@@ -4,133 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_meshinfo/TMP_MeshInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_MeshInfo {
-    pub mesh: crate :: unity_engine :: mesh :: Mesh,
-    pub vertex_count: i32,
-    pub vertices: :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 >,
-    pub normals: :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 >,
-    pub tangents: :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 >,
-    pub uvs0: :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 >,
-    pub uvs2: :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 >,
-    pub colors32: :: unity2 :: Array < crate :: unity_engine :: color32 :: Color32 >,
-    pub triangles: :: unity2 :: Array < i32 >,
-    pub material: crate :: unity_engine :: material :: Material,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_meshinfo/TMP_MeshInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_MeshInfo{pub mesh:crate::unity_engine::mesh::Mesh,pub vertex_count:i32,pub vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,pub tangents: ::unity2::Array<crate::unity_engine::vector4::Vector4>,pub uvs0: ::unity2::Array<crate::unity_engine::vector2::Vector2>,pub uvs2: ::unity2::Array<crate::unity_engine::vector2::Vector2>,pub colors32: ::unity2::Array<crate::unity_engine::color32::Color32>,pub triangles: ::unity2::Array<i32>,pub material:crate::unity_engine::material::Material,}
+impl::unity2::ClassIdentity for TMP_MeshInfo{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_MeshInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TMP_MeshInfo {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_MeshInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for TMP_MeshInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for TMP_MeshInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl TMP_MeshInfo{#[inline]pub fn s_default_color()->crate::unity_engine::color32::Color32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_DefaultColor");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_default_color(value:crate::unity_engine::color32::Color32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_DefaultColor");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl TMP_MeshInfo {
-    #[inline]
-    pub fn s_default_color() -> crate :: unity_engine :: color32 :: Color32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultColor");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_default_color(value: crate :: unity_engine :: color32 :: Color32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultColor");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_default_normal() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultNormal");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_default_normal(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultNormal");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_default_tangent() -> crate :: unity_engine :: vector4 :: Vector4 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultTangent");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_default_tangent(value: crate :: unity_engine :: vector4 :: Vector4) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultTangent");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_default_bounds() -> crate :: unity_engine :: bounds :: Bounds {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultBounds");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_default_bounds(value: crate :: unity_engine :: bounds :: Bounds) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultBounds");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn s_default_normal()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_DefaultNormal");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_default_normal(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_DefaultNormal");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_default_tangent()->crate::unity_engine::vector4::Vector4{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_DefaultTangent");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_default_tangent(value:crate::unity_engine::vector4::Vector4){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_DefaultTangent");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_default_bounds()->crate::unity_engine::bounds::Bounds{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_DefaultBounds");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_default_bounds(value:crate::unity_engine::bounds::Bounds){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_DefaultBounds");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -138,14 +55,63 @@ impl TMP_MeshInfo {
 #[cfg(feature = "tm_pro-tmp_meshinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_meshinfo")]
-impl TMP_MeshInfo { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_meshinfo")]impl TMP_MeshInfo{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829b80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_meshinfo")]
-impl TMP_MeshInfo { # [doc = "`.ctor(crate::unity_engine::mesh::Mesh, i32)` overload"] pub fn ctor (& mut self , mesh : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh > , size : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , crate :: unity_engine :: mesh :: Mesh , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2827360usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (mesh) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::mesh::Mesh, i32, bool)` overload"] pub fn ctor_2 (& mut self , mesh : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh > , size : impl :: core :: convert :: Into < i32 > , is_volumetric : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , crate :: unity_engine :: mesh :: Mesh , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28278d0usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (mesh) , :: core :: convert :: Into :: into (size) , :: core :: convert :: Into :: into (is_volumetric) , :: core :: option :: Option :: None) } } } # [doc = "`ResizeMeshInfo(i32)` overload"] pub fn resize_mesh_info (& mut self , size : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28281b0usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`ResizeMeshInfo(i32, bool)` overload"] pub fn resize_mesh_info_2 (& mut self , size : impl :: core :: convert :: Into < i32 > , is_volumetric : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2828640usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (size) , :: core :: convert :: Into :: into (is_volumetric) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829040usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: option :: Option :: None) } } } # [doc = "`Clear(bool)` overload"] pub fn clear_2 (& mut self , upload_changes : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829100usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (upload_changes) , :: core :: option :: Option :: None) } } } # [doc = "`ClearUnusedVertices()` overload"] pub fn clear_unused_vertices (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829240usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: option :: Option :: None) } } } # [doc = "`ClearUnusedVertices(i32)` overload"] pub fn clear_unused_vertices_2 (& mut self , start_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829270usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (start_index) , :: core :: option :: Option :: None) } } } # [doc = "`ClearUnusedVertices(i32, bool)` overload"] pub fn clear_unused_vertices_3 (& mut self , start_index : impl :: core :: convert :: Into < i32 > , update_mesh : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829290usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (start_index) , :: core :: convert :: Into :: into (update_mesh) , :: core :: option :: Option :: None) } } } # [doc = "`SortGeometry(crate::tm_pro::vertexsortingorder::VertexSortingOrder)` overload"] pub fn sort_geometry (& mut self , order : impl :: core :: convert :: Into < crate :: tm_pro :: vertexsortingorder :: VertexSortingOrder >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , crate :: tm_pro :: vertexsortingorder :: VertexSortingOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829360usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`SortGeometry(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32>)` overload"] pub fn sort_geometry_2 (& mut self , sorting_order : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < i32 > >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28299a0usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (sorting_order) , :: core :: option :: Option :: None) } } } # [doc = "`SwapVertexData(i32, i32)` overload"] pub fn swap_vertex_data (& mut self , src : impl :: core :: convert :: Into < i32 > , dst : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_MeshInfo , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28293f0usize) as * mut u8) ; __inner (self as * mut TMP_MeshInfo , :: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (dst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_meshinfo")]impl TMP_MeshInfo{#[doc="`.ctor(crate::unity_engine::mesh::Mesh, i32)` overload"]pub fn ctor(&mut self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,size:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2827360usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(i32)::core::convert::Into::into(size))}
+}
+#[doc="`.ctor(crate::unity_engine::mesh::Mesh, i32, bool)` overload"]pub fn ctor_2(&mut self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,size:impl::core::convert::Into<i32> ,is_volumetric:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28278d0usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(i32)::core::convert::Into::into(size),(bool)::core::convert::Into::into(is_volumetric))}
+}
+#[doc="`ResizeMeshInfo(i32)` overload"]pub fn resize_mesh_info(&mut self,size:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28281b0usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(i32)::core::convert::Into::into(size))}
+}
+#[doc="`ResizeMeshInfo(i32, bool)` overload"]pub fn resize_mesh_info_2(&mut self,size:impl::core::convert::Into<i32> ,is_volumetric:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2828640usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(i32)::core::convert::Into::into(size),(bool)::core::convert::Into::into(is_volumetric))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829040usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo)}
+}
+#[doc="`Clear(bool)` overload"]pub fn clear_2(&mut self,upload_changes:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829100usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(bool)::core::convert::Into::into(upload_changes))}
+}
+#[doc="`ClearUnusedVertices()` overload"]pub fn clear_unused_vertices(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829240usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo)}
+}
+#[doc="`ClearUnusedVertices(i32)` overload"]pub fn clear_unused_vertices_2(&mut self,start_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829270usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(i32)::core::convert::Into::into(start_index))}
+}
+#[doc="`ClearUnusedVertices(i32, bool)` overload"]pub fn clear_unused_vertices_3(&mut self,start_index:impl::core::convert::Into<i32> ,update_mesh:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829290usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(i32)::core::convert::Into::into(start_index),(bool)::core::convert::Into::into(update_mesh))}
+}
+#[doc="`SortGeometry(crate::tm_pro::vertexsortingorder::VertexSortingOrder)` overload"]pub fn sort_geometry(&mut self,order:impl::core::convert::Into<crate::tm_pro::vertexsortingorder::VertexSortingOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829360usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(crate::tm_pro::vertexsortingorder::VertexSortingOrder)::core::convert::Into::into(order))}
+}
+#[doc="`SortGeometry(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32>)` overload"]pub fn sort_geometry_2(&mut self,sorting_order:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28299a0usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32>)::core::convert::Into::into(sorting_order))}
+}
+#[doc="`SwapVertexData(i32, i32)` overload"]pub fn swap_vertex_data(&mut self,src:impl::core::convert::Into<i32> ,dst:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28293f0usize)as*mut u8,();
+(*mut TMP_MeshInfo)self as*mut TMP_MeshInfo,(i32)::core::convert::Into::into(src),(i32)::core::convert::Into::into(dst))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_meshinfo")]
-impl TMP_MeshInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn resize_mesh_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn resize_mesh_info_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn clear_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn clear_unused_vertices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn clear_unused_vertices_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn clear_unused_vertices_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn sort_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn sort_geometry_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn swap_vertex_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MeshInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="tm_pro-tmp_meshinfo")]impl TMP_MeshInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn resize_mesh_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn resize_mesh_info_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_unused_vertices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn clear_unused_vertices_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn clear_unused_vertices_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn sort_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn sort_geometry_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn swap_vertex_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
 #[cfg(feature = "tm_pro-tmp_meshinfo")]
 #[doc(hidden)]

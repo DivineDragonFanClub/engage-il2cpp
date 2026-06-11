@@ -4,37 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: capabilitybase_1 :: { CapabilityBase_1 , ICapabilityBase_1 }
- ;
- use crate :: app :: capabilitydefinition :: { CapabilityDefinition , ICapabilityDefinition }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::capabilitybase_1::{CapabilityBase_1,ICapabilityBase_1}
+;
+use crate::app::capabilitydefinition::{CapabilityDefinition,ICapabilityDefinition}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capability/Capability.md"))] # [:: unity2 :: class (namespace = "App" , name = "Capability")] # [parent (crate :: app :: capabilitybase_1 :: CapabilityBase_1 < u8 >)] pub struct Capability {
-# [static_field] # [rename (name = "Min")] pub min : i32 ,
-# [static_field] # [rename (name = "Max")] pub max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capability/Capability.md"))]#[::unity2::class(namespace="App",name="Capability")]#[parent(crate::app::capabilitybase_1::CapabilityBase_1<u8>)]pub struct Capability{#[static_field]#[rename(name="Min")]pub min:i32, #[static_field]#[rename(name="Max")]pub max:i32,}
 
 }
 
 #[cfg(feature = "app-capability-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-capability")]
-pub trait ICapabilityMethods : ICapability { # [doc = "`.ctor(u8)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < Capability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Capability , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bcca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32, u8)` overload"] fn add (self , i : impl :: core :: convert :: Into < i32 > , v : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < Capability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Capability , i32 , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bcd00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`IsZero()` overload"] fn is_zero (self ,) -> bool { unsafe { let __receiver = < Capability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Capability , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bcda0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteToStream(crate::app::stream_2::Stream_2, u8)` overload"] fn write_to_stream (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , v : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < Capability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Capability , crate :: app :: stream_2 :: Stream_2 , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bce60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`ReadFromStream(crate::app::stream_2::Stream_2)` overload"] fn read_from_stream (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> u8 { unsafe { let __receiver = < Capability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Capability , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bce70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-capability")]pub trait ICapabilityMethods:ICapability{#[doc="`.ctor(u8)` overload"]fn ctor(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <Capability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bcca0usize)as*mut u8,();
+(Capability)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`Add(i32, u8)` overload"]fn add(self,i:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <Capability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bcd00usize)as*mut u8,();
+(Capability)__receiver,(i32)::core::convert::Into::into(i),(u8)::core::convert::Into::into(v))}
+}
+#[doc="`IsZero()` overload"]fn is_zero(self,)->bool{unsafe{let __receiver= <Capability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bcda0usize)as*mut u8,bool;
+(Capability)__receiver)}
+}
+#[doc="`WriteToStream(crate::app::stream_2::Stream_2, u8)` overload"]fn write_to_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,v:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <Capability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bce60usize)as*mut u8,();
+(Capability)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(u8)::core::convert::Into::into(v))}
+}
+#[doc="`ReadFromStream(crate::app::stream_2::Stream_2)` overload"]fn read_from_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->u8{unsafe{let __receiver= <Capability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bce70usize)as*mut u8,u8;
+(Capability)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
 
-#[cfg(feature = "app-capability")]
-impl < __T : ICapability > ICapabilityMethods for __T { }
+#[cfg(feature="app-capability")]impl<__T:ICapability>ICapabilityMethods for __T{}
 
-#[cfg(feature = "app-capability")]
-impl Capability { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Capability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Capability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Capability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn write_to_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Capability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn read_from_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Capability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-capability")]impl Capability{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn write_to_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_from_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-capability")]
-impl Capability {
-# [doc = "`.ctor(u8)` — overload selector"] pub fn new (value : u8) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Capability) , :: core :: stringify ! (new) ,)) ; < Self as ICapabilityMethods > :: ctor (this , value) ; this }
+#[cfg(feature="app-capability")]impl Capability{#[doc="`.ctor(u8)` — overload selector"]pub fn new(value:u8)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Capability), ::core::stringify!(new),));
+ <Self as ICapabilityMethods> ::ctor(this,value);
+this}
 }
 
 #[cfg(feature = "app-capability")]

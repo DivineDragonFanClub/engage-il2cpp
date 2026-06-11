@@ -4,170 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/update/Update_ScriptRunDelayedTasks.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Update_ScriptRunDelayedTasks {}
-
-
-impl ::unity2::ClassIdentity for Update_ScriptRunDelayedTasks {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "Update.ScriptRunDelayedTasks";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/player_loop/update/Update_ScriptRunDelayedTasks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Update_ScriptRunDelayedTasks{}
+impl::unity2::ClassIdentity for Update_ScriptRunDelayedTasks{const NAMESPACE: &'static str="UnityEngine.PlayerLoop";
+const NAME: &'static str="Update.ScriptRunDelayedTasks";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Update_ScriptRunDelayedTasks{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::IlType for Update_ScriptRunDelayedTasks {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/player_loop/update/Update_ScriptRunDelayedDynamicFrameRate.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Update_ScriptRunDelayedDynamicFrameRate{}
+impl::unity2::ClassIdentity for Update_ScriptRunDelayedDynamicFrameRate{const NAMESPACE: &'static str="UnityEngine.PlayerLoop";
+const NAME: &'static str="Update.ScriptRunDelayedDynamicFrameRate";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Update_ScriptRunDelayedDynamicFrameRate{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/update/Update_ScriptRunDelayedDynamicFrameRate.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Update_ScriptRunDelayedDynamicFrameRate {}
-
-
-impl ::unity2::ClassIdentity for Update_ScriptRunDelayedDynamicFrameRate {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "Update.ScriptRunDelayedDynamicFrameRate";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/player_loop/update/Update_ScriptRunBehaviourUpdate.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Update_ScriptRunBehaviourUpdate{}
+impl::unity2::ClassIdentity for Update_ScriptRunBehaviourUpdate{const NAMESPACE: &'static str="UnityEngine.PlayerLoop";
+const NAME: &'static str="Update.ScriptRunBehaviourUpdate";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Update_ScriptRunBehaviourUpdate{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::IlType for Update_ScriptRunDelayedDynamicFrameRate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/player_loop/update/Update_DirectorUpdate.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Update_DirectorUpdate{}
+impl::unity2::ClassIdentity for Update_DirectorUpdate{const NAMESPACE: &'static str="UnityEngine.PlayerLoop";
+const NAME: &'static str="Update.DirectorUpdate";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Update_DirectorUpdate{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/update/Update_DirectorUpdate.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Update_DirectorUpdate {}
-
-
-impl ::unity2::ClassIdentity for Update_DirectorUpdate {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "Update.DirectorUpdate";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/player_loop/update/Update.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Update{}
+impl::unity2::ClassIdentity for Update{const NAMESPACE: &'static str="UnityEngine.PlayerLoop";
+const NAME: &'static str="Update";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for Update_DirectorUpdate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/update/Update.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Update {}
-
-
-impl ::unity2::ClassIdentity for Update {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "Update";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Update {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/update/Update_ScriptRunBehaviourUpdate.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Update_ScriptRunBehaviourUpdate {}
-
-
-impl ::unity2::ClassIdentity for Update_ScriptRunBehaviourUpdate {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "Update.ScriptRunBehaviourUpdate";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Update_ScriptRunBehaviourUpdate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Update{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -180,9 +75,9 @@ pub use __types::*;
 pub mod prelude {
     pub use super::Update_ScriptRunDelayedTasks;
     pub use super::Update_ScriptRunDelayedDynamicFrameRate;
+    pub use super::Update_ScriptRunBehaviourUpdate;
     pub use super::Update_DirectorUpdate;
     pub use super::Update;
-    pub use super::Update_ScriptRunBehaviourUpdate;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

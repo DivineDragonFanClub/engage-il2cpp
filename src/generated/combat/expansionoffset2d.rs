@@ -4,25 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/expansionoffset2d/ExpansionOffset2D.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ExpansionOffset2D")] # [parent (crate :: system :: object :: Object)] pub struct ExpansionOffset2D {
-# [static_field] # [rename (name = "XY")] pub xy : :: unity2 :: Array < f32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/expansionoffset2d/ExpansionOffset2D.md"))]#[::unity2::class(namespace="Combat",name="ExpansionOffset2D")]#[parent(crate::system::object::Object)]pub struct ExpansionOffset2D{#[static_field]#[rename(name="XY")]pub xy: ::unity2::Array<f32> ,}
 
 }
 
 #[cfg(feature = "combat-expansionoffset2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-expansionoffset2d")]
-impl ExpansionOffset2D { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ea560usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-expansionoffset2d")]impl ExpansionOffset2D{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ea560usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-expansionoffset2d")]
-impl ExpansionOffset2D { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpansionOffset2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-expansionoffset2d")]impl ExpansionOffset2D{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-expansionoffset2d")]
 #[doc(hidden)]

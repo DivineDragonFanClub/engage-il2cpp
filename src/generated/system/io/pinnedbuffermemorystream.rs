@@ -4,36 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: stream :: { IStream , Stream }
- ;
- use crate :: system :: io :: unmanagedmemorystream :: { IUnmanagedMemoryStream , UnmanagedMemoryStream }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::stream::{IStream,Stream}
+;
+use crate::system::io::unmanagedmemorystream::{IUnmanagedMemoryStream,UnmanagedMemoryStream}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/pinnedbuffermemorystream/PinnedBufferMemoryStream.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "PinnedBufferMemoryStream")] # [parent (crate :: system :: io :: unmanagedmemorystream :: UnmanagedMemoryStream)] pub struct PinnedBufferMemoryStream {
-# [offset (104)] # [rename (name = "_array")] pub array : :: unity2 :: Array < u8 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/pinnedbuffermemorystream/PinnedBufferMemoryStream.md"))]#[::unity2::class(namespace="System.IO",name="PinnedBufferMemoryStream")]#[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]pub struct PinnedBufferMemoryStream{#[offset(104)]#[rename(name="_array")]pub array: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "system-io-pinnedbuffermemorystream-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-pinnedbuffermemorystream")]
-pub trait IPinnedBufferMemoryStreamMethods : IPinnedBufferMemoryStream { # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < PinnedBufferMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PinnedBufferMemoryStream , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x376a1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < PinnedBufferMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PinnedBufferMemoryStream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x376a2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PinnedBufferMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PinnedBufferMemoryStream , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x376a330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-pinnedbuffermemorystream")]pub trait IPinnedBufferMemoryStreamMethods:IPinnedBufferMemoryStream{#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,array:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x376a1c0usize)as*mut u8,();
+(PinnedBufferMemoryStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x376a2b0usize)as*mut u8,();
+(PinnedBufferMemoryStream)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x376a330usize)as*mut u8,();
+(PinnedBufferMemoryStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+}
 
-#[cfg(feature = "system-io-pinnedbuffermemorystream")]
-impl < __T : IPinnedBufferMemoryStream > IPinnedBufferMemoryStreamMethods for __T { }
+#[cfg(feature="system-io-pinnedbuffermemorystream")]impl<__T:IPinnedBufferMemoryStream>IPinnedBufferMemoryStreamMethods for __T{}
 
-#[cfg(feature = "system-io-pinnedbuffermemorystream")]
-impl PinnedBufferMemoryStream { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PinnedBufferMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PinnedBufferMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PinnedBufferMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-io-pinnedbuffermemorystream")]impl PinnedBufferMemoryStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "system-io-pinnedbuffermemorystream")]
-impl PinnedBufferMemoryStream {
-# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (array : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PinnedBufferMemoryStream) , :: core :: stringify ! (new) ,)) ; < Self as IPinnedBufferMemoryStreamMethods > :: ctor (this , array) ; this }
+#[cfg(feature="system-io-pinnedbuffermemorystream")]impl PinnedBufferMemoryStream{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(array: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PinnedBufferMemoryStream), ::core::stringify!(new),));
+ <Self as IPinnedBufferMemoryStreamMethods> ::ctor(this,array);
+this}
 }
 
 #[cfg(feature = "system-io-pinnedbuffermemorystream")]

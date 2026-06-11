@@ -4,31 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinecameraoffset/CinemachineCameraOffset.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineCameraOffset")] pub struct CinemachineCameraOffset {
-# [offset (40)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (56)] # [rename (name = "m_PreserveComposition")] pub m_preserve_composition : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/cinemachinecameraoffset/CinemachineCameraOffset.md"))]#[::unity2::class(namespace="",name="CinemachineCameraOffset")]pub struct CinemachineCameraOffset{#[offset(40)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_PreserveComposition")]pub m_preserve_composition:bool,}
 
 }
 
 #[cfg(feature = "root-cinemachinecameraoffset-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-cinemachinecameraoffset")]
-pub trait ICinemachineCameraOffsetMethods : ICinemachineCameraOffset { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineCameraOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineCameraOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37ab010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-cinemachinecameraoffset")]pub trait ICinemachineCameraOffsetMethods:ICinemachineCameraOffset{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CinemachineCameraOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37ab010usize)as*mut u8,();
+(CinemachineCameraOffset)__receiver)}
+}
+}
 
-#[cfg(feature = "root-cinemachinecameraoffset")]
-impl < __T : ICinemachineCameraOffset > ICinemachineCameraOffsetMethods for __T { }
+#[cfg(feature="root-cinemachinecameraoffset")]impl<__T:ICinemachineCameraOffset>ICinemachineCameraOffsetMethods for __T{}
 
-#[cfg(feature = "root-cinemachinecameraoffset")]
-impl CinemachineCameraOffset { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineCameraOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-cinemachinecameraoffset")]impl CinemachineCameraOffset{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-cinemachinecameraoffset")]
-impl CinemachineCameraOffset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineCameraOffset) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineCameraOffsetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-cinemachinecameraoffset")]impl CinemachineCameraOffset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineCameraOffset), ::core::stringify!(new),));
+ <Self as ICinemachineCameraOffsetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-cinemachinecameraoffset")]

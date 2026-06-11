@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblycompanyattribute/AssemblyCompanyAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyCompanyAttribute")] pub struct AssemblyCompanyAttribute {
-# [offset (16)] # [rename (name = "m_company")] pub m_company : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblycompanyattribute/AssemblyCompanyAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyCompanyAttribute")]pub struct AssemblyCompanyAttribute{#[offset(16)]#[rename(name="m_company")]pub m_company: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblycompanyattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblycompanyattribute")]
-pub trait IAssemblyCompanyAttributeMethods : IAssemblyCompanyAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , company : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyCompanyAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyCompanyAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (company) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblycompanyattribute")]pub trait IAssemblyCompanyAttributeMethods:IAssemblyCompanyAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,company:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyCompanyAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401a90usize)as*mut u8,();
+(AssemblyCompanyAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(company))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblycompanyattribute")]
-impl < __T : IAssemblyCompanyAttribute > IAssemblyCompanyAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblycompanyattribute")]impl<__T:IAssemblyCompanyAttribute>IAssemblyCompanyAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblycompanyattribute")]
-impl AssemblyCompanyAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyCompanyAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblycompanyattribute")]impl AssemblyCompanyAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblycompanyattribute")]
-impl AssemblyCompanyAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (company : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyCompanyAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyCompanyAttributeMethods > :: ctor (this , company) ; this }
+#[cfg(feature="system-reflection-assemblycompanyattribute")]impl AssemblyCompanyAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(company: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyCompanyAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyCompanyAttributeMethods> ::ctor(this,company);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblycompanyattribute")]

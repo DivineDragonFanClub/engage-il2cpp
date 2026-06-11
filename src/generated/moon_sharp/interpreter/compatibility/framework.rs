@@ -4,28 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/compatibility/framework/Framework.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Compatibility" , name = "Framework")] # [parent (crate :: system :: object :: Object)] pub struct Framework {
-# [static_field] # [rename (name = "s_FrameworkCurrent")] pub s_framework_current : crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkcurrent :: FrameworkCurrent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/compatibility/framework/Framework.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Compatibility",name="Framework")]#[parent(crate::system::object::Object)]pub struct Framework{#[static_field]#[rename(name="s_FrameworkCurrent")]pub s_framework_current:crate::moon_sharp::interpreter::compatibility::frameworks::frameworkcurrent::FrameworkCurrent,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-framework-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-compatibility-framework")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Framework_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_do { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Framework as :: unity2 :: ClassIdentity > :: class () , "get_Do" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Framework as :: unity2 :: ClassIdentity > :: NAME , "get_Do" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Framework as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Framework as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-compatibility-framework")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Framework_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_do{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<Framework as::unity2::ClassIdentity> ::class(),"get_Do",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Framework as::unity2::ClassIdentity> ::NAME,"get_Do",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_cctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<Framework as::unity2::ClassIdentity> ::class(),".cctor",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Framework as::unity2::ClassIdentity> ::NAME,".cctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-compatibility-framework")]
-impl Framework { # [doc = "`get_Do()` overload"] pub fn get_do () -> crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkbase :: FrameworkBase { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkbase :: FrameworkBase = :: core :: mem :: transmute (__Framework_unity2_raw :: __lookup_get_do :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__Framework_unity2_raw :: __lookup_cctor :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-compatibility-framework")]impl Framework{#[doc="`get_Do()` overload"]pub fn get_do()->crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase{unsafe{::unity2::il2cpp_call!(__Framework_unity2_raw::__lookup_get_do::get_method_info().method_ptr,crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!(__Framework_unity2_raw::__lookup_cctor::get_method_info().method_ptr,();
+)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-compatibility-framework")]
-impl Framework { pub fn get_do_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="moon_sharp-interpreter-compatibility-framework")]impl Framework{pub fn get_do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-framework")]
 #[doc(hidden)]

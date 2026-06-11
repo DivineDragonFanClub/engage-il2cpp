@@ -4,32 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/projector/Projector.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Projector")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct Projector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/projector/Projector.md"))]#[::unity2::class(namespace="UnityEngine",name="Projector")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct Projector{}
 
 }
 
 #[cfg(feature = "unity_engine-projector-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-projector")]
-pub trait IProjectorMethods : IProjector { # [doc = "`get_material()` overload"] fn get_material (self ,) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < Projector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Projector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_material(crate::unity_engine::material::Material)` overload"] fn set_material (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { let __receiver = < Projector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Projector , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-projector")]pub trait IProjectorMethods:IProjector{#[doc="`get_material()` overload"]fn get_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <Projector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f8c00usize)as*mut u8,crate::unity_engine::material::Material;
+(Projector)__receiver)}
+}
+#[doc="`set_material(crate::unity_engine::material::Material)` overload"]fn set_material(self,value:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <Projector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f8c50usize)as*mut u8,();
+(Projector)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-projector")]
-impl < __T : IProjector > IProjectorMethods for __T { }
+#[cfg(feature="unity_engine-projector")]impl<__T:IProjector>IProjectorMethods for __T{}
 
-#[cfg(feature = "unity_engine-projector")]
-impl Projector { pub fn get_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Projector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Projector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-projector")]impl Projector{pub fn get_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-projector")]
 #[doc(hidden)]

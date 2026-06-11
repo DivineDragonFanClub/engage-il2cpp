@@ -4,217 +4,582 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/hashtable/Hashtable_bucket.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Hashtable_bucket {
-    pub key: :: unity2 :: IlInstance,
-    pub val: :: unity2 :: IlInstance,
-    pub hash_coll: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_HashtableEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.HashtableEnumerator")]#[parent(crate::system::object::Object)]pub struct Hashtable_HashtableEnumerator{#[offset(16)]#[rename(name="hashtable")]pub hashtable:crate::system::collections::hashtable::Hashtable, #[offset(24)]#[rename(name="bucket")]pub bucket:i32, #[offset(28)]#[rename(name="version")]pub version:i32, #[offset(32)]#[rename(name="current")]pub current:bool, #[offset(36)]#[rename(name="getObjectRetType")]pub get_object_ret_type:i32, #[offset(40)]#[rename(name="currentKey")]pub current_key: ::unity2::IlInstance, #[offset(48)]#[rename(name="currentValue")]pub current_value: ::unity2::IlInstance,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable")]#[parent(crate::system::object::Object)]pub struct Hashtable{#[static_field]#[rename(name="HashPrime")]pub hash_prime:i32, #[static_field]#[rename(name="InitialSize")]pub initial_size:i32, #[static_field]#[rename(name="LoadFactorName")]pub load_factor_name: ::unity2::Il2CppString, #[static_field]#[rename(name="VersionName")]pub version_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ComparerName")]pub comparer_name: ::unity2::Il2CppString, #[static_field]#[rename(name="HashCodeProviderName")]pub hash_code_provider_name: ::unity2::Il2CppString, #[static_field]#[rename(name="HashSizeName")]pub hash_size_name: ::unity2::Il2CppString, #[static_field]#[rename(name="KeysName")]pub keys_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ValuesName")]pub values_name: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyComparerName")]pub key_comparer_name: ::unity2::Il2CppString, #[offset(16)]#[rename(name="buckets")]pub buckets: ::unity2::Array<crate::system::collections::hashtable::Hashtable_bucket> , #[offset(24)]#[rename(name="count")]pub count:i32, #[offset(28)]#[rename(name="occupancy")]pub occupancy:i32, #[offset(32)]#[rename(name="loadsize")]pub loadsize:i32, #[offset(36)]#[rename(name="loadFactor")]pub load_factor:f32, #[offset(40)]#[rename(name="version")]pub version:i32, #[offset(44)]#[rename(name="isWriterInProgress")]pub is_writer_in_progress:bool, #[offset(48)]#[rename(name="keys")]pub keys:crate::system::collections::icollection::ICollection, #[offset(56)]#[rename(name="values")]pub values:crate::system::collections::icollection::ICollection, #[offset(64)]#[rename(name="_keycomparer")]pub keycomparer:crate::system::collections::iequalitycomparer::IEqualityComparer, #[offset(72)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_ValueCollection.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.ValueCollection")]#[parent(crate::system::object::Object)]pub struct Hashtable_ValueCollection{#[offset(16)]#[rename(name="_hashtable")]pub hashtable:crate::system::collections::hashtable::Hashtable,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_KeyCollection.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.KeyCollection")]#[parent(crate::system::object::Object)]pub struct Hashtable_KeyCollection{#[offset(16)]#[rename(name="_hashtable")]pub hashtable:crate::system::collections::hashtable::Hashtable,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_SyncHashtable.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.SyncHashtable")]#[parent(crate::system::collections::hashtable::Hashtable)]pub struct Hashtable_SyncHashtable{#[offset(80)]#[rename(name="_table")]pub table:crate::system::collections::hashtable::Hashtable,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_bucket.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Hashtable_bucket{pub key: ::unity2::IlInstance,pub val: ::unity2::IlInstance,pub hash_coll:i32,}
+impl::unity2::ClassIdentity for Hashtable_bucket{const NAMESPACE: &'static str="System.Collections";
+const NAME: &'static str="Hashtable.bucket";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Hashtable_bucket{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for Hashtable_bucket {
-    const NAMESPACE: &'static str = "System.Collections";
-
-    const NAME: &'static str = "Hashtable.bucket";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Hashtable_bucket {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_HashtableDebugView.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Hashtable.HashtableDebugView")] # [parent (crate :: system :: object :: Object)] pub struct Hashtable_HashtableDebugView {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_SyncHashtable.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Hashtable.SyncHashtable")] # [parent (crate :: system :: collections :: hashtable :: Hashtable)] pub struct Hashtable_SyncHashtable {
-# [offset (80)] # [rename (name = "_table")] pub table : crate :: system :: collections :: hashtable :: Hashtable ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_KeyCollection.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Hashtable.KeyCollection")] # [parent (crate :: system :: object :: Object)] pub struct Hashtable_KeyCollection {
-# [offset (16)] # [rename (name = "_hashtable")] pub hashtable : crate :: system :: collections :: hashtable :: Hashtable ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_ValueCollection.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Hashtable.ValueCollection")] # [parent (crate :: system :: object :: Object)] pub struct Hashtable_ValueCollection {
-# [offset (16)] # [rename (name = "_hashtable")] pub hashtable : crate :: system :: collections :: hashtable :: Hashtable ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Hashtable")] # [parent (crate :: system :: object :: Object)] pub struct Hashtable {
-# [static_field] # [rename (name = "HashPrime")] pub hash_prime : i32 ,
-# [static_field] # [rename (name = "InitialSize")] pub initial_size : i32 ,
-# [static_field] # [rename (name = "LoadFactorName")] pub load_factor_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "VersionName")] pub version_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ComparerName")] pub comparer_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "HashCodeProviderName")] pub hash_code_provider_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "HashSizeName")] pub hash_size_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "KeysName")] pub keys_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ValuesName")] pub values_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "KeyComparerName")] pub key_comparer_name : :: unity2 :: Il2CppString ,
-# [offset (16)] # [rename (name = "buckets")] pub buckets : :: unity2 :: Array < crate :: system :: collections :: hashtable :: Hashtable_bucket > ,
-# [offset (24)] # [rename (name = "count")] pub count : i32 ,
-# [offset (28)] # [rename (name = "occupancy")] pub occupancy : i32 ,
-# [offset (32)] # [rename (name = "loadsize")] pub loadsize : i32 ,
-# [offset (36)] # [rename (name = "loadFactor")] pub load_factor : f32 ,
-# [offset (40)] # [rename (name = "version")] pub version : i32 ,
-# [offset (44)] # [rename (name = "isWriterInProgress")] pub is_writer_in_progress : bool ,
-# [offset (48)] # [rename (name = "keys")] pub keys : crate :: system :: collections :: icollection :: ICollection ,
-# [offset (56)] # [rename (name = "values")] pub values : crate :: system :: collections :: icollection :: ICollection ,
-# [offset (64)] # [rename (name = "_keycomparer")] pub keycomparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer ,
-# [offset (72)] # [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_HashtableEnumerator.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Hashtable.HashtableEnumerator")] # [parent (crate :: system :: object :: Object)] pub struct Hashtable_HashtableEnumerator {
-# [offset (16)] # [rename (name = "hashtable")] pub hashtable : crate :: system :: collections :: hashtable :: Hashtable ,
-# [offset (24)] # [rename (name = "bucket")] pub bucket : i32 ,
-# [offset (28)] # [rename (name = "version")] pub version : i32 ,
-# [offset (32)] # [rename (name = "current")] pub current : bool ,
-# [offset (36)] # [rename (name = "getObjectRetType")] pub get_object_ret_type : i32 ,
-# [offset (40)] # [rename (name = "currentKey")] pub current_key : :: unity2 :: IlInstance ,
-# [offset (48)] # [rename (name = "currentValue")] pub current_value : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_HashtableDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.HashtableDebugView")]#[parent(crate::system::object::Object)]pub struct Hashtable_HashtableDebugView{}
 
 }
 
 #[cfg(feature = "system-collections-hashtable-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-hashtable")]
-pub trait IHashtable_SyncHashtableMethods : IHashtable_SyncHashtable { # [doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` overload"] fn ctor (self , table : impl :: core :: convert :: Into < crate :: system :: collections :: hashtable :: Hashtable >) -> () { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , crate :: system :: collections :: hashtable :: Hashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d78c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (table) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsReadOnly()` overload"] fn get_is_read_only (self ,) -> bool { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFixedSize()` overload"] fn get_is_fixed_size (self ,) -> bool { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSynchronized()` overload"] fn get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(crate::system::object::Object)` overload"] fn get_item (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"] fn set_item (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SyncRoot()` overload"] fn get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::system::object::Object, crate::system::object::Object)` overload"] fn add (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Contains(crate::system::object::Object)` overload"] fn contains (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`ContainsKey(crate::system::object::Object)` overload"] fn contains_key (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::IlInstance, i32)` overload"] fn copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d80c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d81c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: idictionaryenumerator :: IDictionaryEnumerator { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: idictionaryenumerator :: IDictionaryEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Keys()` overload"] fn get_keys (self ,) -> crate :: system :: collections :: icollection :: ICollection { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icollection :: ICollection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Values()` overload"] fn get_values (self ,) -> crate :: system :: collections :: icollection :: ICollection { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icollection :: ICollection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::system::object::Object)` overload"] fn remove (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialization(crate::system::object::Object)` overload"] fn on_deserialization (self , sender : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Hashtable_SyncHashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_SyncHashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sender) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl < __T : IHashtable_SyncHashtable > IHashtable_SyncHashtableMethods for __T { }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_SyncHashtable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_fixed_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn contains_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_keys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn on_deserialization_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_SyncHashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_SyncHashtable {
-# [doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"] pub fn new (table : crate :: system :: collections :: hashtable :: Hashtable) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable_SyncHashtable) , :: core :: stringify ! (new) ,)) ; < Self as IHashtable_SyncHashtableMethods > :: ctor (this , table) ; this }
+#[cfg(feature="system-collections-hashtable")]pub trait IHashtable_HashtableEnumeratorMethods:IHashtable_HashtableEnumerator{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable, i32)` overload"]fn ctor(self,hashtable:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable> ,get_obj_ret_type:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7110usize)as*mut u8,();
+(Hashtable_HashtableEnumerator)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(hashtable),(i32)::core::convert::Into::into(get_obj_ret_type))}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7180usize)as*mut u8,crate::system::object::Object;
+(Hashtable_HashtableEnumerator)__receiver)}
+}
+#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7190usize)as*mut u8,crate::system::object::Object;
+(Hashtable_HashtableEnumerator)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7210usize)as*mut u8,bool;
+(Hashtable_HashtableEnumerator)__receiver)}
+}
+#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7340usize)as*mut u8,crate::system::collections::dictionaryentry::DictionaryEntry;
+(Hashtable_HashtableEnumerator)__receiver)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d73d0usize)as*mut u8,crate::system::object::Object;
+(Hashtable_HashtableEnumerator)__receiver)}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d74e0usize)as*mut u8,crate::system::object::Object;
+(Hashtable_HashtableEnumerator)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7560usize)as*mut u8,();
+(Hashtable_HashtableEnumerator)__receiver)}
+}
 }
 
-#[cfg(feature = "system-collections-hashtable")]
-pub trait IHashtable_KeyCollectionMethods : IHashtable_KeyCollection { # [doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` overload"] fn ctor (self , hashtable : impl :: core :: convert :: Into < crate :: system :: collections :: hashtable :: Hashtable >) -> () { unsafe { let __receiver = < Hashtable_KeyCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_KeyCollection , crate :: system :: collections :: hashtable :: Hashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hashtable) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::IlInstance, i32)` overload"] fn copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable_KeyCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_KeyCollection , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Hashtable_KeyCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_KeyCollection , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d77d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSynchronized()` overload"] fn get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < Hashtable_KeyCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_KeyCollection , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SyncRoot()` overload"] fn get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_KeyCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_KeyCollection , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < Hashtable_KeyCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_KeyCollection , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d78b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable_HashtableEnumerator>IHashtable_HashtableEnumeratorMethods for __T{}
 
-#[cfg(feature = "system-collections-hashtable")]
-impl < __T : IHashtable_KeyCollection > IHashtable_KeyCollectionMethods for __T { }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_KeyCollection { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_KeyCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_KeyCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_KeyCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_KeyCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_KeyCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_KeyCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_KeyCollection {
-# [doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"] pub fn new (hashtable : crate :: system :: collections :: hashtable :: Hashtable) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable_KeyCollection) , :: core :: stringify ! (new) ,)) ; < Self as IHashtable_KeyCollectionMethods > :: ctor (this , hashtable) ; this }
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_HashtableEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature = "system-collections-hashtable")]
-pub trait IHashtable_ValueCollectionMethods : IHashtable_ValueCollection { # [doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` overload"] fn ctor (self , hashtable : impl :: core :: convert :: Into < crate :: system :: collections :: hashtable :: Hashtable >) -> () { unsafe { let __receiver = < Hashtable_ValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_ValueCollection , crate :: system :: collections :: hashtable :: Hashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hashtable) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::IlInstance, i32)` overload"] fn copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable_ValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_ValueCollection , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d86b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Hashtable_ValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_ValueCollection , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSynchronized()` overload"] fn get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < Hashtable_ValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_ValueCollection , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d88c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SyncRoot()` overload"] fn get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_ValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_ValueCollection , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d88e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < Hashtable_ValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_ValueCollection , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d8900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl < __T : IHashtable_ValueCollection > IHashtable_ValueCollectionMethods for __T { }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_ValueCollection { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_ValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_ValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_ValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_ValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_ValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_ValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_ValueCollection {
-# [doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"] pub fn new (hashtable : crate :: system :: collections :: hashtable :: Hashtable) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable_ValueCollection) , :: core :: stringify ! (new) ,)) ; < Self as IHashtable_ValueCollectionMethods > :: ctor (this , hashtable) ; this }
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_HashtableEnumerator{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable, i32)` — overload selector"]pub fn new(hashtable:crate::system::collections::hashtable::Hashtable,get_obj_ret_type:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable_HashtableEnumerator), ::core::stringify!(new),));
+ <Self as IHashtable_HashtableEnumeratorMethods> ::ctor(this,hashtable,get_obj_ret_type);
+this}
 }
 
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable { # [doc = "`Synchronized(crate::system::collections::hashtable::Hashtable)` overload"] pub fn synchronized (table : impl :: core :: convert :: Into < crate :: system :: collections :: hashtable :: Hashtable >) -> crate :: system :: collections :: hashtable :: Hashtable { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: hashtable :: Hashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: hashtable :: Hashtable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820770usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (table) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-hashtable")]
-pub trait IHashtableMethods : IHashtable { # [doc = "`.ctor(bool)` overload"] fn ctor (self , trash : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381e6e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (trash) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381e6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] fn ctor_3 (self , capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381e9f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, f32)` overload"] fn ctor_4 (self , capacity : impl :: core :: convert :: Into < i32 > , load_factor : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381e700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: convert :: Into :: into (load_factor) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, f32, crate::system::collections::ihashcodeprovider::IHashCodeProvider, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"] fn ctor_5 (self , capacity : impl :: core :: convert :: Into < i32 > , load_factor : impl :: core :: convert :: Into < f32 > , hcp : impl :: core :: convert :: Into < crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , i32 , f32 , crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381ea00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: convert :: Into :: into (load_factor) , :: core :: convert :: Into :: into (hcp) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, f32, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"] fn ctor_6 (self , capacity : impl :: core :: convert :: Into < i32 > , load_factor : impl :: core :: convert :: Into < f32 > , equality_comparer : impl :: core :: convert :: Into < crate :: system :: collections :: iequalitycomparer :: IEqualityComparer >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , i32 , f32 , crate :: system :: collections :: iequalitycomparer :: IEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381eac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: convert :: Into :: into (load_factor) , :: core :: convert :: Into :: into (equality_comparer) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::ihashcodeprovider::IHashCodeProvider, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"] fn ctor_7 (self , hcp : impl :: core :: convert :: Into < crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381eaf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hcp) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"] fn ctor_8 (self , equality_comparer : impl :: core :: convert :: Into < crate :: system :: collections :: iequalitycomparer :: IEqualityComparer >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: collections :: iequalitycomparer :: IEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381eba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (equality_comparer) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"] fn ctor_9 (self , capacity : impl :: core :: convert :: Into < i32 > , equality_comparer : impl :: core :: convert :: Into < crate :: system :: collections :: iequalitycomparer :: IEqualityComparer >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , i32 , crate :: system :: collections :: iequalitycomparer :: IEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381ebe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: convert :: Into :: into (equality_comparer) , :: core :: option :: Option :: None) } } } # [doc = "`InitHash(crate::system::object::Object, i32, *mutu32, *mutu32)` overload"] fn init_hash (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , hashsize : impl :: core :: convert :: Into < i32 >) -> (u32 , u32 , u32) { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < u32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , i32 , * mut u32 , * mut u32 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381ecc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (hashsize) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Add(crate::system::object::Object, crate::system::object::Object)` overload"] fn add (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381ed20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Contains(crate::system::object::Object)` overload"] fn contains (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`ContainsKey(crate::system::object::Object)` overload"] fn contains_key (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`CopyKeys(::unity2::IlInstance, i32)` overload"] fn copy_keys (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`CopyEntries(::unity2::IlInstance, i32)` overload"] fn copy_entries (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f6a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::IlInstance, i32)` overload"] fn copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`CopyValues(::unity2::IlInstance, i32)` overload"] fn copy_values (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(crate::system::object::Object)` overload"] fn get_item (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381fa00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"] fn set_item (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381fc20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`expand()` overload"] fn expand (self ,) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381fc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`rehash()` overload"] fn rehash (self ,) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381ff20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVersion()` overload"] fn update_version (self ,) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381f300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`rehash(i32, bool)` overload"] fn rehash_2 (self , newsize : impl :: core :: convert :: Into < i32 > , force_new_hash_code : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381fd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (newsize) , :: core :: convert :: Into :: into (force_new_hash_code) , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: idictionaryenumerator :: IDictionaryEnumerator { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: idictionaryenumerator :: IDictionaryEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x38200c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHash(crate::system::object::Object)` overload"] fn get_hash (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsReadOnly()` overload"] fn get_is_read_only (self ,) -> bool { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFixedSize()` overload"] fn get_is_fixed_size (self ,) -> bool { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSynchronized()` overload"] fn get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyEquals(crate::system::object::Object, crate::system::object::Object)` overload"] fn key_equals (self , item : impl :: core :: convert :: Into < crate :: system :: object :: Object > , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`get_Keys()` overload"] fn get_keys (self ,) -> crate :: system :: collections :: icollection :: ICollection { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icollection :: ICollection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Values()` overload"] fn get_values (self ,) -> crate :: system :: collections :: icollection :: ICollection { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icollection :: ICollection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x38203f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Insert(crate::system::object::Object, crate::system::object::Object, bool)` overload"] fn insert (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , nvalue : impl :: core :: convert :: Into < crate :: system :: object :: Object > , add : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , crate :: system :: object :: Object , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381ed30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (nvalue) , :: core :: convert :: Into :: into (add) , :: core :: option :: Option :: None) } } } # [doc = "`putEntry(::unity2::Array<crate::system::collections::hashtable::Hashtable_bucket>, crate::system::object::Object, crate::system::object::Object, i32)` overload"] fn put_entry (self , new_buckets : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: collections :: hashtable :: Hashtable_bucket > > , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , nvalue : impl :: core :: convert :: Into < crate :: system :: object :: Object > , hashcode : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: Array < crate :: system :: collections :: hashtable :: Hashtable_bucket > , crate :: system :: object :: Object , crate :: system :: object :: Object , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381ff30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (new_buckets) , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (nvalue) , :: core :: convert :: Into :: into (hashcode) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::system::object::Object)` overload"] fn remove (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`get_SyncRoot()` overload"] fn get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x38206d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialization(crate::system::object::Object)` overload"] fn on_deserialization (self , sender : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Hashtable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3820eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sender) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl < __T : IHashtable > IHashtableMethods for __T { }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_8_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_9_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn init_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn contains_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn copy_keys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn copy_entries_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn copy_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn expand_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn rehash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn update_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn rehash_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_is_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_is_fixed_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn key_equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_keys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn insert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn put_entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn on_deserialization_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } }
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (trash : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new) ,)) ; < Self as IHashtableMethods > :: ctor (this , trash) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new_2) ,)) ; < Self as IHashtableMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new_3 (capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new_3) ,)) ; < Self as IHashtableMethods > :: ctor_3 (this , capacity) ; this }
-
-# [doc = "`.ctor(i32, f32)` — overload selector"] pub fn new_4 (capacity : i32 , load_factor : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new_4) ,)) ; < Self as IHashtableMethods > :: ctor_4 (this , capacity , load_factor) ; this }
-
-# [doc = "`.ctor(i32, f32, crate::system::collections::ihashcodeprovider::IHashCodeProvider, crate::system::collections::icomparer_interface::IComparer_Interface)` — overload selector"] pub fn new_5 (capacity : i32 , load_factor : f32 , hcp : crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider , comparer : crate :: system :: collections :: icomparer_interface :: IComparer_Interface) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new_5) ,)) ; < Self as IHashtableMethods > :: ctor_5 (this , capacity , load_factor , hcp , comparer) ; this }
-
-# [doc = "`.ctor(i32, f32, crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"] pub fn new_6 (capacity : i32 , load_factor : f32 , equality_comparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new_6) ,)) ; < Self as IHashtableMethods > :: ctor_6 (this , capacity , load_factor , equality_comparer) ; this }
-
-# [doc = "`.ctor(crate::system::collections::ihashcodeprovider::IHashCodeProvider, crate::system::collections::icomparer_interface::IComparer_Interface)` — overload selector"] pub fn new_7 (hcp : crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider , comparer : crate :: system :: collections :: icomparer_interface :: IComparer_Interface) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new_7) ,)) ; < Self as IHashtableMethods > :: ctor_7 (this , hcp , comparer) ; this }
-
-# [doc = "`.ctor(crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"] pub fn new_8 (equality_comparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new_8) ,)) ; < Self as IHashtableMethods > :: ctor_8 (this , equality_comparer) ; this }
-
-# [doc = "`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"] pub fn new_9 (capacity : i32 , equality_comparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable) , :: core :: stringify ! (new_9) ,)) ; < Self as IHashtableMethods > :: ctor_9 (this , capacity , equality_comparer) ; this }
+#[cfg(feature="system-collections-hashtable")]impl Hashtable{#[doc="`Synchronized(crate::system::collections::hashtable::Hashtable)` overload"]pub fn synchronized(table:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->crate::system::collections::hashtable::Hashtable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3820770usize)as*mut u8,crate::system::collections::hashtable::Hashtable;
+(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(table))}
+}
 }
 
-#[cfg(feature = "system-collections-hashtable")]
-pub trait IHashtable_HashtableEnumeratorMethods : IHashtable_HashtableEnumerator { # [doc = "`.ctor(crate::system::collections::hashtable::Hashtable, i32)` overload"] fn ctor (self , hashtable : impl :: core :: convert :: Into < crate :: system :: collections :: hashtable :: Hashtable > , get_obj_ret_type : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Hashtable_HashtableEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_HashtableEnumerator , crate :: system :: collections :: hashtable :: Hashtable , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hashtable) , :: core :: convert :: Into :: into (get_obj_ret_type) , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_HashtableEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_HashtableEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Key()` overload"] fn get_key (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_HashtableEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_HashtableEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> bool { unsafe { let __receiver = < Hashtable_HashtableEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_HashtableEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Entry()` overload"] fn get_entry (self ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry { unsafe { let __receiver = < Hashtable_HashtableEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_HashtableEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_HashtableEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_HashtableEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d73d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Hashtable_HashtableEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_HashtableEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d74e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < Hashtable_HashtableEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Hashtable_HashtableEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d7560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-hashtable")]pub trait IHashtableMethods:IHashtable{#[doc="`.ctor(bool)` overload"]fn ctor(self,trash:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381e6e0usize)as*mut u8,();
+(Hashtable)__receiver,(bool)::core::convert::Into::into(trash))}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381e6f0usize)as*mut u8,();
+(Hashtable)__receiver)}
+}
+#[doc="`.ctor(i32)` overload"]fn ctor_3(self,capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381e9f0usize)as*mut u8,();
+(Hashtable)__receiver,(i32)::core::convert::Into::into(capacity))}
+}
+#[doc="`.ctor(i32, f32)` overload"]fn ctor_4(self,capacity:impl::core::convert::Into<i32> ,load_factor:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381e700usize)as*mut u8,();
+(Hashtable)__receiver,(i32)::core::convert::Into::into(capacity),(f32)::core::convert::Into::into(load_factor))}
+}
+#[doc="`.ctor(i32, f32, crate::system::collections::ihashcodeprovider::IHashCodeProvider, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]fn ctor_5(self,capacity:impl::core::convert::Into<i32> ,load_factor:impl::core::convert::Into<f32> ,hcp:impl::core::convert::Into<crate::system::collections::ihashcodeprovider::IHashCodeProvider> ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381ea00usize)as*mut u8,();
+(Hashtable)__receiver,(i32)::core::convert::Into::into(capacity),(f32)::core::convert::Into::into(load_factor),(crate::system::collections::ihashcodeprovider::IHashCodeProvider)::core::convert::Into::into(hcp),(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer))}
+}
+#[doc="`.ctor(i32, f32, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn ctor_6(self,capacity:impl::core::convert::Into<i32> ,load_factor:impl::core::convert::Into<f32> ,equality_comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381eac0usize)as*mut u8,();
+(Hashtable)__receiver,(i32)::core::convert::Into::into(capacity),(f32)::core::convert::Into::into(load_factor),(crate::system::collections::iequalitycomparer::IEqualityComparer)::core::convert::Into::into(equality_comparer))}
+}
+#[doc="`.ctor(crate::system::collections::ihashcodeprovider::IHashCodeProvider, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]fn ctor_7(self,hcp:impl::core::convert::Into<crate::system::collections::ihashcodeprovider::IHashCodeProvider> ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381eaf0usize)as*mut u8,();
+(Hashtable)__receiver,(crate::system::collections::ihashcodeprovider::IHashCodeProvider)::core::convert::Into::into(hcp),(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer))}
+}
+#[doc="`.ctor(crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn ctor_8(self,equality_comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381eba0usize)as*mut u8,();
+(Hashtable)__receiver,(crate::system::collections::iequalitycomparer::IEqualityComparer)::core::convert::Into::into(equality_comparer))}
+}
+#[doc="`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn ctor_9(self,capacity:impl::core::convert::Into<i32> ,equality_comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381ebe0usize)as*mut u8,();
+(Hashtable)__receiver,(i32)::core::convert::Into::into(capacity),(crate::system::collections::iequalitycomparer::IEqualityComparer)::core::convert::Into::into(equality_comparer))}
+}
+#[doc="`InitHash(crate::system::object::Object, i32, *mutu32, *mutu32)` overload"]fn init_hash(self,key:impl::core::convert::Into<crate::system::object::Object> ,hashsize:impl::core::convert::Into<i32>)->(u32,u32,u32){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x381ecc0usize)as*mut u8,u32;
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(i32)::core::convert::Into::into(hashsize),(*mut u32)__out_0.as_mut_ptr(),(*mut u32)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381ed20usize)as*mut u8,();
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f1f0usize)as*mut u8,();
+(Hashtable)__receiver)}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f330usize)as*mut u8,crate::system::object::Object;
+(Hashtable)__receiver)}
+}
+#[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f460usize)as*mut u8,bool;
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`ContainsKey(crate::system::object::Object)` overload"]fn contains_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f470usize)as*mut u8,bool;
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`CopyKeys(::unity2::IlInstance, i32)` overload"]fn copy_keys(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f5f0usize)as*mut u8,();
+(Hashtable)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`CopyEntries(::unity2::IlInstance, i32)` overload"]fn copy_entries(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f6a0usize)as*mut u8,();
+(Hashtable)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f7c0usize)as*mut u8,();
+(Hashtable)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`CopyValues(::unity2::IlInstance, i32)` overload"]fn copy_values(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f940usize)as*mut u8,();
+(Hashtable)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381fa00usize)as*mut u8,crate::system::object::Object;
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381fc20usize)as*mut u8,();
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`expand()` overload"]fn expand(self,)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381fc30usize)as*mut u8,();
+(Hashtable)__receiver)}
+}
+#[doc="`rehash()` overload"]fn rehash(self,)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381ff20usize)as*mut u8,();
+(Hashtable)__receiver)}
+}
+#[doc="`UpdateVersion()` overload"]fn update_version(self,)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381f300usize)as*mut u8,();
+(Hashtable)__receiver)}
+}
+#[doc="`rehash(i32, bool)` overload"]fn rehash_2(self,newsize:impl::core::convert::Into<i32> ,force_new_hash_code:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381fd30usize)as*mut u8,();
+(Hashtable)__receiver,(i32)::core::convert::Into::into(newsize),(bool)::core::convert::Into::into(force_new_hash_code))}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820050usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(Hashtable)__receiver)}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x38200c0usize)as*mut u8,crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
+(Hashtable)__receiver)}
+}
+#[doc="`GetHash(crate::system::object::Object)` overload"]fn get_hash(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820130usize)as*mut u8,i32;
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820200usize)as*mut u8,bool;
+(Hashtable)__receiver)}
+}
+#[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820210usize)as*mut u8,bool;
+(Hashtable)__receiver)}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820220usize)as*mut u8,bool;
+(Hashtable)__receiver)}
+}
+#[doc="`KeyEquals(crate::system::object::Object, crate::system::object::Object)` overload"]fn key_equals(self,item:impl::core::convert::Into<crate::system::object::Object> ,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820230usize)as*mut u8,bool;
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(item),(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820350usize)as*mut u8,crate::system::collections::icollection::ICollection;
+(Hashtable)__receiver)}
+}
+#[doc="`get_Values()` overload"]fn get_values(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x38203f0usize)as*mut u8,crate::system::collections::icollection::ICollection;
+(Hashtable)__receiver)}
+}
+#[doc="`Insert(crate::system::object::Object, crate::system::object::Object, bool)` overload"]fn insert(self,key:impl::core::convert::Into<crate::system::object::Object> ,nvalue:impl::core::convert::Into<crate::system::object::Object> ,add:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381ed30usize)as*mut u8,();
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(nvalue),(bool)::core::convert::Into::into(add))}
+}
+#[doc="`putEntry(::unity2::Array<crate::system::collections::hashtable::Hashtable_bucket>, crate::system::object::Object, crate::system::object::Object, i32)` overload"]fn put_entry(self,new_buckets:impl::core::convert::Into< ::unity2::Array<crate::system::collections::hashtable::Hashtable_bucket> > ,key:impl::core::convert::Into<crate::system::object::Object> ,nvalue:impl::core::convert::Into<crate::system::object::Object> ,hashcode:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x381ff30usize)as*mut u8,();
+(Hashtable)__receiver,(::unity2::Array<crate::system::collections::hashtable::Hashtable_bucket>)::core::convert::Into::into(new_buckets),(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(nvalue),(i32)::core::convert::Into::into(hashcode))}
+}
+#[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820490usize)as*mut u8,();
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x38206d0usize)as*mut u8,crate::system::object::Object;
+(Hashtable)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820760usize)as*mut u8,i32;
+(Hashtable)__receiver)}
+}
+#[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3820eb0usize)as*mut u8,();
+(Hashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(sender))}
+}
+}
 
-#[cfg(feature = "system-collections-hashtable")]
-impl < __T : IHashtable_HashtableEnumerator > IHashtable_HashtableEnumeratorMethods for __T { }
+#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable>IHashtableMethods for __T{}
 
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_HashtableEnumerator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_HashtableEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_HashtableEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_HashtableEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_HashtableEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_HashtableEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_HashtableEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_HashtableEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hashtable_HashtableEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="system-collections-hashtable")]impl Hashtable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_9_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn init_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn contains_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn copy_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn copy_entries_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn copy_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn expand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn rehash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn update_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn rehash_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_is_fixed_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn key_equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn insert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn put_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+}
 
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_HashtableEnumerator {
-# [doc = "`.ctor(crate::system::collections::hashtable::Hashtable, i32)` — overload selector"] pub fn new (hashtable : crate :: system :: collections :: hashtable :: Hashtable , get_obj_ret_type : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Hashtable_HashtableEnumerator) , :: core :: stringify ! (new) ,)) ; < Self as IHashtable_HashtableEnumeratorMethods > :: ctor (this , hashtable , get_obj_ret_type) ; this }
+#[cfg(feature="system-collections-hashtable")]impl Hashtable{#[doc="`.ctor(bool)` — overload selector"]pub fn new(trash:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new),));
+ <Self as IHashtableMethods> ::ctor(this,trash);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new_2),));
+ <Self as IHashtableMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(i32)` — overload selector"]pub fn new_3(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new_3),));
+ <Self as IHashtableMethods> ::ctor_3(this,capacity);
+this}
+#[doc="`.ctor(i32, f32)` — overload selector"]pub fn new_4(capacity:i32,load_factor:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new_4),));
+ <Self as IHashtableMethods> ::ctor_4(this,capacity,load_factor);
+this}
+#[doc="`.ctor(i32, f32, crate::system::collections::ihashcodeprovider::IHashCodeProvider, crate::system::collections::icomparer_interface::IComparer_Interface)` — overload selector"]pub fn new_5(capacity:i32,load_factor:f32,hcp:crate::system::collections::ihashcodeprovider::IHashCodeProvider,comparer:crate::system::collections::icomparer_interface::IComparer_Interface)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new_5),));
+ <Self as IHashtableMethods> ::ctor_5(this,capacity,load_factor,hcp,comparer);
+this}
+#[doc="`.ctor(i32, f32, crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"]pub fn new_6(capacity:i32,load_factor:f32,equality_comparer:crate::system::collections::iequalitycomparer::IEqualityComparer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new_6),));
+ <Self as IHashtableMethods> ::ctor_6(this,capacity,load_factor,equality_comparer);
+this}
+#[doc="`.ctor(crate::system::collections::ihashcodeprovider::IHashCodeProvider, crate::system::collections::icomparer_interface::IComparer_Interface)` — overload selector"]pub fn new_7(hcp:crate::system::collections::ihashcodeprovider::IHashCodeProvider,comparer:crate::system::collections::icomparer_interface::IComparer_Interface)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new_7),));
+ <Self as IHashtableMethods> ::ctor_7(this,hcp,comparer);
+this}
+#[doc="`.ctor(crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"]pub fn new_8(equality_comparer:crate::system::collections::iequalitycomparer::IEqualityComparer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new_8),));
+ <Self as IHashtableMethods> ::ctor_8(this,equality_comparer);
+this}
+#[doc="`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"]pub fn new_9(capacity:i32,equality_comparer:crate::system::collections::iequalitycomparer::IEqualityComparer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable), ::core::stringify!(new_9),));
+ <Self as IHashtableMethods> ::ctor_9(this,capacity,equality_comparer);
+this}
+}
+
+#[cfg(feature="system-collections-hashtable")]pub trait IHashtable_ValueCollectionMethods:IHashtable_ValueCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]fn ctor(self,hashtable:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->(){unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8670usize)as*mut u8,();
+(Hashtable_ValueCollection)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(hashtable))}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d86b0usize)as*mut u8,();
+(Hashtable_ValueCollection)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8820usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(Hashtable_ValueCollection)__receiver)}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d88c0usize)as*mut u8,bool;
+(Hashtable_ValueCollection)__receiver)}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d88e0usize)as*mut u8,crate::system::object::Object;
+(Hashtable_ValueCollection)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8900usize)as*mut u8,i32;
+(Hashtable_ValueCollection)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable_ValueCollection>IHashtable_ValueCollectionMethods for __T{}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_ValueCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_ValueCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]pub fn new(hashtable:crate::system::collections::hashtable::Hashtable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable_ValueCollection), ::core::stringify!(new),));
+ <Self as IHashtable_ValueCollectionMethods> ::ctor(this,hashtable);
+this}
+}
+
+#[cfg(feature="system-collections-hashtable")]pub trait IHashtable_KeyCollectionMethods:IHashtable_KeyCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]fn ctor(self,hashtable:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->(){unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7620usize)as*mut u8,();
+(Hashtable_KeyCollection)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(hashtable))}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7660usize)as*mut u8,();
+(Hashtable_KeyCollection)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d77d0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(Hashtable_KeyCollection)__receiver)}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7870usize)as*mut u8,bool;
+(Hashtable_KeyCollection)__receiver)}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7890usize)as*mut u8,crate::system::object::Object;
+(Hashtable_KeyCollection)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d78b0usize)as*mut u8,i32;
+(Hashtable_KeyCollection)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable_KeyCollection>IHashtable_KeyCollectionMethods for __T{}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_KeyCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_KeyCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]pub fn new(hashtable:crate::system::collections::hashtable::Hashtable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable_KeyCollection), ::core::stringify!(new),));
+ <Self as IHashtable_KeyCollectionMethods> ::ctor(this,hashtable);
+this}
+}
+
+#[cfg(feature="system-collections-hashtable")]pub trait IHashtable_SyncHashtableMethods:IHashtable_SyncHashtable{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]fn ctor(self,table:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d78c0usize)as*mut u8,();
+(Hashtable_SyncHashtable)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(table))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7c70usize)as*mut u8,i32;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7c90usize)as*mut u8,bool;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7cb0usize)as*mut u8,bool;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7cd0usize)as*mut u8,bool;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7ce0usize)as*mut u8,crate::system::object::Object;
+(Hashtable_SyncHashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7d00usize)as*mut u8,();
+(Hashtable_SyncHashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7e00usize)as*mut u8,crate::system::object::Object;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7e20usize)as*mut u8,();
+(Hashtable_SyncHashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7f20usize)as*mut u8,();
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8010usize)as*mut u8,bool;
+(Hashtable_SyncHashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`ContainsKey(crate::system::object::Object)` overload"]fn contains_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8030usize)as*mut u8,bool;
+(Hashtable_SyncHashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d80c0usize)as*mut u8,();
+(Hashtable_SyncHashtable)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d81c0usize)as*mut u8,crate::system::object::Object;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8320usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8340usize)as*mut u8,crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8360usize)as*mut u8,crate::system::collections::icollection::ICollection;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`get_Values()` overload"]fn get_values(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8460usize)as*mut u8,crate::system::collections::icollection::ICollection;
+(Hashtable_SyncHashtable)__receiver)}
+}
+#[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8560usize)as*mut u8,();
+(Hashtable_SyncHashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8660usize)as*mut u8,();
+(Hashtable_SyncHashtable)__receiver,(crate::system::object::Object)::core::convert::Into::into(sender))}
+}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable_SyncHashtable>IHashtable_SyncHashtableMethods for __T{}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_SyncHashtable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_fixed_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn contains_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_SyncHashtable{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]pub fn new(table:crate::system::collections::hashtable::Hashtable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable_SyncHashtable), ::core::stringify!(new),));
+ <Self as IHashtable_SyncHashtableMethods> ::ctor(this,table);
+this}
 }
 
 #[cfg(feature = "system-collections-hashtable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Hashtable_bucket;
-    pub use super::Hashtable_HashtableDebugView;
-    pub use super::IHashtable_HashtableDebugView;
-    pub use super::Hashtable_SyncHashtable;
-    pub use super::IHashtable_SyncHashtable;
-    pub use super::IHashtable_SyncHashtableMethods;
-    pub use super::Hashtable_KeyCollection;
-    pub use super::IHashtable_KeyCollection;
-    pub use super::IHashtable_KeyCollectionMethods;
-    pub use super::Hashtable_ValueCollection;
-    pub use super::IHashtable_ValueCollection;
-    pub use super::IHashtable_ValueCollectionMethods;
-    pub use super::Hashtable;
-    pub use super::IHashtable;
-    pub use super::IHashtableMethods;
     pub use super::Hashtable_HashtableEnumerator;
     pub use super::IHashtable_HashtableEnumerator;
     pub use super::IHashtable_HashtableEnumeratorMethods;
+    pub use super::Hashtable;
+    pub use super::IHashtable;
+    pub use super::IHashtableMethods;
+    pub use super::Hashtable_ValueCollection;
+    pub use super::IHashtable_ValueCollection;
+    pub use super::IHashtable_ValueCollectionMethods;
+    pub use super::Hashtable_KeyCollection;
+    pub use super::IHashtable_KeyCollection;
+    pub use super::IHashtable_KeyCollectionMethods;
+    pub use super::Hashtable_SyncHashtable;
+    pub use super::IHashtable_SyncHashtable;
+    pub use super::IHashtable_SyncHashtableMethods;
+    pub use super::Hashtable_bucket;
+    pub use super::Hashtable_HashtableDebugView;
+    pub use super::IHashtable_HashtableDebugView;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

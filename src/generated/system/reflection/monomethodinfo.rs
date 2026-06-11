@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/monomethodinfo/MonoMethodInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MonoMethodInfo {
-    pub parent: :: unity2 :: SystemType,
-    pub ret: :: unity2 :: SystemType,
-    pub attrs: crate :: system :: reflection :: methodattributes :: MethodAttributes,
-    pub iattrs: crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes,
-    pub callconv: crate :: system :: reflection :: callingconventions :: CallingConventions,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monomethodinfo/MonoMethodInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MonoMethodInfo{pub parent: ::unity2::SystemType,pub ret: ::unity2::SystemType,pub attrs:crate::system::reflection::methodattributes::MethodAttributes,pub iattrs:crate::system::reflection::methodimplattributes::MethodImplAttributes,pub callconv:crate::system::reflection::callingconventions::CallingConventions,}
+impl::unity2::ClassIdentity for MonoMethodInfo{const NAMESPACE: &'static str="System.Reflection";
+const NAME: &'static str="MonoMethodInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for MonoMethodInfo {
-    const NAMESPACE: &'static str = "System.Reflection";
-
-    const NAME: &'static str = "MonoMethodInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MonoMethodInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MonoMethodInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,11 +26,51 @@ impl ::unity2::IlType for MonoMethodInfo {
 #[cfg(feature = "system-reflection-monomethodinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-monomethodinfo")]
-impl MonoMethodInfo { # [doc = "`get_method_info(::unity2::IntPtr, *mutcrate::system::reflection::monomethodinfo::MonoMethodInfo)` overload"] pub fn get_method_info (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: system :: reflection :: monomethodinfo :: MonoMethodInfo { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: reflection :: monomethodinfo :: MonoMethodInfo > :: uninit () ; { let __inner : extern "C" fn (:: unity2 :: IntPtr , * mut crate :: system :: reflection :: monomethodinfo :: MonoMethodInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3382030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`get_method_attributes(::unity2::IntPtr)` overload"] pub fn get_method_attributes (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3382040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetMethodInfo(::unity2::IntPtr)` overload"] pub fn get_method_info_2 (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: system :: reflection :: monomethodinfo :: MonoMethodInfo { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: monomethodinfo :: MonoMethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3381aa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetDeclaringType(::unity2::IntPtr)` overload"] pub fn get_declaring_type (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> :: unity2 :: SystemType { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bfe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetReturnType(::unity2::IntPtr)` overload"] pub fn get_return_type (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> :: unity2 :: SystemType { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3381510usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetAttributes(::unity2::IntPtr)` overload"] pub fn get_attributes (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: system :: reflection :: methodattributes :: MethodAttributes { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodattributes :: MethodAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bf00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetCallingConvention(::unity2::IntPtr)` overload"] pub fn get_calling_convention (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: system :: reflection :: callingconventions :: CallingConventions { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: callingconventions :: CallingConventions = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bf40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetMethodImplementationFlags(::unity2::IntPtr)` overload"] pub fn get_method_implementation_flags (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b740usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`get_parameter_info(::unity2::IntPtr, crate::system::reflection::memberinfo::MemberInfo)` overload"] pub fn get_parameter_info (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , member : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo >) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , crate :: system :: reflection :: memberinfo :: MemberInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3382050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: convert :: Into :: into (member) , :: core :: option :: Option :: None) } } } # [doc = "`GetParametersInfo(::unity2::IntPtr, crate::system::reflection::memberinfo::MemberInfo)` overload"] pub fn get_parameters_info (handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , member : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo >) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , crate :: system :: reflection :: memberinfo :: MemberInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: convert :: Into :: into (member) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-monomethodinfo")]impl MonoMethodInfo{#[doc="`get_method_info(::unity2::IntPtr, *mutcrate::system::reflection::monomethodinfo::MonoMethodInfo)` overload"]pub fn get_method_info(handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::system::reflection::monomethodinfo::MonoMethodInfo{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::reflection::monomethodinfo::MonoMethodInfo> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3382030usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(handle),(*mut crate::system::reflection::monomethodinfo::MonoMethodInfo)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`get_method_attributes(::unity2::IntPtr)` overload"]pub fn get_method_attributes(handle:impl::core::convert::Into< ::unity2::IntPtr>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3382040usize)as*mut u8,i32;
+(::unity2::IntPtr)::core::convert::Into::into(handle))}
+}
+#[doc="`GetMethodInfo(::unity2::IntPtr)` overload"]pub fn get_method_info_2(handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::system::reflection::monomethodinfo::MonoMethodInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3381aa0usize)as*mut u8,crate::system::reflection::monomethodinfo::MonoMethodInfo;
+(::unity2::IntPtr)::core::convert::Into::into(handle))}
+}
+#[doc="`GetDeclaringType(::unity2::IntPtr)` overload"]pub fn get_declaring_type(handle:impl::core::convert::Into< ::unity2::IntPtr>)-> ::unity2::SystemType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337bfe0usize)as*mut u8, ::unity2::SystemType;
+(::unity2::IntPtr)::core::convert::Into::into(handle))}
+}
+#[doc="`GetReturnType(::unity2::IntPtr)` overload"]pub fn get_return_type(handle:impl::core::convert::Into< ::unity2::IntPtr>)-> ::unity2::SystemType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3381510usize)as*mut u8, ::unity2::SystemType;
+(::unity2::IntPtr)::core::convert::Into::into(handle))}
+}
+#[doc="`GetAttributes(::unity2::IntPtr)` overload"]pub fn get_attributes(handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::system::reflection::methodattributes::MethodAttributes{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337bf00usize)as*mut u8,crate::system::reflection::methodattributes::MethodAttributes;
+(::unity2::IntPtr)::core::convert::Into::into(handle))}
+}
+#[doc="`GetCallingConvention(::unity2::IntPtr)` overload"]pub fn get_calling_convention(handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::system::reflection::callingconventions::CallingConventions{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337bf40usize)as*mut u8,crate::system::reflection::callingconventions::CallingConventions;
+(::unity2::IntPtr)::core::convert::Into::into(handle))}
+}
+#[doc="`GetMethodImplementationFlags(::unity2::IntPtr)` overload"]pub fn get_method_implementation_flags(handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::system::reflection::methodimplattributes::MethodImplAttributes{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337b740usize)as*mut u8,crate::system::reflection::methodimplattributes::MethodImplAttributes;
+(::unity2::IntPtr)::core::convert::Into::into(handle))}
+}
+#[doc="`get_parameter_info(::unity2::IntPtr, crate::system::reflection::memberinfo::MemberInfo)` overload"]pub fn get_parameter_info(handle:impl::core::convert::Into< ::unity2::IntPtr> ,member:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3382050usize)as*mut u8, ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> ;
+(::unity2::IntPtr)::core::convert::Into::into(handle),(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(member))}
+}
+#[doc="`GetParametersInfo(::unity2::IntPtr, crate::system::reflection::memberinfo::MemberInfo)` overload"]pub fn get_parameters_info(handle:impl::core::convert::Into< ::unity2::IntPtr> ,member:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337b780usize)as*mut u8, ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> ;
+(::unity2::IntPtr)::core::convert::Into::into(handle),(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(member))}
+}
+}
 
-#[cfg(feature = "system-reflection-monomethodinfo")]
-impl MonoMethodInfo { pub fn get_method_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_method_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_method_info_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_declaring_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_return_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_calling_convention_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_method_implementation_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_parameter_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_parameters_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoMethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="system-reflection-monomethodinfo")]impl MonoMethodInfo{pub fn get_method_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_method_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_declaring_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_return_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_calling_convention_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_method_implementation_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_parameter_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_parameters_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
 #[cfg(feature = "system-reflection-monomethodinfo")]
 #[doc(hidden)]

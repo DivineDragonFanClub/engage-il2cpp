@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/glyphvaluerecord/GlyphValueRecord.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GlyphValueRecord {
-    pub m_x_placement: f32,
-    pub m_y_placement: f32,
-    pub m_x_advance: f32,
-    pub m_y_advance: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/text_core/low_level/glyphvaluerecord/GlyphValueRecord.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GlyphValueRecord{pub m_x_placement:f32,pub m_y_placement:f32,pub m_x_advance:f32,pub m_y_advance:f32,}
+impl::unity2::ClassIdentity for GlyphValueRecord{const NAMESPACE: &'static str="UnityEngine.TextCore.LowLevel";
+const NAME: &'static str="GlyphValueRecord";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for GlyphValueRecord {
-    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
-
-    const NAME: &'static str = "GlyphValueRecord";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for GlyphValueRecord {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for GlyphValueRecord{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,37 @@ impl ::unity2::IlType for GlyphValueRecord {
 #[cfg(feature = "unity_engine-text_core-low_level-glyphvaluerecord-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-text_core-low_level-glyphvaluerecord")]
-impl GlyphValueRecord { # [doc = "`get_xPlacement()` overload"] pub fn get_x_placement (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e840usize) as * mut u8) ; __inner (self as * mut GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`get_yPlacement()` overload"] pub fn get_y_placement (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e850usize) as * mut u8) ; __inner (self as * mut GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`get_xAdvance()` overload"] pub fn get_x_advance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e860usize) as * mut u8) ; __inner (self as * mut GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`get_yAdvance()` overload"] pub fn get_y_advance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e870usize) as * mut u8) ; __inner (self as * mut GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e880usize) as * mut u8) ; __inner (self as * mut GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut GlyphValueRecord , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e8f0usize) as * mut u8) ; __inner (self as * mut GlyphValueRecord , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord >) -> bool { unsafe { { let __inner : extern "C" fn (* mut GlyphValueRecord , crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e970usize) as * mut u8) ; __inner (self as * mut GlyphValueRecord , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-text_core-low_level-glyphvaluerecord")]impl GlyphValueRecord{#[doc="`get_xPlacement()` overload"]pub fn get_x_placement(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e840usize)as*mut u8,f32;
+(*mut GlyphValueRecord)self as*mut GlyphValueRecord)}
+}
+#[doc="`get_yPlacement()` overload"]pub fn get_y_placement(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e850usize)as*mut u8,f32;
+(*mut GlyphValueRecord)self as*mut GlyphValueRecord)}
+}
+#[doc="`get_xAdvance()` overload"]pub fn get_x_advance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e860usize)as*mut u8,f32;
+(*mut GlyphValueRecord)self as*mut GlyphValueRecord)}
+}
+#[doc="`get_yAdvance()` overload"]pub fn get_y_advance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e870usize)as*mut u8,f32;
+(*mut GlyphValueRecord)self as*mut GlyphValueRecord)}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e880usize)as*mut u8,i32;
+(*mut GlyphValueRecord)self as*mut GlyphValueRecord)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e8f0usize)as*mut u8,bool;
+(*mut GlyphValueRecord)self as*mut GlyphValueRecord,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e970usize)as*mut u8,bool;
+(*mut GlyphValueRecord)self as*mut GlyphValueRecord,(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-text_core-low_level-glyphvaluerecord")]
-impl GlyphValueRecord { pub fn get_x_placement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_y_placement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_x_advance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_y_advance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-text_core-low_level-glyphvaluerecord")]impl GlyphValueRecord{pub fn get_x_placement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_y_placement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_advance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_y_advance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphvaluerecord")]
 #[doc(hidden)]

@@ -4,32 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/condcommand/CondCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "CondCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct CondCommand {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/condcommand/CondCommand.md"))]#[::unity2::class(namespace="App",name="CondCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct CondCommand{}
 
 }
 
 #[cfg(feature = "app-condcommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-condcommand")]
-pub trait ICondCommandMethods : ICondCommand { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CondCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CondCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25369f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ArgNum()` overload"] fn get_arg_num (self ,) -> i32 { unsafe { let __receiver = < CondCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CondCommand , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"] fn func (self , args : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > >) -> f32 { unsafe { let __receiver = < CondCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CondCommand , crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CondCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CondCommand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-condcommand")]pub trait ICondCommandMethods:ICondCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CondCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25369f0usize)as*mut u8, ::unity2::Il2CppString;
+(CondCommand)__receiver)}
+}
+#[doc="`get_ArgNum()` overload"]fn get_arg_num(self,)->i32{unsafe{let __receiver= <CondCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536a40usize)as*mut u8,i32;
+(CondCommand)__receiver)}
+}
+#[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <CondCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536a50usize)as*mut u8,f32;
+(CondCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CondCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536b10usize)as*mut u8,();
+(CondCommand)__receiver)}
+}
+}
 
-#[cfg(feature = "app-condcommand")]
-impl < __T : ICondCommand > ICondCommandMethods for __T { }
+#[cfg(feature="app-condcommand")]impl<__T:ICondCommand>ICondCommandMethods for __T{}
 
-#[cfg(feature = "app-condcommand")]
-impl CondCommand { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CondCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_arg_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CondCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CondCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CondCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-condcommand")]impl CondCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_arg_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-condcommand")]
-impl CondCommand {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CondCommand) , :: core :: stringify ! (new) ,)) ; < Self as ICondCommandMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-condcommand")]impl CondCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CondCommand), ::core::stringify!(new),));
+ <Self as ICondCommandMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-condcommand")]

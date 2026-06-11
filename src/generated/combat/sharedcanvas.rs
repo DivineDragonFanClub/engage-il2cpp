@@ -4,45 +4,118 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/sharedcanvas/SharedCanvas.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SharedCanvas")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct SharedCanvas {
-# [static_field] # [rename (name = "s_this")] pub s_this : crate :: combat :: sharedcanvas :: SharedCanvas ,
-# [offset (24)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: canvas :: Canvas ,
-# [offset (32)] # [rename (name = "m_bShown")] pub m_b_shown : crate :: combat :: editorprefs_bool :: EditorPrefs_Bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/sharedcanvas/SharedCanvas.md"))]#[::unity2::class(namespace="Combat",name="SharedCanvas")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SharedCanvas{#[static_field]#[rename(name="s_this")]pub s_this:crate::combat::sharedcanvas::SharedCanvas, #[offset(24)]#[rename(name="m_Canvas")]pub m_canvas:crate::unity_engine::canvas::Canvas, #[offset(32)]#[rename(name="m_bShown")]pub m_b_shown:crate::combat::editorprefs_bool::EditorPrefs_Bool,}
 
 }
 
 #[cfg(feature = "combat-sharedcanvas-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-sharedcanvas")]
-impl SharedCanvas { # [doc = "`get_Instance()` overload"] pub fn get_instance () -> crate :: combat :: sharedcanvas :: SharedCanvas { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: sharedcanvas :: SharedCanvas = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aa5d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Canvas()` overload"] pub fn get_canvas () -> crate :: unity_engine :: canvas :: Canvas { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: canvas :: Canvas = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aa620usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ReplaceInputModule()` overload"] pub fn replace_input_module () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aa860usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_IsShown()` overload"] pub fn get_is_shown () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aac80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FromLeft(i32)` overload"] pub fn from_left (margin : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (margin) , :: core :: option :: Option :: None) } } } # [doc = "`FromRight(i32)` overload"] pub fn from_right (margin : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab1a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (margin) , :: core :: option :: Option :: None) } } } # [doc = "`FromTop(i32)` overload"] pub fn from_top (margin : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab1e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (margin) , :: core :: option :: Option :: None) } } } # [doc = "`FromBottom(i32)` overload"] pub fn from_bottom (margin : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (margin) , :: core :: option :: Option :: None) } } } # [doc = "`X(f32, f32)` overload"] pub fn x (value : impl :: core :: convert :: Into < f32 > , div : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (div) , :: core :: option :: Option :: None) } } } # [doc = "`Y(f32, f32)` overload"] pub fn y (value : impl :: core :: convert :: Into < f32 > , div : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab2b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (div) , :: core :: option :: Option :: None) } } } # [doc = "`XY(i32, i32)` overload"] pub fn xy (x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-sharedcanvas")]impl SharedCanvas{#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::combat::sharedcanvas::SharedCanvas{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21aa5d0usize)as*mut u8,crate::combat::sharedcanvas::SharedCanvas;
+)}
+}
+#[doc="`get_Canvas()` overload"]pub fn get_canvas()->crate::unity_engine::canvas::Canvas{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21aa620usize)as*mut u8,crate::unity_engine::canvas::Canvas;
+)}
+}
+#[doc="`ReplaceInputModule()` overload"]pub fn replace_input_module()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21aa860usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_IsShown()` overload"]pub fn get_is_shown()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21aac80usize)as*mut u8,bool;
+)}
+}
+#[doc="`FromLeft(i32)` overload"]pub fn from_left(margin:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ab170usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(margin))}
+}
+#[doc="`FromRight(i32)` overload"]pub fn from_right(margin:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ab1a0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(margin))}
+}
+#[doc="`FromTop(i32)` overload"]pub fn from_top(margin:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ab1e0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(margin))}
+}
+#[doc="`FromBottom(i32)` overload"]pub fn from_bottom(margin:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ab220usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(margin))}
+}
+#[doc="`X(f32, f32)` overload"]pub fn x(value:impl::core::convert::Into<f32> ,div:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ab250usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(value),(f32)::core::convert::Into::into(div))}
+}
+#[doc="`Y(f32, f32)` overload"]pub fn y(value:impl::core::convert::Into<f32> ,div:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ab2b0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(value),(f32)::core::convert::Into::into(div))}
+}
+#[doc="`XY(i32, i32)` overload"]pub fn xy(x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ab310usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(y))}
+}
+}
 
-#[cfg(feature = "combat-sharedcanvas")]
-pub trait ISharedCanvasMethods : ISharedCanvas { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < SharedCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SharedCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aa7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < SharedCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SharedCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aaa10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ForceDestroyCanvas()` overload"] fn force_destroy_canvas (self ,) -> () { unsafe { let __receiver = < SharedCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SharedCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aab40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Show(bool)` overload"] fn show (self , v : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SharedCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SharedCanvas , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aad70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`Reconnect()` overload"] fn reconnect (self ,) -> () { unsafe { let __receiver = < SharedCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SharedCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21aae20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearCanvas()` overload"] fn clear_canvas (self ,) -> () { unsafe { let __receiver = < SharedCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SharedCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SharedCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SharedCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ab3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-sharedcanvas")]pub trait ISharedCanvasMethods:ISharedCanvas{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <SharedCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21aa7b0usize)as*mut u8,();
+(SharedCanvas)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <SharedCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21aaa10usize)as*mut u8,();
+(SharedCanvas)__receiver)}
+}
+#[doc="`ForceDestroyCanvas()` overload"]fn force_destroy_canvas(self,)->(){unsafe{let __receiver= <SharedCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21aab40usize)as*mut u8,();
+(SharedCanvas)__receiver)}
+}
+#[doc="`Show(bool)` overload"]fn show(self,v:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SharedCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21aad70usize)as*mut u8,();
+(SharedCanvas)__receiver,(bool)::core::convert::Into::into(v))}
+}
+#[doc="`Reconnect()` overload"]fn reconnect(self,)->(){unsafe{let __receiver= <SharedCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21aae20usize)as*mut u8,();
+(SharedCanvas)__receiver)}
+}
+#[doc="`ClearCanvas()` overload"]fn clear_canvas(self,)->(){unsafe{let __receiver= <SharedCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ab020usize)as*mut u8,();
+(SharedCanvas)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SharedCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ab3c0usize)as*mut u8,();
+(SharedCanvas)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-sharedcanvas")]
-impl < __T : ISharedCanvas > ISharedCanvasMethods for __T { }
+#[cfg(feature="combat-sharedcanvas")]impl<__T:ISharedCanvas>ISharedCanvasMethods for __T{}
 
-#[cfg(feature = "combat-sharedcanvas")]
-impl SharedCanvas { pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn force_destroy_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn replace_input_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_is_shown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn reconnect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn clear_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn from_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn from_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn from_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn from_bottom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn xy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SharedCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="combat-sharedcanvas")]impl SharedCanvas{pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn force_destroy_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn replace_input_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_is_shown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn reconnect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn from_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn from_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn from_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn from_bottom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn xy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "combat-sharedcanvas")]
-impl SharedCanvas {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SharedCanvas) , :: core :: stringify ! (new) ,)) ; < Self as ISharedCanvasMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-sharedcanvas")]impl SharedCanvas{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SharedCanvas), ::core::stringify!(new),));
+ <Self as ISharedCanvasMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-sharedcanvas")]

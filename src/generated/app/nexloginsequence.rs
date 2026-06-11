@@ -4,167 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NexLoginSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence.md"))]#[::unity2::class(namespace="App",name="NexLoginSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexLoginSequence{#[offset(112)]#[rename(name="m_IsShowError")]pub m_is_show_error:bool, #[static_field]#[rename(name="s_LastResult")]pub s_last_result:crate::app::nexloginsequence::NexLoginSequence_Result, #[static_field]#[rename(name="s_IsGotIntegerSettings")]pub s_is_got_integer_settings:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexLoginSequence_Result{pub value:i32,}
+impl::unity2::ClassIdentity for NexLoginSequence_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexLoginSequence.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexLoginSequence_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexLoginSequence_Result{pub fn failed()->Self{Self{value:0}
+}
+pub fn cancelled()->Self{Self{value:1}
+}
+pub fn succeeded()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for NexLoginSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexLoginSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexLoginSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexLoginSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexLoginSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for NexLoginSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for NexLoginSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  NexLoginSequence_Label  {
-    pub fn setup_nsa() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn login() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn get_integer_settings() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn succeeded() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn cancelled() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn failed_without_error() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn error() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn error_and_cleanup() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-
-    }
-
+impl NexLoginSequence_Label{pub fn setup_nsa()->Self{Self{value:0}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexLoginSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NexLoginSequence {
-# [offset (112)] # [rename (name = "m_IsShowError")] pub m_is_show_error : bool ,
-# [static_field] # [rename (name = "s_LastResult")] pub s_last_result : crate :: app :: nexloginsequence :: NexLoginSequence_Result ,
-# [static_field] # [rename (name = "s_IsGotIntegerSettings")] pub s_is_got_integer_settings : bool ,
+pub fn login()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NexLoginSequence_Result  {
-    pub value: i32,
+pub fn get_integer_settings()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for NexLoginSequence_Result  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexLoginSequence.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn succeeded()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::IlType for NexLoginSequence_Result  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn cancelled()->Self{Self{value:4}
 }
-
-
-impl  NexLoginSequence_Result  {
-    pub fn failed() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn cancelled() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn succeeded() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn failed_without_error()->Self{Self{value:5}
+}
+pub fn error()->Self{Self{value:6}
+}
+pub fn error_and_cleanup()->Self{Self{value:7}
+}
+pub fn end()->Self{Self{value:8}
+}
 }
 
 }
@@ -172,31 +70,101 @@ impl  NexLoginSequence_Result  {
 #[cfg(feature = "app-nexloginsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-nexloginsequence")]
-impl NexLoginSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , is_show_error : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f11260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (is_show_error) , :: core :: option :: Option :: None) } } } # [doc = "`get_LastResult()` overload"] pub fn get_last_result () -> crate :: app :: nexloginsequence :: NexLoginSequence_Result { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: nexloginsequence :: NexLoginSequence_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f157a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f15810usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-nexloginsequence")]impl NexLoginSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_show_error:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f11260usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_show_error))}
+}
+#[doc="`get_LastResult()` overload"]pub fn get_last_result()->crate::app::nexloginsequence::NexLoginSequence_Result{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f157a0usize)as*mut u8,crate::app::nexloginsequence::NexLoginSequence_Result;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f15810usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-nexloginsequence")]
-pub trait INexLoginSequenceMethods : INexLoginSequence { # [doc = "`.ctor(bool)` overload"] fn ctor (self , is_show_error : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14c70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_show_error) , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitAutoLogout()` overload"] fn wait_auto_logout (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitializeNex()` overload"] fn initialize_nex (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupNetworkServiceAccount()` overload"] fn setup_network_service_account (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f15050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoginGameServer()` overload"] fn login_game_server (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f15120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetIntegerSettings()` overload"] fn get_integer_settings (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f15300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResultSucceeded()` overload"] fn result_succeeded (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f15460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResultCancelled()` overload"] fn result_cancelled (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f154d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResultFailed()` overload"] fn result_failed (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f15540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowError()` overload"] fn show_error (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f155b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < NexLoginSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexLoginSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f156a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-nexloginsequence")]pub trait INexLoginSequenceMethods:INexLoginSequence{#[doc="`.ctor(bool)` overload"]fn ctor(self,is_show_error:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14c70usize)as*mut u8,();
+(NexLoginSequence)__receiver,(bool)::core::convert::Into::into(is_show_error))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14ca0usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`WaitAutoLogout()` overload"]fn wait_auto_logout(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14d70usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`InitializeNex()` overload"]fn initialize_nex(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14db0usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`SetupNetworkServiceAccount()` overload"]fn setup_network_service_account(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15050usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`LoginGameServer()` overload"]fn login_game_server(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15120usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`GetIntegerSettings()` overload"]fn get_integer_settings(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15300usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`ResultSucceeded()` overload"]fn result_succeeded(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15460usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`ResultCancelled()` overload"]fn result_cancelled(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f154d0usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`ResultFailed()` overload"]fn result_failed(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15540usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`ShowError()` overload"]fn show_error(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f155b0usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f156a0usize)as*mut u8,();
+(NexLoginSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-nexloginsequence")]
-impl < __T : INexLoginSequence > INexLoginSequenceMethods for __T { }
+#[cfg(feature="app-nexloginsequence")]impl<__T:INexLoginSequence>INexLoginSequenceMethods for __T{}
 
-#[cfg(feature = "app-nexloginsequence")]
-impl NexLoginSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn wait_auto_logout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn initialize_nex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn setup_network_service_account_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn login_game_server_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_integer_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn result_succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn result_cancelled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn result_failed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn show_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_last_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexLoginSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-nexloginsequence")]impl NexLoginSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn wait_auto_logout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn initialize_nex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn setup_network_service_account_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn login_game_server_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_integer_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn result_succeeded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn result_cancelled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn result_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn show_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_last_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-nexloginsequence")]
-impl NexLoginSequence {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (is_show_error : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NexLoginSequence) , :: core :: stringify ! (new) ,)) ; < Self as INexLoginSequenceMethods > :: ctor (this , is_show_error) ; this }
+#[cfg(feature="app-nexloginsequence")]impl NexLoginSequence{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_show_error:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexLoginSequence), ::core::stringify!(new),));
+ <Self as INexLoginSequenceMethods> ::ctor(this,is_show_error);
+this}
 }
 
 #[cfg(feature = "app-nexloginsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NexLoginSequence_Label;
     pub use super::NexLoginSequence;
     pub use super::INexLoginSequence;
     pub use super::INexLoginSequenceMethods;
     pub use super::NexLoginSequence_Result;
+    pub use super::NexLoginSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

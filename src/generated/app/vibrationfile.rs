@@ -4,34 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationfile/VibrationFile.md"))] # [:: unity2 :: class (namespace = "App" , name = "VibrationFile")] # [parent (crate :: system :: object :: Object)] pub struct VibrationFile {
-# [offset (16)] # [rename (name = "m_file")] pub m_file : crate :: app :: rawfilehandle :: RawFileHandle ,
-# [offset (24)] # [rename (name = "m_info")] pub m_info : crate :: nn :: hid :: vibrationfileinfo :: VibrationFileInfo ,
-# [offset (56)] # [rename (name = "m_context")] pub m_context : crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/vibrationfile/VibrationFile.md"))]#[::unity2::class(namespace="App",name="VibrationFile")]#[parent(crate::system::object::Object)]pub struct VibrationFile{#[offset(16)]#[rename(name="m_file")]pub m_file:crate::app::rawfilehandle::RawFileHandle, #[offset(24)]#[rename(name="m_info")]pub m_info:crate::nn::hid::vibrationfileinfo::VibrationFileInfo, #[offset(56)]#[rename(name="m_context")]pub m_context:crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext,}
 
 }
 
 #[cfg(feature = "app-vibrationfile-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-vibrationfile")]
-pub trait IVibrationFileMethods : IVibrationFile { # [doc = "`get_Context()` overload"] fn get_context (self ,) -> crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext { unsafe { let __receiver = < VibrationFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationFile , :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Length()` overload"] fn get_length (self ,) -> i32 { unsafe { let __receiver = < VibrationFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationFile , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VibrationFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationFile , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString)` overload"] fn load (self , file_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < VibrationFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationFile , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (file_path) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-vibrationfile")]pub trait IVibrationFileMethods:IVibrationFile{#[doc="`get_Context()` overload"]fn get_context(self,)->crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext{unsafe{let __receiver= <VibrationFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf870usize)as*mut u8,crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext;
+(VibrationFile)__receiver)}
+}
+#[doc="`get_Length()` overload"]fn get_length(self,)->i32{unsafe{let __receiver= <VibrationFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf8a0usize)as*mut u8,i32;
+(VibrationFile)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VibrationFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf8b0usize)as*mut u8,();
+(VibrationFile)__receiver)}
+}
+#[doc="`Load(::unity2::Il2CppString)` overload"]fn load(self,file_path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <VibrationFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf950usize)as*mut u8,bool;
+(VibrationFile)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file_path))}
+}
+}
 
-#[cfg(feature = "app-vibrationfile")]
-impl < __T : IVibrationFile > IVibrationFileMethods for __T { }
+#[cfg(feature="app-vibrationfile")]impl<__T:IVibrationFile>IVibrationFileMethods for __T{}
 
-#[cfg(feature = "app-vibrationfile")]
-impl VibrationFile { pub fn get_context_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-vibrationfile")]impl VibrationFile{pub fn get_context_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-vibrationfile")]
-impl VibrationFile {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VibrationFile) , :: core :: stringify ! (new) ,)) ; < Self as IVibrationFileMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-vibrationfile")]impl VibrationFile{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VibrationFile), ::core::stringify!(new),));
+ <Self as IVibrationFileMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-vibrationfile")]

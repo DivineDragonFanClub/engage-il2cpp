@@ -4,25 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/fontupdatetracker/FontUpdateTracker.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "FontUpdateTracker")] # [parent (crate :: system :: object :: Object)] pub struct FontUpdateTracker {
-# [static_field] # [rename (name = "m_Tracked")] pub m_tracked : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: font :: Font , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: unity_engine :: ui :: text :: Text > > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/fontupdatetracker/FontUpdateTracker.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="FontUpdateTracker")]#[parent(crate::system::object::Object)]pub struct FontUpdateTracker{#[static_field]#[rename(name="m_Tracked")]pub m_tracked:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::font::Font,crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::ui::text::Text> > ,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-fontupdatetracker-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-fontupdatetracker")]
-impl FontUpdateTracker { # [doc = "`TrackText(crate::unity_engine::ui::text::Text)` overload"] pub fn track_text (t : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: text :: Text >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: text :: Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b860usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`RebuildForFont(crate::unity_engine::font::Font)` overload"] pub fn rebuild_for_font (f : impl :: core :: convert :: Into < crate :: unity_engine :: font :: Font >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: font :: Font , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318bad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`UntrackText(crate::unity_engine::ui::text::Text)` overload"] pub fn untrack_text (t : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: text :: Text >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: text :: Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318bc40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318be70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-fontupdatetracker")]impl FontUpdateTracker{#[doc="`TrackText(crate::unity_engine::ui::text::Text)` overload"]pub fn track_text(t:impl::core::convert::Into<crate::unity_engine::ui::text::Text>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b860usize)as*mut u8,();
+(crate::unity_engine::ui::text::Text)::core::convert::Into::into(t))}
+}
+#[doc="`RebuildForFont(crate::unity_engine::font::Font)` overload"]pub fn rebuild_for_font(f:impl::core::convert::Into<crate::unity_engine::font::Font>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318bad0usize)as*mut u8,();
+(crate::unity_engine::font::Font)::core::convert::Into::into(f))}
+}
+#[doc="`UntrackText(crate::unity_engine::ui::text::Text)` overload"]pub fn untrack_text(t:impl::core::convert::Into<crate::unity_engine::ui::text::Text>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318bc40usize)as*mut u8,();
+(crate::unity_engine::ui::text::Text)::core::convert::Into::into(t))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318be70usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-fontupdatetracker")]
-impl FontUpdateTracker { pub fn track_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontUpdateTracker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn rebuild_for_font_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontUpdateTracker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn untrack_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontUpdateTracker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontUpdateTracker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-ui-fontupdatetracker")]impl FontUpdateTracker{pub fn track_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn rebuild_for_font_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn untrack_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-ui-fontupdatetracker")]
 #[doc(hidden)]

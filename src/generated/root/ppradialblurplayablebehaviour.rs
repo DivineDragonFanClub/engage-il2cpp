@@ -4,32 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/ppradialblurplayablebehaviour/PPRadialBlurPlayableBehaviour.md"))] # [:: unity2 :: class (namespace = "" , name = "PPRadialBlurPlayableBehaviour")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct PPRadialBlurPlayableBehaviour {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/ppradialblurplayablebehaviour/PPRadialBlurPlayableBehaviour.md"))]#[::unity2::class(namespace="",name="PPRadialBlurPlayableBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct PPRadialBlurPlayableBehaviour{}
 
 }
 
 #[cfg(feature = "root-ppradialblurplayablebehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-ppradialblurplayablebehaviour")]
-pub trait IPPRadialBlurPlayableBehaviourMethods : IPPRadialBlurPlayableBehaviour { # [doc = "`get_PPVolume()` overload"] fn get_pp_volume (self ,) -> crate :: unity_engine :: rendering :: volume :: Volume { unsafe { let __receiver = < PPRadialBlurPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PPRadialBlurPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volume :: Volume = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f21f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PPVolume(crate::unity_engine::rendering::volume::Volume)` overload"] fn set_pp_volume (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volume :: Volume >) -> () { unsafe { let __receiver = < PPRadialBlurPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PPRadialBlurPlayableBehaviour , crate :: unity_engine :: rendering :: volume :: Volume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f21f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BeginIntensity()` overload"] fn get_begin_intensity (self ,) -> f32 { unsafe { let __receiver = < PPRadialBlurPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PPRadialBlurPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f21f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BeginIntensity(f32)` overload"] fn set_begin_intensity (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PPRadialBlurPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PPRadialBlurPlayableBehaviour , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f21f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EndIntensity()` overload"] fn get_end_intensity (self ,) -> f32 { unsafe { let __receiver = < PPRadialBlurPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PPRadialBlurPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f21f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EndIntensity(f32)` overload"] fn set_end_intensity (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PPRadialBlurPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PPRadialBlurPlayableBehaviour , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f21f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < PPRadialBlurPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PPRadialBlurPlayableBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f21f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PPRadialBlurPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PPRadialBlurPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f220e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-ppradialblurplayablebehaviour")]pub trait IPPRadialBlurPlayableBehaviourMethods:IPPRadialBlurPlayableBehaviour{#[doc="`get_PPVolume()` overload"]fn get_pp_volume(self,)->crate::unity_engine::rendering::volume::Volume{unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21f00usize)as*mut u8,crate::unity_engine::rendering::volume::Volume;
+(PPRadialBlurPlayableBehaviour)__receiver)}
+}
+#[doc="`set_PPVolume(crate::unity_engine::rendering::volume::Volume)` overload"]fn set_pp_volume(self,value:impl::core::convert::Into<crate::unity_engine::rendering::volume::Volume>)->(){unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21f10usize)as*mut u8,();
+(PPRadialBlurPlayableBehaviour)__receiver,(crate::unity_engine::rendering::volume::Volume)::core::convert::Into::into(value))}
+}
+#[doc="`get_BeginIntensity()` overload"]fn get_begin_intensity(self,)->f32{unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21f20usize)as*mut u8,f32;
+(PPRadialBlurPlayableBehaviour)__receiver)}
+}
+#[doc="`set_BeginIntensity(f32)` overload"]fn set_begin_intensity(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21f30usize)as*mut u8,();
+(PPRadialBlurPlayableBehaviour)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_EndIntensity()` overload"]fn get_end_intensity(self,)->f32{unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21f40usize)as*mut u8,f32;
+(PPRadialBlurPlayableBehaviour)__receiver)}
+}
+#[doc="`set_EndIntensity(f32)` overload"]fn set_end_intensity(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21f50usize)as*mut u8,();
+(PPRadialBlurPlayableBehaviour)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21f60usize)as*mut u8,();
+(PPRadialBlurPlayableBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f220e0usize)as*mut u8,();
+(PPRadialBlurPlayableBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "root-ppradialblurplayablebehaviour")]
-impl < __T : IPPRadialBlurPlayableBehaviour > IPPRadialBlurPlayableBehaviourMethods for __T { }
+#[cfg(feature="root-ppradialblurplayablebehaviour")]impl<__T:IPPRadialBlurPlayableBehaviour>IPPRadialBlurPlayableBehaviourMethods for __T{}
 
-#[cfg(feature = "root-ppradialblurplayablebehaviour")]
-impl PPRadialBlurPlayableBehaviour { pub fn get_pp_volume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PPRadialBlurPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_pp_volume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PPRadialBlurPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_begin_intensity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PPRadialBlurPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_begin_intensity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PPRadialBlurPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_end_intensity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PPRadialBlurPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_end_intensity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PPRadialBlurPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PPRadialBlurPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PPRadialBlurPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="root-ppradialblurplayablebehaviour")]impl PPRadialBlurPlayableBehaviour{pub fn get_pp_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pp_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_begin_intensity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_begin_intensity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_end_intensity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_end_intensity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "root-ppradialblurplayablebehaviour")]
-impl PPRadialBlurPlayableBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PPRadialBlurPlayableBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IPPRadialBlurPlayableBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-ppradialblurplayablebehaviour")]impl PPRadialBlurPlayableBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PPRadialBlurPlayableBehaviour), ::core::stringify!(new),));
+ <Self as IPPRadialBlurPlayableBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-ppradialblurplayablebehaviour")]

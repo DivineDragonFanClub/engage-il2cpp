@@ -4,47 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditthemeselectcontent/VersusMapEditThemeSelectContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusMapEditThemeSelectContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct VersusMapEditThemeSelectContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_NavigationText")] pub m_navigation_text : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_NavigationPointList")] pub m_navigation_point_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmapeditthemeselectcontent/VersusMapEditThemeSelectContent.md"))]#[::unity2::class(namespace="App",name="VersusMapEditThemeSelectContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct VersusMapEditThemeSelectContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_NavigationText")]pub m_navigation_text:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_NavigationPointList")]pub m_navigation_point_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-versusmapeditthemeselectcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusmapeditthemeselectcontent")]
-impl VersusMapEditThemeSelectContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae580usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: versusmapeditthemeselectcontent :: VersusMapEditThemeSelectContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: versusmapeditthemeselectcontent :: VersusMapEditThemeSelectContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmapeditthemeselectcontent")]impl VersusMapEditThemeSelectContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ae460usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ae500usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ae580usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ae600usize)as*mut u8,crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent;
+)}
+}
+}
 
-#[cfg(feature = "app-versusmapeditthemeselectcontent")]
-pub trait IVersusMapEditThemeSelectContentMethods : IVersusMapEditThemeSelectContent { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < VersusMapEditThemeSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditThemeSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < VersusMapEditThemeSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditThemeSelectContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26aea40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`SetNavigation(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)` overload"] fn set_navigation (self , category : impl :: core :: convert :: Into < crate :: app :: profilecardthemeofeditmapdata :: ProfileCardThemeOfEditMapData_Categories >) -> () { unsafe { let __receiver = < VersusMapEditThemeSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditThemeSelectContent , crate :: app :: profilecardthemeofeditmapdata :: ProfileCardThemeOfEditMapData_Categories , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26aeb30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (category) , :: core :: option :: Option :: None) } } } # [doc = "`SetInfoMessage()` overload"] fn set_info_message (self ,) -> () { unsafe { let __receiver = < VersusMapEditThemeSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditThemeSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusMapEditThemeSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditThemeSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26aedb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmapeditthemeselectcontent")]pub trait IVersusMapEditThemeSelectContentMethods:IVersusMapEditThemeSelectContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ae6f0usize)as*mut u8,();
+(VersusMapEditThemeSelectContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <VersusMapEditThemeSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26aea40usize)as*mut u8,f32;
+(VersusMapEditThemeSelectContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`SetNavigation(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)` overload"]fn set_navigation(self,category:impl::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories>)->(){unsafe{let __receiver= <VersusMapEditThemeSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26aeb30usize)as*mut u8,();
+(VersusMapEditThemeSelectContent)__receiver,(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)::core::convert::Into::into(category))}
+}
+#[doc="`SetInfoMessage()` overload"]fn set_info_message(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ae910usize)as*mut u8,();
+(VersusMapEditThemeSelectContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26aedb0usize)as*mut u8,();
+(VersusMapEditThemeSelectContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusmapeditthemeselectcontent")]
-impl < __T : IVersusMapEditThemeSelectContent > IVersusMapEditThemeSelectContentMethods for __T { }
+#[cfg(feature="app-versusmapeditthemeselectcontent")]impl<__T:IVersusMapEditThemeSelectContent>IVersusMapEditThemeSelectContentMethods for __T{}
 
-#[cfg(feature = "app-versusmapeditthemeselectcontent")]
-impl VersusMapEditThemeSelectContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_navigation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_info_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditThemeSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-versusmapeditthemeselectcontent")]impl VersusMapEditThemeSelectContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_navigation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_info_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-versusmapeditthemeselectcontent")]
-impl VersusMapEditThemeSelectContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusMapEditThemeSelectContent) , :: core :: stringify ! (new) ,)) ; < Self as IVersusMapEditThemeSelectContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusmapeditthemeselectcontent")]impl VersusMapEditThemeSelectContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusMapEditThemeSelectContent), ::core::stringify!(new),));
+ <Self as IVersusMapEditThemeSelectContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusmapeditthemeselectcontent")]

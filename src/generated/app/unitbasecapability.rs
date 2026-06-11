@@ -4,36 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: capabilitybase_1 :: { CapabilityBase_1 , ICapabilityBase_1 }
- ;
- use crate :: app :: capabilitydefinition :: { CapabilityDefinition , ICapabilityDefinition }
- ;
- use crate :: app :: capabilitysbyte :: { CapabilitySbyte , ICapabilitySbyte }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::capabilitybase_1::{CapabilityBase_1,ICapabilityBase_1}
+;
+use crate::app::capabilitydefinition::{CapabilityDefinition,ICapabilityDefinition}
+;
+use crate::app::capabilitysbyte::{CapabilitySbyte,ICapabilitySbyte}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitbasecapability/UnitBaseCapability.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitBaseCapability")] # [parent (crate :: app :: capabilitysbyte :: CapabilitySbyte)] pub struct UnitBaseCapability {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitbasecapability/UnitBaseCapability.md"))]#[::unity2::class(namespace="App",name="UnitBaseCapability")]#[parent(crate::app::capabilitysbyte::CapabilitySbyte)]pub struct UnitBaseCapability{}
 
 }
 
 #[cfg(feature = "app-unitbasecapability-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitbasecapability")]
-pub trait IUnitBaseCapabilityMethods : IUnitBaseCapability { # [doc = "`Set(i32, i32)` overload"] fn set (self , i : impl :: core :: convert :: Into < i32 > , v : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitBaseCapability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitBaseCapability , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f723b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`Set(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32)` overload"] fn set_2 (self , t : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , v : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitBaseCapability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitBaseCapability , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f72420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitBaseCapability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitBaseCapability , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f72490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitbasecapability")]pub trait IUnitBaseCapabilityMethods:IUnitBaseCapability{#[doc="`Set(i32, i32)` overload"]fn set(self,i:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitBaseCapability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f723b0usize)as*mut u8,();
+(UnitBaseCapability)__receiver,(i32)::core::convert::Into::into(i),(i32)::core::convert::Into::into(v))}
+}
+#[doc="`Set(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32)` overload"]fn set_2(self,t:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type> ,v:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitBaseCapability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f72420usize)as*mut u8,();
+(UnitBaseCapability)__receiver,(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(t),(i32)::core::convert::Into::into(v))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitBaseCapability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f72490usize)as*mut u8,();
+(UnitBaseCapability)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitbasecapability")]
-impl < __T : IUnitBaseCapability > IUnitBaseCapabilityMethods for __T { }
+#[cfg(feature="app-unitbasecapability")]impl<__T:IUnitBaseCapability>IUnitBaseCapabilityMethods for __T{}
 
-#[cfg(feature = "app-unitbasecapability")]
-impl UnitBaseCapability { pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitBaseCapability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitBaseCapability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitBaseCapability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-unitbasecapability")]impl UnitBaseCapability{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-unitbasecapability")]
-impl UnitBaseCapability {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitBaseCapability) , :: core :: stringify ! (new) ,)) ; < Self as IUnitBaseCapabilityMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitbasecapability")]impl UnitBaseCapability{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitBaseCapability), ::core::stringify!(new),));
+ <Self as IUnitBaseCapabilityMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitbasecapability")]

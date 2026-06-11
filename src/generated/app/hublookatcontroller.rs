@@ -4,68 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublookatcontroller/HubLookAtController_LookAtIKParam.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HubLookAtController_LookAtIKParam {
-    pub body_weight: f32,
-    pub head_weight: f32,
-    pub eyes_weight: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hublookatcontroller/HubLookAtController.md"))]#[::unity2::class(namespace="App",name="HubLookAtController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubLookAtController{#[offset(32)]#[rename(name="m_curve")]pub m_curve:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(48)]#[rename(name="m_lookAtIKParam")]pub m_look_at_ik_param: ::unity2::Array<crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam> , #[offset(56)]#[rename(name="m_lookAtTarget")]pub m_look_at_target:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_target")]pub m_target:crate::unity_engine::transform::Transform, #[offset(72)]#[rename(name="m_targetPosition")]pub m_target_position:crate::unity_engine::vector3::Vector3, #[offset(88)]#[rename(name="m_headTransform")]pub m_head_transform:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="m_disableFollow")]pub m_disable_follow:bool, #[offset(97)]#[rename(name="m_verticalLimit")]pub m_vertical_limit:bool, #[offset(100)]#[rename(name="m_verticalLimitValue")]pub m_vertical_limit_value:f32, #[static_field]#[rename(name="DefaultParam")]pub default_param:crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hublookatcontroller/HubLookAtController_LookAtIKParam.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HubLookAtController_LookAtIKParam{pub body_weight:f32,pub head_weight:f32,pub eyes_weight:f32,}
+impl::unity2::ClassIdentity for HubLookAtController_LookAtIKParam{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubLookAtController.LookAtIKParam";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for HubLookAtController_LookAtIKParam {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubLookAtController.LookAtIKParam";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for HubLookAtController_LookAtIKParam {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublookatcontroller/HubLookAtController.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubLookAtController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubLookAtController {
-# [offset (32)] # [rename (name = "m_curve")] pub m_curve : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (48)] # [rename (name = "m_lookAtIKParam")] pub m_look_at_ik_param : :: unity2 :: Array < crate :: app :: hublookatcontroller :: HubLookAtController_LookAtIKParam > ,
-# [offset (56)] # [rename (name = "m_lookAtTarget")] pub m_look_at_target : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_target")] pub m_target : crate :: unity_engine :: transform :: Transform ,
-# [offset (72)] # [rename (name = "m_targetPosition")] pub m_target_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (88)] # [rename (name = "m_headTransform")] pub m_head_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (96)] # [rename (name = "m_disableFollow")] pub m_disable_follow : bool ,
-# [offset (97)] # [rename (name = "m_verticalLimit")] pub m_vertical_limit : bool ,
-# [offset (100)] # [rename (name = "m_verticalLimitValue")] pub m_vertical_limit_value : f32 ,
-# [static_field] # [rename (name = "DefaultParam")] pub default_param : crate :: app :: hublookatcontroller :: HubLookAtController_LookAtIKParam ,
+impl::unity2::IlType for HubLookAtController_LookAtIKParam{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -73,36 +37,125 @@ impl ::unity2::IlType for HubLookAtController_LookAtIKParam {
 #[cfg(feature = "app-hublookatcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hublookatcontroller")]
-impl HubLookAtController_LookAtIKParam { # [doc = "`.ctor(f32, f32, f32)` overload"] pub fn ctor (& mut self , body : impl :: core :: convert :: Into < f32 > , head : impl :: core :: convert :: Into < f32 > , eyes : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut HubLookAtController_LookAtIKParam , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7040usize) as * mut u8) ; __inner (self as * mut HubLookAtController_LookAtIKParam , :: core :: convert :: Into :: into (body) , :: core :: convert :: Into :: into (head) , :: core :: convert :: Into :: into (eyes) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b0cf0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hublookatcontroller")]
-impl HubLookAtController_LookAtIKParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController_LookAtIKParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-hublookatcontroller")]pub trait IHubLookAtControllerMethods:IHubLookAtController{#[doc="`get_FollowTime()` overload"]fn get_follow_time(self,)->f32{unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b00c0usize)as*mut u8,f32;
+(HubLookAtController)__receiver)}
+}
+#[doc="`set_FollowTime(f32)` overload"]fn set_follow_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b00d0usize)as*mut u8,();
+(HubLookAtController)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDisabledParam()` overload"]fn get_is_disabled_param(self,)->bool{unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b00e0usize)as*mut u8,bool;
+(HubLookAtController)__receiver)}
+}
+#[doc="`set_IsDisabledParam(bool)` overload"]fn set_is_disabled_param(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b00f0usize)as*mut u8,();
+(HubLookAtController)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`SetTargetTransform(crate::unity_engine::transform::Transform)` overload"]fn set_target_transform(self,target:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0100usize)as*mut u8,();
+(HubLookAtController)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(target))}
+}
+#[doc="`SetTargetPosition(crate::unity_engine::vector3::Vector3)` overload"]fn set_target_position(self,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0110usize)as*mut u8,();
+(HubLookAtController)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position))}
+}
+#[doc="`DisableFollow()` overload"]fn disable_follow(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0120usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`EnableFollow()` overload"]fn enable_follow(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0150usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`Instant()` overload"]fn instant(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0180usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`EnableVerticalLimit()` overload"]fn enable_vertical_limit(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0730usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`DisableVerticalLimit()` overload"]fn disable_vertical_limit(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0740usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0750usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0a30usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b02a0usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`OnDrawGizmos()` overload"]fn on_draw_gizmos(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0ae0usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0ba0usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0c60usize)as*mut u8,();
+(HubLookAtController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hublookatcontroller")]
-impl HubLookAtController { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0cf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hublookatcontroller")]impl<__T:IHubLookAtController>IHubLookAtControllerMethods for __T{}
 
-#[cfg(feature = "app-hublookatcontroller")]
-pub trait IHubLookAtControllerMethods : IHubLookAtController { # [doc = "`get_FollowTime()` overload"] fn get_follow_time (self ,) -> f32 { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b00c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FollowTime(f32)` overload"] fn set_follow_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b00d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDisabledParam()` overload"] fn get_is_disabled_param (self ,) -> bool { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b00e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsDisabledParam(bool)` overload"] fn set_is_disabled_param (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b00f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetTargetTransform(crate::unity_engine::transform::Transform)` overload"] fn set_target_transform (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`SetTargetPosition(crate::unity_engine::vector3::Vector3)` overload"] fn set_target_position (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } } # [doc = "`DisableFollow()` overload"] fn disable_follow (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableFollow()` overload"] fn enable_follow (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Instant()` overload"] fn instant (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableVerticalLimit()` overload"] fn enable_vertical_limit (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableVerticalLimit()` overload"] fn disable_vertical_limit (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b02a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDrawGizmos()` overload"] fn on_draw_gizmos (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubLookAtController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLookAtController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController{pub fn get_follow_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_follow_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_disabled_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_disabled_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_target_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_target_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn disable_follow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn enable_follow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn instant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn enable_vertical_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn disable_vertical_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-hublookatcontroller")]
-impl < __T : IHubLookAtController > IHubLookAtControllerMethods for __T { }
+#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubLookAtController), ::core::stringify!(new),));
+ <Self as IHubLookAtControllerMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-hublookatcontroller")]
-impl HubLookAtController { pub fn get_follow_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_follow_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_disabled_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_is_disabled_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_target_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_target_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn disable_follow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn enable_follow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn instant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn enable_vertical_limit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn disable_vertical_limit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_draw_gizmos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLookAtController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController_LookAtIKParam{#[doc="`.ctor(f32, f32, f32)` overload"]pub fn ctor(&mut self,body:impl::core::convert::Into<f32> ,head:impl::core::convert::Into<f32> ,eyes:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7040usize)as*mut u8,();
+(*mut HubLookAtController_LookAtIKParam)self as*mut HubLookAtController_LookAtIKParam,(f32)::core::convert::Into::into(body),(f32)::core::convert::Into::into(head),(f32)::core::convert::Into::into(eyes))}
+}
+}
 
-#[cfg(feature = "app-hublookatcontroller")]
-impl HubLookAtController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubLookAtController) , :: core :: stringify ! (new) ,)) ; < Self as IHubLookAtControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController_LookAtIKParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature = "app-hublookatcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubLookAtController_LookAtIKParam;
     pub use super::HubLookAtController;
     pub use super::IHubLookAtController;
     pub use super::IHubLookAtControllerMethods;
+    pub use super::HubLookAtController_LookAtIKParam;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

@@ -4,133 +4,164 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatskip/CombatSkip_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CombatSkip_State  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatskip/CombatSkip_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CombatSkip_State{pub value:i32,}
+impl::unity2::ClassIdentity for CombatSkip_State{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="CombatSkip.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CombatSkip_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CombatSkip_State{pub fn prohibited()->Self{Self{value:0}
+}
+pub fn waiting()->Self{Self{value:1}
+}
+pub fn fade_out()->Self{Self{value:2}
+}
+pub fn cleanup1()->Self{Self{value:3}
+}
+pub fn cleanup2()->Self{Self{value:4}
+}
+pub fn cleanup3()->Self{Self{value:5}
+}
+pub fn fade_in()->Self{Self{value:6}
+}
+pub fn end()->Self{Self{value:7}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for CombatSkip_State  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CombatSkip.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for CombatSkip_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CombatSkip_State  {
-    pub fn prohibited() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn waiting() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn fade_out() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn cleanup1() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn cleanup2() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn cleanup3() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn fade_in() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatskip/CombatSkip.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatSkip")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CombatSkip {
-# [offset (24)] # [rename (name = "state")] pub state : crate :: combat :: combatskip :: CombatSkip_State ,
-# [offset (28)] # [rename (name = "isSoundSkipEnable")] pub is_sound_skip_enable : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatskip/CombatSkip.md"))]#[::unity2::class(namespace="Combat",name="CombatSkip")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatSkip{#[offset(24)]#[rename(name="state")]pub state:crate::combat::combatskip::CombatSkip_State, #[offset(28)]#[rename(name="isSoundSkipEnable")]pub is_sound_skip_enable:bool,}
 
 }
 
 #[cfg(feature = "combat-combatskip-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatskip")]
-impl CombatSkip { # [doc = "`CleanupHUDs(crate::combat::combatworld::CombatWorld)` overload"] pub fn cleanup_hu_ds (world : impl :: core :: convert :: Into < crate :: combat :: combatworld :: CombatWorld >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: combatworld :: CombatWorld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292f960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (world) , :: core :: option :: Option :: None) } } } # [doc = "`SkipCharacters(crate::combat::combatworld::CombatWorld)` overload"] pub fn skip_characters (world : impl :: core :: convert :: Into < crate :: combat :: combatworld :: CombatWorld >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: combatworld :: CombatWorld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292f9f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (world) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatskip")]impl CombatSkip{#[doc="`CleanupHUDs(crate::combat::combatworld::CombatWorld)` overload"]pub fn cleanup_hu_ds(world:impl::core::convert::Into<crate::combat::combatworld::CombatWorld>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x292f960usize)as*mut u8,();
+(crate::combat::combatworld::CombatWorld)::core::convert::Into::into(world))}
+}
+#[doc="`SkipCharacters(crate::combat::combatworld::CombatWorld)` overload"]pub fn skip_characters(world:impl::core::convert::Into<crate::combat::combatworld::CombatWorld>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x292f9f0usize)as*mut u8,();
+(crate::combat::combatworld::CombatWorld)::core::convert::Into::into(world))}
+}
+}
 
-#[cfg(feature = "combat-combatskip")]
-pub trait ICombatSkipMethods : ICombatSkip { # [doc = "`NextState()` overload"] fn next_state (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292e9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSkipping()` overload"] fn get_is_skipping (self ,) -> bool { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292e9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsBlackout()` overload"] fn get_is_blackout (self ,) -> bool { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ea10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsWaiting()` overload"] fn get_is_waiting (self ,) -> bool { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ea30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSkipped()` overload"] fn get_is_skipped (self ,) -> bool { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ea40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Enable()` overload"] fn enable (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ea50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Skip()` overload"] fn skip (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ea70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsInstantComeback(crate::combat::combatrecord::CombatRecord)` overload"] fn is_instant_comeback (self , rec : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> bool { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ea90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rec) , :: core :: option :: Option :: None) } } } # [doc = "`InstantComeback()` overload"] fn instant_comeback (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292eaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ec70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ec90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ecb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ed40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup1()` overload"] fn cleanup1 (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ef10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup2()` overload"] fn cleanup2 (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292f3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup4()` overload"] fn cleanup4 (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292f7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292fef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatskip")]pub trait ICombatSkipMethods:ICombatSkip{#[doc="`NextState()` overload"]fn next_state(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292e9e0usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`get_IsSkipping()` overload"]fn get_is_skipping(self,)->bool{unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292e9f0usize)as*mut u8,bool;
+(CombatSkip)__receiver)}
+}
+#[doc="`get_IsBlackout()` overload"]fn get_is_blackout(self,)->bool{unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ea10usize)as*mut u8,bool;
+(CombatSkip)__receiver)}
+}
+#[doc="`get_IsWaiting()` overload"]fn get_is_waiting(self,)->bool{unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ea30usize)as*mut u8,bool;
+(CombatSkip)__receiver)}
+}
+#[doc="`get_IsSkipped()` overload"]fn get_is_skipped(self,)->bool{unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ea40usize)as*mut u8,bool;
+(CombatSkip)__receiver)}
+}
+#[doc="`Enable()` overload"]fn enable(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ea50usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`Skip()` overload"]fn skip(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ea70usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`IsInstantComeback(crate::combat::combatrecord::CombatRecord)` overload"]fn is_instant_comeback(self,rec:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->bool{unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ea90usize)as*mut u8,bool;
+(CombatSkip)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(rec))}
+}
+#[doc="`InstantComeback()` overload"]fn instant_comeback(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292eaf0usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ec70usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ec90usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ecb0usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ed40usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`Cleanup1()` overload"]fn cleanup1(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ef10usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`Cleanup2()` overload"]fn cleanup2(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292f3c0usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`Cleanup4()` overload"]fn cleanup4(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292f7d0usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292fef0usize)as*mut u8,();
+(CombatSkip)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatskip")]
-impl < __T : ICombatSkip > ICombatSkipMethods for __T { }
+#[cfg(feature="combat-combatskip")]impl<__T:ICombatSkip>ICombatSkipMethods for __T{}
 
-#[cfg(feature = "combat-combatskip")]
-impl CombatSkip { pub fn next_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_skipping_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_blackout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_is_waiting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_skipped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_instant_comeback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn instant_comeback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cleanup1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cleanup2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cleanup_hu_ds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn skip_characters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn cleanup4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="combat-combatskip")]impl CombatSkip{pub fn next_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_skipping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_blackout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_waiting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_skipped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_instant_comeback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn instant_comeback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cleanup1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cleanup2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cleanup_hu_ds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn skip_characters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn cleanup4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "combat-combatskip")]
-impl CombatSkip {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatSkip) , :: core :: stringify ! (new) ,)) ; < Self as ICombatSkipMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatskip")]impl CombatSkip{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatSkip), ::core::stringify!(new),));
+ <Self as ICombatSkipMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combatskip")]

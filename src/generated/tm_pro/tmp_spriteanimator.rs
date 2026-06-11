@@ -4,41 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spriteanimator/TMP_SpriteAnimator.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_SpriteAnimator")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TMP_SpriteAnimator {
-# [offset (24)] # [rename (name = "m_animations")] pub m_animations : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , bool > ,
-# [offset (32)] # [rename (name = "m_TextComponent")] pub m_text_component : crate :: tm_pro :: tmp_text :: TMP_Text ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_spriteanimator/TMP_SpriteAnimator.md"))]#[::unity2::class(namespace="TMPro",name="TMP_SpriteAnimator")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TMP_SpriteAnimator{#[offset(24)]#[rename(name="m_animations")]pub m_animations:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,bool> , #[offset(32)]#[rename(name="m_TextComponent")]pub m_text_component:crate::tm_pro::tmp_text::TMP_Text,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_spriteanimator")]
-pub trait ITMP_SpriteAnimatorMethods : ITMP_SpriteAnimator { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopAllAnimations()` overload"] fn stop_all_animations (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DoSpriteAnimation(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, i32, i32)` overload"] fn do_sprite_animation (self , current_character : impl :: core :: convert :: Into < i32 > , sprite_asset : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset > , start : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , framerate : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteAnimator , i32 , crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current_character) , :: core :: convert :: Into :: into (sprite_asset) , :: core :: convert :: Into :: into (start) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (framerate) , :: core :: option :: Option :: None) } } } # [doc = "`DoSpriteAnimationInternal(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, i32, i32)` overload"] fn do_sprite_animation_internal (self , current_character : impl :: core :: convert :: Into < i32 > , sprite_asset : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset > , start : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , framerate : impl :: core :: convert :: Into < i32 >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteAnimator , i32 , crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current_character) , :: core :: convert :: Into :: into (sprite_asset) , :: core :: convert :: Into :: into (start) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (framerate) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_SpriteAnimator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteAnimator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_spriteanimator")]pub trait ITMP_SpriteAnimatorMethods:ITMP_SpriteAnimator{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <TMP_SpriteAnimator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b500usize)as*mut u8,();
+(TMP_SpriteAnimator)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <TMP_SpriteAnimator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b570usize)as*mut u8,();
+(TMP_SpriteAnimator)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <TMP_SpriteAnimator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b580usize)as*mut u8,();
+(TMP_SpriteAnimator)__receiver)}
+}
+#[doc="`StopAllAnimations()` overload"]fn stop_all_animations(self,)->(){unsafe{let __receiver= <TMP_SpriteAnimator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b590usize)as*mut u8,();
+(TMP_SpriteAnimator)__receiver)}
+}
+#[doc="`DoSpriteAnimation(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, i32, i32)` overload"]fn do_sprite_animation(self,current_character:impl::core::convert::Into<i32> ,sprite_asset:impl::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset> ,start:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32> ,framerate:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TMP_SpriteAnimator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b5f0usize)as*mut u8,();
+(TMP_SpriteAnimator)__receiver,(i32)::core::convert::Into::into(current_character),(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)::core::convert::Into::into(sprite_asset),(i32)::core::convert::Into::into(start),(i32)::core::convert::Into::into(end),(i32)::core::convert::Into::into(framerate))}
+}
+#[doc="`DoSpriteAnimationInternal(i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, i32, i32, i32)` overload"]fn do_sprite_animation_internal(self,current_character:impl::core::convert::Into<i32> ,sprite_asset:impl::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset> ,start:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32> ,framerate:impl::core::convert::Into<i32>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <TMP_SpriteAnimator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b730usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(TMP_SpriteAnimator)__receiver,(i32)::core::convert::Into::into(current_character),(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)::core::convert::Into::into(sprite_asset),(i32)::core::convert::Into::into(start),(i32)::core::convert::Into::into(end),(i32)::core::convert::Into::into(framerate))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_SpriteAnimator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b7f0usize)as*mut u8,();
+(TMP_SpriteAnimator)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_spriteanimator")]
-impl < __T : ITMP_SpriteAnimator > ITMP_SpriteAnimatorMethods for __T { }
+#[cfg(feature="tm_pro-tmp_spriteanimator")]impl<__T:ITMP_SpriteAnimator>ITMP_SpriteAnimatorMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_spriteanimator")]
-impl TMP_SpriteAnimator { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn stop_all_animations_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn do_sprite_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn do_sprite_animation_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteAnimator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="tm_pro-tmp_spriteanimator")]impl TMP_SpriteAnimator{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn stop_all_animations_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn do_sprite_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn do_sprite_animation_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "tm_pro-tmp_spriteanimator")]
-impl TMP_SpriteAnimator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteAnimator) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SpriteAnimatorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_spriteanimator")]impl TMP_SpriteAnimator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_SpriteAnimator), ::core::stringify!(new),));
+ <Self as ITMP_SpriteAnimatorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_spriteanimator")]

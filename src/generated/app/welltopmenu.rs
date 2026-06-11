@@ -4,215 +4,273 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct WellTopMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapStartMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellTopMenu.EvilMapStartMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct WellTopMenu_EvilMapStartMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/welltopmenu/WellTopMenu_MenuResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellTopMenu_MenuResult{pub value:i32,}
+impl::unity2::ClassIdentity for WellTopMenu_MenuResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="WellTopMenu.MenuResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for WellTopMenu_MenuResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl WellTopMenu_MenuResult{pub fn item_exchange()->Self{Self{value:0}
+}
+pub fn evil_map_first()->Self{Self{value:1}
+}
+pub fn evil_map()->Self{Self{value:2}
+}
+pub fn evil_cannot_start()->Self{Self{value:3}
+}
+pub fn change_difficulty()->Self{Self{value:4}
+}
+pub fn end()->Self{Self{value:5}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/welltopmenu/WellTopMenu_MenuResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WellTopMenu_MenuResult  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/welltopmenu/WellTopMenu.md"))]#[::unity2::class(namespace="App",name="WellTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct WellTopMenu{}
 
 
-impl  ::unity2::ClassIdentity for WellTopMenu_MenuResult  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "WellTopMenu.MenuResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/welltopmenu/WellTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="WellTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WellTopMenu_DecideEventHandler{}
 
 
-impl  ::unity2::IlType for WellTopMenu_MenuResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/welltopmenu/WellTopMenu_EvilMapStartMenuItem.md"))]#[::unity2::class(namespace="App",name="WellTopMenu.EvilMapStartMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct WellTopMenu_EvilMapStartMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::welltopmenu::WellTopMenu_DecideEventHandler,}
 
 
-impl  WellTopMenu_MenuResult  {
-    pub fn item_exchange() -> Self {
-        Self { value: 0 }
-
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/welltopmenu/WellTopMenu_EvilMapChangeDifficultyMenuItem.md"))]#[::unity2::class(namespace="App",name="WellTopMenu.EvilMapChangeDifficultyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct WellTopMenu_EvilMapChangeDifficultyMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::welltopmenu::WellTopMenu_DecideEventHandler,}
 
 
-    pub fn evil_map_first() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn evil_map() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn evil_cannot_start() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn change_difficulty() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_ItemExchangeMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellTopMenu.ItemExchangeMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct WellTopMenu_ItemExchangeMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellTopMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct WellTopMenu_DecideEventHandler {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapChangeDifficultyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellTopMenu.EvilMapChangeDifficultyMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct WellTopMenu_EvilMapChangeDifficultyMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/welltopmenu/WellTopMenu_ItemExchangeMenuItem.md"))]#[::unity2::class(namespace="App",name="WellTopMenu.ItemExchangeMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct WellTopMenu_ItemExchangeMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::welltopmenu::WellTopMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-welltopmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::welltopmenu::WellTopMenu_MenuResult, crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , initial_selected : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_MenuResult > , event_handler : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: welltopmenu :: WellTopMenu_MenuResult , crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293c6a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (initial_selected) , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenuMethods : IWellTopMenu { # [doc = "`get_m_DecideEventHandler()` overload"] fn get_m_decide_event_handler (self ,) -> crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler { unsafe { let __receiver = < WellTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_DecideEventHandler(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"] fn set_m_decide_event_handler (self , value : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < WellTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu , crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::welltopmenu::WellTopMenu_MenuResult, crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent > , initial_selected : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_MenuResult > , event_handler : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < WellTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , crate :: app :: welltopmenu :: WellTopMenu_MenuResult , crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (initial_selected) , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WellTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < WellTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-welltopmenu")]
-impl < __T : IWellTopMenu > IWellTopMenuMethods for __T { }
-
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu { pub fn get_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::welltopmenu::WellTopMenu_MenuResult, crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , initial_selected : crate :: app :: welltopmenu :: WellTopMenu_MenuResult , event_handler : crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellTopMenu) , :: core :: stringify ! (new) ,)) ; < Self as IWellTopMenuMethods > :: ctor (this , menu_item_list , menu_content , initial_selected , event_handler) ; this }
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::welltopmenu::WellTopMenu_MenuResult, crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_MenuResult> ,event_handler:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293c6a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::welltopmenu::WellTopMenu_MenuResult)::core::convert::Into::into(initial_selected),(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
 }
 
-#[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenu_EvilMapStartMenuItemMethods : IWellTopMenu_EvilMapStartMenuItem { # [doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"] fn ctor (self , event_handler : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapStartMenuItem , crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapStartMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapStartMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d6d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapStartMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapStartMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2db50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-welltopmenu")]
-impl < __T : IWellTopMenu_EvilMapStartMenuItem > IWellTopMenu_EvilMapStartMenuItemMethods for __T { }
-
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_EvilMapStartMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_EvilMapStartMenuItem {
-# [doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"] pub fn new (event_handler : crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellTopMenu_EvilMapStartMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IWellTopMenu_EvilMapStartMenuItemMethods > :: ctor (this , event_handler) ; this }
+#[cfg(feature="app-welltopmenu")]pub trait IWellTopMenuMethods:IWellTopMenu{#[doc="`get_m_DecideEventHandler()` overload"]fn get_m_decide_event_handler(self,)->crate::app::welltopmenu::WellTopMenu_DecideEventHandler{unsafe{let __receiver= <WellTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e380usize)as*mut u8,crate::app::welltopmenu::WellTopMenu_DecideEventHandler;
+(WellTopMenu)__receiver)}
+}
+#[doc="`set_m_DecideEventHandler(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]fn set_m_decide_event_handler(self,value:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <WellTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e390usize)as*mut u8,();
+(WellTopMenu)__receiver,(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)::core::convert::Into::into(value))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e3a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellTopMenu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::welltopmenu::WellTopMenu_MenuResult, crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,initial_selected:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_MenuResult> ,event_handler:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <WellTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e4e0usize)as*mut u8,();
+(WellTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::welltopmenu::WellTopMenu_MenuResult)::core::convert::Into::into(initial_selected),(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WellTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e590usize)as*mut u8, ::unity2::Il2CppString;
+(WellTopMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <WellTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e5e0usize)as*mut u8,();
+(WellTopMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenu_ItemExchangeMenuItemMethods : IWellTopMenu_ItemExchangeMenuItem { # [doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"] fn ctor (self , event_handler : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_ItemExchangeMenuItem , crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2db60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_ItemExchangeMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2dba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_ItemExchangeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2dc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_ItemExchangeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2dc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_ItemExchangeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2dce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-welltopmenu")]impl<__T:IWellTopMenu>IWellTopMenuMethods for __T{}
 
-#[cfg(feature = "app-welltopmenu")]
-impl < __T : IWellTopMenu_ItemExchangeMenuItem > IWellTopMenu_ItemExchangeMenuItemMethods for __T { }
-
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_ItemExchangeMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_ItemExchangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_ItemExchangeMenuItem {
-# [doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"] pub fn new (event_handler : crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellTopMenu_ItemExchangeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IWellTopMenu_ItemExchangeMenuItemMethods > :: ctor (this , event_handler) ; this }
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu{pub fn get_m_decide_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_decide_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 }
 
-#[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenu_DecideEventHandlerMethods : IWellTopMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < WellTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2ce40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::welltopmenu::WellTopMenu_MenuResult)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_MenuResult >) -> () { unsafe { let __receiver = < WellTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_DecideEventHandler , crate :: app :: welltopmenu :: WellTopMenu_MenuResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2ce60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-welltopmenu")]
-impl < __T : IWellTopMenu_DecideEventHandler > IWellTopMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellTopMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IWellTopMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::welltopmenu::WellTopMenu_MenuResult, crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,initial_selected:crate::app::welltopmenu::WellTopMenu_MenuResult,event_handler:crate::app::welltopmenu::WellTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellTopMenu), ::core::stringify!(new),));
+ <Self as IWellTopMenuMethods> ::ctor(this,menu_item_list,menu_content,initial_selected,event_handler);
+this}
 }
 
-#[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods : IWellTopMenu_EvilMapChangeDifficultyMenuItem { # [doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"] fn ctor (self , event_handler : impl :: core :: convert :: Into < crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapChangeDifficultyMenuItem , crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapChangeDifficultyMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapChangeDifficultyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapChangeDifficultyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellTopMenu_EvilMapChangeDifficultyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2d4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-welltopmenu")]pub trait IWellTopMenu_DecideEventHandlerMethods:IWellTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WellTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ce40usize)as*mut u8,();
+(WellTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::welltopmenu::WellTopMenu_MenuResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_MenuResult>)->(){unsafe{let __receiver= <WellTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ce60usize)as*mut u8,();
+(WellTopMenu_DecideEventHandler)__receiver,(crate::app::welltopmenu::WellTopMenu_MenuResult)::core::convert::Into::into(result))}
+}
+}
 
-#[cfg(feature = "app-welltopmenu")]
-impl < __T : IWellTopMenu_EvilMapChangeDifficultyMenuItem > IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods for __T { }
+#[cfg(feature="app-welltopmenu")]impl<__T:IWellTopMenu_DecideEventHandler>IWellTopMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_EvilMapChangeDifficultyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_EvilMapChangeDifficultyMenuItem {
-# [doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"] pub fn new (event_handler : crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellTopMenu_EvilMapChangeDifficultyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods > :: ctor (this , event_handler) ; this }
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellTopMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IWellTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-welltopmenu")]pub trait IWellTopMenu_EvilMapStartMenuItemMethods:IWellTopMenu_EvilMapStartMenuItem{#[doc="`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <WellTopMenu_EvilMapStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d4f0usize)as*mut u8,();
+(WellTopMenu_EvilMapStartMenuItem)__receiver,(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WellTopMenu_EvilMapStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d530usize)as*mut u8, ::unity2::Il2CppString;
+(WellTopMenu_EvilMapStartMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <WellTopMenu_EvilMapStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d6d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(WellTopMenu_EvilMapStartMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellTopMenu_EvilMapStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d8a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellTopMenu_EvilMapStartMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellTopMenu_EvilMapStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2db50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellTopMenu_EvilMapStartMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-welltopmenu")]impl<__T:IWellTopMenu_EvilMapStartMenuItem>IWellTopMenu_EvilMapStartMenuItemMethods for __T{}
+
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu_EvilMapStartMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu_EvilMapStartMenuItem{#[doc="`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::welltopmenu::WellTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellTopMenu_EvilMapStartMenuItem), ::core::stringify!(new),));
+ <Self as IWellTopMenu_EvilMapStartMenuItemMethods> ::ctor(this,event_handler);
+this}
+}
+
+#[cfg(feature="app-welltopmenu")]pub trait IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods:IWellTopMenu_EvilMapChangeDifficultyMenuItem{#[doc="`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <WellTopMenu_EvilMapChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d160usize)as*mut u8,();
+(WellTopMenu_EvilMapChangeDifficultyMenuItem)__receiver,(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WellTopMenu_EvilMapChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d1a0usize)as*mut u8, ::unity2::Il2CppString;
+(WellTopMenu_EvilMapChangeDifficultyMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <WellTopMenu_EvilMapChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d220usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(WellTopMenu_EvilMapChangeDifficultyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellTopMenu_EvilMapChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d3f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellTopMenu_EvilMapChangeDifficultyMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellTopMenu_EvilMapChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2d4e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellTopMenu_EvilMapChangeDifficultyMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-welltopmenu")]impl<__T:IWellTopMenu_EvilMapChangeDifficultyMenuItem>IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods for __T{}
+
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu_EvilMapChangeDifficultyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu_EvilMapChangeDifficultyMenuItem{#[doc="`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::welltopmenu::WellTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellTopMenu_EvilMapChangeDifficultyMenuItem), ::core::stringify!(new),));
+ <Self as IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods> ::ctor(this,event_handler);
+this}
+}
+
+#[cfg(feature="app-welltopmenu")]pub trait IWellTopMenu_ItemExchangeMenuItemMethods:IWellTopMenu_ItemExchangeMenuItem{#[doc="`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::welltopmenu::WellTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <WellTopMenu_ItemExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2db60usize)as*mut u8,();
+(WellTopMenu_ItemExchangeMenuItem)__receiver,(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WellTopMenu_ItemExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2dba0usize)as*mut u8, ::unity2::Il2CppString;
+(WellTopMenu_ItemExchangeMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <WellTopMenu_ItemExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2dc20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(WellTopMenu_ItemExchangeMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellTopMenu_ItemExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2dc90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellTopMenu_ItemExchangeMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellTopMenu_ItemExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2dce0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellTopMenu_ItemExchangeMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-welltopmenu")]impl<__T:IWellTopMenu_ItemExchangeMenuItem>IWellTopMenu_ItemExchangeMenuItemMethods for __T{}
+
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu_ItemExchangeMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-welltopmenu")]impl WellTopMenu_ItemExchangeMenuItem{#[doc="`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::welltopmenu::WellTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellTopMenu_ItemExchangeMenuItem), ::core::stringify!(new),));
+ <Self as IWellTopMenu_ItemExchangeMenuItemMethods> ::ctor(this,event_handler);
+this}
 }
 
 #[cfg(feature = "app-welltopmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::WellTopMenu_MenuResult;
     pub use super::WellTopMenu;
     pub use super::IWellTopMenu;
     pub use super::IWellTopMenuMethods;
-    pub use super::WellTopMenu_EvilMapStartMenuItem;
-    pub use super::IWellTopMenu_EvilMapStartMenuItem;
-    pub use super::IWellTopMenu_EvilMapStartMenuItemMethods;
-    pub use super::WellTopMenu_MenuResult;
-    pub use super::WellTopMenu_ItemExchangeMenuItem;
-    pub use super::IWellTopMenu_ItemExchangeMenuItem;
-    pub use super::IWellTopMenu_ItemExchangeMenuItemMethods;
     pub use super::WellTopMenu_DecideEventHandler;
     pub use super::IWellTopMenu_DecideEventHandler;
     pub use super::IWellTopMenu_DecideEventHandlerMethods;
+    pub use super::WellTopMenu_EvilMapStartMenuItem;
+    pub use super::IWellTopMenu_EvilMapStartMenuItem;
+    pub use super::IWellTopMenu_EvilMapStartMenuItemMethods;
     pub use super::WellTopMenu_EvilMapChangeDifficultyMenuItem;
     pub use super::IWellTopMenu_EvilMapChangeDifficultyMenuItem;
     pub use super::IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods;
+    pub use super::WellTopMenu_ItemExchangeMenuItem;
+    pub use super::IWellTopMenu_ItemExchangeMenuItem;
+    pub use super::IWellTopMenu_ItemExchangeMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

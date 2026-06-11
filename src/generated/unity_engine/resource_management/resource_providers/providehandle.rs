@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/providehandle/ProvideHandle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ProvideHandle {
-    pub m_version: i32,
-    pub m_internal_op: crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation,
-    pub m_resource_manager: crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/providehandle/ProvideHandle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ProvideHandle{pub m_version:i32,pub m_internal_op:crate::unity_engine::resource_management::async_operations::igenericprovideroperation::IGenericProviderOperation,pub m_resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,}
+impl::unity2::ClassIdentity for ProvideHandle{const NAMESPACE: &'static str="UnityEngine.ResourceManagement.ResourceProviders";
+const NAME: &'static str="ProvideHandle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ProvideHandle {
-    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.ResourceProviders";
-
-    const NAME: &'static str = "ProvideHandle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ProvideHandle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ProvideHandle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,14 +26,172 @@ impl ::unity2::IlType for ProvideHandle {
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providehandle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-providehandle")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProvideHandle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_internal_op { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "get_InternalOp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "get_InternalOp" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_resource_manager { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "get_ResourceManager" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "get_ResourceManager" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "get_Type" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "get_Type" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "get_Location" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "get_Location" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dependency_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "get_DependencyCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "get_DependencyCount" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dependencies { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "GetDependencies" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "GetDependencies" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_progress_callback { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: func_1 :: Func_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "SetProgressCallback" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "SetProgressCallback" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_download_progress_callbacks { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: func_1 :: Func_1 < crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "SetDownloadProgressCallbacks" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "SetDownloadProgressCallbacks" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_wait_for_completion_callback { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: func_1 :: Func_1 < bool > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "SetWaitForCompletionCallback" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "SetWaitForCompletionCallback" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-providehandle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProvideHandle_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resourcemanager::ResourceManager as::unity2::IlType> ::il_type(), <crate::unity_engine::resource_management::async_operations::igenericprovideroperation::IGenericProviderOperation as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_internal_op{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"get_InternalOp",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"get_InternalOp",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_resource_manager{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"get_ResourceManager",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"get_ResourceManager",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"get_Type",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"get_Type",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_location{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"get_Location",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"get_Location",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_dependency_count{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"get_DependencyCount",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"get_DependencyCount",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_dependencies{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"GetDependencies",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"GetDependencies",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_progress_callback{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::func_1::Func_1<f32>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"SetProgressCallback",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"SetProgressCallback",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_download_progress_callbacks{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"SetDownloadProgressCallbacks",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"SetDownloadProgressCallbacks",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_wait_for_completion_callback{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::func_1::Func_1<bool>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ProvideHandle as::unity2::ClassIdentity> ::class(),"SetWaitForCompletionCallback",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"SetWaitForCompletionCallback",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-providehandle")]
-impl ProvideHandle { # [doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::igenericprovideroperation::IGenericProviderOperation)` overload"] pub fn ctor (& mut self , rm : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager > , op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: convert :: Into :: into (rm) , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`get_InternalOp()` overload"] pub fn get_internal_op (& mut self ,) -> crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_get_internal_op :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_ResourceManager()` overload"] pub fn get_resource_manager (& mut self ,) -> crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_get_resource_manager :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_Type()` overload"] pub fn get_type (& mut self ,) -> :: unity2 :: SystemType { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_get_type :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_Location()` overload"] pub fn get_location (& mut self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_get_location :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_DependencyCount()` overload"] pub fn get_dependency_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_get_dependency_count :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: option :: Option :: None) } } } pub fn get_dependency < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (& mut self , index : impl :: core :: convert :: Into < i32 >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< ProvideHandle as :: unity2 :: ClassIdentity > :: class () , "GetDependency" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProvideHandle as :: unity2 :: ClassIdentity > :: NAME , "GetDependency" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (* mut ProvideHandle , i32 , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (self as * mut ProvideHandle , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetDependencies(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>)` overload"] pub fn get_dependencies (& mut self , list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_get_dependencies :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } # [doc = "`SetProgressCallback(crate::system::func_1::Func_1<f32>)` overload"] pub fn set_progress_callback (& mut self , callback : impl :: core :: convert :: Into < crate :: system :: func_1 :: Func_1 < f32 > >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , crate :: system :: func_1 :: Func_1 < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_set_progress_callback :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`SetDownloadProgressCallbacks(crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus>)` overload"] pub fn set_download_progress_callbacks (& mut self , callback : impl :: core :: convert :: Into < crate :: system :: func_1 :: Func_1 < crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus > >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , crate :: system :: func_1 :: Func_1 < crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_set_download_progress_callbacks :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`SetWaitForCompletionCallback(crate::system::func_1::Func_1<bool>)` overload"] pub fn set_wait_for_completion_callback (& mut self , callback : impl :: core :: convert :: Into < crate :: system :: func_1 :: Func_1 < bool > >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProvideHandle , crate :: system :: func_1 :: Func_1 < bool > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__ProvideHandle_unity2_raw :: __lookup_set_wait_for_completion_callback :: get_method_info () . method_ptr)) ; __inner (self as * mut ProvideHandle , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-providehandle")]impl ProvideHandle{#[doc="`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::igenericprovideroperation::IGenericProviderOperation)` overload"]pub fn ctor(&mut self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::igenericprovideroperation::IGenericProviderOperation>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_ctor::get_method_info().method_ptr),();
+(*mut ProvideHandle)self as*mut ProvideHandle,(crate::unity_engine::resource_management::resourcemanager::ResourceManager)::core::convert::Into::into(rm),(crate::unity_engine::resource_management::async_operations::igenericprovideroperation::IGenericProviderOperation)::core::convert::Into::into(op))}
+}
+#[doc="`get_InternalOp()` overload"]pub fn get_internal_op(&mut self,)->crate::unity_engine::resource_management::async_operations::igenericprovideroperation::IGenericProviderOperation{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_get_internal_op::get_method_info().method_ptr),crate::unity_engine::resource_management::async_operations::igenericprovideroperation::IGenericProviderOperation;
+(*mut ProvideHandle)self as*mut ProvideHandle)}
+}
+#[doc="`get_ResourceManager()` overload"]pub fn get_resource_manager(&mut self,)->crate::unity_engine::resource_management::resourcemanager::ResourceManager{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_get_resource_manager::get_method_info().method_ptr),crate::unity_engine::resource_management::resourcemanager::ResourceManager;
+(*mut ProvideHandle)self as*mut ProvideHandle)}
+}
+#[doc="`get_Type()` overload"]pub fn get_type(&mut self,)-> ::unity2::SystemType{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_get_type::get_method_info().method_ptr), ::unity2::SystemType;
+(*mut ProvideHandle)self as*mut ProvideHandle)}
+}
+#[doc="`get_Location()` overload"]pub fn get_location(&mut self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_get_location::get_method_info().method_ptr),crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation;
+(*mut ProvideHandle)self as*mut ProvideHandle)}
+}
+#[doc="`get_DependencyCount()` overload"]pub fn get_dependency_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_get_dependency_count::get_method_info().method_ptr),i32;
+(*mut ProvideHandle)self as*mut ProvideHandle)}
+}
+pub fn get_dependency<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(&mut self,index:impl::core::convert::Into<i32>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<ProvideHandle as::unity2::ClassIdentity> ::class(),"GetDependency",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ProvideHandle as::unity2::ClassIdentity> ::NAME,"GetDependency",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(*mut ProvideHandle,i32, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(self as*mut ProvideHandle, ::core::convert::Into::into(index), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetDependencies(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>)` overload"]pub fn get_dependencies(&mut self,list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_get_dependencies::get_method_info().method_ptr),();
+(*mut ProvideHandle)self as*mut ProvideHandle,(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>)::core::convert::Into::into(list))}
+}
+#[doc="`SetProgressCallback(crate::system::func_1::Func_1<f32>)` overload"]pub fn set_progress_callback(&mut self,callback:impl::core::convert::Into<crate::system::func_1::Func_1<f32> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_set_progress_callback::get_method_info().method_ptr),();
+(*mut ProvideHandle)self as*mut ProvideHandle,(crate::system::func_1::Func_1<f32>)::core::convert::Into::into(callback))}
+}
+#[doc="`SetDownloadProgressCallbacks(crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus>)` overload"]pub fn set_download_progress_callbacks(&mut self,callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_set_download_progress_callbacks::get_method_info().method_ptr),();
+(*mut ProvideHandle)self as*mut ProvideHandle,(crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus>)::core::convert::Into::into(callback))}
+}
+#[doc="`SetWaitForCompletionCallback(crate::system::func_1::Func_1<bool>)` overload"]pub fn set_wait_for_completion_callback(&mut self,callback:impl::core::convert::Into<crate::system::func_1::Func_1<bool> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__ProvideHandle_unity2_raw::__lookup_set_wait_for_completion_callback::get_method_info().method_ptr),();
+(*mut ProvideHandle)self as*mut ProvideHandle,(crate::system::func_1::Func_1<bool>)::core::convert::Into::into(callback))}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-providehandle")]
-impl ProvideHandle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_internal_op_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_resource_manager_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_dependency_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_dependencies_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_progress_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_download_progress_callbacks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_wait_for_completion_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProvideHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-providehandle")]impl ProvideHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_internal_op_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_resource_manager_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_dependency_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_progress_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_download_progress_callbacks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_wait_for_completion_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providehandle")]
 #[doc(hidden)]

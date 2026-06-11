@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/misc/Misc.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Misc")] # [parent (crate :: system :: object :: Object)] pub struct Misc {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/misc/Misc.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Misc")]#[parent(crate::system::object::Object)]pub struct Misc{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-misc-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-misc")]
-impl Misc { # [doc = "`Destroy(crate::unity_engine::object_2::Object_2)` overload"] pub fn destroy (obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`DestroyImmediate(crate::unity_engine::object_2::Object_2)` overload"] pub fn destroy_immediate (obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-misc")]impl Misc{#[doc="`Destroy(crate::unity_engine::object_2::Object_2)` overload"]pub fn destroy(obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d200usize)as*mut u8,();
+(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
+}
+#[doc="`DestroyImmediate(crate::unity_engine::object_2::Object_2)` overload"]pub fn destroy_immediate(obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d330usize)as*mut u8,();
+(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-misc")]
-impl Misc { pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Misc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn destroy_immediate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Misc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-ui-misc")]impl Misc{pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn destroy_immediate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-ui-misc")]
 #[doc(hidden)]

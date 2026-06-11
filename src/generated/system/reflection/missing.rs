@@ -4,35 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/missing/Missing.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Missing")] # [parent (crate :: system :: object :: Object)] pub struct Missing {
-# [static_field] # [rename (name = "Value")] pub value : crate :: system :: reflection :: missing :: Missing ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/missing/Missing.md"))]#[::unity2::class(namespace="System.Reflection",name="Missing")]#[parent(crate::system::object::Object)]pub struct Missing{#[static_field]#[rename(name="Value")]pub value:crate::system::reflection::missing::Missing,}
 
 }
 
 #[cfg(feature = "system-reflection-missing-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-missing")]
-impl Missing { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3379a10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-missing")]impl Missing{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3379a10usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-reflection-missing")]
-pub trait IMissingMethods : IMissing { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Missing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Missing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3379990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-missing")]pub trait IMissingMethods:IMissing{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Missing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3379990usize)as*mut u8,();
+(Missing)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-missing")]
-impl < __T : IMissing > IMissingMethods for __T { }
+#[cfg(feature="system-reflection-missing")]impl<__T:IMissing>IMissingMethods for __T{}
 
-#[cfg(feature = "system-reflection-missing")]
-impl Missing { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Missing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Missing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-reflection-missing")]impl Missing{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "system-reflection-missing")]
-impl Missing {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Missing) , :: core :: stringify ! (new) ,)) ; < Self as IMissingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-missing")]impl Missing{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Missing), ::core::stringify!(new),));
+ <Self as IMissingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-missing")]

@@ -4,75 +4,185 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: mapbasicmenuitem :: { IMapBasicMenuItem , MapBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::mapbasicmenuitem::{IMapBasicMenuItem,MapBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTopMenuShopSubMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct SortieTopMenuShopSubMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu.md"))]#[::unity2::class(namespace="App",name="SortieTopMenuShopSubMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SortieTopMenuShopSubMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu_ItemShopMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTopMenuShopSubMenu.ItemShopMenuItem")] # [parent (crate :: app :: mapbasicmenuitem :: MapBasicMenuItem)] pub struct SortieTopMenuShopSubMenu_ItemShopMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu_ItemShopMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenuShopSubMenu.ItemShopMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct SortieTopMenuShopSubMenu_ItemShopMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu_WeaponShopMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTopMenuShopSubMenu.WeaponShopMenuItem")] # [parent (crate :: app :: mapbasicmenuitem :: MapBasicMenuItem)] pub struct SortieTopMenuShopSubMenu_WeaponShopMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenushopsubmenu/SortieTopMenuShopSubMenu_WeaponShopMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenuShopSubMenu.WeaponShopMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct SortieTopMenuShopSubMenu_WeaponShopMenuItem{}
 
 }
 
 #[cfg(feature = "app-sortietopmenushopsubmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl SortieTopMenuShopSubMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (parent_menu : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ee3a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent_menu) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-pub trait ISortieTopMenuShopSubMenuMethods : ISortieTopMenuShopSubMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < SortieTopMenuShopSubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ee580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieTopMenuShopSubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ee590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SortieTopMenuShopSubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ee5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlusCall()` overload"] fn plus_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SortieTopMenuShopSubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ee700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl < __T : ISortieTopMenuShopSubMenu > ISortieTopMenuShopSubMenuMethods for __T { }
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl SortieTopMenuShopSubMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn plus_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl SortieTopMenuShopSubMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTopMenuShopSubMenu) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTopMenuShopSubMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl SortieTopMenuShopSubMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(parent_menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ee3a0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(parent_menu),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
 }
 
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-pub trait ISortieTopMenuShopSubMenu_ItemShopMenuItemMethods : ISortieTopMenuShopSubMenu_ItemShopMenuItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d79d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d79d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d79e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d79e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d79f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d79f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d79fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_ItemShopMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl < __T : ISortieTopMenuShopSubMenu_ItemShopMenuItem > ISortieTopMenuShopSubMenu_ItemShopMenuItemMethods for __T { }
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl SortieTopMenuShopSubMenu_ItemShopMenuItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_ItemShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl SortieTopMenuShopSubMenu_ItemShopMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTopMenuShopSubMenu_ItemShopMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTopMenuShopSubMenu_ItemShopMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortietopmenushopsubmenu")]pub trait ISortieTopMenuShopSubMenuMethods:ISortieTopMenuShopSubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <SortieTopMenuShopSubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ee580usize)as*mut u8,();
+(SortieTopMenuShopSubMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenuShopSubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ee590usize)as*mut u8, ::unity2::Il2CppString;
+(SortieTopMenuShopSubMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenuShopSubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ee5e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SortieTopMenuShopSubMenu)__receiver)}
+}
+#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenuShopSubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ee700usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SortieTopMenuShopSubMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-pub trait ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods : ISortieTopMenuShopSubMenu_WeaponShopMenuItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a3e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuShopSubMenu_WeaponShopMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl<__T:ISortieTopMenuShopSubMenu>ISortieTopMenuShopSubMenuMethods for __T{}
 
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl < __T : ISortieTopMenuShopSubMenu_WeaponShopMenuItem > ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods for __T { }
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl SortieTopMenuShopSubMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl SortieTopMenuShopSubMenu_WeaponShopMenuItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuShopSubMenu_WeaponShopMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl SortieTopMenuShopSubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenuShopSubMenu), ::core::stringify!(new),));
+ <Self as ISortieTopMenuShopSubMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
 
-#[cfg(feature = "app-sortietopmenushopsubmenu")]
-impl SortieTopMenuShopSubMenu_WeaponShopMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTopMenuShopSubMenu_WeaponShopMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortietopmenushopsubmenu")]pub trait ISortieTopMenuShopSubMenu_ItemShopMenuItemMethods:ISortieTopMenuShopSubMenu_ItemShopMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79d40usize)as*mut u8, ::unity2::Il2CppString;
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79d90usize)as*mut u8, ::unity2::Il2CppString;
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79e10usize)as*mut u8, ::unity2::Il2CppString;
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79e90usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79f40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79f50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79fb0usize)as*mut u8,();
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a0c0usize)as*mut u8,();
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenuShopSubMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a1d0usize)as*mut u8,();
+(SortieTopMenuShopSubMenu_ItemShopMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl<__T:ISortieTopMenuShopSubMenu_ItemShopMenuItem>ISortieTopMenuShopSubMenu_ItemShopMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl SortieTopMenuShopSubMenu_ItemShopMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl SortieTopMenuShopSubMenu_ItemShopMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenuShopSubMenu_ItemShopMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenuShopSubMenu_ItemShopMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenushopsubmenu")]pub trait ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods:ISortieTopMenuShopSubMenu_WeaponShopMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a1e0usize)as*mut u8, ::unity2::Il2CppString;
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a230usize)as*mut u8, ::unity2::Il2CppString;
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a2b0usize)as*mut u8, ::unity2::Il2CppString;
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a330usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a3e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a3f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a450usize)as*mut u8,();
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a560usize)as*mut u8,();
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenuShopSubMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a670usize)as*mut u8,();
+(SortieTopMenuShopSubMenu_WeaponShopMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl<__T:ISortieTopMenuShopSubMenu_WeaponShopMenuItem>ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl SortieTopMenuShopSubMenu_WeaponShopMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-sortietopmenushopsubmenu")]impl SortieTopMenuShopSubMenu_WeaponShopMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenuShopSubMenu_WeaponShopMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortietopmenushopsubmenu")]

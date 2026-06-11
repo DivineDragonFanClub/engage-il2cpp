@@ -4,51 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/boneweight/BoneWeight.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BoneWeight {
-    pub m_weight0: f32,
-    pub m_weight1: f32,
-    pub m_weight2: f32,
-    pub m_weight3: f32,
-    pub m_bone_index0: i32,
-    pub m_bone_index1: i32,
-    pub m_bone_index2: i32,
-    pub m_bone_index3: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/boneweight/BoneWeight.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BoneWeight{pub m_weight0:f32,pub m_weight1:f32,pub m_weight2:f32,pub m_weight3:f32,pub m_bone_index0:i32,pub m_bone_index1:i32,pub m_bone_index2:i32,pub m_bone_index3:i32,}
+impl::unity2::ClassIdentity for BoneWeight{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="BoneWeight";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for BoneWeight {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "BoneWeight";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for BoneWeight {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for BoneWeight{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -56,11 +26,53 @@ impl ::unity2::IlType for BoneWeight {
 #[cfg(feature = "unity_engine-boneweight-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-boneweight")]
-impl BoneWeight { # [doc = "`get_weight0()` overload"] pub fn get_weight0 (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37c20usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`get_weight1()` overload"] pub fn get_weight1 (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37c30usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`get_weight2()` overload"] pub fn get_weight2 (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37c40usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`get_weight3()` overload"] pub fn get_weight3 (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37c50usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`get_boneIndex0()` overload"] pub fn get_bone_index0 (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37c60usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`get_boneIndex1()` overload"] pub fn get_bone_index1 (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37c70usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`get_boneIndex2()` overload"] pub fn get_bone_index2 (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37c80usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`get_boneIndex3()` overload"] pub fn get_bone_index3 (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37c90usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37ca0usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37dc0usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::boneweight::BoneWeight)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: boneweight :: BoneWeight >) -> bool { unsafe { { let __inner : extern "C" fn (* mut BoneWeight , crate :: unity_engine :: boneweight :: BoneWeight , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37e60usize) as * mut u8) ; __inner (self as * mut BoneWeight , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-boneweight")]impl BoneWeight{#[doc="`get_weight0()` overload"]pub fn get_weight0(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37c20usize)as*mut u8,f32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`get_weight1()` overload"]pub fn get_weight1(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37c30usize)as*mut u8,f32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`get_weight2()` overload"]pub fn get_weight2(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37c40usize)as*mut u8,f32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`get_weight3()` overload"]pub fn get_weight3(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37c50usize)as*mut u8,f32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`get_boneIndex0()` overload"]pub fn get_bone_index0(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37c60usize)as*mut u8,i32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`get_boneIndex1()` overload"]pub fn get_bone_index1(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37c70usize)as*mut u8,i32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`get_boneIndex2()` overload"]pub fn get_bone_index2(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37c80usize)as*mut u8,i32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`get_boneIndex3()` overload"]pub fn get_bone_index3(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37c90usize)as*mut u8,i32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37ca0usize)as*mut u8,i32;
+(*mut BoneWeight)self as*mut BoneWeight)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37dc0usize)as*mut u8,bool;
+(*mut BoneWeight)self as*mut BoneWeight,(crate::system::object::Object)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::boneweight::BoneWeight)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::boneweight::BoneWeight>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37e60usize)as*mut u8,bool;
+(*mut BoneWeight)self as*mut BoneWeight,(crate::unity_engine::boneweight::BoneWeight)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-boneweight")]
-impl BoneWeight { pub fn get_weight0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_weight1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_weight2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_weight3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_bone_index0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_bone_index1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_bone_index2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_bone_index3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoneWeight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-boneweight")]impl BoneWeight{pub fn get_weight0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_weight1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_weight2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_weight3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_bone_index0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_bone_index1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_bone_index2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_bone_index3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "unity_engine-boneweight")]
 #[doc(hidden)]

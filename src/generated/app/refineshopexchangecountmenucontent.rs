@@ -4,57 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangecountmenucontent/RefineShopExchangeCountMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopExchangeCountMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct RefineShopExchangeCountMenuContent {
-# [offset (232)] # [rename (name = "m_HelpText")] pub m_help_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_SourceCaptionText")] pub m_source_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_SourceIconImage")] pub m_source_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (256)] # [rename (name = "m_SourceNameText")] pub m_source_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (264)] # [rename (name = "m_SourceValueText")] pub m_source_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_TargetCaptionText")] pub m_target_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (280)] # [rename (name = "m_TargetIconImage")] pub m_target_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (288)] # [rename (name = "m_TargetNameText")] pub m_target_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (296)] # [rename (name = "m_TargetValueText")] pub m_target_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (304)] # [rename (name = "m_ArrowLeft")] pub m_arrow_left : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (312)] # [rename (name = "m_ArrowRignt")] pub m_arrow_rignt : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (320)] # [rename (name = "m_CountUpDownText")] pub m_count_up_down_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (328)] # [rename (name = "m_DecideText")] pub m_decide_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (336)] # [rename (name = "m_MenuItemContent")] pub m_menu_item_content : crate :: app :: basicmenuitemcontent :: BasicMenuItemContent ,
-# [offset (344)] # [rename (name = "m_textBaseColor")] pub m_text_base_color : crate :: unity_engine :: color :: Color ,
-# [offset (360)] # [rename (name = "m_NotEnnoughColor")] pub m_not_ennough_color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangecountmenucontent/RefineShopExchangeCountMenuContent.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeCountMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct RefineShopExchangeCountMenuContent{#[offset(232)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_SourceCaptionText")]pub m_source_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_SourceIconImage")]pub m_source_icon_image:crate::unity_engine::ui::image::Image, #[offset(256)]#[rename(name="m_SourceNameText")]pub m_source_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_SourceValueText")]pub m_source_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_TargetCaptionText")]pub m_target_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_TargetIconImage")]pub m_target_icon_image:crate::unity_engine::ui::image::Image, #[offset(288)]#[rename(name="m_TargetNameText")]pub m_target_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_TargetValueText")]pub m_target_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_ArrowLeft")]pub m_arrow_left:crate::unity_engine::gameobject::GameObject, #[offset(312)]#[rename(name="m_ArrowRignt")]pub m_arrow_rignt:crate::unity_engine::gameobject::GameObject, #[offset(320)]#[rename(name="m_CountUpDownText")]pub m_count_up_down_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(328)]#[rename(name="m_DecideText")]pub m_decide_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(336)]#[rename(name="m_MenuItemContent")]pub m_menu_item_content:crate::app::basicmenuitemcontent::BasicMenuItemContent, #[offset(344)]#[rename(name="m_textBaseColor")]pub m_text_base_color:crate::unity_engine::color::Color, #[offset(360)]#[rename(name="m_NotEnnoughColor")]pub m_not_ennough_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-refineshopexchangecountmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopexchangecountmenucontent")]
-pub trait IRefineShopExchangeCountMenuContentMethods : IRefineShopExchangeCountMenuContent { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2960bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2960be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2960f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMenuItemContent()` overload"] fn build_menu_item_content (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29614e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295fc00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateValues()` overload"] fn update_values (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295ff30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopexchangecountmenucontent")]pub trait IRefineShopExchangeCountMenuContentMethods:IRefineShopExchangeCountMenuContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2960bd0usize)as*mut u8,();
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2960be0usize)as*mut u8,();
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2960f50usize)as*mut u8,();
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961280usize)as*mut u8,();
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961380usize)as*mut u8,i32;
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961400usize)as*mut u8,f32;
+(RefineShopExchangeCountMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29614e0usize)as*mut u8,f32;
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961500usize)as*mut u8,f32;
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295fc00usize)as*mut u8,();
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`UpdateValues()` overload"]fn update_values(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295ff30usize)as*mut u8,();
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961530usize)as*mut u8,();
+(RefineShopExchangeCountMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopexchangecountmenucontent")]
-impl < __T : IRefineShopExchangeCountMenuContent > IRefineShopExchangeCountMenuContentMethods for __T { }
+#[cfg(feature="app-refineshopexchangecountmenucontent")]impl<__T:IRefineShopExchangeCountMenuContent>IRefineShopExchangeCountMenuContentMethods for __T{}
 
-#[cfg(feature = "app-refineshopexchangecountmenucontent")]
-impl RefineShopExchangeCountMenuContent { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-refineshopexchangecountmenucontent")]impl RefineShopExchangeCountMenuContent{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-refineshopexchangecountmenucontent")]
-impl RefineShopExchangeCountMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopExchangeCountMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopExchangeCountMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineshopexchangecountmenucontent")]impl RefineShopExchangeCountMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeCountMenuContent), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeCountMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineshopexchangecountmenucontent")]

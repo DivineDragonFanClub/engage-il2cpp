@@ -4,37 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: stream_2 :: { IStream_2 , Stream_2 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::stream_2::{IStream_2,Stream_2}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugstream/DebugStream.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugStream")] # [parent (crate :: app :: stream_2 :: Stream_2)] pub struct DebugStream {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugstream/DebugStream.md"))]#[::unity2::class(namespace="App",name="DebugStream")]#[parent(crate::app::stream_2::Stream_2)]pub struct DebugStream{}
 
 }
 
 #[cfg(feature = "app-debugstream-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugstream")]
-impl DebugStream { # [doc = "`Delete(::unity2::Il2CppString)` overload"] pub fn delete (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a10410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugstream")]impl DebugStream{#[doc="`Delete(::unity2::Il2CppString)` overload"]pub fn delete(name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a10410usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "app-debugstream")]
-pub trait IDebugStreamMethods : IDebugStream { # [doc = "`.ctor(i32)` overload"] fn ctor (self , size : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugStream , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a103b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor_2 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugStream , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a103c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: option :: Option :: None) } } } # [doc = "`Save(::unity2::Il2CppString)` overload"] fn save (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugStream , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a103d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString)` overload"] fn load (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugStream , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a103e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`WriteMembers(crate::system::object::Object)` overload"] fn write_members (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugStream , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a103f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`ReadMembers(crate::system::object::Object)` overload"] fn read_members (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < DebugStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugStream , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a10400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugstream")]pub trait IDebugStreamMethods:IDebugStream{#[doc="`.ctor(i32)` overload"]fn ctor(self,size:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DebugStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a103b0usize)as*mut u8,();
+(DebugStream)__receiver,(i32)::core::convert::Into::into(size))}
+}
+#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <DebugStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a103c0usize)as*mut u8,();
+(DebugStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer))}
+}
+#[doc="`Save(::unity2::Il2CppString)` overload"]fn save(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a103d0usize)as*mut u8,();
+(DebugStream)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Load(::unity2::Il2CppString)` overload"]fn load(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a103e0usize)as*mut u8,bool;
+(DebugStream)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`WriteMembers(crate::system::object::Object)` overload"]fn write_members(self,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <DebugStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a103f0usize)as*mut u8,();
+(DebugStream)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`ReadMembers(crate::system::object::Object)` overload"]fn read_members(self,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <DebugStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a10400usize)as*mut u8,();
+(DebugStream)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "app-debugstream")]
-impl < __T : IDebugStream > IDebugStreamMethods for __T { }
+#[cfg(feature="app-debugstream")]impl<__T:IDebugStream>IDebugStreamMethods for __T{}
 
-#[cfg(feature = "app-debugstream")]
-impl DebugStream { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn save_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn write_members_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn read_members_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-debugstream")]impl DebugStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn write_members_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_members_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-debugstream")]
-impl DebugStream {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (size : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugStream) , :: core :: stringify ! (new) ,)) ; < Self as IDebugStreamMethods > :: ctor (this , size) ; this }
-
-# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new_2 (buffer : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugStream) , :: core :: stringify ! (new_2) ,)) ; < Self as IDebugStreamMethods > :: ctor_2 (this , buffer) ; this }
+#[cfg(feature="app-debugstream")]impl DebugStream{#[doc="`.ctor(i32)` — overload selector"]pub fn new(size:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugStream), ::core::stringify!(new),));
+ <Self as IDebugStreamMethods> ::ctor(this,size);
+this}
+#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new_2(buffer: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugStream), ::core::stringify!(new_2),));
+ <Self as IDebugStreamMethods> ::ctor_2(this,buffer);
+this}
 }
 
 #[cfg(feature = "app-debugstream")]

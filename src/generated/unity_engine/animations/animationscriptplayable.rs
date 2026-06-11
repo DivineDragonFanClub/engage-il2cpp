@@ -4,67 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animationscriptplayable/AnimationScriptPlayable.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AnimationScriptPlayable {
-    pub m_handle: crate :: unity_engine :: playables :: playablehandle :: PlayableHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animations/animationscriptplayable/AnimationScriptPlayable.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AnimationScriptPlayable{pub m_handle:crate::unity_engine::playables::playablehandle::PlayableHandle,}
+impl::unity2::ClassIdentity for AnimationScriptPlayable{const NAMESPACE: &'static str="UnityEngine.Animations";
+const NAME: &'static str="AnimationScriptPlayable";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AnimationScriptPlayable {
-    const NAMESPACE: &'static str = "UnityEngine.Animations";
-
-    const NAME: &'static str = "AnimationScriptPlayable";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for AnimationScriptPlayable{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for AnimationScriptPlayable {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl AnimationScriptPlayable{#[inline]pub fn m_null_playable()->crate::unity_engine::animations::animationscriptplayable::AnimationScriptPlayable{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayable");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_m_null_playable(value:crate::unity_engine::animations::animationscriptplayable::AnimationScriptPlayable){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayable");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl AnimationScriptPlayable {
-    #[inline]
-    pub fn m_null_playable() -> crate :: unity_engine :: animations :: animationscriptplayable :: AnimationScriptPlayable {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_m_null_playable(value: crate :: unity_engine :: animations :: animationscriptplayable :: AnimationScriptPlayable) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -72,14 +34,27 @@ impl AnimationScriptPlayable {
 #[cfg(feature = "unity_engine-animations-animationscriptplayable-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animations-animationscriptplayable")]
-impl AnimationScriptPlayable { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb0330usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animations-animationscriptplayable")]impl AnimationScriptPlayable{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb0330usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animationscriptplayable")]
-impl AnimationScriptPlayable { # [doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut AnimationScriptPlayable , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb01d0usize) as * mut u8) ; __inner (self as * mut AnimationScriptPlayable , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { { let __inner : extern "C" fn (* mut AnimationScriptPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb0290usize) as * mut u8) ; __inner (self as * mut AnimationScriptPlayable , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::animations::animationscriptplayable::AnimationScriptPlayable)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationscriptplayable :: AnimationScriptPlayable >) -> bool { unsafe { { let __inner : extern "C" fn (* mut AnimationScriptPlayable , crate :: unity_engine :: animations :: animationscriptplayable :: AnimationScriptPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb02a0usize) as * mut u8) ; __inner (self as * mut AnimationScriptPlayable , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animations-animationscriptplayable")]impl AnimationScriptPlayable{#[doc="`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb01d0usize)as*mut u8,();
+(*mut AnimationScriptPlayable)self as*mut AnimationScriptPlayable,(crate::unity_engine::playables::playablehandle::PlayableHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playablehandle::PlayableHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb0290usize)as*mut u8,crate::unity_engine::playables::playablehandle::PlayableHandle;
+(*mut AnimationScriptPlayable)self as*mut AnimationScriptPlayable)}
+}
+#[doc="`Equals(crate::unity_engine::animations::animationscriptplayable::AnimationScriptPlayable)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::animations::animationscriptplayable::AnimationScriptPlayable>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb02a0usize)as*mut u8,bool;
+(*mut AnimationScriptPlayable)self as*mut AnimationScriptPlayable,(crate::unity_engine::animations::animationscriptplayable::AnimationScriptPlayable)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animationscriptplayable")]
-impl AnimationScriptPlayable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationScriptPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationScriptPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationScriptPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationScriptPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-animations-animationscriptplayable")]impl AnimationScriptPlayable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-animations-animationscriptplayable")]
 #[doc(hidden)]

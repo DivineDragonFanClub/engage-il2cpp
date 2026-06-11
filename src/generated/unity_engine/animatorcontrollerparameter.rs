@@ -4,36 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatorcontrollerparameter/AnimatorControllerParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AnimatorControllerParameter")] # [parent (crate :: system :: object :: Object)] pub struct AnimatorControllerParameter {
-# [offset (16)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Type")] pub m_type : crate :: unity_engine :: animatorcontrollerparametertype :: AnimatorControllerParameterType ,
-# [offset (28)] # [rename (name = "m_DefaultFloat")] pub m_default_float : f32 ,
-# [offset (32)] # [rename (name = "m_DefaultInt")] pub m_default_int : i32 ,
-# [offset (36)] # [rename (name = "m_DefaultBool")] pub m_default_bool : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animatorcontrollerparameter/AnimatorControllerParameter.md"))]#[::unity2::class(namespace="UnityEngine",name="AnimatorControllerParameter")]#[parent(crate::system::object::Object)]pub struct AnimatorControllerParameter{#[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Type")]pub m_type:crate::unity_engine::animatorcontrollerparametertype::AnimatorControllerParameterType, #[offset(28)]#[rename(name="m_DefaultFloat")]pub m_default_float:f32, #[offset(32)]#[rename(name="m_DefaultInt")]pub m_default_int:i32, #[offset(36)]#[rename(name="m_DefaultBool")]pub m_default_bool:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-animatorcontrollerparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animatorcontrollerparameter")]
-pub trait IAnimatorControllerParameterMethods : IAnimatorControllerParameter { # [doc = "`get_name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimatorControllerParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimatorControllerParameter , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb6d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , o : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < AnimatorControllerParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimatorControllerParameter , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb6d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < AnimatorControllerParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimatorControllerParameter , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb6e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimatorControllerParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimatorControllerParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb6e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animatorcontrollerparameter")]pub trait IAnimatorControllerParameterMethods:IAnimatorControllerParameter{#[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimatorControllerParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6d70usize)as*mut u8, ::unity2::Il2CppString;
+(AnimatorControllerParameter)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <AnimatorControllerParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6d80usize)as*mut u8,bool;
+(AnimatorControllerParameter)__receiver,(crate::system::object::Object)::core::convert::Into::into(o))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <AnimatorControllerParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6e80usize)as*mut u8,i32;
+(AnimatorControllerParameter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimatorControllerParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6e90usize)as*mut u8,();
+(AnimatorControllerParameter)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-animatorcontrollerparameter")]
-impl < __T : IAnimatorControllerParameter > IAnimatorControllerParameterMethods for __T { }
+#[cfg(feature="unity_engine-animatorcontrollerparameter")]impl<__T:IAnimatorControllerParameter>IAnimatorControllerParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-animatorcontrollerparameter")]
-impl AnimatorControllerParameter { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-animatorcontrollerparameter")]impl AnimatorControllerParameter{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-animatorcontrollerparameter")]
-impl AnimatorControllerParameter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimatorControllerParameter) , :: core :: stringify ! (new) ,)) ; < Self as IAnimatorControllerParameterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-animatorcontrollerparameter")]impl AnimatorControllerParameter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimatorControllerParameter), ::core::stringify!(new),));
+ <Self as IAnimatorControllerParameterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-animatorcontrollerparameter")]

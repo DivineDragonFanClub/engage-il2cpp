@@ -4,34 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyemptymenuitem/AccessoryShopBuyEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopBuyEmptyMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct AccessoryShopBuyEmptyMenuItem {
-# [offset (104)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: accessoryshopbuymenu :: AccessoryShopBuyMenu_SelectEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyemptymenuitem/AccessoryShopBuyEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyEmptyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AccessoryShopBuyEmptyMenuItem{#[offset(104)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler,}
 
 }
 
 #[cfg(feature = "app-accessoryshopbuyemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryshopbuyemptymenuitem")]
-pub trait IAccessoryShopBuyEmptyMenuItemMethods : IAccessoryShopBuyEmptyMenuItem { # [doc = "`get_m_AccessoryKind()` overload"] fn get_m_accessory_kind (self ,) -> crate :: app :: accessorydata :: AccessoryData_Kinds { unsafe { let __receiver = < AccessoryShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_AccessoryKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn set_m_accessory_kind (self , value : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> () { unsafe { let __receiver = < AccessoryShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyEmptyMenuItem , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::accessorydata::AccessoryData_Kinds, crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler)` overload"] fn ctor (self , accessory_kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: accessoryshopbuymenu :: AccessoryShopBuyMenu_SelectEventHandler >) -> () { unsafe { let __receiver = < AccessoryShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyEmptyMenuItem , crate :: app :: accessorydata :: AccessoryData_Kinds , crate :: app :: accessoryshopbuymenu :: AccessoryShopBuyMenu_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (accessory_kind) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AccessoryShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < AccessoryShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AccessoryShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopbuyemptymenuitem")]pub trait IAccessoryShopBuyEmptyMenuItemMethods:IAccessoryShopBuyEmptyMenuItem{#[doc="`get_m_AccessoryKind()` overload"]fn get_m_accessory_kind(self,)->crate::app::accessorydata::AccessoryData_Kinds{unsafe{let __receiver= <AccessoryShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8cc0usize)as*mut u8,crate::app::accessorydata::AccessoryData_Kinds;
+(AccessoryShopBuyEmptyMenuItem)__receiver)}
+}
+#[doc="`set_m_AccessoryKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn set_m_accessory_kind(self,value:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->(){unsafe{let __receiver= <AccessoryShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8cd0usize)as*mut u8,();
+(AccessoryShopBuyEmptyMenuItem)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::accessorydata::AccessoryData_Kinds, crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler)` overload"]fn ctor(self,accessory_kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds> ,select_event_handler:impl::core::convert::Into<crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler>)->(){unsafe{let __receiver= <AccessoryShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8ce0usize)as*mut u8,();
+(AccessoryShopBuyEmptyMenuItem)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(accessory_kind),(crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AccessoryShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8d30usize)as*mut u8, ::unity2::Il2CppString;
+(AccessoryShopBuyEmptyMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <AccessoryShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8db0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(AccessoryShopBuyEmptyMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <AccessoryShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8dc0usize)as*mut u8,();
+(AccessoryShopBuyEmptyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AccessoryShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8e00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AccessoryShopBuyEmptyMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessoryshopbuyemptymenuitem")]
-impl < __T : IAccessoryShopBuyEmptyMenuItem > IAccessoryShopBuyEmptyMenuItemMethods for __T { }
+#[cfg(feature="app-accessoryshopbuyemptymenuitem")]impl<__T:IAccessoryShopBuyEmptyMenuItem>IAccessoryShopBuyEmptyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-accessoryshopbuyemptymenuitem")]
-impl AccessoryShopBuyEmptyMenuItem { pub fn get_m_accessory_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_accessory_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-accessoryshopbuyemptymenuitem")]impl AccessoryShopBuyEmptyMenuItem{pub fn get_m_accessory_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_accessory_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-accessoryshopbuyemptymenuitem")]
-impl AccessoryShopBuyEmptyMenuItem {
-# [doc = "`.ctor(crate::app::accessorydata::AccessoryData_Kinds, crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler)` — overload selector"] pub fn new (accessory_kind : crate :: app :: accessorydata :: AccessoryData_Kinds , select_event_handler : crate :: app :: accessoryshopbuymenu :: AccessoryShopBuyMenu_SelectEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopBuyEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopBuyEmptyMenuItemMethods > :: ctor (this , accessory_kind , select_event_handler) ; this }
+#[cfg(feature="app-accessoryshopbuyemptymenuitem")]impl AccessoryShopBuyEmptyMenuItem{#[doc="`.ctor(crate::app::accessorydata::AccessoryData_Kinds, crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler)` — overload selector"]pub fn new(accessory_kind:crate::app::accessorydata::AccessoryData_Kinds,select_event_handler:crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyEmptyMenuItemMethods> ::ctor(this,accessory_kind,select_event_handler);
+this}
 }
 
 #[cfg(feature = "app-accessoryshopbuyemptymenuitem")]

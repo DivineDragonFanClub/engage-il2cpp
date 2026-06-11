@@ -4,74 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposunit/DisposUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposUnit")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DisposUnit {
-# [static_field] # [rename (name = "LevelMax")] pub level_max : i32 ,
-# [offset (24)] # [rename (name = "m_Person")] pub m_person : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_Job")] pub m_job : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_Force")] pub m_force : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_Level")] pub m_level : i32 ,
-# [offset (52)] # [rename (name = "m_Normal")] pub m_normal : bool ,
-# [offset (53)] # [rename (name = "m_Hard")] pub m_hard : bool ,
-# [offset (54)] # [rename (name = "m_Lunatic")] pub m_lunatic : bool ,
-# [offset (55)] # [rename (name = "新規生成")] pub 新規生成 : bool ,
-# [offset (56)] # [rename (name = "リーダー")] pub リーダー : bool ,
-# [offset (57)] # [rename (name = "移動禁止")] pub 移動禁止 : bool ,
-# [offset (58)] # [rename (name = "進撃位置")] pub 進撃位置 : bool ,
-# [offset (59)] # [rename (name = "進撃強制")] pub 進撃強制 : bool ,
-# [offset (60)] # [rename (name = "進撃固定")] pub 進撃固定 : bool ,
-# [offset (61)] # [rename (name = "外枠配置")] pub 外枠配置 : bool ,
-# [offset (62)] # [rename (name = "ゲスト")] pub ゲスト : bool ,
-# [offset (64)] # [rename (name = "m_Items")] pub m_items : :: unity2 :: Array < crate :: app :: disposunit :: DisposUnit_Item > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposunit/DisposUnit.md"))]#[::unity2::class(namespace="App",name="DisposUnit")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DisposUnit{#[static_field]#[rename(name="LevelMax")]pub level_max:i32, #[offset(24)]#[rename(name="m_Person")]pub m_person: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Job")]pub m_job: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Force")]pub m_force: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Level")]pub m_level:i32, #[offset(52)]#[rename(name="m_Normal")]pub m_normal:bool, #[offset(53)]#[rename(name="m_Hard")]pub m_hard:bool, #[offset(54)]#[rename(name="m_Lunatic")]pub m_lunatic:bool, #[offset(55)]#[rename(name="新規生成")]pub 新規生成:bool, #[offset(56)]#[rename(name="リーダー")]pub リーダー:bool, #[offset(57)]#[rename(name="移動禁止")]pub 移動禁止:bool, #[offset(58)]#[rename(name="進撃位置")]pub 進撃位置:bool, #[offset(59)]#[rename(name="進撃強制")]pub 進撃強制:bool, #[offset(60)]#[rename(name="進撃固定")]pub 進撃固定:bool, #[offset(61)]#[rename(name="外枠配置")]pub 外枠配置:bool, #[offset(62)]#[rename(name="ゲスト")]pub ゲスト:bool, #[offset(64)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::app::disposunit::DisposUnit_Item> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposunit/DisposUnit_Item.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DisposUnit_Item{pub m_item: ::unity2::Il2CppString,pub m_is_drop:bool,}
+impl::unity2::ClassIdentity for DisposUnit_Item{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DisposUnit.Item";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposunit/DisposUnit_Item.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DisposUnit_Item {
-    pub m_item: :: unity2 :: Il2CppString,
-    pub m_is_drop: bool,
-}
-
-
-impl ::unity2::ClassIdentity for DisposUnit_Item {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DisposUnit.Item";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for DisposUnit_Item {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for DisposUnit_Item{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -79,21 +37,41 @@ impl ::unity2::IlType for DisposUnit_Item {
 #[cfg(feature = "app-disposunit-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-disposunit")]
-impl DisposUnit { # [doc = "`GetForceNames()` overload"] pub fn get_force_names () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfbe80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetForceName(i32)` overload"] pub fn get_force_name (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetForceIndex(::unity2::Il2CppString)` overload"] pub fn get_force_index (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc0a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-disposunit")]impl DisposUnit{#[doc="`GetForceNames()` overload"]pub fn get_force_names()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cfbe80usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`GetForceName(i32)` overload"]pub fn get_force_name(index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc060usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetForceIndex(::unity2::Il2CppString)` overload"]pub fn get_force_index(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc0a0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "app-disposunit")]
-pub trait IDisposUnitMethods : IDisposUnit { # [doc = "`GetForceType()` overload"] fn get_force_type (self ,) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < DisposUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DisposUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfbd70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DisposUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DisposUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-disposunit")]pub trait IDisposUnitMethods:IDisposUnit{#[doc="`GetForceType()` overload"]fn get_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <DisposUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfbd70usize)as*mut u8,crate::app::force::Force_Type;
+(DisposUnit)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DisposUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc130usize)as*mut u8,();
+(DisposUnit)__receiver)}
+}
+}
 
-#[cfg(feature = "app-disposunit")]
-impl < __T : IDisposUnit > IDisposUnitMethods for __T { }
+#[cfg(feature="app-disposunit")]impl<__T:IDisposUnit>IDisposUnitMethods for __T{}
 
-#[cfg(feature = "app-disposunit")]
-impl DisposUnit { pub fn get_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisposUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_force_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisposUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_force_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisposUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_force_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisposUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisposUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-disposunit")]impl DisposUnit{pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_force_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_force_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_force_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-disposunit")]
-impl DisposUnit {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposUnit) , :: core :: stringify ! (new) ,)) ; < Self as IDisposUnitMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-disposunit")]impl DisposUnit{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisposUnit), ::core::stringify!(new),));
+ <Self as IDisposUnitMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-disposunit")]

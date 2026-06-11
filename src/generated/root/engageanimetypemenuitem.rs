@@ -4,34 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: configbasicmenuitem :: { ConfigBasicMenuItem , IConfigBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::configbasicmenuitem::{ConfigBasicMenuItem,IConfigBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/engageanimetypemenuitem/EngageAnimeTypeMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "EngageAnimeTypeMenuItem")] # [parent (crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem)] pub struct EngageAnimeTypeMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/engageanimetypemenuitem/EngageAnimeTypeMenuItem.md"))]#[::unity2::class(namespace="",name="EngageAnimeTypeMenuItem")]#[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]pub struct EngageAnimeTypeMenuItem{}
 
 }
 
 #[cfg(feature = "root-engageanimetypemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-engageanimetypemenuitem")]
-pub trait IEngageAnimeTypeMenuItemMethods : IEngageAnimeTypeMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EngageAnimeTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EngageAnimeTypeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e95e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < EngageAnimeTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EngageAnimeTypeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitContent()` overload"] fn init_content (self ,) -> () { unsafe { let __receiver = < EngageAnimeTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EngageAnimeTypeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCommandText()` overload"] fn set_command_text (self ,) -> () { unsafe { let __receiver = < EngageAnimeTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EngageAnimeTypeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e96a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpText()` overload"] fn set_help_text (self ,) -> () { unsafe { let __receiver = < EngageAnimeTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EngageAnimeTypeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-engageanimetypemenuitem")]pub trait IEngageAnimeTypeMenuItemMethods:IEngageAnimeTypeMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EngageAnimeTypeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e95e0usize)as*mut u8,();
+(EngageAnimeTypeMenuItem)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <EngageAnimeTypeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9980usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(EngageAnimeTypeMenuItem)__receiver)}
+}
+#[doc="`InitContent()` overload"]fn init_content(self,)->(){unsafe{let __receiver= <EngageAnimeTypeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9a70usize)as*mut u8,();
+(EngageAnimeTypeMenuItem)__receiver)}
+}
+#[doc="`SetCommandText()` overload"]fn set_command_text(self,)->(){unsafe{let __receiver= <EngageAnimeTypeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e96a0usize)as*mut u8,();
+(EngageAnimeTypeMenuItem)__receiver)}
+}
+#[doc="`SetHelpText()` overload"]fn set_help_text(self,)->(){unsafe{let __receiver= <EngageAnimeTypeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9810usize)as*mut u8,();
+(EngageAnimeTypeMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-engageanimetypemenuitem")]
-impl < __T : IEngageAnimeTypeMenuItem > IEngageAnimeTypeMenuItemMethods for __T { }
+#[cfg(feature="root-engageanimetypemenuitem")]impl<__T:IEngageAnimeTypeMenuItem>IEngageAnimeTypeMenuItemMethods for __T{}
 
-#[cfg(feature = "root-engageanimetypemenuitem")]
-impl EngageAnimeTypeMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EngageAnimeTypeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EngageAnimeTypeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EngageAnimeTypeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_command_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EngageAnimeTypeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EngageAnimeTypeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-engageanimetypemenuitem")]impl EngageAnimeTypeMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_command_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-engageanimetypemenuitem")]
-impl EngageAnimeTypeMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EngageAnimeTypeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IEngageAnimeTypeMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-engageanimetypemenuitem")]impl EngageAnimeTypeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EngageAnimeTypeMenuItem), ::core::stringify!(new),));
+ <Self as IEngageAnimeTypeMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-engageanimetypemenuitem")]

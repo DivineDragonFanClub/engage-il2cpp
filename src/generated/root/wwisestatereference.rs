@@ -4,40 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: wwisegroupvalueobjectreference :: { IWwiseGroupValueObjectReference , WwiseGroupValueObjectReference }
- ;
- use crate :: root :: wwiseobjectreference :: { IWwiseObjectReference , WwiseObjectReference }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::wwisegroupvalueobjectreference::{IWwiseGroupValueObjectReference,WwiseGroupValueObjectReference}
+;
+use crate::root::wwiseobjectreference::{IWwiseObjectReference,WwiseObjectReference}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/wwisestatereference/WwiseStateReference.md"))] # [:: unity2 :: class (namespace = "" , name = "WwiseStateReference")] # [parent (crate :: root :: wwisegroupvalueobjectreference :: WwiseGroupValueObjectReference)] pub struct WwiseStateReference {
-# [offset (48)] # [rename (name = "WwiseStateGroupReference")] pub wwise_state_group_reference : crate :: root :: wwisestategroupreference :: WwiseStateGroupReference ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/wwisestatereference/WwiseStateReference.md"))]#[::unity2::class(namespace="",name="WwiseStateReference")]#[parent(crate::root::wwisegroupvalueobjectreference::WwiseGroupValueObjectReference)]pub struct WwiseStateReference{#[offset(48)]#[rename(name="WwiseStateGroupReference")]pub wwise_state_group_reference:crate::root::wwisestategroupreference::WwiseStateGroupReference,}
 
 }
 
 #[cfg(feature = "root-wwisestatereference-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-wwisestatereference")]
-pub trait IWwiseStateReferenceMethods : IWwiseStateReference { # [doc = "`get_WwiseObjectType()` overload"] fn get_wwise_object_type (self ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType { unsafe { let __receiver = < WwiseStateReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WwiseStateReference , :: unity2 :: OptionalMethod ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ffb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_GroupObjectReference()` overload"] fn get_group_object_reference (self ,) -> crate :: root :: wwiseobjectreference :: WwiseObjectReference { unsafe { let __receiver = < WwiseStateReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WwiseStateReference , :: unity2 :: OptionalMethod ,) -> crate :: root :: wwiseobjectreference :: WwiseObjectReference = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ffc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GroupObjectReference(crate::root::wwiseobjectreference::WwiseObjectReference)` overload"] fn set_group_object_reference (self , value : impl :: core :: convert :: Into < crate :: root :: wwiseobjectreference :: WwiseObjectReference >) -> () { unsafe { let __receiver = < WwiseStateReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WwiseStateReference , crate :: root :: wwiseobjectreference :: WwiseObjectReference , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ffd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GroupWwiseObjectType()` overload"] fn get_group_wwise_object_type (self ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType { unsafe { let __receiver = < WwiseStateReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WwiseStateReference , :: unity2 :: OptionalMethod ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2940060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WwiseStateReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WwiseStateReference , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2940070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-wwisestatereference")]pub trait IWwiseStateReferenceMethods:IWwiseStateReference{#[doc="`get_WwiseObjectType()` overload"]fn get_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseStateReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293ffb0usize)as*mut u8,crate::root::wwiseobjecttype::WwiseObjectType;
+(WwiseStateReference)__receiver)}
+}
+#[doc="`get_GroupObjectReference()` overload"]fn get_group_object_reference(self,)->crate::root::wwiseobjectreference::WwiseObjectReference{unsafe{let __receiver= <WwiseStateReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293ffc0usize)as*mut u8,crate::root::wwiseobjectreference::WwiseObjectReference;
+(WwiseStateReference)__receiver)}
+}
+#[doc="`set_GroupObjectReference(crate::root::wwiseobjectreference::WwiseObjectReference)` overload"]fn set_group_object_reference(self,value:impl::core::convert::Into<crate::root::wwiseobjectreference::WwiseObjectReference>)->(){unsafe{let __receiver= <WwiseStateReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293ffd0usize)as*mut u8,();
+(WwiseStateReference)__receiver,(crate::root::wwiseobjectreference::WwiseObjectReference)::core::convert::Into::into(value))}
+}
+#[doc="`get_GroupWwiseObjectType()` overload"]fn get_group_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseStateReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2940060usize)as*mut u8,crate::root::wwiseobjecttype::WwiseObjectType;
+(WwiseStateReference)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WwiseStateReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2940070usize)as*mut u8,();
+(WwiseStateReference)__receiver)}
+}
+}
 
-#[cfg(feature = "root-wwisestatereference")]
-impl < __T : IWwiseStateReference > IWwiseStateReferenceMethods for __T { }
+#[cfg(feature="root-wwisestatereference")]impl<__T:IWwiseStateReference>IWwiseStateReferenceMethods for __T{}
 
-#[cfg(feature = "root-wwisestatereference")]
-impl WwiseStateReference { pub fn get_wwise_object_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WwiseStateReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_group_object_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WwiseStateReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_group_object_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WwiseStateReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_group_wwise_object_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WwiseStateReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WwiseStateReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-wwisestatereference")]impl WwiseStateReference{pub fn get_wwise_object_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_group_object_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_group_object_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_group_wwise_object_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-wwisestatereference")]
-impl WwiseStateReference {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WwiseStateReference) , :: core :: stringify ! (new) ,)) ; < Self as IWwiseStateReferenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-wwisestatereference")]impl WwiseStateReference{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WwiseStateReference), ::core::stringify!(new),));
+ <Self as IWwiseStateReferenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-wwisestatereference")]

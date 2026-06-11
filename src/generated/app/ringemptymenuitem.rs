@@ -4,34 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: ringmenuitem :: { IRingMenuItem , RingMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::ringmenuitem::{IRingMenuItem,RingMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringemptymenuitem/RingEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingEmptyMenuItem")] # [parent (crate :: app :: ringmenuitem :: RingMenuItem)] pub struct RingEmptyMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringemptymenuitem/RingEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="RingEmptyMenuItem")]#[parent(crate::app::ringmenuitem::RingMenuItem)]pub struct RingEmptyMenuItem{}
 
 }
 
 #[cfg(feature = "app-ringemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringemptymenuitem")]
-pub trait IRingEmptyMenuItemMethods : IRingEmptyMenuItem { # [doc = "`.ctor(crate::app::ringmenuitem::RingMenuItem_SelectEventHandler)` overload"] fn ctor (self , select_event_handler : impl :: core :: convert :: Into < crate :: app :: ringmenuitem :: RingMenuItem_SelectEventHandler >) -> () { unsafe { let __receiver = < RingEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingEmptyMenuItem , crate :: app :: ringmenuitem :: RingMenuItem_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2426880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2426aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RingEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2426af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RingEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2426b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringemptymenuitem")]pub trait IRingEmptyMenuItemMethods:IRingEmptyMenuItem{#[doc="`.ctor(crate::app::ringmenuitem::RingMenuItem_SelectEventHandler)` overload"]fn ctor(self,select_event_handler:impl::core::convert::Into<crate::app::ringmenuitem::RingMenuItem_SelectEventHandler>)->(){unsafe{let __receiver= <RingEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2426880usize)as*mut u8,();
+(RingEmptyMenuItem)__receiver,(crate::app::ringmenuitem::RingMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2426aa0usize)as*mut u8, ::unity2::Il2CppString;
+(RingEmptyMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2426af0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RingEmptyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2426b00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RingEmptyMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringemptymenuitem")]
-impl < __T : IRingEmptyMenuItem > IRingEmptyMenuItemMethods for __T { }
+#[cfg(feature="app-ringemptymenuitem")]impl<__T:IRingEmptyMenuItem>IRingEmptyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-ringemptymenuitem")]
-impl RingEmptyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-ringemptymenuitem")]impl RingEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-ringemptymenuitem")]
-impl RingEmptyMenuItem {
-# [doc = "`.ctor(crate::app::ringmenuitem::RingMenuItem_SelectEventHandler)` — overload selector"] pub fn new (select_event_handler : crate :: app :: ringmenuitem :: RingMenuItem_SelectEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRingEmptyMenuItemMethods > :: ctor (this , select_event_handler) ; this }
+#[cfg(feature="app-ringemptymenuitem")]impl RingEmptyMenuItem{#[doc="`.ctor(crate::app::ringmenuitem::RingMenuItem_SelectEventHandler)` — overload selector"]pub fn new(select_event_handler:crate::app::ringmenuitem::RingMenuItem_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IRingEmptyMenuItemMethods> ::ctor(this,select_event_handler);
+this}
 }
 
 #[cfg(feature = "app-ringemptymenuitem")]

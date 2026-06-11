@@ -4,92 +4,134 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmode/GmapMode_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapMode_Mode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmode/GmapMode_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapMode_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for GmapMode_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapMode.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapMode_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapMode_Mode{pub fn main()->Self{Self{value:0}
+}
+pub fn dlc_god()->Self{Self{value:1}
+}
+pub fn dlc_evil()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for GmapMode_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapMode.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GmapMode_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GmapMode_Mode  {
-    pub fn main() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn dlc_god() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn dlc_evil() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmode/GmapMode.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMode")] # [parent (crate :: system :: object :: Object)] pub struct GmapMode {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmode/GmapMode.md"))]#[::unity2::class(namespace="App",name="GmapMode")]#[parent(crate::system::object::Object)]pub struct GmapMode{}
 
 }
 
 #[cfg(feature = "app-gmapmode-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapmode")]
-impl GmapMode { # [doc = "`get_IsAlongPath()` overload"] pub fn get_is_along_path () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b34a00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsAlongPath(bool)` overload"] pub fn set_is_along_path (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b34a70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetMode()` overload"] pub fn get_mode () -> crate :: app :: gmapmode :: GmapMode_Mode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gmapmode :: GmapMode_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b34af0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetMode(crate::app::gmapmode::GmapMode_Mode)` overload"] pub fn set_mode (mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b34b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GoMode(crate::app::gmapmode::GmapMode_Mode)` overload"] pub fn go_mode (mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b34c80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetSceneName(crate::app::gmapmode::GmapMode_Mode)` overload"] pub fn get_scene_name (mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b34e10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`SetNowSpotId(::unity2::Il2CppString)` overload"] pub fn set_now_spot_id (spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b34ed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (spot_id) , :: core :: option :: Option :: None) } } } # [doc = "`SetNowSpotId(crate::app::gmapmode::GmapMode_Mode, ::unity2::Il2CppString)` overload"] pub fn set_now_spot_id_2 (mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode > , spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b350a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (spot_id) , :: core :: option :: Option :: None) } } } # [doc = "`GetNowSpotId()` overload"] pub fn get_now_spot_id () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35180usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CanMoveDlcMap()` overload"] pub fn can_move_dlc_map () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35260usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CanMoveGod()` overload"] pub fn can_move_god () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CanMoveEvil()` overload"] pub fn can_move_evil () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CheckSpotModeOnGmap(crate::app::gmapspot::GmapSpot, crate::app::gmapmode::GmapMode_Mode)` overload"] pub fn check_spot_mode_on_gmap (spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot > , mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapspot :: GmapSpot , crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b355a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (spot) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`CheckSpotModeAtChapter(crate::app::gmapspot::GmapSpot, crate::app::gmapmode::GmapMode_Mode)` overload"] pub fn check_spot_mode_at_chapter (spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot > , mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapspot :: GmapSpot , crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (spot) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`CheckSpotModeOnGmap(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` overload"] pub fn check_spot_mode_on_gmap_2 (spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b358f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (spot_id) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`CheckSpotModeImpl(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode, bool)` overload"] pub fn check_spot_mode_impl (spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode > , on_gmap : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: gmapmode :: GmapMode_Mode , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b356c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (spot_id) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (on_gmap) , :: core :: option :: Option :: None) } } } # [doc = "`GetDlcGmapPathAssetPath()` overload"] pub fn get_dlc_gmap_path_asset_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35970usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetDlcGmapSpotAssetPath()` overload"] pub fn get_dlc_gmap_spot_asset_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b359c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35a20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapmode")]impl GmapMode{#[doc="`get_IsAlongPath()` overload"]pub fn get_is_along_path()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b34a00usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsAlongPath(bool)` overload"]pub fn set_is_along_path(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b34a70usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`GetMode()` overload"]pub fn get_mode()->crate::app::gmapmode::GmapMode_Mode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b34af0usize)as*mut u8,crate::app::gmapmode::GmapMode_Mode;
+)}
+}
+#[doc="`SetMode(crate::app::gmapmode::GmapMode_Mode)` overload"]pub fn set_mode(mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b34b70usize)as*mut u8,();
+(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`GoMode(crate::app::gmapmode::GmapMode_Mode)` overload"]pub fn go_mode(mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b34c80usize)as*mut u8,();
+(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetSceneName(crate::app::gmapmode::GmapMode_Mode)` overload"]pub fn get_scene_name(mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b34e10usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`SetNowSpotId(::unity2::Il2CppString)` overload"]pub fn set_now_spot_id(spot_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b34ed0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(spot_id))}
+}
+#[doc="`SetNowSpotId(crate::app::gmapmode::GmapMode_Mode, ::unity2::Il2CppString)` overload"]pub fn set_now_spot_id_2(mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode> ,spot_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b350a0usize)as*mut u8,();
+(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode),(::unity2::Il2CppString)::core::convert::Into::into(spot_id))}
+}
+#[doc="`GetNowSpotId()` overload"]pub fn get_now_spot_id()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b35180usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`CanMoveDlcMap()` overload"]pub fn can_move_dlc_map()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b35260usize)as*mut u8,bool;
+)}
+}
+#[doc="`CanMoveGod()` overload"]pub fn can_move_god()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b35370usize)as*mut u8,bool;
+)}
+}
+#[doc="`CanMoveEvil()` overload"]pub fn can_move_evil()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b35400usize)as*mut u8,bool;
+)}
+}
+#[doc="`CheckSpotModeOnGmap(crate::app::gmapspot::GmapSpot, crate::app::gmapmode::GmapMode_Mode)` overload"]pub fn check_spot_mode_on_gmap(spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot> ,mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b355a0usize)as*mut u8,bool;
+(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(spot),(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`CheckSpotModeAtChapter(crate::app::gmapspot::GmapSpot, crate::app::gmapmode::GmapMode_Mode)` overload"]pub fn check_spot_mode_at_chapter(spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot> ,mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b35830usize)as*mut u8,bool;
+(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(spot),(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`CheckSpotModeOnGmap(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` overload"]pub fn check_spot_mode_on_gmap_2(spot_id:impl::core::convert::Into< ::unity2::Il2CppString> ,mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b358f0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(spot_id),(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`CheckSpotModeImpl(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode, bool)` overload"]pub fn check_spot_mode_impl(spot_id:impl::core::convert::Into< ::unity2::Il2CppString> ,mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode> ,on_gmap:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b356c0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(spot_id),(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(on_gmap))}
+}
+#[doc="`GetDlcGmapPathAssetPath()` overload"]pub fn get_dlc_gmap_path_asset_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b35970usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`GetDlcGmapSpotAssetPath()` overload"]pub fn get_dlc_gmap_spot_asset_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b359c0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b35a20usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-gmapmode")]
-pub trait IGmapModeMethods : IGmapMode { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMode as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapmode")]pub trait IGmapModeMethods:IGmapMode{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b35a10usize)as*mut u8,();
+(GmapMode)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmapmode")]
-impl < __T : IGmapMode > IGmapModeMethods for __T { }
+#[cfg(feature="app-gmapmode")]impl<__T:IGmapMode>IGmapModeMethods for __T{}
 
-#[cfg(feature = "app-gmapmode")]
-impl GmapMode { pub fn get_is_along_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_along_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn go_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_now_spot_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_now_spot_id_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_now_spot_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn can_move_dlc_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn can_move_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn can_move_evil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn check_spot_mode_on_gmap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn check_spot_mode_at_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn check_spot_mode_on_gmap_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn check_spot_mode_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_dlc_gmap_path_asset_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_dlc_gmap_spot_asset_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="app-gmapmode")]impl GmapMode{pub fn get_is_along_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_along_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn go_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_now_spot_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_now_spot_id_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_now_spot_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn can_move_dlc_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn can_move_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn can_move_evil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn check_spot_mode_on_gmap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn check_spot_mode_at_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn check_spot_mode_on_gmap_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn check_spot_mode_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_dlc_gmap_path_asset_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_dlc_gmap_spot_asset_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "app-gmapmode")]
-impl GmapMode {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMode) , :: core :: stringify ! (new) ,)) ; < Self as IGmapModeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmapmode")]impl GmapMode{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMode), ::core::stringify!(new),));
+ <Self as IGmapModeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gmapmode")]

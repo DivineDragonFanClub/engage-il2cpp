@@ -4,117 +4,203 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubballoon/HubBalloon.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubBalloon")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubBalloon {
-# [offset (64)] # [rename (name = "m_propetyToID")] pub m_propety_to_id : i32 ,
-# [offset (72)] # [rename (name = "m_talkDefault")] pub m_talk_default : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_talkChapter")] pub m_talk_chapter : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_talkReliance")] pub m_talk_reliance : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_rendererList")] pub m_renderer_list : :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > ,
-# [offset (104)] # [rename (name = "m_materials")] pub m_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [offset (112)] # [rename (name = "m_alpha")] pub m_alpha : f32 ,
-# [offset (116)] # [rename (name = "m_talkDefaultActive")] pub m_talk_default_active : bool ,
-# [offset (117)] # [rename (name = "m_talkChapterActive")] pub m_talk_chapter_active : bool ,
-# [offset (118)] # [rename (name = "m_talkRelianceActive")] pub m_talk_reliance_active : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubballoon/HubBalloon_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubBalloon_Type{pub value:i32,}
+impl::unity2::ClassIdentity for HubBalloon_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubBalloon.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubBalloon_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubBalloon_Type{pub fn default()->Self{Self{value:0}
+}
+pub fn chapter()->Self{Self{value:1}
+}
+pub fn reliance()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubballoon/HubBalloon_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubBalloon_Type  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for HubBalloon_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubBalloon.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubBalloon_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubBalloon_Type  {
-    pub fn default() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn chapter() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn reliance() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubballoon/HubBalloon.md"))]#[::unity2::class(namespace="App",name="HubBalloon")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubBalloon{#[offset(64)]#[rename(name="m_propetyToID")]pub m_propety_to_id:i32, #[offset(72)]#[rename(name="m_talkDefault")]pub m_talk_default:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_talkChapter")]pub m_talk_chapter:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_talkReliance")]pub m_talk_reliance:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_rendererList")]pub m_renderer_list: ::unity2::Array<crate::unity_engine::renderer::Renderer> , #[offset(104)]#[rename(name="m_materials")]pub m_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(112)]#[rename(name="m_alpha")]pub m_alpha:f32, #[offset(116)]#[rename(name="m_talkDefaultActive")]pub m_talk_default_active:bool, #[offset(117)]#[rename(name="m_talkChapterActive")]pub m_talk_chapter_active:bool, #[offset(118)]#[rename(name="m_talkRelianceActive")]pub m_talk_reliance_active:bool,}
 
 }
 
 #[cfg(feature = "app-hubballoon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubballoon")]
-pub trait IHubBalloonMethods : IHubBalloon { # [doc = "`get_BalloonType()` overload"] fn get_balloon_type (self ,) -> crate :: app :: hubballoon :: HubBalloon_Type { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubballoon :: HubBalloon_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BalloonType(crate::app::hubballoon::HubBalloon_Type)` overload"] fn set_balloon_type (self , value : impl :: core :: convert :: Into < crate :: app :: hubballoon :: HubBalloon_Type >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , crate :: app :: hubballoon :: HubBalloon_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_UseUpIcon()` overload"] fn get_use_up_icon (self ,) -> bool { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d775a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_UseUpIcon(bool)` overload"] fn set_use_up_icon (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d775b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TargetAccess()` overload"] fn get_target_access (self ,) -> crate :: app :: hubaccess :: HubAccess { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccess :: HubAccess = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d775c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TargetAccess(crate::app::hubaccess::HubAccess)` overload"] fn set_target_access (self , value : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d775d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CharaFader()` overload"] fn get_chara_fader (self ,) -> crate :: root :: iron19characterfader :: Iron19CharacterFader { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> crate :: root :: iron19characterfader :: Iron19CharacterFader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d775e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CharaFader(crate::root::iron19characterfader::Iron19CharacterFader)` overload"] fn set_chara_fader (self , value : impl :: core :: convert :: Into < crate :: root :: iron19characterfader :: Iron19CharacterFader >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , crate :: root :: iron19characterfader :: Iron19CharacterFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d775f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FadeDistance()` overload"] fn get_fade_distance (self ,) -> f32 { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FadeDistance(f32)` overload"] fn set_fade_distance (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayerController()` overload"] fn get_player_controller (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayerController(crate::app::hubplayercontroller::HubPlayerController)` overload"] fn set_player_controller (self , value : impl :: core :: convert :: Into < crate :: app :: hubplayercontroller :: HubPlayerController >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , crate :: app :: hubplayercontroller :: HubPlayerController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetActiveTalkDefault(bool)` overload"] fn set_active_talk_default (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetActiveTalkChapter(bool)` overload"] fn set_active_talk_chapter (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetActiveTalkReliance(bool)` overload"] fn set_active_talk_reliance (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d776a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d776d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOutRange()` overload"] fn is_out_range (self ,) -> bool { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsFadeAlpha()` overload"] fn is_fade_alpha (self ,) -> bool { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d784e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsActiveAccess()` overload"] fn is_active_access (self ,) -> bool { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAlpha(f32)` overload"] fn update_alpha (self , gain : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d77b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gain) , :: core :: option :: Option :: None) } } } # [doc = "`SetMaterialDark()` overload"] fn set_material_dark (self ,) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d780d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMaterialLight()` overload"] fn set_material_light (self ,) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubBalloon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubBalloon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubballoon")]pub trait IHubBalloonMethods:IHubBalloon{#[doc="`get_BalloonType()` overload"]fn get_balloon_type(self,)->crate::app::hubballoon::HubBalloon_Type{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77580usize)as*mut u8,crate::app::hubballoon::HubBalloon_Type;
+(HubBalloon)__receiver)}
+}
+#[doc="`set_BalloonType(crate::app::hubballoon::HubBalloon_Type)` overload"]fn set_balloon_type(self,value:impl::core::convert::Into<crate::app::hubballoon::HubBalloon_Type>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77590usize)as*mut u8,();
+(HubBalloon)__receiver,(crate::app::hubballoon::HubBalloon_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_UseUpIcon()` overload"]fn get_use_up_icon(self,)->bool{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d775a0usize)as*mut u8,bool;
+(HubBalloon)__receiver)}
+}
+#[doc="`set_UseUpIcon(bool)` overload"]fn set_use_up_icon(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d775b0usize)as*mut u8,();
+(HubBalloon)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_TargetAccess()` overload"]fn get_target_access(self,)->crate::app::hubaccess::HubAccess{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d775c0usize)as*mut u8,crate::app::hubaccess::HubAccess;
+(HubBalloon)__receiver)}
+}
+#[doc="`set_TargetAccess(crate::app::hubaccess::HubAccess)` overload"]fn set_target_access(self,value:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d775d0usize)as*mut u8,();
+(HubBalloon)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(value))}
+}
+#[doc="`get_CharaFader()` overload"]fn get_chara_fader(self,)->crate::root::iron19characterfader::Iron19CharacterFader{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d775e0usize)as*mut u8,crate::root::iron19characterfader::Iron19CharacterFader;
+(HubBalloon)__receiver)}
+}
+#[doc="`set_CharaFader(crate::root::iron19characterfader::Iron19CharacterFader)` overload"]fn set_chara_fader(self,value:impl::core::convert::Into<crate::root::iron19characterfader::Iron19CharacterFader>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d775f0usize)as*mut u8,();
+(HubBalloon)__receiver,(crate::root::iron19characterfader::Iron19CharacterFader)::core::convert::Into::into(value))}
+}
+#[doc="`get_FadeDistance()` overload"]fn get_fade_distance(self,)->f32{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77600usize)as*mut u8,f32;
+(HubBalloon)__receiver)}
+}
+#[doc="`set_FadeDistance(f32)` overload"]fn set_fade_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77610usize)as*mut u8,();
+(HubBalloon)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayerController()` overload"]fn get_player_controller(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77620usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
+(HubBalloon)__receiver)}
+}
+#[doc="`set_PlayerController(crate::app::hubplayercontroller::HubPlayerController)` overload"]fn set_player_controller(self,value:impl::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77630usize)as*mut u8,();
+(HubBalloon)__receiver,(crate::app::hubplayercontroller::HubPlayerController)::core::convert::Into::into(value))}
+}
+#[doc="`SetActiveTalkDefault(bool)` overload"]fn set_active_talk_default(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77640usize)as*mut u8,();
+(HubBalloon)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`SetActiveTalkChapter(bool)` overload"]fn set_active_talk_chapter(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77670usize)as*mut u8,();
+(HubBalloon)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`SetActiveTalkReliance(bool)` overload"]fn set_active_talk_reliance(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d776a0usize)as*mut u8,();
+(HubBalloon)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d776d0usize)as*mut u8,();
+(HubBalloon)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77be0usize)as*mut u8,();
+(HubBalloon)__receiver)}
+}
+#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78230usize)as*mut u8,bool;
+(HubBalloon)__receiver)}
+}
+#[doc="`IsOutRange()` overload"]fn is_out_range(self,)->bool{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78440usize)as*mut u8,bool;
+(HubBalloon)__receiver)}
+}
+#[doc="`IsFadeAlpha()` overload"]fn is_fade_alpha(self,)->bool{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d784e0usize)as*mut u8,bool;
+(HubBalloon)__receiver)}
+}
+#[doc="`IsActiveAccess()` overload"]fn is_active_access(self,)->bool{unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78590usize)as*mut u8,bool;
+(HubBalloon)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78630usize)as*mut u8,();
+(HubBalloon)__receiver)}
+}
+#[doc="`UpdateAlpha(f32)` overload"]fn update_alpha(self,gain:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d77b20usize)as*mut u8,();
+(HubBalloon)__receiver,(f32)::core::convert::Into::into(gain))}
+}
+#[doc="`SetMaterialDark()` overload"]fn set_material_dark(self,)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d780d0usize)as*mut u8,();
+(HubBalloon)__receiver)}
+}
+#[doc="`SetMaterialLight()` overload"]fn set_material_light(self,)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78180usize)as*mut u8,();
+(HubBalloon)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78730usize)as*mut u8,();
+(HubBalloon)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubBalloon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78800usize)as*mut u8,();
+(HubBalloon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubballoon")]
-impl < __T : IHubBalloon > IHubBalloonMethods for __T { }
+#[cfg(feature="app-hubballoon")]impl<__T:IHubBalloon>IHubBalloonMethods for __T{}
 
-#[cfg(feature = "app-hubballoon")]
-impl HubBalloon { pub fn get_balloon_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_balloon_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_use_up_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_use_up_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_target_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_target_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_chara_fader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_chara_fader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_fade_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_fade_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_active_talk_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_active_talk_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_active_talk_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_out_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_fade_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_active_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn update_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_material_dark_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_material_light_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubBalloon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } }
+#[cfg(feature="app-hubballoon")]impl HubBalloon{pub fn get_balloon_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_balloon_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_use_up_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_use_up_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_target_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_target_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_chara_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_chara_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_fade_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_fade_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_player_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_player_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_active_talk_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_active_talk_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_active_talk_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_out_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_fade_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_active_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn update_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_material_dark_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_material_light_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
 
-#[cfg(feature = "app-hubballoon")]
-impl HubBalloon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubBalloon) , :: core :: stringify ! (new) ,)) ; < Self as IHubBalloonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubballoon")]impl HubBalloon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubBalloon), ::core::stringify!(new),));
+ <Self as IHubBalloonMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubballoon")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubBalloon_Type;
     pub use super::HubBalloon;
     pub use super::IHubBalloon;
     pub use super::IHubBalloonMethods;
-    pub use super::HubBalloon_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

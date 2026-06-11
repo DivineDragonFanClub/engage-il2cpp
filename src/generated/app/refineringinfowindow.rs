@@ -4,109 +4,115 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefineStatistics.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingInfoWindow.RingRefineStatistics")] # [parent (crate :: system :: object :: Object)] pub struct RefineRingInfoWindow_RingRefineStatistics {
-# [offset (16)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_ExistS")] pub m_exist_s : bool ,
-# [offset (25)] # [rename (name = "m_ExistA")] pub m_exist_a : bool ,
-# [offset (26)] # [rename (name = "m_ExistB")] pub m_exist_b : bool ,
-# [offset (27)] # [rename (name = "m_ExistC")] pub m_exist_c : bool ,
-# [offset (28)] # [rename (name = "m_RefinedS")] pub m_refined_s : bool ,
-# [offset (29)] # [rename (name = "m_RefinedA")] pub m_refined_a : bool ,
-# [offset (30)] # [rename (name = "m_RefinedB")] pub m_refined_b : bool ,
-# [offset (31)] # [rename (name = "m_RefinedC")] pub m_refined_c : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringinfowindow/RefineRingInfoWindow.md"))]#[::unity2::class(namespace="App",name="RefineRingInfoWindow")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineRingInfoWindow{#[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_GodNameText")]pub m_god_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_TotalCountCaption")]pub m_total_count_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_TotalCountValue")]pub m_total_count_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_KindCountCaption")]pub m_kind_count_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_KindCountValue")]pub m_kind_count_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_KindCountMax")]pub m_kind_count_max:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_CompleteStar")]pub m_complete_star:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_RingRefinedInfo")]pub m_ring_refined_info: ::unity2::Array<crate::app::refineringinfowindow::RefineRingInfoWindow_RingRefinedInfo> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingInfoWindow")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineRingInfoWindow {
-# [offset (24)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (32)] # [rename (name = "m_GodNameText")] pub m_god_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_TotalCountCaption")] pub m_total_count_caption : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_TotalCountValue")] pub m_total_count_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_KindCountCaption")] pub m_kind_count_caption : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "m_KindCountValue")] pub m_kind_count_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "m_KindCountMax")] pub m_kind_count_max : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_CompleteStar")] pub m_complete_star : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_RingRefinedInfo")] pub m_ring_refined_info : :: unity2 :: Array < crate :: app :: refineringinfowindow :: RefineRingInfoWindow_RingRefinedInfo > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefineStatistics.md"))]#[::unity2::class(namespace="App",name="RefineRingInfoWindow.RingRefineStatistics")]#[parent(crate::system::object::Object)]pub struct RefineRingInfoWindow_RingRefineStatistics{#[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_ExistS")]pub m_exist_s:bool, #[offset(25)]#[rename(name="m_ExistA")]pub m_exist_a:bool, #[offset(26)]#[rename(name="m_ExistB")]pub m_exist_b:bool, #[offset(27)]#[rename(name="m_ExistC")]pub m_exist_c:bool, #[offset(28)]#[rename(name="m_RefinedS")]pub m_refined_s:bool, #[offset(29)]#[rename(name="m_RefinedA")]pub m_refined_a:bool, #[offset(30)]#[rename(name="m_RefinedB")]pub m_refined_b:bool, #[offset(31)]#[rename(name="m_RefinedC")]pub m_refined_c:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefinedInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingInfoWindow.RingRefinedInfo")] # [parent (crate :: system :: object :: Object)] pub struct RefineRingInfoWindow_RingRefinedInfo {
-# [offset (16)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (24)] # [rename (name = "m_RingCImage")] pub m_ring_c_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_RingBImage")] pub m_ring_b_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_RingAImage")] pub m_ring_a_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "m_RingSImage")] pub m_ring_s_image : crate :: unity_engine :: ui :: image :: Image ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefinedInfo.md"))]#[::unity2::class(namespace="App",name="RefineRingInfoWindow.RingRefinedInfo")]#[parent(crate::system::object::Object)]pub struct RefineRingInfoWindow_RingRefinedInfo{#[offset(16)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_RingCImage")]pub m_ring_c_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_RingBImage")]pub m_ring_b_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_RingAImage")]pub m_ring_a_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_RingSImage")]pub m_ring_s_image:crate::unity_engine::ui::image::Image,}
 
 }
 
 #[cfg(feature = "app-refineringinfowindow-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineringinfowindow")]
-pub trait IRefineRingInfoWindow_RingRefineStatisticsMethods : IRefineRingInfoWindow_RingRefineStatistics { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingInfoWindow_RingRefineStatistics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingInfoWindow_RingRefineStatistics , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af8850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl < __T : IRefineRingInfoWindow_RingRefineStatistics > IRefineRingInfoWindow_RingRefineStatisticsMethods for __T { }
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow_RingRefineStatistics { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingInfoWindow_RingRefineStatistics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow_RingRefineStatistics {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingInfoWindow_RingRefineStatistics) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingInfoWindow_RingRefineStatisticsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringinfowindow")]pub trait IRefineRingInfoWindowMethods:IRefineRingInfoWindow{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RefineRingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2953be0usize)as*mut u8,();
+(RefineRingInfoWindow)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <RefineRingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2953bf0usize)as*mut u8,();
+(RefineRingInfoWindow)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RefineRingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2953cd0usize)as*mut u8,();
+(RefineRingInfoWindow)__receiver)}
+}
+#[doc="`SetData(crate::app::godunit::GodUnit)` overload"]fn set_data(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <RefineRingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2953db0usize)as*mut u8,();
+(RefineRingInfoWindow)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2954a00usize)as*mut u8,();
+(RefineRingInfoWindow)__receiver)}
+}
 }
 
-#[cfg(feature = "app-refineringinfowindow")]
-pub trait IRefineRingInfoWindowMethods : IRefineRingInfoWindow { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RefineRingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2953be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < RefineRingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2953bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < RefineRingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2953cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::app::godunit::GodUnit)` overload"] fn set_data (self , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < RefineRingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingInfoWindow , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2953db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2954a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringinfowindow")]impl<__T:IRefineRingInfoWindow>IRefineRingInfoWindowMethods for __T{}
 
-#[cfg(feature = "app-refineringinfowindow")]
-impl < __T : IRefineRingInfoWindow > IRefineRingInfoWindowMethods for __T { }
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingInfoWindow) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingInfoWindowMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringinfowindow")]impl RefineRingInfoWindow{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-refineringinfowindow")]
-pub trait IRefineRingInfoWindow_RingRefinedInfoMethods : IRefineRingInfoWindow_RingRefinedInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingInfoWindow_RingRefinedInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingInfoWindow_RingRefinedInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af8860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringinfowindow")]impl RefineRingInfoWindow{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingInfoWindow), ::core::stringify!(new),));
+ <Self as IRefineRingInfoWindowMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-refineringinfowindow")]
-impl < __T : IRefineRingInfoWindow_RingRefinedInfo > IRefineRingInfoWindow_RingRefinedInfoMethods for __T { }
+#[cfg(feature="app-refineringinfowindow")]pub trait IRefineRingInfoWindow_RingRefineStatisticsMethods:IRefineRingInfoWindow_RingRefineStatistics{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingInfoWindow_RingRefineStatistics as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8850usize)as*mut u8,();
+(RefineRingInfoWindow_RingRefineStatistics)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow_RingRefinedInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingInfoWindow_RingRefinedInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-refineringinfowindow")]impl<__T:IRefineRingInfoWindow_RingRefineStatistics>IRefineRingInfoWindow_RingRefineStatisticsMethods for __T{}
 
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow_RingRefinedInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingInfoWindow_RingRefinedInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingInfoWindow_RingRefinedInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringinfowindow")]impl RefineRingInfoWindow_RingRefineStatistics{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-refineringinfowindow")]impl RefineRingInfoWindow_RingRefineStatistics{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingInfoWindow_RingRefineStatistics), ::core::stringify!(new),));
+ <Self as IRefineRingInfoWindow_RingRefineStatisticsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-refineringinfowindow")]pub trait IRefineRingInfoWindow_RingRefinedInfoMethods:IRefineRingInfoWindow_RingRefinedInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingInfoWindow_RingRefinedInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8860usize)as*mut u8,();
+(RefineRingInfoWindow_RingRefinedInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineringinfowindow")]impl<__T:IRefineRingInfoWindow_RingRefinedInfo>IRefineRingInfoWindow_RingRefinedInfoMethods for __T{}
+
+#[cfg(feature="app-refineringinfowindow")]impl RefineRingInfoWindow_RingRefinedInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-refineringinfowindow")]impl RefineRingInfoWindow_RingRefinedInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingInfoWindow_RingRefinedInfo), ::core::stringify!(new),));
+ <Self as IRefineRingInfoWindow_RingRefinedInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineringinfowindow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineRingInfoWindow_RingRefineStatistics;
-    pub use super::IRefineRingInfoWindow_RingRefineStatistics;
-    pub use super::IRefineRingInfoWindow_RingRefineStatisticsMethods;
     pub use super::RefineRingInfoWindow;
     pub use super::IRefineRingInfoWindow;
     pub use super::IRefineRingInfoWindowMethods;
+    pub use super::RefineRingInfoWindow_RingRefineStatistics;
+    pub use super::IRefineRingInfoWindow_RingRefineStatistics;
+    pub use super::IRefineRingInfoWindow_RingRefineStatisticsMethods;
     pub use super::RefineRingInfoWindow_RingRefinedInfo;
     pub use super::IRefineRingInfoWindow_RingRefinedInfo;
     pub use super::IRefineRingInfoWindow_RingRefinedInfoMethods;

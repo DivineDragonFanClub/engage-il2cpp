@@ -4,114 +4,102 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapMaterial")] # [parent (crate :: system :: object :: Object)] pub struct MapMaterial {
-# [offset (16)] # [rename (name = "m_List")] pub m_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapmaterial :: MapMaterial_Node > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial.md"))]#[::unity2::class(namespace="App",name="MapMaterial")]#[parent(crate::system::object::Object)]pub struct MapMaterial{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::mapmaterial::MapMaterial_Node> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapMaterial_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for MapMaterial_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapMaterial.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapMaterial_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapMaterial_Kinds{pub fn none()->Self{Self{value:0}
+}
+pub fn float()->Self{Self{value:1}
+}
+pub fn color()->Self{Self{value:2}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial_Node.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapMaterial.Node")] # [parent (crate :: system :: object :: Object)] pub struct MapMaterial_Node {
-# [offset (16)] # [rename (name = "kind")] pub kind : crate :: app :: mapmaterial :: MapMaterial_Kinds ,
-# [offset (24)] # [rename (name = "material")] pub material : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "property")] pub property : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "value")] pub value : f32 ,
-# [offset (44)] # [rename (name = "color")] pub color : crate :: unity_engine :: color :: Color ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmaterial/MapMaterial_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapMaterial_Kinds  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapMaterial_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMaterial.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapMaterial_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapMaterial_Kinds  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn float() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn color() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial_Node.md"))]#[::unity2::class(namespace="App",name="MapMaterial.Node")]#[parent(crate::system::object::Object)]pub struct MapMaterial_Node{#[offset(16)]#[rename(name="kind")]pub kind:crate::app::mapmaterial::MapMaterial_Kinds, #[offset(24)]#[rename(name="material")]pub material: ::unity2::Il2CppString, #[offset(32)]#[rename(name="property")]pub property: ::unity2::Il2CppString, #[offset(40)]#[rename(name="value")]pub value:f32, #[offset(44)]#[rename(name="color")]pub color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-mapmaterial-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapmaterial")]
-pub trait IMapMaterialMethods : IMapMaterial { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMaterial , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Find(crate::app::mapmaterial::MapMaterial_Kinds, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn find (self , kind : impl :: core :: convert :: Into < crate :: app :: mapmaterial :: MapMaterial_Kinds > , material : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , property : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: mapmaterial :: MapMaterial_Node { unsafe { let __receiver = < MapMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMaterial , crate :: app :: mapmaterial :: MapMaterial_Kinds , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (material) , :: core :: convert :: Into :: into (property) , :: core :: option :: Option :: None) } } } # [doc = "`TryAdd(crate::app::mapmaterial::MapMaterial_Kinds, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn try_add (self , kind : impl :: core :: convert :: Into < crate :: app :: mapmaterial :: MapMaterial_Kinds > , material : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , property : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: mapmaterial :: MapMaterial_Node { unsafe { let __receiver = < MapMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMaterial , crate :: app :: mapmaterial :: MapMaterial_Kinds , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df4080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (material) , :: core :: convert :: Into :: into (property) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < MapMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMaterial , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df4160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , i : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapmaterial :: MapMaterial_Node { unsafe { let __receiver = < MapMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMaterial , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df41b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: app :: mapmaterial :: MapMaterial_Node > { unsafe { let __receiver = < MapMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMaterial , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: app :: mapmaterial :: MapMaterial_Node > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df4220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapmaterial")]
-impl < __T : IMapMaterial > IMapMaterialMethods for __T { }
-
-#[cfg(feature = "app-mapmaterial")]
-impl MapMaterial { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMaterial as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn find_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMaterial as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMaterial as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMaterial as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMaterial as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMaterial as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapmaterial")]
-impl MapMaterial {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapMaterial) , :: core :: stringify ! (new) ,)) ; < Self as IMapMaterialMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapmaterial")]pub trait IMapMaterialMethods:IMapMaterial{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3e90usize)as*mut u8,();
+(MapMaterial)__receiver)}
+}
+#[doc="`Find(crate::app::mapmaterial::MapMaterial_Kinds, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn find(self,kind:impl::core::convert::Into<crate::app::mapmaterial::MapMaterial_Kinds> ,material:impl::core::convert::Into< ::unity2::Il2CppString> ,property:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::mapmaterial::MapMaterial_Node{unsafe{let __receiver= <MapMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3f20usize)as*mut u8,crate::app::mapmaterial::MapMaterial_Node;
+(MapMaterial)__receiver,(crate::app::mapmaterial::MapMaterial_Kinds)::core::convert::Into::into(kind),(::unity2::Il2CppString)::core::convert::Into::into(material),(::unity2::Il2CppString)::core::convert::Into::into(property))}
+}
+#[doc="`TryAdd(crate::app::mapmaterial::MapMaterial_Kinds, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn try_add(self,kind:impl::core::convert::Into<crate::app::mapmaterial::MapMaterial_Kinds> ,material:impl::core::convert::Into< ::unity2::Il2CppString> ,property:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::mapmaterial::MapMaterial_Node{unsafe{let __receiver= <MapMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df4080usize)as*mut u8,crate::app::mapmaterial::MapMaterial_Node;
+(MapMaterial)__receiver,(crate::app::mapmaterial::MapMaterial_Kinds)::core::convert::Into::into(kind),(::unity2::Il2CppString)::core::convert::Into::into(material),(::unity2::Il2CppString)::core::convert::Into::into(property))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df4160usize)as*mut u8,i32;
+(MapMaterial)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,i:impl::core::convert::Into<i32>)->crate::app::mapmaterial::MapMaterial_Node{unsafe{let __receiver= <MapMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df41b0usize)as*mut u8,crate::app::mapmaterial::MapMaterial_Node;
+(MapMaterial)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::app::mapmaterial::MapMaterial_Node>{unsafe{let __receiver= <MapMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df4220usize)as*mut u8,crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::app::mapmaterial::MapMaterial_Node> ;
+(MapMaterial)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapmaterial")]
-pub trait IMapMaterial_NodeMethods : IMapMaterial_Node { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapMaterial_Node as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMaterial_Node , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapmaterial")]impl<__T:IMapMaterial>IMapMaterialMethods for __T{}
 
-#[cfg(feature = "app-mapmaterial")]
-impl < __T : IMapMaterial_Node > IMapMaterial_NodeMethods for __T { }
+#[cfg(feature="app-mapmaterial")]impl MapMaterial{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn find_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-mapmaterial")]
-impl MapMaterial_Node { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMaterial_Node as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapmaterial")]impl MapMaterial{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapMaterial), ::core::stringify!(new),));
+ <Self as IMapMaterialMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapmaterial")]
-impl MapMaterial_Node {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapMaterial_Node) , :: core :: stringify ! (new) ,)) ; < Self as IMapMaterial_NodeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapmaterial")]pub trait IMapMaterial_NodeMethods:IMapMaterial_Node{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMaterial_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186b00usize)as*mut u8,();
+(MapMaterial_Node)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapmaterial")]impl<__T:IMapMaterial_Node>IMapMaterial_NodeMethods for __T{}
+
+#[cfg(feature="app-mapmaterial")]impl MapMaterial_Node{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapmaterial")]impl MapMaterial_Node{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapMaterial_Node), ::core::stringify!(new),));
+ <Self as IMapMaterial_NodeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapmaterial")]
@@ -120,10 +108,10 @@ pub mod prelude {
     pub use super::MapMaterial;
     pub use super::IMapMaterial;
     pub use super::IMapMaterialMethods;
+    pub use super::MapMaterial_Kinds;
     pub use super::MapMaterial_Node;
     pub use super::IMapMaterial_Node;
     pub use super::IMapMaterial_NodeMethods;
-    pub use super::MapMaterial_Kinds;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

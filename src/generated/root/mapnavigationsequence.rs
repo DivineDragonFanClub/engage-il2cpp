@@ -4,75 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationsequence/MapNavigationSequence.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapNavigationSequence {
-# [offset (112)] # [rename (name = "m_IsHide")] pub m_is_hide : bool ,
-# [offset (120)] # [rename (name = "m_MapNavigationObject")] pub m_map_navigation_object : crate :: unity_engine :: gameobject :: GameObject ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapnavigationsequence/MapNavigationSequence.md"))]#[::unity2::class(namespace="",name="MapNavigationSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MapNavigationSequence{#[offset(112)]#[rename(name="m_IsHide")]pub m_is_hide:bool, #[offset(120)]#[rename(name="m_MapNavigationObject")]pub m_map_navigation_object:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapnavigationsequence/MapNavigationSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapNavigationSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapNavigationSequence_Label{const NAMESPACE: &'static str="";
+const NAME: &'static str="MapNavigationSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapnavigationsequence/MapNavigationSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapNavigationSequence_Label  {
-    pub value: i32,
+impl::unity2::IlType for MapNavigationSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for MapNavigationSequence_Label  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapNavigationSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl MapNavigationSequence_Label{pub fn load()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for MapNavigationSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn unload()->Self{Self{value:1}
 }
-
-
-impl  MapNavigationSequence_Label  {
-    pub fn load() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn unload() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn end()->Self{Self{value:2}
+}
 }
 
 }
@@ -80,21 +40,77 @@ impl  MapNavigationSequence_Label  {
 #[cfg(feature = "root-mapnavigationsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapnavigationsequence")]
-impl MapNavigationSequence { # [doc = "`TryCreateBind(crate::app::procinst::ProcInst)` overload"] pub fn try_create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df86f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df87a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationsequence")]impl MapNavigationSequence{#[doc="`TryCreateBind(crate::app::procinst::ProcInst)` overload"]pub fn try_create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df86f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df87a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "root-mapnavigationsequence")]
-pub trait IMapNavigationSequenceMethods : IMapNavigationSequence { # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResources()` overload"] fn unload_resources (self ,) -> () { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideInfo()` overload"] fn hide_info (self ,) -> () { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowInfo()` overload"] fn show_info (self ,) -> () { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateMapNavigationMenu()` overload"] fn create_map_navigation_menu (self ,) -> () { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseMapNavigationRoot()` overload"] fn close_map_navigation_root (self ,) -> () { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df8400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosingMapNavigationRoot()` overload"] fn is_closing_map_navigation_root (self ,) -> bool { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df8540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyMapNavigationgMenu()` overload"] fn destroy_map_navigationg_menu (self ,) -> () { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df8680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapNavigationSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df8e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationsequence")]pub trait IMapNavigationSequenceMethods:IMapNavigationSequence{#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7b10usize)as*mut u8,();
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`UnloadResources()` overload"]fn unload_resources(self,)->(){unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7b90usize)as*mut u8,();
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7c10usize)as*mut u8,bool;
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`HideInfo()` overload"]fn hide_info(self,)->(){unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7c90usize)as*mut u8,();
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`ShowInfo()` overload"]fn show_info(self,)->(){unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7e20usize)as*mut u8,();
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`CreateMapNavigationMenu()` overload"]fn create_map_navigation_menu(self,)->(){unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7f90usize)as*mut u8,();
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`CloseMapNavigationRoot()` overload"]fn close_map_navigation_root(self,)->(){unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df8400usize)as*mut u8,();
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`IsClosingMapNavigationRoot()` overload"]fn is_closing_map_navigation_root(self,)->bool{unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df8540usize)as*mut u8,bool;
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`DestroyMapNavigationgMenu()` overload"]fn destroy_map_navigationg_menu(self,)->(){unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df8680usize)as*mut u8,();
+(MapNavigationSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapNavigationSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df8e30usize)as*mut u8,();
+(MapNavigationSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapnavigationsequence")]
-impl < __T : IMapNavigationSequence > IMapNavigationSequenceMethods for __T { }
+#[cfg(feature="root-mapnavigationsequence")]impl<__T:IMapNavigationSequence>IMapNavigationSequenceMethods for __T{}
 
-#[cfg(feature = "root-mapnavigationsequence")]
-impl MapNavigationSequence { pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn hide_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn show_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_map_navigation_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn close_map_navigation_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_closing_map_navigation_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn destroy_map_navigationg_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn try_create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="root-mapnavigationsequence")]impl MapNavigationSequence{pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hide_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn show_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_map_navigation_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn close_map_navigation_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_closing_map_navigation_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn destroy_map_navigationg_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn try_create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "root-mapnavigationsequence")]
-impl MapNavigationSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapNavigationSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMapNavigationSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapnavigationsequence")]impl MapNavigationSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapNavigationSequence), ::core::stringify!(new),));
+ <Self as IMapNavigationSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapnavigationsequence")]

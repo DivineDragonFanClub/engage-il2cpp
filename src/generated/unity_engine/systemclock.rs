@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/systemclock/SystemClock.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SystemClock")] # [parent (crate :: system :: object :: Object)] pub struct SystemClock {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/systemclock/SystemClock.md"))]#[::unity2::class(namespace="UnityEngine",name="SystemClock")]#[parent(crate::system::object::Object)]pub struct SystemClock{}
 
 }
 
 #[cfg(feature = "unity_engine-systemclock-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-systemclock")]
-impl SystemClock { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3787de0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-systemclock")]impl SystemClock{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3787de0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-systemclock")]
-impl SystemClock { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemClock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-systemclock")]impl SystemClock{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-systemclock")]
 #[doc(hidden)]

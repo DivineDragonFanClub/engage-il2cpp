@@ -4,40 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: markertrack :: { IMarkerTrack , MarkerTrack }
- ;
- use crate :: unity_engine :: timeline :: trackasset :: { ITrackAsset , TrackAsset }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::markertrack::{IMarkerTrack,MarkerTrack}
+;
+use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventmarkertrack/EventMarkerTrack.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventMarkerTrack")] # [parent (crate :: unity_engine :: timeline :: markertrack :: MarkerTrack)] pub struct EventMarkerTrack {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventmarkertrack/EventMarkerTrack.md"))]#[::unity2::class(namespace="App",name="EventMarkerTrack")]#[parent(crate::unity_engine::timeline::markertrack::MarkerTrack)]pub struct EventMarkerTrack{}
 
 }
 
 #[cfg(feature = "app-eventmarkertrack-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-eventmarkertrack")]
-pub trait IEventMarkerTrackMethods : IEventMarkerTrack { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventMarkerTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventMarkerTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eventmarkertrack")]pub trait IEventMarkerTrackMethods:IEventMarkerTrack{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventMarkerTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1b70usize)as*mut u8,();
+(EventMarkerTrack)__receiver)}
+}
+}
 
-#[cfg(feature = "app-eventmarkertrack")]
-impl < __T : IEventMarkerTrack > IEventMarkerTrackMethods for __T { }
+#[cfg(feature="app-eventmarkertrack")]impl<__T:IEventMarkerTrack>IEventMarkerTrackMethods for __T{}
 
-#[cfg(feature = "app-eventmarkertrack")]
-impl EventMarkerTrack { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventMarkerTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-eventmarkertrack")]impl EventMarkerTrack{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-eventmarkertrack")]
-impl EventMarkerTrack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventMarkerTrack) , :: core :: stringify ! (new) ,)) ; < Self as IEventMarkerTrackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-eventmarkertrack")]impl EventMarkerTrack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventMarkerTrack), ::core::stringify!(new),));
+ <Self as IEventMarkerTrackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-eventmarkertrack")]

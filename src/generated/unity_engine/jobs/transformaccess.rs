@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/transformaccess/TransformAccess.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TransformAccess {
-    pub hierarchy: :: unity2 :: IntPtr,
-    pub index: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/jobs/transformaccess/TransformAccess.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TransformAccess{pub hierarchy: ::unity2::IntPtr,pub index:i32,}
+impl::unity2::ClassIdentity for TransformAccess{const NAMESPACE: &'static str="UnityEngine.Jobs";
+const NAME: &'static str="TransformAccess";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TransformAccess {
-    const NAMESPACE: &'static str = "UnityEngine.Jobs";
-
-    const NAME: &'static str = "TransformAccess";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TransformAccess {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TransformAccess{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,14 +26,44 @@ impl ::unity2::IlType for TransformAccess {
 #[cfg(feature = "unity_engine-jobs-transformaccess-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-jobs-transformaccess")]
-impl TransformAccess { # [doc = "`GetPosition(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn get_position_2 () -> (crate :: unity_engine :: jobs :: transformaccess :: TransformAccess , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: jobs :: transformaccess :: TransformAccess > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: jobs :: transformaccess :: TransformAccess , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793070usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetRotation(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::quaternion::Quaternion)` overload"] pub fn get_rotation_2 () -> (crate :: unity_engine :: jobs :: transformaccess :: TransformAccess , crate :: unity_engine :: quaternion :: Quaternion) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: jobs :: transformaccess :: TransformAccess > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: quaternion :: Quaternion > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: jobs :: transformaccess :: TransformAccess , * mut crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793120usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`SetLocalRotation(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::quaternion::Quaternion)` overload"] pub fn set_local_rotation_2 () -> (crate :: unity_engine :: jobs :: transformaccess :: TransformAccess , crate :: unity_engine :: quaternion :: Quaternion) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: jobs :: transformaccess :: TransformAccess > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: quaternion :: Quaternion > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: jobs :: transformaccess :: TransformAccess , * mut crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37931d0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="unity_engine-jobs-transformaccess")]impl TransformAccess{#[doc="`GetPosition(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn get_position_2()->(crate::unity_engine::jobs::transformaccess::TransformAccess,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::jobs::transformaccess::TransformAccess> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3793070usize)as*mut u8,();
+(*mut crate::unity_engine::jobs::transformaccess::TransformAccess)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetRotation(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]pub fn get_rotation_2()->(crate::unity_engine::jobs::transformaccess::TransformAccess,crate::unity_engine::quaternion::Quaternion){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::jobs::transformaccess::TransformAccess> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3793120usize)as*mut u8,();
+(*mut crate::unity_engine::jobs::transformaccess::TransformAccess)__out_0.as_mut_ptr(),(*mut crate::unity_engine::quaternion::Quaternion)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`SetLocalRotation(*mutcrate::unity_engine::jobs::transformaccess::TransformAccess, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]pub fn set_local_rotation_2()->(crate::unity_engine::jobs::transformaccess::TransformAccess,crate::unity_engine::quaternion::Quaternion){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::jobs::transformaccess::TransformAccess> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37931d0usize)as*mut u8,();
+(*mut crate::unity_engine::jobs::transformaccess::TransformAccess)__out_0.as_mut_ptr(),(*mut crate::unity_engine::quaternion::Quaternion)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-jobs-transformaccess")]
-impl TransformAccess { # [doc = "`get_position()` overload"] pub fn get_position (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut TransformAccess , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793010usize) as * mut u8) ; __inner (self as * mut TransformAccess , :: core :: option :: Option :: None) } } } # [doc = "`get_rotation()` overload"] pub fn get_rotation (& mut self ,) -> crate :: unity_engine :: quaternion :: Quaternion { unsafe { { let __inner : extern "C" fn (* mut TransformAccess , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: quaternion :: Quaternion = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37930c0usize) as * mut u8) ; __inner (self as * mut TransformAccess , :: core :: option :: Option :: None) } } } # [doc = "`set_localRotation(crate::unity_engine::quaternion::Quaternion)` overload"] pub fn set_local_rotation (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: quaternion :: Quaternion >) -> () { unsafe { { let __inner : extern "C" fn (* mut TransformAccess , crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793170usize) as * mut u8) ; __inner (self as * mut TransformAccess , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-jobs-transformaccess")]impl TransformAccess{#[doc="`get_position()` overload"]pub fn get_position(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3793010usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut TransformAccess)self as*mut TransformAccess)}
+}
+#[doc="`get_rotation()` overload"]pub fn get_rotation(&mut self,)->crate::unity_engine::quaternion::Quaternion{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37930c0usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+(*mut TransformAccess)self as*mut TransformAccess)}
+}
+#[doc="`set_localRotation(crate::unity_engine::quaternion::Quaternion)` overload"]pub fn set_local_rotation(&mut self,value:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3793170usize)as*mut u8,();
+(*mut TransformAccess)self as*mut TransformAccess,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-jobs-transformaccess")]
-impl TransformAccess { pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAccess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAccess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_local_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAccess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_position_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAccess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_rotation_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAccess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_local_rotation_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAccess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-jobs-transformaccess")]impl TransformAccess{pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_local_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_position_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_rotation_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_local_rotation_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-jobs-transformaccess")]
 #[doc(hidden)]

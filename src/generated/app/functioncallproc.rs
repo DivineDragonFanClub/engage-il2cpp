@@ -4,37 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/functioncallproc/FunctionCallProc.md"))] # [:: unity2 :: class (namespace = "App" , name = "FunctionCallProc")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct FunctionCallProc {
-# [offset (112)] # [rename (name = "m_Callback")] pub m_callback : crate :: app :: procvoidmethod :: ProcVoidMethod ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/functioncallproc/FunctionCallProc.md"))]#[::unity2::class(namespace="App",name="FunctionCallProc")]#[parent(crate::app::procinst::ProcInst)]pub struct FunctionCallProc{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::app::procvoidmethod::ProcVoidMethod,}
 
 }
 
 #[cfg(feature = "app-functioncallproc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-functioncallproc")]
-impl FunctionCallProc { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::procvoidmethod::ProcVoidMethod)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , callback : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2276800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-functioncallproc")]impl FunctionCallProc{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::procvoidmethod::ProcVoidMethod)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,callback:impl::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2276800usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::procvoidmethod::ProcVoidMethod)::core::convert::Into::into(callback))}
+}
+}
 
-#[cfg(feature = "app-functioncallproc")]
-pub trait IFunctionCallProcMethods : IFunctionCallProc { # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < FunctionCallProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FunctionCallProc , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22768e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` overload"] fn ctor (self , callback : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> () { unsafe { let __receiver = < FunctionCallProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FunctionCallProc , crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22768a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-functioncallproc")]pub trait IFunctionCallProcMethods:IFunctionCallProc{#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <FunctionCallProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22768e0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(FunctionCallProc)__receiver)}
+}
+#[doc="`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` overload"]fn ctor(self,callback:impl::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>)->(){unsafe{let __receiver= <FunctionCallProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22768a0usize)as*mut u8,();
+(FunctionCallProc)__receiver,(crate::app::procvoidmethod::ProcVoidMethod)::core::convert::Into::into(callback))}
+}
+}
 
-#[cfg(feature = "app-functioncallproc")]
-impl < __T : IFunctionCallProc > IFunctionCallProcMethods for __T { }
+#[cfg(feature="app-functioncallproc")]impl<__T:IFunctionCallProc>IFunctionCallProcMethods for __T{}
 
-#[cfg(feature = "app-functioncallproc")]
-impl FunctionCallProc { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCallProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCallProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCallProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-functioncallproc")]impl FunctionCallProc{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-functioncallproc")]
-impl FunctionCallProc {
-# [doc = "`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` — overload selector"] pub fn new (callback : crate :: app :: procvoidmethod :: ProcVoidMethod) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FunctionCallProc) , :: core :: stringify ! (new) ,)) ; < Self as IFunctionCallProcMethods > :: ctor (this , callback) ; this }
+#[cfg(feature="app-functioncallproc")]impl FunctionCallProc{#[doc="`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` — overload selector"]pub fn new(callback:crate::app::procvoidmethod::ProcVoidMethod)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FunctionCallProc), ::core::stringify!(new),));
+ <Self as IFunctionCallProcMethods> ::ctor(this,callback);
+this}
 }
 
 #[cfg(feature = "app-functioncallproc")]

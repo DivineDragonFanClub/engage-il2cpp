@@ -4,43 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cameraconstraint/CameraConstraint.md"))] # [:: unity2 :: class (namespace = "App" , name = "CameraConstraint")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CameraConstraint {
-# [offset (24)] # [rename (name = "m_Target")] pub m_target : crate :: unity_engine :: camera :: Camera ,
-# [offset (32)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (40)] # [rename (name = "m_Position")] pub m_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (52)] # [rename (name = "m_Rotation")] pub m_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cameraconstraint/CameraConstraint.md"))]#[::unity2::class(namespace="App",name="CameraConstraint")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CameraConstraint{#[offset(24)]#[rename(name="m_Target")]pub m_target:crate::unity_engine::camera::Camera, #[offset(32)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(40)]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="m_Rotation")]pub m_rotation:crate::unity_engine::quaternion::Quaternion,}
 
 }
 
 #[cfg(feature = "app-cameraconstraint-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cameraconstraint")]
-pub trait ICameraConstraintMethods : ICameraConstraint { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CameraConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CameraConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29948e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cameraconstraint")]pub trait ICameraConstraintMethods:ICameraConstraint{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CameraConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994840usize)as*mut u8,();
+(CameraConstraint)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <CameraConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29948e0usize)as*mut u8,();
+(CameraConstraint)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994b00usize)as*mut u8,();
+(CameraConstraint)__receiver)}
+}
+}
 
-#[cfg(feature = "app-cameraconstraint")]
-impl < __T : ICameraConstraint > ICameraConstraintMethods for __T { }
+#[cfg(feature="app-cameraconstraint")]impl<__T:ICameraConstraint>ICameraConstraintMethods for __T{}
 
-#[cfg(feature = "app-cameraconstraint")]
-impl CameraConstraint { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraConstraint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraConstraint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraConstraint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-cameraconstraint")]impl CameraConstraint{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-cameraconstraint")]
-impl CameraConstraint {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraConstraint) , :: core :: stringify ! (new) ,)) ; < Self as ICameraConstraintMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cameraconstraint")]impl CameraConstraint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraConstraint), ::core::stringify!(new),));
+ <Self as ICameraConstraintMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-cameraconstraint")]

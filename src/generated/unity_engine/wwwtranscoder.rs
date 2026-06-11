@@ -4,33 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/wwwtranscoder/WWWTranscoder.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "WWWTranscoder")] # [parent (crate :: system :: object :: Object)] pub struct WWWTranscoder {
-# [static_field] # [rename (name = "ucHexChars")] pub uc_hex_chars : :: unity2 :: Array < u8 > ,
-# [static_field] # [rename (name = "lcHexChars")] pub lc_hex_chars : :: unity2 :: Array < u8 > ,
-# [static_field] # [rename (name = "urlEscapeChar")] pub url_escape_char : u8 ,
-# [static_field] # [rename (name = "urlSpace")] pub url_space : :: unity2 :: Array < u8 > ,
-# [static_field] # [rename (name = "dataSpace")] pub data_space : :: unity2 :: Array < u8 > ,
-# [static_field] # [rename (name = "urlForbidden")] pub url_forbidden : :: unity2 :: Array < u8 > ,
-# [static_field] # [rename (name = "qpEscapeChar")] pub qp_escape_char : u8 ,
-# [static_field] # [rename (name = "qpSpace")] pub qp_space : :: unity2 :: Array < u8 > ,
-# [static_field] # [rename (name = "qpForbidden")] pub qp_forbidden : :: unity2 :: Array < u8 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/wwwtranscoder/WWWTranscoder.md"))]#[::unity2::class(namespace="UnityEngine",name="WWWTranscoder")]#[parent(crate::system::object::Object)]pub struct WWWTranscoder{#[static_field]#[rename(name="ucHexChars")]pub uc_hex_chars: ::unity2::Array<u8> , #[static_field]#[rename(name="lcHexChars")]pub lc_hex_chars: ::unity2::Array<u8> , #[static_field]#[rename(name="urlEscapeChar")]pub url_escape_char:u8, #[static_field]#[rename(name="urlSpace")]pub url_space: ::unity2::Array<u8> , #[static_field]#[rename(name="dataSpace")]pub data_space: ::unity2::Array<u8> , #[static_field]#[rename(name="urlForbidden")]pub url_forbidden: ::unity2::Array<u8> , #[static_field]#[rename(name="qpEscapeChar")]pub qp_escape_char:u8, #[static_field]#[rename(name="qpSpace")]pub qp_space: ::unity2::Array<u8> , #[static_field]#[rename(name="qpForbidden")]pub qp_forbidden: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "unity_engine-wwwtranscoder-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-wwwtranscoder")]
-impl WWWTranscoder { # [doc = "`Hex2Byte(::unity2::Array<u8>, i32)` overload"] pub fn hex2_byte (b : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 >) -> u8 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cfa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } } # [doc = "`Byte2Hex(u8, ::unity2::Array<u8>)` overload"] pub fn byte2_hex (b : impl :: core :: convert :: Into < u8 > , hex_chars : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (u8 , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1d060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (hex_chars) , :: core :: option :: Option :: None) } } } # [doc = "`DataEncode(::unity2::Array<u8>)` overload"] pub fn data_encode (to_encode : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cf20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (to_encode) , :: core :: option :: Option :: None) } } } # [doc = "`Encode(::unity2::Array<u8>, u8, ::unity2::Array<u8>, ::unity2::Array<u8>, bool)` overload"] pub fn encode (input : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , escape_char : impl :: core :: convert :: Into < u8 > , space : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , forbidden : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , uppercase : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , u8 , :: unity2 :: Array < u8 > , :: unity2 :: Array < u8 > , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1d120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (input) , :: core :: convert :: Into :: into (escape_char) , :: core :: convert :: Into :: into (space) , :: core :: convert :: Into :: into (forbidden) , :: core :: convert :: Into :: into (uppercase) , :: core :: option :: Option :: None) } } } # [doc = "`ByteArrayContains(::unity2::Array<u8>, u8)` overload"] pub fn byte_array_contains (array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , b : impl :: core :: convert :: Into < u8 >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , u8 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1d4a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`URLDecode(::unity2::Array<u8>)` overload"] pub fn url_decode (to_encode : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1d4e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (to_encode) , :: core :: option :: Option :: None) } } } # [doc = "`ByteSubArrayEquals(::unity2::Array<u8>, i32, ::unity2::Array<u8>)` overload"] pub fn byte_sub_array_equals (array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , index : impl :: core :: convert :: Into < i32 > , comperand : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1d8f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (comperand) , :: core :: option :: Option :: None) } } } # [doc = "`Decode(::unity2::Array<u8>, u8, ::unity2::Array<u8>)` overload"] pub fn decode (input : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , escape_char : impl :: core :: convert :: Into < u8 > , space : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , u8 , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1d560usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (input) , :: core :: convert :: Into :: into (escape_char) , :: core :: convert :: Into :: into (space) , :: core :: option :: Option :: None) } } } # [doc = "`SevenBitClean(::unity2::Array<u8>)` overload"] pub fn seven_bit_clean (input : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1d970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (input) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1d9e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-wwwtranscoder")]impl WWWTranscoder{#[doc="`Hex2Byte(::unity2::Array<u8>, i32)` overload"]pub fn hex2_byte(b:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32>)->u8{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cfa0usize)as*mut u8,u8;
+(::unity2::Array<u8>)::core::convert::Into::into(b),(i32)::core::convert::Into::into(offset))}
+}
+#[doc="`Byte2Hex(u8, ::unity2::Array<u8>)` overload"]pub fn byte2_hex(b:impl::core::convert::Into<u8> ,hex_chars:impl::core::convert::Into< ::unity2::Array<u8> >)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1d060usize)as*mut u8, ::unity2::Array<u8> ;
+(u8)::core::convert::Into::into(b),(::unity2::Array<u8>)::core::convert::Into::into(hex_chars))}
+}
+#[doc="`DataEncode(::unity2::Array<u8>)` overload"]pub fn data_encode(to_encode:impl::core::convert::Into< ::unity2::Array<u8> >)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cf20usize)as*mut u8, ::unity2::Array<u8> ;
+(::unity2::Array<u8>)::core::convert::Into::into(to_encode))}
+}
+#[doc="`Encode(::unity2::Array<u8>, u8, ::unity2::Array<u8>, ::unity2::Array<u8>, bool)` overload"]pub fn encode(input:impl::core::convert::Into< ::unity2::Array<u8> > ,escape_char:impl::core::convert::Into<u8> ,space:impl::core::convert::Into< ::unity2::Array<u8> > ,forbidden:impl::core::convert::Into< ::unity2::Array<u8> > ,uppercase:impl::core::convert::Into<bool>)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1d120usize)as*mut u8, ::unity2::Array<u8> ;
+(::unity2::Array<u8>)::core::convert::Into::into(input),(u8)::core::convert::Into::into(escape_char),(::unity2::Array<u8>)::core::convert::Into::into(space),(::unity2::Array<u8>)::core::convert::Into::into(forbidden),(bool)::core::convert::Into::into(uppercase))}
+}
+#[doc="`ByteArrayContains(::unity2::Array<u8>, u8)` overload"]pub fn byte_array_contains(array:impl::core::convert::Into< ::unity2::Array<u8> > ,b:impl::core::convert::Into<u8>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1d4a0usize)as*mut u8,bool;
+(::unity2::Array<u8>)::core::convert::Into::into(array),(u8)::core::convert::Into::into(b))}
+}
+#[doc="`URLDecode(::unity2::Array<u8>)` overload"]pub fn url_decode(to_encode:impl::core::convert::Into< ::unity2::Array<u8> >)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1d4e0usize)as*mut u8, ::unity2::Array<u8> ;
+(::unity2::Array<u8>)::core::convert::Into::into(to_encode))}
+}
+#[doc="`ByteSubArrayEquals(::unity2::Array<u8>, i32, ::unity2::Array<u8>)` overload"]pub fn byte_sub_array_equals(array:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,comperand:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1d8f0usize)as*mut u8,bool;
+(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index),(::unity2::Array<u8>)::core::convert::Into::into(comperand))}
+}
+#[doc="`Decode(::unity2::Array<u8>, u8, ::unity2::Array<u8>)` overload"]pub fn decode(input:impl::core::convert::Into< ::unity2::Array<u8> > ,escape_char:impl::core::convert::Into<u8> ,space:impl::core::convert::Into< ::unity2::Array<u8> >)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1d560usize)as*mut u8, ::unity2::Array<u8> ;
+(::unity2::Array<u8>)::core::convert::Into::into(input),(u8)::core::convert::Into::into(escape_char),(::unity2::Array<u8>)::core::convert::Into::into(space))}
+}
+#[doc="`SevenBitClean(::unity2::Array<u8>)` overload"]pub fn seven_bit_clean(input:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1d970usize)as*mut u8,bool;
+(::unity2::Array<u8>)::core::convert::Into::into(input))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1d9e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-wwwtranscoder")]
-impl WWWTranscoder { pub fn hex2_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn byte2_hex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn data_encode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn encode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn byte_array_contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn url_decode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn byte_sub_array_equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn decode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn seven_bit_clean_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWTranscoder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="unity_engine-wwwtranscoder")]impl WWWTranscoder{pub fn hex2_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn byte2_hex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn data_encode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn encode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn byte_array_contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn url_decode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn byte_sub_array_equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn decode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn seven_bit_clean_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
 #[cfg(feature = "unity_engine-wwwtranscoder")]
 #[doc(hidden)]

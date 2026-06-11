@@ -4,32 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenuselect/BasicMenuSelect.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicMenuSelect")] # [parent (crate :: system :: object :: Object)] pub struct BasicMenuSelect {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicmenuselect/BasicMenuSelect.md"))]#[::unity2::class(namespace="App",name="BasicMenuSelect")]#[parent(crate::system::object::Object)]pub struct BasicMenuSelect{}
 
 }
 
 #[cfg(feature = "app-basicmenuselect-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-basicmenuselect")]
-pub trait IBasicMenuSelectMethods : IBasicMenuSelect { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BasicMenuSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::basicmenuselect::BasicMenuSelect)` overload"] fn ctor_2 (self , other : impl :: core :: convert :: Into < crate :: app :: basicmenuselect :: BasicMenuSelect >) -> () { unsafe { let __receiver = < BasicMenuSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicMenuSelect , crate :: app :: basicmenuselect :: BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < BasicMenuSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245d090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Duplicate()` overload"] fn duplicate (self ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect { unsafe { let __receiver = < BasicMenuSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24679d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Index()` overload"] fn get_index (self ,) -> i32 { unsafe { let __receiver = < BasicMenuSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Index(i32)` overload"] fn set_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BasicMenuSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicMenuSelect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Scroll()` overload"] fn get_scroll (self ,) -> i32 { unsafe { let __receiver = < BasicMenuSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Scroll(i32)` overload"] fn set_scroll (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BasicMenuSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicMenuSelect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicmenuselect")]pub trait IBasicMenuSelectMethods:IBasicMenuSelect{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicMenuSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467960usize)as*mut u8,();
+(BasicMenuSelect)__receiver)}
+}
+#[doc="`.ctor(crate::app::basicmenuselect::BasicMenuSelect)` overload"]fn ctor_2(self,other:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>)->(){unsafe{let __receiver= <BasicMenuSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467990usize)as*mut u8,();
+(BasicMenuSelect)__receiver,(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(other))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <BasicMenuSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245d090usize)as*mut u8,();
+(BasicMenuSelect)__receiver)}
+}
+#[doc="`Duplicate()` overload"]fn duplicate(self,)->crate::app::basicmenuselect::BasicMenuSelect{unsafe{let __receiver= <BasicMenuSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24679d0usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
+(BasicMenuSelect)__receiver)}
+}
+#[doc="`get_Index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <BasicMenuSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467a50usize)as*mut u8,i32;
+(BasicMenuSelect)__receiver)}
+}
+#[doc="`set_Index(i32)` overload"]fn set_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BasicMenuSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467a60usize)as*mut u8,();
+(BasicMenuSelect)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Scroll()` overload"]fn get_scroll(self,)->i32{unsafe{let __receiver= <BasicMenuSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467a70usize)as*mut u8,i32;
+(BasicMenuSelect)__receiver)}
+}
+#[doc="`set_Scroll(i32)` overload"]fn set_scroll(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BasicMenuSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467a80usize)as*mut u8,();
+(BasicMenuSelect)__receiver,(i32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-basicmenuselect")]
-impl < __T : IBasicMenuSelect > IBasicMenuSelectMethods for __T { }
+#[cfg(feature="app-basicmenuselect")]impl<__T:IBasicMenuSelect>IBasicMenuSelectMethods for __T{}
 
-#[cfg(feature = "app-basicmenuselect")]
-impl BasicMenuSelect { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicMenuSelect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicMenuSelect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicMenuSelect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn duplicate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicMenuSelect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicMenuSelect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicMenuSelect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicMenuSelect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicMenuSelect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-basicmenuselect")]impl BasicMenuSelect{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn duplicate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-basicmenuselect")]
-impl BasicMenuSelect {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicMenuSelect) , :: core :: stringify ! (new) ,)) ; < Self as IBasicMenuSelectMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::app::basicmenuselect::BasicMenuSelect)` — overload selector"] pub fn new_2 (other : crate :: app :: basicmenuselect :: BasicMenuSelect) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicMenuSelect) , :: core :: stringify ! (new_2) ,)) ; < Self as IBasicMenuSelectMethods > :: ctor_2 (this , other) ; this }
+#[cfg(feature="app-basicmenuselect")]impl BasicMenuSelect{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicMenuSelect), ::core::stringify!(new),));
+ <Self as IBasicMenuSelectMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::app::basicmenuselect::BasicMenuSelect)` — overload selector"]pub fn new_2(other:crate::app::basicmenuselect::BasicMenuSelect)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicMenuSelect), ::core::stringify!(new_2),));
+ <Self as IBasicMenuSelectMethods> ::ctor_2(this,other);
+this}
 }
 
 #[cfg(feature = "app-basicmenuselect")]

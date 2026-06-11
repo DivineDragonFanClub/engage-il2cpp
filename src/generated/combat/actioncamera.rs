@@ -4,35 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actioncamera/ActionCamera.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionCamera")] # [parent (crate :: combat :: state :: State)] pub struct ActionCamera {
-# [offset (20)] # [rename (name = "m_Style")] pub m_style : crate :: combat :: camerasituation :: CameraSituation ,
-# [offset (24)] # [rename (name = "m_Force")] pub m_force : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actioncamera/ActionCamera.md"))]#[::unity2::class(namespace="Combat",name="ActionCamera")]#[parent(crate::combat::state::State)]pub struct ActionCamera{#[offset(20)]#[rename(name="m_Style")]pub m_style:crate::combat::camerasituation::CameraSituation, #[offset(24)]#[rename(name="m_Force")]pub m_force:bool,}
 
 }
 
 #[cfg(feature = "combat-actioncamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actioncamera")]
-pub trait IActionCameraMethods : IActionCamera { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionCamera , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::camerasituation::CameraSituation, bool)` overload"] fn ctor (self , style : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , force : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ActionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionCamera , crate :: combat :: camerasituation :: CameraSituation , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3fe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (style) , :: core :: convert :: Into :: into (force) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actioncamera")]pub trait IActionCameraMethods:IActionCamera{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3f90usize)as*mut u8, ::unity2::Il2CppString;
+(ActionCamera)__receiver)}
+}
+#[doc="`.ctor(crate::combat::camerasituation::CameraSituation, bool)` overload"]fn ctor(self,style:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ActionCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3fe0usize)as*mut u8,();
+(ActionCamera)__receiver,(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(style),(bool)::core::convert::Into::into(force))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4020usize)as*mut u8,();
+(ActionCamera)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actioncamera")]
-impl < __T : IActionCamera > IActionCameraMethods for __T { }
+#[cfg(feature="combat-actioncamera")]impl<__T:IActionCamera>IActionCameraMethods for __T{}
 
-#[cfg(feature = "combat-actioncamera")]
-impl ActionCamera { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actioncamera")]impl ActionCamera{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actioncamera")]
-impl ActionCamera {
-# [doc = "`.ctor(crate::combat::camerasituation::CameraSituation, bool)` — overload selector"] pub fn new (style : crate :: combat :: camerasituation :: CameraSituation , force : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionCamera) , :: core :: stringify ! (new) ,)) ; < Self as IActionCameraMethods > :: ctor (this , style , force) ; this }
+#[cfg(feature="combat-actioncamera")]impl ActionCamera{#[doc="`.ctor(crate::combat::camerasituation::CameraSituation, bool)` — overload selector"]pub fn new(style:crate::combat::camerasituation::CameraSituation,force:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionCamera), ::core::stringify!(new),));
+ <Self as IActionCameraMethods> ::ctor(this,style,force);
+this}
 }
 
 #[cfg(feature = "combat-actioncamera")]

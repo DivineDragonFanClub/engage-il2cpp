@@ -4,65 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shadowsplitdata/ShadowSplitData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ShadowSplitData {}
-
-
-impl ::unity2::ClassIdentity for ShadowSplitData {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "ShadowSplitData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/shadowsplitdata/ShadowSplitData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ShadowSplitData{}
+impl::unity2::ClassIdentity for ShadowSplitData{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="ShadowSplitData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for ShadowSplitData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ShadowSplitData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ShadowSplitData {
-    #[inline]
-    pub fn maximum_culling_plane_count() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "maximumCullingPlaneCount");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_maximum_culling_plane_count(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "maximumCullingPlaneCount");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl ShadowSplitData{#[inline]pub fn maximum_culling_plane_count()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"maximumCullingPlaneCount");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_maximum_culling_plane_count(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"maximumCullingPlaneCount");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -70,14 +34,47 @@ impl ShadowSplitData {
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
-impl ShadowSplitData { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93c80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-shadowsplitdata")]impl ShadowSplitData{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f93c80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
-impl ShadowSplitData { # [doc = "`get_cullingPlaneCount()` overload"] pub fn get_culling_plane_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ShadowSplitData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93a90usize) as * mut u8) ; __inner (self as * mut ShadowSplitData , :: core :: option :: Option :: None) } } } # [doc = "`get_cullingSphere()` overload"] pub fn get_culling_sphere (& mut self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { { let __inner : extern "C" fn (* mut ShadowSplitData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93aa0usize) as * mut u8) ; __inner (self as * mut ShadowSplitData , :: core :: option :: Option :: None) } } } # [doc = "`set_cullingSphere(crate::unity_engine::vector4::Vector4)` overload"] pub fn set_culling_sphere (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ShadowSplitData , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93ab0usize) as * mut u8) ; __inner (self as * mut ShadowSplitData , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_shadowCascadeBlendCullingFactor(f32)` overload"] pub fn set_shadow_cascade_blend_culling_factor (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ShadowSplitData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f935f0usize) as * mut u8) ; __inner (self as * mut ShadowSplitData , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetCullingPlane(i32)` overload"] pub fn get_culling_plane (& mut self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: plane :: Plane { unsafe { { let __inner : extern "C" fn (* mut ShadowSplitData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: plane :: Plane = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93ad0usize) as * mut u8) ; __inner (self as * mut ShadowSplitData , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData >) -> bool { unsafe { { let __inner : extern "C" fn (* mut ShadowSplitData , crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f937a0usize) as * mut u8) ; __inner (self as * mut ShadowSplitData , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut ShadowSplitData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93be0usize) as * mut u8) ; __inner (self as * mut ShadowSplitData , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ShadowSplitData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93a60usize) as * mut u8) ; __inner (self as * mut ShadowSplitData , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-shadowsplitdata")]impl ShadowSplitData{#[doc="`get_cullingPlaneCount()` overload"]pub fn get_culling_plane_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f93a90usize)as*mut u8,i32;
+(*mut ShadowSplitData)self as*mut ShadowSplitData)}
+}
+#[doc="`get_cullingSphere()` overload"]pub fn get_culling_sphere(&mut self,)->crate::unity_engine::vector4::Vector4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f93aa0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(*mut ShadowSplitData)self as*mut ShadowSplitData)}
+}
+#[doc="`set_cullingSphere(crate::unity_engine::vector4::Vector4)` overload"]pub fn set_culling_sphere(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector4::Vector4>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f93ab0usize)as*mut u8,();
+(*mut ShadowSplitData)self as*mut ShadowSplitData,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(value))}
+}
+#[doc="`set_shadowCascadeBlendCullingFactor(f32)` overload"]pub fn set_shadow_cascade_blend_culling_factor(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f935f0usize)as*mut u8,();
+(*mut ShadowSplitData)self as*mut ShadowSplitData,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`GetCullingPlane(i32)` overload"]pub fn get_culling_plane(&mut self,index:impl::core::convert::Into<i32>)->crate::unity_engine::plane::Plane{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f93ad0usize)as*mut u8,crate::unity_engine::plane::Plane;
+(*mut ShadowSplitData)self as*mut ShadowSplitData,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f937a0usize)as*mut u8,bool;
+(*mut ShadowSplitData)self as*mut ShadowSplitData,(crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f93be0usize)as*mut u8,bool;
+(*mut ShadowSplitData)self as*mut ShadowSplitData,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f93a60usize)as*mut u8,i32;
+(*mut ShadowSplitData)self as*mut ShadowSplitData)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
-impl ShadowSplitData { pub fn get_culling_plane_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_culling_sphere_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_culling_sphere_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_shadow_cascade_blend_culling_factor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_culling_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSplitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-rendering-shadowsplitdata")]impl ShadowSplitData{pub fn get_culling_plane_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_culling_sphere_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_culling_sphere_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_shadow_cascade_blend_culling_factor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_culling_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
 #[doc(hidden)]

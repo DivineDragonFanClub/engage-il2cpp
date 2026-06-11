@@ -4,97 +4,122 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawardsequence/RelayAwardSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayAwardSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayawardsequence/RelayAwardSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayAwardSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RelayAwardSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayAwardSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RelayAwardSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RelayAwardSequence_Label{pub fn unit_award()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for RelayAwardSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAwardSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RelayAwardSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RelayAwardSequence_Label  {
-    pub fn unit_award() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawardsequence/RelayAwardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayAwardSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayawardsequence :: RelayAwardSequence >)] pub struct RelayAwardSequence {
-# [offset (120)] # [rename (name = "m_EnteredBattle")] pub m_entered_battle : crate :: app :: relayuserdata :: RelayUserData_EnteredBattle ,
-# [offset (128)] # [rename (name = "m_Raids")] pub m_raids : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (136)] # [rename (name = "m_GainItem")] pub m_gain_item : crate :: app :: itemdata :: ItemData ,
-# [offset (144)] # [rename (name = "m_IsAwarded")] pub m_is_awarded : bool ,
-# [offset (148)] # [rename (name = "m_PrevMasterProofCount")] pub m_prev_master_proof_count : i32 ,
-# [offset (152)] # [rename (name = "m_PrevChangeProofCount")] pub m_prev_change_proof_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayawardsequence/RelayAwardSequence.md"))]#[::unity2::class(namespace="App",name="RelayAwardSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayawardsequence::RelayAwardSequence>)]pub struct RelayAwardSequence{#[offset(120)]#[rename(name="m_EnteredBattle")]pub m_entered_battle:crate::app::relayuserdata::RelayUserData_EnteredBattle, #[offset(128)]#[rename(name="m_Raids")]pub m_raids: ::unity2::Array< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_GainItem")]pub m_gain_item:crate::app::itemdata::ItemData, #[offset(144)]#[rename(name="m_IsAwarded")]pub m_is_awarded:bool, #[offset(148)]#[rename(name="m_PrevMasterProofCount")]pub m_prev_master_proof_count:i32, #[offset(152)]#[rename(name="m_PrevChangeProofCount")]pub m_prev_change_proof_count:i32,}
 
 }
 
 #[cfg(feature = "app-relayawardsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayawardsequence")]
-impl RelayAwardSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cfcf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnteredBattle()` overload"] pub fn get_entered_battle () -> crate :: app :: relayuserdata :: RelayUserData_EnteredBattle { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: relayuserdata :: RelayUserData_EnteredBattle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf310usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetEnteredBattleFromUserData()` overload"] pub fn get_entered_battle_from_user_data () -> crate :: app :: relayuserdata :: RelayUserData_EnteredBattle { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: relayuserdata :: RelayUserData_EnteredBattle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf3d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayawardsequence")]impl RelayAwardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cfcf0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`GetEnteredBattle()` overload"]pub fn get_entered_battle()->crate::app::relayuserdata::RelayUserData_EnteredBattle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cf310usize)as*mut u8,crate::app::relayuserdata::RelayUserData_EnteredBattle;
+)}
+}
+#[doc="`GetEnteredBattleFromUserData()` overload"]pub fn get_entered_battle_from_user_data()->crate::app::relayuserdata::RelayUserData_EnteredBattle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cf3d0usize)as*mut u8,crate::app::relayuserdata::RelayUserData_EnteredBattle;
+)}
+}
+}
 
-#[cfg(feature = "app-relayawardsequence")]
-pub trait IRelayAwardSequenceMethods : IRelayAwardSequence { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TeamAward()` overload"] fn team_award (self ,) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitAward()` overload"] fn unit_award (self ,) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GainItem()` overload"] fn gain_item (self ,) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GainItems(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult)` overload"] fn gain_items (self , result : impl :: core :: convert :: Into < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult >) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } # [doc = "`GainItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"] fn gain_items_2 (self , items : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > >) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf9a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (items) , :: core :: option :: Option :: None) } } } # [doc = "`SetGainItem(crate::app::itemdata::ItemData)` overload"] fn set_gain_item (self , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cf880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`TutorialClassChange()` overload"] fn tutorial_class_change (self ,) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cfb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cfc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayAwardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayawardsequence")]pub trait IRelayAwardSequenceMethods:IRelayAwardSequence{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf080usize)as*mut u8,();
+(RelayAwardSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf3a0usize)as*mut u8,();
+(RelayAwardSequence)__receiver)}
+}
+#[doc="`TeamAward()` overload"]fn team_award(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf4b0usize)as*mut u8,();
+(RelayAwardSequence)__receiver)}
+}
+#[doc="`UnitAward()` overload"]fn unit_award(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf8a0usize)as*mut u8,();
+(RelayAwardSequence)__receiver)}
+}
+#[doc="`GainItem()` overload"]fn gain_item(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf940usize)as*mut u8,();
+(RelayAwardSequence)__receiver)}
+}
+#[doc="`GainItems(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult)` overload"]fn gain_items(self,result:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult>)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf830usize)as*mut u8,();
+(RelayAwardSequence)__receiver,(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult)::core::convert::Into::into(result))}
+}
+#[doc="`GainItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]fn gain_items_2(self,items:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> >)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf9a0usize)as*mut u8,();
+(RelayAwardSequence)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(items))}
+}
+#[doc="`SetGainItem(crate::app::itemdata::ItemData)` overload"]fn set_gain_item(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf880usize)as*mut u8,();
+(RelayAwardSequence)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`TutorialClassChange()` overload"]fn tutorial_class_change(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cfb60usize)as*mut u8,();
+(RelayAwardSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cfc50usize)as*mut u8,();
+(RelayAwardSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0190usize)as*mut u8,();
+(RelayAwardSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayawardsequence")]
-impl < __T : IRelayAwardSequence > IRelayAwardSequenceMethods for __T { }
+#[cfg(feature="app-relayawardsequence")]impl<__T:IRelayAwardSequence>IRelayAwardSequenceMethods for __T{}
 
-#[cfg(feature = "app-relayawardsequence")]
-impl RelayAwardSequence { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn team_award_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unit_award_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn gain_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn gain_items_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn gain_items_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_gain_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn tutorial_class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_entered_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_entered_battle_from_user_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-relayawardsequence")]impl RelayAwardSequence{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn team_award_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unit_award_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn gain_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn gain_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn gain_items_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_gain_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn tutorial_class_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_entered_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_entered_battle_from_user_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-relayawardsequence")]
-impl RelayAwardSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayAwardSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRelayAwardSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayawardsequence")]impl RelayAwardSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayAwardSequence), ::core::stringify!(new),));
+ <Self as IRelayAwardSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayawardsequence")]

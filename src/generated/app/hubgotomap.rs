@@ -4,77 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: confirmdialogitemfunc :: { ConfirmDialogItemFunc , IConfirmDialogItemFunc }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::confirmdialogitemfunc::{ConfirmDialogItemFunc,IConfirmDialogItemFunc}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap_GoToDialogItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubGoToMap.GoToDialogItem")] # [parent (crate :: app :: confirmdialogitemfunc :: ConfirmDialogItemFunc)] pub struct HubGoToMap_GoToDialogItem {
-# [offset (120)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: gmapmode :: GmapMode_Mode ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubgotomap/HubGoToMap.md"))]#[::unity2::class(namespace="App",name="HubGoToMap")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct HubGoToMap{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubGoToMap")] # [parent (crate :: app :: basicdialog :: BasicDialog)] pub struct HubGoToMap {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubgotomap/HubGoToMap_GoToDialogItem.md"))]#[::unity2::class(namespace="App",name="HubGoToMap.GoToDialogItem")]#[parent(crate::app::confirmdialogitemfunc::ConfirmDialogItemFunc)]pub struct HubGoToMap_GoToDialogItem{#[offset(120)]#[rename(name="m_Mode")]pub m_mode:crate::app::gmapmode::GmapMode_Mode,}
 
 }
 
 #[cfg(feature = "app-hubgotomap-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubgotomap")]
-pub trait IHubGoToMap_GoToDialogItemMethods : IHubGoToMap_GoToDialogItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < crate :: system :: action :: Action > , mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> () { unsafe { let __receiver = < HubGoToMap_GoToDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubGoToMap_GoToDialogItem , :: unity2 :: Il2CppString , crate :: system :: action :: Action , crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce6100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (func) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubGoToMap_GoToDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubGoToMap_GoToDialogItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce6130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubgotomap")]
-impl < __T : IHubGoToMap_GoToDialogItem > IHubGoToMap_GoToDialogItemMethods for __T { }
-
-#[cfg(feature = "app-hubgotomap")]
-impl HubGoToMap_GoToDialogItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubGoToMap_GoToDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubGoToMap_GoToDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-hubgotomap")]
-impl HubGoToMap_GoToDialogItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` — overload selector"] pub fn new (label : :: unity2 :: Il2CppString , func : crate :: system :: action :: Action , mode : crate :: app :: gmapmode :: GmapMode_Mode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubGoToMap_GoToDialogItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubGoToMap_GoToDialogItemMethods > :: ctor (this , label , func , mode) ; this }
+#[cfg(feature="app-hubgotomap")]impl HubGoToMap{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,func:impl::core::convert::Into<crate::system::action::Action>)->crate::app::hubgotomap::HubGoToMap{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28aa180usize)as*mut u8,crate::app::hubgotomap::HubGoToMap;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(func))}
+}
 }
 
-#[cfg(feature = "app-hubgotomap")]
-impl HubGoToMap { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> crate :: app :: hubgotomap :: HubGoToMap { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubgotomap :: HubGoToMap = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa180usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubgotomap")]pub trait IHubGoToMapMethods:IHubGoToMap{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <HubGoToMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa170usize)as*mut u8,();
+(HubGoToMap)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+}
 
-#[cfg(feature = "app-hubgotomap")]
-pub trait IHubGoToMapMethods : IHubGoToMap { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicdialogcontent :: BasicDialogContent >) -> () { unsafe { let __receiver = < HubGoToMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubGoToMap , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicdialogcontent :: BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubgotomap")]impl<__T:IHubGoToMap>IHubGoToMapMethods for __T{}
 
-#[cfg(feature = "app-hubgotomap")]
-impl < __T : IHubGoToMap > IHubGoToMapMethods for __T { }
+#[cfg(feature="app-hubgotomap")]impl HubGoToMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-hubgotomap")]
-impl HubGoToMap { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubGoToMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubGoToMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-hubgotomap")]impl HubGoToMap{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubGoToMap), ::core::stringify!(new),));
+ <Self as IHubGoToMapMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
 
-#[cfg(feature = "app-hubgotomap")]
-impl HubGoToMap {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicdialogcontent :: BasicDialogContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubGoToMap) , :: core :: stringify ! (new) ,)) ; < Self as IHubGoToMapMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-hubgotomap")]pub trait IHubGoToMap_GoToDialogItemMethods:IHubGoToMap_GoToDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` overload"]fn ctor(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::action::Action> ,mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)->(){unsafe{let __receiver= <HubGoToMap_GoToDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce6100usize)as*mut u8,();
+(HubGoToMap_GoToDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::action::Action)::core::convert::Into::into(func),(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubGoToMap_GoToDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce6130usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubGoToMap_GoToDialogItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubgotomap")]impl<__T:IHubGoToMap_GoToDialogItem>IHubGoToMap_GoToDialogItemMethods for __T{}
+
+#[cfg(feature="app-hubgotomap")]impl HubGoToMap_GoToDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-hubgotomap")]impl HubGoToMap_GoToDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` — overload selector"]pub fn new(label: ::unity2::Il2CppString,func:crate::system::action::Action,mode:crate::app::gmapmode::GmapMode_Mode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubGoToMap_GoToDialogItem), ::core::stringify!(new),));
+ <Self as IHubGoToMap_GoToDialogItemMethods> ::ctor(this,label,func,mode);
+this}
 }
 
 #[cfg(feature = "app-hubgotomap")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubGoToMap_GoToDialogItem;
-    pub use super::IHubGoToMap_GoToDialogItem;
-    pub use super::IHubGoToMap_GoToDialogItemMethods;
     pub use super::HubGoToMap;
     pub use super::IHubGoToMap;
     pub use super::IHubGoToMapMethods;
+    pub use super::HubGoToMap_GoToDialogItem;
+    pub use super::IHubGoToMap_GoToDialogItem;
+    pub use super::IHubGoToMap_GoToDialogItemMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

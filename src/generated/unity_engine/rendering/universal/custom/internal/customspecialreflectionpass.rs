@@ -4,43 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customspecialreflectionpass/CustomSpecialReflectionPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomSpecialReflectionPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomSpecialReflectionPass {
-# [offset (112)] # [rename (name = "m_FilteringSettings")] pub m_filtering_settings : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings ,
-# [offset (136)] # [rename (name = "m_ShaderTagId")] pub m_shader_tag_id : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
-# [offset (144)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "s_DrawObjectPassDataPropID")] pub s_draw_object_pass_data_prop_id : i32 ,
-# [offset (152)] # [rename (name = "m_CustomViewport")] pub m_custom_viewport : bool ,
-# [offset (156)] # [rename (name = "m_CustomViewportRect")] pub m_custom_viewport_rect : crate :: unity_engine :: rect :: Rect ,
-# [offset (172)] # [rename (name = "m_OriginalViewportRect")] pub m_original_viewport_rect : crate :: unity_engine :: rect :: Rect ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/internal/customspecialreflectionpass/CustomSpecialReflectionPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom.Internal",name="CustomSpecialReflectionPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct CustomSpecialReflectionPass{#[offset(112)]#[rename(name="m_FilteringSettings")]pub m_filtering_settings:crate::unity_engine::rendering::filteringsettings::FilteringSettings, #[offset(136)]#[rename(name="m_ShaderTagId")]pub m_shader_tag_id:crate::unity_engine::rendering::shadertagid::ShaderTagId, #[offset(144)]#[rename(name="m_ProfilingSampler")]pub m_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="s_DrawObjectPassDataPropID")]pub s_draw_object_pass_data_prop_id:i32, #[offset(152)]#[rename(name="m_CustomViewport")]pub m_custom_viewport:bool, #[offset(156)]#[rename(name="m_CustomViewportRect")]pub m_custom_viewport_rect:crate::unity_engine::rect::Rect, #[offset(172)]#[rename(name="m_OriginalViewportRect")]pub m_original_viewport_rect:crate::unity_engine::rect::Rect,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-impl CustomSpecialReflectionPass { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4f380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]impl CustomSpecialReflectionPass{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a4f380usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-pub trait ICustomSpecialReflectionPassMethods : ICustomSpecialReflectionPass { # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` overload"] fn ctor (self , profiler_tag : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , render_queue_range : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange > , layer_mask : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < CustomSpecialReflectionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomSpecialReflectionPass , :: unity2 :: Il2CppString , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4ee80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (profiler_tag) , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (render_queue_range) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } } # [doc = "`EnableCustomViewport(f32, f32, f32, f32)` overload"] fn enable_custom_viewport (self , original_w : impl :: core :: convert :: Into < f32 > , original_h : impl :: core :: convert :: Into < f32 > , custom_w : impl :: core :: convert :: Into < f32 > , custom_h : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CustomSpecialReflectionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomSpecialReflectionPass , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4f060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (original_w) , :: core :: convert :: Into :: into (original_h) , :: core :: convert :: Into :: into (custom_w) , :: core :: convert :: Into :: into (custom_h) , :: core :: option :: Option :: None) } } } # [doc = "`DisableCustomViewport()` overload"] fn disable_custom_viewport (self ,) -> () { unsafe { let __receiver = < CustomSpecialReflectionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomSpecialReflectionPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4f0e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < CustomSpecialReflectionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (CustomSpecialReflectionPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4f0f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]pub trait ICustomSpecialReflectionPassMethods:ICustomSpecialReflectionPass{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` overload"]fn ctor(self,profiler_tag:impl::core::convert::Into< ::unity2::Il2CppString> ,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent> ,render_queue_range:impl::core::convert::Into<crate::unity_engine::rendering::renderqueuerange::RenderQueueRange> ,layer_mask:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{let __receiver= <CustomSpecialReflectionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4ee80usize)as*mut u8,();
+(CustomSpecialReflectionPass)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(profiler_tag),(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(crate::unity_engine::rendering::renderqueuerange::RenderQueueRange)::core::convert::Into::into(render_queue_range),(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(layer_mask))}
+}
+#[doc="`EnableCustomViewport(f32, f32, f32, f32)` overload"]fn enable_custom_viewport(self,original_w:impl::core::convert::Into<f32> ,original_h:impl::core::convert::Into<f32> ,custom_w:impl::core::convert::Into<f32> ,custom_h:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CustomSpecialReflectionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4f060usize)as*mut u8,();
+(CustomSpecialReflectionPass)__receiver,(f32)::core::convert::Into::into(original_w),(f32)::core::convert::Into::into(original_h),(f32)::core::convert::Into::into(custom_w),(f32)::core::convert::Into::into(custom_h))}
+}
+#[doc="`DisableCustomViewport()` overload"]fn disable_custom_viewport(self,)->(){unsafe{let __receiver= <CustomSpecialReflectionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4f0e0usize)as*mut u8,();
+(CustomSpecialReflectionPass)__receiver)}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <CustomSpecialReflectionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4f0f0usize)as*mut u8,();
+(CustomSpecialReflectionPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-impl < __T : ICustomSpecialReflectionPass > ICustomSpecialReflectionPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]impl<__T:ICustomSpecialReflectionPass>ICustomSpecialReflectionPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-impl CustomSpecialReflectionPass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn enable_custom_viewport_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn disable_custom_viewport_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSpecialReflectionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]impl CustomSpecialReflectionPass{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn enable_custom_viewport_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn disable_custom_viewport_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]
-impl CustomSpecialReflectionPass {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` — overload selector"] pub fn new (profiler_tag : :: unity2 :: Il2CppString , evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , render_queue_range : crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , layer_mask : crate :: unity_engine :: layermask :: LayerMask) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomSpecialReflectionPass) , :: core :: stringify ! (new) ,)) ; < Self as ICustomSpecialReflectionPassMethods > :: ctor (this , profiler_tag , evt , render_queue_range , layer_mask) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]impl CustomSpecialReflectionPass{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask)` — overload selector"]pub fn new(profiler_tag: ::unity2::Il2CppString,evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,render_queue_range:crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,layer_mask:crate::unity_engine::layermask::LayerMask)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomSpecialReflectionPass), ::core::stringify!(new),));
+ <Self as ICustomSpecialReflectionPassMethods> ::ctor(this,profiler_tag,evt,render_queue_range,layer_mask);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customspecialreflectionpass")]

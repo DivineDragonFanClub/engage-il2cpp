@@ -4,36 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/globaljavaobjectref/GlobalJavaObjectRef.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GlobalJavaObjectRef")] # [parent (crate :: system :: object :: Object)] pub struct GlobalJavaObjectRef {
-# [offset (16)] # [rename (name = "m_disposed")] pub m_disposed : bool ,
-# [offset (24)] # [rename (name = "m_jobject")] pub m_jobject : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/globaljavaobjectref/GlobalJavaObjectRef.md"))]#[::unity2::class(namespace="UnityEngine",name="GlobalJavaObjectRef")]#[parent(crate::system::object::Object)]pub struct GlobalJavaObjectRef{#[offset(16)]#[rename(name="m_disposed")]pub m_disposed:bool, #[offset(24)]#[rename(name="m_jobject")]pub m_jobject: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-globaljavaobjectref-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-globaljavaobjectref")]
-impl GlobalJavaObjectRef { # [doc = "`op_Implicit(crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef)` overload"] pub fn op_implicit (obj : impl :: core :: convert :: Into < crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f122a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-globaljavaobjectref")]impl GlobalJavaObjectRef{#[doc="`op_Implicit(crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef)` overload"]pub fn op_implicit(obj:impl::core::convert::Into<crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f122a0usize)as*mut u8, ::unity2::IntPtr;
+(crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "unity_engine-globaljavaobjectref")]
-pub trait IGlobalJavaObjectRefMethods : IGlobalJavaObjectRef { # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor (self , jobject : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < GlobalJavaObjectRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GlobalJavaObjectRef , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f11b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (jobject) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < GlobalJavaObjectRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GlobalJavaObjectRef , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f15ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < GlobalJavaObjectRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GlobalJavaObjectRef , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-globaljavaobjectref")]pub trait IGlobalJavaObjectRefMethods:IGlobalJavaObjectRef{#[doc="`.ctor(::unity2::IntPtr)` overload"]fn ctor(self,jobject:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GlobalJavaObjectRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f11b60usize)as*mut u8,();
+(GlobalJavaObjectRef)__receiver,(::unity2::IntPtr)::core::convert::Into::into(jobject))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <GlobalJavaObjectRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f15ac0usize)as*mut u8,();
+(GlobalJavaObjectRef)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <GlobalJavaObjectRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12600usize)as*mut u8,();
+(GlobalJavaObjectRef)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-globaljavaobjectref")]
-impl < __T : IGlobalJavaObjectRef > IGlobalJavaObjectRefMethods for __T { }
+#[cfg(feature="unity_engine-globaljavaobjectref")]impl<__T:IGlobalJavaObjectRef>IGlobalJavaObjectRefMethods for __T{}
 
-#[cfg(feature = "unity_engine-globaljavaobjectref")]
-impl GlobalJavaObjectRef { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlobalJavaObjectRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-globaljavaobjectref")]impl GlobalJavaObjectRef{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-globaljavaobjectref")]
-impl GlobalJavaObjectRef {
-# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new (jobject : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GlobalJavaObjectRef) , :: core :: stringify ! (new) ,)) ; < Self as IGlobalJavaObjectRefMethods > :: ctor (this , jobject) ; this }
+#[cfg(feature="unity_engine-globaljavaobjectref")]impl GlobalJavaObjectRef{#[doc="`.ctor(::unity2::IntPtr)` — overload selector"]pub fn new(jobject: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GlobalJavaObjectRef), ::core::stringify!(new),));
+ <Self as IGlobalJavaObjectRefMethods> ::ctor(this,jobject);
+this}
 }
 
 #[cfg(feature = "unity_engine-globaljavaobjectref")]

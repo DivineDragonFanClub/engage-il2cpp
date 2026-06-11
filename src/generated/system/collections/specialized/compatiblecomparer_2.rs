@@ -4,38 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/compatiblecomparer_2/CompatibleComparer_2.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "CompatibleComparer")] # [parent (crate :: system :: object :: Object)] pub struct CompatibleComparer_2 {
-# [offset (16)] # [rename (name = "_comparer")] pub comparer : crate :: system :: collections :: icomparer_interface :: IComparer_Interface ,
-# [static_field] # [rename (name = "defaultComparer")] pub default_comparer : crate :: system :: collections :: icomparer_interface :: IComparer_Interface ,
-# [offset (24)] # [rename (name = "_hcp")] pub hcp : crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider ,
-# [static_field] # [rename (name = "defaultHashProvider")] pub default_hash_provider : crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/compatiblecomparer_2/CompatibleComparer_2.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="CompatibleComparer")]#[parent(crate::system::object::Object)]pub struct CompatibleComparer_2{#[offset(16)]#[rename(name="_comparer")]pub comparer:crate::system::collections::icomparer_interface::IComparer_Interface, #[static_field]#[rename(name="defaultComparer")]pub default_comparer:crate::system::collections::icomparer_interface::IComparer_Interface, #[offset(24)]#[rename(name="_hcp")]pub hcp:crate::system::collections::ihashcodeprovider::IHashCodeProvider, #[static_field]#[rename(name="defaultHashProvider")]pub default_hash_provider:crate::system::collections::ihashcodeprovider::IHashCodeProvider,}
 
 }
 
 #[cfg(feature = "system-collections-specialized-compatiblecomparer_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
-impl CompatibleComparer_2 { # [doc = "`get_DefaultComparer()` overload"] pub fn get_default_comparer () -> crate :: system :: collections :: icomparer_interface :: IComparer_Interface { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icomparer_interface :: IComparer_Interface = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354ddc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_DefaultHashCodeProvider()` overload"] pub fn get_default_hash_code_provider () -> crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354deb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-specialized-compatiblecomparer_2")]impl CompatibleComparer_2{#[doc="`get_DefaultComparer()` overload"]pub fn get_default_comparer()->crate::system::collections::icomparer_interface::IComparer_Interface{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x354ddc0usize)as*mut u8,crate::system::collections::icomparer_interface::IComparer_Interface;
+)}
+}
+#[doc="`get_DefaultHashCodeProvider()` overload"]pub fn get_default_hash_code_provider()->crate::system::collections::ihashcodeprovider::IHashCodeProvider{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x354deb0usize)as*mut u8,crate::system::collections::ihashcodeprovider::IHashCodeProvider;
+)}
+}
+}
 
-#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
-pub trait ICompatibleComparer_2Methods : ICompatibleComparer_2 { # [doc = "`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface, crate::system::collections::ihashcodeprovider::IHashCodeProvider)` overload"] fn ctor (self , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface > , hash_code_provider : impl :: core :: convert :: Into < crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider >) -> () { unsafe { let __receiver = < CompatibleComparer_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CompatibleComparer_2 , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354da10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (comparer) , :: core :: convert :: Into :: into (hash_code_provider) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object, crate::system::object::Object)` overload"] fn equals (self , a : impl :: core :: convert :: Into < crate :: system :: object :: Object > , b : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < CompatibleComparer_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CompatibleComparer_2 , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354da60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode(crate::system::object::Object)` overload"] fn get_hash_code (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < CompatibleComparer_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CompatibleComparer_2 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354dc80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`get_Comparer()` overload"] fn get_comparer (self ,) -> crate :: system :: collections :: icomparer_interface :: IComparer_Interface { unsafe { let __receiver = < CompatibleComparer_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CompatibleComparer_2 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icomparer_interface :: IComparer_Interface = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354dda0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_HashCodeProvider()` overload"] fn get_hash_code_provider (self ,) -> crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider { unsafe { let __receiver = < CompatibleComparer_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CompatibleComparer_2 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354ddb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-specialized-compatiblecomparer_2")]pub trait ICompatibleComparer_2Methods:ICompatibleComparer_2{#[doc="`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface, crate::system::collections::ihashcodeprovider::IHashCodeProvider)` overload"]fn ctor(self,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface> ,hash_code_provider:impl::core::convert::Into<crate::system::collections::ihashcodeprovider::IHashCodeProvider>)->(){unsafe{let __receiver= <CompatibleComparer_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x354da10usize)as*mut u8,();
+(CompatibleComparer_2)__receiver,(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer),(crate::system::collections::ihashcodeprovider::IHashCodeProvider)::core::convert::Into::into(hash_code_provider))}
+}
+#[doc="`Equals(crate::system::object::Object, crate::system::object::Object)` overload"]fn equals(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <CompatibleComparer_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x354da60usize)as*mut u8,bool;
+(CompatibleComparer_2)__receiver,(crate::system::object::Object)::core::convert::Into::into(a),(crate::system::object::Object)::core::convert::Into::into(b))}
+}
+#[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CompatibleComparer_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x354dc80usize)as*mut u8,i32;
+(CompatibleComparer_2)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`get_Comparer()` overload"]fn get_comparer(self,)->crate::system::collections::icomparer_interface::IComparer_Interface{unsafe{let __receiver= <CompatibleComparer_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x354dda0usize)as*mut u8,crate::system::collections::icomparer_interface::IComparer_Interface;
+(CompatibleComparer_2)__receiver)}
+}
+#[doc="`get_HashCodeProvider()` overload"]fn get_hash_code_provider(self,)->crate::system::collections::ihashcodeprovider::IHashCodeProvider{unsafe{let __receiver= <CompatibleComparer_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x354ddb0usize)as*mut u8,crate::system::collections::ihashcodeprovider::IHashCodeProvider;
+(CompatibleComparer_2)__receiver)}
+}
+}
 
-#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
-impl < __T : ICompatibleComparer_2 > ICompatibleComparer_2Methods for __T { }
+#[cfg(feature="system-collections-specialized-compatiblecomparer_2")]impl<__T:ICompatibleComparer_2>ICompatibleComparer_2Methods for __T{}
 
-#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
-impl CompatibleComparer_2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompatibleComparer_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompatibleComparer_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompatibleComparer_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_comparer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompatibleComparer_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_provider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompatibleComparer_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_default_comparer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompatibleComparer_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_default_hash_code_provider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompatibleComparer_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="system-collections-specialized-compatiblecomparer_2")]impl CompatibleComparer_2{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_comparer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_provider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_default_comparer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_default_hash_code_provider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
-impl CompatibleComparer_2 {
-# [doc = "`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface, crate::system::collections::ihashcodeprovider::IHashCodeProvider)` — overload selector"] pub fn new (comparer : crate :: system :: collections :: icomparer_interface :: IComparer_Interface , hash_code_provider : crate :: system :: collections :: ihashcodeprovider :: IHashCodeProvider) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CompatibleComparer_2) , :: core :: stringify ! (new) ,)) ; < Self as ICompatibleComparer_2Methods > :: ctor (this , comparer , hash_code_provider) ; this }
+#[cfg(feature="system-collections-specialized-compatiblecomparer_2")]impl CompatibleComparer_2{#[doc="`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface, crate::system::collections::ihashcodeprovider::IHashCodeProvider)` — overload selector"]pub fn new(comparer:crate::system::collections::icomparer_interface::IComparer_Interface,hash_code_provider:crate::system::collections::ihashcodeprovider::IHashCodeProvider)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CompatibleComparer_2), ::core::stringify!(new),));
+ <Self as ICompatibleComparer_2Methods> ::ctor(this,comparer,hash_code_provider);
+this}
 }
 
 #[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]

@@ -4,42 +4,93 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hudpopup/HUDPopup.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "HUDPopup")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HUDPopup {
-# [offset (24)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (32)] # [rename (name = "m_WorldPos")] pub m_world_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (44)] # [rename (name = "m_Offset2D")] pub m_offset2_d : crate :: unity_engine :: vector2 :: Vector2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/hudpopup/HUDPopup.md"))]#[::unity2::class(namespace="Combat",name="HUDPopup")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HUDPopup{#[offset(24)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_WorldPos")]pub m_world_pos:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="m_Offset2D")]pub m_offset2_d:crate::unity_engine::vector2::Vector2,}
 
 }
 
 #[cfg(feature = "combat-hudpopup-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-hudpopup")]
-pub trait IHUDPopupMethods : IHUDPopup { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetWorldPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_world_position (self ,) -> (crate :: combat :: hudpopup :: HUDPopup , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (HUDPopup , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hudpopup :: HUDPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978c30usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`SetWorldPositionAndDisplayNumber(*mutcrate::unity_engine::vector3::Vector3, i32)` overload"] fn set_world_position_and_display_number (self , value : impl :: core :: convert :: Into < i32 >) -> (crate :: combat :: hudpopup :: HUDPopup , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (HUDPopup , * mut crate :: unity_engine :: vector3 :: Vector3 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hudpopup :: HUDPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978cc0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`Set2DOffset(f32, f32)` overload"] fn set2_d_offset (self , offset_x : impl :: core :: convert :: Into < f32 > , offset_y : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: hudpopup :: HUDPopup { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopup , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hudpopup :: HUDPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offset_x) , :: core :: convert :: Into :: into (offset_y) , :: core :: option :: Option :: None) } } } # [doc = "`SetText(::unity2::Il2CppString)` overload"] fn set_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: hudpopup :: HUDPopup { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopup , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hudpopup :: HUDPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`SetText(i32)` overload"] fn set_text_2 (self , value : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: hudpopup :: HUDPopup { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopup , i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hudpopup :: HUDPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetText()` overload"] fn get_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopup , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTextColor(crate::unity_engine::color::Color)` overload"] fn set_text_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> crate :: combat :: hudpopup :: HUDPopup { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopup , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hudpopup :: HUDPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978fe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`SetImage(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"] fn set_image (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: combat :: hudpopup :: HUDPopup { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopup , :: unity2 :: Il2CppString , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hudpopup :: HUDPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29790c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HUDPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2979200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-hudpopup")]pub trait IHUDPopupMethods:IHUDPopup{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978a40usize)as*mut u8,();
+(HUDPopup)__receiver)}
+}
+#[doc="`SetWorldPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn set_world_position(self,)->(crate::combat::hudpopup::HUDPopup,crate::unity_engine::vector3::Vector3){unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2978c30usize)as*mut u8,crate::combat::hudpopup::HUDPopup;
+(HUDPopup)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SetWorldPositionAndDisplayNumber(*mutcrate::unity_engine::vector3::Vector3, i32)` overload"]fn set_world_position_and_display_number(self,value:impl::core::convert::Into<i32>)->(crate::combat::hudpopup::HUDPopup,crate::unity_engine::vector3::Vector3){unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2978cc0usize)as*mut u8,crate::combat::hudpopup::HUDPopup;
+(HUDPopup)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(i32)::core::convert::Into::into(value))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`Set2DOffset(f32, f32)` overload"]fn set2_d_offset(self,offset_x:impl::core::convert::Into<f32> ,offset_y:impl::core::convert::Into<f32>)->crate::combat::hudpopup::HUDPopup{unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978e30usize)as*mut u8,crate::combat::hudpopup::HUDPopup;
+(HUDPopup)__receiver,(f32)::core::convert::Into::into(offset_x),(f32)::core::convert::Into::into(offset_y))}
+}
+#[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::hudpopup::HUDPopup{unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978e40usize)as*mut u8,crate::combat::hudpopup::HUDPopup;
+(HUDPopup)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`SetText(i32)` overload"]fn set_text_2(self,value:impl::core::convert::Into<i32>)->crate::combat::hudpopup::HUDPopup{unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978d60usize)as*mut u8,crate::combat::hudpopup::HUDPopup;
+(HUDPopup)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetText()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978f00usize)as*mut u8, ::unity2::Il2CppString;
+(HUDPopup)__receiver)}
+}
+#[doc="`SetTextColor(crate::unity_engine::color::Color)` overload"]fn set_text_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->crate::combat::hudpopup::HUDPopup{unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978fe0usize)as*mut u8,crate::combat::hudpopup::HUDPopup;
+(HUDPopup)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`SetImage(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"]fn set_image(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->crate::combat::hudpopup::HUDPopup{unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29790c0usize)as*mut u8,crate::combat::hudpopup::HUDPopup;
+(HUDPopup)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HUDPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2979200usize)as*mut u8,();
+(HUDPopup)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-hudpopup")]
-impl < __T : IHUDPopup > IHUDPopupMethods for __T { }
+#[cfg(feature="combat-hudpopup")]impl<__T:IHUDPopup>IHUDPopupMethods for __T{}
 
-#[cfg(feature = "combat-hudpopup")]
-impl HUDPopup { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_world_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_world_position_and_display_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set2_d_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="combat-hudpopup")]impl HUDPopup{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_world_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_world_position_and_display_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set2_d_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "combat-hudpopup")]
-impl HUDPopup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HUDPopup) , :: core :: stringify ! (new) ,)) ; < Self as IHUDPopupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-hudpopup")]impl HUDPopup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HUDPopup), ::core::stringify!(new),));
+ <Self as IHUDPopupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-hudpopup")]

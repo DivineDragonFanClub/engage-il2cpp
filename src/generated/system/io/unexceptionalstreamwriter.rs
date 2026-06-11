@@ -4,30 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: streamwriter :: { IStreamWriter , StreamWriter }
- ;
- use crate :: system :: io :: textwriter :: { ITextWriter , TextWriter }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::streamwriter::{IStreamWriter,StreamWriter}
+;
+use crate::system::io::textwriter::{ITextWriter,TextWriter}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/unexceptionalstreamwriter/UnexceptionalStreamWriter.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "UnexceptionalStreamWriter")] # [parent (crate :: system :: io :: streamwriter :: StreamWriter)] pub struct UnexceptionalStreamWriter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/unexceptionalstreamwriter/UnexceptionalStreamWriter.md"))]#[::unity2::class(namespace="System.IO",name="UnexceptionalStreamWriter")]#[parent(crate::system::io::streamwriter::StreamWriter)]pub struct UnexceptionalStreamWriter{}
 
 }
 
 #[cfg(feature = "system-io-unexceptionalstreamwriter-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-unexceptionalstreamwriter")]
-pub trait IUnexceptionalStreamWriterMethods : IUnexceptionalStreamWriter { # [doc = "`Flush()` overload"] fn flush (self ,) -> () { unsafe { let __receiver = < UnexceptionalStreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3572b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u16>, i32, i32)` overload"] fn write (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnexceptionalStreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamWriter , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3572c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Write(u16)` overload"] fn write_2 (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < UnexceptionalStreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamWriter , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3572cb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u16>)` overload"] fn write_3 (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > >) -> () { unsafe { let __receiver = < UnexceptionalStreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamWriter , :: unity2 :: Array < u16 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3572d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Il2CppString)` overload"] fn write_4 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnexceptionalStreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamWriter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3572df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-unexceptionalstreamwriter")]pub trait IUnexceptionalStreamWriterMethods:IUnexceptionalStreamWriter{#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3572b70usize)as*mut u8,();
+(UnexceptionalStreamWriter)__receiver)}
+}
+#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3572c10usize)as*mut u8,();
+(UnexceptionalStreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Write(u16)` overload"]fn write_2(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3572cb0usize)as*mut u8,();
+(UnexceptionalStreamWriter)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`Write(::unity2::Array<u16>)` overload"]fn write_3(self,value:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3572d50usize)as*mut u8,();
+(UnexceptionalStreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(value))}
+}
+#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3572df0usize)as*mut u8,();
+(UnexceptionalStreamWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-io-unexceptionalstreamwriter")]
-impl < __T : IUnexceptionalStreamWriter > IUnexceptionalStreamWriterMethods for __T { }
+#[cfg(feature="system-io-unexceptionalstreamwriter")]impl<__T:IUnexceptionalStreamWriter>IUnexceptionalStreamWriterMethods for __T{}
 
-#[cfg(feature = "system-io-unexceptionalstreamwriter")]
-impl UnexceptionalStreamWriter { pub fn flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn write_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn write_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn write_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="system-io-unexceptionalstreamwriter")]impl UnexceptionalStreamWriter{pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn write_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn write_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "system-io-unexceptionalstreamwriter")]
 #[doc(hidden)]

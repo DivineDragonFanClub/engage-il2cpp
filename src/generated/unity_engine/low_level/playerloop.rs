@@ -4,23 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloop/PlayerLoop.md"))] # [:: unity2 :: class (namespace = "UnityEngine.LowLevel" , name = "PlayerLoop")] # [parent (crate :: system :: object :: Object)] pub struct PlayerLoop {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/low_level/playerloop/PlayerLoop.md"))]#[::unity2::class(namespace="UnityEngine.LowLevel",name="PlayerLoop")]#[parent(crate::system::object::Object)]pub struct PlayerLoop{}
 
 }
 
 #[cfg(feature = "unity_engine-low_level-playerloop-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-low_level-playerloop")]
-impl PlayerLoop { # [doc = "`GetDefaultPlayerLoop()` overload"] pub fn get_default_player_loop () -> crate :: unity_engine :: low_level :: playerloopsystem :: PlayerLoopSystem { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: low_level :: playerloopsystem :: PlayerLoopSystem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f82f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetPlayerLoop(crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem)` overload"] pub fn set_player_loop (r#loop : impl :: core :: convert :: Into < crate :: unity_engine :: low_level :: playerloopsystem :: PlayerLoopSystem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: low_level :: playerloopsystem :: PlayerLoopSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#loop) , :: core :: option :: Option :: None) } } } # [doc = "`PlayerLoopSystemToInternal(crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>)` overload"] pub fn player_loop_system_to_internal (sys : impl :: core :: convert :: Into < crate :: unity_engine :: low_level :: playerloopsystem :: PlayerLoopSystem >) -> (i32 , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal > > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: low_level :: playerloopsystem :: PlayerLoopSystem , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sys) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`InternalToPlayerLoopSystem(::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>, *muti32)` overload"] pub fn internal_to_player_loop_system (internal_sys : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal > >) -> (crate :: unity_engine :: low_level :: playerloopsystem :: PlayerLoopSystem , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal > , * mut i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: low_level :: playerloopsystem :: PlayerLoopSystem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f83b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (internal_sys) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetDefaultPlayerLoopInternal()` overload"] pub fn get_default_player_loop_internal () -> :: unity2 :: Array < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetPlayerLoopInternal(::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>)` overload"] pub fn set_player_loop_internal (r#loop : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: low_level :: playerloopsysteminternal :: PlayerLoopSystemInternal > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f88b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#loop) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-low_level-playerloop")]impl PlayerLoop{#[doc="`GetDefaultPlayerLoop()` overload"]pub fn get_default_player_loop()->crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f82f0usize)as*mut u8,crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem;
+)}
+}
+#[doc="`SetPlayerLoop(crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem)` overload"]pub fn set_player_loop(r#loop:impl::core::convert::Into<crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8600usize)as*mut u8,();
+(crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem)::core::convert::Into::into(r#loop))}
+}
+#[doc="`PlayerLoopSystemToInternal(crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>)` overload"]pub fn player_loop_system_to_internal(sys:impl::core::convert::Into<crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem>)->(i32,crate::system::collections::generic::list_1::List_1<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal> > ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x32f8700usize)as*mut u8,i32;
+(crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem)::core::convert::Into::into(sys),(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`InternalToPlayerLoopSystem(::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>, *muti32)` overload"]pub fn internal_to_player_loop_system(internal_sys:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal> >)->(crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x32f83b0usize)as*mut u8,crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem;
+(::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>)::core::convert::Into::into(internal_sys),(*mut i32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetDefaultPlayerLoopInternal()` overload"]pub fn get_default_player_loop_internal()-> ::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8370usize)as*mut u8, ::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal> ;
+)}
+}
+#[doc="`SetPlayerLoopInternal(::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>)` overload"]pub fn set_player_loop_internal(r#loop:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f88b0usize)as*mut u8,();
+(::unity2::Array<crate::unity_engine::low_level::playerloopsysteminternal::PlayerLoopSystemInternal>)::core::convert::Into::into(r#loop))}
+}
+}
 
-#[cfg(feature = "unity_engine-low_level-playerloop")]
-impl PlayerLoop { pub fn get_default_player_loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_player_loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn player_loop_system_to_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn internal_to_player_loop_system_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_default_player_loop_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_player_loop_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-low_level-playerloop")]impl PlayerLoop{pub fn get_default_player_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_player_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn player_loop_system_to_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn internal_to_player_loop_system_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_default_player_loop_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_player_loop_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-low_level-playerloop")]
 #[doc(hidden)]

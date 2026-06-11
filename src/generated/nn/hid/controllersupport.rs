@@ -4,28 +4,27 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/controllersupport/ControllerSupport.md"))] # [:: unity2 :: class (namespace = "nn.hid" , name = "ControllerSupport")] # [parent (crate :: system :: object :: Object)] pub struct ControllerSupport {
-# [static_field] # [rename (name = "ExplainTextMaxLength")] pub explain_text_max_length : i32 ,
-# [static_field] # [rename (name = "Utf8ByteSize")] pub utf8_byte_size : i32 ,
-# [static_field] # [rename (name = "ExplainTextMaxBufferSize")] pub explain_text_max_buffer_size : i32 ,
-# [static_field] # [rename (name = "ControllerSupportPlayerCountMax")] pub controller_support_player_count_max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/controllersupport/ControllerSupport.md"))]#[::unity2::class(namespace="nn.hid",name="ControllerSupport")]#[parent(crate::system::object::Object)]pub struct ControllerSupport{#[static_field]#[rename(name="ExplainTextMaxLength")]pub explain_text_max_length:i32, #[static_field]#[rename(name="Utf8ByteSize")]pub utf8_byte_size:i32, #[static_field]#[rename(name="ExplainTextMaxBufferSize")]pub explain_text_max_buffer_size:i32, #[static_field]#[rename(name="ControllerSupportPlayerCountMax")]pub controller_support_player_count_max:i32,}
 
 }
 
 #[cfg(feature = "nn-hid-controllersupport-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-controllersupport")]
-impl ControllerSupport { # [doc = "`SetExplainText(*mutcrate::nn::hid::controllersupportarg::ControllerSupportArg, ::unity2::Il2CppString, crate::nn::hid::npadid::NpadId)` overload"] pub fn set_explain_text (p_str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , npad_id : impl :: core :: convert :: Into < crate :: nn :: hid :: npadid :: NpadId >) -> crate :: nn :: hid :: controllersupportarg :: ControllerSupportArg { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: controllersupportarg :: ControllerSupportArg > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: nn :: hid :: controllersupportarg :: ControllerSupportArg , :: unity2 :: Il2CppString , crate :: nn :: hid :: npadid :: NpadId , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253e3b0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (p_str) , :: core :: convert :: Into :: into (npad_id) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="nn-hid-controllersupport")]impl ControllerSupport{#[doc="`SetExplainText(*mutcrate::nn::hid::controllersupportarg::ControllerSupportArg, ::unity2::Il2CppString, crate::nn::hid::npadid::NpadId)` overload"]pub fn set_explain_text(p_str:impl::core::convert::Into< ::unity2::Il2CppString> ,npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId>)->crate::nn::hid::controllersupportarg::ControllerSupportArg{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::controllersupportarg::ControllerSupportArg> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253e3b0usize)as*mut u8,();
+(*mut crate::nn::hid::controllersupportarg::ControllerSupportArg)__out_0.as_mut_ptr(),(::unity2::Il2CppString)::core::convert::Into::into(p_str),(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id));
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "nn-hid-controllersupport")]
-impl ControllerSupport { pub fn set_explain_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ControllerSupport as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="nn-hid-controllersupport")]impl ControllerSupport{pub fn set_explain_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "nn-hid-controllersupport")]
 #[doc(hidden)]

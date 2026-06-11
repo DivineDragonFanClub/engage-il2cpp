@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/lmscolor/LMSColor.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LMSColor {
-    pub r: u8,
-    pub g: u8,
-    pub b: u8,
-    pub a: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/lmscolor/LMSColor.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LMSColor{pub r:u8,pub g:u8,pub b:u8,pub a:u8,}
+impl::unity2::ClassIdentity for LMSColor{const NAMESPACE: &'static str="Nintendo.MessageStudio.Lib";
+const NAME: &'static str="LMSColor";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for LMSColor {
-    const NAMESPACE: &'static str = "Nintendo.MessageStudio.Lib";
-
-    const NAME: &'static str = "LMSColor";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LMSColor {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LMSColor{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,13 @@ impl ::unity2::IlType for LMSColor {
 #[cfg(feature = "nintendo-message_studio-lib-lmscolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-lmscolor")]
-impl LMSColor { # [doc = "`.ctor(u8, u8, u8, u8)` overload"] pub fn ctor (& mut self , r : impl :: core :: convert :: Into < u8 > , g : impl :: core :: convert :: Into < u8 > , b : impl :: core :: convert :: Into < u8 > , a : impl :: core :: convert :: Into < u8 >) -> () { unsafe { { let __inner : extern "C" fn (* mut LMSColor , u8 , u8 , u8 , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb050usize) as * mut u8) ; __inner (self as * mut LMSColor , :: core :: convert :: Into :: into (r) , :: core :: convert :: Into :: into (g) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nintendo-message_studio-lib-lmscolor")]impl LMSColor{#[doc="`.ctor(u8, u8, u8, u8)` overload"]pub fn ctor(&mut self,r:impl::core::convert::Into<u8> ,g:impl::core::convert::Into<u8> ,b:impl::core::convert::Into<u8> ,a:impl::core::convert::Into<u8>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb050usize)as*mut u8,();
+(*mut LMSColor)self as*mut LMSColor,(u8)::core::convert::Into::into(r),(u8)::core::convert::Into::into(g),(u8)::core::convert::Into::into(b),(u8)::core::convert::Into::into(a))}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-lmscolor")]
-impl LMSColor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LMSColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="nintendo-message_studio-lib-lmscolor")]impl LMSColor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "nintendo-message_studio-lib-lmscolor")]
 #[doc(hidden)]

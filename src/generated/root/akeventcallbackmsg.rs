@@ -4,34 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akeventcallbackmsg/AkEventCallbackMsg.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEventCallbackMsg")] # [parent (crate :: system :: object :: Object)] pub struct AkEventCallbackMsg {
-# [offset (16)] # [rename (name = "info")] pub info : crate :: root :: akcallbackinfo :: AkCallbackInfo ,
-# [offset (24)] # [rename (name = "sender")] pub sender : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "type")] pub r#type : crate :: root :: akcallbacktype :: AkCallbackType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akeventcallbackmsg/AkEventCallbackMsg.md"))]#[::unity2::class(namespace="",name="AkEventCallbackMsg")]#[parent(crate::system::object::Object)]pub struct AkEventCallbackMsg{#[offset(16)]#[rename(name="info")]pub info:crate::root::akcallbackinfo::AkCallbackInfo, #[offset(24)]#[rename(name="sender")]pub sender:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="type")]pub r#type:crate::root::akcallbacktype::AkCallbackType,}
 
 }
 
 #[cfg(feature = "root-akeventcallbackmsg-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akeventcallbackmsg")]
-pub trait IAkEventCallbackMsgMethods : IAkEventCallbackMsg { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEventCallbackMsg as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventCallbackMsg , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1a710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akeventcallbackmsg")]pub trait IAkEventCallbackMsgMethods:IAkEventCallbackMsg{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEventCallbackMsg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1a710usize)as*mut u8,();
+(AkEventCallbackMsg)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akeventcallbackmsg")]
-impl < __T : IAkEventCallbackMsg > IAkEventCallbackMsgMethods for __T { }
+#[cfg(feature="root-akeventcallbackmsg")]impl<__T:IAkEventCallbackMsg>IAkEventCallbackMsgMethods for __T{}
 
-#[cfg(feature = "root-akeventcallbackmsg")]
-impl AkEventCallbackMsg { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventCallbackMsg as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akeventcallbackmsg")]impl AkEventCallbackMsg{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akeventcallbackmsg")]
-impl AkEventCallbackMsg {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEventCallbackMsg) , :: core :: stringify ! (new) ,)) ; < Self as IAkEventCallbackMsgMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akeventcallbackmsg")]impl AkEventCallbackMsg{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEventCallbackMsg), ::core::stringify!(new),));
+ <Self as IAkEventCallbackMsgMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akeventcallbackmsg")]

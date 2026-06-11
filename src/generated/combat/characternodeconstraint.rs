@@ -4,103 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characternodeconstraint/CharacterNodeConstraint_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CharacterNodeConstraint_State  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characternodeconstraint/CharacterNodeConstraint_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CharacterNodeConstraint_State{pub value:i32,}
+impl::unity2::ClassIdentity for CharacterNodeConstraint_State{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="CharacterNodeConstraint.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CharacterNodeConstraint_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CharacterNodeConstraint_State{pub fn uninitialized()->Self{Self{value:0}
+}
+pub fn no_use()->Self{Self{value:1}
+}
+pub fn running()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for CharacterNodeConstraint_State  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CharacterNodeConstraint.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for CharacterNodeConstraint_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CharacterNodeConstraint_State  {
-    pub fn uninitialized() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn no_use() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn running() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterNodeConstraint")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterNodeConstraint {
-# [offset (24)] # [rename (name = "state")] pub state : crate :: combat :: characternodeconstraint :: CharacterNodeConstraint_State ,
-# [offset (32)] # [rename (name = "SpecialPurposeCameraNodes")] pub special_purpose_camera_nodes : :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > ,
-# [offset (40)] # [rename (name = "SpecialPurposeParticleNodes")] pub special_purpose_particle_nodes : :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > ,
-# [offset (48)] # [rename (name = "specialPurposeParticleNodesOffset")] pub special_purpose_particle_nodes_offset : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (56)] # [rename (name = "_ctr")] pub ctr : crate :: unity_engine :: transform :: Transform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))]#[::unity2::class(namespace="Combat",name="CharacterNodeConstraint")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterNodeConstraint{#[offset(24)]#[rename(name="state")]pub state:crate::combat::characternodeconstraint::CharacterNodeConstraint_State, #[offset(32)]#[rename(name="SpecialPurposeCameraNodes")]pub special_purpose_camera_nodes: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(40)]#[rename(name="SpecialPurposeParticleNodes")]pub special_purpose_particle_nodes: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(48)]#[rename(name="specialPurposeParticleNodesOffset")]pub special_purpose_particle_nodes_offset: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(56)]#[rename(name="_ctr")]pub ctr:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "combat-characternodeconstraint-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characternodeconstraint")]
-pub trait ICharacterNodeConstraintMethods : ICharacterNodeConstraint { # [doc = "`get_CTR()` overload"] fn get_ctr (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterNodeConstraint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e6f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AllocOnce()` overload"] fn alloc_once (self ,) -> () { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterNodeConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e7090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterNodeConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e7110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetNodeOffset(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3)` overload"] fn set_node_offset (self , node : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterNodeConstraint , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e73e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterNodeConstraint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterNodeConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e75c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characternodeconstraint")]pub trait ICharacterNodeConstraintMethods:ICharacterNodeConstraint{#[doc="`get_CTR()` overload"]fn get_ctr(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <CharacterNodeConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e6f50usize)as*mut u8,crate::unity_engine::transform::Transform;
+(CharacterNodeConstraint)__receiver)}
+}
+#[doc="`AllocOnce()` overload"]fn alloc_once(self,)->(){unsafe{let __receiver= <CharacterNodeConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e7090usize)as*mut u8,();
+(CharacterNodeConstraint)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <CharacterNodeConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e7110usize)as*mut u8,();
+(CharacterNodeConstraint)__receiver)}
+}
+#[doc="`SetNodeOffset(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3)` overload"]fn set_node_offset(self,node:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <CharacterNodeConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e73e0usize)as*mut u8,();
+(CharacterNodeConstraint)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(node),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterNodeConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e75c0usize)as*mut u8,();
+(CharacterNodeConstraint)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characternodeconstraint")]
-impl < __T : ICharacterNodeConstraint > ICharacterNodeConstraintMethods for __T { }
+#[cfg(feature="combat-characternodeconstraint")]impl<__T:ICharacterNodeConstraint>ICharacterNodeConstraintMethods for __T{}
 
-#[cfg(feature = "combat-characternodeconstraint")]
-impl CharacterNodeConstraint { pub fn get_ctr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn alloc_once_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_node_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterNodeConstraint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-characternodeconstraint")]impl CharacterNodeConstraint{pub fn get_ctr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn alloc_once_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_node_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-characternodeconstraint")]
-impl CharacterNodeConstraint {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterNodeConstraint) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterNodeConstraintMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characternodeconstraint")]impl CharacterNodeConstraint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterNodeConstraint), ::core::stringify!(new),));
+ <Self as ICharacterNodeConstraintMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characternodeconstraint")]

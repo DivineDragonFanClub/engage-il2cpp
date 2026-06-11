@@ -4,130 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitparamdetail/UnitParamDetail.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitParamDetail")] # [parent (crate :: system :: object :: Object)] pub struct UnitParamDetail {
-# [offset (16)] # [rename (name = "m_value")] pub m_value : :: unity2 :: Array < i32 > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitparamdetail/UnitParamDetail_ValueDetail.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitParamDetail_ValueDetail{pub value:i32,}
+impl::unity2::ClassIdentity for UnitParamDetail_ValueDetail{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitParamDetail.ValueDetail";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitParamDetail_ValueDetail{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitParamDetail_ValueDetail{pub fn base()->Self{Self{value:0}
+}
+pub fn god()->Self{Self{value:1}
+}
+pub fn terrain()->Self{Self{value:2}
+}
+pub fn support()->Self{Self{value:3}
+}
+pub fn effect()->Self{Self{value:4}
+}
+pub fn hub()->Self{Self{value:5}
+}
+pub fn weight()->Self{Self{value:6}
+}
+pub fn num()->Self{Self{value:7}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitparamdetail/UnitParamDetail_ValueDetail.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitParamDetail_ValueDetail  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitParamDetail_ValueDetail  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitParamDetail.ValueDetail";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitParamDetail_ValueDetail  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitParamDetail_ValueDetail  {
-    pub fn base() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn terrain() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn support() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn effect() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn weight() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitparamdetail/UnitParamDetail.md"))]#[::unity2::class(namespace="App",name="UnitParamDetail")]#[parent(crate::system::object::Object)]pub struct UnitParamDetail{#[offset(16)]#[rename(name="m_value")]pub m_value: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "app-unitparamdetail-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitparamdetail")]
-pub trait IUnitParamDetailMethods : IUnitParamDetail { # [doc = "`SetParam(i32, i32, i32, i32, i32, i32)` overload"] fn set_param (self , total : impl :: core :: convert :: Into < i32 > , no_god : impl :: core :: convert :: Into < i32 > , no_effect : impl :: core :: convert :: Into < i32 > , no_hub : impl :: core :: convert :: Into < i32 > , terrain : impl :: core :: convert :: Into < i32 > , support : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitParamDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitParamDetail , i32 , i32 , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c52fe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (total) , :: core :: convert :: Into :: into (no_god) , :: core :: convert :: Into :: into (no_effect) , :: core :: convert :: Into :: into (no_hub) , :: core :: convert :: Into :: into (terrain) , :: core :: convert :: Into :: into (support) , :: core :: option :: Option :: None) } } } # [doc = "`AddParam(crate::app::unitparamdetail::UnitParamDetail_ValueDetail, i32)` overload"] fn add_param (self , r#type : impl :: core :: convert :: Into < crate :: app :: unitparamdetail :: UnitParamDetail_ValueDetail > , val : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitParamDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitParamDetail , crate :: app :: unitparamdetail :: UnitParamDetail_ValueDetail , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c53230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`SetParamForContinuous(i32, i32, i32)` overload"] fn set_param_for_continuous (self , god_delta : impl :: core :: convert :: Into < i32 > , skill_delta : impl :: core :: convert :: Into < i32 > , weight : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitParamDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitParamDetail , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c53270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_delta) , :: core :: convert :: Into :: into (skill_delta) , :: core :: convert :: Into :: into (weight) , :: core :: option :: Option :: None) } } } # [doc = "`GetValue(crate::app::unitparamdetail::UnitParamDetail_ValueDetail)` overload"] fn get_value (self , detail : impl :: core :: convert :: Into < crate :: app :: unitparamdetail :: UnitParamDetail_ValueDetail >) -> i32 { unsafe { let __receiver = < UnitParamDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitParamDetail , crate :: app :: unitparamdetail :: UnitParamDetail_ValueDetail , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c533b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (detail) , :: core :: option :: Option :: None) } } } # [doc = "`GetTotal()` overload"] fn get_total (self ,) -> i32 { unsafe { let __receiver = < UnitParamDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitParamDetail , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c533f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEnhanceDir(bool)` overload"] fn get_enhance_dir (self , is_god_change : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < UnitParamDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitParamDetail , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c53450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_god_change) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitParamDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitParamDetail , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c534e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitparamdetail")]pub trait IUnitParamDetailMethods:IUnitParamDetail{#[doc="`SetParam(i32, i32, i32, i32, i32, i32)` overload"]fn set_param(self,total:impl::core::convert::Into<i32> ,no_god:impl::core::convert::Into<i32> ,no_effect:impl::core::convert::Into<i32> ,no_hub:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<i32> ,support:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitParamDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c52fe0usize)as*mut u8,();
+(UnitParamDetail)__receiver,(i32)::core::convert::Into::into(total),(i32)::core::convert::Into::into(no_god),(i32)::core::convert::Into::into(no_effect),(i32)::core::convert::Into::into(no_hub),(i32)::core::convert::Into::into(terrain),(i32)::core::convert::Into::into(support))}
+}
+#[doc="`AddParam(crate::app::unitparamdetail::UnitParamDetail_ValueDetail, i32)` overload"]fn add_param(self,r#type:impl::core::convert::Into<crate::app::unitparamdetail::UnitParamDetail_ValueDetail> ,val:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitParamDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c53230usize)as*mut u8,();
+(UnitParamDetail)__receiver,(crate::app::unitparamdetail::UnitParamDetail_ValueDetail)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(val))}
+}
+#[doc="`SetParamForContinuous(i32, i32, i32)` overload"]fn set_param_for_continuous(self,god_delta:impl::core::convert::Into<i32> ,skill_delta:impl::core::convert::Into<i32> ,weight:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitParamDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c53270usize)as*mut u8,();
+(UnitParamDetail)__receiver,(i32)::core::convert::Into::into(god_delta),(i32)::core::convert::Into::into(skill_delta),(i32)::core::convert::Into::into(weight))}
+}
+#[doc="`GetValue(crate::app::unitparamdetail::UnitParamDetail_ValueDetail)` overload"]fn get_value(self,detail:impl::core::convert::Into<crate::app::unitparamdetail::UnitParamDetail_ValueDetail>)->i32{unsafe{let __receiver= <UnitParamDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c533b0usize)as*mut u8,i32;
+(UnitParamDetail)__receiver,(crate::app::unitparamdetail::UnitParamDetail_ValueDetail)::core::convert::Into::into(detail))}
+}
+#[doc="`GetTotal()` overload"]fn get_total(self,)->i32{unsafe{let __receiver= <UnitParamDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c533f0usize)as*mut u8,i32;
+(UnitParamDetail)__receiver)}
+}
+#[doc="`GetEnhanceDir(bool)` overload"]fn get_enhance_dir(self,is_god_change:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <UnitParamDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c53450usize)as*mut u8,i32;
+(UnitParamDetail)__receiver,(bool)::core::convert::Into::into(is_god_change))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitParamDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c534e0usize)as*mut u8,();
+(UnitParamDetail)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitparamdetail")]
-impl < __T : IUnitParamDetail > IUnitParamDetailMethods for __T { }
+#[cfg(feature="app-unitparamdetail")]impl<__T:IUnitParamDetail>IUnitParamDetailMethods for __T{}
 
-#[cfg(feature = "app-unitparamdetail")]
-impl UnitParamDetail { pub fn set_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitParamDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitParamDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_param_for_continuous_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitParamDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitParamDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_total_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitParamDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_enhance_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitParamDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitParamDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-unitparamdetail")]impl UnitParamDetail{pub fn set_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_param_for_continuous_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_total_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_enhance_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-unitparamdetail")]
-impl UnitParamDetail {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitParamDetail) , :: core :: stringify ! (new) ,)) ; < Self as IUnitParamDetailMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitparamdetail")]impl UnitParamDetail{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitParamDetail), ::core::stringify!(new),));
+ <Self as IUnitParamDetailMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitparamdetail")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitParamDetail_ValueDetail;
     pub use super::UnitParamDetail;
     pub use super::IUnitParamDetail;
     pub use super::IUnitParamDetailMethods;
-    pub use super::UnitParamDetail_ValueDetail;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

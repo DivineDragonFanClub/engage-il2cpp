@@ -4,38 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionplay/ActionPlay.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionPlay")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionPlay {
-# [offset (40)] # [rename (name = "m_Hash")] pub m_hash : i32 ,
-# [offset (44)] # [rename (name = "m_WaitIdle")] pub m_wait_idle : bool ,
-# [offset (48)] # [rename (name = "m_StartTime")] pub m_start_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionplay/ActionPlay.md"))]#[::unity2::class(namespace="Combat",name="ActionPlay")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionPlay{#[offset(40)]#[rename(name="m_Hash")]pub m_hash:i32, #[offset(44)]#[rename(name="m_WaitIdle")]pub m_wait_idle:bool, #[offset(48)]#[rename(name="m_StartTime")]pub m_start_time:f32,}
 
 }
 
 #[cfg(feature = "combat-actionplay-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionplay")]
-pub trait IActionPlayMethods : IActionPlay { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionPlay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionPlay , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc8060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_AbortByInterrupt()` overload"] fn get_abort_by_interrupt (self ,) -> bool { unsafe { let __receiver = < ActionPlay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionPlay , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc8100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, i32, bool, f32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , hash : impl :: core :: convert :: Into < i32 > , wait_idle : impl :: core :: convert :: Into < bool > , start_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ActionPlay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionPlay , crate :: combat :: character :: Character , i32 , bool , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc8110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (hash) , :: core :: convert :: Into :: into (wait_idle) , :: core :: convert :: Into :: into (start_time) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionPlay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionPlay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc81a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionPlay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionPlay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc81c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionplay")]pub trait IActionPlayMethods:IActionPlay{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8060usize)as*mut u8, ::unity2::Il2CppString;
+(ActionPlay)__receiver)}
+}
+#[doc="`get_AbortByInterrupt()` overload"]fn get_abort_by_interrupt(self,)->bool{unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8100usize)as*mut u8,bool;
+(ActionPlay)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, i32, bool, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,hash:impl::core::convert::Into<i32> ,wait_idle:impl::core::convert::Into<bool> ,start_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8110usize)as*mut u8,();
+(ActionPlay)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(i32)::core::convert::Into::into(hash),(bool)::core::convert::Into::into(wait_idle),(f32)::core::convert::Into::into(start_time))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc81a0usize)as*mut u8,();
+(ActionPlay)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc81c0usize)as*mut u8,();
+(ActionPlay)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actionplay")]
-impl < __T : IActionPlay > IActionPlayMethods for __T { }
+#[cfg(feature="combat-actionplay")]impl<__T:IActionPlay>IActionPlayMethods for __T{}
 
-#[cfg(feature = "combat-actionplay")]
-impl ActionPlay { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_abort_by_interrupt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-actionplay")]impl ActionPlay{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_abort_by_interrupt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-actionplay")]
-impl ActionPlay {
-# [doc = "`.ctor(crate::combat::character::Character, i32, bool, f32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , hash : i32 , wait_idle : bool , start_time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionPlay) , :: core :: stringify ! (new) ,)) ; < Self as IActionPlayMethods > :: ctor (this , chr , hash , wait_idle , start_time) ; this }
+#[cfg(feature="combat-actionplay")]impl ActionPlay{#[doc="`.ctor(crate::combat::character::Character, i32, bool, f32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,hash:i32,wait_idle:bool,start_time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionPlay), ::core::stringify!(new),));
+ <Self as IActionPlayMethods> ::ctor(this,chr,hash,wait_idle,start_time);
+this}
 }
 
 #[cfg(feature = "combat-actionplay")]

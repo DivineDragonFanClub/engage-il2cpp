@@ -4,33 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/wwwform/WWWForm.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "WWWForm")] # [parent (crate :: system :: object :: Object)] pub struct WWWForm {
-# [offset (16)] # [rename (name = "formData")] pub form_data : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Array < u8 > > ,
-# [offset (24)] # [rename (name = "fieldNames")] pub field_names : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (32)] # [rename (name = "fileNames")] pub file_names : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (40)] # [rename (name = "types")] pub types : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (48)] # [rename (name = "boundary")] pub boundary : :: unity2 :: Array < u8 > ,
-# [offset (56)] # [rename (name = "containsFiles")] pub contains_files : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/wwwform/WWWForm.md"))]#[::unity2::class(namespace="UnityEngine",name="WWWForm")]#[parent(crate::system::object::Object)]pub struct WWWForm{#[offset(16)]#[rename(name="formData")]pub form_data:crate::system::collections::generic::list_1::List_1< ::unity2::Array<u8> > , #[offset(24)]#[rename(name="fieldNames")]pub field_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="fileNames")]pub file_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="types")]pub types:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(48)]#[rename(name="boundary")]pub boundary: ::unity2::Array<u8> , #[offset(56)]#[rename(name="containsFiles")]pub contains_files:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-wwwform-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-wwwform")]
-pub trait IWWWFormMethods : IWWWForm { # [doc = "`get_headers()` overload"] fn get_headers (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > { unsafe { let __receiver = < WWWForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WWWForm , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1c9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_data()` overload"] fn get_data (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < WWWForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WWWForm , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1b720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-wwwform")]pub trait IWWWFormMethods:IWWWForm{#[doc="`get_headers()` overload"]fn get_headers(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString>{unsafe{let __receiver= <WWWForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1c9c0usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> ;
+(WWWForm)__receiver)}
+}
+#[doc="`get_data()` overload"]fn get_data(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <WWWForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1b720usize)as*mut u8, ::unity2::Array<u8> ;
+(WWWForm)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-wwwform")]
-impl < __T : IWWWForm > IWWWFormMethods for __T { }
+#[cfg(feature="unity_engine-wwwform")]impl<__T:IWWWForm>IWWWFormMethods for __T{}
 
-#[cfg(feature = "unity_engine-wwwform")]
-impl WWWForm { pub fn get_headers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WWWForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-wwwform")]impl WWWForm{pub fn get_headers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-wwwform")]
 #[doc(hidden)]

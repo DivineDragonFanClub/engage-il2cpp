@@ -4,36 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundlemanager/AssetBundleManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceProviders" , name = "AssetBundleManager")] # [parent (crate :: system :: object :: Object)] pub struct AssetBundleManager {
-# [static_field] # [rename (name = "s_ResourceStack")] pub s_resource_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource > ,
-# [static_field] # [rename (name = "s_ResourceEntry")] pub s_resource_entry : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/assetbundlemanager/AssetBundleManager.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="AssetBundleManager")]#[parent(crate::system::object::Object)]pub struct AssetBundleManager{#[static_field]#[rename(name="s_ResourceStack")]pub s_resource_stack:crate::system::collections::generic::stack_1::Stack_1<crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource> , #[static_field]#[rename(name="s_ResourceEntry")]pub s_resource_entry:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource> ,}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-impl AssetBundleManager { # [doc = "`Initialize(i32)` overload"] pub fn initialize (capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (capacity) , :: core :: option :: Option :: None) } } } # [doc = "`PopAssetBundleLocalResource(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"] pub fn pop_asset_bundle_local_resource (provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (provide_handle) , :: core :: option :: Option :: None) } } } # [doc = "`PushAssetBundleLocalResource(crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource)` overload"] pub fn push_asset_bundle_local_resource (resource : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119fb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (resource) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a640usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlemanager")]impl AssetBundleManager{#[doc="`Initialize(i32)` overload"]pub fn initialize(capacity:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2119960usize)as*mut u8,();
+(i32)::core::convert::Into::into(capacity))}
+}
+#[doc="`PopAssetBundleLocalResource(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]pub fn pop_asset_bundle_local_resource(provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2119bd0usize)as*mut u8,();
+(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)::core::convert::Into::into(provide_handle))}
+}
+#[doc="`PushAssetBundleLocalResource(crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource)` overload"]pub fn push_asset_bundle_local_resource(resource:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2119fb0usize)as*mut u8,();
+(crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource)::core::convert::Into::into(resource))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211a640usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-pub trait IAssetBundleManagerMethods : IAssetBundleManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetBundleManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlemanager")]pub trait IAssetBundleManagerMethods:IAssetBundleManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetBundleManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211a630usize)as*mut u8,();
+(AssetBundleManager)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-impl < __T : IAssetBundleManager > IAssetBundleManagerMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlemanager")]impl<__T:IAssetBundleManager>IAssetBundleManagerMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-impl AssetBundleManager { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn pop_asset_bundle_local_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn push_asset_bundle_local_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlemanager")]impl AssetBundleManager{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn pop_asset_bundle_local_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn push_asset_bundle_local_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-impl AssetBundleManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetBundleManager) , :: core :: stringify ! (new) ,)) ; < Self as IAssetBundleManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlemanager")]impl AssetBundleManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetBundleManager), ::core::stringify!(new),));
+ <Self as IAssetBundleManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]

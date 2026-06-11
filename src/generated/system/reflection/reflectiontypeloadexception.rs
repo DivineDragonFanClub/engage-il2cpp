@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/reflectiontypeloadexception/ReflectionTypeLoadException.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "ReflectionTypeLoadException")] pub struct ReflectionTypeLoadException {
-# [offset (136)] # [rename (name = "_classes")] pub classes : :: unity2 :: Array < :: unity2 :: SystemType > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/reflectiontypeloadexception/ReflectionTypeLoadException.md"))]#[::unity2::class(namespace="System.Reflection",name="ReflectionTypeLoadException")]pub struct ReflectionTypeLoadException{#[offset(136)]#[rename(name="_classes")]pub classes: ::unity2::Array< ::unity2::SystemType> ,}
 
 }
 
 #[cfg(feature = "system-reflection-reflectiontypeloadexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-reflectiontypeloadexception")]
-pub trait IReflectionTypeLoadExceptionMethods : IReflectionTypeLoadException { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReflectionTypeLoadException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionTypeLoadException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ae6850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-reflectiontypeloadexception")]pub trait IReflectionTypeLoadExceptionMethods:IReflectionTypeLoadException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ReflectionTypeLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae6850usize)as*mut u8,();
+(ReflectionTypeLoadException)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-reflectiontypeloadexception")]
-impl < __T : IReflectionTypeLoadException > IReflectionTypeLoadExceptionMethods for __T { }
+#[cfg(feature="system-reflection-reflectiontypeloadexception")]impl<__T:IReflectionTypeLoadException>IReflectionTypeLoadExceptionMethods for __T{}
 
-#[cfg(feature = "system-reflection-reflectiontypeloadexception")]
-impl ReflectionTypeLoadException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionTypeLoadException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-reflectiontypeloadexception")]impl ReflectionTypeLoadException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-reflectiontypeloadexception")]
-impl ReflectionTypeLoadException {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReflectionTypeLoadException) , :: core :: stringify ! (new) ,)) ; < Self as IReflectionTypeLoadExceptionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-reflectiontypeloadexception")]impl ReflectionTypeLoadException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReflectionTypeLoadException), ::core::stringify!(new),));
+ <Self as IReflectionTypeLoadExceptionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-reflectiontypeloadexception")]

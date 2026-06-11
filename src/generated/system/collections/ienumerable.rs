@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ienumerable/IEnumerable.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IEnumerable")] pub struct IEnumerable {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/ienumerable/IEnumerable.md"))]#[::unity2::class(namespace="System.Collections",name="IEnumerable")]pub struct IEnumerable{}
 
 }
 
 #[cfg(feature = "system-collections-ienumerable-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-ienumerable")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IEnumerable_unity2_raw { use super :: * ; pub unsafe fn get_enumerator (this : IEnumerable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetEnumerator") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetEnumerator" , < IEnumerable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IEnumerable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="system-collections-ienumerable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IEnumerable_unity2_raw{use super:: * ;
+pub unsafe fn get_enumerator(this:IEnumerable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetEnumerator").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetEnumerator", <IEnumerable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IEnumerable, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "system-collections-ienumerable")]
-pub trait IIEnumerableMethods : IIEnumerable { # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < IEnumerable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IEnumerable_unity2_raw :: get_enumerator (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="system-collections-ienumerable")]pub trait IIEnumerableMethods:IIEnumerable{#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <IEnumerable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IEnumerable_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "system-collections-ienumerable")]
-impl < __T : IIEnumerable > IIEnumerableMethods for __T { }
+#[cfg(feature="system-collections-ienumerable")]impl<__T:IIEnumerable>IIEnumerableMethods for __T{}
 
-#[cfg(feature = "system-collections-ienumerable")]
-impl IEnumerable { pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IEnumerable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-collections-ienumerable")]impl IEnumerable{pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "system-collections-ienumerable")]
 #[doc(hidden)]

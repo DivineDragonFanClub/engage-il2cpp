@@ -4,50 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangesourcemenucontent/RefineShopExchangeSourceMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopExchangeSourceMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct RefineShopExchangeSourceMenuContent {
-# [offset (232)] # [rename (name = "m_HelpText")] pub m_help_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_MaterialSourceCaption")] pub m_material_source_caption : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_MaterialSourceIconImage")] pub m_material_source_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (256)] # [rename (name = "m_MaterialSourceNameText")] pub m_material_source_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (264)] # [rename (name = "m_MaterialSourceValueText")] pub m_material_source_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_MaterialTargetCaption")] pub m_material_target_caption : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (280)] # [rename (name = "m_MaterialTargetIconImage")] pub m_material_target_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (288)] # [rename (name = "m_MaterialTargetNameText")] pub m_material_target_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (296)] # [rename (name = "m_MaterialTargetValueText")] pub m_material_target_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangesourcemenucontent/RefineShopExchangeSourceMenuContent.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeSourceMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct RefineShopExchangeSourceMenuContent{#[offset(232)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_MaterialSourceCaption")]pub m_material_source_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_MaterialSourceIconImage")]pub m_material_source_icon_image:crate::unity_engine::ui::image::Image, #[offset(256)]#[rename(name="m_MaterialSourceNameText")]pub m_material_source_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_MaterialSourceValueText")]pub m_material_source_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_MaterialTargetCaption")]pub m_material_target_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_MaterialTargetIconImage")]pub m_material_target_icon_image:crate::unity_engine::ui::image::Image, #[offset(288)]#[rename(name="m_MaterialTargetNameText")]pub m_material_target_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_MaterialTargetValueText")]pub m_material_target_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-refineshopexchangesourcemenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopexchangesourcemenucontent")]
-pub trait IRefineShopExchangeSourceMenuContentMethods : IRefineShopExchangeSourceMenuContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2964bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMenuItemContent()` overload"] fn build_menu_item_content (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2964e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2964fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2964570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateRate()` overload"] fn update_rate (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29647c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeSourceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeSourceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29651b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopexchangesourcemenucontent")]pub trait IRefineShopExchangeSourceMenuContentMethods:IRefineShopExchangeSourceMenuContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2964bd0usize)as*mut u8,();
+(RefineShopExchangeSourceMenuContent)__receiver)}
+}
+#[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2964e10usize)as*mut u8,();
+(RefineShopExchangeSourceMenuContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2964fd0usize)as*mut u8,i32;
+(RefineShopExchangeSourceMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965070usize)as*mut u8,f32;
+(RefineShopExchangeSourceMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965160usize)as*mut u8,f32;
+(RefineShopExchangeSourceMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965180usize)as*mut u8,f32;
+(RefineShopExchangeSourceMenuContent)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2964570usize)as*mut u8,();
+(RefineShopExchangeSourceMenuContent)__receiver)}
+}
+#[doc="`UpdateRate()` overload"]fn update_rate(self,)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29647c0usize)as*mut u8,();
+(RefineShopExchangeSourceMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29651b0usize)as*mut u8,();
+(RefineShopExchangeSourceMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopexchangesourcemenucontent")]
-impl < __T : IRefineShopExchangeSourceMenuContent > IRefineShopExchangeSourceMenuContentMethods for __T { }
+#[cfg(feature="app-refineshopexchangesourcemenucontent")]impl<__T:IRefineShopExchangeSourceMenuContent>IRefineShopExchangeSourceMenuContentMethods for __T{}
 
-#[cfg(feature = "app-refineshopexchangesourcemenucontent")]
-impl RefineShopExchangeSourceMenuContent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeSourceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-refineshopexchangesourcemenucontent")]impl RefineShopExchangeSourceMenuContent{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-refineshopexchangesourcemenucontent")]
-impl RefineShopExchangeSourceMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopExchangeSourceMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopExchangeSourceMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineshopexchangesourcemenucontent")]impl RefineShopExchangeSourceMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeSourceMenuContent), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeSourceMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineshopexchangesourcemenucontent")]

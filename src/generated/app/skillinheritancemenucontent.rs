@@ -4,53 +4,122 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillinheritancemenucontent/SkillInheritanceMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillInheritanceMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct SkillInheritanceMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_TextGodName")] pub m_text_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_IconGod")] pub m_icon_god : crate :: app :: uniticon :: UnitIcon ,
-# [offset (248)] # [rename (name = "m_ObjNaviList")] pub m_obj_navi_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (256)] # [rename (name = "m_TextHelp")] pub m_text_help : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (264)] # [rename (name = "m_TextHelpNg")] pub m_text_help_ng : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_TextValueSp")] pub m_text_value_sp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (280)] # [rename (name = "m_TextUnitName")] pub m_text_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (288)] # [rename (name = "m_SkillSelectObj")] pub m_skill_select_obj : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillinheritancemenucontent/SkillInheritanceMenuContent.md"))]#[::unity2::class(namespace="App",name="SkillInheritanceMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct SkillInheritanceMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_TextGodName")]pub m_text_god_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_IconGod")]pub m_icon_god:crate::app::uniticon::UnitIcon, #[offset(248)]#[rename(name="m_ObjNaviList")]pub m_obj_navi_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(256)]#[rename(name="m_TextHelp")]pub m_text_help:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_TextHelpNg")]pub m_text_help_ng:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_TextValueSp")]pub m_text_value_sp:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_TextUnitName")]pub m_text_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_SkillSelectObj")]pub m_skill_select_obj:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-skillinheritancemenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-skillinheritancemenucontent")]
-impl SkillInheritanceMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a5fe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a6080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a6100usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: skillinheritancemenucontent :: SkillInheritanceMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skillinheritancemenucontent :: SkillInheritanceMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a2490usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-skillinheritancemenucontent")]impl SkillInheritanceMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a5fe0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a6080usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a6100usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::skillinheritancemenucontent::SkillInheritanceMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a2490usize)as*mut u8,crate::app::skillinheritancemenucontent::SkillInheritanceMenuContent;
+)}
+}
+}
 
-#[cfg(feature = "app-skillinheritancemenucontent")]
-pub trait ISkillInheritanceMenuContentMethods : ISkillInheritanceMenuContent { # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a5df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a5ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a30b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetActive(bool)` overload"] fn set_active (self , is_active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a4a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_active) , :: core :: option :: Option :: None) } } } # [doc = "`SetCharaImageIgnoreParentGroups(bool)` overload"] fn set_chara_image_ignore_parent_groups (self , is_ignore : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a4c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_ignore) , :: core :: option :: Option :: None) } } } # [doc = "`EnableInput(bool)` overload"] fn enable_input (self , is_enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a6180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_enable) , :: core :: option :: Option :: None) } } } # [doc = "`CloseOther()` overload"] fn close_other (self ,) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a3a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a61d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a6240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSkillHelp(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::skilldata::SkillData, i32)` overload"] fn set_skill_help (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: skilldata :: SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a58e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`SetNavi(i32, bool, crate::app::godunit::GodUnit)` overload"] fn set_navi (self , index : impl :: core :: convert :: Into < i32 > , is_active : impl :: core :: convert :: Into < bool > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , i32 , bool , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a5070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (is_active) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSkillPoint()` overload"] fn update_skill_point (self ,) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a37e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillInheritanceMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillInheritanceMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24a62b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-skillinheritancemenucontent")]pub trait ISkillInheritanceMenuContentMethods:ISkillInheritanceMenuContent{#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a5df0usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a5ef0usize)as*mut u8,f32;
+(SkillInheritanceMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a30b0usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver)}
+}
+#[doc="`SetActive(bool)` overload"]fn set_active(self,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a4a20usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver,(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`SetCharaImageIgnoreParentGroups(bool)` overload"]fn set_chara_image_ignore_parent_groups(self,is_ignore:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a4c10usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver,(bool)::core::convert::Into::into(is_ignore))}
+}
+#[doc="`EnableInput(bool)` overload"]fn enable_input(self,is_enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a6180usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver,(bool)::core::convert::Into::into(is_enable))}
+}
+#[doc="`CloseOther()` overload"]fn close_other(self,)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a3a60usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a61d0usize)as*mut u8,f32;
+(SkillInheritanceMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a6240usize)as*mut u8,f32;
+(SkillInheritanceMenuContent)__receiver)}
+}
+#[doc="`SetSkillHelp(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::skilldata::SkillData, i32)` overload"]fn set_skill_help(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,level:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a58e0usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`SetNavi(i32, bool, crate::app::godunit::GodUnit)` overload"]fn set_navi(self,index:impl::core::convert::Into<i32> ,is_active:impl::core::convert::Into<bool> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a5070usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver,(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(is_active),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`UpdateSkillPoint()` overload"]fn update_skill_point(self,)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a37e0usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillInheritanceMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a62b0usize)as*mut u8,();
+(SkillInheritanceMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-skillinheritancemenucontent")]
-impl < __T : ISkillInheritanceMenuContent > ISkillInheritanceMenuContentMethods for __T { }
+#[cfg(feature="app-skillinheritancemenucontent")]impl<__T:ISkillInheritanceMenuContent>ISkillInheritanceMenuContentMethods for __T{}
 
-#[cfg(feature = "app-skillinheritancemenucontent")]
-impl SkillInheritanceMenuContent { pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_chara_image_ignore_parent_groups_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn enable_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn close_other_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_skill_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_navi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn update_skill_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillInheritanceMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-skillinheritancemenucontent")]impl SkillInheritanceMenuContent{pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_chara_image_ignore_parent_groups_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn enable_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn close_other_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_skill_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_navi_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn update_skill_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-skillinheritancemenucontent")]
-impl SkillInheritanceMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillInheritanceMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as ISkillInheritanceMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-skillinheritancemenucontent")]impl SkillInheritanceMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillInheritanceMenuContent), ::core::stringify!(new),));
+ <Self as ISkillInheritanceMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-skillinheritancemenucontent")]

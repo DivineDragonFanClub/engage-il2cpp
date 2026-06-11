@@ -4,35 +4,227 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/lua_state_interop/luastate/LuaState.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop" , name = "LuaState")] # [parent (crate :: system :: object :: Object)] pub struct LuaState {
-# [offset (16)] # [rename (name = "m_Stack")] pub m_stack : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/lua_state_interop/luastate/LuaState.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.LuaStateInterop",name="LuaState")]#[parent(crate::system::object::Object)]pub struct LuaState{#[offset(16)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynvalue::DynValue> ,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luastate-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luastate")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LuaState_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_execution_context { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "get_ExecutionContext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "get_ExecutionContext" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_execution_context { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "set_ExecutionContext" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "set_ExecutionContext" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_function_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "get_FunctionName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "get_FunctionName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_function_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "set_FunctionName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "set_FunctionName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_top { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "Top" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "Top" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_at { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "At" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "At" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "get_Count" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "get_Count" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "Push" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "Push" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "Pop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "Pop" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_top_array { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "GetTopArray" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "GetTopArray" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_return_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "GetReturnValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "GetReturnValue" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_discard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaState as :: unity2 :: ClassIdentity > :: class () , "Discard" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaState as :: unity2 :: ClassIdentity > :: NAME , "Discard" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-lua_state_interop-luastate")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LuaState_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_execution_context{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"get_ExecutionContext",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"get_ExecutionContext",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_execution_context{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"set_ExecutionContext",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"set_ExecutionContext",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_function_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"get_FunctionName",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"get_FunctionName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_function_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"set_FunctionName",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"set_FunctionName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_top{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"Top",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"Top",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_at{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"At",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"At",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_count{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"get_Count",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"get_Count",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_push{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"Push",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"Push",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_pop{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"Pop",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"Pop",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_top_array{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"GetTopArray",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"GetTopArray",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_return_value{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"GetReturnValue",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"GetReturnValue",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_discard{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaState as::unity2::ClassIdentity> ::class(),"Discard",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaState as::unity2::ClassIdentity> ::NAME,"Discard",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luastate")]
-pub trait ILuaStateMethods : ILuaState { # [doc = "`get_ExecutionContext()` overload"] fn get_execution_context (self ,) -> crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_get_execution_context :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExecutionContext(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"] fn set_execution_context (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext >) -> () { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_set_execution_context :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FunctionName()` overload"] fn get_function_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_get_function_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FunctionName(::unity2::Il2CppString)` overload"] fn set_function_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_set_function_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::Il2CppString)` overload"] fn ctor (self , execution_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments > , function_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (execution_context) , :: core :: convert :: Into :: into (args) , :: core :: convert :: Into :: into (function_name) , :: core :: option :: Option :: None) } } } # [doc = "`Top(i32)` overload"] fn top (self , pos : impl :: core :: convert :: Into < i32 >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_top :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`At(i32)` overload"] fn at (self , pos : impl :: core :: convert :: Into < i32 >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_at :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_get_count :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Push(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] fn push (self , v : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_push :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`Pop()` overload"] fn pop (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_pop :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTopArray(i32)` overload"] fn get_top_array (self , num : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_get_top_array :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`GetReturnValue(i32)` overload"] fn get_return_value (self , retvals : impl :: core :: convert :: Into < i32 >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_get_return_value :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (retvals) , :: core :: option :: Option :: None) } } } # [doc = "`Discard(i32)` overload"] fn discard (self , nargs : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < LuaState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LuaState , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LuaState_unity2_raw :: __lookup_discard :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (nargs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-lua_state_interop-luastate")]pub trait ILuaStateMethods:ILuaState{#[doc="`get_ExecutionContext()` overload"]fn get_execution_context(self,)->crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext{unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_get_execution_context::get_method_info().method_ptr,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext;
+(LuaState)__receiver)}
+}
+#[doc="`set_ExecutionContext(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]fn set_execution_context(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>)->(){unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_set_execution_context::get_method_info().method_ptr,();
+(LuaState)__receiver,(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(value))}
+}
+#[doc="`get_FunctionName()` overload"]fn get_function_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_get_function_name::get_method_info().method_ptr, ::unity2::Il2CppString;
+(LuaState)__receiver)}
+}
+#[doc="`set_FunctionName(::unity2::Il2CppString)` overload"]fn set_function_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_set_function_name::get_method_info().method_ptr,();
+(LuaState)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::Il2CppString)` overload"]fn ctor(self,execution_context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments> ,function_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(LuaState)__receiver,(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(execution_context),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args),(::unity2::Il2CppString)::core::convert::Into::into(function_name))}
+}
+#[doc="`Top(i32)` overload"]fn top(self,pos:impl::core::convert::Into<i32>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_top::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(LuaState)__receiver,(i32)::core::convert::Into::into(pos))}
+}
+#[doc="`At(i32)` overload"]fn at(self,pos:impl::core::convert::Into<i32>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_at::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(LuaState)__receiver,(i32)::core::convert::Into::into(pos))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_get_count::get_method_info().method_ptr,i32;
+(LuaState)__receiver)}
+}
+#[doc="`Push(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn push(self,v:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_push::get_method_info().method_ptr,();
+(LuaState)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(v))}
+}
+#[doc="`Pop()` overload"]fn pop(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_pop::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(LuaState)__receiver)}
+}
+#[doc="`GetTopArray(i32)` overload"]fn get_top_array(self,num:impl::core::convert::Into<i32>)-> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>{unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_get_top_array::get_method_info().method_ptr, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> ;
+(LuaState)__receiver,(i32)::core::convert::Into::into(num))}
+}
+#[doc="`GetReturnValue(i32)` overload"]fn get_return_value(self,retvals:impl::core::convert::Into<i32>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_get_return_value::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(LuaState)__receiver,(i32)::core::convert::Into::into(retvals))}
+}
+#[doc="`Discard(i32)` overload"]fn discard(self,nargs:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LuaState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LuaState_unity2_raw::__lookup_discard::get_method_info().method_ptr,();
+(LuaState)__receiver,(i32)::core::convert::Into::into(nargs))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luastate")]
-impl < __T : ILuaState > ILuaStateMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-interop-lua_state_interop-luastate")]impl<__T:ILuaState>ILuaStateMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luastate")]
-impl LuaState { pub fn get_execution_context_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_execution_context_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_function_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_function_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn push_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn pop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_top_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_return_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn discard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="moon_sharp-interpreter-interop-lua_state_interop-luastate")]impl LuaState{pub fn get_execution_context_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_execution_context_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_function_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_function_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_top_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_return_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn discard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luastate")]
-impl LuaState {
-# [doc = "`.ctor(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::Il2CppString)` — overload selector"] pub fn new (execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , args : crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , function_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LuaState) , :: core :: stringify ! (new) ,)) ; < Self as ILuaStateMethods > :: ctor (this , execution_context , args , function_name) ; this }
+#[cfg(feature="moon_sharp-interpreter-interop-lua_state_interop-luastate")]impl LuaState{#[doc="`.ctor(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::Il2CppString)` — overload selector"]pub fn new(execution_context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,function_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LuaState), ::core::stringify!(new),));
+ <Self as ILuaStateMethods> ::ctor(this,execution_context,args,function_name);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luastate")]

@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/extensionofnativeclassattribute/ExtensionOfNativeClassAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ExtensionOfNativeClassAttribute")] pub struct ExtensionOfNativeClassAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/extensionofnativeclassattribute/ExtensionOfNativeClassAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="ExtensionOfNativeClassAttribute")]pub struct ExtensionOfNativeClassAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-extensionofnativeclassattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
-pub trait IExtensionOfNativeClassAttributeMethods : IExtensionOfNativeClassAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExtensionOfNativeClassAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExtensionOfNativeClassAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-extensionofnativeclassattribute")]pub trait IExtensionOfNativeClassAttributeMethods:IExtensionOfNativeClassAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExtensionOfNativeClassAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d570usize)as*mut u8,();
+(ExtensionOfNativeClassAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
-impl < __T : IExtensionOfNativeClassAttribute > IExtensionOfNativeClassAttributeMethods for __T { }
+#[cfg(feature="unity_engine-extensionofnativeclassattribute")]impl<__T:IExtensionOfNativeClassAttribute>IExtensionOfNativeClassAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
-impl ExtensionOfNativeClassAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExtensionOfNativeClassAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-extensionofnativeclassattribute")]impl ExtensionOfNativeClassAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
-impl ExtensionOfNativeClassAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExtensionOfNativeClassAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IExtensionOfNativeClassAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-extensionofnativeclassattribute")]impl ExtensionOfNativeClassAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExtensionOfNativeClassAttribute), ::core::stringify!(new),));
+ <Self as IExtensionOfNativeClassAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-extensionofnativeclassattribute")]

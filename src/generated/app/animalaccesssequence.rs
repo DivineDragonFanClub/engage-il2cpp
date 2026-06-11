@@ -4,70 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalaccesssequence/AnimalAccessSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AnimalAccessSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalaccesssequence/AnimalAccessSequence.md"))]#[::unity2::class(namespace="App",name="AnimalAccessSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalaccesssequence::AnimalAccessSequence>)]pub struct AnimalAccessSequence{#[offset(136)]#[rename(name="m_AnimalCamera")]pub m_animal_camera:crate::app::animalaccesscamera::AnimalAccessCamera,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalaccesssequence/AnimalAccessSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalAccessSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for AnimalAccessSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AnimalAccessSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for AnimalAccessSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AnimalAccessSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for AnimalAccessSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for AnimalAccessSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl AnimalAccessSequence_Label{pub fn main()->Self{Self{value:0}
 }
-
-
-impl  AnimalAccessSequence_Label  {
-    pub fn main() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn end()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalaccesssequence/AnimalAccessSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalAccessSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalaccesssequence :: AnimalAccessSequence >)] pub struct AnimalAccessSequence {
-# [offset (136)] # [rename (name = "m_AnimalCamera")] pub m_animal_camera : crate :: app :: animalaccesscamera :: AnimalAccessCamera ,
 }
 
 }
@@ -75,30 +40,82 @@ impl  AnimalAccessSequence_Label  {
 #[cfg(feature = "app-animalaccesssequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-animalaccesssequence")]
-impl AnimalAccessSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90be0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animalaccesssequence")]impl AnimalAccessSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c90be0usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
+}
 
-#[cfg(feature = "app-animalaccesssequence")]
-pub trait IAnimalAccessSequenceMethods : IAnimalAccessSequence { # [doc = "`get_Access()` overload"] fn get_access (self ,) -> crate :: app :: hubaccess :: HubAccess { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccess :: HubAccess = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Access(crate::app::hubaccess::HubAccess)` overload"] fn set_access (self , value : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Animal()` overload"] fn get_animal (self ,) -> crate :: app :: animaldata :: AnimalData { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaldata :: AnimalData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Animal(crate::app::animaldata::AnimalData)` overload"] fn set_animal (self , value : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Player()` overload"] fn get_player (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Camera()` overload"] fn get_camera (self ,) -> crate :: app :: hubcamera :: HubCamera { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubcamera :: HubCamera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c901c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::hubaccess::HubAccess)` overload"] fn ctor (self , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Main()` overload"] fn main (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < AnimalAccessSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c908c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animalaccesssequence")]pub trait IAnimalAccessSequenceMethods:IAnimalAccessSequence{#[doc="`get_Access()` overload"]fn get_access(self,)->crate::app::hubaccess::HubAccess{unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90100usize)as*mut u8,crate::app::hubaccess::HubAccess;
+(AnimalAccessSequence)__receiver)}
+}
+#[doc="`set_Access(crate::app::hubaccess::HubAccess)` overload"]fn set_access(self,value:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90110usize)as*mut u8,();
+(AnimalAccessSequence)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(value))}
+}
+#[doc="`get_Animal()` overload"]fn get_animal(self,)->crate::app::animaldata::AnimalData{unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90120usize)as*mut u8,crate::app::animaldata::AnimalData;
+(AnimalAccessSequence)__receiver)}
+}
+#[doc="`set_Animal(crate::app::animaldata::AnimalData)` overload"]fn set_animal(self,value:impl::core::convert::Into<crate::app::animaldata::AnimalData>)->(){unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90130usize)as*mut u8,();
+(AnimalAccessSequence)__receiver,(crate::app::animaldata::AnimalData)::core::convert::Into::into(value))}
+}
+#[doc="`get_Player()` overload"]fn get_player(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90140usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
+(AnimalAccessSequence)__receiver)}
+}
+#[doc="`get_Camera()` overload"]fn get_camera(self,)->crate::app::hubcamera::HubCamera{unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c901c0usize)as*mut u8,crate::app::hubcamera::HubCamera;
+(AnimalAccessSequence)__receiver)}
+}
+#[doc="`.ctor(crate::app::hubaccess::HubAccess)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90240usize)as*mut u8,();
+(AnimalAccessSequence)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90430usize)as*mut u8,();
+(AnimalAccessSequence)__receiver)}
+}
+#[doc="`Main()` overload"]fn main(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90840usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(AnimalAccessSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <AnimalAccessSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c908c0usize)as*mut u8,();
+(AnimalAccessSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-animalaccesssequence")]
-impl < __T : IAnimalAccessSequence > IAnimalAccessSequenceMethods for __T { }
+#[cfg(feature="app-animalaccesssequence")]impl<__T:IAnimalAccessSequence>IAnimalAccessSequenceMethods for __T{}
 
-#[cfg(feature = "app-animalaccesssequence")]
-impl AnimalAccessSequence { pub fn get_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-animalaccesssequence")]impl AnimalAccessSequence{pub fn get_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-animalaccesssequence")]
-impl AnimalAccessSequence {
-# [doc = "`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"] pub fn new (access : crate :: app :: hubaccess :: HubAccess) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalAccessSequence) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalAccessSequenceMethods > :: ctor (this , access) ; this }
+#[cfg(feature="app-animalaccesssequence")]impl AnimalAccessSequence{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalAccessSequence), ::core::stringify!(new),));
+ <Self as IAnimalAccessSequenceMethods> ::ctor(this,access);
+this}
 }
 
 #[cfg(feature = "app-animalaccesssequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimalAccessSequence_Label;
     pub use super::AnimalAccessSequence;
     pub use super::IAnimalAccessSequence;
     pub use super::IAnimalAccessSequenceMethods;
+    pub use super::AnimalAccessSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

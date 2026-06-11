@@ -4,42 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrotitlesetter/JobIntroTitleSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroTitleSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct JobIntroTitleSetter {
-# [offset (24)] # [rename (name = "JobName")] pub job_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "ReadyTime1")] pub ready_time1 : f32 ,
-# [offset (36)] # [rename (name = "ReadyTime2")] pub ready_time2 : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobintrotitlesetter/JobIntroTitleSetter.md"))]#[::unity2::class(namespace="App",name="JobIntroTitleSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct JobIntroTitleSetter{#[offset(24)]#[rename(name="JobName")]pub job_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="ReadyTime1")]pub ready_time1:f32, #[offset(36)]#[rename(name="ReadyTime2")]pub ready_time2:f32,}
 
 }
 
 #[cfg(feature = "app-jobintrotitlesetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-jobintrotitlesetter")]
-pub trait IJobIntroTitleSetterMethods : IJobIntroTitleSetter { # [doc = "`SetData(crate::app::jobdata::JobData)` overload"] fn set_data (self , job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData >) -> () { unsafe { let __receiver = < JobIntroTitleSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroTitleSetter , crate :: app :: jobdata :: JobData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205a770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (job) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < JobIntroTitleSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroTitleSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205a800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-jobintrotitlesetter")]pub trait IJobIntroTitleSetterMethods:IJobIntroTitleSetter{#[doc="`SetData(crate::app::jobdata::JobData)` overload"]fn set_data(self,job:impl::core::convert::Into<crate::app::jobdata::JobData>)->(){unsafe{let __receiver= <JobIntroTitleSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205a770usize)as*mut u8,();
+(JobIntroTitleSetter)__receiver,(crate::app::jobdata::JobData)::core::convert::Into::into(job))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <JobIntroTitleSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205a800usize)as*mut u8,();
+(JobIntroTitleSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-jobintrotitlesetter")]
-impl < __T : IJobIntroTitleSetter > IJobIntroTitleSetterMethods for __T { }
+#[cfg(feature="app-jobintrotitlesetter")]impl<__T:IJobIntroTitleSetter>IJobIntroTitleSetterMethods for __T{}
 
-#[cfg(feature = "app-jobintrotitlesetter")]
-impl JobIntroTitleSetter { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroTitleSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroTitleSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-jobintrotitlesetter")]impl JobIntroTitleSetter{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-jobintrotitlesetter")]
-impl JobIntroTitleSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (JobIntroTitleSetter) , :: core :: stringify ! (new) ,)) ; < Self as IJobIntroTitleSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-jobintrotitlesetter")]impl JobIntroTitleSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(JobIntroTitleSetter), ::core::stringify!(new),));
+ <Self as IJobIntroTitleSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-jobintrotitlesetter")]

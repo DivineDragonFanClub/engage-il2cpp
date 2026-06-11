@@ -4,81 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))] # [:: unity2 :: class (namespace = "App" , name = "SoftwareKeyboard")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct SoftwareKeyboard {
-# [static_field] # [rename (name = "DataCodeMaxLength")] pub data_code_max_length : i32 ,
-# [static_field] # [rename (name = "s_result")] pub s_result : :: unity2 :: IlInstance ,
-# [offset (296)] # [rename (name = "m_maxLength")] pub m_max_length : i32 ,
-# [offset (304)] # [rename (name = "m_headerText")] pub m_header_text : :: unity2 :: Il2CppString ,
-# [offset (312)] # [rename (name = "m_subText")] pub m_sub_text : :: unity2 :: Il2CppString ,
-# [offset (320)] # [rename (name = "m_initialText")] pub m_initial_text : :: unity2 :: Il2CppString ,
-# [offset (328)] # [rename (name = "m_preset")] pub m_preset : crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset ,
-# [offset (336)] # [rename (name = "m_callback")] pub m_callback : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/softwarekeyboard/SoftwareKeyboard.md"))]#[::unity2::class(namespace="App",name="SoftwareKeyboard")]#[parent(crate::app::procinst::ProcInst)]pub struct SoftwareKeyboard{#[static_field]#[rename(name="DataCodeMaxLength")]pub data_code_max_length:i32, #[static_field]#[rename(name="s_result")]pub s_result: ::unity2::IlInstance, #[offset(296)]#[rename(name="m_maxLength")]pub m_max_length:i32, #[offset(304)]#[rename(name="m_headerText")]pub m_header_text: ::unity2::Il2CppString, #[offset(312)]#[rename(name="m_subText")]pub m_sub_text: ::unity2::Il2CppString, #[offset(320)]#[rename(name="m_initialText")]pub m_initial_text: ::unity2::Il2CppString, #[offset(328)]#[rename(name="m_preset")]pub m_preset:crate::app::softwarekeyboard::SoftwareKeyboard_Preset, #[offset(336)]#[rename(name="m_callback")]pub m_callback:crate::system::action_1::Action_1< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/softwarekeyboard/SoftwareKeyboard_Preset.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SoftwareKeyboard_Preset{pub value:i32,}
+impl::unity2::ClassIdentity for SoftwareKeyboard_Preset{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SoftwareKeyboard.Preset";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/softwarekeyboard/SoftwareKeyboard_Preset.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SoftwareKeyboard_Preset  {
-    pub value: i32,
+impl::unity2::IlType for SoftwareKeyboard_Preset{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for SoftwareKeyboard_Preset  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SoftwareKeyboard.Preset";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl SoftwareKeyboard_Preset{pub fn default()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for SoftwareKeyboard_Preset  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn download_code()->Self{Self{value:1}
 }
-
-
-impl  SoftwareKeyboard_Preset  {
-    pub fn default() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn download_code() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn reported_reason() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn reported_reason()->Self{Self{value:2}
+}
 }
 
 }
@@ -86,21 +40,79 @@ impl  SoftwareKeyboard_Preset  {
 #[cfg(feature = "app-softwarekeyboard-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-softwarekeyboard")]
-impl SoftwareKeyboard { # [doc = "`get_ResultText()` overload"] pub fn get_result_text () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdde40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , max_length : impl :: core :: convert :: Into < i32 > , initial_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , header_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , sub_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , preset : impl :: core :: convert :: Into < crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset , crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fde850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (max_length) , :: core :: convert :: Into :: into (initial_text) , :: core :: convert :: Into :: into (header_text) , :: core :: convert :: Into :: into (sub_text) , :: core :: convert :: Into :: into (preset) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindByPlayerNameInput(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"] pub fn create_bind_by_player_name_input (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fde950usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`GetResult()` overload"] pub fn get_result () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdea50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdeb10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-softwarekeyboard")]impl SoftwareKeyboard{#[doc="`get_ResultText()` overload"]pub fn get_result_text()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fdde40usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,max_length:impl::core::convert::Into<i32> ,initial_text:impl::core::convert::Into< ::unity2::Il2CppString> ,header_text:impl::core::convert::Into< ::unity2::Il2CppString> ,sub_text:impl::core::convert::Into< ::unity2::Il2CppString> ,preset:impl::core::convert::Into<crate::app::softwarekeyboard::SoftwareKeyboard_Preset> ,callback:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fde850usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(max_length),(::unity2::Il2CppString)::core::convert::Into::into(initial_text),(::unity2::Il2CppString)::core::convert::Into::into(header_text),(::unity2::Il2CppString)::core::convert::Into::into(sub_text),(crate::app::softwarekeyboard::SoftwareKeyboard_Preset)::core::convert::Into::into(preset),(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(callback))}
+}
+#[doc="`CreateBindByPlayerNameInput(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]pub fn create_bind_by_player_name_input(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fde950usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(callback))}
+}
+#[doc="`GetResult()` overload"]pub fn get_result()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fdea50usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fdeb10usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-softwarekeyboard")]
-pub trait ISoftwareKeyboardMethods : ISoftwareKeyboard { # [doc = "`.ctor(i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"] fn ctor (self , max_length : impl :: core :: convert :: Into < i32 > , initial_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , header_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , sub_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , preset : impl :: core :: convert :: Into < crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < SoftwareKeyboard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftwareKeyboard , i32 , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset , crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fddeb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (max_length) , :: core :: convert :: Into :: into (initial_text) , :: core :: convert :: Into :: into (header_text) , :: core :: convert :: Into :: into (sub_text) , :: core :: convert :: Into :: into (preset) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < SoftwareKeyboard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftwareKeyboard , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fddf50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < SoftwareKeyboard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftwareKeyboard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fde310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < SoftwareKeyboard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftwareKeyboard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fde320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Callback()` overload"] fn callback (self ,) -> () { unsafe { let __receiver = < SoftwareKeyboard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftwareKeyboard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fde330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowKeyboard()` overload"] fn show_keyboard (self ,) -> () { unsafe { let __receiver = < SoftwareKeyboard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftwareKeyboard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fde550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NetKeepAliveOn()` overload"] fn net_keep_alive_on (self ,) -> () { unsafe { let __receiver = < SoftwareKeyboard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftwareKeyboard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fde830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NetKeepAliveOff()` overload"] fn net_keep_alive_off (self ,) -> () { unsafe { let __receiver = < SoftwareKeyboard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftwareKeyboard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fde840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-softwarekeyboard")]pub trait ISoftwareKeyboardMethods:ISoftwareKeyboard{#[doc="`.ctor(i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]fn ctor(self,max_length:impl::core::convert::Into<i32> ,initial_text:impl::core::convert::Into< ::unity2::Il2CppString> ,header_text:impl::core::convert::Into< ::unity2::Il2CppString> ,sub_text:impl::core::convert::Into< ::unity2::Il2CppString> ,preset:impl::core::convert::Into<crate::app::softwarekeyboard::SoftwareKeyboard_Preset> ,callback:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <SoftwareKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fddeb0usize)as*mut u8,();
+(SoftwareKeyboard)__receiver,(i32)::core::convert::Into::into(max_length),(::unity2::Il2CppString)::core::convert::Into::into(initial_text),(::unity2::Il2CppString)::core::convert::Into::into(header_text),(::unity2::Il2CppString)::core::convert::Into::into(sub_text),(crate::app::softwarekeyboard::SoftwareKeyboard_Preset)::core::convert::Into::into(preset),(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(callback))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <SoftwareKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fddf50usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(SoftwareKeyboard)__receiver)}
+}
+#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <SoftwareKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fde310usize)as*mut u8,();
+(SoftwareKeyboard)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <SoftwareKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fde320usize)as*mut u8,();
+(SoftwareKeyboard)__receiver)}
+}
+#[doc="`Callback()` overload"]fn callback(self,)->(){unsafe{let __receiver= <SoftwareKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fde330usize)as*mut u8,();
+(SoftwareKeyboard)__receiver)}
+}
+#[doc="`ShowKeyboard()` overload"]fn show_keyboard(self,)->(){unsafe{let __receiver= <SoftwareKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fde550usize)as*mut u8,();
+(SoftwareKeyboard)__receiver)}
+}
+#[doc="`NetKeepAliveOn()` overload"]fn net_keep_alive_on(self,)->(){unsafe{let __receiver= <SoftwareKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fde830usize)as*mut u8,();
+(SoftwareKeyboard)__receiver)}
+}
+#[doc="`NetKeepAliveOff()` overload"]fn net_keep_alive_off(self,)->(){unsafe{let __receiver= <SoftwareKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fde840usize)as*mut u8,();
+(SoftwareKeyboard)__receiver)}
+}
+}
 
-#[cfg(feature = "app-softwarekeyboard")]
-impl < __T : ISoftwareKeyboard > ISoftwareKeyboardMethods for __T { }
+#[cfg(feature="app-softwarekeyboard")]impl<__T:ISoftwareKeyboard>ISoftwareKeyboardMethods for __T{}
 
-#[cfg(feature = "app-softwarekeyboard")]
-impl SoftwareKeyboard { pub fn get_result_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn show_keyboard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn net_keep_alive_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn net_keep_alive_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_bind_by_player_name_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftwareKeyboard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-softwarekeyboard")]impl SoftwareKeyboard{pub fn get_result_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn show_keyboard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn net_keep_alive_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn net_keep_alive_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_bind_by_player_name_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-softwarekeyboard")]
-impl SoftwareKeyboard {
-# [doc = "`.ctor(i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` — overload selector"] pub fn new (max_length : i32 , initial_text : :: unity2 :: Il2CppString , header_text : :: unity2 :: Il2CppString , sub_text : :: unity2 :: Il2CppString , preset : crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset , callback : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SoftwareKeyboard) , :: core :: stringify ! (new) ,)) ; < Self as ISoftwareKeyboardMethods > :: ctor (this , max_length , initial_text , header_text , sub_text , preset , callback) ; this }
+#[cfg(feature="app-softwarekeyboard")]impl SoftwareKeyboard{#[doc="`.ctor(i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::softwarekeyboard::SoftwareKeyboard_Preset, crate::system::action_1::Action_1<::unity2::Il2CppString>)` — overload selector"]pub fn new(max_length:i32,initial_text: ::unity2::Il2CppString,header_text: ::unity2::Il2CppString,sub_text: ::unity2::Il2CppString,preset:crate::app::softwarekeyboard::SoftwareKeyboard_Preset,callback:crate::system::action_1::Action_1< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoftwareKeyboard), ::core::stringify!(new),));
+ <Self as ISoftwareKeyboardMethods> ::ctor(this,max_length,initial_text,header_text,sub_text,preset,callback);
+this}
 }
 
 #[cfg(feature = "app-softwarekeyboard")]

@@ -4,42 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: app :: mainmenusequence :: { IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::app::mainmenusequence::{IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent,IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent,MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent,MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/playerbirthdayinputdaymenuitemcontent/PlayerBirthdayInputDayMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PlayerBirthdayInputDayMenuItemContent")] # [parent (crate :: app :: mainmenusequence :: MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent)] pub struct PlayerBirthdayInputDayMenuItemContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/playerbirthdayinputdaymenuitemcontent/PlayerBirthdayInputDayMenuItemContent.md"))]#[::unity2::class(namespace="App",name="PlayerBirthdayInputDayMenuItemContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent)]pub struct PlayerBirthdayInputDayMenuItemContent{}
 
 }
 
 #[cfg(feature = "app-playerbirthdayinputdaymenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-playerbirthdayinputdaymenuitemcontent")]
-pub trait IPlayerBirthdayInputDayMenuItemContentMethods : IPlayerBirthdayInputDayMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayerBirthdayInputDayMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerBirthdayInputDayMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-playerbirthdayinputdaymenuitemcontent")]pub trait IPlayerBirthdayInputDayMenuItemContentMethods:IPlayerBirthdayInputDayMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayerBirthdayInputDayMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814430usize)as*mut u8,();
+(PlayerBirthdayInputDayMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-playerbirthdayinputdaymenuitemcontent")]
-impl < __T : IPlayerBirthdayInputDayMenuItemContent > IPlayerBirthdayInputDayMenuItemContentMethods for __T { }
+#[cfg(feature="app-playerbirthdayinputdaymenuitemcontent")]impl<__T:IPlayerBirthdayInputDayMenuItemContent>IPlayerBirthdayInputDayMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-playerbirthdayinputdaymenuitemcontent")]
-impl PlayerBirthdayInputDayMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerBirthdayInputDayMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-playerbirthdayinputdaymenuitemcontent")]impl PlayerBirthdayInputDayMenuItemContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-playerbirthdayinputdaymenuitemcontent")]
-impl PlayerBirthdayInputDayMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayerBirthdayInputDayMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IPlayerBirthdayInputDayMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-playerbirthdayinputdaymenuitemcontent")]impl PlayerBirthdayInputDayMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayerBirthdayInputDayMenuItemContent), ::core::stringify!(new),));
+ <Self as IPlayerBirthdayInputDayMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-playerbirthdayinputdaymenuitemcontent")]

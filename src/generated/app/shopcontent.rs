@@ -4,34 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcontent/ShopContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopContent")] # [parent (crate :: system :: object :: Object)] pub struct ShopContent {
-# [offset (16)] # [rename (name = "m_Iid")] pub m_iid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_StockNum")] pub m_stock_num : i32 ,
-# [offset (28)] # [rename (name = "m_NewArrival")] pub m_new_arrival : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopcontent/ShopContent.md"))]#[::unity2::class(namespace="App",name="ShopContent")]#[parent(crate::system::object::Object)]pub struct ShopContent{#[offset(16)]#[rename(name="m_Iid")]pub m_iid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_StockNum")]pub m_stock_num:i32, #[offset(28)]#[rename(name="m_NewArrival")]pub m_new_arrival:bool,}
 
 }
 
 #[cfg(feature = "app-shopcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopcontent")]
-pub trait IShopContentMethods : IShopContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ae6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopcontent")]pub trait IShopContentMethods:IShopContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ae6f0usize)as*mut u8,();
+(ShopContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-shopcontent")]
-impl < __T : IShopContent > IShopContentMethods for __T { }
+#[cfg(feature="app-shopcontent")]impl<__T:IShopContent>IShopContentMethods for __T{}
 
-#[cfg(feature = "app-shopcontent")]
-impl ShopContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-shopcontent")]impl ShopContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-shopcontent")]
-impl ShopContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopContent) , :: core :: stringify ! (new) ,)) ; < Self as IShopContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-shopcontent")]impl ShopContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopContent), ::core::stringify!(new),));
+ <Self as IShopContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-shopcontent")]

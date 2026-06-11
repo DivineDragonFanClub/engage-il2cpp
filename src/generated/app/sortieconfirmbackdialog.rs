@@ -4,75 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbackdialog/SortieConfirmBackDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieConfirmBackDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct SortieConfirmBackDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbackdialog/SortieConfirmBackDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="SortieConfirmBackDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct SortieConfirmBackDialog_ConfirmYesDialogItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbackdialog/SortieConfirmBackDialog_ConfirmYesDialogItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieConfirmBackDialog.ConfirmYesDialogItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct SortieConfirmBackDialog_ConfirmYesDialogItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbackdialog/SortieConfirmBackDialog.md"))]#[::unity2::class(namespace="App",name="SortieConfirmBackDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct SortieConfirmBackDialog{}
 
 }
 
 #[cfg(feature = "app-sortieconfirmbackdialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-impl SortieConfirmBackDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-pub trait ISortieConfirmBackDialogMethods : ISortieConfirmBackDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { let __receiver = < SortieConfirmBackDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieConfirmBackDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe5420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-impl < __T : ISortieConfirmBackDialog > ISortieConfirmBackDialogMethods for __T { }
-
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-impl SortieConfirmBackDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieConfirmBackDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieConfirmBackDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-impl SortieConfirmBackDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieConfirmBackDialog) , :: core :: stringify ! (new) ,)) ; < Self as ISortieConfirmBackDialogMethods > :: ctor (this , menu_item_list) ; this }
+#[cfg(feature="app-sortieconfirmbackdialog")]pub trait ISortieConfirmBackDialog_ConfirmYesDialogItemMethods:ISortieConfirmBackDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SortieConfirmBackDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d728d0usize)as*mut u8,();
+(SortieConfirmBackDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieConfirmBackDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d728e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SortieConfirmBackDialog_ConfirmYesDialogItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-pub trait ISortieConfirmBackDialog_ConfirmYesDialogItemMethods : ISortieConfirmBackDialog_ConfirmYesDialogItem { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SortieConfirmBackDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieConfirmBackDialog_ConfirmYesDialogItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d728d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SortieConfirmBackDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieConfirmBackDialog_ConfirmYesDialogItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d728e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortieconfirmbackdialog")]impl<__T:ISortieConfirmBackDialog_ConfirmYesDialogItem>ISortieConfirmBackDialog_ConfirmYesDialogItemMethods for __T{}
 
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-impl < __T : ISortieConfirmBackDialog_ConfirmYesDialogItem > ISortieConfirmBackDialog_ConfirmYesDialogItemMethods for __T { }
+#[cfg(feature="app-sortieconfirmbackdialog")]impl SortieConfirmBackDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-impl SortieConfirmBackDialog_ConfirmYesDialogItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieConfirmBackDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieConfirmBackDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-sortieconfirmbackdialog")]impl SortieConfirmBackDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieConfirmBackDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
+ <Self as ISortieConfirmBackDialog_ConfirmYesDialogItemMethods> ::ctor(this,text);
+this}
+}
 
-#[cfg(feature = "app-sortieconfirmbackdialog")]
-impl SortieConfirmBackDialog_ConfirmYesDialogItem {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieConfirmBackDialog_ConfirmYesDialogItem) , :: core :: stringify ! (new) ,)) ; < Self as ISortieConfirmBackDialog_ConfirmYesDialogItemMethods > :: ctor (this , text) ; this }
+#[cfg(feature="app-sortieconfirmbackdialog")]impl SortieConfirmBackDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4ec0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-sortieconfirmbackdialog")]pub trait ISortieConfirmBackDialogMethods:ISortieConfirmBackDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <SortieConfirmBackDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5420usize)as*mut u8,();
+(SortieConfirmBackDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-sortieconfirmbackdialog")]impl<__T:ISortieConfirmBackDialog>ISortieConfirmBackDialogMethods for __T{}
+
+#[cfg(feature="app-sortieconfirmbackdialog")]impl SortieConfirmBackDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-sortieconfirmbackdialog")]impl SortieConfirmBackDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieConfirmBackDialog), ::core::stringify!(new),));
+ <Self as ISortieConfirmBackDialogMethods> ::ctor(this,menu_item_list);
+this}
 }
 
 #[cfg(feature = "app-sortieconfirmbackdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieConfirmBackDialog;
-    pub use super::ISortieConfirmBackDialog;
-    pub use super::ISortieConfirmBackDialogMethods;
     pub use super::SortieConfirmBackDialog_ConfirmYesDialogItem;
     pub use super::ISortieConfirmBackDialog_ConfirmYesDialogItem;
     pub use super::ISortieConfirmBackDialog_ConfirmYesDialogItemMethods;
+    pub use super::SortieConfirmBackDialog;
+    pub use super::ISortieConfirmBackDialog;
+    pub use super::ISortieConfirmBackDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

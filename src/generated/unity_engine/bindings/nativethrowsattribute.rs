@@ -4,28 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/nativethrowsattribute/NativeThrowsAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "NativeThrowsAttribute")] pub struct NativeThrowsAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/nativethrowsattribute/NativeThrowsAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="NativeThrowsAttribute")]pub struct NativeThrowsAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-nativethrowsattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-nativethrowsattribute")]
-pub trait INativeThrowsAttributeMethods : INativeThrowsAttribute { # [doc = "`set_ThrowsException(bool)` overload"] fn set_throws_exception (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NativeThrowsAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeThrowsAttribute , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NativeThrowsAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeThrowsAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-nativethrowsattribute")]pub trait INativeThrowsAttributeMethods:INativeThrowsAttribute{#[doc="`set_ThrowsException(bool)` overload"]fn set_throws_exception(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeThrowsAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38230usize)as*mut u8,();
+(NativeThrowsAttribute)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NativeThrowsAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38240usize)as*mut u8,();
+(NativeThrowsAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativethrowsattribute")]
-impl < __T : INativeThrowsAttribute > INativeThrowsAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-nativethrowsattribute")]impl<__T:INativeThrowsAttribute>INativeThrowsAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-nativethrowsattribute")]
-impl NativeThrowsAttribute { pub fn set_throws_exception_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeThrowsAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeThrowsAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-bindings-nativethrowsattribute")]impl NativeThrowsAttribute{pub fn set_throws_exception_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativethrowsattribute")]
-impl NativeThrowsAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeThrowsAttribute) , :: core :: stringify ! (new) ,)) ; < Self as INativeThrowsAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-bindings-nativethrowsattribute")]impl NativeThrowsAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeThrowsAttribute), ::core::stringify!(new),));
+ <Self as INativeThrowsAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-nativethrowsattribute")]

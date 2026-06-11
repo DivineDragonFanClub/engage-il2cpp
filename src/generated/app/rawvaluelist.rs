@@ -4,33 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rawvaluelist/RawValueList.md"))] # [:: unity2 :: class (namespace = "App" , name = "RawValueList")] # [parent (crate :: system :: object :: Object)] pub struct RawValueList {
-# [offset (16)] # [rename (name = "Count")] pub count : i32 ,
-# [offset (24)] # [rename (name = "Values")] pub values : :: unity2 :: Array < crate :: system :: valuetype :: ValueType > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rawvaluelist/RawValueList.md"))]#[::unity2::class(namespace="App",name="RawValueList")]#[parent(crate::system::object::Object)]pub struct RawValueList{#[offset(16)]#[rename(name="Count")]pub count:i32, #[offset(24)]#[rename(name="Values")]pub values: ::unity2::Array<crate::system::valuetype::ValueType> ,}
 
 }
 
 #[cfg(feature = "app-rawvaluelist-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-rawvaluelist")]
-pub trait IRawValueListMethods : IRawValueList { # [doc = "`get_Capacity()` overload"] fn get_capacity (self ,) -> i32 { unsafe { let __receiver = < RawValueList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawValueList , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237e360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] fn ctor (self , capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RawValueList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawValueList , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237e370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: option :: Option :: None) } } } # [doc = "`Get(i32)` overload"] fn get (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: system :: valuetype :: ValueType { unsafe { let __receiver = < RawValueList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawValueList , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: valuetype :: ValueType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237e400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Set(i32, *mutcrate::system::valuetype::ValueType)` overload"] fn set (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: system :: valuetype :: ValueType { unsafe { let __receiver = < RawValueList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: valuetype :: ValueType > :: uninit () ; { let __inner : extern "C" fn (RawValueList , i32 , * mut crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237e440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Add(crate::system::valuetype::ValueType)` overload"] fn add (self , value : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> () { unsafe { let __receiver = < RawValueList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawValueList , crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237e4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < RawValueList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawValueList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237e540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-rawvaluelist")]pub trait IRawValueListMethods:IRawValueList{#[doc="`get_Capacity()` overload"]fn get_capacity(self,)->i32{unsafe{let __receiver= <RawValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x237e360usize)as*mut u8,i32;
+(RawValueList)__receiver)}
+}
+#[doc="`.ctor(i32)` overload"]fn ctor(self,capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RawValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x237e370usize)as*mut u8,();
+(RawValueList)__receiver,(i32)::core::convert::Into::into(capacity))}
+}
+#[doc="`Get(i32)` overload"]fn get(self,index:impl::core::convert::Into<i32>)->crate::system::valuetype::ValueType{unsafe{let __receiver= <RawValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x237e400usize)as*mut u8,crate::system::valuetype::ValueType;
+(RawValueList)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Set(i32, *mutcrate::system::valuetype::ValueType)` overload"]fn set(self,index:impl::core::convert::Into<i32>)->crate::system::valuetype::ValueType{unsafe{let __receiver= <RawValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::valuetype::ValueType> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x237e440usize)as*mut u8,();
+(RawValueList)__receiver,(i32)::core::convert::Into::into(index),(*mut crate::system::valuetype::ValueType)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Add(crate::system::valuetype::ValueType)` overload"]fn add(self,value:impl::core::convert::Into<crate::system::valuetype::ValueType>)->(){unsafe{let __receiver= <RawValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x237e4c0usize)as*mut u8,();
+(RawValueList)__receiver,(crate::system::valuetype::ValueType)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RawValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x237e540usize)as*mut u8,();
+(RawValueList)__receiver)}
+}
+}
 
-#[cfg(feature = "app-rawvaluelist")]
-impl < __T : IRawValueList > IRawValueListMethods for __T { }
+#[cfg(feature="app-rawvaluelist")]impl<__T:IRawValueList>IRawValueListMethods for __T{}
 
-#[cfg(feature = "app-rawvaluelist")]
-impl RawValueList { pub fn get_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawValueList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawValueList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawValueList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawValueList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawValueList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawValueList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-rawvaluelist")]impl RawValueList{pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-rawvaluelist")]
-impl RawValueList {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RawValueList) , :: core :: stringify ! (new) ,)) ; < Self as IRawValueListMethods > :: ctor (this , capacity) ; this }
+#[cfg(feature="app-rawvaluelist")]impl RawValueList{#[doc="`.ctor(i32)` — overload selector"]pub fn new(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RawValueList), ::core::stringify!(new),));
+ <Self as IRawValueListMethods> ::ctor(this,capacity);
+this}
 }
 
 #[cfg(feature = "app-rawvaluelist")]

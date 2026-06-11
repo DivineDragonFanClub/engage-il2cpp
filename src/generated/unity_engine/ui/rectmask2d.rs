@@ -4,53 +4,129 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/rectmask2d/RectMask2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "RectMask2D")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct RectMask2D {
-# [offset (24)] # [rename (name = "m_VertexClipper")] pub m_vertex_clipper : crate :: unity_engine :: ui :: rectangularvertexclipper :: RectangularVertexClipper ,
-# [offset (32)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (40)] # [rename (name = "m_MaskableTargets")] pub m_maskable_targets : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic > ,
-# [offset (48)] # [rename (name = "m_ClipTargets")] pub m_clip_targets : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: unity_engine :: ui :: iclippable :: IClippable > ,
-# [offset (56)] # [rename (name = "m_ShouldRecalculateClipRects")] pub m_should_recalculate_clip_rects : bool ,
-# [offset (64)] # [rename (name = "m_Clippers")] pub m_clippers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: rectmask2d :: RectMask2D > ,
-# [offset (72)] # [rename (name = "m_LastClipRectCanvasSpace")] pub m_last_clip_rect_canvas_space : crate :: unity_engine :: rect :: Rect ,
-# [offset (88)] # [rename (name = "m_ForceClip")] pub m_force_clip : bool ,
-# [offset (92)] # [rename (name = "m_Padding")] pub m_padding : crate :: unity_engine :: vector4 :: Vector4 ,
-# [offset (108)] # [rename (name = "m_Softness")] pub m_softness : crate :: unity_engine :: vector2int :: Vector2Int ,
-# [offset (120)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: canvas :: Canvas ,
-# [offset (128)] # [rename (name = "m_Corners")] pub m_corners : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/rectmask2d/RectMask2D.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="RectMask2D")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct RectMask2D{#[offset(24)]#[rename(name="m_VertexClipper")]pub m_vertex_clipper:crate::unity_engine::ui::rectangularvertexclipper::RectangularVertexClipper, #[offset(32)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_MaskableTargets")]pub m_maskable_targets:crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::ui::maskablegraphic::MaskableGraphic> , #[offset(48)]#[rename(name="m_ClipTargets")]pub m_clip_targets:crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::ui::iclippable::IClippable> , #[offset(56)]#[rename(name="m_ShouldRecalculateClipRects")]pub m_should_recalculate_clip_rects:bool, #[offset(64)]#[rename(name="m_Clippers")]pub m_clippers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D> , #[offset(72)]#[rename(name="m_LastClipRectCanvasSpace")]pub m_last_clip_rect_canvas_space:crate::unity_engine::rect::Rect, #[offset(88)]#[rename(name="m_ForceClip")]pub m_force_clip:bool, #[offset(92)]#[rename(name="m_Padding")]pub m_padding:crate::unity_engine::vector4::Vector4, #[offset(108)]#[rename(name="m_Softness")]pub m_softness:crate::unity_engine::vector2int::Vector2Int, #[offset(120)]#[rename(name="m_Canvas")]pub m_canvas:crate::unity_engine::canvas::Canvas, #[offset(128)]#[rename(name="m_Corners")]pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-rectmask2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-rectmask2d")]
-pub trait IRectMask2DMethods : IRectMask2D { # [doc = "`get_padding()` overload"] fn get_padding (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_padding(crate::unity_engine::vector4::Vector4)` overload"] fn set_padding (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_softness()` overload"] fn get_softness (self ,) -> crate :: unity_engine :: vector2int :: Vector2Int { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2int :: Vector2Int = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_softness(crate::unity_engine::vector2int::Vector2Int)` overload"] fn set_softness (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2int :: Vector2Int >) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , crate :: unity_engine :: vector2int :: Vector2Int , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Canvas()` overload"] fn get_canvas (self ,) -> crate :: unity_engine :: canvas :: Canvas { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: canvas :: Canvas = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37227a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_canvasRect()` overload"] fn get_canvas_rect (self ,) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37229d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"] fn is_raycast_location_valid (self , sp : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , event_camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722fe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sp) , :: core :: convert :: Into :: into (event_camera) , :: core :: option :: Option :: None) } } } # [doc = "`get_rootCanvasRect()` overload"] fn get_root_canvas_rect (self ,) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3723120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PerformClipping()` overload"] fn perform_clipping (self ,) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3723330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateClipSoftness()` overload"] fn update_clip_softness (self ,) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3723ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddClippable(crate::unity_engine::ui::iclippable::IClippable)` overload"] fn add_clippable (self , clippable : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: iclippable :: IClippable >) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , crate :: unity_engine :: ui :: iclippable :: IClippable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371cf20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clippable) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveClippable(crate::unity_engine::ui::iclippable::IClippable)` overload"] fn remove_clippable (self , clippable : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: iclippable :: IClippable >) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , crate :: unity_engine :: ui :: iclippable :: IClippable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371cd70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clippable) , :: core :: option :: Option :: None) } } } # [doc = "`OnTransformParentChanged()` overload"] fn on_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3723de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCanvasHierarchyChanged()` overload"] fn on_canvas_hierarchy_changed (self ,) -> () { unsafe { let __receiver = < RectMask2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectMask2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3723e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-rectmask2d")]pub trait IRectMask2DMethods:IRectMask2D{#[doc="`get_padding()` overload"]fn get_padding(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722710usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(RectMask2D)__receiver)}
+}
+#[doc="`set_padding(crate::unity_engine::vector4::Vector4)` overload"]fn set_padding(self,value:impl::core::convert::Into<crate::unity_engine::vector4::Vector4>)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722720usize)as*mut u8,();
+(RectMask2D)__receiver,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(value))}
+}
+#[doc="`get_softness()` overload"]fn get_softness(self,)->crate::unity_engine::vector2int::Vector2Int{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722740usize)as*mut u8,crate::unity_engine::vector2int::Vector2Int;
+(RectMask2D)__receiver)}
+}
+#[doc="`set_softness(crate::unity_engine::vector2int::Vector2Int)` overload"]fn set_softness(self,value:impl::core::convert::Into<crate::unity_engine::vector2int::Vector2Int>)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722750usize)as*mut u8,();
+(RectMask2D)__receiver,(crate::unity_engine::vector2int::Vector2Int)::core::convert::Into::into(value))}
+}
+#[doc="`get_Canvas()` overload"]fn get_canvas(self,)->crate::unity_engine::canvas::Canvas{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37227a0usize)as*mut u8,crate::unity_engine::canvas::Canvas;
+(RectMask2D)__receiver)}
+}
+#[doc="`get_canvasRect()` overload"]fn get_canvas_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722940usize)as*mut u8,crate::unity_engine::rect::Rect;
+(RectMask2D)__receiver)}
+}
+#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37229d0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(RectMask2D)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722c50usize)as*mut u8,();
+(RectMask2D)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722ee0usize)as*mut u8,();
+(RectMask2D)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722f20usize)as*mut u8,();
+(RectMask2D)__receiver)}
+}
+#[doc="`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn is_raycast_location_valid(self,sp:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722fe0usize)as*mut u8,bool;
+(RectMask2D)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(sp),(crate::unity_engine::camera::Camera)::core::convert::Into::into(event_camera))}
+}
+#[doc="`get_rootCanvasRect()` overload"]fn get_root_canvas_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3723120usize)as*mut u8,crate::unity_engine::rect::Rect;
+(RectMask2D)__receiver)}
+}
+#[doc="`PerformClipping()` overload"]fn perform_clipping(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3723330usize)as*mut u8,();
+(RectMask2D)__receiver)}
+}
+#[doc="`UpdateClipSoftness()` overload"]fn update_clip_softness(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3723ae0usize)as*mut u8,();
+(RectMask2D)__receiver)}
+}
+#[doc="`AddClippable(crate::unity_engine::ui::iclippable::IClippable)` overload"]fn add_clippable(self,clippable:impl::core::convert::Into<crate::unity_engine::ui::iclippable::IClippable>)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371cf20usize)as*mut u8,();
+(RectMask2D)__receiver,(crate::unity_engine::ui::iclippable::IClippable)::core::convert::Into::into(clippable))}
+}
+#[doc="`RemoveClippable(crate::unity_engine::ui::iclippable::IClippable)` overload"]fn remove_clippable(self,clippable:impl::core::convert::Into<crate::unity_engine::ui::iclippable::IClippable>)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371cd70usize)as*mut u8,();
+(RectMask2D)__receiver,(crate::unity_engine::ui::iclippable::IClippable)::core::convert::Into::into(clippable))}
+}
+#[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3723de0usize)as*mut u8,();
+(RectMask2D)__receiver)}
+}
+#[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3723e10usize)as*mut u8,();
+(RectMask2D)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-rectmask2d")]
-impl < __T : IRectMask2D > IRectMask2DMethods for __T { }
+#[cfg(feature="unity_engine-ui-rectmask2d")]impl<__T:IRectMask2D>IRectMask2DMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-rectmask2d")]
-impl RectMask2D { pub fn get_padding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_padding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_softness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_softness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_canvas_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_raycast_location_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_root_canvas_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn perform_clipping_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_clip_softness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn add_clippable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn remove_clippable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn on_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_canvas_hierarchy_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectMask2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="unity_engine-ui-rectmask2d")]impl RectMask2D{pub fn get_padding_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_padding_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_softness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_softness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_canvas_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_raycast_location_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_root_canvas_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn perform_clipping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_clip_softness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn add_clippable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn remove_clippable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn on_transform_parent_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_canvas_hierarchy_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "unity_engine-ui-rectmask2d")]
-impl RectMask2D {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RectMask2D) , :: core :: stringify ! (new) ,)) ; < Self as IRectMask2DMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-rectmask2d")]impl RectMask2D{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RectMask2D), ::core::stringify!(new),));
+ <Self as IRectMask2DMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-rectmask2d")]

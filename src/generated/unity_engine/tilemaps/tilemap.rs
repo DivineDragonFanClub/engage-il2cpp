@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: gridlayout :: { GridLayout , IGridLayout }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::gridlayout::{GridLayout,IGridLayout}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/tilemap/Tilemap.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Tilemaps" , name = "Tilemap")] # [parent (crate :: unity_engine :: gridlayout :: GridLayout)] pub struct Tilemap {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/tilemap/Tilemap.md"))]#[::unity2::class(namespace="UnityEngine.Tilemaps",name="Tilemap")]#[parent(crate::unity_engine::gridlayout::GridLayout)]pub struct Tilemap{}
 
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tilemap-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-tilemaps-tilemap")]
-pub trait ITilemapMethods : ITilemap { # [doc = "`RefreshTile(crate::unity_engine::vector3int::Vector3Int)` overload"] fn refresh_tile (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3int :: Vector3Int >) -> () { unsafe { let __receiver = < Tilemap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Tilemap , crate :: unity_engine :: vector3int :: Vector3Int , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } } # [doc = "`RefreshTile_Injected(*mutcrate::unity_engine::vector3int::Vector3Int)` overload"] fn refresh_tile_injected (self ,) -> crate :: unity_engine :: vector3int :: Vector3Int { unsafe { let __receiver = < Tilemap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3int :: Vector3Int > :: uninit () ; { let __inner : extern "C" fn (Tilemap , * mut crate :: unity_engine :: vector3int :: Vector3Int , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42f40usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-tilemaps-tilemap")]pub trait ITilemapMethods:ITilemap{#[doc="`RefreshTile(crate::unity_engine::vector3int::Vector3Int)` overload"]fn refresh_tile(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int>)->(){unsafe{let __receiver= <Tilemap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42a70usize)as*mut u8,();
+(Tilemap)__receiver,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(position))}
+}
+#[doc="`RefreshTile_Injected(*mutcrate::unity_engine::vector3int::Vector3Int)` overload"]fn refresh_tile_injected(self,)->crate::unity_engine::vector3int::Vector3Int{unsafe{let __receiver= <Tilemap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3int::Vector3Int> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42f40usize)as*mut u8,();
+(Tilemap)__receiver,(*mut crate::unity_engine::vector3int::Vector3Int)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-tilemaps-tilemap")]
-impl < __T : ITilemap > ITilemapMethods for __T { }
+#[cfg(feature="unity_engine-tilemaps-tilemap")]impl<__T:ITilemap>ITilemapMethods for __T{}
 
-#[cfg(feature = "unity_engine-tilemaps-tilemap")]
-impl Tilemap { pub fn refresh_tile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Tilemap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn refresh_tile_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Tilemap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-tilemaps-tilemap")]impl Tilemap{pub fn refresh_tile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn refresh_tile_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-tilemaps-tilemap")]
 #[doc(hidden)]

@@ -4,38 +4,75 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: decorator :: { Decorator , IDecorator }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::decorator::{Decorator,IDecorator}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_skill/Deco_Skill.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Deco_Skill")] # [parent (crate :: combat :: decorator :: Decorator)] pub struct Deco_Skill {
-# [offset (40)] # [rename (name = "m_Pair")] pub m_pair : crate :: combat :: skillstack :: SkillStack_Packet ,
-# [offset (48)] # [rename (name = "m_bNameShown")] pub m_b_name_shown : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/deco_skill/Deco_Skill.md"))]#[::unity2::class(namespace="Combat",name="Deco_Skill")]#[parent(crate::combat::decorator::Decorator)]pub struct Deco_Skill{#[offset(40)]#[rename(name="m_Pair")]pub m_pair:crate::combat::skillstack::SkillStack_Packet, #[offset(48)]#[rename(name="m_bNameShown")]pub m_b_name_shown:bool,}
 
 }
 
 #[cfg(feature = "combat-deco_skill-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-deco_skill")]
-impl Deco_Skill { # [doc = "`IsAvailable(crate::combat::decoratorargs::DecoratorArgs, crate::combat::skillstack::SkillStack_Packet)` overload"] pub fn is_available (that : impl :: core :: convert :: Into < crate :: combat :: decoratorargs :: DecoratorArgs > , pair : impl :: core :: convert :: Into < crate :: combat :: skillstack :: SkillStack_Packet >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: decoratorargs :: DecoratorArgs , crate :: combat :: skillstack :: SkillStack_Packet , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce92e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (that) , :: core :: convert :: Into :: into (pair) , :: core :: option :: Option :: None) } } } # [doc = "`DrawSkillDamages(crate::combat::phase::Phase, crate::combat::skillstack::SkillStack)` overload"] pub fn draw_skill_damages (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , skills : impl :: core :: convert :: Into < crate :: combat :: skillstack :: SkillStack >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , crate :: combat :: skillstack :: SkillStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce9860usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (skills) , :: core :: option :: Option :: None) } } } # [doc = "`IsSubspace(crate::combat::character::Character)` overload"] pub fn is_subspace (c : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce9830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-deco_skill")]impl Deco_Skill{#[doc="`IsAvailable(crate::combat::decoratorargs::DecoratorArgs, crate::combat::skillstack::SkillStack_Packet)` overload"]pub fn is_available(that:impl::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs> ,pair:impl::core::convert::Into<crate::combat::skillstack::SkillStack_Packet>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce92e0usize)as*mut u8,bool;
+(crate::combat::decoratorargs::DecoratorArgs)::core::convert::Into::into(that),(crate::combat::skillstack::SkillStack_Packet)::core::convert::Into::into(pair))}
+}
+#[doc="`DrawSkillDamages(crate::combat::phase::Phase, crate::combat::skillstack::SkillStack)` overload"]pub fn draw_skill_damages(phase:impl::core::convert::Into<crate::combat::phase::Phase> ,skills:impl::core::convert::Into<crate::combat::skillstack::SkillStack>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce9860usize)as*mut u8,();
+(crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::combat::skillstack::SkillStack)::core::convert::Into::into(skills))}
+}
+#[doc="`IsSubspace(crate::combat::character::Character)` overload"]pub fn is_subspace(c:impl::core::convert::Into<crate::combat::character::Character>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce9830usize)as*mut u8,bool;
+(crate::combat::character::Character)::core::convert::Into::into(c))}
+}
+}
 
-#[cfg(feature = "combat-deco_skill")]
-pub trait IDeco_SkillMethods : IDeco_Skill { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_Skill , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce9280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pair(crate::combat::skillstack::SkillStack_Packet)` overload"] fn set_pair (self , value : impl :: core :: convert :: Into < crate :: combat :: skillstack :: SkillStack_Packet >) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_Skill , crate :: combat :: skillstack :: SkillStack_Packet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce92d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_Skill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce9330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnterAttack()` overload"] fn on_enter_attack (self ,) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_Skill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce94e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_enemy_damage (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_Skill , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce9a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Deco_Skill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_Skill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce9f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-deco_skill")]pub trait IDeco_SkillMethods:IDeco_Skill{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Deco_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce9280usize)as*mut u8, ::unity2::Il2CppString;
+(Deco_Skill)__receiver)}
+}
+#[doc="`set_Pair(crate::combat::skillstack::SkillStack_Packet)` overload"]fn set_pair(self,value:impl::core::convert::Into<crate::combat::skillstack::SkillStack_Packet>)->(){unsafe{let __receiver= <Deco_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce92d0usize)as*mut u8,();
+(Deco_Skill)__receiver,(crate::combat::skillstack::SkillStack_Packet)::core::convert::Into::into(value))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <Deco_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce9330usize)as*mut u8,();
+(Deco_Skill)__receiver)}
+}
+#[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <Deco_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce94e0usize)as*mut u8,();
+(Deco_Skill)__receiver)}
+}
+#[doc="`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_enemy_damage(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Deco_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce9a70usize)as*mut u8,();
+(Deco_Skill)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Deco_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce9f10usize)as*mut u8,();
+(Deco_Skill)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-deco_skill")]
-impl < __T : IDeco_Skill > IDeco_SkillMethods for __T { }
+#[cfg(feature="combat-deco_skill")]impl<__T:IDeco_Skill>IDeco_SkillMethods for __T{}
 
-#[cfg(feature = "combat-deco_skill")]
-impl Deco_Skill { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_pair_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_enter_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_enemy_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn draw_skill_damages_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_subspace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_Skill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="combat-deco_skill")]impl Deco_Skill{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pair_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_enter_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_enemy_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn draw_skill_damages_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_subspace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "combat-deco_skill")]
-impl Deco_Skill {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Deco_Skill) , :: core :: stringify ! (new) ,)) ; < Self as IDeco_SkillMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-deco_skill")]impl Deco_Skill{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Deco_Skill), ::core::stringify!(new),));
+ <Self as IDeco_SkillMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-deco_skill")]

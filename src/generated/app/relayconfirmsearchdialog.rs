@@ -4,89 +4,134 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_NoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayConfirmSearchDialog.NoMenuItem")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct RelayConfirmSearchDialog_NoMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="RelayConfirmSearchDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RelayConfirmSearchDialog_YesMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayConfirmSearchDialog")] # [parent (crate :: system :: object :: Object)] pub struct RelayConfirmSearchDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog.md"))]#[::unity2::class(namespace="App",name="RelayConfirmSearchDialog")]#[parent(crate::system::object::Object)]pub struct RelayConfirmSearchDialog{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_YesMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayConfirmSearchDialog.YesMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct RelayConfirmSearchDialog_YesMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="RelayConfirmSearchDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct RelayConfirmSearchDialog_NoMenuItem{}
 
 }
 
 #[cfg(feature = "app-relayconfirmsearchdialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-pub trait IRelayConfirmSearchDialog_NoMenuItemMethods : IRelayConfirmSearchDialog_NoMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayConfirmSearchDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog_NoMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RelayConfirmSearchDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog_NoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b05000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RelayConfirmSearchDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog_NoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b05010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RelayConfirmSearchDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog_NoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b05040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl < __T : IRelayConfirmSearchDialog_NoMenuItem > IRelayConfirmSearchDialog_NoMenuItemMethods for __T { }
-
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl RelayConfirmSearchDialog_NoMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl RelayConfirmSearchDialog_NoMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayConfirmSearchDialog_NoMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRelayConfirmSearchDialog_NoMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayconfirmsearchdialog")]pub trait IRelayConfirmSearchDialog_YesMenuItemMethods:IRelayConfirmSearchDialog_YesMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayConfirmSearchDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05070usize)as*mut u8,();
+(RelayConfirmSearchDialog_YesMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RelayConfirmSearchDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05100usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RelayConfirmSearchDialog_YesMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayConfirmSearchDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05110usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RelayConfirmSearchDialog_YesMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayConfirmSearchDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05140usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RelayConfirmSearchDialog_YesMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl RelayConfirmSearchDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , code : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffcc20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (code) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayconfirmsearchdialog")]impl<__T:IRelayConfirmSearchDialog_YesMenuItem>IRelayConfirmSearchDialog_YesMenuItemMethods for __T{}
 
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-pub trait IRelayConfirmSearchDialogMethods : IRelayConfirmSearchDialog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayConfirmSearchDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffcd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl < __T : IRelayConfirmSearchDialog > IRelayConfirmSearchDialogMethods for __T { }
-
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl RelayConfirmSearchDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl RelayConfirmSearchDialog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayConfirmSearchDialog) , :: core :: stringify ! (new) ,)) ; < Self as IRelayConfirmSearchDialogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayconfirmsearchdialog")]impl RelayConfirmSearchDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-pub trait IRelayConfirmSearchDialog_YesMenuItemMethods : IRelayConfirmSearchDialog_YesMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayConfirmSearchDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog_YesMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b05070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RelayConfirmSearchDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog_YesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b05100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RelayConfirmSearchDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog_YesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b05110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RelayConfirmSearchDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayConfirmSearchDialog_YesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b05140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayconfirmsearchdialog")]impl RelayConfirmSearchDialog_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayConfirmSearchDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as IRelayConfirmSearchDialog_YesMenuItemMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl < __T : IRelayConfirmSearchDialog_YesMenuItem > IRelayConfirmSearchDialog_YesMenuItemMethods for __T { }
+#[cfg(feature="app-relayconfirmsearchdialog")]impl RelayConfirmSearchDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,code:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcc20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(code))}
+}
+}
 
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl RelayConfirmSearchDialog_YesMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayConfirmSearchDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-relayconfirmsearchdialog")]pub trait IRelayConfirmSearchDialogMethods:IRelayConfirmSearchDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayConfirmSearchDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcd30usize)as*mut u8,();
+(RelayConfirmSearchDialog)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayconfirmsearchdialog")]
-impl RelayConfirmSearchDialog_YesMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayConfirmSearchDialog_YesMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRelayConfirmSearchDialog_YesMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayconfirmsearchdialog")]impl<__T:IRelayConfirmSearchDialog>IRelayConfirmSearchDialogMethods for __T{}
+
+#[cfg(feature="app-relayconfirmsearchdialog")]impl RelayConfirmSearchDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relayconfirmsearchdialog")]impl RelayConfirmSearchDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayConfirmSearchDialog), ::core::stringify!(new),));
+ <Self as IRelayConfirmSearchDialogMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-relayconfirmsearchdialog")]pub trait IRelayConfirmSearchDialog_NoMenuItemMethods:IRelayConfirmSearchDialog_NoMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayConfirmSearchDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04f70usize)as*mut u8,();
+(RelayConfirmSearchDialog_NoMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RelayConfirmSearchDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05000usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RelayConfirmSearchDialog_NoMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayConfirmSearchDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05010usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RelayConfirmSearchDialog_NoMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayConfirmSearchDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05040usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RelayConfirmSearchDialog_NoMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-relayconfirmsearchdialog")]impl<__T:IRelayConfirmSearchDialog_NoMenuItem>IRelayConfirmSearchDialog_NoMenuItemMethods for __T{}
+
+#[cfg(feature="app-relayconfirmsearchdialog")]impl RelayConfirmSearchDialog_NoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-relayconfirmsearchdialog")]impl RelayConfirmSearchDialog_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayConfirmSearchDialog_NoMenuItem), ::core::stringify!(new),));
+ <Self as IRelayConfirmSearchDialog_NoMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayconfirmsearchdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayConfirmSearchDialog_NoMenuItem;
-    pub use super::IRelayConfirmSearchDialog_NoMenuItem;
-    pub use super::IRelayConfirmSearchDialog_NoMenuItemMethods;
-    pub use super::RelayConfirmSearchDialog;
-    pub use super::IRelayConfirmSearchDialog;
-    pub use super::IRelayConfirmSearchDialogMethods;
     pub use super::RelayConfirmSearchDialog_YesMenuItem;
     pub use super::IRelayConfirmSearchDialog_YesMenuItem;
     pub use super::IRelayConfirmSearchDialog_YesMenuItemMethods;
+    pub use super::RelayConfirmSearchDialog;
+    pub use super::IRelayConfirmSearchDialog;
+    pub use super::IRelayConfirmSearchDialogMethods;
+    pub use super::RelayConfirmSearchDialog_NoMenuItem;
+    pub use super::IRelayConfirmSearchDialog_NoMenuItem;
+    pub use super::IRelayConfirmSearchDialog_NoMenuItemMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

@@ -4,38 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatormanager :: { CalculatorManager , ICalculatorManager }
- ;
- use crate :: app :: calculatorutil :: { CalculatorUtil , ICalculatorUtil }
- ;
- use crate :: app :: systemcalculator :: { ISystemCalculator , SystemCalculator }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatormanager::{CalculatorManager,ICalculatorManager}
+;
+use crate::app::calculatorutil::{CalculatorUtil,ICalculatorUtil}
+;
+use crate::app::systemcalculator::{ISystemCalculator,SystemCalculator}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculatorinstance_1/SystemCalculatorInstance_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "SystemCalculatorInstance`1")] # [parent (crate :: app :: systemcalculator :: SystemCalculator)] # [parent (crate :: app :: calculatormanager :: CalculatorManager)] # [parent (crate :: app :: calculatorutil :: CalculatorUtil)] # [parent (crate :: system :: object :: Object)] pub struct SystemCalculatorInstance_1 < T0 : :: unity2 :: ClassIdentity > {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : T0 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/systemcalculatorinstance_1/SystemCalculatorInstance_1.md"))]#[::unity2::class(namespace="App",name="SystemCalculatorInstance`1")]#[parent(crate::app::systemcalculator::SystemCalculator)]#[parent(crate::app::calculatormanager::CalculatorManager)]#[parent(crate::app::calculatorutil::CalculatorUtil)]#[parent(crate::system::object::Object)]pub struct SystemCalculatorInstance_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="s_Instance")]pub s_instance:T0,}
 
 }
 
 #[cfg(feature = "app-systemcalculatorinstance_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-systemcalculatorinstance_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > SystemCalculatorInstance_1 < T0 > {
-# [doc = "`get_Instance()` overload"] # [method (name = "get_Instance" , args = 0)] pub fn get_instance () -> T0 ;
-
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
-
-# [doc = "`.cctor()` overload"] # [method (name = ".cctor" , args = 0)] pub fn cctor () -> () ;
+#[cfg(feature="app-systemcalculatorinstance_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>SystemCalculatorInstance_1<T0>{#[doc="`get_Instance()` overload"]#[method(name="get_Instance",args=0)]pub fn get_instance()->T0;
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
+ #[doc="`.cctor()` overload"]#[method(name=".cctor",args=0)]pub fn cctor()->();
 }
 
-#[cfg(feature = "app-systemcalculatorinstance_1")]
-impl < T0 : :: unity2 :: ClassIdentity > SystemCalculatorInstance_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SystemCalculatorInstance_1) , :: core :: stringify ! (new) ,)) ; < Self as ISystemCalculatorInstance_1Methods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="app-systemcalculatorinstance_1")]impl<T0: ::unity2::ClassIdentity>SystemCalculatorInstance_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SystemCalculatorInstance_1), ::core::stringify!(new),));
+ <Self as ISystemCalculatorInstance_1Methods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-systemcalculatorinstance_1")]

@@ -4,195 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh.md"))] # [:: unity2 :: class (namespace = "App" , name = "DynamicMesh")] # [parent (crate :: system :: object :: Object)] pub struct DynamicMesh {
-# [static_field] # [rename (name = "STACK_COUNT")] pub stack_count : i32 ,
-# [static_field] # [rename (name = "BOUNDS")] pub bounds : crate :: unity_engine :: bounds :: Bounds ,
-# [offset (16)] # [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (24)] # [rename (name = "m_Positions")] pub m_positions : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (32)] # [rename (name = "m_Normals")] pub m_normals : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (40)] # [rename (name = "m_Tangents")] pub m_tangents : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [offset (48)] # [rename (name = "m_Colors")] pub m_colors : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: color :: Color > ,
-# [offset (56)] # [rename (name = "m_UV0")] pub m_uv0 : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector2 :: Vector2 > ,
-# [offset (64)] # [rename (name = "m_UV1")] pub m_uv1 : crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector2 :: Vector2 > ,
-# [offset (72)] # [rename (name = "m_UVs")] pub m_u_vs : :: unity2 :: Array < crate :: app :: rawstructlist_1 :: RawStructList_1 < crate :: unity_engine :: vector2 :: Vector2 > > ,
-# [offset (80)] # [rename (name = "m_Stack")] pub m_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: dynamicmesh :: DynamicMesh_State > ,
-# [offset (88)] # [rename (name = "m_States")] pub m_states : :: unity2 :: Array < crate :: app :: dynamicmesh :: DynamicMesh_State > ,
-# [offset (96)] # [rename (name = "m_StripIndex")] pub m_strip_index : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dynamicmesh/DynamicMesh.md"))]#[::unity2::class(namespace="App",name="DynamicMesh")]#[parent(crate::system::object::Object)]pub struct DynamicMesh{#[static_field]#[rename(name="STACK_COUNT")]pub stack_count:i32, #[static_field]#[rename(name="BOUNDS")]pub bounds:crate::unity_engine::bounds::Bounds, #[offset(16)]#[rename(name="m_Mesh")]pub m_mesh:crate::unity_engine::mesh::Mesh, #[offset(24)]#[rename(name="m_Positions")]pub m_positions:crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector3::Vector3> , #[offset(32)]#[rename(name="m_Normals")]pub m_normals:crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector3::Vector3> , #[offset(40)]#[rename(name="m_Tangents")]pub m_tangents:crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector4::Vector4> , #[offset(48)]#[rename(name="m_Colors")]pub m_colors:crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::color::Color> , #[offset(56)]#[rename(name="m_UV0")]pub m_uv0:crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector2::Vector2> , #[offset(64)]#[rename(name="m_UV1")]pub m_uv1:crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector2::Vector2> , #[offset(72)]#[rename(name="m_UVs")]pub m_u_vs: ::unity2::Array<crate::app::rawstructlist_1::RawStructList_1<crate::unity_engine::vector2::Vector2> > , #[offset(80)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::dynamicmesh::DynamicMesh_State> , #[offset(88)]#[rename(name="m_States")]pub m_states: ::unity2::Array<crate::app::dynamicmesh::DynamicMesh_State> , #[offset(96)]#[rename(name="m_StripIndex")]pub m_strip_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dynamicmesh/DynamicMesh_Scope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DynamicMesh_Scope{pub m_mesh:crate::app::dynamicmesh::DynamicMesh,}
+impl::unity2::ClassIdentity for DynamicMesh_Scope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DynamicMesh.Scope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DynamicMesh_Scope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DynamicMesh_Mode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dynamicmesh/DynamicMesh_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DynamicMesh_State{pub mode:crate::app::dynamicmesh::DynamicMesh_Mode,pub index:u16,pub count:u16,}
+impl::unity2::ClassIdentity for DynamicMesh_State{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DynamicMesh.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DynamicMesh_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl  ::unity2::ClassIdentity for DynamicMesh_Mode  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))]#[::unity2::class(namespace="App",name="DynamicMesh.StaticIndices")]#[parent(crate::system::object::Object)]pub struct DynamicMesh_StaticIndices{#[static_field]#[rename(name="s_Indices")]pub s_indices: ::unity2::Array< ::unity2::Array<u16> > ,}
 
-    const NAME: &'static str = "DynamicMesh.Mode";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dynamicmesh/DynamicMesh_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DynamicMesh_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for DynamicMesh_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DynamicMesh.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for DynamicMesh_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for DynamicMesh_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  DynamicMesh_Mode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn triangle() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn quad() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn pyramid() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn fan() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn fan_ccw() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn strip() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn lines() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn cell() -> Self {
-        Self { value: 3 }
-
-    }
-
+impl DynamicMesh_Mode{pub fn none()->Self{Self{value:0}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))] # [:: unity2 :: class (namespace = "App" , name = "DynamicMesh.StaticIndices")] # [parent (crate :: system :: object :: Object)] pub struct DynamicMesh_StaticIndices {
-# [static_field] # [rename (name = "s_Indices")] pub s_indices : :: unity2 :: Array < :: unity2 :: Array < u16 > > ,
+pub fn triangle()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Scope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DynamicMesh_Scope {
-    pub m_mesh: crate :: app :: dynamicmesh :: DynamicMesh,
+pub fn quad()->Self{Self{value:2}
 }
-
-
-impl ::unity2::ClassIdentity for DynamicMesh_Scope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DynamicMesh.Scope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn pyramid()->Self{Self{value:3}
 }
-
-
-impl ::unity2::IlType for DynamicMesh_Scope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn fan()->Self{Self{value:4}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DynamicMesh_State {
-    pub mode: crate :: app :: dynamicmesh :: DynamicMesh_Mode,
-    pub index: u16,
-    pub count: u16,
+pub fn fan_ccw()->Self{Self{value:5}
 }
-
-
-impl ::unity2::ClassIdentity for DynamicMesh_State {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DynamicMesh.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn strip()->Self{Self{value:6}
 }
-
-
-impl ::unity2::IlType for DynamicMesh_State {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn lines()->Self{Self{value:7}
+}
+pub fn cell()->Self{Self{value:3}
+}
 }
 
 }
@@ -200,55 +75,241 @@ impl ::unity2::IlType for DynamicMesh_State {
 #[cfg(feature = "app-dynamicmesh-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4b10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-dynamicmesh")]
-pub trait IDynamicMeshMethods : IDynamicMesh { # [doc = "`.ctor(i32)` overload"] fn ctor (self , vertex_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vertex_capacity) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32)` overload"] fn ctor_2 (self , sub_mesh_count : impl :: core :: convert :: Into < i32 > , vertex_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d36f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sub_mesh_count) , :: core :: convert :: Into :: into (vertex_capacity) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"] fn ctor_3 (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , sub_mesh_count : impl :: core :: convert :: Into < i32 > , vertex_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , crate :: unity_engine :: gameobject :: GameObject , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (sub_mesh_count) , :: core :: convert :: Into :: into (vertex_capacity) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"] fn setup (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , sub_mesh_count : impl :: core :: convert :: Into < i32 > , vertex_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , crate :: unity_engine :: gameobject :: GameObject , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (sub_mesh_count) , :: core :: convert :: Into :: into (vertex_capacity) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Mesh()` overload"] fn get_mesh (self ,) -> crate :: unity_engine :: mesh :: Mesh { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn add_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3a10usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`AddNormal(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn add_normal (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3aa0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`AddTangents(*mutcrate::unity_engine::vector4::Vector4)` overload"] fn add_tangents (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector4 :: Vector4 > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3b30usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`AddColor(*mutcrate::unity_engine::color::Color)` overload"] fn add_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3bc0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`AddUV(*mutcrate::unity_engine::vector2::Vector2)` overload"] fn add_uv (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3c50usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`AddUV(i32, *mutcrate::unity_engine::vector2::Vector2)` overload"] fn add_uv_2 (self , ch : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , i32 , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ch) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::color::Color)` overload"] fn add_vertex (self ,) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: color :: Color) { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3d70usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::color::Color, *mutcrate::unity_engine::vector2::Vector2)` overload"] fn add_vertex_2 (self ,) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: color :: Color , crate :: unity_engine :: vector2 :: Vector2) { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: color :: Color , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3e40usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector2::Vector2)` overload"] fn add_vertex_3 (self ,) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector2 :: Vector2) { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (DynamicMesh , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3f60usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`StripBegin()` overload"] fn strip_begin (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StripEnd()` overload"] fn strip_end (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d43e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d38e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateScope(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"] fn create_scope (self , mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode > , sub_mesh_index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: dynamicmesh :: DynamicMesh_Scope { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , crate :: app :: dynamicmesh :: DynamicMesh_Mode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: dynamicmesh :: DynamicMesh_Scope = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d44a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (sub_mesh_index) , :: core :: option :: Option :: None) } } } # [doc = "`Begin(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"] fn begin (self , mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode > , sub_mesh_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , crate :: app :: dynamicmesh :: DynamicMesh_Mode , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d44e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (sub_mesh_index) , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCommonMode()` overload"] fn get_common_mode (self ,) -> crate :: app :: dynamicmesh :: DynamicMesh_Mode { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> crate :: app :: dynamicmesh :: DynamicMesh_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopySubMesh(i32, i32)` overload"] fn copy_sub_mesh (self , src_mesh_index : impl :: core :: convert :: Into < i32 > , dst_mesh_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DynamicMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src_mesh_index) , :: core :: convert :: Into :: into (dst_mesh_index) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-dynamicmesh")]
-impl < __T : IDynamicMesh > IDynamicMeshMethods for __T { }
-
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn add_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_tangents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_uv_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn add_uv_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn add_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn add_vertex_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn add_vertex_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn strip_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn strip_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn create_scope_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_common_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn copy_sub_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } }
-
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (vertex_capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicMesh) , :: core :: stringify ! (new) ,)) ; < Self as IDynamicMeshMethods > :: ctor (this , vertex_capacity) ; this }
-
-# [doc = "`.ctor(i32, i32)` — overload selector"] pub fn new_2 (sub_mesh_count : i32 , vertex_capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicMesh) , :: core :: stringify ! (new_2) ,)) ; < Self as IDynamicMeshMethods > :: ctor_2 (this , sub_mesh_count , vertex_capacity) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"] pub fn new_3 (go : crate :: unity_engine :: gameobject :: GameObject , sub_mesh_count : i32 , vertex_capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicMesh) , :: core :: stringify ! (new_3) ,)) ; < Self as IDynamicMeshMethods > :: ctor_3 (this , go , sub_mesh_count , vertex_capacity) ; this }
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d4b10usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_StaticIndices { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5c90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetIndices(crate::app::dynamicmesh::DynamicMesh_Mode)` overload"] pub fn get_indices (mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode >) -> :: unity2 :: Array < u16 > { unsafe { { let __inner : extern "C" fn (crate :: app :: dynamicmesh :: DynamicMesh_Mode , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u16 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd6430usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetTriangleCount(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"] pub fn get_triangle_count (mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode > , vertex_count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: dynamicmesh :: DynamicMesh_Mode , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd64c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (vertex_count) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-dynamicmesh")]
-pub trait IDynamicMesh_StaticIndicesMethods : IDynamicMesh_StaticIndices { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DynamicMesh_StaticIndices as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMesh_StaticIndices , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd6540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-dynamicmesh")]
-impl < __T : IDynamicMesh_StaticIndices > IDynamicMesh_StaticIndicesMethods for __T { }
-
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_StaticIndices { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_indices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_triangle_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_StaticIndices as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_StaticIndices {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicMesh_StaticIndices) , :: core :: stringify ! (new) ,)) ; < Self as IDynamicMesh_StaticIndicesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dynamicmesh")]pub trait IDynamicMeshMethods:IDynamicMesh{#[doc="`.ctor(i32)` overload"]fn ctor(self,vertex_capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3240usize)as*mut u8,();
+(DynamicMesh)__receiver,(i32)::core::convert::Into::into(vertex_capacity))}
+}
+#[doc="`.ctor(i32, i32)` overload"]fn ctor_2(self,sub_mesh_count:impl::core::convert::Into<i32> ,vertex_capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d36f0usize)as*mut u8,();
+(DynamicMesh)__receiver,(i32)::core::convert::Into::into(sub_mesh_count),(i32)::core::convert::Into::into(vertex_capacity))}
+}
+#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]fn ctor_3(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,sub_mesh_count:impl::core::convert::Into<i32> ,vertex_capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3740usize)as*mut u8,();
+(DynamicMesh)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(sub_mesh_count),(i32)::core::convert::Into::into(vertex_capacity))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3790usize)as*mut u8,();
+(DynamicMesh)__receiver)}
+}
+#[doc="`Setup(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]fn setup(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,sub_mesh_count:impl::core::convert::Into<i32> ,vertex_capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3280usize)as*mut u8,();
+(DynamicMesh)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(sub_mesh_count),(i32)::core::convert::Into::into(vertex_capacity))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3800usize)as*mut u8,();
+(DynamicMesh)__receiver)}
+}
+#[doc="`get_Mesh()` overload"]fn get_mesh(self,)->crate::unity_engine::mesh::Mesh{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3a00usize)as*mut u8,crate::unity_engine::mesh::Mesh;
+(DynamicMesh)__receiver)}
+}
+#[doc="`AddPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn add_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3a10usize)as*mut u8,();
+(DynamicMesh)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`AddNormal(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn add_normal(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3aa0usize)as*mut u8,();
+(DynamicMesh)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`AddTangents(*mutcrate::unity_engine::vector4::Vector4)` overload"]fn add_tangents(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector4::Vector4> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3b30usize)as*mut u8,();
+(DynamicMesh)__receiver,(*mut crate::unity_engine::vector4::Vector4)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`AddColor(*mutcrate::unity_engine::color::Color)` overload"]fn add_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::color::Color> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3bc0usize)as*mut u8,();
+(DynamicMesh)__receiver,(*mut crate::unity_engine::color::Color)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`AddUV(*mutcrate::unity_engine::vector2::Vector2)` overload"]fn add_uv(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3c50usize)as*mut u8,();
+(DynamicMesh)__receiver,(*mut crate::unity_engine::vector2::Vector2)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`AddUV(i32, *mutcrate::unity_engine::vector2::Vector2)` overload"]fn add_uv_2(self,ch:impl::core::convert::Into<i32>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3cd0usize)as*mut u8,();
+(DynamicMesh)__receiver,(i32)::core::convert::Into::into(ch),(*mut crate::unity_engine::vector2::Vector2)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::color::Color)` overload"]fn add_vertex(self,)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::color::Color){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::color::Color> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3d70usize)as*mut u8,();
+(DynamicMesh)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::color::Color)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::color::Color, *mutcrate::unity_engine::vector2::Vector2)` overload"]fn add_vertex_2(self,)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::color::Color,crate::unity_engine::vector2::Vector2){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::color::Color> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3e40usize)as*mut u8,();
+(DynamicMesh)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::color::Color)__out_1.as_mut_ptr(),(*mut crate::unity_engine::vector2::Vector2)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`AddVertex(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector2::Vector2)` overload"]fn add_vertex_3(self,)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector2::Vector2){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3f60usize)as*mut u8,();
+(DynamicMesh)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector2::Vector2)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`StripBegin()` overload"]fn strip_begin(self,)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4030usize)as*mut u8,();
+(DynamicMesh)__receiver)}
+}
+#[doc="`StripEnd()` overload"]fn strip_end(self,)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d43e0usize)as*mut u8,();
+(DynamicMesh)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d38e0usize)as*mut u8,();
+(DynamicMesh)__receiver)}
+}
+#[doc="`CreateScope(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]fn create_scope(self,mode:impl::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode> ,sub_mesh_index:impl::core::convert::Into<i32>)->crate::app::dynamicmesh::DynamicMesh_Scope{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d44a0usize)as*mut u8,crate::app::dynamicmesh::DynamicMesh_Scope;
+(DynamicMesh)__receiver,(crate::app::dynamicmesh::DynamicMesh_Mode)::core::convert::Into::into(mode),(i32)::core::convert::Into::into(sub_mesh_index))}
+}
+#[doc="`Begin(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]fn begin(self,mode:impl::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode> ,sub_mesh_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d44e0usize)as*mut u8,();
+(DynamicMesh)__receiver,(crate::app::dynamicmesh::DynamicMesh_Mode)::core::convert::Into::into(mode),(i32)::core::convert::Into::into(sub_mesh_index))}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4570usize)as*mut u8,();
+(DynamicMesh)__receiver)}
+}
+#[doc="`GetCommonMode()` overload"]fn get_common_mode(self,)->crate::app::dynamicmesh::DynamicMesh_Mode{unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4a50usize)as*mut u8,crate::app::dynamicmesh::DynamicMesh_Mode;
+(DynamicMesh)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4680usize)as*mut u8,();
+(DynamicMesh)__receiver)}
+}
+#[doc="`CopySubMesh(i32, i32)` overload"]fn copy_sub_mesh(self,src_mesh_index:impl::core::convert::Into<i32> ,dst_mesh_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DynamicMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4ad0usize)as*mut u8,();
+(DynamicMesh)__receiver,(i32)::core::convert::Into::into(src_mesh_index),(i32)::core::convert::Into::into(dst_mesh_index))}
+}
 }
 
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_Scope { # [doc = "`.ctor(crate::app::dynamicmesh::DynamicMesh, crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"] pub fn ctor (& mut self , mesh : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh > , mode : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_Mode > , sub_mesh_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DynamicMesh_Scope , crate :: app :: dynamicmesh :: DynamicMesh , crate :: app :: dynamicmesh :: DynamicMesh_Mode , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5b90usize) as * mut u8) ; __inner (self as * mut DynamicMesh_Scope , :: core :: convert :: Into :: into (mesh) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (sub_mesh_index) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut DynamicMesh_Scope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5bf0usize) as * mut u8) ; __inner (self as * mut DynamicMesh_Scope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dynamicmesh")]impl<__T:IDynamicMesh>IDynamicMeshMethods for __T{}
 
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_Scope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_Scope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_Scope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_tangents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_uv_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn add_uv_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn add_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn add_vertex_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn add_vertex_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn strip_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn strip_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn create_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_common_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn copy_sub_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+}
 
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_State { # [doc = "`CanConnect(crate::app::dynamicmesh::DynamicMesh_State)` overload"] pub fn can_connect (& mut self , state : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_State >) -> bool { unsafe { { let __inner : extern "C" fn (* mut DynamicMesh_State , crate :: app :: dynamicmesh :: DynamicMesh_State , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5c30usize) as * mut u8) ; __inner (self as * mut DynamicMesh_State , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`Connect(crate::app::dynamicmesh::DynamicMesh_State)` overload"] pub fn connect (& mut self , state : impl :: core :: convert :: Into < crate :: app :: dynamicmesh :: DynamicMesh_State >) -> () { unsafe { { let __inner : extern "C" fn (* mut DynamicMesh_State , crate :: app :: dynamicmesh :: DynamicMesh_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5c60usize) as * mut u8) ; __inner (self as * mut DynamicMesh_State , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut DynamicMesh_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5c80usize) as * mut u8) ; __inner (self as * mut DynamicMesh_State , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh{#[doc="`.ctor(i32)` — overload selector"]pub fn new(vertex_capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DynamicMesh), ::core::stringify!(new),));
+ <Self as IDynamicMeshMethods> ::ctor(this,vertex_capacity);
+this}
+#[doc="`.ctor(i32, i32)` — overload selector"]pub fn new_2(sub_mesh_count:i32,vertex_capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DynamicMesh), ::core::stringify!(new_2),));
+ <Self as IDynamicMeshMethods> ::ctor_2(this,sub_mesh_count,vertex_capacity);
+this}
+#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]pub fn new_3(go:crate::unity_engine::gameobject::GameObject,sub_mesh_count:i32,vertex_capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DynamicMesh), ::core::stringify!(new_3),));
+ <Self as IDynamicMeshMethods> ::ctor_3(this,go,sub_mesh_count,vertex_capacity);
+this}
+}
 
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_State { pub fn can_connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_State as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_State as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMesh_State as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh_Scope{#[doc="`.ctor(crate::app::dynamicmesh::DynamicMesh, crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]pub fn ctor(&mut self,mesh:impl::core::convert::Into<crate::app::dynamicmesh::DynamicMesh> ,mode:impl::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode> ,sub_mesh_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5b90usize)as*mut u8,();
+(*mut DynamicMesh_Scope)self as*mut DynamicMesh_Scope,(crate::app::dynamicmesh::DynamicMesh)::core::convert::Into::into(mesh),(crate::app::dynamicmesh::DynamicMesh_Mode)::core::convert::Into::into(mode),(i32)::core::convert::Into::into(sub_mesh_index))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5bf0usize)as*mut u8,();
+(*mut DynamicMesh_Scope)self as*mut DynamicMesh_Scope)}
+}
+}
+
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh_Scope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh_State{#[doc="`CanConnect(crate::app::dynamicmesh::DynamicMesh_State)` overload"]pub fn can_connect(&mut self,state:impl::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_State>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5c30usize)as*mut u8,bool;
+(*mut DynamicMesh_State)self as*mut DynamicMesh_State,(crate::app::dynamicmesh::DynamicMesh_State)::core::convert::Into::into(state))}
+}
+#[doc="`Connect(crate::app::dynamicmesh::DynamicMesh_State)` overload"]pub fn connect(&mut self,state:impl::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_State>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5c60usize)as*mut u8,();
+(*mut DynamicMesh_State)self as*mut DynamicMesh_State,(crate::app::dynamicmesh::DynamicMesh_State)::core::convert::Into::into(state))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5c80usize)as*mut u8,();
+(*mut DynamicMesh_State)self as*mut DynamicMesh_State)}
+}
+}
+
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh_State{pub fn can_connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh_StaticIndices{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5c90usize)as*mut u8,();
+)}
+}
+#[doc="`GetIndices(crate::app::dynamicmesh::DynamicMesh_Mode)` overload"]pub fn get_indices(mode:impl::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>)-> ::unity2::Array<u16>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6430usize)as*mut u8, ::unity2::Array<u16> ;
+(crate::app::dynamicmesh::DynamicMesh_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetTriangleCount(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]pub fn get_triangle_count(mode:impl::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode> ,vertex_count:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd64c0usize)as*mut u8,i32;
+(crate::app::dynamicmesh::DynamicMesh_Mode)::core::convert::Into::into(mode),(i32)::core::convert::Into::into(vertex_count))}
+}
+}
+
+#[cfg(feature="app-dynamicmesh")]pub trait IDynamicMesh_StaticIndicesMethods:IDynamicMesh_StaticIndices{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DynamicMesh_StaticIndices as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6540usize)as*mut u8,();
+(DynamicMesh_StaticIndices)__receiver)}
+}
+}
+
+#[cfg(feature="app-dynamicmesh")]impl<__T:IDynamicMesh_StaticIndices>IDynamicMesh_StaticIndicesMethods for __T{}
+
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh_StaticIndices{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_indices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_triangle_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-dynamicmesh")]impl DynamicMesh_StaticIndices{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DynamicMesh_StaticIndices), ::core::stringify!(new),));
+ <Self as IDynamicMesh_StaticIndicesMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature = "app-dynamicmesh")]
 #[doc(hidden)]
@@ -256,12 +317,12 @@ pub mod prelude {
     pub use super::DynamicMesh;
     pub use super::IDynamicMesh;
     pub use super::IDynamicMeshMethods;
-    pub use super::DynamicMesh_Mode;
+    pub use super::DynamicMesh_Scope;
+    pub use super::DynamicMesh_State;
     pub use super::DynamicMesh_StaticIndices;
     pub use super::IDynamicMesh_StaticIndices;
     pub use super::IDynamicMesh_StaticIndicesMethods;
-    pub use super::DynamicMesh_Scope;
-    pub use super::DynamicMesh_State;
+    pub use super::DynamicMesh_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

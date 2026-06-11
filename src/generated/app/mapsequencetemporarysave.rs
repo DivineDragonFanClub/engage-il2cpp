@@ -4,37 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencetemporarysave/MapSequenceTemporarySave.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceTemporarySave")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceTemporarySave {
-# [offset (112)] # [rename (name = "m_IsSuccess")] pub m_is_success : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencetemporarysave/MapSequenceTemporarySave.md"))]#[::unity2::class(namespace="App",name="MapSequenceTemporarySave")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceTemporarySave{#[offset(112)]#[rename(name="m_IsSuccess")]pub m_is_success:bool,}
 
 }
 
 #[cfg(feature = "app-mapsequencetemporarysave-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencetemporarysave")]
-impl MapSequenceTemporarySave { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f40f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencetemporarysave")]impl MapSequenceTemporarySave{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f40f40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-mapsequencetemporarysave")]
-pub trait IMapSequenceTemporarySaveMethods : IMapSequenceTemporarySave { # [doc = "`Write()` overload"] fn write (self ,) -> () { unsafe { let __receiver = < MapSequenceTemporarySave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceTemporarySave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f41180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostWrite()` overload"] fn post_write (self ,) -> () { unsafe { let __receiver = < MapSequenceTemporarySave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceTemporarySave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f41190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnResult(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"] fn on_result (self , is_success : impl :: core :: convert :: Into < bool > , header : impl :: core :: convert :: Into < crate :: app :: gamesavedataheader :: GameSaveDataHeader >) -> () { unsafe { let __receiver = < MapSequenceTemporarySave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceTemporarySave , bool , crate :: app :: gamesavedataheader :: GameSaveDataHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f41360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_success) , :: core :: convert :: Into :: into (header) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceTemporarySave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceTemporarySave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f41170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencetemporarysave")]pub trait IMapSequenceTemporarySaveMethods:IMapSequenceTemporarySave{#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <MapSequenceTemporarySave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41180usize)as*mut u8,();
+(MapSequenceTemporarySave)__receiver)}
+}
+#[doc="`PostWrite()` overload"]fn post_write(self,)->(){unsafe{let __receiver= <MapSequenceTemporarySave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41190usize)as*mut u8,();
+(MapSequenceTemporarySave)__receiver)}
+}
+#[doc="`OnResult(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]fn on_result(self,is_success:impl::core::convert::Into<bool> ,header:impl::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>)->(){unsafe{let __receiver= <MapSequenceTemporarySave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41360usize)as*mut u8,();
+(MapSequenceTemporarySave)__receiver,(bool)::core::convert::Into::into(is_success),(crate::app::gamesavedataheader::GameSaveDataHeader)::core::convert::Into::into(header))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTemporarySave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41170usize)as*mut u8,();
+(MapSequenceTemporarySave)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencetemporarysave")]
-impl < __T : IMapSequenceTemporarySave > IMapSequenceTemporarySaveMethods for __T { }
+#[cfg(feature="app-mapsequencetemporarysave")]impl<__T:IMapSequenceTemporarySave>IMapSequenceTemporarySaveMethods for __T{}
 
-#[cfg(feature = "app-mapsequencetemporarysave")]
-impl MapSequenceTemporarySave { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceTemporarySave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceTemporarySave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn post_write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceTemporarySave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceTemporarySave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceTemporarySave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-mapsequencetemporarysave")]impl MapSequenceTemporarySave{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn post_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-mapsequencetemporarysave")]
-impl MapSequenceTemporarySave {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceTemporarySave) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceTemporarySaveMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencetemporarysave")]impl MapSequenceTemporarySave{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceTemporarySave), ::core::stringify!(new),));
+ <Self as IMapSequenceTemporarySaveMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencetemporarysave")]

@@ -4,43 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterikfoot/CharacterIKFoot.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterIKFoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterIKFoot {
-# [offset (24)] # [rename (name = "m_Race")] pub m_race : crate :: combat :: animname :: AnimName_Race ,
-# [offset (32)] # [rename (name = "m_BodyIK")] pub m_body_ik : crate :: unity_engine :: behaviour :: Behaviour ,
-# [offset (40)] # [rename (name = "m_RideIK")] pub m_ride_ik : crate :: unity_engine :: behaviour :: Behaviour ,
-# [offset (48)] # [rename (name = "limbIKs")] pub limb_i_ks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: behaviour :: Behaviour > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterikfoot/CharacterIKFoot.md"))]#[::unity2::class(namespace="Combat",name="CharacterIKFoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterIKFoot{#[offset(24)]#[rename(name="m_Race")]pub m_race:crate::combat::animname::AnimName_Race, #[offset(32)]#[rename(name="m_BodyIK")]pub m_body_ik:crate::unity_engine::behaviour::Behaviour, #[offset(40)]#[rename(name="m_RideIK")]pub m_ride_ik:crate::unity_engine::behaviour::Behaviour, #[offset(48)]#[rename(name="limbIKs")]pub limb_i_ks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::behaviour::Behaviour> ,}
 
 }
 
 #[cfg(feature = "combat-characterikfoot-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterikfoot")]
-pub trait ICharacterIKFootMethods : ICharacterIKFoot { # [doc = "`Setup(crate::combat::animname::AnimName_Race)` overload"] fn setup (self , race : impl :: core :: convert :: Into < crate :: combat :: animname :: AnimName_Race >) -> () { unsafe { let __receiver = < CharacterIKFoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKFoot , crate :: combat :: animname :: AnimName_Race , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e49f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (race) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsActive()` overload"] fn get_is_active (self ,) -> bool { unsafe { let __receiver = < CharacterIKFoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKFoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetActive(bool)` overload"] fn set_active (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterIKFoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKFoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`DeactivateIfHorse()` overload"] fn deactivate_if_horse (self ,) -> () { unsafe { let __receiver = < CharacterIKFoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKFoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e50d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeactivateIfDragonic()` overload"] fn deactivate_if_dragonic (self ,) -> () { unsafe { let __receiver = < CharacterIKFoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKFoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e50f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterIKFoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKFoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterikfoot")]pub trait ICharacterIKFootMethods:ICharacterIKFoot{#[doc="`Setup(crate::combat::animname::AnimName_Race)` overload"]fn setup(self,race:impl::core::convert::Into<crate::combat::animname::AnimName_Race>)->(){unsafe{let __receiver= <CharacterIKFoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e49f0usize)as*mut u8,();
+(CharacterIKFoot)__receiver,(crate::combat::animname::AnimName_Race)::core::convert::Into::into(race))}
+}
+#[doc="`get_IsActive()` overload"]fn get_is_active(self,)->bool{unsafe{let __receiver= <CharacterIKFoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4fc0usize)as*mut u8,bool;
+(CharacterIKFoot)__receiver)}
+}
+#[doc="`SetActive(bool)` overload"]fn set_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterIKFoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4c00usize)as*mut u8,();
+(CharacterIKFoot)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`DeactivateIfHorse()` overload"]fn deactivate_if_horse(self,)->(){unsafe{let __receiver= <CharacterIKFoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e50d0usize)as*mut u8,();
+(CharacterIKFoot)__receiver)}
+}
+#[doc="`DeactivateIfDragonic()` overload"]fn deactivate_if_dragonic(self,)->(){unsafe{let __receiver= <CharacterIKFoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e50f0usize)as*mut u8,();
+(CharacterIKFoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterIKFoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5110usize)as*mut u8,();
+(CharacterIKFoot)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterikfoot")]
-impl < __T : ICharacterIKFoot > ICharacterIKFootMethods for __T { }
+#[cfg(feature="combat-characterikfoot")]impl<__T:ICharacterIKFoot>ICharacterIKFootMethods for __T{}
 
-#[cfg(feature = "combat-characterikfoot")]
-impl CharacterIKFoot { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKFoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKFoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKFoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn deactivate_if_horse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKFoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn deactivate_if_dragonic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKFoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKFoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-characterikfoot")]impl CharacterIKFoot{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn deactivate_if_horse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn deactivate_if_dragonic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-characterikfoot")]
-impl CharacterIKFoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterIKFoot) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterIKFootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterikfoot")]impl CharacterIKFoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterIKFoot), ::core::stringify!(new),));
+ <Self as ICharacterIKFootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterikfoot")]

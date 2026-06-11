@@ -4,34 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/inspectornameattribute/InspectorNameAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "InspectorNameAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct InspectorNameAttribute {
-# [offset (16)] # [rename (name = "displayName")] pub display_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/inspectornameattribute/InspectorNameAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="InspectorNameAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct InspectorNameAttribute{#[offset(16)]#[rename(name="displayName")]pub display_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-inspectornameattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-inspectornameattribute")]
-pub trait IInspectorNameAttributeMethods : IInspectorNameAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , display_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InspectorNameAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InspectorNameAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c51570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (display_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-inspectornameattribute")]pub trait IInspectorNameAttributeMethods:IInspectorNameAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,display_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InspectorNameAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51570usize)as*mut u8,();
+(InspectorNameAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(display_name))}
+}
+}
 
-#[cfg(feature = "unity_engine-inspectornameattribute")]
-impl < __T : IInspectorNameAttribute > IInspectorNameAttributeMethods for __T { }
+#[cfg(feature="unity_engine-inspectornameattribute")]impl<__T:IInspectorNameAttribute>IInspectorNameAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-inspectornameattribute")]
-impl InspectorNameAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InspectorNameAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-inspectornameattribute")]impl InspectorNameAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-inspectornameattribute")]
-impl InspectorNameAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (display_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InspectorNameAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IInspectorNameAttributeMethods > :: ctor (this , display_name) ; this }
+#[cfg(feature="unity_engine-inspectornameattribute")]impl InspectorNameAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(display_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InspectorNameAttribute), ::core::stringify!(new),));
+ <Self as IInspectorNameAttributeMethods> ::ctor(this,display_name);
+this}
 }
 
 #[cfg(feature = "unity_engine-inspectornameattribute")]

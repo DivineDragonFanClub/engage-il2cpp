@@ -4,23 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scene_management/scenemanagerapiinternal/SceneManagerAPIInternal.md"))] # [:: unity2 :: class (namespace = "UnityEngine.SceneManagement" , name = "SceneManagerAPIInternal")] # [parent (crate :: system :: object :: Object)] pub struct SceneManagerAPIInternal {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scene_management/scenemanagerapiinternal/SceneManagerAPIInternal.md"))]#[::unity2::class(namespace="UnityEngine.SceneManagement",name="SceneManagerAPIInternal")]#[parent(crate::system::object::Object)]pub struct SceneManagerAPIInternal{}
 
 }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
-impl SceneManagerAPIInternal { # [doc = "`LoadSceneAsyncNameIndexInternal(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"] pub fn load_scene_async_name_index_internal (scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , scene_build_index : impl :: core :: convert :: Into < i32 > , parameters : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters > , must_complete_next_frame : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b7c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (scene_build_index) , :: core :: convert :: Into :: into (parameters) , :: core :: convert :: Into :: into (must_complete_next_frame) , :: core :: option :: Option :: None) } } } # [doc = "`LoadSceneAsyncNameIndexInternal_Injected(::unity2::Il2CppString, i32, *mutcrate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"] pub fn load_scene_async_name_index_internal_injected (scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , scene_build_index : impl :: core :: convert :: Into < i32 > , must_complete_next_frame : impl :: core :: convert :: Into < bool >) -> (crate :: unity_engine :: asyncoperation :: AsyncOperation , crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , * mut crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b8b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (scene_build_index) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (must_complete_next_frame) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="unity_engine-scene_management-scenemanagerapiinternal")]impl SceneManagerAPIInternal{#[doc="`LoadSceneAsyncNameIndexInternal(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]pub fn load_scene_async_name_index_internal(scene_name:impl::core::convert::Into< ::unity2::Il2CppString> ,scene_build_index:impl::core::convert::Into<i32> ,parameters:impl::core::convert::Into<crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters> ,must_complete_next_frame:impl::core::convert::Into<bool>)->crate::unity_engine::asyncoperation::AsyncOperation{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b7c0usize)as*mut u8,crate::unity_engine::asyncoperation::AsyncOperation;
+(::unity2::Il2CppString)::core::convert::Into::into(scene_name),(i32)::core::convert::Into::into(scene_build_index),(crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters)::core::convert::Into::into(parameters),(bool)::core::convert::Into::into(must_complete_next_frame))}
+}
+#[doc="`LoadSceneAsyncNameIndexInternal_Injected(::unity2::Il2CppString, i32, *mutcrate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]pub fn load_scene_async_name_index_internal_injected(scene_name:impl::core::convert::Into< ::unity2::Il2CppString> ,scene_build_index:impl::core::convert::Into<i32> ,must_complete_next_frame:impl::core::convert::Into<bool>)->(crate::unity_engine::asyncoperation::AsyncOperation,crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b8b0usize)as*mut u8,crate::unity_engine::asyncoperation::AsyncOperation;
+(::unity2::Il2CppString)::core::convert::Into::into(scene_name),(i32)::core::convert::Into::into(scene_build_index),(*mut crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(must_complete_next_frame))}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
-impl SceneManagerAPIInternal { pub fn load_scene_async_name_index_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneManagerAPIInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_scene_async_name_index_internal_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneManagerAPIInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-scene_management-scenemanagerapiinternal")]impl SceneManagerAPIInternal{pub fn load_scene_async_name_index_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_scene_async_name_index_internal_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
 #[doc(hidden)]

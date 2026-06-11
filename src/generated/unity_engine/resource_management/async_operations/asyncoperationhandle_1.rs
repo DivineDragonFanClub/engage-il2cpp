@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/asyncoperationhandle_1/AsyncOperationHandle_1.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AsyncOperationHandle_1<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
-
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for AsyncOperationHandle_1<T0> {
-    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.AsyncOperations";
-
-    const NAME: &'static str = "AsyncOperationHandle`1";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-            .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-            .expect("generic instantiation")
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/async_operations/asyncoperationhandle_1/AsyncOperationHandle_1.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AsyncOperationHandle_1<T0>{pub _phantom: ::core::marker::PhantomData<(T0,)>}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for AsyncOperationHandle_1<T0>{const NAMESPACE: &'static str="UnityEngine.ResourceManagement.AsyncOperations";
+const NAME: &'static str="AsyncOperationHandle`1";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME).make_generic(&[<T0 as::unity2::ClassIdentity>::class()]).expect("generic instantiation")}
+)}
 }
-
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for AsyncOperationHandle_1<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for AsyncOperationHandle_1<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,71 +26,38 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for AsyncOperationHandle_1<T0
 #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle_1")]
-# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity > AsyncOperationHandle_1 < T0 > {
-# [doc = "`get_LocationName()` overload"] # [method (name = "get_LocationName" , args = 0)] pub fn get_location_name (self ,) -> :: unity2 :: Il2CppString ;
-
-# [doc = "`set_LocationName(::unity2::Il2CppString)` overload"] # [method (name = "set_LocationName" , args = 1)] pub fn set_location_name (self , value : :: unity2 :: Il2CppString) -> () ;
-
-# [doc = "`op_Implicit(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>)` overload"] # [method (name = "op_Implicit" , args = 1)] pub fn op_implicit (obj : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
-
-# [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<T0>)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < T0 >) -> () ;
-
-# [doc = "`GetDownloadStatus()` overload"] # [method (name = "GetDownloadStatus" , args = 0)] pub fn get_download_status (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus ;
-
-# [doc = "`InternalGetDownloadStatus(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)` overload"] # [method (name = "InternalGetDownloadStatus" , args = 1)] pub fn internal_get_download_status (self , visited : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: system :: object :: Object >) -> crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus ;
-
-# [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor_2 (self , op : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation) -> () ;
-
-# [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, i32)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor_3 (self , op : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation , version : i32) -> () ;
-
-# [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, ::unity2::Il2CppString)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor_4 (self , op : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation , location_name : :: unity2 :: Il2CppString) -> () ;
-
-# [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, i32, ::unity2::Il2CppString)` overload"] # [method (name = ".ctor" , args = 3)] pub fn ctor_5 (self , op : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation , version : i32 , location_name : :: unity2 :: Il2CppString) -> () ;
-
-# [doc = "`Acquire()` overload"] # [method (name = "Acquire" , args = 0)] pub fn acquire (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > ;
-
-# [doc = "`add_Completed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>>)` overload"] # [method (name = "add_Completed" , args = 1)] pub fn add_completed (self , value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > >) -> () ;
-
-# [doc = "`remove_Completed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>>)` overload"] # [method (name = "remove_Completed" , args = 1)] pub fn remove_completed (self , value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > >) -> () ;
-
-# [doc = "`add_CompletedTypeless(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] # [method (name = "add_CompletedTypeless" , args = 1)] pub fn add_completed_typeless (self , value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> () ;
-
-# [doc = "`remove_CompletedTypeless(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] # [method (name = "remove_CompletedTypeless" , args = 1)] pub fn remove_completed_typeless (self , value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> () ;
-
-# [doc = "`get_DebugName()` overload"] # [method (name = "get_DebugName" , args = 0)] pub fn get_debug_name (self ,) -> :: unity2 :: Il2CppString ;
-
-# [doc = "`add_Destroyed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] # [method (name = "add_Destroyed" , args = 1)] pub fn add_destroyed (self , value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> () ;
-
-# [doc = "`remove_Destroyed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] # [method (name = "remove_Destroyed" , args = 1)] pub fn remove_destroyed (self , value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> () ;
-
-# [doc = "`Equals(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>)` overload"] # [method (name = "Equals" , args = 1)] pub fn equals (self , other : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 >) -> bool ;
-
-# [doc = "`GetHashCode()` overload"] # [method (name = "GetHashCode" , args = 0)] pub fn get_hash_code (self ,) -> i32 ;
-
-# [doc = "`WaitForCompletion()` overload"] # [method (name = "WaitForCompletion" , args = 0)] pub fn wait_for_completion (self ,) -> T0 ;
-
-# [doc = "`get_InternalOp()` overload"] # [method (name = "get_InternalOp" , args = 0)] pub fn get_internal_op (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < T0 > ;
-
-# [doc = "`get_IsDone()` overload"] # [method (name = "get_IsDone" , args = 0)] pub fn get_is_done (self ,) -> bool ;
-
-# [doc = "`IsValid()` overload"] # [method (name = "IsValid" , args = 0)] pub fn is_valid (self ,) -> bool ;
-
-# [doc = "`get_PercentComplete()` overload"] # [method (name = "get_PercentComplete" , args = 0)] pub fn get_percent_complete (self ,) -> f32 ;
-
-# [doc = "`get_ReferenceCount()` overload"] # [method (name = "get_ReferenceCount" , args = 0)] pub fn get_reference_count (self ,) -> i32 ;
-
-# [doc = "`Release()` overload"] # [method (name = "Release" , args = 0)] pub fn release (self ,) -> () ;
-
-# [doc = "`get_Result()` overload"] # [method (name = "get_Result" , args = 0)] pub fn get_result (self ,) -> T0 ;
-
-# [doc = "`get_Status()` overload"] # [method (name = "get_Status" , args = 0)] pub fn get_status (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationstatus :: AsyncOperationStatus ;
-
-# [doc = "`System.Collections.IEnumerator.get_Current()` overload"] # [method (name = "System.Collections.IEnumerator.get_Current" , args = 0)] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object ;
-
-# [doc = "`System.Collections.IEnumerator.MoveNext()` overload"] # [method (name = "System.Collections.IEnumerator.MoveNext" , args = 0)] pub fn system_collections_i_enumerator_move_next (self ,) -> bool ;
-
-# [doc = "`System.Collections.IEnumerator.Reset()` overload"] # [method (name = "System.Collections.IEnumerator.Reset" , args = 0)] pub fn system_collections_i_enumerator_reset (self ,) -> () ;
+#[cfg(feature="unity_engine-resource_management-async_operations-asyncoperationhandle_1")]#[::unity2::methods(value)]impl<T0: ::unity2::ClassIdentity>AsyncOperationHandle_1<T0>{#[doc="`get_LocationName()` overload"]#[method(name="get_LocationName",args=0)]pub fn get_location_name(self,)-> ::unity2::Il2CppString;
+ #[doc="`set_LocationName(::unity2::Il2CppString)` overload"]#[method(name="set_LocationName",args=1)]pub fn set_location_name(self,value: ::unity2::Il2CppString)->();
+ #[doc="`op_Implicit(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>)` overload"]#[method(name="op_Implicit",args=1)]pub fn op_implicit(obj:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle;
+ #[doc="`.ctor(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<T0>)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,op:crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<T0>)->();
+ #[doc="`GetDownloadStatus()` overload"]#[method(name="GetDownloadStatus",args=0)]pub fn get_download_status(self,)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
+ #[doc="`InternalGetDownloadStatus(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)` overload"]#[method(name="InternalGetDownloadStatus",args=1)]pub fn internal_get_download_status(self,visited:crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
+ #[doc="`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)` overload"]#[method(name=".ctor",args=1)]pub fn ctor_2(self,op:crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)->();
+ #[doc="`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, i32)` overload"]#[method(name=".ctor",args=2)]pub fn ctor_3(self,op:crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation,version:i32)->();
+ #[doc="`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, ::unity2::Il2CppString)` overload"]#[method(name=".ctor",args=2)]pub fn ctor_4(self,op:crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation,location_name: ::unity2::Il2CppString)->();
+ #[doc="`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, i32, ::unity2::Il2CppString)` overload"]#[method(name=".ctor",args=3)]pub fn ctor_5(self,op:crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation,version:i32,location_name: ::unity2::Il2CppString)->();
+ #[doc="`Acquire()` overload"]#[method(name="Acquire",args=0)]pub fn acquire(self,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0> ;
+ #[doc="`add_Completed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>>)` overload"]#[method(name="add_Completed",args=1)]pub fn add_completed(self,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0> >)->();
+ #[doc="`remove_Completed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>>)` overload"]#[method(name="remove_Completed",args=1)]pub fn remove_completed(self,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0> >)->();
+ #[doc="`add_CompletedTypeless(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]#[method(name="add_CompletedTypeless",args=1)]pub fn add_completed_typeless(self,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)->();
+ #[doc="`remove_CompletedTypeless(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]#[method(name="remove_CompletedTypeless",args=1)]pub fn remove_completed_typeless(self,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)->();
+ #[doc="`get_DebugName()` overload"]#[method(name="get_DebugName",args=0)]pub fn get_debug_name(self,)-> ::unity2::Il2CppString;
+ #[doc="`add_Destroyed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]#[method(name="add_Destroyed",args=1)]pub fn add_destroyed(self,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)->();
+ #[doc="`remove_Destroyed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]#[method(name="remove_Destroyed",args=1)]pub fn remove_destroyed(self,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)->();
+ #[doc="`Equals(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>)` overload"]#[method(name="Equals",args=1)]pub fn equals(self,other:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>)->bool;
+ #[doc="`GetHashCode()` overload"]#[method(name="GetHashCode",args=0)]pub fn get_hash_code(self,)->i32;
+ #[doc="`WaitForCompletion()` overload"]#[method(name="WaitForCompletion",args=0)]pub fn wait_for_completion(self,)->T0;
+ #[doc="`get_InternalOp()` overload"]#[method(name="get_InternalOp",args=0)]pub fn get_internal_op(self,)->crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<T0> ;
+ #[doc="`get_IsDone()` overload"]#[method(name="get_IsDone",args=0)]pub fn get_is_done(self,)->bool;
+ #[doc="`IsValid()` overload"]#[method(name="IsValid",args=0)]pub fn is_valid(self,)->bool;
+ #[doc="`get_PercentComplete()` overload"]#[method(name="get_PercentComplete",args=0)]pub fn get_percent_complete(self,)->f32;
+ #[doc="`get_ReferenceCount()` overload"]#[method(name="get_ReferenceCount",args=0)]pub fn get_reference_count(self,)->i32;
+ #[doc="`Release()` overload"]#[method(name="Release",args=0)]pub fn release(self,)->();
+ #[doc="`get_Result()` overload"]#[method(name="get_Result",args=0)]pub fn get_result(self,)->T0;
+ #[doc="`get_Status()` overload"]#[method(name="get_Status",args=0)]pub fn get_status(self,)->crate::unity_engine::resource_management::async_operations::asyncoperationstatus::AsyncOperationStatus;
+ #[doc="`System.Collections.IEnumerator.get_Current()` overload"]#[method(name="System.Collections.IEnumerator.get_Current",args=0)]pub fn system_collections_i_enumerator_get_current(self,)->crate::system::object::Object;
+ #[doc="`System.Collections.IEnumerator.MoveNext()` overload"]#[method(name="System.Collections.IEnumerator.MoveNext",args=0)]pub fn system_collections_i_enumerator_move_next(self,)->bool;
+ #[doc="`System.Collections.IEnumerator.Reset()` overload"]#[method(name="System.Collections.IEnumerator.Reset",args=0)]pub fn system_collections_i_enumerator_reset(self,)->();
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle_1")]

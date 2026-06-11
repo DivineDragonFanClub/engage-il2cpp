@@ -4,94 +4,159 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/puppet/Puppet_Hand.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Puppet_Hand  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/puppet/Puppet_Hand.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Puppet_Hand{pub value:i32,}
+impl::unity2::ClassIdentity for Puppet_Hand{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="Puppet.Hand";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Puppet_Hand{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Puppet_Hand{pub fn right()->Self{Self{value:0}
+}
+pub fn left()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Puppet_Hand  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "Puppet.Hand";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Puppet_Hand  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Puppet_Hand  {
-    pub fn right() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/puppet/Puppet.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Puppet")] # [parent (crate :: system :: object :: Object)] pub struct Puppet {
-# [offset (16)] # [rename (name = "m_BodyInst")] pub m_body_inst : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_RideInst")] pub m_ride_inst : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_BodyAnim")] pub m_body_anim : crate :: unity_engine :: animationclip :: AnimationClip ,
-# [offset (40)] # [rename (name = "m_RideAnim")] pub m_ride_anim : crate :: unity_engine :: animationclip :: AnimationClip ,
-# [offset (48)] # [rename (name = "m_Joint")] pub m_joint : crate :: combat :: characterjoint :: CharacterJoint ,
-# [offset (56)] # [rename (name = "m_Proportion")] pub m_proportion : crate :: combat :: proportionparameters :: ProportionParameters ,
-# [offset (64)] # [rename (name = "m_InitialTransform")] pub m_initial_transform : crate :: combat :: tr :: TR ,
-# [offset (92)] # [rename (name = "m_LastEvalTime")] pub m_last_eval_time : f32 ,
-# [offset (96)] # [rename (name = "m_DestroyableGOs")] pub m_destroyable_g_os : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (104)] # [rename (name = "m_trailSlots")] pub m_trail_slots : :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/puppet/Puppet.md"))]#[::unity2::class(namespace="Combat",name="Puppet")]#[parent(crate::system::object::Object)]pub struct Puppet{#[offset(16)]#[rename(name="m_BodyInst")]pub m_body_inst:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RideInst")]pub m_ride_inst:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_BodyAnim")]pub m_body_anim:crate::unity_engine::animationclip::AnimationClip, #[offset(40)]#[rename(name="m_RideAnim")]pub m_ride_anim:crate::unity_engine::animationclip::AnimationClip, #[offset(48)]#[rename(name="m_Joint")]pub m_joint:crate::combat::characterjoint::CharacterJoint, #[offset(56)]#[rename(name="m_Proportion")]pub m_proportion:crate::combat::proportionparameters::ProportionParameters, #[offset(64)]#[rename(name="m_InitialTransform")]pub m_initial_transform:crate::combat::tr::TR, #[offset(92)]#[rename(name="m_LastEvalTime")]pub m_last_eval_time:f32, #[offset(96)]#[rename(name="m_DestroyableGOs")]pub m_destroyable_g_os:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(104)]#[rename(name="m_trailSlots")]pub m_trail_slots: ::unity2::Array<crate::unity_engine::transform::Transform> ,}
 
 }
 
 #[cfg(feature = "combat-puppet-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-puppet")]
-pub trait IPuppetMethods : IPuppet { # [doc = "`get_RightRoot()` overload"] fn get_right_root (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0a970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RightTip()` overload"] fn get_right_tip (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0a9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_LeftRoot()` overload"] fn get_left_root (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0a9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_LeftTip()` overload"] fn get_left_tip (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0aa00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_HumanAnimationClip()` overload"] fn get_human_animation_clip (self ,) -> crate :: unity_engine :: animationclip :: AnimationClip { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0aa30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RideAnimationClip()` overload"] fn get_ride_animation_clip (self ,) -> crate :: unity_engine :: animationclip :: AnimationClip { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0aa40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_HumanGameObject()` overload"] fn get_human_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0aa50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_BaseGameObject()` overload"] fn get_base_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0aa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RootTransform()` overload"] fn get_root_transform (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0aaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(::unity2::Il2CppString)` overload"] fn get_item (self , joint_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0ad00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (joint_name) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsRiding()` overload"] fn get_is_riding (self ,) -> bool { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0ac80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFlying()` overload"] fn get_is_flying (self ,) -> bool { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0aed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsHorse()` overload"] fn get_is_horse (self ,) -> bool { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0af00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0afb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsValid(bool)` overload"] fn set_is_valid (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0afc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip)` overload"] fn ctor (self , body_inst : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , body_anim : impl :: core :: convert :: Into < crate :: unity_engine :: animationclip :: AnimationClip > , ride_inst : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , ride_anim : impl :: core :: convert :: Into < crate :: unity_engine :: animationclip :: AnimationClip >) -> () { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: animationclip :: AnimationClip , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: animationclip :: AnimationClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0afd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_inst) , :: core :: convert :: Into :: into (body_anim) , :: core :: convert :: Into :: into (ride_inst) , :: core :: convert :: Into :: into (ride_anim) , :: core :: option :: Option :: None) } } } # [doc = "`CreateWeaponTrailSlots()` overload"] fn create_weapon_trail_slots (self ,) -> () { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0b490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateSlot(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"] fn create_slot (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0b8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0b9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Evaluate(f32)` overload"] fn evaluate (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0bc20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`ClearRootMovedAfterEvaluate()` overload"] fn clear_root_moved_after_evaluate (self ,) -> () { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0bcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddDestroyableGOs(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"] fn add_destroyable_g_os (self , gos : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > >) -> () { unsafe { let __receiver = < Puppet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Puppet , :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c0bd20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gos) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-puppet")]pub trait IPuppetMethods:IPuppet{#[doc="`get_RightRoot()` overload"]fn get_right_root(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0a970usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Puppet)__receiver)}
+}
+#[doc="`get_RightTip()` overload"]fn get_right_tip(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0a9a0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Puppet)__receiver)}
+}
+#[doc="`get_LeftRoot()` overload"]fn get_left_root(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0a9d0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Puppet)__receiver)}
+}
+#[doc="`get_LeftTip()` overload"]fn get_left_tip(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0aa00usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Puppet)__receiver)}
+}
+#[doc="`get_HumanAnimationClip()` overload"]fn get_human_animation_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0aa30usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(Puppet)__receiver)}
+}
+#[doc="`get_RideAnimationClip()` overload"]fn get_ride_animation_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0aa40usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(Puppet)__receiver)}
+}
+#[doc="`get_HumanGameObject()` overload"]fn get_human_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0aa50usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(Puppet)__receiver)}
+}
+#[doc="`get_BaseGameObject()` overload"]fn get_base_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0aa60usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(Puppet)__receiver)}
+}
+#[doc="`get_RootTransform()` overload"]fn get_root_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0aaf0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Puppet)__receiver)}
+}
+#[doc="`get_Item(::unity2::Il2CppString)` overload"]fn get_item(self,joint_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0ad00usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Puppet)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(joint_name))}
+}
+#[doc="`get_IsRiding()` overload"]fn get_is_riding(self,)->bool{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0ac80usize)as*mut u8,bool;
+(Puppet)__receiver)}
+}
+#[doc="`get_IsFlying()` overload"]fn get_is_flying(self,)->bool{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0aed0usize)as*mut u8,bool;
+(Puppet)__receiver)}
+}
+#[doc="`get_IsHorse()` overload"]fn get_is_horse(self,)->bool{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0af00usize)as*mut u8,bool;
+(Puppet)__receiver)}
+}
+#[doc="`get_IsValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0afb0usize)as*mut u8,bool;
+(Puppet)__receiver)}
+}
+#[doc="`set_IsValid(bool)` overload"]fn set_is_valid(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0afc0usize)as*mut u8,();
+(Puppet)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip)` overload"]fn ctor(self,body_inst:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,body_anim:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip> ,ride_inst:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,ride_anim:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0afd0usize)as*mut u8,();
+(Puppet)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(body_inst),(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(body_anim),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(ride_inst),(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(ride_anim))}
+}
+#[doc="`CreateWeaponTrailSlots()` overload"]fn create_weapon_trail_slots(self,)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0b490usize)as*mut u8,();
+(Puppet)__receiver)}
+}
+#[doc="`CreateSlot(crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"]fn create_slot(self,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0b8e0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Puppet)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0b9d0usize)as*mut u8,();
+(Puppet)__receiver)}
+}
+#[doc="`Evaluate(f32)` overload"]fn evaluate(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0bc20usize)as*mut u8,();
+(Puppet)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`ClearRootMovedAfterEvaluate()` overload"]fn clear_root_moved_after_evaluate(self,)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0bcf0usize)as*mut u8,();
+(Puppet)__receiver)}
+}
+#[doc="`AddDestroyableGOs(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"]fn add_destroyable_g_os(self,gos:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::gameobject::GameObject> >)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0bd20usize)as*mut u8,();
+(Puppet)__receiver,(::unity2::Array<crate::unity_engine::gameobject::GameObject>)::core::convert::Into::into(gos))}
+}
+}
 
-#[cfg(feature = "combat-puppet")]
-impl < __T : IPuppet > IPuppetMethods for __T { }
+#[cfg(feature="combat-puppet")]impl<__T:IPuppet>IPuppetMethods for __T{}
 
-#[cfg(feature = "combat-puppet")]
-impl Puppet { pub fn get_right_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_right_tip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_left_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_left_tip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_human_animation_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_ride_animation_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_human_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_base_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_root_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_riding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_is_flying_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_is_horse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn create_weapon_trail_slots_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn create_slot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn evaluate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn clear_root_moved_after_evaluate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn add_destroyable_g_os_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Puppet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="combat-puppet")]impl Puppet{pub fn get_right_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_right_tip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_left_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_left_tip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_human_animation_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_ride_animation_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_human_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_base_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_root_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_riding_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_is_flying_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_is_horse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn create_weapon_trail_slots_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn create_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn evaluate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn clear_root_moved_after_evaluate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn add_destroyable_g_os_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "combat-puppet")]
-impl Puppet {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip)` — overload selector"] pub fn new (body_inst : crate :: unity_engine :: gameobject :: GameObject , body_anim : crate :: unity_engine :: animationclip :: AnimationClip , ride_inst : crate :: unity_engine :: gameobject :: GameObject , ride_anim : crate :: unity_engine :: animationclip :: AnimationClip) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Puppet) , :: core :: stringify ! (new) ,)) ; < Self as IPuppetMethods > :: ctor (this , body_inst , body_anim , ride_inst , ride_anim) ; this }
+#[cfg(feature="combat-puppet")]impl Puppet{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip)` — overload selector"]pub fn new(body_inst:crate::unity_engine::gameobject::GameObject,body_anim:crate::unity_engine::animationclip::AnimationClip,ride_inst:crate::unity_engine::gameobject::GameObject,ride_anim:crate::unity_engine::animationclip::AnimationClip)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Puppet), ::core::stringify!(new),));
+ <Self as IPuppetMethods> ::ctor(this,body_inst,body_anim,ride_inst,ride_anim);
+this}
 }
 
 #[cfg(feature = "combat-puppet")]

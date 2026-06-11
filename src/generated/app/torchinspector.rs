@@ -4,36 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: pokeinspector :: { IPokeInspector , PokeInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::pokeinspector::{IPokeInspector,PokeInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/torchinspector/TorchInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "TorchInspector")] # [parent (crate :: app :: pokeinspector :: PokeInspector)] pub struct TorchInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/torchinspector/TorchInspector.md"))]#[::unity2::class(namespace="App",name="TorchInspector")]#[parent(crate::app::pokeinspector::PokeInspector)]pub struct TorchInspector{}
 
 }
 
 #[cfg(feature = "app-torchinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-torchinspector")]
-pub trait ITorchInspectorMethods : ITorchInspector { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TorchInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TorchInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22991e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLabel()` overload"] fn get_label (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TorchInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TorchInspector , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22991f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRange()` overload"] fn get_range (self ,) -> i32 { unsafe { let __receiver = < TorchInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TorchInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2299240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < TorchInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TorchInspector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2299250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PreCall(crate::app::procinst::ProcInst)` overload"] fn pre_call (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < TorchInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TorchInspector , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2299290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Completed()` overload"] fn completed (self ,) -> () { unsafe { let __receiver = < TorchInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TorchInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22994f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-torchinspector")]pub trait ITorchInspectorMethods:ITorchInspector{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TorchInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22991e0usize)as*mut u8,();
+(TorchInspector)__receiver)}
+}
+#[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TorchInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22991f0usize)as*mut u8, ::unity2::Il2CppString;
+(TorchInspector)__receiver)}
+}
+#[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <TorchInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2299240usize)as*mut u8,i32;
+(TorchInspector)__receiver)}
+}
+#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <TorchInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2299250usize)as*mut u8,crate::unity_engine::color::Color;
+(TorchInspector)__receiver)}
+}
+#[doc="`PreCall(crate::app::procinst::ProcInst)` overload"]fn pre_call(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <TorchInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2299290usize)as*mut u8,();
+(TorchInspector)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Completed()` overload"]fn completed(self,)->(){unsafe{let __receiver= <TorchInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22994f0usize)as*mut u8,();
+(TorchInspector)__receiver)}
+}
+}
 
-#[cfg(feature = "app-torchinspector")]
-impl < __T : ITorchInspector > ITorchInspectorMethods for __T { }
+#[cfg(feature="app-torchinspector")]impl<__T:ITorchInspector>ITorchInspectorMethods for __T{}
 
-#[cfg(feature = "app-torchinspector")]
-impl TorchInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TorchInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TorchInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TorchInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TorchInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn pre_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TorchInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TorchInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-torchinspector")]impl TorchInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn pre_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-torchinspector")]
-impl TorchInspector {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TorchInspector) , :: core :: stringify ! (new) ,)) ; < Self as ITorchInspectorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-torchinspector")]impl TorchInspector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TorchInspector), ::core::stringify!(new),));
+ <Self as ITorchInspectorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-torchinspector")]

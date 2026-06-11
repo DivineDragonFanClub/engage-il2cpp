@@ -4,41 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eatunitsselectmenureliancecontent/EatUnitsSelectMenuRelianceContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "EatUnitsSelectMenuRelianceContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EatUnitsSelectMenuRelianceContent {
-# [offset (24)] # [rename (name = "m_TogetherList")] pub m_together_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (32)] # [rename (name = "m_RelianceList")] pub m_reliance_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eatunitsselectmenureliancecontent/EatUnitsSelectMenuRelianceContent.md"))]#[::unity2::class(namespace="App",name="EatUnitsSelectMenuRelianceContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EatUnitsSelectMenuRelianceContent{#[offset(24)]#[rename(name="m_TogetherList")]pub m_together_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_RelianceList")]pub m_reliance_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-eatunitsselectmenureliancecontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-eatunitsselectmenureliancecontent")]
-pub trait IEatUnitsSelectMenuRelianceContentMethods : IEatUnitsSelectMenuRelianceContent { # [doc = "`UpdateList(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::unit::Unit)` overload"] fn update_list (self , selected_units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > > , now_cursor_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < EatUnitsSelectMenuRelianceContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EatUnitsSelectMenuRelianceContent , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (selected_units) , :: core :: convert :: Into :: into (now_cursor_unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsSameUnits(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::unit::Unit)` overload"] fn is_same_units (self , selected_units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > > , now_cursor_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < EatUnitsSelectMenuRelianceContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EatUnitsSelectMenuRelianceContent , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d52e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (selected_units) , :: core :: convert :: Into :: into (now_cursor_unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"] fn set_unit_info (self , together_list_item_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < EatUnitsSelectMenuRelianceContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EatUnitsSelectMenuRelianceContent , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d5370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (together_list_item_object) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EatUnitsSelectMenuRelianceContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EatUnitsSelectMenuRelianceContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d55e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eatunitsselectmenureliancecontent")]pub trait IEatUnitsSelectMenuRelianceContentMethods:IEatUnitsSelectMenuRelianceContent{#[doc="`UpdateList(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::unit::Unit)` overload"]fn update_list(self,selected_units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> > ,now_cursor_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <EatUnitsSelectMenuRelianceContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4e80usize)as*mut u8,();
+(EatUnitsSelectMenuRelianceContent)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(selected_units),(crate::app::unit::Unit)::core::convert::Into::into(now_cursor_unit))}
+}
+#[doc="`IsSameUnits(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::unit::Unit)` overload"]fn is_same_units(self,selected_units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> > ,now_cursor_unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <EatUnitsSelectMenuRelianceContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d52e0usize)as*mut u8,bool;
+(EatUnitsSelectMenuRelianceContent)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(selected_units),(crate::app::unit::Unit)::core::convert::Into::into(now_cursor_unit))}
+}
+#[doc="`SetUnitInfo(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"]fn set_unit_info(self,together_list_item_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <EatUnitsSelectMenuRelianceContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d5370usize)as*mut u8,();
+(EatUnitsSelectMenuRelianceContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(together_list_item_object),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EatUnitsSelectMenuRelianceContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d55e0usize)as*mut u8,();
+(EatUnitsSelectMenuRelianceContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-eatunitsselectmenureliancecontent")]
-impl < __T : IEatUnitsSelectMenuRelianceContent > IEatUnitsSelectMenuRelianceContentMethods for __T { }
+#[cfg(feature="app-eatunitsselectmenureliancecontent")]impl<__T:IEatUnitsSelectMenuRelianceContent>IEatUnitsSelectMenuRelianceContentMethods for __T{}
 
-#[cfg(feature = "app-eatunitsselectmenureliancecontent")]
-impl EatUnitsSelectMenuRelianceContent { pub fn update_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EatUnitsSelectMenuRelianceContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_same_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EatUnitsSelectMenuRelianceContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EatUnitsSelectMenuRelianceContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EatUnitsSelectMenuRelianceContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-eatunitsselectmenureliancecontent")]impl EatUnitsSelectMenuRelianceContent{pub fn update_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_same_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-eatunitsselectmenureliancecontent")]
-impl EatUnitsSelectMenuRelianceContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EatUnitsSelectMenuRelianceContent) , :: core :: stringify ! (new) ,)) ; < Self as IEatUnitsSelectMenuRelianceContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-eatunitsselectmenureliancecontent")]impl EatUnitsSelectMenuRelianceContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EatUnitsSelectMenuRelianceContent), ::core::stringify!(new),));
+ <Self as IEatUnitsSelectMenuRelianceContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-eatunitsselectmenureliancecontent")]

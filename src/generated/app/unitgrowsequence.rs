@@ -4,126 +4,137 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitgrowsequence/UnitGrowSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitGrowSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct UnitGrowSequence {
-# [offset (112)] # [rename (name = "m_CameraMode")] pub m_camera_mode : crate :: app :: viewmode :: ViewMode_Mode ,
-# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
-# [offset (132)] # [rename (name = "m_OldLevel")] pub m_old_level : i32 ,
-# [offset (136)] # [rename (name = "m_IsTalk")] pub m_is_talk : bool ,
-# [offset (140)] # [rename (name = "m_SkillPoint")] pub m_skill_point : i32 ,
-# [offset (144)] # [rename (name = "m_ClassChangeJob")] pub m_class_change_job : crate :: app :: jobdata :: JobData ,
-# [offset (152)] # [rename (name = "m_ClassChangeItem")] pub m_class_change_item : crate :: app :: itemdata :: ItemData ,
-# [offset (160)] # [rename (name = "m_ClassChangeWeaponMask")] pub m_class_change_weapon_mask : crate :: app :: weaponmask :: WeaponMask ,
-# [offset (168)] # [rename (name = "m_ClassChangeWeapon")] pub m_class_change_weapon : crate :: app :: itemdata :: ItemData ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitgrowsequence/UnitGrowSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitGrowSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for UnitGrowSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitGrowSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitGrowSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitGrowSequence_Label{pub fn level_up_start()->Self{Self{value:0}
+}
+pub fn level_up_end()->Self{Self{value:1}
+}
+pub fn class_change_start()->Self{Self{value:2}
+}
+pub fn class_change_end()->Self{Self{value:3}
+}
+pub fn end()->Self{Self{value:4}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitgrowsequence/UnitGrowSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitGrowSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitGrowSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitGrowSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitGrowSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitGrowSequence_Label  {
-    pub fn level_up_start() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn level_up_end() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn class_change_start() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn class_change_end() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitgrowsequence/UnitGrowSequence.md"))]#[::unity2::class(namespace="App",name="UnitGrowSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct UnitGrowSequence{#[offset(112)]#[rename(name="m_CameraMode")]pub m_camera_mode:crate::app::viewmode::ViewMode_Mode, #[offset(120)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_Exp")]pub m_exp:i32, #[offset(132)]#[rename(name="m_OldLevel")]pub m_old_level:i32, #[offset(136)]#[rename(name="m_IsTalk")]pub m_is_talk:bool, #[offset(140)]#[rename(name="m_SkillPoint")]pub m_skill_point:i32, #[offset(144)]#[rename(name="m_ClassChangeJob")]pub m_class_change_job:crate::app::jobdata::JobData, #[offset(152)]#[rename(name="m_ClassChangeItem")]pub m_class_change_item:crate::app::itemdata::ItemData, #[offset(160)]#[rename(name="m_ClassChangeWeaponMask")]pub m_class_change_weapon_mask:crate::app::weaponmask::WeaponMask, #[offset(168)]#[rename(name="m_ClassChangeWeapon")]pub m_class_change_weapon:crate::app::itemdata::ItemData,}
 
 }
 
 #[cfg(feature = "app-unitgrowsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitgrowsequence")]
-impl UnitGrowSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: unitgrowsequence :: UnitGrowSequence { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitgrowsequence :: UnitGrowSequence = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7ebc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitgrowsequence")]impl UnitGrowSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::unitgrowsequence::UnitGrowSequence{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f7ebc0usize)as*mut u8,crate::app::unitgrowsequence::UnitGrowSequence;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-unitgrowsequence")]
-pub trait IUnitGrowSequenceMethods : IUnitGrowSequence { # [doc = "`setUnitGrowData(crate::app::battleinfoside::BattleInfoSide, bool)` overload"] fn set_unit_grow_data (self , side : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , is_talk : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , crate :: app :: battleinfoside :: BattleInfoSide , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7e970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (is_talk) , :: core :: option :: Option :: None) } } } # [doc = "`setUnitGrowData(crate::app::unit::Unit, i32)` overload"] fn set_unit_grow_data_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , exp : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7ea90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (exp) , :: core :: option :: Option :: None) } } } # [doc = "`setUnitGrowData(crate::app::unit::Unit, i32, i32, bool)` overload"] fn set_unit_grow_data_3 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , exp : impl :: core :: convert :: Into < i32 > , skill_point : impl :: core :: convert :: Into < i32 > , is_talk : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , crate :: app :: unit :: Unit , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7ea40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (exp) , :: core :: convert :: Into :: into (skill_point) , :: core :: convert :: Into :: into (is_talk) , :: core :: option :: Option :: None) } } } # [doc = "`setUnitClassChange(crate::app::unit::Unit, crate::app::jobdata::JobData, crate::app::itemdata::ItemData)` overload"] fn set_unit_class_change (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData > , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , crate :: app :: unit :: Unit , crate :: app :: jobdata :: JobData , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7eaf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (job) , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`setUnitClassChange(crate::app::unit::Unit, crate::app::classchange::ClassChange_ChangeJobData)` overload"] fn set_unit_class_change_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , data : impl :: core :: convert :: Into < crate :: app :: classchange :: ClassChange_ChangeJobData >) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , crate :: app :: unit :: Unit , crate :: app :: classchange :: ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7eb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Prepare()` overload"] fn prepare (self ,) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7f210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GainExp()` overload"] fn gain_exp (self ,) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7f360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckLevelUp()` overload"] fn check_level_up (self ,) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7f3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LevelUp()` overload"] fn level_up (self ,) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7f450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckClassChange()` overload"] fn check_class_change (self ,) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7f4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClassChange()` overload"] fn class_change (self ,) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7f580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetWeapon()` overload"] fn set_weapon (self ,) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7fb70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitGrowSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitGrowSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7f200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitgrowsequence")]pub trait IUnitGrowSequenceMethods:IUnitGrowSequence{#[doc="`setUnitGrowData(crate::app::battleinfoside::BattleInfoSide, bool)` overload"]fn set_unit_grow_data(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,is_talk:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7e970usize)as*mut u8,();
+(UnitGrowSequence)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_talk))}
+}
+#[doc="`setUnitGrowData(crate::app::unit::Unit, i32)` overload"]fn set_unit_grow_data_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,exp:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7ea90usize)as*mut u8,();
+(UnitGrowSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(exp))}
+}
+#[doc="`setUnitGrowData(crate::app::unit::Unit, i32, i32, bool)` overload"]fn set_unit_grow_data_3(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,exp:impl::core::convert::Into<i32> ,skill_point:impl::core::convert::Into<i32> ,is_talk:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7ea40usize)as*mut u8,();
+(UnitGrowSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(exp),(i32)::core::convert::Into::into(skill_point),(bool)::core::convert::Into::into(is_talk))}
+}
+#[doc="`setUnitClassChange(crate::app::unit::Unit, crate::app::jobdata::JobData, crate::app::itemdata::ItemData)` overload"]fn set_unit_class_change(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7eaf0usize)as*mut u8,();
+(UnitGrowSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::jobdata::JobData)::core::convert::Into::into(job),(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`setUnitClassChange(crate::app::unit::Unit, crate::app::classchange::ClassChange_ChangeJobData)` overload"]fn set_unit_class_change_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,data:impl::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7eb60usize)as*mut u8,();
+(UnitGrowSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::classchange::ClassChange_ChangeJobData)::core::convert::Into::into(data))}
+}
+#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7f210usize)as*mut u8,();
+(UnitGrowSequence)__receiver)}
+}
+#[doc="`GainExp()` overload"]fn gain_exp(self,)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7f360usize)as*mut u8,();
+(UnitGrowSequence)__receiver)}
+}
+#[doc="`CheckLevelUp()` overload"]fn check_level_up(self,)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7f3c0usize)as*mut u8,();
+(UnitGrowSequence)__receiver)}
+}
+#[doc="`LevelUp()` overload"]fn level_up(self,)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7f450usize)as*mut u8,();
+(UnitGrowSequence)__receiver)}
+}
+#[doc="`CheckClassChange()` overload"]fn check_class_change(self,)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7f4f0usize)as*mut u8,();
+(UnitGrowSequence)__receiver)}
+}
+#[doc="`ClassChange()` overload"]fn class_change(self,)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7f580usize)as*mut u8,();
+(UnitGrowSequence)__receiver)}
+}
+#[doc="`SetWeapon()` overload"]fn set_weapon(self,)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7fb70usize)as*mut u8,();
+(UnitGrowSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitGrowSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7f200usize)as*mut u8,();
+(UnitGrowSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitgrowsequence")]
-impl < __T : IUnitGrowSequence > IUnitGrowSequenceMethods for __T { }
+#[cfg(feature="app-unitgrowsequence")]impl<__T:IUnitGrowSequence>IUnitGrowSequenceMethods for __T{}
 
-#[cfg(feature = "app-unitgrowsequence")]
-impl UnitGrowSequence { pub fn set_unit_grow_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_unit_grow_data_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_unit_grow_data_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_unit_class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_unit_class_change_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn gain_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn check_level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn check_class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitGrowSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-unitgrowsequence")]impl UnitGrowSequence{pub fn set_unit_grow_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_grow_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_unit_grow_data_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_unit_class_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_unit_class_change_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn gain_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn check_level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn check_class_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn class_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-unitgrowsequence")]
-impl UnitGrowSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitGrowSequence) , :: core :: stringify ! (new) ,)) ; < Self as IUnitGrowSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitgrowsequence")]impl UnitGrowSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitGrowSequence), ::core::stringify!(new),));
+ <Self as IUnitGrowSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitgrowsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitGrowSequence_Label;
     pub use super::UnitGrowSequence;
     pub use super::IUnitGrowSequence;
     pub use super::IUnitGrowSequenceMethods;
-    pub use super::UnitGrowSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

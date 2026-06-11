@@ -4,40 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/finalblitpass/FinalBlitPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "FinalBlitPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct FinalBlitPass {
-# [offset (112)] # [rename (name = "m_Source")] pub m_source : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [offset (160)] # [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
-# [offset (168)] # [rename (name = "m_CustomFinalMonoColor")] pub m_custom_final_mono_color : crate :: unity_engine :: vector4 :: Vector4 ,
-# [static_field] # [rename (name = "s_CustomFinalMonoColorProp")] pub s_custom_final_mono_color_prop : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/finalblitpass/FinalBlitPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Internal",name="FinalBlitPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct FinalBlitPass{#[offset(112)]#[rename(name="m_Source")]pub m_source:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(160)]#[rename(name="m_BlitMaterial")]pub m_blit_material:crate::unity_engine::material::Material, #[offset(168)]#[rename(name="m_CustomFinalMonoColor")]pub m_custom_final_mono_color:crate::unity_engine::vector4::Vector4, #[static_field]#[rename(name="s_CustomFinalMonoColorProp")]pub s_custom_final_mono_color_prop:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-finalblitpass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-finalblitpass")]
-impl FinalBlitPass { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2eea5d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-internal-finalblitpass")]impl FinalBlitPass{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2eea5d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-finalblitpass")]
-pub trait IFinalBlitPassMethods : IFinalBlitPass { # [doc = "`SetCustomFinalMonoColorToResult(crate::unity_engine::color::Color, f32)` overload"] fn set_custom_final_mono_color_to_result (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , ratio : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FinalBlitPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FinalBlitPass , crate :: unity_engine :: color :: Color , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee9910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , blit_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { let __receiver = < FinalBlitPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FinalBlitPass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee9970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (blit_material) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"] fn setup (self , base_descriptor : impl :: core :: convert :: Into < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor > , color_handle : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle >) -> () { unsafe { let __receiver = < FinalBlitPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FinalBlitPass , crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee9a40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (base_descriptor) , :: core :: convert :: Into :: into (color_handle) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < FinalBlitPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (FinalBlitPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee9a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-rendering-universal-internal-finalblitpass")]pub trait IFinalBlitPassMethods:IFinalBlitPass{#[doc="`SetCustomFinalMonoColorToResult(crate::unity_engine::color::Color, f32)` overload"]fn set_custom_final_mono_color_to_result(self,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,ratio:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FinalBlitPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee9910usize)as*mut u8,();
+(FinalBlitPass)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(ratio))}
+}
+#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent> ,blit_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <FinalBlitPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee9970usize)as*mut u8,();
+(FinalBlitPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(crate::unity_engine::material::Material)::core::convert::Into::into(blit_material))}
+}
+#[doc="`Setup(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]fn setup(self,base_descriptor:impl::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor> ,color_handle:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)->(){unsafe{let __receiver= <FinalBlitPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee9a40usize)as*mut u8,();
+(FinalBlitPass)__receiver,(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)::core::convert::Into::into(base_descriptor),(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(color_handle))}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <FinalBlitPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee9a60usize)as*mut u8,();
+(FinalBlitPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-finalblitpass")]
-impl < __T : IFinalBlitPass > IFinalBlitPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-internal-finalblitpass")]impl<__T:IFinalBlitPass>IFinalBlitPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-finalblitpass")]
-impl FinalBlitPass { pub fn set_custom_final_mono_color_to_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FinalBlitPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FinalBlitPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FinalBlitPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FinalBlitPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FinalBlitPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-universal-internal-finalblitpass")]impl FinalBlitPass{pub fn set_custom_final_mono_color_to_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-finalblitpass")]
-impl FinalBlitPass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , blit_material : crate :: unity_engine :: material :: Material) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FinalBlitPass) , :: core :: stringify ! (new) ,)) ; < Self as IFinalBlitPassMethods > :: ctor (this , evt , blit_material) ; this }
+#[cfg(feature="unity_engine-rendering-universal-internal-finalblitpass")]impl FinalBlitPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,blit_material:crate::unity_engine::material::Material)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FinalBlitPass), ::core::stringify!(new),));
+ <Self as IFinalBlitPassMethods> ::ctor(this,evt,blit_material);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-finalblitpass")]

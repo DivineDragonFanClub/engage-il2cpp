@@ -4,51 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/visiblelight/VisibleLight.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VisibleLight {
-    pub m_light_type: crate :: unity_engine :: lighttype :: LightType,
-    pub m_final_color: crate :: unity_engine :: color :: Color,
-    pub m_screen_rect: crate :: unity_engine :: rect :: Rect,
-    pub m_local_to_world_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub m_range: f32,
-    pub m_spot_angle: f32,
-    pub m_instance_id: i32,
-    pub m_flags: crate :: unity_engine :: rendering :: visiblelightflags :: VisibleLightFlags,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/visiblelight/VisibleLight.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VisibleLight{pub m_light_type:crate::unity_engine::lighttype::LightType,pub m_final_color:crate::unity_engine::color::Color,pub m_screen_rect:crate::unity_engine::rect::Rect,pub m_local_to_world_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub m_range:f32,pub m_spot_angle:f32,pub m_instance_id:i32,pub m_flags:crate::unity_engine::rendering::visiblelightflags::VisibleLightFlags,}
+impl::unity2::ClassIdentity for VisibleLight{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="VisibleLight";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for VisibleLight {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "VisibleLight";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for VisibleLight {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for VisibleLight{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -56,11 +26,45 @@ impl ::unity2::IlType for VisibleLight {
 #[cfg(feature = "unity_engine-rendering-visiblelight-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-visiblelight")]
-impl VisibleLight { # [doc = "`get_light()` overload"] pub fn get_light (& mut self ,) -> crate :: unity_engine :: light :: Light { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: light :: Light = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a3d0usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: option :: Option :: None) } } } # [doc = "`get_lightType()` overload"] pub fn get_light_type (& mut self ,) -> crate :: unity_engine :: lighttype :: LightType { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lighttype :: LightType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a490usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: option :: Option :: None) } } } # [doc = "`get_finalColor()` overload"] pub fn get_final_color (& mut self ,) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a4a0usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: option :: Option :: None) } } } # [doc = "`get_localToWorldMatrix()` overload"] pub fn get_local_to_world_matrix (& mut self ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a4b0usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: option :: Option :: None) } } } # [doc = "`get_range()` overload"] pub fn get_range (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a4f0usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: option :: Option :: None) } } } # [doc = "`get_spotAngle()` overload"] pub fn get_spot_angle (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a500usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::visiblelight::VisibleLight)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: visiblelight :: VisibleLight >) -> bool { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , crate :: unity_engine :: rendering :: visiblelight :: VisibleLight , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a510usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a670usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut VisibleLight , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a750usize) as * mut u8) ; __inner (self as * mut VisibleLight , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-visiblelight")]impl VisibleLight{#[doc="`get_light()` overload"]pub fn get_light(&mut self,)->crate::unity_engine::light::Light{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a3d0usize)as*mut u8,crate::unity_engine::light::Light;
+(*mut VisibleLight)self as*mut VisibleLight)}
+}
+#[doc="`get_lightType()` overload"]pub fn get_light_type(&mut self,)->crate::unity_engine::lighttype::LightType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a490usize)as*mut u8,crate::unity_engine::lighttype::LightType;
+(*mut VisibleLight)self as*mut VisibleLight)}
+}
+#[doc="`get_finalColor()` overload"]pub fn get_final_color(&mut self,)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a4a0usize)as*mut u8,crate::unity_engine::color::Color;
+(*mut VisibleLight)self as*mut VisibleLight)}
+}
+#[doc="`get_localToWorldMatrix()` overload"]pub fn get_local_to_world_matrix(&mut self,)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a4b0usize)as*mut u8,crate::unity_engine::matrix4x4::Matrix4x4;
+(*mut VisibleLight)self as*mut VisibleLight)}
+}
+#[doc="`get_range()` overload"]pub fn get_range(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a4f0usize)as*mut u8,f32;
+(*mut VisibleLight)self as*mut VisibleLight)}
+}
+#[doc="`get_spotAngle()` overload"]pub fn get_spot_angle(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a500usize)as*mut u8,f32;
+(*mut VisibleLight)self as*mut VisibleLight)}
+}
+#[doc="`Equals(crate::unity_engine::rendering::visiblelight::VisibleLight)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::visiblelight::VisibleLight>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a510usize)as*mut u8,bool;
+(*mut VisibleLight)self as*mut VisibleLight,(crate::unity_engine::rendering::visiblelight::VisibleLight)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a670usize)as*mut u8,bool;
+(*mut VisibleLight)self as*mut VisibleLight,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a750usize)as*mut u8,i32;
+(*mut VisibleLight)self as*mut VisibleLight)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-visiblelight")]
-impl VisibleLight { pub fn get_light_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_light_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_final_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_local_to_world_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_spot_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-rendering-visiblelight")]impl VisibleLight{pub fn get_light_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_light_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_final_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_local_to_world_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_spot_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-rendering-visiblelight")]
 #[doc(hidden)]

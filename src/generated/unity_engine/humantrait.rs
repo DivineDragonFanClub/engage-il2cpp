@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/humantrait/HumanTrait.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "HumanTrait")] # [parent (crate :: system :: object :: Object)] pub struct HumanTrait {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/humantrait/HumanTrait.md"))]#[::unity2::class(namespace="UnityEngine",name="HumanTrait")]#[parent(crate::system::object::Object)]pub struct HumanTrait{}
 
 }
 
 #[cfg(feature = "unity_engine-humantrait-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-humantrait")]
-impl HumanTrait { # [doc = "`get_MuscleCount()` overload"] pub fn get_muscle_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb93e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetBoneIndexFromMono(i32)` overload"] pub fn get_bone_index_from_mono (human_id : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb34f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (human_id) , :: core :: option :: Option :: None) } } } # [doc = "`get_MuscleName()` overload"] pub fn get_muscle_name () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb9900usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-humantrait")]impl HumanTrait{#[doc="`get_MuscleCount()` overload"]pub fn get_muscle_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb93e0usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetBoneIndexFromMono(i32)` overload"]pub fn get_bone_index_from_mono(human_id:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb34f0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(human_id))}
+}
+#[doc="`get_MuscleName()` overload"]pub fn get_muscle_name()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9900usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-humantrait")]
-impl HumanTrait { pub fn get_muscle_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanTrait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_bone_index_from_mono_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanTrait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_muscle_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanTrait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-humantrait")]impl HumanTrait{pub fn get_muscle_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_bone_index_from_mono_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_muscle_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-humantrait")]
 #[doc(hidden)]

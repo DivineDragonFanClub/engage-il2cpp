@@ -4,34 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyemptymenuitem/WeaponShopBuyEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WeaponShopBuyEmptyMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct WeaponShopBuyEmptyMenuItem {
-# [offset (104)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_SelectEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuyemptymenuitem/WeaponShopBuyEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyEmptyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct WeaponShopBuyEmptyMenuItem{#[offset(104)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,}
 
 }
 
 #[cfg(feature = "app-weaponshopbuyemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-weaponshopbuyemptymenuitem")]
-pub trait IWeaponShopBuyEmptyMenuItemMethods : IWeaponShopBuyEmptyMenuItem { # [doc = "`.ctor(crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler)` overload"] fn ctor (self , select_event_handler : impl :: core :: convert :: Into < crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_SelectEventHandler >) -> () { unsafe { let __receiver = < WeaponShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponShopBuyEmptyMenuItem , crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21cb370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < WeaponShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponShopBuyEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21cb420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < WeaponShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponShopBuyEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21cb430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WeaponShopBuyEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponShopBuyEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21cb470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-weaponshopbuyemptymenuitem")]pub trait IWeaponShopBuyEmptyMenuItemMethods:IWeaponShopBuyEmptyMenuItem{#[doc="`.ctor(crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler)` overload"]fn ctor(self,select_event_handler:impl::core::convert::Into<crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler>)->(){unsafe{let __receiver= <WeaponShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21cb370usize)as*mut u8,();
+(WeaponShopBuyEmptyMenuItem)__receiver,(crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <WeaponShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21cb420usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(WeaponShopBuyEmptyMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <WeaponShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21cb430usize)as*mut u8,();
+(WeaponShopBuyEmptyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WeaponShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21cb470usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WeaponShopBuyEmptyMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-weaponshopbuyemptymenuitem")]
-impl < __T : IWeaponShopBuyEmptyMenuItem > IWeaponShopBuyEmptyMenuItemMethods for __T { }
+#[cfg(feature="app-weaponshopbuyemptymenuitem")]impl<__T:IWeaponShopBuyEmptyMenuItem>IWeaponShopBuyEmptyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-weaponshopbuyemptymenuitem")]
-impl WeaponShopBuyEmptyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponShopBuyEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-weaponshopbuyemptymenuitem")]impl WeaponShopBuyEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-weaponshopbuyemptymenuitem")]
-impl WeaponShopBuyEmptyMenuItem {
-# [doc = "`.ctor(crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler)` — overload selector"] pub fn new (select_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_SelectEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponShopBuyEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IWeaponShopBuyEmptyMenuItemMethods > :: ctor (this , select_event_handler) ; this }
+#[cfg(feature="app-weaponshopbuyemptymenuitem")]impl WeaponShopBuyEmptyMenuItem{#[doc="`.ctor(crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler)` — overload selector"]pub fn new(select_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponShopBuyEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyEmptyMenuItemMethods> ::ctor(this,select_event_handler);
+this}
 }
 
 #[cfg(feature = "app-weaponshopbuyemptymenuitem")]

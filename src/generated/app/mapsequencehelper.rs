@@ -4,94 +4,220 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCameraLoosely.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceHelper.ProcWaitCameraLoosely")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceHelper_ProcWaitCameraLoosely {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCamera.md"))]#[::unity2::class(namespace="App",name="MapSequenceHelper.ProcWaitCamera")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceHelper_ProcWaitCamera{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceHelper")] # [parent (crate :: system :: object :: Object)] pub struct MapSequenceHelper {
-# [static_field] # [rename (name = "AroundOffsetXs")] pub around_offset_xs : :: unity2 :: Array < i32 > ,
-# [static_field] # [rename (name = "AroundOffsetZs")] pub around_offset_zs : :: unity2 :: Array < i32 > ,
-# [static_field] # [rename (name = "InsideScreenMin")] pub inside_screen_min : f32 ,
-# [static_field] # [rename (name = "InsideScreenMax")] pub inside_screen_max : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehelper/MapSequenceHelper.md"))]#[::unity2::class(namespace="App",name="MapSequenceHelper")]#[parent(crate::system::object::Object)]pub struct MapSequenceHelper{#[static_field]#[rename(name="AroundOffsetXs")]pub around_offset_xs: ::unity2::Array<i32> , #[static_field]#[rename(name="AroundOffsetZs")]pub around_offset_zs: ::unity2::Array<i32> , #[static_field]#[rename(name="InsideScreenMin")]pub inside_screen_min:f32, #[static_field]#[rename(name="InsideScreenMax")]pub inside_screen_max:f32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCamera.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceHelper.ProcWaitCamera")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceHelper_ProcWaitCamera {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCameraLoosely.md"))]#[::unity2::class(namespace="App",name="MapSequenceHelper.ProcWaitCameraLoosely")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceHelper_ProcWaitCameraLoosely{}
 
 }
 
 #[cfg(feature = "app-mapsequencehelper-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCameraLoosely { # [doc = "`IsCameraScrolling()` overload"] pub fn is_camera_scrolling () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e37a20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e37a30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencehelper")]
-pub trait IMapSequenceHelper_ProcWaitCameraLooselyMethods : IMapSequenceHelper_ProcWaitCameraLoosely { # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHelper_ProcWaitCameraLoosely , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e37aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHelper_ProcWaitCameraLoosely , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e37b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencehelper")]
-impl < __T : IMapSequenceHelper_ProcWaitCameraLoosely > IMapSequenceHelper_ProcWaitCameraLooselyMethods for __T { }
-
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCameraLoosely { pub fn is_camera_scrolling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper_ProcWaitCameraLoosely as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCameraLoosely {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceHelper_ProcWaitCameraLoosely) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceHelper_ProcWaitCameraLooselyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{#[doc="`IsCameraScrolling()` overload"]pub fn is_camera_scrolling()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37930usize)as*mut u8,bool;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37940usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper { # [doc = "`GetCursorTurnFirst(crate::app::force::Force_Type, *muti32, *muti32)` overload"] pub fn get_cursor_turn_first (force : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> (bool , i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b0f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (force) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetCursorTurnHero(crate::app::force::Force_Type, *muti32, *muti32)` overload"] pub fn get_cursor_turn_hero (force : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> (bool , i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d0850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (force) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`WaitCamera(crate::app::procinst::ProcInst)` overload"] pub fn wait_camera (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d08c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`MoveCamera(crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn move_camera (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d0900usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`MoveCamera(crate::app::procinst::ProcInst, f32, f32)` overload"] pub fn move_camera_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , x : impl :: core :: convert :: Into < f32 > , z : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d09c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`WaitCameraLoosely(crate::app::procinst::ProcInst)` overload"] pub fn wait_camera_loosely (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d0a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`MoveCameraLoosely(crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn move_camera_loosely (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d0ad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`TryMoveCameraLoosely(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] pub fn try_move_camera_loosely (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d0b90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CheckPhaseEnd()` overload"] pub fn check_phase_end () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b04b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CheckRemovable(crate::app::unit::Unit)` overload"] pub fn check_removable (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d19e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CheckRemovableDetail(crate::app::unit::Unit)` overload"] pub fn check_removable_detail (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d1c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetRemovable(crate::app::unit::Unit)` overload"] pub fn set_removable (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d2410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CheckRemagicable(crate::app::unit::Unit)` overload"] pub fn check_remagicable (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d25b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetRemagicable(crate::app::unit::Unit)` overload"] pub fn set_remagicable (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d27d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CheckRerewarp(crate::app::unit::Unit)` overload"] pub fn check_rerewarp (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d2950usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetRerewarp(crate::app::unit::Unit)` overload"] pub fn set_rerewarp (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d2ad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetRouteCost()` overload"] pub fn get_route_cost () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d2b30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsInsideScreen(crate::app::unit::Unit)` overload"] pub fn is_inside_screen (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d0cc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`EngageAttackTelop(crate::app::procinst::ProcInst)` overload"] pub fn engage_attack_telop (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b45c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetEngageAttackPair(*mutcrate::app::goddata::GodData, *mutcrate::app::goddata::GodData)` overload"] pub fn try_get_engage_attack_pair () -> (bool , crate :: app :: goddata :: GodData , crate :: app :: goddata :: GodData) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: goddata :: GodData > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: app :: goddata :: GodData > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: app :: goddata :: GodData , * mut crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d2bf0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d2e10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencehelper")]
-pub trait IMapSequenceHelperMethods : IMapSequenceHelper { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d2e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencehelper")]
-impl < __T : IMapSequenceHelper > IMapSequenceHelperMethods for __T { }
-
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper { pub fn get_cursor_turn_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_cursor_turn_hero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn wait_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn move_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn move_camera_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn wait_camera_loosely_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn move_camera_loosely_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn try_move_camera_loosely_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn check_phase_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn check_removable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn check_removable_detail_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_removable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn check_remagicable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_remagicable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn check_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_route_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_inside_screen_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn engage_attack_telop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn try_get_engage_attack_pair_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
-
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceHelper) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceHelperMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencehelper")]pub trait IMapSequenceHelper_ProcWaitCameraMethods:IMapSequenceHelper_ProcWaitCamera{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapSequenceHelper_ProcWaitCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e379c0usize)as*mut u8,();
+(MapSequenceHelper_ProcWaitCamera)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceHelper_ProcWaitCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e379b0usize)as*mut u8,();
+(MapSequenceHelper_ProcWaitCamera)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCamera { # [doc = "`IsCameraScrolling()` overload"] pub fn is_camera_scrolling () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e37930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e37940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencehelper")]impl<__T:IMapSequenceHelper_ProcWaitCamera>IMapSequenceHelper_ProcWaitCameraMethods for __T{}
 
-#[cfg(feature = "app-mapsequencehelper")]
-pub trait IMapSequenceHelper_ProcWaitCameraMethods : IMapSequenceHelper_ProcWaitCamera { # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHelper_ProcWaitCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHelper_ProcWaitCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e379c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceHelper_ProcWaitCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHelper_ProcWaitCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e379b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{pub fn is_camera_scrolling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-mapsequencehelper")]
-impl < __T : IMapSequenceHelper_ProcWaitCamera > IMapSequenceHelper_ProcWaitCameraMethods for __T { }
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceHelper_ProcWaitCamera), ::core::stringify!(new),));
+ <Self as IMapSequenceHelper_ProcWaitCameraMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCamera { pub fn is_camera_scrolling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper_ProcWaitCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper_ProcWaitCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper_ProcWaitCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHelper_ProcWaitCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper{#[doc="`GetCursorTurnFirst(crate::app::force::Force_Type, *muti32, *muti32)` overload"]pub fn get_cursor_turn_first(force:impl::core::convert::Into<crate::app::force::Force_Type>)->(bool,i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x23b0f90usize)as*mut u8,bool;
+(crate::app::force::Force_Type)::core::convert::Into::into(force),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetCursorTurnHero(crate::app::force::Force_Type, *muti32, *muti32)` overload"]pub fn get_cursor_turn_hero(force:impl::core::convert::Into<crate::app::force::Force_Type>)->(bool,i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x23d0850usize)as*mut u8,bool;
+(crate::app::force::Force_Type)::core::convert::Into::into(force),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`WaitCamera(crate::app::procinst::ProcInst)` overload"]pub fn wait_camera(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d08c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`MoveCamera(crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn move_camera(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d0900usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`MoveCamera(crate::app::procinst::ProcInst, f32, f32)` overload"]pub fn move_camera_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,x:impl::core::convert::Into<f32> ,z:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d09c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(z))}
+}
+#[doc="`WaitCameraLoosely(crate::app::procinst::ProcInst)` overload"]pub fn wait_camera_loosely(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d0a90usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`MoveCameraLoosely(crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn move_camera_loosely(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d0ad0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(y))}
+}
+#[doc="`TryMoveCameraLoosely(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn try_move_camera_loosely(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d0b90usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CheckPhaseEnd()` overload"]pub fn check_phase_end()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23b04b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`CheckRemovable(crate::app::unit::Unit)` overload"]pub fn check_removable(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d19e0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CheckRemovableDetail(crate::app::unit::Unit)` overload"]pub fn check_removable_detail(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d1c70usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetRemovable(crate::app::unit::Unit)` overload"]pub fn set_removable(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d2410usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CheckRemagicable(crate::app::unit::Unit)` overload"]pub fn check_remagicable(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d25b0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetRemagicable(crate::app::unit::Unit)` overload"]pub fn set_remagicable(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d27d0usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CheckRerewarp(crate::app::unit::Unit)` overload"]pub fn check_rerewarp(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d2950usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetRerewarp(crate::app::unit::Unit)` overload"]pub fn set_rerewarp(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d2ad0usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetRouteCost()` overload"]pub fn get_route_cost()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d2b30usize)as*mut u8,i32;
+)}
+}
+#[doc="`IsInsideScreen(crate::app::unit::Unit)` overload"]pub fn is_inside_screen(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d0cc0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`EngageAttackTelop(crate::app::procinst::ProcInst)` overload"]pub fn engage_attack_telop(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23b45c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`TryGetEngageAttackPair(*mutcrate::app::goddata::GodData, *mutcrate::app::goddata::GodData)` overload"]pub fn try_get_engage_attack_pair()->(bool,crate::app::goddata::GodData,crate::app::goddata::GodData){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::goddata::GodData> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::app::goddata::GodData> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x23d2bf0usize)as*mut u8,bool;
+(*mut crate::app::goddata::GodData)__out_0.as_mut_ptr(),(*mut crate::app::goddata::GodData)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d2e10usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mapsequencehelper")]
-impl MapSequenceHelper_ProcWaitCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceHelper_ProcWaitCamera) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceHelper_ProcWaitCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencehelper")]pub trait IMapSequenceHelperMethods:IMapSequenceHelper{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceHelper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d2e00usize)as*mut u8,();
+(MapSequenceHelper)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencehelper")]impl<__T:IMapSequenceHelper>IMapSequenceHelperMethods for __T{}
+
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper{pub fn get_cursor_turn_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_cursor_turn_hero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn wait_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn move_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn move_camera_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn wait_camera_loosely_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn move_camera_loosely_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_move_camera_loosely_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn check_phase_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn check_removable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn check_removable_detail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_removable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn check_remagicable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_remagicable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn check_rerewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_rerewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_route_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_inside_screen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn engage_attack_telop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn try_get_engage_attack_pair_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceHelper), ::core::stringify!(new),));
+ <Self as IMapSequenceHelperMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCameraLoosely{#[doc="`IsCameraScrolling()` overload"]pub fn is_camera_scrolling()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37a20usize)as*mut u8,bool;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37a30usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapsequencehelper")]pub trait IMapSequenceHelper_ProcWaitCameraLooselyMethods:IMapSequenceHelper_ProcWaitCameraLoosely{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapSequenceHelper_ProcWaitCameraLoosely as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e37aa0usize)as*mut u8,();
+(MapSequenceHelper_ProcWaitCameraLoosely)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceHelper_ProcWaitCameraLoosely as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e37b00usize)as*mut u8,();
+(MapSequenceHelper_ProcWaitCameraLoosely)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencehelper")]impl<__T:IMapSequenceHelper_ProcWaitCameraLoosely>IMapSequenceHelper_ProcWaitCameraLooselyMethods for __T{}
+
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCameraLoosely{pub fn is_camera_scrolling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCameraLoosely{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceHelper_ProcWaitCameraLoosely), ::core::stringify!(new),));
+ <Self as IMapSequenceHelper_ProcWaitCameraLooselyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencehelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceHelper_ProcWaitCameraLoosely;
-    pub use super::IMapSequenceHelper_ProcWaitCameraLoosely;
-    pub use super::IMapSequenceHelper_ProcWaitCameraLooselyMethods;
-    pub use super::MapSequenceHelper;
-    pub use super::IMapSequenceHelper;
-    pub use super::IMapSequenceHelperMethods;
     pub use super::MapSequenceHelper_ProcWaitCamera;
     pub use super::IMapSequenceHelper_ProcWaitCamera;
     pub use super::IMapSequenceHelper_ProcWaitCameraMethods;
+    pub use super::MapSequenceHelper;
+    pub use super::IMapSequenceHelper;
+    pub use super::IMapSequenceHelperMethods;
+    pub use super::MapSequenceHelper_ProcWaitCameraLoosely;
+    pub use super::IMapSequenceHelper_ProcWaitCameraLoosely;
+    pub use super::IMapSequenceHelper_ProcWaitCameraLooselyMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;

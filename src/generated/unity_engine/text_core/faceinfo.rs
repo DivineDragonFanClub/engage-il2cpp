@@ -4,63 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/faceinfo/FaceInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FaceInfo {
-    pub m_face_index: i32,
-    pub m_family_name: :: unity2 :: Il2CppString,
-    pub m_style_name: :: unity2 :: Il2CppString,
-    pub m_point_size: i32,
-    pub m_scale: f32,
-    pub m_line_height: f32,
-    pub m_ascent_line: f32,
-    pub m_cap_line: f32,
-    pub m_mean_line: f32,
-    pub m_baseline: f32,
-    pub m_descent_line: f32,
-    pub m_superscript_offset: f32,
-    pub m_superscript_size: f32,
-    pub m_subscript_offset: f32,
-    pub m_subscript_size: f32,
-    pub m_underline_offset: f32,
-    pub m_underline_thickness: f32,
-    pub m_strikethrough_offset: f32,
-    pub m_strikethrough_thickness: f32,
-    pub m_tab_width: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/text_core/faceinfo/FaceInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FaceInfo{pub m_face_index:i32,pub m_family_name: ::unity2::Il2CppString,pub m_style_name: ::unity2::Il2CppString,pub m_point_size:i32,pub m_scale:f32,pub m_line_height:f32,pub m_ascent_line:f32,pub m_cap_line:f32,pub m_mean_line:f32,pub m_baseline:f32,pub m_descent_line:f32,pub m_superscript_offset:f32,pub m_superscript_size:f32,pub m_subscript_offset:f32,pub m_subscript_size:f32,pub m_underline_offset:f32,pub m_underline_thickness:f32,pub m_strikethrough_offset:f32,pub m_strikethrough_thickness:f32,pub m_tab_width:f32,}
+impl::unity2::ClassIdentity for FaceInfo{const NAMESPACE: &'static str="UnityEngine.TextCore";
+const NAME: &'static str="FaceInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for FaceInfo {
-    const NAMESPACE: &'static str = "UnityEngine.TextCore";
-
-    const NAME: &'static str = "FaceInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for FaceInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for FaceInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -68,11 +26,149 @@ impl ::unity2::IlType for FaceInfo {
 #[cfg(feature = "unity_engine-text_core-faceinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-text_core-faceinfo")]
-impl FaceInfo { # [doc = "`set_familyName(::unity2::Il2CppString)` overload"] pub fn set_family_name (& mut self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c230usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_styleName(::unity2::Il2CppString)` overload"] pub fn set_style_name (& mut self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c240usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pointSize()` overload"] pub fn get_point_size (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c250usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_pointSize(i32)` overload"] pub fn set_point_size (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c260usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_scale()` overload"] pub fn get_scale (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c270usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_scale(f32)` overload"] pub fn set_scale (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c280usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_lineHeight()` overload"] pub fn get_line_height (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c290usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_lineHeight(f32)` overload"] pub fn set_line_height (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c2a0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ascentLine()` overload"] pub fn get_ascent_line (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c2b0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_ascentLine(f32)` overload"] pub fn set_ascent_line (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c2c0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_capLine()` overload"] pub fn get_cap_line (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c2d0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_capLine(f32)` overload"] pub fn set_cap_line (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c2e0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_meanLine()` overload"] pub fn get_mean_line (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c2f0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_meanLine(f32)` overload"] pub fn set_mean_line (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c300usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_baseline()` overload"] pub fn get_baseline (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c310usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_baseline(f32)` overload"] pub fn set_baseline (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c320usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_descentLine()` overload"] pub fn get_descent_line (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c330usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_descentLine(f32)` overload"] pub fn set_descent_line (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c340usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_superscriptOffset()` overload"] pub fn get_superscript_offset (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c350usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_superscriptOffset(f32)` overload"] pub fn set_superscript_offset (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c360usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_superscriptSize()` overload"] pub fn get_superscript_size (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c370usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_superscriptSize(f32)` overload"] pub fn set_superscript_size (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c380usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_subscriptOffset()` overload"] pub fn get_subscript_offset (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c390usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_subscriptOffset(f32)` overload"] pub fn set_subscript_offset (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c3a0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_subscriptSize()` overload"] pub fn get_subscript_size (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c3b0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_subscriptSize(f32)` overload"] pub fn set_subscript_size (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c3c0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_underlineOffset()` overload"] pub fn get_underline_offset (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c3d0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_underlineOffset(f32)` overload"] pub fn set_underline_offset (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c3e0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_underlineThickness()` overload"] pub fn get_underline_thickness (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c3f0usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_underlineThickness(f32)` overload"] pub fn set_underline_thickness (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c400usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_strikethroughOffset()` overload"] pub fn get_strikethrough_offset (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c410usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_strikethroughOffset(f32)` overload"] pub fn set_strikethrough_offset (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c420usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_strikethroughThickness(f32)` overload"] pub fn set_strikethrough_thickness (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c430usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_tabWidth()` overload"] pub fn get_tab_width (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c440usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: option :: Option :: None) } } } # [doc = "`set_tabWidth(f32)` overload"] pub fn set_tab_width (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FaceInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2c450usize) as * mut u8) ; __inner (self as * mut FaceInfo , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-text_core-faceinfo")]impl FaceInfo{#[doc="`set_familyName(::unity2::Il2CppString)` overload"]pub fn set_family_name(&mut self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c230usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_styleName(::unity2::Il2CppString)` overload"]pub fn set_style_name(&mut self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c240usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_pointSize()` overload"]pub fn get_point_size(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c250usize)as*mut u8,i32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_pointSize(i32)` overload"]pub fn set_point_size(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c260usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_scale()` overload"]pub fn get_scale(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c270usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_scale(f32)` overload"]pub fn set_scale(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c280usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_lineHeight()` overload"]pub fn get_line_height(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c290usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_lineHeight(f32)` overload"]pub fn set_line_height(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c2a0usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ascentLine()` overload"]pub fn get_ascent_line(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c2b0usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_ascentLine(f32)` overload"]pub fn set_ascent_line(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c2c0usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_capLine()` overload"]pub fn get_cap_line(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c2d0usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_capLine(f32)` overload"]pub fn set_cap_line(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c2e0usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_meanLine()` overload"]pub fn get_mean_line(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c2f0usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_meanLine(f32)` overload"]pub fn set_mean_line(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c300usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_baseline()` overload"]pub fn get_baseline(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c310usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_baseline(f32)` overload"]pub fn set_baseline(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c320usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_descentLine()` overload"]pub fn get_descent_line(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c330usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_descentLine(f32)` overload"]pub fn set_descent_line(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c340usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_superscriptOffset()` overload"]pub fn get_superscript_offset(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c350usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_superscriptOffset(f32)` overload"]pub fn set_superscript_offset(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c360usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_superscriptSize()` overload"]pub fn get_superscript_size(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c370usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_superscriptSize(f32)` overload"]pub fn set_superscript_size(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c380usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_subscriptOffset()` overload"]pub fn get_subscript_offset(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c390usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_subscriptOffset(f32)` overload"]pub fn set_subscript_offset(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c3a0usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_subscriptSize()` overload"]pub fn get_subscript_size(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c3b0usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_subscriptSize(f32)` overload"]pub fn set_subscript_size(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c3c0usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_underlineOffset()` overload"]pub fn get_underline_offset(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c3d0usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_underlineOffset(f32)` overload"]pub fn set_underline_offset(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c3e0usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_underlineThickness()` overload"]pub fn get_underline_thickness(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c3f0usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_underlineThickness(f32)` overload"]pub fn set_underline_thickness(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c400usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_strikethroughOffset()` overload"]pub fn get_strikethrough_offset(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c410usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_strikethroughOffset(f32)` overload"]pub fn set_strikethrough_offset(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c420usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_strikethroughThickness(f32)` overload"]pub fn set_strikethrough_thickness(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c430usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_tabWidth()` overload"]pub fn get_tab_width(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c440usize)as*mut u8,f32;
+(*mut FaceInfo)self as*mut FaceInfo)}
+}
+#[doc="`set_tabWidth(f32)` overload"]pub fn set_tab_width(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2c450usize)as*mut u8,();
+(*mut FaceInfo)self as*mut FaceInfo,(f32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-text_core-faceinfo")]
-impl FaceInfo { pub fn set_family_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_style_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_point_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_point_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_line_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_line_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_ascent_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_ascent_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_cap_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_cap_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_mean_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_mean_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_baseline_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_baseline_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_descent_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_descent_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_superscript_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_superscript_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_superscript_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_superscript_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_subscript_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_subscript_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_subscript_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_subscript_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_underline_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_underline_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_underline_thickness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_underline_thickness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_strikethrough_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_strikethrough_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn set_strikethrough_thickness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_tab_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn set_tab_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } }
+#[cfg(feature="unity_engine-text_core-faceinfo")]impl FaceInfo{pub fn set_family_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_style_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_point_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_point_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_line_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_line_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_ascent_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_ascent_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_cap_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_cap_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_mean_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_mean_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_baseline_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_baseline_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_descent_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_descent_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_superscript_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_superscript_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_superscript_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_superscript_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_subscript_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_subscript_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_subscript_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_subscript_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_underline_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_underline_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_underline_thickness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_underline_thickness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_strikethrough_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_strikethrough_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn set_strikethrough_thickness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_tab_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn set_tab_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
 
 #[cfg(feature = "unity_engine-text_core-faceinfo")]
 #[doc(hidden)]

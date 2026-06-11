@@ -4,63 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravedemo/RefineShopEngraveDemo.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveDemo")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefineShopEngraveDemo {
-# [offset (136)] # [rename (name = "m_RefineShopEngraveDemoRoot")] pub m_refine_shop_engrave_demo_root : crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot ,
-# [offset (144)] # [rename (name = "m_ShopWeaponModelRenderer")] pub m_shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopengravedemo/RefineShopEngraveDemo.md"))]#[::unity2::class(namespace="App",name="RefineShopEngraveDemo")]#[parent(crate::app::procinst::ProcInst)]pub struct RefineShopEngraveDemo{#[offset(136)]#[rename(name="m_RefineShopEngraveDemoRoot")]pub m_refine_shop_engrave_demo_root:crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot, #[offset(144)]#[rename(name="m_ShopWeaponModelRenderer")]pub m_shop_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopengravedemo/RefineShopEngraveDemo_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefineShopEngraveDemo_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RefineShopEngraveDemo_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RefineShopEngraveDemo.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopengravedemo/RefineShopEngraveDemo_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RefineShopEngraveDemo_Label  {
-    pub value: i32,
+impl::unity2::IlType for RefineShopEngraveDemo_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for RefineShopEngraveDemo_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefineShopEngraveDemo.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl RefineShopEngraveDemo_Label{pub fn end()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for RefineShopEngraveDemo_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RefineShopEngraveDemo_Label  {
-    pub fn end() -> Self {
-        Self { value: 0 }
-
-    }
-
 }
 
 }
@@ -68,21 +36,98 @@ impl  RefineShopEngraveDemo_Label  {
 #[cfg(feature = "app-refineshopengravedemo-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopengravedemo")]
-impl RefineShopEngraveDemo { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , base_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , engraved_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unititem :: UnitItem , crate :: app :: unititem :: UnitItem , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29588f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (base_unit_item) , :: core :: convert :: Into :: into (engraved_unit_item) , :: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopengravedemo")]impl RefineShopEngraveDemo{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,base_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,engraved_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::app::refineshopengravedemo::RefineShopEngraveDemo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29588f0usize)as*mut u8,crate::app::refineshopengravedemo::RefineShopEngraveDemo;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unititem::UnitItem)::core::convert::Into::into(base_unit_item),(crate::app::unititem::UnitItem)::core::convert::Into::into(engraved_unit_item),(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+}
 
-#[cfg(feature = "app-refineshopengravedemo")]
-pub trait IRefineShopEngraveDemoMethods : IRefineShopEngraveDemo { # [doc = "`get_m_BaseUnitItem()` overload"] fn get_m_base_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2958890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_BaseUnitItem(crate::app::unititem::UnitItem)` overload"] fn set_m_base_unit_item (self , value : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29588a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_EngravedUnitItem()` overload"] fn get_m_engraved_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29588b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_EngravedUnitItem(crate::app::unititem::UnitItem)` overload"] fn set_m_engraved_unit_item (self , value : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29588c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_GodData()` overload"] fn get_m_god_data (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29588d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_GodData(crate::app::goddata::GodData)` overload"] fn set_m_god_data (self , value : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29588e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDefaultDesc()` overload"] fn create_default_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2958a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` overload"] fn ctor (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , base_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , engraved_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , crate :: app :: procinst :: ProcInst , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unititem :: UnitItem , crate :: app :: unititem :: UnitItem , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29589e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (base_unit_item) , :: core :: convert :: Into :: into (engraved_unit_item) , :: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } # [doc = "`LoadPrefabs()` overload"] fn load_prefabs (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2958fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefabs()` overload"] fn is_loading_prefabs (self ,) -> bool { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2959120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2959220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSound()` overload"] fn start_sound (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295a2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295a360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlaying()` overload"] fn is_playing (self ,) -> bool { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295a530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyAndUnloadPrefabs()` overload"] fn destroy_and_unload_prefabs (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295a6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopengravedemo")]pub trait IRefineShopEngraveDemoMethods:IRefineShopEngraveDemo{#[doc="`get_m_BaseUnitItem()` overload"]fn get_m_base_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2958890usize)as*mut u8,crate::app::unititem::UnitItem;
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`set_m_BaseUnitItem(crate::app::unititem::UnitItem)` overload"]fn set_m_base_unit_item(self,value:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29588a0usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_EngravedUnitItem()` overload"]fn get_m_engraved_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29588b0usize)as*mut u8,crate::app::unititem::UnitItem;
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`set_m_EngravedUnitItem(crate::app::unititem::UnitItem)` overload"]fn set_m_engraved_unit_item(self,value:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29588c0usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_GodData()` overload"]fn get_m_god_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29588d0usize)as*mut u8,crate::app::goddata::GodData;
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`set_m_GodData(crate::app::goddata::GodData)` overload"]fn set_m_god_data(self,value:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29588e0usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(value))}
+}
+#[doc="`CreateDefaultDesc()` overload"]fn create_default_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2958a60usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`.ctor(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` overload"]fn ctor(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,base_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,engraved_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29589e0usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unititem::UnitItem)::core::convert::Into::into(base_unit_item),(crate::app::unititem::UnitItem)::core::convert::Into::into(engraved_unit_item),(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`LoadPrefabs()` overload"]fn load_prefabs(self,)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2958fe0usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`IsLoadingPrefabs()` overload"]fn is_loading_prefabs(self,)->bool{unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2959120usize)as*mut u8,bool;
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2959220usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`StartSound()` overload"]fn start_sound(self,)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295a2e0usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295a360usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295a530usize)as*mut u8,bool;
+(RefineShopEngraveDemo)__receiver)}
+}
+#[doc="`DestroyAndUnloadPrefabs()` overload"]fn destroy_and_unload_prefabs(self,)->(){unsafe{let __receiver= <RefineShopEngraveDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295a6f0usize)as*mut u8,();
+(RefineShopEngraveDemo)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopengravedemo")]
-impl < __T : IRefineShopEngraveDemo > IRefineShopEngraveDemoMethods for __T { }
+#[cfg(feature="app-refineshopengravedemo")]impl<__T:IRefineShopEngraveDemo>IRefineShopEngraveDemoMethods for __T{}
 
-#[cfg(feature = "app-refineshopengravedemo")]
-impl RefineShopEngraveDemo { pub fn get_m_base_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_base_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_engraved_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_engraved_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_m_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_m_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_default_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn load_prefabs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_loading_prefabs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn start_sound_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn destroy_and_unload_prefabs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-refineshopengravedemo")]impl RefineShopEngraveDemo{pub fn get_m_base_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_base_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_engraved_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_engraved_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_m_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_m_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_default_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn load_prefabs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_loading_prefabs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn start_sound_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn destroy_and_unload_prefabs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-refineshopengravedemo")]
-impl RefineShopEngraveDemo {
-# [doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` — overload selector"] pub fn new (super_ : crate :: app :: procinst :: ProcInst , shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , base_unit_item : crate :: app :: unititem :: UnitItem , engraved_unit_item : crate :: app :: unititem :: UnitItem , god_data : crate :: app :: goddata :: GodData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveDemo) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveDemoMethods > :: ctor (this , super_ , shop_weapon_model_renderer , base_unit_item , engraved_unit_item , god_data) ; this }
+#[cfg(feature="app-refineshopengravedemo")]impl RefineShopEngraveDemo{#[doc="`.ctor(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::goddata::GodData)` — overload selector"]pub fn new(super_:crate::app::procinst::ProcInst,shop_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,base_unit_item:crate::app::unititem::UnitItem,engraved_unit_item:crate::app::unititem::UnitItem,god_data:crate::app::goddata::GodData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopEngraveDemo), ::core::stringify!(new),));
+ <Self as IRefineShopEngraveDemoMethods> ::ctor(this,super_,shop_weapon_model_renderer,base_unit_item,engraved_unit_item,god_data);
+this}
 }
 
 #[cfg(feature = "app-refineshopengravedemo")]

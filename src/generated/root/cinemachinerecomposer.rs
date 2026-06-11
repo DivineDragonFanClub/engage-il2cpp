@@ -4,35 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinerecomposer/CinemachineRecomposer.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineRecomposer")] pub struct CinemachineRecomposer {
-# [offset (44)] # [rename (name = "m_Tilt")] pub m_tilt : f32 ,
-# [offset (48)] # [rename (name = "m_Pan")] pub m_pan : f32 ,
-# [offset (52)] # [rename (name = "m_Dutch")] pub m_dutch : f32 ,
-# [offset (56)] # [rename (name = "m_ZoomScale")] pub m_zoom_scale : f32 ,
-# [offset (60)] # [rename (name = "m_FollowAttachment")] pub m_follow_attachment : f32 ,
-# [offset (64)] # [rename (name = "m_LookAtAttachment")] pub m_look_at_attachment : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/cinemachinerecomposer/CinemachineRecomposer.md"))]#[::unity2::class(namespace="",name="CinemachineRecomposer")]pub struct CinemachineRecomposer{#[offset(44)]#[rename(name="m_Tilt")]pub m_tilt:f32, #[offset(48)]#[rename(name="m_Pan")]pub m_pan:f32, #[offset(52)]#[rename(name="m_Dutch")]pub m_dutch:f32, #[offset(56)]#[rename(name="m_ZoomScale")]pub m_zoom_scale:f32, #[offset(60)]#[rename(name="m_FollowAttachment")]pub m_follow_attachment:f32, #[offset(64)]#[rename(name="m_LookAtAttachment")]pub m_look_at_attachment:f32,}
 
 }
 
 #[cfg(feature = "root-cinemachinerecomposer-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-cinemachinerecomposer")]
-pub trait ICinemachineRecomposerMethods : ICinemachineRecomposer { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < CinemachineRecomposer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineRecomposer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x388cf10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < CinemachineRecomposer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineRecomposer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x388cf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineRecomposer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineRecomposer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x388d160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-cinemachinerecomposer")]pub trait ICinemachineRecomposerMethods:ICinemachineRecomposer{#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <CinemachineRecomposer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x388cf10usize)as*mut u8,();
+(CinemachineRecomposer)__receiver)}
+}
+#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <CinemachineRecomposer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x388cf30usize)as*mut u8,();
+(CinemachineRecomposer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CinemachineRecomposer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x388d160usize)as*mut u8,();
+(CinemachineRecomposer)__receiver)}
+}
+}
 
-#[cfg(feature = "root-cinemachinerecomposer")]
-impl < __T : ICinemachineRecomposer > ICinemachineRecomposerMethods for __T { }
+#[cfg(feature="root-cinemachinerecomposer")]impl<__T:ICinemachineRecomposer>ICinemachineRecomposerMethods for __T{}
 
-#[cfg(feature = "root-cinemachinerecomposer")]
-impl CinemachineRecomposer { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineRecomposer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineRecomposer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineRecomposer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-cinemachinerecomposer")]impl CinemachineRecomposer{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-cinemachinerecomposer")]
-impl CinemachineRecomposer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineRecomposer) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineRecomposerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-cinemachinerecomposer")]impl CinemachineRecomposer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineRecomposer), ::core::stringify!(new),));
+ <Self as ICinemachineRecomposerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-cinemachinerecomposer")]

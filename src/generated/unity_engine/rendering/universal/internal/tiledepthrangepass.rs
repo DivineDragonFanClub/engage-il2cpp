@@ -4,35 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/tiledepthrangepass/TileDepthRangePass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "TileDepthRangePass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct TileDepthRangePass {
-# [offset (112)] # [rename (name = "m_DeferredLights")] pub m_deferred_lights : crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights ,
-# [offset (120)] # [rename (name = "m_PassIndex")] pub m_pass_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/tiledepthrangepass/TileDepthRangePass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Internal",name="TileDepthRangePass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct TileDepthRangePass{#[offset(112)]#[rename(name="m_DeferredLights")]pub m_deferred_lights:crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights, #[offset(120)]#[rename(name="m_PassIndex")]pub m_pass_index:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass")]
-pub trait ITileDepthRangePassMethods : ITileDepthRangePass { # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights, i32)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , deferred_lights : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights > , pass_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TileDepthRangePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TileDepthRangePass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca3a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (deferred_lights) , :: core :: convert :: Into :: into (pass_index) , :: core :: option :: Option :: None) } } } # [doc = "`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"] fn configure (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , camera_texture_descriptor : impl :: core :: convert :: Into < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor >) -> () { unsafe { let __receiver = < TileDepthRangePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TileDepthRangePass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca3ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (camera_texture_descriptor) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < TileDepthRangePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (TileDepthRangePass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca3c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"] fn on_camera_cleanup (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> () { unsafe { let __receiver = < TileDepthRangePass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TileDepthRangePass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca3c70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-internal-tiledepthrangepass")]pub trait ITileDepthRangePassMethods:ITileDepthRangePass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights, i32)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent> ,deferred_lights:impl::core::convert::Into<crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights> ,pass_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TileDepthRangePass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca3a10usize)as*mut u8,();
+(TileDepthRangePass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights)::core::convert::Into::into(deferred_lights),(i32)::core::convert::Into::into(pass_index))}
+}
+#[doc="`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]fn configure(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,camera_texture_descriptor:impl::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>)->(){unsafe{let __receiver= <TileDepthRangePass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca3ae0usize)as*mut u8,();
+(TileDepthRangePass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)::core::convert::Into::into(camera_texture_descriptor))}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <TileDepthRangePass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca3c50usize)as*mut u8,();
+(TileDepthRangePass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn on_camera_cleanup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <TileDepthRangePass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca3c70usize)as*mut u8,();
+(TileDepthRangePass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass")]
-impl < __T : ITileDepthRangePass > ITileDepthRangePassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-internal-tiledepthrangepass")]impl<__T:ITileDepthRangePass>ITileDepthRangePassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass")]
-impl TileDepthRangePass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileDepthRangePass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn configure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileDepthRangePass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileDepthRangePass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_camera_cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileDepthRangePass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-rendering-universal-internal-tiledepthrangepass")]impl TileDepthRangePass{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn configure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_camera_cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass")]
-impl TileDepthRangePass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights, i32)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , deferred_lights : crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights , pass_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TileDepthRangePass) , :: core :: stringify ! (new) ,)) ; < Self as ITileDepthRangePassMethods > :: ctor (this , evt , deferred_lights , pass_index) ; this }
+#[cfg(feature="unity_engine-rendering-universal-internal-tiledepthrangepass")]impl TileDepthRangePass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights, i32)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,deferred_lights:crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights,pass_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TileDepthRangePass), ::core::stringify!(new),));
+ <Self as ITileDepthRangePassMethods> ::ctor(this,evt,deferred_lights,pass_index);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass")]

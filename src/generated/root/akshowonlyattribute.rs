@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akshowonlyattribute/AkShowOnlyAttribute.md"))] # [:: unity2 :: class (namespace = "" , name = "AkShowOnlyAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct AkShowOnlyAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akshowonlyattribute/AkShowOnlyAttribute.md"))]#[::unity2::class(namespace="",name="AkShowOnlyAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct AkShowOnlyAttribute{}
 
 }
 
 #[cfg(feature = "root-akshowonlyattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akshowonlyattribute")]
-pub trait IAkShowOnlyAttributeMethods : IAkShowOnlyAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkShowOnlyAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkShowOnlyAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akshowonlyattribute")]pub trait IAkShowOnlyAttributeMethods:IAkShowOnlyAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkShowOnlyAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04ce0usize)as*mut u8,();
+(AkShowOnlyAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akshowonlyattribute")]
-impl < __T : IAkShowOnlyAttribute > IAkShowOnlyAttributeMethods for __T { }
+#[cfg(feature="root-akshowonlyattribute")]impl<__T:IAkShowOnlyAttribute>IAkShowOnlyAttributeMethods for __T{}
 
-#[cfg(feature = "root-akshowonlyattribute")]
-impl AkShowOnlyAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkShowOnlyAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akshowonlyattribute")]impl AkShowOnlyAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akshowonlyattribute")]
-impl AkShowOnlyAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkShowOnlyAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAkShowOnlyAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akshowonlyattribute")]impl AkShowOnlyAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkShowOnlyAttribute), ::core::stringify!(new),));
+ <Self as IAkShowOnlyAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akshowonlyattribute")]

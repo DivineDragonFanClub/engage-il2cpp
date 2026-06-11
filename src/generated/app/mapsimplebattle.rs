@@ -4,44 +4,115 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsimplebattle/MapSimpleBattle.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSimpleBattle")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsimplebattle :: MapSimpleBattle >)] pub struct MapSimpleBattle {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LeftSideObjName")] pub left_side_obj_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "RightSideObjName")] pub right_side_obj_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (40)] # [rename (name = "m_IsValid")] pub m_is_valid : bool ,
-# [offset (48)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_GaugeControllerLeft")] pub m_gauge_controller_left : crate :: root :: combatgaugecontroller :: CombatGaugeController ,
-# [offset (64)] # [rename (name = "m_GaugeControllerRight")] pub m_gauge_controller_right : crate :: root :: combatgaugecontroller :: CombatGaugeController ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsimplebattle/MapSimpleBattle.md"))]#[::unity2::class(namespace="App",name="MapSimpleBattle")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapsimplebattle::MapSimpleBattle>)]pub struct MapSimpleBattle{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="LeftSideObjName")]pub left_side_obj_name: ::unity2::Il2CppString, #[static_field]#[rename(name="RightSideObjName")]pub right_side_obj_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_IsValid")]pub m_is_valid:bool, #[offset(48)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_GaugeControllerLeft")]pub m_gauge_controller_left:crate::root::combatgaugecontroller::CombatGaugeController, #[offset(64)]#[rename(name="m_GaugeControllerRight")]pub m_gauge_controller_right:crate::root::combatgaugecontroller::CombatGaugeController,}
 
 }
 
 #[cfg(feature = "app-mapsimplebattle-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsimplebattle")]
-impl MapSimpleBattle { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f489b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsimplebattle")]impl MapSimpleBattle{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f489b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mapsimplebattle")]
-pub trait IMapSimpleBattleMethods : IMapSimpleBattle { # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f47b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetObject(crate::app::battleinfo::BattleInfo, *mutcrate::root::combatgaugecontroller::CombatGaugeController, *mutcrate::root::combatgaugecontroller::CombatGaugeController)` overload"] fn get_object (self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo >) -> (crate :: root :: combatgaugecontroller :: CombatGaugeController , crate :: root :: combatgaugecontroller :: CombatGaugeController) { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: root :: combatgaugecontroller :: CombatGaugeController > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: root :: combatgaugecontroller :: CombatGaugeController > :: uninit () ; { let __inner : extern "C" fn (MapSimpleBattle , crate :: app :: battleinfo :: BattleInfo , * mut crate :: root :: combatgaugecontroller :: CombatGaugeController , * mut crate :: root :: combatgaugecontroller :: CombatGaugeController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f47b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (info) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`SetSimpleBattle(crate::app::battlecalculator::BattleCalculator)` overload"] fn set_simple_battle (self , calc : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator >) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , crate :: app :: battlecalculator :: BattleCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f47c90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (calc) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateValue(crate::app::battleinfo::BattleInfo)` overload"] fn update_value (self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo >) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , crate :: app :: battleinfo :: BattleInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f47ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`SkipGaugeAnime(crate::app::battleinfo::BattleInfo)` overload"] fn skip_gauge_anime (self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo >) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , crate :: app :: battleinfo :: BattleInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`IsMoving()` overload"] fn is_moving (self ,) -> bool { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayingAnim()` overload"] fn is_playing_anim (self ,) -> bool { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f47e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deactivate()` overload"] fn deactivate (self ,) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Out()` overload"] fn out (self ,) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f485e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateObjects()` overload"] fn create_objects (self ,) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f486e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyObjects()` overload"] fn destroy_objects (self ,) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f485f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSimpleBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSimpleBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsimplebattle")]pub trait IMapSimpleBattleMethods:IMapSimpleBattle{#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f47b10usize)as*mut u8,bool;
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`GetObject(crate::app::battleinfo::BattleInfo, *mutcrate::root::combatgaugecontroller::CombatGaugeController, *mutcrate::root::combatgaugecontroller::CombatGaugeController)` overload"]fn get_object(self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->(crate::root::combatgaugecontroller::CombatGaugeController,crate::root::combatgaugecontroller::CombatGaugeController){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::root::combatgaugecontroller::CombatGaugeController> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::root::combatgaugecontroller::CombatGaugeController> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f47b40usize)as*mut u8,();
+(MapSimpleBattle)__receiver,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(*mut crate::root::combatgaugecontroller::CombatGaugeController)__out_0.as_mut_ptr(),(*mut crate::root::combatgaugecontroller::CombatGaugeController)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`SetSimpleBattle(crate::app::battlecalculator::BattleCalculator)` overload"]fn set_simple_battle(self,calc:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator>)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f47c90usize)as*mut u8,();
+(MapSimpleBattle)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calc))}
+}
+#[doc="`UpdateValue(crate::app::battleinfo::BattleInfo)` overload"]fn update_value(self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f47ed0usize)as*mut u8,();
+(MapSimpleBattle)__receiver,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
+}
+#[doc="`SkipGaugeAnime(crate::app::battleinfo::BattleInfo)` overload"]fn skip_gauge_anime(self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48090usize)as*mut u8,();
+(MapSimpleBattle)__receiver,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
+}
+#[doc="`IsMoving()` overload"]fn is_moving(self,)->bool{unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48180usize)as*mut u8,bool;
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`IsPlayingAnim()` overload"]fn is_playing_anim(self,)->bool{unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48280usize)as*mut u8,bool;
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f47e20usize)as*mut u8,();
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`Deactivate()` overload"]fn deactivate(self,)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48380usize)as*mut u8,();
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`Out()` overload"]fn out(self,)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48430usize)as*mut u8,();
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48480usize)as*mut u8,();
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f485e0usize)as*mut u8,();
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`CreateObjects()` overload"]fn create_objects(self,)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f486e0usize)as*mut u8,();
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`DestroyObjects()` overload"]fn destroy_objects(self,)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f485f0usize)as*mut u8,();
+(MapSimpleBattle)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSimpleBattle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48930usize)as*mut u8,();
+(MapSimpleBattle)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsimplebattle")]
-impl < __T : IMapSimpleBattle > IMapSimpleBattleMethods for __T { }
+#[cfg(feature="app-mapsimplebattle")]impl<__T:IMapSimpleBattle>IMapSimpleBattleMethods for __T{}
 
-#[cfg(feature = "app-mapsimplebattle")]
-impl MapSimpleBattle { pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_simple_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn skip_gauge_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_moving_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_playing_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn deactivate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn destroy_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSimpleBattle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-mapsimplebattle")]impl MapSimpleBattle{pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_simple_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn skip_gauge_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_moving_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_playing_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn deactivate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn destroy_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-mapsimplebattle")]
-impl MapSimpleBattle {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSimpleBattle) , :: core :: stringify ! (new) ,)) ; < Self as IMapSimpleBattleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsimplebattle")]impl MapSimpleBattle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSimpleBattle), ::core::stringify!(new),));
+ <Self as IMapSimpleBattleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsimplebattle")]

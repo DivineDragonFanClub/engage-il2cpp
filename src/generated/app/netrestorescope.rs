@@ -4,49 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netrestorescope/NetRestoreScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct NetRestoreScope {
-    pub m_save_play_time: f32,
-    pub m_is_show_net_terms: bool,
-    pub m_is_show_engage_plus_attention: bool,
-    pub m_is_show_field_bgm_changeable: bool,
-    pub m_variable_writer: crate :: app :: gameuserrestartdata :: GameUserRestartData_VariableWriter,
-    pub m_game_config_writer: crate :: app :: gameuserrestartdata :: GameUserRestartData_GameConfigWriter,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netrestorescope/NetRestoreScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NetRestoreScope{pub m_save_play_time:f32,pub m_is_show_net_terms:bool,pub m_is_show_engage_plus_attention:bool,pub m_is_show_field_bgm_changeable:bool,pub m_variable_writer:crate::app::gameuserrestartdata::GameUserRestartData_VariableWriter,pub m_game_config_writer:crate::app::gameuserrestartdata::GameUserRestartData_GameConfigWriter,}
+impl::unity2::ClassIdentity for NetRestoreScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NetRestoreScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for NetRestoreScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NetRestoreScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for NetRestoreScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for NetRestoreScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -54,11 +26,17 @@ impl ::unity2::IlType for NetRestoreScope {
 #[cfg(feature = "app-netrestorescope-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-netrestorescope")]
-impl NetRestoreScope { # [doc = "`.ctor(i32)` overload"] pub fn ctor (& mut self , dummy : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut NetRestoreScope , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f13290usize) as * mut u8) ; __inner (self as * mut NetRestoreScope , :: core :: convert :: Into :: into (dummy) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut NetRestoreScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f134f0usize) as * mut u8) ; __inner (self as * mut NetRestoreScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-netrestorescope")]impl NetRestoreScope{#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,dummy:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13290usize)as*mut u8,();
+(*mut NetRestoreScope)self as*mut NetRestoreScope,(i32)::core::convert::Into::into(dummy))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f134f0usize)as*mut u8,();
+(*mut NetRestoreScope)self as*mut NetRestoreScope)}
+}
+}
 
-#[cfg(feature = "app-netrestorescope")]
-impl NetRestoreScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetRestoreScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetRestoreScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-netrestorescope")]impl NetRestoreScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "app-netrestorescope")]
 #[doc(hidden)]

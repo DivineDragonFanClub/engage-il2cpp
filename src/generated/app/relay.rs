@@ -4,433 +4,154 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_TrfrResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Relay_TrfrResult  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_TakeOverModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_TakeOverModes{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_TakeOverModes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.TakeOverModes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_TakeOverModes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_TakeOverModes{pub fn random()->Self{Self{value:0}
+}
+pub fn data_code()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Relay_TrfrResult  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_FlagsField.md"))]#[::unity2::class(namespace="App",name="Relay.FlagsField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::relay::Relay_Flags>)]pub struct Relay_FlagsField{}
 
-    const NAME: &'static str = "Relay.TrfrResult";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_ChooseAwardeeData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Relay_ChooseAwardeeData{pub unit:crate::app::unit::Unit,pub leaving_unit_data:crate::app::relayleavingunitdata::RelayLeavingUnitData,pub count:i32,}
+impl::unity2::ClassIdentity for Relay_ChooseAwardeeData{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.ChooseAwardeeData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_ChooseAwardeeData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl  ::unity2::IlType for Relay_TrfrResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_Flags{pub fn need_to_upload()->Self{Self{value:1}
+}
+pub fn uploaded()->Self{Self{value:2}
+}
+pub fn global_saved()->Self{Self{value:4}
+}
+pub fn show_win_rule()->Self{Self{value:8}
+}
 }
 
 
-impl  Relay_TrfrResult  {
-    pub fn no_changed() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn done() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn failed() -> Self {
-        Self { value: 2 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_Modes{pub fn new()->Self{Self{value:0}
+}
+pub fn take_over()->Self{Self{value:1}
+}
+pub fn replay()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_ChooseAwardeeData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Relay_ChooseAwardeeData {
-    pub unit: crate :: app :: unit :: Unit,
-    pub leaving_unit_data: crate :: app :: relayleavingunitdata :: RelayLeavingUnitData,
-    pub count: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_DisposPlayerCountsSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_DisposPlayerCountsSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_DisposPlayerCountsSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.DisposPlayerCountsSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_DisposPlayerCountsSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_DisposPlayerCountsSequence_Label{pub fn loading()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
 }
 
 
-impl ::unity2::ClassIdentity for Relay_ChooseAwardeeData {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_DisposPlayerCountsSequence.md"))]#[::unity2::class(namespace="App",name="Relay.DisposPlayerCountsSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct Relay_DisposPlayerCountsSequence{#[offset(112)]#[rename(name="m_Index")]pub m_index:i32, #[offset(120)]#[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString,}
 
-    const NAME: &'static str = "Relay.ChooseAwardeeData";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay.md"))]#[::unity2::class(namespace="App",name="Relay")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::relay::Relay>)]pub struct Relay{#[offset(32)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(40)]#[rename(name="m_Data")]pub m_data:crate::app::relayserverdata::RelayServerData, #[offset(48)]#[rename(name="m_SelectedMetaData")]pub m_selected_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(56)]#[rename(name="m_BackupDataForReplay")]pub m_backup_data_for_replay:crate::app::relaybackupdata::RelayBackupData, #[offset(64)]#[rename(name="m_BackupDataForAll")]pub m_backup_data_for_all:crate::app::relaybackupdata::RelayBackupData, #[offset(72)]#[rename(name="m_CopiedUserData")]pub m_copied_user_data:crate::app::relayuserdata::RelayUserData, #[offset(80)]#[rename(name="m_Mode")]pub m_mode:crate::app::relay::Relay_Modes, #[offset(88)]#[rename(name="m_Flag")]pub m_flag:crate::app::relay::Relay_FlagsField, #[offset(96)]#[rename(name="m_DisposPlayerCounts")]pub m_dispos_player_counts:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> , #[offset(104)]#[rename(name="m_Sortie")]pub m_sortie:crate::app::relaysortie::RelaySortie, #[offset(112)]#[rename(name="m_AppearanceUnits")]pub m_appearance_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(120)]#[rename(name="m_LeavingUnits")]pub m_leaving_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(128)]#[rename(name="m_MaxTurn")]pub m_max_turn:i32, #[offset(132)]#[rename(name="m_LimitTurn")]pub m_limit_turn:i32, #[offset(136)]#[rename(name="m_CurrentPlayerIndex")]pub m_current_player_index:i32, #[offset(144)]#[rename(name="m_CurrentBattle")]pub m_current_battle:crate::app::relayuserdata::RelayUserData_EnteredBattle, #[offset(152)]#[rename(name="m_ReplayPlayerIndex")]pub m_replay_player_index:i32, #[offset(160)]#[rename(name="m_PlayingTermHolder")]pub m_playing_term_holder:crate::app::gameparam::GameParam_Holder, #[offset(168)]#[rename(name="m_PoolUnits")]pub m_pool_units:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(176)]#[rename(name="m_PoolGods")]pub m_pool_gods:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
 
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_TrfrResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_TrfrResult{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_TrfrResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.TrfrResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_TrfrResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_TrfrResult{pub fn no_changed()->Self{Self{value:0}
+}
+pub fn done()->Self{Self{value:1}
+}
+pub fn failed()->Self{Self{value:2}
+}
 }
 
 
-impl ::unity2::IlType for Relay_ChooseAwardeeData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_CstoResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_CstoResult{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_CstoResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.CstoResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_TakeOverModes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Relay_TakeOverModes  {
-    pub value: i32,
+impl::unity2::IlType for Relay_CstoResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for Relay_TakeOverModes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Relay.TakeOverModes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl Relay_CstoResult{pub fn ok()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for Relay_TakeOverModes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn ng_end()->Self{Self{value:1}
 }
-
-
-impl  Relay_TakeOverModes  {
-    pub fn random() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn data_code() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn ng_other_playing()->Self{Self{value:2}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Relay_Flags  {
-    pub value: i32,
+pub fn ng_already_played()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::ClassIdentity for Relay_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Relay.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn ng_lack_of_unit()->Self{Self{value:4}
 }
-
-
-impl  ::unity2::IlType for Relay_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn ng_unknown()->Self{Self{value:5}
 }
-
-
-impl  Relay_Flags  {
-    pub fn need_to_upload() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn uploaded() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn global_saved() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn show_win_rule() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_DisposPlayerCountsSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Relay_DisposPlayerCountsSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Relay_DisposPlayerCountsSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Relay.DisposPlayerCountsSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Relay_DisposPlayerCountsSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Relay_DisposPlayerCountsSequence_Label  {
-    pub fn loading() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_FlagsField.md"))] # [:: unity2 :: class (namespace = "App" , name = "Relay.FlagsField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relay :: Relay_Flags >)] pub struct Relay_FlagsField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_CstoResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Relay_CstoResult  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Relay_CstoResult  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Relay.CstoResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Relay_CstoResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Relay_CstoResult  {
-    pub fn ok() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn ng_end() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn ng_other_playing() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn ng_already_played() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn ng_lack_of_unit() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn ng_unknown() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay.md"))] # [:: unity2 :: class (namespace = "App" , name = "Relay")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: relay :: Relay >)] pub struct Relay {
-# [offset (32)] # [rename (name = "m_MetaData")] pub m_meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData ,
-# [offset (40)] # [rename (name = "m_Data")] pub m_data : crate :: app :: relayserverdata :: RelayServerData ,
-# [offset (48)] # [rename (name = "m_SelectedMetaData")] pub m_selected_meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData ,
-# [offset (56)] # [rename (name = "m_BackupDataForReplay")] pub m_backup_data_for_replay : crate :: app :: relaybackupdata :: RelayBackupData ,
-# [offset (64)] # [rename (name = "m_BackupDataForAll")] pub m_backup_data_for_all : crate :: app :: relaybackupdata :: RelayBackupData ,
-# [offset (72)] # [rename (name = "m_CopiedUserData")] pub m_copied_user_data : crate :: app :: relayuserdata :: RelayUserData ,
-# [offset (80)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: relay :: Relay_Modes ,
-# [offset (88)] # [rename (name = "m_Flag")] pub m_flag : crate :: app :: relay :: Relay_FlagsField ,
-# [offset (96)] # [rename (name = "m_DisposPlayerCounts")] pub m_dispos_player_counts : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 > ,
-# [offset (104)] # [rename (name = "m_Sortie")] pub m_sortie : crate :: app :: relaysortie :: RelaySortie ,
-# [offset (112)] # [rename (name = "m_AppearanceUnits")] pub m_appearance_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (120)] # [rename (name = "m_LeavingUnits")] pub m_leaving_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (128)] # [rename (name = "m_MaxTurn")] pub m_max_turn : i32 ,
-# [offset (132)] # [rename (name = "m_LimitTurn")] pub m_limit_turn : i32 ,
-# [offset (136)] # [rename (name = "m_CurrentPlayerIndex")] pub m_current_player_index : i32 ,
-# [offset (144)] # [rename (name = "m_CurrentBattle")] pub m_current_battle : crate :: app :: relayuserdata :: RelayUserData_EnteredBattle ,
-# [offset (152)] # [rename (name = "m_ReplayPlayerIndex")] pub m_replay_player_index : i32 ,
-# [offset (160)] # [rename (name = "m_PlayingTermHolder")] pub m_playing_term_holder : crate :: app :: gameparam :: GameParam_Holder ,
-# [offset (168)] # [rename (name = "m_PoolUnits")] pub m_pool_units : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (176)] # [rename (name = "m_PoolGods")] pub m_pool_gods : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relay/Relay_Modes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Relay_Modes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Relay_Modes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Relay.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Relay_Modes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Relay_Modes  {
-    pub fn new() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn take_over() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn replay() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relay/Relay_DisposPlayerCountsSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "Relay.DisposPlayerCountsSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct Relay_DisposPlayerCountsSequence {
-# [offset (112)] # [rename (name = "m_Index")] pub m_index : i32 ,
-# [offset (120)] # [rename (name = "m_Cid")] pub m_cid : :: unity2 :: Il2CppString ,
 }
 
 }
@@ -438,79 +159,502 @@ impl  Relay_Modes  {
 #[cfg(feature = "app-relay-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relay")]
-impl Relay_ChooseAwardeeData { # [doc = "`CompareAndSwap(crate::app::unit::Unit, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"] pub fn compare_and_swap (& mut self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , count : impl :: core :: convert :: Into < i32 > , op : impl :: core :: convert :: Into < crate :: app :: relayawarddata :: RelayAwardData_CompareOp >) -> () { unsafe { { let __inner : extern "C" fn (* mut Relay_ChooseAwardeeData , crate :: app :: unit :: Unit , i32 , crate :: app :: relayawarddata :: RelayAwardData_CompareOp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b03c60usize) as * mut u8) ; __inner (self as * mut Relay_ChooseAwardeeData , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`CompareAndSwap(crate::app::relayleavingunitdata::RelayLeavingUnitData, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"] pub fn compare_and_swap_2 (& mut self , leaving_unit_data : impl :: core :: convert :: Into < crate :: app :: relayleavingunitdata :: RelayLeavingUnitData > , count : impl :: core :: convert :: Into < i32 > , op : impl :: core :: convert :: Into < crate :: app :: relayawarddata :: RelayAwardData_CompareOp >) -> () { unsafe { { let __inner : extern "C" fn (* mut Relay_ChooseAwardeeData , crate :: app :: relayleavingunitdata :: RelayLeavingUnitData , i32 , crate :: app :: relayawarddata :: RelayAwardData_CompareOp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04020usize) as * mut u8) ; __inner (self as * mut Relay_ChooseAwardeeData , :: core :: convert :: Into :: into (leaving_unit_data) , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`Compare(i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"] pub fn compare (& mut self , count : impl :: core :: convert :: Into < i32 > , op : impl :: core :: convert :: Into < crate :: app :: relayawarddata :: RelayAwardData_CompareOp >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Relay_ChooseAwardeeData , i32 , crate :: app :: relayawarddata :: RelayAwardData_CompareOp , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b03f60usize) as * mut u8) ; __inner (self as * mut Relay_ChooseAwardeeData , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`CompareGreater(i32)` overload"] pub fn compare_greater (& mut self , count : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Relay_ChooseAwardeeData , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b040a0usize) as * mut u8) ; __inner (self as * mut Relay_ChooseAwardeeData , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`CompareLess(i32)` overload"] pub fn compare_less (& mut self , count : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Relay_ChooseAwardeeData , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04100usize) as * mut u8) ; __inner (self as * mut Relay_ChooseAwardeeData , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`CompareZero(i32)` overload"] pub fn compare_zero (& mut self , count : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Relay_ChooseAwardeeData , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04160usize) as * mut u8) ; __inner (self as * mut Relay_ChooseAwardeeData , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`IsRandom()` overload"] pub fn is_random (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut Relay_ChooseAwardeeData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b041d0usize) as * mut u8) ; __inner (self as * mut Relay_ChooseAwardeeData , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] pub fn is_valid (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut Relay_ChooseAwardeeData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b041b0usize) as * mut u8) ; __inner (self as * mut Relay_ChooseAwardeeData , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-relay")]
-impl Relay_ChooseAwardeeData { pub fn compare_and_swap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_ChooseAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn compare_and_swap_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_ChooseAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_ChooseAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn compare_greater_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_ChooseAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn compare_less_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_ChooseAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn compare_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_ChooseAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_ChooseAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_ChooseAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-relay")]
-pub trait IRelay_FlagsFieldMethods : IRelay_FlagsField { # [doc = "`ToInt(crate::app::relay::Relay_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: relay :: Relay_Flags >) -> i32 { unsafe { let __receiver = < Relay_FlagsField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay_FlagsField , crate :: app :: relay :: Relay_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Relay_FlagsField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay_FlagsField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-relay")]
-impl < __T : IRelay_FlagsField > IRelay_FlagsFieldMethods for __T { }
-
-#[cfg(feature = "app-relay")]
-impl Relay_FlagsField { pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_FlagsField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_FlagsField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-relay")]
-impl Relay_FlagsField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Relay_FlagsField) , :: core :: stringify ! (new) ,)) ; < Self as IRelay_FlagsFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relay")]pub trait IRelay_FlagsFieldMethods:IRelay_FlagsField{#[doc="`ToInt(crate::app::relay::Relay_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::relay::Relay_Flags>)->i32{unsafe{let __receiver= <Relay_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04940usize)as*mut u8,i32;
+(Relay_FlagsField)__receiver,(crate::app::relay::Relay_Flags)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Relay_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04950usize)as*mut u8,();
+(Relay_FlagsField)__receiver)}
+}
 }
 
-#[cfg(feature = "app-relay")]
-impl Relay { # [doc = "`IsValid()` overload"] pub fn is_valid () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c8830usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsMyUnit(crate::app::unit::Unit)` overload"] pub fn is_my_unit (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc2d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsOthersUnit(crate::app::unit::Unit)` overload"] pub fn is_others_unit (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsNoCountUnit(crate::app::unit::Unit)` overload"] pub fn is_no_count_unit (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc3b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetNickname()` overload"] pub fn get_nickname () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbdd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ConvertToKinds(crate::app::persondata::PersonData_Country)` overload"] pub fn convert_to_kinds (country : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Country >) -> crate :: app :: relaystampdata :: RelayStampData_Kinds { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData_Country , :: unity2 :: OptionalMethod ,) -> crate :: app :: relaystampdata :: RelayStampData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc5a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (country) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaxTurnFromRelayData(::unity2::Il2CppString)` overload"] pub fn get_max_turn_from_relay_data (cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c9370usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`GetPlayTurnFromRelayData(::unity2::Il2CppString, bool)` overload"] pub fn get_play_turn_from_relay_data (cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_new : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c9420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (is_new) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relay")]impl<__T:IRelay_FlagsField>IRelay_FlagsFieldMethods for __T{}
 
-#[cfg(feature = "app-relay")]
-pub trait IRelayMethods : IRelay { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c88b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisposPlayerCounts(crate::app::procinst::ProcInst)` overload"] fn dispos_player_counts (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c8d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CanSelectNew(::unity2::Il2CppString)` overload"] fn can_select_new (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c8df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`CanSelectTakeOver(crate::app::relayservermetadata::RelayServerMetaData, u64, i64, *mutcrate::app::relay::Relay_CstoResult)` overload"] fn can_select_take_over (self , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , principal_id : impl :: core :: convert :: Into < u64 > , current_unix_time : impl :: core :: convert :: Into < i64 >) -> (bool , crate :: app :: relay :: Relay_CstoResult) { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: relay :: Relay_CstoResult > :: uninit () ; let __ret = { { let __inner : extern "C" fn (Relay , crate :: app :: relayservermetadata :: RelayServerMetaData , u64 , i64 , * mut crate :: app :: relay :: Relay_CstoResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c8ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (principal_id) , :: core :: convert :: Into :: into (current_unix_time) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`InitializeForNew(::unity2::Il2CppString)` overload"] fn initialize_for_new (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c90b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`InitializeForTakeOver(crate::app::relayservermetadata::RelayServerMetaData)` overload"] fn initialize_for_take_over (self , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , crate :: app :: relayservermetadata :: RelayServerMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c9920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`InitializeForReplay(crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"] fn initialize_for_replay (self , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , reinit_meta : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , crate :: app :: relayservermetadata :: RelayServerMetaData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c9b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (reinit_meta) , :: core :: option :: Option :: None) } } } # [doc = "`TryReinitializeForReplay(crate::app::relayservermetadata::RelayServerMetaData)` overload"] fn try_reinitialize_for_replay (self , new_meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData >) -> crate :: app :: relay :: Relay_TrfrResult { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , crate :: app :: relayservermetadata :: RelayServerMetaData , :: unity2 :: OptionalMethod ,) -> crate :: app :: relay :: Relay_TrfrResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c9d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (new_meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetPlayingDone()` overload"] fn set_playing_done (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c9d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteGodLink()` overload"] fn delete_god_link (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c9df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitializeForSortie()` overload"] fn initialize_for_sortie (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ca0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupForSortie()` overload"] fn setup_for_sortie (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ca150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSortieCount(*muti32, *muti32)` overload"] fn get_sortie_count (self ,) -> (i32 , i32) { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (Relay , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ca160usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetSortieCount(crate::app::relay::Relay_Modes, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, *muti32, *muti32, *muti32, *muti32)` overload"] fn get_sortie_count_2 (self , mode : impl :: core :: convert :: Into < crate :: app :: relay :: Relay_Modes > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pids : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > >) -> (i32 , i32 , i32 , i32) { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (Relay , crate :: app :: relay :: Relay_Modes , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , * mut i32 , * mut i32 , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c8fd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (pids) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init ()) } } # [doc = "`GetSortieCountFromData(crate::app::relay::Relay_Modes, ::unity2::Il2CppString, *muti32, *muti32)` overload"] fn get_sortie_count_from_data (self , mode : impl :: core :: convert :: Into < crate :: app :: relay :: Relay_Modes > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (i32 , i32) { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (Relay , crate :: app :: relay :: Relay_Modes , :: unity2 :: Il2CppString , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ca1b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (cid) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetPlayerUnitCount(crate::app::relay::Relay_Modes, crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, *muti32, *muti32)` overload"] fn get_player_unit_count (self , mode : impl :: core :: convert :: Into < crate :: app :: relay :: Relay_Modes > , pids : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > >) -> (i32 , i32) { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (Relay , crate :: app :: relay :: Relay_Modes , crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ca2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (pids) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`DecideToBattle()` overload"] fn decide_to_battle (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ca3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MapBegin()` overload"] fn map_begin (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cae90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MapEnd()` overload"] fn map_end (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cafe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Complete()` overload"] fn complete (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cb320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GameOver()` overload"] fn game_over (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddEnteredBattle(crate::app::relayuserdata::RelayUserData_EnteredBattle)` overload"] fn add_entered_battle (self , new_battle : impl :: core :: convert :: Into < crate :: app :: relayuserdata :: RelayUserData_EnteredBattle >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , crate :: app :: relayuserdata :: RelayUserData_EnteredBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbcc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (new_battle) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnteredBattle(u64)` overload"] fn get_entered_battle (self , data_id : impl :: core :: convert :: Into < u64 >) -> crate :: app :: relayuserdata :: RelayUserData_EnteredBattle { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , u64 , :: unity2 :: OptionalMethod ,) -> crate :: app :: relayuserdata :: RelayUserData_EnteredBattle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbcd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data_id) , :: core :: option :: Option :: None) } } } # [doc = "`ClearCurrentBattle()` overload"] fn clear_current_battle (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPlayerName(i32)` overload"] fn get_player_name (self , player_index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbcf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (player_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetLastPlayerName()` overload"] fn get_last_player_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbe50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetReplayPlayerName()` overload"] fn get_replay_player_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NextReplayPlayer()` overload"] fn next_replay_player (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetReplayPlayerForSkip(i32)` overload"] fn set_replay_player_for_skip (self , player_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbf30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (player_index) , :: core :: option :: Option :: None) } } } # [doc = "`DbgFakeAwardee()` overload"] fn dbg_fake_awardee (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cbfb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MetaData()` overload"] fn get_meta_data (self ,) -> crate :: app :: relayservermetadata :: RelayServerMetaData { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: app :: relayservermetadata :: RelayServerMetaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: app :: relayserverdata :: RelayServerData { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: app :: relayserverdata :: RelayServerData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectedMetaData()` overload"] fn get_selected_meta_data (self ,) -> crate :: app :: relayservermetadata :: RelayServerMetaData { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: app :: relayservermetadata :: RelayServerMetaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_BackupDataForReplay()` overload"] fn get_backup_data_for_replay (self ,) -> crate :: app :: relaybackupdata :: RelayBackupData { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: app :: relaybackupdata :: RelayBackupData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_BackupDataForAll()` overload"] fn get_backup_data_for_all (self ,) -> crate :: app :: relaybackupdata :: RelayBackupData { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: app :: relaybackupdata :: RelayBackupData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: relay :: Relay_FlagsField { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: app :: relay :: Relay_FlagsField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsNew()` overload"] fn get_is_new (self ,) -> bool { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsTakeOver()` overload"] fn get_is_take_over (self ,) -> bool { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsReplay()` overload"] fn get_is_replay (self ,) -> bool { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MaxTurn()` overload"] fn get_max_turn (self ,) -> i32 { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_LimitTurn()` overload"] fn get_limit_turn (self ,) -> i32 { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Sortie()` overload"] fn get_sortie (self ,) -> crate :: app :: relaysortie :: RelaySortie { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: app :: relaysortie :: RelaySortie = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_AppearanceUnits()` overload"] fn get_appearance_units (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_LeavingUnits()` overload"] fn get_leaving_units (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentPlayerIndex()` overload"] fn get_current_player_index (self ,) -> i32 { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CurrentPlayerIndex(i32)` overload"] fn set_current_player_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentBattle()` overload"] fn get_current_battle (self ,) -> crate :: app :: relayuserdata :: RelayUserData_EnteredBattle { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: app :: relayuserdata :: RelayUserData_EnteredBattle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PoolUnits()` overload"] fn get_pool_units (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PoolGods()` overload"] fn get_pool_gods (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteUnneededUnits()` overload"] fn delete_unneeded_units (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ca7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteUnneededGodUnitsAndBonds()` overload"] fn delete_unneeded_god_units_and_bonds (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ca950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteUnneededRings()` overload"] fn delete_unneeded_rings (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cac70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChooseAwardee()` overload"] fn choose_awardee (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cb380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c9250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveTempPoolUnit()` overload"] fn save_temp_pool_unit (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c94e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgLogBegin()` overload"] fn dbg_log_begin (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgLogEnd()` overload"] fn dbg_log_end (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccb70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgLogAppendLine(::unity2::Il2CppString)` overload"] fn dbg_log_append_line (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccb90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`DbgLogBeginImpl()` overload"] fn dbg_log_begin_impl (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgLogEndImpl()` overload"] fn dbg_log_end_impl (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgLogAppendLineImpl(::unity2::Il2CppString)` overload"] fn dbg_log_append_line_impl (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Relay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-relay")]
-impl < __T : IRelay > IRelayMethods for __T { }
-
-#[cfg(feature = "app-relay")]
-impl Relay { pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispos_player_counts_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn can_select_new_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn can_select_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn initialize_for_new_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn initialize_for_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn initialize_for_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn try_reinitialize_for_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_playing_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn delete_god_link_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn initialize_for_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn setup_for_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_sortie_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_sortie_count_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_sortie_count_from_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_player_unit_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn decide_to_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn map_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn map_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn game_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn add_entered_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_entered_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn clear_current_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_player_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_last_player_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_replay_player_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn next_replay_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_replay_player_for_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn dbg_fake_awardee_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn is_my_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn is_others_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn is_no_count_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_nickname_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_selected_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_backup_data_for_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_backup_data_for_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn get_is_new_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_is_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_is_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_max_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_limit_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn get_appearance_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_leaving_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn get_current_player_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn set_current_player_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn get_current_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn get_pool_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn get_pool_gods_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn convert_to_kinds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn delete_unneeded_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn delete_unneeded_god_units_and_bonds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn delete_unneeded_rings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn choose_awardee_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn save_temp_pool_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn get_max_turn_from_relay_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn get_play_turn_from_relay_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn dbg_log_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn dbg_log_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn dbg_log_append_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn dbg_log_begin_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn dbg_log_end_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn dbg_log_append_line_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } }
-
-#[cfg(feature = "app-relay")]
-impl Relay {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Relay) , :: core :: stringify ! (new) ,)) ; < Self as IRelayMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relay")]impl Relay_FlagsField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-relay")]
-impl Relay_DisposPlayerCountsSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04610usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relay")]impl Relay_FlagsField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Relay_FlagsField), ::core::stringify!(new),));
+ <Self as IRelay_FlagsFieldMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-relay")]
-pub trait IRelay_DisposPlayerCountsSequenceMethods : IRelay_DisposPlayerCountsSequence { # [doc = "`LoadFirst()` overload"] fn load_first (self ,) -> () { unsafe { let __receiver = < Relay_DisposPlayerCountsSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay_DisposPlayerCountsSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadDone()` overload"] fn load_done (self ,) -> () { unsafe { let __receiver = < Relay_DisposPlayerCountsSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay_DisposPlayerCountsSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetChapter()` overload"] fn get_chapter (self ,) -> crate :: app :: chapterdata :: ChapterData { unsafe { let __receiver = < Relay_DisposPlayerCountsSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay_DisposPlayerCountsSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterdata :: ChapterData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Load()` overload"] fn load (self ,) -> bool { unsafe { let __receiver = < Relay_DisposPlayerCountsSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay_DisposPlayerCountsSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b042c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Relay_DisposPlayerCountsSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Relay_DisposPlayerCountsSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b04930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relay")]impl Relay_ChooseAwardeeData{#[doc="`CompareAndSwap(crate::app::unit::Unit, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare_and_swap(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b03c60usize)as*mut u8,();
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
+}
+#[doc="`CompareAndSwap(crate::app::relayleavingunitdata::RelayLeavingUnitData, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare_and_swap_2(&mut self,leaving_unit_data:impl::core::convert::Into<crate::app::relayleavingunitdata::RelayLeavingUnitData> ,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04020usize)as*mut u8,();
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(crate::app::relayleavingunitdata::RelayLeavingUnitData)::core::convert::Into::into(leaving_unit_data),(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
+}
+#[doc="`Compare(i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare(&mut self,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b03f60usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
+}
+#[doc="`CompareGreater(i32)` overload"]pub fn compare_greater(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b040a0usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`CompareLess(i32)` overload"]pub fn compare_less(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04100usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`CompareZero(i32)` overload"]pub fn compare_zero(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04160usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`IsRandom()` overload"]pub fn is_random(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b041d0usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData)}
+}
+#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b041b0usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData)}
+}
+}
 
-#[cfg(feature = "app-relay")]
-impl < __T : IRelay_DisposPlayerCountsSequence > IRelay_DisposPlayerCountsSequenceMethods for __T { }
+#[cfg(feature="app-relay")]impl Relay_ChooseAwardeeData{pub fn compare_and_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn compare_and_swap_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn compare_greater_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn compare_less_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn compare_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-relay")]
-impl Relay_DisposPlayerCountsSequence { pub fn load_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_DisposPlayerCountsSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_DisposPlayerCountsSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_DisposPlayerCountsSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_DisposPlayerCountsSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_DisposPlayerCountsSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Relay_DisposPlayerCountsSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04610usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-relay")]
-impl Relay_DisposPlayerCountsSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Relay_DisposPlayerCountsSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRelay_DisposPlayerCountsSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relay")]pub trait IRelay_DisposPlayerCountsSequenceMethods:IRelay_DisposPlayerCountsSequence{#[doc="`LoadFirst()` overload"]fn load_first(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04200usize)as*mut u8,();
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+#[doc="`LoadDone()` overload"]fn load_done(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04310usize)as*mut u8,();
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+#[doc="`GetChapter()` overload"]fn get_chapter(self,)->crate::app::chapterdata::ChapterData{unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04500usize)as*mut u8,crate::app::chapterdata::ChapterData;
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+#[doc="`Load()` overload"]fn load(self,)->bool{unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b042c0usize)as*mut u8,bool;
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04930usize)as*mut u8,();
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-relay")]impl<__T:IRelay_DisposPlayerCountsSequence>IRelay_DisposPlayerCountsSequenceMethods for __T{}
+
+#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{pub fn load_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Relay_DisposPlayerCountsSequence), ::core::stringify!(new),));
+ <Self as IRelay_DisposPlayerCountsSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-relay")]impl Relay{#[doc="`IsValid()` overload"]pub fn is_valid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c8830usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsMyUnit(crate::app::unit::Unit)` overload"]pub fn is_my_unit(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cc2d0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsOthersUnit(crate::app::unit::Unit)` overload"]pub fn is_others_unit(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cc340usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsNoCountUnit(crate::app::unit::Unit)` overload"]pub fn is_no_count_unit(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cc3b0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetNickname()` overload"]pub fn get_nickname()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cbdd0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`ConvertToKinds(crate::app::persondata::PersonData_Country)` overload"]pub fn convert_to_kinds(country:impl::core::convert::Into<crate::app::persondata::PersonData_Country>)->crate::app::relaystampdata::RelayStampData_Kinds{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cc5a0usize)as*mut u8,crate::app::relaystampdata::RelayStampData_Kinds;
+(crate::app::persondata::PersonData_Country)::core::convert::Into::into(country))}
+}
+#[doc="`GetMaxTurnFromRelayData(::unity2::Il2CppString)` overload"]pub fn get_max_turn_from_relay_data(cid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c9370usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`GetPlayTurnFromRelayData(::unity2::Il2CppString, bool)` overload"]pub fn get_play_turn_from_relay_data(cid:impl::core::convert::Into< ::unity2::Il2CppString> ,is_new:impl::core::convert::Into<bool>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c9420usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(cid),(bool)::core::convert::Into::into(is_new))}
+}
+}
+
+#[cfg(feature="app-relay")]pub trait IRelayMethods:IRelay{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c88b0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DisposPlayerCounts(crate::app::procinst::ProcInst)` overload"]fn dispos_player_counts(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c8d70usize)as*mut u8,();
+(Relay)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CanSelectNew(::unity2::Il2CppString)` overload"]fn can_select_new(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c8df0usize)as*mut u8,bool;
+(Relay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`CanSelectTakeOver(crate::app::relayservermetadata::RelayServerMetaData, u64, i64, *mutcrate::app::relay::Relay_CstoResult)` overload"]fn can_select_take_over(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,principal_id:impl::core::convert::Into<u64> ,current_unix_time:impl::core::convert::Into<i64>)->(bool,crate::app::relay::Relay_CstoResult){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::relay::Relay_CstoResult> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x22c8ea0usize)as*mut u8,bool;
+(Relay)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(u64)::core::convert::Into::into(principal_id),(i64)::core::convert::Into::into(current_unix_time),(*mut crate::app::relay::Relay_CstoResult)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`InitializeForNew(::unity2::Il2CppString)` overload"]fn initialize_for_new(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c90b0usize)as*mut u8,();
+(Relay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`InitializeForTakeOver(crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn initialize_for_take_over(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c9920usize)as*mut u8,();
+(Relay)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`InitializeForReplay(crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]fn initialize_for_replay(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,reinit_meta:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c9b20usize)as*mut u8,();
+(Relay)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(reinit_meta))}
+}
+#[doc="`TryReinitializeForReplay(crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn try_reinitialize_for_replay(self,new_meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->crate::app::relay::Relay_TrfrResult{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c9d10usize)as*mut u8,crate::app::relay::Relay_TrfrResult;
+(Relay)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(new_meta_data))}
+}
+#[doc="`SetPlayingDone()` overload"]fn set_playing_done(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c9d90usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DeleteGodLink()` overload"]fn delete_god_link(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c9df0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`InitializeForSortie()` overload"]fn initialize_for_sortie(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ca0d0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`SetupForSortie()` overload"]fn setup_for_sortie(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ca150usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`GetSortieCount(*muti32, *muti32)` overload"]fn get_sortie_count(self,)->(i32,i32){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ca160usize)as*mut u8,();
+(Relay)__receiver,(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetSortieCount(crate::app::relay::Relay_Modes, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, *muti32, *muti32, *muti32, *muti32)` overload"]fn get_sortie_count_2(self,mode:impl::core::convert::Into<crate::app::relay::Relay_Modes> ,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,pids:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> >)->(i32,i32,i32,i32){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c8fd0usize)as*mut u8,();
+(Relay)__receiver,(crate::app::relay::Relay_Modes)::core::convert::Into::into(mode),(::unity2::Il2CppString)::core::convert::Into::into(cid),(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)::core::convert::Into::into(pids),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr(),(*mut i32)__out_2.as_mut_ptr(),(*mut i32)__out_3.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
+}
+#[doc="`GetSortieCountFromData(crate::app::relay::Relay_Modes, ::unity2::Il2CppString, *muti32, *muti32)` overload"]fn get_sortie_count_from_data(self,mode:impl::core::convert::Into<crate::app::relay::Relay_Modes> ,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(i32,i32){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ca1b0usize)as*mut u8,();
+(Relay)__receiver,(crate::app::relay::Relay_Modes)::core::convert::Into::into(mode),(::unity2::Il2CppString)::core::convert::Into::into(cid),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetPlayerUnitCount(crate::app::relay::Relay_Modes, crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, *muti32, *muti32)` overload"]fn get_player_unit_count(self,mode:impl::core::convert::Into<crate::app::relay::Relay_Modes> ,pids:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> >)->(i32,i32){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ca2e0usize)as*mut u8,();
+(Relay)__receiver,(crate::app::relay::Relay_Modes)::core::convert::Into::into(mode),(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)::core::convert::Into::into(pids),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`DecideToBattle()` overload"]fn decide_to_battle(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ca3f0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`MapBegin()` overload"]fn map_begin(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cae90usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`MapEnd()` overload"]fn map_end(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cafe0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`Complete()` overload"]fn complete(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cb320usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`GameOver()` overload"]fn game_over(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbc70usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`AddEnteredBattle(crate::app::relayuserdata::RelayUserData_EnteredBattle)` overload"]fn add_entered_battle(self,new_battle:impl::core::convert::Into<crate::app::relayuserdata::RelayUserData_EnteredBattle>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbcc0usize)as*mut u8,();
+(Relay)__receiver,(crate::app::relayuserdata::RelayUserData_EnteredBattle)::core::convert::Into::into(new_battle))}
+}
+#[doc="`GetEnteredBattle(u64)` overload"]fn get_entered_battle(self,data_id:impl::core::convert::Into<u64>)->crate::app::relayuserdata::RelayUserData_EnteredBattle{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbcd0usize)as*mut u8,crate::app::relayuserdata::RelayUserData_EnteredBattle;
+(Relay)__receiver,(u64)::core::convert::Into::into(data_id))}
+}
+#[doc="`ClearCurrentBattle()` overload"]fn clear_current_battle(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbce0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`GetPlayerName(i32)` overload"]fn get_player_name(self,player_index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbcf0usize)as*mut u8, ::unity2::Il2CppString;
+(Relay)__receiver,(i32)::core::convert::Into::into(player_index))}
+}
+#[doc="`GetLastPlayerName()` overload"]fn get_last_player_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbe50usize)as*mut u8, ::unity2::Il2CppString;
+(Relay)__receiver)}
+}
+#[doc="`GetReplayPlayerName()` overload"]fn get_replay_player_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbea0usize)as*mut u8, ::unity2::Il2CppString;
+(Relay)__receiver)}
+}
+#[doc="`NextReplayPlayer()` overload"]fn next_replay_player(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbeb0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`SetReplayPlayerForSkip(i32)` overload"]fn set_replay_player_for_skip(self,player_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbf30usize)as*mut u8,();
+(Relay)__receiver,(i32)::core::convert::Into::into(player_index))}
+}
+#[doc="`DbgFakeAwardee()` overload"]fn dbg_fake_awardee(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cbfb0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`get_MetaData()` overload"]fn get_meta_data(self,)->crate::app::relayservermetadata::RelayServerMetaData{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc470usize)as*mut u8,crate::app::relayservermetadata::RelayServerMetaData;
+(Relay)__receiver)}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::relayserverdata::RelayServerData{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc480usize)as*mut u8,crate::app::relayserverdata::RelayServerData;
+(Relay)__receiver)}
+}
+#[doc="`get_SelectedMetaData()` overload"]fn get_selected_meta_data(self,)->crate::app::relayservermetadata::RelayServerMetaData{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc490usize)as*mut u8,crate::app::relayservermetadata::RelayServerMetaData;
+(Relay)__receiver)}
+}
+#[doc="`get_BackupDataForReplay()` overload"]fn get_backup_data_for_replay(self,)->crate::app::relaybackupdata::RelayBackupData{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc4a0usize)as*mut u8,crate::app::relaybackupdata::RelayBackupData;
+(Relay)__receiver)}
+}
+#[doc="`get_BackupDataForAll()` overload"]fn get_backup_data_for_all(self,)->crate::app::relaybackupdata::RelayBackupData{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc4b0usize)as*mut u8,crate::app::relaybackupdata::RelayBackupData;
+(Relay)__receiver)}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::relay::Relay_FlagsField{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc4c0usize)as*mut u8,crate::app::relay::Relay_FlagsField;
+(Relay)__receiver)}
+}
+#[doc="`get_IsNew()` overload"]fn get_is_new(self,)->bool{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc4d0usize)as*mut u8,bool;
+(Relay)__receiver)}
+}
+#[doc="`get_IsTakeOver()` overload"]fn get_is_take_over(self,)->bool{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc4e0usize)as*mut u8,bool;
+(Relay)__receiver)}
+}
+#[doc="`get_IsReplay()` overload"]fn get_is_replay(self,)->bool{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc4f0usize)as*mut u8,bool;
+(Relay)__receiver)}
+}
+#[doc="`get_MaxTurn()` overload"]fn get_max_turn(self,)->i32{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc500usize)as*mut u8,i32;
+(Relay)__receiver)}
+}
+#[doc="`get_LimitTurn()` overload"]fn get_limit_turn(self,)->i32{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc510usize)as*mut u8,i32;
+(Relay)__receiver)}
+}
+#[doc="`get_Sortie()` overload"]fn get_sortie(self,)->crate::app::relaysortie::RelaySortie{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc520usize)as*mut u8,crate::app::relaysortie::RelaySortie;
+(Relay)__receiver)}
+}
+#[doc="`get_AppearanceUnits()` overload"]fn get_appearance_units(self,)->crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc530usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ;
+(Relay)__receiver)}
+}
+#[doc="`get_LeavingUnits()` overload"]fn get_leaving_units(self,)->crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc540usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ;
+(Relay)__receiver)}
+}
+#[doc="`get_CurrentPlayerIndex()` overload"]fn get_current_player_index(self,)->i32{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc550usize)as*mut u8,i32;
+(Relay)__receiver)}
+}
+#[doc="`set_CurrentPlayerIndex(i32)` overload"]fn set_current_player_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc560usize)as*mut u8,();
+(Relay)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_CurrentBattle()` overload"]fn get_current_battle(self,)->crate::app::relayuserdata::RelayUserData_EnteredBattle{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc570usize)as*mut u8,crate::app::relayuserdata::RelayUserData_EnteredBattle;
+(Relay)__receiver)}
+}
+#[doc="`get_PoolUnits()` overload"]fn get_pool_units(self,)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc580usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+(Relay)__receiver)}
+}
+#[doc="`get_PoolGods()` overload"]fn get_pool_gods(self,)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc590usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+(Relay)__receiver)}
+}
+#[doc="`DeleteUnneededUnits()` overload"]fn delete_unneeded_units(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ca7e0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DeleteUnneededGodUnitsAndBonds()` overload"]fn delete_unneeded_god_units_and_bonds(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ca950usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DeleteUnneededRings()` overload"]fn delete_unneeded_rings(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cac70usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`ChooseAwardee()` overload"]fn choose_awardee(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cb380usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c9250usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`SaveTempPoolUnit()` overload"]fn save_temp_pool_unit(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c94e0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DbgLogBegin()` overload"]fn dbg_log_begin(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccb50usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DbgLogEnd()` overload"]fn dbg_log_end(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccb70usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DbgLogAppendLine(::unity2::Il2CppString)` overload"]fn dbg_log_append_line(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccb90usize)as*mut u8,();
+(Relay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`DbgLogBeginImpl()` overload"]fn dbg_log_begin_impl(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccb60usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DbgLogEndImpl()` overload"]fn dbg_log_end_impl(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccb80usize)as*mut u8,();
+(Relay)__receiver)}
+}
+#[doc="`DbgLogAppendLineImpl(::unity2::Il2CppString)` overload"]fn dbg_log_append_line_impl(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccba0usize)as*mut u8,();
+(Relay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Relay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccbb0usize)as*mut u8,();
+(Relay)__receiver)}
+}
+}
+
+#[cfg(feature="app-relay")]impl<__T:IRelay>IRelayMethods for __T{}
+
+#[cfg(feature="app-relay")]impl Relay{pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispos_player_counts_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn can_select_new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn can_select_take_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn initialize_for_new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn initialize_for_take_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn initialize_for_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn try_reinitialize_for_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_playing_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn delete_god_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn initialize_for_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn setup_for_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_sortie_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_sortie_count_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_sortie_count_from_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_player_unit_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn decide_to_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn map_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn map_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn game_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn add_entered_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_entered_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn clear_current_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_player_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_last_player_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_replay_player_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn next_replay_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_replay_player_for_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn dbg_fake_awardee_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn is_my_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn is_others_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn is_no_count_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_nickname_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_selected_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_backup_data_for_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_backup_data_for_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_is_new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_is_take_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_is_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_max_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_limit_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn get_appearance_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_leaving_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn get_current_player_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn set_current_player_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn get_current_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn get_pool_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn get_pool_gods_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn convert_to_kinds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn delete_unneeded_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn delete_unneeded_god_units_and_bonds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn delete_unneeded_rings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn choose_awardee_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn save_temp_pool_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn get_max_turn_from_relay_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn get_play_turn_from_relay_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn dbg_log_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn dbg_log_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn dbg_log_append_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn dbg_log_begin_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn dbg_log_end_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn dbg_log_append_line_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+}
+
+#[cfg(feature="app-relay")]impl Relay{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Relay), ::core::stringify!(new),));
+ <Self as IRelayMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relay")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Relay_TrfrResult;
-    pub use super::Relay_ChooseAwardeeData;
     pub use super::Relay_TakeOverModes;
-    pub use super::Relay_Flags;
-    pub use super::Relay_DisposPlayerCountsSequence_Label;
     pub use super::Relay_FlagsField;
     pub use super::IRelay_FlagsField;
     pub use super::IRelay_FlagsFieldMethods;
-    pub use super::Relay_CstoResult;
-    pub use super::Relay;
-    pub use super::IRelay;
-    pub use super::IRelayMethods;
+    pub use super::Relay_ChooseAwardeeData;
+    pub use super::Relay_Flags;
     pub use super::Relay_Modes;
+    pub use super::Relay_DisposPlayerCountsSequence_Label;
     pub use super::Relay_DisposPlayerCountsSequence;
     pub use super::IRelay_DisposPlayerCountsSequence;
     pub use super::IRelay_DisposPlayerCountsSequenceMethods;
+    pub use super::Relay;
+    pub use super::IRelay;
+    pub use super::IRelayMethods;
+    pub use super::Relay_TrfrResult;
+    pub use super::Relay_CstoResult;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

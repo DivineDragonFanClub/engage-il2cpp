@@ -4,62 +4,90 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogcontent :: { BasicDialogContent , IBasicDialogContent }
- ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogcontent::{BasicDialogContent,IBasicDialogContent}
+;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangedialogcontent/ExchangeDialogContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExchangeDialogContent")] # [parent (crate :: app :: basicdialogcontent :: BasicDialogContent)] pub struct ExchangeDialogContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (264)] # [rename (name = "m_GetTitleText")] pub m_get_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_GetItemListObject")] pub m_get_item_list_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (280)] # [rename (name = "m_GetItemMoneyObject")] pub m_get_item_money_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (288)] # [rename (name = "m_GetBeforeAfterObject")] pub m_get_before_after_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (296)] # [rename (name = "m_GetItemBeforeItemObject")] pub m_get_item_before_item_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (304)] # [rename (name = "m_GetItemArrowObject")] pub m_get_item_arrow_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (312)] # [rename (name = "m_GetItemAfterItemObject")] pub m_get_item_after_item_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (320)] # [rename (name = "m_GetItemLongNameObject")] pub m_get_item_long_name_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (328)] # [rename (name = "m_GetItemNameOnlyObject")] pub m_get_item_name_only_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (336)] # [rename (name = "m_CostTitleText")] pub m_cost_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (344)] # [rename (name = "m_CostItemListObject")] pub m_cost_item_list_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (352)] # [rename (name = "m_CostItemMoneyObject")] pub m_cost_item_money_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (360)] # [rename (name = "m_CostItemNameOnlyObject")] pub m_cost_item_name_only_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (368)] # [rename (name = "m_MenuItemListParentObject")] pub m_menu_item_list_parent_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (376)] # [rename (name = "m_WaitKeyIconObject")] pub m_wait_key_icon_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangedialogcontent/ExchangeDialogContent.md"))]#[::unity2::class(namespace="App",name="ExchangeDialogContent")]#[parent(crate::app::basicdialogcontent::BasicDialogContent)]pub struct ExchangeDialogContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(264)]#[rename(name="m_GetTitleText")]pub m_get_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_GetItemListObject")]pub m_get_item_list_object:crate::unity_engine::gameobject::GameObject, #[offset(280)]#[rename(name="m_GetItemMoneyObject")]pub m_get_item_money_object:crate::unity_engine::gameobject::GameObject, #[offset(288)]#[rename(name="m_GetBeforeAfterObject")]pub m_get_before_after_object:crate::unity_engine::gameobject::GameObject, #[offset(296)]#[rename(name="m_GetItemBeforeItemObject")]pub m_get_item_before_item_object:crate::unity_engine::gameobject::GameObject, #[offset(304)]#[rename(name="m_GetItemArrowObject")]pub m_get_item_arrow_object:crate::unity_engine::gameobject::GameObject, #[offset(312)]#[rename(name="m_GetItemAfterItemObject")]pub m_get_item_after_item_object:crate::unity_engine::gameobject::GameObject, #[offset(320)]#[rename(name="m_GetItemLongNameObject")]pub m_get_item_long_name_object:crate::unity_engine::gameobject::GameObject, #[offset(328)]#[rename(name="m_GetItemNameOnlyObject")]pub m_get_item_name_only_object:crate::unity_engine::gameobject::GameObject, #[offset(336)]#[rename(name="m_CostTitleText")]pub m_cost_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(344)]#[rename(name="m_CostItemListObject")]pub m_cost_item_list_object:crate::unity_engine::gameobject::GameObject, #[offset(352)]#[rename(name="m_CostItemMoneyObject")]pub m_cost_item_money_object:crate::unity_engine::gameobject::GameObject, #[offset(360)]#[rename(name="m_CostItemNameOnlyObject")]pub m_cost_item_name_only_object:crate::unity_engine::gameobject::GameObject, #[offset(368)]#[rename(name="m_MenuItemListParentObject")]pub m_menu_item_list_parent_object:crate::unity_engine::gameobject::GameObject, #[offset(376)]#[rename(name="m_WaitKeyIconObject")]pub m_wait_key_icon_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-exchangedialogcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-exchangedialogcontent")]
-impl ExchangeDialogContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4d50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: exchangedialogcontent :: ExchangeDialogContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: exchangedialogcontent :: ExchangeDialogContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4df0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e5fa0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-exchangedialogcontent")]impl ExchangeDialogContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e4d50usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::exchangedialogcontent::ExchangeDialogContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e4df0usize)as*mut u8,crate::app::exchangedialogcontent::ExchangeDialogContent;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e5fa0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-exchangedialogcontent")]
-pub trait IExchangeDialogContentMethods : IExchangeDialogContent { # [doc = "`InitObjReference()` overload"] fn init_obj_reference (self ,) -> () { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMenuItemContent()` overload"] fn build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e50a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGetItemListCount()` overload"] fn get_get_item_list_count (self ,) -> i32 { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e5c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCostItemListCount()` overload"] fn get_cost_item_list_count (self ,) -> i32 { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e5d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosX(i32)` overload"] fn calc_cursor_moved_pos_x (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExchangeDialogContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e5de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExchangeDialogContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e5e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExchangeDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExchangeDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e5f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-exchangedialogcontent")]pub trait IExchangeDialogContentMethods:IExchangeDialogContent{#[doc="`InitObjReference()` overload"]fn init_obj_reference(self,)->(){unsafe{let __receiver= <ExchangeDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e4ee0usize)as*mut u8,();
+(ExchangeDialogContent)__receiver)}
+}
+#[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <ExchangeDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e50a0usize)as*mut u8,();
+(ExchangeDialogContent)__receiver)}
+}
+#[doc="`GetGetItemListCount()` overload"]fn get_get_item_list_count(self,)->i32{unsafe{let __receiver= <ExchangeDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e5c20usize)as*mut u8,i32;
+(ExchangeDialogContent)__receiver)}
+}
+#[doc="`GetCostItemListCount()` overload"]fn get_cost_item_list_count(self,)->i32{unsafe{let __receiver= <ExchangeDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e5d00usize)as*mut u8,i32;
+(ExchangeDialogContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ExchangeDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e5de0usize)as*mut u8,f32;
+(ExchangeDialogContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ExchangeDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e5e40usize)as*mut u8,f32;
+(ExchangeDialogContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExchangeDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e5f30usize)as*mut u8,();
+(ExchangeDialogContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-exchangedialogcontent")]
-impl < __T : IExchangeDialogContent > IExchangeDialogContentMethods for __T { }
+#[cfg(feature="app-exchangedialogcontent")]impl<__T:IExchangeDialogContent>IExchangeDialogContentMethods for __T{}
 
-#[cfg(feature = "app-exchangedialogcontent")]
-impl ExchangeDialogContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_obj_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_get_item_list_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_cost_item_list_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_cursor_moved_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExchangeDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-exchangedialogcontent")]impl ExchangeDialogContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_obj_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_get_item_list_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_cost_item_list_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_cursor_moved_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-exchangedialogcontent")]
-impl ExchangeDialogContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExchangeDialogContent) , :: core :: stringify ! (new) ,)) ; < Self as IExchangeDialogContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-exchangedialogcontent")]impl ExchangeDialogContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExchangeDialogContent), ::core::stringify!(new),));
+ <Self as IExchangeDialogContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-exchangedialogcontent")]

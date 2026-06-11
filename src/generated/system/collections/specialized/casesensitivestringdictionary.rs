@@ -4,32 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: specialized :: stringdictionary :: { IStringDictionary , StringDictionary }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::specialized::stringdictionary::{IStringDictionary,StringDictionary}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/casesensitivestringdictionary/CaseSensitiveStringDictionary.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "CaseSensitiveStringDictionary")] # [parent (crate :: system :: collections :: specialized :: stringdictionary :: StringDictionary)] pub struct CaseSensitiveStringDictionary {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/casesensitivestringdictionary/CaseSensitiveStringDictionary.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="CaseSensitiveStringDictionary")]#[parent(crate::system::collections::specialized::stringdictionary::StringDictionary)]pub struct CaseSensitiveStringDictionary{}
 
 }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
-pub trait ICaseSensitiveStringDictionaryMethods : ICaseSensitiveStringDictionary { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CaseSensitiveStringDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CaseSensitiveStringDictionary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354c680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn add (self , key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CaseSensitiveStringDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CaseSensitiveStringDictionary , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x354c690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]pub trait ICaseSensitiveStringDictionaryMethods:ICaseSensitiveStringDictionary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CaseSensitiveStringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x354c680usize)as*mut u8,();
+(CaseSensitiveStringDictionary)__receiver)}
+}
+#[doc="`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add(self,key:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CaseSensitiveStringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x354c690usize)as*mut u8,();
+(CaseSensitiveStringDictionary)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key),(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
-impl < __T : ICaseSensitiveStringDictionary > ICaseSensitiveStringDictionaryMethods for __T { }
+#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]impl<__T:ICaseSensitiveStringDictionary>ICaseSensitiveStringDictionaryMethods for __T{}
 
-#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
-impl CaseSensitiveStringDictionary { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CaseSensitiveStringDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CaseSensitiveStringDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]impl CaseSensitiveStringDictionary{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
-impl CaseSensitiveStringDictionary {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CaseSensitiveStringDictionary) , :: core :: stringify ! (new) ,)) ; < Self as ICaseSensitiveStringDictionaryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]impl CaseSensitiveStringDictionary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CaseSensitiveStringDictionary), ::core::stringify!(new),));
+ <Self as ICaseSensitiveStringDictionaryMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]

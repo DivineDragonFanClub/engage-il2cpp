@@ -4,54 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/contactfilter2d/ContactFilter2D.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ContactFilter2D {
-    pub use_triggers: bool,
-    pub use_layer_mask: bool,
-    pub use_depth: bool,
-    pub use_outside_depth: bool,
-    pub use_normal_angle: bool,
-    pub use_outside_normal_angle: bool,
-    pub layer_mask: crate :: unity_engine :: layermask :: LayerMask,
-    pub min_depth: f32,
-    pub max_depth: f32,
-    pub min_normal_angle: f32,
-    pub max_normal_angle: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/contactfilter2d/ContactFilter2D.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ContactFilter2D{pub use_triggers:bool,pub use_layer_mask:bool,pub use_depth:bool,pub use_outside_depth:bool,pub use_normal_angle:bool,pub use_outside_normal_angle:bool,pub layer_mask:crate::unity_engine::layermask::LayerMask,pub min_depth:f32,pub max_depth:f32,pub min_normal_angle:f32,pub max_normal_angle:f32,}
+impl::unity2::ClassIdentity for ContactFilter2D{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ContactFilter2D";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ContactFilter2D {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ContactFilter2D";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ContactFilter2D {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ContactFilter2D{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -59,14 +26,33 @@ impl ::unity2::IlType for ContactFilter2D {
 #[cfg(feature = "unity_engine-contactfilter2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-contactfilter2d")]
-impl ContactFilter2D { # [doc = "`CreateLegacyFilter(i32, f32, f32)` overload"] pub fn create_legacy_filter (layer_mask : impl :: core :: convert :: Into < i32 > , min_depth : impl :: core :: convert :: Into < f32 > , max_depth : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: contactfilter2d :: ContactFilter2D { unsafe { { let __inner : extern "C" fn (i32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: contactfilter2d :: ContactFilter2D = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31e60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (layer_mask) , :: core :: convert :: Into :: into (min_depth) , :: core :: convert :: Into :: into (max_depth) , :: core :: option :: Option :: None) } } } # [doc = "`CheckConsistency_Injected(*mutcrate::unity_engine::contactfilter2d::ContactFilter2D)` overload"] pub fn check_consistency_injected () -> crate :: unity_engine :: contactfilter2d :: ContactFilter2D { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: contactfilter2d :: ContactFilter2D > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: contactfilter2d :: ContactFilter2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31da0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-contactfilter2d")]impl ContactFilter2D{#[doc="`CreateLegacyFilter(i32, f32, f32)` overload"]pub fn create_legacy_filter(layer_mask:impl::core::convert::Into<i32> ,min_depth:impl::core::convert::Into<f32> ,max_depth:impl::core::convert::Into<f32>)->crate::unity_engine::contactfilter2d::ContactFilter2D{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f31e60usize)as*mut u8,crate::unity_engine::contactfilter2d::ContactFilter2D;
+(i32)::core::convert::Into::into(layer_mask),(f32)::core::convert::Into::into(min_depth),(f32)::core::convert::Into::into(max_depth))}
+}
+#[doc="`CheckConsistency_Injected(*mutcrate::unity_engine::contactfilter2d::ContactFilter2D)` overload"]pub fn check_consistency_injected()->crate::unity_engine::contactfilter2d::ContactFilter2D{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::contactfilter2d::ContactFilter2D> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f31da0usize)as*mut u8,();
+(*mut crate::unity_engine::contactfilter2d::ContactFilter2D)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-contactfilter2d")]
-impl ContactFilter2D { # [doc = "`CheckConsistency()` overload"] pub fn check_consistency (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut ContactFilter2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31d50usize) as * mut u8) ; __inner (self as * mut ContactFilter2D , :: core :: option :: Option :: None) } } } # [doc = "`SetLayerMask(crate::unity_engine::layermask::LayerMask)` overload"] pub fn set_layer_mask (& mut self , layer_mask : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { { let __inner : extern "C" fn (* mut ContactFilter2D , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31df0usize) as * mut u8) ; __inner (self as * mut ContactFilter2D , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } } # [doc = "`SetDepth(f32, f32)` overload"] pub fn set_depth (& mut self , min_depth : impl :: core :: convert :: Into < f32 > , max_depth : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ContactFilter2D , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31e00usize) as * mut u8) ; __inner (self as * mut ContactFilter2D , :: core :: convert :: Into :: into (min_depth) , :: core :: convert :: Into :: into (max_depth) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-contactfilter2d")]impl ContactFilter2D{#[doc="`CheckConsistency()` overload"]pub fn check_consistency(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f31d50usize)as*mut u8,();
+(*mut ContactFilter2D)self as*mut ContactFilter2D)}
+}
+#[doc="`SetLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]pub fn set_layer_mask(&mut self,layer_mask:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f31df0usize)as*mut u8,();
+(*mut ContactFilter2D)self as*mut ContactFilter2D,(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(layer_mask))}
+}
+#[doc="`SetDepth(f32, f32)` overload"]pub fn set_depth(&mut self,min_depth:impl::core::convert::Into<f32> ,max_depth:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f31e00usize)as*mut u8,();
+(*mut ContactFilter2D)self as*mut ContactFilter2D,(f32)::core::convert::Into::into(min_depth),(f32)::core::convert::Into::into(max_depth))}
+}
+}
 
-#[cfg(feature = "unity_engine-contactfilter2d")]
-impl ContactFilter2D { pub fn check_consistency_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContactFilter2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContactFilter2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_depth_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContactFilter2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_legacy_filter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContactFilter2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn check_consistency_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContactFilter2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-contactfilter2d")]impl ContactFilter2D{pub fn check_consistency_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_depth_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_legacy_filter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn check_consistency_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-contactfilter2d")]
 #[doc(hidden)]

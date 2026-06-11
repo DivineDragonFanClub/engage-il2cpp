@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/executionstate/ExecutionState.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Execution.VM" , name = "ExecutionState")] # [parent (crate :: system :: object :: Object)] pub struct ExecutionState {
-# [offset (16)] # [rename (name = "ValueStack")] pub value_stack : crate :: moon_sharp :: interpreter :: data_structs :: faststack_1 :: FastStack_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > ,
-# [offset (24)] # [rename (name = "ExecutionStack")] pub execution_stack : crate :: moon_sharp :: interpreter :: data_structs :: faststack_1 :: FastStack_1 < crate :: moon_sharp :: interpreter :: execution :: vm :: callstackitem :: CallStackItem > ,
-# [offset (32)] # [rename (name = "InstructionPtr")] pub instruction_ptr : i32 ,
-# [offset (36)] # [rename (name = "State")] pub state : crate :: moon_sharp :: interpreter :: coroutinestate :: CoroutineState ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/vm/executionstate/ExecutionState.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Execution.VM",name="ExecutionState")]#[parent(crate::system::object::Object)]pub struct ExecutionState{#[offset(16)]#[rename(name="ValueStack")]pub value_stack:crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<crate::moon_sharp::interpreter::dynvalue::DynValue> , #[offset(24)]#[rename(name="ExecutionStack")]pub execution_stack:crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<crate::moon_sharp::interpreter::execution::vm::callstackitem::CallStackItem> , #[offset(32)]#[rename(name="InstructionPtr")]pub instruction_ptr:i32, #[offset(36)]#[rename(name="State")]pub state:crate::moon_sharp::interpreter::coroutinestate::CoroutineState,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExecutionState_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExecutionState as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExecutionState as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-executionstate")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ExecutionState_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ExecutionState as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ExecutionState as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]
-pub trait IExecutionStateMethods : IExecutionState { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExecutionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExecutionState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ExecutionState_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-executionstate")]pub trait IExecutionStateMethods:IExecutionState{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExecutionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ExecutionState_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(ExecutionState)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]
-impl < __T : IExecutionState > IExecutionStateMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-executionstate")]impl<__T:IExecutionState>IExecutionStateMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]
-impl ExecutionState { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExecutionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-executionstate")]impl ExecutionState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]
-impl ExecutionState {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExecutionState) , :: core :: stringify ! (new) ,)) ; < Self as IExecutionStateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-executionstate")]impl ExecutionState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExecutionState), ::core::stringify!(new),));
+ <Self as IExecutionStateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]

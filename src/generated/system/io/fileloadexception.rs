@@ -4,40 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: ioexception :: { IIOException , IOException }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::ioexception::{IIOException,IOException}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/fileloadexception/FileLoadException.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "FileLoadException")] # [parent (crate :: system :: io :: ioexception :: IOException)] pub struct FileLoadException {
-# [offset (144)] # [rename (name = "_fileName")] pub file_name : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "_fusionLog")] pub fusion_log : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/fileloadexception/FileLoadException.md"))]#[::unity2::class(namespace="System.IO",name="FileLoadException")]#[parent(crate::system::io::ioexception::IOException)]pub struct FileLoadException{#[offset(144)]#[rename(name="_fileName")]pub file_name: ::unity2::Il2CppString, #[offset(152)]#[rename(name="_fusionLog")]pub fusion_log: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-io-fileloadexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-fileloadexception")]
-impl FileLoadException { # [doc = "`FormatFileLoadExceptionMessage(::unity2::Il2CppString, i32)` overload"] pub fn format_file_load_exception_message (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , h_result : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380d120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: convert :: Into :: into (h_result) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-fileloadexception")]impl FileLoadException{#[doc="`FormatFileLoadExceptionMessage(::unity2::Il2CppString, i32)` overload"]pub fn format_file_load_exception_message(file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,h_result:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x380d120usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name),(i32)::core::convert::Into::into(h_result))}
+}
+}
 
-#[cfg(feature = "system-io-fileloadexception")]
-pub trait IFileLoadExceptionMethods : IFileLoadException { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FileLoadException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileLoadException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380cf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FileLoadException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileLoadException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380cff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`get_Message()` overload"] fn get_message (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileLoadException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileLoadException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380d030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMessageField()` overload"] fn set_message_field (self ,) -> () { unsafe { let __receiver = < FileLoadException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileLoadException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380d060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileLoadException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileLoadException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380d1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FusionLog()` overload"] fn get_fusion_log (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileLoadException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileLoadException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380d610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-fileloadexception")]pub trait IFileLoadExceptionMethods:IFileLoadException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380cf70usize)as*mut u8,();
+(FileLoadException)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380cff0usize)as*mut u8,();
+(FileLoadException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`get_Message()` overload"]fn get_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380d030usize)as*mut u8, ::unity2::Il2CppString;
+(FileLoadException)__receiver)}
+}
+#[doc="`SetMessageField()` overload"]fn set_message_field(self,)->(){unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380d060usize)as*mut u8,();
+(FileLoadException)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380d1b0usize)as*mut u8, ::unity2::Il2CppString;
+(FileLoadException)__receiver)}
+}
+#[doc="`get_FusionLog()` overload"]fn get_fusion_log(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380d610usize)as*mut u8, ::unity2::Il2CppString;
+(FileLoadException)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-fileloadexception")]
-impl < __T : IFileLoadException > IFileLoadExceptionMethods for __T { }
+#[cfg(feature="system-io-fileloadexception")]impl<__T:IFileLoadException>IFileLoadExceptionMethods for __T{}
 
-#[cfg(feature = "system-io-fileloadexception")]
-impl FileLoadException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileLoadException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileLoadException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileLoadException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_message_field_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileLoadException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileLoadException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_fusion_log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileLoadException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn format_file_load_exception_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileLoadException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="system-io-fileloadexception")]impl FileLoadException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_message_field_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_fusion_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn format_file_load_exception_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "system-io-fileloadexception")]
-impl FileLoadException {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileLoadException) , :: core :: stringify ! (new) ,)) ; < Self as IFileLoadExceptionMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileLoadException) , :: core :: stringify ! (new_2) ,)) ; < Self as IFileLoadExceptionMethods > :: ctor_2 (this , message) ; this }
+#[cfg(feature="system-io-fileloadexception")]impl FileLoadException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileLoadException), ::core::stringify!(new),));
+ <Self as IFileLoadExceptionMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileLoadException), ::core::stringify!(new_2),));
+ <Self as IFileLoadExceptionMethods> ::ctor_2(this,message);
+this}
 }
 
 #[cfg(feature = "system-io-fileloadexception")]

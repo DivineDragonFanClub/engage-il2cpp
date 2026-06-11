@@ -4,39 +4,161 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideprizedata/DragonRidePrizeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRidePrizeData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: dragonrideprizedata :: DragonRidePrizeData >)] pub struct DragonRidePrizeData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideprizedata/DragonRidePrizeData.md"))]#[::unity2::class(namespace="App",name="DragonRidePrizeData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::dragonrideprizedata::DragonRidePrizeData>)]pub struct DragonRidePrizeData{}
 
 }
 
 #[cfg(feature = "app-dragonrideprizedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonrideprizedata")]
-impl DragonRidePrizeData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3740usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonrideprizedata")]impl DragonRidePrizeData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3740usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-dragonrideprizedata")]
-pub trait IDragonRidePrizeDataMethods : IDragonRidePrizeData { # [doc = "`get_ItemList()` overload"] fn get_item_list (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ItemList(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_item_list (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Group()` overload"] fn get_group (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Group(::unity2::Il2CppString)` overload"] fn set_group (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PieceOfBond()` overload"] fn get_piece_of_bond (self ,) -> i32 { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad35a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PieceOfBond(i32)` overload"] fn set_piece_of_bond (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad35b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ItemCount()` overload"] fn get_item_count (self ,) -> i32 { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad35c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ItemCount(i32)` overload"] fn set_item_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad35d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item1()` overload"] fn get_item1 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad35e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item1(::unity2::Il2CppString)` overload"] fn set_item1 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad35f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item2()` overload"] fn get_item2 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item2(::unity2::Il2CppString)` overload"] fn set_item2 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item3()` overload"] fn get_item3 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item3(::unity2::Il2CppString)` overload"] fn set_item3 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item4()` overload"] fn get_item4 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item4(::unity2::Il2CppString)` overload"] fn set_item4 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item5()` overload"] fn get_item5 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item5(::unity2::Il2CppString)` overload"] fn set_item5 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item6()` overload"] fn get_item6 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item6(::unity2::Il2CppString)` overload"] fn set_item6 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ItemTypeCount()` overload"] fn get_item_type_count (self ,) -> i32 { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad36a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ItemTypeCount(i32)` overload"] fn set_item_type_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad36b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad36c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < DragonRidePrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRidePrizeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad37f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonrideprizedata")]pub trait IDragonRidePrizeDataMethods:IDragonRidePrizeData{#[doc="`get_ItemList()` overload"]fn get_item_list(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3560usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_ItemList(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_item_list(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3570usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Group()` overload"]fn get_group(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3580usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_Group(::unity2::Il2CppString)` overload"]fn set_group(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3590usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PieceOfBond()` overload"]fn get_piece_of_bond(self,)->i32{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad35a0usize)as*mut u8,i32;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_PieceOfBond(i32)` overload"]fn set_piece_of_bond(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad35b0usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ItemCount()` overload"]fn get_item_count(self,)->i32{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad35c0usize)as*mut u8,i32;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_ItemCount(i32)` overload"]fn set_item_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad35d0usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item1()` overload"]fn get_item1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad35e0usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_Item1(::unity2::Il2CppString)` overload"]fn set_item1(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad35f0usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item2()` overload"]fn get_item2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3600usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_Item2(::unity2::Il2CppString)` overload"]fn set_item2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3610usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item3()` overload"]fn get_item3(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3620usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_Item3(::unity2::Il2CppString)` overload"]fn set_item3(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3630usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item4()` overload"]fn get_item4(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3640usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_Item4(::unity2::Il2CppString)` overload"]fn set_item4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3650usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item5()` overload"]fn get_item5(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3660usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_Item5(::unity2::Il2CppString)` overload"]fn set_item5(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3670usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item6()` overload"]fn get_item6(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3680usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_Item6(::unity2::Il2CppString)` overload"]fn set_item6(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3690usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ItemTypeCount()` overload"]fn get_item_type_count(self,)->i32{unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad36a0usize)as*mut u8,i32;
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`set_ItemTypeCount(i32)` overload"]fn set_item_type_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad36b0usize)as*mut u8,();
+(DragonRidePrizeData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad36c0usize)as*mut u8,();
+(DragonRidePrizeData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <DragonRidePrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad37f0usize)as*mut u8,();
+(DragonRidePrizeData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonrideprizedata")]
-impl < __T : IDragonRidePrizeData > IDragonRidePrizeDataMethods for __T { }
+#[cfg(feature="app-dragonrideprizedata")]impl<__T:IDragonRidePrizeData>IDragonRidePrizeDataMethods for __T{}
 
-#[cfg(feature = "app-dragonrideprizedata")]
-impl DragonRidePrizeData { pub fn get_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_item_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_item_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_item1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_item1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_item2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_item2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_item3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_item3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_item4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_item4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_item5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_item5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_item6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_item6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_item_type_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_item_type_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRidePrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } }
+#[cfg(feature="app-dragonrideprizedata")]impl DragonRidePrizeData{pub fn get_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_item1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_item1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_item2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_item2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_item3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_item3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_item4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_item4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_item5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_item5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_item6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_item6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_item_type_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_item_type_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
 
-#[cfg(feature = "app-dragonrideprizedata")]
-impl DragonRidePrizeData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRidePrizeData) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRidePrizeDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonrideprizedata")]impl DragonRidePrizeData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRidePrizeData), ::core::stringify!(new),));
+ <Self as IDragonRidePrizeDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonrideprizedata")]

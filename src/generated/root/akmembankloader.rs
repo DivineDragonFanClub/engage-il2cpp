@@ -4,48 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmembankloader/AkMemBankLoader.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMemBankLoader")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkMemBankLoader {
-# [static_field] # [rename (name = "WaitMs")] pub wait_ms : i32 ,
-# [static_field] # [rename (name = "AK_BANK_PLATFORM_DATA_ALIGNMENT")] pub ak_bank_platform_data_alignment : i64 ,
-# [static_field] # [rename (name = "AK_BANK_PLATFORM_DATA_ALIGNMENT_MASK")] pub ak_bank_platform_data_alignment_mask : i64 ,
-# [offset (24)] # [rename (name = "bankName")] pub bank_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "isLocalizedBank")] pub is_localized_bank : bool ,
-# [offset (40)] # [rename (name = "m_bankPath")] pub m_bank_path : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "ms_bankID")] pub ms_bank_id : u32 ,
-# [offset (56)] # [rename (name = "ms_pInMemoryBankPtr")] pub ms_p_in_memory_bank_ptr : :: unity2 :: IntPtr ,
-# [offset (72)] # [rename (name = "ms_www")] pub ms_www : crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmembankloader/AkMemBankLoader.md"))]#[::unity2::class(namespace="",name="AkMemBankLoader")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkMemBankLoader{#[static_field]#[rename(name="WaitMs")]pub wait_ms:i32, #[static_field]#[rename(name="AK_BANK_PLATFORM_DATA_ALIGNMENT")]pub ak_bank_platform_data_alignment:i64, #[static_field]#[rename(name="AK_BANK_PLATFORM_DATA_ALIGNMENT_MASK")]pub ak_bank_platform_data_alignment_mask:i64, #[offset(24)]#[rename(name="bankName")]pub bank_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="isLocalizedBank")]pub is_localized_bank:bool, #[offset(40)]#[rename(name="m_bankPath")]pub m_bank_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="ms_bankID")]pub ms_bank_id:u32, #[offset(56)]#[rename(name="ms_pInMemoryBankPtr")]pub ms_p_in_memory_bank_ptr: ::unity2::IntPtr, #[offset(72)]#[rename(name="ms_www")]pub ms_www:crate::unity_engine::networking::unitywebrequest::UnityWebRequest,}
 
 }
 
 #[cfg(feature = "root-akmembankloader-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akmembankloader")]
-pub trait IAkMemBankLoaderMethods : IAkMemBankLoader { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkMemBankLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMemBankLoader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadNonLocalizedBank(::unity2::Il2CppString)` overload"] fn load_non_localized_bank (self , in_bank_filename : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkMemBankLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMemBankLoader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_bank_filename) , :: core :: option :: Option :: None) } } } # [doc = "`LoadLocalizedBank(::unity2::Il2CppString)` overload"] fn load_localized_bank (self , in_bank_filename : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkMemBankLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMemBankLoader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_bank_filename) , :: core :: option :: Option :: None) } } } # [doc = "`AllocateAlignedBuffer(::unity2::Array<u8>)` overload"] fn allocate_aligned_buffer (self , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> u32 { unsafe { let __receiver = < AkMemBankLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMemBankLoader , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f27130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`LoadFile()` overload"] fn load_file (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < AkMemBankLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMemBankLoader , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f27360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DoLoadBank(::unity2::Il2CppString)` overload"] fn do_load_bank (self , in_bank_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkMemBankLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMemBankLoader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f270a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_bank_path) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < AkMemBankLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMemBankLoader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f273e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkMemBankLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMemBankLoader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f274a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmembankloader")]pub trait IAkMemBankLoaderMethods:IAkMemBankLoader{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkMemBankLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26d00usize)as*mut u8,();
+(AkMemBankLoader)__receiver)}
+}
+#[doc="`LoadNonLocalizedBank(::unity2::Il2CppString)` overload"]fn load_non_localized_bank(self,in_bank_filename:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkMemBankLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26f00usize)as*mut u8,();
+(AkMemBankLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(in_bank_filename))}
+}
+#[doc="`LoadLocalizedBank(::unity2::Il2CppString)` overload"]fn load_localized_bank(self,in_bank_filename:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkMemBankLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26d20usize)as*mut u8,();
+(AkMemBankLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(in_bank_filename))}
+}
+#[doc="`AllocateAlignedBuffer(::unity2::Array<u8>)` overload"]fn allocate_aligned_buffer(self,data:impl::core::convert::Into< ::unity2::Array<u8> >)->u32{unsafe{let __receiver= <AkMemBankLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f27130usize)as*mut u8,u32;
+(AkMemBankLoader)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+#[doc="`LoadFile()` overload"]fn load_file(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <AkMemBankLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f27360usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(AkMemBankLoader)__receiver)}
+}
+#[doc="`DoLoadBank(::unity2::Il2CppString)` overload"]fn do_load_bank(self,in_bank_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkMemBankLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f270a0usize)as*mut u8,();
+(AkMemBankLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(in_bank_path))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <AkMemBankLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f273e0usize)as*mut u8,();
+(AkMemBankLoader)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkMemBankLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f274a0usize)as*mut u8,();
+(AkMemBankLoader)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akmembankloader")]
-impl < __T : IAkMemBankLoader > IAkMemBankLoaderMethods for __T { }
+#[cfg(feature="root-akmembankloader")]impl<__T:IAkMemBankLoader>IAkMemBankLoaderMethods for __T{}
 
-#[cfg(feature = "root-akmembankloader")]
-impl AkMemBankLoader { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMemBankLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_non_localized_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMemBankLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_localized_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMemBankLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn allocate_aligned_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMemBankLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMemBankLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn do_load_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMemBankLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMemBankLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMemBankLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="root-akmembankloader")]impl AkMemBankLoader{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_non_localized_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_localized_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn allocate_aligned_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn do_load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "root-akmembankloader")]
-impl AkMemBankLoader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMemBankLoader) , :: core :: stringify ! (new) ,)) ; < Self as IAkMemBankLoaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akmembankloader")]impl AkMemBankLoader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMemBankLoader), ::core::stringify!(new),));
+ <Self as IAkMemBankLoaderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akmembankloader")]

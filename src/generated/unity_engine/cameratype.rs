@@ -4,79 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/cameratype/CameraType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CameraType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cameratype/CameraType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CameraType{pub value:i32,}
+impl::unity2::ClassIdentity for CameraType{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="CameraType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for CameraType  {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "CameraType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for CameraType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for CameraType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl CameraType{pub fn game()->Self{Self{value:1}
 }
-
-
-impl  CameraType  {
-    pub fn game() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn scene_view() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn preview() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn vr() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn reflection() -> Self {
-        Self { value: 16 }
-
-    }
-
+pub fn scene_view()->Self{Self{value:2}
+}
+pub fn preview()->Self{Self{value:4}
+}
+pub fn vr()->Self{Self{value:8}
+}
+pub fn reflection()->Self{Self{value:16}
+}
 }
 
 }

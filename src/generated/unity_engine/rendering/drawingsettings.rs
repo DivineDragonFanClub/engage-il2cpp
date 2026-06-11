@@ -4,65 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/drawingsettings/DrawingSettings.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DrawingSettings {}
-
-
-impl ::unity2::ClassIdentity for DrawingSettings {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "DrawingSettings";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/drawingsettings/DrawingSettings.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DrawingSettings{}
+impl::unity2::ClassIdentity for DrawingSettings{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="DrawingSettings";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for DrawingSettings {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for DrawingSettings{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl DrawingSettings {
-    #[inline]
-    pub fn max_shader_passes() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "maxShaderPasses");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_max_shader_passes(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "maxShaderPasses");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl DrawingSettings{#[inline]pub fn max_shader_passes()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"maxShaderPasses");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_max_shader_passes(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"maxShaderPasses");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -70,14 +34,71 @@ impl DrawingSettings {
 #[cfg(feature = "unity_engine-rendering-drawingsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-drawingsettings")]
-impl DrawingSettings { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d4a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-drawingsettings")]impl DrawingSettings{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d4a0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-drawingsettings")]
-impl DrawingSettings { # [doc = "`.ctor(crate::unity_engine::rendering::shadertagid::ShaderTagId, crate::unity_engine::rendering::sortingsettings::SortingSettings)` overload"] pub fn ctor (& mut self , shader_pass_name : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > , sorting_settings : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId , crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4cd20usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (shader_pass_name) , :: core :: convert :: Into :: into (sorting_settings) , :: core :: option :: Option :: None) } } } # [doc = "`get_sortingSettings()` overload"] pub fn get_sorting_settings (& mut self ,) -> crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4ce10usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: option :: Option :: None) } } } # [doc = "`set_sortingSettings(crate::unity_engine::rendering::sortingsettings::SortingSettings)` overload"] pub fn set_sorting_settings (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4ce30usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_perObjectData(crate::unity_engine::rendering::perobjectdata::PerObjectData)` overload"] pub fn set_per_object_data (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: perobjectdata :: PerObjectData >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , crate :: unity_engine :: rendering :: perobjectdata :: PerObjectData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4ce50usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_enableDynamicBatching(bool)` overload"] pub fn set_enable_dynamic_batching (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4ce60usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_enableInstancing(bool)` overload"] pub fn set_enable_instancing (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4ce80usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_overrideMaterial(crate::unity_engine::material::Material)` overload"] pub fn set_override_material (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4cea0usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_overrideMaterialPassIndex(i32)` overload"] pub fn set_override_material_pass_index (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4cef0usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_mainLightIndex(i32)` overload"] pub fn set_main_light_index (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4cf00usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetShaderPassName(i32)` overload"] pub fn get_shader_pass_name (& mut self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4cf10usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SetShaderPassName(i32, crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"] pub fn set_shader_pass_name (& mut self , index : impl :: core :: convert :: Into < i32 > , shader_pass_name : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , i32 , crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d0b0usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (shader_pass_name) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::drawingsettings::DrawingSettings)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: drawingsettings :: DrawingSettings >) -> bool { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , crate :: unity_engine :: rendering :: drawingsettings :: DrawingSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d240usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d390usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DrawingSettings , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d430usize) as * mut u8) ; __inner (self as * mut DrawingSettings , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-drawingsettings")]impl DrawingSettings{#[doc="`.ctor(crate::unity_engine::rendering::shadertagid::ShaderTagId, crate::unity_engine::rendering::sortingsettings::SortingSettings)` overload"]pub fn ctor(&mut self,shader_pass_name:impl::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId> ,sorting_settings:impl::core::convert::Into<crate::unity_engine::rendering::sortingsettings::SortingSettings>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4cd20usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(crate::unity_engine::rendering::shadertagid::ShaderTagId)::core::convert::Into::into(shader_pass_name),(crate::unity_engine::rendering::sortingsettings::SortingSettings)::core::convert::Into::into(sorting_settings))}
+}
+#[doc="`get_sortingSettings()` overload"]pub fn get_sorting_settings(&mut self,)->crate::unity_engine::rendering::sortingsettings::SortingSettings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4ce10usize)as*mut u8,crate::unity_engine::rendering::sortingsettings::SortingSettings;
+(*mut DrawingSettings)self as*mut DrawingSettings)}
+}
+#[doc="`set_sortingSettings(crate::unity_engine::rendering::sortingsettings::SortingSettings)` overload"]pub fn set_sorting_settings(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::sortingsettings::SortingSettings>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4ce30usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(crate::unity_engine::rendering::sortingsettings::SortingSettings)::core::convert::Into::into(value))}
+}
+#[doc="`set_perObjectData(crate::unity_engine::rendering::perobjectdata::PerObjectData)` overload"]pub fn set_per_object_data(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::perobjectdata::PerObjectData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4ce50usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(crate::unity_engine::rendering::perobjectdata::PerObjectData)::core::convert::Into::into(value))}
+}
+#[doc="`set_enableDynamicBatching(bool)` overload"]pub fn set_enable_dynamic_batching(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4ce60usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_enableInstancing(bool)` overload"]pub fn set_enable_instancing(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4ce80usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_overrideMaterial(crate::unity_engine::material::Material)` overload"]pub fn set_override_material(&mut self,value:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4cea0usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(crate::unity_engine::material::Material)::core::convert::Into::into(value))}
+}
+#[doc="`set_overrideMaterialPassIndex(i32)` overload"]pub fn set_override_material_pass_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4cef0usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`set_mainLightIndex(i32)` overload"]pub fn set_main_light_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4cf00usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetShaderPassName(i32)` overload"]pub fn get_shader_pass_name(&mut self,index:impl::core::convert::Into<i32>)->crate::unity_engine::rendering::shadertagid::ShaderTagId{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4cf10usize)as*mut u8,crate::unity_engine::rendering::shadertagid::ShaderTagId;
+(*mut DrawingSettings)self as*mut DrawingSettings,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SetShaderPassName(i32, crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"]pub fn set_shader_pass_name(&mut self,index:impl::core::convert::Into<i32> ,shader_pass_name:impl::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d0b0usize)as*mut u8,();
+(*mut DrawingSettings)self as*mut DrawingSettings,(i32)::core::convert::Into::into(index),(crate::unity_engine::rendering::shadertagid::ShaderTagId)::core::convert::Into::into(shader_pass_name))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::drawingsettings::DrawingSettings)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::drawingsettings::DrawingSettings>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d240usize)as*mut u8,bool;
+(*mut DrawingSettings)self as*mut DrawingSettings,(crate::unity_engine::rendering::drawingsettings::DrawingSettings)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d390usize)as*mut u8,bool;
+(*mut DrawingSettings)self as*mut DrawingSettings,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d430usize)as*mut u8,i32;
+(*mut DrawingSettings)self as*mut DrawingSettings)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-drawingsettings")]
-impl DrawingSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_sorting_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_sorting_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_per_object_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_enable_dynamic_batching_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_enable_instancing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_override_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_override_material_pass_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_main_light_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_shader_pass_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_shader_pass_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="unity_engine-rendering-drawingsettings")]impl DrawingSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_sorting_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_sorting_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_per_object_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_enable_dynamic_batching_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_enable_instancing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_override_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_override_material_pass_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_main_light_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_shader_pass_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_shader_pass_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
 #[cfg(feature = "unity_engine-rendering-drawingsettings")]
 #[doc(hidden)]

@@ -4,63 +4,73 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx_HitPoint.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FXZEx_HitPoint {
-    pub pos: crate :: unity_engine :: vector3 :: Vector3,
-    pub nrm: crate :: unity_engine :: vector3 :: Vector3,
-    pub col_index: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fxzex/FXZEx_HitPoint.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FXZEx_HitPoint{pub pos:crate::unity_engine::vector3::Vector3,pub nrm:crate::unity_engine::vector3::Vector3,pub col_index:i32,}
+impl::unity2::ClassIdentity for FXZEx_HitPoint{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="FXZEx.HitPoint";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for FXZEx_HitPoint{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for FXZEx_HitPoint {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "FXZEx.HitPoint";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for FXZEx_HitPoint {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FXZEx")] # [parent (crate :: system :: object :: Object)] pub struct FXZEx {
-# [static_field] # [rename (name = "layerMask")] pub layer_mask : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fxzex/FXZEx.md"))]#[::unity2::class(namespace="Combat",name="FXZEx")]#[parent(crate::system::object::Object)]pub struct FXZEx{#[static_field]#[rename(name="layerMask")]pub layer_mask:i32,}
 
 }
 
 #[cfg(feature = "combat-fxzex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fxzex")]
-impl FXZEx { # [doc = "`get_LayerMask()` overload"] pub fn get_layer_mask () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ToXHZ(crate::unity_engine::vector3::Vector3)` overload"] pub fn to_xhz (xyz : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4fa50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xyz) , :: core :: option :: Option :: None) } } } # [doc = "`ToXHZ(crate::combat::fxz::FXZ)` overload"] pub fn to_xhz_2 (xz : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4fb60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xz) , :: core :: option :: Option :: None) } } } # [doc = "`SampleHeight(crate::unity_engine::vector3::Vector3)` overload"] pub fn sample_height (xyz : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4fc10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xyz) , :: core :: option :: Option :: None) } } } # [doc = "`SampleHeight(crate::combat::fxz::FXZ)` overload"] pub fn sample_height_2 (xz : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4fca0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xz) , :: core :: option :: Option :: None) } } } # [doc = "`ToABCD(crate::unity_engine::vector3::Vector3)` overload"] pub fn to_abcd (xyz : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4fd60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xyz) , :: core :: option :: Option :: None) } } } # [doc = "`ToWideABCD(crate::unity_engine::vector3::Vector3)` overload"] pub fn to_wide_abcd (center_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4fed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (center_pos) , :: core :: option :: Option :: None) } } } # [doc = "`ToWideABCD(crate::unity_engine::vector3::Vector3, *mutbool)` overload"] pub fn to_wide_abcd_2 (center_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> (crate :: unity_engine :: vector4 :: Vector4 , bool) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , * mut bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ff60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (center_pos) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d50650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fxzex")]impl FXZEx{#[doc="`get_LayerMask()` overload"]pub fn get_layer_mask()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f930usize)as*mut u8,i32;
+)}
+}
+#[doc="`ToXHZ(crate::unity_engine::vector3::Vector3)` overload"]pub fn to_xhz(xyz:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4fa50usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(xyz))}
+}
+#[doc="`ToXHZ(crate::combat::fxz::FXZ)` overload"]pub fn to_xhz_2(xz:impl::core::convert::Into<crate::combat::fxz::FXZ>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4fb60usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(xz))}
+}
+#[doc="`SampleHeight(crate::unity_engine::vector3::Vector3)` overload"]pub fn sample_height(xyz:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4fc10usize)as*mut u8,f32;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(xyz))}
+}
+#[doc="`SampleHeight(crate::combat::fxz::FXZ)` overload"]pub fn sample_height_2(xz:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4fca0usize)as*mut u8,f32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(xz))}
+}
+#[doc="`ToABCD(crate::unity_engine::vector3::Vector3)` overload"]pub fn to_abcd(xyz:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector4::Vector4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4fd60usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(xyz))}
+}
+#[doc="`ToWideABCD(crate::unity_engine::vector3::Vector3)` overload"]pub fn to_wide_abcd(center_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector4::Vector4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4fed0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(center_pos))}
+}
+#[doc="`ToWideABCD(crate::unity_engine::vector3::Vector3, *mutbool)` overload"]pub fn to_wide_abcd_2(center_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(crate::unity_engine::vector4::Vector4,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ff60usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(center_pos),(*mut bool)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d50650usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-fxzex")]
-impl FXZEx { pub fn get_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_xhz_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_xhz_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn sample_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn sample_height_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn to_abcd_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn to_wide_abcd_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn to_wide_abcd_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="combat-fxzex")]impl FXZEx{pub fn get_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_xhz_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_xhz_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn sample_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn sample_height_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn to_abcd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_wide_abcd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn to_wide_abcd_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "combat-fxzex")]
 #[doc(hidden)]

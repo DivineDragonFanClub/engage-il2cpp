@@ -4,52 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animatorstateinfo/AnimatorStateInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AnimatorStateInfo {
-    pub m_name: i32,
-    pub m_path: i32,
-    pub m_full_path: i32,
-    pub m_normalized_time: f32,
-    pub m_length: f32,
-    pub m_speed: f32,
-    pub m_speed_multiplier: f32,
-    pub m_tag: i32,
-    pub m_loop: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animatorstateinfo/AnimatorStateInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AnimatorStateInfo{pub m_name:i32,pub m_path:i32,pub m_full_path:i32,pub m_normalized_time:f32,pub m_length:f32,pub m_speed:f32,pub m_speed_multiplier:f32,pub m_tag:i32,pub m_loop:i32,}
+impl::unity2::ClassIdentity for AnimatorStateInfo{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="AnimatorStateInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AnimatorStateInfo {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "AnimatorStateInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AnimatorStateInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for AnimatorStateInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -57,11 +26,41 @@ impl ::unity2::IlType for AnimatorStateInfo {
 #[cfg(feature = "unity_engine-animatorstateinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animatorstateinfo")]
-impl AnimatorStateInfo { # [doc = "`IsName(::unity2::Il2CppString)` overload"] pub fn is_name (& mut self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (* mut AnimatorStateInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb8410usize) as * mut u8) ; __inner (self as * mut AnimatorStateInfo , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`get_fullPathHash()` overload"] pub fn get_full_path_hash (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut AnimatorStateInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb84a0usize) as * mut u8) ; __inner (self as * mut AnimatorStateInfo , :: core :: option :: Option :: None) } } } # [doc = "`get_shortNameHash()` overload"] pub fn get_short_name_hash (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut AnimatorStateInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb84b0usize) as * mut u8) ; __inner (self as * mut AnimatorStateInfo , :: core :: option :: Option :: None) } } } # [doc = "`get_normalizedTime()` overload"] pub fn get_normalized_time (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut AnimatorStateInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb84c0usize) as * mut u8) ; __inner (self as * mut AnimatorStateInfo , :: core :: option :: Option :: None) } } } # [doc = "`get_length()` overload"] pub fn get_length (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut AnimatorStateInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb84d0usize) as * mut u8) ; __inner (self as * mut AnimatorStateInfo , :: core :: option :: Option :: None) } } } # [doc = "`get_speed()` overload"] pub fn get_speed (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut AnimatorStateInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb84e0usize) as * mut u8) ; __inner (self as * mut AnimatorStateInfo , :: core :: option :: Option :: None) } } } # [doc = "`get_speedMultiplier()` overload"] pub fn get_speed_multiplier (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut AnimatorStateInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb84f0usize) as * mut u8) ; __inner (self as * mut AnimatorStateInfo , :: core :: option :: Option :: None) } } } # [doc = "`get_loop()` overload"] pub fn get_loop (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut AnimatorStateInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb8500usize) as * mut u8) ; __inner (self as * mut AnimatorStateInfo , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animatorstateinfo")]impl AnimatorStateInfo{#[doc="`IsName(::unity2::Il2CppString)` overload"]pub fn is_name(&mut self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb8410usize)as*mut u8,bool;
+(*mut AnimatorStateInfo)self as*mut AnimatorStateInfo,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`get_fullPathHash()` overload"]pub fn get_full_path_hash(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb84a0usize)as*mut u8,i32;
+(*mut AnimatorStateInfo)self as*mut AnimatorStateInfo)}
+}
+#[doc="`get_shortNameHash()` overload"]pub fn get_short_name_hash(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb84b0usize)as*mut u8,i32;
+(*mut AnimatorStateInfo)self as*mut AnimatorStateInfo)}
+}
+#[doc="`get_normalizedTime()` overload"]pub fn get_normalized_time(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb84c0usize)as*mut u8,f32;
+(*mut AnimatorStateInfo)self as*mut AnimatorStateInfo)}
+}
+#[doc="`get_length()` overload"]pub fn get_length(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb84d0usize)as*mut u8,f32;
+(*mut AnimatorStateInfo)self as*mut AnimatorStateInfo)}
+}
+#[doc="`get_speed()` overload"]pub fn get_speed(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb84e0usize)as*mut u8,f32;
+(*mut AnimatorStateInfo)self as*mut AnimatorStateInfo)}
+}
+#[doc="`get_speedMultiplier()` overload"]pub fn get_speed_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb84f0usize)as*mut u8,f32;
+(*mut AnimatorStateInfo)self as*mut AnimatorStateInfo)}
+}
+#[doc="`get_loop()` overload"]pub fn get_loop(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb8500usize)as*mut u8,bool;
+(*mut AnimatorStateInfo)self as*mut AnimatorStateInfo)}
+}
+}
 
-#[cfg(feature = "unity_engine-animatorstateinfo")]
-impl AnimatorStateInfo { pub fn is_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorStateInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_full_path_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorStateInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_short_name_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorStateInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_normalized_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorStateInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorStateInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorStateInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_speed_multiplier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorStateInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorStateInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-animatorstateinfo")]impl AnimatorStateInfo{pub fn is_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_full_path_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_short_name_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_speed_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-animatorstateinfo")]
 #[doc(hidden)]

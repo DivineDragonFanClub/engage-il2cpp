@@ -4,43 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/supportcalculator/SupportCalculator.md"))] # [:: unity2 :: class (namespace = "App" , name = "SupportCalculator")] # [parent (crate :: system :: object :: Object)] pub struct SupportCalculator {
-# [static_field] # [rename (name = "Range")] pub range : i32 ,
-# [static_field] # [rename (name = "MaxShowUnits")] pub max_show_units : i32 ,
-# [offset (16)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (24)] # [rename (name = "m_X")] pub m_x : i32 ,
-# [offset (28)] # [rename (name = "m_Z")] pub m_z : i32 ,
-# [offset (32)] # [rename (name = "m_Hit")] pub m_hit : i32 ,
-# [offset (36)] # [rename (name = "m_Avoid")] pub m_avoid : i32 ,
-# [offset (40)] # [rename (name = "m_Critical")] pub m_critical : i32 ,
-# [offset (44)] # [rename (name = "m_Secure")] pub m_secure : i32 ,
-# [offset (48)] # [rename (name = "m_ShowUnits")] pub m_show_units : :: unity2 :: Array < crate :: app :: unit :: Unit > ,
-# [offset (56)] # [rename (name = "m_ShowUnitLevels")] pub m_show_unit_levels : :: unity2 :: Array < crate :: app :: reliancedata :: RelianceData_Level > ,
-# [offset (64)] # [rename (name = "m_RangeFunction")] pub m_range_function : crate :: app :: mapfor :: MapFor_RangeFunction ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/supportcalculator/SupportCalculator.md"))]#[::unity2::class(namespace="App",name="SupportCalculator")]#[parent(crate::system::object::Object)]pub struct SupportCalculator{#[static_field]#[rename(name="Range")]pub range:i32, #[static_field]#[rename(name="MaxShowUnits")]pub max_show_units:i32, #[offset(16)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_X")]pub m_x:i32, #[offset(28)]#[rename(name="m_Z")]pub m_z:i32, #[offset(32)]#[rename(name="m_Hit")]pub m_hit:i32, #[offset(36)]#[rename(name="m_Avoid")]pub m_avoid:i32, #[offset(40)]#[rename(name="m_Critical")]pub m_critical:i32, #[offset(44)]#[rename(name="m_Secure")]pub m_secure:i32, #[offset(48)]#[rename(name="m_ShowUnits")]pub m_show_units: ::unity2::Array<crate::app::unit::Unit> , #[offset(56)]#[rename(name="m_ShowUnitLevels")]pub m_show_unit_levels: ::unity2::Array<crate::app::reliancedata::RelianceData_Level> , #[offset(64)]#[rename(name="m_RangeFunction")]pub m_range_function:crate::app::mapfor::MapFor_RangeFunction,}
 
 }
 
 #[cfg(feature = "app-supportcalculator-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-supportcalculator")]
-pub trait ISupportCalculatorMethods : ISupportCalculator { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::app::unit::Unit, i32, i32)` overload"] fn setup (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`RangeFunction(i32, i32, i32)` overload"] fn range_function (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , range : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae4b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (range) , :: core :: option :: Option :: None) } } } # [doc = "`Calc()` overload"] fn calc (self ,) -> () { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Hit()` overload"] fn get_hit (self ,) -> i32 { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Avoid()` overload"] fn get_avoid (self ,) -> i32 { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Critical()` overload"] fn get_critical (self ,) -> i32 { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Secure()` overload"] fn get_secure (self ,) -> i32 { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ShowUnits()` overload"] fn get_show_units (self ,) -> :: unity2 :: Array < crate :: app :: unit :: Unit > { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: unit :: Unit > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegisterShowUnit(crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level)` overload"] fn register_show_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , reliance_level : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level >) -> () { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , crate :: app :: unit :: Unit , crate :: app :: reliancedata :: RelianceData_Level , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (reliance_level) , :: core :: option :: Option :: None) } } } # [doc = "`InsertShowUnit(i32, crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level)` overload"] fn insert_show_unit (self , index : impl :: core :: convert :: Into < i32 > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , reliance_level : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level >) -> () { unsafe { let __receiver = < SupportCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportCalculator , i32 , crate :: app :: unit :: Unit , crate :: app :: reliancedata :: RelianceData_Level , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (reliance_level) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-supportcalculator")]pub trait ISupportCalculatorMethods:ISupportCalculator{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae270usize)as*mut u8,();
+(SupportCalculator)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae370usize)as*mut u8,();
+(SupportCalculator)__receiver)}
+}
+#[doc="`Setup(crate::app::unit::Unit, i32, i32)` overload"]fn setup(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae470usize)as*mut u8,();
+(SupportCalculator)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`RangeFunction(i32, i32, i32)` overload"]fn range_function(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae4b0usize)as*mut u8,();
+(SupportCalculator)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(range))}
+}
+#[doc="`Calc()` overload"]fn calc(self,)->(){unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae700usize)as*mut u8,();
+(SupportCalculator)__receiver)}
+}
+#[doc="`get_Hit()` overload"]fn get_hit(self,)->i32{unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae840usize)as*mut u8,i32;
+(SupportCalculator)__receiver)}
+}
+#[doc="`get_Avoid()` overload"]fn get_avoid(self,)->i32{unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae850usize)as*mut u8,i32;
+(SupportCalculator)__receiver)}
+}
+#[doc="`get_Critical()` overload"]fn get_critical(self,)->i32{unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae860usize)as*mut u8,i32;
+(SupportCalculator)__receiver)}
+}
+#[doc="`get_Secure()` overload"]fn get_secure(self,)->i32{unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae870usize)as*mut u8,i32;
+(SupportCalculator)__receiver)}
+}
+#[doc="`get_ShowUnits()` overload"]fn get_show_units(self,)-> ::unity2::Array<crate::app::unit::Unit>{unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae880usize)as*mut u8, ::unity2::Array<crate::app::unit::Unit> ;
+(SupportCalculator)__receiver)}
+}
+#[doc="`RegisterShowUnit(crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level)` overload"]fn register_show_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,reliance_level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)->(){unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae610usize)as*mut u8,();
+(SupportCalculator)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(reliance_level))}
+}
+#[doc="`InsertShowUnit(i32, crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level)` overload"]fn insert_show_unit(self,index:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,reliance_level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)->(){unsafe{let __receiver= <SupportCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ae890usize)as*mut u8,();
+(SupportCalculator)__receiver,(i32)::core::convert::Into::into(index),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(reliance_level))}
+}
+}
 
-#[cfg(feature = "app-supportcalculator")]
-impl < __T : ISupportCalculator > ISupportCalculatorMethods for __T { }
+#[cfg(feature="app-supportcalculator")]impl<__T:ISupportCalculator>ISupportCalculatorMethods for __T{}
 
-#[cfg(feature = "app-supportcalculator")]
-impl SupportCalculator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn range_function_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_avoid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_secure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_show_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn register_show_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn insert_show_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-supportcalculator")]impl SupportCalculator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn range_function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_avoid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_secure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_show_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn register_show_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn insert_show_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-supportcalculator")]
-impl SupportCalculator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SupportCalculator) , :: core :: stringify ! (new) ,)) ; < Self as ISupportCalculatorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-supportcalculator")]impl SupportCalculator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SupportCalculator), ::core::stringify!(new),));
+ <Self as ISupportCalculatorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-supportcalculator")]

@@ -4,44 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uir/utility_2/Utility_2.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UIElements.UIR" , name = "Utility")] # [parent (crate :: system :: object :: Object)] pub struct Utility_2 {
-# [static_field] # [rename (name = "GraphicsResourcesRecreate")] pub graphics_resources_recreate : crate :: system :: action_1 :: Action_1 < bool > ,
-# [static_field] # [rename (name = "EngineUpdate")] pub engine_update : crate :: system :: action :: Action ,
-# [static_field] # [rename (name = "FlushPendingResources")] pub flush_pending_resources : crate :: system :: action :: Action ,
-# [static_field] # [rename (name = "RegisterIntermediateRenderers")] pub register_intermediate_renderers : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: camera :: Camera > ,
-# [static_field] # [rename (name = "RenderNodeAdd")] pub render_node_add : crate :: system :: action_1 :: Action_1 < :: unity2 :: IntPtr > ,
-# [static_field] # [rename (name = "RenderNodeExecute")] pub render_node_execute : crate :: system :: action_1 :: Action_1 < :: unity2 :: IntPtr > ,
-# [static_field] # [rename (name = "RenderNodeCleanup")] pub render_node_cleanup : crate :: system :: action_1 :: Action_1 < :: unity2 :: IntPtr > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md"))]#[::unity2::class(namespace="UnityEngine.UIElements.UIR",name="Utility.GPUBuffer`1")]#[parent(crate::system::object::Object)]pub struct Utility_GPUBuffer_1<T0: ::unity2::ClassIdentity>{#[rename(name="buffer")]pub buffer: ::unity2::IntPtr,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UIElements.UIR" , name = "Utility.GPUBuffer`1")] # [parent (crate :: system :: object :: Object)] pub struct Utility_GPUBuffer_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "buffer")] pub buffer : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui_elements/uir/utility_2/Utility_2.md"))]#[::unity2::class(namespace="UnityEngine.UIElements.UIR",name="Utility")]#[parent(crate::system::object::Object)]pub struct Utility_2{#[static_field]#[rename(name="GraphicsResourcesRecreate")]pub graphics_resources_recreate:crate::system::action_1::Action_1<bool> , #[static_field]#[rename(name="EngineUpdate")]pub engine_update:crate::system::action::Action, #[static_field]#[rename(name="FlushPendingResources")]pub flush_pending_resources:crate::system::action::Action, #[static_field]#[rename(name="RegisterIntermediateRenderers")]pub register_intermediate_renderers:crate::system::action_1::Action_1<crate::unity_engine::camera::Camera> , #[static_field]#[rename(name="RenderNodeAdd")]pub render_node_add:crate::system::action_1::Action_1< ::unity2::IntPtr> , #[static_field]#[rename(name="RenderNodeExecute")]pub render_node_execute:crate::system::action_1::Action_1< ::unity2::IntPtr> , #[static_field]#[rename(name="RenderNodeCleanup")]pub render_node_cleanup:crate::system::action_1::Action_1< ::unity2::IntPtr> ,}
 
 }
 
 #[cfg(feature = "unity_engine-ui_elements-uir-utility_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui_elements-uir-utility_2")]
-impl Utility_2 { # [doc = "`RaiseGraphicsResourcesRecreate(bool)` overload"] pub fn raise_graphics_resources_recreate (recreate : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f402f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (recreate) , :: core :: option :: Option :: None) } } } # [doc = "`RaiseEngineUpdate()` overload"] pub fn raise_engine_update () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f403a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RaiseFlushPendingResources()` overload"] pub fn raise_flush_pending_resources () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40450usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RaiseRegisterIntermediateRenderers(crate::unity_engine::camera::Camera)` overload"] pub fn raise_register_intermediate_renderers (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f404e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`RaiseRenderNodeAdd(::unity2::IntPtr)` overload"] pub fn raise_render_node_add (user_data : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (user_data) , :: core :: option :: Option :: None) } } } # [doc = "`RaiseRenderNodeExecute(::unity2::IntPtr)` overload"] pub fn raise_render_node_execute (user_data : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40640usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (user_data) , :: core :: option :: Option :: None) } } } # [doc = "`RaiseRenderNodeCleanup(::unity2::IntPtr)` overload"] pub fn raise_render_node_cleanup (user_data : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f406f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (user_data) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f407a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui_elements-uir-utility_2")]impl Utility_2{#[doc="`RaiseGraphicsResourcesRecreate(bool)` overload"]pub fn raise_graphics_resources_recreate(recreate:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f402f0usize)as*mut u8,();
+(bool)::core::convert::Into::into(recreate))}
+}
+#[doc="`RaiseEngineUpdate()` overload"]pub fn raise_engine_update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f403a0usize)as*mut u8,();
+)}
+}
+#[doc="`RaiseFlushPendingResources()` overload"]pub fn raise_flush_pending_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40450usize)as*mut u8,();
+)}
+}
+#[doc="`RaiseRegisterIntermediateRenderers(crate::unity_engine::camera::Camera)` overload"]pub fn raise_register_intermediate_renderers(camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f404e0usize)as*mut u8,();
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`RaiseRenderNodeAdd(::unity2::IntPtr)` overload"]pub fn raise_render_node_add(user_data:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40590usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(user_data))}
+}
+#[doc="`RaiseRenderNodeExecute(::unity2::IntPtr)` overload"]pub fn raise_render_node_execute(user_data:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40640usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(user_data))}
+}
+#[doc="`RaiseRenderNodeCleanup(::unity2::IntPtr)` overload"]pub fn raise_render_node_cleanup(user_data:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f406f0usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(user_data))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f407a0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui_elements-uir-utility_2")]
-impl Utility_2 { pub fn raise_graphics_resources_recreate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn raise_engine_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn raise_flush_pending_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn raise_register_intermediate_renderers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn raise_render_node_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn raise_render_node_execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn raise_render_node_cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-ui_elements-uir-utility_2")]impl Utility_2{pub fn raise_graphics_resources_recreate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn raise_engine_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn raise_flush_pending_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn raise_register_intermediate_renderers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn raise_render_node_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn raise_render_node_execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn raise_render_node_cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-ui_elements-uir-utility_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Utility_2;
-    pub use super::IUtility_2;
     pub use super::Utility_GPUBuffer_1;
     pub use super::IUtility_GPUBuffer_1;
+    pub use super::Utility_2;
+    pub use super::IUtility_2;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -4,277 +4,259 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: integratedsubsystem :: { IIntegratedSubsystem , IntegratedSubsystem }
- ;
- use crate :: unity_engine :: integratedsubsystem_1 :: { IIntegratedSubsystem_1 , IntegratedSubsystem_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::integratedsubsystem::{IIntegratedSubsystem,IntegratedSubsystem}
+;
+use crate::unity_engine::integratedsubsystem_1::{IIntegratedSubsystem_1,IntegratedSubsystem_1}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRBlitParams.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct XRDisplaySubsystem_XRBlitParams {
-    pub src_tex: crate :: unity_engine :: rendertexture :: RenderTexture,
-    pub src_tex_array_slice: i32,
-    pub src_rect: crate :: unity_engine :: rect :: Rect,
-    pub dest_rect: crate :: unity_engine :: rect :: Rect,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRMirrorViewBlitDesc.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRMirrorViewBlitDesc{pub display_subsystem_instance: ::unity2::IntPtr,pub native_blit_available:bool,pub native_blit_invalid_states:bool,pub blit_params_count:i32,}
+impl::unity2::ClassIdentity for XRDisplaySubsystem_XRMirrorViewBlitDesc{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRDisplaySubsystem.XRMirrorViewBlitDesc";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for XRDisplaySubsystem_XRMirrorViewBlitDesc{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRBlitParams {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "XRDisplaySubsystem.XRBlitParams";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderParameter.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRRenderParameter{pub view:crate::unity_engine::matrix4x4::Matrix4x4,pub projection:crate::unity_engine::matrix4x4::Matrix4x4,pub viewport:crate::unity_engine::rect::Rect,pub occlusion_mesh:crate::unity_engine::mesh::Mesh,pub texture_array_slice:i32,}
+impl::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderParameter{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRDisplaySubsystem.XRRenderParameter";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for XRDisplaySubsystem_XRRenderParameter{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::IlType for XRDisplaySubsystem_XRBlitParams {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRBlitParams.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRBlitParams{pub src_tex:crate::unity_engine::rendertexture::RenderTexture,pub src_tex_array_slice:i32,pub src_rect:crate::unity_engine::rect::Rect,pub dest_rect:crate::unity_engine::rect::Rect,}
+impl::unity2::ClassIdentity for XRDisplaySubsystem_XRBlitParams{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRDisplaySubsystem.XRBlitParams";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for XRDisplaySubsystem_XRBlitParams{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderPass.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct XRDisplaySubsystem_XRRenderPass {
-    pub display_subsystem_instance: :: unity2 :: IntPtr,
-    pub render_pass_index: i32,
-    pub render_target: crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-    pub render_target_desc: crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
-    pub should_fill_out_depth: bool,
-    pub culling_pass_index: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderPass.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRRenderPass{pub display_subsystem_instance: ::unity2::IntPtr,pub render_pass_index:i32,pub render_target:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,pub render_target_desc:crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,pub should_fill_out_depth:bool,pub culling_pass_index:i32,}
+impl::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderPass{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRDisplaySubsystem.XRRenderPass";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for XRDisplaySubsystem_XRRenderPass{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderPass {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "XRDisplaySubsystem.XRRenderPass";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_TextureLayout.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct XRDisplaySubsystem_TextureLayout{pub value:i32,}
+impl::unity2::ClassIdentity for XRDisplaySubsystem_TextureLayout{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRDisplaySubsystem.TextureLayout";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for XRDisplaySubsystem_TextureLayout{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl XRDisplaySubsystem_TextureLayout{pub fn texture2_d_array()->Self{Self{value:1}
+}
+pub fn single_texture2_d()->Self{Self{value:2}
+}
+pub fn separate_texture2_ds()->Self{Self{value:4}
+}
 }
 
 
-impl ::unity2::IlType for XRDisplaySubsystem_XRRenderPass {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRMirrorViewBlitDesc.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct XRDisplaySubsystem_XRMirrorViewBlitDesc {
-    pub display_subsystem_instance: :: unity2 :: IntPtr,
-    pub native_blit_available: bool,
-    pub native_blit_invalid_states: bool,
-    pub blit_params_count: i32,
-}
-
-
-impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRMirrorViewBlitDesc {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "XRDisplaySubsystem.XRMirrorViewBlitDesc";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for XRDisplaySubsystem_XRMirrorViewBlitDesc {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_TextureLayout.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct XRDisplaySubsystem_TextureLayout  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for XRDisplaySubsystem_TextureLayout  {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "XRDisplaySubsystem.TextureLayout";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for XRDisplaySubsystem_TextureLayout  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  XRDisplaySubsystem_TextureLayout  {
-    pub fn texture2_d_array() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn single_texture2_d() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn separate_texture2_ds() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRDisplaySubsystem")] # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrdisplaysubsystemdescriptor :: XRDisplaySubsystemDescriptor >)] pub struct XRDisplaySubsystem {
-# [offset (32)] # [rename (name = "displayFocusChanged")] pub display_focus_changed : crate :: system :: action_1 :: Action_1 < bool > ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderParameter.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct XRDisplaySubsystem_XRRenderParameter {
-    pub view: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub projection: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub viewport: crate :: unity_engine :: rect :: Rect,
-    pub occlusion_mesh: crate :: unity_engine :: mesh :: Mesh,
-    pub texture_array_slice: i32,
-}
-
-
-impl ::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderParameter {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "XRDisplaySubsystem.XRRenderParameter";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for XRDisplaySubsystem_XRRenderParameter {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="XRDisplaySubsystem")]#[parent(crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1<crate::unity_engine::xr::xrdisplaysubsystemdescriptor::XRDisplaySubsystemDescriptor>)]pub struct XRDisplaySubsystem{#[offset(32)]#[rename(name="displayFocusChanged")]pub display_focus_changed:crate::system::action_1::Action_1<bool> ,}
 
 }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRRenderPass { # [doc = "`GetRenderParameter_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"] pub fn get_render_parameter_injected (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , render_parameter_index : impl :: core :: convert :: Into < i32 >) -> (crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , crate :: unity_engine :: camera :: Camera , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ff40usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (render_parameter_index) , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetRenderParameterCount_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"] pub fn get_render_parameter_count_injected () -> (i32 , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f20000usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl XRDisplaySubsystem_XRMirrorViewBlitDesc{#[doc="`GetBlitParameter_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)` overload"]pub fn get_blit_parameter_injected(blit_parameter_index:impl::core::convert::Into<i32>)->(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc,crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1fe70usize)as*mut u8,();
+(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc)__out_0.as_mut_ptr(),(i32)::core::convert::Into::into(blit_parameter_index),(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRRenderPass { # [doc = "`GetRenderParameter(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"] pub fn get_render_parameter (& mut self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , render_parameter_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter > :: uninit () ; { let __inner : extern "C" fn (* mut XRDisplaySubsystem_XRRenderPass , crate :: unity_engine :: camera :: Camera , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1fed0usize) as * mut u8) ; __inner (self as * mut XRDisplaySubsystem_XRRenderPass , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (render_parameter_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`GetRenderParameterCount()` overload"] pub fn get_render_parameter_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut XRDisplaySubsystem_XRRenderPass , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ffb0usize) as * mut u8) ; __inner (self as * mut XRDisplaySubsystem_XRRenderPass , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl XRDisplaySubsystem_XRMirrorViewBlitDesc{#[doc="`GetBlitParameter(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)` overload"]pub fn get_blit_parameter(&mut self,blit_parameter_index:impl::core::convert::Into<i32>)->crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1fe10usize)as*mut u8,();
+(*mut XRDisplaySubsystem_XRMirrorViewBlitDesc)self as*mut XRDisplaySubsystem_XRMirrorViewBlitDesc,(i32)::core::convert::Into::into(blit_parameter_index),(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRRenderPass { pub fn get_render_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_render_parameter_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_render_parameter_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_render_parameter_count_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem_XRRenderPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl XRDisplaySubsystem_XRMirrorViewBlitDesc{pub fn get_blit_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_blit_parameter_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRMirrorViewBlitDesc { # [doc = "`GetBlitParameter_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)` overload"] pub fn get_blit_parameter_injected (blit_parameter_index : impl :: core :: convert :: Into < i32 >) -> (crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1fe70usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (blit_parameter_index) , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl XRDisplaySubsystem_XRRenderPass{#[doc="`GetRenderParameter_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]pub fn get_render_parameter_injected(camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,render_parameter_index:impl::core::convert::Into<i32>)->(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ff40usize)as*mut u8,();
+(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)__out_0.as_mut_ptr(),(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(i32)::core::convert::Into::into(render_parameter_index),(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetRenderParameterCount_Injected(*mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"]pub fn get_render_parameter_count_injected()->(i32,crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f20000usize)as*mut u8,i32;
+(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRMirrorViewBlitDesc { # [doc = "`GetBlitParameter(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRBlitParams)` overload"] pub fn get_blit_parameter (& mut self , blit_parameter_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams > :: uninit () ; { let __inner : extern "C" fn (* mut XRDisplaySubsystem_XRMirrorViewBlitDesc , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRBlitParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1fe10usize) as * mut u8) ; __inner (self as * mut XRDisplaySubsystem_XRMirrorViewBlitDesc , :: core :: convert :: Into :: into (blit_parameter_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl XRDisplaySubsystem_XRRenderPass{#[doc="`GetRenderParameter(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]pub fn get_render_parameter(&mut self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,render_parameter_index:impl::core::convert::Into<i32>)->crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1fed0usize)as*mut u8,();
+(*mut XRDisplaySubsystem_XRRenderPass)self as*mut XRDisplaySubsystem_XRRenderPass,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(i32)::core::convert::Into::into(render_parameter_index),(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`GetRenderParameterCount()` overload"]pub fn get_render_parameter_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ffb0usize)as*mut u8,i32;
+(*mut XRDisplaySubsystem_XRRenderPass)self as*mut XRDisplaySubsystem_XRRenderPass)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem_XRMirrorViewBlitDesc { pub fn get_blit_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem_XRMirrorViewBlitDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_blit_parameter_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem_XRMirrorViewBlitDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl XRDisplaySubsystem_XRRenderPass{pub fn get_render_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_render_parameter_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_render_parameter_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_render_parameter_count_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-pub trait IXRDisplaySubsystemMethods : IXRDisplaySubsystem { # [doc = "`InvokeDisplayFocusChanged(bool)` overload"] fn invoke_display_focus_changed (self , focus : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (focus) , :: core :: option :: Option :: None) } } } # [doc = "`set_scaleOfAllRenderTargets(f32)` overload"] fn set_scale_of_all_render_targets (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_zNear(f32)` overload"] fn set_z_near (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_zFar(f32)` overload"] fn set_z_far (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_sRGB(bool)` overload"] fn set_s_rgb (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_textureLayout(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout)` overload"] fn set_texture_layout (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_TextureLayout >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_TextureLayout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetMSAALevel(i32)` overload"] fn set_msaa_level (self , level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`set_disableLegacyRenderer(bool)` overload"] fn set_disable_legacy_renderer (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f4b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetRenderPassCount()` overload"] fn get_render_pass_count (self ,) -> i32 { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRenderPass(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"] fn get_render_pass (self , render_pass_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > :: uninit () ; { let __inner : extern "C" fn (XRDisplaySubsystem , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (render_pass_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Internal_TryGetRenderPass(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"] fn internal_try_get_render_pass (self , render_pass_index : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass) { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > :: uninit () ; let __ret = { { let __inner : extern "C" fn (XRDisplaySubsystem , i32 , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (render_pass_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetCullingParameters(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"] fn get_culling_parameters (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , culling_pass_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ; { let __inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: camera :: Camera , i32 , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (culling_pass_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Internal_TryGetCullingParams(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"] fn internal_try_get_culling_params (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , culling_pass_index : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters) { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ; let __ret = { { let __inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: camera :: Camera , i32 , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f7a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (culling_pass_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetPreferredMirrorBlitMode()` overload"] fn get_preferred_mirror_blit_mode (self ,) -> i32 { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMirrorViewBlitDesc(crate::unity_engine::rendertexture::RenderTexture, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc, i32)` overload"] fn get_mirror_view_blit_desc (self , mirror_rt : impl :: core :: convert :: Into < crate :: unity_engine :: rendertexture :: RenderTexture > , mode : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc) { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc > :: uninit () ; let __ret = { { let __inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: rendertexture :: RenderTexture , * mut crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRMirrorViewBlitDesc , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mirror_rt) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`AddGraphicsThreadMirrorViewBlit(crate::unity_engine::rendering::commandbuffer::CommandBuffer, bool, i32)` overload"] fn add_graphics_thread_mirror_view_blit (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , allow_graphics_state_invalidate : impl :: core :: convert :: Into < bool > , mode : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , bool , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f8d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (allow_graphics_state_invalidate) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < XRDisplaySubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRDisplaySubsystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1f940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]pub trait IXRDisplaySubsystemMethods:IXRDisplaySubsystem{#[doc="`InvokeDisplayFocusChanged(bool)` overload"]fn invoke_display_focus_changed(self,focus:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f260usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(bool)::core::convert::Into::into(focus))}
+}
+#[doc="`set_scaleOfAllRenderTargets(f32)` overload"]fn set_scale_of_all_render_targets(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f2d0usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_zNear(f32)` overload"]fn set_z_near(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f320usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_zFar(f32)` overload"]fn set_z_far(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f370usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_sRGB(bool)` overload"]fn set_s_rgb(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f3c0usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_textureLayout(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout)` overload"]fn set_texture_layout(self,value:impl::core::convert::Into<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout>)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f410usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_TextureLayout)::core::convert::Into::into(value))}
+}
+#[doc="`SetMSAALevel(i32)` overload"]fn set_msaa_level(self,level:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f460usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(i32)::core::convert::Into::into(level))}
+}
+#[doc="`set_disableLegacyRenderer(bool)` overload"]fn set_disable_legacy_renderer(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f4b0usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`GetRenderPassCount()` overload"]fn get_render_pass_count(self,)->i32{unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f500usize)as*mut u8,i32;
+(XRDisplaySubsystem)__receiver)}
+}
+#[doc="`GetRenderPass(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"]fn get_render_pass(self,render_pass_index:impl::core::convert::Into<i32>)->crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass{unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f550usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(i32)::core::convert::Into::into(render_pass_index),(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Internal_TryGetRenderPass(i32, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)` overload"]fn internal_try_get_render_pass(self,render_pass_index:impl::core::convert::Into<i32>)->(bool,crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f600usize)as*mut u8,bool;
+(XRDisplaySubsystem)__receiver,(i32)::core::convert::Into::into(render_pass_index),(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetCullingParameters(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"]fn get_culling_parameters(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,culling_pass_index:impl::core::convert::Into<i32>)->crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters{unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f660usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(i32)::core::convert::Into::into(culling_pass_index),(*mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Internal_TryGetCullingParams(crate::unity_engine::camera::Camera, i32, *mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"]fn internal_try_get_culling_params(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,culling_pass_index:impl::core::convert::Into<i32>)->(bool,crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f7a0usize)as*mut u8,bool;
+(XRDisplaySubsystem)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(i32)::core::convert::Into::into(culling_pass_index),(*mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetPreferredMirrorBlitMode()` overload"]fn get_preferred_mirror_blit_mode(self,)->i32{unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f810usize)as*mut u8,i32;
+(XRDisplaySubsystem)__receiver)}
+}
+#[doc="`GetMirrorViewBlitDesc(crate::unity_engine::rendertexture::RenderTexture, *mutcrate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc, i32)` overload"]fn get_mirror_view_blit_desc(self,mirror_rt:impl::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture> ,mode:impl::core::convert::Into<i32>)->(bool,crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f860usize)as*mut u8,bool;
+(XRDisplaySubsystem)__receiver,(crate::unity_engine::rendertexture::RenderTexture)::core::convert::Into::into(mirror_rt),(*mut crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRMirrorViewBlitDesc)__out_0.as_mut_ptr(),(i32)::core::convert::Into::into(mode))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`AddGraphicsThreadMirrorViewBlit(crate::unity_engine::rendering::commandbuffer::CommandBuffer, bool, i32)` overload"]fn add_graphics_thread_mirror_view_blit(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,allow_graphics_state_invalidate:impl::core::convert::Into<bool> ,mode:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f8d0usize)as*mut u8,bool;
+(XRDisplaySubsystem)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(bool)::core::convert::Into::into(allow_graphics_state_invalidate),(i32)::core::convert::Into::into(mode))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <XRDisplaySubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1f940usize)as*mut u8,();
+(XRDisplaySubsystem)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl < __T : IXRDisplaySubsystem > IXRDisplaySubsystemMethods for __T { }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl<__T:IXRDisplaySubsystem>IXRDisplaySubsystemMethods for __T{}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem { pub fn invoke_display_focus_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_scale_of_all_render_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_z_near_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_z_far_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_s_rgb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_texture_layout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_msaa_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_disable_legacy_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_render_pass_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_render_pass_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn internal_try_get_render_pass_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_culling_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn internal_try_get_culling_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_preferred_mirror_blit_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_mirror_view_blit_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn add_graphics_thread_mirror_view_blit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDisplaySubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl XRDisplaySubsystem{pub fn invoke_display_focus_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_scale_of_all_render_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_z_near_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_z_far_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_s_rgb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_texture_layout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_msaa_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_disable_legacy_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_render_pass_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_render_pass_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn internal_try_get_render_pass_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_culling_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn internal_try_get_culling_params_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_preferred_mirror_blit_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_mirror_view_blit_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn add_graphics_thread_mirror_view_blit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
-impl XRDisplaySubsystem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (XRDisplaySubsystem) , :: core :: stringify ! (new) ,)) ; < Self as IXRDisplaySubsystemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-xr-xrdisplaysubsystem")]impl XRDisplaySubsystem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(XRDisplaySubsystem), ::core::stringify!(new),));
+ <Self as IXRDisplaySubsystemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::XRDisplaySubsystem_XRMirrorViewBlitDesc;
+    pub use super::XRDisplaySubsystem_XRRenderParameter;
     pub use super::XRDisplaySubsystem_XRBlitParams;
     pub use super::XRDisplaySubsystem_XRRenderPass;
-    pub use super::XRDisplaySubsystem_XRMirrorViewBlitDesc;
     pub use super::XRDisplaySubsystem_TextureLayout;
     pub use super::XRDisplaySubsystem;
     pub use super::IXRDisplaySubsystem;
     pub use super::IXRDisplaySubsystemMethods;
-    pub use super::XRDisplaySubsystem_XRRenderParameter;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

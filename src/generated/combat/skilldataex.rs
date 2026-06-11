@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skilldataex/SkillDataEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SkillDataEx")] # [parent (crate :: system :: object :: Object)] pub struct SkillDataEx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/skilldataex/SkillDataEx.md"))]#[::unity2::class(namespace="Combat",name="SkillDataEx")]#[parent(crate::system::object::Object)]pub struct SkillDataEx{}
 
 }
 
 #[cfg(feature = "combat-skilldataex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-skilldataex")]
-impl SkillDataEx { # [doc = "`HasSkillEffect(crate::app::skilldata::SkillData)` overload"] pub fn has_skill_effect (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2499670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`GetActivateEffectPrefab(crate::app::skilldata::SkillData)` overload"] pub fn get_activate_effect_prefab (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2499770usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`GetHitEffectPrefab(crate::app::skilldata::SkillData)` overload"] pub fn get_hit_effect_prefab (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2499870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`PreloadForAdhocAssetLoader(crate::app::skilldata::SkillData)` overload"] pub fn preload_for_adhoc_asset_loader (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2499970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-skilldataex")]impl SkillDataEx{#[doc="`HasSkillEffect(crate::app::skilldata::SkillData)` overload"]pub fn has_skill_effect(skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2499670usize)as*mut u8,bool;
+(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`GetActivateEffectPrefab(crate::app::skilldata::SkillData)` overload"]pub fn get_activate_effect_prefab(skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2499770usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`GetHitEffectPrefab(crate::app::skilldata::SkillData)` overload"]pub fn get_hit_effect_prefab(skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2499870usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`PreloadForAdhocAssetLoader(crate::app::skilldata::SkillData)` overload"]pub fn preload_for_adhoc_asset_loader(skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2499970usize)as*mut u8,();
+(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+}
 
-#[cfg(feature = "combat-skilldataex")]
-impl SkillDataEx { pub fn has_skill_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillDataEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_activate_effect_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillDataEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hit_effect_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillDataEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn preload_for_adhoc_asset_loader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillDataEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-skilldataex")]impl SkillDataEx{pub fn has_skill_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_activate_effect_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hit_effect_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn preload_for_adhoc_asset_loader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "combat-skilldataex")]
 #[doc(hidden)]

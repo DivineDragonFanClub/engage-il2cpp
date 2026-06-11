@@ -4,40 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
- ;
- use crate :: combat :: actiongranbase :: { ActionGranBase , IActionGranBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::actiondisposerholder::{ActionDisposerHolder,IActionDisposerHolder}
+;
+use crate::combat::actiongranbase::{ActionGranBase,IActionGranBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranfarattack/ActionGranFarAttack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionGranFarAttack")] # [parent (crate :: combat :: actiongranbase :: ActionGranBase)] pub struct ActionGranFarAttack {
-# [offset (64)] # [rename (name = "m_WorldHitTime")] pub m_world_hit_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiongranfarattack/ActionGranFarAttack.md"))]#[::unity2::class(namespace="Combat",name="ActionGranFarAttack")]#[parent(crate::combat::actiongranbase::ActionGranBase)]pub struct ActionGranFarAttack{#[offset(64)]#[rename(name="m_WorldHitTime")]pub m_world_hit_time:f32,}
 
 }
 
 #[cfg(feature = "combat-actiongranfarattack-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiongranfarattack")]
-pub trait IActionGranFarAttackMethods : IActionGranFarAttack { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionGranFarAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranFarAttack , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc7610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, f32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , world_hit_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ActionGranFarAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranFarAttack , crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc7660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (world_hit_time) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionGranFarAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranFarAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc76a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiongranfarattack")]pub trait IActionGranFarAttackMethods:IActionGranFarAttack{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionGranFarAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7610usize)as*mut u8, ::unity2::Il2CppString;
+(ActionGranFarAttack)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,world_hit_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionGranFarAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7660usize)as*mut u8,();
+(ActionGranFarAttack)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(f32)::core::convert::Into::into(world_hit_time))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionGranFarAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc76a0usize)as*mut u8,();
+(ActionGranFarAttack)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actiongranfarattack")]
-impl < __T : IActionGranFarAttack > IActionGranFarAttackMethods for __T { }
+#[cfg(feature="combat-actiongranfarattack")]impl<__T:IActionGranFarAttack>IActionGranFarAttackMethods for __T{}
 
-#[cfg(feature = "combat-actiongranfarattack")]
-impl ActionGranFarAttack { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranFarAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranFarAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranFarAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actiongranfarattack")]impl ActionGranFarAttack{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actiongranfarattack")]
-impl ActionGranFarAttack {
-# [doc = "`.ctor(crate::combat::character::Character, f32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , world_hit_time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionGranFarAttack) , :: core :: stringify ! (new) ,)) ; < Self as IActionGranFarAttackMethods > :: ctor (this , chr , world_hit_time) ; this }
+#[cfg(feature="combat-actiongranfarattack")]impl ActionGranFarAttack{#[doc="`.ctor(crate::combat::character::Character, f32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,world_hit_time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionGranFarAttack), ::core::stringify!(new),));
+ <Self as IActionGranFarAttackMethods> ::ctor(this,chr,world_hit_time);
+this}
 }
 
 #[cfg(feature = "combat-actiongranfarattack")]

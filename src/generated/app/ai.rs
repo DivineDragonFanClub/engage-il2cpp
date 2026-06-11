@@ -4,101 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ai/AI_Seq.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AI_Seq  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ai/AI.md"))]#[::unity2::class(namespace="App",name="AI")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::ai::AI>)]pub struct AI{#[offset(32)]#[rename(name="m_Order")]pub m_order:crate::app::aiorder::AIOrder, #[offset(40)]#[rename(name="m_Think")]pub m_think:crate::app::aithink::AIThink, #[offset(48)]#[rename(name="m_Cannon")]pub m_cannon:crate::app::aicannon::AICannon, #[offset(56)]#[rename(name="m_InterruptAttack")]pub m_interrupt_attack:crate::app::aiinterruptattack::AIInterruptAttack, #[offset(64)]#[rename(name="m_Seq")]pub m_seq:crate::app::ai::AI_Seq, #[offset(68)]#[rename(name="m_Crossfire")]pub m_crossfire:bool, #[offset(69)]#[rename(name="m_IsTargetUpdate")]pub m_is_target_update:bool, #[offset(70)]#[rename(name="m_IsVersus")]pub m_is_versus:bool, #[offset(71)]#[rename(name="m_IsVersusCasual")]pub m_is_versus_casual:bool, #[offset(72)]#[rename(name="m_IsVersusRankedOrMock")]pub m_is_versus_ranked_or_mock:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ai/AI_Seq.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AI_Seq{pub value:i32,}
+impl::unity2::ClassIdentity for AI_Seq{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AI.Seq";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for AI_Seq  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AI.Seq";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for AI_Seq{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for AI_Seq  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl AI_Seq{pub fn initialize()->Self{Self{value:0}
 }
-
-
-impl  AI_Seq  {
-    pub fn initialize() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn order() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn processing() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn crossfire() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn interrupt_attack() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn finalize() -> Self {
-        Self { value: 5 }
-
-    }
-
+pub fn order()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ai/AI.md"))] # [:: unity2 :: class (namespace = "App" , name = "AI")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ai :: AI >)] pub struct AI {
-# [offset (32)] # [rename (name = "m_Order")] pub m_order : crate :: app :: aiorder :: AIOrder ,
-# [offset (40)] # [rename (name = "m_Think")] pub m_think : crate :: app :: aithink :: AIThink ,
-# [offset (48)] # [rename (name = "m_Cannon")] pub m_cannon : crate :: app :: aicannon :: AICannon ,
-# [offset (56)] # [rename (name = "m_InterruptAttack")] pub m_interrupt_attack : crate :: app :: aiinterruptattack :: AIInterruptAttack ,
-# [offset (64)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: ai :: AI_Seq ,
-# [offset (68)] # [rename (name = "m_Crossfire")] pub m_crossfire : bool ,
-# [offset (69)] # [rename (name = "m_IsTargetUpdate")] pub m_is_target_update : bool ,
-# [offset (70)] # [rename (name = "m_IsVersus")] pub m_is_versus : bool ,
-# [offset (71)] # [rename (name = "m_IsVersusCasual")] pub m_is_versus_casual : bool ,
-# [offset (72)] # [rename (name = "m_IsVersusRankedOrMock")] pub m_is_versus_ranked_or_mock : bool ,
+pub fn processing()->Self{Self{value:2}
+}
+pub fn crossfire()->Self{Self{value:3}
+}
+pub fn interrupt_attack()->Self{Self{value:4}
+}
+pub fn finalize()->Self{Self{value:5}
+}
 }
 
 }
@@ -106,30 +46,200 @@ impl  AI_Seq  {
 #[cfg(feature = "app-ai-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ai")]
-impl AI { # [doc = "`IsEntrust()` overload"] pub fn is_entrust () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923530usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Rand()` overload"] pub fn rand () -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19235c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsRandom()` overload"] pub fn is_random () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19235d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ai")]impl AI{#[doc="`IsEntrust()` overload"]pub fn is_entrust()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1923530usize)as*mut u8,bool;
+)}
+}
+#[doc="`Rand()` overload"]pub fn rand()->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19235c0usize)as*mut u8,crate::app::random_2::Random_2;
+)}
+}
+#[doc="`IsRandom()` overload"]pub fn is_random()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19235d0usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-ai")]
-pub trait IAIMethods : IAI { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1922b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Order()` overload"] fn get_order (self ,) -> crate :: app :: aiorder :: AIOrder { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> crate :: app :: aiorder :: AIOrder = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19234a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Think()` overload"] fn get_think (self ,) -> crate :: app :: aithink :: AIThink { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> crate :: app :: aithink :: AIThink = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19234b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Cannon()` overload"] fn get_cannon (self ,) -> crate :: app :: aicannon :: AICannon { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> crate :: app :: aicannon :: AICannon = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19234c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_InterruptAttack()` overload"] fn get_interrupt_attack (self ,) -> crate :: app :: aiinterruptattack :: AIInterruptAttack { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> crate :: app :: aiinterruptattack :: AIInterruptAttack = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19234d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSeq(crate::app::ai::AI_Seq)` overload"] fn set_seq (self , seq : impl :: core :: convert :: Into < crate :: app :: ai :: AI_Seq >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , crate :: app :: ai :: AI_Seq , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19234e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (seq) , :: core :: option :: Option :: None) } } } # [doc = "`SetCrossfire(bool)` overload"] fn set_crossfire (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19234f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`IsVersus()` overload"] fn is_versus (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVersusCasual()` overload"] fn is_versus_casual (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVersusRankedOrMock()` overload"] fn is_versus_ranked_or_mock (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Processing()` overload"] fn processing (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupForEngageOrGodChange(crate::app::unit::Unit)` overload"] fn setup_for_engage_or_god_change (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19242a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsOrderUnitEngageOrGodChange()` overload"] fn is_order_unit_engage_or_god_change (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19242b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupForRemove(crate::app::unit::Unit)` overload"] fn setup_for_remove (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19242e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsOrderUnitRemove()` overload"] fn is_order_unit_remove (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19242f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupForRemagic(crate::app::unit::Unit)` overload"] fn setup_for_remagic (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsOrderUnitRemagic()` overload"] fn is_order_unit_remagic (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupForRerewarp(crate::app::unit::Unit)` overload"] fn setup_for_rerewarp (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsOrderUnitRerewarp()` overload"] fn is_order_unit_rerewarp (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`iInitialize()` overload"] fn i_initialize (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`iProcessing()` overload"] fn i_processing (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`iProcessingRemove()` overload"] fn i_processing_remove (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19243a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`iProcessingRemagic()` overload"] fn i_processing_remagic (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`iProcessingRerewarp()` overload"] fn i_processing_rerewarp (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`iCrossfire()` overload"] fn i_crossfire (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`iInterruptAttack()` overload"] fn i_interrupt_attack (self ,) -> bool { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Completion(crate::app::unit::Unit)` overload"] fn completion (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1925e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`iFinalize()` overload"] fn i_finalize (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19240c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgPLCPrepare()` overload"] fn dbg_plc_prepare (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1927130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgPLCAddLog()` overload"] fn dbg_plc_add_log (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1927140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgPLCUnknownSeq()` overload"] fn dbg_plc_unknown_seq (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1927150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DbgPLCCheckLoopCount()` overload"] fn dbg_plc_check_loop_count (self ,) -> () { unsafe { let __receiver = < AI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1927160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ai")]pub trait IAIMethods:IAI{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1922b20usize)as*mut u8,();
+(AI)__receiver)}
+}
+#[doc="`get_Order()` overload"]fn get_order(self,)->crate::app::aiorder::AIOrder{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19234a0usize)as*mut u8,crate::app::aiorder::AIOrder;
+(AI)__receiver)}
+}
+#[doc="`get_Think()` overload"]fn get_think(self,)->crate::app::aithink::AIThink{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19234b0usize)as*mut u8,crate::app::aithink::AIThink;
+(AI)__receiver)}
+}
+#[doc="`get_Cannon()` overload"]fn get_cannon(self,)->crate::app::aicannon::AICannon{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19234c0usize)as*mut u8,crate::app::aicannon::AICannon;
+(AI)__receiver)}
+}
+#[doc="`get_InterruptAttack()` overload"]fn get_interrupt_attack(self,)->crate::app::aiinterruptattack::AIInterruptAttack{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19234d0usize)as*mut u8,crate::app::aiinterruptattack::AIInterruptAttack;
+(AI)__receiver)}
+}
+#[doc="`SetSeq(crate::app::ai::AI_Seq)` overload"]fn set_seq(self,seq:impl::core::convert::Into<crate::app::ai::AI_Seq>)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19234e0usize)as*mut u8,();
+(AI)__receiver,(crate::app::ai::AI_Seq)::core::convert::Into::into(seq))}
+}
+#[doc="`SetCrossfire(bool)` overload"]fn set_crossfire(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19234f0usize)as*mut u8,();
+(AI)__receiver,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`IsVersus()` overload"]fn is_versus(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923500usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`IsVersusCasual()` overload"]fn is_versus_casual(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923510usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`IsVersusRankedOrMock()` overload"]fn is_versus_ranked_or_mock(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923520usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`Processing()` overload"]fn processing(self,)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923600usize)as*mut u8,();
+(AI)__receiver)}
+}
+#[doc="`SetupForEngageOrGodChange(crate::app::unit::Unit)` overload"]fn setup_for_engage_or_god_change(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19242a0usize)as*mut u8,();
+(AI)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsOrderUnitEngageOrGodChange()` overload"]fn is_order_unit_engage_or_god_change(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19242b0usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`SetupForRemove(crate::app::unit::Unit)` overload"]fn setup_for_remove(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19242e0usize)as*mut u8,();
+(AI)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsOrderUnitRemove()` overload"]fn is_order_unit_remove(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19242f0usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`SetupForRemagic(crate::app::unit::Unit)` overload"]fn setup_for_remagic(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924320usize)as*mut u8,();
+(AI)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsOrderUnitRemagic()` overload"]fn is_order_unit_remagic(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924330usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`SetupForRerewarp(crate::app::unit::Unit)` overload"]fn setup_for_rerewarp(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924360usize)as*mut u8,();
+(AI)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsOrderUnitRerewarp()` overload"]fn is_order_unit_rerewarp(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924370usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`iInitialize()` overload"]fn i_initialize(self,)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923690usize)as*mut u8,();
+(AI)__receiver)}
+}
+#[doc="`iProcessing()` overload"]fn i_processing(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923a60usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`iProcessingRemove()` overload"]fn i_processing_remove(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19243a0usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`iProcessingRemagic()` overload"]fn i_processing_remagic(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924680usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`iProcessingRerewarp()` overload"]fn i_processing_rerewarp(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924960usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`iCrossfire()` overload"]fn i_crossfire(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923dc0usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`iInterruptAttack()` overload"]fn i_interrupt_attack(self,)->bool{unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923f60usize)as*mut u8,bool;
+(AI)__receiver)}
+}
+#[doc="`Completion(crate::app::unit::Unit)` overload"]fn completion(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1925e20usize)as*mut u8,();
+(AI)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`iFinalize()` overload"]fn i_finalize(self,)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19240c0usize)as*mut u8,();
+(AI)__receiver)}
+}
+#[doc="`DbgPLCPrepare()` overload"]fn dbg_plc_prepare(self,)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1927130usize)as*mut u8,();
+(AI)__receiver)}
+}
+#[doc="`DbgPLCAddLog()` overload"]fn dbg_plc_add_log(self,)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1927140usize)as*mut u8,();
+(AI)__receiver)}
+}
+#[doc="`DbgPLCUnknownSeq()` overload"]fn dbg_plc_unknown_seq(self,)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1927150usize)as*mut u8,();
+(AI)__receiver)}
+}
+#[doc="`DbgPLCCheckLoopCount()` overload"]fn dbg_plc_check_loop_count(self,)->(){unsafe{let __receiver= <AI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1927160usize)as*mut u8,();
+(AI)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ai")]
-impl < __T : IAI > IAIMethods for __T { }
+#[cfg(feature="app-ai")]impl<__T:IAI>IAIMethods for __T{}
 
-#[cfg(feature = "app-ai")]
-impl AI { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_think_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_interrupt_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_seq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_crossfire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_versus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_versus_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_versus_ranked_or_mock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_entrust_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn rand_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn processing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn setup_for_engage_or_god_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_order_unit_engage_or_god_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn setup_for_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_order_unit_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn setup_for_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_order_unit_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn setup_for_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn is_order_unit_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn i_initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn i_processing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn i_processing_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn i_processing_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn i_processing_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn i_crossfire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn i_interrupt_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn i_finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn dbg_plc_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn dbg_plc_add_log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn dbg_plc_unknown_seq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn dbg_plc_check_loop_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } }
+#[cfg(feature="app-ai")]impl AI{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_think_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_interrupt_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_seq_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_crossfire_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_versus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_versus_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_versus_ranked_or_mock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_entrust_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn rand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn processing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn setup_for_engage_or_god_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_order_unit_engage_or_god_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn setup_for_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_order_unit_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn setup_for_remagic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_order_unit_remagic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn setup_for_rerewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn is_order_unit_rerewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn i_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn i_processing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn i_processing_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn i_processing_remagic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn i_processing_rerewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn i_crossfire_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn i_interrupt_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn i_finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn dbg_plc_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn dbg_plc_add_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn dbg_plc_unknown_seq_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn dbg_plc_check_loop_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
 
-#[cfg(feature = "app-ai")]
-impl AI {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AI) , :: core :: stringify ! (new) ,)) ; < Self as IAIMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ai")]impl AI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AI), ::core::stringify!(new),));
+ <Self as IAIMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ai")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AI_Seq;
     pub use super::AI;
     pub use super::IAI;
     pub use super::IAIMethods;
+    pub use super::AI_Seq;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

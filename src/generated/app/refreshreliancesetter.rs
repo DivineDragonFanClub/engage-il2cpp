@@ -4,33 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshreliancesetter/RefreshRelianceSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshRelianceSetter")] # [parent (crate :: system :: object :: Object)] pub struct RefreshRelianceSetter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshreliancesetter/RefreshRelianceSetter.md"))]#[::unity2::class(namespace="App",name="RefreshRelianceSetter")]#[parent(crate::system::object::Object)]pub struct RefreshRelianceSetter{}
 
 }
 
 #[cfg(feature = "app-refreshreliancesetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshreliancesetter")]
-impl RefreshRelianceSetter { # [doc = "`SetData(crate::app::unit::Unit, crate::app::unit::Unit, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image)` overload"] pub fn set_data (unit0 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , rank_c_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , rank_b_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , rank_a_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , rank_s_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , rank_none_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , crate :: unity_engine :: ui :: image :: Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bba50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit0) , :: core :: convert :: Into :: into (unit1) , :: core :: convert :: Into :: into (rank_c_image) , :: core :: convert :: Into :: into (rank_b_image) , :: core :: convert :: Into :: into (rank_a_image) , :: core :: convert :: Into :: into (rank_s_image) , :: core :: convert :: Into :: into (rank_none_image) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshreliancesetter")]impl RefreshRelianceSetter{#[doc="`SetData(crate::app::unit::Unit, crate::app::unit::Unit, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image, crate::unity_engine::ui::image::Image)` overload"]pub fn set_data(unit0:impl::core::convert::Into<crate::app::unit::Unit> ,unit1:impl::core::convert::Into<crate::app::unit::Unit> ,rank_c_image:impl::core::convert::Into<crate::unity_engine::ui::image::Image> ,rank_b_image:impl::core::convert::Into<crate::unity_engine::ui::image::Image> ,rank_a_image:impl::core::convert::Into<crate::unity_engine::ui::image::Image> ,rank_s_image:impl::core::convert::Into<crate::unity_engine::ui::image::Image> ,rank_none_image:impl::core::convert::Into<crate::unity_engine::ui::image::Image>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22bba50usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit0),(crate::app::unit::Unit)::core::convert::Into::into(unit1),(crate::unity_engine::ui::image::Image)::core::convert::Into::into(rank_c_image),(crate::unity_engine::ui::image::Image)::core::convert::Into::into(rank_b_image),(crate::unity_engine::ui::image::Image)::core::convert::Into::into(rank_a_image),(crate::unity_engine::ui::image::Image)::core::convert::Into::into(rank_s_image),(crate::unity_engine::ui::image::Image)::core::convert::Into::into(rank_none_image))}
+}
+}
 
-#[cfg(feature = "app-refreshreliancesetter")]
-pub trait IRefreshRelianceSetterMethods : IRefreshRelianceSetter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefreshRelianceSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshRelianceSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bc180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshreliancesetter")]pub trait IRefreshRelianceSetterMethods:IRefreshRelianceSetter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefreshRelianceSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22bc180usize)as*mut u8,();
+(RefreshRelianceSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refreshreliancesetter")]
-impl < __T : IRefreshRelianceSetter > IRefreshRelianceSetterMethods for __T { }
+#[cfg(feature="app-refreshreliancesetter")]impl<__T:IRefreshRelianceSetter>IRefreshRelianceSetterMethods for __T{}
 
-#[cfg(feature = "app-refreshreliancesetter")]
-impl RefreshRelianceSetter { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshRelianceSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshRelianceSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-refreshreliancesetter")]impl RefreshRelianceSetter{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-refreshreliancesetter")]
-impl RefreshRelianceSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshRelianceSetter) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshRelianceSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refreshreliancesetter")]impl RefreshRelianceSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshRelianceSetter), ::core::stringify!(new),));
+ <Self as IRefreshRelianceSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refreshreliancesetter")]

@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/cinemachineuniversalpixelperfect/CinemachineUniversalPixelPerfect.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "CinemachineUniversalPixelPerfect")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CinemachineUniversalPixelPerfect {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/cinemachineuniversalpixelperfect/CinemachineUniversalPixelPerfect.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="CinemachineUniversalPixelPerfect")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CinemachineUniversalPixelPerfect{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]
-pub trait ICinemachineUniversalPixelPerfectMethods : ICinemachineUniversalPixelPerfect { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CinemachineUniversalPixelPerfect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineUniversalPixelPerfect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3e7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineUniversalPixelPerfect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineUniversalPixelPerfect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3e820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]pub trait ICinemachineUniversalPixelPerfectMethods:ICinemachineUniversalPixelPerfect{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CinemachineUniversalPixelPerfect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3e7a0usize)as*mut u8,();
+(CinemachineUniversalPixelPerfect)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CinemachineUniversalPixelPerfect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3e820usize)as*mut u8,();
+(CinemachineUniversalPixelPerfect)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]
-impl < __T : ICinemachineUniversalPixelPerfect > ICinemachineUniversalPixelPerfectMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]impl<__T:ICinemachineUniversalPixelPerfect>ICinemachineUniversalPixelPerfectMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]
-impl CinemachineUniversalPixelPerfect { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineUniversalPixelPerfect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineUniversalPixelPerfect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]impl CinemachineUniversalPixelPerfect{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]
-impl CinemachineUniversalPixelPerfect {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineUniversalPixelPerfect) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineUniversalPixelPerfectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]impl CinemachineUniversalPixelPerfect{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineUniversalPixelPerfect), ::core::stringify!(new),));
+ <Self as ICinemachineUniversalPixelPerfectMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]

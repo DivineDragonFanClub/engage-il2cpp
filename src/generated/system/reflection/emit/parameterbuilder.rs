@@ -4,12 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/parameterbuilder/ParameterBuilder.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "ParameterBuilder")] # [parent (crate :: system :: object :: Object)] pub struct ParameterBuilder {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/emit/parameterbuilder/ParameterBuilder.md"))]#[::unity2::class(namespace="System.Reflection.Emit",name="ParameterBuilder")]#[parent(crate::system::object::Object)]pub struct ParameterBuilder{}
 
 }
 

@@ -4,38 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
- ;
- use crate :: combat :: actiongranbase :: { ActionGranBase , IActionGranBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::actiondisposerholder::{ActionDisposerHolder,IActionDisposerHolder}
+;
+use crate::combat::actiongranbase::{ActionGranBase,IActionGranBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranbackstep/ActionGranBackstep.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionGranBackstep")] # [parent (crate :: combat :: actiongranbase :: ActionGranBase)] pub struct ActionGranBackstep {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiongranbackstep/ActionGranBackstep.md"))]#[::unity2::class(namespace="Combat",name="ActionGranBackstep")]#[parent(crate::combat::actiongranbase::ActionGranBase)]pub struct ActionGranBackstep{}
 
 }
 
 #[cfg(feature = "combat-actiongranbackstep-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiongranbackstep")]
-pub trait IActionGranBackstepMethods : IActionGranBackstep { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionGranBackstep as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBackstep , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < ActionGranBackstep as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBackstep , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionGranBackstep as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBackstep , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < ActionGranBackstep as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBackstep , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiongranbackstep")]pub trait IActionGranBackstepMethods:IActionGranBackstep{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionGranBackstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5df0usize)as*mut u8, ::unity2::Il2CppString;
+(ActionGranBackstep)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <ActionGranBackstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5e40usize)as*mut u8,();
+(ActionGranBackstep)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionGranBackstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5e70usize)as*mut u8,();
+(ActionGranBackstep)__receiver)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionGranBackstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6560usize)as*mut u8,();
+(ActionGranBackstep)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actiongranbackstep")]
-impl < __T : IActionGranBackstep > IActionGranBackstepMethods for __T { }
+#[cfg(feature="combat-actiongranbackstep")]impl<__T:IActionGranBackstep>IActionGranBackstepMethods for __T{}
 
-#[cfg(feature = "combat-actiongranbackstep")]
-impl ActionGranBackstep { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBackstep as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBackstep as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBackstep as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBackstep as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-actiongranbackstep")]impl ActionGranBackstep{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-actiongranbackstep")]
-impl ActionGranBackstep {
-# [doc = "`.ctor(crate::combat::character::Character)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionGranBackstep) , :: core :: stringify ! (new) ,)) ; < Self as IActionGranBackstepMethods > :: ctor (this , chr) ; this }
+#[cfg(feature="combat-actiongranbackstep")]impl ActionGranBackstep{#[doc="`.ctor(crate::combat::character::Character)` — overload selector"]pub fn new(chr:crate::combat::character::Character)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionGranBackstep), ::core::stringify!(new),));
+ <Self as IActionGranBackstepMethods> ::ctor(this,chr);
+this}
 }
 
 #[cfg(feature = "combat-actiongranbackstep")]

@@ -4,23 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jsonutility/JsonUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "JsonUtility")] # [parent (crate :: system :: object :: Object)] pub struct JsonUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/jsonutility/JsonUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="JsonUtility")]#[parent(crate::system::object::Object)]pub struct JsonUtility{}
 
 }
 
 #[cfg(feature = "unity_engine-jsonutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-jsonutility")]
-impl JsonUtility { # [doc = "`ToJsonInternal(crate::system::object::Object, bool)` overload"] pub fn to_json_internal (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , pretty_print : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f469b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (pretty_print) , :: core :: option :: Option :: None) } } } # [doc = "`FromJsonInternal(::unity2::Il2CppString, crate::system::object::Object, ::unity2::SystemType)` overload"] pub fn from_json_internal (json : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , object_to_overwrite : impl :: core :: convert :: Into < crate :: system :: object :: Object > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (json) , :: core :: convert :: Into :: into (object_to_overwrite) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`ToJson(crate::system::object::Object)` overload"] pub fn to_json (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46a60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`ToJson(crate::system::object::Object, bool)` overload"] pub fn to_json_2 (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , pretty_print : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46a70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (pretty_print) , :: core :: option :: Option :: None) } } } pub fn from_json < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (json : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< JsonUtility as :: unity2 :: ClassIdentity > :: class () , "FromJson" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonUtility as :: unity2 :: ClassIdentity > :: NAME , "FromJson" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (json) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`FromJson(::unity2::Il2CppString, ::unity2::SystemType)` overload"] pub fn from_json_2 (json : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46bf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (json) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-jsonutility")]impl JsonUtility{#[doc="`ToJsonInternal(crate::system::object::Object, bool)` overload"]pub fn to_json_internal(obj:impl::core::convert::Into<crate::system::object::Object> ,pretty_print:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f469b0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::system::object::Object)::core::convert::Into::into(obj),(bool)::core::convert::Into::into(pretty_print))}
+}
+#[doc="`FromJsonInternal(::unity2::Il2CppString, crate::system::object::Object, ::unity2::SystemType)` overload"]pub fn from_json_internal(json:impl::core::convert::Into< ::unity2::Il2CppString> ,object_to_overwrite:impl::core::convert::Into<crate::system::object::Object> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46a00usize)as*mut u8,crate::system::object::Object;
+(::unity2::Il2CppString)::core::convert::Into::into(json),(crate::system::object::Object)::core::convert::Into::into(object_to_overwrite),(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+#[doc="`ToJson(crate::system::object::Object)` overload"]pub fn to_json(obj:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46a60usize)as*mut u8, ::unity2::Il2CppString;
+(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`ToJson(crate::system::object::Object, bool)` overload"]pub fn to_json_2(obj:impl::core::convert::Into<crate::system::object::Object> ,pretty_print:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46a70usize)as*mut u8, ::unity2::Il2CppString;
+(crate::system::object::Object)::core::convert::Into::into(obj),(bool)::core::convert::Into::into(pretty_print))}
+}
+pub fn from_json<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(json:impl::core::convert::Into< ::unity2::Il2CppString>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<JsonUtility as::unity2::ClassIdentity> ::class(),"FromJson",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <JsonUtility as::unity2::ClassIdentity> ::NAME,"FromJson",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(json), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`FromJson(::unity2::Il2CppString, ::unity2::SystemType)` overload"]pub fn from_json_2(json:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46bf0usize)as*mut u8,crate::system::object::Object;
+(::unity2::Il2CppString)::core::convert::Into::into(json),(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "unity_engine-jsonutility")]
-impl JsonUtility { pub fn to_json_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn from_json_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_json_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_json_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn from_json_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-jsonutility")]impl JsonUtility{pub fn to_json_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn from_json_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_json_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_json_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn from_json_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-jsonutility")]
 #[doc(hidden)]

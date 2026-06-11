@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapdeploybitimage :: { IMapDeployBitImage , MapDeployBitImage }
- ;
- use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapdeploybitimage::{IMapDeployBitImage,MapDeployBitImage}
+;
+use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeployhealimage/MapDeployHealImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDeployHealImage")] # [parent (crate :: app :: mapdeploybitimage :: MapDeployBitImage)] pub struct MapDeployHealImage {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeployhealimage/MapDeployHealImage.md"))]#[::unity2::class(namespace="App",name="MapDeployHealImage")]#[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]pub struct MapDeployHealImage{}
 
 }
 
 #[cfg(feature = "app-mapdeployhealimage-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapdeployhealimage")]
-pub trait IMapDeployHealImageMethods : IMapDeployHealImage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDeployHealImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployHealImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapdeployhealimage")]pub trait IMapDeployHealImageMethods:IMapDeployHealImage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeployHealImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3aa0usize)as*mut u8,();
+(MapDeployHealImage)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapdeployhealimage")]
-impl < __T : IMapDeployHealImage > IMapDeployHealImageMethods for __T { }
+#[cfg(feature="app-mapdeployhealimage")]impl<__T:IMapDeployHealImage>IMapDeployHealImageMethods for __T{}
 
-#[cfg(feature = "app-mapdeployhealimage")]
-impl MapDeployHealImage { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployHealImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapdeployhealimage")]impl MapDeployHealImage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-mapdeployhealimage")]
-impl MapDeployHealImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDeployHealImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapDeployHealImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapdeployhealimage")]impl MapDeployHealImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDeployHealImage), ::core::stringify!(new),));
+ <Self as IMapDeployHealImageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapdeployhealimage")]

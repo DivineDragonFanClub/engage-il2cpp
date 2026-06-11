@@ -4,34 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: interpolator_1 :: { IInterpolator_1 , Interpolator_1 }
- ;
- use crate :: app :: interpolatortime :: { IInterpolatorTime , InterpolatorTime }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::interpolator_1::{IInterpolator_1,Interpolator_1}
+;
+use crate::app::interpolatortime::{IInterpolatorTime,InterpolatorTime}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorcolor/InterpolatorColor.md"))] # [:: unity2 :: class (namespace = "App" , name = "InterpolatorColor")] # [parent (crate :: app :: interpolator_1 :: Interpolator_1 < crate :: unity_engine :: color :: Color >)] pub struct InterpolatorColor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorcolor/InterpolatorColor.md"))]#[::unity2::class(namespace="App",name="InterpolatorColor")]#[parent(crate::app::interpolator_1::Interpolator_1<crate::unity_engine::color::Color>)]pub struct InterpolatorColor{}
 
 }
 
 #[cfg(feature = "app-interpolatorcolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-interpolatorcolor")]
-pub trait IInterpolatorColorMethods : IInterpolatorColor { # [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: curve :: Curve_Type > , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InterpolatorColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorColor , crate :: app :: curve :: Curve_Type , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < InterpolatorColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorColor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27949e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEqual(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] fn is_equal (self , a : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , b : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> bool { unsafe { let __receiver = < InterpolatorColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorColor , crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-interpolatorcolor")]pub trait IInterpolatorColorMethods:IInterpolatorColor{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794970usize)as*mut u8,();
+(InterpolatorColor)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27949e0usize)as*mut u8,crate::unity_engine::color::Color;
+(InterpolatorColor)__receiver)}
+}
+#[doc="`IsEqual(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]fn is_equal(self,a:impl::core::convert::Into<crate::unity_engine::color::Color> ,b:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794b40usize)as*mut u8,bool;
+(InterpolatorColor)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(a),(crate::unity_engine::color::Color)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "app-interpolatorcolor")]
-impl < __T : IInterpolatorColor > IInterpolatorColorMethods for __T { }
+#[cfg(feature="app-interpolatorcolor")]impl<__T:IInterpolatorColor>IInterpolatorColorMethods for __T{}
 
-#[cfg(feature = "app-interpolatorcolor")]
-impl InterpolatorColor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-interpolatorcolor")]impl InterpolatorColor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-interpolatorcolor")]
-impl InterpolatorColor {
-# [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"] pub fn new (r#type : crate :: app :: curve :: Curve_Type , num : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpolatorColor) , :: core :: stringify ! (new) ,)) ; < Self as IInterpolatorColorMethods > :: ctor (this , r#type , num) ; this }
+#[cfg(feature="app-interpolatorcolor")]impl InterpolatorColor{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]pub fn new(r#type:crate::app::curve::Curve_Type,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InterpolatorColor), ::core::stringify!(new),));
+ <Self as IInterpolatorColorMethods> ::ctor(this,r#type,num);
+this}
 }
 
 #[cfg(feature = "app-interpolatorcolor")]

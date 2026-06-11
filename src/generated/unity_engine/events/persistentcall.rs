@@ -4,40 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/persistentcall/PersistentCall.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Events" , name = "PersistentCall")] # [parent (crate :: system :: object :: Object)] pub struct PersistentCall {
-# [offset (16)] # [rename (name = "m_Target")] pub m_target : crate :: unity_engine :: object_2 :: Object_2 ,
-# [offset (24)] # [rename (name = "m_TargetAssemblyTypeName")] pub m_target_assembly_type_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_MethodName")] pub m_method_name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_Mode")] pub m_mode : crate :: unity_engine :: events :: persistentlistenermode :: PersistentListenerMode ,
-# [offset (48)] # [rename (name = "m_Arguments")] pub m_arguments : crate :: unity_engine :: events :: argumentcache :: ArgumentCache ,
-# [offset (56)] # [rename (name = "m_CallState")] pub m_call_state : crate :: unity_engine :: events :: unityeventcallstate :: UnityEventCallState ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/events/persistentcall/PersistentCall.md"))]#[::unity2::class(namespace="UnityEngine.Events",name="PersistentCall")]#[parent(crate::system::object::Object)]pub struct PersistentCall{#[offset(16)]#[rename(name="m_Target")]pub m_target:crate::unity_engine::object_2::Object_2, #[offset(24)]#[rename(name="m_TargetAssemblyTypeName")]pub m_target_assembly_type_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_MethodName")]pub m_method_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Mode")]pub m_mode:crate::unity_engine::events::persistentlistenermode::PersistentListenerMode, #[offset(48)]#[rename(name="m_Arguments")]pub m_arguments:crate::unity_engine::events::argumentcache::ArgumentCache, #[offset(56)]#[rename(name="m_CallState")]pub m_call_state:crate::unity_engine::events::unityeventcallstate::UnityEventCallState,}
 
 }
 
 #[cfg(feature = "unity_engine-events-persistentcall-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-events-persistentcall")]
-impl PersistentCall { # [doc = "`GetObjectCall(crate::unity_engine::object_2::Object_2, crate::system::reflection::methodinfo::MethodInfo, crate::unity_engine::events::argumentcache::ArgumentCache)` overload"] pub fn get_object_call (target : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 > , method : impl :: core :: convert :: Into < crate :: system :: reflection :: methodinfo :: MethodInfo > , arguments : impl :: core :: convert :: Into < crate :: unity_engine :: events :: argumentcache :: ArgumentCache >) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , crate :: system :: reflection :: methodinfo :: MethodInfo , crate :: unity_engine :: events :: argumentcache :: ArgumentCache , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0900usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (method) , :: core :: convert :: Into :: into (arguments) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-events-persistentcall")]impl PersistentCall{#[doc="`GetObjectCall(crate::unity_engine::object_2::Object_2, crate::system::reflection::methodinfo::MethodInfo, crate::unity_engine::events::argumentcache::ArgumentCache)` overload"]pub fn get_object_call(target:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,method:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo> ,arguments:impl::core::convert::Into<crate::unity_engine::events::argumentcache::ArgumentCache>)->crate::unity_engine::events::baseinvokablecall::BaseInvokableCall{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f0900usize)as*mut u8,crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
+(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(target),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(method),(crate::unity_engine::events::argumentcache::ArgumentCache)::core::convert::Into::into(arguments))}
+}
+}
 
-#[cfg(feature = "unity_engine-events-persistentcall")]
-pub trait IPersistentCallMethods : IPersistentCall { # [doc = "`get_target()` overload"] fn get_target (self ,) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_targetAssemblyTypeName()` overload"] fn get_target_assembly_type_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_methodName()` overload"] fn get_method_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f04d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_mode()` overload"] fn get_mode (self ,) -> crate :: unity_engine :: events :: persistentlistenermode :: PersistentListenerMode { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: persistentlistenermode :: PersistentListenerMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f04e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_arguments()` overload"] fn get_arguments (self ,) -> crate :: unity_engine :: events :: argumentcache :: ArgumentCache { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: argumentcache :: ArgumentCache = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f04f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRuntimeCall(crate::unity_engine::events::unityeventbase::UnityEventBase)` overload"] fn get_runtime_call (self , the_event : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityeventbase :: UnityEventBase >) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , crate :: unity_engine :: events :: unityeventbase :: UnityEventBase , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (the_event) , :: core :: option :: Option :: None) } } } # [doc = "`OnBeforeSerialize()` overload"] fn on_before_serialize (self ,) -> () { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnAfterDeserialize()` overload"] fn on_after_deserialize (self ,) -> () { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PersistentCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCall , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-events-persistentcall")]pub trait IPersistentCallMethods:IPersistentCall{#[doc="`get_target()` overload"]fn get_target(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0330usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(PersistentCall)__receiver)}
+}
+#[doc="`get_targetAssemblyTypeName()` overload"]fn get_target_assembly_type_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0340usize)as*mut u8, ::unity2::Il2CppString;
+(PersistentCall)__receiver)}
+}
+#[doc="`get_methodName()` overload"]fn get_method_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f04d0usize)as*mut u8, ::unity2::Il2CppString;
+(PersistentCall)__receiver)}
+}
+#[doc="`get_mode()` overload"]fn get_mode(self,)->crate::unity_engine::events::persistentlistenermode::PersistentListenerMode{unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f04e0usize)as*mut u8,crate::unity_engine::events::persistentlistenermode::PersistentListenerMode;
+(PersistentCall)__receiver)}
+}
+#[doc="`get_arguments()` overload"]fn get_arguments(self,)->crate::unity_engine::events::argumentcache::ArgumentCache{unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f04f0usize)as*mut u8,crate::unity_engine::events::argumentcache::ArgumentCache;
+(PersistentCall)__receiver)}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0500usize)as*mut u8,bool;
+(PersistentCall)__receiver)}
+}
+#[doc="`GetRuntimeCall(crate::unity_engine::events::unityeventbase::UnityEventBase)` overload"]fn get_runtime_call(self,the_event:impl::core::convert::Into<crate::unity_engine::events::unityeventbase::UnityEventBase>)->crate::unity_engine::events::baseinvokablecall::BaseInvokableCall{unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0560usize)as*mut u8,crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
+(PersistentCall)__receiver,(crate::unity_engine::events::unityeventbase::UnityEventBase)::core::convert::Into::into(the_event))}
+}
+#[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0e60usize)as*mut u8,();
+(PersistentCall)__receiver)}
+}
+#[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0ea0usize)as*mut u8,();
+(PersistentCall)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PersistentCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0ee0usize)as*mut u8,();
+(PersistentCall)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-events-persistentcall")]
-impl < __T : IPersistentCall > IPersistentCallMethods for __T { }
+#[cfg(feature="unity_engine-events-persistentcall")]impl<__T:IPersistentCall>IPersistentCallMethods for __T{}
 
-#[cfg(feature = "unity_engine-events-persistentcall")]
-impl PersistentCall { pub fn get_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_target_assembly_type_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_method_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_arguments_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_runtime_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_object_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_before_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_after_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-events-persistentcall")]impl PersistentCall{pub fn get_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_target_assembly_type_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_arguments_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_runtime_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_object_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_before_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "unity_engine-events-persistentcall")]
-impl PersistentCall {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PersistentCall) , :: core :: stringify ! (new) ,)) ; < Self as IPersistentCallMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-events-persistentcall")]impl PersistentCall{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PersistentCall), ::core::stringify!(new),));
+ <Self as IPersistentCallMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-events-persistentcall")]

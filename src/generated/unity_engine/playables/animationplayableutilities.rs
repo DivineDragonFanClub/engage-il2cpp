@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/animationplayableutilities/AnimationPlayableUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Playables" , name = "AnimationPlayableUtilities")] # [parent (crate :: system :: object :: Object)] pub struct AnimationPlayableUtilities {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/animationplayableutilities/AnimationPlayableUtilities.md"))]#[::unity2::class(namespace="UnityEngine.Playables",name="AnimationPlayableUtilities")]#[parent(crate::system::object::Object)]pub struct AnimationPlayableUtilities{}
 
 }
 
 #[cfg(feature = "unity_engine-playables-animationplayableutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playables-animationplayableutilities")]
-impl AnimationPlayableUtilities { # [doc = "`Play(crate::unity_engine::animator::Animator, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"] pub fn play (animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf8c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (graph) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-animationplayableutilities")]impl AnimationPlayableUtilities{#[doc="`Play(crate::unity_engine::animator::Animator, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]pub fn play(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf8c0usize)as*mut u8,();
+(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph))}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-animationplayableutilities")]
-impl AnimationPlayableUtilities { pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-playables-animationplayableutilities")]impl AnimationPlayableUtilities{pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-playables-animationplayableutilities")]
 #[doc(hidden)]

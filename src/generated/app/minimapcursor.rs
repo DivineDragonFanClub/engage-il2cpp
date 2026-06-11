@@ -4,50 +4,103 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcursor/MiniMapCursor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MiniMapCursor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MiniMapCursor {
-# [offset (24)] # [rename (name = "m_CursorLT")] pub m_cursor_lt : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_CursorRT")] pub m_cursor_rt : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_CursorLB")] pub m_cursor_lb : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_CursorRB")] pub m_cursor_rb : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_OrgCursorLT")] pub m_org_cursor_lt : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_OrgCursorRT")] pub m_org_cursor_rt : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_OrgCursorLB")] pub m_org_cursor_lb : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_OrgCursorRB")] pub m_org_cursor_rb : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcursor/MiniMapCursor.md"))]#[::unity2::class(namespace="App",name="MiniMapCursor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MiniMapCursor{#[offset(24)]#[rename(name="m_CursorLT")]pub m_cursor_lt:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_CursorRT")]pub m_cursor_rt:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_CursorLB")]pub m_cursor_lb:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_CursorRB")]pub m_cursor_rb:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_OrgCursorLT")]pub m_org_cursor_lt:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_OrgCursorRT")]pub m_org_cursor_rt:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_OrgCursorLB")]pub m_org_cursor_lb:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_OrgCursorRB")]pub m_org_cursor_rb:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-minimapcursor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-minimapcursor")]
-impl MiniMapCursor { # [doc = "`GetPosition(crate::unity_engine::gameobject::GameObject)` overload"] pub fn get_position (obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e3aa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-minimapcursor")]impl MiniMapCursor{#[doc="`GetPosition(crate::unity_engine::gameobject::GameObject)` overload"]pub fn get_position(obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25e3aa0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "app-minimapcursor")]
-pub trait IMiniMapCursorMethods : IMiniMapCursor { # [doc = "`get_Scale()` overload"] fn get_scale (self ,) -> f32 { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e3590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Scale(f32)` overload"] fn set_scale (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e35a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CalculatedGridSize()` overload"] fn get_calculated_grid_size (self ,) -> f32 { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e35b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CalculatedGridSize(f32)` overload"] fn set_calculated_grid_size (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e35c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsCursorVisible()` overload"] fn get_is_cursor_visible (self ,) -> bool { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e35d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsCursorVisible(bool)` overload"] fn set_is_cursor_visible (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e35e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e35f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryInitializeParts()` overload"] fn try_initialize_parts (self ,) -> () { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e3600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateCursorPosition(f32)` overload"] fn calculate_cursor_position (self , grid_size : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ddc70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (grid_size) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e3760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCenter()` overload"] fn get_center (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25dd980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MiniMapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e3b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-minimapcursor")]pub trait IMiniMapCursorMethods:IMiniMapCursor{#[doc="`get_Scale()` overload"]fn get_scale(self,)->f32{unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e3590usize)as*mut u8,f32;
+(MiniMapCursor)__receiver)}
+}
+#[doc="`set_Scale(f32)` overload"]fn set_scale(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e35a0usize)as*mut u8,();
+(MiniMapCursor)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_CalculatedGridSize()` overload"]fn get_calculated_grid_size(self,)->f32{unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e35b0usize)as*mut u8,f32;
+(MiniMapCursor)__receiver)}
+}
+#[doc="`set_CalculatedGridSize(f32)` overload"]fn set_calculated_grid_size(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e35c0usize)as*mut u8,();
+(MiniMapCursor)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsCursorVisible()` overload"]fn get_is_cursor_visible(self,)->bool{unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e35d0usize)as*mut u8,bool;
+(MiniMapCursor)__receiver)}
+}
+#[doc="`set_IsCursorVisible(bool)` overload"]fn set_is_cursor_visible(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e35e0usize)as*mut u8,();
+(MiniMapCursor)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e35f0usize)as*mut u8,();
+(MiniMapCursor)__receiver)}
+}
+#[doc="`TryInitializeParts()` overload"]fn try_initialize_parts(self,)->(){unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e3600usize)as*mut u8,();
+(MiniMapCursor)__receiver)}
+}
+#[doc="`CalculateCursorPosition(f32)` overload"]fn calculate_cursor_position(self,grid_size:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ddc70usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(MiniMapCursor)__receiver,(f32)::core::convert::Into::into(grid_size))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e3760usize)as*mut u8,();
+(MiniMapCursor)__receiver)}
+}
+#[doc="`GetCenter()` overload"]fn get_center(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25dd980usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(MiniMapCursor)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MiniMapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e3b00usize)as*mut u8,();
+(MiniMapCursor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-minimapcursor")]
-impl < __T : IMiniMapCursor > IMiniMapCursorMethods for __T { }
+#[cfg(feature="app-minimapcursor")]impl<__T:IMiniMapCursor>IMiniMapCursorMethods for __T{}
 
-#[cfg(feature = "app-minimapcursor")]
-impl MiniMapCursor { pub fn get_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_calculated_grid_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_calculated_grid_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_cursor_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_is_cursor_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn try_initialize_parts_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn calculate_cursor_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-minimapcursor")]impl MiniMapCursor{pub fn get_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_calculated_grid_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_calculated_grid_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_cursor_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_is_cursor_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_initialize_parts_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn calculate_cursor_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-minimapcursor")]
-impl MiniMapCursor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MiniMapCursor) , :: core :: stringify ! (new) ,)) ; < Self as IMiniMapCursorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-minimapcursor")]impl MiniMapCursor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MiniMapCursor), ::core::stringify!(new),));
+ <Self as IMiniMapCursorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-minimapcursor")]

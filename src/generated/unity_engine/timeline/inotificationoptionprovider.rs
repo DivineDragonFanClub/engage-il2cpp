@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/inotificationoptionprovider/INotificationOptionProvider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "INotificationOptionProvider")] pub struct INotificationOptionProvider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/inotificationoptionprovider/INotificationOptionProvider.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="INotificationOptionProvider")]pub struct INotificationOptionProvider{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-inotificationoptionprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __INotificationOptionProvider_unity2_raw { use super :: * ; pub unsafe fn get_flags (this : INotificationOptionProvider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_flags") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_flags" , < INotificationOptionProvider as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (INotificationOptionProvider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-timeline-inotificationoptionprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __INotificationOptionProvider_unity2_raw{use super:: * ;
+pub unsafe fn get_flags(this:INotificationOptionProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::notificationflags::NotificationFlags{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_flags").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_flags", <INotificationOptionProvider as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(INotificationOptionProvider, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::notificationflags::NotificationFlags= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
-pub trait IINotificationOptionProviderMethods : IINotificationOptionProvider { # [doc = "`get_flags()` overload"] fn get_flags (self ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags { unsafe { let __receiver = < INotificationOptionProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __INotificationOptionProvider_unity2_raw :: get_flags (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-timeline-inotificationoptionprovider")]pub trait IINotificationOptionProviderMethods:IINotificationOptionProvider{#[doc="`get_flags()` overload"]fn get_flags(self,)->crate::unity_engine::timeline::notificationflags::NotificationFlags{unsafe{let __receiver= <INotificationOptionProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__INotificationOptionProvider_unity2_raw::get_flags(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
-impl < __T : IINotificationOptionProvider > IINotificationOptionProviderMethods for __T { }
+#[cfg(feature="unity_engine-timeline-inotificationoptionprovider")]impl<__T:IINotificationOptionProvider>IINotificationOptionProviderMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
-impl INotificationOptionProvider { pub fn get_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < INotificationOptionProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-inotificationoptionprovider")]impl INotificationOptionProvider{pub fn get_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
 #[doc(hidden)]

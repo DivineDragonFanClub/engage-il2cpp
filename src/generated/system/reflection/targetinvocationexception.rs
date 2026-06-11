@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/targetinvocationexception/TargetInvocationException.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "TargetInvocationException")] pub struct TargetInvocationException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/targetinvocationexception/TargetInvocationException.md"))]#[::unity2::class(namespace="System.Reflection",name="TargetInvocationException")]pub struct TargetInvocationException{}
 
 }
 
 #[cfg(feature = "system-reflection-targetinvocationexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-targetinvocationexception")]
-pub trait ITargetInvocationExceptionMethods : ITargetInvocationException { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TargetInvocationException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TargetInvocationException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3590b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-targetinvocationexception")]pub trait ITargetInvocationExceptionMethods:ITargetInvocationException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TargetInvocationException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3590b40usize)as*mut u8,();
+(TargetInvocationException)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-targetinvocationexception")]
-impl < __T : ITargetInvocationException > ITargetInvocationExceptionMethods for __T { }
+#[cfg(feature="system-reflection-targetinvocationexception")]impl<__T:ITargetInvocationException>ITargetInvocationExceptionMethods for __T{}
 
-#[cfg(feature = "system-reflection-targetinvocationexception")]
-impl TargetInvocationException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TargetInvocationException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-targetinvocationexception")]impl TargetInvocationException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-targetinvocationexception")]
-impl TargetInvocationException {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TargetInvocationException) , :: core :: stringify ! (new) ,)) ; < Self as ITargetInvocationExceptionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-targetinvocationexception")]impl TargetInvocationException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TargetInvocationException), ::core::stringify!(new),));
+ <Self as ITargetInvocationExceptionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-targetinvocationexception")]

@@ -4,180 +4,216 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGlobalData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)] pub struct GameUserGlobalData {
-# [offset (48)] # [rename (name = "m_CompletedHash")] pub m_completed_hash : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
-# [offset (56)] # [rename (name = "m_CompletedList")] pub m_completed_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameuserglobaldata::GameUserGlobalData>)]pub struct GameUserGlobalData{#[offset(48)]#[rename(name="m_CompletedHash")]pub m_completed_hash:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="m_CompletedList")]pub m_completed_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData.FlagsField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)]pub struct GameUserGlobalData_FlagsField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUserGlobalData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for GameUserGlobalData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameUserGlobalData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameUserGlobalData_Flags  {
-    pub value: i32,
+impl::unity2::IlType for GameUserGlobalData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for GameUserGlobalData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameUserGlobalData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl GameUserGlobalData_Flags{pub fn cleared_difficulty_normal()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for GameUserGlobalData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn cleared_difficulty_hard()->Self{Self{value:2}
 }
-
-
-impl  GameUserGlobalData_Flags  {
-    pub fn cleared_difficulty_normal() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn cleared_difficulty_hard() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn cleared_difficulty_lunatic() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn cleared_difficulty_mask() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn cleared_mode_classic() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn cleared_mode_casual() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn cleared_mode_phoenix() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn cleared_mode_mask() -> Self {
-        Self { value: 56 }
-
-    }
-
-
-    pub fn cleared_mask() -> Self {
-        Self { value: 63 }
-
-    }
-
-
-    pub fn dlc_news_patch0() -> Self {
-        Self { value: 64 }
-
-    }
-
-
-    pub fn dlc_news_patch1() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn dlc_news_patch2() -> Self {
-        Self { value: 256 }
-
-    }
-
-
-    pub fn dlc_news_patch3() -> Self {
-        Self { value: 512 }
-
-    }
-
+pub fn cleared_difficulty_lunatic()->Self{Self{value:4}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGlobalData.FlagsField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)] pub struct GameUserGlobalData_FlagsField {}
+pub fn cleared_difficulty_mask()->Self{Self{value:7}
+}
+pub fn cleared_mode_classic()->Self{Self{value:8}
+}
+pub fn cleared_mode_casual()->Self{Self{value:16}
+}
+pub fn cleared_mode_phoenix()->Self{Self{value:32}
+}
+pub fn cleared_mode_mask()->Self{Self{value:56}
+}
+pub fn cleared_mask()->Self{Self{value:63}
+}
+pub fn dlc_news_patch0()->Self{Self{value:64}
+}
+pub fn dlc_news_patch1()->Self{Self{value:128}
+}
+pub fn dlc_news_patch2()->Self{Self{value:256}
+}
+pub fn dlc_news_patch3()->Self{Self{value:512}
+}
+}
 
 }
 
 #[cfg(feature = "app-gameuserglobaldata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData { # [doc = "`CreateIdentifier()` overload"] pub fn create_identifier () -> u64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25118c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gameuserglobaldata")]
-pub trait IGameUserGlobalDataMethods : IGameUserGlobalData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251b7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251b990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLastSaveDataType()` overload"] fn get_last_save_data_type (self ,) -> crate :: app :: gamesavedata :: GameSaveData_Types { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> crate :: app :: gamesavedata :: GameSaveData_Types = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ba20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLastSaveDataIndex()` overload"] fn get_last_save_data_index (self ,) -> i32 { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ba30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLastSaveDataIndex(crate::app::gamesavedata::GameSaveData_Types)` overload"] fn get_last_save_data_index_2 (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types >) -> i32 { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , crate :: app :: gamesavedata :: GameSaveData_Types , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ba40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetLastSaveDataInfo(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"] fn set_last_save_data_info (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ba60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsLastSaveDataInfo(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"] fn is_last_save_data_info (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ba70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251baa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251bab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251bcd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`set_LastSaveDataType(crate::app::gamesavedata::GameSaveData_Types)` overload"] fn set_last_save_data_type (self , value : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , crate :: app :: gamesavedata :: GameSaveData_Types , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c3e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_LastSaveDataIndex(i32)` overload"] fn set_last_save_data_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IdentifierCount()` overload"] fn get_identifier_count (self ,) -> u32 { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IdentifierCount(u32)` overload"] fn set_identifier_count (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: gameuserglobaldata :: GameUserGlobalData_FlagsField { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> crate :: app :: gameuserglobaldata :: GameUserGlobalData_FlagsField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Completed()` overload"] fn completed (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25155a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearCompleted()` overload"] fn clear_completed (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2515b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCompleted()` overload"] fn is_completed (self ,) -> bool { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCompleted(crate::app::chapterdata::ChapterData)` overload"] fn set_completed (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2515190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`ClearCompleted(crate::app::chapterdata::ChapterData)` overload"] fn clear_completed_2 (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`IsCompleted(::unity2::Il2CppString)` overload"] fn is_completed_2 (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < GameUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl < __T : IGameUserGlobalData > IGameUserGlobalDataMethods for __T { }
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_last_save_data_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_last_save_data_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_last_save_data_index_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_last_save_data_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_last_save_data_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_last_save_data_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_last_save_data_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_identifier_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_identifier_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn clear_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn clear_completed_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn is_completed_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn create_identifier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameUserGlobalData) , :: core :: stringify ! (new) ,)) ; < Self as IGameUserGlobalDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData{#[doc="`CreateIdentifier()` overload"]pub fn create_identifier()->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25118c0usize)as*mut u8,u64;
+)}
+}
 }
 
-#[cfg(feature = "app-gameuserglobaldata")]
-pub trait IGameUserGlobalData_FlagsFieldMethods : IGameUserGlobalData_FlagsField { # [doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >) -> i32 { unsafe { let __receiver = < GameUserGlobalData_FlagsField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData_FlagsField , crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6e1e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameUserGlobalData_FlagsField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGlobalData_FlagsField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6e1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gameuserglobaldata")]pub trait IGameUserGlobalDataMethods:IGameUserGlobalData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251b7c0usize)as*mut u8,();
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251b990usize)as*mut u8,();
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`GetLastSaveDataType()` overload"]fn get_last_save_data_type(self,)->crate::app::gamesavedata::GameSaveData_Types{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ba20usize)as*mut u8,crate::app::gamesavedata::GameSaveData_Types;
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`GetLastSaveDataIndex()` overload"]fn get_last_save_data_index(self,)->i32{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ba30usize)as*mut u8,i32;
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`GetLastSaveDataIndex(crate::app::gamesavedata::GameSaveData_Types)` overload"]fn get_last_save_data_index_2(self,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>)->i32{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ba40usize)as*mut u8,i32;
+(GameUserGlobalData)__receiver,(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetLastSaveDataInfo(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]fn set_last_save_data_info(self,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ba60usize)as*mut u8,();
+(GameUserGlobalData)__receiver,(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsLastSaveDataInfo(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]fn is_last_save_data_info(self,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ba70usize)as*mut u8,bool;
+(GameUserGlobalData)__receiver,(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251baa0usize)as*mut u8,i32;
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251bab0usize)as*mut u8,();
+(GameUserGlobalData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251bcd0usize)as*mut u8,();
+(GameUserGlobalData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`set_LastSaveDataType(crate::app::gamesavedata::GameSaveData_Types)` overload"]fn set_last_save_data_type(self,value:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c3e0usize)as*mut u8,();
+(GameUserGlobalData)__receiver,(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(value))}
+}
+#[doc="`set_LastSaveDataIndex(i32)` overload"]fn set_last_save_data_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c400usize)as*mut u8,();
+(GameUserGlobalData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IdentifierCount()` overload"]fn get_identifier_count(self,)->u32{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c410usize)as*mut u8,u32;
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`set_IdentifierCount(u32)` overload"]fn set_identifier_count(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c420usize)as*mut u8,();
+(GameUserGlobalData)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::gameuserglobaldata::GameUserGlobalData_FlagsField{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c430usize)as*mut u8,crate::app::gameuserglobaldata::GameUserGlobalData_FlagsField;
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`Completed()` overload"]fn completed(self,)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25155a0usize)as*mut u8,();
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`ClearCompleted()` overload"]fn clear_completed(self,)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2515b30usize)as*mut u8,();
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`IsCompleted()` overload"]fn is_completed(self,)->bool{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c440usize)as*mut u8,bool;
+(GameUserGlobalData)__receiver)}
+}
+#[doc="`SetCompleted(crate::app::chapterdata::ChapterData)` overload"]fn set_completed(self,chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2515190usize)as*mut u8,();
+(GameUserGlobalData)__receiver,(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`ClearCompleted(crate::app::chapterdata::ChapterData)` overload"]fn clear_completed_2(self,chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c4a0usize)as*mut u8,();
+(GameUserGlobalData)__receiver,(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`IsCompleted(::unity2::Il2CppString)` overload"]fn is_completed_2(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c560usize)as*mut u8,bool;
+(GameUserGlobalData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+}
 
-#[cfg(feature = "app-gameuserglobaldata")]
-impl < __T : IGameUserGlobalData_FlagsField > IGameUserGlobalData_FlagsFieldMethods for __T { }
+#[cfg(feature="app-gameuserglobaldata")]impl<__T:IGameUserGlobalData>IGameUserGlobalDataMethods for __T{}
 
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData_FlagsField { pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData_FlagsField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGlobalData_FlagsField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_last_save_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_last_save_data_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_last_save_data_index_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_last_save_data_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_last_save_data_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_last_save_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_last_save_data_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_identifier_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_identifier_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn clear_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn clear_completed_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_completed_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn create_identifier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData_FlagsField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameUserGlobalData_FlagsField) , :: core :: stringify ! (new) ,)) ; < Self as IGameUserGlobalData_FlagsFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserGlobalData), ::core::stringify!(new),));
+ <Self as IGameUserGlobalDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gameuserglobaldata")]pub trait IGameUserGlobalData_FlagsFieldMethods:IGameUserGlobalData_FlagsField{#[doc="`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)->i32{unsafe{let __receiver= <GameUserGlobalData_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e1e0usize)as*mut u8,i32;
+(GameUserGlobalData_FlagsField)__receiver,(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserGlobalData_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e1f0usize)as*mut u8,();
+(GameUserGlobalData_FlagsField)__receiver)}
+}
+}
+
+#[cfg(feature="app-gameuserglobaldata")]impl<__T:IGameUserGlobalData_FlagsField>IGameUserGlobalData_FlagsFieldMethods for __T{}
+
+#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData_FlagsField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData_FlagsField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserGlobalData_FlagsField), ::core::stringify!(new),));
+ <Self as IGameUserGlobalData_FlagsFieldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gameuserglobaldata")]
@@ -186,10 +222,10 @@ pub mod prelude {
     pub use super::GameUserGlobalData;
     pub use super::IGameUserGlobalData;
     pub use super::IGameUserGlobalDataMethods;
-    pub use super::GameUserGlobalData_Flags;
     pub use super::GameUserGlobalData_FlagsField;
     pub use super::IGameUserGlobalData_FlagsField;
     pub use super::IGameUserGlobalData_FlagsFieldMethods;
+    pub use super::GameUserGlobalData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

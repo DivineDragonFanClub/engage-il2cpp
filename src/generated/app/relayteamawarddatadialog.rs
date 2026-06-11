@@ -4,33 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayteamawarddatadialog/RelayTeamAwardDataDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayTeamAwardDataDialog")] # [parent (crate :: system :: object :: Object)] pub struct RelayTeamAwardDataDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayteamawarddatadialog/RelayTeamAwardDataDialog.md"))]#[::unity2::class(namespace="App",name="RelayTeamAwardDataDialog")]#[parent(crate::system::object::Object)]pub struct RelayTeamAwardDataDialog{}
 
 }
 
 #[cfg(feature = "app-relayteamawarddatadialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayteamawarddatadialog")]
-impl RelayTeamAwardDataDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>, crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , main_item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > > , sub_item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d8b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (main_item_param_list) , :: core :: convert :: Into :: into (sub_item_param_list) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayteamawarddatadialog")]impl RelayTeamAwardDataDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>, crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,main_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> > ,sub_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200d8b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(main_item_param_list),(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(sub_item_param_list))}
+}
+}
 
-#[cfg(feature = "app-relayteamawarddatadialog")]
-pub trait IRelayTeamAwardDataDialogMethods : IRelayTeamAwardDataDialog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayTeamAwardDataDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayTeamAwardDataDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayteamawarddatadialog")]pub trait IRelayTeamAwardDataDialogMethods:IRelayTeamAwardDataDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayTeamAwardDataDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d960usize)as*mut u8,();
+(RelayTeamAwardDataDialog)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayteamawarddatadialog")]
-impl < __T : IRelayTeamAwardDataDialog > IRelayTeamAwardDataDialogMethods for __T { }
+#[cfg(feature="app-relayteamawarddatadialog")]impl<__T:IRelayTeamAwardDataDialog>IRelayTeamAwardDataDialogMethods for __T{}
 
-#[cfg(feature = "app-relayteamawarddatadialog")]
-impl RelayTeamAwardDataDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayTeamAwardDataDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayTeamAwardDataDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-relayteamawarddatadialog")]impl RelayTeamAwardDataDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-relayteamawarddatadialog")]
-impl RelayTeamAwardDataDialog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayTeamAwardDataDialog) , :: core :: stringify ! (new) ,)) ; < Self as IRelayTeamAwardDataDialogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayteamawarddatadialog")]impl RelayTeamAwardDataDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayTeamAwardDataDialog), ::core::stringify!(new),));
+ <Self as IRelayTeamAwardDataDialogMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayteamawarddatadialog")]

@@ -4,123 +4,114 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibotopsequence/AmiiboTopSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AmiiboTopSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibotopsequence/AmiiboTopSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AmiiboTopSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for AmiiboTopSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AmiiboTopSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AmiiboTopSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AmiiboTopSequence_Label{pub fn init()->Self{Self{value:0}
+}
+pub fn entry()->Self{Self{value:1}
+}
+pub fn amiibo()->Self{Self{value:2}
+}
+pub fn accessory()->Self{Self{value:3}
+}
+pub fn sound()->Self{Self{value:4}
+}
+pub fn exit()->Self{Self{value:5}
+}
+pub fn end()->Self{Self{value:6}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for AmiiboTopSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AmiiboTopSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AmiiboTopSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AmiiboTopSequence_Label  {
-    pub fn init() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn entry() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn amiibo() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn accessory() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn sound() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopsequence/AmiiboTopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboTopSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibotopsequence :: AmiiboTopSequence >)] pub struct AmiiboTopSequence {
-# [offset (116)] # [rename (name = "m_menuResult")] pub m_menu_result : crate :: app :: amiibotopmenu :: AmiiboTopMenu_MenuResult ,
-# [offset (120)] # [rename (name = "m_AccessoryShopChangeRoot")] pub m_accessory_shop_change_root : crate :: app :: accessoryshopchangeroot :: AccessoryShopChangeRoot ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibotopsequence/AmiiboTopSequence.md"))]#[::unity2::class(namespace="App",name="AmiiboTopSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::amiibotopsequence::AmiiboTopSequence>)]pub struct AmiiboTopSequence{#[offset(116)]#[rename(name="m_menuResult")]pub m_menu_result:crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult, #[offset(120)]#[rename(name="m_AccessoryShopChangeRoot")]pub m_accessory_shop_change_root:crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,}
 
 }
 
 #[cfg(feature = "app-amiibotopsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-amiibotopsequence")]
-impl AmiiboTopSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8c4c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiibotopsequence")]impl AmiiboTopSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8c4c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-amiibotopsequence")]
-pub trait IAmiiboTopSequenceMethods : IAmiiboTopSequence { # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8c690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenTitle()` overload"] fn open_title (self ,) -> () { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseTitle()` overload"] fn close_title (self ,) -> () { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResources()` overload"] fn unload_resources (self ,) -> () { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateTopMenu()` overload"] fn create_top_menu (self ,) -> () { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateAccessoryMenu()` overload"] fn create_accessory_menu (self ,) -> () { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AmiiboTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8c610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiibotopsequence")]pub trait IAmiiboTopSequenceMethods:IAmiiboTopSequence{#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8c690usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(AmiiboTopSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d0f0usize)as*mut u8,();
+(AmiiboTopSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d200usize)as*mut u8,bool;
+(AmiiboTopSequence)__receiver)}
+}
+#[doc="`OpenTitle()` overload"]fn open_title(self,)->(){unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d270usize)as*mut u8,();
+(AmiiboTopSequence)__receiver)}
+}
+#[doc="`CloseTitle()` overload"]fn close_title(self,)->(){unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d3b0usize)as*mut u8,();
+(AmiiboTopSequence)__receiver)}
+}
+#[doc="`UnloadResources()` overload"]fn unload_resources(self,)->(){unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d480usize)as*mut u8,();
+(AmiiboTopSequence)__receiver)}
+}
+#[doc="`CreateTopMenu()` overload"]fn create_top_menu(self,)->(){unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d560usize)as*mut u8,();
+(AmiiboTopSequence)__receiver)}
+}
+#[doc="`CreateAccessoryMenu()` overload"]fn create_accessory_menu(self,)->(){unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d5f0usize)as*mut u8,();
+(AmiiboTopSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8c610usize)as*mut u8,();
+(AmiiboTopSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-amiibotopsequence")]
-impl < __T : IAmiiboTopSequence > IAmiiboTopSequenceMethods for __T { }
+#[cfg(feature="app-amiibotopsequence")]impl<__T:IAmiiboTopSequence>IAmiiboTopSequenceMethods for __T{}
 
-#[cfg(feature = "app-amiibotopsequence")]
-impl AmiiboTopSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn open_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn close_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_accessory_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-amiibotopsequence")]impl AmiiboTopSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn open_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn close_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_accessory_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-amiibotopsequence")]
-impl AmiiboTopSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AmiiboTopSequence) , :: core :: stringify ! (new) ,)) ; < Self as IAmiiboTopSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-amiibotopsequence")]impl AmiiboTopSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboTopSequence), ::core::stringify!(new),));
+ <Self as IAmiiboTopSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-amiibotopsequence")]

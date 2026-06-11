@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/sr/SR.md"))] # [:: unity2 :: class (namespace = "" , name = "SR")] # [parent (crate :: system :: object :: Object)] pub struct SR {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/sr/SR.md"))]#[::unity2::class(namespace="",name="SR")]#[parent(crate::system::object::Object)]pub struct SR{}
 
 }
 
 #[cfg(feature = "root-sr-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-sr")]
-impl SR { # [doc = "`Format(::unity2::Il2CppString, crate::system::object::Object)` overload"] pub fn format (resource_format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , p1 : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34fe4d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (resource_format) , :: core :: convert :: Into :: into (p1) , :: core :: option :: Option :: None) } } } # [doc = "`Format(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"] pub fn format_2 (resource_format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , p1 : impl :: core :: convert :: Into < crate :: system :: object :: Object > , p2 : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34fe550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (resource_format) , :: core :: convert :: Into :: into (p1) , :: core :: convert :: Into :: into (p2) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-sr")]impl SR{#[doc="`Format(::unity2::Il2CppString, crate::system::object::Object)` overload"]pub fn format(resource_format:impl::core::convert::Into< ::unity2::Il2CppString> ,p1:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34fe4d0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(resource_format),(crate::system::object::Object)::core::convert::Into::into(p1))}
+}
+#[doc="`Format(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]pub fn format_2(resource_format:impl::core::convert::Into< ::unity2::Il2CppString> ,p1:impl::core::convert::Into<crate::system::object::Object> ,p2:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34fe550usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(resource_format),(crate::system::object::Object)::core::convert::Into::into(p1),(crate::system::object::Object)::core::convert::Into::into(p2))}
+}
+}
 
-#[cfg(feature = "root-sr")]
-impl SR { pub fn format_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn format_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-sr")]impl SR{pub fn format_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn format_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "root-sr")]
 #[doc(hidden)]

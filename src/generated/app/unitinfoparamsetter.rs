@@ -4,374 +4,208 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_ForceType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfoParamSetter_ForceType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoparamsetter/UnitInfoParamSetter_WdwType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfoParamSetter_WdwType{pub value:i32,}
+impl::unity2::ClassIdentity for UnitInfoParamSetter_WdwType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfoParamSetter.WdwType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitInfoParamSetter_WdwType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitInfoParamSetter_WdwType{pub fn default()->Self{Self{value:0}
+}
+pub fn synchro_blue()->Self{Self{value:1}
+}
+pub fn synchro_red()->Self{Self{value:2}
+}
+pub fn synchro_green()->Self{Self{value:3}
+}
+pub fn engage_blue()->Self{Self{value:4}
+}
+pub fn engage_red()->Self{Self{value:5}
+}
+pub fn synchro_yellow()->Self{Self{value:6}
+}
+pub fn count()->Self{Self{value:7}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for UnitInfoParamSetter_ForceType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoParamSetter.ForceType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfoParamSetter_HPStockType{pub value:i32,}
+impl::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfoParamSetter.HPStockType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitInfoParamSetter_HPStockType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitInfoParamSetter_HPStockType{pub fn normal()->Self{Self{value:0}
+}
+pub fn rampage()->Self{Self{value:1}
+}
+pub fn player()->Self{Self{value:2}
+}
+pub fn count()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::IlType for UnitInfoParamSetter_ForceType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoparamsetter/UnitInfoParamSetter_GodBuffType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfoParamSetter_GodBuffType{pub value:i32,}
+impl::unity2::ClassIdentity for UnitInfoParamSetter_GodBuffType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfoParamSetter.GodBuffType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitInfoParamSetter_GodBuffType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitInfoParamSetter_GodBuffType{pub fn blue()->Self{Self{value:0}
+}
+pub fn red()->Self{Self{value:1}
+}
+pub fn count()->Self{Self{value:2}
+}
 }
 
 
-impl  UnitInfoParamSetter_ForceType  {
-    pub fn player() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn enemy() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn ally() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn f4th() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 4 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoparamsetter/UnitInfoParamSetter_ForceType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfoParamSetter_ForceType{pub value:i32,}
+impl::unity2::ClassIdentity for UnitInfoParamSetter_ForceType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfoParamSetter.ForceType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitInfoParamSetter_ForceType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitInfoParamSetter_ForceType{pub fn player()->Self{Self{value:0}
+}
+pub fn enemy()->Self{Self{value:1}
+}
+pub fn ally()->Self{Self{value:2}
+}
+pub fn f4th()->Self{Self{value:3}
+}
+pub fn count()->Self{Self{value:4}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfoParamSetter_HPStockType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitInfoParamSetter_HPStockType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitInfoParamSetter_HPStockType  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn rampage() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn player() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_WdwType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfoParamSetter_WdwType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitInfoParamSetter_WdwType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoParamSetter.WdwType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitInfoParamSetter_WdwType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitInfoParamSetter_WdwType  {
-    pub fn default() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn synchro_blue() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn synchro_red() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn synchro_green() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn engage_blue() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn engage_red() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn synchro_yellow() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_GodBuffType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfoParamSetter_GodBuffType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitInfoParamSetter_GodBuffType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoParamSetter.GodBuffType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitInfoParamSetter_GodBuffType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitInfoParamSetter_GodBuffType  {
-    pub fn blue() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn red() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparamsetter/UnitInfoParamSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoParamSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitInfoParamSetter {
-# [offset (24)] # [rename (name = "m_SubInfo")] pub m_sub_info : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_IsSimpleUI")] pub m_is_simple_ui : bool ,
-# [offset (40)] # [rename (name = "m_FrameImage")] pub m_frame_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "m_WdwImage")] pub m_wdw_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_ForceSprites")] pub m_force_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (64)] # [rename (name = "m_WdwSprites")] pub m_wdw_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (72)] # [rename (name = "m_GodBuffSprites")] pub m_god_buff_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (80)] # [rename (name = "m_HpStockSprites")] pub m_hp_stock_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (88)] # [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_GodIcon")] pub m_god_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_CharaName")] pub m_chara_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (112)] # [rename (name = "m_JobName")] pub m_job_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (120)] # [rename (name = "m_BattleStyleName")] pub m_battle_style_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (128)] # [rename (name = "m_GodNameRoot")] pub m_god_name_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_GodName")] pub m_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (144)] # [rename (name = "m_BondInfoRoot")] pub m_bond_info_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_BondLevelValue")] pub m_bond_level_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (160)] # [rename (name = "m_BondLevelGauge")] pub m_bond_level_gauge : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (168)] # [rename (name = "m_Enchant")] pub m_enchant : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (176)] # [rename (name = "m_Level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (184)] # [rename (name = "m_GodBuffLevel")] pub m_god_buff_level : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (192)] # [rename (name = "m_GaugeExp")] pub m_gauge_exp : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (200)] # [rename (name = "m_MaxHp")] pub m_max_hp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (208)] # [rename (name = "m_Hp")] pub m_hp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (216)] # [rename (name = "m_GodBuffHp")] pub m_god_buff_hp : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (224)] # [rename (name = "m_HpStockRoot")] pub m_hp_stock_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (232)] # [rename (name = "m_HpStock")] pub m_hp_stock : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (240)] # [rename (name = "m_Move")] pub m_move : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_GodBuffMove")] pub m_god_buff_move : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (256)] # [rename (name = "m_TitleBtlAtk")] pub m_title_btl_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (264)] # [rename (name = "m_BtlAtk")] pub m_btl_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_GodBuffAtk")] pub m_god_buff_atk : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (280)] # [rename (name = "m_BtlHit")] pub m_btl_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (288)] # [rename (name = "m_GodBuffHit")] pub m_god_buff_hit : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (296)] # [rename (name = "m_BtlSpd")] pub m_btl_spd : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (304)] # [rename (name = "m_GodBuffSpd")] pub m_god_buff_spd : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (312)] # [rename (name = "m_BtlAvo")] pub m_btl_avo : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (320)] # [rename (name = "m_GodBuffAvo")] pub m_god_buff_avo : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (328)] # [rename (name = "m_BtlDef")] pub m_btl_def : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (336)] # [rename (name = "m_GodBuffDef")] pub m_god_buff_def : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (344)] # [rename (name = "m_BtlRes")] pub m_btl_res : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (352)] # [rename (name = "m_GodBuffRes")] pub m_god_buff_res : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (360)] # [rename (name = "m_ItemName")] pub m_item_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (368)] # [rename (name = "m_Items")] pub m_items : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (376)] # [rename (name = "m_Frames")] pub m_frames : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [static_field] # [rename (name = "EfficacyMax")] pub efficacy_max : i32 ,
-# [offset (384)] # [rename (name = "m_EfficacyIcons")] pub m_efficacy_icons : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [static_field] # [rename (name = "SkillMax")] pub skill_max : i32 ,
-# [offset (392)] # [rename (name = "m_SkillIcons")] pub m_skill_icons : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (400)] # [rename (name = "m_RelayNameRoot")] pub m_relay_name_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (408)] # [rename (name = "m_RelayName")] pub m_relay_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoparamsetter/UnitInfoParamSetter.md"))]#[::unity2::class(namespace="App",name="UnitInfoParamSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitInfoParamSetter{#[offset(24)]#[rename(name="m_SubInfo")]pub m_sub_info:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_IsSimpleUI")]pub m_is_simple_ui:bool, #[offset(40)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_WdwImage")]pub m_wdw_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_ForceSprites")]pub m_force_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(64)]#[rename(name="m_WdwSprites")]pub m_wdw_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(72)]#[rename(name="m_GodBuffSprites")]pub m_god_buff_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(80)]#[rename(name="m_HpStockSprites")]pub m_hp_stock_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(88)]#[rename(name="m_UnitIcon")]pub m_unit_icon:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_GodIcon")]pub m_god_icon:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_CharaName")]pub m_chara_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(112)]#[rename(name="m_JobName")]pub m_job_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_BattleStyleName")]pub m_battle_style_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_GodNameRoot")]pub m_god_name_root:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_GodName")]pub m_god_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_BondInfoRoot")]pub m_bond_info_root:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_BondLevelValue")]pub m_bond_level_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_BondLevelGauge")]pub m_bond_level_gauge:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_Enchant")]pub m_enchant:crate::unity_engine::gameobject::GameObject, #[offset(176)]#[rename(name="m_Level")]pub m_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_GodBuffLevel")]pub m_god_buff_level:crate::unity_engine::ui::image::Image, #[offset(192)]#[rename(name="m_GaugeExp")]pub m_gauge_exp:crate::unity_engine::gameobject::GameObject, #[offset(200)]#[rename(name="m_MaxHp")]pub m_max_hp:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_Hp")]pub m_hp:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_GodBuffHp")]pub m_god_buff_hp:crate::unity_engine::ui::image::Image, #[offset(224)]#[rename(name="m_HpStockRoot")]pub m_hp_stock_root:crate::unity_engine::gameobject::GameObject, #[offset(232)]#[rename(name="m_HpStock")]pub m_hp_stock: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(240)]#[rename(name="m_Move")]pub m_move:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_GodBuffMove")]pub m_god_buff_move:crate::unity_engine::ui::image::Image, #[offset(256)]#[rename(name="m_TitleBtlAtk")]pub m_title_btl_atk:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_BtlAtk")]pub m_btl_atk:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_GodBuffAtk")]pub m_god_buff_atk:crate::unity_engine::ui::image::Image, #[offset(280)]#[rename(name="m_BtlHit")]pub m_btl_hit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_GodBuffHit")]pub m_god_buff_hit:crate::unity_engine::ui::image::Image, #[offset(296)]#[rename(name="m_BtlSpd")]pub m_btl_spd:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_GodBuffSpd")]pub m_god_buff_spd:crate::unity_engine::ui::image::Image, #[offset(312)]#[rename(name="m_BtlAvo")]pub m_btl_avo:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(320)]#[rename(name="m_GodBuffAvo")]pub m_god_buff_avo:crate::unity_engine::ui::image::Image, #[offset(328)]#[rename(name="m_BtlDef")]pub m_btl_def:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(336)]#[rename(name="m_GodBuffDef")]pub m_god_buff_def:crate::unity_engine::ui::image::Image, #[offset(344)]#[rename(name="m_BtlRes")]pub m_btl_res:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(352)]#[rename(name="m_GodBuffRes")]pub m_god_buff_res:crate::unity_engine::ui::image::Image, #[offset(360)]#[rename(name="m_ItemName")]pub m_item_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(368)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(376)]#[rename(name="m_Frames")]pub m_frames: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[static_field]#[rename(name="EfficacyMax")]pub efficacy_max:i32, #[offset(384)]#[rename(name="m_EfficacyIcons")]pub m_efficacy_icons: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[static_field]#[rename(name="SkillMax")]pub skill_max:i32, #[offset(392)]#[rename(name="m_SkillIcons")]pub m_skill_icons: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(400)]#[rename(name="m_RelayNameRoot")]pub m_relay_name_root:crate::unity_engine::gameobject::GameObject, #[offset(408)]#[rename(name="m_RelayName")]pub m_relay_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-unitinfoparamsetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitinfoparamsetter")]
-impl UnitInfoParamSetter { # [doc = "`GetEfficacySkill(crate::app::unit::Unit, i32)` overload"] pub fn get_efficacy_skill (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , icon_index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: skilldata :: SkillData { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f962c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (icon_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetJobCategory(crate::app::unit::Unit, i32)` overload"] pub fn get_job_category (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , icon_index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: skilldata :: SkillData { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f9e700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (icon_index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinfoparamsetter")]impl UnitInfoParamSetter{#[doc="`GetEfficacySkill(crate::app::unit::Unit, i32)` overload"]pub fn get_efficacy_skill(unit:impl::core::convert::Into<crate::app::unit::Unit> ,icon_index:impl::core::convert::Into<i32>)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f962c0usize)as*mut u8,crate::app::skilldata::SkillData;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(icon_index))}
+}
+#[doc="`GetJobCategory(crate::app::unit::Unit, i32)` overload"]pub fn get_job_category(unit:impl::core::convert::Into<crate::app::unit::Unit> ,icon_index:impl::core::convert::Into<i32>)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f9e700usize)as*mut u8,crate::app::skilldata::SkillData;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(icon_index))}
+}
+}
 
-#[cfg(feature = "app-unitinfoparamsetter")]
-pub trait IUnitInfoParamSetterMethods : IUnitInfoParamSetter { # [doc = "`SetTextColor(crate::tm_pro::textmeshprougui::TextMeshProUGUI, i32, bool)` overload"] fn set_text_color (self , text : impl :: core :: convert :: Into < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > , dir : impl :: core :: convert :: Into < i32 > , is_limit : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f93310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (dir) , :: core :: convert :: Into :: into (is_limit) , :: core :: option :: Option :: None) } } } # [doc = "`SetGodBuff(crate::app::unit::Unit, crate::unity_engine::ui::image::Image, i32)` overload"] fn set_god_buff (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , dir : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: app :: unit :: Unit , crate :: unity_engine :: ui :: image :: Image , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f934b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (image) , :: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`SetParamText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::ui::image::Image, crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType, ::unity2::Il2CppString)` overload"] fn set_param_text (self , text : impl :: core :: convert :: Into < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > , god_buff_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , r#type : impl :: core :: convert :: Into < crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType > , ex_string : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , crate :: unity_engine :: ui :: image :: Image , crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f93690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (god_buff_image) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (ex_string) , :: core :: option :: Option :: None) } } } # [doc = "`SetParamText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::ui::image::Image, crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"] fn set_param_text_2 (self , text : impl :: core :: convert :: Into < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > , god_buff_image : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image > , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , crate :: unity_engine :: ui :: image :: Image , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f93820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (god_buff_image) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetItemIcons(crate::app::unit::Unit)` overload"] fn set_item_icons (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f94a00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetEfficacyIcons(crate::app::unit::Unit)` overload"] fn set_efficacy_icons (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f96160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetSkillIcon(i32, crate::app::skilldata::SkillData, bool)` overload"] fn set_skill_icon (self , icon_no : impl :: core :: convert :: Into < i32 > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , is_active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , i32 , crate :: app :: skilldata :: SkillData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f9d050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (icon_no) , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (is_active) , :: core :: option :: Option :: None) } } } # [doc = "`SetSkillIcons(crate::app::unit::Unit)` overload"] fn set_skill_icons (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f9d1e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnit_Core(crate::app::unit::Unit, i32, i32, bool, crate::app::godunit::GodUnit)` overload"] fn set_unit_core (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , b_select_god : impl :: core :: convert :: Into < bool > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: app :: unit :: Unit , i32 , i32 , bool , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f9d320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (b_select_god) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnit(crate::app::unit::Unit, i32, i32)` overload"] fn set_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f9e6e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitSelectGod(crate::app::unit::Unit, i32, i32, crate::app::godunit::GodUnit)` overload"] fn set_unit_select_god (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , crate :: app :: unit :: Unit , i32 , i32 , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f9e6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfoParamSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f9ebe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinfoparamsetter")]pub trait IUnitInfoParamSetterMethods:IUnitInfoParamSetter{#[doc="`SetTextColor(crate::tm_pro::textmeshprougui::TextMeshProUGUI, i32, bool)` overload"]fn set_text_color(self,text:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,dir:impl::core::convert::Into<i32> ,is_limit:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f93310usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::tm_pro::textmeshprougui::TextMeshProUGUI)::core::convert::Into::into(text),(i32)::core::convert::Into::into(dir),(bool)::core::convert::Into::into(is_limit))}
+}
+#[doc="`SetGodBuff(crate::app::unit::Unit, crate::unity_engine::ui::image::Image, i32)` overload"]fn set_god_buff(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,image:impl::core::convert::Into<crate::unity_engine::ui::image::Image> ,dir:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f934b0usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::unity_engine::ui::image::Image)::core::convert::Into::into(image),(i32)::core::convert::Into::into(dir))}
+}
+#[doc="`SetParamText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::ui::image::Image, crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType, ::unity2::Il2CppString)` overload"]fn set_param_text(self,text:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,god_buff_image:impl::core::convert::Into<crate::unity_engine::ui::image::Image> ,r#type:impl::core::convert::Into<crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType> ,ex_string:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f93690usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::tm_pro::textmeshprougui::TextMeshProUGUI)::core::convert::Into::into(text),(crate::unity_engine::ui::image::Image)::core::convert::Into::into(god_buff_image),(crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(ex_string))}
+}
+#[doc="`SetParamText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::ui::image::Image, crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"]fn set_param_text_2(self,text:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,god_buff_image:impl::core::convert::Into<crate::unity_engine::ui::image::Image> ,r#type:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f93820usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::tm_pro::textmeshprougui::TextMeshProUGUI)::core::convert::Into::into(text),(crate::unity_engine::ui::image::Image)::core::convert::Into::into(god_buff_image),(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetItemIcons(crate::app::unit::Unit)` overload"]fn set_item_icons(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f94a00usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetEfficacyIcons(crate::app::unit::Unit)` overload"]fn set_efficacy_icons(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f96160usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetSkillIcon(i32, crate::app::skilldata::SkillData, bool)` overload"]fn set_skill_icon(self,icon_no:impl::core::convert::Into<i32> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f9d050usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(i32)::core::convert::Into::into(icon_no),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`SetSkillIcons(crate::app::unit::Unit)` overload"]fn set_skill_icons(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f9d1e0usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnit_Core(crate::app::unit::Unit, i32, i32, bool, crate::app::godunit::GodUnit)` overload"]fn set_unit_core(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,b_select_god:impl::core::convert::Into<bool> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f9d320usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(bool)::core::convert::Into::into(b_select_god),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`SetUnit(crate::app::unit::Unit, i32, i32)` overload"]fn set_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f9e6e0usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`SetUnitSelectGod(crate::app::unit::Unit, i32, i32, crate::app::godunit::GodUnit)` overload"]fn set_unit_select_god(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f9e6f0usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoParamSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f9ebe0usize)as*mut u8,();
+(UnitInfoParamSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitinfoparamsetter")]
-impl < __T : IUnitInfoParamSetter > IUnitInfoParamSetterMethods for __T { }
+#[cfg(feature="app-unitinfoparamsetter")]impl<__T:IUnitInfoParamSetter>IUnitInfoParamSetterMethods for __T{}
 
-#[cfg(feature = "app-unitinfoparamsetter")]
-impl UnitInfoParamSetter { pub fn set_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_god_buff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_param_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_param_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_item_icons_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_efficacy_icons_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_skill_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_skill_icons_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_unit_core_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_unit_select_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_efficacy_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_job_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-unitinfoparamsetter")]impl UnitInfoParamSetter{pub fn set_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_god_buff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_param_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_param_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_item_icons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_efficacy_icons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_skill_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_skill_icons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_unit_core_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_unit_select_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_efficacy_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_job_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-unitinfoparamsetter")]
-impl UnitInfoParamSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfoParamSetter) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfoParamSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitinfoparamsetter")]impl UnitInfoParamSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfoParamSetter), ::core::stringify!(new),));
+ <Self as IUnitInfoParamSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitinfoparamsetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfoParamSetter_ForceType;
-    pub use super::UnitInfoParamSetter_HPStockType;
     pub use super::UnitInfoParamSetter_WdwType;
+    pub use super::UnitInfoParamSetter_HPStockType;
     pub use super::UnitInfoParamSetter_GodBuffType;
+    pub use super::UnitInfoParamSetter_ForceType;
     pub use super::UnitInfoParamSetter;
     pub use super::IUnitInfoParamSetter;
     pub use super::IUnitInfoParamSetterMethods;

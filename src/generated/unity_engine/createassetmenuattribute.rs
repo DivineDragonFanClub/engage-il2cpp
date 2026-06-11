@@ -4,28 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/createassetmenuattribute/CreateAssetMenuAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CreateAssetMenuAttribute")] pub struct CreateAssetMenuAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/createassetmenuattribute/CreateAssetMenuAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="CreateAssetMenuAttribute")]pub struct CreateAssetMenuAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-createassetmenuattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-createassetmenuattribute")]
-pub trait ICreateAssetMenuAttributeMethods : ICreateAssetMenuAttribute { # [doc = "`set_menuName(::unity2::Il2CppString)` overload"] fn set_menu_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CreateAssetMenuAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CreateAssetMenuAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c47590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_fileName(::unity2::Il2CppString)` overload"] fn set_file_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CreateAssetMenuAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CreateAssetMenuAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c475a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_order(i32)` overload"] fn set_order (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CreateAssetMenuAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CreateAssetMenuAttribute , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c475b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CreateAssetMenuAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CreateAssetMenuAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c475c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-createassetmenuattribute")]pub trait ICreateAssetMenuAttributeMethods:ICreateAssetMenuAttribute{#[doc="`set_menuName(::unity2::Il2CppString)` overload"]fn set_menu_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CreateAssetMenuAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47590usize)as*mut u8,();
+(CreateAssetMenuAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_fileName(::unity2::Il2CppString)` overload"]fn set_file_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CreateAssetMenuAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c475a0usize)as*mut u8,();
+(CreateAssetMenuAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_order(i32)` overload"]fn set_order(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CreateAssetMenuAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c475b0usize)as*mut u8,();
+(CreateAssetMenuAttribute)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CreateAssetMenuAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c475c0usize)as*mut u8,();
+(CreateAssetMenuAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-createassetmenuattribute")]
-impl < __T : ICreateAssetMenuAttribute > ICreateAssetMenuAttributeMethods for __T { }
+#[cfg(feature="unity_engine-createassetmenuattribute")]impl<__T:ICreateAssetMenuAttribute>ICreateAssetMenuAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-createassetmenuattribute")]
-impl CreateAssetMenuAttribute { pub fn set_menu_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CreateAssetMenuAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CreateAssetMenuAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CreateAssetMenuAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CreateAssetMenuAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-createassetmenuattribute")]impl CreateAssetMenuAttribute{pub fn set_menu_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-createassetmenuattribute")]
-impl CreateAssetMenuAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CreateAssetMenuAttribute) , :: core :: stringify ! (new) ,)) ; < Self as ICreateAssetMenuAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-createassetmenuattribute")]impl CreateAssetMenuAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CreateAssetMenuAttribute), ::core::stringify!(new),));
+ <Self as ICreateAssetMenuAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-createassetmenuattribute")]

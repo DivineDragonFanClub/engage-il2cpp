@@ -4,45 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bondlevelupskill/BondLevelUpSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "BondLevelUpSkill")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BondLevelUpSkill {
-# [offset (24)] # [rename (name = "m_Skill")] pub m_skill : crate :: app :: ringlistskillmenuitemcontent :: RingListSkillMenuItemContent ,
-# [offset (32)] # [rename (name = "m_SkillDetailHelp")] pub m_skill_detail_help : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_SkillDetailSetter")] pub m_skill_detail_setter : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_Anim")] pub m_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (56)] # [rename (name = "m_NextMenuItem")] pub m_next_menu_item : crate :: app :: basicmenuitem :: BasicMenuItem ,
-# [offset (64)] # [rename (name = "m_NextGod")] pub m_next_god : crate :: app :: godunit :: GodUnit ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bondlevelupskill/BondLevelUpSkill.md"))]#[::unity2::class(namespace="App",name="BondLevelUpSkill")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct BondLevelUpSkill{#[offset(24)]#[rename(name="m_Skill")]pub m_skill:crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent, #[offset(32)]#[rename(name="m_SkillDetailHelp")]pub m_skill_detail_help:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_SkillDetailSetter")]pub m_skill_detail_setter:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_Anim")]pub m_anim:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="m_NextMenuItem")]pub m_next_menu_item:crate::app::basicmenuitem::BasicMenuItem, #[offset(64)]#[rename(name="m_NextGod")]pub m_next_god:crate::app::godunit::GodUnit,}
 
 }
 
 #[cfg(feature = "app-bondlevelupskill-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bondlevelupskill")]
-pub trait IBondLevelUpSkillMethods : IBondLevelUpSkill { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondLevelUpSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2989be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSkill(crate::app::basicmenuitem::BasicMenuItem, crate::app::godunit::GodUnit)` overload"] fn set_skill (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondLevelUpSkill , crate :: app :: basicmenuitem :: BasicMenuItem , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2989d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`SetNext(crate::app::basicmenuitem::BasicMenuItem, crate::app::godunit::GodUnit)` overload"] fn set_next (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondLevelUpSkill , crate :: app :: basicmenuitem :: BasicMenuItem , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayAnim()` overload"] fn is_play_anim (self ,) -> bool { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondLevelUpSkill , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondLevelUpSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BondLevelUpSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondLevelUpSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bondlevelupskill")]pub trait IBondLevelUpSkillMethods:IBondLevelUpSkill{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <BondLevelUpSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2989be0usize)as*mut u8,();
+(BondLevelUpSkill)__receiver)}
+}
+#[doc="`SetSkill(crate::app::basicmenuitem::BasicMenuItem, crate::app::godunit::GodUnit)` overload"]fn set_skill(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <BondLevelUpSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2989d30usize)as*mut u8,();
+(BondLevelUpSkill)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`SetNext(crate::app::basicmenuitem::BasicMenuItem, crate::app::godunit::GodUnit)` overload"]fn set_next(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <BondLevelUpSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298a150usize)as*mut u8,();
+(BondLevelUpSkill)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`IsPlayAnim()` overload"]fn is_play_anim(self,)->bool{unsafe{let __receiver= <BondLevelUpSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298a270usize)as*mut u8,bool;
+(BondLevelUpSkill)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <BondLevelUpSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298a1a0usize)as*mut u8,();
+(BondLevelUpSkill)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BondLevelUpSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298a340usize)as*mut u8,();
+(BondLevelUpSkill)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bondlevelupskill")]
-impl < __T : IBondLevelUpSkill > IBondLevelUpSkillMethods for __T { }
+#[cfg(feature="app-bondlevelupskill")]impl<__T:IBondLevelUpSkill>IBondLevelUpSkillMethods for __T{}
 
-#[cfg(feature = "app-bondlevelupskill")]
-impl BondLevelUpSkill { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_play_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondLevelUpSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-bondlevelupskill")]impl BondLevelUpSkill{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_play_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-bondlevelupskill")]
-impl BondLevelUpSkill {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BondLevelUpSkill) , :: core :: stringify ! (new) ,)) ; < Self as IBondLevelUpSkillMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bondlevelupskill")]impl BondLevelUpSkill{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BondLevelUpSkill), ::core::stringify!(new),));
+ <Self as IBondLevelUpSkillMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bondlevelupskill")]

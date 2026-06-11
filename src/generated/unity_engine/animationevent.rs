@@ -4,42 +4,104 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animationevent/AnimationEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AnimationEvent")] # [parent (crate :: system :: object :: Object)] pub struct AnimationEvent {
-# [offset (16)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (24)] # [rename (name = "m_FunctionName")] pub m_function_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_StringParameter")] pub m_string_parameter : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_ObjectReferenceParameter")] pub m_object_reference_parameter : crate :: unity_engine :: object_2 :: Object_2 ,
-# [offset (48)] # [rename (name = "m_FloatParameter")] pub m_float_parameter : f32 ,
-# [offset (52)] # [rename (name = "m_IntParameter")] pub m_int_parameter : i32 ,
-# [offset (56)] # [rename (name = "m_MessageOptions")] pub m_message_options : i32 ,
-# [offset (60)] # [rename (name = "m_Source")] pub m_source : crate :: unity_engine :: animationeventsource :: AnimationEventSource ,
-# [offset (64)] # [rename (name = "m_StateSender")] pub m_state_sender : crate :: unity_engine :: animationstate :: AnimationState ,
-# [offset (72)] # [rename (name = "m_AnimatorStateInfo")] pub m_animator_state_info : crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo ,
-# [offset (108)] # [rename (name = "m_AnimatorClipInfo")] pub m_animator_clip_info : crate :: unity_engine :: animatorclipinfo :: AnimatorClipInfo ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animationevent/AnimationEvent.md"))]#[::unity2::class(namespace="UnityEngine",name="AnimationEvent")]#[parent(crate::system::object::Object)]pub struct AnimationEvent{#[offset(16)]#[rename(name="m_Time")]pub m_time:f32, #[offset(24)]#[rename(name="m_FunctionName")]pub m_function_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_StringParameter")]pub m_string_parameter: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_ObjectReferenceParameter")]pub m_object_reference_parameter:crate::unity_engine::object_2::Object_2, #[offset(48)]#[rename(name="m_FloatParameter")]pub m_float_parameter:f32, #[offset(52)]#[rename(name="m_IntParameter")]pub m_int_parameter:i32, #[offset(56)]#[rename(name="m_MessageOptions")]pub m_message_options:i32, #[offset(60)]#[rename(name="m_Source")]pub m_source:crate::unity_engine::animationeventsource::AnimationEventSource, #[offset(64)]#[rename(name="m_StateSender")]pub m_state_sender:crate::unity_engine::animationstate::AnimationState, #[offset(72)]#[rename(name="m_AnimatorStateInfo")]pub m_animator_state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo, #[offset(108)]#[rename(name="m_AnimatorClipInfo")]pub m_animator_clip_info:crate::unity_engine::animatorclipinfo::AnimatorClipInfo,}
 
 }
 
 #[cfg(feature = "unity_engine-animationevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animationevent")]
-pub trait IAnimationEventMethods : IAnimationEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_stringParameter()` overload"] fn get_string_parameter (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_stringParameter(::unity2::Il2CppString)` overload"] fn set_string_parameter (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead6d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_floatParameter()` overload"] fn get_float_parameter (self ,) -> f32 { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_floatParameter(f32)` overload"] fn set_float_parameter (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_intParameter()` overload"] fn get_int_parameter (self ,) -> i32 { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_intParameter(i32)` overload"] fn set_int_parameter (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_objectReferenceParameter()` overload"] fn get_object_reference_parameter (self ,) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_objectReferenceParameter(crate::unity_engine::object_2::Object_2)` overload"] fn set_object_reference_parameter (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_functionName()` overload"] fn get_function_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_functionName(::unity2::Il2CppString)` overload"] fn set_function_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_time()` overload"] fn get_time (self ,) -> f32 { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_time(f32)` overload"] fn set_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_messageOptions()` overload"] fn get_message_options (self ,) -> crate :: unity_engine :: sendmessageoptions :: SendMessageOptions { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sendmessageoptions :: SendMessageOptions = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_messageOptions(crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"] fn set_message_options (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sendmessageoptions :: SendMessageOptions >) -> () { unsafe { let __receiver = < AnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationEvent , crate :: unity_engine :: sendmessageoptions :: SendMessageOptions , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animationevent")]pub trait IAnimationEventMethods:IAnimationEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead620usize)as*mut u8,();
+(AnimationEvent)__receiver)}
+}
+#[doc="`get_stringParameter()` overload"]fn get_string_parameter(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead6c0usize)as*mut u8, ::unity2::Il2CppString;
+(AnimationEvent)__receiver)}
+}
+#[doc="`set_stringParameter(::unity2::Il2CppString)` overload"]fn set_string_parameter(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead6d0usize)as*mut u8,();
+(AnimationEvent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_floatParameter()` overload"]fn get_float_parameter(self,)->f32{unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead6e0usize)as*mut u8,f32;
+(AnimationEvent)__receiver)}
+}
+#[doc="`set_floatParameter(f32)` overload"]fn set_float_parameter(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead6f0usize)as*mut u8,();
+(AnimationEvent)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_intParameter()` overload"]fn get_int_parameter(self,)->i32{unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead700usize)as*mut u8,i32;
+(AnimationEvent)__receiver)}
+}
+#[doc="`set_intParameter(i32)` overload"]fn set_int_parameter(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead710usize)as*mut u8,();
+(AnimationEvent)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_objectReferenceParameter()` overload"]fn get_object_reference_parameter(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead720usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(AnimationEvent)__receiver)}
+}
+#[doc="`set_objectReferenceParameter(crate::unity_engine::object_2::Object_2)` overload"]fn set_object_reference_parameter(self,value:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead730usize)as*mut u8,();
+(AnimationEvent)__receiver,(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(value))}
+}
+#[doc="`get_functionName()` overload"]fn get_function_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead740usize)as*mut u8, ::unity2::Il2CppString;
+(AnimationEvent)__receiver)}
+}
+#[doc="`set_functionName(::unity2::Il2CppString)` overload"]fn set_function_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead750usize)as*mut u8,();
+(AnimationEvent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_time()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead760usize)as*mut u8,f32;
+(AnimationEvent)__receiver)}
+}
+#[doc="`set_time(f32)` overload"]fn set_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead770usize)as*mut u8,();
+(AnimationEvent)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_messageOptions()` overload"]fn get_message_options(self,)->crate::unity_engine::sendmessageoptions::SendMessageOptions{unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead780usize)as*mut u8,crate::unity_engine::sendmessageoptions::SendMessageOptions;
+(AnimationEvent)__receiver)}
+}
+#[doc="`set_messageOptions(crate::unity_engine::sendmessageoptions::SendMessageOptions)` overload"]fn set_message_options(self,value:impl::core::convert::Into<crate::unity_engine::sendmessageoptions::SendMessageOptions>)->(){unsafe{let __receiver= <AnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ead790usize)as*mut u8,();
+(AnimationEvent)__receiver,(crate::unity_engine::sendmessageoptions::SendMessageOptions)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-animationevent")]
-impl < __T : IAnimationEvent > IAnimationEventMethods for __T { }
+#[cfg(feature="unity_engine-animationevent")]impl<__T:IAnimationEvent>IAnimationEventMethods for __T{}
 
-#[cfg(feature = "unity_engine-animationevent")]
-impl AnimationEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_string_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_string_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_float_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_float_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_int_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_int_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_object_reference_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_object_reference_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_function_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_function_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_message_options_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_message_options_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="unity_engine-animationevent")]impl AnimationEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_string_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_string_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_float_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_float_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_int_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_int_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_object_reference_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_object_reference_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_function_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_function_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_message_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_message_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "unity_engine-animationevent")]
-impl AnimationEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimationEvent) , :: core :: stringify ! (new) ,)) ; < Self as IAnimationEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-animationevent")]impl AnimationEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimationEvent), ::core::stringify!(new),));
+ <Self as IAnimationEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-animationevent")]

@@ -4,32 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: nintendo :: message_studio :: lib :: binlibmsfilebase :: { BinLibmsFileBase , IBinLibmsFileBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::nintendo::message_studio::lib::binlibmsfilebase::{BinLibmsFileBase,IBinLibmsFileBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/binflwfile/BinFlwFile.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "BinFlwFile")] # [parent (crate :: nintendo :: message_studio :: lib :: binlibmsfilebase :: BinLibmsFileBase)] pub struct BinFlwFile {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/binflwfile/BinFlwFile.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="BinFlwFile")]#[parent(crate::nintendo::message_studio::lib::binlibmsfilebase::BinLibmsFileBase)]pub struct BinFlwFile{}
 
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-binflwfile-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
-pub trait IBinFlwFileMethods : IBinFlwFile { # [doc = "`InitObject(::unity2::IntPtr)` overload"] fn init_object (self , resource_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> :: unity2 :: IntPtr { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95c80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (resource_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`CloseObject(::unity2::IntPtr)` overload"] fn close_object (self , object_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`GetNodeNum()` overload"] fn get_node_num (self ,) -> i32 { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEntryNodeIndex(::unity2::Il2CppString)` overload"] fn get_entry_node_index (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`GetNodeData(i32)` overload"] fn get_node_data (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: nintendo :: message_studio :: lib :: lmsflownodedata :: LMSFlowNodeData { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , i32 , :: unity2 :: OptionalMethod ,) -> crate :: nintendo :: message_studio :: lib :: lmsflownodedata :: LMSFlowNodeData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetCaseIndexesFromBranchNode(i32)` overload"] fn get_case_indexes_from_branch_node (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < u16 > { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u16 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e96040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetFlowParamText(i32)` overload"] fn get_flow_param_text (self , offset : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e96200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } } # [doc = "`GetIndexTest(i32)` overload"] fn get_index_test (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e962c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BinFlwFile as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinFlwFile , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e96340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nintendo-message_studio-lib-binflwfile")]pub trait IBinFlwFileMethods:IBinFlwFile{#[doc="`InitObject(::unity2::IntPtr)` overload"]fn init_object(self,resource_ptr:impl::core::convert::Into< ::unity2::IntPtr>)-> ::unity2::IntPtr{unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95c80usize)as*mut u8, ::unity2::IntPtr;
+(BinFlwFile)__receiver,(::unity2::IntPtr)::core::convert::Into::into(resource_ptr))}
+}
+#[doc="`CloseObject(::unity2::IntPtr)` overload"]fn close_object(self,object_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95cf0usize)as*mut u8,();
+(BinFlwFile)__receiver,(::unity2::IntPtr)::core::convert::Into::into(object_ptr))}
+}
+#[doc="`GetNodeNum()` overload"]fn get_node_num(self,)->i32{unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95d60usize)as*mut u8,i32;
+(BinFlwFile)__receiver)}
+}
+#[doc="`GetEntryNodeIndex(::unity2::Il2CppString)` overload"]fn get_entry_node_index(self,label:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95dd0usize)as*mut u8,i32;
+(BinFlwFile)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`GetNodeData(i32)` overload"]fn get_node_data(self,index:impl::core::convert::Into<i32>)->crate::nintendo::message_studio::lib::lmsflownodedata::LMSFlowNodeData{unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95e50usize)as*mut u8,crate::nintendo::message_studio::lib::lmsflownodedata::LMSFlowNodeData;
+(BinFlwFile)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetCaseIndexesFromBranchNode(i32)` overload"]fn get_case_indexes_from_branch_node(self,index:impl::core::convert::Into<i32>)-> ::unity2::Array<u16>{unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e96040usize)as*mut u8, ::unity2::Array<u16> ;
+(BinFlwFile)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetFlowParamText(i32)` overload"]fn get_flow_param_text(self,offset:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e96200usize)as*mut u8, ::unity2::Il2CppString;
+(BinFlwFile)__receiver,(i32)::core::convert::Into::into(offset))}
+}
+#[doc="`GetIndexTest(i32)` overload"]fn get_index_test(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e962c0usize)as*mut u8,();
+(BinFlwFile)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BinFlwFile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e96340usize)as*mut u8,();
+(BinFlwFile)__receiver)}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
-impl < __T : IBinFlwFile > IBinFlwFileMethods for __T { }
+#[cfg(feature="nintendo-message_studio-lib-binflwfile")]impl<__T:IBinFlwFile>IBinFlwFileMethods for __T{}
 
-#[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
-impl BinFlwFile { pub fn init_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn close_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_node_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_entry_node_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_node_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_case_indexes_from_branch_node_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_flow_param_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_index_test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinFlwFile as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="nintendo-message_studio-lib-binflwfile")]impl BinFlwFile{pub fn init_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_node_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_entry_node_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_node_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_case_indexes_from_branch_node_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_flow_param_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_index_test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
-impl BinFlwFile {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BinFlwFile) , :: core :: stringify ! (new) ,)) ; < Self as IBinFlwFileMethods > :: ctor (this ,) ; this }
+#[cfg(feature="nintendo-message_studio-lib-binflwfile")]impl BinFlwFile{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BinFlwFile), ::core::stringify!(new),));
+ <Self as IBinFlwFileMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-binflwfile")]

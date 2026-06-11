@@ -4,121 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: gui :: { GUI , IGUI }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::gui::{GUI,IGUI}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GX_Anchor  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gx/GX.md"))]#[::unity2::class(namespace="App",name="GX")]#[parent(crate::unity_engine::gui::GUI)]pub struct GX{#[static_field]#[rename(name="scrollBaseColor")]pub scroll_base_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="scrollBarColor")]pub scroll_bar_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="CanvasSizeX")]pub canvas_size_x:f32, #[static_field]#[rename(name="CanvasSizeY")]pub canvas_size_y:f32, #[static_field]#[rename(name="CanvasHalfX")]pub canvas_half_x:f32, #[static_field]#[rename(name="CanvasHalfY")]pub canvas_half_y:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gx/GX_Anchor.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GX_Anchor{pub value:i32,}
+impl::unity2::ClassIdentity for GX_Anchor{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GX.Anchor";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for GX_Anchor  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GX.Anchor";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for GX_Anchor{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for GX_Anchor  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl GX_Anchor{pub fn center()->Self{Self{value:0}
 }
-
-
-impl  GX_Anchor  {
-    pub fn center() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn left_up() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn up() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn right_up() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn right_down() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn down() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn left_down() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 9 }
-
-    }
-
+pub fn left_up()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))] # [:: unity2 :: class (namespace = "App" , name = "GX")] # [parent (crate :: unity_engine :: gui :: GUI)] pub struct GX {
-# [static_field] # [rename (name = "scrollBaseColor")] pub scroll_base_color : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "scrollBarColor")] pub scroll_bar_color : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "CanvasSizeX")] pub canvas_size_x : f32 ,
-# [static_field] # [rename (name = "CanvasSizeY")] pub canvas_size_y : f32 ,
-# [static_field] # [rename (name = "CanvasHalfX")] pub canvas_half_x : f32 ,
-# [static_field] # [rename (name = "CanvasHalfY")] pub canvas_half_y : f32 ,
+pub fn up()->Self{Self{value:2}
+}
+pub fn right_up()->Self{Self{value:3}
+}
+pub fn right()->Self{Self{value:4}
+}
+pub fn right_down()->Self{Self{value:5}
+}
+pub fn down()->Self{Self{value:6}
+}
+pub fn left_down()->Self{Self{value:7}
+}
+pub fn left()->Self{Self{value:8}
+}
+pub fn num()->Self{Self{value:9}
+}
 }
 
 }
@@ -126,30 +54,105 @@ impl  GX_Anchor  {
 #[cfg(feature = "app-gx-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gx")]
-impl GX { # [doc = "`GetAnchorDir(crate::app::gx::GX_Anchor)` overload"] pub fn get_anchor_dir (anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22770d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } } # [doc = "`GetAnchorPos(crate::app::gx::GX_Anchor)` overload"] pub fn get_anchor_pos (anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277110usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } } # [doc = "`GetReduceRect(crate::unity_engine::rect::Rect, f32)` overload"] pub fn get_reduce_rect (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , size : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: rect :: Rect { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277210usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`GetReduceRect(crate::unity_engine::rect::Rect, f32, f32)` overload"] pub fn get_reduce_rect_2 (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , size_x : impl :: core :: convert :: Into < f32 > , size_y : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: rect :: Rect { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22772b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (size_x) , :: core :: convert :: Into :: into (size_y) , :: core :: option :: Option :: None) } } } # [doc = "`GetLocalRect(crate::unity_engine::rect::Rect)` overload"] pub fn get_local_rect (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> crate :: unity_engine :: rect :: Rect { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277380usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rect) , :: core :: option :: Option :: None) } } } # [doc = "`SetupScreenMatrix(crate::app::gx::GX_Anchor)` overload"] pub fn setup_screen_matrix (anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22773e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } } # [doc = "`GetScreenSpaceMatrix(crate::app::gx::GX_Anchor)` overload"] pub fn get_screen_space_matrix (anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { { let __inner : extern "C" fn (crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22774b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } } # [doc = "`DrawRect(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color)` overload"] pub fn draw_rect (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277690usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`DrawRect(f32, f32, f32, f32, crate::unity_engine::color::Color)` overload"] pub fn draw_rect_2 (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , w : impl :: core :: convert :: Into < f32 > , h : impl :: core :: convert :: Into < f32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277760usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`DrawText(f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"] pub fn draw_text (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , w : impl :: core :: convert :: Into < f32 > , h : impl :: core :: convert :: Into < f32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , crate :: unity_engine :: color :: Color , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22778a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`DrawText(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"] pub fn draw_text_2 (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: color :: Color , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`BeginScreenClip(crate::unity_engine::rect::Rect)` overload"] pub fn begin_screen_clip (rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277c90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rect) , :: core :: option :: Option :: None) } } } # [doc = "`BeginScreenClip(f32, f32, f32, f32)` overload"] pub fn begin_screen_clip_2 (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277d20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } } # [doc = "`EndScreenClip()` overload"] pub fn end_screen_clip () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277dd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DrawScrollBar(f32, f32, crate::unity_engine::color::Color, f32, f32, f32)` overload"] pub fn draw_scroll_bar (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , height : impl :: core :: convert :: Into < f32 > , pos : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , crate :: unity_engine :: color :: Color , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2277e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`GetTextSize(crate::unity_engine::guistyle::GUIStyle, ::unity2::Il2CppString)` overload"] pub fn get_text_size (style : impl :: core :: convert :: Into < crate :: unity_engine :: guistyle :: GUIStyle > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: guistyle :: GUIStyle , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22780d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (style) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`GetTextSize(::unity2::Il2CppString)` overload"] pub fn get_text_size_2 (text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2278150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2278300usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gx")]impl GX{#[doc="`GetAnchorDir(crate::app::gx::GX_Anchor)` overload"]pub fn get_anchor_dir(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22770d0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
+}
+#[doc="`GetAnchorPos(crate::app::gx::GX_Anchor)` overload"]pub fn get_anchor_pos(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277110usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
+}
+#[doc="`GetReduceRect(crate::unity_engine::rect::Rect, f32)` overload"]pub fn get_reduce_rect(rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,size:impl::core::convert::Into<f32>)->crate::unity_engine::rect::Rect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277210usize)as*mut u8,crate::unity_engine::rect::Rect;
+(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(f32)::core::convert::Into::into(size))}
+}
+#[doc="`GetReduceRect(crate::unity_engine::rect::Rect, f32, f32)` overload"]pub fn get_reduce_rect_2(rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,size_x:impl::core::convert::Into<f32> ,size_y:impl::core::convert::Into<f32>)->crate::unity_engine::rect::Rect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22772b0usize)as*mut u8,crate::unity_engine::rect::Rect;
+(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(f32)::core::convert::Into::into(size_x),(f32)::core::convert::Into::into(size_y))}
+}
+#[doc="`GetLocalRect(crate::unity_engine::rect::Rect)` overload"]pub fn get_local_rect(rect:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->crate::unity_engine::rect::Rect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277380usize)as*mut u8,crate::unity_engine::rect::Rect;
+(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect))}
+}
+#[doc="`SetupScreenMatrix(crate::app::gx::GX_Anchor)` overload"]pub fn setup_screen_matrix(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22773e0usize)as*mut u8,();
+(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
+}
+#[doc="`GetScreenSpaceMatrix(crate::app::gx::GX_Anchor)` overload"]pub fn get_screen_space_matrix(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22774b0usize)as*mut u8,crate::unity_engine::matrix4x4::Matrix4x4;
+(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
+}
+#[doc="`DrawRect(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color)` overload"]pub fn draw_rect(rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277690usize)as*mut u8,();
+(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`DrawRect(f32, f32, f32, f32, crate::unity_engine::color::Color)` overload"]pub fn draw_rect_2(x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,w:impl::core::convert::Into<f32> ,h:impl::core::convert::Into<f32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277760usize)as*mut u8,();
+(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(w),(f32)::core::convert::Into::into(h),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`DrawText(f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]pub fn draw_text(x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,w:impl::core::convert::Into<f32> ,h:impl::core::convert::Into<f32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22778a0usize)as*mut u8,();
+(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(w),(f32)::core::convert::Into::into(h),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`DrawText(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]pub fn draw_text_2(rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277b20usize)as*mut u8,();
+(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`BeginScreenClip(crate::unity_engine::rect::Rect)` overload"]pub fn begin_screen_clip(rect:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277c90usize)as*mut u8,();
+(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect))}
+}
+#[doc="`BeginScreenClip(f32, f32, f32, f32)` overload"]pub fn begin_screen_clip_2(x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277d20usize)as*mut u8,();
+(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(width),(f32)::core::convert::Into::into(height))}
+}
+#[doc="`EndScreenClip()` overload"]pub fn end_screen_clip()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277dd0usize)as*mut u8,();
+)}
+}
+#[doc="`DrawScrollBar(f32, f32, crate::unity_engine::color::Color, f32, f32, f32)` overload"]pub fn draw_scroll_bar(x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,height:impl::core::convert::Into<f32> ,pos:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2277e40usize)as*mut u8,();
+(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(height),(f32)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(max))}
+}
+#[doc="`GetTextSize(crate::unity_engine::guistyle::GUIStyle, ::unity2::Il2CppString)` overload"]pub fn get_text_size(style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22780d0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`GetTextSize(::unity2::Il2CppString)` overload"]pub fn get_text_size_2(text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2278150usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2278300usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-gx")]
-pub trait IGXMethods : IGX { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GX as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GX , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2278290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gx")]pub trait IGXMethods:IGX{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GX as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2278290usize)as*mut u8,();
+(GX)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gx")]
-impl < __T : IGX > IGXMethods for __T { }
+#[cfg(feature="app-gx")]impl<__T:IGX>IGXMethods for __T{}
 
-#[cfg(feature = "app-gx")]
-impl GX { pub fn get_anchor_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_anchor_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_reduce_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_reduce_rect_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_local_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn setup_screen_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_screen_space_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn draw_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn draw_rect_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn draw_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn draw_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn begin_screen_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn begin_screen_clip_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn end_screen_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn draw_scroll_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_text_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_text_size_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GX as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-gx")]impl GX{pub fn get_anchor_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_anchor_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_reduce_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_reduce_rect_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_local_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn setup_screen_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_screen_space_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn draw_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn draw_rect_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn draw_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn draw_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn begin_screen_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn begin_screen_clip_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn end_screen_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn draw_scroll_bar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_text_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_text_size_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-gx")]
-impl GX {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GX) , :: core :: stringify ! (new) ,)) ; < Self as IGXMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gx")]impl GX{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GX), ::core::stringify!(new),));
+ <Self as IGXMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gx")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GX_Anchor;
     pub use super::GX;
     pub use super::IGX;
     pub use super::IGXMethods;
+    pub use super::GX_Anchor;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

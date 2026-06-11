@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: eachinspector :: { EachInspector , IEachInspector }
- ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::eachinspector::{EachInspector,IEachInspector}
+;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battletalkinspector/BattleTalkInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleTalkInspector")] # [parent (crate :: app :: eachinspector :: EachInspector)] pub struct BattleTalkInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battletalkinspector/BattleTalkInspector.md"))]#[::unity2::class(namespace="App",name="BattleTalkInspector")]#[parent(crate::app::eachinspector::EachInspector)]pub struct BattleTalkInspector{}
 
 }
 
 #[cfg(feature = "app-battletalkinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battletalkinspector")]
-pub trait IBattleTalkInspectorMethods : IBattleTalkInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < BattleTalkInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleTalkInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`IsTerminated(i32, i32, i32, i32)` overload"] fn is_terminated (self , arg1 : impl :: core :: convert :: Into < i32 > , arg2 : impl :: core :: convert :: Into < i32 > , arg3 : impl :: core :: convert :: Into < i32 > , arg4 : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BattleTalkInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleTalkInspector , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (arg1) , :: core :: convert :: Into :: into (arg2) , :: core :: convert :: Into :: into (arg3) , :: core :: convert :: Into :: into (arg4) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battletalkinspector")]pub trait IBattleTalkInspectorMethods:IBattleTalkInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <BattleTalkInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e93b30usize)as*mut u8,();
+(BattleTalkInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`IsTerminated(i32, i32, i32, i32)` overload"]fn is_terminated(self,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BattleTalkInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e93b40usize)as*mut u8,bool;
+(BattleTalkInspector)__receiver,(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
+}
+}
 
-#[cfg(feature = "app-battletalkinspector")]
-impl < __T : IBattleTalkInspector > IBattleTalkInspectorMethods for __T { }
+#[cfg(feature="app-battletalkinspector")]impl<__T:IBattleTalkInspector>IBattleTalkInspectorMethods for __T{}
 
-#[cfg(feature = "app-battletalkinspector")]
-impl BattleTalkInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleTalkInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_terminated_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleTalkInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-battletalkinspector")]impl BattleTalkInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_terminated_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-battletalkinspector")]
-impl BattleTalkInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleTalkInspector) , :: core :: stringify ! (new) ,)) ; < Self as IBattleTalkInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-battletalkinspector")]impl BattleTalkInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleTalkInspector), ::core::stringify!(new),));
+ <Self as IBattleTalkInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-battletalkinspector")]

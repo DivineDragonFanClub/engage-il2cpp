@@ -4,39 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringunitselectmenu/RefineRingUnitSelectMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingUnitSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefineRingUnitSelectMenu {
-# [offset (200)] # [rename (name = "m_GodSelectRoot")] pub m_god_select_root : crate :: app :: godselectroot :: GodSelectRoot ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringunitselectmenu/RefineRingUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="RefineRingUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefineRingUnitSelectMenu{#[offset(200)]#[rename(name="m_GodSelectRoot")]pub m_god_select_root:crate::app::godselectroot::GodSelectRoot,}
 
 }
 
 #[cfg(feature = "app-refineringunitselectmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineringunitselectmenu")]
-impl RefineRingUnitSelectMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler > , default_god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> crate :: app :: refineringunitselectmenu :: RefineRingUnitSelectMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineringunitselectmenu :: RefineRingUnitSelectMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2958160usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (default_god_unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringunitselectmenu")]impl RefineRingUnitSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,default_god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2958160usize)as*mut u8,crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::godunit::GodUnit)::core::convert::Into::into(default_god_unit))}
+}
+}
 
-#[cfg(feature = "app-refineringunitselectmenu")]
-pub trait IRefineRingUnitSelectMenuMethods : IRefineRingUnitSelectMenu { # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RefineRingUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2958790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::app::godselectroot::GodSelectRoot, crate::app::godunit::GodUnit)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: godunitselectmenucontent :: GodUnitSelectMenuContent > , god_select_root : impl :: core :: convert :: Into < crate :: app :: godselectroot :: GodSelectRoot > , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < RefineRingUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingUnitSelectMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: godunitselectmenucontent :: GodUnitSelectMenuContent , crate :: app :: godselectroot :: GodSelectRoot , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2958750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (god_select_root) , :: core :: convert :: Into :: into (god_unit) , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineRingUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2958870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < RefineRingUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2958880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringunitselectmenu")]pub trait IRefineRingUnitSelectMenuMethods:IRefineRingUnitSelectMenu{#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineRingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2958790usize)as*mut u8,();
+(RefineRingUnitSelectMenu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::app::godselectroot::GodSelectRoot, crate::app::godunit::GodUnit)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::godunitselectmenucontent::GodUnitSelectMenuContent> ,god_select_root:impl::core::convert::Into<crate::app::godselectroot::GodSelectRoot> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <RefineRingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2958750usize)as*mut u8,();
+(RefineRingUnitSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::godselectroot::GodSelectRoot)::core::convert::Into::into(god_select_root),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineRingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2958870usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineRingUnitSelectMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <RefineRingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2958880usize)as*mut u8,();
+(RefineRingUnitSelectMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineringunitselectmenu")]
-impl < __T : IRefineRingUnitSelectMenu > IRefineRingUnitSelectMenuMethods for __T { }
+#[cfg(feature="app-refineringunitselectmenu")]impl<__T:IRefineRingUnitSelectMenu>IRefineRingUnitSelectMenuMethods for __T{}
 
-#[cfg(feature = "app-refineringunitselectmenu")]
-impl RefineRingUnitSelectMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-refineringunitselectmenu")]impl RefineRingUnitSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-refineringunitselectmenu")]
-impl RefineRingUnitSelectMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::app::godselectroot::GodSelectRoot, crate::app::godunit::GodUnit)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: godunitselectmenucontent :: GodUnitSelectMenuContent , god_select_root : crate :: app :: godselectroot :: GodSelectRoot , god_unit : crate :: app :: godunit :: GodUnit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingUnitSelectMenu) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingUnitSelectMenuMethods > :: ctor (this , menu_item_list , menu_content , god_select_root , god_unit) ; this }
+#[cfg(feature="app-refineringunitselectmenu")]impl RefineRingUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::app::godselectroot::GodSelectRoot, crate::app::godunit::GodUnit)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,god_select_root:crate::app::godselectroot::GodSelectRoot,god_unit:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingUnitSelectMenu), ::core::stringify!(new),));
+ <Self as IRefineRingUnitSelectMenuMethods> ::ctor(this,menu_item_list,menu_content,god_select_root,god_unit);
+this}
 }
 
 #[cfg(feature = "app-refineringunitselectmenu")]

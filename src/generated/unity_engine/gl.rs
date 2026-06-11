@@ -4,23 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gl/GL.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GL")] # [parent (crate :: system :: object :: Object)] pub struct GL {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/gl/GL.md"))]#[::unity2::class(namespace="UnityEngine",name="GL")]#[parent(crate::system::object::Object)]pub struct GL{}
 
 }
 
 #[cfg(feature = "unity_engine-gl-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-gl")]
-impl GL { # [doc = "`get_wireframe()` overload"] pub fn get_wireframe () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4da70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_invertCulling()` overload"] pub fn get_invert_culling () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4dab0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_invertCulling(bool)` overload"] pub fn set_invert_culling (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4daf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetGPUProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, bool)` overload"] pub fn get_gpu_projection_matrix (proj : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , render_into_texture : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: matrix4x4 :: Matrix4x4 , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4db40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (proj) , :: core :: convert :: Into :: into (render_into_texture) , :: core :: option :: Option :: None) } } } # [doc = "`GetGPUProjectionMatrix_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4, bool, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn get_gpu_projection_matrix_injected (render_into_texture : impl :: core :: convert :: Into < bool >) -> (crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: matrix4x4 :: Matrix4x4) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , bool , * mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4dbe0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (render_into_texture) , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="unity_engine-gl")]impl GL{#[doc="`get_wireframe()` overload"]pub fn get_wireframe()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4da70usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_invertCulling()` overload"]pub fn get_invert_culling()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4dab0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_invertCulling(bool)` overload"]pub fn set_invert_culling(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4daf0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`GetGPUProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, bool)` overload"]pub fn get_gpu_projection_matrix(proj:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4> ,render_into_texture:impl::core::convert::Into<bool>)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4db40usize)as*mut u8,crate::unity_engine::matrix4x4::Matrix4x4;
+(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(proj),(bool)::core::convert::Into::into(render_into_texture))}
+}
+#[doc="`GetGPUProjectionMatrix_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4, bool, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]pub fn get_gpu_projection_matrix_injected(render_into_texture:impl::core::convert::Into<bool>)->(crate::unity_engine::matrix4x4::Matrix4x4,crate::unity_engine::matrix4x4::Matrix4x4){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::matrix4x4::Matrix4x4> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::matrix4x4::Matrix4x4> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4dbe0usize)as*mut u8,();
+(*mut crate::unity_engine::matrix4x4::Matrix4x4)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(render_into_texture),(*mut crate::unity_engine::matrix4x4::Matrix4x4)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-gl")]
-impl GL { pub fn get_wireframe_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GL as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_invert_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GL as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_invert_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GL as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_gpu_projection_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GL as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_gpu_projection_matrix_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GL as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-gl")]impl GL{pub fn get_wireframe_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_invert_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_invert_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_gpu_projection_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_gpu_projection_matrix_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-gl")]
 #[doc(hidden)]

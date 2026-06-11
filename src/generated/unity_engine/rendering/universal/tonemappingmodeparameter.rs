@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/tonemappingmodeparameter/TonemappingModeParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "TonemappingModeParameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: rendering :: universal :: tonemappingmode :: TonemappingMode >)] pub struct TonemappingModeParameter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/tonemappingmodeparameter/TonemappingModeParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="TonemappingModeParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::rendering::universal::tonemappingmode::TonemappingMode>)]pub struct TonemappingModeParameter{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-tonemappingmodeparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-tonemappingmodeparameter")]
-pub trait ITonemappingModeParameterMethods : ITonemappingModeParameter { # [doc = "`.ctor(crate::unity_engine::rendering::universal::tonemappingmode::TonemappingMode, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: tonemappingmode :: TonemappingMode > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TonemappingModeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TonemappingModeParameter , crate :: unity_engine :: rendering :: universal :: tonemappingmode :: TonemappingMode , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca3fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-tonemappingmodeparameter")]pub trait ITonemappingModeParameterMethods:ITonemappingModeParameter{#[doc="`.ctor(crate::unity_engine::rendering::universal::tonemappingmode::TonemappingMode, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::tonemappingmode::TonemappingMode> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TonemappingModeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca3fc0usize)as*mut u8,();
+(TonemappingModeParameter)__receiver,(crate::unity_engine::rendering::universal::tonemappingmode::TonemappingMode)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-tonemappingmodeparameter")]
-impl < __T : ITonemappingModeParameter > ITonemappingModeParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-tonemappingmodeparameter")]impl<__T:ITonemappingModeParameter>ITonemappingModeParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-tonemappingmodeparameter")]
-impl TonemappingModeParameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TonemappingModeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-universal-tonemappingmodeparameter")]impl TonemappingModeParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-tonemappingmodeparameter")]
-impl TonemappingModeParameter {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::tonemappingmode::TonemappingMode, bool)` — overload selector"] pub fn new (value : crate :: unity_engine :: rendering :: universal :: tonemappingmode :: TonemappingMode , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TonemappingModeParameter) , :: core :: stringify ! (new) ,)) ; < Self as ITonemappingModeParameterMethods > :: ctor (this , value , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-universal-tonemappingmodeparameter")]impl TonemappingModeParameter{#[doc="`.ctor(crate::unity_engine::rendering::universal::tonemappingmode::TonemappingMode, bool)` — overload selector"]pub fn new(value:crate::unity_engine::rendering::universal::tonemappingmode::TonemappingMode,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TonemappingModeParameter), ::core::stringify!(new),));
+ <Self as ITonemappingModeParameterMethods> ::ctor(this,value,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-tonemappingmodeparameter")]

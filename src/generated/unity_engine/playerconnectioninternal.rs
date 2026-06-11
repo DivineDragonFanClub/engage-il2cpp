@@ -4,33 +4,88 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playerconnectioninternal/PlayerConnectionInternal.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "PlayerConnectionInternal")] # [parent (crate :: system :: object :: Object)] pub struct PlayerConnectionInternal {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playerconnectioninternal/PlayerConnectionInternal.md"))]#[::unity2::class(namespace="UnityEngine",name="PlayerConnectionInternal")]#[parent(crate::system::object::Object)]pub struct PlayerConnectionInternal{}
 
 }
 
 #[cfg(feature = "unity_engine-playerconnectioninternal-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playerconnectioninternal")]
-impl PlayerConnectionInternal { # [doc = "`IsConnected()` overload"] pub fn is_connected () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8230usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f81b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RegisterInternal(::unity2::Il2CppString)` overload"] pub fn register_internal (message_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message_id) , :: core :: option :: Option :: None) } } } # [doc = "`UnregisterInternal(::unity2::Il2CppString)` overload"] pub fn unregister_internal (message_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message_id) , :: core :: option :: Option :: None) } } } # [doc = "`SendMessage(::unity2::Il2CppString, ::unity2::Array<u8>, i32)` overload"] pub fn send_message (message_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , player_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < u8 > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f7d20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message_id) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (player_id) , :: core :: option :: Option :: None) } } } # [doc = "`TrySendMessage(::unity2::Il2CppString, ::unity2::Array<u8>, i32)` overload"] pub fn try_send_message (message_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , player_id : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < u8 > , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f7ed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message_id) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (player_id) , :: core :: option :: Option :: None) } } } # [doc = "`PollInternal()` overload"] pub fn poll_internal () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f7f70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DisconnectAll()` overload"] pub fn disconnect_all () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f82b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playerconnectioninternal")]impl PlayerConnectionInternal{#[doc="`IsConnected()` overload"]pub fn is_connected()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8230usize)as*mut u8,bool;
+)}
+}
+#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f81b0usize)as*mut u8,();
+)}
+}
+#[doc="`RegisterInternal(::unity2::Il2CppString)` overload"]pub fn register_internal(message_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8040usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(message_id))}
+}
+#[doc="`UnregisterInternal(::unity2::Il2CppString)` overload"]pub fn unregister_internal(message_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8120usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(message_id))}
+}
+#[doc="`SendMessage(::unity2::Il2CppString, ::unity2::Array<u8>, i32)` overload"]pub fn send_message(message_id:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Array<u8> > ,player_id:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f7d20usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(message_id),(::unity2::Array<u8>)::core::convert::Into::into(data),(i32)::core::convert::Into::into(player_id))}
+}
+#[doc="`TrySendMessage(::unity2::Il2CppString, ::unity2::Array<u8>, i32)` overload"]pub fn try_send_message(message_id:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Array<u8> > ,player_id:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f7ed0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(message_id),(::unity2::Array<u8>)::core::convert::Into::into(data),(i32)::core::convert::Into::into(player_id))}
+}
+#[doc="`PollInternal()` overload"]pub fn poll_internal()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f7f70usize)as*mut u8,();
+)}
+}
+#[doc="`DisconnectAll()` overload"]pub fn disconnect_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f82b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-playerconnectioninternal")]
-pub trait IPlayerConnectionInternalMethods : IPlayerConnectionInternal { # [doc = "`UnityEngine.IPlayerEditorConnectionNative.Poll()` overload"] fn unity_engine_i_player_editor_connection_native_poll (self ,) -> () { unsafe { let __receiver = < PlayerConnectionInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerConnectionInternal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f7f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.IPlayerEditorConnectionNative.Initialize()` overload"] fn unity_engine_i_player_editor_connection_native_initialize (self ,) -> () { unsafe { let __receiver = < PlayerConnectionInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerConnectionInternal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.IPlayerEditorConnectionNative.IsConnected()` overload"] fn unity_engine_i_player_editor_connection_native_is_connected (self ,) -> bool { unsafe { let __receiver = < PlayerConnectionInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerConnectionInternal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f81f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.IPlayerEditorConnectionNative.DisconnectAll()` overload"] fn unity_engine_i_player_editor_connection_native_disconnect_all (self ,) -> () { unsafe { let __receiver = < PlayerConnectionInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerConnectionInternal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayerConnectionInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerConnectionInternal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f6150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playerconnectioninternal")]pub trait IPlayerConnectionInternalMethods:IPlayerConnectionInternal{#[doc="`UnityEngine.IPlayerEditorConnectionNative.Poll()` overload"]fn unity_engine_i_player_editor_connection_native_poll(self,)->(){unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f7f30usize)as*mut u8,();
+(PlayerConnectionInternal)__receiver)}
+}
+#[doc="`UnityEngine.IPlayerEditorConnectionNative.Initialize()` overload"]fn unity_engine_i_player_editor_connection_native_initialize(self,)->(){unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f8170usize)as*mut u8,();
+(PlayerConnectionInternal)__receiver)}
+}
+#[doc="`UnityEngine.IPlayerEditorConnectionNative.IsConnected()` overload"]fn unity_engine_i_player_editor_connection_native_is_connected(self,)->bool{unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f81f0usize)as*mut u8,bool;
+(PlayerConnectionInternal)__receiver)}
+}
+#[doc="`UnityEngine.IPlayerEditorConnectionNative.DisconnectAll()` overload"]fn unity_engine_i_player_editor_connection_native_disconnect_all(self,)->(){unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f8270usize)as*mut u8,();
+(PlayerConnectionInternal)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f6150usize)as*mut u8,();
+(PlayerConnectionInternal)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-playerconnectioninternal")]
-impl < __T : IPlayerConnectionInternal > IPlayerConnectionInternalMethods for __T { }
+#[cfg(feature="unity_engine-playerconnectioninternal")]impl<__T:IPlayerConnectionInternal>IPlayerConnectionInternalMethods for __T{}
 
-#[cfg(feature = "unity_engine-playerconnectioninternal")]
-impl PlayerConnectionInternal { pub fn unity_engine_i_player_editor_connection_native_poll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unity_engine_i_player_editor_connection_native_initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unity_engine_i_player_editor_connection_native_is_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn unity_engine_i_player_editor_connection_native_disconnect_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn register_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn unregister_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn send_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn try_send_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn poll_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn disconnect_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerConnectionInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="unity_engine-playerconnectioninternal")]impl PlayerConnectionInternal{pub fn unity_engine_i_player_editor_connection_native_poll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unity_engine_i_player_editor_connection_native_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unity_engine_i_player_editor_connection_native_is_connected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn unity_engine_i_player_editor_connection_native_disconnect_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_connected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn register_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn unregister_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn send_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn try_send_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn poll_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn disconnect_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "unity_engine-playerconnectioninternal")]
-impl PlayerConnectionInternal {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayerConnectionInternal) , :: core :: stringify ! (new) ,)) ; < Self as IPlayerConnectionInternalMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-playerconnectioninternal")]impl PlayerConnectionInternal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayerConnectionInternal), ::core::stringify!(new),));
+ <Self as IPlayerConnectionInternalMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-playerconnectioninternal")]

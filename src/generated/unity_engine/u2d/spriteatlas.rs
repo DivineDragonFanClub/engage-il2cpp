@@ -4,32 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/u2d/spriteatlas/SpriteAtlas.md"))] # [:: unity2 :: class (namespace = "UnityEngine.U2D" , name = "SpriteAtlas")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct SpriteAtlas {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/u2d/spriteatlas/SpriteAtlas.md"))]#[::unity2::class(namespace="UnityEngine.U2D",name="SpriteAtlas")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct SpriteAtlas{}
 
 }
 
 #[cfg(feature = "unity_engine-u2d-spriteatlas-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-u2d-spriteatlas")]
-pub trait ISpriteAtlasMethods : ISpriteAtlas { # [doc = "`get_isVariant()` overload"] fn get_is_variant (self ,) -> bool { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_tag()` overload"] fn get_tag (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_spriteCount()` overload"] fn get_sprite_count (self ,) -> i32 { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanBindTo(crate::unity_engine::sprite::Sprite)` overload"] fn can_bind_to (self , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> bool { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } # [doc = "`GetSprite(::unity2::Il2CppString)` overload"] fn get_sprite (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetSprites(::unity2::Array<crate::unity_engine::sprite::Sprite>)` overload"] fn get_sprites (self , sprites : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > >) -> i32 { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sprites) , :: core :: option :: Option :: None) } } } # [doc = "`GetSprites(::unity2::Array<crate::unity_engine::sprite::Sprite>, ::unity2::Il2CppString)` overload"] fn get_sprites_2 (self , sprites : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sprites) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetSpritesScripting(::unity2::Array<crate::unity_engine::sprite::Sprite>)` overload"] fn get_sprites_scripting (self , sprites : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > >) -> i32 { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sprites) , :: core :: option :: Option :: None) } } } # [doc = "`GetSpritesWithNameScripting(::unity2::Array<crate::unity_engine::sprite::Sprite>, ::unity2::Il2CppString)` overload"] fn get_sprites_with_name_scripting (self , sprites : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sprites) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SpriteAtlas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-u2d-spriteatlas")]pub trait ISpriteAtlasMethods:ISpriteAtlas{#[doc="`get_isVariant()` overload"]fn get_is_variant(self,)->bool{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98c80usize)as*mut u8,bool;
+(SpriteAtlas)__receiver)}
+}
+#[doc="`get_tag()` overload"]fn get_tag(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98cd0usize)as*mut u8, ::unity2::Il2CppString;
+(SpriteAtlas)__receiver)}
+}
+#[doc="`get_spriteCount()` overload"]fn get_sprite_count(self,)->i32{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98d20usize)as*mut u8,i32;
+(SpriteAtlas)__receiver)}
+}
+#[doc="`CanBindTo(crate::unity_engine::sprite::Sprite)` overload"]fn can_bind_to(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->bool{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98d70usize)as*mut u8,bool;
+(SpriteAtlas)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`GetSprite(::unity2::Il2CppString)` overload"]fn get_sprite(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98dc0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(SpriteAtlas)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetSprites(::unity2::Array<crate::unity_engine::sprite::Sprite>)` overload"]fn get_sprites(self,sprites:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::sprite::Sprite> >)->i32{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98e10usize)as*mut u8,i32;
+(SpriteAtlas)__receiver,(::unity2::Array<crate::unity_engine::sprite::Sprite>)::core::convert::Into::into(sprites))}
+}
+#[doc="`GetSprites(::unity2::Array<crate::unity_engine::sprite::Sprite>, ::unity2::Il2CppString)` overload"]fn get_sprites_2(self,sprites:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::sprite::Sprite> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98eb0usize)as*mut u8,i32;
+(SpriteAtlas)__receiver,(::unity2::Array<crate::unity_engine::sprite::Sprite>)::core::convert::Into::into(sprites),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetSpritesScripting(::unity2::Array<crate::unity_engine::sprite::Sprite>)` overload"]fn get_sprites_scripting(self,sprites:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::sprite::Sprite> >)->i32{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98e60usize)as*mut u8,i32;
+(SpriteAtlas)__receiver,(::unity2::Array<crate::unity_engine::sprite::Sprite>)::core::convert::Into::into(sprites))}
+}
+#[doc="`GetSpritesWithNameScripting(::unity2::Array<crate::unity_engine::sprite::Sprite>, ::unity2::Il2CppString)` overload"]fn get_sprites_with_name_scripting(self,sprites:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::sprite::Sprite> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98f10usize)as*mut u8,i32;
+(SpriteAtlas)__receiver,(::unity2::Array<crate::unity_engine::sprite::Sprite>)::core::convert::Into::into(sprites),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SpriteAtlas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f98f70usize)as*mut u8,();
+(SpriteAtlas)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-u2d-spriteatlas")]
-impl < __T : ISpriteAtlas > ISpriteAtlasMethods for __T { }
+#[cfg(feature="unity_engine-u2d-spriteatlas")]impl<__T:ISpriteAtlas>ISpriteAtlasMethods for __T{}
 
-#[cfg(feature = "unity_engine-u2d-spriteatlas")]
-impl SpriteAtlas { pub fn get_is_variant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_sprite_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn can_bind_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_sprites_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_sprites_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_sprites_scripting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_sprites_with_name_scripting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-u2d-spriteatlas")]impl SpriteAtlas{pub fn get_is_variant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sprite_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn can_bind_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_sprites_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_sprites_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sprites_scripting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_sprites_with_name_scripting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "unity_engine-u2d-spriteatlas")]
-impl SpriteAtlas {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SpriteAtlas) , :: core :: stringify ! (new) ,)) ; < Self as ISpriteAtlasMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-u2d-spriteatlas")]impl SpriteAtlas{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SpriteAtlas), ::core::stringify!(new),));
+ <Self as ISpriteAtlasMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-u2d-spriteatlas")]

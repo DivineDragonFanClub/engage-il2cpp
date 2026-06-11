@@ -4,42 +4,164 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rendermanager/RenderManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "RenderManager")] # [parent (crate :: system :: object :: Object)] pub struct RenderManager {
-# [static_field] # [rename (name = "s_ScaleStack")] pub s_scale_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < f32 > ,
-# [static_field] # [rename (name = "s_ScaleStackOnGpuSaved")] pub s_scale_stack_on_gpu_saved : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < f32 > ,
-# [static_field] # [rename (name = "s_LodBiasStack")] pub s_lod_bias_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < f32 > ,
-# [static_field] # [rename (name = "s_LodBiasStackOnGpuSaved")] pub s_lod_bias_stack_on_gpu_saved : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < f32 > ,
-# [static_field] # [rename (name = "s_BlurStack")] pub s_blur_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < i32 > ,
-# [static_field] # [rename (name = "s_ColorStack")] pub s_color_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: unity_engine :: color :: Color > ,
-# [static_field] # [rename (name = "s_ColorRateStack")] pub s_color_rate_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < f32 > ,
-# [static_field] # [rename (name = "s_CrossFadeAnimationDuration")] pub s_cross_fade_animation_duration : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < f32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rendermanager/RenderManager.md"))]#[::unity2::class(namespace="App",name="RenderManager")]#[parent(crate::system::object::Object)]pub struct RenderManager{#[static_field]#[rename(name="s_ScaleStack")]pub s_scale_stack:crate::system::collections::generic::stack_1::Stack_1<f32> , #[static_field]#[rename(name="s_ScaleStackOnGpuSaved")]pub s_scale_stack_on_gpu_saved:crate::system::collections::generic::stack_1::Stack_1<f32> , #[static_field]#[rename(name="s_LodBiasStack")]pub s_lod_bias_stack:crate::system::collections::generic::stack_1::Stack_1<f32> , #[static_field]#[rename(name="s_LodBiasStackOnGpuSaved")]pub s_lod_bias_stack_on_gpu_saved:crate::system::collections::generic::stack_1::Stack_1<f32> , #[static_field]#[rename(name="s_BlurStack")]pub s_blur_stack:crate::system::collections::generic::stack_1::Stack_1<i32> , #[static_field]#[rename(name="s_ColorStack")]pub s_color_stack:crate::system::collections::generic::stack_1::Stack_1<crate::unity_engine::color::Color> , #[static_field]#[rename(name="s_ColorRateStack")]pub s_color_rate_stack:crate::system::collections::generic::stack_1::Stack_1<f32> , #[static_field]#[rename(name="s_CrossFadeAnimationDuration")]pub s_cross_fade_animation_duration:crate::system::collections::generic::stack_1::Stack_1<f32> ,}
 
 }
 
 #[cfg(feature = "app-rendermanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-rendermanager")]
-impl RenderManager { # [doc = "`PushRenderScale(::unity2::Il2CppString)` overload"] pub fn push_render_scale (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`PushRenderScale(f32)` overload"] pub fn push_render_scale_2 (scale : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20119d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scale) , :: core :: option :: Option :: None) } } } # [doc = "`PushRenderScale(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn push_render_scale_3 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name_on_gpu_save : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011c00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (name_on_gpu_save) , :: core :: option :: Option :: None) } } } # [doc = "`PushRenderScale(f32, f32)` overload"] pub fn push_render_scale_4 (scale : impl :: core :: convert :: Into < f32 > , scale_on_gpu_save : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011d90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scale) , :: core :: convert :: Into :: into (scale_on_gpu_save) , :: core :: option :: Option :: None) } } } # [doc = "`PopRenderScale()` overload"] pub fn pop_render_scale () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011ea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PushLodBias(f32)` overload"] pub fn push_lod_bias (lod_bias : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lod_bias) , :: core :: option :: Option :: None) } } } # [doc = "`PushLodBias(f32, f32)` overload"] pub fn push_lod_bias_2 (lod_bias : impl :: core :: convert :: Into < f32 > , lod_bias_on_gpu_saved : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lod_bias) , :: core :: convert :: Into :: into (lod_bias_on_gpu_saved) , :: core :: option :: Option :: None) } } } # [doc = "`PopLodBias()` overload"] pub fn pop_lod_bias () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012200usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PushCrossFadeAnimationDuration(f32)` overload"] pub fn push_cross_fade_animation_duration (duration : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20122f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (duration) , :: core :: option :: Option :: None) } } } # [doc = "`PopCrossFadeAnimationDuration()` overload"] pub fn pop_cross_fade_animation_duration () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20124c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PushCustomBlur(::unity2::Il2CppString)` overload"] pub fn push_custom_blur (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20125f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`PushCustomBlur(i32)` overload"] pub fn push_custom_blur_2 (blur : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20127b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (blur) , :: core :: option :: Option :: None) } } } # [doc = "`PopCustomBlur()` overload"] pub fn pop_custom_blur () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PushColorRate(::unity2::Il2CppString)` overload"] pub fn push_color_rate (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`PushColorRate(f32)` overload"] pub fn push_color_rate_2 (rate : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012b10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } } # [doc = "`PopColorRate()` overload"] pub fn pop_color_rate () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012cb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] pub fn reset () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012d70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdateGpuPerformanceMode()` overload"] pub fn update_gpu_performance_mode () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20130e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetFloat(::unity2::Il2CppString, f32)` overload"] pub fn get_float (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , def : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011900usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (def) , :: core :: option :: Option :: None) } } } # [doc = "`GetInt(::unity2::Il2CppString, i32)` overload"] pub fn get_int (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , def : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20126f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (def) , :: core :: option :: Option :: None) } } } pub fn get_stack_peek < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (stack : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: stack_1 :: Stack_1 < M0 > > , def : impl :: core :: convert :: Into < M0 >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< RenderManager as :: unity2 :: ClassIdentity > :: class () , "GetStackPeek" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderManager as :: unity2 :: ClassIdentity > :: NAME , "GetStackPeek" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: stack_1 :: Stack_1 < M0 > , M0 , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (stack) , :: core :: convert :: Into :: into (def) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`CommitScale()` overload"] pub fn commit_scale () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011ae0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CommitLodBias()` overload"] pub fn commit_lod_bias () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012110usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CommitBlur()` overload"] pub fn commit_blur () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012880usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CommitColor()` overload"] pub fn commit_color () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012fe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CommitColorRate()` overload"] pub fn commit_color_rate () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012be0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CommitCrossFadeAnimationDuration()` overload"] pub fn commit_cross_fade_animation_duration () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2012430usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013160usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-rendermanager")]impl RenderManager{#[doc="`PushRenderScale(::unity2::Il2CppString)` overload"]pub fn push_render_scale(name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2011800usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`PushRenderScale(f32)` overload"]pub fn push_render_scale_2(scale:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20119d0usize)as*mut u8,();
+(f32)::core::convert::Into::into(scale))}
+}
+#[doc="`PushRenderScale(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn push_render_scale_3(name:impl::core::convert::Into< ::unity2::Il2CppString> ,name_on_gpu_save:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2011c00usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(name_on_gpu_save))}
+}
+#[doc="`PushRenderScale(f32, f32)` overload"]pub fn push_render_scale_4(scale:impl::core::convert::Into<f32> ,scale_on_gpu_save:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2011d90usize)as*mut u8,();
+(f32)::core::convert::Into::into(scale),(f32)::core::convert::Into::into(scale_on_gpu_save))}
+}
+#[doc="`PopRenderScale()` overload"]pub fn pop_render_scale()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2011ea0usize)as*mut u8,();
+)}
+}
+#[doc="`PushLodBias(f32)` overload"]pub fn push_lod_bias(lod_bias:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2011f90usize)as*mut u8,();
+(f32)::core::convert::Into::into(lod_bias))}
+}
+#[doc="`PushLodBias(f32, f32)` overload"]pub fn push_lod_bias_2(lod_bias:impl::core::convert::Into<f32> ,lod_bias_on_gpu_saved:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012000usize)as*mut u8,();
+(f32)::core::convert::Into::into(lod_bias),(f32)::core::convert::Into::into(lod_bias_on_gpu_saved))}
+}
+#[doc="`PopLodBias()` overload"]pub fn pop_lod_bias()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012200usize)as*mut u8,();
+)}
+}
+#[doc="`PushCrossFadeAnimationDuration(f32)` overload"]pub fn push_cross_fade_animation_duration(duration:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20122f0usize)as*mut u8,();
+(f32)::core::convert::Into::into(duration))}
+}
+#[doc="`PopCrossFadeAnimationDuration()` overload"]pub fn pop_cross_fade_animation_duration()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20124c0usize)as*mut u8,();
+)}
+}
+#[doc="`PushCustomBlur(::unity2::Il2CppString)` overload"]pub fn push_custom_blur(name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20125f0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`PushCustomBlur(i32)` overload"]pub fn push_custom_blur_2(blur:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20127b0usize)as*mut u8,();
+(i32)::core::convert::Into::into(blur))}
+}
+#[doc="`PopCustomBlur()` overload"]pub fn pop_custom_blur()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012950usize)as*mut u8,();
+)}
+}
+#[doc="`PushColorRate(::unity2::Il2CppString)` overload"]pub fn push_color_rate(name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012a10usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`PushColorRate(f32)` overload"]pub fn push_color_rate_2(rate:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012b10usize)as*mut u8,();
+(f32)::core::convert::Into::into(rate))}
+}
+#[doc="`PopColorRate()` overload"]pub fn pop_color_rate()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012cb0usize)as*mut u8,();
+)}
+}
+#[doc="`Reset()` overload"]pub fn reset()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012d70usize)as*mut u8,();
+)}
+}
+#[doc="`UpdateGpuPerformanceMode()` overload"]pub fn update_gpu_performance_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20130e0usize)as*mut u8,();
+)}
+}
+#[doc="`GetFloat(::unity2::Il2CppString, f32)` overload"]pub fn get_float(name:impl::core::convert::Into< ::unity2::Il2CppString> ,def:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2011900usize)as*mut u8,f32;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(def))}
+}
+#[doc="`GetInt(::unity2::Il2CppString, i32)` overload"]pub fn get_int(name:impl::core::convert::Into< ::unity2::Il2CppString> ,def:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20126f0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(def))}
+}
+pub fn get_stack_peek<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(stack:impl::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<M0> > ,def:impl::core::convert::Into<M0>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<RenderManager as::unity2::ClassIdentity> ::class(),"GetStackPeek",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RenderManager as::unity2::ClassIdentity> ::NAME,"GetStackPeek",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::stack_1::Stack_1<M0> ,M0, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(stack), ::core::convert::Into::into(def), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`CommitScale()` overload"]pub fn commit_scale()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2011ae0usize)as*mut u8,();
+)}
+}
+#[doc="`CommitLodBias()` overload"]pub fn commit_lod_bias()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012110usize)as*mut u8,();
+)}
+}
+#[doc="`CommitBlur()` overload"]pub fn commit_blur()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012880usize)as*mut u8,();
+)}
+}
+#[doc="`CommitColor()` overload"]pub fn commit_color()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012fe0usize)as*mut u8,();
+)}
+}
+#[doc="`CommitColorRate()` overload"]pub fn commit_color_rate()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012be0usize)as*mut u8,();
+)}
+}
+#[doc="`CommitCrossFadeAnimationDuration()` overload"]pub fn commit_cross_fade_animation_duration()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2012430usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013160usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-rendermanager")]
-pub trait IRenderManagerMethods : IRenderManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-rendermanager")]pub trait IRenderManagerMethods:IRenderManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2013150usize)as*mut u8,();
+(RenderManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-rendermanager")]
-impl < __T : IRenderManager > IRenderManagerMethods for __T { }
+#[cfg(feature="app-rendermanager")]impl<__T:IRenderManager>IRenderManagerMethods for __T{}
 
-#[cfg(feature = "app-rendermanager")]
-impl RenderManager { pub fn push_render_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn push_render_scale_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn push_render_scale_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn push_render_scale_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn pop_render_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn push_lod_bias_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn push_lod_bias_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn pop_lod_bias_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn push_cross_fade_animation_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn pop_cross_fade_animation_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn push_custom_blur_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn push_custom_blur_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn pop_custom_blur_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn push_color_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn push_color_rate_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn pop_color_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn update_gpu_performance_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn commit_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn commit_lod_bias_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn commit_blur_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn commit_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn commit_color_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn commit_cross_fade_animation_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } }
+#[cfg(feature="app-rendermanager")]impl RenderManager{pub fn push_render_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn push_render_scale_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn push_render_scale_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn push_render_scale_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn pop_render_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn push_lod_bias_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn push_lod_bias_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn pop_lod_bias_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn push_cross_fade_animation_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn pop_cross_fade_animation_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn push_custom_blur_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn push_custom_blur_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn pop_custom_blur_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn push_color_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn push_color_rate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn pop_color_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn update_gpu_performance_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn commit_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn commit_lod_bias_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn commit_blur_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn commit_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn commit_color_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn commit_cross_fade_animation_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
 
-#[cfg(feature = "app-rendermanager")]
-impl RenderManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderManager) , :: core :: stringify ! (new) ,)) ; < Self as IRenderManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-rendermanager")]impl RenderManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RenderManager), ::core::stringify!(new),));
+ <Self as IRenderManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-rendermanager")]

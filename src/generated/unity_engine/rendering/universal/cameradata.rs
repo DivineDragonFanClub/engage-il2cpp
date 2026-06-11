@@ -4,77 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/cameradata/CameraData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CameraData {
-    pub m_view_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub m_projection_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub camera: crate :: unity_engine :: camera :: Camera,
-    pub render_type: crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType,
-    pub target_texture: crate :: unity_engine :: rendertexture :: RenderTexture,
-    pub camera_target_descriptor: crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
-    pub pixel_rect: crate :: unity_engine :: rect :: Rect,
-    pub pixel_width: i32,
-    pub pixel_height: i32,
-    pub aspect_ratio: f32,
-    pub render_scale: f32,
-    pub clear_depth: bool,
-    pub camera_type: crate :: unity_engine :: cameratype :: CameraType,
-    pub is_default_viewport: bool,
-    pub is_hdr_enabled: bool,
-    pub requires_depth_texture: bool,
-    pub requires_opaque_texture: bool,
-    pub xr_rendering: bool,
-    pub default_opaque_sort_flags: crate :: unity_engine :: rendering :: sortingcriteria :: SortingCriteria,
-    pub xr: crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass,
-    pub is_stereo_enabled: bool,
-    pub max_shadow_distance: f32,
-    pub post_process_enabled: bool,
-    pub capture_actions: crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > >,
-    pub volume_layer_mask: crate :: unity_engine :: layermask :: LayerMask,
-    pub volume_trigger: crate :: unity_engine :: transform :: Transform,
-    pub is_stop_na_n_enabled: bool,
-    pub is_dithering_enabled: bool,
-    pub antialiasing: crate :: unity_engine :: rendering :: universal :: antialiasingmode :: AntialiasingMode,
-    pub antialiasing_quality: crate :: unity_engine :: rendering :: universal :: antialiasingquality :: AntialiasingQuality,
-    pub renderer: crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer,
-    pub resolve_final_target: bool,
-    pub is_auto_reduction: bool,
-    pub custom_rendering_flag: crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/cameradata/CameraData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CameraData{pub m_view_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub m_projection_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub camera:crate::unity_engine::camera::Camera,pub render_type:crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,pub target_texture:crate::unity_engine::rendertexture::RenderTexture,pub camera_target_descriptor:crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,pub pixel_rect:crate::unity_engine::rect::Rect,pub pixel_width:i32,pub pixel_height:i32,pub aspect_ratio:f32,pub render_scale:f32,pub clear_depth:bool,pub camera_type:crate::unity_engine::cameratype::CameraType,pub is_default_viewport:bool,pub is_hdr_enabled:bool,pub requires_depth_texture:bool,pub requires_opaque_texture:bool,pub xr_rendering:bool,pub default_opaque_sort_flags:crate::unity_engine::rendering::sortingcriteria::SortingCriteria,pub xr:crate::unity_engine::rendering::universal::xrpass::XRPass,pub is_stereo_enabled:bool,pub max_shadow_distance:f32,pub post_process_enabled:bool,pub capture_actions:crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::system::action_2::Action_2<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,crate::unity_engine::rendering::commandbuffer::CommandBuffer> >,pub volume_layer_mask:crate::unity_engine::layermask::LayerMask,pub volume_trigger:crate::unity_engine::transform::Transform,pub is_stop_na_n_enabled:bool,pub is_dithering_enabled:bool,pub antialiasing:crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode,pub antialiasing_quality:crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality,pub renderer:crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,pub resolve_final_target:bool,pub is_auto_reduction:bool,pub custom_rendering_flag:crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag,}
+impl::unity2::ClassIdentity for CameraData{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
+const NAME: &'static str="CameraData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for CameraData {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "CameraData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for CameraData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for CameraData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -82,11 +26,41 @@ impl ::unity2::IlType for CameraData {
 #[cfg(feature = "unity_engine-rendering-universal-cameradata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-cameradata")]
-impl CameraData { # [doc = "`SetViewAndProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn set_view_and_projection_matrix (& mut self , view_matrix : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , projection_matrix : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 >) -> () { unsafe { { let __inner : extern "C" fn (* mut CameraData , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d690usize) as * mut u8) ; __inner (self as * mut CameraData , :: core :: convert :: Into :: into (view_matrix) , :: core :: convert :: Into :: into (projection_matrix) , :: core :: option :: Option :: None) } } } # [doc = "`GetViewMatrix(i32)` overload"] pub fn get_view_matrix (& mut self , view_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { { let __inner : extern "C" fn (* mut CameraData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d6d0usize) as * mut u8) ; __inner (self as * mut CameraData , :: core :: convert :: Into :: into (view_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetProjectionMatrix(i32)` overload"] pub fn get_projection_matrix (& mut self , view_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { { let __inner : extern "C" fn (* mut CameraData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d770usize) as * mut u8) ; __inner (self as * mut CameraData , :: core :: convert :: Into :: into (view_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetGPUProjectionMatrix(i32)` overload"] pub fn get_gpu_projection_matrix (& mut self , view_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { { let __inner : extern "C" fn (* mut CameraData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d810usize) as * mut u8) ; __inner (self as * mut CameraData , :: core :: convert :: Into :: into (view_index) , :: core :: option :: Option :: None) } } } # [doc = "`get_requireSrgbConversion()` overload"] pub fn get_require_srgb_conversion (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut CameraData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3db30usize) as * mut u8) ; __inner (self as * mut CameraData , :: core :: option :: Option :: None) } } } # [doc = "`get_isSceneViewCamera()` overload"] pub fn get_is_scene_view_camera (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut CameraData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3dc20usize) as * mut u8) ; __inner (self as * mut CameraData , :: core :: option :: Option :: None) } } } # [doc = "`get_isPreviewCamera()` overload"] pub fn get_is_preview_camera (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut CameraData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3dc30usize) as * mut u8) ; __inner (self as * mut CameraData , :: core :: option :: Option :: None) } } } # [doc = "`IsCameraProjectionMatrixFlipped()` overload"] pub fn is_camera_projection_matrix_flipped (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut CameraData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d930usize) as * mut u8) ; __inner (self as * mut CameraData , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-cameradata")]impl CameraData{#[doc="`SetViewAndProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]pub fn set_view_and_projection_matrix(&mut self,view_matrix:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4> ,projection_matrix:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d690usize)as*mut u8,();
+(*mut CameraData)self as*mut CameraData,(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(view_matrix),(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(projection_matrix))}
+}
+#[doc="`GetViewMatrix(i32)` overload"]pub fn get_view_matrix(&mut self,view_index:impl::core::convert::Into<i32>)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d6d0usize)as*mut u8,crate::unity_engine::matrix4x4::Matrix4x4;
+(*mut CameraData)self as*mut CameraData,(i32)::core::convert::Into::into(view_index))}
+}
+#[doc="`GetProjectionMatrix(i32)` overload"]pub fn get_projection_matrix(&mut self,view_index:impl::core::convert::Into<i32>)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d770usize)as*mut u8,crate::unity_engine::matrix4x4::Matrix4x4;
+(*mut CameraData)self as*mut CameraData,(i32)::core::convert::Into::into(view_index))}
+}
+#[doc="`GetGPUProjectionMatrix(i32)` overload"]pub fn get_gpu_projection_matrix(&mut self,view_index:impl::core::convert::Into<i32>)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d810usize)as*mut u8,crate::unity_engine::matrix4x4::Matrix4x4;
+(*mut CameraData)self as*mut CameraData,(i32)::core::convert::Into::into(view_index))}
+}
+#[doc="`get_requireSrgbConversion()` overload"]pub fn get_require_srgb_conversion(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3db30usize)as*mut u8,bool;
+(*mut CameraData)self as*mut CameraData)}
+}
+#[doc="`get_isSceneViewCamera()` overload"]pub fn get_is_scene_view_camera(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3dc20usize)as*mut u8,bool;
+(*mut CameraData)self as*mut CameraData)}
+}
+#[doc="`get_isPreviewCamera()` overload"]pub fn get_is_preview_camera(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3dc30usize)as*mut u8,bool;
+(*mut CameraData)self as*mut CameraData)}
+}
+#[doc="`IsCameraProjectionMatrixFlipped()` overload"]pub fn is_camera_projection_matrix_flipped(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d930usize)as*mut u8,bool;
+(*mut CameraData)self as*mut CameraData)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-cameradata")]
-impl CameraData { pub fn set_view_and_projection_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_view_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_projection_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_gpu_projection_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_require_srgb_conversion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_scene_view_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_preview_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_camera_projection_matrix_flipped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-rendering-universal-cameradata")]impl CameraData{pub fn set_view_and_projection_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_view_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_projection_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_gpu_projection_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_require_srgb_conversion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_scene_view_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_preview_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_camera_projection_matrix_flipped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-cameradata")]
 #[doc(hidden)]

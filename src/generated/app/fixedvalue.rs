@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fixedvalue/FixedValue.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FixedValue {
-    pub v: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fixedvalue/FixedValue.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FixedValue{pub v:i32,}
+impl::unity2::ClassIdentity for FixedValue{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FixedValue";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for FixedValue {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FixedValue";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for FixedValue {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for FixedValue{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,87 @@ impl ::unity2::IlType for FixedValue {
 #[cfg(feature = "app-fixedvalue-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fixedvalue")]
-impl FixedValue { # [doc = "`op_Addition(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"] pub fn op_addition (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , crate :: app :: fixedvalue :: FixedValue , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"] pub fn op_subtraction (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , crate :: app :: fixedvalue :: FixedValue , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"] pub fn op_multiply (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , crate :: app :: fixedvalue :: FixedValue , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Division(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"] pub fn op_division (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , crate :: app :: fixedvalue :: FixedValue , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Addition(crate::app::fixedvalue::FixedValue, i32)` overload"] pub fn op_addition_2 (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < i32 >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c080usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, i32)` overload"] pub fn op_subtraction_2 (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < i32 >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c090usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, i32)` overload"] pub fn op_multiply_2 (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < i32 >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c0a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Division(crate::app::fixedvalue::FixedValue, i32)` overload"] pub fn op_division_2 (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < i32 >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c0b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Addition(crate::app::fixedvalue::FixedValue, f32)` overload"] pub fn op_addition_3 (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < f32 >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c0c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Subtraction(crate::app::fixedvalue::FixedValue, f32)` overload"] pub fn op_subtraction_3 (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < f32 >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c0f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(crate::app::fixedvalue::FixedValue, f32)` overload"] pub fn op_multiply_3 (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < f32 >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Division(crate::app::fixedvalue::FixedValue, f32)` overload"] pub fn op_division_3 (a : impl :: core :: convert :: Into < crate :: app :: fixedvalue :: FixedValue > , b : impl :: core :: convert :: Into < f32 >) -> crate :: app :: fixedvalue :: FixedValue { unsafe { { let __inner : extern "C" fn (crate :: app :: fixedvalue :: FixedValue , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: fixedvalue :: FixedValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fixedvalue")]impl FixedValue{#[doc="`op_Addition(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]pub fn op_addition(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<crate::app::fixedvalue::FixedValue>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c040usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(b))}
+}
+#[doc="`op_Subtraction(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]pub fn op_subtraction(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<crate::app::fixedvalue::FixedValue>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c050usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(b))}
+}
+#[doc="`op_Multiply(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]pub fn op_multiply(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<crate::app::fixedvalue::FixedValue>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c060usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(b))}
+}
+#[doc="`op_Division(crate::app::fixedvalue::FixedValue, crate::app::fixedvalue::FixedValue)` overload"]pub fn op_division(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<crate::app::fixedvalue::FixedValue>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c070usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(b))}
+}
+#[doc="`op_Addition(crate::app::fixedvalue::FixedValue, i32)` overload"]pub fn op_addition_2(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<i32>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c080usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b))}
+}
+#[doc="`op_Subtraction(crate::app::fixedvalue::FixedValue, i32)` overload"]pub fn op_subtraction_2(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<i32>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c090usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b))}
+}
+#[doc="`op_Multiply(crate::app::fixedvalue::FixedValue, i32)` overload"]pub fn op_multiply_2(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<i32>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c0a0usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b))}
+}
+#[doc="`op_Division(crate::app::fixedvalue::FixedValue, i32)` overload"]pub fn op_division_2(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<i32>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c0b0usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b))}
+}
+#[doc="`op_Addition(crate::app::fixedvalue::FixedValue, f32)` overload"]pub fn op_addition_3(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<f32>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c0c0usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`op_Subtraction(crate::app::fixedvalue::FixedValue, f32)` overload"]pub fn op_subtraction_3(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<f32>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c0f0usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`op_Multiply(crate::app::fixedvalue::FixedValue, f32)` overload"]pub fn op_multiply_3(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<f32>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c120usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`op_Division(crate::app::fixedvalue::FixedValue, f32)` overload"]pub fn op_division_3(a:impl::core::convert::Into<crate::app::fixedvalue::FixedValue> ,b:impl::core::convert::Into<f32>)->crate::app::fixedvalue::FixedValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c150usize)as*mut u8,crate::app::fixedvalue::FixedValue;
+(crate::app::fixedvalue::FixedValue)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "app-fixedvalue")]
-impl FixedValue { # [doc = "`get_Value()` overload"] pub fn get_value (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut FixedValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260bf90usize) as * mut u8) ; __inner (self as * mut FixedValue , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(i32)` overload"] pub fn set_value (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FixedValue , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260bfa0usize) as * mut u8) ; __inner (self as * mut FixedValue , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Float()` overload"] pub fn get_float (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FixedValue , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260bfb0usize) as * mut u8) ; __inner (self as * mut FixedValue , :: core :: option :: Option :: None) } } } # [doc = "`set_Float(f32)` overload"] pub fn set_float (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FixedValue , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260bfc0usize) as * mut u8) ; __inner (self as * mut FixedValue , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] pub fn ctor (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FixedValue , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260bff0usize) as * mut u8) ; __inner (self as * mut FixedValue , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32)` overload"] pub fn ctor_2 (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FixedValue , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c000usize) as * mut u8) ; __inner (self as * mut FixedValue , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32)` overload"] pub fn ctor_3 (& mut self , value : impl :: core :: convert :: Into < i32 > , shift : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FixedValue , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260c030usize) as * mut u8) ; __inner (self as * mut FixedValue , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fixedvalue")]impl FixedValue{#[doc="`get_Value()` overload"]pub fn get_value(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260bf90usize)as*mut u8,i32;
+(*mut FixedValue)self as*mut FixedValue)}
+}
+#[doc="`set_Value(i32)` overload"]pub fn set_value(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260bfa0usize)as*mut u8,();
+(*mut FixedValue)self as*mut FixedValue,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Float()` overload"]pub fn get_float(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260bfb0usize)as*mut u8,f32;
+(*mut FixedValue)self as*mut FixedValue)}
+}
+#[doc="`set_Float(f32)` overload"]pub fn set_float(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260bfc0usize)as*mut u8,();
+(*mut FixedValue)self as*mut FixedValue,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260bff0usize)as*mut u8,();
+(*mut FixedValue)self as*mut FixedValue,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(f32)` overload"]pub fn ctor_2(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c000usize)as*mut u8,();
+(*mut FixedValue)self as*mut FixedValue,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, i32)` overload"]pub fn ctor_3(&mut self,value:impl::core::convert::Into<i32> ,shift:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260c030usize)as*mut u8,();
+(*mut FixedValue)self as*mut FixedValue,(i32)::core::convert::Into::into(value),(i32)::core::convert::Into::into(shift))}
+}
+}
 
-#[cfg(feature = "app-fixedvalue")]
-impl FixedValue { pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn op_subtraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn op_multiply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn op_division_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_addition_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn op_subtraction_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn op_multiply_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_division_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn op_addition_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn op_subtraction_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn op_multiply_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn op_division_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-fixedvalue")]impl FixedValue{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_addition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn op_subtraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn op_multiply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn op_division_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_addition_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn op_subtraction_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn op_multiply_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_division_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn op_addition_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn op_subtraction_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn op_multiply_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn op_division_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
 #[cfg(feature = "app-fixedvalue")]
 #[doc(hidden)]

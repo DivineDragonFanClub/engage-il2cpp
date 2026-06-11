@@ -4,34 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/spriteatlasmanager_2/SpriteAtlasManager_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "SpriteAtlasManager")] # [parent (crate :: system :: object :: Object)] pub struct SpriteAtlasManager_2 {
-# [offset (16)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > ,
-# [offset (24)] # [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (32)] # [rename (name = "m_CacheTable")] pub m_cache_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: sprite :: Sprite > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/spriteatlasmanager_2/SpriteAtlasManager_2.md"))]#[::unity2::class(namespace="App",name="SpriteAtlasManager")]#[parent(crate::system::object::Object)]pub struct SpriteAtlasManager_2{#[offset(16)]#[rename(name="m_Handle")]pub m_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[offset(24)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(32)]#[rename(name="m_CacheTable")]pub m_cache_table:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::sprite::Sprite> ,}
 
 }
 
 #[cfg(feature = "app-spriteatlasmanager_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-spriteatlasmanager_2")]
-pub trait ISpriteAtlasManager_2Methods : ISpriteAtlasManager_2 { # [doc = "`LoadAsync(::unity2::Il2CppString)` overload"] fn load_async (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoaded()` overload"] fn is_loaded (self ,) -> bool { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString)` overload"] fn get (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`TryGet(::unity2::Il2CppString)` overload"] fn try_get (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`ClearCache()` overload"] fn clear_cache (self ,) -> () { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SpriteAtlasManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteAtlasManager_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-spriteatlasmanager_2")]pub trait ISpriteAtlasManager_2Methods:ISpriteAtlasManager_2{#[doc="`LoadAsync(::unity2::Il2CppString)` overload"]fn load_async(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SpriteAtlasManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ff430usize)as*mut u8,();
+(SpriteAtlasManager_2)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <SpriteAtlasManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ff560usize)as*mut u8,bool;
+(SpriteAtlasManager_2)__receiver)}
+}
+#[doc="`IsLoaded()` overload"]fn is_loaded(self,)->bool{unsafe{let __receiver= <SpriteAtlasManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ff590usize)as*mut u8,bool;
+(SpriteAtlasManager_2)__receiver)}
+}
+#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <SpriteAtlasManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ff610usize)as*mut u8,();
+(SpriteAtlasManager_2)__receiver)}
+}
+#[doc="`Get(::unity2::Il2CppString)` overload"]fn get(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <SpriteAtlasManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ff850usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(SpriteAtlasManager_2)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`TryGet(::unity2::Il2CppString)` overload"]fn try_get(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <SpriteAtlasManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ff8e0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(SpriteAtlasManager_2)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`ClearCache()` overload"]fn clear_cache(self,)->(){unsafe{let __receiver= <SpriteAtlasManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ff670usize)as*mut u8,();
+(SpriteAtlasManager_2)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SpriteAtlasManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ff9e0usize)as*mut u8,();
+(SpriteAtlasManager_2)__receiver)}
+}
+}
 
-#[cfg(feature = "app-spriteatlasmanager_2")]
-impl < __T : ISpriteAtlasManager_2 > ISpriteAtlasManager_2Methods for __T { }
+#[cfg(feature="app-spriteatlasmanager_2")]impl<__T:ISpriteAtlasManager_2>ISpriteAtlasManager_2Methods for __T{}
 
-#[cfg(feature = "app-spriteatlasmanager_2")]
-impl SpriteAtlasManager_2 { pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn try_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn clear_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-spriteatlasmanager_2")]impl SpriteAtlasManager_2{pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-spriteatlasmanager_2")]
-impl SpriteAtlasManager_2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SpriteAtlasManager_2) , :: core :: stringify ! (new) ,)) ; < Self as ISpriteAtlasManager_2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-spriteatlasmanager_2")]impl SpriteAtlasManager_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SpriteAtlasManager_2), ::core::stringify!(new),));
+ <Self as ISpriteAtlasManager_2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-spriteatlasmanager_2")]

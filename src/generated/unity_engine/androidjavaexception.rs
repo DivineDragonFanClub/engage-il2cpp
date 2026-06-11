@@ -4,30 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavaexception/AndroidJavaException.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AndroidJavaException")] pub struct AndroidJavaException {
-# [offset (136)] # [rename (name = "mJavaStackTrace")] pub m_java_stack_trace : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/androidjavaexception/AndroidJavaException.md"))]#[::unity2::class(namespace="UnityEngine",name="AndroidJavaException")]pub struct AndroidJavaException{#[offset(136)]#[rename(name="mJavaStackTrace")]pub m_java_stack_trace: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-androidjavaexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-androidjavaexception")]
-pub trait IAndroidJavaExceptionMethods : IAndroidJavaException { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , java_stack_trace : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AndroidJavaException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaException , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f0f920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: convert :: Into :: into (java_stack_trace) , :: core :: option :: Option :: None) } } } # [doc = "`get_StackTrace()` overload"] fn get_stack_trace (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AndroidJavaException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f11e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-androidjavaexception")]pub trait IAndroidJavaExceptionMethods:IAndroidJavaException{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,java_stack_trace:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AndroidJavaException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f0f920usize)as*mut u8,();
+(AndroidJavaException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(::unity2::Il2CppString)::core::convert::Into::into(java_stack_trace))}
+}
+#[doc="`get_StackTrace()` overload"]fn get_stack_trace(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AndroidJavaException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f11e20usize)as*mut u8, ::unity2::Il2CppString;
+(AndroidJavaException)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-androidjavaexception")]
-impl < __T : IAndroidJavaException > IAndroidJavaExceptionMethods for __T { }
+#[cfg(feature="unity_engine-androidjavaexception")]impl<__T:IAndroidJavaException>IAndroidJavaExceptionMethods for __T{}
 
-#[cfg(feature = "unity_engine-androidjavaexception")]
-impl AndroidJavaException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_stack_trace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-androidjavaexception")]impl AndroidJavaException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_stack_trace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-androidjavaexception")]
-impl AndroidJavaException {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (message : :: unity2 :: Il2CppString , java_stack_trace : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaException) , :: core :: stringify ! (new) ,)) ; < Self as IAndroidJavaExceptionMethods > :: ctor (this , message , java_stack_trace) ; this }
+#[cfg(feature="unity_engine-androidjavaexception")]impl AndroidJavaException{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,java_stack_trace: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AndroidJavaException), ::core::stringify!(new),));
+ <Self as IAndroidJavaExceptionMethods> ::ctor(this,message,java_stack_trace);
+this}
 }
 
 #[cfg(feature = "unity_engine-androidjavaexception")]

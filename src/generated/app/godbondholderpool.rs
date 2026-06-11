@@ -4,34 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: app :: singletonpool_2 :: { ISingletonPool_2 , SingletonPool_2 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::app::singletonpool_2::{ISingletonPool_2,SingletonPool_2}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godbondholderpool/GodBondHolderPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodBondHolderPool")] # [parent (crate :: app :: singletonpool_2 :: SingletonPool_2 < crate :: app :: godbondholderpool :: GodBondHolderPool , crate :: app :: godbondholder :: GodBondHolder >)] pub struct GodBondHolderPool {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godbondholderpool/GodBondHolderPool.md"))]#[::unity2::class(namespace="App",name="GodBondHolderPool")]#[parent(crate::app::singletonpool_2::SingletonPool_2<crate::app::godbondholderpool::GodBondHolderPool,crate::app::godbondholder::GodBondHolder>)]pub struct GodBondHolderPool{}
 
 }
 
 #[cfg(feature = "app-godbondholderpool-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godbondholderpool")]
-pub trait IGodBondHolderPoolMethods : IGodBondHolderPool { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodBondHolderPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodBondHolderPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b50f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < GodBondHolderPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodBondHolderPool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b50f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateOrGet(crate::app::goddata::GodData)` overload"] fn create_or_get (self , data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: app :: godbondholder :: GodBondHolder { unsafe { let __receiver = < GodBondHolderPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodBondHolderPool , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: godbondholder :: GodBondHolder = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b50f70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GodBondHolderPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodBondHolderPool , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b51100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GodBondHolderPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodBondHolderPool , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b51160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`SerializeForRewindLatest(crate::app::stream_2::Stream_2, crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>)` overload"] fn serialize_for_rewind_latest (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , exclude_pids : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < GodBondHolderPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodBondHolderPool , crate :: app :: stream_2 :: Stream_2 , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b511d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (exclude_pids) , :: core :: option :: Option :: None) } } } # [doc = "`DeserializeForRewindLatest(crate::app::stream_2::Stream_2)` overload"] fn deserialize_for_rewind_latest (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GodBondHolderPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodBondHolderPool , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b512f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godbondholderpool")]pub trait IGodBondHolderPoolMethods:IGodBondHolderPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodBondHolderPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b50f00usize)as*mut u8,();
+(GodBondHolderPool)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <GodBondHolderPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b50f60usize)as*mut u8,i32;
+(GodBondHolderPool)__receiver)}
+}
+#[doc="`CreateOrGet(crate::app::goddata::GodData)` overload"]fn create_or_get(self,data:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::app::godbondholder::GodBondHolder{unsafe{let __receiver= <GodBondHolderPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b50f70usize)as*mut u8,crate::app::godbondholder::GodBondHolder;
+(GodBondHolderPool)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(data))}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodBondHolderPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b51100usize)as*mut u8,();
+(GodBondHolderPool)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodBondHolderPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b51160usize)as*mut u8,();
+(GodBondHolderPool)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`SerializeForRewindLatest(crate::app::stream_2::Stream_2, crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>)` overload"]fn serialize_for_rewind_latest(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,exclude_pids:impl::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <GodBondHolderPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b511d0usize)as*mut u8,();
+(GodBondHolderPool)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString>)::core::convert::Into::into(exclude_pids))}
+}
+#[doc="`DeserializeForRewindLatest(crate::app::stream_2::Stream_2)` overload"]fn deserialize_for_rewind_latest(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodBondHolderPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b512f0usize)as*mut u8,();
+(GodBondHolderPool)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
 
-#[cfg(feature = "app-godbondholderpool")]
-impl < __T : IGodBondHolderPool > IGodBondHolderPoolMethods for __T { }
+#[cfg(feature="app-godbondholderpool")]impl<__T:IGodBondHolderPool>IGodBondHolderPoolMethods for __T{}
 
-#[cfg(feature = "app-godbondholderpool")]
-impl GodBondHolderPool { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodBondHolderPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodBondHolderPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_or_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodBondHolderPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodBondHolderPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodBondHolderPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn serialize_for_rewind_latest_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodBondHolderPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn deserialize_for_rewind_latest_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodBondHolderPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-godbondholderpool")]impl GodBondHolderPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_or_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn serialize_for_rewind_latest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn deserialize_for_rewind_latest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-godbondholderpool")]
-impl GodBondHolderPool {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodBondHolderPool) , :: core :: stringify ! (new) ,)) ; < Self as IGodBondHolderPoolMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godbondholderpool")]impl GodBondHolderPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodBondHolderPool), ::core::stringify!(new),));
+ <Self as IGodBondHolderPoolMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godbondholderpool")]

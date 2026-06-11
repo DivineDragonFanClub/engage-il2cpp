@@ -4,328 +4,392 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WellSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_EvilWeaponEventStates.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_EvilWeaponEventStates{pub value:i32,}
+impl::unity2::ClassIdentity for WellSequence_EvilWeaponEventStates{const NAMESPACE: &'static str="App";
+const NAME: &'static str="WellSequence.EvilWeaponEventStates";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for WellSequence_EvilWeaponEventStates{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl WellSequence_EvilWeaponEventStates{pub fn none()->Self{Self{value:0}
+}
+pub fn can_get()->Self{Self{value:1}
+}
+pub fn already_get()->Self{Self{value:2}
+}
+pub fn already_talk()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for WellSequence_Label  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]#[::unity2::class(namespace="App",name="WellSequence.DialogItemGotoEvilFirst")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct WellSequence_DialogItemGotoEvilFirst{}
 
-    const NAME: &'static str = "WellSequence.Label";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for WellSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="WellSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for WellSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl WellSequence_Label{pub fn entry()->Self{Self{value:0}
+}
+pub fn get_evil_weapons()->Self{Self{value:1}
+}
+pub fn evil_map_first_demo()->Self{Self{value:2}
+}
+pub fn get_exchange_item()->Self{Self{value:3}
+}
+pub fn top_menu()->Self{Self{value:4}
+}
+pub fn item_select()->Self{Self{value:5}
+}
+pub fn first_evil_map_confirm()->Self{Self{value:6}
+}
+pub fn evil_map_confirm()->Self{Self{value:7}
+}
+pub fn change_difficulty()->Self{Self{value:8}
+}
+pub fn change_difficulty_result()->Self{Self{value:9}
+}
+pub fn exit()->Self{Self{value:10}
+}
+pub fn end()->Self{Self{value:11}
+}
 }
 
 
-impl  ::unity2::IlType for WellSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_UseFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_UseFlags{pub value:i32,}
+impl::unity2::ClassIdentity for WellSequence_UseFlags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="WellSequence.UseFlags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for WellSequence_UseFlags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl WellSequence_UseFlags{pub fn not_use()->Self{Self{value:0}
+}
+pub fn used()->Self{Self{value:1}
+}
+pub fn item_return()->Self{Self{value:2}
+}
 }
 
 
-impl  WellSequence_Label  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))]#[::unity2::class(namespace="App",name="WellSequence.ChangeDifficultyMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct WellSequence_ChangeDifficultyMenuItem{#[offset(112)]#[rename(name="YesEventHandler")]pub yes_event_handler:crate::system::action::Action,}
 
-    }
 
-
-    pub fn get_evil_weapons() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn evil_map_first_demo() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn get_exchange_item() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn top_menu() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn item_select() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn first_evil_map_confirm() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn evil_map_confirm() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn change_difficulty() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn change_difficulty_result() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 11 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_UseFlags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WellSequence_UseFlags  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for WellSequence_UseFlags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "WellSequence.UseFlags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for WellSequence_UseFlags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  WellSequence_UseFlags  {
-    pub fn not_use() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn used() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn item_return() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_EvilWeaponEventStates.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WellSequence_EvilWeaponEventStates  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for WellSequence_EvilWeaponEventStates  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "WellSequence.EvilWeaponEventStates";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for WellSequence_EvilWeaponEventStates  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  WellSequence_EvilWeaponEventStates  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn can_get() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn already_get() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn already_talk() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellSequence.ChangeDifficultyMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct WellSequence_ChangeDifficultyMenuItem {
-# [offset (112)] # [rename (name = "YesEventHandler")] pub yes_event_handler : crate :: system :: action :: Action ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellSequence.DialogItemGotoEvilFirst")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct WellSequence_DialogItemGotoEvilFirst {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct WellSequence {
-# [static_field] # [rename (name = "UseFlagName")] pub use_flag_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ExchangeLevelName")] pub exchange_level_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "SeedName")] pub seed_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "EvilWeaponState")] pub evil_weapon_state : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: welltopmenu :: WellTopMenu_MenuResult ,
-# [static_field] # [rename (name = "m_WellEffectManager")] pub m_well_effect_manager : crate :: unity_engine :: gameobject :: GameObject ,
-# [static_field] # [rename (name = "EFF_NAME_TABLE")] pub eff_name_table : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence.md"))]#[::unity2::class(namespace="App",name="WellSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct WellSequence{#[static_field]#[rename(name="UseFlagName")]pub use_flag_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ExchangeLevelName")]pub exchange_level_name: ::unity2::Il2CppString, #[static_field]#[rename(name="SeedName")]pub seed_name: ::unity2::Il2CppString, #[static_field]#[rename(name="EvilWeaponState")]pub evil_weapon_state: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::welltopmenu::WellTopMenu_MenuResult, #[static_field]#[rename(name="m_WellEffectManager")]pub m_well_effect_manager:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="EFF_NAME_TABLE")]pub eff_name_table: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-wellsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-wellsequence")]
-pub trait IWellSequence_ChangeDifficultyMenuItemMethods : IWellSequence_ChangeDifficultyMenuItem { # [doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"] fn ctor (self , yes_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WellSequence_ChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence_ChangeDifficultyMenuItem , crate :: system :: action :: Action , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2cba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellSequence_ChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence_ChangeDifficultyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2cbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-wellsequence")]
-impl < __T : IWellSequence_ChangeDifficultyMenuItem > IWellSequence_ChangeDifficultyMenuItemMethods for __T { }
-
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence_ChangeDifficultyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence_ChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence_ChangeDifficultyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence_ChangeDifficultyMenuItem {
-# [doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"] pub fn new (yes_event_handler : crate :: system :: action :: Action , text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellSequence_ChangeDifficultyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IWellSequence_ChangeDifficultyMenuItemMethods > :: ctor (this , yes_event_handler , text) ; this }
+#[cfg(feature="app-wellsequence")]pub trait IWellSequence_DialogItemGotoEvilFirstMethods:IWellSequence_DialogItemGotoEvilFirst{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,label:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <WellSequence_DialogItemGotoEvilFirst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2cc10usize)as*mut u8,();
+(WellSequence_DialogItemGotoEvilFirst)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellSequence_DialogItemGotoEvilFirst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2cc90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellSequence_DialogItemGotoEvilFirst)__receiver)}
+}
 }
 
-#[cfg(feature = "app-wellsequence")]
-pub trait IWellSequence_DialogItemGotoEvilFirstMethods : IWellSequence_DialogItemGotoEvilFirst { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WellSequence_DialogItemGotoEvilFirst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence_DialogItemGotoEvilFirst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2cc10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellSequence_DialogItemGotoEvilFirst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence_DialogItemGotoEvilFirst , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2cc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-wellsequence")]impl<__T:IWellSequence_DialogItemGotoEvilFirst>IWellSequence_DialogItemGotoEvilFirstMethods for __T{}
 
-#[cfg(feature = "app-wellsequence")]
-impl < __T : IWellSequence_DialogItemGotoEvilFirst > IWellSequence_DialogItemGotoEvilFirstMethods for __T { }
-
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence_DialogItemGotoEvilFirst { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence_DialogItemGotoEvilFirst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence_DialogItemGotoEvilFirst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence_DialogItemGotoEvilFirst {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (label : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellSequence_DialogItemGotoEvilFirst) , :: core :: stringify ! (new) ,)) ; < Self as IWellSequence_DialogItemGotoEvilFirstMethods > :: ctor (this , label) ; this }
+#[cfg(feature="app-wellsequence")]impl WellSequence_DialogItemGotoEvilFirst{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence { # [doc = "`CreateGlobalFlags()` overload"] pub fn create_global_flags () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939630usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CalcExpected(crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>)` overload"] pub fn calc_expected (unit_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unititem :: UnitItem > >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unititem :: UnitItem > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2938880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_item_list) , :: core :: option :: Option :: None) } } } # [doc = "`get_Variable()` overload"] pub fn get_variable () -> crate :: app :: gamevariable :: GameVariable { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gamevariable :: GameVariable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29398d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_UseFlag()` overload"] pub fn get_use_flag () -> crate :: app :: wellsequence :: WellSequence_UseFlags { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: wellsequence :: WellSequence_UseFlags = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_UseFlag(crate::app::wellsequence::WellSequence_UseFlags)` overload"] pub fn set_use_flag (value : impl :: core :: convert :: Into < crate :: app :: wellsequence :: WellSequence_UseFlags >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: wellsequence :: WellSequence_UseFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939a80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExchangeLevel()` overload"] pub fn get_exchange_level () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939c90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_ExchangeLevel(i32)` overload"] pub fn set_exchange_level (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939dc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Seed()` overload"] pub fn get_seed () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939fd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_Seed(i32)` overload"] pub fn set_seed (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293a100usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EvilWeaponEventState()` overload"] pub fn get_evil_weapon_event_state () -> crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293a310usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_EvilWeaponEventState(crate::app::wellsequence::WellSequence_EvilWeaponEventStates)` overload"] pub fn set_evil_weapon_event_state (value : impl :: core :: convert :: Into < crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: wellsequence :: WellSequence_EvilWeaponEventStates , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293a440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetExchange(i32)` overload"] pub fn set_exchange (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29386b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`MapClear()` overload"] pub fn map_clear () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293a650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_IsItemReturn()` overload"] pub fn get_is_item_return () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293a700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_CanItemIn()` overload"] pub fn get_can_item_in () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293a770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetEffectName()` overload"] pub fn get_effect_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293a7e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryCreateItemEffect()` overload"] pub fn try_create_item_effect () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293a910usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryFadeoutEffect()` overload"] pub fn try_fadeout_effect () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293aab0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryDestroyEffect()` overload"] pub fn try_destroy_effect () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ab60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ac80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293def0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-wellsequence")]impl WellSequence_DialogItemGotoEvilFirst{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(label: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellSequence_DialogItemGotoEvilFirst), ::core::stringify!(new),));
+ <Self as IWellSequence_DialogItemGotoEvilFirstMethods> ::ctor(this,label);
+this}
+}
 
-#[cfg(feature = "app-wellsequence")]
-pub trait IWellSequenceMethods : IWellSequence { # [doc = "`LoadPrefabAsync()` overload"] fn load_prefab_async (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293c340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitLoadPrefab()` overload"] fn wait_load_prefab (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293c360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] fn unload_prefab (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293c400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenHeader()` overload"] fn open_header (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293c420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293c560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateTopMenu()` overload"] fn create_top_menu (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293c570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcItemExchange(i32, crate::app::random_2::Random_2)` overload"] fn calc_item_exchange (self , level : impl :: core :: convert :: Into < i32 > , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , i32 , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293c890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } } # [doc = "`GetItem()` overload"] fn get_item (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293cb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckCcTutorial()` overload"] fn check_cc_tutorial (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ccb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateItemSelectMenu()` overload"] fn create_item_select_menu (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293cd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckItemSelectResult()` overload"] fn check_item_select_result (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293cdb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateGotoEvilFirstConfirmDialog()` overload"] fn create_goto_evil_first_confirm_dialog (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293cf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateGotoEvilConfirmDialog()` overload"] fn create_goto_evil_confirm_dialog (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293d1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnChangeNormal()` overload"] fn on_change_normal (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293d230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnChangeHard()` overload"] fn on_change_hard (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293d300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnChangeLunatic()` overload"] fn on_change_lunatic (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293d3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateChangeDifficultyDialog()` overload"] fn create_change_difficulty_dialog (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293d4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateChangeDifficultyResultDialog()` overload"] fn create_change_difficulty_result_dialog (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293d9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293dad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEvilWeapon1()` overload"] fn get_evil_weapon1 (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293dc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEvilWeapon2()` overload"] fn get_evil_weapon2 (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293dcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EvilMapFirstDemo()` overload"] fn evil_map_first_demo (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293dde0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FirstTutorial()` overload"] fn first_tutorial (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293de60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ad10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WellSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ad00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-wellsequence")]pub trait IWellSequence_ChangeDifficultyMenuItemMethods:IWellSequence_ChangeDifficultyMenuItem{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <WellSequence_ChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2cba0usize)as*mut u8,();
+(WellSequence_ChangeDifficultyMenuItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(yes_event_handler),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellSequence_ChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2cbe0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellSequence_ChangeDifficultyMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-wellsequence")]
-impl < __T : IWellSequence > IWellSequenceMethods for __T { }
+#[cfg(feature="app-wellsequence")]impl<__T:IWellSequence_ChangeDifficultyMenuItem>IWellSequence_ChangeDifficultyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence { pub fn create_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_expected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_variable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_use_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_use_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_exchange_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_exchange_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_seed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_seed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_evil_weapon_event_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_evil_weapon_event_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_exchange_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn map_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_is_item_return_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_can_item_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_effect_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn try_create_item_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn try_fadeout_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn try_destroy_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn wait_load_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn open_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn create_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn calc_item_exchange_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn check_cc_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn create_item_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn check_item_select_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn create_goto_evil_first_confirm_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn create_goto_evil_confirm_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn on_change_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn on_change_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn on_change_lunatic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn create_change_difficulty_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn create_change_difficulty_result_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_evil_weapon1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_evil_weapon2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn evil_map_first_demo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn first_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } }
+#[cfg(feature="app-wellsequence")]impl WellSequence_ChangeDifficultyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellSequence) , :: core :: stringify ! (new) ,)) ; < Self as IWellSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-wellsequence")]impl WellSequence_ChangeDifficultyMenuItem{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(yes_event_handler:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellSequence_ChangeDifficultyMenuItem), ::core::stringify!(new),));
+ <Self as IWellSequence_ChangeDifficultyMenuItemMethods> ::ctor(this,yes_event_handler,text);
+this}
+}
+
+#[cfg(feature="app-wellsequence")]impl WellSequence{#[doc="`CreateGlobalFlags()` overload"]pub fn create_global_flags()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2939630usize)as*mut u8,();
+)}
+}
+#[doc="`CalcExpected(crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>)` overload"]pub fn calc_expected(unit_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem> >)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2938880usize)as*mut u8,i32;
+(crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>)::core::convert::Into::into(unit_item_list))}
+}
+#[doc="`get_Variable()` overload"]pub fn get_variable()->crate::app::gamevariable::GameVariable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29398d0usize)as*mut u8,crate::app::gamevariable::GameVariable;
+)}
+}
+#[doc="`get_UseFlag()` overload"]pub fn get_use_flag()->crate::app::wellsequence::WellSequence_UseFlags{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2939950usize)as*mut u8,crate::app::wellsequence::WellSequence_UseFlags;
+)}
+}
+#[doc="`set_UseFlag(crate::app::wellsequence::WellSequence_UseFlags)` overload"]pub fn set_use_flag(value:impl::core::convert::Into<crate::app::wellsequence::WellSequence_UseFlags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2939a80usize)as*mut u8,();
+(crate::app::wellsequence::WellSequence_UseFlags)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExchangeLevel()` overload"]pub fn get_exchange_level()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2939c90usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_ExchangeLevel(i32)` overload"]pub fn set_exchange_level(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2939dc0usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Seed()` overload"]pub fn get_seed()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2939fd0usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_Seed(i32)` overload"]pub fn set_seed(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293a100usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_EvilWeaponEventState()` overload"]pub fn get_evil_weapon_event_state()->crate::app::wellsequence::WellSequence_EvilWeaponEventStates{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293a310usize)as*mut u8,crate::app::wellsequence::WellSequence_EvilWeaponEventStates;
+)}
+}
+#[doc="`set_EvilWeaponEventState(crate::app::wellsequence::WellSequence_EvilWeaponEventStates)` overload"]pub fn set_evil_weapon_event_state(value:impl::core::convert::Into<crate::app::wellsequence::WellSequence_EvilWeaponEventStates>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293a440usize)as*mut u8,();
+(crate::app::wellsequence::WellSequence_EvilWeaponEventStates)::core::convert::Into::into(value))}
+}
+#[doc="`SetExchange(i32)` overload"]pub fn set_exchange(level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29386b0usize)as*mut u8,();
+(i32)::core::convert::Into::into(level))}
+}
+#[doc="`MapClear()` overload"]pub fn map_clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293a650usize)as*mut u8,();
+)}
+}
+#[doc="`get_IsItemReturn()` overload"]pub fn get_is_item_return()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293a700usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_CanItemIn()` overload"]pub fn get_can_item_in()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293a770usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetEffectName()` overload"]pub fn get_effect_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293a7e0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`TryCreateItemEffect()` overload"]pub fn try_create_item_effect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293a910usize)as*mut u8,();
+)}
+}
+#[doc="`TryFadeoutEffect()` overload"]pub fn try_fadeout_effect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293aab0usize)as*mut u8,();
+)}
+}
+#[doc="`TryDestroyEffect()` overload"]pub fn try_destroy_effect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293ab60usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293ac80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293def0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-wellsequence")]pub trait IWellSequenceMethods:IWellSequence{#[doc="`LoadPrefabAsync()` overload"]fn load_prefab_async(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293c340usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`WaitLoadPrefab()` overload"]fn wait_load_prefab(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293c360usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`UnloadPrefab()` overload"]fn unload_prefab(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293c400usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`OpenHeader()` overload"]fn open_header(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293c420usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293c560usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CreateTopMenu()` overload"]fn create_top_menu(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293c570usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CalcItemExchange(i32, crate::app::random_2::Random_2)` overload"]fn calc_item_exchange(self,level:impl::core::convert::Into<i32> ,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>{unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293c890usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ;
+(WellSequence)__receiver,(i32)::core::convert::Into::into(level),(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+}
+#[doc="`GetItem()` overload"]fn get_item(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293cb60usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CheckCcTutorial()` overload"]fn check_cc_tutorial(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293ccb0usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CreateItemSelectMenu()` overload"]fn create_item_select_menu(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293cd40usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CheckItemSelectResult()` overload"]fn check_item_select_result(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293cdb0usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CreateGotoEvilFirstConfirmDialog()` overload"]fn create_goto_evil_first_confirm_dialog(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293cf70usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CreateGotoEvilConfirmDialog()` overload"]fn create_goto_evil_confirm_dialog(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293d1a0usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`OnChangeNormal()` overload"]fn on_change_normal(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293d230usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`OnChangeHard()` overload"]fn on_change_hard(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293d300usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`OnChangeLunatic()` overload"]fn on_change_lunatic(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293d3d0usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CreateChangeDifficultyDialog()` overload"]fn create_change_difficulty_dialog(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293d4a0usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CreateChangeDifficultyResultDialog()` overload"]fn create_change_difficulty_result_dialog(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293d9a0usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293dad0usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`GetEvilWeapon1()` overload"]fn get_evil_weapon1(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293dc40usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`GetEvilWeapon2()` overload"]fn get_evil_weapon2(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293dcf0usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`EvilMapFirstDemo()` overload"]fn evil_map_first_demo(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293dde0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(WellSequence)__receiver)}
+}
+#[doc="`FirstTutorial()` overload"]fn first_tutorial(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293de60usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293ad10usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(WellSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WellSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293ad00usize)as*mut u8,();
+(WellSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-wellsequence")]impl<__T:IWellSequence>IWellSequenceMethods for __T{}
+
+#[cfg(feature="app-wellsequence")]impl WellSequence{pub fn create_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_expected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_variable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_use_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_use_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_exchange_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_exchange_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_seed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_seed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_evil_weapon_event_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_evil_weapon_event_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_exchange_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn map_clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_is_item_return_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_can_item_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_effect_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn try_create_item_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn try_fadeout_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn try_destroy_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn wait_load_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn open_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn create_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn calc_item_exchange_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn check_cc_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn create_item_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn check_item_select_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn create_goto_evil_first_confirm_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn create_goto_evil_confirm_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn on_change_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn on_change_hard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn on_change_lunatic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn create_change_difficulty_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn create_change_difficulty_result_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_evil_weapon1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_evil_weapon2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn evil_map_first_demo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn first_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+}
+
+#[cfg(feature="app-wellsequence")]impl WellSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellSequence), ::core::stringify!(new),));
+ <Self as IWellSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-wellsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WellSequence_Label;
-    pub use super::WellSequence_UseFlags;
     pub use super::WellSequence_EvilWeaponEventStates;
-    pub use super::WellSequence_ChangeDifficultyMenuItem;
-    pub use super::IWellSequence_ChangeDifficultyMenuItem;
-    pub use super::IWellSequence_ChangeDifficultyMenuItemMethods;
     pub use super::WellSequence_DialogItemGotoEvilFirst;
     pub use super::IWellSequence_DialogItemGotoEvilFirst;
     pub use super::IWellSequence_DialogItemGotoEvilFirstMethods;
+    pub use super::WellSequence_Label;
+    pub use super::WellSequence_UseFlags;
+    pub use super::WellSequence_ChangeDifficultyMenuItem;
+    pub use super::IWellSequence_ChangeDifficultyMenuItem;
+    pub use super::IWellSequence_ChangeDifficultyMenuItemMethods;
     pub use super::WellSequence;
     pub use super::IWellSequence;
     pub use super::IWellSequenceMethods;

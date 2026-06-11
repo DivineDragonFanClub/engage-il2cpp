@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/iequalitycomparer/IEqualityComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IEqualityComparer")] pub struct IEqualityComparer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/iequalitycomparer/IEqualityComparer.md"))]#[::unity2::class(namespace="System.Collections",name="IEqualityComparer")]pub struct IEqualityComparer{}
 
 }
 
 #[cfg(feature = "system-collections-iequalitycomparer-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-iequalitycomparer")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IEqualityComparer_unity2_raw { use super :: * ; pub unsafe fn equals (this : IEqualityComparer , x : crate :: system :: object :: Object , y : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Equals") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Equals" , < IEqualityComparer as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IEqualityComparer , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , x , y , __mi) } pub unsafe fn get_hash_code (this : IEqualityComparer , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetHashCode") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetHashCode" , < IEqualityComparer as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IEqualityComparer , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , obj , __mi) } }
+#[cfg(feature="system-collections-iequalitycomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IEqualityComparer_unity2_raw{use super:: * ;
+pub unsafe fn equals(this:IEqualityComparer,x:crate::system::object::Object,y:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Equals").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Equals", <IEqualityComparer as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IEqualityComparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,__mi)}
+pub unsafe fn get_hash_code(this:IEqualityComparer,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetHashCode").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetHashCode", <IEqualityComparer as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IEqualityComparer,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+}
 
-#[cfg(feature = "system-collections-iequalitycomparer")]
-pub trait IIEqualityComparerMethods : IIEqualityComparer { # [doc = "`Equals(crate::system::object::Object, crate::system::object::Object)` overload"] fn equals (self , x : impl :: core :: convert :: Into < crate :: system :: object :: Object > , y : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < IEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IEqualityComparer_unity2_raw :: equals (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode(crate::system::object::Object)` overload"] fn get_hash_code (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < IEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IEqualityComparer_unity2_raw :: get_hash_code (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="system-collections-iequalitycomparer")]pub trait IIEqualityComparerMethods:IIEqualityComparer{#[doc="`Equals(crate::system::object::Object, crate::system::object::Object)` overload"]fn equals(self,x:impl::core::convert::Into<crate::system::object::Object> ,y:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <IEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IEqualityComparer_unity2_raw::equals(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
+}
+#[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <IEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IEqualityComparer_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "system-collections-iequalitycomparer")]
-impl < __T : IIEqualityComparer > IIEqualityComparerMethods for __T { }
+#[cfg(feature="system-collections-iequalitycomparer")]impl<__T:IIEqualityComparer>IIEqualityComparerMethods for __T{}
 
-#[cfg(feature = "system-collections-iequalitycomparer")]
-impl IEqualityComparer { pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-collections-iequalitycomparer")]impl IEqualityComparer{pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "system-collections-iequalitycomparer")]
 #[doc(hidden)]

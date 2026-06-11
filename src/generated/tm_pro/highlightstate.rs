@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/highlightstate/HighlightState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HighlightState {
-    pub color: crate :: unity_engine :: color32 :: Color32,
-    pub padding: crate :: tm_pro :: tmp_offset :: TMP_Offset,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/highlightstate/HighlightState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HighlightState{pub color:crate::unity_engine::color32::Color32,pub padding:crate::tm_pro::tmp_offset::TMP_Offset,}
+impl::unity2::ClassIdentity for HighlightState{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="HighlightState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for HighlightState {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "HighlightState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for HighlightState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for HighlightState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,14 +26,35 @@ impl ::unity2::IlType for HighlightState {
 #[cfg(feature = "tm_pro-highlightstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-highlightstate")]
-impl HighlightState { # [doc = "`op_Equality(crate::tm_pro::highlightstate::HighlightState, crate::tm_pro::highlightstate::HighlightState)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: tm_pro :: highlightstate :: HighlightState > , rhs : impl :: core :: convert :: Into < crate :: tm_pro :: highlightstate :: HighlightState >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: highlightstate :: HighlightState , crate :: tm_pro :: highlightstate :: HighlightState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c100usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::tm_pro::highlightstate::HighlightState, crate::tm_pro::highlightstate::HighlightState)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: tm_pro :: highlightstate :: HighlightState > , rhs : impl :: core :: convert :: Into < crate :: tm_pro :: highlightstate :: HighlightState >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: highlightstate :: HighlightState , crate :: tm_pro :: highlightstate :: HighlightState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-highlightstate")]impl HighlightState{#[doc="`op_Equality(crate::tm_pro::highlightstate::HighlightState, crate::tm_pro::highlightstate::HighlightState)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::tm_pro::highlightstate::HighlightState> ,rhs:impl::core::convert::Into<crate::tm_pro::highlightstate::HighlightState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c100usize)as*mut u8,bool;
+(crate::tm_pro::highlightstate::HighlightState)::core::convert::Into::into(lhs),(crate::tm_pro::highlightstate::HighlightState)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::tm_pro::highlightstate::HighlightState, crate::tm_pro::highlightstate::HighlightState)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::tm_pro::highlightstate::HighlightState> ,rhs:impl::core::convert::Into<crate::tm_pro::highlightstate::HighlightState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c200usize)as*mut u8,bool;
+(crate::tm_pro::highlightstate::HighlightState)::core::convert::Into::into(lhs),(crate::tm_pro::highlightstate::HighlightState)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "tm_pro-highlightstate")]
-impl HighlightState { # [doc = "`.ctor(crate::unity_engine::color32::Color32, crate::tm_pro::tmp_offset::TMP_Offset)` overload"] pub fn ctor (& mut self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color32 :: Color32 > , padding : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_offset :: TMP_Offset >) -> () { unsafe { { let __inner : extern "C" fn (* mut HighlightState , crate :: unity_engine :: color32 :: Color32 , crate :: tm_pro :: tmp_offset :: TMP_Offset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c0e0usize) as * mut u8) ; __inner (self as * mut HighlightState , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (padding) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut HighlightState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c2f0usize) as * mut u8) ; __inner (self as * mut HighlightState , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut HighlightState , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c370usize) as * mut u8) ; __inner (self as * mut HighlightState , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::tm_pro::highlightstate::HighlightState)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: tm_pro :: highlightstate :: HighlightState >) -> bool { unsafe { { let __inner : extern "C" fn (* mut HighlightState , crate :: tm_pro :: highlightstate :: HighlightState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c400usize) as * mut u8) ; __inner (self as * mut HighlightState , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-highlightstate")]impl HighlightState{#[doc="`.ctor(crate::unity_engine::color32::Color32, crate::tm_pro::tmp_offset::TMP_Offset)` overload"]pub fn ctor(&mut self,color:impl::core::convert::Into<crate::unity_engine::color32::Color32> ,padding:impl::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c0e0usize)as*mut u8,();
+(*mut HighlightState)self as*mut HighlightState,(crate::unity_engine::color32::Color32)::core::convert::Into::into(color),(crate::tm_pro::tmp_offset::TMP_Offset)::core::convert::Into::into(padding))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c2f0usize)as*mut u8,i32;
+(*mut HighlightState)self as*mut HighlightState)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c370usize)as*mut u8,bool;
+(*mut HighlightState)self as*mut HighlightState,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::tm_pro::highlightstate::HighlightState)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::tm_pro::highlightstate::HighlightState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c400usize)as*mut u8,bool;
+(*mut HighlightState)self as*mut HighlightState,(crate::tm_pro::highlightstate::HighlightState)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "tm_pro-highlightstate")]
-impl HighlightState { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HighlightState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HighlightState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HighlightState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HighlightState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HighlightState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HighlightState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="tm_pro-highlightstate")]impl HighlightState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "tm_pro-highlightstate")]
 #[doc(hidden)]

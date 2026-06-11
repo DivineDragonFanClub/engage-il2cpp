@@ -4,37 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectfaceaccmenuitem/PhotographSelectFaceAccMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectFaceAccMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct PhotographSelectFaceAccMenuItem {
-# [offset (100)] # [rename (name = "m_IsCurrent")] pub m_is_current : bool ,
-# [offset (101)] # [rename (name = "m_IsMascot")] pub m_is_mascot : bool ,
-# [offset (104)] # [rename (name = "m_FaceAccData")] pub m_face_acc_data : crate :: app :: accessorydata :: AccessoryData ,
-# [offset (112)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectfaceaccmenuitem/PhotographSelectFaceAccMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectFaceAccMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct PhotographSelectFaceAccMenuItem{#[offset(100)]#[rename(name="m_IsCurrent")]pub m_is_current:bool, #[offset(101)]#[rename(name="m_IsMascot")]pub m_is_mascot:bool, #[offset(104)]#[rename(name="m_FaceAccData")]pub m_face_acc_data:crate::app::accessorydata::AccessoryData, #[offset(112)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager,}
 
 }
 
 #[cfg(feature = "app-photographselectfaceaccmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographselectfaceaccmenuitem")]
-pub trait IPhotographSelectFaceAccMenuItemMethods : IPhotographSelectFaceAccMenuItem { # [doc = "`get_IsCurrent()` overload"] fn get_is_current (self ,) -> bool { unsafe { let __receiver = < PhotographSelectFaceAccMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectFaceAccMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2699030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsMascot()` overload"] fn get_is_mascot (self ,) -> bool { unsafe { let __receiver = < PhotographSelectFaceAccMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectFaceAccMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2699040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::accessorydata::AccessoryData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"] fn ctor (self , face_acc_data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager > , is_current : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographSelectFaceAccMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectFaceAccMenuItem , crate :: app :: accessorydata :: AccessoryData , crate :: app :: photographdisposmanager :: PhotographDisposManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2698a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (face_acc_data) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: convert :: Into :: into (is_current) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < PhotographSelectFaceAccMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectFaceAccMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2699050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectFaceAccMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectFaceAccMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26990b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectFaceAccMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectFaceAccMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26990c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectfaceaccmenuitem")]pub trait IPhotographSelectFaceAccMenuItemMethods:IPhotographSelectFaceAccMenuItem{#[doc="`get_IsCurrent()` overload"]fn get_is_current(self,)->bool{unsafe{let __receiver= <PhotographSelectFaceAccMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2699030usize)as*mut u8,bool;
+(PhotographSelectFaceAccMenuItem)__receiver)}
+}
+#[doc="`get_IsMascot()` overload"]fn get_is_mascot(self,)->bool{unsafe{let __receiver= <PhotographSelectFaceAccMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2699040usize)as*mut u8,bool;
+(PhotographSelectFaceAccMenuItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::accessorydata::AccessoryData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"]fn ctor(self,face_acc_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,is_current:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectFaceAccMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2698a80usize)as*mut u8,();
+(PhotographSelectFaceAccMenuItem)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(face_acc_data),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(bool)::core::convert::Into::into(is_current))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <PhotographSelectFaceAccMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2699050usize)as*mut u8,();
+(PhotographSelectFaceAccMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectFaceAccMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26990b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectFaceAccMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectFaceAccMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26990c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectFaceAccMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographselectfaceaccmenuitem")]
-impl < __T : IPhotographSelectFaceAccMenuItem > IPhotographSelectFaceAccMenuItemMethods for __T { }
+#[cfg(feature="app-photographselectfaceaccmenuitem")]impl<__T:IPhotographSelectFaceAccMenuItem>IPhotographSelectFaceAccMenuItemMethods for __T{}
 
-#[cfg(feature = "app-photographselectfaceaccmenuitem")]
-impl PhotographSelectFaceAccMenuItem { pub fn get_is_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectFaceAccMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_mascot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectFaceAccMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectFaceAccMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectFaceAccMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectFaceAccMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectFaceAccMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-photographselectfaceaccmenuitem")]impl PhotographSelectFaceAccMenuItem{pub fn get_is_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_mascot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-photographselectfaceaccmenuitem")]
-impl PhotographSelectFaceAccMenuItem {
-# [doc = "`.ctor(crate::app::accessorydata::AccessoryData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"] pub fn new (face_acc_data : crate :: app :: accessorydata :: AccessoryData , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , is_current : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectFaceAccMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectFaceAccMenuItemMethods > :: ctor (this , face_acc_data , dispos_manager , is_current) ; this }
+#[cfg(feature="app-photographselectfaceaccmenuitem")]impl PhotographSelectFaceAccMenuItem{#[doc="`.ctor(crate::app::accessorydata::AccessoryData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"]pub fn new(face_acc_data:crate::app::accessorydata::AccessoryData,dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager,is_current:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectFaceAccMenuItem), ::core::stringify!(new),));
+ <Self as IPhotographSelectFaceAccMenuItemMethods> ::ctor(this,face_acc_data,dispos_manager,is_current);
+this}
 }
 
 #[cfg(feature = "app-photographselectfaceaccmenuitem")]

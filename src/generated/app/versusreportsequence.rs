@@ -4,193 +4,255 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
-# [offset (112)] # [rename (name = "m_Action")] pub m_action : crate :: system :: action :: Action ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusReportSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for VersusReportSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusReportSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VersusReportSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl VersusReportSequence_Label{pub fn type_menu()->Self{Self{value:0}
+}
+pub fn reason()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusReportSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct VersusReportSequence {
-# [offset (112)] # [rename (name = "m_Content")] pub m_content : crate :: app :: versusviolationtopcontent :: VersusViolationTopContent ,
-# [offset (120)] # [rename (name = "m_Bg")] pub m_bg : crate :: app :: menubg :: MenuBg ,
-# [offset (128)] # [rename (name = "m_MapTexture")] pub m_map_texture : crate :: unity_engine :: texture2d :: Texture2D ,
-# [offset (144)] # [rename (name = "m_Reason")] pub m_reason : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_ReasonDisplay")] pub m_reason_display : :: unity2 :: Il2CppString ,
-# [offset (160)] # [rename (name = "m_IsReported")] pub m_is_reported : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusReportSequence{#[offset(112)]#[rename(name="m_Content")]pub m_content:crate::app::versusviolationtopcontent::VersusViolationTopContent, #[offset(120)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(128)]#[rename(name="m_MapTexture")]pub m_map_texture:crate::unity_engine::texture2d::Texture2D, #[offset(144)]#[rename(name="m_Reason")]pub m_reason: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_ReasonDisplay")]pub m_reason_display: ::unity2::Il2CppString, #[offset(160)]#[rename(name="m_IsReported")]pub m_is_reported:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-# [offset (112)] # [rename (name = "m_Action")] pub m_action : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusReportSequence.ConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct VersusReportSequence_ConfirmDialog {
-# [offset (216)] # [rename (name = "m_CancelCallback")] pub m_cancel_callback : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct VersusReportSequence_ConfirmDialog{#[offset(216)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::action::Action,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct VersusReportSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for VersusReportSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "VersusReportSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for VersusReportSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  VersusReportSequence_Label  {
-    pub fn type_menu() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn reason() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-versusreportsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods : IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo { # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , action : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f6720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f6760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versusreportsequence")]
-impl < __T : IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo > IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods for __T { }
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
-# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (action : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo) , :: core :: stringify ! (new) ,)) ; < Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods > :: ctor (this , action) ; this }
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b2630usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b2630usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequenceMethods : IVersusReportSequence { # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResources()` overload"] fn unload_resources (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b15b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b15d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Notice()` overload"] fn notice (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateContent()` overload"] fn create_content (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenMenu()` overload"] fn open_menu (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b18a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InputKeyboard()` overload"] fn input_keyboard (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckReason()` overload"] fn check_reason (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b19f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenConfirmDialog()` overload"] fn open_confirm_dialog (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Report()` overload"] fn report (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowDialog()` overload"] fn show_dialog (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b23d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b24c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b2f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetReason(::unity2::Il2CppString)` overload"] fn set_reason (self , reason : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (reason) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b2ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versusreportsequence")]
-impl < __T : IVersusReportSequence > IVersusReportSequenceMethods for __T { }
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence { pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn input_keyboard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn check_reason_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn open_confirm_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn report_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn show_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_reason_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusReportSequence) , :: core :: stringify ! (new) ,)) ; < Self as IVersusReportSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusreportsequence")]pub trait IVersusReportSequenceMethods:IVersusReportSequence{#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1560usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1580usize)as*mut u8,bool;
+(VersusReportSequence)__receiver)}
+}
+#[doc="`UnloadResources()` overload"]fn unload_resources(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b15b0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b15d0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`Notice()` overload"]fn notice(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1670usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`CreateContent()` overload"]fn create_content(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1700usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`OpenMenu()` overload"]fn open_menu(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b18a0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`InputKeyboard()` overload"]fn input_keyboard(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1950usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`CheckReason()` overload"]fn check_reason(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b19f0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`OpenConfirmDialog()` overload"]fn open_confirm_dialog(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1cb0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`Report()` overload"]fn report(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1df0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`ShowDialog()` overload"]fn show_dialog(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b23d0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b24c0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b2f50usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
+#[doc="`SetReason(::unity2::Il2CppString)` overload"]fn set_reason(self,reason:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1b30usize)as*mut u8,();
+(VersusReportSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(reason))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b2ed0usize)as*mut u8,();
+(VersusReportSequence)__receiver)}
+}
 }
 
-#[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods : IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes { # [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , action : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , :: unity2 :: Il2CppString , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f6790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f67d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusreportsequence")]impl<__T:IVersusReportSequence>IVersusReportSequenceMethods for __T{}
 
-#[cfg(feature = "app-versusreportsequence")]
-impl < __T : IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes > IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods for __T { }
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString , action : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods > :: ctor (this , text , action) ; this }
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence{pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn notice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn input_keyboard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn check_reason_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn open_confirm_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn report_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn show_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_reason_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , decide_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , cancel_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b61ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (decide_callback) , :: core :: convert :: Into :: into (cancel_callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusReportSequence), ::core::stringify!(new),));
+ <Self as IVersusReportSequenceMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-versusreportsequence")]
-pub trait IVersusReportSequence_ConfirmDialogMethods : IVersusReportSequence_ConfirmDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , cancel_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence_ConfirmDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b61df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (cancel_callback) , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusReportSequence_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusReportSequence_ConfirmDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b620d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusreportsequence")]pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6720usize)as*mut u8,();
+(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo)__receiver,(crate::system::action::Action)::core::convert::Into::into(action))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6760usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusreportsequence")]
-impl < __T : IVersusReportSequence_ConfirmDialog > IVersusReportSequence_ConfirmDialogMethods for __T { }
+#[cfg(feature="app-versusreportsequence")]impl<__T:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo>IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods for __T{}
 
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusReportSequence_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-versusreportsequence")]
-impl VersusReportSequence_ConfirmDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , cancel_callback : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusReportSequence_ConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IVersusReportSequence_ConfirmDialogMethods > :: ctor (this , menu_item_list , cancel_callback) ; this }
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,action);
+this}
+}
+
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_callback:impl::core::convert::Into<crate::system::action::Action> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b61ec0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(decide_callback),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
+}
+}
+
+#[cfg(feature="app-versusreportsequence")]pub trait IVersusReportSequence_ConfirmDialogMethods:IVersusReportSequence_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusReportSequence_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b61df0usize)as*mut u8,();
+(VersusReportSequence_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusReportSequence_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b620d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusReportSequence_ConfirmDialog)__receiver)}
+}
+}
+
+#[cfg(feature="app-versusreportsequence")]impl<__T:IVersusReportSequence_ConfirmDialog>IVersusReportSequence_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,cancel_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusReportSequence_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IVersusReportSequence_ConfirmDialogMethods> ::ctor(this,menu_item_list,cancel_callback);
+this}
+}
+
+#[cfg(feature="app-versusreportsequence")]pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6790usize)as*mut u8,();
+(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::system::action::Action)::core::convert::Into::into(action))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f67d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-versusreportsequence")]impl<__T:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes>IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,text,action);
+this}
 }
 
 #[cfg(feature = "app-versusreportsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods;
+    pub use super::VersusReportSequence_Label;
     pub use super::VersusReportSequence;
     pub use super::IVersusReportSequence;
     pub use super::IVersusReportSequenceMethods;
-    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods;
+    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods;
     pub use super::VersusReportSequence_ConfirmDialog;
     pub use super::IVersusReportSequence_ConfirmDialog;
     pub use super::IVersusReportSequence_ConfirmDialogMethods;
-    pub use super::VersusReportSequence_Label;
+    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

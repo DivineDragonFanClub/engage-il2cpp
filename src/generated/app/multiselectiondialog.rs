@@ -4,39 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/multiselectiondialog/MultiSelectionDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "MultiSelectionDialog")] # [parent (crate :: app :: basicdialog :: BasicDialog)] pub struct MultiSelectionDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/multiselectiondialog/MultiSelectionDialog.md"))]#[::unity2::class(namespace="App",name="MultiSelectionDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct MultiSelectionDialog{}
 
 }
 
 #[cfg(feature = "app-multiselectiondialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-multiselectiondialog")]
-impl MultiSelectionDialog { # [doc = "`CreateBasicDialogBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] pub fn create_basic_dialog_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> crate :: app :: basicdialog :: BasicDialog { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-multiselectiondialog")]impl MultiSelectionDialog{#[doc="`CreateBasicDialogBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]pub fn create_basic_dialog_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2783030usize)as*mut u8,crate::app::basicdialog::BasicDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
 
-#[cfg(feature = "app-multiselectiondialog")]
-pub trait IMultiSelectionDialogMethods : IMultiSelectionDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicdialogcontent :: BasicDialogContent >) -> () { unsafe { let __receiver = < MultiSelectionDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MultiSelectionDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicdialogcontent :: BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-multiselectiondialog")]pub trait IMultiSelectionDialogMethods:IMultiSelectionDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <MultiSelectionDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783020usize)as*mut u8,();
+(MultiSelectionDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+}
 
-#[cfg(feature = "app-multiselectiondialog")]
-impl < __T : IMultiSelectionDialog > IMultiSelectionDialogMethods for __T { }
+#[cfg(feature="app-multiselectiondialog")]impl<__T:IMultiSelectionDialog>IMultiSelectionDialogMethods for __T{}
 
-#[cfg(feature = "app-multiselectiondialog")]
-impl MultiSelectionDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MultiSelectionDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_basic_dialog_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MultiSelectionDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-multiselectiondialog")]impl MultiSelectionDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_basic_dialog_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-multiselectiondialog")]
-impl MultiSelectionDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicdialogcontent :: BasicDialogContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MultiSelectionDialog) , :: core :: stringify ! (new) ,)) ; < Self as IMultiSelectionDialogMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-multiselectiondialog")]impl MultiSelectionDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MultiSelectionDialog), ::core::stringify!(new),));
+ <Self as IMultiSelectionDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-multiselectiondialog")]

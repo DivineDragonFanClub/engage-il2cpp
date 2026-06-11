@@ -4,43 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningconditionicon/RingCleaningConditionIcon.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningConditionIcon")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingCleaningConditionIcon {
-# [offset (24)] # [rename (name = "Gauge")] pub gauge : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_GaugeAnimator")] pub m_gauge_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (48)] # [rename (name = "m_GaugeController")] pub m_gauge_controller : crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningconditionicon/RingCleaningConditionIcon.md"))]#[::unity2::class(namespace="App",name="RingCleaningConditionIcon")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingCleaningConditionIcon{#[offset(24)]#[rename(name="Gauge")]pub gauge:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_GaugeAnimator")]pub m_gauge_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_GaugeController")]pub m_gauge_controller:crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController,}
 
 }
 
 #[cfg(feature = "app-ringcleaningconditionicon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcleaningconditionicon")]
-pub trait IRingCleaningConditionIconMethods : IRingCleaningConditionIcon { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayIconAnim(i32, i32)` overload"] fn play_icon_anim (self , old_dirty : impl :: core :: convert :: Into < i32 > , new_dirty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningConditionIcon , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (old_dirty) , :: core :: convert :: Into :: into (new_dirty) , :: core :: option :: Option :: None) } } } # [doc = "`ResetParam()` overload"] fn reset_param (self ,) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPosition(f32)` overload"] fn set_position (self , x : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningConditionIcon , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417bc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`SetBoolAnimators(::unity2::Il2CppString, bool)` overload"] fn set_bool_animators (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`PlayAnimators(::unity2::Il2CppString)` overload"] fn play_animators (self , state_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningconditionicon")]pub trait IRingCleaningConditionIconMethods:IRingCleaningConditionIcon{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RingCleaningConditionIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417430usize)as*mut u8,();
+(RingCleaningConditionIcon)__receiver)}
+}
+#[doc="`PlayIconAnim(i32, i32)` overload"]fn play_icon_anim(self,old_dirty:impl::core::convert::Into<i32> ,new_dirty:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingCleaningConditionIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417820usize)as*mut u8,();
+(RingCleaningConditionIcon)__receiver,(i32)::core::convert::Into::into(old_dirty),(i32)::core::convert::Into::into(new_dirty))}
+}
+#[doc="`ResetParam()` overload"]fn reset_param(self,)->(){unsafe{let __receiver= <RingCleaningConditionIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417510usize)as*mut u8,();
+(RingCleaningConditionIcon)__receiver)}
+}
+#[doc="`SetPosition(f32)` overload"]fn set_position(self,x:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <RingCleaningConditionIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417bc0usize)as*mut u8,();
+(RingCleaningConditionIcon)__receiver,(f32)::core::convert::Into::into(x))}
+}
+#[doc="`SetBoolAnimators(::unity2::Il2CppString, bool)` overload"]fn set_bool_animators(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingCleaningConditionIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417ad0usize)as*mut u8,();
+(RingCleaningConditionIcon)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(value))}
+}
+#[doc="`PlayAnimators(::unity2::Il2CppString)` overload"]fn play_animators(self,state_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingCleaningConditionIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417b80usize)as*mut u8,();
+(RingCleaningConditionIcon)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(state_name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCleaningConditionIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417c70usize)as*mut u8,();
+(RingCleaningConditionIcon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningconditionicon")]
-impl < __T : IRingCleaningConditionIcon > IRingCleaningConditionIconMethods for __T { }
+#[cfg(feature="app-ringcleaningconditionicon")]impl<__T:IRingCleaningConditionIcon>IRingCleaningConditionIconMethods for __T{}
 
-#[cfg(feature = "app-ringcleaningconditionicon")]
-impl RingCleaningConditionIcon { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn play_icon_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_bool_animators_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn play_animators_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-ringcleaningconditionicon")]impl RingCleaningConditionIcon{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn play_icon_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_bool_animators_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn play_animators_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-ringcleaningconditionicon")]
-impl RingCleaningConditionIcon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningConditionIcon) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningConditionIconMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcleaningconditionicon")]impl RingCleaningConditionIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningConditionIcon), ::core::stringify!(new),));
+ <Self as IRingCleaningConditionIconMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringcleaningconditionicon")]

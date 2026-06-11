@@ -4,35 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: searchresulthandler_1 :: { ISearchResultHandler_1 , SearchResultHandler_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::searchresulthandler_1::{ISearchResultHandler_1,SearchResultHandler_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stringresulthandler/StringResultHandler.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "StringResultHandler")] # [parent (crate :: system :: io :: searchresulthandler_1 :: SearchResultHandler_1 < :: unity2 :: Il2CppString >)] pub struct StringResultHandler {
-# [offset (16)] # [rename (name = "_includeFiles")] pub include_files : bool ,
-# [offset (17)] # [rename (name = "_includeDirs")] pub include_dirs : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stringresulthandler/StringResultHandler.md"))]#[::unity2::class(namespace="System.IO",name="StringResultHandler")]#[parent(crate::system::io::searchresulthandler_1::SearchResultHandler_1< ::unity2::Il2CppString>)]pub struct StringResultHandler{#[offset(16)]#[rename(name="_includeFiles")]pub include_files:bool, #[offset(17)]#[rename(name="_includeDirs")]pub include_dirs:bool,}
 
 }
 
 #[cfg(feature = "system-io-stringresulthandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-stringresulthandler")]
-pub trait IStringResultHandlerMethods : IStringResultHandler { # [doc = "`.ctor(bool, bool)` overload"] fn ctor (self , include_files : impl :: core :: convert :: Into < bool > , include_dirs : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StringResultHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringResultHandler , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358c0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (include_files) , :: core :: convert :: Into :: into (include_dirs) , :: core :: option :: Option :: None) } } } # [doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"] fn is_result_included (self , result : impl :: core :: convert :: Into < crate :: system :: io :: searchresult :: SearchResult >) -> bool { unsafe { let __receiver = < StringResultHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringResultHandler , crate :: system :: io :: searchresult :: SearchResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358c120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } # [doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"] fn create_object (self , result : impl :: core :: convert :: Into < crate :: system :: io :: searchresult :: SearchResult >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StringResultHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringResultHandler , crate :: system :: io :: searchresult :: SearchResult , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358c190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-stringresulthandler")]pub trait IStringResultHandlerMethods:IStringResultHandler{#[doc="`.ctor(bool, bool)` overload"]fn ctor(self,include_files:impl::core::convert::Into<bool> ,include_dirs:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358c0a0usize)as*mut u8,();
+(StringResultHandler)__receiver,(bool)::core::convert::Into::into(include_files),(bool)::core::convert::Into::into(include_dirs))}
+}
+#[doc="`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"]fn is_result_included(self,result:impl::core::convert::Into<crate::system::io::searchresult::SearchResult>)->bool{unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358c120usize)as*mut u8,bool;
+(StringResultHandler)__receiver,(crate::system::io::searchresult::SearchResult)::core::convert::Into::into(result))}
+}
+#[doc="`CreateObject(crate::system::io::searchresult::SearchResult)` overload"]fn create_object(self,result:impl::core::convert::Into<crate::system::io::searchresult::SearchResult>)-> ::unity2::Il2CppString{unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358c190usize)as*mut u8, ::unity2::Il2CppString;
+(StringResultHandler)__receiver,(crate::system::io::searchresult::SearchResult)::core::convert::Into::into(result))}
+}
+}
 
-#[cfg(feature = "system-io-stringresulthandler")]
-impl < __T : IStringResultHandler > IStringResultHandlerMethods for __T { }
+#[cfg(feature="system-io-stringresulthandler")]impl<__T:IStringResultHandler>IStringResultHandlerMethods for __T{}
 
-#[cfg(feature = "system-io-stringresulthandler")]
-impl StringResultHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringResultHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_result_included_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringResultHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringResultHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-io-stringresulthandler")]impl StringResultHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_result_included_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "system-io-stringresulthandler")]
-impl StringResultHandler {
-# [doc = "`.ctor(bool, bool)` — overload selector"] pub fn new (include_files : bool , include_dirs : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StringResultHandler) , :: core :: stringify ! (new) ,)) ; < Self as IStringResultHandlerMethods > :: ctor (this , include_files , include_dirs) ; this }
+#[cfg(feature="system-io-stringresulthandler")]impl StringResultHandler{#[doc="`.ctor(bool, bool)` — overload selector"]pub fn new(include_files:bool,include_dirs:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StringResultHandler), ::core::stringify!(new),));
+ <Self as IStringResultHandlerMethods> ::ctor(this,include_files,include_dirs);
+this}
 }
 
 #[cfg(feature = "system-io-stringresulthandler")]

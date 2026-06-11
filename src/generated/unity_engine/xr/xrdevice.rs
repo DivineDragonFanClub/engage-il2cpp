@@ -4,25 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrdevice/XRDevice.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRDevice")] # [parent (crate :: system :: object :: Object)] pub struct XRDevice {
-# [static_field] # [rename (name = "deviceLoaded")] pub device_loaded : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdevice/XRDevice.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="XRDevice")]#[parent(crate::system::object::Object)]pub struct XRDevice{#[static_field]#[rename(name="deviceLoaded")]pub device_loaded:crate::system::action_1::Action_1< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "unity_engine-xr-xrdevice-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-xrdevice")]
-impl XRDevice { # [doc = "`InvokeDeviceLoaded(::unity2::Il2CppString)` overload"] pub fn invoke_device_loaded (loaded_device_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f464f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (loaded_device_name) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f465c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-xrdevice")]impl XRDevice{#[doc="`InvokeDeviceLoaded(::unity2::Il2CppString)` overload"]pub fn invoke_device_loaded(loaded_device_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f464f0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(loaded_device_name))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f465c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrdevice")]
-impl XRDevice { pub fn invoke_device_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDevice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRDevice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-xr-xrdevice")]impl XRDevice{pub fn invoke_device_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-xr-xrdevice")]
 #[doc(hidden)]

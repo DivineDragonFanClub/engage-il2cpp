@@ -4,123 +4,55 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicSkillMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct BasicSkillMenuItemContent {
-# [offset (72)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_Name")] pub m_name : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_SubText")] pub m_sub_text : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_Border")] pub m_border : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_Efficacy")] pub m_efficacy : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (112)] # [rename (name = "m_IsDouble")] pub m_is_double : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]#[::unity2::class(namespace="App",name="BasicSkillMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct BasicSkillMenuItemContent{#[offset(72)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Name")]pub m_name:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_SubText")]pub m_sub_text:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_Border")]pub m_border:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_Efficacy")]pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(112)]#[rename(name="m_IsDouble")]pub m_is_double:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent_SubText.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BasicSkillMenuItemContent_SubText{pub value:i32,}
+impl::unity2::ClassIdentity for BasicSkillMenuItemContent_SubText{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BasicSkillMenuItemContent.SubText";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent_SubText.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct BasicSkillMenuItemContent_SubText  {
-    pub value: i32,
+impl::unity2::IlType for BasicSkillMenuItemContent_SubText{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for BasicSkillMenuItemContent_SubText  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BasicSkillMenuItemContent.SubText";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl BasicSkillMenuItemContent_SubText{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for BasicSkillMenuItemContent_SubText  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn person()->Self{Self{value:1}
 }
-
-
-impl  BasicSkillMenuItemContent_SubText  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn person() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn job() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn inheritance() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn ring() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn engage_attack() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn equiped() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn double() -> Self {
-        Self { value: 8 }
-
-    }
-
+pub fn job()->Self{Self{value:2}
+}
+pub fn inheritance()->Self{Self{value:3}
+}
+pub fn ring()->Self{Self{value:4}
+}
+pub fn god()->Self{Self{value:5}
+}
+pub fn engage_attack()->Self{Self{value:6}
+}
+pub fn equiped()->Self{Self{value:7}
+}
+pub fn double()->Self{Self{value:8}
+}
 }
 
 }
@@ -128,18 +60,72 @@ impl  BasicSkillMenuItemContent_SubText  {
 #[cfg(feature = "app-basicskillmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-basicskillmenuitemcontent")]
-pub trait IBasicSkillMenuItemContentMethods : IBasicSkillMenuItemContent { # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetIconColor(bool)` overload"] fn set_icon_color (self , is_active_icon : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_active_icon) , :: core :: option :: Option :: None) } } } # [doc = "`FindGameObject(::unity2::Il2CppString)` overload"] fn find_game_object (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SetupObjects()` overload"] fn setup_objects (self ,) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2467ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Blank()` overload"] fn blank (self ,) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2468120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24682c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24682f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildText(crate::app::skilldata::SkillData, bool)` overload"] fn build_text_2 (self , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , is_active_icon : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , crate :: app :: skilldata :: SkillData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2468740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (is_active_icon) , :: core :: option :: Option :: None) } } } # [doc = "`BuildSubText()` overload"] fn build_sub_text (self ,) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2468910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildTextColor()` overload"] fn build_text_color (self ,) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2468e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BasicSkillMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicSkillMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2468fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicskillmenuitemcontent")]pub trait IBasicSkillMenuItemContentMethods:IBasicSkillMenuItemContent{#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467b80usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver)}
+}
+#[doc="`SetIconColor(bool)` overload"]fn set_icon_color(self,is_active_icon:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467cc0usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver,(bool)::core::convert::Into::into(is_active_icon))}
+}
+#[doc="`FindGameObject(::unity2::Il2CppString)` overload"]fn find_game_object(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467e20usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(BasicSkillMenuItemContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SetupObjects()` overload"]fn setup_objects(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2467ef0usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver)}
+}
+#[doc="`Blank()` overload"]fn blank(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2468120usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24682c0usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24682f0usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver)}
+}
+#[doc="`BuildText(crate::app::skilldata::SkillData, bool)` overload"]fn build_text_2(self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,is_active_icon:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2468740usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(bool)::core::convert::Into::into(is_active_icon))}
+}
+#[doc="`BuildSubText()` overload"]fn build_sub_text(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2468910usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver)}
+}
+#[doc="`BuildTextColor()` overload"]fn build_text_color(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2468e30usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2468fb0usize)as*mut u8,();
+(BasicSkillMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-basicskillmenuitemcontent")]
-impl < __T : IBasicSkillMenuItemContent > IBasicSkillMenuItemContentMethods for __T { }
+#[cfg(feature="app-basicskillmenuitemcontent")]impl<__T:IBasicSkillMenuItemContent>IBasicSkillMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-basicskillmenuitemcontent")]
-impl BasicSkillMenuItemContent { pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_icon_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn find_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn build_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn build_sub_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn build_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicSkillMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-basicskillmenuitemcontent")]impl BasicSkillMenuItemContent{pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_icon_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn find_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn build_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn build_sub_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn build_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-basicskillmenuitemcontent")]
-impl BasicSkillMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicSkillMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IBasicSkillMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-basicskillmenuitemcontent")]impl BasicSkillMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicSkillMenuItemContent), ::core::stringify!(new),));
+ <Self as IBasicSkillMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-basicskillmenuitemcontent")]

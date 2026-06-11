@@ -4,52 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchstate/TouchState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TouchState {
-    pub delta_time_nano_seconds: i64,
-    pub attributes: crate :: nn :: hid :: touchattribute :: TouchAttribute,
-    pub finger_id: i32,
-    pub x: i32,
-    pub y: i32,
-    pub diameter_x: i32,
-    pub diameter_y: i32,
-    pub rotation_angle: i32,
-    pub reserved: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/touchstate/TouchState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TouchState{pub delta_time_nano_seconds:i64,pub attributes:crate::nn::hid::touchattribute::TouchAttribute,pub finger_id:i32,pub x:i32,pub y:i32,pub diameter_x:i32,pub diameter_y:i32,pub rotation_angle:i32,pub reserved:i32,}
+impl::unity2::ClassIdentity for TouchState{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="TouchState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TouchState {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "TouchState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TouchState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TouchState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -57,14 +26,35 @@ impl ::unity2::IlType for TouchState {
 #[cfg(feature = "nn-hid-touchstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-touchstate")]
-impl TouchState { # [doc = "`op_Equality(crate::nn::hid::touchstate::TouchState, crate::nn::hid::touchstate::TouchState)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState > , rhs : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: nn :: hid :: touchstate :: TouchState , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229adf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::nn::hid::touchstate::TouchState, crate::nn::hid::touchstate::TouchState)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState > , rhs : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: nn :: hid :: touchstate :: TouchState , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ae80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-touchstate")]impl TouchState{#[doc="`op_Equality(crate::nn::hid::touchstate::TouchState, crate::nn::hid::touchstate::TouchState)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState> ,rhs:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229adf0usize)as*mut u8,bool;
+(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(lhs),(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::nn::hid::touchstate::TouchState, crate::nn::hid::touchstate::TouchState)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState> ,rhs:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229ae80usize)as*mut u8,bool;
+(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(lhs),(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "nn-hid-touchstate")]
-impl TouchState { # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut TouchState , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229aab0usize) as * mut u8) ; __inner (self as * mut TouchState , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , right : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TouchState , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229af10usize) as * mut u8) ; __inner (self as * mut TouchState , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::nn::hid::touchstate::TouchState)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TouchState , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b030usize) as * mut u8) ; __inner (self as * mut TouchState , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut TouchState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b0c0usize) as * mut u8) ; __inner (self as * mut TouchState , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-touchstate")]impl TouchState{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229aab0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut TouchState)self as*mut TouchState)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,right:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229af10usize)as*mut u8,bool;
+(*mut TouchState)self as*mut TouchState,(crate::system::object::Object)::core::convert::Into::into(right))}
+}
+#[doc="`Equals(crate::nn::hid::touchstate::TouchState)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229b030usize)as*mut u8,bool;
+(*mut TouchState)self as*mut TouchState,(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229b0c0usize)as*mut u8,i32;
+(*mut TouchState)self as*mut TouchState)}
+}
+}
 
-#[cfg(feature = "nn-hid-touchstate")]
-impl TouchState { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="nn-hid-touchstate")]impl TouchState{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "nn-hid-touchstate")]
 #[doc(hidden)]

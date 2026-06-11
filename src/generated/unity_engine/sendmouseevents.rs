@@ -4,54 +4,24 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/sendmouseevents/SendMouseEvents_HitInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SendMouseEvents_HitInfo {
-    pub target: crate :: unity_engine :: gameobject :: GameObject,
-    pub camera: crate :: unity_engine :: camera :: Camera,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/sendmouseevents/SendMouseEvents.md"))]#[::unity2::class(namespace="UnityEngine",name="SendMouseEvents")]#[parent(crate::system::object::Object)]pub struct SendMouseEvents{#[static_field]#[rename(name="s_MouseUsed")]pub s_mouse_used:bool, #[static_field]#[rename(name="m_LastHit")]pub m_last_hit: ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo> , #[static_field]#[rename(name="m_MouseDownHit")]pub m_mouse_down_hit: ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo> , #[static_field]#[rename(name="m_CurrentHit")]pub m_current_hit: ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo> , #[static_field]#[rename(name="m_Cameras")]pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/sendmouseevents/SendMouseEvents_HitInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SendMouseEvents_HitInfo{pub target:crate::unity_engine::gameobject::GameObject,pub camera:crate::unity_engine::camera::Camera,}
+impl::unity2::ClassIdentity for SendMouseEvents_HitInfo{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="SendMouseEvents.HitInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for SendMouseEvents_HitInfo {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "SendMouseEvents.HitInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SendMouseEvents_HitInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sendmouseevents/SendMouseEvents.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SendMouseEvents")] # [parent (crate :: system :: object :: Object)] pub struct SendMouseEvents {
-# [static_field] # [rename (name = "s_MouseUsed")] pub s_mouse_used : bool ,
-# [static_field] # [rename (name = "m_LastHit")] pub m_last_hit : :: unity2 :: Array < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo > ,
-# [static_field] # [rename (name = "m_MouseDownHit")] pub m_mouse_down_hit : :: unity2 :: Array < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo > ,
-# [static_field] # [rename (name = "m_CurrentHit")] pub m_current_hit : :: unity2 :: Array < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo > ,
-# [static_field] # [rename (name = "m_Cameras")] pub m_cameras : :: unity2 :: Array < crate :: unity_engine :: camera :: Camera > ,
+impl::unity2::IlType for SendMouseEvents_HitInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -59,27 +29,50 @@ impl ::unity2::IlType for SendMouseEvents_HitInfo {
 #[cfg(feature = "unity_engine-sendmouseevents-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-sendmouseevents")]
-impl SendMouseEvents_HitInfo { # [doc = "`op_Implicit(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"] pub fn op_implicit (exists : impl :: core :: convert :: Into < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a3c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (exists) , :: core :: option :: Option :: None) } } } # [doc = "`Compare(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"] pub fn compare (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo , crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a4a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-sendmouseevents")]impl SendMouseEvents{#[doc="`SetMouseMoved()` overload"]pub fn set_mouse_moved()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f39460usize)as*mut u8,();
+)}
+}
+#[doc="`DoSendMouseEvents(i32)` overload"]pub fn do_send_mouse_events(skip_rt_cameras:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f394d0usize)as*mut u8,();
+(i32)::core::convert::Into::into(skip_rt_cameras))}
+}
+#[doc="`SendEvents(i32, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]pub fn send_events(i:impl::core::convert::Into<i32> ,hit:impl::core::convert::Into<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f39eb0usize)as*mut u8,();
+(i32)::core::convert::Into::into(i),(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)::core::convert::Into::into(hit))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a570usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-sendmouseevents")]
-impl SendMouseEvents_HitInfo { # [doc = "`SendMessage(::unity2::Il2CppString)` overload"] pub fn send_message (& mut self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut SendMouseEvents_HitInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a480usize) as * mut u8) ; __inner (self as * mut SendMouseEvents_HitInfo , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-sendmouseevents")]impl SendMouseEvents{pub fn set_mouse_moved_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn do_send_mouse_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn send_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-sendmouseevents")]
-impl SendMouseEvents_HitInfo { pub fn send_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SendMouseEvents_HitInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SendMouseEvents_HitInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SendMouseEvents_HitInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-sendmouseevents")]impl SendMouseEvents_HitInfo{#[doc="`op_Implicit(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]pub fn op_implicit(exists:impl::core::convert::Into<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a3c0usize)as*mut u8,bool;
+(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)::core::convert::Into::into(exists))}
+}
+#[doc="`Compare(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]pub fn compare(lhs:impl::core::convert::Into<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo> ,rhs:impl::core::convert::Into<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a4a0usize)as*mut u8,bool;
+(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)::core::convert::Into::into(lhs),(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "unity_engine-sendmouseevents")]
-impl SendMouseEvents { # [doc = "`SetMouseMoved()` overload"] pub fn set_mouse_moved () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f39460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DoSendMouseEvents(i32)` overload"] pub fn do_send_mouse_events (skip_rt_cameras : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f394d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (skip_rt_cameras) , :: core :: option :: Option :: None) } } } # [doc = "`SendEvents(i32, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"] pub fn send_events (i : impl :: core :: convert :: Into < i32 > , hit : impl :: core :: convert :: Into < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo >) -> () { unsafe { { let __inner : extern "C" fn (i32 , crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f39eb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (hit) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a570usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-sendmouseevents")]impl SendMouseEvents_HitInfo{#[doc="`SendMessage(::unity2::Il2CppString)` overload"]pub fn send_message(&mut self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a480usize)as*mut u8,();
+(*mut SendMouseEvents_HitInfo)self as*mut SendMouseEvents_HitInfo,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "unity_engine-sendmouseevents")]
-impl SendMouseEvents { pub fn set_mouse_moved_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SendMouseEvents as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn do_send_mouse_events_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SendMouseEvents as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn send_events_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SendMouseEvents as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SendMouseEvents as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-sendmouseevents")]impl SendMouseEvents_HitInfo{pub fn send_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-sendmouseevents")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SendMouseEvents_HitInfo;
     pub use super::SendMouseEvents;
     pub use super::ISendMouseEvents;
+    pub use super::SendMouseEvents_HitInfo;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

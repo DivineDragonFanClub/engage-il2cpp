@@ -4,40 +4,108 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cannoninspector/CannonInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "CannonInspector")] # [parent (crate :: app :: mapinspector :: MapInspector)] pub struct CannonInspector {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (48)] # [rename (name = "m_X")] pub m_x : i32 ,
-# [offset (52)] # [rename (name = "m_Z")] pub m_z : i32 ,
-# [offset (56)] # [rename (name = "m_MaxShells")] pub m_max_shells : i32 ,
-# [offset (64)] # [rename (name = "m_KeyShells")] pub m_key_shells : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cannoninspector/CannonInspector.md"))]#[::unity2::class(namespace="App",name="CannonInspector")]#[parent(crate::app::mapinspector::MapInspector)]pub struct CannonInspector{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(48)]#[rename(name="m_X")]pub m_x:i32, #[offset(52)]#[rename(name="m_Z")]pub m_z:i32, #[offset(56)]#[rename(name="m_MaxShells")]pub m_max_shells:i32, #[offset(64)]#[rename(name="m_KeyShells")]pub m_key_shells: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-cannoninspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cannoninspector")]
-pub trait ICannonInspectorMethods : ICannonInspector { # [doc = "`.ctor(i32, i32, i32)` overload"] fn ctor (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , max_shells : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bacf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (max_shells) , :: core :: option :: Option :: None) } } } # [doc = "`IsEanble()` overload"] fn is_eanble (self ,) -> bool { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bae70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Completed()` overload"] fn completed (self ,) -> () { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bafb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bafc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bafd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMaxShells()` overload"] fn get_max_shells (self ,) -> i32 { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bafe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetShells(i32)` overload"] fn set_shells (self , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25baff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`GetShells()` overload"] fn get_shells (self ,) -> i32 { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DecreaseShell()` overload"] fn decrease_shell (self ,) -> () { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCannonSkill(bool)` overload"] fn get_cannon_skill (self , is_force : impl :: core :: convert :: Into < bool >) -> crate :: app :: skilldata :: SkillData { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_force) , :: core :: option :: Option :: None) } } } # [doc = "`IsTerrainFlag(crate::app::terraindata_2::TerrainData_Flags)` overload"] fn is_terrain_flag (self , flags : impl :: core :: convert :: Into < crate :: app :: terraindata_2 :: TerrainData_Flags >) -> bool { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , crate :: app :: terraindata_2 :: TerrainData_Flags , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (flags) , :: core :: option :: Option :: None) } } } # [doc = "`IsBowCannon()` overload"] fn is_bow_cannon (self ,) -> bool { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsMagicCannon()` overload"] fn is_magic_cannon (self ,) -> bool { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsFireCannon()` overload"] fn is_fire_cannon (self ,) -> bool { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTerrain()` overload"] fn get_terrain (self ,) -> crate :: app :: terraindata_2 :: TerrainData_2 { unsafe { let __receiver = < CannonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CannonInspector , :: unity2 :: OptionalMethod ,) -> crate :: app :: terraindata_2 :: TerrainData_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bae90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cannoninspector")]pub trait ICannonInspectorMethods:ICannonInspector{#[doc="`.ctor(i32, i32, i32)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,max_shells:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bacf0usize)as*mut u8,();
+(CannonInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(max_shells))}
+}
+#[doc="`IsEanble()` overload"]fn is_eanble(self,)->bool{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bae70usize)as*mut u8,bool;
+(CannonInspector)__receiver)}
+}
+#[doc="`Completed()` overload"]fn completed(self,)->(){unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bafb0usize)as*mut u8,();
+(CannonInspector)__receiver)}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bafc0usize)as*mut u8,i32;
+(CannonInspector)__receiver)}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bafd0usize)as*mut u8,i32;
+(CannonInspector)__receiver)}
+}
+#[doc="`GetMaxShells()` overload"]fn get_max_shells(self,)->i32{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bafe0usize)as*mut u8,i32;
+(CannonInspector)__receiver)}
+}
+#[doc="`SetShells(i32)` overload"]fn set_shells(self,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25baff0usize)as*mut u8,();
+(CannonInspector)__receiver,(i32)::core::convert::Into::into(num))}
+}
+#[doc="`GetShells()` overload"]fn get_shells(self,)->i32{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb1c0usize)as*mut u8,i32;
+(CannonInspector)__receiver)}
+}
+#[doc="`DecreaseShell()` overload"]fn decrease_shell(self,)->(){unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb2a0usize)as*mut u8,();
+(CannonInspector)__receiver)}
+}
+#[doc="`GetCannonSkill(bool)` overload"]fn get_cannon_skill(self,is_force:impl::core::convert::Into<bool>)->crate::app::skilldata::SkillData{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb2e0usize)as*mut u8,crate::app::skilldata::SkillData;
+(CannonInspector)__receiver,(bool)::core::convert::Into::into(is_force))}
+}
+#[doc="`IsTerrainFlag(crate::app::terraindata_2::TerrainData_Flags)` overload"]fn is_terrain_flag(self,flags:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_Flags>)->bool{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb350usize)as*mut u8,bool;
+(CannonInspector)__receiver,(crate::app::terraindata_2::TerrainData_Flags)::core::convert::Into::into(flags))}
+}
+#[doc="`IsBowCannon()` overload"]fn is_bow_cannon(self,)->bool{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb3d0usize)as*mut u8,bool;
+(CannonInspector)__receiver)}
+}
+#[doc="`IsMagicCannon()` overload"]fn is_magic_cannon(self,)->bool{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb450usize)as*mut u8,bool;
+(CannonInspector)__receiver)}
+}
+#[doc="`IsFireCannon()` overload"]fn is_fire_cannon(self,)->bool{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb4d0usize)as*mut u8,bool;
+(CannonInspector)__receiver)}
+}
+#[doc="`GetTerrain()` overload"]fn get_terrain(self,)->crate::app::terraindata_2::TerrainData_2{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bae90usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
+(CannonInspector)__receiver)}
+}
+}
 
-#[cfg(feature = "app-cannoninspector")]
-impl < __T : ICannonInspector > ICannonInspectorMethods for __T { }
+#[cfg(feature="app-cannoninspector")]impl<__T:ICannonInspector>ICannonInspectorMethods for __T{}
 
-#[cfg(feature = "app-cannoninspector")]
-impl CannonInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_eanble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_max_shells_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_shells_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_shells_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn decrease_shell_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_cannon_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_terrain_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_bow_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_magic_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_fire_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CannonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-cannoninspector")]impl CannonInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_eanble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_max_shells_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_shells_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_shells_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn decrease_shell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_cannon_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_terrain_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_bow_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_magic_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_fire_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-cannoninspector")]
-impl CannonInspector {
-# [doc = "`.ctor(i32, i32, i32)` — overload selector"] pub fn new (x : i32 , z : i32 , max_shells : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CannonInspector) , :: core :: stringify ! (new) ,)) ; < Self as ICannonInspectorMethods > :: ctor (this , x , z , max_shells) ; this }
+#[cfg(feature="app-cannoninspector")]impl CannonInspector{#[doc="`.ctor(i32, i32, i32)` — overload selector"]pub fn new(x:i32,z:i32,max_shells:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CannonInspector), ::core::stringify!(new),));
+ <Self as ICannonInspectorMethods> ::ctor(this,x,z,max_shells);
+this}
 }
 
 #[cfg(feature = "app-cannoninspector")]

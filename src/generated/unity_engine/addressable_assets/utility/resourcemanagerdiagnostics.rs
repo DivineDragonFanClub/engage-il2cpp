@@ -4,33 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/resourcemanagerdiagnostics/ResourceManagerDiagnostics.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Utility" , name = "ResourceManagerDiagnostics")] # [parent (crate :: system :: object :: Object)] pub struct ResourceManagerDiagnostics {
-# [offset (16)] # [rename (name = "m_ResourceManager")] pub m_resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
-# [offset (24)] # [rename (name = "m_cachedDiagnosticInfo")] pub m_cached_diagnostic_info : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: addressable_assets :: utility :: diagnosticinfo :: DiagnosticInfo > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/utility/resourcemanagerdiagnostics/ResourceManagerDiagnostics.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Utility",name="ResourceManagerDiagnostics")]#[parent(crate::system::object::Object)]pub struct ResourceManagerDiagnostics{#[offset(16)]#[rename(name="m_ResourceManager")]pub m_resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager, #[offset(24)]#[rename(name="m_cachedDiagnosticInfo")]pub m_cached_diagnostic_info:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::unity_engine::addressable_assets::utility::diagnosticinfo::DiagnosticInfo> ,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
-pub trait IResourceManagerDiagnosticsMethods : IResourceManagerDiagnostics { # [doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"] fn ctor (self , resource_manager : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager >) -> () { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceManagerDiagnostics , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db7bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (resource_manager) , :: core :: option :: Option :: None) } } } # [doc = "`SumDependencyNameHashCodes(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"] fn sum_dependency_name_hash_codes (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> i32 { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceManagerDiagnostics , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbcb30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateHashCode(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"] fn calculate_hash_code (self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> i32 { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceManagerDiagnostics , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbcd20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`OnResourceManagerDiagnosticEvent(crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext)` overload"] fn on_resource_manager_diagnostic_event (self , event_context : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext >) -> () { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceManagerDiagnostics , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbce10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_context) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < ResourceManagerDiagnostics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceManagerDiagnostics , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db8dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]pub trait IResourceManagerDiagnosticsMethods:IResourceManagerDiagnostics{#[doc="`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]fn ctor(self,resource_manager:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>)->(){unsafe{let __receiver= <ResourceManagerDiagnostics as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db7bd0usize)as*mut u8,();
+(ResourceManagerDiagnostics)__receiver,(crate::unity_engine::resource_management::resourcemanager::ResourceManager)::core::convert::Into::into(resource_manager))}
+}
+#[doc="`SumDependencyNameHashCodes(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"]fn sum_dependency_name_hash_codes(self,handle:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)->i32{unsafe{let __receiver= <ResourceManagerDiagnostics as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbcb30usize)as*mut u8,i32;
+(ResourceManagerDiagnostics)__receiver,(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`CalculateHashCode(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"]fn calculate_hash_code(self,handle:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)->i32{unsafe{let __receiver= <ResourceManagerDiagnostics as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbcd20usize)as*mut u8,i32;
+(ResourceManagerDiagnostics)__receiver,(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`OnResourceManagerDiagnosticEvent(crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext)` overload"]fn on_resource_manager_diagnostic_event(self,event_context:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext>)->(){unsafe{let __receiver= <ResourceManagerDiagnostics as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbce10usize)as*mut u8,();
+(ResourceManagerDiagnostics)__receiver,(crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext)::core::convert::Into::into(event_context))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ResourceManagerDiagnostics as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db8dd0usize)as*mut u8,();
+(ResourceManagerDiagnostics)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
-impl < __T : IResourceManagerDiagnostics > IResourceManagerDiagnosticsMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]impl<__T:IResourceManagerDiagnostics>IResourceManagerDiagnosticsMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
-impl ResourceManagerDiagnostics { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn sum_dependency_name_hash_codes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calculate_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_resource_manager_diagnostic_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceManagerDiagnostics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]impl ResourceManagerDiagnostics{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn sum_dependency_name_hash_codes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_resource_manager_diagnostic_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
-impl ResourceManagerDiagnostics {
-# [doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"] pub fn new (resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourceManagerDiagnostics) , :: core :: stringify ! (new) ,)) ; < Self as IResourceManagerDiagnosticsMethods > :: ctor (this , resource_manager) ; this }
+#[cfg(feature="unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]impl ResourceManagerDiagnostics{#[doc="`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"]pub fn new(resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourceManagerDiagnostics), ::core::stringify!(new),));
+ <Self as IResourceManagerDiagnosticsMethods> ::ctor(this,resource_manager);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]

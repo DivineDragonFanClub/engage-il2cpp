@@ -4,35 +4,195 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkbase :: { FrameworkBase , IFrameworkBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::{FrameworkBase,IFrameworkBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/compatibility/frameworks/frameworkreflectionbase/FrameworkReflectionBase.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Compatibility.Frameworks" , name = "FrameworkReflectionBase")] # [parent (crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkbase :: FrameworkBase)] pub struct FrameworkReflectionBase {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/compatibility/frameworks/frameworkreflectionbase/FrameworkReflectionBase.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Compatibility.Frameworks",name="FrameworkReflectionBase")]#[parent(crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase)]pub struct FrameworkReflectionBase{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FrameworkReflectionBase_unity2_raw { use super :: * ; pub unsafe fn get_type_info_from_type (this : FrameworkReflectionBase , t : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetTypeInfoFromType") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetTypeInfoFromType" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , t , __mi) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_assembly { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "GetAssembly" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "GetAssembly" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_base_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "GetBaseType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "GetBaseType" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_value_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "IsValueType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "IsValueType" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_interface { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "IsInterface" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "IsInterface" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_nested_public { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "IsNestedPublic" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "IsNestedPublic" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_abstract { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "IsAbstract" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "IsAbstract" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_enum { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "IsEnum" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "IsEnum" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_generic_type_definition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "IsGenericTypeDefinition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "IsGenericTypeDefinition" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_generic_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , "IsGenericType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , "IsGenericType" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FrameworkReflectionBase_unity2_raw{use super:: * ;
+pub unsafe fn get_type_info_from_type(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetTypeInfoFromType").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetTypeInfoFromType", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_assembly{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"GetAssembly",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"GetAssembly",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_base_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"GetBaseType",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"GetBaseType",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_value_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"IsValueType",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsValueType",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_interface{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"IsInterface",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsInterface",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_nested_public{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"IsNestedPublic",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsNestedPublic",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_abstract{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"IsAbstract",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsAbstract",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_enum{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"IsEnum",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsEnum",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_generic_type_definition{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"IsGenericTypeDefinition",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsGenericTypeDefinition",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_generic_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),"IsGenericType",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsGenericType",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]
-pub trait IFrameworkReflectionBaseMethods : IFrameworkReflectionBase { # [doc = "`GetTypeInfoFromType(::unity2::SystemType)` overload"] fn get_type_info_from_type (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> :: unity2 :: SystemType { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FrameworkReflectionBase_unity2_raw :: get_type_info_from_type (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } # [doc = "`GetAssembly(::unity2::SystemType)` overload"] fn get_assembly (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: reflection :: assembly :: Assembly { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assembly :: Assembly = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_get_assembly :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`GetBaseType(::unity2::SystemType)` overload"] fn get_base_type (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> :: unity2 :: SystemType { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_get_base_type :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`IsValueType(::unity2::SystemType)` overload"] fn is_value_type (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_is_value_type :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`IsInterface(::unity2::SystemType)` overload"] fn is_interface (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_is_interface :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`IsNestedPublic(::unity2::SystemType)` overload"] fn is_nested_public (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_is_nested_public :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`IsAbstract(::unity2::SystemType)` overload"] fn is_abstract (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_is_abstract :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnum(::unity2::SystemType)` overload"] fn is_enum (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_is_enum :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`IsGenericTypeDefinition(::unity2::SystemType)` overload"] fn is_generic_type_definition (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_is_generic_type_definition :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`IsGenericType(::unity2::SystemType)` overload"] fn is_generic_type (self , t : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_is_generic_type :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FrameworkReflectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FrameworkReflectionBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__FrameworkReflectionBase_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]pub trait IFrameworkReflectionBaseMethods:IFrameworkReflectionBase{#[doc="`GetTypeInfoFromType(::unity2::SystemType)` overload"]fn get_type_info_from_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::SystemType{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__FrameworkReflectionBase_unity2_raw::get_type_info_from_type(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+}
+#[doc="`GetAssembly(::unity2::SystemType)` overload"]fn get_assembly(self,t:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::reflection::assembly::Assembly{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_get_assembly::get_method_info().method_ptr,crate::system::reflection::assembly::Assembly;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`GetBaseType(::unity2::SystemType)` overload"]fn get_base_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::SystemType{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_get_base_type::get_method_info().method_ptr, ::unity2::SystemType;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`IsValueType(::unity2::SystemType)` overload"]fn is_value_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_is_value_type::get_method_info().method_ptr,bool;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`IsInterface(::unity2::SystemType)` overload"]fn is_interface(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_is_interface::get_method_info().method_ptr,bool;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`IsNestedPublic(::unity2::SystemType)` overload"]fn is_nested_public(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_is_nested_public::get_method_info().method_ptr,bool;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`IsAbstract(::unity2::SystemType)` overload"]fn is_abstract(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_is_abstract::get_method_info().method_ptr,bool;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`IsEnum(::unity2::SystemType)` overload"]fn is_enum(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_is_enum::get_method_info().method_ptr,bool;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`IsGenericTypeDefinition(::unity2::SystemType)` overload"]fn is_generic_type_definition(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_is_generic_type_definition::get_method_info().method_ptr,bool;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`IsGenericType(::unity2::SystemType)` overload"]fn is_generic_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_is_generic_type::get_method_info().method_ptr,bool;
+(FrameworkReflectionBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(FrameworkReflectionBase)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]
-impl < __T : IFrameworkReflectionBase > IFrameworkReflectionBaseMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]impl<__T:IFrameworkReflectionBase>IFrameworkReflectionBaseMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]
-impl FrameworkReflectionBase { pub fn get_type_info_from_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_base_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_value_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_interface_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_nested_public_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_abstract_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_enum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_generic_type_definition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_generic_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameworkReflectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]impl FrameworkReflectionBase{pub fn get_type_info_from_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_base_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_value_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_interface_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_nested_public_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_abstract_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_enum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_generic_type_definition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_generic_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]
-impl FrameworkReflectionBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FrameworkReflectionBase) , :: core :: stringify ! (new) ,)) ; < Self as IFrameworkReflectionBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]impl FrameworkReflectionBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FrameworkReflectionBase), ::core::stringify!(new),));
+ <Self as IFrameworkReflectionBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]

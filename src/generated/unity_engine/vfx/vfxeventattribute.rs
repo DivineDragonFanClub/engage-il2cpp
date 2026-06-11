@@ -4,37 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxeventattribute/VFXEventAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VFXEventAttribute")] # [parent (crate :: system :: object :: Object)] pub struct VFXEventAttribute {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_Owner")] pub m_owner : bool ,
-# [offset (32)] # [rename (name = "m_VfxAsset")] pub m_vfx_asset : crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/vfxeventattribute/VFXEventAttribute.md"))]#[::unity2::class(namespace="UnityEngine.VFX",name="VFXEventAttribute")]#[parent(crate::system::object::Object)]pub struct VFXEventAttribute{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_Owner")]pub m_owner:bool, #[offset(32)]#[rename(name="m_VfxAsset")]pub m_vfx_asset:crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,}
 
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxeventattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
-impl VFXEventAttribute { # [doc = "`Internal_Create()` overload"] pub fn internal_create () -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f443b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Internal_InstanciateVFXEventAttribute(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"] pub fn internal_instanciate_vfx_event_attribute (vfx_asset : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset >) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f443f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vfx_asset) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_Destroy(::unity2::IntPtr)` overload"] pub fn internal_destroy (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f445c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-vfxeventattribute")]impl VFXEventAttribute{#[doc="`Internal_Create()` overload"]pub fn internal_create()-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f443b0usize)as*mut u8, ::unity2::IntPtr;
+)}
+}
+#[doc="`Internal_InstanciateVFXEventAttribute(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]pub fn internal_instanciate_vfx_event_attribute(vfx_asset:impl::core::convert::Into<crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset>)->crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f443f0usize)as*mut u8,crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute;
+(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)::core::convert::Into::into(vfx_asset))}
+}
+#[doc="`Internal_Destroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f445c0usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
-pub trait IVFXEventAttributeMethods : IVFXEventAttribute { # [doc = "`.ctor(::unity2::IntPtr, bool, crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"] fn ctor (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , owner : impl :: core :: convert :: Into < bool > , vfx_asset : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset >) -> () { unsafe { let __receiver = < VFXEventAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXEventAttribute , :: unity2 :: IntPtr , bool , crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: convert :: Into :: into (owner) , :: core :: convert :: Into :: into (vfx_asset) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_InitFromAsset(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"] fn internal_init_from_asset (self , vfx_asset : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset >) -> () { unsafe { let __receiver = < VFXEventAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXEventAttribute , crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f444d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vfx_asset) , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < VFXEventAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXEventAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < VFXEventAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXEventAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < VFXEventAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXEventAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-vfxeventattribute")]pub trait IVFXEventAttributeMethods:IVFXEventAttribute{#[doc="`.ctor(::unity2::IntPtr, bool, crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]fn ctor(self,ptr:impl::core::convert::Into< ::unity2::IntPtr> ,owner:impl::core::convert::Into<bool> ,vfx_asset:impl::core::convert::Into<crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset>)->(){unsafe{let __receiver= <VFXEventAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44360usize)as*mut u8,();
+(VFXEventAttribute)__receiver,(::unity2::IntPtr)::core::convert::Into::into(ptr),(bool)::core::convert::Into::into(owner),(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)::core::convert::Into::into(vfx_asset))}
+}
+#[doc="`Internal_InitFromAsset(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` overload"]fn internal_init_from_asset(self,vfx_asset:impl::core::convert::Into<crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset>)->(){unsafe{let __receiver= <VFXEventAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f444d0usize)as*mut u8,();
+(VFXEventAttribute)__receiver,(crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)::core::convert::Into::into(vfx_asset))}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <VFXEventAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44520usize)as*mut u8,();
+(VFXEventAttribute)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <VFXEventAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44610usize)as*mut u8,();
+(VFXEventAttribute)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <VFXEventAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44700usize)as*mut u8,();
+(VFXEventAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
-impl < __T : IVFXEventAttribute > IVFXEventAttributeMethods for __T { }
+#[cfg(feature="unity_engine-vfx-vfxeventattribute")]impl<__T:IVFXEventAttribute>IVFXEventAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
-impl VFXEventAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXEventAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn internal_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXEventAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn internal_instanciate_vfx_event_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXEventAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn internal_init_from_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXEventAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXEventAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXEventAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXEventAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn internal_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXEventAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-vfx-vfxeventattribute")]impl VFXEventAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn internal_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn internal_instanciate_vfx_event_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn internal_init_from_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn internal_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
-impl VFXEventAttribute {
-# [doc = "`.ctor(::unity2::IntPtr, bool, crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` — overload selector"] pub fn new (ptr : :: unity2 :: IntPtr , owner : bool , vfx_asset : crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VFXEventAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IVFXEventAttributeMethods > :: ctor (this , ptr , owner , vfx_asset) ; this }
+#[cfg(feature="unity_engine-vfx-vfxeventattribute")]impl VFXEventAttribute{#[doc="`.ctor(::unity2::IntPtr, bool, crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)` — overload selector"]pub fn new(ptr: ::unity2::IntPtr,owner:bool,vfx_asset:crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VFXEventAttribute), ::core::stringify!(new),));
+ <Self as IVFXEventAttributeMethods> ::ctor(this,ptr,owner,vfx_asset);
+this}
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxeventattribute")]

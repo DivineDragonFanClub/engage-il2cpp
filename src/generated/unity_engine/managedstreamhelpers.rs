@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/managedstreamhelpers/ManagedStreamHelpers.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ManagedStreamHelpers")] # [parent (crate :: system :: object :: Object)] pub struct ManagedStreamHelpers {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/managedstreamhelpers/ManagedStreamHelpers.md"))]#[::unity2::class(namespace="UnityEngine",name="ManagedStreamHelpers")]#[parent(crate::system::object::Object)]pub struct ManagedStreamHelpers{}
 
 }
 
 #[cfg(feature = "unity_engine-managedstreamhelpers-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-managedstreamhelpers")]
-impl ManagedStreamHelpers { # [doc = "`ValidateLoadFromStream(crate::system::io::stream::Stream)` overload"] pub fn validate_load_from_stream (stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32d8a40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`ManagedStreamRead(::unity2::Array<u8>, i32, i32, crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"] pub fn managed_stream_read (buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 > , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , i32 , crate :: system :: io :: stream :: Stream , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32d8b50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } } # [doc = "`ManagedStreamSeek(i64, u32, crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"] pub fn managed_stream_seek (offset : impl :: core :: convert :: Into < i64 > , origin : impl :: core :: convert :: Into < u32 > , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (i64 , u32 , crate :: system :: io :: stream :: Stream , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32d8c60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (origin) , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } } # [doc = "`ManagedStreamLength(crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"] pub fn managed_stream_length (stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: io :: stream :: Stream , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32d8d60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-managedstreamhelpers")]impl ManagedStreamHelpers{#[doc="`ValidateLoadFromStream(crate::system::io::stream::Stream)` overload"]pub fn validate_load_from_stream(stream:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32d8a40usize)as*mut u8,();
+(crate::system::io::stream::Stream)::core::convert::Into::into(stream))}
+}
+#[doc="`ManagedStreamRead(::unity2::Array<u8>, i32, i32, crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"]pub fn managed_stream_read(buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32> ,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,return_value_address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32d8b50usize)as*mut u8,();
+(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count),(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(::unity2::IntPtr)::core::convert::Into::into(return_value_address))}
+}
+#[doc="`ManagedStreamSeek(i64, u32, crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"]pub fn managed_stream_seek(offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<u32> ,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,return_value_address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32d8c60usize)as*mut u8,();
+(i64)::core::convert::Into::into(offset),(u32)::core::convert::Into::into(origin),(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(::unity2::IntPtr)::core::convert::Into::into(return_value_address))}
+}
+#[doc="`ManagedStreamLength(crate::system::io::stream::Stream, ::unity2::IntPtr)` overload"]pub fn managed_stream_length(stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,return_value_address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32d8d60usize)as*mut u8,();
+(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(::unity2::IntPtr)::core::convert::Into::into(return_value_address))}
+}
+}
 
-#[cfg(feature = "unity_engine-managedstreamhelpers")]
-impl ManagedStreamHelpers { pub fn validate_load_from_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn managed_stream_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn managed_stream_seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn managed_stream_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ManagedStreamHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-managedstreamhelpers")]impl ManagedStreamHelpers{pub fn validate_load_from_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn managed_stream_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn managed_stream_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn managed_stream_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-managedstreamhelpers")]
 #[doc(hidden)]

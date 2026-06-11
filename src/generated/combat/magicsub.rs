@@ -4,49 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsub/MagicSub.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "MagicSub")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MagicSub {
-# [offset (24)] # [rename (name = "BulletSettings")] pub bullet_settings : crate :: combat :: magicbulletsettings :: MagicBulletSettings ,
-# [offset (32)] # [rename (name = "Trackヒット時処理")] pub trackヒット時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (40)] # [rename (name = "Trackミス時処理")] pub trackミス時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (48)] # [rename (name = "Trackガード時処理")] pub trackガード時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (56)] # [rename (name = "Trackパリィ時処理")] pub trackパリィ時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (64)] # [rename (name = "Track衝突時処理")] pub track衝突時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (72)] # [rename (name = "Track自然消滅処理")] pub track自然消滅処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/magicsub/MagicSub.md"))]#[::unity2::class(namespace="Combat",name="MagicSub")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MagicSub{#[offset(24)]#[rename(name="BulletSettings")]pub bullet_settings:crate::combat::magicbulletsettings::MagicBulletSettings, #[offset(32)]#[rename(name="Trackヒット時処理")]pub trackヒット時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(40)]#[rename(name="Trackミス時処理")]pub trackミス時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(48)]#[rename(name="Trackガード時処理")]pub trackガード時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(56)]#[rename(name="Trackパリィ時処理")]pub trackパリィ時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(64)]#[rename(name="Track衝突時処理")]pub track衝突時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(72)]#[rename(name="Track自然消滅処理")]pub track自然消滅処理:crate::combat::magicsignaltrack::MagicSignalTrack,}
 
 }
 
 #[cfg(feature = "combat-magicsub-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-magicsub")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MagicSub_unity2_raw { use super :: * ; pub unsafe fn setup (this : MagicSub , chr : crate :: combat :: character :: Character , initial_start_pos : * mut crate :: unity_engine :: vector3 :: Vector3 , initial_end_pos : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Setup") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Setup" , < MagicSub as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (MagicSub , crate :: combat :: character :: Character , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , chr , initial_start_pos , initial_end_pos , __mi) } }
+#[cfg(feature="combat-magicsub")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MagicSub_unity2_raw{use super:: * ;
+pub unsafe fn setup(this:MagicSub,chr:crate::combat::character::Character,initial_start_pos: *mut crate::unity_engine::vector3::Vector3,initial_end_pos: *mut crate::unity_engine::vector3::Vector3,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Setup").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Setup", <MagicSub as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(MagicSub,crate::combat::character::Character, *mut crate::unity_engine::vector3::Vector3, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,chr,initial_start_pos,initial_end_pos,__mi)}
+}
 
-#[cfg(feature = "combat-magicsub")]
-pub trait IMagicSubMethods : IMagicSub { # [doc = "`Track(i32)` overload"] fn track (self , i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack { unsafe { let __receiver = < MagicSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSub , i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] fn setup (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < MagicSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __MagicSub_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (chr) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`ManualUpdate()` overload"] fn manual_update (self ,) -> () { unsafe { let __receiver = < MagicSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MagicSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-magicsub")]pub trait IMagicSubMethods:IMagicSub{#[doc="`Track(i32)` overload"]fn track(self,i:impl::core::convert::Into<i32>)->crate::combat::magicsignaltrack::MagicSignalTrack{unsafe{let __receiver= <MagicSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5c10usize)as*mut u8,crate::combat::magicsignaltrack::MagicSignalTrack;
+(MagicSub)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]fn setup(self,chr:impl::core::convert::Into<crate::combat::character::Character>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let __receiver= <MagicSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+__MagicSub_unity2_raw::setup(__receiver, ::core::convert::Into::into(chr),__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`ManualUpdate()` overload"]fn manual_update(self,)->(){unsafe{let __receiver= <MagicSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5c90usize)as*mut u8,();
+(MagicSub)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MagicSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5ca0usize)as*mut u8,();
+(MagicSub)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-magicsub")]
-impl < __T : IMagicSub > IMagicSubMethods for __T { }
+#[cfg(feature="combat-magicsub")]impl<__T:IMagicSub>IMagicSubMethods for __T{}
 
-#[cfg(feature = "combat-magicsub")]
-impl MagicSub { pub fn track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn manual_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-magicsub")]impl MagicSub{pub fn track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn manual_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-magicsub")]
-impl MagicSub {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MagicSub) , :: core :: stringify ! (new) ,)) ; < Self as IMagicSubMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-magicsub")]impl MagicSub{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MagicSub), ::core::stringify!(new),));
+ <Self as IMagicSubMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-magicsub")]

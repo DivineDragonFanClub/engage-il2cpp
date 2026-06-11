@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/lod/LOD.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LOD {
-    pub screen_relative_transition_height: f32,
-    pub fade_transition_width: f32,
-    pub renderers: :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer >,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/lod/LOD.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LOD{pub screen_relative_transition_height:f32,pub fade_transition_width:f32,pub renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,}
+impl::unity2::ClassIdentity for LOD{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="LOD";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for LOD {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "LOD";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LOD {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LOD{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,13 @@ impl ::unity2::IlType for LOD {
 #[cfg(feature = "unity_engine-lod-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-lod")]
-impl LOD { # [doc = "`.ctor(f32, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"] pub fn ctor (& mut self , screen_relative_transition_height : impl :: core :: convert :: Into < f32 > , renderers : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > >) -> () { unsafe { { let __inner : extern "C" fn (* mut LOD , f32 , :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52850usize) as * mut u8) ; __inner (self as * mut LOD , :: core :: convert :: Into :: into (screen_relative_transition_height) , :: core :: convert :: Into :: into (renderers) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-lod")]impl LOD{#[doc="`.ctor(f32, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]pub fn ctor(&mut self,screen_relative_transition_height:impl::core::convert::Into<f32> ,renderers:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::renderer::Renderer> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52850usize)as*mut u8,();
+(*mut LOD)self as*mut LOD,(f32)::core::convert::Into::into(screen_relative_transition_height),(::unity2::Array<crate::unity_engine::renderer::Renderer>)::core::convert::Into::into(renderers))}
+}
+}
 
-#[cfg(feature = "unity_engine-lod")]
-impl LOD { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LOD as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-lod")]impl LOD{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-lod")]
 #[doc(hidden)]

@@ -4,39 +4,142 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemevolvedata/ItemEvolveData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemEvolveData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: itemevolvedata :: ItemEvolveData >)] pub struct ItemEvolveData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemevolvedata/ItemEvolveData.md"))]#[::unity2::class(namespace="App",name="ItemEvolveData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::itemevolvedata::ItemEvolveData>)]pub struct ItemEvolveData{}
 
 }
 
 #[cfg(feature = "app-itemevolvedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-itemevolvedata")]
-impl ItemEvolveData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203da60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetFromIid(::unity2::Il2CppString)` overload"] pub fn try_get_from_iid (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemevolvedata :: ItemEvolveData > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemevolvedata :: ItemEvolveData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203db10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetFromItem(crate::app::itemdata::ItemData)` overload"] pub fn try_get_from_item (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemevolvedata :: ItemEvolveData > { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemevolvedata :: ItemEvolveData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203dc80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Iid2Eid(::unity2::Il2CppString)` overload"] pub fn iid2_eid (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203dc00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203dfd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemevolvedata")]impl ItemEvolveData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x203da60usize)as*mut u8,();
+)}
+}
+#[doc="`TryGetFromIid(::unity2::Il2CppString)` overload"]pub fn try_get_from_iid(iid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::collections::generic::list_1::List_1<crate::app::itemevolvedata::ItemEvolveData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x203db10usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemevolvedata::ItemEvolveData> ;
+(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`TryGetFromItem(crate::app::itemdata::ItemData)` overload"]pub fn try_get_from_item(item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->crate::system::collections::generic::list_1::List_1<crate::app::itemevolvedata::ItemEvolveData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x203dc80usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemevolvedata::ItemEvolveData> ;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`Iid2Eid(::unity2::Il2CppString)` overload"]pub fn iid2_eid(iid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x203dc00usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`RegistGlobalFlags()` overload"]pub fn regist_global_flags()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x203dfd0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-itemevolvedata")]
-pub trait IItemEvolveDataMethods : IItemEvolveData { # [doc = "`get_Iid()` overload"] fn get_iid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203dd90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iid(::unity2::Il2CppString)` overload"] fn set_iid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203dda0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Iron()` overload"] fn get_iron (self ,) -> u16 { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203ddb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iron(u16)` overload"] fn set_iron (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203ddc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Steel()` overload"] fn get_steel (self ,) -> u16 { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203ddd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Steel(u16)` overload"] fn set_steel (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203dde0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Silver()` overload"] fn get_silver (self ,) -> u16 { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203ddf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Silver(u16)` overload"] fn set_silver (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203de00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Price()` overload"] fn get_price (self ,) -> u16 { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203de10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Price(u16)` overload"] fn set_price (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203de20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RefineLevel()` overload"] fn get_refine_level (self ,) -> u8 { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203de30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RefineLevel(u8)` overload"] fn set_refine_level (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203de40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203de50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFlagName()` overload"] fn get_flag_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203dee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOnceEvolved()` overload"] fn is_once_evolved (self ,) -> bool { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203e1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetEvolved(bool)` overload"] fn set_evolved (self , evolved : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203e2a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evolved) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemEvolveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemEvolveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203e5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemevolvedata")]pub trait IItemEvolveDataMethods:IItemEvolveData{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203dd90usize)as*mut u8, ::unity2::Il2CppString;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203dda0usize)as*mut u8,();
+(ItemEvolveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Iron()` overload"]fn get_iron(self,)->u16{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203ddb0usize)as*mut u8,u16;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`set_Iron(u16)` overload"]fn set_iron(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203ddc0usize)as*mut u8,();
+(ItemEvolveData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Steel()` overload"]fn get_steel(self,)->u16{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203ddd0usize)as*mut u8,u16;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`set_Steel(u16)` overload"]fn set_steel(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203dde0usize)as*mut u8,();
+(ItemEvolveData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Silver()` overload"]fn get_silver(self,)->u16{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203ddf0usize)as*mut u8,u16;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`set_Silver(u16)` overload"]fn set_silver(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203de00usize)as*mut u8,();
+(ItemEvolveData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Price()` overload"]fn get_price(self,)->u16{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203de10usize)as*mut u8,u16;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`set_Price(u16)` overload"]fn set_price(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203de20usize)as*mut u8,();
+(ItemEvolveData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_RefineLevel()` overload"]fn get_refine_level(self,)->u8{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203de30usize)as*mut u8,u8;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`set_RefineLevel(u8)` overload"]fn set_refine_level(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203de40usize)as*mut u8,();
+(ItemEvolveData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203de50usize)as*mut u8, ::unity2::Il2CppString;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`GetFlagName()` overload"]fn get_flag_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203dee0usize)as*mut u8, ::unity2::Il2CppString;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`IsOnceEvolved()` overload"]fn is_once_evolved(self,)->bool{unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203e1b0usize)as*mut u8,bool;
+(ItemEvolveData)__receiver)}
+}
+#[doc="`SetEvolved(bool)` overload"]fn set_evolved(self,evolved:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203e2a0usize)as*mut u8,();
+(ItemEvolveData)__receiver,(bool)::core::convert::Into::into(evolved))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemEvolveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203e5b0usize)as*mut u8,();
+(ItemEvolveData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-itemevolvedata")]
-impl < __T : IItemEvolveData > IItemEvolveDataMethods for __T { }
+#[cfg(feature="app-itemevolvedata")]impl<__T:IItemEvolveData>IItemEvolveDataMethods for __T{}
 
-#[cfg(feature = "app-itemevolvedata")]
-impl ItemEvolveData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn try_get_from_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_get_from_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn iid2_eid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_price_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_price_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_refine_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_refine_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_flag_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_once_evolved_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_evolved_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemEvolveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-itemevolvedata")]impl ItemEvolveData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_get_from_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_get_from_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn iid2_eid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_price_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_price_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_refine_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_refine_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_flag_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn regist_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_once_evolved_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_evolved_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-itemevolvedata")]
-impl ItemEvolveData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemEvolveData) , :: core :: stringify ! (new) ,)) ; < Self as IItemEvolveDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-itemevolvedata")]impl ItemEvolveData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemEvolveData), ::core::stringify!(new),));
+ <Self as IItemEvolveDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-itemevolvedata")]

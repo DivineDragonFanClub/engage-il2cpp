@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/classlibraryinitializer/ClassLibraryInitializer.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ClassLibraryInitializer")] # [parent (crate :: system :: object :: Object)] pub struct ClassLibraryInitializer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/classlibraryinitializer/ClassLibraryInitializer.md"))]#[::unity2::class(namespace="UnityEngine",name="ClassLibraryInitializer")]#[parent(crate::system::object::Object)]pub struct ClassLibraryInitializer{}
 
 }
 
 #[cfg(feature = "unity_engine-classlibraryinitializer-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-classlibraryinitializer")]
-impl ClassLibraryInitializer { # [doc = "`Init()` overload"] pub fn init () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c40b40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-classlibraryinitializer")]impl ClassLibraryInitializer{#[doc="`Init()` overload"]pub fn init()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40b40usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-classlibraryinitializer")]
-impl ClassLibraryInitializer { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassLibraryInitializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-classlibraryinitializer")]impl ClassLibraryInitializer{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-classlibraryinitializer")]
 #[doc(hidden)]

@@ -4,105 +4,151 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitenhancevalues/UnitEnhanceValues.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitEnhanceValues")] # [parent (crate :: system :: object :: Object)] pub struct UnitEnhanceValues {
-# [static_field] # [rename (name = "Num")] pub num : i32 ,
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_Values")] pub m_values : :: unity2 :: Array < i32 > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitenhancevalues/UnitEnhanceValues_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitEnhanceValues_Type{pub value:i32,}
+impl::unity2::ClassIdentity for UnitEnhanceValues_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitEnhanceValues.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitEnhanceValues_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitEnhanceValues_Type{pub fn capability_begin()->Self{Self{value:0}
+}
+pub fn capability_end()->Self{Self{value:11}
+}
+pub fn num()->Self{Self{value:11}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenhancevalues/UnitEnhanceValues_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitEnhanceValues_Type  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitEnhanceValues_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitEnhanceValues.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitEnhanceValues_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitEnhanceValues_Type  {
-    pub fn capability_begin() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn capability_end() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 11 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitenhancevalues/UnitEnhanceValues.md"))]#[::unity2::class(namespace="App",name="UnitEnhanceValues")]#[parent(crate::system::object::Object)]pub struct UnitEnhanceValues{#[static_field]#[rename(name="Num")]pub num:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Values")]pub m_values: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "app-unitenhancevalues-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitenhancevalues")]
-impl UnitEnhanceValues { # [doc = "`GetNameForDebug(i32)` overload"] pub fn get_name_for_debug (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7c8b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitenhancevalues")]impl UnitEnhanceValues{#[doc="`GetNameForDebug(i32)` overload"]pub fn get_name_for_debug(index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f7c8b0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(index))}
+}
+}
 
-#[cfg(feature = "app-unitenhancevalues")]
-pub trait IUnitEnhanceValuesMethods : IUnitEnhanceValues { # [doc = "`IsZero()` overload"] fn is_zero (self ,) -> bool { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7b010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Set(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"] fn set (self , values : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: unitenhancevalues :: UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7b090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::unitenhancevalues::UnitEnhanceValues, bool)` overload"] fn add (self , values : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: unitenhancevalues :: UnitEnhanceValues , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7b270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (values) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } } # [doc = "`Sub(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"] fn sub (self , values : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: unitenhancevalues :: UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7b760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`Merge(crate::app::unitenhancevalues::UnitEnhanceValues, bool)` overload"] fn merge (self , values : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: unitenhancevalues :: UnitEnhanceValues , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7b9a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (values) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } } # [doc = "`Set(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn set_2 (self , capability : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7bb20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capability) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::capabilitysbyte::CapabilitySbyte, bool)` overload"] fn add_2 (self , capability : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitysbyte :: CapabilitySbyte , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7bd40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capability) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } } # [doc = "`Merge(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn merge_2 (self , capability : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7c260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capability) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::capabilitysbyte::CapabilitySbyte, i32, bool)` overload"] fn add_3 (self , capability : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte > , decay : impl :: core :: convert :: Into < i32 > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitysbyte :: CapabilitySbyte , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7c340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capability) , :: core :: convert :: Into :: into (decay) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, bool)` overload"] fn add_4 (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , value : impl :: core :: convert :: Into < i32 > , is_not_enhance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7c4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (is_not_enhance) , :: core :: option :: Option :: None) } } } # [doc = "`Clear(i32)` overload"] fn clear (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7c530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Clamp(i32, i32)` overload"] fn clamp (self , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7c630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f79410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f797a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f781b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(i32, i32)` overload"] fn set_item (self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f7a6d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitEnhanceValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f74ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitenhancevalues")]pub trait IUnitEnhanceValuesMethods:IUnitEnhanceValues{#[doc="`IsZero()` overload"]fn is_zero(self,)->bool{unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7b010usize)as*mut u8,bool;
+(UnitEnhanceValues)__receiver)}
+}
+#[doc="`Set(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]fn set(self,values:impl::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7b090usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::unitenhancevalues::UnitEnhanceValues)::core::convert::Into::into(values))}
+}
+#[doc="`Add(crate::app::unitenhancevalues::UnitEnhanceValues, bool)` overload"]fn add(self,values:impl::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues> ,is_not_enhance:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7b270usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::unitenhancevalues::UnitEnhanceValues)::core::convert::Into::into(values),(bool)::core::convert::Into::into(is_not_enhance))}
+}
+#[doc="`Sub(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]fn sub(self,values:impl::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7b760usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::unitenhancevalues::UnitEnhanceValues)::core::convert::Into::into(values))}
+}
+#[doc="`Merge(crate::app::unitenhancevalues::UnitEnhanceValues, bool)` overload"]fn merge(self,values:impl::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues> ,is_not_enhance:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7b9a0usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::unitenhancevalues::UnitEnhanceValues)::core::convert::Into::into(values),(bool)::core::convert::Into::into(is_not_enhance))}
+}
+#[doc="`Set(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]fn set_2(self,capability:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7bb20usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(capability))}
+}
+#[doc="`Add(crate::app::capabilitysbyte::CapabilitySbyte, bool)` overload"]fn add_2(self,capability:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte> ,is_not_enhance:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7bd40usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(capability),(bool)::core::convert::Into::into(is_not_enhance))}
+}
+#[doc="`Merge(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]fn merge_2(self,capability:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7c260usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(capability))}
+}
+#[doc="`Add(crate::app::capabilitysbyte::CapabilitySbyte, i32, bool)` overload"]fn add_3(self,capability:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte> ,decay:impl::core::convert::Into<i32> ,is_not_enhance:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7c340usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(capability),(i32)::core::convert::Into::into(decay),(bool)::core::convert::Into::into(is_not_enhance))}
+}
+#[doc="`Add(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, bool)` overload"]fn add_4(self,r#type:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type> ,value:impl::core::convert::Into<i32> ,is_not_enhance:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7c4c0usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(value),(bool)::core::convert::Into::into(is_not_enhance))}
+}
+#[doc="`Clear(i32)` overload"]fn clear(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7c530usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Clamp(i32, i32)` overload"]fn clamp(self,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7c630usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f79410usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f797a0usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f781b0usize)as*mut u8,i32;
+(UnitEnhanceValues)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`set_Item(i32, i32)` overload"]fn set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7a6d0usize)as*mut u8,();
+(UnitEnhanceValues)__receiver,(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitEnhanceValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f74ad0usize)as*mut u8,();
+(UnitEnhanceValues)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitenhancevalues")]
-impl < __T : IUnitEnhanceValues > IUnitEnhanceValuesMethods for __T { }
+#[cfg(feature="app-unitenhancevalues")]impl<__T:IUnitEnhanceValues>IUnitEnhanceValuesMethods for __T{}
 
-#[cfg(feature = "app-unitenhancevalues")]
-impl UnitEnhanceValues { pub fn is_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn merge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn merge_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn clamp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_name_for_debug_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitEnhanceValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="app-unitenhancevalues")]impl UnitEnhanceValues{pub fn is_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn merge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn merge_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn clamp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_name_for_debug_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-unitenhancevalues")]
-impl UnitEnhanceValues {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitEnhanceValues) , :: core :: stringify ! (new) ,)) ; < Self as IUnitEnhanceValuesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitenhancevalues")]impl UnitEnhanceValues{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitEnhanceValues), ::core::stringify!(new),));
+ <Self as IUnitEnhanceValuesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitenhancevalues")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitEnhanceValues_Type;
     pub use super::UnitEnhanceValues;
     pub use super::IUnitEnhanceValues;
     pub use super::IUnitEnhanceValuesMethods;
-    pub use super::UnitEnhanceValues_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

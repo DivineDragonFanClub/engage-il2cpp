@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/keyvaluepair/KeyValuePair.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "KeyValuePair")] # [parent (crate :: system :: object :: Object)] pub struct KeyValuePair {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/keyvaluepair/KeyValuePair.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="KeyValuePair")]#[parent(crate::system::object::Object)]pub struct KeyValuePair{}
 
 }
 
 #[cfg(feature = "system-collections-generic-keyvaluepair-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-keyvaluepair")]
-impl KeyValuePair { # [doc = "`PairToString(crate::system::object::Object, crate::system::object::Object)` overload"] pub fn pair_to_string (key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x326bf40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-keyvaluepair")]impl KeyValuePair{#[doc="`PairToString(crate::system::object::Object, crate::system::object::Object)` overload"]pub fn pair_to_string(key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x326bf40usize)as*mut u8, ::unity2::Il2CppString;
+(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-collections-generic-keyvaluepair")]
-impl KeyValuePair { pub fn pair_to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyValuePair as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-collections-generic-keyvaluepair")]impl KeyValuePair{pub fn pair_to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "system-collections-generic-keyvaluepair")]
 #[doc(hidden)]

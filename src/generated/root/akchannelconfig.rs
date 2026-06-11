@@ -4,40 +4,160 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akchannelconfig/AkChannelConfig.md"))] # [:: unity2 :: class (namespace = "" , name = "AkChannelConfig")] # [parent (crate :: system :: object :: Object)] pub struct AkChannelConfig {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akchannelconfig/AkChannelConfig.md"))]#[::unity2::class(namespace="",name="AkChannelConfig")]#[parent(crate::system::object::Object)]pub struct AkChannelConfig{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akchannelconfig-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akchannelconfig")]
-impl AkChannelConfig { # [doc = "`getCPtr(crate::root::akchannelconfig::AkChannelConfig)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akchannelconfig :: AkChannelConfig >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akchannelconfig :: AkChannelConfig , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0ffc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akchannelconfig")]impl AkChannelConfig{#[doc="`getCPtr(crate::root::akchannelconfig::AkChannelConfig)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akchannelconfig::AkChannelConfig>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f0ffc0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akchannelconfig::AkChannelConfig)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akchannelconfig")]
-pub trait IAkChannelConfigMethods : IAkChannelConfig { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0ff80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f100c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uNumChannels(u32)` overload"] fn set_u_num_channels (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uNumChannels()` overload"] fn get_u_num_channels (self ,) -> u32 { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f102d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_eConfigType(u32)` overload"] fn set_e_config_type (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_eConfigType()` overload"] fn get_e_config_type (self ,) -> u32 { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f103c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uChannelMask(u32)` overload"] fn set_u_channel_mask (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uChannelMask()` overload"] fn get_u_channel_mask (self ,) -> u32 { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f104b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, u32)` overload"] fn ctor_3 (self , in_u_num_channels : impl :: core :: convert :: Into < u32 > , in_u_channel_mask : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f105b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_u_num_channels) , :: core :: convert :: Into :: into (in_u_channel_mask) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetStandard(u32)` overload"] fn set_standard (self , in_u_channel_mask : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f106c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_u_channel_mask) , :: core :: option :: Option :: None) } } } # [doc = "`SetStandardOrAnonymous(u32, u32)` overload"] fn set_standard_or_anonymous (self , in_u_num_channels : impl :: core :: convert :: Into < u32 > , in_u_channel_mask : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_u_num_channels) , :: core :: convert :: Into :: into (in_u_channel_mask) , :: core :: option :: Option :: None) } } } # [doc = "`SetAnonymous(u32)` overload"] fn set_anonymous (self , in_u_num_channels : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f107d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_u_num_channels) , :: core :: option :: Option :: None) } } } # [doc = "`SetAmbisonic(u32)` overload"] fn set_ambisonic (self , in_u_num_channels : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_u_num_channels) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f108d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> u32 { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(u32)` overload"] fn deserialize (self , in_u_channel_config : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f109b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_u_channel_config) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveLFE()` overload"] fn remove_lfe (self ,) -> crate :: root :: akchannelconfig :: AkChannelConfig { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> crate :: root :: akchannelconfig :: AkChannelConfig = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RemoveCenter()` overload"] fn remove_center (self ,) -> crate :: root :: akchannelconfig :: AkChannelConfig { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> crate :: root :: akchannelconfig :: AkChannelConfig = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsChannelConfigSupported()` overload"] fn is_channel_config_supported (self ,) -> bool { unsafe { let __receiver = < AkChannelConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkChannelConfig , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f10b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akchannelconfig")]pub trait IAkChannelConfigMethods:IAkChannelConfig{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f0ff80usize)as*mut u8,();
+(AkChannelConfig)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10020usize)as*mut u8,();
+(AkChannelConfig)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10050usize)as*mut u8,();
+(AkChannelConfig)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f100c0usize)as*mut u8,();
+(AkChannelConfig)__receiver)}
+}
+#[doc="`set_uNumChannels(u32)` overload"]fn set_u_num_channels(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10250usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uNumChannels()` overload"]fn get_u_num_channels(self,)->u32{unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f102d0usize)as*mut u8,u32;
+(AkChannelConfig)__receiver)}
+}
+#[doc="`set_eConfigType(u32)` overload"]fn set_e_config_type(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10340usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_eConfigType()` overload"]fn get_e_config_type(self,)->u32{unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f103c0usize)as*mut u8,u32;
+(AkChannelConfig)__receiver)}
+}
+#[doc="`set_uChannelMask(u32)` overload"]fn set_u_channel_mask(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10430usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uChannelMask()` overload"]fn get_u_channel_mask(self,)->u32{unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f104b0usize)as*mut u8,u32;
+(AkChannelConfig)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10520usize)as*mut u8,();
+(AkChannelConfig)__receiver)}
+}
+#[doc="`.ctor(u32, u32)` overload"]fn ctor_3(self,in_u_num_channels:impl::core::convert::Into<u32> ,in_u_channel_mask:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f105b0usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(in_u_num_channels),(u32)::core::convert::Into::into(in_u_channel_mask))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10650usize)as*mut u8,();
+(AkChannelConfig)__receiver)}
+}
+#[doc="`SetStandard(u32)` overload"]fn set_standard(self,in_u_channel_mask:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f106c0usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(in_u_channel_mask))}
+}
+#[doc="`SetStandardOrAnonymous(u32, u32)` overload"]fn set_standard_or_anonymous(self,in_u_num_channels:impl::core::convert::Into<u32> ,in_u_channel_mask:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10740usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(in_u_num_channels),(u32)::core::convert::Into::into(in_u_channel_mask))}
+}
+#[doc="`SetAnonymous(u32)` overload"]fn set_anonymous(self,in_u_num_channels:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f107d0usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(in_u_num_channels))}
+}
+#[doc="`SetAmbisonic(u32)` overload"]fn set_ambisonic(self,in_u_num_channels:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10850usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(in_u_num_channels))}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f108d0usize)as*mut u8,bool;
+(AkChannelConfig)__receiver)}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->u32{unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10940usize)as*mut u8,u32;
+(AkChannelConfig)__receiver)}
+}
+#[doc="`Deserialize(u32)` overload"]fn deserialize(self,in_u_channel_config:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f109b0usize)as*mut u8,();
+(AkChannelConfig)__receiver,(u32)::core::convert::Into::into(in_u_channel_config))}
+}
+#[doc="`RemoveLFE()` overload"]fn remove_lfe(self,)->crate::root::akchannelconfig::AkChannelConfig{unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10a30usize)as*mut u8,crate::root::akchannelconfig::AkChannelConfig;
+(AkChannelConfig)__receiver)}
+}
+#[doc="`RemoveCenter()` overload"]fn remove_center(self,)->crate::root::akchannelconfig::AkChannelConfig{unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10ae0usize)as*mut u8,crate::root::akchannelconfig::AkChannelConfig;
+(AkChannelConfig)__receiver)}
+}
+#[doc="`IsChannelConfigSupported()` overload"]fn is_channel_config_supported(self,)->bool{unsafe{let __receiver= <AkChannelConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f10b90usize)as*mut u8,bool;
+(AkChannelConfig)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akchannelconfig")]
-impl < __T : IAkChannelConfig > IAkChannelConfigMethods for __T { }
+#[cfg(feature="root-akchannelconfig")]impl<__T:IAkChannelConfig>IAkChannelConfigMethods for __T{}
 
-#[cfg(feature = "root-akchannelconfig")]
-impl AkChannelConfig { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_u_num_channels_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_u_num_channels_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_e_config_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_e_config_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_u_channel_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_u_channel_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_standard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_standard_or_anonymous_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_anonymous_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_ambisonic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn remove_lfe_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn remove_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_channel_config_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkChannelConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="root-akchannelconfig")]impl AkChannelConfig{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_u_num_channels_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_u_num_channels_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_e_config_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_e_config_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_u_channel_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_u_channel_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_standard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_standard_or_anonymous_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_anonymous_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_ambisonic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn remove_lfe_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn remove_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_channel_config_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "root-akchannelconfig")]
-impl AkChannelConfig {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkChannelConfig) , :: core :: stringify ! (new) ,)) ; < Self as IAkChannelConfigMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkChannelConfig) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkChannelConfigMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(u32, u32)` — overload selector"] pub fn new_3 (in_u_num_channels : u32 , in_u_channel_mask : u32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkChannelConfig) , :: core :: stringify ! (new_3) ,)) ; < Self as IAkChannelConfigMethods > :: ctor_3 (this , in_u_num_channels , in_u_channel_mask) ; this }
+#[cfg(feature="root-akchannelconfig")]impl AkChannelConfig{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkChannelConfig), ::core::stringify!(new),));
+ <Self as IAkChannelConfigMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkChannelConfig), ::core::stringify!(new_2),));
+ <Self as IAkChannelConfigMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(u32, u32)` — overload selector"]pub fn new_3(in_u_num_channels:u32,in_u_channel_mask:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkChannelConfig), ::core::stringify!(new_3),));
+ <Self as IAkChannelConfigMethods> ::ctor_3(this,in_u_num_channels,in_u_channel_mask);
+this}
 }
 
 #[cfg(feature = "root-akchannelconfig")]

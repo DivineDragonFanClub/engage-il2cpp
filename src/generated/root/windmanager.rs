@@ -4,47 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windmanager/WindManager.md"))] # [:: unity2 :: class (namespace = "" , name = "WindManager")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: windmanager :: WindManager >)] pub struct WindManager {
-# [offset (32)] # [rename (name = "m_Actor")] pub m_actor : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_Sampler")] pub m_sampler : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_Actors")] pub m_actors : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: windactor :: WindActor > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/windmanager/WindManager.md"))]#[::unity2::class(namespace="",name="WindManager")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::root::windmanager::WindManager>)]pub struct WindManager{#[offset(32)]#[rename(name="m_Actor")]pub m_actor:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Sampler")]pub m_sampler:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_Actors")]pub m_actors:crate::system::collections::generic::list_1::List_1<crate::root::windactor::WindActor> ,}
 
 }
 
 #[cfg(feature = "root-windmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-windmanager")]
-impl WindManager { # [doc = "`GetWind(crate::unity_engine::vector3::Vector3)` overload"] pub fn get_wind (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f470usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateActor()` overload"] pub fn try_create_actor () -> crate :: root :: windactor :: WindActor { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: windactor :: WindActor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f6e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Attach(crate::root::windactor::WindActor)` overload"] pub fn attach (actor : impl :: core :: convert :: Into < crate :: root :: windactor :: WindActor >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: windactor :: WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f080usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } # [doc = "`Detach(crate::root::windactor::WindActor)` overload"] pub fn detach (actor : impl :: core :: convert :: Into < crate :: root :: windactor :: WindActor >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: windactor :: WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f1b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-windmanager")]impl WindManager{#[doc="`GetWind(crate::unity_engine::vector3::Vector3)` overload"]pub fn get_wind(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293f470usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`TryCreateActor()` overload"]pub fn try_create_actor()->crate::root::windactor::WindActor{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293f6e0usize)as*mut u8,crate::root::windactor::WindActor;
+)}
+}
+#[doc="`Attach(crate::root::windactor::WindActor)` overload"]pub fn attach(actor:impl::core::convert::Into<crate::root::windactor::WindActor>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293f080usize)as*mut u8,();
+(crate::root::windactor::WindActor)::core::convert::Into::into(actor))}
+}
+#[doc="`Detach(crate::root::windactor::WindActor)` overload"]pub fn detach(actor:impl::core::convert::Into<crate::root::windactor::WindActor>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293f1b0usize)as*mut u8,();
+(crate::root::windactor::WindActor)::core::convert::Into::into(actor))}
+}
+}
 
-#[cfg(feature = "root-windmanager")]
-pub trait IWindManagerMethods : IWindManager { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < WindManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < WindManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Calculate(crate::unity_engine::vector3::Vector3)` overload"] fn calculate (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindManager , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`CreateActor()` overload"] fn create_actor (self ,) -> crate :: root :: windactor :: WindActor { unsafe { let __receiver = < WindManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindManager , :: unity2 :: OptionalMethod ,) -> crate :: root :: windactor :: WindActor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateSampler()` overload"] fn create_sampler (self ,) -> crate :: root :: windsampler :: WindSampler { unsafe { let __receiver = < WindManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindManager , :: unity2 :: OptionalMethod ,) -> crate :: root :: windsampler :: WindSampler = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < WindManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WindManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-windmanager")]pub trait IWindManagerMethods:IWindManager{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <WindManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f330usize)as*mut u8,();
+(WindManager)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <WindManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f340usize)as*mut u8,();
+(WindManager)__receiver)}
+}
+#[doc="`Calculate(crate::unity_engine::vector3::Vector3)` overload"]fn calculate(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <WindManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f350usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(WindManager)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`CreateActor()` overload"]fn create_actor(self,)->crate::root::windactor::WindActor{unsafe{let __receiver= <WindManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f5a0usize)as*mut u8,crate::root::windactor::WindActor;
+(WindManager)__receiver)}
+}
+#[doc="`CreateSampler()` overload"]fn create_sampler(self,)->crate::root::windsampler::WindSampler{unsafe{let __receiver= <WindManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f640usize)as*mut u8,crate::root::windsampler::WindSampler;
+(WindManager)__receiver)}
+}
+#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <WindManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f7e0usize)as*mut u8,();
+(WindManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WindManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f7f0usize)as*mut u8,();
+(WindManager)__receiver)}
+}
+}
 
-#[cfg(feature = "root-windmanager")]
-impl < __T : IWindManager > IWindManagerMethods for __T { }
+#[cfg(feature="root-windmanager")]impl<__T:IWindManager>IWindManagerMethods for __T{}
 
-#[cfg(feature = "root-windmanager")]
-impl WindManager { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_wind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_sampler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn try_create_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn attach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn detach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="root-windmanager")]impl WindManager{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_wind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_sampler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn try_create_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn attach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn detach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "root-windmanager")]
-impl WindManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WindManager) , :: core :: stringify ! (new) ,)) ; < Self as IWindManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-windmanager")]impl WindManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WindManager), ::core::stringify!(new),));
+ <Self as IWindManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-windmanager")]

@@ -4,40 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/prefetchedcurve/PrefetchedCurve.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PrefetchedCurve")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct PrefetchedCurve {
-# [offset (24)] # [rename (name = "RightHand")] pub right_hand : crate :: combat :: trailtrack :: TrailTrack ,
-# [offset (32)] # [rename (name = "LeftHand")] pub left_hand : crate :: combat :: trailtrack :: TrailTrack ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/prefetchedcurve/PrefetchedCurve.md"))]#[::unity2::class(namespace="Combat",name="PrefetchedCurve")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct PrefetchedCurve{#[offset(24)]#[rename(name="RightHand")]pub right_hand:crate::combat::trailtrack::TrailTrack, #[offset(32)]#[rename(name="LeftHand")]pub left_hand:crate::combat::trailtrack::TrailTrack,}
 
 }
 
 #[cfg(feature = "combat-prefetchedcurve-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-prefetchedcurve")]
-impl PrefetchedCurve { # [doc = "`Equals(crate::combat::prefetchedcurve::PrefetchedCurve, crate::combat::prefetchedcurve::PrefetchedCurve)` overload"] pub fn equals (a : impl :: core :: convert :: Into < crate :: combat :: prefetchedcurve :: PrefetchedCurve > , b : impl :: core :: convert :: Into < crate :: combat :: prefetchedcurve :: PrefetchedCurve >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: prefetchedcurve :: PrefetchedCurve , crate :: combat :: prefetchedcurve :: PrefetchedCurve , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2816370usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-prefetchedcurve")]impl PrefetchedCurve{#[doc="`Equals(crate::combat::prefetchedcurve::PrefetchedCurve, crate::combat::prefetchedcurve::PrefetchedCurve)` overload"]pub fn equals(a:impl::core::convert::Into<crate::combat::prefetchedcurve::PrefetchedCurve> ,b:impl::core::convert::Into<crate::combat::prefetchedcurve::PrefetchedCurve>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2816370usize)as*mut u8,bool;
+(crate::combat::prefetchedcurve::PrefetchedCurve)::core::convert::Into::into(a),(crate::combat::prefetchedcurve::PrefetchedCurve)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "combat-prefetchedcurve")]
-pub trait IPrefetchedCurveMethods : IPrefetchedCurve { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PrefetchedCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PrefetchedCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2816500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-prefetchedcurve")]pub trait IPrefetchedCurveMethods:IPrefetchedCurve{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PrefetchedCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2816500usize)as*mut u8,();
+(PrefetchedCurve)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-prefetchedcurve")]
-impl < __T : IPrefetchedCurve > IPrefetchedCurveMethods for __T { }
+#[cfg(feature="combat-prefetchedcurve")]impl<__T:IPrefetchedCurve>IPrefetchedCurveMethods for __T{}
 
-#[cfg(feature = "combat-prefetchedcurve")]
-impl PrefetchedCurve { pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PrefetchedCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PrefetchedCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-prefetchedcurve")]impl PrefetchedCurve{pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "combat-prefetchedcurve")]
-impl PrefetchedCurve {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PrefetchedCurve) , :: core :: stringify ! (new) ,)) ; < Self as IPrefetchedCurveMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-prefetchedcurve")]impl PrefetchedCurve{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PrefetchedCurve), ::core::stringify!(new),));
+ <Self as IPrefetchedCurveMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-prefetchedcurve")]

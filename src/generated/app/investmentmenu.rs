@@ -4,99 +4,198 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenu/InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMenu.InvestmentMenuItem.InvestmentSubMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem {
-# [offset (100)] # [rename (name = "m_useCost")] pub m_use_cost : i32 ,
-# [offset (104)] # [rename (name = "m_parent")] pub m_parent : crate :: app :: investmentmenu :: InvestmentMenu_InvestmentMenuItem ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenu/InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem.md"))]#[::unity2::class(namespace="App",name="InvestmentMenu.InvestmentMenuItem.InvestmentSubMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[offset(100)]#[rename(name="m_useCost")]pub m_use_cost:i32, #[offset(104)]#[rename(name="m_parent")]pub m_parent:crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenu/InvestmentMenu_InvestmentMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMenu.InvestmentMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct InvestmentMenu_InvestmentMenuItem {
-# [offset (100)] # [rename (name = "m_Index")] pub m_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenu/InvestmentMenu_InvestmentMenuItem.md"))]#[::unity2::class(namespace="App",name="InvestmentMenu.InvestmentMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct InvestmentMenu_InvestmentMenuItem{#[offset(100)]#[rename(name="m_Index")]pub m_index:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenu/InvestmentMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct InvestmentMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenu/InvestmentMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="InvestmentMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InvestmentMenu_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenu/InvestmentMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InvestmentMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenu/InvestmentMenu.md"))]#[::unity2::class(namespace="App",name="InvestmentMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct InvestmentMenu{}
 
 }
 
 #[cfg(feature = "app-investmentmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-investmentmenu")]
-pub trait IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods : IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem { # [doc = "`.ctor(i32, crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)` overload"] fn ctor (self , cost : impl :: core :: convert :: Into < i32 > , parent : impl :: core :: convert :: Into < crate :: app :: investmentmenu :: InvestmentMenu_InvestmentMenuItem >) -> () { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , i32 , crate :: app :: investmentmenu :: InvestmentMenu_InvestmentMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b66b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cost) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`SetTextColor(crate::unity_engine::color::Color, bool)` overload"] fn set_text_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , b_inactive : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , crate :: unity_engine :: color :: Color , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b66d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (b_inactive) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b66ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b66f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b67070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-investmentmenu")]
-impl < __T : IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem > IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods for __T { }
-
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem {
-# [doc = "`.ctor(i32, crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)` — overload selector"] pub fn new (cost : i32 , parent : crate :: app :: investmentmenu :: InvestmentMenu_InvestmentMenuItem) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods > :: ctor (this , cost , parent) ; this }
+#[cfg(feature="app-investmentmenu")]pub trait IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods:IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[doc="`.ctor(i32, crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)` overload"]fn ctor(self,cost:impl::core::convert::Into<i32> ,parent:impl::core::convert::Into<crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66b10usize)as*mut u8,();
+(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem)__receiver,(i32)::core::convert::Into::into(cost),(crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)::core::convert::Into::into(parent))}
+}
+#[doc="`SetTextColor(crate::unity_engine::color::Color, bool)` overload"]fn set_text_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,b_inactive:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66d10usize)as*mut u8,();
+(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color),(bool)::core::convert::Into::into(b_inactive))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66ea0usize)as*mut u8,();
+(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66f90usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67070usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-investmentmenu")]
-pub trait IInvestmentMenu_InvestmentMenuItemMethods : IInvestmentMenu_InvestmentMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc6d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNationData()` overload"] fn get_nation_data (self ,) -> crate :: app :: hubnationdata :: HubNationData { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubnationdata :: HubNationData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNextCost()` overload"] fn get_next_cost (self ,) -> i32 { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32)` overload"] fn add (self , add_cost : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentMenu_InvestmentMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_InvestmentMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (add_cost) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-investmentmenu")]impl<__T:IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem>IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods for __T{}
 
-#[cfg(feature = "app-investmentmenu")]
-impl < __T : IInvestmentMenu_InvestmentMenuItem > IInvestmentMenu_InvestmentMenuItemMethods for __T { }
-
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu_InvestmentMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_nation_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_next_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_InvestmentMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu_InvestmentMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMenu_InvestmentMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMenu_InvestmentMenuItemMethods > :: ctor (this , index) ; this }
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a0af0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-investmentmenu")]
-pub trait IInvestmentMenuMethods : IInvestmentMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::investmentmenucontent::InvestmentMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: investmentmenucontent :: InvestmentMenuContent >) -> () { unsafe { let __receiver = < InvestmentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: investmentmenucontent :: InvestmentMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a0da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InvestmentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a1390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InvestmentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a13e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SelectNation(i32)` overload"] fn select_nation (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a13f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateNation(i32)` overload"] fn update_nation (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a1610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-investmentmenu")]
-impl < __T : IInvestmentMenu > IInvestmentMenuMethods for __T { }
-
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn select_nation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_nation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::investmentmenucontent::InvestmentMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: investmentmenucontent :: InvestmentMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMenu) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[doc="`.ctor(i32, crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)` — overload selector"]pub fn new(cost:i32,parent:crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem), ::core::stringify!(new),));
+ <Self as IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods> ::ctor(this,cost,parent);
+this}
 }
 
-#[cfg(feature = "app-investmentmenu")]
-pub trait IInvestmentMenu_DecideEventHandlerMethods : IInvestmentMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < InvestmentMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcbe40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(i32)` overload"] fn invoke (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMenu_DecideEventHandler , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcbe60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-investmentmenu")]pub trait IInvestmentMenu_InvestmentMenuItemMethods:IInvestmentMenu_InvestmentMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc130usize)as*mut u8,();
+(InvestmentMenu_InvestmentMenuItem)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc160usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InvestmentMenu_InvestmentMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc290usize)as*mut u8, ::unity2::Il2CppString;
+(InvestmentMenu_InvestmentMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc300usize)as*mut u8,();
+(InvestmentMenu_InvestmentMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc3a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InvestmentMenu_InvestmentMenuItem)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc6d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InvestmentMenu_InvestmentMenuItem)__receiver)}
+}
+#[doc="`GetNationData()` overload"]fn get_nation_data(self,)->crate::app::hubnationdata::HubNationData{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc1b0usize)as*mut u8,crate::app::hubnationdata::HubNationData;
+(InvestmentMenu_InvestmentMenuItem)__receiver)}
+}
+#[doc="`GetNextCost()` overload"]fn get_next_cost(self,)->i32{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc810usize)as*mut u8,i32;
+(InvestmentMenu_InvestmentMenuItem)__receiver)}
+}
+#[doc="`Add(i32)` overload"]fn add(self,add_cost:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc830usize)as*mut u8,();
+(InvestmentMenu_InvestmentMenuItem)__receiver,(i32)::core::convert::Into::into(add_cost))}
+}
+}
 
-#[cfg(feature = "app-investmentmenu")]
-impl < __T : IInvestmentMenu_DecideEventHandler > IInvestmentMenu_DecideEventHandlerMethods for __T { }
+#[cfg(feature="app-investmentmenu")]impl<__T:IInvestmentMenu_InvestmentMenuItem>IInvestmentMenu_InvestmentMenuItemMethods for __T{}
 
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_nation_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_next_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenu_InvestmentMenuItem), ::core::stringify!(new),));
+ <Self as IInvestmentMenu_InvestmentMenuItemMethods> ::ctor(this,index);
+this}
+}
+
+#[cfg(feature="app-investmentmenu")]pub trait IInvestmentMenu_DecideEventHandlerMethods:IInvestmentMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InvestmentMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcbe40usize)as*mut u8,();
+(InvestmentMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcbe60usize)as*mut u8,();
+(InvestmentMenu_DecideEventHandler)__receiver,(i32)::core::convert::Into::into(index))}
+}
+}
+
+#[cfg(feature="app-investmentmenu")]impl<__T:IInvestmentMenu_DecideEventHandler>IInvestmentMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IInvestmentMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27a0af0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-investmentmenu")]pub trait IInvestmentMenuMethods:IInvestmentMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::investmentmenucontent::InvestmentMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::investmentmenucontent::InvestmentMenuContent>)->(){unsafe{let __receiver= <InvestmentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a0da0usize)as*mut u8,();
+(InvestmentMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::investmentmenucontent::InvestmentMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvestmentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a1390usize)as*mut u8, ::unity2::Il2CppString;
+(InvestmentMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a13e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InvestmentMenu)__receiver)}
+}
+#[doc="`SelectNation(i32)` overload"]fn select_nation(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a13f0usize)as*mut u8,();
+(InvestmentMenu)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`UpdateNation(i32)` overload"]fn update_nation(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a1610usize)as*mut u8,();
+(InvestmentMenu)__receiver,(i32)::core::convert::Into::into(index))}
+}
+}
+
+#[cfg(feature="app-investmentmenu")]impl<__T:IInvestmentMenu>IInvestmentMenuMethods for __T{}
+
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn select_nation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_nation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::investmentmenucontent::InvestmentMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::investmentmenucontent::InvestmentMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenu), ::core::stringify!(new),));
+ <Self as IInvestmentMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-investmentmenu")]
@@ -108,12 +207,12 @@ pub mod prelude {
     pub use super::InvestmentMenu_InvestmentMenuItem;
     pub use super::IInvestmentMenu_InvestmentMenuItem;
     pub use super::IInvestmentMenu_InvestmentMenuItemMethods;
-    pub use super::InvestmentMenu;
-    pub use super::IInvestmentMenu;
-    pub use super::IInvestmentMenuMethods;
     pub use super::InvestmentMenu_DecideEventHandler;
     pub use super::IInvestmentMenu_DecideEventHandler;
     pub use super::IInvestmentMenu_DecideEventHandlerMethods;
+    pub use super::InvestmentMenu;
+    pub use super::IInvestmentMenu;
+    pub use super::IInvestmentMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

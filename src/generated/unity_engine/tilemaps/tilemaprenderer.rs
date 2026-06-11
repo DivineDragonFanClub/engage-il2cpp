@@ -4,32 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: renderer :: { IRenderer , Renderer }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::renderer::{IRenderer,Renderer}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/tilemaprenderer/TilemapRenderer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Tilemaps" , name = "TilemapRenderer")] # [parent (crate :: unity_engine :: renderer :: Renderer)] pub struct TilemapRenderer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/tilemaprenderer/TilemapRenderer.md"))]#[::unity2::class(namespace="UnityEngine.Tilemaps",name="TilemapRenderer")]#[parent(crate::unity_engine::renderer::Renderer)]pub struct TilemapRenderer{}
 
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tilemaprenderer-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
-pub trait ITilemapRendererMethods : ITilemapRenderer { # [doc = "`RegisterSpriteAtlasRegistered()` overload"] fn register_sprite_atlas_registered (self ,) -> () { unsafe { let __receiver = < TilemapRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TilemapRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnregisterSpriteAtlasRegistered()` overload"] fn unregister_sprite_atlas_registered (self ,) -> () { unsafe { let __receiver = < TilemapRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TilemapRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSpriteAtlasRegistered(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"] fn on_sprite_atlas_registered (self , atlas : impl :: core :: convert :: Into < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas >) -> () { unsafe { let __receiver = < TilemapRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TilemapRenderer , crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (atlas) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-tilemaps-tilemaprenderer")]pub trait ITilemapRendererMethods:ITilemapRenderer{#[doc="`RegisterSpriteAtlasRegistered()` overload"]fn register_sprite_atlas_registered(self,)->(){unsafe{let __receiver= <TilemapRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42f90usize)as*mut u8,();
+(TilemapRenderer)__receiver)}
+}
+#[doc="`UnregisterSpriteAtlasRegistered()` overload"]fn unregister_sprite_atlas_registered(self,)->(){unsafe{let __receiver= <TilemapRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f43060usize)as*mut u8,();
+(TilemapRenderer)__receiver)}
+}
+#[doc="`OnSpriteAtlasRegistered(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]fn on_sprite_atlas_registered(self,atlas:impl::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)->(){unsafe{let __receiver= <TilemapRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f43130usize)as*mut u8,();
+(TilemapRenderer)__receiver,(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)::core::convert::Into::into(atlas))}
+}
+}
 
-#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
-impl < __T : ITilemapRenderer > ITilemapRendererMethods for __T { }
+#[cfg(feature="unity_engine-tilemaps-tilemaprenderer")]impl<__T:ITilemapRenderer>ITilemapRendererMethods for __T{}
 
-#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
-impl TilemapRenderer { pub fn register_sprite_atlas_registered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TilemapRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn unregister_sprite_atlas_registered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TilemapRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_sprite_atlas_registered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TilemapRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-tilemaps-tilemaprenderer")]impl TilemapRenderer{pub fn register_sprite_atlas_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn unregister_sprite_atlas_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_sprite_atlas_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
 #[doc(hidden)]

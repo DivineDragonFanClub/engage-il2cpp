@@ -4,44 +4,130 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: interop :: functionmemberdescriptorbase :: { FunctionMemberDescriptorBase , IFunctionMemberDescriptorBase }
- ;
- use crate :: moon_sharp :: interpreter :: interop :: objectcallbackmemberdescriptor :: { IObjectCallbackMemberDescriptor , ObjectCallbackMemberDescriptor }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::{FunctionMemberDescriptorBase,IFunctionMemberDescriptorBase}
+;
+use crate::moon_sharp::interpreter::interop::objectcallbackmemberdescriptor::{IObjectCallbackMemberDescriptor,ObjectCallbackMemberDescriptor}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/arraymemberdescriptor/ArrayMemberDescriptor.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop" , name = "ArrayMemberDescriptor")] # [parent (crate :: moon_sharp :: interpreter :: interop :: objectcallbackmemberdescriptor :: ObjectCallbackMemberDescriptor)] pub struct ArrayMemberDescriptor {
-# [offset (80)] # [rename (name = "m_IsSetter")] pub m_is_setter : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/arraymemberdescriptor/ArrayMemberDescriptor.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="ArrayMemberDescriptor")]#[parent(crate::moon_sharp::interpreter::interop::objectcallbackmemberdescriptor::ObjectCallbackMemberDescriptor)]pub struct ArrayMemberDescriptor{#[offset(80)]#[rename(name="m_IsSetter")]pub m_is_setter:bool,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ArrayMemberDescriptor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_prepare_for_wiring { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , "PrepareForWiring" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "PrepareForWiring" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build_array_indices { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , "BuildArrayIndices" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "BuildArrayIndices" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_array_indexer_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , "ArrayIndexerSet" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "ArrayIndexerSet" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_array_indexer_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () , "ArrayIndexerGet" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "ArrayIndexerGet" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-arraymemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ArrayMemberDescriptor_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ArrayMemberDescriptor as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ArrayMemberDescriptor as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_prepare_for_wiring{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ArrayMemberDescriptor as::unity2::ClassIdentity> ::class(),"PrepareForWiring",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_build_array_indices{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ArrayMemberDescriptor as::unity2::ClassIdentity> ::class(),"BuildArrayIndices",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,"BuildArrayIndices",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_array_indexer_set{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ArrayMemberDescriptor as::unity2::ClassIdentity> ::class(),"ArrayIndexerSet",3,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,"ArrayIndexerSet",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_array_indexer_get{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ArrayMemberDescriptor as::unity2::ClassIdentity> ::class(),"ArrayIndexerGet",3,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,"ArrayIndexerGet",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor")]
-impl ArrayMemberDescriptor { # [doc = "`BuildArrayIndices(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, i32)` overload"] pub fn build_array_indices (args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments > , count : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < i32 > { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (__ArrayMemberDescriptor_unity2_raw :: __lookup_build_array_indices :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`ArrayIndexerSet(crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] pub fn array_indexer_set (array_obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , ctx : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__ArrayMemberDescriptor_unity2_raw :: __lookup_array_indexer_set :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (array_obj) , :: core :: convert :: Into :: into (ctx) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`ArrayIndexerGet(crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] pub fn array_indexer_get (array_obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , ctx : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__ArrayMemberDescriptor_unity2_raw :: __lookup_array_indexer_get :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (array_obj) , :: core :: convert :: Into :: into (ctx) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-arraymemberdescriptor")]impl ArrayMemberDescriptor{#[doc="`BuildArrayIndices(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, i32)` overload"]pub fn build_array_indices(args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments> ,count:impl::core::convert::Into<i32>)-> ::unity2::Array<i32>{unsafe{::unity2::il2cpp_call!(__ArrayMemberDescriptor_unity2_raw::__lookup_build_array_indices::get_method_info().method_ptr, ::unity2::Array<i32> ;
+(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`ArrayIndexerSet(crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]pub fn array_indexer_set(array_obj:impl::core::convert::Into<crate::system::object::Object> ,ctx:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!(__ArrayMemberDescriptor_unity2_raw::__lookup_array_indexer_set::get_method_info().method_ptr,crate::system::object::Object;
+(crate::system::object::Object)::core::convert::Into::into(array_obj),(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(ctx),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
+}
+#[doc="`ArrayIndexerGet(crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]pub fn array_indexer_get(array_obj:impl::core::convert::Into<crate::system::object::Object> ,ctx:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!(__ArrayMemberDescriptor_unity2_raw::__lookup_array_indexer_get::get_method_info().method_ptr,crate::system::object::Object;
+(crate::system::object::Object)::core::convert::Into::into(array_obj),(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(ctx),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor")]
-pub trait IArrayMemberDescriptorMethods : IArrayMemberDescriptor { # [doc = "`.ctor(::unity2::Il2CppString, bool, ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_setter : impl :: core :: convert :: Into < bool > , indexer_params : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > >) -> () { unsafe { let __receiver = < ArrayMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArrayMemberDescriptor , :: unity2 :: Il2CppString , bool , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ArrayMemberDescriptor_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (is_setter) , :: core :: convert :: Into :: into (indexer_params) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_setter : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ArrayMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArrayMemberDescriptor , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ArrayMemberDescriptor_unity2_raw :: __lookup_ctor_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (is_setter) , :: core :: option :: Option :: None) } } } # [doc = "`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"] fn prepare_for_wiring (self , t : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> () { unsafe { let __receiver = < ArrayMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArrayMemberDescriptor , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ArrayMemberDescriptor_unity2_raw :: __lookup_prepare_for_wiring :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-arraymemberdescriptor")]pub trait IArrayMemberDescriptorMethods:IArrayMemberDescriptor{#[doc="`.ctor(::unity2::Il2CppString, bool, ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_setter:impl::core::convert::Into<bool> ,indexer_params:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> >)->(){unsafe{let __receiver= <ArrayMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ArrayMemberDescriptor_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(ArrayMemberDescriptor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(is_setter),(::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)::core::convert::Into::into(indexer_params))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_setter:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ArrayMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ArrayMemberDescriptor_unity2_raw::__lookup_ctor_2::get_method_info().method_ptr,();
+(ArrayMemberDescriptor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(is_setter))}
+}
+#[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <ArrayMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ArrayMemberDescriptor_unity2_raw::__lookup_prepare_for_wiring::get_method_info().method_ptr,();
+(ArrayMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(t))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor")]
-impl < __T : IArrayMemberDescriptor > IArrayMemberDescriptorMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-interop-arraymemberdescriptor")]impl<__T:IArrayMemberDescriptor>IArrayMemberDescriptorMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor")]
-impl ArrayMemberDescriptor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn prepare_for_wiring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_array_indices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn array_indexer_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn array_indexer_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArrayMemberDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="moon_sharp-interpreter-interop-arraymemberdescriptor")]impl ArrayMemberDescriptor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn prepare_for_wiring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_array_indices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn array_indexer_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn array_indexer_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor")]
-impl ArrayMemberDescriptor {
-# [doc = "`.ctor(::unity2::Il2CppString, bool, ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , is_setter : bool , indexer_params : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArrayMemberDescriptor) , :: core :: stringify ! (new) ,)) ; < Self as IArrayMemberDescriptorMethods > :: ctor (this , name , is_setter , indexer_params) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString , is_setter : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArrayMemberDescriptor) , :: core :: stringify ! (new_2) ,)) ; < Self as IArrayMemberDescriptorMethods > :: ctor_2 (this , name , is_setter) ; this }
+#[cfg(feature="moon_sharp-interpreter-interop-arraymemberdescriptor")]impl ArrayMemberDescriptor{#[doc="`.ctor(::unity2::Il2CppString, bool, ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,is_setter:bool,indexer_params: ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArrayMemberDescriptor), ::core::stringify!(new),));
+ <Self as IArrayMemberDescriptorMethods> ::ctor(this,name,is_setter,indexer_params);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString,is_setter:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArrayMemberDescriptor), ::core::stringify!(new_2),));
+ <Self as IArrayMemberDescriptorMethods> ::ctor_2(this,name,is_setter);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor")]

@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/eyes/Eyes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Eyes {
-    pub m_device_id: u64,
-    pub m_feature_index: u32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/eyes/Eyes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Eyes{pub m_device_id:u64,pub m_feature_index:u32,}
+impl::unity2::ClassIdentity for Eyes{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="Eyes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Eyes {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "Eyes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Eyes {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Eyes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,29 @@ impl ::unity2::IlType for Eyes {
 #[cfg(feature = "unity_engine-xr-eyes-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-eyes")]
-impl Eyes { # [doc = "`get_deviceId()` overload"] pub fn get_device_id (& mut self ,) -> u64 { unsafe { { let __inner : extern "C" fn (* mut Eyes , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e380usize) as * mut u8) ; __inner (self as * mut Eyes , :: core :: option :: Option :: None) } } } # [doc = "`get_featureIndex()` overload"] pub fn get_feature_index (& mut self ,) -> u32 { unsafe { { let __inner : extern "C" fn (* mut Eyes , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e390usize) as * mut u8) ; __inner (self as * mut Eyes , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Eyes , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e3a0usize) as * mut u8) ; __inner (self as * mut Eyes , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::xr::eyes::Eyes)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: eyes :: Eyes >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Eyes , crate :: unity_engine :: xr :: eyes :: Eyes , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e440usize) as * mut u8) ; __inner (self as * mut Eyes , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Eyes , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e470usize) as * mut u8) ; __inner (self as * mut Eyes , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-eyes")]impl Eyes{#[doc="`get_deviceId()` overload"]pub fn get_device_id(&mut self,)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e380usize)as*mut u8,u64;
+(*mut Eyes)self as*mut Eyes)}
+}
+#[doc="`get_featureIndex()` overload"]pub fn get_feature_index(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e390usize)as*mut u8,u32;
+(*mut Eyes)self as*mut Eyes)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e3a0usize)as*mut u8,bool;
+(*mut Eyes)self as*mut Eyes,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::xr::eyes::Eyes)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::xr::eyes::Eyes>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e440usize)as*mut u8,bool;
+(*mut Eyes)self as*mut Eyes,(crate::unity_engine::xr::eyes::Eyes)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e470usize)as*mut u8,i32;
+(*mut Eyes)self as*mut Eyes)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-eyes")]
-impl Eyes { pub fn get_device_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Eyes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_feature_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Eyes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Eyes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Eyes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Eyes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-xr-eyes")]impl Eyes{pub fn get_device_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_feature_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-xr-eyes")]
 #[doc(hidden)]

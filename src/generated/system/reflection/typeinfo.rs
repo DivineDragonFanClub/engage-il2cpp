@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/typeinfo/TypeInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "TypeInfo")] pub struct TypeInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/typeinfo/TypeInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="TypeInfo")]pub struct TypeInfo{}
 
 }
 
 #[cfg(feature = "system-reflection-typeinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-typeinfo")]
-pub trait ITypeInfoMethods : ITypeInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TypeInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3563ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Reflection.IReflectableType.GetTypeInfo()` overload"] fn system_reflection_i_reflectable_type_get_type_info (self ,) -> crate :: system :: reflection :: typeinfo :: TypeInfo { unsafe { let __receiver = < TypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TypeInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: typeinfo :: TypeInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3563b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ImplementedInterfaces()` overload"] fn get_implemented_interfaces (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: SystemType > { unsafe { let __receiver = < TypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TypeInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: SystemType > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3563b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-typeinfo")]pub trait ITypeInfoMethods:ITypeInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TypeInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3563ac0usize)as*mut u8,();
+(TypeInfo)__receiver)}
+}
+#[doc="`System.Reflection.IReflectableType.GetTypeInfo()` overload"]fn system_reflection_i_reflectable_type_get_type_info(self,)->crate::system::reflection::typeinfo::TypeInfo{unsafe{let __receiver= <TypeInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3563b30usize)as*mut u8,crate::system::reflection::typeinfo::TypeInfo;
+(TypeInfo)__receiver)}
+}
+#[doc="`get_ImplementedInterfaces()` overload"]fn get_implemented_interfaces(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::SystemType>{unsafe{let __receiver= <TypeInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3563b40usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::SystemType> ;
+(TypeInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-typeinfo")]
-impl < __T : ITypeInfo > ITypeInfoMethods for __T { }
+#[cfg(feature="system-reflection-typeinfo")]impl<__T:ITypeInfo>ITypeInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-typeinfo")]
-impl TypeInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn system_reflection_i_reflectable_type_get_type_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_implemented_interfaces_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-reflection-typeinfo")]impl TypeInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn system_reflection_i_reflectable_type_get_type_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_implemented_interfaces_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "system-reflection-typeinfo")]
-impl TypeInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TypeInfo) , :: core :: stringify ! (new) ,)) ; < Self as ITypeInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-typeinfo")]impl TypeInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TypeInfo), ::core::stringify!(new),));
+ <Self as ITypeInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-typeinfo")]

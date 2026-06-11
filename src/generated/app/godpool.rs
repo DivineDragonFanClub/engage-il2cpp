@@ -4,37 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: app :: singletonpool_2 :: { ISingletonPool_2 , SingletonPool_2 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::app::singletonpool_2::{ISingletonPool_2,SingletonPool_2}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godpool/GodPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodPool")] # [parent (crate :: app :: singletonpool_2 :: SingletonPool_2 < crate :: app :: godpool :: GodPool , crate :: app :: godunit :: GodUnit >)] pub struct GodPool {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godpool/GodPool.md"))]#[::unity2::class(namespace="App",name="GodPool")]#[parent(crate::app::singletonpool_2::SingletonPool_2<crate::app::godpool::GodPool,crate::app::godunit::GodUnit>)]pub struct GodPool{}
 
 }
 
 #[cfg(feature = "app-godpool-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godpool")]
-impl GodPool { # [doc = "`TryGet(::unity2::Il2CppString, bool)` overload"] pub fn try_get (gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , include_reserved : impl :: core :: convert :: Into < bool >) -> crate :: app :: godunit :: GodUnit { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334570usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gid) , :: core :: convert :: Into :: into (include_reserved) , :: core :: option :: Option :: None) } } } # [doc = "`TryGet(crate::app::goddata::GodData, bool)` overload"] pub fn try_get_2 (data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData > , include_reserved : impl :: core :: convert :: Into < bool >) -> crate :: app :: godunit :: GodUnit { unsafe { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (include_reserved) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetImpl(crate::app::goddata::GodData, bool)` overload"] pub fn try_get_impl (data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData > , include_reserved : impl :: core :: convert :: Into < bool >) -> crate :: app :: godunit :: GodUnit { unsafe { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334720usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (include_reserved) , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::goddata::GodData)` overload"] pub fn create (data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: app :: godunit :: GodUnit { unsafe { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23349c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(crate::app::godunit::GodUnit)` overload"] pub fn delete (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334c30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteOrReserve(crate::app::godunit::GodUnit)` overload"] pub fn delete_or_reserve (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334db0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteReserved()` overload"] pub fn delete_reserved () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334ed0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DeleteExceptForPlayer()` overload"] pub fn delete_except_for_player () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335130usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AppendEnemyGod(crate::app::godunit::GodUnit)` overload"] pub fn append_enemy_god (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> crate :: app :: godunit :: GodUnit { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`HasArmlet()` overload"] pub fn has_armlet () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23359c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godpool")]impl GodPool{#[doc="`TryGet(::unity2::Il2CppString, bool)` overload"]pub fn try_get(gid:impl::core::convert::Into< ::unity2::Il2CppString> ,include_reserved:impl::core::convert::Into<bool>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2334570usize)as*mut u8,crate::app::godunit::GodUnit;
+(::unity2::Il2CppString)::core::convert::Into::into(gid),(bool)::core::convert::Into::into(include_reserved))}
+}
+#[doc="`TryGet(crate::app::goddata::GodData, bool)` overload"]pub fn try_get_2(data:impl::core::convert::Into<crate::app::goddata::GodData> ,include_reserved:impl::core::convert::Into<bool>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2334600usize)as*mut u8,crate::app::godunit::GodUnit;
+(crate::app::goddata::GodData)::core::convert::Into::into(data),(bool)::core::convert::Into::into(include_reserved))}
+}
+#[doc="`TryGetImpl(crate::app::goddata::GodData, bool)` overload"]pub fn try_get_impl(data:impl::core::convert::Into<crate::app::goddata::GodData> ,include_reserved:impl::core::convert::Into<bool>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2334720usize)as*mut u8,crate::app::godunit::GodUnit;
+(crate::app::goddata::GodData)::core::convert::Into::into(data),(bool)::core::convert::Into::into(include_reserved))}
+}
+#[doc="`Create(crate::app::goddata::GodData)` overload"]pub fn create(data:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23349c0usize)as*mut u8,crate::app::godunit::GodUnit;
+(crate::app::goddata::GodData)::core::convert::Into::into(data))}
+}
+#[doc="`Delete(crate::app::godunit::GodUnit)` overload"]pub fn delete(god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2334c30usize)as*mut u8,();
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`DeleteOrReserve(crate::app::godunit::GodUnit)` overload"]pub fn delete_or_reserve(god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2334db0usize)as*mut u8,();
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`DeleteReserved()` overload"]pub fn delete_reserved()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2334ed0usize)as*mut u8,();
+)}
+}
+#[doc="`DeleteExceptForPlayer()` overload"]pub fn delete_except_for_player()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2335130usize)as*mut u8,();
+)}
+}
+#[doc="`AppendEnemyGod(crate::app::godunit::GodUnit)` overload"]pub fn append_enemy_god(god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2335420usize)as*mut u8,crate::app::godunit::GodUnit;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`HasArmlet()` overload"]pub fn has_armlet()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23359c0usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-godpool")]
-pub trait IGodPoolMethods : IGodPool { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < GodPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodPool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GodPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodPool , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GodPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodPool , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godpool")]pub trait IGodPoolMethods:IGodPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2334500usize)as*mut u8,();
+(GodPool)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <GodPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2334560usize)as*mut u8,i32;
+(GodPool)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2335bd0usize)as*mut u8,();
+(GodPool)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2335c30usize)as*mut u8,();
+(GodPool)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+}
 
-#[cfg(feature = "app-godpool")]
-impl < __T : IGodPool > IGodPoolMethods for __T { }
+#[cfg(feature="app-godpool")]impl<__T:IGodPool>IGodPoolMethods for __T{}
 
-#[cfg(feature = "app-godpool")]
-impl GodPool { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn try_get_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn delete_or_reserve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn delete_reserved_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn delete_except_for_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn append_enemy_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn has_armlet_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-godpool")]impl GodPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn try_get_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn delete_or_reserve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn delete_reserved_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn delete_except_for_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn append_enemy_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn has_armlet_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-godpool")]
-impl GodPool {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodPool) , :: core :: stringify ! (new) ,)) ; < Self as IGodPoolMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godpool")]impl GodPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodPool), ::core::stringify!(new),));
+ <Self as IGodPoolMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godpool")]

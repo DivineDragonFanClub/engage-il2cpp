@@ -4,33 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackbindingtypeattribute/TrackBindingTypeAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TrackBindingTypeAttribute")] pub struct TrackBindingTypeAttribute {
-# [offset (16)] # [rename (name = "type")] pub r#type : :: unity2 :: SystemType ,
-# [offset (24)] # [rename (name = "flags")] pub flags : crate :: unity_engine :: timeline :: trackbindingflags :: TrackBindingFlags ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/trackbindingtypeattribute/TrackBindingTypeAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TrackBindingTypeAttribute")]pub struct TrackBindingTypeAttribute{#[offset(16)]#[rename(name="type")]pub r#type: ::unity2::SystemType, #[offset(24)]#[rename(name="flags")]pub flags:crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
-pub trait ITrackBindingTypeAttributeMethods : ITrackBindingTypeAttribute { # [doc = "`.ctor(::unity2::SystemType)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < TrackBindingTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrackBindingTypeAttribute , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ea5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::SystemType, crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags)` overload"] fn ctor_2 (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , flags : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackbindingflags :: TrackBindingFlags >) -> () { unsafe { let __receiver = < TrackBindingTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrackBindingTypeAttribute , :: unity2 :: SystemType , crate :: unity_engine :: timeline :: trackbindingflags :: TrackBindingFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ea5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (flags) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-trackbindingtypeattribute")]pub trait ITrackBindingTypeAttributeMethods:ITrackBindingTypeAttribute{#[doc="`.ctor(::unity2::SystemType)` overload"]fn ctor(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <TrackBindingTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ea5b0usize)as*mut u8,();
+(TrackBindingTypeAttribute)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+#[doc="`.ctor(::unity2::SystemType, crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags)` overload"]fn ctor_2(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,flags:impl::core::convert::Into<crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags>)->(){unsafe{let __receiver= <TrackBindingTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ea5f0usize)as*mut u8,();
+(TrackBindingTypeAttribute)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags)::core::convert::Into::into(flags))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
-impl < __T : ITrackBindingTypeAttribute > ITrackBindingTypeAttributeMethods for __T { }
+#[cfg(feature="unity_engine-timeline-trackbindingtypeattribute")]impl<__T:ITrackBindingTypeAttribute>ITrackBindingTypeAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
-impl TrackBindingTypeAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackBindingTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackBindingTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-timeline-trackbindingtypeattribute")]impl TrackBindingTypeAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
-impl TrackBindingTypeAttribute {
-# [doc = "`.ctor(::unity2::SystemType)` — overload selector"] pub fn new (r#type : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrackBindingTypeAttribute) , :: core :: stringify ! (new) ,)) ; < Self as ITrackBindingTypeAttributeMethods > :: ctor (this , r#type) ; this }
-
-# [doc = "`.ctor(::unity2::SystemType, crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags)` — overload selector"] pub fn new_2 (r#type : :: unity2 :: SystemType , flags : crate :: unity_engine :: timeline :: trackbindingflags :: TrackBindingFlags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrackBindingTypeAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as ITrackBindingTypeAttributeMethods > :: ctor_2 (this , r#type , flags) ; this }
+#[cfg(feature="unity_engine-timeline-trackbindingtypeattribute")]impl TrackBindingTypeAttribute{#[doc="`.ctor(::unity2::SystemType)` — overload selector"]pub fn new(r#type: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TrackBindingTypeAttribute), ::core::stringify!(new),));
+ <Self as ITrackBindingTypeAttributeMethods> ::ctor(this,r#type);
+this}
+#[doc="`.ctor(::unity2::SystemType, crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags)` — overload selector"]pub fn new_2(r#type: ::unity2::SystemType,flags:crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TrackBindingTypeAttribute), ::core::stringify!(new_2),));
+ <Self as ITrackBindingTypeAttributeMethods> ::ctor_2(this,r#type,flags);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]

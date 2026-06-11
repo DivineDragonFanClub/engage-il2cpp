@@ -4,111 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleparam/BattleParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleParam")] # [parent (crate :: system :: object :: Object)] pub struct BattleParam {
-# [static_field] # [rename (name = "INVALID")] pub invalid : f32 ,
-# [static_field] # [rename (name = "Mins")] pub mins : :: unity2 :: Array < f32 > ,
-# [static_field] # [rename (name = "Maxs")] pub maxs : :: unity2 :: Array < f32 > ,
-# [static_field] # [rename (name = "Clamps")] pub clamps : :: unity2 :: Array < f32 > ,
-# [offset (16)] # [rename (name = "Add")] pub add : f32 ,
-# [offset (20)] # [rename (name = "Scale")] pub scale : f32 ,
-# [offset (24)] # [rename (name = "Value")] pub value : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleparam/BattleParam_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleParam_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for BattleParam_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleParam.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for BattleParam_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl BattleParam_Kinds{pub fn value()->Self{Self{value:0}
+}
+pub fn ratio()->Self{Self{value:1}
+}
+pub fn num()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleparam/BattleParam_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct BattleParam_Kinds  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for BattleParam_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleParam.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for BattleParam_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  BattleParam_Kinds  {
-    pub fn value() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn ratio() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleparam/BattleParam.md"))]#[::unity2::class(namespace="App",name="BattleParam")]#[parent(crate::system::object::Object)]pub struct BattleParam{#[static_field]#[rename(name="INVALID")]pub invalid:f32, #[static_field]#[rename(name="Mins")]pub mins: ::unity2::Array<f32> , #[static_field]#[rename(name="Maxs")]pub maxs: ::unity2::Array<f32> , #[static_field]#[rename(name="Clamps")]pub clamps: ::unity2::Array<f32> , #[offset(16)]#[rename(name="Add")]pub add:f32, #[offset(20)]#[rename(name="Scale")]pub scale:f32, #[offset(24)]#[rename(name="Value")]pub value:f32,}
 
 }
 
 #[cfg(feature = "app-battleparam-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battleparam")]
-impl BattleParam { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8dd60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battleparam")]impl BattleParam{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8dd60usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-battleparam")]
-pub trait IBattleParamMethods : IBattleParam { # [doc = "`get_Kind()` overload"] fn get_kind (self ,) -> crate :: app :: battleparam :: BattleParam_Kinds { unsafe { let __receiver = < BattleParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleparam :: BattleParam_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BattleParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleParam , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResult(crate::app::battleinfoside::BattleInfoSide)` overload"] fn get_result (self , side : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> f32 { unsafe { let __receiver = < BattleParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleParam , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8da30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"] fn calculate (self , side : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> f32 { unsafe { let __receiver = < BattleParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleParam , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8db60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8db70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::battleparam::BattleParam)` overload"] fn ctor_2 (self , src : impl :: core :: convert :: Into < crate :: app :: battleparam :: BattleParam >) -> () { unsafe { let __receiver = < BattleParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleParam , crate :: app :: battleparam :: BattleParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8dc10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < BattleParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8dcc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Copy(crate::app::battleparam::BattleParam)` overload"] fn copy (self , src : impl :: core :: convert :: Into < crate :: app :: battleparam :: BattleParam >) -> () { unsafe { let __receiver = < BattleParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleParam , crate :: app :: battleparam :: BattleParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8dd40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battleparam")]pub trait IBattleParamMethods:IBattleParam{#[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::battleparam::BattleParam_Kinds{unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d9d0usize)as*mut u8,crate::app::battleparam::BattleParam_Kinds;
+(BattleParam)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d9e0usize)as*mut u8, ::unity2::Il2CppString;
+(BattleParam)__receiver)}
+}
+#[doc="`GetResult(crate::app::battleinfoside::BattleInfoSide)` overload"]fn get_result(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8da30usize)as*mut u8,f32;
+(BattleParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+}
+#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8db60usize)as*mut u8,f32;
+(BattleParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8db70usize)as*mut u8,();
+(BattleParam)__receiver)}
+}
+#[doc="`.ctor(crate::app::battleparam::BattleParam)` overload"]fn ctor_2(self,src:impl::core::convert::Into<crate::app::battleparam::BattleParam>)->(){unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8dc10usize)as*mut u8,();
+(BattleParam)__receiver,(crate::app::battleparam::BattleParam)::core::convert::Into::into(src))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8dcc0usize)as*mut u8,();
+(BattleParam)__receiver)}
+}
+#[doc="`Copy(crate::app::battleparam::BattleParam)` overload"]fn copy(self,src:impl::core::convert::Into<crate::app::battleparam::BattleParam>)->(){unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8dd40usize)as*mut u8,();
+(BattleParam)__receiver,(crate::app::battleparam::BattleParam)::core::convert::Into::into(src))}
+}
+}
 
-#[cfg(feature = "app-battleparam")]
-impl < __T : IBattleParam > IBattleParamMethods for __T { }
+#[cfg(feature="app-battleparam")]impl<__T:IBattleParam>IBattleParamMethods for __T{}
 
-#[cfg(feature = "app-battleparam")]
-impl BattleParam { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn copy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-battleparam")]impl BattleParam{pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn copy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-battleparam")]
-impl BattleParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleParam) , :: core :: stringify ! (new) ,)) ; < Self as IBattleParamMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::app::battleparam::BattleParam)` — overload selector"] pub fn new_2 (src : crate :: app :: battleparam :: BattleParam) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleParam) , :: core :: stringify ! (new_2) ,)) ; < Self as IBattleParamMethods > :: ctor_2 (this , src) ; this }
+#[cfg(feature="app-battleparam")]impl BattleParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleParam), ::core::stringify!(new),));
+ <Self as IBattleParamMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::app::battleparam::BattleParam)` — overload selector"]pub fn new_2(src:crate::app::battleparam::BattleParam)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleParam), ::core::stringify!(new_2),));
+ <Self as IBattleParamMethods> ::ctor_2(this,src);
+this}
 }
 
 #[cfg(feature = "app-battleparam")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::BattleParam_Kinds;
     pub use super::BattleParam;
     pub use super::IBattleParam;
     pub use super::IBattleParamMethods;
-    pub use super::BattleParam_Kinds;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

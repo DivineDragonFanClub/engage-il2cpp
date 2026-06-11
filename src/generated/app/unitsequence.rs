@@ -4,66 +4,30 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonscriptableobject_1::{ISingletonScriptableObject_1,SingletonScriptableObject_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitsequence/UnitSequence_Action.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct UnitSequence_Action {
-    pub 起動モーション: crate :: app :: unitanim :: UnitAnim_Types,
-    pub 常駐モーション: crate :: app :: unitanim :: UnitAnim_Types,
-    pub 正面回転: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitsequence/UnitSequence.md"))]#[::unity2::class(namespace="App",name="UnitSequence")]#[parent(crate::app::singletonscriptableobject_1::SingletonScriptableObject_1<crate::app::unitsequence::UnitSequence>)]pub struct UnitSequence{#[offset(24)]#[rename(name="待機中")]pub 待機中:crate::app::unitsequence::UnitSequence_Action, #[offset(36)]#[rename(name="カーソル")]pub カーソル:crate::app::unitsequence::UnitSequence_Action, #[offset(48)]#[rename(name="掴み中")]pub 掴み中:crate::app::unitsequence::UnitSequence_Action, #[offset(60)]#[rename(name="移動中")]pub 移動中:crate::app::unitsequence::UnitSequence_Action, #[offset(72)]#[rename(name="移動後")]pub 移動後:crate::app::unitsequence::UnitSequence_Action, #[offset(84)]#[rename(name="敵選択中")]pub 敵選択中:crate::app::unitsequence::UnitSequence_Action, #[offset(96)]#[rename(name="戦闘中")]pub 戦闘中:crate::app::unitsequence::UnitSequence_Action, #[offset(108)]#[rename(name="戦闘後")]pub 戦闘後:crate::app::unitsequence::UnitSequence_Action, #[offset(120)]#[rename(name="杖戦闘中")]pub 杖戦闘中:crate::app::unitsequence::UnitSequence_Action, #[offset(132)]#[rename(name="ガード中")]pub ガード中:crate::app::unitsequence::UnitSequence_Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitsequence/UnitSequence_Action.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UnitSequence_Action{pub 起動モーション:crate::app::unitanim::UnitAnim_Types,pub 常駐モーション:crate::app::unitanim::UnitAnim_Types,pub 正面回転:bool,}
+impl::unity2::ClassIdentity for UnitSequence_Action{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitSequence.Action";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for UnitSequence_Action {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitSequence.Action";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for UnitSequence_Action {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitsequence/UnitSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitSequence")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: unitsequence :: UnitSequence >)] pub struct UnitSequence {
-# [offset (24)] # [rename (name = "待機中")] pub 待機中 : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (36)] # [rename (name = "カーソル")] pub カーソル : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (48)] # [rename (name = "掴み中")] pub 掴み中 : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (60)] # [rename (name = "移動中")] pub 移動中 : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (72)] # [rename (name = "移動後")] pub 移動後 : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (84)] # [rename (name = "敵選択中")] pub 敵選択中 : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (96)] # [rename (name = "戦闘中")] pub 戦闘中 : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (108)] # [rename (name = "戦闘後")] pub 戦闘後 : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (120)] # [rename (name = "杖戦闘中")] pub 杖戦闘中 : crate :: app :: unitsequence :: UnitSequence_Action ,
-# [offset (132)] # [rename (name = "ガード中")] pub ガード中 : crate :: app :: unitsequence :: UnitSequence_Action ,
+impl::unity2::IlType for UnitSequence_Action{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -71,27 +35,31 @@ impl ::unity2::IlType for UnitSequence_Action {
 #[cfg(feature = "app-unitsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitsequence")]
-pub trait IUnitSequenceMethods : IUnitSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c62930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitsequence")]pub trait IUnitSequenceMethods:IUnitSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c62930usize)as*mut u8,();
+(UnitSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitsequence")]
-impl < __T : IUnitSequence > IUnitSequenceMethods for __T { }
+#[cfg(feature="app-unitsequence")]impl<__T:IUnitSequence>IUnitSequenceMethods for __T{}
 
-#[cfg(feature = "app-unitsequence")]
-impl UnitSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-unitsequence")]impl UnitSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-unitsequence")]
-impl UnitSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitSequence) , :: core :: stringify ! (new) ,)) ; < Self as IUnitSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitsequence")]impl UnitSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSequence), ::core::stringify!(new),));
+ <Self as IUnitSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitSequence_Action;
     pub use super::UnitSequence;
     pub use super::IUnitSequence;
     pub use super::IUnitSequenceMethods;
+    pub use super::UnitSequence_Action;
     pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;

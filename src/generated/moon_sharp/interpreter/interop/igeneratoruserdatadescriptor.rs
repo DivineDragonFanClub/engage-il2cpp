@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/igeneratoruserdatadescriptor/IGeneratorUserDataDescriptor.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop" , name = "IGeneratorUserDataDescriptor")] pub struct IGeneratorUserDataDescriptor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/igeneratoruserdatadescriptor/IGeneratorUserDataDescriptor.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="IGeneratorUserDataDescriptor")]pub struct IGeneratorUserDataDescriptor{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IGeneratorUserDataDescriptor_unity2_raw { use super :: * ; pub unsafe fn generate (this : IGeneratorUserDataDescriptor , r#type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Generate") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Generate" , < IGeneratorUserDataDescriptor as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IGeneratorUserDataDescriptor , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , r#type , __mi) } }
+#[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IGeneratorUserDataDescriptor_unity2_raw{use super:: * ;
+pub unsafe fn generate(this:IGeneratorUserDataDescriptor,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Generate").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Generate", <IGeneratorUserDataDescriptor as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IGeneratorUserDataDescriptor, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
-pub trait IIGeneratorUserDataDescriptorMethods : IIGeneratorUserDataDescriptor { # [doc = "`Generate(::unity2::SystemType)` overload"] fn generate (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor { unsafe { let __receiver = < IGeneratorUserDataDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IGeneratorUserDataDescriptor_unity2_raw :: generate (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]pub trait IIGeneratorUserDataDescriptorMethods:IIGeneratorUserDataDescriptor{#[doc="`Generate(::unity2::SystemType)` overload"]fn generate(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{unsafe{let __receiver= <IGeneratorUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IGeneratorUserDataDescriptor_unity2_raw::generate(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
-impl < __T : IIGeneratorUserDataDescriptor > IIGeneratorUserDataDescriptorMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]impl<__T:IIGeneratorUserDataDescriptor>IIGeneratorUserDataDescriptorMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
-impl IGeneratorUserDataDescriptor { pub fn generate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IGeneratorUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]impl IGeneratorUserDataDescriptor{pub fn generate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
 #[doc(hidden)]

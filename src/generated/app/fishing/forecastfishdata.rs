@@ -4,36 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishing/forecastfishdata/ForecastFishData.md"))] # [:: unity2 :: class (namespace = "App.Fishing" , name = "ForecastFishData")] # [parent (crate :: system :: object :: Object)] pub struct ForecastFishData {
-# [offset (16)] # [rename (name = "m_FishData")] pub m_fish_data : crate :: app :: fishingfishdata :: FishingFishData ,
-# [offset (24)] # [rename (name = "m_SizeMult")] pub m_size_mult : f32 ,
-# [offset (28)] # [rename (name = "m_Priority")] pub m_priority : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishing/forecastfishdata/ForecastFishData.md"))]#[::unity2::class(namespace="App.Fishing",name="ForecastFishData")]#[parent(crate::system::object::Object)]pub struct ForecastFishData{#[offset(16)]#[rename(name="m_FishData")]pub m_fish_data:crate::app::fishingfishdata::FishingFishData, #[offset(24)]#[rename(name="m_SizeMult")]pub m_size_mult:f32, #[offset(28)]#[rename(name="m_Priority")]pub m_priority:f32,}
 
 }
 
 #[cfg(feature = "app-fishing-forecastfishdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishing-forecastfishdata")]
-pub trait IForecastFishDataMethods : IForecastFishData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ForecastFishData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForecastFishData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::fishingfishdata::FishingFishData, f32, f32)` overload"] fn ctor_2 (self , data : impl :: core :: convert :: Into < crate :: app :: fishingfishdata :: FishingFishData > , size_mult : impl :: core :: convert :: Into < f32 > , priority : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ForecastFishData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForecastFishData , crate :: app :: fishingfishdata :: FishingFishData , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616f40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (size_mult) , :: core :: convert :: Into :: into (priority) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishing-forecastfishdata")]pub trait IForecastFishDataMethods:IForecastFishData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ForecastFishData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616f30usize)as*mut u8,();
+(ForecastFishData)__receiver)}
+}
+#[doc="`.ctor(crate::app::fishingfishdata::FishingFishData, f32, f32)` overload"]fn ctor_2(self,data:impl::core::convert::Into<crate::app::fishingfishdata::FishingFishData> ,size_mult:impl::core::convert::Into<f32> ,priority:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ForecastFishData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616f40usize)as*mut u8,();
+(ForecastFishData)__receiver,(crate::app::fishingfishdata::FishingFishData)::core::convert::Into::into(data),(f32)::core::convert::Into::into(size_mult),(f32)::core::convert::Into::into(priority))}
+}
+}
 
-#[cfg(feature = "app-fishing-forecastfishdata")]
-impl < __T : IForecastFishData > IForecastFishDataMethods for __T { }
+#[cfg(feature="app-fishing-forecastfishdata")]impl<__T:IForecastFishData>IForecastFishDataMethods for __T{}
 
-#[cfg(feature = "app-fishing-forecastfishdata")]
-impl ForecastFishData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForecastFishData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForecastFishData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-fishing-forecastfishdata")]impl ForecastFishData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-fishing-forecastfishdata")]
-impl ForecastFishData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ForecastFishData) , :: core :: stringify ! (new) ,)) ; < Self as IForecastFishDataMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::app::fishingfishdata::FishingFishData, f32, f32)` — overload selector"] pub fn new_2 (data : crate :: app :: fishingfishdata :: FishingFishData , size_mult : f32 , priority : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ForecastFishData) , :: core :: stringify ! (new_2) ,)) ; < Self as IForecastFishDataMethods > :: ctor_2 (this , data , size_mult , priority) ; this }
+#[cfg(feature="app-fishing-forecastfishdata")]impl ForecastFishData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ForecastFishData), ::core::stringify!(new),));
+ <Self as IForecastFishDataMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::app::fishingfishdata::FishingFishData, f32, f32)` — overload selector"]pub fn new_2(data:crate::app::fishingfishdata::FishingFishData,size_mult:f32,priority:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ForecastFishData), ::core::stringify!(new_2),));
+ <Self as IForecastFishDataMethods> ::ctor_2(this,data,size_mult,priority);
+this}
 }
 
 #[cfg(feature = "app-fishing-forecastfishdata")]

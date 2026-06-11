@@ -4,30 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsignaltimeline/MagicSignalTimeline.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "MagicSignalTimeline")] # [parent (crate :: system :: object :: Object)] pub struct MagicSignalTimeline {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/magicsignaltimeline/MagicSignalTimeline.md"))]#[::unity2::class(namespace="Combat",name="MagicSignalTimeline")]#[parent(crate::system::object::Object)]pub struct MagicSignalTimeline{}
 
 }
 
 #[cfg(feature = "combat-magicsignaltimeline-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-magicsignaltimeline")]
-pub trait IMagicSignalTimelineMethods : IMagicSignalTimeline { # [doc = "`get_Track()` overload"] fn get_track (self ,) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , :: unity2 :: OptionalMethod ,) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Track(crate::combat::magicsignaltrack::MagicSignalTrack)` overload"] fn set_track (self , value : impl :: core :: convert :: Into < crate :: combat :: magicsignaltrack :: MagicSignalTrack >) -> () { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , crate :: combat :: magicsignaltrack :: MagicSignalTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5a40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PrevTime()` overload"] fn get_prev_time (self ,) -> f32 { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PrevTime(f32)` overload"] fn set_prev_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Time()` overload"] fn get_time (self ,) -> f32 { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Time(f32)` overload"] fn set_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::magicsignaltrack::MagicSignalTrack)` overload"] fn ctor (self , track : impl :: core :: convert :: Into < crate :: combat :: magicsignaltrack :: MagicSignalTrack >) -> () { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , crate :: combat :: magicsignaltrack :: MagicSignalTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf32e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (track) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEnd()` overload"] fn get_is_end (self ,) -> bool { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf41f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf3320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf41e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Advance(f32)` overload"] fn advance (self , dt : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MagicSignalTimeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTimeline , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf4330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dt) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-magicsignaltimeline")]pub trait IMagicSignalTimelineMethods:IMagicSignalTimeline{#[doc="`get_Track()` overload"]fn get_track(self,)->crate::combat::magicsignaltrack::MagicSignalTrack{unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5a30usize)as*mut u8,crate::combat::magicsignaltrack::MagicSignalTrack;
+(MagicSignalTimeline)__receiver)}
+}
+#[doc="`set_Track(crate::combat::magicsignaltrack::MagicSignalTrack)` overload"]fn set_track(self,value:impl::core::convert::Into<crate::combat::magicsignaltrack::MagicSignalTrack>)->(){unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5a40usize)as*mut u8,();
+(MagicSignalTimeline)__receiver,(crate::combat::magicsignaltrack::MagicSignalTrack)::core::convert::Into::into(value))}
+}
+#[doc="`get_PrevTime()` overload"]fn get_prev_time(self,)->f32{unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5a50usize)as*mut u8,f32;
+(MagicSignalTimeline)__receiver)}
+}
+#[doc="`set_PrevTime(f32)` overload"]fn set_prev_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5a60usize)as*mut u8,();
+(MagicSignalTimeline)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Time()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5a70usize)as*mut u8,f32;
+(MagicSignalTimeline)__receiver)}
+}
+#[doc="`set_Time(f32)` overload"]fn set_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5a80usize)as*mut u8,();
+(MagicSignalTimeline)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::combat::magicsignaltrack::MagicSignalTrack)` overload"]fn ctor(self,track:impl::core::convert::Into<crate::combat::magicsignaltrack::MagicSignalTrack>)->(){unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf32e0usize)as*mut u8,();
+(MagicSignalTimeline)__receiver,(crate::combat::magicsignaltrack::MagicSignalTrack)::core::convert::Into::into(track))}
+}
+#[doc="`get_IsEnd()` overload"]fn get_is_end(self,)->bool{unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf41f0usize)as*mut u8,bool;
+(MagicSignalTimeline)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf3320usize)as*mut u8,();
+(MagicSignalTimeline)__receiver)}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf41e0usize)as*mut u8,();
+(MagicSignalTimeline)__receiver)}
+}
+#[doc="`Advance(f32)` overload"]fn advance(self,dt:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MagicSignalTimeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf4330usize)as*mut u8,();
+(MagicSignalTimeline)__receiver,(f32)::core::convert::Into::into(dt))}
+}
+}
 
-#[cfg(feature = "combat-magicsignaltimeline")]
-impl < __T : IMagicSignalTimeline > IMagicSignalTimelineMethods for __T { }
+#[cfg(feature="combat-magicsignaltimeline")]impl<__T:IMagicSignalTimeline>IMagicSignalTimelineMethods for __T{}
 
-#[cfg(feature = "combat-magicsignaltimeline")]
-impl MagicSignalTimeline { pub fn get_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_prev_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_prev_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn advance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTimeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="combat-magicsignaltimeline")]impl MagicSignalTimeline{pub fn get_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_prev_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_prev_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn advance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "combat-magicsignaltimeline")]
-impl MagicSignalTimeline {
-# [doc = "`.ctor(crate::combat::magicsignaltrack::MagicSignalTrack)` — overload selector"] pub fn new (track : crate :: combat :: magicsignaltrack :: MagicSignalTrack) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MagicSignalTimeline) , :: core :: stringify ! (new) ,)) ; < Self as IMagicSignalTimelineMethods > :: ctor (this , track) ; this }
+#[cfg(feature="combat-magicsignaltimeline")]impl MagicSignalTimeline{#[doc="`.ctor(crate::combat::magicsignaltrack::MagicSignalTrack)` — overload selector"]pub fn new(track:crate::combat::magicsignaltrack::MagicSignalTrack)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MagicSignalTimeline), ::core::stringify!(new),));
+ <Self as IMagicSignalTimelineMethods> ::ctor(this,track);
+this}
 }
 
 #[cfg(feature = "combat-magicsignaltimeline")]

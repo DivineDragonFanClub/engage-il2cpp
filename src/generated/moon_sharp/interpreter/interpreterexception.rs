@@ -4,33 +4,215 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interpreterexception/InterpreterException.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "InterpreterException")] pub struct InterpreterException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interpreterexception/InterpreterException.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="InterpreterException")]pub struct InterpreterException{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interpreterexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InterpreterException_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_instruction_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "get_InstructionPtr" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "get_InstructionPtr" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_instruction_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "set_InstructionPtr" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "set_InstructionPtr" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_call_stack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "get_CallStack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "get_CallStack" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_call_stack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: moon_sharp :: interpreter :: debugging :: watchitem :: WatchItem > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "set_CallStack" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "set_CallStack" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_decorated_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "get_DecoratedMessage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "get_DecoratedMessage" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_decorated_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "set_DecoratedMessage" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "set_DecoratedMessage" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_do_not_decorate_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "get_DoNotDecorateMessage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "get_DoNotDecorateMessage" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_do_not_decorate_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "set_DoNotDecorateMessage" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "set_DoNotDecorateMessage" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_decorate_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "DecorateMessage" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "DecorateMessage" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rethrow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InterpreterException as :: unity2 :: ClassIdentity > :: class () , "Rethrow" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InterpreterException as :: unity2 :: ClassIdentity > :: NAME , "Rethrow" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-interpreterexception")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InterpreterException_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_instruction_ptr{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"get_InstructionPtr",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"get_InstructionPtr",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_instruction_ptr{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"set_InstructionPtr",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"set_InstructionPtr",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_call_stack{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"get_CallStack",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"get_CallStack",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_call_stack{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"set_CallStack",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"set_CallStack",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_decorated_message{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"get_DecoratedMessage",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"get_DecoratedMessage",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_decorated_message{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"set_DecoratedMessage",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"set_DecoratedMessage",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_do_not_decorate_message{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"get_DoNotDecorateMessage",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"get_DoNotDecorateMessage",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_do_not_decorate_message{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"set_DoNotDecorateMessage",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"set_DoNotDecorateMessage",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_decorate_message{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"DecorateMessage",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"DecorateMessage",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_rethrow{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InterpreterException as::unity2::ClassIdentity> ::class(),"Rethrow",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InterpreterException as::unity2::ClassIdentity> ::NAME,"Rethrow",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
-pub trait IInterpreterExceptionMethods : IInterpreterException { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn ctor_2 (self , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_ctor_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`get_InstructionPtr()` overload"] fn get_instruction_ptr (self ,) -> i32 { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_get_instruction_ptr :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InstructionPtr(i32)` overload"] fn set_instruction_ptr (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_set_instruction_ptr :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CallStack()` overload"] fn get_call_stack (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: moon_sharp :: interpreter :: debugging :: watchitem :: WatchItem > { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: moon_sharp :: interpreter :: debugging :: watchitem :: WatchItem > = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_get_call_stack :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CallStack(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>)` overload"] fn set_call_stack (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: moon_sharp :: interpreter :: debugging :: watchitem :: WatchItem > >) -> () { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: moon_sharp :: interpreter :: debugging :: watchitem :: WatchItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_set_call_stack :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DecoratedMessage()` overload"] fn get_decorated_message (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_get_decorated_message :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DecoratedMessage(::unity2::Il2CppString)` overload"] fn set_decorated_message (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_set_decorated_message :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DoNotDecorateMessage()` overload"] fn get_do_not_decorate_message (self ,) -> bool { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_get_do_not_decorate_message :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DoNotDecorateMessage(bool)` overload"] fn set_do_not_decorate_message (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_set_do_not_decorate_message :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`DecorateMessage(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, i32)` overload"] fn decorate_message (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , sref : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef > , ip : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , crate :: moon_sharp :: interpreter :: script :: Script , crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_decorate_message :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (sref) , :: core :: convert :: Into :: into (ip) , :: core :: option :: Option :: None) } } } # [doc = "`Rethrow()` overload"] fn rethrow (self ,) -> () { unsafe { let __receiver = < InterpreterException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpreterException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InterpreterException_unity2_raw :: __lookup_rethrow :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-interpreterexception")]pub trait IInterpreterExceptionMethods:IInterpreterException{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(InterpreterException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn ctor_2(self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_ctor_2::get_method_info().method_ptr,();
+(InterpreterException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`get_InstructionPtr()` overload"]fn get_instruction_ptr(self,)->i32{unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_get_instruction_ptr::get_method_info().method_ptr,i32;
+(InterpreterException)__receiver)}
+}
+#[doc="`set_InstructionPtr(i32)` overload"]fn set_instruction_ptr(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_set_instruction_ptr::get_method_info().method_ptr,();
+(InterpreterException)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_CallStack()` overload"]fn get_call_stack(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>{unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_get_call_stack::get_method_info().method_ptr,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> ;
+(InterpreterException)__receiver)}
+}
+#[doc="`set_CallStack(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>)` overload"]fn set_call_stack(self,value:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> >)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_set_call_stack::get_method_info().method_ptr,();
+(InterpreterException)__receiver,(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>)::core::convert::Into::into(value))}
+}
+#[doc="`get_DecoratedMessage()` overload"]fn get_decorated_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_get_decorated_message::get_method_info().method_ptr, ::unity2::Il2CppString;
+(InterpreterException)__receiver)}
+}
+#[doc="`set_DecoratedMessage(::unity2::Il2CppString)` overload"]fn set_decorated_message(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_set_decorated_message::get_method_info().method_ptr,();
+(InterpreterException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_DoNotDecorateMessage()` overload"]fn get_do_not_decorate_message(self,)->bool{unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_get_do_not_decorate_message::get_method_info().method_ptr,bool;
+(InterpreterException)__receiver)}
+}
+#[doc="`set_DoNotDecorateMessage(bool)` overload"]fn set_do_not_decorate_message(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_set_do_not_decorate_message::get_method_info().method_ptr,();
+(InterpreterException)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`DecorateMessage(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, i32)` overload"]fn decorate_message(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,sref:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> ,ip:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_decorate_message::get_method_info().method_ptr,();
+(InterpreterException)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)::core::convert::Into::into(sref),(i32)::core::convert::Into::into(ip))}
+}
+#[doc="`Rethrow()` overload"]fn rethrow(self,)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InterpreterException_unity2_raw::__lookup_rethrow::get_method_info().method_ptr,();
+(InterpreterException)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
-impl < __T : IInterpreterException > IInterpreterExceptionMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-interpreterexception")]impl<__T:IInterpreterException>IInterpreterExceptionMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
-impl InterpreterException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_instruction_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_instruction_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_call_stack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_call_stack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_decorated_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_decorated_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_do_not_decorate_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_do_not_decorate_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn decorate_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn rethrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpreterException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="moon_sharp-interpreter-interpreterexception")]impl InterpreterException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_instruction_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_instruction_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_call_stack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_call_stack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_decorated_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_decorated_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_do_not_decorate_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_do_not_decorate_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn decorate_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn rethrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
-impl InterpreterException {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpreterException) , :: core :: stringify ! (new) ,)) ; < Self as IInterpreterExceptionMethods > :: ctor (this , message) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"] pub fn new_2 (format : :: unity2 :: Il2CppString , args : :: unity2 :: Array < crate :: system :: object :: Object >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpreterException) , :: core :: stringify ! (new_2) ,)) ; < Self as IInterpreterExceptionMethods > :: ctor_2 (this , format , args) ; this }
+#[cfg(feature="moon_sharp-interpreter-interpreterexception")]impl InterpreterException{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InterpreterException), ::core::stringify!(new),));
+ <Self as IInterpreterExceptionMethods> ::ctor(this,message);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"]pub fn new_2(format: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InterpreterException), ::core::stringify!(new_2),));
+ <Self as IInterpreterExceptionMethods> ::ctor_2(this,format,args);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interpreterexception")]

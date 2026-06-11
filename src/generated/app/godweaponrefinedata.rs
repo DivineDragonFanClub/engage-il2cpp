@@ -4,203 +4,588 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinedata/GodWeaponRefineData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodWeaponRefineData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData >)] pub struct GodWeaponRefineData {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godweaponrefinedata/GodWeaponRefineData_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GodWeaponRefineData_Kind  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godweaponrefinedata/GodWeaponRefineData_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodWeaponRefineData_Kind{pub value:i32,}
+impl::unity2::ClassIdentity for GodWeaponRefineData_Kind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GodWeaponRefineData.Kind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GodWeaponRefineData_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GodWeaponRefineData_Kind{pub fn power()->Self{Self{value:0}
+}
+pub fn hit()->Self{Self{value:1}
+}
+pub fn critical()->Self{Self{value:2}
+}
+pub fn avoid()->Self{Self{value:3}
+}
+pub fn secure()->Self{Self{value:4}
+}
+pub fn tech()->Self{Self{value:5}
+}
+pub fn quick()->Self{Self{value:6}
+}
+pub fn def()->Self{Self{value:7}
+}
+pub fn mdef()->Self{Self{value:8}
+}
+pub fn efficacy_horse()->Self{Self{value:9}
+}
+pub fn efficacy_armor()->Self{Self{value:10}
+}
+pub fn efficacy_fly()->Self{Self{value:11}
+}
+pub fn efficacy_dragon()->Self{Self{value:12}
+}
+pub fn efficacy_morph()->Self{Self{value:13}
+}
+pub fn num()->Self{Self{value:14}
+}
+pub fn none()->Self{Self{value: -1}
+}
+pub fn param_num()->Self{Self{value:9}
+}
+pub fn skill_min()->Self{Self{value:9}
+}
+pub fn skill_max()->Self{Self{value:13}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for GodWeaponRefineData_Kind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GodWeaponRefineData.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GodWeaponRefineData_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GodWeaponRefineData_Kind  {
-    pub fn power() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn hit() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn critical() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn avoid() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn secure() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn tech() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn quick() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn def() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn mdef() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn efficacy_horse() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn efficacy_armor() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn efficacy_fly() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn efficacy_dragon() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn efficacy_morph() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn param_num() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn skill_min() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn skill_max() -> Self {
-        Self { value: 13 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godweaponrefinedata/GodWeaponRefineData.md"))]#[::unity2::class(namespace="App",name="GodWeaponRefineData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::godweaponrefinedata::GodWeaponRefineData>)]pub struct GodWeaponRefineData{}
 
 }
 
 #[cfg(feature = "app-godweaponrefinedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godweaponrefinedata")]
-impl GodWeaponRefineData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347f80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGet(crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, i32)` overload"] pub fn try_get (data_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > > , level : impl :: core :: convert :: Into < i32 >) -> crate :: app :: godweaponrefinedata :: GodWeaponRefineData { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: godweaponrefinedata :: GodWeaponRefineData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2344200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data_list) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetKindMid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] pub fn get_kind_mid (kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23484f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`IsSkill(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] pub fn is_skill (kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348610usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetKindSid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] pub fn get_kind_sid (kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2343e50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetKind(::unity2::Il2CppString)` overload"] pub fn get_kind (sid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sid) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaterialIid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] pub fn get_material_iid (kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetValue(crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, i32, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] pub fn get_value_2 (data_list : impl :: core :: convert :: Into < crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > > , level : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > , i32 , crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348a50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data_list) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetValue(::unity2::Il2CppString, i32, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] pub fn get_value_3 (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetValuePower(::unity2::Il2CppString, i32)` overload"] pub fn get_value_power (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueHit(::unity2::Il2CppString, i32)` overload"] pub fn get_value_hit (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueCritical(::unity2::Il2CppString, i32)` overload"] pub fn get_value_critical (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueAvoid(::unity2::Il2CppString, i32)` overload"] pub fn get_value_avoid (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueSecure(::unity2::Il2CppString, i32)` overload"] pub fn get_value_secure (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueTech(::unity2::Il2CppString, i32)` overload"] pub fn get_value_tech (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueQuick(::unity2::Il2CppString, i32)` overload"] pub fn get_value_quick (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueDef(::unity2::Il2CppString, i32)` overload"] pub fn get_value_def (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueMdef(::unity2::Il2CppString, i32)` overload"] pub fn get_value_mdef (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetMinLevel()` overload"] pub fn get_min_level () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23445f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMaxLevel(::unity2::Il2CppString, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] pub fn get_max_level (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2344500usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaxLevel(crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] pub fn get_max_level_2 (data_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > > , kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > , crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348d80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data_list) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetTotalCapacity(::unity2::Il2CppString, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32)` overload"] pub fn get_total_capacity (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind > , level : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348de0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godweaponrefinedata")]impl GodWeaponRefineData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2347f80usize)as*mut u8,();
+)}
+}
+#[doc="`TryGet(crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, i32)` overload"]pub fn try_get(data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData> > ,level:impl::core::convert::Into<i32>)->crate::app::godweaponrefinedata::GodWeaponRefineData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2344200usize)as*mut u8,crate::app::godweaponrefinedata::GodWeaponRefineData;
+(crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>)::core::convert::Into::into(data_list),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetKindMid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]pub fn get_kind_mid(kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23484f0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`IsSkill(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]pub fn is_skill(kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348610usize)as*mut u8,bool;
+(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetKindSid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]pub fn get_kind_sid(kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2343e50usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetKind(::unity2::Il2CppString)` overload"]pub fn get_kind(sid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::godweaponrefinedata::GodWeaponRefineData_Kind{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348620usize)as*mut u8,crate::app::godweaponrefinedata::GodWeaponRefineData_Kind;
+(::unity2::Il2CppString)::core::convert::Into::into(sid))}
+}
+#[doc="`GetMaterialIid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]pub fn get_material_iid(kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348810usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetValue(crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, i32, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]pub fn get_value_2(data_list:impl::core::convert::Into<crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::godweaponrefinedata::GodWeaponRefineData> > ,level:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348a50usize)as*mut u8,i32;
+(crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::godweaponrefinedata::GodWeaponRefineData>)::core::convert::Into::into(data_list),(i32)::core::convert::Into::into(level),(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetValue(::unity2::Il2CppString, i32, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]pub fn get_value_3(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348b70usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level),(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetValuePower(::unity2::Il2CppString, i32)` overload"]pub fn get_value_power(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348cf0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetValueHit(::unity2::Il2CppString, i32)` overload"]pub fn get_value_hit(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d00usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetValueCritical(::unity2::Il2CppString, i32)` overload"]pub fn get_value_critical(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d10usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetValueAvoid(::unity2::Il2CppString, i32)` overload"]pub fn get_value_avoid(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d20usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetValueSecure(::unity2::Il2CppString, i32)` overload"]pub fn get_value_secure(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d30usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetValueTech(::unity2::Il2CppString, i32)` overload"]pub fn get_value_tech(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d40usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetValueQuick(::unity2::Il2CppString, i32)` overload"]pub fn get_value_quick(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d50usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetValueDef(::unity2::Il2CppString, i32)` overload"]pub fn get_value_def(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d60usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetValueMdef(::unity2::Il2CppString, i32)` overload"]pub fn get_value_mdef(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d70usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`GetMinLevel()` overload"]pub fn get_min_level()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23445f0usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetMaxLevel(::unity2::Il2CppString, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]pub fn get_max_level(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2344500usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetMaxLevel(crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]pub fn get_max_level_2(data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData> > ,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348d80usize)as*mut u8,i32;
+(crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>)::core::convert::Into::into(data_list),(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetTotalCapacity(::unity2::Il2CppString, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32)` overload"]pub fn get_total_capacity(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind> ,level:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2348de0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(level))}
+}
+}
 
-#[cfg(feature = "app-godweaponrefinedata")]
-pub trait IGodWeaponRefineDataMethods : IGodWeaponRefineData { # [doc = "`get_Iid()` overload"] fn get_iid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iid(::unity2::Il2CppString)` overload"] fn set_iid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PowerMat()` overload"] fn get_power_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PowerMat(u16)` overload"] fn set_power_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HitMat()` overload"] fn get_hit_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HitMat(u16)` overload"] fn set_hit_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CriticalMat()` overload"] fn get_critical_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CriticalMat(u16)` overload"] fn set_critical_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23480a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AvoidMat()` overload"] fn get_avoid_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23480b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AvoidMat(u16)` overload"] fn set_avoid_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23480c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SecureMat()` overload"] fn get_secure_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23480d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SecureMat(u16)` overload"] fn set_secure_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23480e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TechMat()` overload"] fn get_tech_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23480f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TechMat(u16)` overload"] fn set_tech_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_QuickMat()` overload"] fn get_quick_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_QuickMat(u16)` overload"] fn set_quick_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DefMat()` overload"] fn get_def_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DefMat(u16)` overload"] fn set_def_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MdefMat()` overload"] fn get_mdef_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MdefMat(u16)` overload"] fn set_mdef_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyHorseMat()` overload"] fn get_efficacy_horse_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyHorseMat(u16)` overload"] fn set_efficacy_horse_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyArmorMat()` overload"] fn get_efficacy_armor_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyArmorMat(u16)` overload"] fn set_efficacy_armor_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23481a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyFlyMat()` overload"] fn get_efficacy_fly_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23481b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyFlyMat(u16)` overload"] fn set_efficacy_fly_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23481c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyDragonMat()` overload"] fn get_efficacy_dragon_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23481d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyDragonMat(u16)` overload"] fn set_efficacy_dragon_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23481e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyMorphMat()` overload"] fn get_efficacy_morph_mat (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23481f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyMorphMat(u16)` overload"] fn set_efficacy_morph_mat (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PowerCapa()` overload"] fn get_power_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PowerCapa(u16)` overload"] fn set_power_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HitCapa()` overload"] fn get_hit_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HitCapa(u16)` overload"] fn set_hit_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CriticalCapa()` overload"] fn get_critical_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CriticalCapa(u16)` overload"] fn set_critical_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AvoidCapa()` overload"] fn get_avoid_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AvoidCapa(u16)` overload"] fn set_avoid_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SecureCapa()` overload"] fn get_secure_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SecureCapa(u16)` overload"] fn set_secure_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23482a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TechCapa()` overload"] fn get_tech_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23482b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TechCapa(u16)` overload"] fn set_tech_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23482c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_QuickCapa()` overload"] fn get_quick_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23482d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_QuickCapa(u16)` overload"] fn set_quick_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23482e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DefCapa()` overload"] fn get_def_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23482f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DefCapa(u16)` overload"] fn set_def_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MdefCapa()` overload"] fn get_mdef_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MdefCapa(u16)` overload"] fn set_mdef_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyHorseCapa()` overload"] fn get_efficacy_horse_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyHorseCapa(u16)` overload"] fn set_efficacy_horse_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyArmorCapa()` overload"] fn get_efficacy_armor_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyArmorCapa(u16)` overload"] fn set_efficacy_armor_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyFlyCapa()` overload"] fn get_efficacy_fly_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyFlyCapa(u16)` overload"] fn set_efficacy_fly_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyDragonCapa()` overload"] fn get_efficacy_dragon_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyDragonCapa(u16)` overload"] fn set_efficacy_dragon_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23483a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EfficacyMorphCapa()` overload"] fn get_efficacy_morph_capa (self ,) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23483b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EfficacyMorphCapa(u16)` overload"] fn set_efficacy_morph_capa (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23483c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Power()` overload"] fn get_power (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23483d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Power(i8)` overload"] fn set_power (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23483e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Hit()` overload"] fn get_hit (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23483f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Hit(i8)` overload"] fn set_hit (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Critical()` overload"] fn get_critical (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Critical(i8)` overload"] fn set_critical (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Avoid()` overload"] fn get_avoid (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Avoid(i8)` overload"] fn set_avoid (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Secure()` overload"] fn get_secure (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Secure(i8)` overload"] fn set_secure (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Tech()` overload"] fn get_tech (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Tech(i8)` overload"] fn set_tech (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Quick()` overload"] fn get_quick (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Quick(i8)` overload"] fn set_quick (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23484a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Def()` overload"] fn get_def (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23484b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Def(i8)` overload"] fn set_def (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23484c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Mdef()` overload"] fn get_mdef (self ,) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23484d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mdef(i8)` overload"] fn set_mdef (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23484e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaterialCount(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] fn get_material_count (self , kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetCapacity(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] fn get_capacity (self , kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> u16 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2348930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetValue(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"] fn get_value (self , kind : impl :: core :: convert :: Into < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind >) -> i8 { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23489d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2349030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godweaponrefinedata")]pub trait IGodWeaponRefineDataMethods:IGodWeaponRefineData{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348030usize)as*mut u8, ::unity2::Il2CppString;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348040usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PowerMat()` overload"]fn get_power_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348050usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_PowerMat(u16)` overload"]fn set_power_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348060usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_HitMat()` overload"]fn get_hit_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348070usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_HitMat(u16)` overload"]fn set_hit_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348080usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_CriticalMat()` overload"]fn get_critical_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348090usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_CriticalMat(u16)` overload"]fn set_critical_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23480a0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_AvoidMat()` overload"]fn get_avoid_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23480b0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_AvoidMat(u16)` overload"]fn set_avoid_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23480c0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_SecureMat()` overload"]fn get_secure_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23480d0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_SecureMat(u16)` overload"]fn set_secure_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23480e0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_TechMat()` overload"]fn get_tech_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23480f0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_TechMat(u16)` overload"]fn set_tech_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348100usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_QuickMat()` overload"]fn get_quick_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348110usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_QuickMat(u16)` overload"]fn set_quick_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348120usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_DefMat()` overload"]fn get_def_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348130usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_DefMat(u16)` overload"]fn set_def_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348140usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_MdefMat()` overload"]fn get_mdef_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348150usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_MdefMat(u16)` overload"]fn set_mdef_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348160usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyHorseMat()` overload"]fn get_efficacy_horse_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348170usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyHorseMat(u16)` overload"]fn set_efficacy_horse_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348180usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyArmorMat()` overload"]fn get_efficacy_armor_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348190usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyArmorMat(u16)` overload"]fn set_efficacy_armor_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23481a0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyFlyMat()` overload"]fn get_efficacy_fly_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23481b0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyFlyMat(u16)` overload"]fn set_efficacy_fly_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23481c0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyDragonMat()` overload"]fn get_efficacy_dragon_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23481d0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyDragonMat(u16)` overload"]fn set_efficacy_dragon_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23481e0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyMorphMat()` overload"]fn get_efficacy_morph_mat(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23481f0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyMorphMat(u16)` overload"]fn set_efficacy_morph_mat(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348200usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_PowerCapa()` overload"]fn get_power_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348210usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_PowerCapa(u16)` overload"]fn set_power_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348220usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_HitCapa()` overload"]fn get_hit_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348230usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_HitCapa(u16)` overload"]fn set_hit_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348240usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_CriticalCapa()` overload"]fn get_critical_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348250usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_CriticalCapa(u16)` overload"]fn set_critical_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348260usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_AvoidCapa()` overload"]fn get_avoid_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348270usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_AvoidCapa(u16)` overload"]fn set_avoid_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348280usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_SecureCapa()` overload"]fn get_secure_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348290usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_SecureCapa(u16)` overload"]fn set_secure_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23482a0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_TechCapa()` overload"]fn get_tech_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23482b0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_TechCapa(u16)` overload"]fn set_tech_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23482c0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_QuickCapa()` overload"]fn get_quick_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23482d0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_QuickCapa(u16)` overload"]fn set_quick_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23482e0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_DefCapa()` overload"]fn get_def_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23482f0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_DefCapa(u16)` overload"]fn set_def_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348300usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_MdefCapa()` overload"]fn get_mdef_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348310usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_MdefCapa(u16)` overload"]fn set_mdef_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348320usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyHorseCapa()` overload"]fn get_efficacy_horse_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348330usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyHorseCapa(u16)` overload"]fn set_efficacy_horse_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348340usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyArmorCapa()` overload"]fn get_efficacy_armor_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348350usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyArmorCapa(u16)` overload"]fn set_efficacy_armor_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348360usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyFlyCapa()` overload"]fn get_efficacy_fly_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348370usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyFlyCapa(u16)` overload"]fn set_efficacy_fly_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348380usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyDragonCapa()` overload"]fn get_efficacy_dragon_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348390usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyDragonCapa(u16)` overload"]fn set_efficacy_dragon_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23483a0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EfficacyMorphCapa()` overload"]fn get_efficacy_morph_capa(self,)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23483b0usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_EfficacyMorphCapa(u16)` overload"]fn set_efficacy_morph_capa(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23483c0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Power()` overload"]fn get_power(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23483d0usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Power(i8)` overload"]fn set_power(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23483e0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Hit()` overload"]fn get_hit(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23483f0usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Hit(i8)` overload"]fn set_hit(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348400usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Critical()` overload"]fn get_critical(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348410usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Critical(i8)` overload"]fn set_critical(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348420usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Avoid()` overload"]fn get_avoid(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348430usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Avoid(i8)` overload"]fn set_avoid(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348440usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Secure()` overload"]fn get_secure(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348450usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Secure(i8)` overload"]fn set_secure(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348460usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Tech()` overload"]fn get_tech(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348470usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Tech(i8)` overload"]fn set_tech(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348480usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Quick()` overload"]fn get_quick(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348490usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Quick(i8)` overload"]fn set_quick(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23484a0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Def()` overload"]fn get_def(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23484b0usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Def(i8)` overload"]fn set_def(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23484c0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Mdef()` overload"]fn get_mdef(self,)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23484d0usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver)}
+}
+#[doc="`set_Mdef(i8)` overload"]fn set_mdef(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23484e0usize)as*mut u8,();
+(GodWeaponRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`GetMaterialCount(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]fn get_material_count(self,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348770usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver,(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetCapacity(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]fn get_capacity(self,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)->u16{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2348930usize)as*mut u8,u16;
+(GodWeaponRefineData)__receiver,(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetValue(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]fn get_value(self,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>)->i8{unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23489d0usize)as*mut u8,i8;
+(GodWeaponRefineData)__receiver,(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodWeaponRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2349030usize)as*mut u8,();
+(GodWeaponRefineData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godweaponrefinedata")]
-impl < __T : IGodWeaponRefineData > IGodWeaponRefineDataMethods for __T { }
+#[cfg(feature="app-godweaponrefinedata")]impl<__T:IGodWeaponRefineData>IGodWeaponRefineDataMethods for __T{}
 
-#[cfg(feature = "app-godweaponrefinedata")]
-impl GodWeaponRefineData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn try_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_power_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_power_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_hit_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_hit_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_critical_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_critical_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_avoid_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_avoid_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_secure_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_secure_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_tech_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_tech_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_quick_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_quick_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_def_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_def_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_mdef_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_mdef_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_efficacy_horse_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_efficacy_horse_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_efficacy_armor_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_efficacy_armor_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_efficacy_fly_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_efficacy_fly_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_efficacy_dragon_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_efficacy_dragon_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_efficacy_morph_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_efficacy_morph_mat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_power_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn set_power_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_hit_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn set_hit_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_critical_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn set_critical_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_avoid_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn set_avoid_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_secure_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn set_secure_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_tech_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn set_tech_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_quick_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn set_quick_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_def_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn set_def_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_mdef_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn set_mdef_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn get_efficacy_horse_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn set_efficacy_horse_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn get_efficacy_armor_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn set_efficacy_armor_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn get_efficacy_fly_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn set_efficacy_fly_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn get_efficacy_dragon_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn set_efficacy_dragon_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn get_efficacy_morph_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn set_efficacy_morph_capa_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn get_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn set_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn get_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn set_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn get_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn set_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn get_avoid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn set_avoid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn get_secure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn set_secure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn get_tech_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn set_tech_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn get_quick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn set_quick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn get_def_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn set_def_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn get_mdef_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn set_mdef_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn get_kind_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn is_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn get_kind_sid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } pub fn get_material_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [82] } pub fn get_material_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [83] } pub fn get_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [84] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [85] } pub fn get_value_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [86] } pub fn get_value_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [87] } pub fn get_value_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [88] } pub fn get_value_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [89] } pub fn get_value_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [90] } pub fn get_value_avoid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [91] } pub fn get_value_secure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [92] } pub fn get_value_tech_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [93] } pub fn get_value_quick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [94] } pub fn get_value_def_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [95] } pub fn get_value_mdef_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [96] } pub fn get_min_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [97] } pub fn get_max_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [98] } pub fn get_max_level_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [99] } pub fn get_total_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [100] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [101] } }
+#[cfg(feature="app-godweaponrefinedata")]impl GodWeaponRefineData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_power_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_power_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_hit_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_hit_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_critical_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_critical_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_avoid_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_avoid_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_secure_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_secure_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_tech_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_tech_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_quick_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_quick_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_def_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_def_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_mdef_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_mdef_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_efficacy_horse_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_efficacy_horse_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_efficacy_armor_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_efficacy_armor_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_efficacy_fly_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_efficacy_fly_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_efficacy_dragon_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_efficacy_dragon_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_efficacy_morph_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_efficacy_morph_mat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_power_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_power_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_hit_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_hit_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_critical_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn set_critical_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_avoid_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn set_avoid_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_secure_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn set_secure_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_tech_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn set_tech_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_quick_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn set_quick_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_def_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn set_def_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_mdef_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn set_mdef_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn get_efficacy_horse_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn set_efficacy_horse_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn get_efficacy_armor_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn set_efficacy_armor_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn get_efficacy_fly_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn set_efficacy_fly_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn get_efficacy_dragon_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn set_efficacy_dragon_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn get_efficacy_morph_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn set_efficacy_morph_capa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn get_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn set_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn get_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn set_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn get_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn set_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn get_avoid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn set_avoid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn get_secure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn set_secure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn get_tech_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn set_tech_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn get_quick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn set_quick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn get_def_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn set_def_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn get_mdef_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn set_mdef_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn get_kind_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn is_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn get_kind_sid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn get_material_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn get_material_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
+pub fn get_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
+pub fn get_value_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
+pub fn get_value_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+pub fn get_value_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
+pub fn get_value_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+pub fn get_value_avoid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
+pub fn get_value_secure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[92]}
+pub fn get_value_tech_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
+pub fn get_value_quick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[94]}
+pub fn get_value_def_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
+pub fn get_value_mdef_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
+pub fn get_min_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
+pub fn get_max_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
+pub fn get_max_level_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
+pub fn get_total_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[100]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[101]}
+}
 
-#[cfg(feature = "app-godweaponrefinedata")]
-impl GodWeaponRefineData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodWeaponRefineData) , :: core :: stringify ! (new) ,)) ; < Self as IGodWeaponRefineDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godweaponrefinedata")]impl GodWeaponRefineData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodWeaponRefineData), ::core::stringify!(new),));
+ <Self as IGodWeaponRefineDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godweaponrefinedata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GodWeaponRefineData_Kind;
     pub use super::GodWeaponRefineData;
     pub use super::IGodWeaponRefineData;
     pub use super::IGodWeaponRefineDataMethods;
-    pub use super::GodWeaponRefineData_Kind;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

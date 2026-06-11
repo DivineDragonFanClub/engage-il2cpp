@@ -4,33 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/rectangularvertexclipper/RectangularVertexClipper.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "RectangularVertexClipper")] # [parent (crate :: system :: object :: Object)] pub struct RectangularVertexClipper {
-# [offset (16)] # [rename (name = "m_WorldCorners")] pub m_world_corners : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (24)] # [rename (name = "m_CanvasCorners")] pub m_canvas_corners : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/rectangularvertexclipper/RectangularVertexClipper.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="RectangularVertexClipper")]#[parent(crate::system::object::Object)]pub struct RectangularVertexClipper{#[offset(16)]#[rename(name="m_WorldCorners")]pub m_world_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(24)]#[rename(name="m_CanvasCorners")]pub m_canvas_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-rectangularvertexclipper-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
-pub trait IRectangularVertexClipperMethods : IRectangularVertexClipper { # [doc = "`GetCanvasRect(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::canvas::Canvas)` overload"] fn get_canvas_rect (self , t : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform > , c : impl :: core :: convert :: Into < crate :: unity_engine :: canvas :: Canvas >) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < RectangularVertexClipper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectangularVertexClipper , crate :: unity_engine :: recttransform :: RectTransform , crate :: unity_engine :: canvas :: Canvas , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RectangularVertexClipper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectangularVertexClipper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-rectangularvertexclipper")]pub trait IRectangularVertexClipperMethods:IRectangularVertexClipper{#[doc="`GetCanvasRect(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::canvas::Canvas)` overload"]fn get_canvas_rect(self,t:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform> ,c:impl::core::convert::Into<crate::unity_engine::canvas::Canvas>)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <RectangularVertexClipper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722a50usize)as*mut u8,crate::unity_engine::rect::Rect;
+(RectangularVertexClipper)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(t),(crate::unity_engine::canvas::Canvas)::core::convert::Into::into(c))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RectangularVertexClipper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722e50usize)as*mut u8,();
+(RectangularVertexClipper)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
-impl < __T : IRectangularVertexClipper > IRectangularVertexClipperMethods for __T { }
+#[cfg(feature="unity_engine-ui-rectangularvertexclipper")]impl<__T:IRectangularVertexClipper>IRectangularVertexClipperMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
-impl RectangularVertexClipper { pub fn get_canvas_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectangularVertexClipper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectangularVertexClipper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-ui-rectangularvertexclipper")]impl RectangularVertexClipper{pub fn get_canvas_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
-impl RectangularVertexClipper {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RectangularVertexClipper) , :: core :: stringify ! (new) ,)) ; < Self as IRectangularVertexClipperMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-rectangularvertexclipper")]impl RectangularVertexClipper{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RectangularVertexClipper), ::core::stringify!(new),));
+ <Self as IRectangularVertexClipperMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]

@@ -4,113 +4,139 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTradeManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortietrademanager :: SortieTradeManager >)] pub struct SortieTradeManager {
-# [offset (32)] # [rename (name = "m_From")] pub m_from : crate :: app :: sortietrademanager :: SortieTradeManager_Side ,
-# [offset (40)] # [rename (name = "m_To")] pub m_to : crate :: app :: sortietrademanager :: SortieTradeManager_Side ,
-# [offset (48)] # [rename (name = "m_SelectSide")] pub m_select_side : crate :: app :: sortietrademanager :: SortieTradeManager_SideId ,
-# [offset (52)] # [rename (name = "m_IsFirstSelected")] pub m_is_first_selected : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietrademanager/SortieTradeManager.md"))]#[::unity2::class(namespace="App",name="SortieTradeManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortietrademanager::SortieTradeManager>)]pub struct SortieTradeManager{#[offset(32)]#[rename(name="m_From")]pub m_from:crate::app::sortietrademanager::SortieTradeManager_Side, #[offset(40)]#[rename(name="m_To")]pub m_to:crate::app::sortietrademanager::SortieTradeManager_Side, #[offset(48)]#[rename(name="m_SelectSide")]pub m_select_side:crate::app::sortietrademanager::SortieTradeManager_SideId, #[offset(52)]#[rename(name="m_IsFirstSelected")]pub m_is_first_selected:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietrademanager/SortieTradeManager_Side.md"))]#[::unity2::class(namespace="App",name="SortieTradeManager.Side")]#[parent(crate::system::object::Object)]pub struct SortieTradeManager_Side{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieTradeManager_SideId{pub value:i32,}
+impl::unity2::ClassIdentity for SortieTradeManager_SideId{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieTradeManager.SideId";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieTradeManager_SideId  {
-    pub value: i32,
+impl::unity2::IlType for SortieTradeManager_SideId{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for SortieTradeManager_SideId  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieTradeManager.SideId";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl SortieTradeManager_SideId{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for SortieTradeManager_SideId  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn from()->Self{Self{value:1}
 }
-
-
-impl  SortieTradeManager_SideId  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn from() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn to() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn to()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTradeManager.Side")] # [parent (crate :: system :: object :: Object)] pub struct SortieTradeManager_Side {}
+}
 
 }
 
 #[cfg(feature = "app-sortietrademanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortietrademanager")]
-pub trait ISortieTradeManagerMethods : ISortieTradeManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f11c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f12d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_From()` overload"] fn get_from (self ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f1310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_To()` overload"] fn get_to (self ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_Side = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f1320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectSide()` overload"] fn get_select_side (self ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_SideId { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortietrademanager :: SortieTradeManager_SideId = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f1330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SelectSide(crate::app::sortietrademanager::SortieTradeManager_SideId)` overload"] fn set_select_side (self , value : impl :: core :: convert :: Into < crate :: app :: sortietrademanager :: SortieTradeManager_SideId >) -> () { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager , crate :: app :: sortietrademanager :: SortieTradeManager_SideId , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f1340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFirstSelected()` overload"] fn get_is_first_selected (self ,) -> bool { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f1350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsFirstSelected(bool)` overload"] fn set_is_first_selected (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SortieTradeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f1360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sortietrademanager")]
-impl < __T : ISortieTradeManager > ISortieTradeManagerMethods for __T { }
-
-#[cfg(feature = "app-sortietrademanager")]
-impl SortieTradeManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_select_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_select_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_first_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_is_first_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-sortietrademanager")]
-impl SortieTradeManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTradeManager) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTradeManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortietrademanager")]pub trait ISortieTradeManagerMethods:ISortieTradeManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTradeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f11c0usize)as*mut u8,();
+(SortieTradeManager)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SortieTradeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f12d0usize)as*mut u8,();
+(SortieTradeManager)__receiver)}
+}
+#[doc="`get_From()` overload"]fn get_from(self,)->crate::app::sortietrademanager::SortieTradeManager_Side{unsafe{let __receiver= <SortieTradeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f1310usize)as*mut u8,crate::app::sortietrademanager::SortieTradeManager_Side;
+(SortieTradeManager)__receiver)}
+}
+#[doc="`get_To()` overload"]fn get_to(self,)->crate::app::sortietrademanager::SortieTradeManager_Side{unsafe{let __receiver= <SortieTradeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f1320usize)as*mut u8,crate::app::sortietrademanager::SortieTradeManager_Side;
+(SortieTradeManager)__receiver)}
+}
+#[doc="`get_SelectSide()` overload"]fn get_select_side(self,)->crate::app::sortietrademanager::SortieTradeManager_SideId{unsafe{let __receiver= <SortieTradeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f1330usize)as*mut u8,crate::app::sortietrademanager::SortieTradeManager_SideId;
+(SortieTradeManager)__receiver)}
+}
+#[doc="`set_SelectSide(crate::app::sortietrademanager::SortieTradeManager_SideId)` overload"]fn set_select_side(self,value:impl::core::convert::Into<crate::app::sortietrademanager::SortieTradeManager_SideId>)->(){unsafe{let __receiver= <SortieTradeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f1340usize)as*mut u8,();
+(SortieTradeManager)__receiver,(crate::app::sortietrademanager::SortieTradeManager_SideId)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsFirstSelected()` overload"]fn get_is_first_selected(self,)->bool{unsafe{let __receiver= <SortieTradeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f1350usize)as*mut u8,bool;
+(SortieTradeManager)__receiver)}
+}
+#[doc="`set_IsFirstSelected(bool)` overload"]fn set_is_first_selected(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SortieTradeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f1360usize)as*mut u8,();
+(SortieTradeManager)__receiver,(bool)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-sortietrademanager")]
-pub trait ISortieTradeManager_SideMethods : ISortieTradeManager_Side { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager_Side , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager_Side , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Unit(crate::app::unit::Unit)` overload"] fn set_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager_Side , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a6d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OwnerItemIndex()` overload"] fn get_owner_item_index (self ,) -> i32 { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager_Side , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OwnerItemIndex(i32)` overload"] fn set_owner_item_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager_Side , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieTradeManager_Side as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeManager_Side , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d7a700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortietrademanager")]impl<__T:ISortieTradeManager>ISortieTradeManagerMethods for __T{}
 
-#[cfg(feature = "app-sortietrademanager")]
-impl < __T : ISortieTradeManager_Side > ISortieTradeManager_SideMethods for __T { }
+#[cfg(feature="app-sortietrademanager")]impl SortieTradeManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_select_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_select_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_first_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_is_first_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-sortietrademanager")]
-impl SortieTradeManager_Side { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_owner_item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_owner_item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeManager_Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-sortietrademanager")]impl SortieTradeManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTradeManager), ::core::stringify!(new),));
+ <Self as ISortieTradeManagerMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-sortietrademanager")]
-impl SortieTradeManager_Side {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTradeManager_Side) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTradeManager_SideMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortietrademanager")]pub trait ISortieTradeManager_SideMethods:ISortieTradeManager_Side{#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SortieTradeManager_Side as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a680usize)as*mut u8,();
+(SortieTradeManager_Side)__receiver)}
+}
+#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SortieTradeManager_Side as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a6c0usize)as*mut u8,crate::app::unit::Unit;
+(SortieTradeManager_Side)__receiver)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]fn set_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SortieTradeManager_Side as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a6d0usize)as*mut u8,();
+(SortieTradeManager_Side)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_OwnerItemIndex()` overload"]fn get_owner_item_index(self,)->i32{unsafe{let __receiver= <SortieTradeManager_Side as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a6e0usize)as*mut u8,i32;
+(SortieTradeManager_Side)__receiver)}
+}
+#[doc="`set_OwnerItemIndex(i32)` overload"]fn set_owner_item_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortieTradeManager_Side as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a6f0usize)as*mut u8,();
+(SortieTradeManager_Side)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTradeManager_Side as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7a700usize)as*mut u8,();
+(SortieTradeManager_Side)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietrademanager")]impl<__T:ISortieTradeManager_Side>ISortieTradeManager_SideMethods for __T{}
+
+#[cfg(feature="app-sortietrademanager")]impl SortieTradeManager_Side{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_owner_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_owner_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortietrademanager")]impl SortieTradeManager_Side{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTradeManager_Side), ::core::stringify!(new),));
+ <Self as ISortieTradeManager_SideMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortietrademanager")]
@@ -119,10 +145,10 @@ pub mod prelude {
     pub use super::SortieTradeManager;
     pub use super::ISortieTradeManager;
     pub use super::ISortieTradeManagerMethods;
-    pub use super::SortieTradeManager_SideId;
     pub use super::SortieTradeManager_Side;
     pub use super::ISortieTradeManager_Side;
     pub use super::ISortieTradeManager_SideMethods;
+    pub use super::SortieTradeManager_SideId;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

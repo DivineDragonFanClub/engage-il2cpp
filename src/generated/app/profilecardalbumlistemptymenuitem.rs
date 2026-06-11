@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistemptymenuitem/ProfileCardAlbumListEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardAlbumListEmptyMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ProfileCardAlbumListEmptyMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbumlistemptymenuitem/ProfileCardAlbumListEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumListEmptyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardAlbumListEmptyMenuItem{}
 
 }
 
 #[cfg(feature = "app-profilecardalbumlistemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardalbumlistemptymenuitem")]
-pub trait IProfileCardAlbumListEmptyMenuItemMethods : IProfileCardAlbumListEmptyMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardAlbumListEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2826950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardAlbumListEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2826960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < ProfileCardAlbumListEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28269e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardalbumlistemptymenuitem")]pub trait IProfileCardAlbumListEmptyMenuItemMethods:IProfileCardAlbumListEmptyMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2826950usize)as*mut u8,();
+(ProfileCardAlbumListEmptyMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardAlbumListEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2826960usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardAlbumListEmptyMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <ProfileCardAlbumListEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28269e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(ProfileCardAlbumListEmptyMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardalbumlistemptymenuitem")]
-impl < __T : IProfileCardAlbumListEmptyMenuItem > IProfileCardAlbumListEmptyMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardalbumlistemptymenuitem")]impl<__T:IProfileCardAlbumListEmptyMenuItem>IProfileCardAlbumListEmptyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardalbumlistemptymenuitem")]
-impl ProfileCardAlbumListEmptyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-profilecardalbumlistemptymenuitem")]impl ProfileCardAlbumListEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-profilecardalbumlistemptymenuitem")]
-impl ProfileCardAlbumListEmptyMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardAlbumListEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardAlbumListEmptyMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardalbumlistemptymenuitem")]impl ProfileCardAlbumListEmptyMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardAlbumListEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardAlbumListEmptyMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardalbumlistemptymenuitem")]

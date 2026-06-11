@@ -4,36 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: combat :: combatsubspace :: { CombatSubspace , ICombatSubspace }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::combat::combatsubspace::{CombatSubspace,ICombatSubspace}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatsubspacego/CombatSubspaceGo.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatSubspaceGo")] # [parent (crate :: combat :: combatsubspace :: CombatSubspace)] pub struct CombatSubspaceGo {
-# [offset (120)] # [rename (name = "m_SceneName")] pub m_scene_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatsubspacego/CombatSubspaceGo.md"))]#[::unity2::class(namespace="Combat",name="CombatSubspaceGo")]#[parent(crate::combat::combatsubspace::CombatSubspace)]pub struct CombatSubspaceGo{#[offset(120)]#[rename(name="m_SceneName")]pub m_scene_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "combat-combatsubspacego-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatsubspacego")]
-pub trait ICombatSubspaceGoMethods : ICombatSubspaceGo { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CombatSubspaceGo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSubspaceGo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2932870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (scene_name) , :: core :: option :: Option :: None) } } } # [doc = "`LoadScene()` overload"] fn load_scene (self ,) -> () { unsafe { let __receiver = < CombatSubspaceGo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSubspaceGo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2932f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SwapScene()` overload"] fn swap_scene (self ,) -> () { unsafe { let __receiver = < CombatSubspaceGo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSubspaceGo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2932fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangeCamera()` overload"] fn change_camera (self ,) -> () { unsafe { let __receiver = < CombatSubspaceGo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSubspaceGo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2933130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatsubspacego")]pub trait ICombatSubspaceGoMethods:ICombatSubspaceGo{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,scene_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CombatSubspaceGo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2932870usize)as*mut u8,();
+(CombatSubspaceGo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(scene_name))}
+}
+#[doc="`LoadScene()` overload"]fn load_scene(self,)->(){unsafe{let __receiver= <CombatSubspaceGo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2932f30usize)as*mut u8,();
+(CombatSubspaceGo)__receiver)}
+}
+#[doc="`SwapScene()` overload"]fn swap_scene(self,)->(){unsafe{let __receiver= <CombatSubspaceGo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2932fb0usize)as*mut u8,();
+(CombatSubspaceGo)__receiver)}
+}
+#[doc="`ChangeCamera()` overload"]fn change_camera(self,)->(){unsafe{let __receiver= <CombatSubspaceGo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2933130usize)as*mut u8,();
+(CombatSubspaceGo)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatsubspacego")]
-impl < __T : ICombatSubspaceGo > ICombatSubspaceGoMethods for __T { }
+#[cfg(feature="combat-combatsubspacego")]impl<__T:ICombatSubspaceGo>ICombatSubspaceGoMethods for __T{}
 
-#[cfg(feature = "combat-combatsubspacego")]
-impl CombatSubspaceGo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSubspaceGo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSubspaceGo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn swap_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSubspaceGo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn change_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSubspaceGo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-combatsubspacego")]impl CombatSubspaceGo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn swap_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn change_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-combatsubspacego")]
-impl CombatSubspaceGo {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (scene_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatSubspaceGo) , :: core :: stringify ! (new) ,)) ; < Self as ICombatSubspaceGoMethods > :: ctor (this , scene_name) ; this }
+#[cfg(feature="combat-combatsubspacego")]impl CombatSubspaceGo{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(scene_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatSubspaceGo), ::core::stringify!(new),));
+ <Self as ICombatSubspaceGoMethods> ::ctor(this,scene_name);
+this}
 }
 
 #[cfg(feature = "combat-combatsubspacego")]

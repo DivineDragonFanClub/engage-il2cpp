@@ -4,35 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdesccallbase :: { IProcDescCallBase , ProcDescCallBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdesccallbase::{IProcDescCallBase,ProcDescCallBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescargt_1/ProcDescArgT_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescArgT`1")] # [parent (crate :: app :: procdesccallbase :: ProcDescCallBase)] # [parent (crate :: app :: procdesc :: ProcDesc)] # [parent (crate :: system :: object :: Object)] pub struct ProcDescArgT_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_Function")] pub m_function : crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , T0 > ,
-# [rename (name = "m_Arg")] pub m_arg : T0 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescargt_1/ProcDescArgT_1.md"))]#[::unity2::class(namespace="App",name="ProcDescArgT`1")]#[parent(crate::app::procdesccallbase::ProcDescCallBase)]#[parent(crate::app::procdesc::ProcDesc)]#[parent(crate::system::object::Object)]pub struct ProcDescArgT_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Function")]pub m_function:crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0> , #[rename(name="m_Arg")]pub m_arg:T0,}
 
 }
 
 #[cfg(feature = "app-procdescargt_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescargt_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ProcDescArgT_1 < T0 > {
-# [doc = "`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0>, T0)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , function : crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , T0 > , arg : T0) -> () ;
-
-# [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] # [method (name = "ExecuteImpl" , args = 1)] pub fn execute_impl (self , inst : crate :: app :: procinst :: ProcInst) -> () ;
+#[cfg(feature="app-procdescargt_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>ProcDescArgT_1<T0>{#[doc="`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0>, T0)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,function:crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0> ,arg:T0)->();
+ #[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]#[method(name="ExecuteImpl",args=1)]pub fn execute_impl(self,inst:crate::app::procinst::ProcInst)->();
 }
 
-#[cfg(feature = "app-procdescargt_1")]
-impl < T0 : :: unity2 :: ClassIdentity > ProcDescArgT_1 < T0 > {
-# [doc = "`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0>, T0)` — overload selector"] pub fn new (function : crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , T0 > , arg : T0) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescArgT_1) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescArgT_1Methods < T0 > > :: ctor (this , function , arg) ; this }
+#[cfg(feature="app-procdescargt_1")]impl<T0: ::unity2::ClassIdentity>ProcDescArgT_1<T0>{#[doc="`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0>, T0)` — overload selector"]pub fn new(function:crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0> ,arg:T0)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescArgT_1), ::core::stringify!(new),));
+ <Self as IProcDescArgT_1Methods<T0> > ::ctor(this,function,arg);
+this}
 }
 
 #[cfg(feature = "app-procdescargt_1")]

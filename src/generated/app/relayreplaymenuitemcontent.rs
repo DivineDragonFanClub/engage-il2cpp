@@ -4,46 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenuitemcontent/RelayReplayMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayReplayMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct RelayReplayMenuItemContent {
-# [offset (72)] # [rename (name = "m_UserNameText")] pub m_user_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (88)] # [rename (name = "m_BattleIcon")] pub m_battle_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_PresentIcon")] pub m_present_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_CheckIcon")] pub m_check_icon : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenuitemcontent/RelayReplayMenuItemContent.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct RelayReplayMenuItemContent{#[offset(72)]#[rename(name="m_UserNameText")]pub m_user_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(88)]#[rename(name="m_BattleIcon")]pub m_battle_icon:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_PresentIcon")]pub m_present_icon:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_CheckIcon")]pub m_check_icon:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-relayreplaymenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayreplaymenuitemcontent")]
-pub trait IRelayReplayMenuItemContentMethods : IRelayReplayMenuItemContent { # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < RelayReplayMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2002950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < RelayReplayMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2002ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayReplayMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2002bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayreplaymenuitemcontent")]pub trait IRelayReplayMenuItemContentMethods:IRelayReplayMenuItemContent{#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <RelayReplayMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2002950usize)as*mut u8,();
+(RelayReplayMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <RelayReplayMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2002ae0usize)as*mut u8,();
+(RelayReplayMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayReplayMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2002bc0usize)as*mut u8,();
+(RelayReplayMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayreplaymenuitemcontent")]
-impl < __T : IRelayReplayMenuItemContent > IRelayReplayMenuItemContentMethods for __T { }
+#[cfg(feature="app-relayreplaymenuitemcontent")]impl<__T:IRelayReplayMenuItemContent>IRelayReplayMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-relayreplaymenuitemcontent")]
-impl RelayReplayMenuItemContent { pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-relayreplaymenuitemcontent")]impl RelayReplayMenuItemContent{pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-relayreplaymenuitemcontent")]
-impl RelayReplayMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayReplayMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IRelayReplayMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayreplaymenuitemcontent")]impl RelayReplayMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplayMenuItemContent), ::core::stringify!(new),));
+ <Self as IRelayReplayMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayreplaymenuitemcontent")]

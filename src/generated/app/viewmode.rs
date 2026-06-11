@@ -4,137 +4,137 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/viewmode/ViewMode.md"))] # [:: unity2 :: class (namespace = "App" , name = "ViewMode")] # [parent (crate :: system :: object :: Object)] pub struct ViewMode {
-# [static_field] # [rename (name = "s_Transition")] pub s_transition : f32 ,
-# [static_field] # [rename (name = "s_Mode")] pub s_mode : crate :: app :: viewmode :: ViewMode_Mode ,
-# [static_field] # [rename (name = "s_Stack")] pub s_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: viewmode :: ViewMode_Mode > ,
-# [static_field] # [rename (name = "s_BmapSkinQuality")] pub s_bmap_skin_quality : crate :: unity_engine :: skinquality :: SkinQuality ,
-# [static_field] # [rename (name = "m_ModeThreshold")] pub m_mode_threshold : crate :: app :: gameparam :: GameParam_Holder ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/viewmode/ViewMode_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ViewMode_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for ViewMode_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ViewMode.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ViewMode_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ViewMode_Mode{pub fn none()->Self{Self{value:0}
+}
+pub fn bmap()->Self{Self{value:1}
+}
+pub fn combat()->Self{Self{value:2}
+}
+pub fn kizuna()->Self{Self{value:3}
+}
+pub fn hub()->Self{Self{value:4}
+}
+pub fn ride()->Self{Self{value:5}
+}
+pub fn gmap()->Self{Self{value:6}
+}
+pub fn demo()->Self{Self{value:7}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/viewmode/ViewMode_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ViewMode_Mode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for ViewMode_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ViewMode.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ViewMode_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ViewMode_Mode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn bmap() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn combat() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn kizuna() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn ride() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn gmap() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn demo() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/viewmode/ViewMode.md"))]#[::unity2::class(namespace="App",name="ViewMode")]#[parent(crate::system::object::Object)]pub struct ViewMode{#[static_field]#[rename(name="s_Transition")]pub s_transition:f32, #[static_field]#[rename(name="s_Mode")]pub s_mode:crate::app::viewmode::ViewMode_Mode, #[static_field]#[rename(name="s_Stack")]pub s_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::viewmode::ViewMode_Mode> , #[static_field]#[rename(name="s_BmapSkinQuality")]pub s_bmap_skin_quality:crate::unity_engine::skinquality::SkinQuality, #[static_field]#[rename(name="m_ModeThreshold")]pub m_mode_threshold:crate::app::gameparam::GameParam_Holder,}
 
 }
 
 #[cfg(feature = "app-viewmode-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-viewmode")]
-impl ViewMode { # [doc = "`get_ModeThreshold()` overload"] pub fn get_mode_threshold () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c1160usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMode()` overload"] pub fn get_mode () -> crate :: app :: viewmode :: ViewMode_Mode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: viewmode :: ViewMode_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c11d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetBmapSkinQuality()` overload"] pub fn get_bmap_skin_quality () -> crate :: unity_engine :: skinquality :: SkinQuality { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: skinquality :: SkinQuality = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c1320usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetBmapAlpha()` overload"] pub fn get_bmap_alpha () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c1390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsBmapShowing()` overload"] pub fn is_bmap_showing () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c1590usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetTransition()` overload"] pub fn get_transition () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c1880usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetMode(crate::app::viewmode::ViewMode_Mode)` overload"] pub fn set_mode (mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c18f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`SetMode(crate::unity_engine::camera::Camera, crate::app::viewmode::ViewMode_Mode)` overload"] pub fn set_mode_2 (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c1970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`PushMode(crate::app::viewmode::ViewMode_Mode)` overload"] pub fn push_mode (mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c2e60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`PopMode()` overload"] pub fn pop_mode () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c3070usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetTransition(f32)` overload"] pub fn set_transition (transition : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c3150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } } # [doc = "`SetLayerCullingMask(crate::unity_engine::camera::Camera, ::unity2::Il2CppString, bool)` overload"] pub fn set_layer_culling_mask (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c31d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`SetTransition(crate::unity_engine::camera::Camera, f32)` overload"] pub fn set_transition_2 (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , transition : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c1a60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateBoostMode(bool)` overload"] pub fn update_boost_mode (is_boost : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c32b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_boost) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c32d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-viewmode")]impl ViewMode{#[doc="`get_ModeThreshold()` overload"]pub fn get_mode_threshold()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c1160usize)as*mut u8,f32;
+)}
+}
+#[doc="`GetMode()` overload"]pub fn get_mode()->crate::app::viewmode::ViewMode_Mode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c11d0usize)as*mut u8,crate::app::viewmode::ViewMode_Mode;
+)}
+}
+#[doc="`GetBmapSkinQuality()` overload"]pub fn get_bmap_skin_quality()->crate::unity_engine::skinquality::SkinQuality{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c1320usize)as*mut u8,crate::unity_engine::skinquality::SkinQuality;
+)}
+}
+#[doc="`GetBmapAlpha()` overload"]pub fn get_bmap_alpha()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c1390usize)as*mut u8,f32;
+)}
+}
+#[doc="`IsBmapShowing()` overload"]pub fn is_bmap_showing()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c1590usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetTransition()` overload"]pub fn get_transition()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c1880usize)as*mut u8,f32;
+)}
+}
+#[doc="`SetMode(crate::app::viewmode::ViewMode_Mode)` overload"]pub fn set_mode(mode:impl::core::convert::Into<crate::app::viewmode::ViewMode_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c18f0usize)as*mut u8,();
+(crate::app::viewmode::ViewMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`SetMode(crate::unity_engine::camera::Camera, crate::app::viewmode::ViewMode_Mode)` overload"]pub fn set_mode_2(camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,mode:impl::core::convert::Into<crate::app::viewmode::ViewMode_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c1970usize)as*mut u8,();
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(crate::app::viewmode::ViewMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`PushMode(crate::app::viewmode::ViewMode_Mode)` overload"]pub fn push_mode(mode:impl::core::convert::Into<crate::app::viewmode::ViewMode_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c2e60usize)as*mut u8,();
+(crate::app::viewmode::ViewMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`PopMode()` overload"]pub fn pop_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c3070usize)as*mut u8,();
+)}
+}
+#[doc="`SetTransition(f32)` overload"]pub fn set_transition(transition:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c3150usize)as*mut u8,();
+(f32)::core::convert::Into::into(transition))}
+}
+#[doc="`SetLayerCullingMask(crate::unity_engine::camera::Camera, ::unity2::Il2CppString, bool)` overload"]pub fn set_layer_culling_mask(camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c31d0usize)as*mut u8,();
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`SetTransition(crate::unity_engine::camera::Camera, f32)` overload"]pub fn set_transition_2(camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,transition:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c1a60usize)as*mut u8,();
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(f32)::core::convert::Into::into(transition))}
+}
+#[doc="`UpdateBoostMode(bool)` overload"]pub fn update_boost_mode(is_boost:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c32b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_boost))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c32d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-viewmode")]
-pub trait IViewModeMethods : IViewMode { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ViewMode as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ViewMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c32c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-viewmode")]pub trait IViewModeMethods:IViewMode{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ViewMode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c32c0usize)as*mut u8,();
+(ViewMode)__receiver)}
+}
+}
 
-#[cfg(feature = "app-viewmode")]
-impl < __T : IViewMode > IViewModeMethods for __T { }
+#[cfg(feature="app-viewmode")]impl<__T:IViewMode>IViewModeMethods for __T{}
 
-#[cfg(feature = "app-viewmode")]
-impl ViewMode { pub fn get_mode_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_bmap_skin_quality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_bmap_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_bmap_showing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_mode_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn push_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn pop_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_layer_culling_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_transition_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_boost_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ViewMode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-viewmode")]impl ViewMode{pub fn get_mode_threshold_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_bmap_skin_quality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_bmap_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_bmap_showing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_mode_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn push_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn pop_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_layer_culling_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_transition_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_boost_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-viewmode")]
-impl ViewMode {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ViewMode) , :: core :: stringify ! (new) ,)) ; < Self as IViewModeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-viewmode")]impl ViewMode{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ViewMode), ::core::stringify!(new),));
+ <Self as IViewModeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-viewmode")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ViewMode_Mode;
     pub use super::ViewMode;
     pub use super::IViewMode;
     pub use super::IViewModeMethods;
-    pub use super::ViewMode_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenunoneitem/MaterialListMenuNoneItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialListMenuNoneItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MaterialListMenuNoneItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenunoneitem/MaterialListMenuNoneItem.md"))]#[::unity2::class(namespace="App",name="MaterialListMenuNoneItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MaterialListMenuNoneItem{}
 
 }
 
 #[cfg(feature = "app-materiallistmenunoneitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-materiallistmenunoneitem")]
-pub trait IMaterialListMenuNoneItemMethods : IMaterialListMenuNoneItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MaterialListMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuNoneItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c7a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MaterialListMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuNoneItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c9680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MaterialListMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuNoneItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c9690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-materiallistmenunoneitem")]pub trait IMaterialListMenuNoneItemMethods:IMaterialListMenuNoneItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaterialListMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7a00usize)as*mut u8,();
+(MaterialListMenuNoneItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MaterialListMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9680usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MaterialListMenuNoneItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MaterialListMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9690usize)as*mut u8,();
+(MaterialListMenuNoneItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-materiallistmenunoneitem")]
-impl < __T : IMaterialListMenuNoneItem > IMaterialListMenuNoneItemMethods for __T { }
+#[cfg(feature="app-materiallistmenunoneitem")]impl<__T:IMaterialListMenuNoneItem>IMaterialListMenuNoneItemMethods for __T{}
 
-#[cfg(feature = "app-materiallistmenunoneitem")]
-impl MaterialListMenuNoneItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-materiallistmenunoneitem")]impl MaterialListMenuNoneItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-materiallistmenunoneitem")]
-impl MaterialListMenuNoneItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaterialListMenuNoneItem) , :: core :: stringify ! (new) ,)) ; < Self as IMaterialListMenuNoneItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-materiallistmenunoneitem")]impl MaterialListMenuNoneItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialListMenuNoneItem), ::core::stringify!(new),));
+ <Self as IMaterialListMenuNoneItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-materiallistmenunoneitem")]

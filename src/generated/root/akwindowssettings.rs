@@ -4,149 +4,125 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbaseplatformsettings :: { AkBasePlatformSettings , IAkBasePlatformSettings }
- ;
- use crate :: root :: akcommonadvancedsettings :: { AkCommonAdvancedSettings , IAkCommonAdvancedSettings }
- ;
- use crate :: root :: akcommonplatformsettings :: { AkCommonPlatformSettings , IAkCommonPlatformSettings }
- ;
- use crate :: root :: akwwiseinitializationsettings :: { AkWwiseInitializationSettings_PlatformSettings , IAkWwiseInitializationSettings_PlatformSettings }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbaseplatformsettings::{AkBasePlatformSettings,IAkBasePlatformSettings}
+;
+use crate::root::akcommonadvancedsettings::{AkCommonAdvancedSettings,IAkCommonAdvancedSettings}
+;
+use crate::root::akcommonplatformsettings::{AkCommonPlatformSettings,IAkCommonPlatformSettings}
+;
+use crate::root::akwwiseinitializationsettings::{AkWwiseInitializationSettings_PlatformSettings,IAkWwiseInitializationSettings_PlatformSettings}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkWindowsSettings.PlatformAdvancedSettings")] # [parent (crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings)] pub struct AkWindowsSettings_PlatformAdvancedSettings {
-# [offset (84)] # [rename (name = "m_AudioAPI")] pub m_audio_api : crate :: root :: akwindowssettings :: AkWindowsSettings_PlatformAdvancedSettings_AudioAPI ,
-# [offset (88)] # [rename (name = "m_GlobalFocus")] pub m_global_focus : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings_AudioAPI.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkWindowsSettings_PlatformAdvancedSettings_AudioAPI{pub value:i32,}
+impl::unity2::ClassIdentity for AkWindowsSettings_PlatformAdvancedSettings_AudioAPI{const NAMESPACE: &'static str="";
+const NAME: &'static str="AkWindowsSettings.PlatformAdvancedSettings.AudioAPI";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AkWindowsSettings_PlatformAdvancedSettings_AudioAPI{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AkWindowsSettings_PlatformAdvancedSettings_AudioAPI{pub fn none()->Self{Self{value:0}
+}
+pub fn wasapi()->Self{Self{value:1}
+}
+pub fn x_audio2()->Self{Self{value:2}
+}
+pub fn direct_sound()->Self{Self{value:4}
+}
+pub fn default()->Self{Self{value: -1}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkWindowsSettings")] # [parent (crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings_PlatformSettings)] pub struct AkWindowsSettings {
-# [offset (48)] # [rename (name = "UserSettings")] pub user_settings : crate :: root :: akcommonusersettings :: AkCommonUserSettings ,
-# [offset (56)] # [rename (name = "AdvancedSettings")] pub advanced_settings : crate :: root :: akwindowssettings :: AkWindowsSettings_PlatformAdvancedSettings ,
-# [offset (64)] # [rename (name = "CommsSettings")] pub comms_settings : crate :: root :: akcommoncommsettings :: AkCommonCommSettings ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings.md"))]#[::unity2::class(namespace="",name="AkWindowsSettings.PlatformAdvancedSettings")]#[parent(crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings)]pub struct AkWindowsSettings_PlatformAdvancedSettings{#[offset(84)]#[rename(name="m_AudioAPI")]pub m_audio_api:crate::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings_AudioAPI, #[offset(88)]#[rename(name="m_GlobalFocus")]pub m_global_focus:bool,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings_AudioAPI.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AkWindowsSettings_PlatformAdvancedSettings_AudioAPI  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for AkWindowsSettings_PlatformAdvancedSettings_AudioAPI  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "AkWindowsSettings.PlatformAdvancedSettings.AudioAPI";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AkWindowsSettings_PlatformAdvancedSettings_AudioAPI  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AkWindowsSettings_PlatformAdvancedSettings_AudioAPI  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn wasapi() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn x_audio2() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn direct_sound() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn default() -> Self {
-        Self { value: -1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwindowssettings/AkWindowsSettings.md"))]#[::unity2::class(namespace="",name="AkWindowsSettings")]#[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings)]pub struct AkWindowsSettings{#[offset(48)]#[rename(name="UserSettings")]pub user_settings:crate::root::akcommonusersettings::AkCommonUserSettings, #[offset(56)]#[rename(name="AdvancedSettings")]pub advanced_settings:crate::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings, #[offset(64)]#[rename(name="CommsSettings")]pub comms_settings:crate::root::akcommoncommsettings::AkCommonCommSettings,}
 
 }
 
 #[cfg(feature = "root-akwindowssettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akwindowssettings")]
-pub trait IAkWindowsSettings_PlatformAdvancedSettingsMethods : IAkWindowsSettings_PlatformAdvancedSettings { # [doc = "`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"] fn copy_to (self , settings : impl :: core :: convert :: Into < crate :: root :: akplatforminitsettings :: AkPlatformInitSettings >) -> () { unsafe { let __receiver = < AkWindowsSettings_PlatformAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWindowsSettings_PlatformAdvancedSettings , crate :: root :: akplatforminitsettings :: AkPlatformInitSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2a00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkWindowsSettings_PlatformAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWindowsSettings_PlatformAdvancedSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akwindowssettings")]
-impl < __T : IAkWindowsSettings_PlatformAdvancedSettings > IAkWindowsSettings_PlatformAdvancedSettingsMethods for __T { }
-
-#[cfg(feature = "root-akwindowssettings")]
-impl AkWindowsSettings_PlatformAdvancedSettings { pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWindowsSettings_PlatformAdvancedSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWindowsSettings_PlatformAdvancedSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akwindowssettings")]
-impl AkWindowsSettings_PlatformAdvancedSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkWindowsSettings_PlatformAdvancedSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkWindowsSettings_PlatformAdvancedSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akwindowssettings")]pub trait IAkWindowsSettings_PlatformAdvancedSettingsMethods:IAkWindowsSettings_PlatformAdvancedSettings{#[doc="`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]fn copy_to(self,settings:impl::core::convert::Into<crate::root::akplatforminitsettings::AkPlatformInitSettings>)->(){unsafe{let __receiver= <AkWindowsSettings_PlatformAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a00usize)as*mut u8,();
+(AkWindowsSettings_PlatformAdvancedSettings)__receiver,(crate::root::akplatforminitsettings::AkPlatformInitSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkWindowsSettings_PlatformAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a10usize)as*mut u8,();
+(AkWindowsSettings_PlatformAdvancedSettings)__receiver)}
+}
 }
 
-#[cfg(feature = "root-akwindowssettings")]
-pub trait IAkWindowsSettingsMethods : IAkWindowsSettings { # [doc = "`GetUserSettings()` overload"] fn get_user_settings (self ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings { unsafe { let __receiver = < AkWindowsSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWindowsSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAdvancedSettings()` overload"] fn get_advanced_settings (self ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings { unsafe { let __receiver = < AkWindowsSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWindowsSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCommsSettings()` overload"] fn get_comms_settings (self ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings { unsafe { let __receiver = < AkWindowsSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWindowsSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkWindowsSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWindowsSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akwindowssettings")]impl<__T:IAkWindowsSettings_PlatformAdvancedSettings>IAkWindowsSettings_PlatformAdvancedSettingsMethods for __T{}
 
-#[cfg(feature = "root-akwindowssettings")]
-impl < __T : IAkWindowsSettings > IAkWindowsSettingsMethods for __T { }
+#[cfg(feature="root-akwindowssettings")]impl AkWindowsSettings_PlatformAdvancedSettings{pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-akwindowssettings")]
-impl AkWindowsSettings { pub fn get_user_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWindowsSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_advanced_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWindowsSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_comms_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWindowsSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWindowsSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-akwindowssettings")]impl AkWindowsSettings_PlatformAdvancedSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkWindowsSettings_PlatformAdvancedSettings), ::core::stringify!(new),));
+ <Self as IAkWindowsSettings_PlatformAdvancedSettingsMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "root-akwindowssettings")]
-impl AkWindowsSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkWindowsSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkWindowsSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akwindowssettings")]pub trait IAkWindowsSettingsMethods:IAkWindowsSettings{#[doc="`GetUserSettings()` overload"]fn get_user_settings(self,)->crate::root::akcommonusersettings::AkCommonUserSettings{unsafe{let __receiver= <AkWindowsSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c570usize)as*mut u8,crate::root::akcommonusersettings::AkCommonUserSettings;
+(AkWindowsSettings)__receiver)}
+}
+#[doc="`GetAdvancedSettings()` overload"]fn get_advanced_settings(self,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{unsafe{let __receiver= <AkWindowsSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c580usize)as*mut u8,crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings;
+(AkWindowsSettings)__receiver)}
+}
+#[doc="`GetCommsSettings()` overload"]fn get_comms_settings(self,)->crate::root::akcommoncommsettings::AkCommonCommSettings{unsafe{let __receiver= <AkWindowsSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c590usize)as*mut u8,crate::root::akcommoncommsettings::AkCommonCommSettings;
+(AkWindowsSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkWindowsSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c5a0usize)as*mut u8,();
+(AkWindowsSettings)__receiver)}
+}
+}
+
+#[cfg(feature="root-akwindowssettings")]impl<__T:IAkWindowsSettings>IAkWindowsSettingsMethods for __T{}
+
+#[cfg(feature="root-akwindowssettings")]impl AkWindowsSettings{pub fn get_user_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_advanced_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_comms_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="root-akwindowssettings")]impl AkWindowsSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkWindowsSettings), ::core::stringify!(new),));
+ <Self as IAkWindowsSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akwindowssettings")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkWindowsSettings_PlatformAdvancedSettings_AudioAPI;
     pub use super::AkWindowsSettings_PlatformAdvancedSettings;
     pub use super::IAkWindowsSettings_PlatformAdvancedSettings;
     pub use super::IAkWindowsSettings_PlatformAdvancedSettingsMethods;
     pub use super::AkWindowsSettings;
     pub use super::IAkWindowsSettings;
     pub use super::IAkWindowsSettingsMethods;
-    pub use super::AkWindowsSettings_PlatformAdvancedSettings_AudioAPI;
     pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettings;
     pub use crate::root::akcommonadvancedsettings::IAkCommonAdvancedSettings;
     pub use crate::root::akcommonplatformsettings::IAkCommonPlatformSettings;

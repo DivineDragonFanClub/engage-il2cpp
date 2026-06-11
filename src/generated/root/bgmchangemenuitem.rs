@@ -4,36 +4,88 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: configbasicmenuitem :: { ConfigBasicMenuItem , IConfigBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::configbasicmenuitem::{ConfigBasicMenuItem,IConfigBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/bgmchangemenuitem/BGMChangeMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "BGMChangeMenuItem")] # [parent (crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem)] pub struct BGMChangeMenuItem {
-# [offset (136)] # [rename (name = "m_IsEnemy")] pub m_is_enemy : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/bgmchangemenuitem/BGMChangeMenuItem.md"))]#[::unity2::class(namespace="",name="BGMChangeMenuItem")]#[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]pub struct BGMChangeMenuItem{#[offset(136)]#[rename(name="m_IsEnemy")]pub m_is_enemy:bool,}
 
 }
 
 #[cfg(feature = "root-bgmchangemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-bgmchangemenuitem")]
-pub trait IBGMChangeMenuItemMethods : IBGMChangeMenuItem { # [doc = "`get_SelectBGM()` overload"] fn get_select_bgm (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21215f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SelectBGM(::unity2::Il2CppString)` overload"] fn set_select_bgm (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21216b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(bool)` overload"] fn ctor (self , is_enemy : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2121780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_enemy) , :: core :: option :: Option :: None) } } } # [doc = "`OnChildMenuDecide(::unity2::Il2CppString)` overload"] fn on_child_menu_decide (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2121b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2121bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2121cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitContent()` overload"] fn init_content (self ,) -> () { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2121ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCommandText()` overload"] fn set_command_text (self ,) -> () { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21218e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2121fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2121fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpText()` overload"] fn set_help_text (self ,) -> () { unsafe { let __receiver = < BGMChangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BGMChangeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2121970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-bgmchangemenuitem")]pub trait IBGMChangeMenuItemMethods:IBGMChangeMenuItem{#[doc="`get_SelectBGM()` overload"]fn get_select_bgm(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21215f0usize)as*mut u8, ::unity2::Il2CppString;
+(BGMChangeMenuItem)__receiver)}
+}
+#[doc="`set_SelectBGM(::unity2::Il2CppString)` overload"]fn set_select_bgm(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21216b0usize)as*mut u8,();
+(BGMChangeMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(bool)` overload"]fn ctor(self,is_enemy:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2121780usize)as*mut u8,();
+(BGMChangeMenuItem)__receiver,(bool)::core::convert::Into::into(is_enemy))}
+}
+#[doc="`OnChildMenuDecide(::unity2::Il2CppString)` overload"]fn on_child_menu_decide(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2121b10usize)as*mut u8,();
+(BGMChangeMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2121bc0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(BGMChangeMenuItem)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2121cf0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(BGMChangeMenuItem)__receiver)}
+}
+#[doc="`InitContent()` overload"]fn init_content(self,)->(){unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2121ef0usize)as*mut u8,();
+(BGMChangeMenuItem)__receiver)}
+}
+#[doc="`SetCommandText()` overload"]fn set_command_text(self,)->(){unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21218e0usize)as*mut u8,();
+(BGMChangeMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2121fa0usize)as*mut u8,();
+(BGMChangeMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2121fd0usize)as*mut u8,();
+(BGMChangeMenuItem)__receiver)}
+}
+#[doc="`SetHelpText()` overload"]fn set_help_text(self,)->(){unsafe{let __receiver= <BGMChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2121970usize)as*mut u8,();
+(BGMChangeMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-bgmchangemenuitem")]
-impl < __T : IBGMChangeMenuItem > IBGMChangeMenuItemMethods for __T { }
+#[cfg(feature="root-bgmchangemenuitem")]impl<__T:IBGMChangeMenuItem>IBGMChangeMenuItemMethods for __T{}
 
-#[cfg(feature = "root-bgmchangemenuitem")]
-impl BGMChangeMenuItem { pub fn get_select_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_select_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_child_menu_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn init_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_command_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BGMChangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="root-bgmchangemenuitem")]impl BGMChangeMenuItem{pub fn get_select_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_select_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_child_menu_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn init_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_command_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "root-bgmchangemenuitem")]
-impl BGMChangeMenuItem {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (is_enemy : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BGMChangeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IBGMChangeMenuItemMethods > :: ctor (this , is_enemy) ; this }
+#[cfg(feature="root-bgmchangemenuitem")]impl BGMChangeMenuItem{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_enemy:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BGMChangeMenuItem), ::core::stringify!(new),));
+ <Self as IBGMChangeMenuItemMethods> ::ctor(this,is_enemy);
+this}
 }
 
 #[cfg(feature = "root-bgmchangemenuitem")]

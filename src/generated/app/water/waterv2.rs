@@ -4,124 +4,124 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/waterv2/WaterV2.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "WaterV2")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WaterV2 {
-# [offset (24)] # [rename (name = "waterMode")] pub water_mode : crate :: app :: water :: waterv2 :: WaterV2_WaterMode ,
-# [offset (28)] # [rename (name = "disablePixelLights")] pub disable_pixel_lights : bool ,
-# [offset (32)] # [rename (name = "textureSize")] pub texture_size : i32 ,
-# [offset (36)] # [rename (name = "clipPlaneOffset")] pub clip_plane_offset : f32 ,
-# [offset (40)] # [rename (name = "reflectLayers")] pub reflect_layers : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (44)] # [rename (name = "refractLayers")] pub refract_layers : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (48)] # [rename (name = "m_ReflectionCameras")] pub m_reflection_cameras : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: camera :: Camera > ,
-# [offset (56)] # [rename (name = "m_RefractionCameras")] pub m_refraction_cameras : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: camera :: Camera > ,
-# [offset (64)] # [rename (name = "m_ReflectionTexture")] pub m_reflection_texture : crate :: unity_engine :: rendertexture :: RenderTexture ,
-# [offset (72)] # [rename (name = "m_RefractionTexture")] pub m_refraction_texture : crate :: unity_engine :: rendertexture :: RenderTexture ,
-# [offset (80)] # [rename (name = "m_HardwareWaterSupport")] pub m_hardware_water_support : crate :: app :: water :: waterv2 :: WaterV2_WaterMode ,
-# [offset (84)] # [rename (name = "m_OldReflectionTextureSize")] pub m_old_reflection_texture_size : i32 ,
-# [offset (88)] # [rename (name = "m_OldRefractionTextureSize")] pub m_old_refraction_texture_size : i32 ,
-# [static_field] # [rename (name = "s_InsideWater")] pub s_inside_water : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/water/waterv2/WaterV2_WaterMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WaterV2_WaterMode{pub value:i32,}
+impl::unity2::ClassIdentity for WaterV2_WaterMode{const NAMESPACE: &'static str="App.Water";
+const NAME: &'static str="WaterV2.WaterMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for WaterV2_WaterMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl WaterV2_WaterMode{pub fn simple()->Self{Self{value:0}
+}
+pub fn reflective()->Self{Self{value:1}
+}
+pub fn refractive()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/water/waterv2/WaterV2_WaterMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WaterV2_WaterMode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for WaterV2_WaterMode  {
-    const NAMESPACE: &'static str = "App.Water";
-
-    const NAME: &'static str = "WaterV2.WaterMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for WaterV2_WaterMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  WaterV2_WaterMode  {
-    pub fn simple() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn reflective() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn refractive() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/water/waterv2/WaterV2.md"))]#[::unity2::class(namespace="App.Water",name="WaterV2")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct WaterV2{#[offset(24)]#[rename(name="waterMode")]pub water_mode:crate::app::water::waterv2::WaterV2_WaterMode, #[offset(28)]#[rename(name="disablePixelLights")]pub disable_pixel_lights:bool, #[offset(32)]#[rename(name="textureSize")]pub texture_size:i32, #[offset(36)]#[rename(name="clipPlaneOffset")]pub clip_plane_offset:f32, #[offset(40)]#[rename(name="reflectLayers")]pub reflect_layers:crate::unity_engine::layermask::LayerMask, #[offset(44)]#[rename(name="refractLayers")]pub refract_layers:crate::unity_engine::layermask::LayerMask, #[offset(48)]#[rename(name="m_ReflectionCameras")]pub m_reflection_cameras:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::camera::Camera,crate::unity_engine::camera::Camera> , #[offset(56)]#[rename(name="m_RefractionCameras")]pub m_refraction_cameras:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::camera::Camera,crate::unity_engine::camera::Camera> , #[offset(64)]#[rename(name="m_ReflectionTexture")]pub m_reflection_texture:crate::unity_engine::rendertexture::RenderTexture, #[offset(72)]#[rename(name="m_RefractionTexture")]pub m_refraction_texture:crate::unity_engine::rendertexture::RenderTexture, #[offset(80)]#[rename(name="m_HardwareWaterSupport")]pub m_hardware_water_support:crate::app::water::waterv2::WaterV2_WaterMode, #[offset(84)]#[rename(name="m_OldReflectionTextureSize")]pub m_old_reflection_texture_size:i32, #[offset(88)]#[rename(name="m_OldRefractionTextureSize")]pub m_old_refraction_texture_size:i32, #[static_field]#[rename(name="s_InsideWater")]pub s_inside_water:bool,}
 
 }
 
 #[cfg(feature = "app-water-waterv2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-water-waterv2")]
-impl WaterV2 { # [doc = "`CalculateReflectionMatrix(*mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"] pub fn calculate_reflection_matrix (plane : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c67f0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (plane) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="app-water-waterv2")]impl WaterV2{#[doc="`CalculateReflectionMatrix(*mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"]pub fn calculate_reflection_matrix(plane:impl::core::convert::Into<crate::unity_engine::vector4::Vector4>)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::matrix4x4::Matrix4x4> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c67f0usize)as*mut u8,();
+(*mut crate::unity_engine::matrix4x4::Matrix4x4)__out_0.as_mut_ptr(),(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(plane));
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "app-water-waterv2")]
-pub trait IWaterV2Methods : IWaterV2 { # [doc = "`OnWillRenderObject()` overload"] fn on_will_render_object (self ,) -> () { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c5090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c6bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c6f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCameraModes(crate::unity_engine::camera::Camera, crate::unity_engine::camera::Camera)` overload"] fn update_camera_modes (self , src : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , dest : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterV2 , crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c6590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (dest) , :: core :: option :: Option :: None) } } } # [doc = "`CreateWaterObjects(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::camera::Camera, *mutcrate::unity_engine::camera::Camera)` overload"] fn create_water_objects (self , current_camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> (crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: camera :: Camera) { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: camera :: Camera > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: camera :: Camera > :: uninit () ; { let __inner : extern "C" fn (WaterV2 , crate :: unity_engine :: camera :: Camera , * mut crate :: unity_engine :: camera :: Camera , * mut crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c5c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current_camera) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetWaterMode()` overload"] fn get_water_mode (self ,) -> crate :: app :: water :: waterv2 :: WaterV2_WaterMode { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterV2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: water :: waterv2 :: WaterV2_WaterMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c5c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindHardwareWaterSupport()` overload"] fn find_hardware_water_support (self ,) -> crate :: app :: water :: waterv2 :: WaterV2_WaterMode { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterV2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: water :: waterv2 :: WaterV2_WaterMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c5a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CameraSpacePlane(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] fn camera_space_plane (self , cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , normal : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , side_sign : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterV2 , crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c6aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cam) , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (normal) , :: core :: convert :: Into :: into (side_sign) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WaterV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c7230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-water-waterv2")]pub trait IWaterV2Methods:IWaterV2{#[doc="`OnWillRenderObject()` overload"]fn on_will_render_object(self,)->(){unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c5090usize)as*mut u8,();
+(WaterV2)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c6bd0usize)as*mut u8,();
+(WaterV2)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c6f50usize)as*mut u8,();
+(WaterV2)__receiver)}
+}
+#[doc="`UpdateCameraModes(crate::unity_engine::camera::Camera, crate::unity_engine::camera::Camera)` overload"]fn update_camera_modes(self,src:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,dest:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c6590usize)as*mut u8,();
+(WaterV2)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(src),(crate::unity_engine::camera::Camera)::core::convert::Into::into(dest))}
+}
+#[doc="`CreateWaterObjects(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::camera::Camera, *mutcrate::unity_engine::camera::Camera)` overload"]fn create_water_objects(self,current_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(crate::unity_engine::camera::Camera,crate::unity_engine::camera::Camera){unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::camera::Camera> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::camera::Camera> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c5c50usize)as*mut u8,();
+(WaterV2)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(current_camera),(*mut crate::unity_engine::camera::Camera)__out_0.as_mut_ptr(),(*mut crate::unity_engine::camera::Camera)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetWaterMode()` overload"]fn get_water_mode(self,)->crate::app::water::waterv2::WaterV2_WaterMode{unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c5c30usize)as*mut u8,crate::app::water::waterv2::WaterV2_WaterMode;
+(WaterV2)__receiver)}
+}
+#[doc="`FindHardwareWaterSupport()` overload"]fn find_hardware_water_support(self,)->crate::app::water::waterv2::WaterV2_WaterMode{unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c5a90usize)as*mut u8,crate::app::water::waterv2::WaterV2_WaterMode;
+(WaterV2)__receiver)}
+}
+#[doc="`CameraSpacePlane(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]fn camera_space_plane(self,cam:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,side_sign:impl::core::convert::Into<f32>)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c6aa0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(WaterV2)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(normal),(f32)::core::convert::Into::into(side_sign))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WaterV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c7230usize)as*mut u8,();
+(WaterV2)__receiver)}
+}
+}
 
-#[cfg(feature = "app-water-waterv2")]
-impl < __T : IWaterV2 > IWaterV2Methods for __T { }
+#[cfg(feature="app-water-waterv2")]impl<__T:IWaterV2>IWaterV2Methods for __T{}
 
-#[cfg(feature = "app-water-waterv2")]
-impl WaterV2 { pub fn on_will_render_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_camera_modes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_water_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_water_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn find_hardware_water_support_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn camera_space_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn calculate_reflection_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-water-waterv2")]impl WaterV2{pub fn on_will_render_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_camera_modes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_water_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_water_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn find_hardware_water_support_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn camera_space_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn calculate_reflection_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-water-waterv2")]
-impl WaterV2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WaterV2) , :: core :: stringify ! (new) ,)) ; < Self as IWaterV2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-water-waterv2")]impl WaterV2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WaterV2), ::core::stringify!(new),));
+ <Self as IWaterV2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-water-waterv2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::WaterV2_WaterMode;
     pub use super::WaterV2;
     pub use super::IWaterV2;
     pub use super::IWaterV2Methods;
-    pub use super::WaterV2_WaterMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

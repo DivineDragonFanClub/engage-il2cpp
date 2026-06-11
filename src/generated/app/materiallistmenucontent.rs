@@ -4,114 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenucontent/MaterialListMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialListMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct MaterialListMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (240)] # [rename (name = "m_ItemHelpText")] pub m_item_help_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_CategoryIconList")] pub m_category_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenucontent/MaterialListMenuContent.md"))]#[::unity2::class(namespace="App",name="MaterialListMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MaterialListMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(240)]#[rename(name="m_ItemHelpText")]pub m_item_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_CategoryIconList")]pub m_category_icon_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenucontent/MaterialListMenuContent_CategoryType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MaterialListMenuContent_CategoryType{pub value:i32,}
+impl::unity2::ClassIdentity for MaterialListMenuContent_CategoryType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MaterialListMenuContent.CategoryType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/materiallistmenucontent/MaterialListMenuContent_CategoryType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MaterialListMenuContent_CategoryType  {
-    pub value: i32,
+impl::unity2::IlType for MaterialListMenuContent_CategoryType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for MaterialListMenuContent_CategoryType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MaterialListMenuContent.CategoryType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl MaterialListMenuContent_CategoryType{pub fn all()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for MaterialListMenuContent_CategoryType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn gift()->Self{Self{value:1}
 }
-
-
-impl  MaterialListMenuContent_CategoryType  {
-    pub fn all() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn gift() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn food() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn material() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn other() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn begin() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn food()->Self{Self{value:2}
+}
+pub fn material()->Self{Self{value:3}
+}
+pub fn other()->Self{Self{value:4}
+}
+pub fn count()->Self{Self{value:5}
+}
+pub fn begin()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:4}
+}
 }
 
 }
@@ -119,21 +58,75 @@ impl  MaterialListMenuContent_CategoryType  {
 #[cfg(feature = "app-materiallistmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-materiallistmenucontent")]
-impl MaterialListMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8e10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8eb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8f30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: materiallistmenucontent :: MaterialListMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: materiallistmenucontent :: MaterialListMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c7af0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-materiallistmenucontent")]impl MaterialListMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c8e10usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c8eb0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c8f30usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::materiallistmenucontent::MaterialListMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c7af0usize)as*mut u8,crate::app::materiallistmenucontent::MaterialListMenuContent;
+)}
+}
+}
 
-#[cfg(feature = "app-materiallistmenucontent")]
-pub trait IMaterialListMenuContentMethods : IMaterialListMenuContent { # [doc = "`get_Category()` overload"] fn get_category (self ,) -> crate :: app :: materiallistmenucontent :: MaterialListMenuContent_CategoryType { unsafe { let __receiver = < MaterialListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: materiallistmenucontent :: MaterialListMenuContent_CategoryType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Category(crate::app::materiallistmenucontent::MaterialListMenuContent_CategoryType)` overload"] fn set_category (self , value : impl :: core :: convert :: Into < crate :: app :: materiallistmenucontent :: MaterialListMenuContent_CategoryType >) -> () { unsafe { let __receiver = < MaterialListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuContent , crate :: app :: materiallistmenucontent :: MaterialListMenuContent_CategoryType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8e00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < MaterialListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`InitCategory()` overload"] fn init_category (self ,) -> () { unsafe { let __receiver = < MaterialListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c7ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LeftCategory(bool)` overload"] fn left_category (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MaterialListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`RightCategory(bool)` overload"] fn right_category (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MaterialListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`SetItemHelpText(::unity2::Il2CppString)` overload"] fn set_item_help_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MaterialListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c8d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MaterialListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c9070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-materiallistmenucontent")]pub trait IMaterialListMenuContentMethods:IMaterialListMenuContent{#[doc="`get_Category()` overload"]fn get_category(self,)->crate::app::materiallistmenucontent::MaterialListMenuContent_CategoryType{unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c8df0usize)as*mut u8,crate::app::materiallistmenucontent::MaterialListMenuContent_CategoryType;
+(MaterialListMenuContent)__receiver)}
+}
+#[doc="`set_Category(crate::app::materiallistmenucontent::MaterialListMenuContent_CategoryType)` overload"]fn set_category(self,value:impl::core::convert::Into<crate::app::materiallistmenucontent::MaterialListMenuContent_CategoryType>)->(){unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c8e00usize)as*mut u8,();
+(MaterialListMenuContent)__receiver,(crate::app::materiallistmenucontent::MaterialListMenuContent_CategoryType)::core::convert::Into::into(value))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c8fb0usize)as*mut u8,f32;
+(MaterialListMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`InitCategory()` overload"]fn init_category(self,)->(){unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7ba0usize)as*mut u8,();
+(MaterialListMenuContent)__receiver)}
+}
+#[doc="`LeftCategory(bool)` overload"]fn left_category(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c8450usize)as*mut u8,();
+(MaterialListMenuContent)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`RightCategory(bool)` overload"]fn right_category(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c8a80usize)as*mut u8,();
+(MaterialListMenuContent)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`SetItemHelpText(::unity2::Il2CppString)` overload"]fn set_item_help_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c8d70usize)as*mut u8,();
+(MaterialListMenuContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9070usize)as*mut u8,();
+(MaterialListMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-materiallistmenucontent")]
-impl < __T : IMaterialListMenuContent > IMaterialListMenuContentMethods for __T { }
+#[cfg(feature="app-materiallistmenucontent")]impl<__T:IMaterialListMenuContent>IMaterialListMenuContentMethods for __T{}
 
-#[cfg(feature = "app-materiallistmenucontent")]
-impl MaterialListMenuContent { pub fn get_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn left_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn right_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_item_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-materiallistmenucontent")]impl MaterialListMenuContent{pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn left_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn right_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_item_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-materiallistmenucontent")]
-impl MaterialListMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaterialListMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IMaterialListMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-materiallistmenucontent")]impl MaterialListMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialListMenuContent), ::core::stringify!(new),));
+ <Self as IMaterialListMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-materiallistmenucontent")]

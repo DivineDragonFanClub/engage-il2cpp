@@ -4,79 +4,159 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: root :: mappanelbase_1 :: { IMapPanelBase_1 , MapPanelBase_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::root::mappanelbase_1::{IMapPanelBase_1,MapPanelBase_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelsortie/MapPanelSortie.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelSortie")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelsortie :: MapPanelSortie >)] pub struct MapPanelSortie {
-# [offset (64)] # [rename (name = "m_DontPosChangeMap")] pub m_dont_pos_change_map : crate :: app :: mappanelsortie :: MapPanelSortie_DontPosChangeMap ,
-# [offset (72)] # [rename (name = "m_SelectX")] pub m_select_x : i32 ,
-# [offset (76)] # [rename (name = "m_SelectZ")] pub m_select_z : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelsortie/MapPanelSortie_DontPosChangeMap.md"))]#[::unity2::class(namespace="App",name="MapPanelSortie.DontPosChangeMap")]#[parent(crate::system::object::Object)]pub struct MapPanelSortie_DontPosChangeMap{#[offset(16)]#[rename(name="m_Bits")]pub m_bits:crate::system::collections::bitarray::BitArray,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelsortie/MapPanelSortie_DontPosChangeMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelSortie.DontPosChangeMap")] # [parent (crate :: system :: object :: Object)] pub struct MapPanelSortie_DontPosChangeMap {
-# [offset (16)] # [rename (name = "m_Bits")] pub m_bits : crate :: system :: collections :: bitarray :: BitArray ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelsortie/MapPanelSortie.md"))]#[::unity2::class(namespace="App",name="MapPanelSortie")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelsortie::MapPanelSortie>)]pub struct MapPanelSortie{#[offset(64)]#[rename(name="m_DontPosChangeMap")]pub m_dont_pos_change_map:crate::app::mappanelsortie::MapPanelSortie_DontPosChangeMap, #[offset(72)]#[rename(name="m_SelectX")]pub m_select_x:i32, #[offset(76)]#[rename(name="m_SelectZ")]pub m_select_z:i32,}
 
 }
 
 #[cfg(feature = "app-mappanelsortie-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mappanelsortie")]
-impl MapPanelSortie { # [doc = "`SetActive(bool)` overload"] pub fn set_active (is_active : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23559f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_active) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mappanelsortie")]
-pub trait IMapPanelSortieMethods : IMapPanelSortie { # [doc = "`Renew()` overload"] fn renew (self ,) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSelect(i32, i32)` overload"] fn set_select (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`ClearSelect()` overload"] fn clear_select (self ,) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectX()` overload"] fn get_select_x (self ,) -> i32 { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SelectX(i32)` overload"] fn set_select_x (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355f40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectZ()` overload"] fn get_select_z (self ,) -> i32 { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SelectZ(i32)` overload"] fn set_select_z (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSelected()` overload"] fn get_is_selected (self ,) -> bool { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2356020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetVertex()` overload"] fn set_vertex (self ,) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelSortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2356030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mappanelsortie")]
-impl < __T : IMapPanelSortie > IMapPanelSortieMethods for __T { }
-
-#[cfg(feature = "app-mappanelsortie")]
-impl MapPanelSortie { pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn renew_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_select_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_select_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_select_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_select_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
-
-#[cfg(feature = "app-mappanelsortie")]
-impl MapPanelSortie {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelSortie) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelSortieMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mappanelsortie")]pub trait IMapPanelSortie_DontPosChangeMapMethods:IMapPanelSortie_DontPosChangeMap{#[doc="`Add(i32, i32)` overload"]fn add(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapPanelSortie_DontPosChangeMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d490usize)as*mut u8,();
+(MapPanelSortie_DontPosChangeMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Test(i32, i32)` overload"]fn test(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapPanelSortie_DontPosChangeMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d4c0usize)as*mut u8,bool;
+(MapPanelSortie_DontPosChangeMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <MapPanelSortie_DontPosChangeMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d4d0usize)as*mut u8,();
+(MapPanelSortie_DontPosChangeMap)__receiver)}
+}
+#[doc="`GetIndex(i32, i32)` overload"]fn get_index(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapPanelSortie_DontPosChangeMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d4b0usize)as*mut u8,i32;
+(MapPanelSortie_DontPosChangeMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelSortie_DontPosChangeMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d4e0usize)as*mut u8,();
+(MapPanelSortie_DontPosChangeMap)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mappanelsortie")]
-pub trait IMapPanelSortie_DontPosChangeMapMethods : IMapPanelSortie_DontPosChangeMap { # [doc = "`Add(i32, i32)` overload"] fn add (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapPanelSortie_DontPosChangeMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie_DontPosChangeMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Test(i32, i32)` overload"] fn test (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapPanelSortie_DontPosChangeMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie_DontPosChangeMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < MapPanelSortie_DontPosChangeMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie_DontPosChangeMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetIndex(i32, i32)` overload"] fn get_index (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < MapPanelSortie_DontPosChangeMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie_DontPosChangeMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d4b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelSortie_DontPosChangeMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelSortie_DontPosChangeMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappanelsortie")]impl<__T:IMapPanelSortie_DontPosChangeMap>IMapPanelSortie_DontPosChangeMapMethods for __T{}
 
-#[cfg(feature = "app-mappanelsortie")]
-impl < __T : IMapPanelSortie_DontPosChangeMap > IMapPanelSortie_DontPosChangeMapMethods for __T { }
+#[cfg(feature="app-mappanelsortie")]impl MapPanelSortie_DontPosChangeMap{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-mappanelsortie")]
-impl MapPanelSortie_DontPosChangeMap { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie_DontPosChangeMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie_DontPosChangeMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie_DontPosChangeMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie_DontPosChangeMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelSortie_DontPosChangeMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-mappanelsortie")]impl MapPanelSortie_DontPosChangeMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelSortie_DontPosChangeMap), ::core::stringify!(new),));
+ <Self as IMapPanelSortie_DontPosChangeMapMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mappanelsortie")]
-impl MapPanelSortie_DontPosChangeMap {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelSortie_DontPosChangeMap) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelSortie_DontPosChangeMapMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mappanelsortie")]impl MapPanelSortie{#[doc="`SetActive(bool)` overload"]pub fn set_active(is_active:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23559f0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_active))}
+}
+}
+
+#[cfg(feature="app-mappanelsortie")]pub trait IMapPanelSortieMethods:IMapPanelSortie{#[doc="`Renew()` overload"]fn renew(self,)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355bc0usize)as*mut u8,();
+(MapPanelSortie)__receiver)}
+}
+#[doc="`SetSelect(i32, i32)` overload"]fn set_select(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f10usize)as*mut u8,();
+(MapPanelSortie)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`ClearSelect()` overload"]fn clear_select(self,)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f20usize)as*mut u8,();
+(MapPanelSortie)__receiver)}
+}
+#[doc="`get_SelectX()` overload"]fn get_select_x(self,)->i32{unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f30usize)as*mut u8,i32;
+(MapPanelSortie)__receiver)}
+}
+#[doc="`set_SelectX(i32)` overload"]fn set_select_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f40usize)as*mut u8,();
+(MapPanelSortie)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SelectZ()` overload"]fn get_select_z(self,)->i32{unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f50usize)as*mut u8,i32;
+(MapPanelSortie)__receiver)}
+}
+#[doc="`set_SelectZ(i32)` overload"]fn set_select_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f60usize)as*mut u8,();
+(MapPanelSortie)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsSelected()` overload"]fn get_is_selected(self,)->bool{unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f70usize)as*mut u8,bool;
+(MapPanelSortie)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f80usize)as*mut u8,();
+(MapPanelSortie)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2356020usize)as*mut u8,();
+(MapPanelSortie)__receiver)}
+}
+#[doc="`SetVertex()` overload"]fn set_vertex(self,)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355bd0usize)as*mut u8,();
+(MapPanelSortie)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2356030usize)as*mut u8,();
+(MapPanelSortie)__receiver)}
+}
+}
+
+#[cfg(feature="app-mappanelsortie")]impl<__T:IMapPanelSortie>IMapPanelSortieMethods for __T{}
+
+#[cfg(feature="app-mappanelsortie")]impl MapPanelSortie{pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn renew_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_select_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_select_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_select_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_select_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-mappanelsortie")]impl MapPanelSortie{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelSortie), ::core::stringify!(new),));
+ <Self as IMapPanelSortieMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mappanelsortie")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelSortie;
-    pub use super::IMapPanelSortie;
-    pub use super::IMapPanelSortieMethods;
     pub use super::MapPanelSortie_DontPosChangeMap;
     pub use super::IMapPanelSortie_DontPosChangeMap;
     pub use super::IMapPanelSortie_DontPosChangeMapMethods;
+    pub use super::MapPanelSortie;
+    pub use super::IMapPanelSortie;
+    pub use super::IMapPanelSortieMethods;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

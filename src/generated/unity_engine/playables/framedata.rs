@@ -4,176 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FrameData_Flags  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/framedata/FrameData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FrameData{pub m_frame_id:u64,pub m_delta_time:f64,pub m_weight:f32,pub m_effective_weight:f32,pub m_effective_parent_delay:f64,pub m_effective_parent_speed:f32,pub m_effective_speed:f32,pub m_flags:crate::unity_engine::playables::framedata::FrameData_Flags,pub m_output:crate::unity_engine::playables::playableoutput::PlayableOutput,}
+impl::unity2::ClassIdentity for FrameData{const NAMESPACE: &'static str="UnityEngine.Playables";
+const NAME: &'static str="FrameData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for FrameData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl  ::unity2::ClassIdentity for FrameData_Flags  {
-    const NAMESPACE: &'static str = "UnityEngine.Playables";
-
-    const NAME: &'static str = "FrameData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/framedata/FrameData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FrameData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for FrameData_Flags{const NAMESPACE: &'static str="UnityEngine.Playables";
+const NAME: &'static str="FrameData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for FrameData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl FrameData_Flags{pub fn evaluate()->Self{Self{value:1}
+}
+pub fn seek_occured()->Self{Self{value:2}
+}
+pub fn r#loop()->Self{Self{value:4}
+}
+pub fn hold()->Self{Self{value:8}
+}
+pub fn effective_play_state_delayed()->Self{Self{value:16}
+}
+pub fn effective_play_state_playing()->Self{Self{value:32}
+}
 }
 
 
-impl  ::unity2::IlType for FrameData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/framedata/FrameData_EvaluationType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FrameData_EvaluationType{pub value:i32,}
+impl::unity2::ClassIdentity for FrameData_EvaluationType{const NAMESPACE: &'static str="UnityEngine.Playables";
+const NAME: &'static str="FrameData.EvaluationType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  FrameData_Flags  {
-    pub fn evaluate() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn seek_occured() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn r#loop() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn hold() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn effective_play_state_delayed() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn effective_play_state_playing() -> Self {
-        Self { value: 32 }
-
-    }
-
+impl::unity2::IlType for FrameData_EvaluationType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FrameData {
-    pub m_frame_id: u64,
-    pub m_delta_time: f64,
-    pub m_weight: f32,
-    pub m_effective_weight: f32,
-    pub m_effective_parent_delay: f64,
-    pub m_effective_parent_speed: f32,
-    pub m_effective_speed: f32,
-    pub m_flags: crate :: unity_engine :: playables :: framedata :: FrameData_Flags,
-    pub m_output: crate :: unity_engine :: playables :: playableoutput :: PlayableOutput,
+impl FrameData_EvaluationType{pub fn evaluate()->Self{Self{value:0}
 }
-
-
-impl ::unity2::ClassIdentity for FrameData {
-    const NAMESPACE: &'static str = "UnityEngine.Playables";
-
-    const NAME: &'static str = "FrameData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn playback()->Self{Self{value:1}
 }
-
-
-impl ::unity2::IlType for FrameData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_EvaluationType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FrameData_EvaluationType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for FrameData_EvaluationType  {
-    const NAMESPACE: &'static str = "UnityEngine.Playables";
-
-    const NAME: &'static str = "FrameData.EvaluationType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for FrameData_EvaluationType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  FrameData_EvaluationType  {
-    pub fn evaluate() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn playback() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
 
 }
@@ -181,17 +68,51 @@ impl  FrameData_EvaluationType  {
 #[cfg(feature = "unity_engine-playables-framedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playables-framedata")]
-impl FrameData { # [doc = "`HasFlags(crate::unity_engine::playables::framedata::FrameData_Flags)` overload"] pub fn has_flags (& mut self , flag : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData_Flags >) -> bool { unsafe { { let __inner : extern "C" fn (* mut FrameData , crate :: unity_engine :: playables :: framedata :: FrameData_Flags , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d9d0usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: convert :: Into :: into (flag) , :: core :: option :: Option :: None) } } } # [doc = "`get_deltaTime()` overload"] pub fn get_delta_time (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FrameData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d9e0usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: option :: Option :: None) } } } # [doc = "`get_effectiveParentSpeed()` overload"] pub fn get_effective_parent_speed (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FrameData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d9f0usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: option :: Option :: None) } } } # [doc = "`get_effectiveSpeed()` overload"] pub fn get_effective_speed (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FrameData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4da00usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: option :: Option :: None) } } } # [doc = "`get_evaluationType()` overload"] pub fn get_evaluation_type (& mut self ,) -> crate :: unity_engine :: playables :: framedata :: FrameData_EvaluationType { unsafe { { let __inner : extern "C" fn (* mut FrameData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: framedata :: FrameData_EvaluationType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4da10usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: option :: Option :: None) } } } # [doc = "`get_timeLooped()` overload"] pub fn get_time_looped (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut FrameData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4da20usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: option :: Option :: None) } } } # [doc = "`get_timeHeld()` overload"] pub fn get_time_held (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut FrameData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4da30usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: option :: Option :: None) } } } # [doc = "`get_output()` overload"] pub fn get_output (& mut self ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { unsafe { { let __inner : extern "C" fn (* mut FrameData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4da40usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: option :: Option :: None) } } } # [doc = "`get_effectivePlayState()` overload"] pub fn get_effective_play_state (& mut self ,) -> crate :: unity_engine :: playables :: playstate :: PlayState { unsafe { { let __inner : extern "C" fn (* mut FrameData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playstate :: PlayState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4da50usize) as * mut u8) ; __inner (self as * mut FrameData , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-framedata")]impl FrameData{#[doc="`HasFlags(crate::unity_engine::playables::framedata::FrameData_Flags)` overload"]pub fn has_flags(&mut self,flag:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData_Flags>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d9d0usize)as*mut u8,bool;
+(*mut FrameData)self as*mut FrameData,(crate::unity_engine::playables::framedata::FrameData_Flags)::core::convert::Into::into(flag))}
+}
+#[doc="`get_deltaTime()` overload"]pub fn get_delta_time(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d9e0usize)as*mut u8,f32;
+(*mut FrameData)self as*mut FrameData)}
+}
+#[doc="`get_effectiveParentSpeed()` overload"]pub fn get_effective_parent_speed(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d9f0usize)as*mut u8,f32;
+(*mut FrameData)self as*mut FrameData)}
+}
+#[doc="`get_effectiveSpeed()` overload"]pub fn get_effective_speed(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4da00usize)as*mut u8,f32;
+(*mut FrameData)self as*mut FrameData)}
+}
+#[doc="`get_evaluationType()` overload"]pub fn get_evaluation_type(&mut self,)->crate::unity_engine::playables::framedata::FrameData_EvaluationType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4da10usize)as*mut u8,crate::unity_engine::playables::framedata::FrameData_EvaluationType;
+(*mut FrameData)self as*mut FrameData)}
+}
+#[doc="`get_timeLooped()` overload"]pub fn get_time_looped(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4da20usize)as*mut u8,bool;
+(*mut FrameData)self as*mut FrameData)}
+}
+#[doc="`get_timeHeld()` overload"]pub fn get_time_held(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4da30usize)as*mut u8,bool;
+(*mut FrameData)self as*mut FrameData)}
+}
+#[doc="`get_output()` overload"]pub fn get_output(&mut self,)->crate::unity_engine::playables::playableoutput::PlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4da40usize)as*mut u8,crate::unity_engine::playables::playableoutput::PlayableOutput;
+(*mut FrameData)self as*mut FrameData)}
+}
+#[doc="`get_effectivePlayState()` overload"]pub fn get_effective_play_state(&mut self,)->crate::unity_engine::playables::playstate::PlayState{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4da50usize)as*mut u8,crate::unity_engine::playables::playstate::PlayState;
+(*mut FrameData)self as*mut FrameData)}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-framedata")]
-impl FrameData { pub fn has_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_effective_parent_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_effective_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_evaluation_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_time_looped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_time_held_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_output_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_effective_play_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FrameData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-playables-framedata")]impl FrameData{pub fn has_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_effective_parent_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_effective_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_evaluation_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_time_looped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_time_held_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_output_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_effective_play_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-playables-framedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FrameData_Flags;
     pub use super::FrameData;
+    pub use super::FrameData_Flags;
     pub use super::FrameData_EvaluationType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

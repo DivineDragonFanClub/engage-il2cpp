@@ -4,33 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gmappathcollection/GmapPathCollection.md"))] # [:: unity2 :: class (namespace = "App.Gmap" , name = "GmapPathCollection")] # [parent (crate :: system :: object :: Object)] pub struct GmapPathCollection {
-# [offset (16)] # [rename (name = "m_Root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_PathList")] pub m_path_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/gmappathcollection/GmapPathCollection.md"))]#[::unity2::class(namespace="App.Gmap",name="GmapPathCollection")]#[parent(crate::system::object::Object)]pub struct GmapPathCollection{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_PathList")]pub m_path_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-gmap-gmappathcollection-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmap-gmappathcollection")]
-pub trait IGmapPathCollectionMethods : IGmapPathCollection { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPathCollection , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b366b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVisible()` overload"] fn update_visible (self ,) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPathCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b36840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetChild(crate::unity_engine::gameobject::GameObject)` overload"] fn set_child (self , path_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPathCollection , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b36940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path_object) , :: core :: option :: Option :: None) } } } # [doc = "`ForEach(crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>)` overload"] fn for_each (self , action : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: gameobject :: GameObject > >) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPathCollection , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: gameobject :: GameObject > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b36990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePathList()` overload"] fn update_path_list (self ,) -> () { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPathCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b36760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckAppearGmapPath(*mutcrate::app::gmapspot::GmapSpot, *mutcrate::app::gmapspot::GmapSpot)` overload"] fn check_appear_gmap_path (self ,) -> (crate :: unity_engine :: gameobject :: GameObject , crate :: app :: gmapspot :: GmapSpot , crate :: app :: gmapspot :: GmapSpot) { unsafe { let __receiver = < GmapPathCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: gmapspot :: GmapSpot > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: app :: gmapspot :: GmapSpot > :: uninit () ; let __ret = { { let __inner : extern "C" fn (GmapPathCollection , * mut crate :: app :: gmapspot :: GmapSpot , * mut crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b36d80usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="app-gmap-gmappathcollection")]pub trait IGmapPathCollectionMethods:IGmapPathCollection{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <GmapPathCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b366b0usize)as*mut u8,();
+(GmapPathCollection)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`UpdateVisible()` overload"]fn update_visible(self,)->(){unsafe{let __receiver= <GmapPathCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b36840usize)as*mut u8,();
+(GmapPathCollection)__receiver)}
+}
+#[doc="`SetChild(crate::unity_engine::gameobject::GameObject)` overload"]fn set_child(self,path_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <GmapPathCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b36940usize)as*mut u8,();
+(GmapPathCollection)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(path_object))}
+}
+#[doc="`ForEach(crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>)` overload"]fn for_each(self,action:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject> >)->(){unsafe{let __receiver= <GmapPathCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b36990usize)as*mut u8,();
+(GmapPathCollection)__receiver,(crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>)::core::convert::Into::into(action))}
+}
+#[doc="`UpdatePathList()` overload"]fn update_path_list(self,)->(){unsafe{let __receiver= <GmapPathCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b36760usize)as*mut u8,();
+(GmapPathCollection)__receiver)}
+}
+#[doc="`CheckAppearGmapPath(*mutcrate::app::gmapspot::GmapSpot, *mutcrate::app::gmapspot::GmapSpot)` overload"]fn check_appear_gmap_path(self,)->(crate::unity_engine::gameobject::GameObject,crate::app::gmapspot::GmapSpot,crate::app::gmapspot::GmapSpot){unsafe{let __receiver= <GmapPathCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::gmapspot::GmapSpot> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::app::gmapspot::GmapSpot> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2b36d80usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(GmapPathCollection)__receiver,(*mut crate::app::gmapspot::GmapSpot)__out_0.as_mut_ptr(),(*mut crate::app::gmapspot::GmapSpot)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+}
 
-#[cfg(feature = "app-gmap-gmappathcollection")]
-impl < __T : IGmapPathCollection > IGmapPathCollectionMethods for __T { }
+#[cfg(feature="app-gmap-gmappathcollection")]impl<__T:IGmapPathCollection>IGmapPathCollectionMethods for __T{}
 
-#[cfg(feature = "app-gmap-gmappathcollection")]
-impl GmapPathCollection { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPathCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPathCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_child_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPathCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn for_each_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPathCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_path_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPathCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn check_appear_gmap_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPathCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-gmap-gmappathcollection")]impl GmapPathCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_child_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn for_each_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_path_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn check_appear_gmap_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-gmap-gmappathcollection")]
-impl GmapPathCollection {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (root : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapPathCollection) , :: core :: stringify ! (new) ,)) ; < Self as IGmapPathCollectionMethods > :: ctor (this , root) ; this }
+#[cfg(feature="app-gmap-gmappathcollection")]impl GmapPathCollection{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapPathCollection), ::core::stringify!(new),));
+ <Self as IGmapPathCollectionMethods> ::ctor(this,root);
+this}
 }
 
 #[cfg(feature = "app-gmap-gmappathcollection")]

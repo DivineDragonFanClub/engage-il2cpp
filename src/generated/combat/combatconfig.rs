@@ -4,50 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatconfig/CombatConfig.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatConfig")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CombatConfig {
-# [offset (24)] # [rename (name = "SpeedPan")] pub speed_pan : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (32)] # [rename (name = "ScalePan")] pub scale_pan : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (40)] # [rename (name = "StartAnimeStartTime")] pub start_anime_start_time : f32 ,
-# [offset (44)] # [rename (name = "BGDarknessScale")] pub bg_darkness_scale : f32 ,
-# [offset (48)] # [rename (name = "DamagePopupNumberStride")] pub damage_popup_number_stride : f32 ,
-# [offset (52)] # [rename (name = "DamagePopupWordsStride")] pub damage_popup_words_stride : f32 ,
-# [offset (56)] # [rename (name = "BackwardCancelPosition_High")] pub backward_cancel_position_high : f32 ,
-# [offset (60)] # [rename (name = "BackwardCancelPosition_Low")] pub backward_cancel_position_low : f32 ,
-# [offset (64)] # [rename (name = "BackwardCancelPosition_Heavy")] pub backward_cancel_position_heavy : f32 ,
-# [offset (68)] # [rename (name = "TimeDragonTransformFadeOut")] pub time_dragon_transform_fade_out : f32 ,
-# [offset (72)] # [rename (name = "TimeDragonTransformFadeIn")] pub time_dragon_transform_fade_in : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatconfig/CombatConfig.md"))]#[::unity2::class(namespace="Combat",name="CombatConfig")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatConfig{#[offset(24)]#[rename(name="SpeedPan")]pub speed_pan:crate::unity_engine::animationcurve::AnimationCurve, #[offset(32)]#[rename(name="ScalePan")]pub scale_pan:crate::unity_engine::vector2::Vector2, #[offset(40)]#[rename(name="StartAnimeStartTime")]pub start_anime_start_time:f32, #[offset(44)]#[rename(name="BGDarknessScale")]pub bg_darkness_scale:f32, #[offset(48)]#[rename(name="DamagePopupNumberStride")]pub damage_popup_number_stride:f32, #[offset(52)]#[rename(name="DamagePopupWordsStride")]pub damage_popup_words_stride:f32, #[offset(56)]#[rename(name="BackwardCancelPosition_High")]pub backward_cancel_position_high:f32, #[offset(60)]#[rename(name="BackwardCancelPosition_Low")]pub backward_cancel_position_low:f32, #[offset(64)]#[rename(name="BackwardCancelPosition_Heavy")]pub backward_cancel_position_heavy:f32, #[offset(68)]#[rename(name="TimeDragonTransformFadeOut")]pub time_dragon_transform_fade_out:f32, #[offset(72)]#[rename(name="TimeDragonTransformFadeIn")]pub time_dragon_transform_fade_in:f32,}
 
 }
 
 #[cfg(feature = "combat-combatconfig-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatconfig")]
-pub trait ICombatConfigMethods : ICombatConfig { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea9f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatconfig")]pub trait ICombatConfigMethods:ICombatConfig{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea9f00usize)as*mut u8,();
+(CombatConfig)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatconfig")]
-impl < __T : ICombatConfig > ICombatConfigMethods for __T { }
+#[cfg(feature="combat-combatconfig")]impl<__T:ICombatConfig>ICombatConfigMethods for __T{}
 
-#[cfg(feature = "combat-combatconfig")]
-impl CombatConfig { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-combatconfig")]impl CombatConfig{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "combat-combatconfig")]
-impl CombatConfig {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatConfig) , :: core :: stringify ! (new) ,)) ; < Self as ICombatConfigMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatconfig")]impl CombatConfig{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatConfig), ::core::stringify!(new),));
+ <Self as ICombatConfigMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combatconfig")]

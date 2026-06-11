@@ -4,32 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertviewer/ConvertViewer.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertViewer")] # [parent (crate :: combat :: situation_converter :: baseconverter :: BaseConverter)] pub struct ConvertViewer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertviewer/ConvertViewer.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertViewer")]#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]pub struct ConvertViewer{}
 
 }
 
 #[cfg(feature = "combat-situation_converter-convertviewer-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-situation_converter-convertviewer")]
-pub trait IConvertViewerMethods : IConvertViewer { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertViewer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertViewer , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"] fn convert (self , situation : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertViewer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertViewer , crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-situation_converter-convertviewer")]pub trait IConvertViewerMethods:IConvertViewer{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertViewer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543940usize)as*mut u8,();
+(ConvertViewer)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
+}
+#[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertViewer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543950usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertViewer)__receiver,(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(situation),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+}
 
-#[cfg(feature = "combat-situation_converter-convertviewer")]
-impl < __T : IConvertViewer > IConvertViewerMethods for __T { }
+#[cfg(feature="combat-situation_converter-convertviewer")]impl<__T:IConvertViewer>IConvertViewerMethods for __T{}
 
-#[cfg(feature = "combat-situation_converter-convertviewer")]
-impl ConvertViewer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-situation_converter-convertviewer")]impl ConvertViewer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "combat-situation_converter-convertviewer")]
-impl ConvertViewer {
-# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertViewer) , :: core :: stringify ! (new) ,)) ; < Self as IConvertViewerMethods > :: ctor (this , data) ; this }
+#[cfg(feature="combat-situation_converter-convertviewer")]impl ConvertViewer{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConvertViewer), ::core::stringify!(new),));
+ <Self as IConvertViewerMethods> ::ctor(this,data);
+this}
 }
 
 #[cfg(feature = "combat-situation_converter-convertviewer")]

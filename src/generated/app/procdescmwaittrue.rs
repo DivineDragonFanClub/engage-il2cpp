@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdescwaitfunc :: { IProcDescWaitFunc , ProcDescWaitFunc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdescwaitfunc::{IProcDescWaitFunc,ProcDescWaitFunc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmwaittrue/ProcDescMWaitTrue.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescMWaitTrue")] # [parent (crate :: app :: procdescwaitfunc :: ProcDescWaitFunc)] pub struct ProcDescMWaitTrue {
-# [offset (24)] # [rename (name = "m_Method")] pub m_method : crate :: app :: procboolmethod :: ProcBoolMethod ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescmwaittrue/ProcDescMWaitTrue.md"))]#[::unity2::class(namespace="App",name="ProcDescMWaitTrue")]#[parent(crate::app::procdescwaitfunc::ProcDescWaitFunc)]pub struct ProcDescMWaitTrue{#[offset(24)]#[rename(name="m_Method")]pub m_method:crate::app::procboolmethod::ProcBoolMethod,}
 
 }
 
 #[cfg(feature = "app-procdescmwaittrue-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescmwaittrue")]
-pub trait IProcDescMWaitTrueMethods : IProcDescMWaitTrue { # [doc = "`.ctor(crate::app::procboolmethod::ProcBoolMethod)` overload"] fn ctor (self , method : impl :: core :: convert :: Into < crate :: app :: procboolmethod :: ProcBoolMethod >) -> () { unsafe { let __receiver = < ProcDescMWaitTrue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescMWaitTrue , crate :: app :: procboolmethod :: ProcBoolMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b9f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`IsWait(crate::app::procinst::ProcInst)` overload"] fn is_wait (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < ProcDescMWaitTrue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescMWaitTrue , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281da50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescmwaittrue")]pub trait IProcDescMWaitTrueMethods:IProcDescMWaitTrue{#[doc="`.ctor(crate::app::procboolmethod::ProcBoolMethod)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod>)->(){unsafe{let __receiver= <ProcDescMWaitTrue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281b9f0usize)as*mut u8,();
+(ProcDescMWaitTrue)__receiver,(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(method))}
+}
+#[doc="`IsWait(crate::app::procinst::ProcInst)` overload"]fn is_wait(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <ProcDescMWaitTrue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281da50usize)as*mut u8,bool;
+(ProcDescMWaitTrue)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescmwaittrue")]
-impl < __T : IProcDescMWaitTrue > IProcDescMWaitTrueMethods for __T { }
+#[cfg(feature="app-procdescmwaittrue")]impl<__T:IProcDescMWaitTrue>IProcDescMWaitTrueMethods for __T{}
 
-#[cfg(feature = "app-procdescmwaittrue")]
-impl ProcDescMWaitTrue { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescMWaitTrue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescMWaitTrue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdescmwaittrue")]impl ProcDescMWaitTrue{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdescmwaittrue")]
-impl ProcDescMWaitTrue {
-# [doc = "`.ctor(crate::app::procboolmethod::ProcBoolMethod)` — overload selector"] pub fn new (method : crate :: app :: procboolmethod :: ProcBoolMethod) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescMWaitTrue) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescMWaitTrueMethods > :: ctor (this , method) ; this }
+#[cfg(feature="app-procdescmwaittrue")]impl ProcDescMWaitTrue{#[doc="`.ctor(crate::app::procboolmethod::ProcBoolMethod)` — overload selector"]pub fn new(method:crate::app::procboolmethod::ProcBoolMethod)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescMWaitTrue), ::core::stringify!(new),));
+ <Self as IProcDescMWaitTrueMethods> ::ctor(this,method);
+this}
 }
 
 #[cfg(feature = "app-procdescmwaittrue")]

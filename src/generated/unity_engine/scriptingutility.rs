@@ -4,47 +4,24 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scriptingutility/ScriptingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ScriptingUtility")] # [parent (crate :: system :: object :: Object)] pub struct ScriptingUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scriptingutility/ScriptingUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="ScriptingUtility")]#[parent(crate::system::object::Object)]pub struct ScriptingUtility{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scriptingutility/ScriptingUtility_TestClass.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ScriptingUtility_TestClass {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scriptingutility/ScriptingUtility_TestClass.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ScriptingUtility_TestClass{pub value:i32,}
+impl::unity2::ClassIdentity for ScriptingUtility_TestClass{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ScriptingUtility.TestClass";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ScriptingUtility_TestClass {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ScriptingUtility.TestClass";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ScriptingUtility_TestClass {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ScriptingUtility_TestClass{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +29,13 @@ impl ::unity2::IlType for ScriptingUtility_TestClass {
 #[cfg(feature = "unity_engine-scriptingutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scriptingutility")]
-impl ScriptingUtility { # [doc = "`IsManagedCodeWorking()` overload"] pub fn is_managed_code_working () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e800usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scriptingutility")]impl ScriptingUtility{#[doc="`IsManagedCodeWorking()` overload"]pub fn is_managed_code_working()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e800usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-scriptingutility")]
-impl ScriptingUtility { pub fn is_managed_code_working_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptingUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-scriptingutility")]impl ScriptingUtility{pub fn is_managed_code_working_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-scriptingutility")]
 #[doc(hidden)]

@@ -4,33 +4,137 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/scriptglobaloptions/ScriptGlobalOptions.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "ScriptGlobalOptions")] # [parent (crate :: system :: object :: Object)] pub struct ScriptGlobalOptions {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/scriptglobaloptions/ScriptGlobalOptions.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="ScriptGlobalOptions")]#[parent(crate::system::object::Object)]pub struct ScriptGlobalOptions{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScriptGlobalOptions_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_custom_converters { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () , "get_CustomConverters" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: NAME , "get_CustomConverters" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_custom_converters { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: customconverterscollection :: CustomConvertersCollection as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () , "set_CustomConverters" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: NAME , "set_CustomConverters" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_platform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () , "get_Platform" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: NAME , "get_Platform" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_platform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: platforms :: iplatformaccessor :: IPlatformAccessor as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () , "set_Platform" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: NAME , "set_Platform" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rethrow_exception_nested { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () , "get_RethrowExceptionNested" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: NAME , "get_RethrowExceptionNested" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rethrow_exception_nested { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () , "set_RethrowExceptionNested" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: NAME , "set_RethrowExceptionNested" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-scriptglobaloptions")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptGlobalOptions_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptGlobalOptions as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptGlobalOptions as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_custom_converters{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptGlobalOptions as::unity2::ClassIdentity> ::class(),"get_CustomConverters",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptGlobalOptions as::unity2::ClassIdentity> ::NAME,"get_CustomConverters",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_custom_converters{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::interop::customconverterscollection::CustomConvertersCollection as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptGlobalOptions as::unity2::ClassIdentity> ::class(),"set_CustomConverters",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptGlobalOptions as::unity2::ClassIdentity> ::NAME,"set_CustomConverters",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_platform{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptGlobalOptions as::unity2::ClassIdentity> ::class(),"get_Platform",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptGlobalOptions as::unity2::ClassIdentity> ::NAME,"get_Platform",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_platform{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptGlobalOptions as::unity2::ClassIdentity> ::class(),"set_Platform",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptGlobalOptions as::unity2::ClassIdentity> ::NAME,"set_Platform",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_rethrow_exception_nested{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptGlobalOptions as::unity2::ClassIdentity> ::class(),"get_RethrowExceptionNested",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptGlobalOptions as::unity2::ClassIdentity> ::NAME,"get_RethrowExceptionNested",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_rethrow_exception_nested{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptGlobalOptions as::unity2::ClassIdentity> ::class(),"set_RethrowExceptionNested",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptGlobalOptions as::unity2::ClassIdentity> ::NAME,"set_RethrowExceptionNested",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
-pub trait IScriptGlobalOptionsMethods : IScriptGlobalOptions { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScriptGlobalOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptGlobalOptions , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptGlobalOptions_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CustomConverters()` overload"] fn get_custom_converters (self ,) -> crate :: moon_sharp :: interpreter :: interop :: customconverterscollection :: CustomConvertersCollection { unsafe { let __receiver = < ScriptGlobalOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptGlobalOptions , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: customconverterscollection :: CustomConvertersCollection = :: core :: mem :: transmute (__ScriptGlobalOptions_unity2_raw :: __lookup_get_custom_converters :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CustomConverters(crate::moon_sharp::interpreter::interop::customconverterscollection::CustomConvertersCollection)` overload"] fn set_custom_converters (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: customconverterscollection :: CustomConvertersCollection >) -> () { unsafe { let __receiver = < ScriptGlobalOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptGlobalOptions , crate :: moon_sharp :: interpreter :: interop :: customconverterscollection :: CustomConvertersCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptGlobalOptions_unity2_raw :: __lookup_set_custom_converters :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Platform()` overload"] fn get_platform (self ,) -> crate :: moon_sharp :: interpreter :: platforms :: iplatformaccessor :: IPlatformAccessor { unsafe { let __receiver = < ScriptGlobalOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptGlobalOptions , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: platforms :: iplatformaccessor :: IPlatformAccessor = :: core :: mem :: transmute (__ScriptGlobalOptions_unity2_raw :: __lookup_get_platform :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Platform(crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor)` overload"] fn set_platform (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: platforms :: iplatformaccessor :: IPlatformAccessor >) -> () { unsafe { let __receiver = < ScriptGlobalOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptGlobalOptions , crate :: moon_sharp :: interpreter :: platforms :: iplatformaccessor :: IPlatformAccessor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptGlobalOptions_unity2_raw :: __lookup_set_platform :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RethrowExceptionNested()` overload"] fn get_rethrow_exception_nested (self ,) -> bool { unsafe { let __receiver = < ScriptGlobalOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptGlobalOptions , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__ScriptGlobalOptions_unity2_raw :: __lookup_get_rethrow_exception_nested :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RethrowExceptionNested(bool)` overload"] fn set_rethrow_exception_nested (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ScriptGlobalOptions as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptGlobalOptions , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptGlobalOptions_unity2_raw :: __lookup_set_rethrow_exception_nested :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-scriptglobaloptions")]pub trait IScriptGlobalOptionsMethods:IScriptGlobalOptions{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptGlobalOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptGlobalOptions_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(ScriptGlobalOptions)__receiver)}
+}
+#[doc="`get_CustomConverters()` overload"]fn get_custom_converters(self,)->crate::moon_sharp::interpreter::interop::customconverterscollection::CustomConvertersCollection{unsafe{let __receiver= <ScriptGlobalOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptGlobalOptions_unity2_raw::__lookup_get_custom_converters::get_method_info().method_ptr,crate::moon_sharp::interpreter::interop::customconverterscollection::CustomConvertersCollection;
+(ScriptGlobalOptions)__receiver)}
+}
+#[doc="`set_CustomConverters(crate::moon_sharp::interpreter::interop::customconverterscollection::CustomConvertersCollection)` overload"]fn set_custom_converters(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::customconverterscollection::CustomConvertersCollection>)->(){unsafe{let __receiver= <ScriptGlobalOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptGlobalOptions_unity2_raw::__lookup_set_custom_converters::get_method_info().method_ptr,();
+(ScriptGlobalOptions)__receiver,(crate::moon_sharp::interpreter::interop::customconverterscollection::CustomConvertersCollection)::core::convert::Into::into(value))}
+}
+#[doc="`get_Platform()` overload"]fn get_platform(self,)->crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor{unsafe{let __receiver= <ScriptGlobalOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptGlobalOptions_unity2_raw::__lookup_get_platform::get_method_info().method_ptr,crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor;
+(ScriptGlobalOptions)__receiver)}
+}
+#[doc="`set_Platform(crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor)` overload"]fn set_platform(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor>)->(){unsafe{let __receiver= <ScriptGlobalOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptGlobalOptions_unity2_raw::__lookup_set_platform::get_method_info().method_ptr,();
+(ScriptGlobalOptions)__receiver,(crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor)::core::convert::Into::into(value))}
+}
+#[doc="`get_RethrowExceptionNested()` overload"]fn get_rethrow_exception_nested(self,)->bool{unsafe{let __receiver= <ScriptGlobalOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptGlobalOptions_unity2_raw::__lookup_get_rethrow_exception_nested::get_method_info().method_ptr,bool;
+(ScriptGlobalOptions)__receiver)}
+}
+#[doc="`set_RethrowExceptionNested(bool)` overload"]fn set_rethrow_exception_nested(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptGlobalOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptGlobalOptions_unity2_raw::__lookup_set_rethrow_exception_nested::get_method_info().method_ptr,();
+(ScriptGlobalOptions)__receiver,(bool)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
-impl < __T : IScriptGlobalOptions > IScriptGlobalOptionsMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-scriptglobaloptions")]impl<__T:IScriptGlobalOptions>IScriptGlobalOptionsMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
-impl ScriptGlobalOptions { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_custom_converters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_custom_converters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_platform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_platform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_rethrow_exception_nested_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_rethrow_exception_nested_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptGlobalOptions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="moon_sharp-interpreter-scriptglobaloptions")]impl ScriptGlobalOptions{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_custom_converters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_custom_converters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_platform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_platform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_rethrow_exception_nested_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_rethrow_exception_nested_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
-impl ScriptGlobalOptions {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptGlobalOptions) , :: core :: stringify ! (new) ,)) ; < Self as IScriptGlobalOptionsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-scriptglobaloptions")]impl ScriptGlobalOptions{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptGlobalOptions), ::core::stringify!(new),));
+ <Self as IScriptGlobalOptionsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]

@@ -4,89 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/vibrationvalue/VibrationValue.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VibrationValue {
-    pub amplitude_low: f32,
-    pub frequency_low: f32,
-    pub amplitude_high: f32,
-    pub frequency_high: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationvalue/VibrationValue.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VibrationValue{pub amplitude_low:f32,pub frequency_low:f32,pub amplitude_high:f32,pub frequency_high:f32,}
+impl::unity2::ClassIdentity for VibrationValue{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="VibrationValue";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for VibrationValue {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "VibrationValue";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for VibrationValue{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for VibrationValue {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl VibrationValue{#[inline]pub fn frequency_low_default()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FrequencyLowDefault");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_frequency_low_default(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FrequencyLowDefault");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl VibrationValue {
-    #[inline]
-    pub fn frequency_low_default() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "FrequencyLowDefault");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_frequency_low_default(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "FrequencyLowDefault");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn frequency_high_default() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "FrequencyHighDefault");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_frequency_high_default(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "FrequencyHighDefault");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn frequency_high_default()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FrequencyHighDefault");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_frequency_high_default(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FrequencyHighDefault");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -94,14 +41,35 @@ impl VibrationValue {
 #[cfg(feature = "nn-hid-vibrationvalue-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-vibrationvalue")]
-impl VibrationValue { # [doc = "`Make()` overload"] pub fn make () -> crate :: nn :: hid :: vibrationvalue :: VibrationValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: vibrationvalue :: VibrationValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c0ca0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Make(f32, f32, f32, f32)` overload"] pub fn make_2 (amplitude_low : impl :: core :: convert :: Into < f32 > , frequency_low : impl :: core :: convert :: Into < f32 > , amplitude_high : impl :: core :: convert :: Into < f32 > , frequency_high : impl :: core :: convert :: Into < f32 >) -> crate :: nn :: hid :: vibrationvalue :: VibrationValue { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: vibrationvalue :: VibrationValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c0ce0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (amplitude_low) , :: core :: convert :: Into :: into (frequency_low) , :: core :: convert :: Into :: into (amplitude_high) , :: core :: convert :: Into :: into (frequency_high) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-vibrationvalue")]impl VibrationValue{#[doc="`Make()` overload"]pub fn make()->crate::nn::hid::vibrationvalue::VibrationValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c0ca0usize)as*mut u8,crate::nn::hid::vibrationvalue::VibrationValue;
+)}
+}
+#[doc="`Make(f32, f32, f32, f32)` overload"]pub fn make_2(amplitude_low:impl::core::convert::Into<f32> ,frequency_low:impl::core::convert::Into<f32> ,amplitude_high:impl::core::convert::Into<f32> ,frequency_high:impl::core::convert::Into<f32>)->crate::nn::hid::vibrationvalue::VibrationValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c0ce0usize)as*mut u8,crate::nn::hid::vibrationvalue::VibrationValue;
+(f32)::core::convert::Into::into(amplitude_low),(f32)::core::convert::Into::into(frequency_low),(f32)::core::convert::Into::into(amplitude_high),(f32)::core::convert::Into::into(frequency_high))}
+}
+}
 
-#[cfg(feature = "nn-hid-vibrationvalue")]
-impl VibrationValue { # [doc = "`.ctor(f32, f32, f32, f32)` overload"] pub fn ctor (& mut self , amplitude_low : impl :: core :: convert :: Into < f32 > , frequency_low : impl :: core :: convert :: Into < f32 > , amplitude_high : impl :: core :: convert :: Into < f32 > , frequency_high : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationValue , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c0cc0usize) as * mut u8) ; __inner (self as * mut VibrationValue , :: core :: convert :: Into :: into (amplitude_low) , :: core :: convert :: Into :: into (frequency_low) , :: core :: convert :: Into :: into (amplitude_high) , :: core :: convert :: Into :: into (frequency_high) , :: core :: option :: Option :: None) } } } # [doc = "`Set(f32, f32, f32, f32)` overload"] pub fn set (& mut self , amplitude_low : impl :: core :: convert :: Into < f32 > , frequency_low : impl :: core :: convert :: Into < f32 > , amplitude_high : impl :: core :: convert :: Into < f32 > , frequency_high : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationValue , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c0cf0usize) as * mut u8) ; __inner (self as * mut VibrationValue , :: core :: convert :: Into :: into (amplitude_low) , :: core :: convert :: Into :: into (frequency_low) , :: core :: convert :: Into :: into (amplitude_high) , :: core :: convert :: Into :: into (frequency_high) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c0d10usize) as * mut u8) ; __inner (self as * mut VibrationValue , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut VibrationValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c0d20usize) as * mut u8) ; __inner (self as * mut VibrationValue , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-vibrationvalue")]impl VibrationValue{#[doc="`.ctor(f32, f32, f32, f32)` overload"]pub fn ctor(&mut self,amplitude_low:impl::core::convert::Into<f32> ,frequency_low:impl::core::convert::Into<f32> ,amplitude_high:impl::core::convert::Into<f32> ,frequency_high:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c0cc0usize)as*mut u8,();
+(*mut VibrationValue)self as*mut VibrationValue,(f32)::core::convert::Into::into(amplitude_low),(f32)::core::convert::Into::into(frequency_low),(f32)::core::convert::Into::into(amplitude_high),(f32)::core::convert::Into::into(frequency_high))}
+}
+#[doc="`Set(f32, f32, f32, f32)` overload"]pub fn set(&mut self,amplitude_low:impl::core::convert::Into<f32> ,frequency_low:impl::core::convert::Into<f32> ,amplitude_high:impl::core::convert::Into<f32> ,frequency_high:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c0cf0usize)as*mut u8,();
+(*mut VibrationValue)self as*mut VibrationValue,(f32)::core::convert::Into::into(amplitude_low),(f32)::core::convert::Into::into(frequency_low),(f32)::core::convert::Into::into(amplitude_high),(f32)::core::convert::Into::into(frequency_high))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c0d10usize)as*mut u8,();
+(*mut VibrationValue)self as*mut VibrationValue)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c0d20usize)as*mut u8, ::unity2::Il2CppString;
+(*mut VibrationValue)self as*mut VibrationValue)}
+}
+}
 
-#[cfg(feature = "nn-hid-vibrationvalue")]
-impl VibrationValue { pub fn make_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn make_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="nn-hid-vibrationvalue")]impl VibrationValue{pub fn make_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn make_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "nn-hid-vibrationvalue")]
 #[doc(hidden)]

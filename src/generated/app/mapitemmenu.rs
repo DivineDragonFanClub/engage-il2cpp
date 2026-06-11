@@ -4,563 +4,1002 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicitemmenuitem :: { BasicItemMenuItem , IBasicItemMenuItem }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: gridmenu :: { GridMenu , IGridMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: trademenu :: { ITradeMenu , TradeMenu }
- ;
- use crate :: app :: trademenuitem :: { ITradeMenuItem , TradeMenuItem }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicitemmenuitem::{BasicItemMenuItem,IBasicItemMenuItem}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::gridmenu::{GridMenu,IGridMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::trademenu::{ITradeMenu,TradeMenu}
+;
+use crate::app::trademenuitem::{ITradeMenuItem,TradeMenuItem}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemEquipMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemEquipMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_SubItemMenuItem)] pub struct MapItemMenu_SubItemEquipMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu.md"))]#[::unity2::class(namespace="App",name="MapItemMenu")]#[parent(crate::system::object::Object)]pub struct MapItemMenu{#[static_field]#[rename(name="s_RodSelectIndex")]pub s_rod_select_index:i32, #[static_field]#[rename(name="s_EnchantSelectIndex")]pub s_enchant_select_index:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_ItemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.ItemMenuItem")] # [parent (crate :: app :: basicitemmenuitem :: BasicItemMenuItem)] pub struct MapItemMenu_ItemMenuItem {
-# [offset (104)] # [rename (name = "m_BasicItemMenuContent")] pub m_basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent ,
-# [offset (112)] # [rename (name = "m_UnitItemIndex")] pub m_unit_item_index : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_ItemMenu.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.ItemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MapItemMenu_ItemMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MapItemMenu_SubItemMenuItem{#[offset(100)]#[rename(name="m_UnitItemIndex")]pub m_unit_item_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemUseMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemUseMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]pub struct MapItemMenu_SubItemUseMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemEquipMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemEquipMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]pub struct MapItemMenu_SubItemEquipMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemSortMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemSortMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]pub struct MapItemMenu_SubItemSortMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_EnchantItemMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.EnchantItemMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_ItemMenuItem)]pub struct MapItemMenu_EnchantItemMenuItem{#[offset(116)]#[rename(name="m_EnchantType")]pub m_enchant_type:crate::app::mapitemmenu::MapItemMenu_EnchantType,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_RodMenu.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.RodMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MapItemMenu_RodMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemMenu.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MapItemMenu_SubItemMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_RodMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.RodMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_TargetMenuItem)]pub struct MapItemMenu_RodMenuItem{#[offset(104)]#[rename(name="m_BasicItemMenuContent")]pub m_basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_TargetMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.TargetMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct MapItemMenu_TargetMenuItem{#[offset(100)]#[rename(name="m_UnitItemIndex")]pub m_unit_item_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemPutOffMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]pub struct MapItemMenu_SubItemPutOffMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemPutOffMenuItem.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_UnitItemIndex")]pub m_unit_item_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemPutOffMenuItem.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_ItemMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.ItemMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct MapItemMenu_ItemMenuItem{#[offset(104)]#[rename(name="m_BasicItemMenuContent")]pub m_basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent, #[offset(112)]#[rename(name="m_UnitItemIndex")]pub m_unit_item_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_MapTradeMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.MapTradeMenuItem")]#[parent(crate::app::trademenuitem::TradeMenuItem)]pub struct MapItemMenu_MapTradeMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_MapTradeMenu.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.MapTradeMenu")]#[parent(crate::app::trademenu::TradeMenu)]pub struct MapItemMenu_MapTradeMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_AttackMenu.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.AttackMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MapItemMenu_AttackMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemTradeMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemTradeMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]pub struct MapItemMenu_SubItemTradeMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_AttackMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.AttackMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_TargetMenuItem)]pub struct MapItemMenu_AttackMenuItem{#[offset(104)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(108)]#[rename(name="m_ActionMask")]pub m_action_mask:crate::app::maptarget::MapTarget_ActionMask, #[offset(112)]#[rename(name="m_Skill")]pub m_skill:crate::app::skilldata::SkillData, #[offset(120)]#[rename(name="m_BasicItemMenuContent")]pub m_basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_EnchantType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapItemMenu_EnchantType{pub value:i32,}
+impl::unity2::ClassIdentity for MapItemMenu_EnchantType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapItemMenu.EnchantType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapItemMenu_EnchantType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapItemMenu_EnchantType{pub fn none()->Self{Self{value:0}
+}
+pub fn item()->Self{Self{value:1}
+}
+pub fn weapon()->Self{Self{value:2}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_RodMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.RodMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_TargetMenuItem)] pub struct MapItemMenu_RodMenuItem {
-# [offset (104)] # [rename (name = "m_BasicItemMenuContent")] pub m_basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemTakeOffMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemTakeOffMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_SubItemMenuItem)] pub struct MapItemMenu_SubItemTakeOffMenuItem {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_AttackMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.AttackMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MapItemMenu_AttackMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_ItemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.ItemMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MapItemMenu_ItemMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemPutOffMenuItem.ConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu")] # [parent (crate :: system :: object :: Object)] pub struct MapItemMenu {
-# [static_field] # [rename (name = "s_RodSelectIndex")] pub s_rod_select_index : i32 ,
-# [static_field] # [rename (name = "s_EnchantSelectIndex")] pub s_enchant_select_index : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemTradeMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemTradeMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_SubItemMenuItem)] pub struct MapItemMenu_SubItemTradeMenuItem {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_RodMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.RodMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MapItemMenu_RodMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MapItemMenu_SubItemMenuItem {
-# [offset (100)] # [rename (name = "m_UnitItemIndex")] pub m_unit_item_index : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_MapTradeMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.MapTradeMenuItem")] # [parent (crate :: app :: trademenuitem :: TradeMenuItem)] pub struct MapItemMenu_MapTradeMenuItem {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MapItemMenu_SubItemMenu {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemmenu/MapItemMenu_EnchantType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapItemMenu_EnchantType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapItemMenu_EnchantType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapItemMenu.EnchantType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapItemMenu_EnchantType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapItemMenu_EnchantType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn item() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn weapon() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_AttackMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.AttackMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_TargetMenuItem)] pub struct MapItemMenu_AttackMenuItem {
-# [offset (104)] # [rename (name = "m_Mind")] pub m_mind : crate :: app :: mapmind :: MapMind_Type ,
-# [offset (108)] # [rename (name = "m_ActionMask")] pub m_action_mask : crate :: app :: maptarget :: MapTarget_ActionMask ,
-# [offset (112)] # [rename (name = "m_Skill")] pub m_skill : crate :: app :: skilldata :: SkillData ,
-# [offset (120)] # [rename (name = "m_BasicItemMenuContent")] pub m_basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_MapTradeMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.MapTradeMenu")] # [parent (crate :: app :: trademenu :: TradeMenu)] pub struct MapItemMenu_MapTradeMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemPutOffMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_SubItemMenuItem)] pub struct MapItemMenu_SubItemPutOffMenuItem {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemUseMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemUseMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_SubItemMenuItem)] pub struct MapItemMenu_SubItemUseMenuItem {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemPutOffMenuItem.ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_UnitItemIndex")] pub m_unit_item_index : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_TargetMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.TargetMenuItem")] # [parent (crate :: app :: basicitemmenuitem :: BasicItemMenuItem)] pub struct MapItemMenu_TargetMenuItem {
-# [offset (100)] # [rename (name = "m_UnitItemIndex")] pub m_unit_item_index : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_EnchantItemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.EnchantItemMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_ItemMenuItem)] pub struct MapItemMenu_EnchantItemMenuItem {
-# [offset (116)] # [rename (name = "m_EnchantType")] pub m_enchant_type : crate :: app :: mapitemmenu :: MapItemMenu_EnchantType ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemmenu/MapItemMenu_SubItemSortMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemMenu.SubItemSortMenuItem")] # [parent (crate :: app :: mapitemmenu :: MapItemMenu_SubItemMenuItem)] pub struct MapItemMenu_SubItemSortMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapitemmenu/MapItemMenu_SubItemTakeOffMenuItem.md"))]#[::unity2::class(namespace="App",name="MapItemMenu.SubItemTakeOffMenuItem")]#[parent(crate::app::mapitemmenu::MapItemMenu_SubItemMenuItem)]pub struct MapItemMenu_SubItemTakeOffMenuItem{}
 
 }
 
 #[cfg(feature = "app-mapitemmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemEquipMenuItemMethods : IMapItemMenu_SubItemEquipMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemEquipMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21829c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_SubItemEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemEquipMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2182a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_SubItemEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemEquipMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2182aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_SubItemEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemEquipMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21831e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemEquipMenuItem > IMapItemMenu_SubItemEquipMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemEquipMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemEquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemEquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemEquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemEquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemEquipMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemEquipMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemEquipMenuItemMethods > :: ctor (this , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu{#[doc="`ResetSelectIndex()` overload"]pub fn reset_select_index()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dedaf0usize)as*mut u8,();
+)}
+}
+#[doc="`JumpTargetSelect(crate::app::mapmind::MapMind_Type)` overload"]pub fn jump_target_select(mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dedb70usize)as*mut u8,();
+(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind))}
+}
+#[doc="`CreateBindTarget(crate::app::procinst::ProcInst, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData)` overload"]pub fn create_bind_target(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,mask:impl::core::convert::Into<crate::app::maptarget::MapTarget_ActionMask> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dedc80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind),(crate::app::maptarget::MapTarget_ActionMask)::core::convert::Into::into(mask),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBindAttack(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"]pub fn create_bind_attack(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee2c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBindMagic(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"]pub fn create_bind_magic(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee340usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBindEngageAttack(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"]pub fn create_bind_engage_attack(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee3c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBindEngageCharge(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"]pub fn create_bind_engage_charge(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee440usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBindEngageWait(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"]pub fn create_bind_engage_wait(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee4c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBindEngageRewarp(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"]pub fn create_bind_engage_rewarp(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee540usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBindEngageRod(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"]pub fn create_bind_engage_rod(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee5c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBindCannon(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_cannon(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee640usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindDestroy(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_destroy(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee6c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindRod(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_rod(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee740usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindItem(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_item(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee8b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindEnchantItem(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_enchant_item(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee8c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindEnchantWeapon(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_enchant_weapon(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee8d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindTrade(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_trade(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee8e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1deea00usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_ItemMenuItemMethods : IMapItemMenu_ItemMenuItem { # [doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 > , basic_item_menu_content : impl :: core :: convert :: Into < crate :: app :: basicitemmenucontent :: BasicItemMenuContent >) -> () { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , i32 , crate :: app :: basicitemmenucontent :: BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ec20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: convert :: Into :: into (basic_item_menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217fe80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ff80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21802e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2180360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitItemIndex()` overload"] fn get_unit_item_index (self ,) -> i32 { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21803e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEffective()` overload"] fn is_effective (self ,) -> bool { unsafe { let __receiver = < MapItemMenu_ItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2180430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_ItemMenuItem > IMapItemMenu_ItemMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_ItemMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_unit_item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_effective_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_ItemMenuItem {
-# [doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"] pub fn new (unit_item_index : i32 , basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_ItemMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_ItemMenuItemMethods > :: ctor (this , unit_item_index , basic_item_menu_content) ; this }
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenuMethods:IMapItemMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dee9f0usize)as*mut u8,();
+(MapItemMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_RodMenuItemMethods : IMapItemMenu_RodMenuItem { # [doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 > , basic_item_menu_content : impl :: core :: convert :: Into < crate :: app :: basicitemmenucontent :: BasicItemMenuContent >) -> () { unsafe { let __receiver = < MapItemMenu_RodMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_RodMenuItem , i32 , crate :: app :: basicitemmenucontent :: BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2182100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: convert :: Into :: into (basic_item_menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapItemMenu_RodMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_RodMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2182150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_RodMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_RodMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21823f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_RodMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_RodMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21828b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_RodMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_RodMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2182930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu>IMapItemMenuMethods for __T{}
 
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_RodMenuItem > IMapItemMenu_RodMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_RodMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_RodMenuItem {
-# [doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"] pub fn new (unit_item_index : i32 , basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_RodMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_RodMenuItemMethods > :: ctor (this , unit_item_index , basic_item_menu_content) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu{pub fn reset_select_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn jump_target_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_magic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_engage_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_engage_charge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_engage_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_engage_rewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_bind_engage_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_bind_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_bind_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_bind_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn create_bind_enchant_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn create_bind_enchant_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn create_bind_trade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemTakeOffMenuItemMethods : IMapItemMenu_SubItemTakeOffMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemTakeOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemTakeOffMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_SubItemTakeOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemTakeOffMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_SubItemTakeOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemTakeOffMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_SubItemTakeOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemTakeOffMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemTakeOffMenuItem > IMapItemMenu_SubItemTakeOffMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemTakeOffMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemTakeOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemTakeOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemTakeOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemTakeOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemTakeOffMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemTakeOffMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemTakeOffMenuItemMethods > :: ctor (this , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu), ::core::stringify!(new),));
+ <Self as IMapItemMenuMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_AttackMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mind : impl :: core :: convert :: Into < crate :: app :: mapmind :: MapMind_Type > , mask : impl :: core :: convert :: Into < crate :: app :: maptarget :: MapTarget_ActionMask > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: mapmind :: MapMind_Type , crate :: app :: maptarget :: MapTarget_ActionMask , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217e1b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (mind) , :: core :: convert :: Into :: into (mask) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_AttackMenuMethods : IMapItemMenu_AttackMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , basic_item_menu_content : impl :: core :: convert :: Into < crate :: app :: basicitemmenucontent :: BasicItemMenuContent >) -> () { unsafe { let __receiver = < MapItemMenu_AttackMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_AttackMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicitemmenucontent :: BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217e030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (basic_item_menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapItemMenu_AttackMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_AttackMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217e0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_AttackMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_AttackMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217e160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_AttackMenu > IMapItemMenu_AttackMenuMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_AttackMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_AttackMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_AttackMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_AttackMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_AttackMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_AttackMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_AttackMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_AttackMenuMethods > :: ctor (this , menu_item_list , basic_item_menu_content) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_ItemMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::mapitemmenu::MapItemMenu_EnchantType)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,enchant_type:impl::core::convert::Into<crate::app::mapitemmenu::MapItemMenu_EnchantType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217f830usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapitemmenu::MapItemMenu_EnchantType)::core::convert::Into::into(enchant_type))}
+}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_ItemMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapitemmenu::MapItemMenu_EnchantType)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , enchant_type : impl :: core :: convert :: Into < crate :: app :: mapitemmenu :: MapItemMenu_EnchantType >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: mapitemmenu :: MapItemMenu_EnchantType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (enchant_type) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_ItemMenuMethods : IMapItemMenu_ItemMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , basic_item_menu_content : impl :: core :: convert :: Into < crate :: app :: basicitemmenucontent :: BasicItemMenuContent >) -> () { unsafe { let __receiver = < MapItemMenu_ItemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicitemmenucontent :: BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (basic_item_menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild(bool)` overload"] fn on_build (self , is_first_build : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapItemMenu_ItemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_first_build) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapItemMenu_ItemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_ItemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemIndexEquipped()` overload"] fn get_menu_item_index_equipped (self ,) -> i32 { unsafe { let __receiver = < MapItemMenu_ItemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_ItemMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217fd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_ItemMenu > IMapItemMenu_ItemMenuMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_ItemMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_menu_item_index_equipped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_ItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_ItemMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_ItemMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_ItemMenuMethods > :: ctor (this , menu_item_list , basic_item_menu_content) ; this }
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_ItemMenuMethods:IMapItemMenu_ItemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,basic_item_menu_content:impl::core::convert::Into<crate::app::basicitemmenucontent::BasicItemMenuContent>)->(){unsafe{let __receiver= <MapItemMenu_ItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f520usize)as*mut u8,();
+(MapItemMenu_ItemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicitemmenucontent::BasicItemMenuContent)::core::convert::Into::into(basic_item_menu_content))}
+}
+#[doc="`OnBuild(bool)` overload"]fn on_build(self,is_first_build:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapItemMenu_ItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f5b0usize)as*mut u8,();
+(MapItemMenu_ItemMenu)__receiver,(bool)::core::convert::Into::into(is_first_build))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapItemMenu_ItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f6a0usize)as*mut u8,();
+(MapItemMenu_ItemMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_ItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f7e0usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_ItemMenu)__receiver)}
+}
+#[doc="`GetMenuItemIndexEquipped()` overload"]fn get_menu_item_index_equipped(self,)->i32{unsafe{let __receiver= <MapItemMenu_ItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217fd00usize)as*mut u8,i32;
+(MapItemMenu_ItemMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b6bdb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_ItemMenu>IMapItemMenu_ItemMenuMethods for __T{}
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods : IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b6bd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialog > IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods > :: ctor (this , menu_item_list) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_ItemMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_menu_item_index_equipped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu { # [doc = "`ResetSelectIndex()` overload"] pub fn reset_select_index () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dedaf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`JumpTargetSelect(crate::app::mapmind::MapMind_Type)` overload"] pub fn jump_target_select (mind : impl :: core :: convert :: Into < crate :: app :: mapmind :: MapMind_Type >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: mapmind :: MapMind_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dedb70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mind) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindTarget(crate::app::procinst::ProcInst, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData)` overload"] pub fn create_bind_target (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mind : impl :: core :: convert :: Into < crate :: app :: mapmind :: MapMind_Type > , mask : impl :: core :: convert :: Into < crate :: app :: maptarget :: MapTarget_ActionMask > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: mapmind :: MapMind_Type , crate :: app :: maptarget :: MapTarget_ActionMask , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dedc80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (mind) , :: core :: convert :: Into :: into (mask) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindAttack(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"] pub fn create_bind_attack (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee2c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindMagic(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"] pub fn create_bind_magic (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageAttack(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"] pub fn create_bind_engage_attack (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee3c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageCharge(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"] pub fn create_bind_engage_charge (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageWait(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"] pub fn create_bind_engage_wait (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee4c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageRewarp(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"] pub fn create_bind_engage_rewarp (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageRod(crate::app::procinst::ProcInst, crate::app::skilldata::SkillData)` overload"] pub fn create_bind_engage_rod (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee5c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCannon(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_cannon (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee640usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindDestroy(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_destroy (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee6c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindRod(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_rod (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee740usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindItem(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_item (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee8b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEnchantItem(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_enchant_item (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee8c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEnchantWeapon(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_enchant_weapon (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee8d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindTrade(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_trade (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee8e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1deea00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenuMethods : IMapItemMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapItemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dee9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu > IMapItemMenuMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu { pub fn reset_select_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn jump_target_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_magic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_engage_charge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_bind_engage_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_bind_engage_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_bind_engage_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_bind_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_bind_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_bind_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn create_bind_enchant_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn create_bind_enchant_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn create_bind_trade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_ItemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_ItemMenu), ::core::stringify!(new),));
+ <Self as IMapItemMenu_ItemMenuMethods> ::ctor(this,menu_item_list,basic_item_menu_content);
+this}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemTradeMenuItemMethods : IMapItemMenu_SubItemTradeMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemTradeMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21835e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_SubItemTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemTradeMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2184040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_SubItemTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemTradeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21840c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_SubItemTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemTradeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21842a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemTradeMenuItem > IMapItemMenu_SubItemTradeMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemTradeMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemTradeMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemTradeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemTradeMenuItemMethods > :: ctor (this , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemMenuItemMethods:IMapItemMenu_SubItemMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_SubItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21829f0usize)as*mut u8,();
+(MapItemMenu_SubItemMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`GetParentMenu()` overload"]fn get_parent_menu(self,)->crate::app::basicmenu::BasicMenu{unsafe{let __receiver= <MapItemMenu_SubItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183420usize)as*mut u8,crate::app::basicmenu::BasicMenu;
+(MapItemMenu_SubItemMenuItem)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapItemMenu_SubItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21830c0usize)as*mut u8,crate::app::unit::Unit;
+(MapItemMenu_SubItemMenuItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <MapItemMenu_SubItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183140usize)as*mut u8,crate::app::unititem::UnitItem;
+(MapItemMenu_SubItemMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_RodMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2181c20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemMenuItem>IMapItemMenu_SubItemMenuItemMethods for __T{}
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_RodMenuMethods : IMapItemMenu_RodMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , basic_item_menu_content : impl :: core :: convert :: Into < crate :: app :: basicitemmenucontent :: BasicItemMenuContent >) -> () { unsafe { let __receiver = < MapItemMenu_RodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_RodMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicitemmenucontent :: BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2181ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (basic_item_menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapItemMenu_RodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_RodMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2181b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_RodMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_RodMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2181bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_RodMenu > IMapItemMenu_RodMenuMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_RodMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_RodMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_RodMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_RodMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_RodMenuMethods > :: ctor (this , menu_item_list , basic_item_menu_content) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_parent_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemMenuItemMethods : IMapItemMenu_SubItemMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21829f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetParentMenu()` overload"] fn get_parent_menu (self ,) -> crate :: app :: basicmenu :: BasicMenu { unsafe { let __receiver = < MapItemMenu_SubItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapItemMenu_SubItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21830c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < MapItemMenu_SubItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemMenuItem > IMapItemMenu_SubItemMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_parent_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemMenuItemMethods > :: ctor (this , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemMenuItemMethods> ::ctor(this,unit_item_index);
+this}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_MapTradeMenuItemMethods : IMapItemMenu_MapTradeMenuItem { # [doc = "`GetLeftUnit()` overload"] fn get_left_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapItemMenu_MapTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_MapTradeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21815f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRightUnit()` overload"] fn get_right_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapItemMenu_MapTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_MapTradeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2181670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDone()` overload"] fn set_done (self ,) -> () { unsafe { let __receiver = < MapItemMenu_MapTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_MapTradeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21816f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDone()` overload"] fn is_done (self ,) -> bool { unsafe { let __receiver = < MapItemMenu_MapTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_MapTradeMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2181770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnd()` overload"] fn on_end (self ,) -> () { unsafe { let __receiver = < MapItemMenu_MapTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_MapTradeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21817f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapItemMenu_MapTradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_MapTradeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21815e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_MapTradeMenuItem > IMapItemMenu_MapTradeMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_MapTradeMenuItem { pub fn get_left_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_right_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_MapTradeMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_MapTradeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_MapTradeMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemUseMenuItemMethods:IMapItemMenu_SubItemUseMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_SubItemUseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21835b0usize)as*mut u8,();
+(MapItemMenu_SubItemUseMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_SubItemUseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21844e0usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_SubItemUseMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_SubItemUseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2184560usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_SubItemUseMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_SubItemUseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2184c90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_SubItemUseMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, i32, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , unit_item_index : impl :: core :: convert :: Into < i32 > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , i32 , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ffc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit_item_index) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemUseMenuItem>IMapItemMenu_SubItemUseMenuItemMethods for __T{}
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemMenuMethods : IMapItemMenu_SubItemMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21834a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_SubItemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemMenu > IMapItemMenu_SubItemMenuMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemUseMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_AttackMenuItemMethods : IMapItemMenu_AttackMenuItem { # [doc = "`.ctor(i32, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 > , mind : impl :: core :: convert :: Into < crate :: app :: mapmind :: MapMind_Type > , action_mask : impl :: core :: convert :: Into < crate :: app :: maptarget :: MapTarget_ActionMask > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , basic_item_menu_content : impl :: core :: convert :: Into < crate :: app :: basicitemmenucontent :: BasicItemMenuContent >) -> () { unsafe { let __receiver = < MapItemMenu_AttackMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_AttackMenuItem , i32 , crate :: app :: mapmind :: MapMind_Type , crate :: app :: maptarget :: MapTarget_ActionMask , crate :: app :: skilldata :: SkillData , crate :: app :: basicitemmenucontent :: BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217e640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: convert :: Into :: into (mind) , :: core :: convert :: Into :: into (action_mask) , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (basic_item_menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapItemMenu_AttackMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_AttackMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217e6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_AttackMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_AttackMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217e930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_AttackMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_AttackMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217eb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_AttackMenuItem > IMapItemMenu_AttackMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_AttackMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_AttackMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_AttackMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_AttackMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_AttackMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_AttackMenuItem {
-# [doc = "`.ctor(i32, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"] pub fn new (unit_item_index : i32 , mind : crate :: app :: mapmind :: MapMind_Type , action_mask : crate :: app :: maptarget :: MapTarget_ActionMask , skill : crate :: app :: skilldata :: SkillData , basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_AttackMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_AttackMenuItemMethods > :: ctor (this , unit_item_index , mind , action_mask , skill , basic_item_menu_content) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemUseMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemUseMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemUseMenuItemMethods> ::ctor(this,unit_item_index);
+this}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_MapTradeMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21811a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_MapTradeMenuMethods : IMapItemMenu_MapTradeMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { let __receiver = < MapItemMenu_MapTradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_MapTradeMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2181030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapItemMenu_MapTradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_MapTradeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21810b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_MapTradeMenu > IMapItemMenu_MapTradeMenuMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_MapTradeMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_MapTradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_MapTradeMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_MapTradeMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_MapTradeMenuMethods > :: ctor (this , menu_item_list) ; this }
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemEquipMenuItemMethods:IMapItemMenu_SubItemEquipMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_SubItemEquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21829c0usize)as*mut u8,();
+(MapItemMenu_SubItemEquipMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_SubItemEquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2182a20usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_SubItemEquipMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_SubItemEquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2182aa0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_SubItemEquipMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_SubItemEquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21831e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_SubItemEquipMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemPutOffMenuItemMethods : IMapItemMenu_SubItemPutOffMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemPutOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemPutOffMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_SubItemPutOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemPutOffMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_SubItemPutOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemPutOffMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21836f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_SubItemPutOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemPutOffMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemEquipMenuItem>IMapItemMenu_SubItemEquipMenuItemMethods for __T{}
 
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemPutOffMenuItem > IMapItemMenu_SubItemPutOffMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemPutOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemPutOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemPutOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemPutOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemPutOffMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemPutOffMenuItemMethods > :: ctor (this , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemEquipMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemUseMenuItemMethods : IMapItemMenu_SubItemUseMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemUseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemUseMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21835b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_SubItemUseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemUseMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21844e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_SubItemUseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemUseMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2184560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_SubItemUseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemUseMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2184c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemUseMenuItem > IMapItemMenu_SubItemUseMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemUseMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemUseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemUseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemUseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemUseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemUseMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemUseMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemUseMenuItemMethods > :: ctor (this , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemEquipMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemEquipMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemEquipMenuItemMethods> ::ctor(this,unit_item_index);
+this}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods : IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes , :: unity2 :: Il2CppString , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b6c3d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b6c420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes > IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString , unit : crate :: app :: unit :: Unit , unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods > :: ctor (this , text , unit , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemSortMenuItemMethods:IMapItemMenu_SubItemSortMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_SubItemSortMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183610usize)as*mut u8,();
+(MapItemMenu_SubItemSortMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_SubItemSortMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21839d0usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_SubItemSortMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_SubItemSortMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183a50usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_SubItemSortMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_SubItemSortMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183b60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_SubItemSortMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_TargetMenuItemMethods : IMapItemMenu_TargetMenuItem { # [doc = "`get_ActiveMind()` overload"] fn get_active_mind (self ,) -> crate :: app :: mapmind :: MapMind_Type { unsafe { let __receiver = < MapItemMenu_TargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_TargetMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmind :: MapMind_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2184e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DeployMode()` overload"] fn get_deploy_mode (self ,) -> crate :: app :: mappaneldeploy :: MapPanelDeploy_Mode { unsafe { let __receiver = < MapItemMenu_TargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_TargetMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: mappaneldeploy :: MapPanelDeploy_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2184ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_TargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_TargetMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217e6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_TargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_TargetMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2184eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < MapItemMenu_TargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_TargetMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2184f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapItemMenu_TargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_TargetMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2184f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapItemMenu_TargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_TargetMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemSortMenuItem>IMapItemMenu_SubItemSortMenuItemMethods for __T{}
 
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_TargetMenuItem > IMapItemMenu_TargetMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_TargetMenuItem { pub fn get_active_mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_TargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_deploy_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_TargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_TargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_TargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_TargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_TargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_TargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_TargetMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_TargetMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_TargetMenuItemMethods > :: ctor (this , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemSortMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_EnchantItemMenuItemMethods : IMapItemMenu_EnchantItemMenuItem { # [doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent, crate::app::mapitemmenu::MapItemMenu_EnchantType)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 > , basic_item_menu_content : impl :: core :: convert :: Into < crate :: app :: basicitemmenucontent :: BasicItemMenuContent > , enchant_type : impl :: core :: convert :: Into < crate :: app :: mapitemmenu :: MapItemMenu_EnchantType >) -> () { unsafe { let __receiver = < MapItemMenu_EnchantItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_EnchantItemMenuItem , i32 , crate :: app :: basicitemmenucontent :: BasicItemMenuContent , crate :: app :: mapitemmenu :: MapItemMenu_EnchantType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ebd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: convert :: Into :: into (basic_item_menu_content) , :: core :: convert :: Into :: into (enchant_type) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_EnchantItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_EnchantItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ec70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_EnchantItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_EnchantItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_EnchantItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_EnchantItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f0e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapItemMenu_EnchantItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_EnchantItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanEnchant(crate::app::unititem::UnitItem)` overload"] fn can_enchant (self , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> bool { unsafe { let __receiver = < MapItemMenu_EnchantItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_EnchantItemMenuItem , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ed60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`Enumerate()` overload"] fn enumerate (self ,) -> bool { unsafe { let __receiver = < MapItemMenu_EnchantItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_EnchantItemMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ee50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEffective()` overload"] fn is_effective (self ,) -> bool { unsafe { let __receiver = < MapItemMenu_EnchantItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_EnchantItemMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217f510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_EnchantItemMenuItem > IMapItemMenu_EnchantItemMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_EnchantItemMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_EnchantItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_EnchantItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_EnchantItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_EnchantItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_EnchantItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn can_enchant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_EnchantItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn enumerate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_EnchantItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_effective_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_EnchantItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_EnchantItemMenuItem {
-# [doc = "`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent, crate::app::mapitemmenu::MapItemMenu_EnchantType)` — overload selector"] pub fn new (unit_item_index : i32 , basic_item_menu_content : crate :: app :: basicitemmenucontent :: BasicItemMenuContent , enchant_type : crate :: app :: mapitemmenu :: MapItemMenu_EnchantType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_EnchantItemMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_EnchantItemMenuItemMethods > :: ctor (this , unit_item_index , basic_item_menu_content , enchant_type) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemSortMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemSortMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemSortMenuItemMethods> ::ctor(this,unit_item_index);
+this}
 }
 
-#[cfg(feature = "app-mapitemmenu")]
-pub trait IMapItemMenu_SubItemSortMenuItemMethods : IMapItemMenu_SubItemSortMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , unit_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapItemMenu_SubItemSortMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemSortMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapItemMenu_SubItemSortMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemSortMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21839d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapItemMenu_SubItemSortMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemSortMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapItemMenu_SubItemSortMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapItemMenu_SubItemSortMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2183b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_EnchantItemMenuItemMethods:IMapItemMenu_EnchantItemMenuItem{#[doc="`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent, crate::app::mapitemmenu::MapItemMenu_EnchantType)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32> ,basic_item_menu_content:impl::core::convert::Into<crate::app::basicitemmenucontent::BasicItemMenuContent> ,enchant_type:impl::core::convert::Into<crate::app::mapitemmenu::MapItemMenu_EnchantType>)->(){unsafe{let __receiver= <MapItemMenu_EnchantItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217ebd0usize)as*mut u8,();
+(MapItemMenu_EnchantItemMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index),(crate::app::basicitemmenucontent::BasicItemMenuContent)::core::convert::Into::into(basic_item_menu_content),(crate::app::mapitemmenu::MapItemMenu_EnchantType)::core::convert::Into::into(enchant_type))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_EnchantItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217ec70usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_EnchantItemMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_EnchantItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f000usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_EnchantItemMenuItem)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_EnchantItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f0e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_EnchantItemMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapItemMenu_EnchantItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f0f0usize)as*mut u8,();
+(MapItemMenu_EnchantItemMenuItem)__receiver)}
+}
+#[doc="`CanEnchant(crate::app::unititem::UnitItem)` overload"]fn can_enchant(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->bool{unsafe{let __receiver= <MapItemMenu_EnchantItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217ed60usize)as*mut u8,bool;
+(MapItemMenu_EnchantItemMenuItem)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`Enumerate()` overload"]fn enumerate(self,)->bool{unsafe{let __receiver= <MapItemMenu_EnchantItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217ee50usize)as*mut u8,bool;
+(MapItemMenu_EnchantItemMenuItem)__receiver)}
+}
+#[doc="`IsEffective()` overload"]fn is_effective(self,)->bool{unsafe{let __receiver= <MapItemMenu_EnchantItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f510usize)as*mut u8,bool;
+(MapItemMenu_EnchantItemMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapitemmenu")]
-impl < __T : IMapItemMenu_SubItemSortMenuItem > IMapItemMenu_SubItemSortMenuItemMethods for __T { }
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_EnchantItemMenuItem>IMapItemMenu_EnchantItemMenuItemMethods for __T{}
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemSortMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemSortMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemSortMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemSortMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapItemMenu_SubItemSortMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_EnchantItemMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn can_enchant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn enumerate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_effective_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-mapitemmenu")]
-impl MapItemMenu_SubItemSortMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (unit_item_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapItemMenu_SubItemSortMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapItemMenu_SubItemSortMenuItemMethods > :: ctor (this , unit_item_index) ; this }
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_EnchantItemMenuItem{#[doc="`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent, crate::app::mapitemmenu::MapItemMenu_EnchantType)` — overload selector"]pub fn new(unit_item_index:i32,basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent,enchant_type:crate::app::mapitemmenu::MapItemMenu_EnchantType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_EnchantItemMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_EnchantItemMenuItemMethods> ::ctor(this,unit_item_index,basic_item_menu_content,enchant_type);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_RodMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2181c20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_RodMenuMethods:IMapItemMenu_RodMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,basic_item_menu_content:impl::core::convert::Into<crate::app::basicitemmenucontent::BasicItemMenuContent>)->(){unsafe{let __receiver= <MapItemMenu_RodMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2181ac0usize)as*mut u8,();
+(MapItemMenu_RodMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicitemmenucontent::BasicItemMenuContent)::core::convert::Into::into(basic_item_menu_content))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapItemMenu_RodMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2181b50usize)as*mut u8,();
+(MapItemMenu_RodMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_RodMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2181bd0usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_RodMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_RodMenu>IMapItemMenu_RodMenuMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_RodMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_RodMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_RodMenu), ::core::stringify!(new),));
+ <Self as IMapItemMenu_RodMenuMethods> ::ctor(this,menu_item_list,basic_item_menu_content);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, i32, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,unit_item_index:impl::core::convert::Into<i32> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217ffc0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(unit_item_index),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemMenuMethods:IMapItemMenu_SubItemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MapItemMenu_SubItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21834a0usize)as*mut u8,();
+(MapItemMenu_SubItemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_SubItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183530usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_SubItemMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemMenu>IMapItemMenu_SubItemMenuMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemMenu), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_RodMenuItemMethods:IMapItemMenu_RodMenuItem{#[doc="`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32> ,basic_item_menu_content:impl::core::convert::Into<crate::app::basicitemmenucontent::BasicItemMenuContent>)->(){unsafe{let __receiver= <MapItemMenu_RodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2182100usize)as*mut u8,();
+(MapItemMenu_RodMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index),(crate::app::basicitemmenucontent::BasicItemMenuContent)::core::convert::Into::into(basic_item_menu_content))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapItemMenu_RodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2182150usize)as*mut u8,();
+(MapItemMenu_RodMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_RodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21823f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_RodMenuItem)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_RodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21828b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_RodMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_RodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2182930usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_RodMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_RodMenuItem>IMapItemMenu_RodMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_RodMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_RodMenuItem{#[doc="`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]pub fn new(unit_item_index:i32,basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_RodMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_RodMenuItemMethods> ::ctor(this,unit_item_index,basic_item_menu_content);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_TargetMenuItemMethods:IMapItemMenu_TargetMenuItem{#[doc="`get_ActiveMind()` overload"]fn get_active_mind(self,)->crate::app::mapmind::MapMind_Type{unsafe{let __receiver= <MapItemMenu_TargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2184e90usize)as*mut u8,crate::app::mapmind::MapMind_Type;
+(MapItemMenu_TargetMenuItem)__receiver)}
+}
+#[doc="`get_DeployMode()` overload"]fn get_deploy_mode(self,)->crate::app::mappaneldeploy::MapPanelDeploy_Mode{unsafe{let __receiver= <MapItemMenu_TargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2184ea0usize)as*mut u8,crate::app::mappaneldeploy::MapPanelDeploy_Mode;
+(MapItemMenu_TargetMenuItem)__receiver)}
+}
+#[doc="`.ctor(i32)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_TargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217e6b0usize)as*mut u8,();
+(MapItemMenu_TargetMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_TargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2184eb0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_TargetMenuItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <MapItemMenu_TargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2184f50usize)as*mut u8,crate::app::unititem::UnitItem;
+(MapItemMenu_TargetMenuItem)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapItemMenu_TargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2184f90usize)as*mut u8,crate::app::unit::Unit;
+(MapItemMenu_TargetMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapItemMenu_TargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185010usize)as*mut u8,();
+(MapItemMenu_TargetMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_TargetMenuItem>IMapItemMenu_TargetMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_TargetMenuItem{pub fn get_active_mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_deploy_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_TargetMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_TargetMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_TargetMenuItemMethods> ::ctor(this,unit_item_index);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemPutOffMenuItemMethods:IMapItemMenu_SubItemPutOffMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_SubItemPutOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183640usize)as*mut u8,();
+(MapItemMenu_SubItemPutOffMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_SubItemPutOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183670usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_SubItemPutOffMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_SubItemPutOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21836f0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_SubItemPutOffMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_SubItemPutOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183900usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_SubItemPutOffMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemPutOffMenuItem>IMapItemMenu_SubItemPutOffMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemPutOffMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemPutOffMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemPutOffMenuItemMethods> ::ctor(this,unit_item_index);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods:IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6c3d0usize)as*mut u8,();
+(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6c420usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes>IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,unit:crate::app::unit::Unit,unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods> ::ctor(this,text,unit,unit_item_index);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bdb0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(unit_item_index))}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods:IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bd30usize)as*mut u8,();
+(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialog>IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods> ::ctor(this,menu_item_list);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_ItemMenuItemMethods:IMapItemMenu_ItemMenuItem{#[doc="`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32> ,basic_item_menu_content:impl::core::convert::Into<crate::app::basicitemmenucontent::BasicItemMenuContent>)->(){unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217ec20usize)as*mut u8,();
+(MapItemMenu_ItemMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index),(crate::app::basicitemmenucontent::BasicItemMenuContent)::core::convert::Into::into(basic_item_menu_content))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217fe80usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_ItemMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f230usize)as*mut u8,();
+(MapItemMenu_ItemMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217ff80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_ItemMenuItem)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21802e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_ItemMenuItem)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2180360usize)as*mut u8,crate::app::unit::Unit;
+(MapItemMenu_ItemMenuItem)__receiver)}
+}
+#[doc="`GetUnitItemIndex()` overload"]fn get_unit_item_index(self,)->i32{unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217f3d0usize)as*mut u8,i32;
+(MapItemMenu_ItemMenuItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21803e0usize)as*mut u8,crate::app::unititem::UnitItem;
+(MapItemMenu_ItemMenuItem)__receiver)}
+}
+#[doc="`IsEffective()` overload"]fn is_effective(self,)->bool{unsafe{let __receiver= <MapItemMenu_ItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2180430usize)as*mut u8,bool;
+(MapItemMenu_ItemMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_ItemMenuItem>IMapItemMenu_ItemMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_ItemMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_unit_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_effective_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_ItemMenuItem{#[doc="`.ctor(i32, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]pub fn new(unit_item_index:i32,basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_ItemMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_ItemMenuItemMethods> ::ctor(this,unit_item_index,basic_item_menu_content);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_MapTradeMenuItemMethods:IMapItemMenu_MapTradeMenuItem{#[doc="`GetLeftUnit()` overload"]fn get_left_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapItemMenu_MapTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21815f0usize)as*mut u8,crate::app::unit::Unit;
+(MapItemMenu_MapTradeMenuItem)__receiver)}
+}
+#[doc="`GetRightUnit()` overload"]fn get_right_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapItemMenu_MapTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2181670usize)as*mut u8,crate::app::unit::Unit;
+(MapItemMenu_MapTradeMenuItem)__receiver)}
+}
+#[doc="`SetDone()` overload"]fn set_done(self,)->(){unsafe{let __receiver= <MapItemMenu_MapTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21816f0usize)as*mut u8,();
+(MapItemMenu_MapTradeMenuItem)__receiver)}
+}
+#[doc="`IsDone()` overload"]fn is_done(self,)->bool{unsafe{let __receiver= <MapItemMenu_MapTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2181770usize)as*mut u8,bool;
+(MapItemMenu_MapTradeMenuItem)__receiver)}
+}
+#[doc="`OnEnd()` overload"]fn on_end(self,)->(){unsafe{let __receiver= <MapItemMenu_MapTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21817f0usize)as*mut u8,();
+(MapItemMenu_MapTradeMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapItemMenu_MapTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21815e0usize)as*mut u8,();
+(MapItemMenu_MapTradeMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_MapTradeMenuItem>IMapItemMenu_MapTradeMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_MapTradeMenuItem{pub fn get_left_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_right_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_MapTradeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_MapTradeMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_MapTradeMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_MapTradeMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21811a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_MapTradeMenuMethods:IMapItemMenu_MapTradeMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <MapItemMenu_MapTradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2181030usize)as*mut u8,();
+(MapItemMenu_MapTradeMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapItemMenu_MapTradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21810b0usize)as*mut u8,();
+(MapItemMenu_MapTradeMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_MapTradeMenu>IMapItemMenu_MapTradeMenuMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_MapTradeMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_MapTradeMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_MapTradeMenu), ::core::stringify!(new),));
+ <Self as IMapItemMenu_MapTradeMenuMethods> ::ctor(this,menu_item_list);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_AttackMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,mask:impl::core::convert::Into<crate::app::maptarget::MapTarget_ActionMask> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217e1b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind),(crate::app::maptarget::MapTarget_ActionMask)::core::convert::Into::into(mask),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_AttackMenuMethods:IMapItemMenu_AttackMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,basic_item_menu_content:impl::core::convert::Into<crate::app::basicitemmenucontent::BasicItemMenuContent>)->(){unsafe{let __receiver= <MapItemMenu_AttackMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217e030usize)as*mut u8,();
+(MapItemMenu_AttackMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicitemmenucontent::BasicItemMenuContent)::core::convert::Into::into(basic_item_menu_content))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapItemMenu_AttackMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217e0c0usize)as*mut u8,();
+(MapItemMenu_AttackMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_AttackMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217e160usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_AttackMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_AttackMenu>IMapItemMenu_AttackMenuMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_AttackMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_AttackMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_AttackMenu), ::core::stringify!(new),));
+ <Self as IMapItemMenu_AttackMenuMethods> ::ctor(this,menu_item_list,basic_item_menu_content);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemTradeMenuItemMethods:IMapItemMenu_SubItemTradeMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_SubItemTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21835e0usize)as*mut u8,();
+(MapItemMenu_SubItemTradeMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_SubItemTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2184040usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_SubItemTradeMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_SubItemTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21840c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_SubItemTradeMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_SubItemTradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21842a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_SubItemTradeMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemTradeMenuItem>IMapItemMenu_SubItemTradeMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemTradeMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemTradeMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemTradeMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemTradeMenuItemMethods> ::ctor(this,unit_item_index);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_AttackMenuItemMethods:IMapItemMenu_AttackMenuItem{#[doc="`.ctor(i32, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData, crate::app::basicitemmenucontent::BasicItemMenuContent)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32> ,mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,action_mask:impl::core::convert::Into<crate::app::maptarget::MapTarget_ActionMask> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,basic_item_menu_content:impl::core::convert::Into<crate::app::basicitemmenucontent::BasicItemMenuContent>)->(){unsafe{let __receiver= <MapItemMenu_AttackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217e640usize)as*mut u8,();
+(MapItemMenu_AttackMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index),(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind),(crate::app::maptarget::MapTarget_ActionMask)::core::convert::Into::into(action_mask),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(crate::app::basicitemmenucontent::BasicItemMenuContent)::core::convert::Into::into(basic_item_menu_content))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapItemMenu_AttackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217e6e0usize)as*mut u8,();
+(MapItemMenu_AttackMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_AttackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217e930usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_AttackMenuItem)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_AttackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217eb50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_AttackMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_AttackMenuItem>IMapItemMenu_AttackMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_AttackMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_AttackMenuItem{#[doc="`.ctor(i32, crate::app::mapmind::MapMind_Type, crate::app::maptarget::MapTarget_ActionMask, crate::app::skilldata::SkillData, crate::app::basicitemmenucontent::BasicItemMenuContent)` — overload selector"]pub fn new(unit_item_index:i32,mind:crate::app::mapmind::MapMind_Type,action_mask:crate::app::maptarget::MapTarget_ActionMask,skill:crate::app::skilldata::SkillData,basic_item_menu_content:crate::app::basicitemmenucontent::BasicItemMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_AttackMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_AttackMenuItemMethods> ::ctor(this,unit_item_index,mind,action_mask,skill,basic_item_menu_content);
+this}
+}
+
+#[cfg(feature="app-mapitemmenu")]pub trait IMapItemMenu_SubItemTakeOffMenuItemMethods:IMapItemMenu_SubItemTakeOffMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapItemMenu_SubItemTakeOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183580usize)as*mut u8,();
+(MapItemMenu_SubItemTakeOffMenuItem)__receiver,(i32)::core::convert::Into::into(unit_item_index))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapItemMenu_SubItemTakeOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183d70usize)as*mut u8, ::unity2::Il2CppString;
+(MapItemMenu_SubItemTakeOffMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapItemMenu_SubItemTakeOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183df0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapItemMenu_SubItemTakeOffMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapItemMenu_SubItemTakeOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2183e20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapItemMenu_SubItemTakeOffMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl<__T:IMapItemMenu_SubItemTakeOffMenuItem>IMapItemMenu_SubItemTakeOffMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemTakeOffMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapitemmenu")]impl MapItemMenu_SubItemTakeOffMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(unit_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapItemMenu_SubItemTakeOffMenuItem), ::core::stringify!(new),));
+ <Self as IMapItemMenu_SubItemTakeOffMenuItemMethods> ::ctor(this,unit_item_index);
+this}
 }
 
 #[cfg(feature = "app-mapitemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapItemMenu_SubItemEquipMenuItem;
-    pub use super::IMapItemMenu_SubItemEquipMenuItem;
-    pub use super::IMapItemMenu_SubItemEquipMenuItemMethods;
-    pub use super::MapItemMenu_ItemMenuItem;
-    pub use super::IMapItemMenu_ItemMenuItem;
-    pub use super::IMapItemMenu_ItemMenuItemMethods;
-    pub use super::MapItemMenu_RodMenuItem;
-    pub use super::IMapItemMenu_RodMenuItem;
-    pub use super::IMapItemMenu_RodMenuItemMethods;
-    pub use super::MapItemMenu_SubItemTakeOffMenuItem;
-    pub use super::IMapItemMenu_SubItemTakeOffMenuItem;
-    pub use super::IMapItemMenu_SubItemTakeOffMenuItemMethods;
-    pub use super::MapItemMenu_AttackMenu;
-    pub use super::IMapItemMenu_AttackMenu;
-    pub use super::IMapItemMenu_AttackMenuMethods;
-    pub use super::MapItemMenu_ItemMenu;
-    pub use super::IMapItemMenu_ItemMenu;
-    pub use super::IMapItemMenu_ItemMenuMethods;
-    pub use super::MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog;
-    pub use super::IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialog;
-    pub use super::IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods;
     pub use super::MapItemMenu;
     pub use super::IMapItemMenu;
     pub use super::IMapItemMenuMethods;
-    pub use super::MapItemMenu_SubItemTradeMenuItem;
-    pub use super::IMapItemMenu_SubItemTradeMenuItem;
-    pub use super::IMapItemMenu_SubItemTradeMenuItemMethods;
-    pub use super::MapItemMenu_RodMenu;
-    pub use super::IMapItemMenu_RodMenu;
-    pub use super::IMapItemMenu_RodMenuMethods;
+    pub use super::MapItemMenu_ItemMenu;
+    pub use super::IMapItemMenu_ItemMenu;
+    pub use super::IMapItemMenu_ItemMenuMethods;
     pub use super::MapItemMenu_SubItemMenuItem;
     pub use super::IMapItemMenu_SubItemMenuItem;
     pub use super::IMapItemMenu_SubItemMenuItemMethods;
-    pub use super::MapItemMenu_MapTradeMenuItem;
-    pub use super::IMapItemMenu_MapTradeMenuItem;
-    pub use super::IMapItemMenu_MapTradeMenuItemMethods;
-    pub use super::MapItemMenu_SubItemMenu;
-    pub use super::IMapItemMenu_SubItemMenu;
-    pub use super::IMapItemMenu_SubItemMenuMethods;
-    pub use super::MapItemMenu_EnchantType;
-    pub use super::MapItemMenu_AttackMenuItem;
-    pub use super::IMapItemMenu_AttackMenuItem;
-    pub use super::IMapItemMenu_AttackMenuItemMethods;
-    pub use super::MapItemMenu_MapTradeMenu;
-    pub use super::IMapItemMenu_MapTradeMenu;
-    pub use super::IMapItemMenu_MapTradeMenuMethods;
-    pub use super::MapItemMenu_SubItemPutOffMenuItem;
-    pub use super::IMapItemMenu_SubItemPutOffMenuItem;
-    pub use super::IMapItemMenu_SubItemPutOffMenuItemMethods;
     pub use super::MapItemMenu_SubItemUseMenuItem;
     pub use super::IMapItemMenu_SubItemUseMenuItem;
     pub use super::IMapItemMenu_SubItemUseMenuItemMethods;
-    pub use super::MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes;
-    pub use super::IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes;
-    pub use super::IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods;
-    pub use super::MapItemMenu_TargetMenuItem;
-    pub use super::IMapItemMenu_TargetMenuItem;
-    pub use super::IMapItemMenu_TargetMenuItemMethods;
-    pub use super::MapItemMenu_EnchantItemMenuItem;
-    pub use super::IMapItemMenu_EnchantItemMenuItem;
-    pub use super::IMapItemMenu_EnchantItemMenuItemMethods;
+    pub use super::MapItemMenu_SubItemEquipMenuItem;
+    pub use super::IMapItemMenu_SubItemEquipMenuItem;
+    pub use super::IMapItemMenu_SubItemEquipMenuItemMethods;
     pub use super::MapItemMenu_SubItemSortMenuItem;
     pub use super::IMapItemMenu_SubItemSortMenuItem;
     pub use super::IMapItemMenu_SubItemSortMenuItemMethods;
+    pub use super::MapItemMenu_EnchantItemMenuItem;
+    pub use super::IMapItemMenu_EnchantItemMenuItem;
+    pub use super::IMapItemMenu_EnchantItemMenuItemMethods;
+    pub use super::MapItemMenu_RodMenu;
+    pub use super::IMapItemMenu_RodMenu;
+    pub use super::IMapItemMenu_RodMenuMethods;
+    pub use super::MapItemMenu_SubItemMenu;
+    pub use super::IMapItemMenu_SubItemMenu;
+    pub use super::IMapItemMenu_SubItemMenuMethods;
+    pub use super::MapItemMenu_RodMenuItem;
+    pub use super::IMapItemMenu_RodMenuItem;
+    pub use super::IMapItemMenu_RodMenuItemMethods;
+    pub use super::MapItemMenu_TargetMenuItem;
+    pub use super::IMapItemMenu_TargetMenuItem;
+    pub use super::IMapItemMenu_TargetMenuItemMethods;
+    pub use super::MapItemMenu_SubItemPutOffMenuItem;
+    pub use super::IMapItemMenu_SubItemPutOffMenuItem;
+    pub use super::IMapItemMenu_SubItemPutOffMenuItemMethods;
+    pub use super::MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes;
+    pub use super::IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes;
+    pub use super::IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods;
+    pub use super::MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog;
+    pub use super::IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialog;
+    pub use super::IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods;
+    pub use super::MapItemMenu_ItemMenuItem;
+    pub use super::IMapItemMenu_ItemMenuItem;
+    pub use super::IMapItemMenu_ItemMenuItemMethods;
+    pub use super::MapItemMenu_MapTradeMenuItem;
+    pub use super::IMapItemMenu_MapTradeMenuItem;
+    pub use super::IMapItemMenu_MapTradeMenuItemMethods;
+    pub use super::MapItemMenu_MapTradeMenu;
+    pub use super::IMapItemMenu_MapTradeMenu;
+    pub use super::IMapItemMenu_MapTradeMenuMethods;
+    pub use super::MapItemMenu_AttackMenu;
+    pub use super::IMapItemMenu_AttackMenu;
+    pub use super::IMapItemMenu_AttackMenuMethods;
+    pub use super::MapItemMenu_SubItemTradeMenuItem;
+    pub use super::IMapItemMenu_SubItemTradeMenuItem;
+    pub use super::IMapItemMenu_SubItemTradeMenuItemMethods;
+    pub use super::MapItemMenu_AttackMenuItem;
+    pub use super::IMapItemMenu_AttackMenuItem;
+    pub use super::IMapItemMenu_AttackMenuItemMethods;
+    pub use super::MapItemMenu_EnchantType;
+    pub use super::MapItemMenu_SubItemTakeOffMenuItem;
+    pub use super::IMapItemMenu_SubItemTakeOffMenuItem;
+    pub use super::IMapItemMenu_SubItemTakeOffMenuItemMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

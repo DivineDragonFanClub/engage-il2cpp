@@ -4,34 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: event_systems :: abstracteventdata :: { AbstractEventData , IAbstractEventData }
- ;
- use crate :: unity_engine :: event_systems :: baseeventdata :: { BaseEventData , IBaseEventData }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::event_systems::abstracteventdata::{AbstractEventData,IAbstractEventData}
+;
+use crate::unity_engine::event_systems::baseeventdata::{BaseEventData,IBaseEventData}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/axiseventdata/AxisEventData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "AxisEventData")] # [parent (crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData)] pub struct AxisEventData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/axiseventdata/AxisEventData.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="AxisEventData")]#[parent(crate::unity_engine::event_systems::baseeventdata::BaseEventData)]pub struct AxisEventData{}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-axiseventdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-axiseventdata")]
-pub trait IAxisEventDataMethods : IAxisEventData { # [doc = "`get_moveVector()` overload"] fn get_move_vector (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < AxisEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AxisEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_moveVector(crate::unity_engine::vector2::Vector2)` overload"] fn set_move_vector (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < AxisEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AxisEventData , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_moveDir()` overload"] fn get_move_dir (self ,) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection { unsafe { let __receiver = < AxisEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AxisEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_moveDir(crate::unity_engine::event_systems::movedirection::MoveDirection)` overload"] fn set_move_dir (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: movedirection :: MoveDirection >) -> () { unsafe { let __receiver = < AxisEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AxisEventData , crate :: unity_engine :: event_systems :: movedirection :: MoveDirection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"] fn ctor (self , event_system : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: eventsystem :: EventSystem >) -> () { unsafe { let __receiver = < AxisEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AxisEventData , crate :: unity_engine :: event_systems :: eventsystem :: EventSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_system) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-axiseventdata")]pub trait IAxisEventDataMethods:IAxisEventData{#[doc="`get_moveVector()` overload"]fn get_move_vector(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <AxisEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a060usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(AxisEventData)__receiver)}
+}
+#[doc="`set_moveVector(crate::unity_engine::vector2::Vector2)` overload"]fn set_move_vector(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <AxisEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a070usize)as*mut u8,();
+(AxisEventData)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_moveDir()` overload"]fn get_move_dir(self,)->crate::unity_engine::event_systems::movedirection::MoveDirection{unsafe{let __receiver= <AxisEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a080usize)as*mut u8,crate::unity_engine::event_systems::movedirection::MoveDirection;
+(AxisEventData)__receiver)}
+}
+#[doc="`set_moveDir(crate::unity_engine::event_systems::movedirection::MoveDirection)` overload"]fn set_move_dir(self,value:impl::core::convert::Into<crate::unity_engine::event_systems::movedirection::MoveDirection>)->(){unsafe{let __receiver= <AxisEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a090usize)as*mut u8,();
+(AxisEventData)__receiver,(crate::unity_engine::event_systems::movedirection::MoveDirection)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"]fn ctor(self,event_system:impl::core::convert::Into<crate::unity_engine::event_systems::eventsystem::EventSystem>)->(){unsafe{let __receiver= <AxisEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a0a0usize)as*mut u8,();
+(AxisEventData)__receiver,(crate::unity_engine::event_systems::eventsystem::EventSystem)::core::convert::Into::into(event_system))}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-axiseventdata")]
-impl < __T : IAxisEventData > IAxisEventDataMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-axiseventdata")]impl<__T:IAxisEventData>IAxisEventDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-axiseventdata")]
-impl AxisEventData { pub fn get_move_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AxisEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_move_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AxisEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_move_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AxisEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_move_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AxisEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AxisEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-event_systems-axiseventdata")]impl AxisEventData{pub fn get_move_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_move_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-axiseventdata")]
-impl AxisEventData {
-# [doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` — overload selector"] pub fn new (event_system : crate :: unity_engine :: event_systems :: eventsystem :: EventSystem) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AxisEventData) , :: core :: stringify ! (new) ,)) ; < Self as IAxisEventDataMethods > :: ctor (this , event_system) ; this }
+#[cfg(feature="unity_engine-event_systems-axiseventdata")]impl AxisEventData{#[doc="`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` — overload selector"]pub fn new(event_system:crate::unity_engine::event_systems::eventsystem::EventSystem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AxisEventData), ::core::stringify!(new),));
+ <Self as IAxisEventDataMethods> ::ctor(this,event_system);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-axiseventdata")]

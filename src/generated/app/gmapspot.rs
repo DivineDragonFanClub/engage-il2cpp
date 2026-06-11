@@ -4,328 +4,115 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_EncountPersonType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapSpot_EncountPersonType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspot/GmapSpot_EncountType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSpot_EncountType{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSpot_EncountType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSpot.EncountType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSpot_EncountType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSpot_EncountType{pub fn none()->Self{Self{value:0}
+}
+pub fn exturmination()->Self{Self{value:1}
+}
+pub fn training_filene()->Self{Self{value:2}
+}
+pub fn training_brodia()->Self{Self{value:3}
+}
+pub fn training_solum()->Self{Self{value:4}
+}
+pub fn training_ircion()->Self{Self{value:5}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for GmapSpot_EncountPersonType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpot.EncountPersonType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspot/GmapSpot_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSpot_State{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSpot_State{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSpot.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSpot_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSpot_State{pub fn reserve_hide()->Self{Self{value:0}
+}
+pub fn hide()->Self{Self{value:1}
+}
+pub fn reserve_active()->Self{Self{value:2}
+}
+pub fn active()->Self{Self{value:3}
+}
+pub fn reserve_cannot_enter()->Self{Self{value:4}
+}
+pub fn cannot_enter()->Self{Self{value:5}
+}
+pub fn reserve_broken()->Self{Self{value:6}
+}
+pub fn broken()->Self{Self{value:7}
+}
+pub fn can_search()->Self{Self{value:8}
+}
 }
 
 
-impl  ::unity2::IlType for GmapSpot_EncountPersonType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspot/GmapSpot.md"))]#[::unity2::class(namespace="App",name="GmapSpot")]#[parent(crate::system::object::Object)]pub struct GmapSpot{#[offset(16)]#[rename(name="m_GlobalFlagName")]pub m_global_flag_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Chapters")]pub m_chapters:crate::system::collections::generic::list_1::List_1<crate::app::chapterdata::ChapterData> , #[offset(32)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Controller")]pub m_controller:crate::app::gmapspotcontroller::GmapSpotController, #[offset(48)]#[rename(name="m_MapObject")]pub m_map_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_NextSpots")]pub m_next_spots: ::unity2::Array<crate::app::gmapspot::GmapSpot> , #[offset(64)]#[rename(name="m_MobUnit")]pub m_mob_unit:crate::app::gmapmobunit::GmapMobUnit, #[offset(72)]#[rename(name="m_EncountIcon")]pub m_encount_icon:crate::root::encounticon::EncountIcon,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspot/GmapSpot_EncountPersonType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSpot_EncountPersonType{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSpot_EncountPersonType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSpot.EncountPersonType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSpot_EncountPersonType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSpot_EncountPersonType{pub fn none()->Self{Self{value:0}
+}
+pub fn morph()->Self{Self{value:1}
+}
+pub fn filene()->Self{Self{value:2}
+}
+pub fn brodia()->Self{Self{value:3}
+}
+pub fn solum()->Self{Self{value:4}
+}
+pub fn ircion()->Self{Self{value:5}
+}
+pub fn troublemaker()->Self{Self{value:6}
+}
 }
 
 
-impl  GmapSpot_EncountPersonType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn morph() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn filene() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn brodia() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn solum() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn ircion() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn troublemaker() -> Self {
-        Self { value: 6 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspot/GmapSpot_Direction.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSpot_Direction{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSpot_Direction{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSpot.Direction";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_EncountType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapSpot_EncountType  {
-    pub value: i32,
+impl::unity2::IlType for GmapSpot_Direction{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for GmapSpot_EncountType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpot.EncountType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl GmapSpot_Direction{pub fn up()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for GmapSpot_EncountType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn down()->Self{Self{value:1}
 }
-
-
-impl  GmapSpot_EncountType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn exturmination() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn training_filene() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn training_brodia() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn training_solum() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn training_ircion() -> Self {
-        Self { value: 5 }
-
-    }
-
+pub fn left()->Self{Self{value:2}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapSpot_State  {
-    pub value: i32,
+pub fn right()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::ClassIdentity for GmapSpot_State  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpot.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GmapSpot_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GmapSpot_State  {
-    pub fn reserve_hide() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn hide() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn reserve_active() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn active() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn reserve_cannot_enter() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn cannot_enter() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn reserve_broken() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn broken() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn can_search() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspot/GmapSpot.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapSpot")] # [parent (crate :: system :: object :: Object)] pub struct GmapSpot {
-# [offset (16)] # [rename (name = "m_GlobalFlagName")] pub m_global_flag_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Chapters")] pub m_chapters : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: chapterdata :: ChapterData > ,
-# [offset (32)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_Controller")] pub m_controller : crate :: app :: gmapspotcontroller :: GmapSpotController ,
-# [offset (48)] # [rename (name = "m_MapObject")] pub m_map_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_NextSpots")] pub m_next_spots : :: unity2 :: Array < crate :: app :: gmapspot :: GmapSpot > ,
-# [offset (64)] # [rename (name = "m_MobUnit")] pub m_mob_unit : crate :: app :: gmapmobunit :: GmapMobUnit ,
-# [offset (72)] # [rename (name = "m_EncountIcon")] pub m_encount_icon : crate :: root :: encounticon :: EncountIcon ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_Direction.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapSpot_Direction  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GmapSpot_Direction  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpot.Direction";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GmapSpot_Direction  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GmapSpot_Direction  {
-    pub fn up() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn down() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 3 }
-
-    }
-
 }
 
 }
@@ -333,32 +120,273 @@ impl  GmapSpot_Direction  {
 #[cfg(feature = "app-gmapspot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapspot")]
-impl GmapSpot { # [doc = "`GetJob(crate::app::random_2::Random_2, i32, ::unity2::Il2CppString)` overload"] pub fn get_job (random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 > , level : impl :: core :: convert :: Into < i32 > , ejid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: jobdata :: JobData { unsafe { { let __inner : extern "C" fn (crate :: app :: random_2 :: Random_2 , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (random) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (ejid) , :: core :: option :: Option :: None) } } } # [doc = "`GetJob(crate::app::random_2::Random_2, i32, crate::app::encountjobdata::EncountJobData)` overload"] pub fn get_job_2 (random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 > , level : impl :: core :: convert :: Into < i32 > , encount_job : impl :: core :: convert :: Into < crate :: app :: encountjobdata :: EncountJobData >) -> crate :: app :: jobdata :: JobData { unsafe { { let __inner : extern "C" fn (crate :: app :: random_2 :: Random_2 , i32 , crate :: app :: encountjobdata :: EncountJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b473d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (random) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (encount_job) , :: core :: option :: Option :: None) } } } # [doc = "`GetPidPrefix(crate::app::gmapspot::GmapSpot_EncountPersonType)` overload"] pub fn get_pid_prefix (r#type : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot_EncountPersonType >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapspot :: GmapSpot_EncountPersonType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b475b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetPerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, ::unity2::Il2CppString)` overload"] pub fn get_person (random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 > , job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData > , pid_prefix : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: persondata :: PersonData { unsafe { { let __inner : extern "C" fn (crate :: app :: random_2 :: Random_2 , crate :: app :: jobdata :: JobData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b476e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (random) , :: core :: convert :: Into :: into (job) , :: core :: convert :: Into :: into (pid_prefix) , :: core :: option :: Option :: None) } } } # [doc = "`GetRarePerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, crate::app::encountunitdata::EncountUnitData_RareType)` overload"] pub fn get_rare_person (random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 > , job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData > , rare_type : impl :: core :: convert :: Into < crate :: app :: encountunitdata :: EncountUnitData_RareType >) -> crate :: app :: persondata :: PersonData { unsafe { { let __inner : extern "C" fn (crate :: app :: random_2 :: Random_2 , crate :: app :: jobdata :: JobData , crate :: app :: encountunitdata :: EncountUnitData_RareType , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b478c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (random) , :: core :: convert :: Into :: into (job) , :: core :: convert :: Into :: into (rare_type) , :: core :: option :: Option :: None) } } } # [doc = "`GetPerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, crate::app::gmapspot::GmapSpot_EncountPersonType, crate::app::encountunitdata::EncountUnitData_RareType)` overload"] pub fn get_person_2 (random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 > , job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData > , r#type : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot_EncountPersonType > , rare_type : impl :: core :: convert :: Into < crate :: app :: encountunitdata :: EncountUnitData_RareType >) -> crate :: app :: persondata :: PersonData { unsafe { { let __inner : extern "C" fn (crate :: app :: random_2 :: Random_2 , crate :: app :: jobdata :: JobData , crate :: app :: gmapspot :: GmapSpot_EncountPersonType , crate :: app :: encountunitdata :: EncountUnitData_RareType , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47ae0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (random) , :: core :: convert :: Into :: into (job) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (rare_type) , :: core :: option :: Option :: None) } } } # [doc = "`GetGmapDirection(f32)` overload"] pub fn get_gmap_direction (degree : impl :: core :: convert :: Into < f32 >) -> i32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (degree) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapspot")]impl GmapSpot{#[doc="`GetJob(crate::app::random_2::Random_2, i32, ::unity2::Il2CppString)` overload"]pub fn get_job(random:impl::core::convert::Into<crate::app::random_2::Random_2> ,level:impl::core::convert::Into<i32> ,ejid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::jobdata::JobData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b47330usize)as*mut u8,crate::app::jobdata::JobData;
+(crate::app::random_2::Random_2)::core::convert::Into::into(random),(i32)::core::convert::Into::into(level),(::unity2::Il2CppString)::core::convert::Into::into(ejid))}
+}
+#[doc="`GetJob(crate::app::random_2::Random_2, i32, crate::app::encountjobdata::EncountJobData)` overload"]pub fn get_job_2(random:impl::core::convert::Into<crate::app::random_2::Random_2> ,level:impl::core::convert::Into<i32> ,encount_job:impl::core::convert::Into<crate::app::encountjobdata::EncountJobData>)->crate::app::jobdata::JobData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b473d0usize)as*mut u8,crate::app::jobdata::JobData;
+(crate::app::random_2::Random_2)::core::convert::Into::into(random),(i32)::core::convert::Into::into(level),(crate::app::encountjobdata::EncountJobData)::core::convert::Into::into(encount_job))}
+}
+#[doc="`GetPidPrefix(crate::app::gmapspot::GmapSpot_EncountPersonType)` overload"]pub fn get_pid_prefix(r#type:impl::core::convert::Into<crate::app::gmapspot::GmapSpot_EncountPersonType>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b475b0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::gmapspot::GmapSpot_EncountPersonType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetPerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, ::unity2::Il2CppString)` overload"]pub fn get_person(random:impl::core::convert::Into<crate::app::random_2::Random_2> ,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,pid_prefix:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::persondata::PersonData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b476e0usize)as*mut u8,crate::app::persondata::PersonData;
+(crate::app::random_2::Random_2)::core::convert::Into::into(random),(crate::app::jobdata::JobData)::core::convert::Into::into(job),(::unity2::Il2CppString)::core::convert::Into::into(pid_prefix))}
+}
+#[doc="`GetRarePerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, crate::app::encountunitdata::EncountUnitData_RareType)` overload"]pub fn get_rare_person(random:impl::core::convert::Into<crate::app::random_2::Random_2> ,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,rare_type:impl::core::convert::Into<crate::app::encountunitdata::EncountUnitData_RareType>)->crate::app::persondata::PersonData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b478c0usize)as*mut u8,crate::app::persondata::PersonData;
+(crate::app::random_2::Random_2)::core::convert::Into::into(random),(crate::app::jobdata::JobData)::core::convert::Into::into(job),(crate::app::encountunitdata::EncountUnitData_RareType)::core::convert::Into::into(rare_type))}
+}
+#[doc="`GetPerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, crate::app::gmapspot::GmapSpot_EncountPersonType, crate::app::encountunitdata::EncountUnitData_RareType)` overload"]pub fn get_person_2(random:impl::core::convert::Into<crate::app::random_2::Random_2> ,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,r#type:impl::core::convert::Into<crate::app::gmapspot::GmapSpot_EncountPersonType> ,rare_type:impl::core::convert::Into<crate::app::encountunitdata::EncountUnitData_RareType>)->crate::app::persondata::PersonData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b47ae0usize)as*mut u8,crate::app::persondata::PersonData;
+(crate::app::random_2::Random_2)::core::convert::Into::into(random),(crate::app::jobdata::JobData)::core::convert::Into::into(job),(crate::app::gmapspot::GmapSpot_EncountPersonType)::core::convert::Into::into(r#type),(crate::app::encountunitdata::EncountUnitData_RareType)::core::convert::Into::into(rare_type))}
+}
+#[doc="`GetGmapDirection(f32)` overload"]pub fn get_gmap_direction(degree:impl::core::convert::Into<f32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b45600usize)as*mut u8,i32;
+(f32)::core::convert::Into::into(degree))}
+}
+}
 
-#[cfg(feature = "app-gmapspot")]
-pub trait IGmapSpotMethods : IGmapSpot { # [doc = "`get_SpotMob()` overload"] fn get_spot_mob (self ,) -> crate :: app :: encountmob :: EncountMob { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: app :: encountmob :: EncountMob = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b40e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SpotMob(crate::app::encountmob::EncountMob)` overload"] fn set_spot_mob (self , value : impl :: core :: convert :: Into < crate :: app :: encountmob :: EncountMob >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: app :: encountmob :: EncountMob , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReserveDispos()` overload"] fn get_reserve_dispos (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReserveDispos(bool)` overload"] fn set_reserve_dispos (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44b70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReserveDeleteMob()` overload"] fn get_reserve_delete_mob (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReserveDeleteMob(bool)` overload"] fn set_reserve_delete_mob (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::chapterdata::ChapterData)` overload"] fn ctor (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`get_SpotState()` overload"] fn get_spot_state (self ,) -> crate :: app :: gmapspot :: GmapSpot_State { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapspot :: GmapSpot_State = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SpotState(crate::app::gmapspot::GmapSpot_State)` overload"] fn set_spot_state (self , value : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot_State >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: app :: gmapspot :: GmapSpot_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44cb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetupSpotController()` overload"] fn setup_spot_controller (self ,) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupMapObject(crate::unity_engine::gameobject::GameObject)` overload"] fn setup_map_object (self , map_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b453a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (map_object) , :: core :: option :: Option :: None) } } } # [doc = "`SetNextSpot(crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"] fn set_next_spot (self , next_spot_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , next_spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b453b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (next_spot_pos) , :: core :: convert :: Into :: into (next_spot_id) , :: core :: option :: Option :: None) } } } # [doc = "`CheckNextSpot(crate::app::gmapspot::GmapSpot_Direction)` overload"] fn check_next_spot (self , dir : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot_Direction >) -> crate :: app :: gmapspot :: GmapSpot { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: app :: gmapspot :: GmapSpot_Direction , :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapspot :: GmapSpot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b3f380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`ExistsEncountMob()` overload"] fn exists_encount_mob (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b456a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExistsTraining()` overload"] fn exists_training (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddChapter(crate::app::chapterdata::ChapterData)` overload"] fn add_chapter (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetRootName(crate::app::gmapspot::GmapSpot)` overload"] fn try_get_root_name (self , next_spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b36c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (next_spot) , :: core :: option :: Option :: None) } } } # [doc = "`CheckChange()` overload"] fn check_change (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckAccess(crate::unity_engine::vector3::Vector3)` overload"] fn check_access (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`get_Position()` overload"] fn get_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b3d490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NextSpots()` overload"] fn next_spots (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gmapspot :: GmapSpot > { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gmapspot :: GmapSpot > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDirectionToSpot(crate::app::gmapspot::GmapSpot)` overload"] fn get_direction_to_spot (self , spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> crate :: app :: gmapspot :: GmapSpot_Direction { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapspot :: GmapSpot_Direction = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b42790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (spot) , :: core :: option :: Option :: None) } } } # [doc = "`FixChange()` overload"] fn fix_change (self ,) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetEnable()` overload"] fn set_enable (self ,) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartAppear()` overload"] fn start_appear (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FixChangeTick()` overload"] fn fix_change_tick (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVisible()` overload"] fn update_visible (self ,) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMapObjectEnable(bool)` overload"] fn set_map_object_enable (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b46240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SpotObject()` overload"] fn get_spot_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b462e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SpotObject(crate::unity_engine::gameobject::GameObject)` overload"] fn set_spot_object (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b463c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Chapter()` overload"] fn get_chapter (self ,) -> crate :: app :: chapterdata :: ChapterData { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterdata :: ChapterData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b3ffa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_GmapSpotID()` overload"] fn get_gmap_spot_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b35660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEqualCID(::unity2::Il2CppString)` overload"] fn is_equal_cid (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b46480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`IsCompleted()` overload"] fn is_completed (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b464b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCompletedOpenCondSpot()` overload"] fn is_completed_open_cond_spot (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b465b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispos()` overload"] fn dispos (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b46740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDispos(bool)` overload"] fn is_dispos (self , ignore_exist_mob : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b46780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ignore_exist_mob) , :: core :: option :: Option :: None) } } } # [doc = "`TransformDispos()` overload"] fn transform_dispos (self ,) -> bool { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b46ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteDispos()` overload"] fn delete_dispos (self ,) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b46eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadMobUnit()` overload"] fn unload_mob_unit (self ,) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b470c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyIcon()` overload"] fn destroy_icon (self ,) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b46f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateMobUnitFromSpotMob()` overload"] fn create_mob_unit_from_spot_mob (self ,) -> () { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPlaceName()` overload"] fn get_place_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GmapSpot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpot , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapspot")]pub trait IGmapSpotMethods:IGmapSpot{#[doc="`get_SpotMob()` overload"]fn get_spot_mob(self,)->crate::app::encountmob::EncountMob{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b40e20usize)as*mut u8,crate::app::encountmob::EncountMob;
+(GmapSpot)__receiver)}
+}
+#[doc="`set_SpotMob(crate::app::encountmob::EncountMob)` overload"]fn set_spot_mob(self,value:impl::core::convert::Into<crate::app::encountmob::EncountMob>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44a10usize)as*mut u8,();
+(GmapSpot)__receiver,(crate::app::encountmob::EncountMob)::core::convert::Into::into(value))}
+}
+#[doc="`get_ReserveDispos()` overload"]fn get_reserve_dispos(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44b60usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`set_ReserveDispos(bool)` overload"]fn set_reserve_dispos(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44b70usize)as*mut u8,();
+(GmapSpot)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_ReserveDeleteMob()` overload"]fn get_reserve_delete_mob(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44b80usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`set_ReserveDeleteMob(bool)` overload"]fn set_reserve_delete_mob(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44b90usize)as*mut u8,();
+(GmapSpot)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::chapterdata::ChapterData)` overload"]fn ctor(self,chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44ba0usize)as*mut u8,();
+(GmapSpot)__receiver,(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`get_SpotState()` overload"]fn get_spot_state(self,)->crate::app::gmapspot::GmapSpot_State{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37310usize)as*mut u8,crate::app::gmapspot::GmapSpot_State;
+(GmapSpot)__receiver)}
+}
+#[doc="`set_SpotState(crate::app::gmapspot::GmapSpot_State)` overload"]fn set_spot_state(self,value:impl::core::convert::Into<crate::app::gmapspot::GmapSpot_State>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44cb0usize)as*mut u8,();
+(GmapSpot)__receiver,(crate::app::gmapspot::GmapSpot_State)::core::convert::Into::into(value))}
+}
+#[doc="`SetupSpotController()` overload"]fn setup_spot_controller(self,)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44e80usize)as*mut u8,();
+(GmapSpot)__receiver)}
+}
+#[doc="`SetupMapObject(crate::unity_engine::gameobject::GameObject)` overload"]fn setup_map_object(self,map_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b453a0usize)as*mut u8,();
+(GmapSpot)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(map_object))}
+}
+#[doc="`SetNextSpot(crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"]fn set_next_spot(self,next_spot_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,next_spot_id:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b453b0usize)as*mut u8,bool;
+(GmapSpot)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(next_spot_pos),(::unity2::Il2CppString)::core::convert::Into::into(next_spot_id))}
+}
+#[doc="`CheckNextSpot(crate::app::gmapspot::GmapSpot_Direction)` overload"]fn check_next_spot(self,dir:impl::core::convert::Into<crate::app::gmapspot::GmapSpot_Direction>)->crate::app::gmapspot::GmapSpot{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b3f380usize)as*mut u8,crate::app::gmapspot::GmapSpot;
+(GmapSpot)__receiver,(crate::app::gmapspot::GmapSpot_Direction)::core::convert::Into::into(dir))}
+}
+#[doc="`ExistsEncountMob()` overload"]fn exists_encount_mob(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b456a0usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`ExistsTraining()` overload"]fn exists_training(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45720usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`AddChapter(crate::app::chapterdata::ChapterData)` overload"]fn add_chapter(self,chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45800usize)as*mut u8,();
+(GmapSpot)__receiver,(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`TryGetRootName(crate::app::gmapspot::GmapSpot)` overload"]fn try_get_root_name(self,next_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot>)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b36c40usize)as*mut u8, ::unity2::Il2CppString;
+(GmapSpot)__receiver,(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(next_spot))}
+}
+#[doc="`CheckChange()` overload"]fn check_change(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45860usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`CheckAccess(crate::unity_engine::vector3::Vector3)` overload"]fn check_access(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45890usize)as*mut u8,bool;
+(GmapSpot)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`get_Position()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b3d490usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(GmapSpot)__receiver)}
+}
+#[doc="`NextSpots()` overload"]fn next_spots(self,)->crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45910usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot> ;
+(GmapSpot)__receiver)}
+}
+#[doc="`GetDirectionToSpot(crate::app::gmapspot::GmapSpot)` overload"]fn get_direction_to_spot(self,spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot>)->crate::app::gmapspot::GmapSpot_Direction{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b42790usize)as*mut u8,crate::app::gmapspot::GmapSpot_Direction;
+(GmapSpot)__receiver,(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(spot))}
+}
+#[doc="`FixChange()` overload"]fn fix_change(self,)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45af0usize)as*mut u8,();
+(GmapSpot)__receiver)}
+}
+#[doc="`SetEnable()` overload"]fn set_enable(self,)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45bd0usize)as*mut u8,();
+(GmapSpot)__receiver)}
+}
+#[doc="`StartAppear()` overload"]fn start_appear(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45c80usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`FixChangeTick()` overload"]fn fix_change_tick(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45ef0usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`UpdateVisible()` overload"]fn update_visible(self,)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45b70usize)as*mut u8,();
+(GmapSpot)__receiver)}
+}
+#[doc="`SetMapObjectEnable(bool)` overload"]fn set_map_object_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b46240usize)as*mut u8,();
+(GmapSpot)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_SpotObject()` overload"]fn get_spot_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b462e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(GmapSpot)__receiver)}
+}
+#[doc="`set_SpotObject(crate::unity_engine::gameobject::GameObject)` overload"]fn set_spot_object(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b463c0usize)as*mut u8,();
+(GmapSpot)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_Chapter()` overload"]fn get_chapter(self,)->crate::app::chapterdata::ChapterData{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b3ffa0usize)as*mut u8,crate::app::chapterdata::ChapterData;
+(GmapSpot)__receiver)}
+}
+#[doc="`get_GmapSpotID()` overload"]fn get_gmap_spot_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b35660usize)as*mut u8, ::unity2::Il2CppString;
+(GmapSpot)__receiver)}
+}
+#[doc="`IsEqualCID(::unity2::Il2CppString)` overload"]fn is_equal_cid(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b46480usize)as*mut u8,bool;
+(GmapSpot)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`IsCompleted()` overload"]fn is_completed(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b464b0usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`IsCompletedOpenCondSpot()` overload"]fn is_completed_open_cond_spot(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b465b0usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`Dispos()` overload"]fn dispos(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b46740usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`IsDispos(bool)` overload"]fn is_dispos(self,ignore_exist_mob:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b46780usize)as*mut u8,bool;
+(GmapSpot)__receiver,(bool)::core::convert::Into::into(ignore_exist_mob))}
+}
+#[doc="`TransformDispos()` overload"]fn transform_dispos(self,)->bool{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b46ad0usize)as*mut u8,bool;
+(GmapSpot)__receiver)}
+}
+#[doc="`DeleteDispos()` overload"]fn delete_dispos(self,)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b46eb0usize)as*mut u8,();
+(GmapSpot)__receiver)}
+}
+#[doc="`UnloadMobUnit()` overload"]fn unload_mob_unit(self,)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b470c0usize)as*mut u8,();
+(GmapSpot)__receiver)}
+}
+#[doc="`DestroyIcon()` overload"]fn destroy_icon(self,)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b46f70usize)as*mut u8,();
+(GmapSpot)__receiver)}
+}
+#[doc="`CreateMobUnitFromSpotMob()` overload"]fn create_mob_unit_from_spot_mob(self,)->(){unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b47110usize)as*mut u8,();
+(GmapSpot)__receiver)}
+}
+#[doc="`GetPlaceName()` overload"]fn get_place_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapSpot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b47240usize)as*mut u8, ::unity2::Il2CppString;
+(GmapSpot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmapspot")]
-impl < __T : IGmapSpot > IGmapSpotMethods for __T { }
+#[cfg(feature="app-gmapspot")]impl<__T:IGmapSpot>IGmapSpotMethods for __T{}
 
-#[cfg(feature = "app-gmapspot")]
-impl GmapSpot { pub fn get_spot_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_spot_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_reserve_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_reserve_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_reserve_delete_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_reserve_delete_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_spot_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_spot_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn setup_spot_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn setup_map_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_next_spot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn check_next_spot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn exists_encount_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn exists_training_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn add_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn try_get_root_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn check_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn check_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn next_spots_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_direction_to_spot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn fix_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn start_appear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn fix_change_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn update_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_map_object_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_spot_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_spot_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_gmap_spot_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn is_equal_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn is_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn is_completed_open_cond_spot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn is_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn transform_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn delete_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn unload_mob_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn destroy_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn create_mob_unit_from_spot_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_place_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_job_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_pid_prefix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn get_rare_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_person_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn get_gmap_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } }
+#[cfg(feature="app-gmapspot")]impl GmapSpot{pub fn get_spot_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_spot_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_reserve_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_reserve_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_reserve_delete_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_reserve_delete_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_spot_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_spot_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn setup_spot_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn setup_map_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_next_spot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn check_next_spot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn exists_encount_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn exists_training_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn add_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn try_get_root_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn check_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn check_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn next_spots_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_direction_to_spot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn fix_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn start_appear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn fix_change_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn update_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_map_object_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_spot_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_spot_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_gmap_spot_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn is_equal_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn is_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn is_completed_open_cond_spot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn is_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn transform_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn delete_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn unload_mob_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn destroy_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn create_mob_unit_from_spot_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_place_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_job_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_pid_prefix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn get_rare_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_person_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn get_gmap_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+}
 
-#[cfg(feature = "app-gmapspot")]
-impl GmapSpot {
-# [doc = "`.ctor(crate::app::chapterdata::ChapterData)` — overload selector"] pub fn new (chapter : crate :: app :: chapterdata :: ChapterData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapSpot) , :: core :: stringify ! (new) ,)) ; < Self as IGmapSpotMethods > :: ctor (this , chapter) ; this }
+#[cfg(feature="app-gmapspot")]impl GmapSpot{#[doc="`.ctor(crate::app::chapterdata::ChapterData)` — overload selector"]pub fn new(chapter:crate::app::chapterdata::ChapterData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapSpot), ::core::stringify!(new),));
+ <Self as IGmapSpotMethods> ::ctor(this,chapter);
+this}
 }
 
 #[cfg(feature = "app-gmapspot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapSpot_EncountPersonType;
     pub use super::GmapSpot_EncountType;
     pub use super::GmapSpot_State;
     pub use super::GmapSpot;
     pub use super::IGmapSpot;
     pub use super::IGmapSpotMethods;
+    pub use super::GmapSpot_EncountPersonType;
     pub use super::GmapSpot_Direction;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

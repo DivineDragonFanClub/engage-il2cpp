@@ -4,35 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/trackedreference/TrackedReference.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TrackedReference")] # [parent (crate :: system :: object :: Object)] pub struct TrackedReference {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/trackedreference/TrackedReference.md"))]#[::unity2::class(namespace="UnityEngine",name="TrackedReference")]#[parent(crate::system::object::Object)]pub struct TrackedReference{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-trackedreference-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-trackedreference")]
-impl TrackedReference { # [doc = "`op_Equality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"] pub fn op_equality (x : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference > , y : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: trackedreference :: TrackedReference , crate :: unity_engine :: trackedreference :: TrackedReference , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378f5f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"] pub fn op_inequality (x : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference > , y : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: trackedreference :: TrackedReference , crate :: unity_engine :: trackedreference :: TrackedReference , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378f680usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(crate::unity_engine::trackedreference::TrackedReference)` overload"] pub fn op_implicit (exists : impl :: core :: convert :: Into < crate :: unity_engine :: trackedreference :: TrackedReference >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: trackedreference :: TrackedReference , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378f810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (exists) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-trackedreference")]impl TrackedReference{#[doc="`op_Equality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"]pub fn op_equality(x:impl::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference> ,y:impl::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378f5f0usize)as*mut u8,bool;
+(crate::unity_engine::trackedreference::TrackedReference)::core::convert::Into::into(x),(crate::unity_engine::trackedreference::TrackedReference)::core::convert::Into::into(y))}
+}
+#[doc="`op_Inequality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"]pub fn op_inequality(x:impl::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference> ,y:impl::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378f680usize)as*mut u8,bool;
+(crate::unity_engine::trackedreference::TrackedReference)::core::convert::Into::into(x),(crate::unity_engine::trackedreference::TrackedReference)::core::convert::Into::into(y))}
+}
+#[doc="`op_Implicit(crate::unity_engine::trackedreference::TrackedReference)` overload"]pub fn op_implicit(exists:impl::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378f810usize)as*mut u8,bool;
+(crate::unity_engine::trackedreference::TrackedReference)::core::convert::Into::into(exists))}
+}
+}
 
-#[cfg(feature = "unity_engine-trackedreference")]
-pub trait ITrackedReferenceMethods : ITrackedReference { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TrackedReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrackedReference , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378f5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , o : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < TrackedReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrackedReference , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378f700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < TrackedReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrackedReference , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378f800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-trackedreference")]pub trait ITrackedReferenceMethods:ITrackedReference{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TrackedReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x378f5e0usize)as*mut u8,();
+(TrackedReference)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <TrackedReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x378f700usize)as*mut u8,bool;
+(TrackedReference)__receiver,(crate::system::object::Object)::core::convert::Into::into(o))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <TrackedReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x378f800usize)as*mut u8,i32;
+(TrackedReference)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-trackedreference")]
-impl < __T : ITrackedReference > ITrackedReferenceMethods for __T { }
+#[cfg(feature="unity_engine-trackedreference")]impl<__T:ITrackedReference>ITrackedReferenceMethods for __T{}
 
-#[cfg(feature = "unity_engine-trackedreference")]
-impl TrackedReference { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackedReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackedReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackedReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackedReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackedReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackedReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-trackedreference")]impl TrackedReference{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-trackedreference")]
-impl TrackedReference {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrackedReference) , :: core :: stringify ! (new) ,)) ; < Self as ITrackedReferenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-trackedreference")]impl TrackedReference{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TrackedReference), ::core::stringify!(new),));
+ <Self as ITrackedReferenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-trackedreference")]

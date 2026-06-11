@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamecurve/GameCurve.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameCurve")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct GameCurve {
-# [offset (24)] # [rename (name = "m_Curve")] pub m_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamecurve/GameCurve.md"))]#[::unity2::class(namespace="App",name="GameCurve")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct GameCurve{#[offset(24)]#[rename(name="m_Curve")]pub m_curve:crate::unity_engine::animationcurve::AnimationCurve,}
 
 }
 
 #[cfg(feature = "app-gamecurve-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gamecurve")]
-pub trait IGameCurveMethods : IGameCurve { # [doc = "`GetValue(f32)` overload"] fn get_value (self , time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < GameCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameCurve , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227bec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227bee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamecurve")]pub trait IGameCurveMethods:IGameCurve{#[doc="`GetValue(f32)` overload"]fn get_value(self,time:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <GameCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227bec0usize)as*mut u8,f32;
+(GameCurve)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227bee0usize)as*mut u8,();
+(GameCurve)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gamecurve")]
-impl < __T : IGameCurve > IGameCurveMethods for __T { }
+#[cfg(feature="app-gamecurve")]impl<__T:IGameCurve>IGameCurveMethods for __T{}
 
-#[cfg(feature = "app-gamecurve")]
-impl GameCurve { pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-gamecurve")]impl GameCurve{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-gamecurve")]
-impl GameCurve {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameCurve) , :: core :: stringify ! (new) ,)) ; < Self as IGameCurveMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gamecurve")]impl GameCurve{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameCurve), ::core::stringify!(new),));
+ <Self as IGameCurveMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gamecurve")]

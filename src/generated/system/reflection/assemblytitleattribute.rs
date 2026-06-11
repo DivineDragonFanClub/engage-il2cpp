@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblytitleattribute/AssemblyTitleAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyTitleAttribute")] pub struct AssemblyTitleAttribute {
-# [offset (16)] # [rename (name = "m_title")] pub m_title : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblytitleattribute/AssemblyTitleAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyTitleAttribute")]pub struct AssemblyTitleAttribute{#[offset(16)]#[rename(name="m_title")]pub m_title: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblytitleattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblytitleattribute")]
-pub trait IAssemblyTitleAttributeMethods : IAssemblyTitleAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyTitleAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyTitleAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3403ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblytitleattribute")]pub trait IAssemblyTitleAttributeMethods:IAssemblyTitleAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyTitleAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3403ad0usize)as*mut u8,();
+(AssemblyTitleAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblytitleattribute")]
-impl < __T : IAssemblyTitleAttribute > IAssemblyTitleAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblytitleattribute")]impl<__T:IAssemblyTitleAttribute>IAssemblyTitleAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblytitleattribute")]
-impl AssemblyTitleAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyTitleAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblytitleattribute")]impl AssemblyTitleAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblytitleattribute")]
-impl AssemblyTitleAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (title : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyTitleAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyTitleAttributeMethods > :: ctor (this , title) ; this }
+#[cfg(feature="system-reflection-assemblytitleattribute")]impl AssemblyTitleAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(title: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyTitleAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyTitleAttributeMethods> ::ctor(this,title);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblytitleattribute")]

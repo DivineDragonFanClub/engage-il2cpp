@@ -4,32 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentruststockkinddata/SortieEntrustStockKindData.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieEntrustStockKindData")] # [parent (crate :: system :: object :: Object)] pub struct SortieEntrustStockKindData {
-# [offset (16)] # [rename (name = "m_Data")] pub m_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentruststockdata :: SortieEntrustStockData > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentruststockkinddata/SortieEntrustStockKindData.md"))]#[::unity2::class(namespace="App",name="SortieEntrustStockKindData")]#[parent(crate::system::object::Object)]pub struct SortieEntrustStockKindData{#[offset(16)]#[rename(name="m_Data")]pub m_data:crate::system::collections::generic::list_1::List_1<crate::app::sortieentruststockdata::SortieEntrustStockData> ,}
 
 }
 
 #[cfg(feature = "app-sortieentruststockkinddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortieentruststockkinddata")]
-pub trait ISortieEntrustStockKindDataMethods : ISortieEntrustStockKindData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieEntrustStockKindData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockKindData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::unititem::UnitItem)` overload"] fn add (self , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < SortieEntrustStockKindData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockKindData , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe71e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentruststockdata :: SortieEntrustStockData > { unsafe { let __receiver = < SortieEntrustStockKindData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockKindData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentruststockdata :: SortieEntrustStockData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < SortieEntrustStockKindData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockKindData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe72a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortieentruststockkinddata")]pub trait ISortieEntrustStockKindDataMethods:ISortieEntrustStockKindData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrustStockKindData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7070usize)as*mut u8,();
+(SortieEntrustStockKindData)__receiver)}
+}
+#[doc="`Add(crate::app::unititem::UnitItem)` overload"]fn add(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <SortieEntrustStockKindData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe71e0usize)as*mut u8,();
+(SortieEntrustStockKindData)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::collections::generic::list_1::List_1<crate::app::sortieentruststockdata::SortieEntrustStockData>{unsafe{let __receiver= <SortieEntrustStockKindData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7290usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::sortieentruststockdata::SortieEntrustStockData> ;
+(SortieEntrustStockKindData)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortieEntrustStockKindData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe72a0usize)as*mut u8,i32;
+(SortieEntrustStockKindData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortieentruststockkinddata")]
-impl < __T : ISortieEntrustStockKindData > ISortieEntrustStockKindDataMethods for __T { }
+#[cfg(feature="app-sortieentruststockkinddata")]impl<__T:ISortieEntrustStockKindData>ISortieEntrustStockKindDataMethods for __T{}
 
-#[cfg(feature = "app-sortieentruststockkinddata")]
-impl SortieEntrustStockKindData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockKindData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockKindData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockKindData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockKindData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-sortieentruststockkinddata")]impl SortieEntrustStockKindData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-sortieentruststockkinddata")]
-impl SortieEntrustStockKindData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieEntrustStockKindData) , :: core :: stringify ! (new) ,)) ; < Self as ISortieEntrustStockKindDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortieentruststockkinddata")]impl SortieEntrustStockKindData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieEntrustStockKindData), ::core::stringify!(new),));
+ <Self as ISortieEntrustStockKindDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortieentruststockkinddata")]

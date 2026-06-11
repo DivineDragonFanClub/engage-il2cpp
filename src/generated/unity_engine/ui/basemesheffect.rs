@@ -4,45 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/basemesheffect/BaseMeshEffect.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "BaseMeshEffect")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct BaseMeshEffect {
-# [offset (24)] # [rename (name = "m_Graphic")] pub m_graphic : crate :: unity_engine :: ui :: graphic :: Graphic ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/basemesheffect/BaseMeshEffect.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="BaseMeshEffect")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct BaseMeshEffect{#[offset(24)]#[rename(name="m_Graphic")]pub m_graphic:crate::unity_engine::ui::graphic::Graphic,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-basemesheffect-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-basemesheffect")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BaseMeshEffect_unity2_raw { use super :: * ; pub unsafe fn modify_mesh_2 (this : BaseMeshEffect , vh : crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ModifyMesh") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ModifyMesh" , < BaseMeshEffect as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseMeshEffect , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , vh , __mi) } }
+#[cfg(feature="unity_engine-ui-basemesheffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseMeshEffect_unity2_raw{use super:: * ;
+pub unsafe fn modify_mesh_2(this:BaseMeshEffect,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ModifyMesh").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ModifyMesh", <BaseMeshEffect as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseMeshEffect,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vh,__mi)}
+}
 
-#[cfg(feature = "unity_engine-ui-basemesheffect")]
-pub trait IBaseMeshEffectMethods : IBaseMeshEffect { # [doc = "`get_graphic()` overload"] fn get_graphic (self ,) -> crate :: unity_engine :: ui :: graphic :: Graphic { unsafe { let __receiver = < BaseMeshEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseMeshEffect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: graphic :: Graphic = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < BaseMeshEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseMeshEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < BaseMeshEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseMeshEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDidApplyAnimationProperties()` overload"] fn on_did_apply_animation_properties (self ,) -> () { unsafe { let __receiver = < BaseMeshEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseMeshEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"] fn modify_mesh (self , mesh : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh >) -> () { unsafe { let __receiver = < BaseMeshEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseMeshEffect , crate :: unity_engine :: mesh :: Mesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317ba80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mesh) , :: core :: option :: Option :: None) } } } # [doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn modify_mesh_2 (self , vh : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < BaseMeshEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseMeshEffect_unity2_raw :: modify_mesh_2 (__receiver , :: core :: convert :: Into :: into (vh) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BaseMeshEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseMeshEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317bc00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-basemesheffect")]pub trait IBaseMeshEffectMethods:IBaseMeshEffect{#[doc="`get_graphic()` overload"]fn get_graphic(self,)->crate::unity_engine::ui::graphic::Graphic{unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b7a0usize)as*mut u8,crate::unity_engine::ui::graphic::Graphic;
+(BaseMeshEffect)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b860usize)as*mut u8,();
+(BaseMeshEffect)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b920usize)as*mut u8,();
+(BaseMeshEffect)__receiver)}
+}
+#[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b9d0usize)as*mut u8,();
+(BaseMeshEffect)__receiver)}
+}
+#[doc="`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"]fn modify_mesh(self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317ba80usize)as*mut u8,();
+(BaseMeshEffect)__receiver,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh))}
+}
+#[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh_2(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseMeshEffect_unity2_raw::modify_mesh_2(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc00usize)as*mut u8,();
+(BaseMeshEffect)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-basemesheffect")]
-impl < __T : IBaseMeshEffect > IBaseMeshEffectMethods for __T { }
+#[cfg(feature="unity_engine-ui-basemesheffect")]impl<__T:IBaseMeshEffect>IBaseMeshEffectMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-basemesheffect")]
-impl BaseMeshEffect { pub fn get_graphic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseMeshEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseMeshEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseMeshEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_did_apply_animation_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseMeshEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn modify_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseMeshEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn modify_mesh_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseMeshEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseMeshEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-ui-basemesheffect")]impl BaseMeshEffect{pub fn get_graphic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_did_apply_animation_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn modify_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn modify_mesh_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-ui-basemesheffect")]
-impl BaseMeshEffect {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaseMeshEffect) , :: core :: stringify ! (new) ,)) ; < Self as IBaseMeshEffectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-basemesheffect")]impl BaseMeshEffect{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BaseMeshEffect), ::core::stringify!(new),));
+ <Self as IBaseMeshEffectMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-basemesheffect")]

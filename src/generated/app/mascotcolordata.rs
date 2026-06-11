@@ -4,41 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolordata/MascotColorData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotColorData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotcolordata :: MascotColorData >)] pub struct MascotColorData {
-# [offset (44)] # [rename (name = "MaskColor075")] pub mask_color075 : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotcolordata/MascotColorData.md"))]#[::unity2::class(namespace="App",name="MascotColorData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::mascotcolordata::MascotColorData>)]pub struct MascotColorData{#[offset(44)]#[rename(name="MaskColor075")]pub mask_color075:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-mascotcolordata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotcolordata")]
-impl MascotColorData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034c50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotcolordata")]impl MascotColorData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2034c50usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mascotcolordata")]
-pub trait IMascotColorDataMethods : IMascotColorData { # [doc = "`get_R()` overload"] fn get_r (self ,) -> i32 { unsafe { let __receiver = < MascotColorData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_R(i32)` overload"] fn set_r (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MascotColorData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_G()` overload"] fn get_g (self ,) -> i32 { unsafe { let __receiver = < MascotColorData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_G(i32)` overload"] fn set_g (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MascotColorData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_B()` overload"] fn get_b (self ,) -> i32 { unsafe { let __receiver = < MascotColorData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_B(i32)` overload"] fn set_b (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MascotColorData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MascotColorData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotColorData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotcolordata")]pub trait IMascotColorDataMethods:IMascotColorData{#[doc="`get_R()` overload"]fn get_r(self,)->i32{unsafe{let __receiver= <MascotColorData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034d00usize)as*mut u8,i32;
+(MascotColorData)__receiver)}
+}
+#[doc="`set_R(i32)` overload"]fn set_r(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MascotColorData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034d10usize)as*mut u8,();
+(MascotColorData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_G()` overload"]fn get_g(self,)->i32{unsafe{let __receiver= <MascotColorData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034d20usize)as*mut u8,i32;
+(MascotColorData)__receiver)}
+}
+#[doc="`set_G(i32)` overload"]fn set_g(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MascotColorData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034d30usize)as*mut u8,();
+(MascotColorData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_B()` overload"]fn get_b(self,)->i32{unsafe{let __receiver= <MascotColorData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034d40usize)as*mut u8,i32;
+(MascotColorData)__receiver)}
+}
+#[doc="`set_B(i32)` overload"]fn set_b(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MascotColorData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034d50usize)as*mut u8,();
+(MascotColorData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MascotColorData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034d60usize)as*mut u8,();
+(MascotColorData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotColorData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034dd0usize)as*mut u8,();
+(MascotColorData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotcolordata")]
-impl < __T : IMascotColorData > IMascotColorDataMethods for __T { }
+#[cfg(feature="app-mascotcolordata")]impl<__T:IMascotColorData>IMascotColorDataMethods for __T{}
 
-#[cfg(feature = "app-mascotcolordata")]
-impl MascotColorData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-mascotcolordata")]impl MascotColorData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-mascotcolordata")]
-impl MascotColorData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotColorData) , :: core :: stringify ! (new) ,)) ; < Self as IMascotColorDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mascotcolordata")]impl MascotColorData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotColorData), ::core::stringify!(new),));
+ <Self as IMascotColorDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mascotcolordata")]

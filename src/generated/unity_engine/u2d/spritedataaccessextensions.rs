@@ -4,23 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/u2d/spritedataaccessextensions/SpriteDataAccessExtensions.md"))] # [:: unity2 :: class (namespace = "UnityEngine.U2D" , name = "SpriteDataAccessExtensions")] # [parent (crate :: system :: object :: Object)] pub struct SpriteDataAccessExtensions {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/u2d/spritedataaccessextensions/SpriteDataAccessExtensions.md"))]#[::unity2::class(namespace="UnityEngine.U2D",name="SpriteDataAccessExtensions")]#[parent(crate::system::object::Object)]pub struct SpriteDataAccessExtensions{}
 
 }
 
 #[cfg(feature = "unity_engine-u2d-spritedataaccessextensions-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-u2d-spritedataaccessextensions")]
-impl SpriteDataAccessExtensions { pub fn check_attribute_type_matches_and_throw < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (channel : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SpriteDataAccessExtensions as :: unity2 :: ClassIdentity > :: class () , "CheckAttributeTypeMatchesAndThrow" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpriteDataAccessExtensions as :: unity2 :: ClassIdentity > :: NAME , "CheckAttributeTypeMatchesAndThrow" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (channel) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetIndicesInfo(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_indices_info (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99580usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } # [doc = "`GetChannelInfo(crate::unity_engine::sprite::Sprite, crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"] pub fn get_channel_info (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite > , channel : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute >) -> crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99650usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite) , :: core :: convert :: Into :: into (channel) , :: core :: option :: Option :: None) } } } # [doc = "`GetIndicesInfo_Injected(crate::unity_engine::sprite::Sprite, *mutcrate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo)` overload"] pub fn get_indices_info_injected (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo > :: uninit () ; { let __inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , * mut crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`GetChannelInfo_Injected(crate::unity_engine::sprite::Sprite, crate::unity_engine::rendering::vertexattribute::VertexAttribute, *mutcrate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo)` overload"] pub fn get_channel_info_injected (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite > , channel : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute >) -> crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo > :: uninit () ; { let __inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , crate :: unity_engine :: rendering :: vertexattribute :: VertexAttribute , * mut crate :: unity_engine :: u2d :: spritechannelinfo :: SpriteChannelInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f996d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite) , :: core :: convert :: Into :: into (channel) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-u2d-spritedataaccessextensions")]impl SpriteDataAccessExtensions{pub fn check_attribute_type_matches_and_throw<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(channel:impl::core::convert::Into<crate::unity_engine::rendering::vertexattribute::VertexAttribute>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SpriteDataAccessExtensions as::unity2::ClassIdentity> ::class(),"CheckAttributeTypeMatchesAndThrow",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SpriteDataAccessExtensions as::unity2::ClassIdentity> ::NAME,"CheckAttributeTypeMatchesAndThrow",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::unity_engine::rendering::vertexattribute::VertexAttribute, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(channel), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetIndicesInfo(crate::unity_engine::sprite::Sprite)` overload"]pub fn get_indices_info(sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f99580usize)as*mut u8,crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo;
+(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`GetChannelInfo(crate::unity_engine::sprite::Sprite, crate::unity_engine::rendering::vertexattribute::VertexAttribute)` overload"]pub fn get_channel_info(sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite> ,channel:impl::core::convert::Into<crate::unity_engine::rendering::vertexattribute::VertexAttribute>)->crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f99650usize)as*mut u8,crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo;
+(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite),(crate::unity_engine::rendering::vertexattribute::VertexAttribute)::core::convert::Into::into(channel))}
+}
+#[doc="`GetIndicesInfo_Injected(crate::unity_engine::sprite::Sprite, *mutcrate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo)` overload"]pub fn get_indices_info_injected(sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f99600usize)as*mut u8,();
+(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite),(*mut crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`GetChannelInfo_Injected(crate::unity_engine::sprite::Sprite, crate::unity_engine::rendering::vertexattribute::VertexAttribute, *mutcrate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo)` overload"]pub fn get_channel_info_injected(sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite> ,channel:impl::core::convert::Into<crate::unity_engine::rendering::vertexattribute::VertexAttribute>)->crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f996d0usize)as*mut u8,();
+(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite),(crate::unity_engine::rendering::vertexattribute::VertexAttribute)::core::convert::Into::into(channel),(*mut crate::unity_engine::u2d::spritechannelinfo::SpriteChannelInfo)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-u2d-spritedataaccessextensions")]
-impl SpriteDataAccessExtensions { pub fn get_indices_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteDataAccessExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_channel_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteDataAccessExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_indices_info_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteDataAccessExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_channel_info_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteDataAccessExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-u2d-spritedataaccessextensions")]impl SpriteDataAccessExtensions{pub fn get_indices_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_channel_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_indices_info_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_channel_info_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-u2d-spritedataaccessextensions")]
 #[doc(hidden)]

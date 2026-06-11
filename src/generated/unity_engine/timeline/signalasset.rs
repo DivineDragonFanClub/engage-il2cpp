@@ -4,39 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalasset/SignalAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "SignalAsset")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct SignalAsset {
-# [static_field] # [rename (name = "OnEnableCallback")] pub on_enable_callback : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: timeline :: signalasset :: SignalAsset > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/signalasset/SignalAsset.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="SignalAsset")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct SignalAsset{#[static_field]#[rename(name="OnEnableCallback")]pub on_enable_callback:crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset> ,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-signalasset-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-signalasset")]
-impl SignalAsset { # [doc = "`add_OnEnableCallback(crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>)` overload"] pub fn add_on_enable_callback (value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: timeline :: signalasset :: SignalAsset > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: timeline :: signalasset :: SignalAsset > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da180usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_OnEnableCallback(crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>)` overload"] pub fn remove_on_enable_callback (value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: timeline :: signalasset :: SignalAsset > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: timeline :: signalasset :: SignalAsset > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da240usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-signalasset")]impl SignalAsset{#[doc="`add_OnEnableCallback(crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>)` overload"]pub fn add_on_enable_callback(value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35da180usize)as*mut u8,();
+(crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>)::core::convert::Into::into(value))}
+}
+#[doc="`remove_OnEnableCallback(crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>)` overload"]pub fn remove_on_enable_callback(value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35da240usize)as*mut u8,();
+(crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-signalasset")]
-pub trait ISignalAssetMethods : ISignalAsset { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < SignalAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SignalAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-signalasset")]pub trait ISignalAssetMethods:ISignalAsset{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <SignalAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da300usize)as*mut u8,();
+(SignalAsset)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SignalAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da390usize)as*mut u8,();
+(SignalAsset)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-signalasset")]
-impl < __T : ISignalAsset > ISignalAssetMethods for __T { }
+#[cfg(feature="unity_engine-timeline-signalasset")]impl<__T:ISignalAsset>ISignalAssetMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-signalasset")]
-impl SignalAsset { pub fn add_on_enable_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn remove_on_enable_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-timeline-signalasset")]impl SignalAsset{pub fn add_on_enable_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_on_enable_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-timeline-signalasset")]
-impl SignalAsset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SignalAsset) , :: core :: stringify ! (new) ,)) ; < Self as ISignalAssetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-signalasset")]impl SignalAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SignalAsset), ::core::stringify!(new),));
+ <Self as ISignalAssetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-signalasset")]

@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatobservable/CombatObservable.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatObservable")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CombatObservable {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatobservable/CombatObservable.md"))]#[::unity2::class(namespace="Combat",name="CombatObservable")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatObservable{}
 
 }
 
 #[cfg(feature = "combat-combatobservable-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatobservable")]
-pub trait ICombatObservableMethods : ICombatObservable { # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < CombatObservable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatObservable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29228b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatObservable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatObservable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2922a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatobservable")]pub trait ICombatObservableMethods:ICombatObservable{#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <CombatObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29228b0usize)as*mut u8,();
+(CombatObservable)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2922a10usize)as*mut u8,();
+(CombatObservable)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatobservable")]
-impl < __T : ICombatObservable > ICombatObservableMethods for __T { }
+#[cfg(feature="combat-combatobservable")]impl<__T:ICombatObservable>ICombatObservableMethods for __T{}
 
-#[cfg(feature = "combat-combatobservable")]
-impl CombatObservable { pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatObservable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatObservable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-combatobservable")]impl CombatObservable{pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "combat-combatobservable")]
-impl CombatObservable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatObservable) , :: core :: stringify ! (new) ,)) ; < Self as ICombatObservableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatobservable")]impl CombatObservable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatObservable), ::core::stringify!(new),));
+ <Self as ICombatObservableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combatobservable")]

@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblydelaysignattribute/AssemblyDelaySignAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyDelaySignAttribute")] pub struct AssemblyDelaySignAttribute {
-# [offset (16)] # [rename (name = "m_delaySign")] pub m_delay_sign : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblydelaysignattribute/AssemblyDelaySignAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyDelaySignAttribute")]pub struct AssemblyDelaySignAttribute{#[offset(16)]#[rename(name="m_delaySign")]pub m_delay_sign:bool,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblydelaysignattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblydelaysignattribute")]
-pub trait IAssemblyDelaySignAttributeMethods : IAssemblyDelaySignAttribute { # [doc = "`.ctor(bool)` overload"] fn ctor (self , delay_sign : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AssemblyDelaySignAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyDelaySignAttribute , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (delay_sign) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblydelaysignattribute")]pub trait IAssemblyDelaySignAttributeMethods:IAssemblyDelaySignAttribute{#[doc="`.ctor(bool)` overload"]fn ctor(self,delay_sign:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AssemblyDelaySignAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401ba0usize)as*mut u8,();
+(AssemblyDelaySignAttribute)__receiver,(bool)::core::convert::Into::into(delay_sign))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblydelaysignattribute")]
-impl < __T : IAssemblyDelaySignAttribute > IAssemblyDelaySignAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblydelaysignattribute")]impl<__T:IAssemblyDelaySignAttribute>IAssemblyDelaySignAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblydelaysignattribute")]
-impl AssemblyDelaySignAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyDelaySignAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblydelaysignattribute")]impl AssemblyDelaySignAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblydelaysignattribute")]
-impl AssemblyDelaySignAttribute {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (delay_sign : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyDelaySignAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyDelaySignAttributeMethods > :: ctor (this , delay_sign) ; this }
+#[cfg(feature="system-reflection-assemblydelaysignattribute")]impl AssemblyDelaySignAttribute{#[doc="`.ctor(bool)` — overload selector"]pub fn new(delay_sign:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyDelaySignAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyDelaySignAttributeMethods> ::ctor(this,delay_sign);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblydelaysignattribute")]

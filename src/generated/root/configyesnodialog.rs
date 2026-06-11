@@ -4,73 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configyesnodialog/ConfigYesNoDialog.md"))] # [:: unity2 :: class (namespace = "" , name = "ConfigYesNoDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct ConfigYesNoDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/configyesnodialog/ConfigYesNoDialog_YesEventHandler.md"))]#[::unity2::class(namespace="",name="ConfigYesNoDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ConfigYesNoDialog_YesEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configyesnodialog/ConfigYesNoDialog_YesEventHandler.md"))] # [:: unity2 :: class (namespace = "" , name = "ConfigYesNoDialog.YesEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ConfigYesNoDialog_YesEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/configyesnodialog/ConfigYesNoDialog.md"))]#[::unity2::class(namespace="",name="ConfigYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ConfigYesNoDialog{}
 
 }
 
 #[cfg(feature = "root-configyesnodialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-configyesnodialog")]
-impl ConfigYesNoDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::root::configyesnodialog::ConfigYesNoDialog_YesEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , yes_event_handler : impl :: core :: convert :: Into < crate :: root :: configyesnodialog :: ConfigYesNoDialog_YesEventHandler >) -> crate :: app :: yesnodialog :: YesNoDialog { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: root :: configyesnodialog :: ConfigYesNoDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: yesnodialog :: YesNoDialog = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2538410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-configyesnodialog")]
-pub trait IConfigYesNoDialogMethods : IConfigYesNoDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicdialogcontent :: BasicDialogContent >) -> () { unsafe { let __receiver = < ConfigYesNoDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigYesNoDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicdialogcontent :: BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253aca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-configyesnodialog")]
-impl < __T : IConfigYesNoDialog > IConfigYesNoDialogMethods for __T { }
-
-#[cfg(feature = "root-configyesnodialog")]
-impl ConfigYesNoDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigYesNoDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigYesNoDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-configyesnodialog")]
-impl ConfigYesNoDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicdialogcontent :: BasicDialogContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConfigYesNoDialog) , :: core :: stringify ! (new) ,)) ; < Self as IConfigYesNoDialogMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="root-configyesnodialog")]pub trait IConfigYesNoDialog_YesEventHandlerMethods:IConfigYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ConfigYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbb30usize)as*mut u8,();
+(ConfigYesNoDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ConfigYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbb50usize)as*mut u8,();
+(ConfigYesNoDialog_YesEventHandler)__receiver)}
+}
 }
 
-#[cfg(feature = "root-configyesnodialog")]
-pub trait IConfigYesNoDialog_YesEventHandlerMethods : IConfigYesNoDialog_YesEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ConfigYesNoDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigYesNoDialog_YesEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cbb30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ConfigYesNoDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigYesNoDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cbb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-configyesnodialog")]impl<__T:IConfigYesNoDialog_YesEventHandler>IConfigYesNoDialog_YesEventHandlerMethods for __T{}
 
-#[cfg(feature = "root-configyesnodialog")]
-impl < __T : IConfigYesNoDialog_YesEventHandler > IConfigYesNoDialog_YesEventHandlerMethods for __T { }
+#[cfg(feature="root-configyesnodialog")]impl ConfigYesNoDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-configyesnodialog")]
-impl ConfigYesNoDialog_YesEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigYesNoDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigYesNoDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-configyesnodialog")]impl ConfigYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConfigYesNoDialog_YesEventHandler), ::core::stringify!(new),));
+ <Self as IConfigYesNoDialog_YesEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "root-configyesnodialog")]
-impl ConfigYesNoDialog_YesEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConfigYesNoDialog_YesEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IConfigYesNoDialog_YesEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-configyesnodialog")]impl ConfigYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::root::configyesnodialog::ConfigYesNoDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,yes_event_handler:impl::core::convert::Into<crate::root::configyesnodialog::ConfigYesNoDialog_YesEventHandler>)->crate::app::yesnodialog::YesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2538410usize)as*mut u8,crate::app::yesnodialog::YesNoDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::root::configyesnodialog::ConfigYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+}
+
+#[cfg(feature="root-configyesnodialog")]pub trait IConfigYesNoDialogMethods:IConfigYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <ConfigYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253aca0usize)as*mut u8,();
+(ConfigYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="root-configyesnodialog")]impl<__T:IConfigYesNoDialog>IConfigYesNoDialogMethods for __T{}
+
+#[cfg(feature="root-configyesnodialog")]impl ConfigYesNoDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-configyesnodialog")]impl ConfigYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConfigYesNoDialog), ::core::stringify!(new),));
+ <Self as IConfigYesNoDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "root-configyesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConfigYesNoDialog;
-    pub use super::IConfigYesNoDialog;
-    pub use super::IConfigYesNoDialogMethods;
     pub use super::ConfigYesNoDialog_YesEventHandler;
     pub use super::IConfigYesNoDialog_YesEventHandler;
     pub use super::IConfigYesNoDialog_YesEventHandlerMethods;
+    pub use super::ConfigYesNoDialog;
+    pub use super::IConfigYesNoDialog;
+    pub use super::IConfigYesNoDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;

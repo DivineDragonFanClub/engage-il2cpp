@@ -4,42 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/camerashake/CameraShake.md"))] # [:: unity2 :: class (namespace = "App" , name = "CameraShake")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CameraShake {
-# [offset (24)] # [rename (name = "m_Delay")] pub m_delay : f32 ,
-# [offset (28)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (32)] # [rename (name = "m_Magnitude")] pub m_magnitude : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/camerashake/CameraShake.md"))]#[::unity2::class(namespace="App",name="CameraShake")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CameraShake{#[offset(24)]#[rename(name="m_Delay")]pub m_delay:f32, #[offset(28)]#[rename(name="m_Time")]pub m_time:f32, #[offset(32)]#[rename(name="m_Magnitude")]pub m_magnitude:f32,}
 
 }
 
 #[cfg(feature = "app-camerashake-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-camerashake")]
-pub trait ICameraShakeMethods : ICameraShake { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CameraShake as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraShake , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < CameraShake as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraShake , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraShake as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraShake , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-camerashake")]pub trait ICameraShakeMethods:ICameraShake{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CameraShake as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba560usize)as*mut u8,();
+(CameraShake)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <CameraShake as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba570usize)as*mut u8,();
+(CameraShake)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraShake as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba710usize)as*mut u8,();
+(CameraShake)__receiver)}
+}
+}
 
-#[cfg(feature = "app-camerashake")]
-impl < __T : ICameraShake > ICameraShakeMethods for __T { }
+#[cfg(feature="app-camerashake")]impl<__T:ICameraShake>ICameraShakeMethods for __T{}
 
-#[cfg(feature = "app-camerashake")]
-impl CameraShake { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraShake as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraShake as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraShake as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-camerashake")]impl CameraShake{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-camerashake")]
-impl CameraShake {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraShake) , :: core :: stringify ! (new) ,)) ; < Self as ICameraShakeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-camerashake")]impl CameraShake{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraShake), ::core::stringify!(new),));
+ <Self as ICameraShakeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-camerashake")]

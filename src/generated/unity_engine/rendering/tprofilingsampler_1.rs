@@ -4,32 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: profilingsampler :: { IProfilingSampler , ProfilingSampler }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::profilingsampler::{IProfilingSampler,ProfilingSampler}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/tprofilingsampler_1/TProfilingSampler_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "TProfilingSampler`1")] # [parent (crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler)] # [parent (crate :: system :: object :: Object)] pub struct TProfilingSampler_1 < T0 : :: unity2 :: ClassIdentity > {
-# [static_field] # [rename (name = "samples")] pub samples : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , crate :: unity_engine :: rendering :: tprofilingsampler_1 :: TProfilingSampler_1 < T0 > > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/tprofilingsampler_1/TProfilingSampler_1.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="TProfilingSampler`1")]#[parent(crate::unity_engine::rendering::profilingsampler::ProfilingSampler)]#[parent(crate::system::object::Object)]pub struct TProfilingSampler_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="samples")]pub samples:crate::system::collections::generic::dictionary_2::Dictionary_2<T0,crate::unity_engine::rendering::tprofilingsampler_1::TProfilingSampler_1<T0> > ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-tprofilingsampler_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-tprofilingsampler_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > TProfilingSampler_1 < T0 > {
-# [doc = "`.cctor()` overload"] # [method (name = ".cctor" , args = 0)] pub fn cctor () -> () ;
-
-# [doc = "`.ctor(::unity2::Il2CppString)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , name : :: unity2 :: Il2CppString) -> () ;
+#[cfg(feature="unity_engine-rendering-tprofilingsampler_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>TProfilingSampler_1<T0>{#[doc="`.cctor()` overload"]#[method(name=".cctor",args=0)]pub fn cctor()->();
+ #[doc="`.ctor(::unity2::Il2CppString)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,name: ::unity2::Il2CppString)->();
 }
 
-#[cfg(feature = "unity_engine-rendering-tprofilingsampler_1")]
-impl < T0 : :: unity2 :: ClassIdentity > TProfilingSampler_1 < T0 > {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TProfilingSampler_1) , :: core :: stringify ! (new) ,)) ; < Self as ITProfilingSampler_1Methods < T0 > > :: ctor (this , name) ; this }
+#[cfg(feature="unity_engine-rendering-tprofilingsampler_1")]impl<T0: ::unity2::ClassIdentity>TProfilingSampler_1<T0>{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TProfilingSampler_1), ::core::stringify!(new),));
+ <Self as ITProfilingSampler_1Methods<T0> > ::ctor(this,name);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-tprofilingsampler_1")]

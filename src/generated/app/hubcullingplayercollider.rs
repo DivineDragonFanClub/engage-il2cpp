@@ -4,45 +4,108 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubcullingplayercollider/HubCullingPlayerCollider.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubCullingPlayerCollider")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubCullingPlayerCollider {
-# [static_field] # [rename (name = "kHubCullingTag")] pub k_hub_culling_tag : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_EnterColliders")] pub m_enter_colliders : crate :: system :: collections :: generic :: queue_1 :: Queue_1 < crate :: unity_engine :: collider :: Collider > ,
-# [offset (40)] # [rename (name = "m_ExitColliders")] pub m_exit_colliders : crate :: system :: collections :: generic :: queue_1 :: Queue_1 < crate :: unity_engine :: collider :: Collider > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubcullingplayercollider/HubCullingPlayerCollider.md"))]#[::unity2::class(namespace="App",name="HubCullingPlayerCollider")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubCullingPlayerCollider{#[static_field]#[rename(name="kHubCullingTag")]pub k_hub_culling_tag: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_EnterColliders")]pub m_enter_colliders:crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::collider::Collider> , #[offset(40)]#[rename(name="m_ExitColliders")]pub m_exit_colliders:crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::collider::Collider> ,}
 
 }
 
 #[cfg(feature = "app-hubcullingplayercollider-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubcullingplayercollider")]
-impl HubCullingPlayerCollider { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87b20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubcullingplayercollider")]impl HubCullingPlayerCollider{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d87b20usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubcullingplayercollider")]
-pub trait IHubCullingPlayerColliderMethods : IHubCullingPlayerCollider { # [doc = "`get_ManualCullingManager()` overload"] fn get_manual_culling_manager (self ,) -> crate :: app :: hubmanualcullingmanager :: HubManualCullingManager { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmanualcullingmanager :: HubManualCullingManager = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d872b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ManualCullingManager(crate::app::hubmanualcullingmanager::HubManualCullingManager)` overload"] fn set_manual_culling_manager (self , value : impl :: core :: convert :: Into < crate :: app :: hubmanualcullingmanager :: HubManualCullingManager >) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , crate :: app :: hubmanualcullingmanager :: HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d872c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d872d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_enter (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`CallTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn call_trigger_enter (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_exit (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`CallTriggerExit(crate::unity_engine::collider::Collider)` overload"] fn call_trigger_exit (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Polling()` overload"] fn polling (self ,) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableCulling()` overload"] fn disable_culling (self ,) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableCulling()` overload"] fn enable_culling (self ,) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearCulling()` overload"] fn clear_culling (self ,) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubCullingPlayerCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCullingPlayerCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubcullingplayercollider")]pub trait IHubCullingPlayerColliderMethods:IHubCullingPlayerCollider{#[doc="`get_ManualCullingManager()` overload"]fn get_manual_culling_manager(self,)->crate::app::hubmanualcullingmanager::HubManualCullingManager{unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d872b0usize)as*mut u8,crate::app::hubmanualcullingmanager::HubManualCullingManager;
+(HubCullingPlayerCollider)__receiver)}
+}
+#[doc="`set_ManualCullingManager(crate::app::hubmanualcullingmanager::HubManualCullingManager)` overload"]fn set_manual_culling_manager(self,value:impl::core::convert::Into<crate::app::hubmanualcullingmanager::HubManualCullingManager>)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d872c0usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver,(crate::app::hubmanualcullingmanager::HubManualCullingManager)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d872d0usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver)}
+}
+#[doc="`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_enter(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87340usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(other))}
+}
+#[doc="`CallTriggerEnter(crate::unity_engine::collider::Collider)` overload"]fn call_trigger_enter(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87420usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(other))}
+}
+#[doc="`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_exit(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87640usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(other))}
+}
+#[doc="`CallTriggerExit(crate::unity_engine::collider::Collider)` overload"]fn call_trigger_exit(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87720usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(other))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87940usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver)}
+}
+#[doc="`Polling()` overload"]fn polling(self,)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87950usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver)}
+}
+#[doc="`DisableCulling()` overload"]fn disable_culling(self,)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87a10usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver)}
+}
+#[doc="`EnableCulling()` overload"]fn enable_culling(self,)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87a30usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver)}
+}
+#[doc="`ClearCulling()` overload"]fn clear_culling(self,)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87a50usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubCullingPlayerCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87a70usize)as*mut u8,();
+(HubCullingPlayerCollider)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubcullingplayercollider")]
-impl < __T : IHubCullingPlayerCollider > IHubCullingPlayerColliderMethods for __T { }
+#[cfg(feature="app-hubcullingplayercollider")]impl<__T:IHubCullingPlayerCollider>IHubCullingPlayerColliderMethods for __T{}
 
-#[cfg(feature = "app-hubcullingplayercollider")]
-impl HubCullingPlayerCollider { pub fn get_manual_culling_manager_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_manual_culling_manager_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn call_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_trigger_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn call_trigger_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn polling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn disable_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn enable_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn clear_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCullingPlayerCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-hubcullingplayercollider")]impl HubCullingPlayerCollider{pub fn get_manual_culling_manager_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_manual_culling_manager_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_trigger_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn call_trigger_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_trigger_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn call_trigger_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn polling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn disable_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn enable_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn clear_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-hubcullingplayercollider")]
-impl HubCullingPlayerCollider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubCullingPlayerCollider) , :: core :: stringify ! (new) ,)) ; < Self as IHubCullingPlayerColliderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubcullingplayercollider")]impl HubCullingPlayerCollider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubCullingPlayerCollider), ::core::stringify!(new),));
+ <Self as IHubCullingPlayerColliderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubcullingplayercollider")]

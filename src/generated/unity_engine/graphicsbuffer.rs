@@ -4,14 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/graphicsbuffer/GraphicsBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GraphicsBuffer")] # [parent (crate :: system :: object :: Object)] pub struct GraphicsBuffer {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/graphicsbuffer/GraphicsBuffer.md"))]#[::unity2::class(namespace="UnityEngine",name="GraphicsBuffer")]#[parent(crate::system::object::Object)]pub struct GraphicsBuffer{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 

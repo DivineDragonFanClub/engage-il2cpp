@@ -4,74 +4,174 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmanualcullingmanager/HubManualCullingManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubManualCullingManager")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubManualCullingManager {
-# [offset (24)] # [rename (name = "m_CullGroups")] pub m_cull_groups : :: unity2 :: Array < crate :: app :: hubmanualcullingmanager :: HubManualCullingManager_CullingGroup > ,
-# [offset (48)] # [rename (name = "m_ManualCullingStack")] pub m_manual_culling_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: hubmanualculling :: HubManualCulling > ,
-# [offset (56)] # [rename (name = "m_Enable")] pub m_enable : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmanualcullingmanager/HubManualCullingManager_CullingGroup.md"))]#[::unity2::class(namespace="App",name="HubManualCullingManager.CullingGroup")]#[parent(crate::system::object::Object)]pub struct HubManualCullingManager_CullingGroup{#[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_CullTargets")]pub m_cull_targets: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_Renderers")]pub m_renderers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmanualcullingmanager/HubManualCullingManager_CullingGroup.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubManualCullingManager.CullingGroup")] # [parent (crate :: system :: object :: Object)] pub struct HubManualCullingManager_CullingGroup {
-# [offset (16)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_CullTargets")] pub m_cull_targets : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (32)] # [rename (name = "m_Renderers")] pub m_renderers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: renderer :: Renderer > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmanualcullingmanager/HubManualCullingManager.md"))]#[::unity2::class(namespace="App",name="HubManualCullingManager")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubManualCullingManager{#[offset(24)]#[rename(name="m_CullGroups")]pub m_cull_groups: ::unity2::Array<crate::app::hubmanualcullingmanager::HubManualCullingManager_CullingGroup> , #[offset(48)]#[rename(name="m_ManualCullingStack")]pub m_manual_culling_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::hubmanualculling::HubManualCulling> , #[offset(56)]#[rename(name="m_Enable")]pub m_enable:bool,}
 
 }
 
 #[cfg(feature = "app-hubmanualcullingmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmanualcullingmanager")]
-pub trait IHubManualCullingManagerMethods : IHubManualCullingManager { # [doc = "`get_StayCullings()` overload"] fn get_stay_cullings (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubmanualculling :: HubManualCulling > { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubmanualculling :: HubManualCulling > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_StayCullings(crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>)` overload"] fn set_stay_cullings (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubmanualculling :: HubManualCulling > >) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubmanualculling :: HubManualCulling > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ActiveManualCulling()` overload"] fn get_active_manual_culling (self ,) -> crate :: app :: hubmanualculling :: HubManualCulling { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmanualculling :: HubManualCulling = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ActiveManualCulling(crate::app::hubmanualculling::HubManualCulling)` overload"] fn set_active_manual_culling (self , value : impl :: core :: convert :: Into < crate :: app :: hubmanualculling :: HubManualCulling >) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , crate :: app :: hubmanualculling :: HubManualCulling , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0f80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b0f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Enter(crate::app::hubmanualculling::HubManualCulling)` overload"] fn enter (self , cull : impl :: core :: convert :: Into < crate :: app :: hubmanualculling :: HubManualCulling >) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , crate :: app :: hubmanualculling :: HubManualCulling , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cull) , :: core :: option :: Option :: None) } } } # [doc = "`Leave(crate::app::hubmanualculling::HubManualCulling)` overload"] fn leave (self , cull : impl :: core :: convert :: Into < crate :: app :: hubmanualculling :: HubManualCulling >) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , crate :: app :: hubmanualculling :: HubManualCulling , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b11e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cull) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b12d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVisibility()` overload"] fn update_visibility (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVisibility(crate::app::hubmanualculling::HubManualCulling)` overload"] fn update_visibility_2 (self , next_manual_culling : impl :: core :: convert :: Into < crate :: app :: hubmanualculling :: HubManualCulling >) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , crate :: app :: hubmanualculling :: HubManualCulling , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (next_manual_culling) , :: core :: option :: Option :: None) } } } # [doc = "`EnableCulling()` overload"] fn enable_culling (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableCulling()` overload"] fn disable_culling (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Push(::unity2::Il2CppString)` overload"] fn push (self , culling_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (culling_name) , :: core :: option :: Option :: None) } } } # [doc = "`Push(crate::unity_engine::gameobject::GameObject)` overload"] fn push_2 (self , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b16e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (game_object) , :: core :: option :: Option :: None) } } } # [doc = "`Push(crate::app::hubmanualculling::HubManualCulling)` overload"] fn push_3 (self , culling : impl :: core :: convert :: Into < crate :: app :: hubmanualculling :: HubManualCulling >) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , crate :: app :: hubmanualculling :: HubManualCulling , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (culling) , :: core :: option :: Option :: None) } } } # [doc = "`Pop()` overload"] fn pop (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b17f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmanualcullingmanager")]
-impl < __T : IHubManualCullingManager > IHubManualCullingManagerMethods for __T { }
-
-#[cfg(feature = "app-hubmanualcullingmanager")]
-impl HubManualCullingManager { pub fn get_stay_cullings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_stay_cullings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_active_manual_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_active_manual_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn leave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_visibility_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_visibility_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn enable_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn disable_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn push_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn push_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn push_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn pop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
-
-#[cfg(feature = "app-hubmanualcullingmanager")]
-impl HubManualCullingManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubManualCullingManager) , :: core :: stringify ! (new) ,)) ; < Self as IHubManualCullingManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmanualcullingmanager")]pub trait IHubManualCullingManager_CullingGroupMethods:IHubManualCullingManager_CullingGroup{#[doc="`get_IsCulling()` overload"]fn get_is_culling(self,)->bool{unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7050usize)as*mut u8,bool;
+(HubManualCullingManager_CullingGroup)__receiver)}
+}
+#[doc="`set_IsCulling(bool)` overload"]fn set_is_culling(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7060usize)as*mut u8,();
+(HubManualCullingManager_CullingGroup)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`ChangeCullingState(bool, bool)` overload"]fn change_culling_state(self,is_next_culling:impl::core::convert::Into<bool> ,force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7070usize)as*mut u8,();
+(HubManualCullingManager_CullingGroup)__receiver,(bool)::core::convert::Into::into(is_next_culling),(bool)::core::convert::Into::into(force))}
+}
+#[doc="`CollectRenderers()` overload"]fn collect_renderers(self,)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce71b0usize)as*mut u8,();
+(HubManualCullingManager_CullingGroup)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7380usize)as*mut u8,();
+(HubManualCullingManager_CullingGroup)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubmanualcullingmanager")]
-pub trait IHubManualCullingManager_CullingGroupMethods : IHubManualCullingManager_CullingGroup { # [doc = "`get_IsCulling()` overload"] fn get_is_culling (self ,) -> bool { unsafe { let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager_CullingGroup , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsCulling(bool)` overload"] fn set_is_culling (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager_CullingGroup , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeCullingState(bool, bool)` overload"] fn change_culling_state (self , is_next_culling : impl :: core :: convert :: Into < bool > , force : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager_CullingGroup , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_next_culling) , :: core :: convert :: Into :: into (force) , :: core :: option :: Option :: None) } } } # [doc = "`CollectRenderers()` overload"] fn collect_renderers (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager_CullingGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce71b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubManualCullingManager_CullingGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmanualcullingmanager")]impl<__T:IHubManualCullingManager_CullingGroup>IHubManualCullingManager_CullingGroupMethods for __T{}
 
-#[cfg(feature = "app-hubmanualcullingmanager")]
-impl < __T : IHubManualCullingManager_CullingGroup > IHubManualCullingManager_CullingGroupMethods for __T { }
+#[cfg(feature="app-hubmanualcullingmanager")]impl HubManualCullingManager_CullingGroup{pub fn get_is_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn change_culling_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn collect_renderers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-hubmanualcullingmanager")]
-impl HubManualCullingManager_CullingGroup { pub fn get_is_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager_CullingGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager_CullingGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn change_culling_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager_CullingGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn collect_renderers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager_CullingGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubManualCullingManager_CullingGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-hubmanualcullingmanager")]impl HubManualCullingManager_CullingGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubManualCullingManager_CullingGroup), ::core::stringify!(new),));
+ <Self as IHubManualCullingManager_CullingGroupMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-hubmanualcullingmanager")]
-impl HubManualCullingManager_CullingGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubManualCullingManager_CullingGroup) , :: core :: stringify ! (new) ,)) ; < Self as IHubManualCullingManager_CullingGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmanualcullingmanager")]pub trait IHubManualCullingManagerMethods:IHubManualCullingManager{#[doc="`get_StayCullings()` overload"]fn get_stay_cullings(self,)->crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>{unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0f50usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling> ;
+(HubManualCullingManager)__receiver)}
+}
+#[doc="`set_StayCullings(crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>)` overload"]fn set_stay_cullings(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling> >)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0f60usize)as*mut u8,();
+(HubManualCullingManager)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>)::core::convert::Into::into(value))}
+}
+#[doc="`get_ActiveManualCulling()` overload"]fn get_active_manual_culling(self,)->crate::app::hubmanualculling::HubManualCulling{unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0f70usize)as*mut u8,crate::app::hubmanualculling::HubManualCulling;
+(HubManualCullingManager)__receiver)}
+}
+#[doc="`set_ActiveManualCulling(crate::app::hubmanualculling::HubManualCulling)` overload"]fn set_active_manual_culling(self,value:impl::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0f80usize)as*mut u8,();
+(HubManualCullingManager)__receiver,(crate::app::hubmanualculling::HubManualCulling)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0f90usize)as*mut u8,();
+(HubManualCullingManager)__receiver)}
+}
+#[doc="`Enter(crate::app::hubmanualculling::HubManualCulling)` overload"]fn enter(self,cull:impl::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1000usize)as*mut u8,();
+(HubManualCullingManager)__receiver,(crate::app::hubmanualculling::HubManualCulling)::core::convert::Into::into(cull))}
+}
+#[doc="`Leave(crate::app::hubmanualculling::HubManualCulling)` overload"]fn leave(self,cull:impl::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b11e0usize)as*mut u8,();
+(HubManualCullingManager)__receiver,(crate::app::hubmanualculling::HubManualCulling)::core::convert::Into::into(cull))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b12d0usize)as*mut u8,();
+(HubManualCullingManager)__receiver)}
+}
+#[doc="`UpdateVisibility()` overload"]fn update_visibility(self,)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1110usize)as*mut u8,();
+(HubManualCullingManager)__receiver)}
+}
+#[doc="`UpdateVisibility(crate::app::hubmanualculling::HubManualCulling)` overload"]fn update_visibility_2(self,next_manual_culling:impl::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1330usize)as*mut u8,();
+(HubManualCullingManager)__receiver,(crate::app::hubmanualculling::HubManualCulling)::core::convert::Into::into(next_manual_culling))}
+}
+#[doc="`EnableCulling()` overload"]fn enable_culling(self,)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1530usize)as*mut u8,();
+(HubManualCullingManager)__receiver)}
+}
+#[doc="`DisableCulling()` overload"]fn disable_culling(self,)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1540usize)as*mut u8,();
+(HubManualCullingManager)__receiver)}
+}
+#[doc="`Push(::unity2::Il2CppString)` overload"]fn push(self,culling_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1550usize)as*mut u8,();
+(HubManualCullingManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(culling_name))}
+}
+#[doc="`Push(crate::unity_engine::gameobject::GameObject)` overload"]fn push_2(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b16e0usize)as*mut u8,();
+(HubManualCullingManager)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+#[doc="`Push(crate::app::hubmanualculling::HubManualCulling)` overload"]fn push_3(self,culling:impl::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1780usize)as*mut u8,();
+(HubManualCullingManager)__receiver,(crate::app::hubmanualculling::HubManualCulling)::core::convert::Into::into(culling))}
+}
+#[doc="`Pop()` overload"]fn pop(self,)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b17f0usize)as*mut u8,();
+(HubManualCullingManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1870usize)as*mut u8,();
+(HubManualCullingManager)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmanualcullingmanager")]impl<__T:IHubManualCullingManager>IHubManualCullingManagerMethods for __T{}
+
+#[cfg(feature="app-hubmanualcullingmanager")]impl HubManualCullingManager{pub fn get_stay_cullings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_stay_cullings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_active_manual_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_active_manual_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn leave_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_visibility_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_visibility_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn enable_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn disable_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn push_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn push_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-hubmanualcullingmanager")]impl HubManualCullingManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubManualCullingManager), ::core::stringify!(new),));
+ <Self as IHubManualCullingManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmanualcullingmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubManualCullingManager;
-    pub use super::IHubManualCullingManager;
-    pub use super::IHubManualCullingManagerMethods;
     pub use super::HubManualCullingManager_CullingGroup;
     pub use super::IHubManualCullingManager_CullingGroup;
     pub use super::IHubManualCullingManager_CullingGroupMethods;
+    pub use super::HubManualCullingManager;
+    pub use super::IHubManualCullingManager;
+    pub use super::IHubManualCullingManagerMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

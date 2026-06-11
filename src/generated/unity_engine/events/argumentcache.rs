@@ -4,37 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/argumentcache/ArgumentCache.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Events" , name = "ArgumentCache")] # [parent (crate :: system :: object :: Object)] pub struct ArgumentCache {
-# [offset (16)] # [rename (name = "m_ObjectArgument")] pub m_object_argument : crate :: unity_engine :: object_2 :: Object_2 ,
-# [offset (24)] # [rename (name = "m_ObjectArgumentAssemblyTypeName")] pub m_object_argument_assembly_type_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_IntArgument")] pub m_int_argument : i32 ,
-# [offset (36)] # [rename (name = "m_FloatArgument")] pub m_float_argument : f32 ,
-# [offset (40)] # [rename (name = "m_StringArgument")] pub m_string_argument : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_BoolArgument")] pub m_bool_argument : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/events/argumentcache/ArgumentCache.md"))]#[::unity2::class(namespace="UnityEngine.Events",name="ArgumentCache")]#[parent(crate::system::object::Object)]pub struct ArgumentCache{#[offset(16)]#[rename(name="m_ObjectArgument")]pub m_object_argument:crate::unity_engine::object_2::Object_2, #[offset(24)]#[rename(name="m_ObjectArgumentAssemblyTypeName")]pub m_object_argument_assembly_type_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_IntArgument")]pub m_int_argument:i32, #[offset(36)]#[rename(name="m_FloatArgument")]pub m_float_argument:f32, #[offset(40)]#[rename(name="m_StringArgument")]pub m_string_argument: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_BoolArgument")]pub m_bool_argument:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-events-argumentcache-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-events-argumentcache")]
-pub trait IArgumentCacheMethods : IArgumentCache { # [doc = "`get_unityObjectArgument()` overload"] fn get_unity_object_argument (self ,) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c362c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_unityObjectArgumentAssemblyTypeName()` overload"] fn get_unity_object_argument_assembly_type_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c362d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_intArgument()` overload"] fn get_int_argument (self ,) -> i32 { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c362e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_floatArgument()` overload"] fn get_float_argument (self ,) -> f32 { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c362f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_stringArgument()` overload"] fn get_string_argument (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_boolArgument()` overload"] fn get_bool_argument (self ,) -> bool { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBeforeSerialize()` overload"] fn on_before_serialize (self ,) -> () { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnAfterDeserialize()` overload"] fn on_after_deserialize (self ,) -> () { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ArgumentCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArgumentCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c363a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-events-argumentcache")]pub trait IArgumentCacheMethods:IArgumentCache{#[doc="`get_unityObjectArgument()` overload"]fn get_unity_object_argument(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c362c0usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(ArgumentCache)__receiver)}
+}
+#[doc="`get_unityObjectArgumentAssemblyTypeName()` overload"]fn get_unity_object_argument_assembly_type_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c362d0usize)as*mut u8, ::unity2::Il2CppString;
+(ArgumentCache)__receiver)}
+}
+#[doc="`get_intArgument()` overload"]fn get_int_argument(self,)->i32{unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c362e0usize)as*mut u8,i32;
+(ArgumentCache)__receiver)}
+}
+#[doc="`get_floatArgument()` overload"]fn get_float_argument(self,)->f32{unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c362f0usize)as*mut u8,f32;
+(ArgumentCache)__receiver)}
+}
+#[doc="`get_stringArgument()` overload"]fn get_string_argument(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36300usize)as*mut u8, ::unity2::Il2CppString;
+(ArgumentCache)__receiver)}
+}
+#[doc="`get_boolArgument()` overload"]fn get_bool_argument(self,)->bool{unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36310usize)as*mut u8,bool;
+(ArgumentCache)__receiver)}
+}
+#[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36320usize)as*mut u8,();
+(ArgumentCache)__receiver)}
+}
+#[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36360usize)as*mut u8,();
+(ArgumentCache)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArgumentCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c363a0usize)as*mut u8,();
+(ArgumentCache)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-events-argumentcache")]
-impl < __T : IArgumentCache > IArgumentCacheMethods for __T { }
+#[cfg(feature="unity_engine-events-argumentcache")]impl<__T:IArgumentCache>IArgumentCacheMethods for __T{}
 
-#[cfg(feature = "unity_engine-events-argumentcache")]
-impl ArgumentCache { pub fn get_unity_object_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_unity_object_argument_assembly_type_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_int_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_float_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_string_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_bool_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_before_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_after_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArgumentCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-events-argumentcache")]impl ArgumentCache{pub fn get_unity_object_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unity_object_argument_assembly_type_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_int_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_float_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_string_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_bool_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_before_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "unity_engine-events-argumentcache")]
-impl ArgumentCache {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArgumentCache) , :: core :: stringify ! (new) ,)) ; < Self as IArgumentCacheMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-events-argumentcache")]impl ArgumentCache{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArgumentCache), ::core::stringify!(new),));
+ <Self as IArgumentCacheMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-events-argumentcache")]

@@ -4,49 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/instancecache/InstanceCache.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "InstanceCache")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct InstanceCache {
-# [static_field] # [rename (name = "s_this")] pub s_this : crate :: combat :: instancecache :: InstanceCache ,
-# [static_field] # [rename (name = "FreeTreeName")] pub free_tree_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "UsedTreeName")] pub used_tree_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "usedDic")] pub used_dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (32)] # [rename (name = "freeDic")] pub free_dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: gameobject :: GameObject , crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: unity_engine :: gameobject :: GameObject > > ,
-# [offset (40)] # [rename (name = "usedNode")] pub used_node : crate :: unity_engine :: transform :: Transform ,
-# [offset (48)] # [rename (name = "freeNode")] pub free_node : crate :: unity_engine :: transform :: Transform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/instancecache/InstanceCache.md"))]#[::unity2::class(namespace="Combat",name="InstanceCache")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InstanceCache{#[static_field]#[rename(name="s_this")]pub s_this:crate::combat::instancecache::InstanceCache, #[static_field]#[rename(name="FreeTreeName")]pub free_tree_name: ::unity2::Il2CppString, #[static_field]#[rename(name="UsedTreeName")]pub used_tree_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="usedDic")]pub used_dic:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::gameobject::GameObject,crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="freeDic")]pub free_dic:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::gameobject::GameObject,crate::system::collections::generic::stack_1::Stack_1<crate::unity_engine::gameobject::GameObject> > , #[offset(40)]#[rename(name="usedNode")]pub used_node:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="freeNode")]pub free_node:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "combat-instancecache-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-instancecache")]
-impl InstanceCache { # [doc = "`get_Instance()` overload"] pub fn get_instance () -> crate :: combat :: instancecache :: InstanceCache { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: instancecache :: InstanceCache = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2916930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-instancecache")]impl InstanceCache{#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::combat::instancecache::InstanceCache{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2916930usize)as*mut u8,crate::combat::instancecache::InstanceCache;
+)}
+}
+}
 
-#[cfg(feature = "combat-instancecache")]
-pub trait IInstanceCacheMethods : IInstanceCache { # [doc = "`get_UsedEffectRoot()` overload"] fn get_used_effect_root (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < InstanceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceCache , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2916980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < InstanceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2916990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < InstanceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2916c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < InstanceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2916e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"] fn create (self , prefab : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < InstanceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceCache , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (prefab) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(crate::unity_engine::gameobject::GameObject)` overload"] fn delete (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < InstanceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceCache , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`ReplayAwakeSound(crate::unity_engine::gameobject::GameObject)` overload"] fn replay_awake_sound (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < InstanceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceCache , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InstanceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-instancecache")]pub trait IInstanceCacheMethods:IInstanceCache{#[doc="`get_UsedEffectRoot()` overload"]fn get_used_effect_root(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <InstanceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2916980usize)as*mut u8,crate::unity_engine::transform::Transform;
+(InstanceCache)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <InstanceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2916990usize)as*mut u8,();
+(InstanceCache)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <InstanceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2916c70usize)as*mut u8,();
+(InstanceCache)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <InstanceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2916e70usize)as*mut u8,();
+(InstanceCache)__receiver)}
+}
+#[doc="`Create(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"]fn create(self,prefab:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <InstanceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917350usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(InstanceCache)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(prefab),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent))}
+}
+#[doc="`Delete(crate::unity_engine::gameobject::GameObject)` overload"]fn delete(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <InstanceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917720usize)as*mut u8,();
+(InstanceCache)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`ReplayAwakeSound(crate::unity_engine::gameobject::GameObject)` overload"]fn replay_awake_sound(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <InstanceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917650usize)as*mut u8,();
+(InstanceCache)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InstanceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917880usize)as*mut u8,();
+(InstanceCache)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-instancecache")]
-impl < __T : IInstanceCache > IInstanceCacheMethods for __T { }
+#[cfg(feature="combat-instancecache")]impl<__T:IInstanceCache>IInstanceCacheMethods for __T{}
 
-#[cfg(feature = "combat-instancecache")]
-impl InstanceCache { pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_used_effect_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn replay_awake_sound_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="combat-instancecache")]impl InstanceCache{pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_used_effect_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn replay_awake_sound_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "combat-instancecache")]
-impl InstanceCache {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InstanceCache) , :: core :: stringify ! (new) ,)) ; < Self as IInstanceCacheMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-instancecache")]impl InstanceCache{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InstanceCache), ::core::stringify!(new),));
+ <Self as IInstanceCacheMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-instancecache")]

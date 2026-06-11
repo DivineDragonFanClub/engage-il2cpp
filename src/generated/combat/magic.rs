@@ -4,56 +4,114 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: launchbehaviour :: { ILaunchBehaviour , LaunchBehaviour }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::launchbehaviour::{ILaunchBehaviour,LaunchBehaviour}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magic/Magic.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Magic")] # [parent (crate :: combat :: launchbehaviour :: LaunchBehaviour)] pub struct Magic {
-# [offset (56)] # [rename (name = "BulletSettings")] pub bullet_settings : crate :: combat :: magicbulletsettings :: MagicBulletSettings ,
-# [offset (64)] # [rename (name = "m_SignalProcessor")] pub m_signal_processor : crate :: combat :: magicsignalprocessor :: MagicSignalProcessor ,
-# [offset (96)] # [rename (name = "Track開始時処理")] pub track開始時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (104)] # [rename (name = "Track魔法動作1処理")] pub track魔法動作1処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (112)] # [rename (name = "Track魔法動作2処理")] pub track魔法動作2処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (120)] # [rename (name = "Track魔法動作3処理")] pub track魔法動作3処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (128)] # [rename (name = "Trackヒット時処理")] pub trackヒット時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (136)] # [rename (name = "Trackミス時処理")] pub trackミス時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (144)] # [rename (name = "Trackガード時処理")] pub trackガード時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (152)] # [rename (name = "Trackパリィ時処理")] pub trackパリィ時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (160)] # [rename (name = "Track衝突時処理")] pub track衝突時処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (168)] # [rename (name = "Track自然消滅処理")] pub track自然消滅処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (176)] # [rename (name = "Track打撃命中処理")] pub track打撃命中処理 : crate :: combat :: magicsignaltrack :: MagicSignalTrack ,
-# [offset (184)] # [rename (name = "_homeNode")] pub home_node : crate :: unity_engine :: transform :: Transform ,
-# [offset (192)] # [rename (name = "_targetNode")] pub target_node : crate :: unity_engine :: transform :: Transform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/magic/Magic.md"))]#[::unity2::class(namespace="Combat",name="Magic")]#[parent(crate::combat::launchbehaviour::LaunchBehaviour)]pub struct Magic{#[offset(56)]#[rename(name="BulletSettings")]pub bullet_settings:crate::combat::magicbulletsettings::MagicBulletSettings, #[offset(64)]#[rename(name="m_SignalProcessor")]pub m_signal_processor:crate::combat::magicsignalprocessor::MagicSignalProcessor, #[offset(96)]#[rename(name="Track開始時処理")]pub track開始時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(104)]#[rename(name="Track魔法動作1処理")]pub track魔法動作1処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(112)]#[rename(name="Track魔法動作2処理")]pub track魔法動作2処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(120)]#[rename(name="Track魔法動作3処理")]pub track魔法動作3処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(128)]#[rename(name="Trackヒット時処理")]pub trackヒット時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(136)]#[rename(name="Trackミス時処理")]pub trackミス時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(144)]#[rename(name="Trackガード時処理")]pub trackガード時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(152)]#[rename(name="Trackパリィ時処理")]pub trackパリィ時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(160)]#[rename(name="Track衝突時処理")]pub track衝突時処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(168)]#[rename(name="Track自然消滅処理")]pub track自然消滅処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(176)]#[rename(name="Track打撃命中処理")]pub track打撃命中処理:crate::combat::magicsignaltrack::MagicSignalTrack, #[offset(184)]#[rename(name="_homeNode")]pub home_node:crate::unity_engine::transform::Transform, #[offset(192)]#[rename(name="_targetNode")]pub target_node:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "combat-magic-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-magic")]
-pub trait IMagicMethods : IMagic { # [doc = "`get_InitialStartPos()` overload"] fn get_initial_start_pos (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf17d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InitialStartPos(crate::unity_engine::vector3::Vector3)` overload"] fn set_initial_start_pos (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf17e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_InitialEndPos()` overload"] fn get_initial_end_pos (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf17f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InitialEndPos(crate::unity_engine::vector3::Vector3)` overload"] fn set_initial_end_pos (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Track(i32)` overload"] fn track (self , i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: magicsignaltrack :: MagicSignalTrack = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`get_HomeNode()` overload"] fn get_home_node (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf18c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TargetNode()` overload"] fn get_target_node (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TargetPosition()` overload"] fn get_target_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RecalcFlyingTime()` overload"] fn recalc_flying_time (self ,) -> () { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCharacterSetup(crate::combat::character::Character)` overload"] fn on_character_setup (self , owner : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnterAttack()` overload"] fn on_enter_attack (self ,) -> () { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnHitTimePredicted(f32)` overload"] fn on_hit_time_predicted (self , world_hit_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (world_hit_time) , :: core :: option :: Option :: None) } } } # [doc = "`OnHitMagicSwordHit()` overload"] fn on_hit_magic_sword_hit (self ,) -> () { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf25b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetIceRockSkippedPrefab仕方なく()` overload"] fn get_ice_rock_skipped_prefab仕方なく (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf2600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Magic as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf2810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-magic")]pub trait IMagicMethods:IMagic{#[doc="`get_InitialStartPos()` overload"]fn get_initial_start_pos(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf17d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Magic)__receiver)}
+}
+#[doc="`set_InitialStartPos(crate::unity_engine::vector3::Vector3)` overload"]fn set_initial_start_pos(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf17e0usize)as*mut u8,();
+(Magic)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_InitialEndPos()` overload"]fn get_initial_end_pos(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf17f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Magic)__receiver)}
+}
+#[doc="`set_InitialEndPos(crate::unity_engine::vector3::Vector3)` overload"]fn set_initial_end_pos(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1800usize)as*mut u8,();
+(Magic)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`Track(i32)` overload"]fn track(self,i:impl::core::convert::Into<i32>)->crate::combat::magicsignaltrack::MagicSignalTrack{unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1810usize)as*mut u8,crate::combat::magicsignaltrack::MagicSignalTrack;
+(Magic)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`get_HomeNode()` overload"]fn get_home_node(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf18c0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Magic)__receiver)}
+}
+#[doc="`get_TargetNode()` overload"]fn get_target_node(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1980usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Magic)__receiver)}
+}
+#[doc="`get_TargetPosition()` overload"]fn get_target_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1a40usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Magic)__receiver)}
+}
+#[doc="`RecalcFlyingTime()` overload"]fn recalc_flying_time(self,)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1b90usize)as*mut u8,();
+(Magic)__receiver)}
+}
+#[doc="`OnCharacterSetup(crate::combat::character::Character)` overload"]fn on_character_setup(self,owner:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1d90usize)as*mut u8,();
+(Magic)__receiver,(crate::combat::character::Character)::core::convert::Into::into(owner))}
+}
+#[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1da0usize)as*mut u8,();
+(Magic)__receiver)}
+}
+#[doc="`OnHitTimePredicted(f32)` overload"]fn on_hit_time_predicted(self,world_hit_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1f50usize)as*mut u8,();
+(Magic)__receiver,(f32)::core::convert::Into::into(world_hit_time))}
+}
+#[doc="`OnHitMagicSwordHit()` overload"]fn on_hit_magic_sword_hit(self,)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf25b0usize)as*mut u8,();
+(Magic)__receiver)}
+}
+#[doc="`GetIceRockSkippedPrefab仕方なく()` overload"]fn get_ice_rock_skipped_prefab仕方なく(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf2600usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(Magic)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf2810usize)as*mut u8,();
+(Magic)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-magic")]
-impl < __T : IMagic > IMagicMethods for __T { }
+#[cfg(feature="combat-magic")]impl<__T:IMagic>IMagicMethods for __T{}
 
-#[cfg(feature = "combat-magic")]
-impl Magic { pub fn get_initial_start_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_initial_start_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_initial_end_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_initial_end_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_home_node_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_target_node_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_target_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn recalc_flying_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_character_setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_enter_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_hit_time_predicted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_hit_magic_sword_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_ice_rock_skipped_prefab仕方なく_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="combat-magic")]impl Magic{pub fn get_initial_start_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_initial_start_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_initial_end_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_initial_end_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_home_node_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_target_node_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_target_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn recalc_flying_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_character_setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_enter_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_hit_time_predicted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_hit_magic_sword_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_ice_rock_skipped_prefab仕方なく_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "combat-magic")]
-impl Magic {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Magic) , :: core :: stringify ! (new) ,)) ; < Self as IMagicMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-magic")]impl Magic{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Magic), ::core::stringify!(new),));
+ <Self as IMagicMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-magic")]

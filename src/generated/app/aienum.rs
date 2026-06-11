@@ -4,91 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyEnumerator.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIEnum_SkillRangeEnemyEnumerator {
-    pub m_unit: crate :: app :: unit :: Unit,
-    pub m_offsets: crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: rangedata :: RangeData_Offset >,
-    pub m_target_x: i32,
-    pub m_target_z: i32,
-    pub m_index: i32,
-    pub m_current: crate :: app :: aienum :: AIEnum_SkillRangeEnemyData,
-    pub m_enumerated: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aienum/AIEnum.md"))]#[::unity2::class(namespace="App",name="AIEnum")]#[parent(crate::system::object::Object)]pub struct AIEnum{#[static_field]#[rename(name="s_SkillRangeEnemyEnumerator")]pub s_skill_range_enemy_enumerator:crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIEnum_SkillRangeEnemyData{pub unit:crate::app::unit::Unit,pub x:i8,pub z:i8,}
+impl::unity2::ClassIdentity for AIEnum_SkillRangeEnemyData{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIEnum.SkillRangeEnemyData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIEnum_SkillRangeEnemyData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for AIEnum_SkillRangeEnemyEnumerator {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIEnum.SkillRangeEnemyEnumerator";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aienum/AIEnum_SkillRangeEnemyEnumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIEnum_SkillRangeEnemyEnumerator{pub m_unit:crate::app::unit::Unit,pub m_offsets:crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>,pub m_target_x:i32,pub m_target_z:i32,pub m_index:i32,pub m_current:crate::app::aienum::AIEnum_SkillRangeEnemyData,pub m_enumerated:crate::system::collections::generic::list_1::List_1<i32>,}
+impl::unity2::ClassIdentity for AIEnum_SkillRangeEnemyEnumerator{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIEnum.SkillRangeEnemyEnumerator";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for AIEnum_SkillRangeEnemyEnumerator {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIEnum_SkillRangeEnemyData {
-    pub unit: crate :: app :: unit :: Unit,
-    pub x: i8,
-    pub z: i8,
-}
-
-
-impl ::unity2::ClassIdentity for AIEnum_SkillRangeEnemyData {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIEnum.SkillRangeEnemyData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AIEnum_SkillRangeEnemyData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIEnum")] # [parent (crate :: system :: object :: Object)] pub struct AIEnum {
-# [static_field] # [rename (name = "s_SkillRangeEnemyEnumerator")] pub s_skill_range_enemy_enumerator : crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator ,
+impl::unity2::IlType for AIEnum_SkillRangeEnemyEnumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -96,25 +40,57 @@ impl ::unity2::IlType for AIEnum_SkillRangeEnemyData {
 #[cfg(feature = "app-aienum-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-aienum")]
-impl AIEnum_SkillRangeEnemyEnumerator { # [doc = "`Setup(crate::app::unit::Unit, crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"] pub fn setup (& mut self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , target_x : impl :: core :: convert :: Into < i32 > , target_z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator { unsafe { { let __inner : extern "C" fn (* mut AIEnum_SkillRangeEnemyEnumerator , crate :: app :: unit :: Unit , crate :: app :: skilldata :: SkillData , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943b20usize) as * mut u8) ; __inner (self as * mut AIEnum_SkillRangeEnemyEnumerator , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (target_x) , :: core :: convert :: Into :: into (target_z) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut AIEnum_SkillRangeEnemyEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943e60usize) as * mut u8) ; __inner (self as * mut AIEnum_SkillRangeEnemyEnumerator , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] pub fn get_current (& mut self ,) -> crate :: app :: aienum :: AIEnum_SkillRangeEnemyData { unsafe { { let __inner : extern "C" fn (* mut AIEnum_SkillRangeEnemyEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: aienum :: AIEnum_SkillRangeEnemyData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943e70usize) as * mut u8) ; __inner (self as * mut AIEnum_SkillRangeEnemyEnumerator , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] pub fn system_collections_i_enumerator_get_current (& mut self ,) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (* mut AIEnum_SkillRangeEnemyEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943e80usize) as * mut u8) ; __inner (self as * mut AIEnum_SkillRangeEnemyEnumerator , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] pub fn move_next (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut AIEnum_SkillRangeEnemyEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943ef0usize) as * mut u8) ; __inner (self as * mut AIEnum_SkillRangeEnemyEnumerator , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] pub fn reset (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut AIEnum_SkillRangeEnemyEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2944240usize) as * mut u8) ; __inner (self as * mut AIEnum_SkillRangeEnemyEnumerator , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] pub fn system_collections_i_enumerable_get_enumerator (& mut self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { { let __inner : extern "C" fn (* mut AIEnum_SkillRangeEnemyEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2944340usize) as * mut u8) ; __inner (self as * mut AIEnum_SkillRangeEnemyEnumerator , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (& mut self ,) -> crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator { unsafe { { let __inner : extern "C" fn (* mut AIEnum_SkillRangeEnemyEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29443c0usize) as * mut u8) ; __inner (self as * mut AIEnum_SkillRangeEnemyEnumerator , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aienum")]impl AIEnum{#[doc="`GetSkillRangeEnemy(crate::app::unit::Unit, crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"]pub fn get_skill_range_enemy(unit:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32>)->crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x192ff40usize)as*mut u8,crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z))}
+}
+}
 
-#[cfg(feature = "app-aienum")]
-impl AIEnum_SkillRangeEnemyEnumerator { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum_SkillRangeEnemyEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum_SkillRangeEnemyEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum_SkillRangeEnemyEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn system_collections_i_enumerator_get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum_SkillRangeEnemyEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum_SkillRangeEnemyEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum_SkillRangeEnemyEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum_SkillRangeEnemyEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum_SkillRangeEnemyEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-aienum")]impl AIEnum{pub fn get_skill_range_enemy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-aienum")]
-impl AIEnum { # [doc = "`GetSkillRangeEnemy(crate::app::unit::Unit, crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"] pub fn get_skill_range_enemy (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , target_x : impl :: core :: convert :: Into < i32 > , target_z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: skilldata :: SkillData , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192ff40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (target_x) , :: core :: convert :: Into :: into (target_z) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aienum")]impl AIEnum_SkillRangeEnemyEnumerator{#[doc="`Setup(crate::app::unit::Unit, crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"]pub fn setup(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32>)->crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2943b20usize)as*mut u8,crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator;
+(*mut AIEnum_SkillRangeEnemyEnumerator)self as*mut AIEnum_SkillRangeEnemyEnumerator,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2943e60usize)as*mut u8,();
+(*mut AIEnum_SkillRangeEnemyEnumerator)self as*mut AIEnum_SkillRangeEnemyEnumerator)}
+}
+#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::aienum::AIEnum_SkillRangeEnemyData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2943e70usize)as*mut u8,crate::app::aienum::AIEnum_SkillRangeEnemyData;
+(*mut AIEnum_SkillRangeEnemyEnumerator)self as*mut AIEnum_SkillRangeEnemyEnumerator)}
+}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2943e80usize)as*mut u8,crate::system::object::Object;
+(*mut AIEnum_SkillRangeEnemyEnumerator)self as*mut AIEnum_SkillRangeEnemyEnumerator)}
+}
+#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2943ef0usize)as*mut u8,bool;
+(*mut AIEnum_SkillRangeEnemyEnumerator)self as*mut AIEnum_SkillRangeEnemyEnumerator)}
+}
+#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944240usize)as*mut u8,();
+(*mut AIEnum_SkillRangeEnemyEnumerator)self as*mut AIEnum_SkillRangeEnemyEnumerator)}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944340usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(*mut AIEnum_SkillRangeEnemyEnumerator)self as*mut AIEnum_SkillRangeEnemyEnumerator)}
+}
+#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29443c0usize)as*mut u8,crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator;
+(*mut AIEnum_SkillRangeEnemyEnumerator)self as*mut AIEnum_SkillRangeEnemyEnumerator)}
+}
+}
 
-#[cfg(feature = "app-aienum")]
-impl AIEnum { pub fn get_skill_range_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIEnum as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-aienum")]impl AIEnum_SkillRangeEnemyEnumerator{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "app-aienum")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AIEnum_SkillRangeEnemyEnumerator;
-    pub use super::AIEnum_SkillRangeEnemyData;
     pub use super::AIEnum;
     pub use super::IAIEnum;
+    pub use super::AIEnum_SkillRangeEnemyData;
+    pub use super::AIEnum_SkillRangeEnemyEnumerator;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -4,34 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkbuilder/TalkBuilder.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkBuilder")] # [parent (crate :: system :: object :: Object)] pub struct TalkBuilder {
-# [static_field] # [rename (name = "BufSize")] pub buf_size : i32 ,
-# [offset (16)] # [rename (name = "m_TalkPtr")] pub m_talk_ptr : crate :: app :: talk3_d :: talkptr :: TalkPtr ,
-# [offset (24)] # [rename (name = "m_IntPtr")] pub m_int_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkbuilder/TalkBuilder.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkBuilder")]#[parent(crate::system::object::Object)]pub struct TalkBuilder{#[static_field]#[rename(name="BufSize")]pub buf_size:i32, #[offset(16)]#[rename(name="m_TalkPtr")]pub m_talk_ptr:crate::app::talk3_d::talkptr::TalkPtr, #[offset(24)]#[rename(name="m_IntPtr")]pub m_int_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "app-talk3_d-talkbuilder-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talkbuilder")]
-pub trait ITalkBuilderMethods : ITalkBuilder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b90e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b91c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddTalkType(crate::app::talk3_d::talk_2::Talk_TalkType, ::unity2::Il2CppString)` overload"] fn add_talk_type (self , r#type : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talk_2 :: Talk_TalkType > , positions_root_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , crate :: app :: talk3_d :: talk_2 :: Talk_TalkType , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b92e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (positions_root_name) , :: core :: option :: Option :: None) } } } # [doc = "`AddKeyWait()` overload"] fn add_key_wait (self ,) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddKeyNextPage()` overload"] fn add_key_next_page (self ,) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddKeyWaitAndNextPage()` overload"] fn add_key_wait_and_next_page (self ,) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b96b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddWindowMake(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn add_window_make (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , location : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (location) , :: core :: option :: Option :: None) } } } # [doc = "`AddWindowDelete(::unity2::Il2CppString)` overload"] fn add_window_delete (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b97c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`AddWindowActive(::unity2::Il2CppString)` overload"] fn add_window_active (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`AddString(::unity2::Il2CppString)` overload"] fn add_string (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b98a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`Terminate()` overload"] fn terminate (self ,) -> () { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b98b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPtr()` overload"] fn get_ptr (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < TalkBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBuilder , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b98c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkbuilder")]pub trait ITalkBuilderMethods:ITalkBuilder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b8f10usize)as*mut u8,();
+(TalkBuilder)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b90e0usize)as*mut u8,();
+(TalkBuilder)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b8f60usize)as*mut u8,();
+(TalkBuilder)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b91c0usize)as*mut u8,();
+(TalkBuilder)__receiver)}
+}
+#[doc="`AddTalkType(crate::app::talk3_d::talk_2::Talk_TalkType, ::unity2::Il2CppString)` overload"]fn add_talk_type(self,r#type:impl::core::convert::Into<crate::app::talk3_d::talk_2::Talk_TalkType> ,positions_root_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b92e0usize)as*mut u8,();
+(TalkBuilder)__receiver,(crate::app::talk3_d::talk_2::Talk_TalkType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(positions_root_name))}
+}
+#[doc="`AddKeyWait()` overload"]fn add_key_wait(self,)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9610usize)as*mut u8,();
+(TalkBuilder)__receiver)}
+}
+#[doc="`AddKeyNextPage()` overload"]fn add_key_next_page(self,)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9660usize)as*mut u8,();
+(TalkBuilder)__receiver)}
+}
+#[doc="`AddKeyWaitAndNextPage()` overload"]fn add_key_wait_and_next_page(self,)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b96b0usize)as*mut u8,();
+(TalkBuilder)__receiver)}
+}
+#[doc="`AddWindowMake(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add_window_make(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,location:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9720usize)as*mut u8,();
+(TalkBuilder)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(location))}
+}
+#[doc="`AddWindowDelete(::unity2::Il2CppString)` overload"]fn add_window_delete(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b97c0usize)as*mut u8,();
+(TalkBuilder)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`AddWindowActive(::unity2::Il2CppString)` overload"]fn add_window_active(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9830usize)as*mut u8,();
+(TalkBuilder)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`AddString(::unity2::Il2CppString)` overload"]fn add_string(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b98a0usize)as*mut u8,();
+(TalkBuilder)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`Terminate()` overload"]fn terminate(self,)->(){unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b98b0usize)as*mut u8,();
+(TalkBuilder)__receiver)}
+}
+#[doc="`GetPtr()` overload"]fn get_ptr(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <TalkBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b98c0usize)as*mut u8, ::unity2::IntPtr;
+(TalkBuilder)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkbuilder")]
-impl < __T : ITalkBuilder > ITalkBuilderMethods for __T { }
+#[cfg(feature="app-talk3_d-talkbuilder")]impl<__T:ITalkBuilder>ITalkBuilderMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talkbuilder")]
-impl TalkBuilder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_talk_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_key_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_key_next_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn add_key_wait_and_next_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_window_make_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_window_delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_window_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn terminate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-talk3_d-talkbuilder")]impl TalkBuilder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_talk_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_key_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_key_next_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_key_wait_and_next_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_window_make_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_window_delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_window_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn terminate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-talk3_d-talkbuilder")]
-impl TalkBuilder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkBuilder) , :: core :: stringify ! (new) ,)) ; < Self as ITalkBuilderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talkbuilder")]impl TalkBuilder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkBuilder), ::core::stringify!(new),));
+ <Self as ITalkBuilderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talkbuilder")]

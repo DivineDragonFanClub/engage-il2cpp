@@ -4,65 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mathf/Mathf.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Mathf {}
-
-
-impl ::unity2::ClassIdentity for Mathf {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Mathf";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/mathf/Mathf.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mathf{}
+impl::unity2::ClassIdentity for Mathf{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Mathf";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for Mathf {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Mathf{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl Mathf {
-    #[inline]
-    pub fn epsilon() -> f32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Epsilon");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_epsilon(value: f32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Epsilon");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl Mathf{#[inline]pub fn epsilon()->f32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Epsilon");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_epsilon(value:f32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Epsilon");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -70,11 +34,221 @@ impl Mathf {
 #[cfg(feature = "unity_engine-mathf-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-mathf")]
-impl Mathf { # [doc = "`NextPowerOfTwo(i32)` overload"] pub fn next_power_of_two (value : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ded20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GammaToLinearSpace(f32)` overload"] pub fn gamma_to_linear_space (value : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ded70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`LinearToGammaSpace(f32)` overload"] pub fn linear_to_gamma_space (value : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dedc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`FloatToHalf(f32)` overload"] pub fn float_to_half (val : impl :: core :: convert :: Into < f32 >) -> u16 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dee10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`PerlinNoise(f32, f32)` overload"] pub fn perlin_noise (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dee60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`Sin(f32)` overload"] pub fn sin (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32deeb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Cos(f32)` overload"] pub fn cos (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32def20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Tan(f32)` overload"] pub fn tan (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32def90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Asin(f32)` overload"] pub fn asin (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Acos(f32)` overload"] pub fn acos (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Atan(f32)` overload"] pub fn atan (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df0e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Atan2(f32, f32)` overload"] pub fn atan2 (y : impl :: core :: convert :: Into < f32 > , x : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`Sqrt(f32)` overload"] pub fn sqrt (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df1d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Abs(f32)` overload"] pub fn abs (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Abs(i32)` overload"] pub fn abs_2 (value : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df2d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Min(f32, f32)` overload"] pub fn min (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Min(::unity2::Array<f32>)` overload"] pub fn min_2 (values : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`Min(i32, i32)` overload"] pub fn min_3 (a : impl :: core :: convert :: Into < i32 > , b : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df3e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Max(f32, f32)` overload"] pub fn max (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df3f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Max(::unity2::Array<f32>)` overload"] pub fn max_2 (values : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`Max(i32, i32)` overload"] pub fn max_3 (a : impl :: core :: convert :: Into < i32 > , b : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df490usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Max(::unity2::Array<i32>)` overload"] pub fn max_4 (values : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df4a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`Pow(f32, f32)` overload"] pub fn pow (f : impl :: core :: convert :: Into < f32 > , p : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } } # [doc = "`Exp(f32)` overload"] pub fn exp (power : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df5b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (power) , :: core :: option :: Option :: None) } } } # [doc = "`Log(f32, f32)` overload"] pub fn log (f : impl :: core :: convert :: Into < f32 > , p : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } } # [doc = "`Log(f32)` overload"] pub fn log_2 (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df6a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Ceil(f32)` overload"] pub fn ceil (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df710usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Floor(f32)` overload"] pub fn floor (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Round(f32)` overload"] pub fn round (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df7f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`CeilToInt(f32)` overload"] pub fn ceil_to_int (f : impl :: core :: convert :: Into < f32 >) -> i32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df8d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`FloorToInt(f32)` overload"] pub fn floor_to_int (f : impl :: core :: convert :: Into < f32 >) -> i32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`RoundToInt(f32)` overload"] pub fn round_to_int (f : impl :: core :: convert :: Into < f32 >) -> i32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32df9f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Sign(f32)` overload"] pub fn sign (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfae0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`Clamp(f32, f32, f32)` overload"] pub fn clamp (value : impl :: core :: convert :: Into < f32 > , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfb00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`Clamp(i32, i32, i32)` overload"] pub fn clamp_2 (value : impl :: core :: convert :: Into < i32 > , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfb20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`Clamp01(f32)` overload"] pub fn clamp01 (value : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfb40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Lerp(f32, f32, f32)` overload"] pub fn lerp (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 > , t : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfb60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`LerpUnclamped(f32, f32, f32)` overload"] pub fn lerp_unclamped (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 > , t : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfb90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`LerpAngle(f32, f32, f32)` overload"] pub fn lerp_angle (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 > , t : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`MoveTowards(f32, f32, f32)` overload"] pub fn move_towards (current : impl :: core :: convert :: Into < f32 > , target : impl :: core :: convert :: Into < f32 > , max_delta : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfc40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (max_delta) , :: core :: option :: Option :: None) } } } # [doc = "`MoveTowardsAngle(f32, f32, f32)` overload"] pub fn move_towards_angle (current : impl :: core :: convert :: Into < f32 > , target : impl :: core :: convert :: Into < f32 > , max_delta : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfc70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (max_delta) , :: core :: option :: Option :: None) } } } # [doc = "`Approximately(f32, f32)` overload"] pub fn approximately (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfd40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`SmoothDamp(f32, f32, *mutf32, f32)` overload"] pub fn smooth_damp (current : impl :: core :: convert :: Into < f32 > , target : impl :: core :: convert :: Into < f32 > , smooth_time : impl :: core :: convert :: Into < f32 >) -> (f32 , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (f32 , f32 , * mut f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfde0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (smooth_time) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`SmoothDamp(f32, f32, *mutf32, f32, f32, f32)` overload"] pub fn smooth_damp_2 (current : impl :: core :: convert :: Into < f32 > , target : impl :: core :: convert :: Into < f32 > , smooth_time : impl :: core :: convert :: Into < f32 > , max_speed : impl :: core :: convert :: Into < f32 > , delta_time : impl :: core :: convert :: Into < f32 >) -> (f32 , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (f32 , f32 , * mut f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dff10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (smooth_time) , :: core :: convert :: Into :: into (max_speed) , :: core :: convert :: Into :: into (delta_time) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`SmoothDampAngle(f32, f32, *mutf32, f32)` overload"] pub fn smooth_damp_angle (current : impl :: core :: convert :: Into < f32 > , target : impl :: core :: convert :: Into < f32 > , smooth_time : impl :: core :: convert :: Into < f32 >) -> (f32 , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (f32 , f32 , * mut f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfff0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (smooth_time) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`SmoothDampAngle(f32, f32, *mutf32, f32, f32, f32)` overload"] pub fn smooth_damp_angle_2 (current : impl :: core :: convert :: Into < f32 > , target : impl :: core :: convert :: Into < f32 > , smooth_time : impl :: core :: convert :: Into < f32 > , max_speed : impl :: core :: convert :: Into < f32 > , delta_time : impl :: core :: convert :: Into < f32 >) -> (f32 , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (f32 , f32 , * mut f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32e0170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (smooth_time) , :: core :: convert :: Into :: into (max_speed) , :: core :: convert :: Into :: into (delta_time) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`Repeat(f32, f32)` overload"] pub fn repeat (t : impl :: core :: convert :: Into < f32 > , length : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfc10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (length) , :: core :: option :: Option :: None) } } } # [doc = "`InverseLerp(f32, f32, f32)` overload"] pub fn inverse_lerp (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 > , value : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32e02a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`DeltaAngle(f32, f32)` overload"] pub fn delta_angle (current : impl :: core :: convert :: Into < f32 > , target : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dfcf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32e02d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-mathf")]impl Mathf{#[doc="`NextPowerOfTwo(i32)` overload"]pub fn next_power_of_two(value:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32ded20usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GammaToLinearSpace(f32)` overload"]pub fn gamma_to_linear_space(value:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32ded70usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`LinearToGammaSpace(f32)` overload"]pub fn linear_to_gamma_space(value:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dedc0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`FloatToHalf(f32)` overload"]pub fn float_to_half(val:impl::core::convert::Into<f32>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dee10usize)as*mut u8,u16;
+(f32)::core::convert::Into::into(val))}
+}
+#[doc="`PerlinNoise(f32, f32)` overload"]pub fn perlin_noise(x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dee60usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`Sin(f32)` overload"]pub fn sin(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32deeb0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Cos(f32)` overload"]pub fn cos(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32def20usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Tan(f32)` overload"]pub fn tan(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32def90usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Asin(f32)` overload"]pub fn asin(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df000usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Acos(f32)` overload"]pub fn acos(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df070usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Atan(f32)` overload"]pub fn atan(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df0e0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Atan2(f32, f32)` overload"]pub fn atan2(y:impl::core::convert::Into<f32> ,x:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df150usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(x))}
+}
+#[doc="`Sqrt(f32)` overload"]pub fn sqrt(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df1d0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Abs(f32)` overload"]pub fn abs(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df260usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Abs(i32)` overload"]pub fn abs_2(value:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df2d0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Min(f32, f32)` overload"]pub fn min(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df340usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`Min(::unity2::Array<f32>)` overload"]pub fn min_2(values:impl::core::convert::Into< ::unity2::Array<f32> >)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df350usize)as*mut u8,f32;
+(::unity2::Array<f32>)::core::convert::Into::into(values))}
+}
+#[doc="`Min(i32, i32)` overload"]pub fn min_3(a:impl::core::convert::Into<i32> ,b:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df3e0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b))}
+}
+#[doc="`Max(f32, f32)` overload"]pub fn max(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df3f0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`Max(::unity2::Array<f32>)` overload"]pub fn max_2(values:impl::core::convert::Into< ::unity2::Array<f32> >)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df400usize)as*mut u8,f32;
+(::unity2::Array<f32>)::core::convert::Into::into(values))}
+}
+#[doc="`Max(i32, i32)` overload"]pub fn max_3(a:impl::core::convert::Into<i32> ,b:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df490usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b))}
+}
+#[doc="`Max(::unity2::Array<i32>)` overload"]pub fn max_4(values:impl::core::convert::Into< ::unity2::Array<i32> >)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df4a0usize)as*mut u8,i32;
+(::unity2::Array<i32>)::core::convert::Into::into(values))}
+}
+#[doc="`Pow(f32, f32)` overload"]pub fn pow(f:impl::core::convert::Into<f32> ,p:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df530usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f),(f32)::core::convert::Into::into(p))}
+}
+#[doc="`Exp(f32)` overload"]pub fn exp(power:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df5b0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(power))}
+}
+#[doc="`Log(f32, f32)` overload"]pub fn log(f:impl::core::convert::Into<f32> ,p:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df620usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f),(f32)::core::convert::Into::into(p))}
+}
+#[doc="`Log(f32)` overload"]pub fn log_2(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df6a0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Ceil(f32)` overload"]pub fn ceil(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df710usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Floor(f32)` overload"]pub fn floor(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df780usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Round(f32)` overload"]pub fn round(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df7f0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`CeilToInt(f32)` overload"]pub fn ceil_to_int(f:impl::core::convert::Into<f32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df8d0usize)as*mut u8,i32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`FloorToInt(f32)` overload"]pub fn floor_to_int(f:impl::core::convert::Into<f32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df960usize)as*mut u8,i32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`RoundToInt(f32)` overload"]pub fn round_to_int(f:impl::core::convert::Into<f32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32df9f0usize)as*mut u8,i32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Sign(f32)` overload"]pub fn sign(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfae0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`Clamp(f32, f32, f32)` overload"]pub fn clamp(value:impl::core::convert::Into<f32> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfb00usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(value),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max))}
+}
+#[doc="`Clamp(i32, i32, i32)` overload"]pub fn clamp_2(value:impl::core::convert::Into<i32> ,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfb20usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(value),(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max))}
+}
+#[doc="`Clamp01(f32)` overload"]pub fn clamp01(value:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfb40usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Lerp(f32, f32, f32)` overload"]pub fn lerp(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32> ,t:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfb60usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`LerpUnclamped(f32, f32, f32)` overload"]pub fn lerp_unclamped(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32> ,t:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfb90usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`LerpAngle(f32, f32, f32)` overload"]pub fn lerp_angle(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32> ,t:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfba0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`MoveTowards(f32, f32, f32)` overload"]pub fn move_towards(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32> ,max_delta:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfc40usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target),(f32)::core::convert::Into::into(max_delta))}
+}
+#[doc="`MoveTowardsAngle(f32, f32, f32)` overload"]pub fn move_towards_angle(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32> ,max_delta:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfc70usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target),(f32)::core::convert::Into::into(max_delta))}
+}
+#[doc="`Approximately(f32, f32)` overload"]pub fn approximately(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfd40usize)as*mut u8,bool;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`SmoothDamp(f32, f32, *mutf32, f32)` overload"]pub fn smooth_damp(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32> ,smooth_time:impl::core::convert::Into<f32>)->(f32,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x32dfde0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target),(*mut f32)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(smooth_time))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SmoothDamp(f32, f32, *mutf32, f32, f32, f32)` overload"]pub fn smooth_damp_2(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32> ,smooth_time:impl::core::convert::Into<f32> ,max_speed:impl::core::convert::Into<f32> ,delta_time:impl::core::convert::Into<f32>)->(f32,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x32dff10usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target),(*mut f32)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(smooth_time),(f32)::core::convert::Into::into(max_speed),(f32)::core::convert::Into::into(delta_time))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SmoothDampAngle(f32, f32, *mutf32, f32)` overload"]pub fn smooth_damp_angle(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32> ,smooth_time:impl::core::convert::Into<f32>)->(f32,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x32dfff0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target),(*mut f32)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(smooth_time))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SmoothDampAngle(f32, f32, *mutf32, f32, f32, f32)` overload"]pub fn smooth_damp_angle_2(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32> ,smooth_time:impl::core::convert::Into<f32> ,max_speed:impl::core::convert::Into<f32> ,delta_time:impl::core::convert::Into<f32>)->(f32,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x32e0170usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target),(*mut f32)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(smooth_time),(f32)::core::convert::Into::into(max_speed),(f32)::core::convert::Into::into(delta_time))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`Repeat(f32, f32)` overload"]pub fn repeat(t:impl::core::convert::Into<f32> ,length:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfc10usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(t),(f32)::core::convert::Into::into(length))}
+}
+#[doc="`InverseLerp(f32, f32, f32)` overload"]pub fn inverse_lerp(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32> ,value:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e02a0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b),(f32)::core::convert::Into::into(value))}
+}
+#[doc="`DeltaAngle(f32, f32)` overload"]pub fn delta_angle(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dfcf0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e02d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-mathf")]
-impl Mathf { pub fn next_power_of_two_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn gamma_to_linear_space_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn linear_to_gamma_space_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn float_to_half_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn perlin_noise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn sin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn tan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn asin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn acos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn atan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn atan2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn sqrt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn abs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn abs_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn min_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn min_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn max_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn max_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn max_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn pow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn log_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn ceil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn floor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn round_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn ceil_to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn floor_to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn round_to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn sign_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn clamp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn clamp_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn clamp01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn lerp_unclamped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn lerp_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn move_towards_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn move_towards_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn approximately_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn smooth_damp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn smooth_damp_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn smooth_damp_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn smooth_damp_angle_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn repeat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn inverse_lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn delta_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mathf as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } }
+#[cfg(feature="unity_engine-mathf")]impl Mathf{pub fn next_power_of_two_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn gamma_to_linear_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn linear_to_gamma_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn float_to_half_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn perlin_noise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn sin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn tan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn asin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn acos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn atan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn atan2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn sqrt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn abs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn abs_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn min_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn min_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn max_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn max_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn max_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn pow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn log_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn ceil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn floor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn round_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn ceil_to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn floor_to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn round_to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn sign_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn clamp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn clamp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn clamp01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn lerp_unclamped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn lerp_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn move_towards_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn move_towards_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn approximately_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn smooth_damp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn smooth_damp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn smooth_damp_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn smooth_damp_angle_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn repeat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn inverse_lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn delta_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+}
 
 #[cfg(feature = "unity_engine-mathf")]
 #[doc(hidden)]

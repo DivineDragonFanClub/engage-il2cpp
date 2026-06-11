@@ -4,34 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: profilecardvisualbasemenuitem :: { IProfileCardVisualBaseMenuItem , ProfileCardVisualBaseMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::profilecardvisualbasemenuitem::{IProfileCardVisualBaseMenuItem,ProfileCardVisualBaseMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualcharacterstampmenuitem/ProfileCardVisualCharacterStampMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualCharacterStampMenuItem")] # [parent (crate :: app :: profilecardvisualbasemenuitem :: ProfileCardVisualBaseMenuItem)] pub struct ProfileCardVisualCharacterStampMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualcharacterstampmenuitem/ProfileCardVisualCharacterStampMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualCharacterStampMenuItem")]#[parent(crate::app::profilecardvisualbasemenuitem::ProfileCardVisualBaseMenuItem)]pub struct ProfileCardVisualCharacterStampMenuItem{}
 
 }
 
 #[cfg(feature = "app-profilecardvisualcharacterstampmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardvisualcharacterstampmenuitem")]
-pub trait IProfileCardVisualCharacterStampMenuItemMethods : IProfileCardVisualCharacterStampMenuItem { # [doc = "`get_m_CharacterStampData()` overload"] fn get_m_character_stamp_data (self ,) -> crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData { unsafe { let __receiver = < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualCharacterStampMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_CharacterStampData(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)` overload"] fn set_m_character_stamp_data (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData >) -> () { unsafe { let __receiver = < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualCharacterStampMenuItem , crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData, bool)` overload"] fn ctor (self , character_stamp_data : impl :: core :: convert :: Into < crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData > , initial_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualCharacterStampMenuItem , crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character_stamp_data) , :: core :: convert :: Into :: into (initial_select) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualCharacterStampMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNewArrival()` overload"] fn is_new_arrival (self ,) -> bool { unsafe { let __receiver = < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualCharacterStampMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAlreadyRead()` overload"] fn set_already_read (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualCharacterStampMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvisualcharacterstampmenuitem")]pub trait IProfileCardVisualCharacterStampMenuItemMethods:IProfileCardVisualCharacterStampMenuItem{#[doc="`get_m_CharacterStampData()` overload"]fn get_m_character_stamp_data(self,)->crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData{unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04370usize)as*mut u8,crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData;
+(ProfileCardVisualCharacterStampMenuItem)__receiver)}
+}
+#[doc="`set_m_CharacterStampData(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)` overload"]fn set_m_character_stamp_data(self,value:impl::core::convert::Into<crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData>)->(){unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04380usize)as*mut u8,();
+(ProfileCardVisualCharacterStampMenuItem)__receiver,(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData, bool)` overload"]fn ctor(self,character_stamp_data:impl::core::convert::Into<crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData> ,initial_select:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03e10usize)as*mut u8,();
+(ProfileCardVisualCharacterStampMenuItem)__receiver,(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)::core::convert::Into::into(character_stamp_data),(bool)::core::convert::Into::into(initial_select))}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04100usize)as*mut u8,();
+(ProfileCardVisualCharacterStampMenuItem)__receiver)}
+}
+#[doc="`IsNewArrival()` overload"]fn is_new_arrival(self,)->bool{unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04390usize)as*mut u8,bool;
+(ProfileCardVisualCharacterStampMenuItem)__receiver)}
+}
+#[doc="`SetAlreadyRead()` overload"]fn set_already_read(self,)->(){unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04430usize)as*mut u8,();
+(ProfileCardVisualCharacterStampMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardvisualcharacterstampmenuitem")]
-impl < __T : IProfileCardVisualCharacterStampMenuItem > IProfileCardVisualCharacterStampMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardvisualcharacterstampmenuitem")]impl<__T:IProfileCardVisualCharacterStampMenuItem>IProfileCardVisualCharacterStampMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardvisualcharacterstampmenuitem")]
-impl ProfileCardVisualCharacterStampMenuItem { pub fn get_m_character_stamp_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_character_stamp_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_new_arrival_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_already_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualCharacterStampMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardvisualcharacterstampmenuitem")]impl ProfileCardVisualCharacterStampMenuItem{pub fn get_m_character_stamp_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_character_stamp_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_new_arrival_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_already_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardvisualcharacterstampmenuitem")]
-impl ProfileCardVisualCharacterStampMenuItem {
-# [doc = "`.ctor(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData, bool)` — overload selector"] pub fn new (character_stamp_data : crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData , initial_select : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualCharacterStampMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualCharacterStampMenuItemMethods > :: ctor (this , character_stamp_data , initial_select) ; this }
+#[cfg(feature="app-profilecardvisualcharacterstampmenuitem")]impl ProfileCardVisualCharacterStampMenuItem{#[doc="`.ctor(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData, bool)` — overload selector"]pub fn new(character_stamp_data:crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,initial_select:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualCharacterStampMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardVisualCharacterStampMenuItemMethods> ::ctor(this,character_stamp_data,initial_select);
+this}
 }
 
 #[cfg(feature = "app-profilecardvisualcharacterstampmenuitem")]

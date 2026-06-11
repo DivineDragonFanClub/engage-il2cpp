@@ -4,42 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/fontengineutilities/FontEngineUtilities.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FontEngineUtilities {}
-
-
-impl ::unity2::ClassIdentity for FontEngineUtilities {
-    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
-
-    const NAME: &'static str = "FontEngineUtilities";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/text_core/low_level/fontengineutilities/FontEngineUtilities.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FontEngineUtilities{}
+impl::unity2::ClassIdentity for FontEngineUtilities{const NAMESPACE: &'static str="UnityEngine.TextCore.LowLevel";
+const NAME: &'static str="FontEngineUtilities";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for FontEngineUtilities {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for FontEngineUtilities{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -47,11 +26,13 @@ impl ::unity2::IlType for FontEngineUtilities {
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
-impl FontEngineUtilities { # [doc = "`MaxValue(i32, i32, i32)` overload"] pub fn max_value (a : impl :: core :: convert :: Into < i32 > , b : impl :: core :: convert :: Into < i32 > , c : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2db00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-text_core-low_level-fontengineutilities")]impl FontEngineUtilities{#[doc="`MaxValue(i32, i32, i32)` overload"]pub fn max_value(a:impl::core::convert::Into<i32> ,b:impl::core::convert::Into<i32> ,c:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2db00usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b),(i32)::core::convert::Into::into(c))}
+}
+}
 
-#[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
-impl FontEngineUtilities { pub fn max_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontEngineUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-text_core-low_level-fontengineutilities")]impl FontEngineUtilities{pub fn max_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
 #[doc(hidden)]

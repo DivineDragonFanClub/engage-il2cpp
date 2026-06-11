@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sprites/datautility/DataUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Sprites" , name = "DataUtility")] # [parent (crate :: system :: object :: Object)] pub struct DataUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/sprites/datautility/DataUtility.md"))]#[::unity2::class(namespace="UnityEngine.Sprites",name="DataUtility")]#[parent(crate::system::object::Object)]pub struct DataUtility{}
 
 }
 
 #[cfg(feature = "unity_engine-sprites-datautility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-sprites-datautility")]
-impl DataUtility { # [doc = "`GetInnerUV(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_inner_uv (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a4b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } # [doc = "`GetOuterUV(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_outer_uv (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a4c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } # [doc = "`GetPadding(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_padding (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a4d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } # [doc = "`GetMinSize(crate::unity_engine::sprite::Sprite)` overload"] pub fn get_min_size (sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a4e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-sprites-datautility")]impl DataUtility{#[doc="`GetInnerUV(crate::unity_engine::sprite::Sprite)` overload"]pub fn get_inner_uv(sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->crate::unity_engine::vector4::Vector4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a4b0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`GetOuterUV(crate::unity_engine::sprite::Sprite)` overload"]pub fn get_outer_uv(sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->crate::unity_engine::vector4::Vector4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a4c0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`GetPadding(crate::unity_engine::sprite::Sprite)` overload"]pub fn get_padding(sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->crate::unity_engine::vector4::Vector4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a4d0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`GetMinSize(crate::unity_engine::sprite::Sprite)` overload"]pub fn get_min_size(sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a4e0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+}
 
-#[cfg(feature = "unity_engine-sprites-datautility")]
-impl DataUtility { pub fn get_inner_uv_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_outer_uv_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_padding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_min_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-sprites-datautility")]impl DataUtility{pub fn get_inner_uv_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_outer_uv_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_padding_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_min_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-sprites-datautility")]
 #[doc(hidden)]

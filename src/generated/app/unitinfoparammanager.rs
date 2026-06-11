@@ -4,174 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparammanager/UnitInfoParamManager_ValueType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfoParamManager_ValueType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoparammanager/UnitInfoParamManager.md"))]#[::unity2::class(namespace="App",name="UnitInfoParamManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::unitinfoparammanager::UnitInfoParamManager>)]pub struct UnitInfoParamManager{#[offset(32)]#[rename(name="m_CalcUnit")]pub m_calc_unit:crate::app::unit::Unit, #[offset(40)]#[rename(name="m_BattleInfoParam")]pub m_battle_info_param:crate::app::battleinfoparam::BattleInfoParam, #[offset(48)]#[rename(name="m_CalcUnitNoGod")]pub m_calc_unit_no_god:crate::app::unit::Unit, #[offset(56)]#[rename(name="m_BattleInfoParamNoGod")]pub m_battle_info_param_no_god:crate::app::battleinfoparam::BattleInfoParam, #[offset(64)]#[rename(name="m_CalcUnitNoEffect")]pub m_calc_unit_no_effect:crate::app::unit::Unit, #[offset(72)]#[rename(name="m_BattleInfoParamNoEffect")]pub m_battle_info_param_no_effect:crate::app::battleinfoparam::BattleInfoParam, #[offset(80)]#[rename(name="m_CalcUnitNoHub")]pub m_calc_unit_no_hub:crate::app::unit::Unit, #[offset(88)]#[rename(name="m_BattleInfoParamNoHub")]pub m_battle_info_param_no_hub:crate::app::battleinfoparam::BattleInfoParam, #[offset(96)]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo, #[offset(104)]#[rename(name="m_OldRingOwner")]pub m_old_ring_owner:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_param")]pub m_param: ::unity2::Array<crate::app::unitparamdetail::UnitParamDetail> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoparammanager/UnitInfoParamManager_ValueType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfoParamManager_ValueType{pub value:i32,}
+impl::unity2::ClassIdentity for UnitInfoParamManager_ValueType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfoParamManager.ValueType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for UnitInfoParamManager_ValueType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoParamManager.ValueType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for UnitInfoParamManager_ValueType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for UnitInfoParamManager_ValueType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl UnitInfoParamManager_ValueType{pub fn max_hp()->Self{Self{value:0}
 }
-
-
-impl  UnitInfoParamManager_ValueType  {
-    pub fn max_hp() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn rating() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn hit() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn critical() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn avoid() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn secure() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn continuous() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn str() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn magic() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn tech() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn quick() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn def() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn mdef() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn luck() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn phys() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn r#move() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 17 }
-
-    }
-
+pub fn rating()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparammanager/UnitInfoParamManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoParamManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: unitinfoparammanager :: UnitInfoParamManager >)] pub struct UnitInfoParamManager {
-# [offset (32)] # [rename (name = "m_CalcUnit")] pub m_calc_unit : crate :: app :: unit :: Unit ,
-# [offset (40)] # [rename (name = "m_BattleInfoParam")] pub m_battle_info_param : crate :: app :: battleinfoparam :: BattleInfoParam ,
-# [offset (48)] # [rename (name = "m_CalcUnitNoGod")] pub m_calc_unit_no_god : crate :: app :: unit :: Unit ,
-# [offset (56)] # [rename (name = "m_BattleInfoParamNoGod")] pub m_battle_info_param_no_god : crate :: app :: battleinfoparam :: BattleInfoParam ,
-# [offset (64)] # [rename (name = "m_CalcUnitNoEffect")] pub m_calc_unit_no_effect : crate :: app :: unit :: Unit ,
-# [offset (72)] # [rename (name = "m_BattleInfoParamNoEffect")] pub m_battle_info_param_no_effect : crate :: app :: battleinfoparam :: BattleInfoParam ,
-# [offset (80)] # [rename (name = "m_CalcUnitNoHub")] pub m_calc_unit_no_hub : crate :: app :: unit :: Unit ,
-# [offset (88)] # [rename (name = "m_BattleInfoParamNoHub")] pub m_battle_info_param_no_hub : crate :: app :: battleinfoparam :: BattleInfoParam ,
-# [offset (96)] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
-# [offset (104)] # [rename (name = "m_OldRingOwner")] pub m_old_ring_owner : crate :: app :: unit :: Unit ,
-# [offset (112)] # [rename (name = "m_param")] pub m_param : :: unity2 :: Array < crate :: app :: unitparamdetail :: UnitParamDetail > ,
+pub fn attack()->Self{Self{value:2}
+}
+pub fn hit()->Self{Self{value:3}
+}
+pub fn critical()->Self{Self{value:4}
+}
+pub fn avoid()->Self{Self{value:5}
+}
+pub fn secure()->Self{Self{value:6}
+}
+pub fn continuous()->Self{Self{value:7}
+}
+pub fn str()->Self{Self{value:8}
+}
+pub fn magic()->Self{Self{value:9}
+}
+pub fn tech()->Self{Self{value:10}
+}
+pub fn quick()->Self{Self{value:11}
+}
+pub fn def()->Self{Self{value:12}
+}
+pub fn mdef()->Self{Self{value:13}
+}
+pub fn luck()->Self{Self{value:14}
+}
+pub fn phys()->Self{Self{value:15}
+}
+pub fn r#move()->Self{Self{value:16}
+}
+pub fn num()->Self{Self{value:17}
+}
 }
 
 }
@@ -179,30 +70,93 @@ impl  UnitInfoParamManager_ValueType  {
 #[cfg(feature = "app-unitinfoparammanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitinfoparammanager")]
-impl UnitInfoParamManager { # [doc = "`ToGrowCapabilityType(crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType)` overload"] pub fn to_grow_capability_type (r#type : impl :: core :: convert :: Into < crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType >) -> crate :: app :: capabilitydefinition :: CapabilityDefinition_Type { unsafe { { let __inner : extern "C" fn (crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitydefinition :: CapabilityDefinition_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f932a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`ToValueType(crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"] pub fn to_value_type (r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type >) -> crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType { unsafe { { let __inner : extern "C" fn (crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f932c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinfoparammanager")]impl UnitInfoParamManager{#[doc="`ToGrowCapabilityType(crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType)` overload"]pub fn to_grow_capability_type(r#type:impl::core::convert::Into<crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType>)->crate::app::capabilitydefinition::CapabilityDefinition_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f932a0usize)as*mut u8,crate::app::capabilitydefinition::CapabilityDefinition_Type;
+(crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType)::core::convert::Into::into(r#type))}
+}
+#[doc="`ToValueType(crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"]pub fn to_value_type(r#type:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>)->crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f932c0usize)as*mut u8,crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType;
+(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "app-unitinfoparammanager")]
-pub trait IUnitInfoParamManagerMethods : IUnitInfoParamManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyValue(crate::app::unitparamdetail::UnitParamDetail_ValueDetail, *mut::unity2::Array<i32>)` overload"] fn copy_value (self , r#type : impl :: core :: convert :: Into < crate :: app :: unitparamdetail :: UnitParamDetail_ValueDetail >) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < i32 > > :: uninit () ; { let __inner : extern "C" fn (UnitInfoParamManager , crate :: app :: unitparamdetail :: UnitParamDetail_ValueDetail , * mut :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8cb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`MargeMaxEnhanceFactors(crate::app::unitenhancefactors::UnitEnhanceFactors, crate::app::unit::Unit)` overload"] fn marge_max_enhance_factors (self , factors : impl :: core :: convert :: Into < crate :: app :: unitenhancefactors :: UnitEnhanceFactors > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , crate :: app :: unitenhancefactors :: UnitEnhanceFactors , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8cc50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (factors) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnit(crate::app::unit::Unit, i32, i32, bool, crate::app::battleinfo::BattleInfo_Flags, bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"] fn set_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , is_diff_collect : impl :: core :: convert :: Into < bool > , f : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo_Flags > , is_god_change : impl :: core :: convert :: Into < bool > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing >) -> () { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , crate :: app :: unit :: Unit , i32 , i32 , bool , crate :: app :: battleinfo :: BattleInfo_Flags , bool , crate :: app :: godunit :: GodUnit , crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8cd80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (is_diff_collect) , :: core :: convert :: Into :: into (f) , :: core :: convert :: Into :: into (is_god_change) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (ring) , :: core :: option :: Option :: None) } } } # [doc = "`ClearUnit(crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"] fn clear_unit (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing >) -> () { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , crate :: app :: godunit :: GodUnit , crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f93190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (ring) , :: core :: option :: Option :: None) } } } # [doc = "`GetParam(crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType)` overload"] fn get_param (self , r#type : impl :: core :: convert :: Into < crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType >) -> crate :: app :: unitparamdetail :: UnitParamDetail { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitparamdetail :: UnitParamDetail = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f93200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetParam(crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"] fn get_param_2 (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type >) -> crate :: app :: unitparamdetail :: UnitParamDetail { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitparamdetail :: UnitParamDetail = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f93240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetCalcUnit()` overload"] fn get_calc_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f932e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCalcNoGod()` overload"] fn get_calc_no_god (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f932f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCalcNoEnhance()` overload"] fn get_calc_no_enhance (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f93300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCapabilityRating(crate::app::unit::Unit, crate::app::battleinfoparam::BattleInfoParam)` overload"] fn get_capability_rating (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , info : impl :: core :: convert :: Into < crate :: app :: battleinfoparam :: BattleInfoParam >) -> i32 { unsafe { let __receiver = < UnitInfoParamManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoParamManager , crate :: app :: unit :: Unit , crate :: app :: battleinfoparam :: BattleInfoParam , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f92290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinfoparammanager")]pub trait IUnitInfoParamManagerMethods:IUnitInfoParamManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c850usize)as*mut u8,();
+(UnitInfoParamManager)__receiver)}
+}
+#[doc="`CopyValue(crate::app::unitparamdetail::UnitParamDetail_ValueDetail, *mut::unity2::Array<i32>)` overload"]fn copy_value(self,r#type:impl::core::convert::Into<crate::app::unitparamdetail::UnitParamDetail_ValueDetail>)-> ::unity2::Array<i32>{unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<i32> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8cb60usize)as*mut u8,();
+(UnitInfoParamManager)__receiver,(crate::app::unitparamdetail::UnitParamDetail_ValueDetail)::core::convert::Into::into(r#type),(*mut::unity2::Array<i32>)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`MargeMaxEnhanceFactors(crate::app::unitenhancefactors::UnitEnhanceFactors, crate::app::unit::Unit)` overload"]fn marge_max_enhance_factors(self,factors:impl::core::convert::Into<crate::app::unitenhancefactors::UnitEnhanceFactors> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8cc50usize)as*mut u8,();
+(UnitInfoParamManager)__receiver,(crate::app::unitenhancefactors::UnitEnhanceFactors)::core::convert::Into::into(factors),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnit(crate::app::unit::Unit, i32, i32, bool, crate::app::battleinfo::BattleInfo_Flags, bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"]fn set_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,is_diff_collect:impl::core::convert::Into<bool> ,f:impl::core::convert::Into<crate::app::battleinfo::BattleInfo_Flags> ,is_god_change:impl::core::convert::Into<bool> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8cd80usize)as*mut u8,();
+(UnitInfoParamManager)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(bool)::core::convert::Into::into(is_diff_collect),(crate::app::battleinfo::BattleInfo_Flags)::core::convert::Into::into(f),(bool)::core::convert::Into::into(is_god_change),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
+}
+#[doc="`ClearUnit(crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"]fn clear_unit(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f93190usize)as*mut u8,();
+(UnitInfoParamManager)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
+}
+#[doc="`GetParam(crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType)` overload"]fn get_param(self,r#type:impl::core::convert::Into<crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType>)->crate::app::unitparamdetail::UnitParamDetail{unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f93200usize)as*mut u8,crate::app::unitparamdetail::UnitParamDetail;
+(UnitInfoParamManager)__receiver,(crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetParam(crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"]fn get_param_2(self,r#type:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>)->crate::app::unitparamdetail::UnitParamDetail{unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f93240usize)as*mut u8,crate::app::unitparamdetail::UnitParamDetail;
+(UnitInfoParamManager)__receiver,(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetCalcUnit()` overload"]fn get_calc_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f932e0usize)as*mut u8,crate::app::unit::Unit;
+(UnitInfoParamManager)__receiver)}
+}
+#[doc="`GetCalcNoGod()` overload"]fn get_calc_no_god(self,)->crate::app::unit::Unit{unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f932f0usize)as*mut u8,crate::app::unit::Unit;
+(UnitInfoParamManager)__receiver)}
+}
+#[doc="`GetCalcNoEnhance()` overload"]fn get_calc_no_enhance(self,)->crate::app::unit::Unit{unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f93300usize)as*mut u8,crate::app::unit::Unit;
+(UnitInfoParamManager)__receiver)}
+}
+#[doc="`GetCapabilityRating(crate::app::unit::Unit, crate::app::battleinfoparam::BattleInfoParam)` overload"]fn get_capability_rating(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,info:impl::core::convert::Into<crate::app::battleinfoparam::BattleInfoParam>)->i32{unsafe{let __receiver= <UnitInfoParamManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f92290usize)as*mut u8,i32;
+(UnitInfoParamManager)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::battleinfoparam::BattleInfoParam)::core::convert::Into::into(info))}
+}
+}
 
-#[cfg(feature = "app-unitinfoparammanager")]
-impl < __T : IUnitInfoParamManager > IUnitInfoParamManagerMethods for __T { }
+#[cfg(feature="app-unitinfoparammanager")]impl<__T:IUnitInfoParamManager>IUnitInfoParamManagerMethods for __T{}
 
-#[cfg(feature = "app-unitinfoparammanager")]
-impl UnitInfoParamManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn copy_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn marge_max_enhance_factors_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_param_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn to_grow_capability_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_value_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_calc_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_calc_no_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_calc_no_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_capability_rating_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoParamManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-unitinfoparammanager")]impl UnitInfoParamManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn copy_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn marge_max_enhance_factors_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_param_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn to_grow_capability_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_value_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_calc_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_calc_no_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_calc_no_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_capability_rating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-unitinfoparammanager")]
-impl UnitInfoParamManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfoParamManager) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfoParamManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitinfoparammanager")]impl UnitInfoParamManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfoParamManager), ::core::stringify!(new),));
+ <Self as IUnitInfoParamManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitinfoparammanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfoParamManager_ValueType;
     pub use super::UnitInfoParamManager;
     pub use super::IUnitInfoParamManager;
     pub use super::IUnitInfoParamManagerMethods;
+    pub use super::UnitInfoParamManager_ValueType;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

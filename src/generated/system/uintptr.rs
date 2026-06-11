@@ -4,65 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/uintptr/UIntPtr.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct UIntPtr {}
-
-
-impl ::unity2::ClassIdentity for UIntPtr {
-    const NAMESPACE: &'static str = "System";
-
-    const NAME: &'static str = "UIntPtr";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/uintptr/UIntPtr.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UIntPtr{}
+impl::unity2::ClassIdentity for UIntPtr{const NAMESPACE: &'static str="System";
+const NAME: &'static str="UIntPtr";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for UIntPtr {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for UIntPtr{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl UIntPtr {
-    #[inline]
-    pub fn zero() -> usize {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Zero");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_zero(value: usize) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Zero");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl UIntPtr{#[inline]pub fn zero()->usize{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Zero");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_zero(value:usize){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Zero");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -70,14 +34,39 @@ impl UIntPtr {
 #[cfg(feature = "system-uintptr-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-uintptr")]
-impl UIntPtr { # [doc = "`op_Equality(usize, usize)` overload"] pub fn op_equality (value1 : impl :: core :: convert :: Into < usize > , value2 : impl :: core :: convert :: Into < usize >) -> bool { unsafe { { let __inner : extern "C" fn (usize , usize , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value1) , :: core :: convert :: Into :: into (value2) , :: core :: option :: Option :: None) } } } # [doc = "`get_Size()` overload"] pub fn get_size () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569e90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569f60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-uintptr")]impl UIntPtr{#[doc="`op_Equality(usize, usize)` overload"]pub fn op_equality(value1:impl::core::convert::Into<usize> ,value2:impl::core::convert::Into<usize>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569f50usize)as*mut u8,bool;
+(usize)::core::convert::Into::into(value1),(usize)::core::convert::Into::into(value2))}
+}
+#[doc="`get_Size()` overload"]pub fn get_size()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569e90usize)as*mut u8,i32;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569f60usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-uintptr")]
-impl UIntPtr { # [doc = "`.ctor(u32)` overload"] pub fn ctor (& mut self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut UIntPtr , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569d60usize) as * mut u8) ; __inner (self as * mut UIntPtr , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut UIntPtr , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569d70usize) as * mut u8) ; __inner (self as * mut UIntPtr , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut UIntPtr , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569e00usize) as * mut u8) ; __inner (self as * mut UIntPtr , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut UIntPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569e10usize) as * mut u8) ; __inner (self as * mut UIntPtr , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-uintptr")]impl UIntPtr{#[doc="`.ctor(u32)` overload"]pub fn ctor(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569d60usize)as*mut u8,();
+(*mut UIntPtr)self as*mut UIntPtr,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569d70usize)as*mut u8,bool;
+(*mut UIntPtr)self as*mut UIntPtr,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569e00usize)as*mut u8,i32;
+(*mut UIntPtr)self as*mut UIntPtr)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569e10usize)as*mut u8, ::unity2::Il2CppString;
+(*mut UIntPtr)self as*mut UIntPtr)}
+}
+}
 
-#[cfg(feature = "system-uintptr")]
-impl UIntPtr { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIntPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIntPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIntPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIntPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIntPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIntPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIntPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="system-uintptr")]impl UIntPtr{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "system-uintptr")]
 #[doc(hidden)]

@@ -4,74 +4,189 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcamera/MapCamera.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCamera")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcamera :: MapCamera >)] pub struct MapCamera {
-# [offset (32)] # [rename (name = "m_Position")] pub m_position : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [offset (40)] # [rename (name = "m_Rotation")] pub m_rotation : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [offset (48)] # [rename (name = "m_Distance")] pub m_distance : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (56)] # [rename (name = "m_EffectShake")] pub m_effect_shake : crate :: app :: mapcamera :: MapCamera_InterpolatorShake ,
-# [offset (64)] # [rename (name = "m_ActionShake")] pub m_action_shake : crate :: app :: mapcamera :: MapCamera_InterpolatorShake ,
-# [offset (72)] # [rename (name = "m_Fov")] pub m_fov : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcamera/MapCamera_InterpolatorShake.md"))]#[::unity2::class(namespace="App",name="MapCamera.InterpolatorShake")]#[parent(crate::system::object::Object)]pub struct MapCamera_InterpolatorShake{#[offset(16)]#[rename(name="m_Time")]pub m_time:f32, #[offset(20)]#[rename(name="m_Magnitude")]pub m_magnitude:f32, #[offset(24)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector3::Vector3,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcamera/MapCamera_InterpolatorShake.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCamera.InterpolatorShake")] # [parent (crate :: system :: object :: Object)] pub struct MapCamera_InterpolatorShake {
-# [offset (16)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (20)] # [rename (name = "m_Magnitude")] pub m_magnitude : f32 ,
-# [offset (24)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcamera/MapCamera.md"))]#[::unity2::class(namespace="App",name="MapCamera")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapcamera::MapCamera>)]pub struct MapCamera{#[offset(32)]#[rename(name="m_Position")]pub m_position:crate::app::interpolatorvector3::InterpolatorVector3, #[offset(40)]#[rename(name="m_Rotation")]pub m_rotation:crate::app::interpolatorvector3::InterpolatorVector3, #[offset(48)]#[rename(name="m_Distance")]pub m_distance:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(56)]#[rename(name="m_EffectShake")]pub m_effect_shake:crate::app::mapcamera::MapCamera_InterpolatorShake, #[offset(64)]#[rename(name="m_ActionShake")]pub m_action_shake:crate::app::mapcamera::MapCamera_InterpolatorShake, #[offset(72)]#[rename(name="m_Fov")]pub m_fov:f32,}
 
 }
 
 #[cfg(feature = "app-mapcamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapcamera")]
-impl MapCamera { # [doc = "`GetCamera()` overload"] pub fn get_camera () -> crate :: unity_engine :: camera :: Camera { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a510usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetPosition(crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn set_position (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , speed : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a5f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`SetPosition(i32, i32)` overload"] pub fn set_position_2 (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c0b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`SetRotation(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_rotation (rot : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rot) , :: core :: option :: Option :: None) } } } # [doc = "`SetDistance(f32)` overload"] pub fn set_distance (distance : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c370usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (distance) , :: core :: option :: Option :: None) } } } # [doc = "`GetRotation()` overload"] pub fn get_rotation () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c550usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Instant(crate::unity_engine::camera::Camera)` overload"] pub fn instant (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c630usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`EffectShake(f32, f32)` overload"] pub fn effect_shake (time : impl :: core :: convert :: Into < f32 > , magnitude : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c7b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (magnitude) , :: core :: option :: Option :: None) } } } # [doc = "`ActionShake(f32, f32)` overload"] pub fn action_shake (time : impl :: core :: convert :: Into < f32 > , magnitude : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (magnitude) , :: core :: option :: Option :: None) } } } # [doc = "`CheckScrollStrictly()` overload"] pub fn check_scroll_strictly () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c970usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CheckScrollLoosely()` overload"] pub fn check_scroll_loosely () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299cb60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapcamera")]
-pub trait IMapCameraMethods : IMapCamera { # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299cd60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299cd70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299ce40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299d1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299d1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit(crate::unity_engine::camera::Camera)` overload"] fn commit (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299d5e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`GetParamTime(::unity2::Il2CppString)` overload"] fn get_param_time (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299dbf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SetPositionImpl(crate::unity_engine::vector3::Vector3, f32)` overload"] fn set_position_impl (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , speed : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a6e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`SetRotationImpl(crate::unity_engine::vector3::Vector3)` overload"] fn set_rotation_impl (self , rot : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c2c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rot) , :: core :: option :: Option :: None) } } } # [doc = "`SetDistanceImpl(f32)` overload"] fn set_distance_impl (self , distance : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c4b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (distance) , :: core :: option :: Option :: None) } } } # [doc = "`InstantImpl(crate::unity_engine::camera::Camera)` overload"] fn instant_impl (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299c740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299dc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapcamera")]
-impl < __T : IMapCamera > IMapCameraMethods for __T { }
-
-#[cfg(feature = "app-mapcamera")]
-impl MapCamera { pub fn get_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_position_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn instant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn effect_shake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn action_shake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn check_scroll_strictly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn check_scroll_loosely_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_param_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_position_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_rotation_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_distance_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn instant_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
-
-#[cfg(feature = "app-mapcamera")]
-impl MapCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCamera) , :: core :: stringify ! (new) ,)) ; < Self as IMapCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapcamera")]pub trait IMapCamera_InterpolatorShakeMethods:IMapCamera_InterpolatorShake{#[doc="`Run(f32, f32)` overload"]fn run(self,time:impl::core::convert::Into<f32> ,magnitude:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapCamera_InterpolatorShake as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd8a0usize)as*mut u8,();
+(MapCamera_InterpolatorShake)__receiver,(f32)::core::convert::Into::into(time),(f32)::core::convert::Into::into(magnitude))}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <MapCamera_InterpolatorShake as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd940usize)as*mut u8,();
+(MapCamera_InterpolatorShake)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MapCamera_InterpolatorShake as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd950usize)as*mut u8,();
+(MapCamera_InterpolatorShake)__receiver)}
+}
+#[doc="`get_Offset()` overload"]fn get_offset(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MapCamera_InterpolatorShake as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdab0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(MapCamera_InterpolatorShake)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCamera_InterpolatorShake as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdac0usize)as*mut u8,();
+(MapCamera_InterpolatorShake)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapcamera")]
-pub trait IMapCamera_InterpolatorShakeMethods : IMapCamera_InterpolatorShake { # [doc = "`Run(f32, f32)` overload"] fn run (self , time : impl :: core :: convert :: Into < f32 > , magnitude : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapCamera_InterpolatorShake as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera_InterpolatorShake , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bd8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (magnitude) , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < MapCamera_InterpolatorShake as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera_InterpolatorShake , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bd940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < MapCamera_InterpolatorShake as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera_InterpolatorShake , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bd950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Offset()` overload"] fn get_offset (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < MapCamera_InterpolatorShake as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera_InterpolatorShake , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bdab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCamera_InterpolatorShake as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCamera_InterpolatorShake , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bdac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapcamera")]impl<__T:IMapCamera_InterpolatorShake>IMapCamera_InterpolatorShakeMethods for __T{}
 
-#[cfg(feature = "app-mapcamera")]
-impl < __T : IMapCamera_InterpolatorShake > IMapCamera_InterpolatorShakeMethods for __T { }
+#[cfg(feature="app-mapcamera")]impl MapCamera_InterpolatorShake{pub fn run_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-mapcamera")]
-impl MapCamera_InterpolatorShake { pub fn run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera_InterpolatorShake as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera_InterpolatorShake as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera_InterpolatorShake as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera_InterpolatorShake as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCamera_InterpolatorShake as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-mapcamera")]impl MapCamera_InterpolatorShake{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCamera_InterpolatorShake), ::core::stringify!(new),));
+ <Self as IMapCamera_InterpolatorShakeMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapcamera")]
-impl MapCamera_InterpolatorShake {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCamera_InterpolatorShake) , :: core :: stringify ! (new) ,)) ; < Self as IMapCamera_InterpolatorShakeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapcamera")]impl MapCamera{#[doc="`GetCamera()` overload"]pub fn get_camera()->crate::unity_engine::camera::Camera{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299a510usize)as*mut u8,crate::unity_engine::camera::Camera;
+)}
+}
+#[doc="`SetPosition(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn set_position(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,speed:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299a5f0usize)as*mut u8,();
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`SetPosition(i32, i32)` overload"]pub fn set_position_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299c0b0usize)as*mut u8,();
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`SetRotation(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_rotation(rot:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299c170usize)as*mut u8,();
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(rot))}
+}
+#[doc="`SetDistance(f32)` overload"]pub fn set_distance(distance:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299c370usize)as*mut u8,();
+(f32)::core::convert::Into::into(distance))}
+}
+#[doc="`GetRotation()` overload"]pub fn get_rotation()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299c550usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`Instant(crate::unity_engine::camera::Camera)` overload"]pub fn instant(camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299c630usize)as*mut u8,();
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`EffectShake(f32, f32)` overload"]pub fn effect_shake(time:impl::core::convert::Into<f32> ,magnitude:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299c7b0usize)as*mut u8,();
+(f32)::core::convert::Into::into(time),(f32)::core::convert::Into::into(magnitude))}
+}
+#[doc="`ActionShake(f32, f32)` overload"]pub fn action_shake(time:impl::core::convert::Into<f32> ,magnitude:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299c890usize)as*mut u8,();
+(f32)::core::convert::Into::into(time),(f32)::core::convert::Into::into(magnitude))}
+}
+#[doc="`CheckScrollStrictly()` overload"]pub fn check_scroll_strictly()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299c970usize)as*mut u8,bool;
+)}
+}
+#[doc="`CheckScrollLoosely()` overload"]pub fn check_scroll_loosely()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299cb60usize)as*mut u8,bool;
+)}
+}
+}
+
+#[cfg(feature="app-mapcamera")]pub trait IMapCameraMethods:IMapCamera{#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299cd60usize)as*mut u8,i32;
+(MapCamera)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299cd70usize)as*mut u8,();
+(MapCamera)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299ce40usize)as*mut u8,();
+(MapCamera)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299d1a0usize)as*mut u8,();
+(MapCamera)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299d1b0usize)as*mut u8,();
+(MapCamera)__receiver)}
+}
+#[doc="`Commit(crate::unity_engine::camera::Camera)` overload"]fn commit(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299d5e0usize)as*mut u8,();
+(MapCamera)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`GetParamTime(::unity2::Il2CppString)` overload"]fn get_param_time(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299dbf0usize)as*mut u8,f32;
+(MapCamera)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SetPositionImpl(crate::unity_engine::vector3::Vector3, f32)` overload"]fn set_position_impl(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299a6e0usize)as*mut u8,();
+(MapCamera)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`SetRotationImpl(crate::unity_engine::vector3::Vector3)` overload"]fn set_rotation_impl(self,rot:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299c2c0usize)as*mut u8,();
+(MapCamera)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(rot))}
+}
+#[doc="`SetDistanceImpl(f32)` overload"]fn set_distance_impl(self,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299c4b0usize)as*mut u8,();
+(MapCamera)__receiver,(f32)::core::convert::Into::into(distance))}
+}
+#[doc="`InstantImpl(crate::unity_engine::camera::Camera)` overload"]fn instant_impl(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299c740usize)as*mut u8,();
+(MapCamera)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299dc30usize)as*mut u8,();
+(MapCamera)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapcamera")]impl<__T:IMapCamera>IMapCameraMethods for __T{}
+
+#[cfg(feature="app-mapcamera")]impl MapCamera{pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_position_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn instant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn effect_shake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn action_shake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn check_scroll_strictly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn check_scroll_loosely_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_param_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_position_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_rotation_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_distance_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn instant_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
+
+#[cfg(feature="app-mapcamera")]impl MapCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCamera), ::core::stringify!(new),));
+ <Self as IMapCameraMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapcamera")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapCamera;
-    pub use super::IMapCamera;
-    pub use super::IMapCameraMethods;
     pub use super::MapCamera_InterpolatorShake;
     pub use super::IMapCamera_InterpolatorShake;
     pub use super::IMapCamera_InterpolatorShakeMethods;
+    pub use super::MapCamera;
+    pub use super::IMapCamera;
+    pub use super::IMapCameraMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;

@@ -4,81 +4,198 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
- ;
- use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::events::unityevent_1::{IUnityEvent_1,UnityEvent_1}
+;
+use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_TriggerEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "EventTrigger.TriggerEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >)] pub struct EventTrigger_TriggerEvent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/eventtrigger/EventTrigger_TriggerEvent.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="EventTrigger.TriggerEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)]pub struct EventTrigger_TriggerEvent{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "EventTrigger")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EventTrigger {
-# [offset (24)] # [rename (name = "m_Delegates")] pub m_delegates : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/eventtrigger/EventTrigger_Entry.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="EventTrigger.Entry")]#[parent(crate::system::object::Object)]pub struct EventTrigger_Entry{#[offset(16)]#[rename(name="eventID")]pub event_id:crate::unity_engine::event_systems::eventtriggertype::EventTriggerType, #[offset(24)]#[rename(name="callback")]pub callback:crate::unity_engine::event_systems::eventtrigger::EventTrigger_TriggerEvent,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_Entry.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "EventTrigger.Entry")] # [parent (crate :: system :: object :: Object)] pub struct EventTrigger_Entry {
-# [offset (16)] # [rename (name = "eventID")] pub event_id : crate :: unity_engine :: event_systems :: eventtriggertype :: EventTriggerType ,
-# [offset (24)] # [rename (name = "callback")] pub callback : crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_TriggerEvent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/eventtrigger/EventTrigger.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="EventTrigger")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventTrigger{#[offset(24)]#[rename(name="m_Delegates")]pub m_delegates:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> ,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-eventtrigger-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-pub trait IEventTrigger_TriggerEventMethods : IEventTrigger_TriggerEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventTrigger_TriggerEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger_TriggerEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0c5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl < __T : IEventTrigger_TriggerEvent > IEventTrigger_TriggerEventMethods for __T { }
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger_TriggerEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger_TriggerEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger_TriggerEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventTrigger_TriggerEvent) , :: core :: stringify ! (new) ,)) ; < Self as IEventTrigger_TriggerEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]pub trait IEventTrigger_TriggerEventMethods:IEventTrigger_TriggerEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventTrigger_TriggerEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c5f0usize)as*mut u8,();
+(EventTrigger_TriggerEvent)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-pub trait IEventTriggerMethods : IEventTrigger { # [doc = "`get_delegates()` overload"] fn get_delegates (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3188eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_delegates(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>)` overload"] fn set_delegates (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3188ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_triggers()` overload"] fn get_triggers (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3188f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_triggers(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>)` overload"] fn set_triggers (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: eventtrigger :: EventTrigger_Entry > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::event_systems::eventtriggertype::EventTriggerType, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn execute (self , id : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: eventtriggertype :: EventTriggerType > , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: eventtriggertype :: EventTriggerType , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_enter (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_exit (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDrop(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_drop (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_down (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_up (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_click (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_select (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31892a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_deselect (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31892b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnScroll(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_scroll (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31892c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"] fn on_move (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31892d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdateSelected(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_update_selected (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31892e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_initialize_potential_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31892f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_begin_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_end_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_submit (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_cancel (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < EventTrigger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3189330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl<__T:IEventTrigger_TriggerEvent>IEventTrigger_TriggerEventMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl < __T : IEventTrigger > IEventTriggerMethods for __T { }
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger { pub fn get_delegates_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_delegates_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_triggers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_triggers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_pointer_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_pointer_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_drop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_pointer_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_pointer_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_pointer_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn on_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_update_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_initialize_potential_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_begin_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn on_end_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn on_submit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn on_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventTrigger) , :: core :: stringify ! (new) ,)) ; < Self as IEventTriggerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger_TriggerEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-pub trait IEventTrigger_EntryMethods : IEventTrigger_Entry { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventTrigger_Entry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventTrigger_Entry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0c540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger_TriggerEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventTrigger_TriggerEvent), ::core::stringify!(new),));
+ <Self as IEventTrigger_TriggerEventMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl < __T : IEventTrigger_Entry > IEventTrigger_EntryMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]pub trait IEventTrigger_EntryMethods:IEventTrigger_Entry{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventTrigger_Entry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c540usize)as*mut u8,();
+(EventTrigger_Entry)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger_Entry { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventTrigger_Entry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl<__T:IEventTrigger_Entry>IEventTrigger_EntryMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger_Entry {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventTrigger_Entry) , :: core :: stringify ! (new) ,)) ; < Self as IEventTrigger_EntryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger_Entry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger_Entry{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventTrigger_Entry), ::core::stringify!(new),));
+ <Self as IEventTrigger_EntryMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]pub trait IEventTriggerMethods:IEventTrigger{#[doc="`get_delegates()` overload"]fn get_delegates(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>{unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3188eb0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> ;
+(EventTrigger)__receiver)}
+}
+#[doc="`set_delegates(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>)` overload"]fn set_delegates(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> >)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3188ff0usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189000usize)as*mut u8,();
+(EventTrigger)__receiver)}
+}
+#[doc="`get_triggers()` overload"]fn get_triggers(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>{unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3188f50usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> ;
+(EventTrigger)__receiver)}
+}
+#[doc="`set_triggers(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>)` overload"]fn set_triggers(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> >)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189010usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>)::core::convert::Into::into(value))}
+}
+#[doc="`Execute(crate::unity_engine::event_systems::eventtriggertype::EventTriggerType, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn execute(self,id:impl::core::convert::Into<crate::unity_engine::event_systems::eventtriggertype::EventTriggerType> ,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189020usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::eventtriggertype::EventTriggerType)::core::convert::Into::into(id),(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_enter(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189230usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_exit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189240usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189250usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnDrop(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drop(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189260usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189270usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_up(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189280usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189290usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_select(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31892a0usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_deselect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31892b0usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnScroll(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_scroll(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31892c0usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]fn on_move(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31892d0usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::axiseventdata::AxisEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnUpdateSelected(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_update_selected(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31892e0usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_initialize_potential_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31892f0usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_begin_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189300usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_end_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189310usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_submit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189320usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_cancel(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <EventTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3189330usize)as*mut u8,();
+(EventTrigger)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl<__T:IEventTrigger>IEventTriggerMethods for __T{}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger{pub fn get_delegates_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_delegates_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_triggers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_triggers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_pointer_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_pointer_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_drop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_pointer_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_pointer_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_pointer_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn on_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_update_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_initialize_potential_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_begin_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn on_end_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn on_submit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn on_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventTrigger), ::core::stringify!(new),));
+ <Self as IEventTriggerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-eventtrigger")]
@@ -87,12 +204,12 @@ pub mod prelude {
     pub use super::EventTrigger_TriggerEvent;
     pub use super::IEventTrigger_TriggerEvent;
     pub use super::IEventTrigger_TriggerEventMethods;
-    pub use super::EventTrigger;
-    pub use super::IEventTrigger;
-    pub use super::IEventTriggerMethods;
     pub use super::EventTrigger_Entry;
     pub use super::IEventTrigger_Entry;
     pub use super::IEventTrigger_EntryMethods;
+    pub use super::EventTrigger;
+    pub use super::IEventTrigger;
+    pub use super::IEventTriggerMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

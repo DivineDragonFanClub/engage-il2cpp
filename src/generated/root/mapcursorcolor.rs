@@ -4,42 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapcursorcolor/MapCursorColor.md"))] # [:: unity2 :: class (namespace = "" , name = "MapCursorColor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapCursorColor {
-# [offset (24)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "m_AlphaPropertyID")] pub m_alpha_property_id : i32 ,
-# [offset (36)] # [rename (name = "m_ColorPropertyID")] pub m_color_property_id : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapcursorcolor/MapCursorColor.md"))]#[::unity2::class(namespace="",name="MapCursorColor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapCursorColor{#[offset(24)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="m_AlphaPropertyID")]pub m_alpha_property_id:i32, #[offset(36)]#[rename(name="m_ColorPropertyID")]pub m_color_property_id:i32,}
 
 }
 
 #[cfg(feature = "root-mapcursorcolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapcursorcolor")]
-pub trait IMapCursorColorMethods : IMapCursorColor { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapCursorColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c1240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapCursorColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c1300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapCursorColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorColor , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c1390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCursorColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c1460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapcursorcolor")]pub trait IMapCursorColorMethods:IMapCursorColor{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapCursorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c1240usize)as*mut u8,();
+(MapCursorColor)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapCursorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c1300usize)as*mut u8,();
+(MapCursorColor)__receiver)}
+}
+#[doc="`SetColor(crate::unity_engine::color::Color)` overload"]fn set_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapCursorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c1390usize)as*mut u8,();
+(MapCursorColor)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCursorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c1460usize)as*mut u8,();
+(MapCursorColor)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapcursorcolor")]
-impl < __T : IMapCursorColor > IMapCursorColorMethods for __T { }
+#[cfg(feature="root-mapcursorcolor")]impl<__T:IMapCursorColor>IMapCursorColorMethods for __T{}
 
-#[cfg(feature = "root-mapcursorcolor")]
-impl MapCursorColor { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-mapcursorcolor")]impl MapCursorColor{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "root-mapcursorcolor")]
-impl MapCursorColor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCursorColor) , :: core :: stringify ! (new) ,)) ; < Self as IMapCursorColorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapcursorcolor")]impl MapCursorColor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCursorColor), ::core::stringify!(new),));
+ <Self as IMapCursorColorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapcursorcolor")]

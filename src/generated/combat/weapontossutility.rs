@@ -4,33 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/weapontossutility/WeaponTossUtility.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "WeaponTossUtility")] # [parent (crate :: system :: object :: Object)] pub struct WeaponTossUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/weapontossutility/WeaponTossUtility.md"))]#[::unity2::class(namespace="Combat",name="WeaponTossUtility")]#[parent(crate::system::object::Object)]pub struct WeaponTossUtility{}
 
 }
 
 #[cfg(feature = "combat-weapontossutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-weapontossutility")]
-impl WeaponTossUtility { # [doc = "`Toss(crate::combat::character::Character, f32, bool)` overload"] pub fn toss (cp : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , power : impl :: core :: convert :: Into < f32 > , skipped : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d34d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cp) , :: core :: convert :: Into :: into (power) , :: core :: convert :: Into :: into (skipped) , :: core :: option :: Option :: None) } } } # [doc = "`TossMain(crate::combat::character::Character, crate::unity_engine::gameobject::GameObject, f32, bool)` overload"] pub fn toss_main (cp : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , wep : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , power : impl :: core :: convert :: Into < f32 > , skipped : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , crate :: unity_engine :: gameobject :: GameObject , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d3670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cp) , :: core :: convert :: Into :: into (wep) , :: core :: convert :: Into :: into (power) , :: core :: convert :: Into :: into (skipped) , :: core :: option :: Option :: None) } } } # [doc = "`AddJustFitBoxCollider(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject, f32)` overload"] pub fn add_just_fit_box_collider (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , mesh_go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , scale : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: boxcollider :: BoxCollider { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: gameobject :: GameObject , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: boxcollider :: BoxCollider = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c8040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (mesh_go) , :: core :: convert :: Into :: into (scale) , :: core :: option :: Option :: None) } } } # [doc = "`GetWeaponTipOffset(crate::unity_engine::gameobject::GameObject)` overload"] pub fn get_weapon_tip_offset (mesh_go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d4050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mesh_go) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-weapontossutility")]impl WeaponTossUtility{#[doc="`Toss(crate::combat::character::Character, f32, bool)` overload"]pub fn toss(cp:impl::core::convert::Into<crate::combat::character::Character> ,power:impl::core::convert::Into<f32> ,skipped:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d34d0usize)as*mut u8,();
+(crate::combat::character::Character)::core::convert::Into::into(cp),(f32)::core::convert::Into::into(power),(bool)::core::convert::Into::into(skipped))}
+}
+#[doc="`TossMain(crate::combat::character::Character, crate::unity_engine::gameobject::GameObject, f32, bool)` overload"]pub fn toss_main(cp:impl::core::convert::Into<crate::combat::character::Character> ,wep:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,power:impl::core::convert::Into<f32> ,skipped:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d3670usize)as*mut u8,();
+(crate::combat::character::Character)::core::convert::Into::into(cp),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(wep),(f32)::core::convert::Into::into(power),(bool)::core::convert::Into::into(skipped))}
+}
+#[doc="`AddJustFitBoxCollider(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject, f32)` overload"]pub fn add_just_fit_box_collider(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,mesh_go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,scale:impl::core::convert::Into<f32>)->crate::unity_engine::boxcollider::BoxCollider{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c8040usize)as*mut u8,crate::unity_engine::boxcollider::BoxCollider;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(mesh_go),(f32)::core::convert::Into::into(scale))}
+}
+#[doc="`GetWeaponTipOffset(crate::unity_engine::gameobject::GameObject)` overload"]pub fn get_weapon_tip_offset(mesh_go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d4050usize)as*mut u8,f32;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(mesh_go))}
+}
+}
 
-#[cfg(feature = "combat-weapontossutility")]
-pub trait IWeaponTossUtilityMethods : IWeaponTossUtility { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponTossUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponTossUtility , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d41b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-weapontossutility")]pub trait IWeaponTossUtilityMethods:IWeaponTossUtility{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WeaponTossUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d41b0usize)as*mut u8,();
+(WeaponTossUtility)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-weapontossutility")]
-impl < __T : IWeaponTossUtility > IWeaponTossUtilityMethods for __T { }
+#[cfg(feature="combat-weapontossutility")]impl<__T:IWeaponTossUtility>IWeaponTossUtilityMethods for __T{}
 
-#[cfg(feature = "combat-weapontossutility")]
-impl WeaponTossUtility { pub fn toss_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponTossUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn toss_main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponTossUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_just_fit_box_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponTossUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_weapon_tip_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponTossUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponTossUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-weapontossutility")]impl WeaponTossUtility{pub fn toss_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn toss_main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_just_fit_box_collider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_weapon_tip_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-weapontossutility")]
-impl WeaponTossUtility {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponTossUtility) , :: core :: stringify ! (new) ,)) ; < Self as IWeaponTossUtilityMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-weapontossutility")]impl WeaponTossUtility{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponTossUtility), ::core::stringify!(new),));
+ <Self as IWeaponTossUtilityMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-weapontossutility")]

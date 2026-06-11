@@ -4,25 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/scriptableruntimereflectionsystemsettings/ScriptableRuntimeReflectionSystemSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering" , name = "ScriptableRuntimeReflectionSystemSettings")] # [parent (crate :: system :: object :: Object)] pub struct ScriptableRuntimeReflectionSystemSettings {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: unity_engine :: experimental :: rendering :: scriptableruntimereflectionsystemwrapper :: ScriptableRuntimeReflectionSystemWrapper ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/scriptableruntimereflectionsystemsettings/ScriptableRuntimeReflectionSystemSettings.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering",name="ScriptableRuntimeReflectionSystemSettings")]#[parent(crate::system::object::Object)]pub struct ScriptableRuntimeReflectionSystemSettings{#[static_field]#[rename(name="s_Instance")]pub s_instance:crate::unity_engine::experimental::rendering::scriptableruntimereflectionsystemwrapper::ScriptableRuntimeReflectionSystemWrapper,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]
-impl ScriptableRuntimeReflectionSystemSettings { # [doc = "`set_Internal_ScriptableRuntimeReflectionSystemSettings_system(crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem)` overload"] pub fn set_internal_scriptable_runtime_reflection_system_settings_system (value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e480usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Internal_ScriptableRuntimeReflectionSystemSettings_instance()` overload"] pub fn get_internal_scriptable_runtime_reflection_system_settings_instance () -> crate :: unity_engine :: experimental :: rendering :: scriptableruntimereflectionsystemwrapper :: ScriptableRuntimeReflectionSystemWrapper { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: scriptableruntimereflectionsystemwrapper :: ScriptableRuntimeReflectionSystemWrapper = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e5e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ScriptingDirtyReflectionSystemInstance()` overload"] pub fn scripting_dirty_reflection_system_instance () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e690usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]impl ScriptableRuntimeReflectionSystemSettings{#[doc="`set_Internal_ScriptableRuntimeReflectionSystemSettings_system(crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem)` overload"]pub fn set_internal_scriptable_runtime_reflection_system_settings_system(value:impl::core::convert::Into<crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e480usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem)::core::convert::Into::into(value))}
+}
+#[doc="`get_Internal_ScriptableRuntimeReflectionSystemSettings_instance()` overload"]pub fn get_internal_scriptable_runtime_reflection_system_settings_instance()->crate::unity_engine::experimental::rendering::scriptableruntimereflectionsystemwrapper::ScriptableRuntimeReflectionSystemWrapper{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e5e0usize)as*mut u8,crate::unity_engine::experimental::rendering::scriptableruntimereflectionsystemwrapper::ScriptableRuntimeReflectionSystemWrapper;
+)}
+}
+#[doc="`ScriptingDirtyReflectionSystemInstance()` overload"]pub fn scripting_dirty_reflection_system_instance()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e650usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e690usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]
-impl ScriptableRuntimeReflectionSystemSettings { pub fn set_internal_scriptable_runtime_reflection_system_settings_system_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRuntimeReflectionSystemSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_internal_scriptable_runtime_reflection_system_settings_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRuntimeReflectionSystemSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn scripting_dirty_reflection_system_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRuntimeReflectionSystemSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRuntimeReflectionSystemSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]impl ScriptableRuntimeReflectionSystemSettings{pub fn set_internal_scriptable_runtime_reflection_system_settings_system_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_internal_scriptable_runtime_reflection_system_settings_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn scripting_dirty_reflection_system_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]
 #[doc(hidden)]

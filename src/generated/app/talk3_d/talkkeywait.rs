@@ -4,40 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkkeywait/TalkKeyWait.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkKeyWait")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TalkKeyWait {
-# [offset (112)] # [rename (name = "m_Mid")] pub m_mid : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_VoiceEventName")] pub m_voice_event_name : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_WaitSecForAutoPlay")] pub m_wait_sec_for_auto_play : f32 ,
-# [offset (132)] # [rename (name = "m_waitCounter")] pub m_wait_counter : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkkeywait/TalkKeyWait.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkKeyWait")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkKeyWait{#[offset(112)]#[rename(name="m_Mid")]pub m_mid: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_VoiceEventName")]pub m_voice_event_name: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_WaitSecForAutoPlay")]pub m_wait_sec_for_auto_play:f32, #[offset(132)]#[rename(name="m_waitCounter")]pub m_wait_counter:f32,}
 
 }
 
 #[cfg(feature = "app-talk3_d-talkkeywait-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talkkeywait")]
-impl TalkKeyWait { # [doc = "`CreateInstBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_inst_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: talk3_d :: talkkeywait :: TalkKeyWait { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talkkeywait :: TalkKeyWait = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c0070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkkeywait")]impl TalkKeyWait{#[doc="`CreateInstBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_inst_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::talk3_d::talkkeywait::TalkKeyWait{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c0070usize)as*mut u8,crate::app::talk3_d::talkkeywait::TalkKeyWait;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkkeywait")]
-pub trait ITalkKeyWaitMethods : ITalkKeyWait { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkKeyWait , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bee50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkKeyWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bf7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkKeyWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bf850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkKeyWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bfa00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < TalkKeyWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkKeyWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c0060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkkeywait")]pub trait ITalkKeyWaitMethods:ITalkKeyWait{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bee50usize)as*mut u8,();
+(TalkKeyWait)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bf7d0usize)as*mut u8,();
+(TalkKeyWait)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bf850usize)as*mut u8,();
+(TalkKeyWait)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bfa00usize)as*mut u8,();
+(TalkKeyWait)__receiver)}
+}
+#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c0060usize)as*mut u8,();
+(TalkKeyWait)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkkeywait")]
-impl < __T : ITalkKeyWait > ITalkKeyWaitMethods for __T { }
+#[cfg(feature="app-talk3_d-talkkeywait")]impl<__T:ITalkKeyWait>ITalkKeyWaitMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talkkeywait")]
-impl TalkKeyWait { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkKeyWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkKeyWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkKeyWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkKeyWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkKeyWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_inst_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkKeyWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-talk3_d-talkkeywait")]impl TalkKeyWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_inst_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-talk3_d-talkkeywait")]
-impl TalkKeyWait {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (mid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkKeyWait) , :: core :: stringify ! (new) ,)) ; < Self as ITalkKeyWaitMethods > :: ctor (this , mid) ; this }
+#[cfg(feature="app-talk3_d-talkkeywait")]impl TalkKeyWait{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(mid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkKeyWait), ::core::stringify!(new),));
+ <Self as ITalkKeyWaitMethods> ::ctor(this,mid);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talkkeywait")]

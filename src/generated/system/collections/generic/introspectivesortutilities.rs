@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/introspectivesortutilities/IntrospectiveSortUtilities.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "IntrospectiveSortUtilities")] # [parent (crate :: system :: object :: Object)] pub struct IntrospectiveSortUtilities {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/introspectivesortutilities/IntrospectiveSortUtilities.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="IntrospectiveSortUtilities")]#[parent(crate::system::object::Object)]pub struct IntrospectiveSortUtilities{}
 
 }
 
 #[cfg(feature = "system-collections-generic-introspectivesortutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-introspectivesortutilities")]
-impl IntrospectiveSortUtilities { # [doc = "`FloorLog2(i32)` overload"] pub fn floor_log2 (n : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32639d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (n) , :: core :: option :: Option :: None) } } } # [doc = "`ThrowOrIgnoreBadComparer(crate::system::object::Object)` overload"] pub fn throw_or_ignore_bad_comparer (comparer : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3263a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-introspectivesortutilities")]impl IntrospectiveSortUtilities{#[doc="`FloorLog2(i32)` overload"]pub fn floor_log2(n:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32639d0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(n))}
+}
+#[doc="`ThrowOrIgnoreBadComparer(crate::system::object::Object)` overload"]pub fn throw_or_ignore_bad_comparer(comparer:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3263a10usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(comparer))}
+}
+}
 
-#[cfg(feature = "system-collections-generic-introspectivesortutilities")]
-impl IntrospectiveSortUtilities { pub fn floor_log2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntrospectiveSortUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn throw_or_ignore_bad_comparer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntrospectiveSortUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-collections-generic-introspectivesortutilities")]impl IntrospectiveSortUtilities{pub fn floor_log2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn throw_or_ignore_bad_comparer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "system-collections-generic-introspectivesortutilities")]
 #[doc(hidden)]

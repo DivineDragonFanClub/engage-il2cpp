@@ -4,149 +4,174 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TerrainData")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct TerrainData {
-# [static_field] # [rename (name = "k_MaximumResolution")] pub k_maximum_resolution : i32 ,
-# [static_field] # [rename (name = "k_MinimumDetailResolutionPerPatch")] pub k_minimum_detail_resolution_per_patch : i32 ,
-# [static_field] # [rename (name = "k_MaximumDetailResolutionPerPatch")] pub k_maximum_detail_resolution_per_patch : i32 ,
-# [static_field] # [rename (name = "k_MaximumDetailPatchCount")] pub k_maximum_detail_patch_count : i32 ,
-# [static_field] # [rename (name = "k_MaximumDetailsPerRes")] pub k_maximum_details_per_res : i32 ,
-# [static_field] # [rename (name = "k_MinimumAlphamapResolution")] pub k_minimum_alphamap_resolution : i32 ,
-# [static_field] # [rename (name = "k_MaximumAlphamapResolution")] pub k_maximum_alphamap_resolution : i32 ,
-# [static_field] # [rename (name = "k_MinimumBaseMapResolution")] pub k_minimum_base_map_resolution : i32 ,
-# [static_field] # [rename (name = "k_MaximumBaseMapResolution")] pub k_maximum_base_map_resolution : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/terraindata/TerrainData_BoundaryValueType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TerrainData_BoundaryValueType{pub value:i32,}
+impl::unity2::ClassIdentity for TerrainData_BoundaryValueType{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="TerrainData.BoundaryValueType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TerrainData_BoundaryValueType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TerrainData_BoundaryValueType{pub fn max_heightmap_res()->Self{Self{value:0}
+}
+pub fn min_detail_res_per_patch()->Self{Self{value:1}
+}
+pub fn max_detail_res_per_patch()->Self{Self{value:2}
+}
+pub fn max_detail_patch_count()->Self{Self{value:3}
+}
+pub fn max_details_per_res()->Self{Self{value:4}
+}
+pub fn min_alphamap_res()->Self{Self{value:5}
+}
+pub fn max_alphamap_res()->Self{Self{value:6}
+}
+pub fn min_base_map_res()->Self{Self{value:7}
+}
+pub fn max_base_map_res()->Self{Self{value:8}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/terraindata/TerrainData_BoundaryValueType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TerrainData_BoundaryValueType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TerrainData_BoundaryValueType  {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "TerrainData.BoundaryValueType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TerrainData_BoundaryValueType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TerrainData_BoundaryValueType  {
-    pub fn max_heightmap_res() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn min_detail_res_per_patch() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn max_detail_res_per_patch() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn max_detail_patch_count() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn max_details_per_res() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn min_alphamap_res() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn max_alphamap_res() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn min_base_map_res() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn max_base_map_res() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/terraindata/TerrainData.md"))]#[::unity2::class(namespace="UnityEngine",name="TerrainData")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct TerrainData{#[static_field]#[rename(name="k_MaximumResolution")]pub k_maximum_resolution:i32, #[static_field]#[rename(name="k_MinimumDetailResolutionPerPatch")]pub k_minimum_detail_resolution_per_patch:i32, #[static_field]#[rename(name="k_MaximumDetailResolutionPerPatch")]pub k_maximum_detail_resolution_per_patch:i32, #[static_field]#[rename(name="k_MaximumDetailPatchCount")]pub k_maximum_detail_patch_count:i32, #[static_field]#[rename(name="k_MaximumDetailsPerRes")]pub k_maximum_details_per_res:i32, #[static_field]#[rename(name="k_MinimumAlphamapResolution")]pub k_minimum_alphamap_resolution:i32, #[static_field]#[rename(name="k_MaximumAlphamapResolution")]pub k_maximum_alphamap_resolution:i32, #[static_field]#[rename(name="k_MinimumBaseMapResolution")]pub k_minimum_base_map_resolution:i32, #[static_field]#[rename(name="k_MaximumBaseMapResolution")]pub k_maximum_base_map_resolution:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-terraindata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-terraindata")]
-impl TerrainData { # [doc = "`GetBoundaryValue(crate::unity_engine::terraindata::TerrainData_BoundaryValueType)` overload"] pub fn get_boundary_value (r#type : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData_BoundaryValueType >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: terraindata :: TerrainData_BoundaryValueType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28d40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_Create(crate::unity_engine::terraindata::TerrainData)` overload"] pub fn internal_create (terrain_data : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: terraindata :: TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28e60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (terrain_data) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29bf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-terraindata")]impl TerrainData{#[doc="`GetBoundaryValue(crate::unity_engine::terraindata::TerrainData_BoundaryValueType)` overload"]pub fn get_boundary_value(r#type:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData_BoundaryValueType>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f28d40usize)as*mut u8,i32;
+(crate::unity_engine::terraindata::TerrainData_BoundaryValueType)::core::convert::Into::into(r#type))}
+}
+#[doc="`Internal_Create(crate::unity_engine::terraindata::TerrainData)` overload"]pub fn internal_create(terrain_data:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f28e60usize)as*mut u8,();
+(crate::unity_engine::terraindata::TerrainData)::core::convert::Into::into(terrain_data))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f29bf0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-terraindata")]
-pub trait ITerrainDataMethods : ITerrainData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_heightmapResolution()` overload"] fn get_heightmap_resolution (self ,) -> i32 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_internalHeightmapResolution()` overload"] fn get_internal_heightmap_resolution (self ,) -> i32 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_heightmapScale()` overload"] fn get_heightmap_scale (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_size()` overload"] fn get_size (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetInterpolatedNormal(f32, f32)` overload"] fn get_interpolated_normal (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f295d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`get_alphamapLayers()` overload"] fn get_alphamap_layers (self ,) -> i32 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f296c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_alphamapResolution()` overload"] fn get_alphamap_resolution (self ,) -> i32 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAlphamapResolutionInternal()` overload"] fn get_alphamap_resolution_internal (self ,) -> f32 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f298f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Internal_alphamapResolution()` overload"] fn get_internal_alphamap_resolution (self ,) -> i32 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f298a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_alphamapWidth()` overload"] fn get_alphamap_width (self ,) -> i32 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_alphamapHeight()` overload"] fn get_alphamap_height (self ,) -> i32 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_users()` overload"] fn get_users (self ,) -> :: unity2 :: Array < crate :: unity_engine :: terrain :: Terrain > { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: terrain :: Terrain > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_heightmapScale_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_heightmap_scale_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (TerrainData , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28fb0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`get_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_size_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (TerrainData , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29060usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`GetInterpolatedNormal_Injected(f32, f32, *mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_interpolated_normal_injected (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < TerrainData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (TerrainData , f32 , f32 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-terraindata")]pub trait ITerrainDataMethods:ITerrainData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28d90usize)as*mut u8,();
+(TerrainData)__receiver)}
+}
+#[doc="`get_heightmapResolution()` overload"]fn get_heightmap_resolution(self,)->i32{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28eb0usize)as*mut u8,i32;
+(TerrainData)__receiver)}
+}
+#[doc="`get_internalHeightmapResolution()` overload"]fn get_internal_heightmap_resolution(self,)->i32{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28f00usize)as*mut u8,i32;
+(TerrainData)__receiver)}
+}
+#[doc="`get_heightmapScale()` overload"]fn get_heightmap_scale(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28f50usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(TerrainData)__receiver)}
+}
+#[doc="`get_size()` overload"]fn get_size(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f29000usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(TerrainData)__receiver)}
+}
+#[doc="`GetInterpolatedNormal(f32, f32)` overload"]fn get_interpolated_normal(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f295d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(TerrainData)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`get_alphamapLayers()` overload"]fn get_alphamap_layers(self,)->i32{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f296c0usize)as*mut u8,i32;
+(TerrainData)__receiver)}
+}
+#[doc="`get_alphamapResolution()` overload"]fn get_alphamap_resolution(self,)->i32{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f29850usize)as*mut u8,i32;
+(TerrainData)__receiver)}
+}
+#[doc="`GetAlphamapResolutionInternal()` overload"]fn get_alphamap_resolution_internal(self,)->f32{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f298f0usize)as*mut u8,f32;
+(TerrainData)__receiver)}
+}
+#[doc="`get_Internal_alphamapResolution()` overload"]fn get_internal_alphamap_resolution(self,)->i32{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f298a0usize)as*mut u8,i32;
+(TerrainData)__receiver)}
+}
+#[doc="`get_alphamapWidth()` overload"]fn get_alphamap_width(self,)->i32{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f29940usize)as*mut u8,i32;
+(TerrainData)__receiver)}
+}
+#[doc="`get_alphamapHeight()` overload"]fn get_alphamap_height(self,)->i32{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f29990usize)as*mut u8,i32;
+(TerrainData)__receiver)}
+}
+#[doc="`get_users()` overload"]fn get_users(self,)-> ::unity2::Array<crate::unity_engine::terrain::Terrain>{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28430usize)as*mut u8, ::unity2::Array<crate::unity_engine::terrain::Terrain> ;
+(TerrainData)__receiver)}
+}
+#[doc="`get_heightmapScale_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_heightmap_scale_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28fb0usize)as*mut u8,();
+(TerrainData)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`get_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_size_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f29060usize)as*mut u8,();
+(TerrainData)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`GetInterpolatedNormal_Injected(f32, f32, *mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_interpolated_normal_injected(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <TerrainData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f29650usize)as*mut u8,();
+(TerrainData)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-terraindata")]
-impl < __T : ITerrainData > ITerrainDataMethods for __T { }
+#[cfg(feature="unity_engine-terraindata")]impl<__T:ITerrainData>ITerrainDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-terraindata")]
-impl TerrainData { pub fn get_boundary_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn internal_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_heightmap_resolution_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_internal_heightmap_resolution_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_heightmap_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_interpolated_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_alphamap_layers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_alphamap_resolution_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_alphamap_resolution_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_internal_alphamap_resolution_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_alphamap_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_alphamap_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_users_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_heightmap_scale_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_size_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_interpolated_normal_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } }
+#[cfg(feature="unity_engine-terraindata")]impl TerrainData{pub fn get_boundary_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn internal_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_heightmap_resolution_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_internal_heightmap_resolution_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_heightmap_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_interpolated_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_alphamap_layers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_alphamap_resolution_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_alphamap_resolution_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_internal_alphamap_resolution_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_alphamap_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_alphamap_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_users_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_heightmap_scale_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_size_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_interpolated_normal_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
 
-#[cfg(feature = "unity_engine-terraindata")]
-impl TerrainData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainData) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-terraindata")]impl TerrainData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainData), ::core::stringify!(new),));
+ <Self as ITerrainDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-terraindata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TerrainData_BoundaryValueType;
     pub use super::TerrainData;
     pub use super::ITerrainData;
     pub use super::ITerrainDataMethods;
-    pub use super::TerrainData_BoundaryValueType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

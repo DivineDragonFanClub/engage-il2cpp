@@ -4,58 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord_Record.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChapterRecord.Record")] # [parent (crate :: system :: object :: Object)] pub struct ChapterRecord_Record {
-# [offset (16)] # [rename (name = "Cid")] pub cid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "MvpPid")] pub mvp_pid : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "MvpJid")] pub mvp_jid : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "MvpGid")] pub mvp_gid : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "ClearTime")] pub clear_time : f32 ,
-# [offset (52)] # [rename (name = "ClearTurn")] pub clear_turn : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chapterrecord/ChapterRecord_Record.md"))]#[::unity2::class(namespace="App",name="ChapterRecord.Record")]#[parent(crate::system::object::Object)]pub struct ChapterRecord_Record{#[offset(16)]#[rename(name="Cid")]pub cid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="MvpPid")]pub mvp_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="MvpJid")]pub mvp_jid: ::unity2::Il2CppString, #[offset(40)]#[rename(name="MvpGid")]pub mvp_gid: ::unity2::Il2CppString, #[offset(48)]#[rename(name="ClearTime")]pub clear_time:f32, #[offset(52)]#[rename(name="ClearTurn")]pub clear_turn:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChapterRecord")] # [parent (crate :: system :: object :: Object)] pub struct ChapterRecord {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_List")] pub m_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: chapterrecord :: ChapterRecord_Record > ,
-# [offset (24)] # [rename (name = "m_Dictionary")] pub m_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: chapterrecord :: ChapterRecord_Record > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chapterrecord/ChapterRecord.md"))]#[::unity2::class(namespace="App",name="ChapterRecord")]#[parent(crate::system::object::Object)]pub struct ChapterRecord{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::chapterrecord::ChapterRecord_Record> , #[offset(24)]#[rename(name="m_Dictionary")]pub m_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::chapterrecord::ChapterRecord_Record> ,}
 
 }
 
 #[cfg(feature = "app-chapterrecord-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-chapterrecord")]
-pub trait IChapterRecord_RecordMethods : IChapterRecord_Record { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ChapterRecord_Record as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord_Record , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c00f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-chapterrecord")]
-impl < __T : IChapterRecord_Record > IChapterRecord_RecordMethods for __T { }
-
-#[cfg(feature = "app-chapterrecord")]
-impl ChapterRecord_Record { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord_Record as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-chapterrecord")]
-impl ChapterRecord_Record {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (cid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChapterRecord_Record) , :: core :: stringify ! (new) ,)) ; < Self as IChapterRecord_RecordMethods > :: ctor (this , cid) ; this }
+#[cfg(feature="app-chapterrecord")]pub trait IChapterRecord_RecordMethods:IChapterRecord_Record{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChapterRecord_Record as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c00f0usize)as*mut u8,();
+(ChapterRecord_Record)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
 }
 
-#[cfg(feature = "app-chapterrecord")]
-pub trait IChapterRecordMethods : IChapterRecord { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: chapterrecord :: ChapterRecord_Record { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterrecord :: ChapterRecord_Record = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Find(::unity2::Il2CppString)` overload"] fn find (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: chapterrecord :: ChapterRecord_Record { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterrecord :: ChapterRecord_Record = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`Find(crate::app::chapterdata::ChapterData)` overload"] fn find_2 (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> crate :: app :: chapterrecord :: ChapterRecord_Record { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterrecord :: ChapterRecord_Record = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb6a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryAdd(crate::app::chapterrecord::ChapterRecord_Record)` overload"] fn try_add (self , record : impl :: core :: convert :: Into < crate :: app :: chapterrecord :: ChapterRecord_Record >) -> crate :: app :: chapterrecord :: ChapterRecord_Record { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , crate :: app :: chapterrecord :: ChapterRecord_Record , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterrecord :: ChapterRecord_Record = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } } # [doc = "`TryAdd(::unity2::Il2CppString)` overload"] fn try_add_2 (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: chapterrecord :: ChapterRecord_Record { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterrecord :: ChapterRecord_Record = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`TryAdd(crate::app::chapterdata::ChapterData)` overload"] fn try_add_3 (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> crate :: app :: chapterrecord :: ChapterRecord_Record { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterrecord :: ChapterRecord_Record = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afb990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < ChapterRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChapterRecord , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2afbac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-chapterrecord")]impl<__T:IChapterRecord_Record>IChapterRecord_RecordMethods for __T{}
 
-#[cfg(feature = "app-chapterrecord")]
-impl < __T : IChapterRecord > IChapterRecordMethods for __T { }
+#[cfg(feature="app-chapterrecord")]impl ChapterRecord_Record{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-chapterrecord")]
-impl ChapterRecord { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn find_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn find_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn try_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn try_add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn try_add_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChapterRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-chapterrecord")]impl ChapterRecord_Record{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(cid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChapterRecord_Record), ::core::stringify!(new),));
+ <Self as IChapterRecord_RecordMethods> ::ctor(this,cid);
+this}
+}
 
-#[cfg(feature = "app-chapterrecord")]
-impl ChapterRecord {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChapterRecord) , :: core :: stringify ! (new) ,)) ; < Self as IChapterRecordMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-chapterrecord")]pub trait IChapterRecordMethods:IChapterRecord{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb480usize)as*mut u8,();
+(ChapterRecord)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb560usize)as*mut u8,i32;
+(ChapterRecord)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::app::chapterrecord::ChapterRecord_Record{unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb5b0usize)as*mut u8,crate::app::chapterrecord::ChapterRecord_Record;
+(ChapterRecord)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Find(::unity2::Il2CppString)` overload"]fn find(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::chapterrecord::ChapterRecord_Record{unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb620usize)as*mut u8,crate::app::chapterrecord::ChapterRecord_Record;
+(ChapterRecord)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`Find(crate::app::chapterdata::ChapterData)` overload"]fn find_2(self,chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->crate::app::chapterrecord::ChapterRecord_Record{unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb6a0usize)as*mut u8,crate::app::chapterrecord::ChapterRecord_Record;
+(ChapterRecord)__receiver,(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb730usize)as*mut u8,();
+(ChapterRecord)__receiver)}
+}
+#[doc="`TryAdd(crate::app::chapterrecord::ChapterRecord_Record)` overload"]fn try_add(self,record:impl::core::convert::Into<crate::app::chapterrecord::ChapterRecord_Record>)->crate::app::chapterrecord::ChapterRecord_Record{unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb7b0usize)as*mut u8,crate::app::chapterrecord::ChapterRecord_Record;
+(ChapterRecord)__receiver,(crate::app::chapterrecord::ChapterRecord_Record)::core::convert::Into::into(record))}
+}
+#[doc="`TryAdd(::unity2::Il2CppString)` overload"]fn try_add_2(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::chapterrecord::ChapterRecord_Record{unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb840usize)as*mut u8,crate::app::chapterrecord::ChapterRecord_Record;
+(ChapterRecord)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`TryAdd(crate::app::chapterdata::ChapterData)` overload"]fn try_add_3(self,chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->crate::app::chapterrecord::ChapterRecord_Record{unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb970usize)as*mut u8,crate::app::chapterrecord::ChapterRecord_Record;
+(ChapterRecord)__receiver,(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afb990usize)as*mut u8,();
+(ChapterRecord)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <ChapterRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2afbac0usize)as*mut u8,();
+(ChapterRecord)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
+
+#[cfg(feature="app-chapterrecord")]impl<__T:IChapterRecord>IChapterRecordMethods for __T{}
+
+#[cfg(feature="app-chapterrecord")]impl ChapterRecord{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn find_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn find_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn try_add_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-chapterrecord")]impl ChapterRecord{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChapterRecord), ::core::stringify!(new),));
+ <Self as IChapterRecordMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-chapterrecord")]

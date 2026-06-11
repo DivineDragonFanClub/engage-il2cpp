@@ -4,40 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customshadowdata/CustomShadowData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "CustomShadowData")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct CustomShadowData {
-# [offset (24)] # [rename (name = "MainLightShadowmapResolution")] pub main_light_shadowmap_resolution : crate :: unity_engine :: rendering :: universal :: shadowresolution_2 :: ShadowResolution_2 ,
-# [offset (28)] # [rename (name = "ShadowDistance")] pub shadow_distance : f32 ,
-# [offset (32)] # [rename (name = "CascadeSplit1")] pub cascade_split1 : f32 ,
-# [offset (36)] # [rename (name = "ShadowDepthBias")] pub shadow_depth_bias : f32 ,
-# [offset (40)] # [rename (name = "ShadowNormalBias")] pub shadow_normal_bias : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/customshadowdata/CustomShadowData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="CustomShadowData")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct CustomShadowData{#[offset(24)]#[rename(name="MainLightShadowmapResolution")]pub main_light_shadowmap_resolution:crate::unity_engine::rendering::universal::shadowresolution_2::ShadowResolution_2, #[offset(28)]#[rename(name="ShadowDistance")]pub shadow_distance:f32, #[offset(32)]#[rename(name="CascadeSplit1")]pub cascade_split1:f32, #[offset(36)]#[rename(name="ShadowDepthBias")]pub shadow_depth_bias:f32, #[offset(40)]#[rename(name="ShadowNormalBias")]pub shadow_normal_bias:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customshadowdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customshadowdata")]
-pub trait ICustomShadowDataMethods : ICustomShadowData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomShadowData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomShadowData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4e740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customshadowdata")]pub trait ICustomShadowDataMethods:ICustomShadowData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomShadowData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4e740usize)as*mut u8,();
+(CustomShadowData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customshadowdata")]
-impl < __T : ICustomShadowData > ICustomShadowDataMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-customshadowdata")]impl<__T:ICustomShadowData>ICustomShadowDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customshadowdata")]
-impl CustomShadowData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomShadowData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customshadowdata")]impl CustomShadowData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customshadowdata")]
-impl CustomShadowData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomShadowData) , :: core :: stringify ! (new) ,)) ; < Self as ICustomShadowDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-customshadowdata")]impl CustomShadowData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomShadowData), ::core::stringify!(new),));
+ <Self as ICustomShadowDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customshadowdata")]

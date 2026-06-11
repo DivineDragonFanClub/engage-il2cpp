@@ -4,45 +4,117 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagedanger/MapImageDanger.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageDanger")] # [parent (crate :: app :: mapimagecorebit :: MapImageCoreBit)] pub struct MapImageDanger {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (24)] # [rename (name = "m_Rod")] pub m_rod : crate :: app :: mapimagecorebit :: MapImageCoreBit ,
-# [offset (32)] # [rename (name = "m_AttackAll")] pub m_attack_all : crate :: app :: mapimagecorebit :: MapImageCoreBit ,
-# [offset (40)] # [rename (name = "m_RodAll")] pub m_rod_all : crate :: app :: mapimagecorebit :: MapImageCoreBit ,
-# [offset (48)] # [rename (name = "m_GunnerAll")] pub m_gunner_all : crate :: app :: mapimagecorebit :: MapImageCoreBit ,
-# [offset (56)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
-# [offset (60)] # [rename (name = "m_UpdateIndex")] pub m_update_index : i32 ,
-# [offset (64)] # [rename (name = "m_UpdateTargets")] pub m_update_targets : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (72)] # [rename (name = "m_MapDnagerDeploy")] pub m_map_dnager_deploy : crate :: app :: mapdnagerdeploy :: MapDnagerDeploy ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagedanger/MapImageDanger.md"))]#[::unity2::class(namespace="App",name="MapImageDanger")]#[parent(crate::app::mapimagecorebit::MapImageCoreBit)]pub struct MapImageDanger{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(24)]#[rename(name="m_Rod")]pub m_rod:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(32)]#[rename(name="m_AttackAll")]pub m_attack_all:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(40)]#[rename(name="m_RodAll")]pub m_rod_all:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(48)]#[rename(name="m_GunnerAll")]pub m_gunner_all:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(56)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(60)]#[rename(name="m_UpdateIndex")]pub m_update_index:i32, #[offset(64)]#[rename(name="m_UpdateTargets")]pub m_update_targets:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(72)]#[rename(name="m_MapDnagerDeploy")]pub m_map_dnager_deploy:crate::app::mapdnagerdeploy::MapDnagerDeploy,}
 
 }
 
 #[cfg(feature = "app-mapimagedanger-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapimagedanger")]
-impl MapImageDanger { # [doc = "`IsUpdateTarget(crate::app::unit::Unit)` overload"] pub fn is_update_target (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20605a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagedanger")]impl MapImageDanger{#[doc="`IsUpdateTarget(crate::app::unit::Unit)` overload"]pub fn is_update_target(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20605a0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
 
-#[cfg(feature = "app-mapimagedanger")]
-pub trait IMapImageDangerMethods : IMapImageDanger { # [doc = "`ClearImage()` overload"] fn clear_image (self ,) -> () { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearUpdate()` overload"] fn clear_update (self ,) -> () { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20600d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRod(i32, i32)` overload"] fn get_rod (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20601e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetAttackAll(i32, i32)` overload"] fn get_attack_all (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetRodAll(i32, i32)` overload"] fn get_rod_all (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetGunnerAll(i32, i32)` overload"] fn get_gunner_all (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20602a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`ExistsRod()` overload"] fn exists_rod (self ,) -> bool { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20602e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExistsAttackAll()` overload"] fn exists_attack_all (self ,) -> bool { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20602f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExistsRodAll()` overload"] fn exists_rod_all (self ,) -> bool { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExistsGunnerAll()` overload"] fn exists_gunner_all (self ,) -> bool { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Coroutine()` overload"] fn coroutine (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2060790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageDanger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageDanger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20608b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagedanger")]pub trait IMapImageDangerMethods:IMapImageDanger{#[doc="`ClearImage()` overload"]fn clear_image(self,)->(){unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060070usize)as*mut u8,();
+(MapImageDanger)__receiver)}
+}
+#[doc="`ClearUpdate()` overload"]fn clear_update(self,)->(){unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20600d0usize)as*mut u8,();
+(MapImageDanger)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060130usize)as*mut u8,();
+(MapImageDanger)__receiver)}
+}
+#[doc="`GetRod(i32, i32)` overload"]fn get_rod(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20601e0usize)as*mut u8,bool;
+(MapImageDanger)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetAttackAll(i32, i32)` overload"]fn get_attack_all(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060220usize)as*mut u8,bool;
+(MapImageDanger)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetRodAll(i32, i32)` overload"]fn get_rod_all(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060260usize)as*mut u8,bool;
+(MapImageDanger)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetGunnerAll(i32, i32)` overload"]fn get_gunner_all(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20602a0usize)as*mut u8,bool;
+(MapImageDanger)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`ExistsRod()` overload"]fn exists_rod(self,)->bool{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20602e0usize)as*mut u8,bool;
+(MapImageDanger)__receiver)}
+}
+#[doc="`ExistsAttackAll()` overload"]fn exists_attack_all(self,)->bool{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20602f0usize)as*mut u8,bool;
+(MapImageDanger)__receiver)}
+}
+#[doc="`ExistsRodAll()` overload"]fn exists_rod_all(self,)->bool{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060300usize)as*mut u8,bool;
+(MapImageDanger)__receiver)}
+}
+#[doc="`ExistsGunnerAll()` overload"]fn exists_gunner_all(self,)->bool{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060310usize)as*mut u8,bool;
+(MapImageDanger)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060320usize)as*mut u8,();
+(MapImageDanger)__receiver)}
+}
+#[doc="`Coroutine()` overload"]fn coroutine(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060700usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(MapImageDanger)__receiver)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060780usize)as*mut u8,();
+(MapImageDanger)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2060790usize)as*mut u8,();
+(MapImageDanger)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20608b0usize)as*mut u8,();
+(MapImageDanger)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapimagedanger")]
-impl < __T : IMapImageDanger > IMapImageDangerMethods for __T { }
+#[cfg(feature="app-mapimagedanger")]impl<__T:IMapImageDanger>IMapImageDangerMethods for __T{}
 
-#[cfg(feature = "app-mapimagedanger")]
-impl MapImageDanger { pub fn clear_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_attack_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_rod_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_gunner_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn exists_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn exists_attack_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn exists_rod_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn exists_gunner_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_update_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageDanger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-mapimagedanger")]impl MapImageDanger{pub fn clear_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_attack_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_rod_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_gunner_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn exists_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn exists_attack_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn exists_rod_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn exists_gunner_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_update_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-mapimagedanger")]
-impl MapImageDanger {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageDanger) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageDangerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapimagedanger")]impl MapImageDanger{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageDanger), ::core::stringify!(new),));
+ <Self as IMapImageDangerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapimagedanger")]

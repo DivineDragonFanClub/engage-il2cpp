@@ -4,95 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonUserSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonUserSettings {
-# [offset (16)] # [rename (name = "m_BasePath")] pub m_base_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_StartupLanguage")] pub m_startup_language : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_EngineLogging")] pub m_engine_logging : bool ,
-# [offset (36)] # [rename (name = "m_MaximumNumberOfPositioningPaths")] pub m_maximum_number_of_positioning_paths : u32 ,
-# [offset (40)] # [rename (name = "m_CommandQueueSize")] pub m_command_queue_size : u32 ,
-# [offset (44)] # [rename (name = "m_SamplesPerFrame")] pub m_samples_per_frame : u32 ,
-# [offset (48)] # [rename (name = "m_MainOutputSettings")] pub m_main_output_settings : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings ,
-# [offset (56)] # [rename (name = "m_StreamingLookAheadRatio")] pub m_streaming_look_ahead_ratio : f32 ,
-# [offset (60)] # [rename (name = "m_SampleRate")] pub m_sample_rate : u32 ,
-# [offset (64)] # [rename (name = "m_NumberOfRefillsInVoice")] pub m_number_of_refills_in_voice : u16 ,
-# [offset (72)] # [rename (name = "m_SpatialAudioSettings")] pub m_spatial_audio_settings : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings.md"))]#[::unity2::class(namespace="",name="AkCommonUserSettings.SpatialAudioSettings")]#[parent(crate::system::object::Object)]pub struct AkCommonUserSettings_SpatialAudioSettings{#[offset(16)]#[rename(name="m_MaxSoundPropagationDepth")]pub m_max_sound_propagation_depth:u32, #[offset(20)]#[rename(name="m_DiffractionFlags")]pub m_diffraction_flags:crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags, #[offset(24)]#[rename(name="m_MovementThreshold")]pub m_movement_threshold:f32, #[offset(28)]#[rename(name="m_NumberOfPrimaryRays")]pub m_number_of_primary_rays:u32, #[offset(32)]#[rename(name="m_MaxReflectionOrder")]pub m_max_reflection_order:u32, #[offset(36)]#[rename(name="m_MaxPathLength")]pub m_max_path_length:f32, #[offset(40)]#[rename(name="m_EnableDiffractionOnReflections")]pub m_enable_diffraction_on_reflections:bool, #[offset(41)]#[rename(name="m_EnableDirectPathDiffraction")]pub m_enable_direct_path_diffraction:bool, #[offset(42)]#[rename(name="m_EnableTransmission")]pub m_enable_transmission:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonusersettings/AkCommonUserSettings.md"))]#[::unity2::class(namespace="",name="AkCommonUserSettings")]#[parent(crate::system::object::Object)]pub struct AkCommonUserSettings{#[offset(16)]#[rename(name="m_BasePath")]pub m_base_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_StartupLanguage")]pub m_startup_language: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_EngineLogging")]pub m_engine_logging:bool, #[offset(36)]#[rename(name="m_MaximumNumberOfPositioningPaths")]pub m_maximum_number_of_positioning_paths:u32, #[offset(40)]#[rename(name="m_CommandQueueSize")]pub m_command_queue_size:u32, #[offset(44)]#[rename(name="m_SamplesPerFrame")]pub m_samples_per_frame:u32, #[offset(48)]#[rename(name="m_MainOutputSettings")]pub m_main_output_settings:crate::root::akcommonoutputsettings::AkCommonOutputSettings, #[offset(56)]#[rename(name="m_StreamingLookAheadRatio")]pub m_streaming_look_ahead_ratio:f32, #[offset(60)]#[rename(name="m_SampleRate")]pub m_sample_rate:u32, #[offset(64)]#[rename(name="m_NumberOfRefillsInVoice")]pub m_number_of_refills_in_voice:u16, #[offset(72)]#[rename(name="m_SpatialAudioSettings")]pub m_spatial_audio_settings:crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags{pub value:i32,}
+impl::unity2::ClassIdentity for AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags{const NAMESPACE: &'static str="";
+const NAME: &'static str="AkCommonUserSettings.SpatialAudioSettings.DiffractionFlags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags  {
-    pub value: i32,
+impl::unity2::IlType for AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "AkCommonUserSettings.SpatialAudioSettings.DiffractionFlags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags{pub fn use_built_in_param()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn use_obstruction()->Self{Self{value:2}
 }
-
-
-impl  AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags  {
-    pub fn use_built_in_param() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn use_obstruction() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn calc_emitter_virtual_position() -> Self {
-        Self { value: 8 }
-
-    }
-
+pub fn calc_emitter_virtual_position()->Self{Self{value:8}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonUserSettings.SpatialAudioSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonUserSettings_SpatialAudioSettings {
-# [offset (16)] # [rename (name = "m_MaxSoundPropagationDepth")] pub m_max_sound_propagation_depth : u32 ,
-# [offset (20)] # [rename (name = "m_DiffractionFlags")] pub m_diffraction_flags : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags ,
-# [offset (24)] # [rename (name = "m_MovementThreshold")] pub m_movement_threshold : f32 ,
-# [offset (28)] # [rename (name = "m_NumberOfPrimaryRays")] pub m_number_of_primary_rays : u32 ,
-# [offset (32)] # [rename (name = "m_MaxReflectionOrder")] pub m_max_reflection_order : u32 ,
-# [offset (36)] # [rename (name = "m_MaxPathLength")] pub m_max_path_length : f32 ,
-# [offset (40)] # [rename (name = "m_EnableDiffractionOnReflections")] pub m_enable_diffraction_on_reflections : bool ,
-# [offset (41)] # [rename (name = "m_EnableDirectPathDiffraction")] pub m_enable_direct_path_diffraction : bool ,
-# [offset (42)] # [rename (name = "m_EnableTransmission")] pub m_enable_transmission : bool ,
 }
 
 }
@@ -100,47 +41,103 @@ impl  AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags  {
 #[cfg(feature = "root-akcommonusersettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akcommonusersettings")]
-impl AkCommonUserSettings { # [doc = "`GetPluginPath()` overload"] pub fn get_plugin_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14e10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcommonusersettings")]
-pub trait IAkCommonUserSettingsMethods : IAkCommonUserSettings { # [doc = "`CopyTo(crate::root::akinitsettings::AkInitSettings)` overload"] fn copy_to (self , settings : impl :: core :: convert :: Into < crate :: root :: akinitsettings :: AkInitSettings >) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , crate :: root :: akinitsettings :: AkInitSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(crate::root::akmusicsettings::AkMusicSettings)` overload"] fn copy_to_2 (self , settings : impl :: core :: convert :: Into < crate :: root :: akmusicsettings :: AkMusicSettings >) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , crate :: root :: akmusicsettings :: AkMusicSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f149e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(crate::root::akstreammgrsettings::AkStreamMgrSettings)` overload"] fn copy_to_3 (self , settings : impl :: core :: convert :: Into < crate :: root :: akstreammgrsettings :: AkStreamMgrSettings >) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , crate :: root :: akstreammgrsettings :: AkStreamMgrSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(crate::root::akdevicesettings::AkDeviceSettings)` overload"] fn copy_to_4 (self , settings : impl :: core :: convert :: Into < crate :: root :: akdevicesettings :: AkDeviceSettings >) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , crate :: root :: akdevicesettings :: AkDeviceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`SetSampleRate(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"] fn set_sample_rate (self , settings : impl :: core :: convert :: Into < crate :: root :: akplatforminitsettings :: AkPlatformInitSettings >) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , crate :: root :: akplatforminitsettings :: AkPlatformInitSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"] fn copy_to_5 (self , settings : impl :: core :: convert :: Into < crate :: root :: akplatforminitsettings :: AkPlatformInitSettings >) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , crate :: root :: akplatforminitsettings :: AkPlatformInitSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings)` overload"] fn copy_to_6 (self , settings : impl :: core :: convert :: Into < crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings >) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings)` overload"] fn copy_to_7 (self , settings : impl :: core :: convert :: Into < crate :: root :: akunityplatformspecificsettings :: AkUnityPlatformSpecificSettings >) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , crate :: root :: akunityplatformspecificsettings :: AkUnityPlatformSpecificSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`Validate()` overload"] fn validate (self ,) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCommonUserSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f158a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcommonusersettings")]
-impl < __T : IAkCommonUserSettings > IAkCommonUserSettingsMethods for __T { }
-
-#[cfg(feature = "root-akcommonusersettings")]
-impl AkCommonUserSettings { pub fn get_plugin_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn copy_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn copy_to_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn copy_to_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_sample_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn copy_to_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn copy_to_6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn copy_to_7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
-
-#[cfg(feature = "root-akcommonusersettings")]
-impl AkCommonUserSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommonUserSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCommonUserSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akcommonusersettings")]pub trait IAkCommonUserSettings_SpatialAudioSettingsMethods:IAkCommonUserSettings_SpatialAudioSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonUserSettings_SpatialAudioSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e520usize)as*mut u8,();
+(AkCommonUserSettings_SpatialAudioSettings)__receiver)}
+}
 }
 
-#[cfg(feature = "root-akcommonusersettings")]
-pub trait IAkCommonUserSettings_SpatialAudioSettingsMethods : IAkCommonUserSettings_SpatialAudioSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCommonUserSettings_SpatialAudioSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonUserSettings_SpatialAudioSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9e520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcommonusersettings")]impl<__T:IAkCommonUserSettings_SpatialAudioSettings>IAkCommonUserSettings_SpatialAudioSettingsMethods for __T{}
 
-#[cfg(feature = "root-akcommonusersettings")]
-impl < __T : IAkCommonUserSettings_SpatialAudioSettings > IAkCommonUserSettings_SpatialAudioSettingsMethods for __T { }
+#[cfg(feature="root-akcommonusersettings")]impl AkCommonUserSettings_SpatialAudioSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akcommonusersettings")]
-impl AkCommonUserSettings_SpatialAudioSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonUserSettings_SpatialAudioSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akcommonusersettings")]impl AkCommonUserSettings_SpatialAudioSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCommonUserSettings_SpatialAudioSettings), ::core::stringify!(new),));
+ <Self as IAkCommonUserSettings_SpatialAudioSettingsMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "root-akcommonusersettings")]
-impl AkCommonUserSettings_SpatialAudioSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommonUserSettings_SpatialAudioSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCommonUserSettings_SpatialAudioSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akcommonusersettings")]impl AkCommonUserSettings{#[doc="`GetPluginPath()` overload"]pub fn get_plugin_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f14e10usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+}
+
+#[cfg(feature="root-akcommonusersettings")]pub trait IAkCommonUserSettingsMethods:IAkCommonUserSettings{#[doc="`CopyTo(crate::root::akinitsettings::AkInitSettings)` overload"]fn copy_to(self,settings:impl::core::convert::Into<crate::root::akinitsettings::AkInitSettings>)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14ed0usize)as*mut u8,();
+(AkCommonUserSettings)__receiver,(crate::root::akinitsettings::AkInitSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`CopyTo(crate::root::akmusicsettings::AkMusicSettings)` overload"]fn copy_to_2(self,settings:impl::core::convert::Into<crate::root::akmusicsettings::AkMusicSettings>)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f149e0usize)as*mut u8,();
+(AkCommonUserSettings)__receiver,(crate::root::akmusicsettings::AkMusicSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`CopyTo(crate::root::akstreammgrsettings::AkStreamMgrSettings)` overload"]fn copy_to_3(self,settings:impl::core::convert::Into<crate::root::akstreammgrsettings::AkStreamMgrSettings>)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14830usize)as*mut u8,();
+(AkCommonUserSettings)__receiver,(crate::root::akstreammgrsettings::AkStreamMgrSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`CopyTo(crate::root::akdevicesettings::AkDeviceSettings)` overload"]fn copy_to_4(self,settings:impl::core::convert::Into<crate::root::akdevicesettings::AkDeviceSettings>)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15510usize)as*mut u8,();
+(AkCommonUserSettings)__receiver,(crate::root::akdevicesettings::AkDeviceSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`SetSampleRate(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]fn set_sample_rate(self,settings:impl::core::convert::Into<crate::root::akplatforminitsettings::AkPlatformInitSettings>)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15520usize)as*mut u8,();
+(AkCommonUserSettings)__receiver,(crate::root::akplatforminitsettings::AkPlatformInitSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]fn copy_to_5(self,settings:impl::core::convert::Into<crate::root::akplatforminitsettings::AkPlatformInitSettings>)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15620usize)as*mut u8,();
+(AkCommonUserSettings)__receiver,(crate::root::akplatforminitsettings::AkPlatformInitSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`CopyTo(crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings)` overload"]fn copy_to_6(self,settings:impl::core::convert::Into<crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings>)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15780usize)as*mut u8,();
+(AkCommonUserSettings)__receiver,(crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`CopyTo(crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings)` overload"]fn copy_to_7(self,settings:impl::core::convert::Into<crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings>)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15850usize)as*mut u8,();
+(AkCommonUserSettings)__receiver,(crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`Validate()` overload"]fn validate(self,)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15860usize)as*mut u8,();
+(AkCommonUserSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonUserSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f158a0usize)as*mut u8,();
+(AkCommonUserSettings)__receiver)}
+}
+}
+
+#[cfg(feature="root-akcommonusersettings")]impl<__T:IAkCommonUserSettings>IAkCommonUserSettingsMethods for __T{}
+
+#[cfg(feature="root-akcommonusersettings")]impl AkCommonUserSettings{pub fn get_plugin_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn copy_to_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn copy_to_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn copy_to_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_sample_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn copy_to_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn copy_to_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn copy_to_7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="root-akcommonusersettings")]impl AkCommonUserSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCommonUserSettings), ::core::stringify!(new),));
+ <Self as IAkCommonUserSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akcommonusersettings")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkCommonUserSettings_SpatialAudioSettings;
+    pub use super::IAkCommonUserSettings_SpatialAudioSettings;
+    pub use super::IAkCommonUserSettings_SpatialAudioSettingsMethods;
     pub use super::AkCommonUserSettings;
     pub use super::IAkCommonUserSettings;
     pub use super::IAkCommonUserSettingsMethods;
     pub use super::AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags;
-    pub use super::AkCommonUserSettings_SpatialAudioSettings;
-    pub use super::IAkCommonUserSettings_SpatialAudioSettings;
-    pub use super::IAkCommonUserSettings_SpatialAudioSettingsMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

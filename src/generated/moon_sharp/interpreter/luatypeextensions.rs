@@ -4,29 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/luatypeextensions/LuaTypeExtensions.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "LuaTypeExtensions")] # [parent (crate :: system :: object :: Object)] pub struct LuaTypeExtensions {
-# [static_field] # [rename (name = "MaxMetaTypes")] pub max_meta_types : crate :: moon_sharp :: interpreter :: datatype :: DataType ,
-# [static_field] # [rename (name = "MaxConvertibleTypes")] pub max_convertible_types : crate :: moon_sharp :: interpreter :: datatype :: DataType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/luatypeextensions/LuaTypeExtensions.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="LuaTypeExtensions")]#[parent(crate::system::object::Object)]pub struct LuaTypeExtensions{#[static_field]#[rename(name="MaxMetaTypes")]pub max_meta_types:crate::moon_sharp::interpreter::datatype::DataType, #[static_field]#[rename(name="MaxConvertibleTypes")]pub max_convertible_types:crate::moon_sharp::interpreter::datatype::DataType,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-luatypeextensions-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-luatypeextensions")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LuaTypeExtensions_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_have_type_metatables { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: datatype :: DataType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaTypeExtensions as :: unity2 :: ClassIdentity > :: class () , "CanHaveTypeMetatables" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaTypeExtensions as :: unity2 :: ClassIdentity > :: NAME , "CanHaveTypeMetatables" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_error_type_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: datatype :: DataType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaTypeExtensions as :: unity2 :: ClassIdentity > :: class () , "ToErrorTypeString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaTypeExtensions as :: unity2 :: ClassIdentity > :: NAME , "ToErrorTypeString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_lua_debugger_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: datatype :: DataType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaTypeExtensions as :: unity2 :: ClassIdentity > :: class () , "ToLuaDebuggerString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaTypeExtensions as :: unity2 :: ClassIdentity > :: NAME , "ToLuaDebuggerString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_lua_type_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: datatype :: DataType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LuaTypeExtensions as :: unity2 :: ClassIdentity > :: class () , "ToLuaTypeString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LuaTypeExtensions as :: unity2 :: ClassIdentity > :: NAME , "ToLuaTypeString" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-luatypeextensions")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LuaTypeExtensions_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_can_have_type_metatables{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::datatype::DataType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaTypeExtensions as::unity2::ClassIdentity> ::class(),"CanHaveTypeMetatables",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaTypeExtensions as::unity2::ClassIdentity> ::NAME,"CanHaveTypeMetatables",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_error_type_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::datatype::DataType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaTypeExtensions as::unity2::ClassIdentity> ::class(),"ToErrorTypeString",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaTypeExtensions as::unity2::ClassIdentity> ::NAME,"ToErrorTypeString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_lua_debugger_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::datatype::DataType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaTypeExtensions as::unity2::ClassIdentity> ::class(),"ToLuaDebuggerString",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaTypeExtensions as::unity2::ClassIdentity> ::NAME,"ToLuaDebuggerString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_lua_type_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::datatype::DataType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LuaTypeExtensions as::unity2::ClassIdentity> ::class(),"ToLuaTypeString",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LuaTypeExtensions as::unity2::ClassIdentity> ::NAME,"ToLuaTypeString",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-luatypeextensions")]
-impl LuaTypeExtensions { # [doc = "`CanHaveTypeMetatables(crate::moon_sharp::interpreter::datatype::DataType)` overload"] pub fn can_have_type_metatables (r#type : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: datatype :: DataType >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: datatype :: DataType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__LuaTypeExtensions_unity2_raw :: __lookup_can_have_type_metatables :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`ToErrorTypeString(crate::moon_sharp::interpreter::datatype::DataType)` overload"] pub fn to_error_type_string (r#type : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: datatype :: DataType >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: datatype :: DataType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__LuaTypeExtensions_unity2_raw :: __lookup_to_error_type_string :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`ToLuaDebuggerString(crate::moon_sharp::interpreter::datatype::DataType)` overload"] pub fn to_lua_debugger_string (r#type : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: datatype :: DataType >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: datatype :: DataType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__LuaTypeExtensions_unity2_raw :: __lookup_to_lua_debugger_string :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`ToLuaTypeString(crate::moon_sharp::interpreter::datatype::DataType)` overload"] pub fn to_lua_type_string (r#type : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: datatype :: DataType >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: datatype :: DataType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__LuaTypeExtensions_unity2_raw :: __lookup_to_lua_type_string :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-luatypeextensions")]impl LuaTypeExtensions{#[doc="`CanHaveTypeMetatables(crate::moon_sharp::interpreter::datatype::DataType)` overload"]pub fn can_have_type_metatables(r#type:impl::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>)->bool{unsafe{::unity2::il2cpp_call!(__LuaTypeExtensions_unity2_raw::__lookup_can_have_type_metatables::get_method_info().method_ptr,bool;
+(crate::moon_sharp::interpreter::datatype::DataType)::core::convert::Into::into(r#type))}
+}
+#[doc="`ToErrorTypeString(crate::moon_sharp::interpreter::datatype::DataType)` overload"]pub fn to_error_type_string(r#type:impl::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(__LuaTypeExtensions_unity2_raw::__lookup_to_error_type_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(crate::moon_sharp::interpreter::datatype::DataType)::core::convert::Into::into(r#type))}
+}
+#[doc="`ToLuaDebuggerString(crate::moon_sharp::interpreter::datatype::DataType)` overload"]pub fn to_lua_debugger_string(r#type:impl::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(__LuaTypeExtensions_unity2_raw::__lookup_to_lua_debugger_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(crate::moon_sharp::interpreter::datatype::DataType)::core::convert::Into::into(r#type))}
+}
+#[doc="`ToLuaTypeString(crate::moon_sharp::interpreter::datatype::DataType)` overload"]pub fn to_lua_type_string(r#type:impl::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(__LuaTypeExtensions_unity2_raw::__lookup_to_lua_type_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(crate::moon_sharp::interpreter::datatype::DataType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-luatypeextensions")]
-impl LuaTypeExtensions { pub fn can_have_type_metatables_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaTypeExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_error_type_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaTypeExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_lua_debugger_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaTypeExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_lua_type_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LuaTypeExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="moon_sharp-interpreter-luatypeextensions")]impl LuaTypeExtensions{pub fn can_have_type_metatables_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_error_type_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_lua_debugger_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_lua_type_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-luatypeextensions")]
 #[doc(hidden)]

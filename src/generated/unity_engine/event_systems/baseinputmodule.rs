@@ -4,53 +4,151 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/baseinputmodule/BaseInputModule.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "BaseInputModule")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct BaseInputModule {
-# [offset (24)] # [rename (name = "m_RaycastResultCache")] pub m_raycast_result_cache : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > ,
-# [offset (32)] # [rename (name = "m_AxisEventData")] pub m_axis_event_data : crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData ,
-# [offset (40)] # [rename (name = "m_EventSystem")] pub m_event_system : crate :: unity_engine :: event_systems :: eventsystem :: EventSystem ,
-# [offset (48)] # [rename (name = "m_BaseEventData")] pub m_base_event_data : crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData ,
-# [offset (56)] # [rename (name = "m_InputOverride")] pub m_input_override : crate :: unity_engine :: event_systems :: baseinput :: BaseInput ,
-# [offset (64)] # [rename (name = "m_DefaultInput")] pub m_default_input : crate :: unity_engine :: event_systems :: baseinput :: BaseInput ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/baseinputmodule/BaseInputModule.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="BaseInputModule")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct BaseInputModule{#[offset(24)]#[rename(name="m_RaycastResultCache")]pub m_raycast_result_cache:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , #[offset(32)]#[rename(name="m_AxisEventData")]pub m_axis_event_data:crate::unity_engine::event_systems::axiseventdata::AxisEventData, #[offset(40)]#[rename(name="m_EventSystem")]pub m_event_system:crate::unity_engine::event_systems::eventsystem::EventSystem, #[offset(48)]#[rename(name="m_BaseEventData")]pub m_base_event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData, #[offset(56)]#[rename(name="m_InputOverride")]pub m_input_override:crate::unity_engine::event_systems::baseinput::BaseInput, #[offset(64)]#[rename(name="m_DefaultInput")]pub m_default_input:crate::unity_engine::event_systems::baseinput::BaseInput,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseinputmodule-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BaseInputModule_unity2_raw { use super :: * ; pub unsafe fn process (this : BaseInputModule , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Process") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Process" , < BaseInputModule as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-event_systems-baseinputmodule")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseInputModule_unity2_raw{use super:: * ;
+pub unsafe fn process(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Process").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Process", <BaseInputModule as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
-impl BaseInputModule { # [doc = "`FindFirstRaycast(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"] pub fn find_first_raycast (candidates : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > >) -> crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317aa10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (candidates) , :: core :: option :: Option :: None) } } } # [doc = "`DetermineMoveDirection(f32, f32)` overload"] pub fn determine_move_direction (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317ab60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`DetermineMoveDirection(f32, f32, f32)` overload"] pub fn determine_move_direction_2 (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , dead_zone : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: movedirection :: MoveDirection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317abe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (dead_zone) , :: core :: option :: Option :: None) } } } # [doc = "`FindCommonRoot(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"] pub fn find_common_root (g1 : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , g2 : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317ac70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (g1) , :: core :: convert :: Into :: into (g2) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-baseinputmodule")]impl BaseInputModule{#[doc="`FindFirstRaycast(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]pub fn find_first_raycast(candidates:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> >)->crate::unity_engine::event_systems::raycastresult::RaycastResult{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317aa10usize)as*mut u8,crate::unity_engine::event_systems::raycastresult::RaycastResult;
+(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)::core::convert::Into::into(candidates))}
+}
+#[doc="`DetermineMoveDirection(f32, f32)` overload"]pub fn determine_move_direction(x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->crate::unity_engine::event_systems::movedirection::MoveDirection{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317ab60usize)as*mut u8,crate::unity_engine::event_systems::movedirection::MoveDirection;
+(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`DetermineMoveDirection(f32, f32, f32)` overload"]pub fn determine_move_direction_2(x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,dead_zone:impl::core::convert::Into<f32>)->crate::unity_engine::event_systems::movedirection::MoveDirection{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317abe0usize)as*mut u8,crate::unity_engine::event_systems::movedirection::MoveDirection;
+(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(dead_zone))}
+}
+#[doc="`FindCommonRoot(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]pub fn find_common_root(g1:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,g2:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317ac70usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(g1),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(g2))}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
-pub trait IBaseInputModuleMethods : IBaseInputModule { # [doc = "`get_input()` overload"] fn get_input (self ,) -> crate :: unity_engine :: event_systems :: baseinput :: BaseInput { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: baseinput :: BaseInput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_inputOverride()` overload"] fn get_input_override (self ,) -> crate :: unity_engine :: event_systems :: baseinput :: BaseInput { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: baseinput :: BaseInput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_inputOverride(crate::unity_engine::event_systems::baseinput::BaseInput)` overload"] fn set_input_override (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseinput :: BaseInput >) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , crate :: unity_engine :: event_systems :: baseinput :: BaseInput , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_eventSystem()` overload"] fn get_event_system (self ,) -> crate :: unity_engine :: event_systems :: eventsystem :: EventSystem { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: eventsystem :: EventSystem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Process()` overload"] fn process (self ,) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseInputModule_unity2_raw :: process (__receiver , :: core :: option :: Option :: None) } } # [doc = "`HandlePointerExitAndEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::gameobject::GameObject)` overload"] fn handle_pointer_exit_and_enter (self , current_pointer_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > , new_enter_target : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317ae20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current_pointer_data) , :: core :: convert :: Into :: into (new_enter_target) , :: core :: option :: Option :: None) } } } # [doc = "`GetAxisEventData(f32, f32, f32)` overload"] fn get_axis_event_data (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , move_dead_zone : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (move_dead_zone) , :: core :: option :: Option :: None) } } } # [doc = "`GetBaseEventData()` overload"] fn get_base_event_data (self ,) -> crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPointerOverGameObject(i32)` overload"] fn is_pointer_over_game_object (self , pointer_id : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pointer_id) , :: core :: option :: Option :: None) } } } # [doc = "`ShouldActivateModule()` overload"] fn should_activate_module (self ,) -> bool { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeactivateModule()` overload"] fn deactivate_module (self ,) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b6d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ActivateModule()` overload"] fn activate_module (self ,) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateModule()` overload"] fn update_module (self ,) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsModuleSupported()` overload"] fn is_module_supported (self ,) -> bool { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BaseInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317b710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-baseinputmodule")]pub trait IBaseInputModuleMethods:IBaseInputModule{#[doc="`get_input()` overload"]fn get_input(self,)->crate::unity_engine::event_systems::baseinput::BaseInput{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a540usize)as*mut u8,crate::unity_engine::event_systems::baseinput::BaseInput;
+(BaseInputModule)__receiver)}
+}
+#[doc="`get_inputOverride()` overload"]fn get_input_override(self,)->crate::unity_engine::event_systems::baseinput::BaseInput{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a7a0usize)as*mut u8,crate::unity_engine::event_systems::baseinput::BaseInput;
+(BaseInputModule)__receiver)}
+}
+#[doc="`set_inputOverride(crate::unity_engine::event_systems::baseinput::BaseInput)` overload"]fn set_input_override(self,value:impl::core::convert::Into<crate::unity_engine::event_systems::baseinput::BaseInput>)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a7b0usize)as*mut u8,();
+(BaseInputModule)__receiver,(crate::unity_engine::event_systems::baseinput::BaseInput)::core::convert::Into::into(value))}
+}
+#[doc="`get_eventSystem()` overload"]fn get_event_system(self,)->crate::unity_engine::event_systems::eventsystem::EventSystem{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a7c0usize)as*mut u8,crate::unity_engine::event_systems::eventsystem::EventSystem;
+(BaseInputModule)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a7d0usize)as*mut u8,();
+(BaseInputModule)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a9e0usize)as*mut u8,();
+(BaseInputModule)__receiver)}
+}
+#[doc="`Process()` overload"]fn process(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseInputModule_unity2_raw::process(__receiver, ::core::option::Option::None)}
+}
+#[doc="`HandlePointerExitAndEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::gameobject::GameObject)` overload"]fn handle_pointer_exit_and_enter(self,current_pointer_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,new_enter_target:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317ae20usize)as*mut u8,();
+(BaseInputModule)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(current_pointer_data),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(new_enter_target))}
+}
+#[doc="`GetAxisEventData(f32, f32, f32)` overload"]fn get_axis_event_data(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,move_dead_zone:impl::core::convert::Into<f32>)->crate::unity_engine::event_systems::axiseventdata::AxisEventData{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b480usize)as*mut u8,crate::unity_engine::event_systems::axiseventdata::AxisEventData;
+(BaseInputModule)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(move_dead_zone))}
+}
+#[doc="`GetBaseEventData()` overload"]fn get_base_event_data(self,)->crate::unity_engine::event_systems::baseeventdata::BaseEventData{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b5c0usize)as*mut u8,crate::unity_engine::event_systems::baseeventdata::BaseEventData;
+(BaseInputModule)__receiver)}
+}
+#[doc="`IsPointerOverGameObject(i32)` overload"]fn is_pointer_over_game_object(self,pointer_id:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b670usize)as*mut u8,bool;
+(BaseInputModule)__receiver,(i32)::core::convert::Into::into(pointer_id))}
+}
+#[doc="`ShouldActivateModule()` overload"]fn should_activate_module(self,)->bool{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b680usize)as*mut u8,bool;
+(BaseInputModule)__receiver)}
+}
+#[doc="`DeactivateModule()` overload"]fn deactivate_module(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b6d0usize)as*mut u8,();
+(BaseInputModule)__receiver)}
+}
+#[doc="`ActivateModule()` overload"]fn activate_module(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b6e0usize)as*mut u8,();
+(BaseInputModule)__receiver)}
+}
+#[doc="`UpdateModule()` overload"]fn update_module(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b6f0usize)as*mut u8,();
+(BaseInputModule)__receiver)}
+}
+#[doc="`IsModuleSupported()` overload"]fn is_module_supported(self,)->bool{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b700usize)as*mut u8,bool;
+(BaseInputModule)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317b710usize)as*mut u8,();
+(BaseInputModule)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
-impl < __T : IBaseInputModule > IBaseInputModuleMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-baseinputmodule")]impl<__T:IBaseInputModule>IBaseInputModuleMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
-impl BaseInputModule { pub fn get_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_input_override_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_input_override_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_event_system_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn process_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn find_first_raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn determine_move_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn determine_move_direction_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn find_common_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn handle_pointer_exit_and_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_axis_event_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_base_event_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_pointer_over_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn should_activate_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn deactivate_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn activate_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn update_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_module_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="unity_engine-event_systems-baseinputmodule")]impl BaseInputModule{pub fn get_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_input_override_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_input_override_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_event_system_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn find_first_raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn determine_move_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn determine_move_direction_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn find_common_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn handle_pointer_exit_and_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_axis_event_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_base_event_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_pointer_over_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn should_activate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn deactivate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn activate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn update_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_module_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
-impl BaseInputModule {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaseInputModule) , :: core :: stringify ! (new) ,)) ; < Self as IBaseInputModuleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-baseinputmodule")]impl BaseInputModule{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BaseInputModule), ::core::stringify!(new),));
+ <Self as IBaseInputModuleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseinputmodule")]

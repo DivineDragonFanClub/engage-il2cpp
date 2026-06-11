@@ -4,50 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/diagnostics/diagnosticevent/DiagnosticEvent.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DiagnosticEvent {
-    pub m_graph: :: unity2 :: Il2CppString,
-    pub m_dependencies: :: unity2 :: Array < i32 >,
-    pub m_object_id: i32,
-    pub m_display_name: :: unity2 :: Il2CppString,
-    pub m_stream: i32,
-    pub m_frame: i32,
-    pub m_value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/diagnostics/diagnosticevent/DiagnosticEvent.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DiagnosticEvent{pub m_graph: ::unity2::Il2CppString,pub m_dependencies: ::unity2::Array<i32>,pub m_object_id:i32,pub m_display_name: ::unity2::Il2CppString,pub m_stream:i32,pub m_frame:i32,pub m_value:i32,}
+impl::unity2::ClassIdentity for DiagnosticEvent{const NAMESPACE: &'static str="UnityEngine.ResourceManagement.Diagnostics";
+const NAME: &'static str="DiagnosticEvent";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for DiagnosticEvent {
-    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.Diagnostics";
-
-    const NAME: &'static str = "DiagnosticEvent";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for DiagnosticEvent {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for DiagnosticEvent{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -55,17 +26,154 @@ impl ::unity2::IlType for DiagnosticEvent {
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticevent")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DiagnosticEvent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_graph { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "get_Graph" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "get_Graph" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_object_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "get_ObjectId" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "get_ObjectId" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_display_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "get_DisplayName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "get_DisplayName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dependencies { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "get_Dependencies" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "get_Dependencies" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stream { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "get_Stream" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "get_Stream" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_frame { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "get_Frame" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "get_Frame" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "get_Value" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "get_Value" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 7 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "Serialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "Serialize" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () , "Deserialize" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticEvent as :: unity2 :: ClassIdentity > :: NAME , "Deserialize" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-diagnostics-diagnosticevent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DiagnosticEvent_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_graph{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"get_Graph",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"get_Graph",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_object_id{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"get_ObjectId",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"get_ObjectId",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_display_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"get_DisplayName",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"get_DisplayName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_dependencies{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"get_Dependencies",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"get_Dependencies",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_stream{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"get_Stream",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"get_Stream",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_frame{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"get_Frame",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"get_Frame",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_value{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"get_Value",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"get_Value",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), < ::unity2::Array<i32>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),".ctor",7,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_serialize{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"Serialize",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"Serialize",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_deserialize{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<u8>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEvent as::unity2::ClassIdentity> ::class(),"Deserialize",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DiagnosticEvent as::unity2::ClassIdentity> ::NAME,"Deserialize",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticevent")]
-impl DiagnosticEvent { # [doc = "`Deserialize(::unity2::Array<u8>)` overload"] pub fn deserialize (data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent = :: core :: mem :: transmute (__DiagnosticEvent_unity2_raw :: __lookup_deserialize :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-diagnostics-diagnosticevent")]impl DiagnosticEvent{#[doc="`Deserialize(::unity2::Array<u8>)` overload"]pub fn deserialize(data:impl::core::convert::Into< ::unity2::Array<u8> >)->crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent{unsafe{::unity2::il2cpp_call!(__DiagnosticEvent_unity2_raw::__lookup_deserialize::get_method_info().method_ptr,crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent;
+(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticevent")]
-impl DiagnosticEvent { # [doc = "`get_Graph()` overload"] pub fn get_graph (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_get_graph :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: option :: Option :: None) } } } # [doc = "`get_ObjectId()` overload"] pub fn get_object_id (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_get_object_id :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: option :: Option :: None) } } } # [doc = "`get_DisplayName()` overload"] pub fn get_display_name (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_get_display_name :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: option :: Option :: None) } } } # [doc = "`get_Dependencies()` overload"] pub fn get_dependencies (& mut self ,) -> :: unity2 :: Array < i32 > { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_get_dependencies :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: option :: Option :: None) } } } # [doc = "`get_Stream()` overload"] pub fn get_stream (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_get_stream :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: option :: Option :: None) } } } # [doc = "`get_Frame()` overload"] pub fn get_frame (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_get_frame :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] pub fn get_value (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_get_value :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, i32, i32, i32, i32, ::unity2::Array<i32>)` overload"] pub fn ctor (& mut self , graph : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , id : impl :: core :: convert :: Into < i32 > , stream : impl :: core :: convert :: Into < i32 > , frame : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 > , deps : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> () { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , i32 , i32 , i32 , i32 , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (frame) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (deps) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] pub fn serialize (& mut self ,) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (* mut DiagnosticEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__DiagnosticEvent_unity2_raw :: __lookup_serialize :: get_method_info () . method_ptr)) ; __inner (self as * mut DiagnosticEvent , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-diagnostics-diagnosticevent")]impl DiagnosticEvent{#[doc="`get_Graph()` overload"]pub fn get_graph(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_get_graph::get_method_info().method_ptr), ::unity2::Il2CppString;
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent)}
+}
+#[doc="`get_ObjectId()` overload"]pub fn get_object_id(&mut self,)->i32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_get_object_id::get_method_info().method_ptr),i32;
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent)}
+}
+#[doc="`get_DisplayName()` overload"]pub fn get_display_name(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_get_display_name::get_method_info().method_ptr), ::unity2::Il2CppString;
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent)}
+}
+#[doc="`get_Dependencies()` overload"]pub fn get_dependencies(&mut self,)-> ::unity2::Array<i32>{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_get_dependencies::get_method_info().method_ptr), ::unity2::Array<i32> ;
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent)}
+}
+#[doc="`get_Stream()` overload"]pub fn get_stream(&mut self,)->i32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_get_stream::get_method_info().method_ptr),i32;
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent)}
+}
+#[doc="`get_Frame()` overload"]pub fn get_frame(&mut self,)->i32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_get_frame::get_method_info().method_ptr),i32;
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent)}
+}
+#[doc="`get_Value()` overload"]pub fn get_value(&mut self,)->i32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_get_value::get_method_info().method_ptr),i32;
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent)}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, i32, i32, i32, i32, ::unity2::Array<i32>)` overload"]pub fn ctor(&mut self,graph:impl::core::convert::Into< ::unity2::Il2CppString> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,id:impl::core::convert::Into<i32> ,stream:impl::core::convert::Into<i32> ,frame:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32> ,deps:impl::core::convert::Into< ::unity2::Array<i32> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_ctor::get_method_info().method_ptr),();
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent,(::unity2::Il2CppString)::core::convert::Into::into(graph),(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(id),(i32)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(frame),(i32)::core::convert::Into::into(value),(::unity2::Array<i32>)::core::convert::Into::into(deps))}
+}
+#[doc="`Serialize()` overload"]pub fn serialize(&mut self,)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DiagnosticEvent_unity2_raw::__lookup_serialize::get_method_info().method_ptr), ::unity2::Array<u8> ;
+(*mut DiagnosticEvent)self as*mut DiagnosticEvent)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticevent")]
-impl DiagnosticEvent { pub fn get_graph_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_object_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_display_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_dependencies_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiagnosticEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-resource_management-diagnostics-diagnosticevent")]impl DiagnosticEvent{pub fn get_graph_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_object_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_display_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticevent")]
 #[doc(hidden)]

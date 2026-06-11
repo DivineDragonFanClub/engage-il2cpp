@@ -4,106 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filecommon/FileCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileCommon")] # [parent (crate :: system :: object :: Object)] pub struct FileCommon {
-# [static_field] # [rename (name = "s_LockObject")] pub s_lock_object : :: unity2 :: IlInstance ,
-# [static_field] # [rename (name = "s_Dictionary")] pub s_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: filedata :: FileData > ,
-# [static_field] # [rename (name = "s_PreAsyncList")] pub s_pre_async_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: filedata :: FileData > ,
-# [static_field] # [rename (name = "s_PostAsyncList")] pub s_post_async_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: filedata :: FileData > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/filecommon/FileCommon_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FileCommon_State{pub value:i32,}
+impl::unity2::ClassIdentity for FileCommon_State{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FileCommon.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for FileCommon_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl FileCommon_State{pub fn none()->Self{Self{value:0}
+}
+pub fn r#async()->Self{Self{value:1}
+}
+pub fn done()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/filecommon/FileCommon_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FileCommon_State  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for FileCommon_State  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FileCommon.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for FileCommon_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  FileCommon_State  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn r#async() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn done() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/filecommon/FileCommon.md"))]#[::unity2::class(namespace="App",name="FileCommon")]#[parent(crate::system::object::Object)]pub struct FileCommon{#[static_field]#[rename(name="s_LockObject")]pub s_lock_object: ::unity2::IlInstance, #[static_field]#[rename(name="s_Dictionary")]pub s_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::filedata::FileData> , #[static_field]#[rename(name="s_PreAsyncList")]pub s_pre_async_list:crate::system::collections::generic::list_1::List_1<crate::app::filedata::FileData> , #[static_field]#[rename(name="s_PostAsyncList")]pub s_post_async_list:crate::system::collections::generic::list_1::List_1<crate::app::filedata::FileData> ,}
 
 }
 
 #[cfg(feature = "app-filecommon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-filecommon")]
-impl FileCommon { # [doc = "`ReadAllBytes(::unity2::Il2CppString)` overload"] pub fn read_all_bytes (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`GetFullPath(::unity2::Il2CppString)` overload"] pub fn get_full_path (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e86a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e88b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-filecommon")]impl FileCommon{#[doc="`ReadAllBytes(::unity2::Il2CppString)` overload"]pub fn read_all_bytes(path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e8330usize)as*mut u8, ::unity2::Array<u8> ;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`GetFullPath(::unity2::Il2CppString)` overload"]pub fn get_full_path(path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e86a0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e88b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-filecommon")]
-pub trait IFileCommonMethods : IFileCommon { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FileCommon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileCommon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e88a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-filecommon")]pub trait IFileCommonMethods:IFileCommon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FileCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e88a0usize)as*mut u8,();
+(FileCommon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-filecommon")]
-impl < __T : IFileCommon > IFileCommonMethods for __T { }
+#[cfg(feature="app-filecommon")]impl<__T:IFileCommon>IFileCommonMethods for __T{}
 
-#[cfg(feature = "app-filecommon")]
-impl FileCommon { pub fn read_all_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_full_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-filecommon")]impl FileCommon{pub fn read_all_bytes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_full_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-filecommon")]
-impl FileCommon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileCommon) , :: core :: stringify ! (new) ,)) ; < Self as IFileCommonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-filecommon")]impl FileCommon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileCommon), ::core::stringify!(new),));
+ <Self as IFileCommonMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-filecommon")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::FileCommon_State;
     pub use super::FileCommon;
     pub use super::IFileCommon;
     pub use super::IFileCommonMethods;
-    pub use super::FileCommon_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

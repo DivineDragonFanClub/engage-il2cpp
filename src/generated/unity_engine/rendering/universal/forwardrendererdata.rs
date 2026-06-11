@@ -4,128 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: { IScriptableRendererData , ScriptableRendererData }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::{IScriptableRendererData,ScriptableRendererData}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ForwardRendererData.ShaderResources")] # [parent (crate :: system :: object :: Object)] pub struct ForwardRendererData_ShaderResources {
-# [offset (16)] # [rename (name = "blitPS")] pub blit_ps : crate :: unity_engine :: shader :: Shader ,
-# [offset (24)] # [rename (name = "zprepass")] pub zprepass : crate :: unity_engine :: shader :: Shader ,
-# [offset (32)] # [rename (name = "downsampleDepth")] pub downsample_depth : crate :: unity_engine :: shader :: Shader ,
-# [offset (40)] # [rename (name = "halfResoComposite")] pub half_reso_composite : crate :: unity_engine :: shader :: Shader ,
-# [offset (48)] # [rename (name = "lightOcclusion")] pub light_occlusion : crate :: unity_engine :: shader :: Shader ,
-# [offset (56)] # [rename (name = "copyDepthPS")] pub copy_depth_ps : crate :: unity_engine :: shader :: Shader ,
-# [offset (64)] # [rename (name = "screenSpaceShadowPS")] pub screen_space_shadow_ps : crate :: unity_engine :: shader :: Shader ,
-# [offset (72)] # [rename (name = "samplingPS")] pub sampling_ps : crate :: unity_engine :: shader :: Shader ,
-# [offset (80)] # [rename (name = "tileDepthInfoPS")] pub tile_depth_info_ps : crate :: unity_engine :: shader :: Shader ,
-# [offset (88)] # [rename (name = "tileDeferredPS")] pub tile_deferred_ps : crate :: unity_engine :: shader :: Shader ,
-# [offset (96)] # [rename (name = "stencilDeferredPS")] pub stencil_deferred_ps : crate :: unity_engine :: shader :: Shader ,
-# [offset (104)] # [rename (name = "fallbackErrorPS")] pub fallback_error_ps : crate :: unity_engine :: shader :: Shader ,
-# [offset (112)] # [rename (name = "materialErrorPS")] pub material_error_ps : crate :: unity_engine :: shader :: Shader ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ForwardRendererData")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]pub struct ForwardRendererData{#[offset(48)]#[rename(name="postProcessData")]pub post_process_data:crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, #[offset(56)]#[rename(name="xrSystemData")]pub xr_system_data:crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData, #[offset(64)]#[rename(name="shaders")]pub shaders:crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_ShaderResources, #[offset(72)]#[rename(name="m_OpaqueLayerMask")]pub m_opaque_layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(76)]#[rename(name="m_TransparentLayerMask")]pub m_transparent_layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(80)]#[rename(name="m_DefaultStencilState")]pub m_default_stencil_state:crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData, #[offset(88)]#[rename(name="m_ShadowTransparentReceive")]pub m_shadow_transparent_receive:bool, #[offset(92)]#[rename(name="m_RenderingMode")]pub m_rendering_mode:crate::unity_engine::rendering::universal::renderingmode::RenderingMode, #[offset(96)]#[rename(name="m_AccurateGbufferNormals")]pub m_accurate_gbuffer_normals:bool, #[offset(100)]#[rename(name="m_MixedResolutionFlag")]pub m_mixed_resolution_flag:crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ForwardRendererData.ShaderResources")]#[parent(crate::system::object::Object)]pub struct ForwardRendererData_ShaderResources{#[offset(16)]#[rename(name="blitPS")]pub blit_ps:crate::unity_engine::shader::Shader, #[offset(24)]#[rename(name="zprepass")]pub zprepass:crate::unity_engine::shader::Shader, #[offset(32)]#[rename(name="downsampleDepth")]pub downsample_depth:crate::unity_engine::shader::Shader, #[offset(40)]#[rename(name="halfResoComposite")]pub half_reso_composite:crate::unity_engine::shader::Shader, #[offset(48)]#[rename(name="lightOcclusion")]pub light_occlusion:crate::unity_engine::shader::Shader, #[offset(56)]#[rename(name="copyDepthPS")]pub copy_depth_ps:crate::unity_engine::shader::Shader, #[offset(64)]#[rename(name="screenSpaceShadowPS")]pub screen_space_shadow_ps:crate::unity_engine::shader::Shader, #[offset(72)]#[rename(name="samplingPS")]pub sampling_ps:crate::unity_engine::shader::Shader, #[offset(80)]#[rename(name="tileDepthInfoPS")]pub tile_depth_info_ps:crate::unity_engine::shader::Shader, #[offset(88)]#[rename(name="tileDeferredPS")]pub tile_deferred_ps:crate::unity_engine::shader::Shader, #[offset(96)]#[rename(name="stencilDeferredPS")]pub stencil_deferred_ps:crate::unity_engine::shader::Shader, #[offset(104)]#[rename(name="fallbackErrorPS")]pub fallback_error_ps:crate::unity_engine::shader::Shader, #[offset(112)]#[rename(name="materialErrorPS")]pub material_error_ps:crate::unity_engine::shader::Shader,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_MixedResolutionFlag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ForwardRendererData_MixedResolutionFlag{pub value:i32,}
+impl::unity2::ClassIdentity for ForwardRendererData_MixedResolutionFlag{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
+const NAME: &'static str="ForwardRendererData.MixedResolutionFlag";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ForwardRendererData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct ForwardRendererData {
-# [offset (48)] # [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [offset (56)] # [rename (name = "xrSystemData")] pub xr_system_data : crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData ,
-# [offset (64)] # [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_ShaderResources ,
-# [offset (72)] # [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (76)] # [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (80)] # [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
-# [offset (88)] # [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
-# [offset (92)] # [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
-# [offset (96)] # [rename (name = "m_AccurateGbufferNormals")] pub m_accurate_gbuffer_normals : bool ,
-# [offset (100)] # [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
+impl::unity2::IlType for ForwardRendererData_MixedResolutionFlag{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_MixedResolutionFlag.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ForwardRendererData_MixedResolutionFlag  {
-    pub value: i32,
+impl ForwardRendererData_MixedResolutionFlag{pub fn off()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::ClassIdentity for ForwardRendererData_MixedResolutionFlag  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "ForwardRendererData.MixedResolutionFlag";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn effect_half_bilinear()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for ForwardRendererData_MixedResolutionFlag  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn effect_half_bilateral2x()->Self{Self{value:2}
 }
-
-
-impl  ForwardRendererData_MixedResolutionFlag  {
-    pub fn off() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn effect_half_bilinear() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn effect_half_bilateral2x() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn effect_half_bilateral4x() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn effect_mixed() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn effect_full() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 6 }
-
-    }
-
+pub fn effect_half_bilateral4x()->Self{Self{value:3}
+}
+pub fn effect_mixed()->Self{Self{value:4}
+}
+pub fn effect_full()->Self{Self{value:5}
+}
+pub fn count()->Self{Self{value:6}
+}
 }
 
 }
@@ -133,43 +55,131 @@ impl  ForwardRendererData_MixedResolutionFlag  {
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-pub trait IForwardRendererData_ShaderResourcesMethods : IForwardRendererData_ShaderResources { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ForwardRendererData_ShaderResources as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData_ShaderResources , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb6e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-impl < __T : IForwardRendererData_ShaderResources > IForwardRendererData_ShaderResourcesMethods for __T { }
-
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-impl ForwardRendererData_ShaderResources { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData_ShaderResources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-impl ForwardRendererData_ShaderResources {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ForwardRendererData_ShaderResources) , :: core :: stringify ! (new) ,)) ; < Self as IForwardRendererData_ShaderResourcesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]pub trait IForwardRendererDataMethods:IForwardRendererData{#[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef01f0usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+(ForwardRendererData)__receiver)}
+}
+#[doc="`get_opaqueLayerMask()` overload"]fn get_opaque_layer_mask(self,)->crate::unity_engine::layermask::LayerMask{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0260usize)as*mut u8,crate::unity_engine::layermask::LayerMask;
+(ForwardRendererData)__receiver)}
+}
+#[doc="`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]fn set_opaque_layer_mask(self,value:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0270usize)as*mut u8,();
+(ForwardRendererData)__receiver,(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_transparentLayerMask()` overload"]fn get_transparent_layer_mask(self,)->crate::unity_engine::layermask::LayerMask{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef02a0usize)as*mut u8,crate::unity_engine::layermask::LayerMask;
+(ForwardRendererData)__receiver)}
+}
+#[doc="`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]fn set_transparent_layer_mask(self,value:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef02b0usize)as*mut u8,();
+(ForwardRendererData)__receiver,(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_defaultStencilState()` overload"]fn get_default_stencil_state(self,)->crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef02e0usize)as*mut u8,crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData;
+(ForwardRendererData)__receiver)}
+}
+#[doc="`set_defaultStencilState(crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData)` overload"]fn set_default_stencil_state(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData>)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef02f0usize)as*mut u8,();
+(ForwardRendererData)__receiver,(crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData)::core::convert::Into::into(value))}
+}
+#[doc="`get_shadowTransparentReceive()` overload"]fn get_shadow_transparent_receive(self,)->bool{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0330usize)as*mut u8,bool;
+(ForwardRendererData)__receiver)}
+}
+#[doc="`set_shadowTransparentReceive(bool)` overload"]fn set_shadow_transparent_receive(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0340usize)as*mut u8,();
+(ForwardRendererData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_renderingMode()` overload"]fn get_rendering_mode(self,)->crate::unity_engine::rendering::universal::renderingmode::RenderingMode{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0370usize)as*mut u8,crate::unity_engine::rendering::universal::renderingmode::RenderingMode;
+(ForwardRendererData)__receiver)}
+}
+#[doc="`set_renderingMode(crate::unity_engine::rendering::universal::renderingmode::RenderingMode)` overload"]fn set_rendering_mode(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderingmode::RenderingMode>)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0380usize)as*mut u8,();
+(ForwardRendererData)__receiver,(crate::unity_engine::rendering::universal::renderingmode::RenderingMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_accurateGbufferNormals()` overload"]fn get_accurate_gbuffer_normals(self,)->bool{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef03b0usize)as*mut u8,bool;
+(ForwardRendererData)__receiver)}
+}
+#[doc="`set_accurateGbufferNormals(bool)` overload"]fn set_accurate_gbuffer_normals(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef03c0usize)as*mut u8,();
+(ForwardRendererData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_mixedResolutionFlag()` overload"]fn get_mixed_resolution_flag(self,)->crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef03f0usize)as*mut u8,crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag;
+(ForwardRendererData)__receiver)}
+}
+#[doc="`set_mixedResolutionFlag(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag)` overload"]fn set_mixed_resolution_flag(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag>)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0400usize)as*mut u8,();
+(ForwardRendererData)__receiver,(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag)::core::convert::Into::into(value))}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0430usize)as*mut u8,();
+(ForwardRendererData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0440usize)as*mut u8,();
+(ForwardRendererData)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-pub trait IForwardRendererDataMethods : IForwardRendererData { # [doc = "`Create()` overload"] fn create (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef01f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_opaqueLayerMask()` overload"] fn get_opaque_layer_mask (self ,) -> crate :: unity_engine :: layermask :: LayerMask { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"] fn set_opaque_layer_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_transparentLayerMask()` overload"] fn get_transparent_layer_mask (self ,) -> crate :: unity_engine :: layermask :: LayerMask { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef02a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"] fn set_transparent_layer_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef02b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_defaultStencilState()` overload"] fn get_default_stencil_state (self ,) -> crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef02e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_defaultStencilState(crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData)` overload"] fn set_default_stencil_state (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData >) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef02f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_shadowTransparentReceive()` overload"] fn get_shadow_transparent_receive (self ,) -> bool { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_shadowTransparentReceive(bool)` overload"] fn set_shadow_transparent_receive (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_renderingMode()` overload"] fn get_rendering_mode (self ,) -> crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_renderingMode(crate::unity_engine::rendering::universal::renderingmode::RenderingMode)` overload"] fn set_rendering_mode (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode >) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_accurateGbufferNormals()` overload"] fn get_accurate_gbuffer_normals (self ,) -> bool { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef03b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_accurateGbufferNormals(bool)` overload"] fn set_accurate_gbuffer_normals (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef03c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_mixedResolutionFlag()` overload"] fn get_mixed_resolution_flag (self ,) -> crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef03f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_mixedResolutionFlag(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag)` overload"] fn set_mixed_resolution_flag (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag >) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ForwardRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ForwardRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef0440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]impl<__T:IForwardRendererData>IForwardRendererDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-impl < __T : IForwardRendererData > IForwardRendererDataMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]impl ForwardRendererData{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_opaque_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_opaque_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_transparent_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_transparent_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_default_stencil_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_default_stencil_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_shadow_transparent_receive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_shadow_transparent_receive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_rendering_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_rendering_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_accurate_gbuffer_normals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_accurate_gbuffer_normals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_mixed_resolution_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_mixed_resolution_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-impl ForwardRendererData { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_opaque_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_opaque_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_transparent_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_transparent_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_default_stencil_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_default_stencil_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_shadow_transparent_receive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_shadow_transparent_receive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_rendering_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_rendering_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_accurate_gbuffer_normals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_accurate_gbuffer_normals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_mixed_resolution_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_mixed_resolution_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ForwardRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]impl ForwardRendererData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ForwardRendererData), ::core::stringify!(new),));
+ <Self as IForwardRendererDataMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-impl ForwardRendererData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ForwardRendererData) , :: core :: stringify ! (new) ,)) ; < Self as IForwardRendererDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]pub trait IForwardRendererData_ShaderResourcesMethods:IForwardRendererData_ShaderResources{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ForwardRendererData_ShaderResources as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb6e80usize)as*mut u8,();
+(ForwardRendererData_ShaderResources)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]impl<__T:IForwardRendererData_ShaderResources>IForwardRendererData_ShaderResourcesMethods for __T{}
+
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]impl ForwardRendererData_ShaderResources{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]impl ForwardRendererData_ShaderResources{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ForwardRendererData_ShaderResources), ::core::stringify!(new),));
+ <Self as IForwardRendererData_ShaderResourcesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ForwardRendererData_ShaderResources;
-    pub use super::IForwardRendererData_ShaderResources;
-    pub use super::IForwardRendererData_ShaderResourcesMethods;
     pub use super::ForwardRendererData;
     pub use super::IForwardRendererData;
     pub use super::IForwardRendererDataMethods;
+    pub use super::ForwardRendererData_ShaderResources;
+    pub use super::IForwardRendererData_ShaderResources;
+    pub use super::IForwardRendererData_ShaderResourcesMethods;
     pub use super::ForwardRendererData_MixedResolutionFlag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

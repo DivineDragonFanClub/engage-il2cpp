@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/excludefromobjectfactoryattribute/ExcludeFromObjectFactoryAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ExcludeFromObjectFactoryAttribute")] pub struct ExcludeFromObjectFactoryAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/excludefromobjectfactoryattribute/ExcludeFromObjectFactoryAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="ExcludeFromObjectFactoryAttribute")]pub struct ExcludeFromObjectFactoryAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-excludefromobjectfactoryattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
-pub trait IExcludeFromObjectFactoryAttributeMethods : IExcludeFromObjectFactoryAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExcludeFromObjectFactoryAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExcludeFromObjectFactoryAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-excludefromobjectfactoryattribute")]pub trait IExcludeFromObjectFactoryAttributeMethods:IExcludeFromObjectFactoryAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExcludeFromObjectFactoryAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d530usize)as*mut u8,();
+(ExcludeFromObjectFactoryAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
-impl < __T : IExcludeFromObjectFactoryAttribute > IExcludeFromObjectFactoryAttributeMethods for __T { }
+#[cfg(feature="unity_engine-excludefromobjectfactoryattribute")]impl<__T:IExcludeFromObjectFactoryAttribute>IExcludeFromObjectFactoryAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
-impl ExcludeFromObjectFactoryAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExcludeFromObjectFactoryAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-excludefromobjectfactoryattribute")]impl ExcludeFromObjectFactoryAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
-impl ExcludeFromObjectFactoryAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExcludeFromObjectFactoryAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IExcludeFromObjectFactoryAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-excludefromobjectfactoryattribute")]impl ExcludeFromObjectFactoryAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExcludeFromObjectFactoryAttribute), ::core::stringify!(new),));
+ <Self as IExcludeFromObjectFactoryAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]

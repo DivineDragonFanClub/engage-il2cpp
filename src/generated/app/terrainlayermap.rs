@@ -4,38 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: terrainmap :: { ITerrainMap , TerrainMap }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::terrainmap::{ITerrainMap,TerrainMap}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainlayermap/TerrainLayerMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainLayerMap")] # [parent (crate :: app :: terrainmap :: TerrainMap)] pub struct TerrainLayerMap {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terrainlayermap/TerrainLayerMap.md"))]#[::unity2::class(namespace="App",name="TerrainLayerMap")]#[parent(crate::app::terrainmap::TerrainMap)]pub struct TerrainLayerMap{}
 
 }
 
 #[cfg(feature = "app-terrainlayermap-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-terrainlayermap")]
-pub trait ITerrainLayerMapMethods : ITerrainLayerMap { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::terrain::Terrain)` overload"] fn ctor_2 (self , terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::terraindata::TerrainData)` overload"] fn ctor_3 (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , crate :: unity_engine :: terraindata :: TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, i32)` overload"] fn ctor_4 (self , width : impl :: core :: convert :: Into < i32 > , height : impl :: core :: convert :: Into < i32 > , layers : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (layers) , :: core :: option :: Option :: None) } } } # [doc = "`ReadData(crate::unity_engine::terraindata::TerrainData)` overload"] fn read_data (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , crate :: unity_engine :: terraindata :: TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e45c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`WriteData(crate::unity_engine::terraindata::TerrainData)` overload"] fn write_data (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , crate :: unity_engine :: terraindata :: TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`GetCurrentLayer(i32, i32)` overload"] fn get_current_layer (self , x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaxAlpha(i32, i32)` overload"] fn get_max_alpha (self , x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`Normalize()` overload"] fn normalize (self ,) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e47f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Normalize(i32)` overload"] fn normalize_2 (self , layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`FillLayer(i32)` overload"] fn fill_layer (self , layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`SlopLayer(crate::unity_engine::terraindata::TerrainData, i32)` overload"] fn slop_layer (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData > , layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , crate :: unity_engine :: terraindata :: TerrainData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`ClearLayer(i32)` overload"] fn clear_layer (self , layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSoft()` overload"] fn update_soft (self ,) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSoft(i32)` overload"] fn update_soft_2 (self , layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e5030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e5370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Count(i32)` overload"] fn set_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e5380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32, i32, i32)` overload"] fn get_item (self , x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 > , layer : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e5390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(i32, i32, i32, f32)` overload"] fn set_item (self , x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 > , layer : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TerrainLayerMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainLayerMap , i32 , i32 , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e5400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (layer) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terrainlayermap")]pub trait ITerrainLayerMapMethods:ITerrainLayerMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4420usize)as*mut u8,();
+(TerrainLayerMap)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::terrain::Terrain)` overload"]fn ctor_2(self,terrain:impl::core::convert::Into<crate::unity_engine::terrain::Terrain>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4430usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(terrain))}
+}
+#[doc="`.ctor(crate::unity_engine::terraindata::TerrainData)` overload"]fn ctor_3(self,data:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4460usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(crate::unity_engine::terraindata::TerrainData)::core::convert::Into::into(data))}
+}
+#[doc="`.ctor(i32, i32, i32)` overload"]fn ctor_4(self,width:impl::core::convert::Into<i32> ,height:impl::core::convert::Into<i32> ,layers:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4510usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(width),(i32)::core::convert::Into::into(height),(i32)::core::convert::Into::into(layers))}
+}
+#[doc="`ReadData(crate::unity_engine::terraindata::TerrainData)` overload"]fn read_data(self,data:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e45c0usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(crate::unity_engine::terraindata::TerrainData)::core::convert::Into::into(data))}
+}
+#[doc="`WriteData(crate::unity_engine::terraindata::TerrainData)` overload"]fn write_data(self,data:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4660usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(crate::unity_engine::terraindata::TerrainData)::core::convert::Into::into(data))}
+}
+#[doc="`GetCurrentLayer(i32, i32)` overload"]fn get_current_layer(self,x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4680usize)as*mut u8,i32;
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(y))}
+}
+#[doc="`GetMaxAlpha(i32, i32)` overload"]fn get_max_alpha(self,x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4730usize)as*mut u8,f32;
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(y))}
+}
+#[doc="`Normalize()` overload"]fn normalize(self,)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e47f0usize)as*mut u8,();
+(TerrainLayerMap)__receiver)}
+}
+#[doc="`Normalize(i32)` overload"]fn normalize_2(self,layer:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4930usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`FillLayer(i32)` overload"]fn fill_layer(self,layer:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4c30usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`SlopLayer(crate::unity_engine::terraindata::TerrainData, i32)` overload"]fn slop_layer(self,data:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData> ,layer:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4d80usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(crate::unity_engine::terraindata::TerrainData)::core::convert::Into::into(data),(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`ClearLayer(i32)` overload"]fn clear_layer(self,layer:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4f30usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`UpdateSoft()` overload"]fn update_soft(self,)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4fe0usize)as*mut u8,();
+(TerrainLayerMap)__receiver)}
+}
+#[doc="`UpdateSoft(i32)` overload"]fn update_soft_2(self,layer:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5030usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5370usize)as*mut u8,i32;
+(TerrainLayerMap)__receiver)}
+}
+#[doc="`set_Count(i32)` overload"]fn set_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5380usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item(i32, i32, i32)` overload"]fn get_item(self,x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32> ,layer:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5390usize)as*mut u8,f32;
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(y),(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`set_Item(i32, i32, i32, f32)` overload"]fn set_item(self,x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32> ,layer:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TerrainLayerMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5400usize)as*mut u8,();
+(TerrainLayerMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(y),(i32)::core::convert::Into::into(layer),(f32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-terrainlayermap")]
-impl < __T : ITerrainLayerMap > ITerrainLayerMapMethods for __T { }
+#[cfg(feature="app-terrainlayermap")]impl<__T:ITerrainLayerMap>ITerrainLayerMapMethods for __T{}
 
-#[cfg(feature = "app-terrainlayermap")]
-impl TerrainLayerMap { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn read_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn write_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_current_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_max_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn normalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn normalize_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn fill_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn slop_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clear_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_soft_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn update_soft_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainLayerMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-terrainlayermap")]impl TerrainLayerMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn write_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_current_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_max_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn normalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn normalize_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn fill_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn slop_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_soft_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn update_soft_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-terrainlayermap")]
-impl TerrainLayerMap {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainLayerMap) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainLayerMapMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::terrain::Terrain)` — overload selector"] pub fn new_2 (terrain : crate :: unity_engine :: terrain :: Terrain) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainLayerMap) , :: core :: stringify ! (new_2) ,)) ; < Self as ITerrainLayerMapMethods > :: ctor_2 (this , terrain) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::terraindata::TerrainData)` — overload selector"] pub fn new_3 (data : crate :: unity_engine :: terraindata :: TerrainData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainLayerMap) , :: core :: stringify ! (new_3) ,)) ; < Self as ITerrainLayerMapMethods > :: ctor_3 (this , data) ; this }
-
-# [doc = "`.ctor(i32, i32, i32)` — overload selector"] pub fn new_4 (width : i32 , height : i32 , layers : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainLayerMap) , :: core :: stringify ! (new_4) ,)) ; < Self as ITerrainLayerMapMethods > :: ctor_4 (this , width , height , layers) ; this }
+#[cfg(feature="app-terrainlayermap")]impl TerrainLayerMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainLayerMap), ::core::stringify!(new),));
+ <Self as ITerrainLayerMapMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::unity_engine::terrain::Terrain)` — overload selector"]pub fn new_2(terrain:crate::unity_engine::terrain::Terrain)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainLayerMap), ::core::stringify!(new_2),));
+ <Self as ITerrainLayerMapMethods> ::ctor_2(this,terrain);
+this}
+#[doc="`.ctor(crate::unity_engine::terraindata::TerrainData)` — overload selector"]pub fn new_3(data:crate::unity_engine::terraindata::TerrainData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainLayerMap), ::core::stringify!(new_3),));
+ <Self as ITerrainLayerMapMethods> ::ctor_3(this,data);
+this}
+#[doc="`.ctor(i32, i32, i32)` — overload selector"]pub fn new_4(width:i32,height:i32,layers:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainLayerMap), ::core::stringify!(new_4),));
+ <Self as ITerrainLayerMapMethods> ::ctor_4(this,width,height,layers);
+this}
 }
 
 #[cfg(feature = "app-terrainlayermap")]

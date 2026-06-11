@@ -4,202 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/vector3int/Vector3Int.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Vector3Int {
-    pub m_x: i32,
-    pub m_y: i32,
-    pub m_z: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vector3int/Vector3Int.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Vector3Int{pub m_x:i32,pub m_y:i32,pub m_z:i32,}
+impl::unity2::ClassIdentity for Vector3Int{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Vector3Int";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Vector3Int {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Vector3Int";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for Vector3Int{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for Vector3Int {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl Vector3Int{#[inline]pub fn s_zero()->crate::unity_engine::vector3int::Vector3Int{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Zero");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_zero(value:crate::unity_engine::vector3int::Vector3Int){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Zero");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl Vector3Int {
-    #[inline]
-    pub fn s_zero() -> crate :: unity_engine :: vector3int :: Vector3Int {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Zero");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_zero(value: crate :: unity_engine :: vector3int :: Vector3Int) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Zero");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_one() -> crate :: unity_engine :: vector3int :: Vector3Int {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_One");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_one(value: crate :: unity_engine :: vector3int :: Vector3Int) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_One");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_up() -> crate :: unity_engine :: vector3int :: Vector3Int {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Up");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_up(value: crate :: unity_engine :: vector3int :: Vector3Int) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Up");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_down() -> crate :: unity_engine :: vector3int :: Vector3Int {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Down");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_down(value: crate :: unity_engine :: vector3int :: Vector3Int) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Down");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_left() -> crate :: unity_engine :: vector3int :: Vector3Int {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Left");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_left(value: crate :: unity_engine :: vector3int :: Vector3Int) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Left");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_right() -> crate :: unity_engine :: vector3int :: Vector3Int {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Right");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_right(value: crate :: unity_engine :: vector3int :: Vector3Int) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Right");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_forward() -> crate :: unity_engine :: vector3int :: Vector3Int {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Forward");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_forward(value: crate :: unity_engine :: vector3int :: Vector3Int) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Forward");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_back() -> crate :: unity_engine :: vector3int :: Vector3Int {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Back");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_back(value: crate :: unity_engine :: vector3int :: Vector3Int) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Back");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn s_one()->crate::unity_engine::vector3int::Vector3Int{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_One");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_one(value:crate::unity_engine::vector3int::Vector3Int){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_One");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_up()->crate::unity_engine::vector3int::Vector3Int{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Up");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_up(value:crate::unity_engine::vector3int::Vector3Int){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Up");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_down()->crate::unity_engine::vector3int::Vector3Int{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Down");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_down(value:crate::unity_engine::vector3int::Vector3Int){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Down");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_left()->crate::unity_engine::vector3int::Vector3Int{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Left");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_left(value:crate::unity_engine::vector3int::Vector3Int){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Left");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_right()->crate::unity_engine::vector3int::Vector3Int{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Right");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_right(value:crate::unity_engine::vector3int::Vector3Int){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Right");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_forward()->crate::unity_engine::vector3int::Vector3Int{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Forward");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_forward(value:crate::unity_engine::vector3int::Vector3Int){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Forward");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_back()->crate::unity_engine::vector3int::Vector3Int{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Back");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_back(value:crate::unity_engine::vector3int::Vector3Int){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Back");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -207,14 +83,63 @@ impl Vector3Int {
 #[cfg(feature = "unity_engine-vector3int-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-vector3int")]
-impl Vector3Int { # [doc = "`op_Equality(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::vector3int::Vector3Int)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3int :: Vector3Int > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3int :: Vector3Int >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3int :: Vector3Int , crate :: unity_engine :: vector3int :: Vector3Int , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799440usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vector3int")]impl Vector3Int{#[doc="`op_Equality(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::vector3int::Vector3Int)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int> ,rhs:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799060usize)as*mut u8,bool;
+(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(lhs),(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(rhs))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799440usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-vector3int")]
-impl Vector3Int { # [doc = "`get_x()` overload"] pub fn get_x (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798ff0usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: option :: Option :: None) } } } # [doc = "`set_x(i32)` overload"] pub fn set_x (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799000usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_y()` overload"] pub fn get_y (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799010usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: option :: Option :: None) } } } # [doc = "`set_y(i32)` overload"] pub fn set_y (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799020usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_z()` overload"] pub fn get_z (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799030usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: option :: Option :: None) } } } # [doc = "`set_z(i32)` overload"] pub fn set_z (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799040usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, i32)` overload"] pub fn ctor (& mut self , x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799050usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799090usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::vector3int::Vector3Int)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: vector3int :: Vector3Int >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , crate :: unity_engine :: vector3int :: Vector3Int , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799150usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799190usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Vector3Int , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3799210usize) as * mut u8) ; __inner (self as * mut Vector3Int , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vector3int")]impl Vector3Int{#[doc="`get_x()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798ff0usize)as*mut u8,i32;
+(*mut Vector3Int)self as*mut Vector3Int)}
+}
+#[doc="`set_x(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799000usize)as*mut u8,();
+(*mut Vector3Int)self as*mut Vector3Int,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_y()` overload"]pub fn get_y(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799010usize)as*mut u8,i32;
+(*mut Vector3Int)self as*mut Vector3Int)}
+}
+#[doc="`set_y(i32)` overload"]pub fn set_y(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799020usize)as*mut u8,();
+(*mut Vector3Int)self as*mut Vector3Int,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799030usize)as*mut u8,i32;
+(*mut Vector3Int)self as*mut Vector3Int)}
+}
+#[doc="`set_z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799040usize)as*mut u8,();
+(*mut Vector3Int)self as*mut Vector3Int,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, i32, i32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799050usize)as*mut u8,();
+(*mut Vector3Int)self as*mut Vector3Int,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(y),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799090usize)as*mut u8,bool;
+(*mut Vector3Int)self as*mut Vector3Int,(crate::system::object::Object)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::vector3int::Vector3Int)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799150usize)as*mut u8,bool;
+(*mut Vector3Int)self as*mut Vector3Int,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799190usize)as*mut u8,i32;
+(*mut Vector3Int)self as*mut Vector3Int)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3799210usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Vector3Int)self as*mut Vector3Int)}
+}
+}
 
-#[cfg(feature = "unity_engine-vector3int")]
-impl Vector3Int { pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Int as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="unity_engine-vector3int")]impl Vector3Int{pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
 #[cfg(feature = "unity_engine-vector3int")]
 #[doc(hidden)]

@@ -4,30 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/visibletoothermodulesattribute/VisibleToOtherModulesAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "VisibleToOtherModulesAttribute")] pub struct VisibleToOtherModulesAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/visibletoothermodulesattribute/VisibleToOtherModulesAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="VisibleToOtherModulesAttribute")]pub struct VisibleToOtherModulesAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute")]
-pub trait IVisibleToOtherModulesAttributeMethods : IVisibleToOtherModulesAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VisibleToOtherModulesAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VisibleToOtherModulesAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"] fn ctor_2 (self , modules : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < VisibleToOtherModulesAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VisibleToOtherModulesAttribute , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f387a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (modules) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-visibletoothermodulesattribute")]pub trait IVisibleToOtherModulesAttributeMethods:IVisibleToOtherModulesAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VisibleToOtherModulesAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38790usize)as*mut u8,();
+(VisibleToOtherModulesAttribute)__receiver)}
+}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor_2(self,modules:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <VisibleToOtherModulesAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f387a0usize)as*mut u8,();
+(VisibleToOtherModulesAttribute)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(modules))}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute")]
-impl < __T : IVisibleToOtherModulesAttribute > IVisibleToOtherModulesAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-visibletoothermodulesattribute")]impl<__T:IVisibleToOtherModulesAttribute>IVisibleToOtherModulesAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute")]
-impl VisibleToOtherModulesAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleToOtherModulesAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleToOtherModulesAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-bindings-visibletoothermodulesattribute")]impl VisibleToOtherModulesAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute")]
-impl VisibleToOtherModulesAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VisibleToOtherModulesAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IVisibleToOtherModulesAttributeMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"] pub fn new_2 (modules : :: unity2 :: Array < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VisibleToOtherModulesAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as IVisibleToOtherModulesAttributeMethods > :: ctor_2 (this , modules) ; this }
+#[cfg(feature="unity_engine-bindings-visibletoothermodulesattribute")]impl VisibleToOtherModulesAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VisibleToOtherModulesAttribute), ::core::stringify!(new),));
+ <Self as IVisibleToOtherModulesAttributeMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new_2(modules: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VisibleToOtherModulesAttribute), ::core::stringify!(new_2),));
+ <Self as IVisibleToOtherModulesAttributeMethods> ::ctor_2(this,modules);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute")]

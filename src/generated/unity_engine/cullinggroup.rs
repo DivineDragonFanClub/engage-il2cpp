@@ -4,56 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CullingGroup.StateChanged")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct CullingGroup_StateChanged {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cullinggroup/CullingGroup.md"))]#[::unity2::class(namespace="UnityEngine",name="CullingGroup")]#[parent(crate::system::object::Object)]pub struct CullingGroup{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_OnStateChanged")]pub m_on_state_changed:crate::unity_engine::cullinggroup::CullingGroup_StateChanged,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CullingGroup")] # [parent (crate :: system :: object :: Object)] pub struct CullingGroup {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_OnStateChanged")] pub m_on_state_changed : crate :: unity_engine :: cullinggroup :: CullingGroup_StateChanged ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))]#[::unity2::class(namespace="UnityEngine",name="CullingGroup.StateChanged")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct CullingGroup_StateChanged{}
 
 }
 
 #[cfg(feature = "unity_engine-cullinggroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-cullinggroup")]
-pub trait ICullingGroup_StateChangedMethods : ICullingGroup_StateChanged { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < CullingGroup_StateChanged as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CullingGroup_StateChanged , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379bd90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::unity_engine::cullinggroupevent::CullingGroupEvent)` overload"] fn invoke (self , sphere : impl :: core :: convert :: Into < crate :: unity_engine :: cullinggroupevent :: CullingGroupEvent >) -> () { unsafe { let __receiver = < CullingGroup_StateChanged as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CullingGroup_StateChanged , crate :: unity_engine :: cullinggroupevent :: CullingGroupEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379bdb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sphere) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-cullinggroup")]
-impl < __T : ICullingGroup_StateChanged > ICullingGroup_StateChangedMethods for __T { }
-
-#[cfg(feature = "unity_engine-cullinggroup")]
-impl CullingGroup_StateChanged { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CullingGroup_StateChanged as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CullingGroup_StateChanged as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "unity_engine-cullinggroup")]
-impl CullingGroup_StateChanged {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CullingGroup_StateChanged) , :: core :: stringify ! (new) ,)) ; < Self as ICullingGroup_StateChangedMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-cullinggroup")]impl CullingGroup{#[doc="`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"]pub fn send_events(culling_group:impl::core::convert::Into<crate::unity_engine::cullinggroup::CullingGroup> ,events_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c494a0usize)as*mut u8,();
+(crate::unity_engine::cullinggroup::CullingGroup)::core::convert::Into::into(culling_group),(::unity2::IntPtr)::core::convert::Into::into(events_ptr),(i32)::core::convert::Into::into(count))}
+}
 }
 
-#[cfg(feature = "unity_engine-cullinggroup")]
-impl CullingGroup { # [doc = "`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"] pub fn send_events (culling_group : impl :: core :: convert :: Into < crate :: unity_engine :: cullinggroup :: CullingGroup > , events_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: cullinggroup :: CullingGroup , :: unity2 :: IntPtr , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c494a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (culling_group) , :: core :: convert :: Into :: into (events_ptr) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-cullinggroup")]impl CullingGroup{pub fn send_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-cullinggroup")]
-impl CullingGroup { pub fn send_events_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CullingGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-cullinggroup")]pub trait ICullingGroup_StateChangedMethods:ICullingGroup_StateChanged{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CullingGroup_StateChanged as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379bd90usize)as*mut u8,();
+(CullingGroup_StateChanged)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::cullinggroupevent::CullingGroupEvent)` overload"]fn invoke(self,sphere:impl::core::convert::Into<crate::unity_engine::cullinggroupevent::CullingGroupEvent>)->(){unsafe{let __receiver= <CullingGroup_StateChanged as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379bdb0usize)as*mut u8,();
+(CullingGroup_StateChanged)__receiver,(crate::unity_engine::cullinggroupevent::CullingGroupEvent)::core::convert::Into::into(sphere))}
+}
+}
+
+#[cfg(feature="unity_engine-cullinggroup")]impl<__T:ICullingGroup_StateChanged>ICullingGroup_StateChangedMethods for __T{}
+
+#[cfg(feature="unity_engine-cullinggroup")]impl CullingGroup_StateChanged{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-cullinggroup")]impl CullingGroup_StateChanged{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CullingGroup_StateChanged), ::core::stringify!(new),));
+ <Self as ICullingGroup_StateChangedMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature = "unity_engine-cullinggroup")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CullingGroup;
+    pub use super::ICullingGroup;
     pub use super::CullingGroup_StateChanged;
     pub use super::ICullingGroup_StateChanged;
     pub use super::ICullingGroup_StateChangedMethods;
-    pub use super::CullingGroup;
-    pub use super::ICullingGroup;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

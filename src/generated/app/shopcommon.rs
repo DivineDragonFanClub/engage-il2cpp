@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcommon/ShopCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopCommon")] # [parent (crate :: system :: object :: Object)] pub struct ShopCommon {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopcommon/ShopCommon.md"))]#[::unity2::class(namespace="App",name="ShopCommon")]#[parent(crate::system::object::Object)]pub struct ShopCommon{}
 
 }
 
 #[cfg(feature = "app-shopcommon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopcommon")]
-impl ShopCommon { # [doc = "`IsSatisfied(::unity2::Il2CppString)` overload"] pub fn is_satisfied (conditions : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ae400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (conditions) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopcommon")]impl ShopCommon{#[doc="`IsSatisfied(::unity2::Il2CppString)` overload"]pub fn is_satisfied(conditions:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ae400usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(conditions))}
+}
+}
 
-#[cfg(feature = "app-shopcommon")]
-impl ShopCommon { pub fn is_satisfied_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-shopcommon")]impl ShopCommon{pub fn is_satisfied_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "app-shopcommon")]
 #[doc(hidden)]

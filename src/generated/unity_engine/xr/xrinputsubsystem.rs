@@ -4,40 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: integratedsubsystem :: { IIntegratedSubsystem , IntegratedSubsystem }
- ;
- use crate :: unity_engine :: integratedsubsystem_1 :: { IIntegratedSubsystem_1 , IntegratedSubsystem_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::integratedsubsystem::{IIntegratedSubsystem,IntegratedSubsystem}
+;
+use crate::unity_engine::integratedsubsystem_1::{IIntegratedSubsystem_1,IntegratedSubsystem_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrinputsubsystem/XRInputSubsystem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRInputSubsystem")] # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrinputsubsystemdescriptor :: XRInputSubsystemDescriptor >)] pub struct XRInputSubsystem {
-# [offset (32)] # [rename (name = "trackingOriginUpdated")] pub tracking_origin_updated : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrinputsubsystem :: XRInputSubsystem > ,
-# [offset (40)] # [rename (name = "boundaryChanged")] pub boundary_changed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrinputsubsystem :: XRInputSubsystem > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrinputsubsystem/XRInputSubsystem.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="XRInputSubsystem")]#[parent(crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1<crate::unity_engine::xr::xrinputsubsystemdescriptor::XRInputSubsystemDescriptor>)]pub struct XRInputSubsystem{#[offset(32)]#[rename(name="trackingOriginUpdated")]pub tracking_origin_updated:crate::system::action_1::Action_1<crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem> , #[offset(40)]#[rename(name="boundaryChanged")]pub boundary_changed:crate::system::action_1::Action_1<crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem> ,}
 
 }
 
 #[cfg(feature = "unity_engine-xr-xrinputsubsystem-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
-impl XRInputSubsystem { # [doc = "`InvokeTrackingOriginUpdatedEvent(::unity2::IntPtr)` overload"] pub fn invoke_tracking_origin_updated_event (internal_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1fa00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (internal_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeBoundaryChangedEvent(::unity2::IntPtr)` overload"] pub fn invoke_boundary_changed_event (internal_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1fb00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (internal_ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-xrinputsubsystem")]impl XRInputSubsystem{#[doc="`InvokeTrackingOriginUpdatedEvent(::unity2::IntPtr)` overload"]pub fn invoke_tracking_origin_updated_event(internal_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1fa00usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(internal_ptr))}
+}
+#[doc="`InvokeBoundaryChangedEvent(::unity2::IntPtr)` overload"]pub fn invoke_boundary_changed_event(internal_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1fb00usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(internal_ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
-pub trait IXRInputSubsystemMethods : IXRInputSubsystem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < XRInputSubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRInputSubsystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1fc00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-xrinputsubsystem")]pub trait IXRInputSubsystemMethods:IXRInputSubsystem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <XRInputSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1fc00usize)as*mut u8,();
+(XRInputSubsystem)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
-impl < __T : IXRInputSubsystem > IXRInputSubsystemMethods for __T { }
+#[cfg(feature="unity_engine-xr-xrinputsubsystem")]impl<__T:IXRInputSubsystem>IXRInputSubsystemMethods for __T{}
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
-impl XRInputSubsystem { pub fn invoke_tracking_origin_updated_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRInputSubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_boundary_changed_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRInputSubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRInputSubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-xr-xrinputsubsystem")]impl XRInputSubsystem{pub fn invoke_tracking_origin_updated_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_boundary_changed_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
-impl XRInputSubsystem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (XRInputSubsystem) , :: core :: stringify ! (new) ,)) ; < Self as IXRInputSubsystemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-xr-xrinputsubsystem")]impl XRInputSubsystem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(XRInputSubsystem), ::core::stringify!(new),));
+ <Self as IXRInputSubsystemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-xr-xrinputsubsystem")]

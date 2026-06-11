@@ -4,38 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akserializedcallbackheader/AkSerializedCallbackHeader.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSerializedCallbackHeader")] # [parent (crate :: system :: object :: Object)] pub struct AkSerializedCallbackHeader {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akserializedcallbackheader/AkSerializedCallbackHeader.md"))]#[::unity2::class(namespace="",name="AkSerializedCallbackHeader")]#[parent(crate::system::object::Object)]pub struct AkSerializedCallbackHeader{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akserializedcallbackheader-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akserializedcallbackheader")]
-impl AkSerializedCallbackHeader { # [doc = "`getCPtr(crate::root::akserializedcallbackheader::AkSerializedCallbackHeader)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akserializedcallbackheader :: AkSerializedCallbackHeader >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akserializedcallbackheader :: AkSerializedCallbackHeader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akserializedcallbackheader")]impl AkSerializedCallbackHeader{#[doc="`getCPtr(crate::root::akserializedcallbackheader::AkSerializedCallbackHeader)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akserializedcallbackheader::AkSerializedCallbackHeader>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d04750usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akserializedcallbackheader::AkSerializedCallbackHeader)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akserializedcallbackheader")]
-pub trait IAkSerializedCallbackHeaderMethods : IAkSerializedCallbackHeader { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d047b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d047e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pPackage()` overload"] fn get_p_package (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d049e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pNext()` overload"] fn get_p_next (self ,) -> crate :: root :: akserializedcallbackheader :: AkSerializedCallbackHeader { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: OptionalMethod ,) -> crate :: root :: akserializedcallbackheader :: AkSerializedCallbackHeader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_eType()` overload"] fn get_e_type (self ,) -> crate :: root :: akcallbacktype :: AkCallbackType { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcallbacktype :: AkCallbackType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetData()` overload"] fn get_data (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkSerializedCallbackHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSerializedCallbackHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akserializedcallbackheader")]pub trait IAkSerializedCallbackHeaderMethods:IAkSerializedCallbackHeader{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04710usize)as*mut u8,();
+(AkSerializedCallbackHeader)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d047b0usize)as*mut u8,();
+(AkSerializedCallbackHeader)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d047e0usize)as*mut u8,();
+(AkSerializedCallbackHeader)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04850usize)as*mut u8,();
+(AkSerializedCallbackHeader)__receiver)}
+}
+#[doc="`get_pPackage()` overload"]fn get_p_package(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d049e0usize)as*mut u8, ::unity2::IntPtr;
+(AkSerializedCallbackHeader)__receiver)}
+}
+#[doc="`get_pNext()` overload"]fn get_p_next(self,)->crate::root::akserializedcallbackheader::AkSerializedCallbackHeader{unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04a60usize)as*mut u8,crate::root::akserializedcallbackheader::AkSerializedCallbackHeader;
+(AkSerializedCallbackHeader)__receiver)}
+}
+#[doc="`get_eType()` overload"]fn get_e_type(self,)->crate::root::akcallbacktype::AkCallbackType{unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04b40usize)as*mut u8,crate::root::akcallbacktype::AkCallbackType;
+(AkSerializedCallbackHeader)__receiver)}
+}
+#[doc="`GetData()` overload"]fn get_data(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04bc0usize)as*mut u8, ::unity2::IntPtr;
+(AkSerializedCallbackHeader)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkSerializedCallbackHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04c40usize)as*mut u8,();
+(AkSerializedCallbackHeader)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akserializedcallbackheader")]
-impl < __T : IAkSerializedCallbackHeader > IAkSerializedCallbackHeaderMethods for __T { }
+#[cfg(feature="root-akserializedcallbackheader")]impl<__T:IAkSerializedCallbackHeader>IAkSerializedCallbackHeaderMethods for __T{}
 
-#[cfg(feature = "root-akserializedcallbackheader")]
-impl AkSerializedCallbackHeader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_p_package_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_p_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_e_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSerializedCallbackHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-akserializedcallbackheader")]impl AkSerializedCallbackHeader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_p_package_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_p_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_e_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "root-akserializedcallbackheader")]
-impl AkSerializedCallbackHeader {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSerializedCallbackHeader) , :: core :: stringify ! (new) ,)) ; < Self as IAkSerializedCallbackHeaderMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSerializedCallbackHeader) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkSerializedCallbackHeaderMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akserializedcallbackheader")]impl AkSerializedCallbackHeader{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSerializedCallbackHeader), ::core::stringify!(new),));
+ <Self as IAkSerializedCallbackHeaderMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSerializedCallbackHeader), ::core::stringify!(new_2),));
+ <Self as IAkSerializedCallbackHeaderMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akserializedcallbackheader")]

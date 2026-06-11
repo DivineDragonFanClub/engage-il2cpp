@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/scriptplayableoutput/ScriptPlayableOutput.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ScriptPlayableOutput {
-    pub m_handle: crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/scriptplayableoutput/ScriptPlayableOutput.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ScriptPlayableOutput{pub m_handle:crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,}
+impl::unity2::ClassIdentity for ScriptPlayableOutput{const NAMESPACE: &'static str="UnityEngine.Playables";
+const NAME: &'static str="ScriptPlayableOutput";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ScriptPlayableOutput {
-    const NAMESPACE: &'static str = "UnityEngine.Playables";
-
-    const NAME: &'static str = "ScriptPlayableOutput";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ScriptPlayableOutput {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ScriptPlayableOutput{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,31 @@ impl ::unity2::IlType for ScriptPlayableOutput {
 #[cfg(feature = "unity_engine-playables-scriptplayableoutput-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playables-scriptplayableoutput")]
-impl ScriptPlayableOutput { # [doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"] pub fn create (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bb70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`get_Null()` overload"] pub fn get_null () -> crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bc70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput)` overload"] pub fn op_implicit (output : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput >) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bc30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (output) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-scriptplayableoutput")]impl ScriptPlayableOutput{#[doc="`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]pub fn create(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bb70usize)as*mut u8,crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`get_Null()` overload"]pub fn get_null()->crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bc70usize)as*mut u8,crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput;
+)}
+}
+#[doc="`op_Implicit(crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput)` overload"]pub fn op_implicit(output:impl::core::convert::Into<crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput>)->crate::unity_engine::playables::playableoutput::PlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bc30usize)as*mut u8,crate::unity_engine::playables::playableoutput::PlayableOutput;
+(crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput)::core::convert::Into::into(output))}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-scriptplayableoutput")]
-impl ScriptPlayableOutput { # [doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut ScriptPlayableOutput , crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bd00usize) as * mut u8) ; __inner (self as * mut ScriptPlayableOutput , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { { let __inner : extern "C" fn (* mut ScriptPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bdc0usize) as * mut u8) ; __inner (self as * mut ScriptPlayableOutput , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-scriptplayableoutput")]impl ScriptPlayableOutput{#[doc="`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bd00usize)as*mut u8,();
+(*mut ScriptPlayableOutput)self as*mut ScriptPlayableOutput,(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bdc0usize)as*mut u8,crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle;
+(*mut ScriptPlayableOutput)self as*mut ScriptPlayableOutput)}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-scriptplayableoutput")]
-impl ScriptPlayableOutput { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-playables-scriptplayableoutput")]impl ScriptPlayableOutput{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-playables-scriptplayableoutput")]
 #[doc(hidden)]

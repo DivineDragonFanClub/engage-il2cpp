@@ -4,40 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfodirty/RingInfoDirty.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingInfoDirty")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingInfoDirty {
-# [offset (24)] # [rename (name = "m_DirtyTextureCurve")] pub m_dirty_texture_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringinfodirty/RingInfoDirty.md"))]#[::unity2::class(namespace="App",name="RingInfoDirty")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingInfoDirty{#[offset(24)]#[rename(name="m_DirtyTextureCurve")]pub m_dirty_texture_curve:crate::unity_engine::animationcurve::AnimationCurve,}
 
 }
 
 #[cfg(feature = "app-ringinfodirty-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringinfodirty")]
-pub trait IRingInfoDirtyMethods : IRingInfoDirty { # [doc = "`GetDirtyTextureValue(f32)` overload"] fn get_dirty_texture_value (self , value : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < RingInfoDirty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoDirty , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingInfoDirty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoDirty , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringinfodirty")]pub trait IRingInfoDirtyMethods:IRingInfoDirty{#[doc="`GetDirtyTextureValue(f32)` overload"]fn get_dirty_texture_value(self,value:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <RingInfoDirty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c950usize)as*mut u8,f32;
+(RingInfoDirty)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingInfoDirty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c960usize)as*mut u8,();
+(RingInfoDirty)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringinfodirty")]
-impl < __T : IRingInfoDirty > IRingInfoDirtyMethods for __T { }
+#[cfg(feature="app-ringinfodirty")]impl<__T:IRingInfoDirty>IRingInfoDirtyMethods for __T{}
 
-#[cfg(feature = "app-ringinfodirty")]
-impl RingInfoDirty { pub fn get_dirty_texture_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoDirty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoDirty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-ringinfodirty")]impl RingInfoDirty{pub fn get_dirty_texture_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-ringinfodirty")]
-impl RingInfoDirty {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingInfoDirty) , :: core :: stringify ! (new) ,)) ; < Self as IRingInfoDirtyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringinfodirty")]impl RingInfoDirty{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingInfoDirty), ::core::stringify!(new),));
+ <Self as IRingInfoDirtyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringinfodirty")]

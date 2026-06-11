@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/layermaskparameter/LayerMaskParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "LayerMaskParameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: layermask :: LayerMask >)] pub struct LayerMaskParameter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/layermaskparameter/LayerMaskParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="LayerMaskParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::layermask::LayerMask>)]pub struct LayerMaskParameter{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-layermaskparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-layermaskparameter")]
-pub trait ILayerMaskParameterMethods : ILayerMaskParameter { # [doc = "`.ctor(crate::unity_engine::layermask::LayerMask, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LayerMaskParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayerMaskParameter , crate :: unity_engine :: layermask :: LayerMask , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aaf90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-layermaskparameter")]pub trait ILayerMaskParameterMethods:ILayerMaskParameter{#[doc="`.ctor(crate::unity_engine::layermask::LayerMask, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <LayerMaskParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aaf90usize)as*mut u8,();
+(LayerMaskParameter)__receiver,(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-layermaskparameter")]
-impl < __T : ILayerMaskParameter > ILayerMaskParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-layermaskparameter")]impl<__T:ILayerMaskParameter>ILayerMaskParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-layermaskparameter")]
-impl LayerMaskParameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayerMaskParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-layermaskparameter")]impl LayerMaskParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-layermaskparameter")]
-impl LayerMaskParameter {
-# [doc = "`.ctor(crate::unity_engine::layermask::LayerMask, bool)` — overload selector"] pub fn new (value : crate :: unity_engine :: layermask :: LayerMask , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LayerMaskParameter) , :: core :: stringify ! (new) ,)) ; < Self as ILayerMaskParameterMethods > :: ctor (this , value , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-layermaskparameter")]impl LayerMaskParameter{#[doc="`.ctor(crate::unity_engine::layermask::LayerMask, bool)` — overload selector"]pub fn new(value:crate::unity_engine::layermask::LayerMask,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LayerMaskParameter), ::core::stringify!(new),));
+ <Self as ILayerMaskParameterMethods> ::ctor(this,value,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-layermaskparameter")]

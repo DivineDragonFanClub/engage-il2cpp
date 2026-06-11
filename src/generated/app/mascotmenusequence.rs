@@ -4,157 +4,223 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotmenusequence/MascotMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mascotmenusequence :: MascotMenuSequence >)] pub struct MascotMenuSequence {
-# [offset (120)] # [rename (name = "m_FriendlyGauge")] pub m_friendly_gauge : crate :: app :: mascotfriendlycontent :: MascotFriendlyContent ,
-# [offset (128)] # [rename (name = "m_MascotPresentationRoot")] pub m_mascot_presentation_root : crate :: app :: mascotpresentationroot :: MascotPresentationRoot ,
-# [offset (136)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: mascottopmenu :: MascotTopMenu_MenuResult ,
-# [offset (140)] # [rename (name = "m_CustomMenuResult")] pub m_custom_menu_result : crate :: app :: mascotcustomizemenu :: MascotCustomizeMenu_MenuResult ,
-# [offset (144)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (160)] # [rename (name = "m_Reserved")] pub m_reserved : bool ,
-# [offset (164)] # [rename (name = "m_MascotReservePosition")] pub m_mascot_reserve_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (176)] # [rename (name = "m_MascotReserveRotation")] pub m_mascot_reserve_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (192)] # [rename (name = "m_MascotCamera")] pub m_mascot_camera : crate :: app :: hubmascotcamera :: HubMascotCamera ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotmenusequence/MascotMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MascotMenuSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MascotMenuSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MascotMenuSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MascotMenuSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MascotMenuSequence_Label{pub fn load()->Self{Self{value:0}
+}
+pub fn main()->Self{Self{value:1}
+}
+pub fn food()->Self{Self{value:2}
+}
+pub fn food_eat()->Self{Self{value:3}
+}
+pub fn strok()->Self{Self{value:4}
+}
+pub fn custom()->Self{Self{value:5}
+}
+pub fn custom_top()->Self{Self{value:6}
+}
+pub fn custom_parts()->Self{Self{value:7}
+}
+pub fn custom_color()->Self{Self{value:8}
+}
+pub fn exit()->Self{Self{value:9}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotmenusequence/MascotMenuSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MascotMenuSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MascotMenuSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MascotMenuSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MascotMenuSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MascotMenuSequence_Label  {
-    pub fn load() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn main() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn food() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn food_eat() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn strok() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn custom() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn custom_top() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn custom_parts() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn custom_color() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 9 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotmenusequence/MascotMenuSequence.md"))]#[::unity2::class(namespace="App",name="MascotMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mascotmenusequence::MascotMenuSequence>)]pub struct MascotMenuSequence{#[offset(120)]#[rename(name="m_FriendlyGauge")]pub m_friendly_gauge:crate::app::mascotfriendlycontent::MascotFriendlyContent, #[offset(128)]#[rename(name="m_MascotPresentationRoot")]pub m_mascot_presentation_root:crate::app::mascotpresentationroot::MascotPresentationRoot, #[offset(136)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::mascottopmenu::MascotTopMenu_MenuResult, #[offset(140)]#[rename(name="m_CustomMenuResult")]pub m_custom_menu_result:crate::app::mascotcustomizemenu::MascotCustomizeMenu_MenuResult, #[offset(144)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(160)]#[rename(name="m_Reserved")]pub m_reserved:bool, #[offset(164)]#[rename(name="m_MascotReservePosition")]pub m_mascot_reserve_position:crate::unity_engine::vector3::Vector3, #[offset(176)]#[rename(name="m_MascotReserveRotation")]pub m_mascot_reserve_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(192)]#[rename(name="m_MascotCamera")]pub m_mascot_camera:crate::app::hubmascotcamera::HubMascotCamera,}
 
 }
 
 #[cfg(feature = "app-mascotmenusequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotmenusequence")]
-impl MascotMenuSequence { # [doc = "`SetShadowModel(crate::unity_engine::gameobject::GameObject, bool)` overload"] pub fn set_shadow_model (game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20396e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203d5c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotmenusequence")]impl MascotMenuSequence{#[doc="`SetShadowModel(crate::unity_engine::gameobject::GameObject, bool)` overload"]pub fn set_shadow_model(game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,enabled:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20396e0usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x203d5c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-mascotmenusequence")]
-pub trait IMascotMenuSequenceMethods : IMascotMenuSequence { # [doc = "`get_Foodstuff()` overload"] fn get_foodstuff (self ,) -> crate :: app :: foodstuffdata :: FoodstuffData { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: foodstuffdata :: FoodstuffData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Foodstuff(crate::app::foodstuffdata::FoodstuffData)` overload"] fn set_foodstuff (self , value : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20395a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FriendlyGauge()` overload"] fn get_friendly_gauge (self ,) -> crate :: app :: mascotfriendlycontent :: MascotFriendlyContent { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: mascotfriendlycontent :: MascotFriendlyContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20395b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PresentationRoot()` overload"] fn get_presentation_root (self ,) -> crate :: app :: mascotpresentationroot :: MascotPresentationRoot { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: mascotpresentationroot :: MascotPresentationRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20395c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayerController()` overload"] fn get_player_controller (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20395d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Player()` overload"] fn get_player (self ,) -> crate :: app :: hubunitcontroller :: HubUnitController { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubunitcontroller :: HubUnitController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20395e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Mascot()` overload"] fn get_mascot (self ,) -> crate :: app :: hubmascotcontroller :: HubMascotController { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20397e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenTitle()` overload"] fn open_title (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateTopMenu()` overload"] fn create_top_menu (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateCustomMenu()` overload"] fn create_custom_menu (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitStrok()` overload"] fn init_strok (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Strok()` overload"] fn strok (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203a330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitStrok()` overload"] fn exit_strok (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203a3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBond()` overload"] fn get_bond (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203a6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitCustom()` overload"] fn init_custom (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203a760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitCustom()` overload"] fn exit_custom (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203aef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203b590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateFoodSelect()` overload"] fn create_food_select (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203b890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateFoodEat()` overload"] fn create_food_eat (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203ba10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateAccChange()` overload"] fn create_acc_change (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203ba20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateColorChange()` overload"] fn create_color_change (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203bbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FriendlyPopup()` overload"] fn friendly_popup (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203bd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203bdf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203d6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotmenusequence")]pub trait IMascotMenuSequenceMethods:IMascotMenuSequence{#[doc="`get_Foodstuff()` overload"]fn get_foodstuff(self,)->crate::app::foodstuffdata::FoodstuffData{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039590usize)as*mut u8,crate::app::foodstuffdata::FoodstuffData;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`set_Foodstuff(crate::app::foodstuffdata::FoodstuffData)` overload"]fn set_foodstuff(self,value:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20395a0usize)as*mut u8,();
+(MascotMenuSequence)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(value))}
+}
+#[doc="`get_FriendlyGauge()` overload"]fn get_friendly_gauge(self,)->crate::app::mascotfriendlycontent::MascotFriendlyContent{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20395b0usize)as*mut u8,crate::app::mascotfriendlycontent::MascotFriendlyContent;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`get_PresentationRoot()` overload"]fn get_presentation_root(self,)->crate::app::mascotpresentationroot::MascotPresentationRoot{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20395c0usize)as*mut u8,crate::app::mascotpresentationroot::MascotPresentationRoot;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`get_PlayerController()` overload"]fn get_player_controller(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20395d0usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`get_Player()` overload"]fn get_player(self,)->crate::app::hubunitcontroller::HubUnitController{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20395e0usize)as*mut u8,crate::app::hubunitcontroller::HubUnitController;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`get_Mascot()` overload"]fn get_mascot(self,)->crate::app::hubmascotcontroller::HubMascotController{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039640usize)as*mut u8,crate::app::hubmascotcontroller::HubMascotController;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20397e0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039a10usize)as*mut u8,bool;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039ac0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`OpenTitle()` overload"]fn open_title(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039cc0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`CreateTopMenu()` overload"]fn create_top_menu(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039e00usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`CreateCustomMenu()` overload"]fn create_custom_menu(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039ed0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`InitStrok()` overload"]fn init_strok(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039f60usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`Strok()` overload"]fn strok(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203a330usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`ExitStrok()` overload"]fn exit_strok(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203a3b0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`GetBond()` overload"]fn get_bond(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203a6a0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`InitCustom()` overload"]fn init_custom(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203a760usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`ExitCustom()` overload"]fn exit_custom(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203aef0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203b590usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`CreateFoodSelect()` overload"]fn create_food_select(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203b890usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`CreateFoodEat()` overload"]fn create_food_eat(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203ba10usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`CreateAccChange()` overload"]fn create_acc_change(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203ba20usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`CreateColorChange()` overload"]fn create_color_change(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203bbe0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`FriendlyPopup()` overload"]fn friendly_popup(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203bd00usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203bdf0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(MascotMenuSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203d6b0usize)as*mut u8,();
+(MascotMenuSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotmenusequence")]
-impl < __T : IMascotMenuSequence > IMascotMenuSequenceMethods for __T { }
+#[cfg(feature="app-mascotmenusequence")]impl<__T:IMascotMenuSequence>IMascotMenuSequenceMethods for __T{}
 
-#[cfg(feature = "app-mascotmenusequence")]
-impl MascotMenuSequence { pub fn get_foodstuff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_foodstuff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_friendly_gauge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_presentation_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_mascot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_shadow_model_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn open_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_custom_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn init_strok_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn strok_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn exit_strok_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn init_custom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn exit_custom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn create_food_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn create_food_eat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn create_acc_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn create_color_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn friendly_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } }
+#[cfg(feature="app-mascotmenusequence")]impl MascotMenuSequence{pub fn get_foodstuff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_foodstuff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_friendly_gauge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_presentation_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_player_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_mascot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_shadow_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn open_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_custom_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn init_strok_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn strok_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn exit_strok_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn init_custom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn exit_custom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn create_food_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn create_food_eat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn create_acc_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn create_color_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn friendly_popup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
 
-#[cfg(feature = "app-mascotmenusequence")]
-impl MascotMenuSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotMenuSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMascotMenuSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mascotmenusequence")]impl MascotMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotMenuSequence), ::core::stringify!(new),));
+ <Self as IMascotMenuSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mascotmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MascotMenuSequence_Label;
     pub use super::MascotMenuSequence;
     pub use super::IMascotMenuSequence;
     pub use super::IMascotMenuSequenceMethods;
-    pub use super::MascotMenuSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

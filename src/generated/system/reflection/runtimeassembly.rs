@@ -4,32 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: assembly :: { Assembly , IAssembly }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::assembly::{Assembly,IAssembly}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimeassembly/RuntimeAssembly.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "RuntimeAssembly")] # [parent (crate :: system :: reflection :: assembly :: Assembly)] pub struct RuntimeAssembly {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/runtimeassembly/RuntimeAssembly.md"))]#[::unity2::class(namespace="System.Reflection",name="RuntimeAssembly")]#[parent(crate::system::reflection::assembly::Assembly)]pub struct RuntimeAssembly{}
 
 }
 
 #[cfg(feature = "system-reflection-runtimeassembly-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-runtimeassembly")]
-pub trait IRuntimeAssemblyMethods : IRuntimeAssembly { # [doc = "`GetName(bool)` overload"] fn get_name (self , copied_name : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: assemblyname :: AssemblyName { unsafe { let __receiver = < RuntimeAssembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeAssembly , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assemblyname :: AssemblyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd3930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (copied_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeAssembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeAssembly , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd3940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-runtimeassembly")]pub trait IRuntimeAssemblyMethods:IRuntimeAssembly{#[doc="`GetName(bool)` overload"]fn get_name(self,copied_name:impl::core::convert::Into<bool>)->crate::system::reflection::assemblyname::AssemblyName{unsafe{let __receiver= <RuntimeAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd3930usize)as*mut u8,crate::system::reflection::assemblyname::AssemblyName;
+(RuntimeAssembly)__receiver,(bool)::core::convert::Into::into(copied_name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd3940usize)as*mut u8,();
+(RuntimeAssembly)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-runtimeassembly")]
-impl < __T : IRuntimeAssembly > IRuntimeAssemblyMethods for __T { }
+#[cfg(feature="system-reflection-runtimeassembly")]impl<__T:IRuntimeAssembly>IRuntimeAssemblyMethods for __T{}
 
-#[cfg(feature = "system-reflection-runtimeassembly")]
-impl RuntimeAssembly { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeAssembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeAssembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="system-reflection-runtimeassembly")]impl RuntimeAssembly{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "system-reflection-runtimeassembly")]
-impl RuntimeAssembly {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeAssembly) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeAssemblyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-runtimeassembly")]impl RuntimeAssembly{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeAssembly), ::core::stringify!(new),));
+ <Self as IRuntimeAssemblyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-runtimeassembly")]

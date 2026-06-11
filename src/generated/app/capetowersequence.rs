@@ -4,190 +4,249 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapeTowerSequence.ConfirmEnableOnlineDialog.NoMenuItem")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog")]#[parent(crate::system::object::Object)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowersequence/CapeTowerSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CapeTowerSequence_Label2  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct CapeTowerSequence{#[offset(112)]#[rename(name="m_CapeTowerTopMenuResult")]pub m_cape_tower_top_menu_result:crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, #[offset(120)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(128)]#[rename(name="m_FromDebugMenu")]pub m_from_debug_menu:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CapeTowerSequence_Label2{pub value:i32,}
+impl::unity2::ClassIdentity for CapeTowerSequence_Label2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="CapeTowerSequence.Label2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for CapeTowerSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CapeTowerSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for CapeTowerSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for CapeTowerSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl CapeTowerSequence_Label2{pub fn entry()->Self{Self{value:0}
 }
-
-
-impl  CapeTowerSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn confirm_enable_online() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn challenge() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn relay() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn versus() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-
-    }
-
+pub fn top()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapeTowerSequence.ConfirmEnableOnlineDialog.YesMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapeTowerSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct CapeTowerSequence {
-# [offset (112)] # [rename (name = "m_CapeTowerTopMenuResult")] pub m_cape_tower_top_menu_result : crate :: app :: capetowertopmenu :: CapeTowerTopMenu_Result2 ,
-# [offset (120)] # [rename (name = "m_Bg")] pub m_bg : crate :: app :: menubg :: MenuBg ,
-# [offset (128)] # [rename (name = "m_FromDebugMenu")] pub m_from_debug_menu : bool ,
+pub fn confirm_enable_online()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapeTowerSequence.ConfirmEnableOnlineDialog")] # [parent (crate :: system :: object :: Object)] pub struct CapeTowerSequence_ConfirmEnableOnlineDialog {}
+pub fn challenge()->Self{Self{value:3}
+}
+pub fn relay()->Self{Self{value:4}
+}
+pub fn versus()->Self{Self{value:5}
+}
+pub fn end()->Self{Self{value:6}
+}
+}
 
 }
 
 #[cfg(feature = "app-capetowersequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-capetowersequence")]
-pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods : ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b32010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b32090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b32120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b321b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-capetowersequence")]
-impl < __T : ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem > ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods for __T { }
-
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bd910usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-capetowersequence")]
-pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods : ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b321c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b32240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b322d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-capetowersequence")]
-impl < __T : ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem > ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods for __T { }
-
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , initial_selected : impl :: core :: convert :: Into < crate :: app :: capetowertopmenu :: CapeTowerTopMenu_Result2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: capetowertopmenu :: CapeTowerTopMenu_Result2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25be3e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (initial_selected) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindForDebugMenu(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_for_debug_menu (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bf2c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-capetowersequence")]
-pub trait ICapeTowerSequenceMethods : ICapeTowerSequence { # [doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, bool)` overload"] fn ctor (self , initial_selected : impl :: core :: convert :: Into < crate :: app :: capetowertopmenu :: CapeTowerTopMenu_Result2 > , from_debug_menu : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , crate :: app :: capetowertopmenu :: CapeTowerTopMenu_Result2 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25be470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (initial_selected) , :: core :: convert :: Into :: into (from_debug_menu) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25be4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bf350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bf4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bf610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateCapeTowerTopMenu()` overload"] fn create_cape_tower_top_menu (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bf720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CapeTowerTopMenuBranch()` overload"] fn cape_tower_top_menu_branch (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bfbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ConfirmEnableOnline()` overload"] fn confirm_enable_online (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bfce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Login()` overload"] fn login (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bfcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoginBranch()` overload"] fn login_branch (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bfd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowNetTerms()` overload"] fn show_net_terms (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bfe00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateChallenge()` overload"] fn create_challenge (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bff30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRelay()` overload"] fn create_relay (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bff40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateVersus()` overload"] fn create_versus (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bff50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < CapeTowerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bff60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-capetowersequence")]
-impl < __T : ICapeTowerSequence > ICapeTowerSequenceMethods for __T { }
-
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_for_debug_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_cape_tower_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cape_tower_top_menu_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn confirm_enable_online_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn login_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn login_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn show_net_terms_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_challenge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn create_relay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn create_versus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
-
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence {
-# [doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, bool)` — overload selector"] pub fn new (initial_selected : crate :: app :: capetowertopmenu :: CapeTowerTopMenu_Result2 , from_debug_menu : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CapeTowerSequence) , :: core :: stringify ! (new) ,)) ; < Self as ICapeTowerSequenceMethods > :: ctor (this , initial_selected , from_debug_menu) ; this }
+#[cfg(feature="app-capetowersequence")]pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods:ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32010usize)as*mut u8, ::unity2::Il2CppString;
+(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32090usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32120usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b321b0usize)as*mut u8,();
+(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bd910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-capetowersequence")]impl<__T:ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem>ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods for __T{}
 
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerSequence_ConfirmEnableOnlineDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem), ::core::stringify!(new),));
+ <Self as ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-capetowersequence")]pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods:ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b321c0usize)as*mut u8, ::unity2::Il2CppString;
+(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b322d0usize)as*mut u8,();
+(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-capetowersequence")]impl<__T:ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem>ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_Result2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25be3e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)::core::convert::Into::into(initial_selected))}
+}
+#[doc="`CreateBindForDebugMenu(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_for_debug_menu(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bf2c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-capetowersequence")]pub trait ICapeTowerSequenceMethods:ICapeTowerSequence{#[doc="`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, bool)` overload"]fn ctor(self,initial_selected:impl::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_Result2> ,from_debug_menu:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25be470usize)as*mut u8,();
+(CapeTowerSequence)__receiver,(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)::core::convert::Into::into(initial_selected),(bool)::core::convert::Into::into(from_debug_menu))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25be4b0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bf350usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bf4f0usize)as*mut u8,bool;
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bf610usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`CreateCapeTowerTopMenu()` overload"]fn create_cape_tower_top_menu(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bf720usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`CapeTowerTopMenuBranch()` overload"]fn cape_tower_top_menu_branch(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bfbb0usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`ConfirmEnableOnline()` overload"]fn confirm_enable_online(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bfce0usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`Login()` overload"]fn login(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bfcf0usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`LoginBranch()` overload"]fn login_branch(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bfd00usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`ShowNetTerms()` overload"]fn show_net_terms(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bfe00usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`CreateChallenge()` overload"]fn create_challenge(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bff30usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`CreateRelay()` overload"]fn create_relay(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bff40usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`CreateVersus()` overload"]fn create_versus(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bff50usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <CapeTowerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bff60usize)as*mut u8,();
+(CapeTowerSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-capetowersequence")]impl<__T:ICapeTowerSequence>ICapeTowerSequenceMethods for __T{}
+
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_for_debug_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_cape_tower_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cape_tower_top_menu_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn confirm_enable_online_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn login_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn login_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn show_net_terms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_challenge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn create_relay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn create_versus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence{#[doc="`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, bool)` — overload selector"]pub fn new(initial_selected:crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,from_debug_menu:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapeTowerSequence), ::core::stringify!(new),));
+ <Self as ICapeTowerSequenceMethods> ::ctor(this,initial_selected,from_debug_menu);
+this}
+}
 
 #[cfg(feature = "app-capetowersequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog;
+    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog;
     pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem;
     pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem;
     pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods;
-    pub use super::CapeTowerSequence_Label2;
     pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem;
     pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem;
     pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods;
     pub use super::CapeTowerSequence;
     pub use super::ICapeTowerSequence;
     pub use super::ICapeTowerSequenceMethods;
-    pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog;
-    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog;
+    pub use super::CapeTowerSequence_Label2;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

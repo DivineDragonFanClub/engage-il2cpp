@@ -4,84 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSequenceSkillEdit_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit.md"))]#[::unity2::class(namespace="App",name="SortieSequenceSkillEdit")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequenceskilledit::SortieSequenceSkillEdit>)]pub struct SortieSequenceSkillEdit{#[static_field]#[rename(name="ResNameC")]pub res_name_c: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_Window")]pub m_window:crate::app::skilleditroot::SkillEditRoot, #[offset(128)]#[rename(name="m_BackInheriteCallback")]pub m_back_inherite_callback:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequenceSkillEdit_Label{pub value:i32,}
+impl::unity2::ClassIdentity for SortieSequenceSkillEdit_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieSequenceSkillEdit.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for SortieSequenceSkillEdit_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSequenceSkillEdit.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for SortieSequenceSkillEdit_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for SortieSequenceSkillEdit_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl SortieSequenceSkillEdit_Label{pub fn r#return()->Self{Self{value:0}
 }
-
-
-impl  SortieSequenceSkillEdit_Label  {
-    pub fn r#return() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn equip_sub_menu() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn back_sub_menu() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn equip_sub_menu()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceSkillEdit")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceskilledit :: SortieSequenceSkillEdit >)] pub struct SortieSequenceSkillEdit {
-# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_Window")] pub m_window : crate :: app :: skilleditroot :: SkillEditRoot ,
-# [offset (128)] # [rename (name = "m_BackInheriteCallback")] pub m_back_inherite_callback : crate :: system :: action :: Action ,
+pub fn back_sub_menu()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
 }
 
 }
@@ -89,30 +44,100 @@ impl  SortieSequenceSkillEdit_Label  {
 #[cfg(feature = "app-sortiesequenceskilledit-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortiesequenceskilledit")]
-impl SortieSequenceSkillEdit { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff1f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , back_inherite_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff27b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (back_inherite_callback) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCommon(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind_common (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , back_inherite_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff1f60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (back_inherite_callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequenceskilledit")]impl SortieSequenceSkillEdit{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ff1f50usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,back_inherite_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ff27b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(back_inherite_callback))}
+}
+#[doc="`CreateBindCommon(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind_common(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,back_inherite_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ff1f60usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(back_inherite_callback))}
+}
+}
 
-#[cfg(feature = "app-sortiesequenceskilledit")]
-pub trait ISortieSequenceSkillEditMethods : ISortieSequenceSkillEdit { # [doc = "`SetBackInheriteCallback(crate::system::action::Action)` overload"] fn set_back_inherite_callback (self , callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff1f40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`LoadRes()` overload"] fn load_res (self ,) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff2840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingRes()` overload"] fn is_loading_res (self ,) -> bool { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff28e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff2960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HasDoneAfterBuild()` overload"] fn has_done_after_build (self ,) -> bool { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff2f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartMenu()` overload"] fn start_menu (self ,) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff2ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MenuTick()` overload"] fn menu_tick (self ,) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff3090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff30a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCloseAll()` overload"] fn is_close_all (self ,) -> bool { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff3130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff31d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateEquipSubMenu()` overload"] fn create_equip_sub_menu (self ,) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff3330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieSequenceSkillEdit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceSkillEdit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff27c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequenceskilledit")]pub trait ISortieSequenceSkillEditMethods:ISortieSequenceSkillEdit{#[doc="`SetBackInheriteCallback(crate::system::action::Action)` overload"]fn set_back_inherite_callback(self,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff1f40usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver,(crate::system::action::Action)::core::convert::Into::into(callback))}
+}
+#[doc="`LoadRes()` overload"]fn load_res(self,)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff2840usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`IsLoadingRes()` overload"]fn is_loading_res(self,)->bool{unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff28e0usize)as*mut u8,bool;
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff2960usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`HasDoneAfterBuild()` overload"]fn has_done_after_build(self,)->bool{unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff2f20usize)as*mut u8,bool;
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`StartMenu()` overload"]fn start_menu(self,)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff2ff0usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`MenuTick()` overload"]fn menu_tick(self,)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff3090usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff30a0usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`IsCloseAll()` overload"]fn is_close_all(self,)->bool{unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff3130usize)as*mut u8,bool;
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff31d0usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`CreateEquipSubMenu()` overload"]fn create_equip_sub_menu(self,)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff3330usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieSequenceSkillEdit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff27c0usize)as*mut u8,();
+(SortieSequenceSkillEdit)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortiesequenceskilledit")]
-impl < __T : ISortieSequenceSkillEdit > ISortieSequenceSkillEditMethods for __T { }
+#[cfg(feature="app-sortiesequenceskilledit")]impl<__T:ISortieSequenceSkillEdit>ISortieSequenceSkillEditMethods for __T{}
 
-#[cfg(feature = "app-sortiesequenceskilledit")]
-impl SortieSequenceSkillEdit { pub fn set_back_inherite_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_common_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_loading_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn has_done_after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn menu_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_close_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_equip_sub_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceSkillEdit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-sortiesequenceskilledit")]impl SortieSequenceSkillEdit{pub fn set_back_inherite_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_loading_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn has_done_after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn menu_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_close_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_equip_sub_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-sortiesequenceskilledit")]
-impl SortieSequenceSkillEdit {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSequenceSkillEdit) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSequenceSkillEditMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortiesequenceskilledit")]impl SortieSequenceSkillEdit{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieSequenceSkillEdit), ::core::stringify!(new),));
+ <Self as ISortieSequenceSkillEditMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortiesequenceskilledit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequenceSkillEdit_Label;
     pub use super::SortieSequenceSkillEdit;
     pub use super::ISortieSequenceSkillEdit;
     pub use super::ISortieSequenceSkillEditMethods;
+    pub use super::SortieSequenceSkillEdit_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

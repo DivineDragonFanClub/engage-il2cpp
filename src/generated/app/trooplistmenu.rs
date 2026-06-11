@@ -4,104 +4,266 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct TroopListMenu {
-# [static_field] # [rename (name = "m_mode")] pub m_mode : crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode ,
-# [static_field] # [rename (name = "m_page")] pub m_page : i32 ,
-# [static_field] # [rename (name = "ListUnitNum")] pub list_unit_num : i32 ,
-# [static_field] # [rename (name = "m_ListUnitNum")] pub m_list_unit_num : i32 ,
-# [static_field] # [rename (name = "m_ListUnit")] pub m_list_unit : :: unity2 :: Array < crate :: app :: unit :: Unit > ,
-# [static_field] # [rename (name = "m_TmpListUnit")] pub m_tmp_list_unit : :: unity2 :: Array < crate :: app :: unit :: Unit > ,
-# [static_field] # [rename (name = "m_sortMenu")] pub m_sort_menu : crate :: app :: trooplistsortmenu :: TroopListSortMenu ,
-# [offset (196)] # [rename (name = "m_SelectSort")] pub m_select_sort : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistmenu/TroopListMenu_ConfirmBattleSequence.md"))]#[::unity2::class(namespace="App",name="TroopListMenu.ConfirmBattleSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct TroopListMenu_ConfirmBattleSequence{#[offset(112)]#[rename(name="m_ParentMenu")]pub m_parent_menu:crate::app::basicmenu::BasicMenu,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu_TroopListMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListMenu.TroopListMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct TroopListMenu_TroopListMenuItem {
-# [offset (100)] # [rename (name = "m_index")] pub m_index : i32 ,
-# [offset (104)] # [rename (name = "m_mode")] pub m_mode : crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistmenu/TroopListMenu_TroopListMenuItem.md"))]#[::unity2::class(namespace="App",name="TroopListMenu.TroopListMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct TroopListMenu_TroopListMenuItem{#[offset(100)]#[rename(name="m_index")]pub m_index:i32, #[offset(104)]#[rename(name="m_mode")]pub m_mode:crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu_ConfirmBattleSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListMenu.ConfirmBattleSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TroopListMenu_ConfirmBattleSequence {
-# [offset (112)] # [rename (name = "m_ParentMenu")] pub m_parent_menu : crate :: app :: basicmenu :: BasicMenu ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistmenu/TroopListMenu.md"))]#[::unity2::class(namespace="App",name="TroopListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct TroopListMenu{#[static_field]#[rename(name="m_mode")]pub m_mode:crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode, #[static_field]#[rename(name="m_page")]pub m_page:i32, #[static_field]#[rename(name="ListUnitNum")]pub list_unit_num:i32, #[static_field]#[rename(name="m_ListUnitNum")]pub m_list_unit_num:i32, #[static_field]#[rename(name="m_ListUnit")]pub m_list_unit: ::unity2::Array<crate::app::unit::Unit> , #[static_field]#[rename(name="m_TmpListUnit")]pub m_tmp_list_unit: ::unity2::Array<crate::app::unit::Unit> , #[static_field]#[rename(name="m_sortMenu")]pub m_sort_menu:crate::app::trooplistsortmenu::TroopListSortMenu, #[offset(196)]#[rename(name="m_SelectSort")]pub m_select_sort:bool,}
 
 }
 
 #[cfg(feature = "app-trooplistmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::trooplistmenucontent::TroopListMenuContent, crate::app::trooplistsortmenu::TroopListSortMenu, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: trooplistmenucontent :: TroopListMenuContent > , sort_menu : impl :: core :: convert :: Into < crate :: app :: trooplistsortmenu :: TroopListSortMenu > , mode : impl :: core :: convert :: Into < crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode >) -> crate :: app :: trooplistmenu :: TroopListMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: trooplistmenucontent :: TroopListMenuContent , crate :: app :: trooplistsortmenu :: TroopListSortMenu , crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode , :: unity2 :: OptionalMethod ,) -> crate :: app :: trooplistmenu :: TroopListMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a35f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (sort_menu) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`InitUnitOrder()` overload"] pub fn init_unit_order () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a38a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddListUnit(crate::app::unit::Unit)` overload"] pub fn add_list_unit (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a6de0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`InitUnitOrderNormal()` overload"] pub fn init_unit_order_normal () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a6c00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`InitUnitOrderRelay()` overload"] pub fn init_unit_order_relay () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a69a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SortUnitOrder()` overload"] pub fn sort_unit_order () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a3940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetSortValue(crate::app::unit::Unit, crate::app::trooplistsortmenu::TroopListSortMenu_SortType)` overload"] pub fn get_sort_value (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , r#type : impl :: core :: convert :: Into < crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a70e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a8910usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-trooplistmenu")]
-pub trait ITroopListMenuMethods : ITroopListMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trooplistmenucontent::TroopListMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: trooplistmenucontent :: TroopListMenuContent >) -> () { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: trooplistmenucontent :: TroopListMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a3e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a4470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveUp(bool)` overload"] fn move_up (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a44c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`MoveDown(bool)` overload"] fn move_down (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a4a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a4e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a6260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCurrentPage()` overload"] fn get_current_page (self ,) -> i32 { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a6720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IncPage(bool)` overload"] fn inc_page (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a5f40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`DecPage(bool)` overload"] fn dec_page (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a59a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`IncSort(bool)` overload"] fn inc_sort (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a5cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`DecSort(bool)` overload"] fn dec_sort (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a5750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`GetSortUnit(i32)` overload"] fn get_sort_unit (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a8740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetSortTmpUnit(i32)` overload"] fn get_sort_tmp_unit (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a8820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsSelectSort()` overload"] fn is_select_sort (self ,) -> bool { unsafe { let __receiver = < TroopListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a8900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-trooplistmenu")]
-impl < __T : ITroopListMenu > ITroopListMenuMethods for __T { }
-
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn move_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn move_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_current_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn inc_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn dec_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn inc_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn dec_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn init_unit_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn add_list_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn init_unit_order_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn init_unit_order_relay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn sort_unit_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_sort_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_sort_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_sort_tmp_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_select_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
-
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trooplistmenucontent::TroopListMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: trooplistmenucontent :: TroopListMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TroopListMenu) , :: core :: stringify ! (new) ,)) ; < Self as ITroopListMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_ConfirmBattleSequence{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu)` overload"]pub fn create_bind(parent_menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fbe0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(parent_menu))}
+}
 }
 
-#[cfg(feature = "app-trooplistmenu")]
-pub trait ITroopListMenu_TroopListMenuItemMethods : ITroopListMenu_TroopListMenuItem { # [doc = "`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"] fn ctor (self , index : impl :: core :: convert :: Into < i32 > , mode : impl :: core :: convert :: Into < crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode >) -> () { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , i32 , crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3ff10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3ff50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTmpUnit()` overload"] fn get_tmp_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMode()` overload"] fn get_mode (self ,) -> crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b40090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b400a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b400b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b40200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b40700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b40f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RCall()` overload"] fn r_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b41190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlusCall()` overload"] fn plus_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b41340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPage(i32)` overload"] fn set_page (self , page : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TroopListMenu_TroopListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_TroopListMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b414b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (page) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-trooplistmenu")]
-impl < __T : ITroopListMenu_TroopListMenuItem > ITroopListMenu_TroopListMenuItemMethods for __T { }
-
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu_TroopListMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_tmp_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn r_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn plus_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_TroopListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
-
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu_TroopListMenuItem {
-# [doc = "`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` — overload selector"] pub fn new (index : i32 , mode : crate :: app :: sortiesequencetrooplist :: SortieSequenceTroopList_Mode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TroopListMenu_TroopListMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ITroopListMenu_TroopListMenuItemMethods > :: ctor (this , index , mode) ; this }
+#[cfg(feature="app-trooplistmenu")]pub trait ITroopListMenu_ConfirmBattleSequenceMethods:ITroopListMenu_ConfirmBattleSequence{#[doc="`.ctor(crate::app::basicmenu::BasicMenu)` overload"]fn ctor(self,parent_menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu>)->(){unsafe{let __receiver= <TroopListMenu_ConfirmBattleSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fe40usize)as*mut u8,();
+(TroopListMenu_ConfirmBattleSequence)__receiver,(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(parent_menu))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TroopListMenu_ConfirmBattleSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fe80usize)as*mut u8,();
+(TroopListMenu_ConfirmBattleSequence)__receiver)}
+}
+#[doc="`CreateDialog()` overload"]fn create_dialog(self,)->(){unsafe{let __receiver= <TroopListMenu_ConfirmBattleSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fe90usize)as*mut u8,();
+(TroopListMenu_ConfirmBattleSequence)__receiver)}
+}
 }
 
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu_ConfirmBattleSequence { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu)` overload"] pub fn create_bind (parent_menu : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fbe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent_menu) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-trooplistmenu")]impl<__T:ITroopListMenu_ConfirmBattleSequence>ITroopListMenu_ConfirmBattleSequenceMethods for __T{}
 
-#[cfg(feature = "app-trooplistmenu")]
-pub trait ITroopListMenu_ConfirmBattleSequenceMethods : ITroopListMenu_ConfirmBattleSequence { # [doc = "`.ctor(crate::app::basicmenu::BasicMenu)` overload"] fn ctor (self , parent_menu : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu >) -> () { unsafe { let __receiver = < TroopListMenu_ConfirmBattleSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_ConfirmBattleSequence , crate :: app :: basicmenu :: BasicMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fe40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent_menu) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < TroopListMenu_ConfirmBattleSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_ConfirmBattleSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fe80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDialog()` overload"] fn create_dialog (self ,) -> () { unsafe { let __receiver = < TroopListMenu_ConfirmBattleSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenu_ConfirmBattleSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fe90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_ConfirmBattleSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-trooplistmenu")]
-impl < __T : ITroopListMenu_ConfirmBattleSequence > ITroopListMenu_ConfirmBattleSequenceMethods for __T { }
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_ConfirmBattleSequence{#[doc="`.ctor(crate::app::basicmenu::BasicMenu)` — overload selector"]pub fn new(parent_menu:crate::app::basicmenu::BasicMenu)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TroopListMenu_ConfirmBattleSequence), ::core::stringify!(new),));
+ <Self as ITroopListMenu_ConfirmBattleSequenceMethods> ::ctor(this,parent_menu);
+this}
+}
 
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu_ConfirmBattleSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_ConfirmBattleSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_ConfirmBattleSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_ConfirmBattleSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenu_ConfirmBattleSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-trooplistmenu")]pub trait ITroopListMenu_TroopListMenuItemMethods:ITroopListMenu_TroopListMenuItem{#[doc="`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,mode:impl::core::convert::Into<crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode>)->(){unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ff10usize)as*mut u8,();
+(TroopListMenu_TroopListMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ff50usize)as*mut u8,crate::app::unit::Unit;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`GetTmpUnit()` overload"]fn get_tmp_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fff0usize)as*mut u8,crate::app::unit::Unit;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`GetMode()` overload"]fn get_mode(self,)->crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b40090usize)as*mut u8,crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`GetRectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b400a0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b400b0usize)as*mut u8, ::unity2::Il2CppString;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b40200usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b40700usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b40f80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`RCall()` overload"]fn r_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b41190usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b41340usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`SetPage(i32)` overload"]fn set_page(self,page:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b414b0usize)as*mut u8,();
+(TroopListMenu_TroopListMenuItem)__receiver,(i32)::core::convert::Into::into(page))}
+}
+}
 
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu_ConfirmBattleSequence {
-# [doc = "`.ctor(crate::app::basicmenu::BasicMenu)` — overload selector"] pub fn new (parent_menu : crate :: app :: basicmenu :: BasicMenu) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TroopListMenu_ConfirmBattleSequence) , :: core :: stringify ! (new) ,)) ; < Self as ITroopListMenu_ConfirmBattleSequenceMethods > :: ctor (this , parent_menu) ; this }
+#[cfg(feature="app-trooplistmenu")]impl<__T:ITroopListMenu_TroopListMenuItem>ITroopListMenu_TroopListMenuItemMethods for __T{}
+
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_TroopListMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_tmp_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn r_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_TroopListMenuItem{#[doc="`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` — overload selector"]pub fn new(index:i32,mode:crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TroopListMenu_TroopListMenuItem), ::core::stringify!(new),));
+ <Self as ITroopListMenu_TroopListMenuItemMethods> ::ctor(this,index,mode);
+this}
+}
+
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::trooplistmenucontent::TroopListMenuContent, crate::app::trooplistsortmenu::TroopListSortMenu, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::trooplistmenucontent::TroopListMenuContent> ,sort_menu:impl::core::convert::Into<crate::app::trooplistsortmenu::TroopListSortMenu> ,mode:impl::core::convert::Into<crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode>)->crate::app::trooplistmenu::TroopListMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a35f0usize)as*mut u8,crate::app::trooplistmenu::TroopListMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::trooplistmenucontent::TroopListMenuContent)::core::convert::Into::into(menu_content),(crate::app::trooplistsortmenu::TroopListSortMenu)::core::convert::Into::into(sort_menu),(crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`InitUnitOrder()` overload"]pub fn init_unit_order()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a38a0usize)as*mut u8,();
+)}
+}
+#[doc="`AddListUnit(crate::app::unit::Unit)` overload"]pub fn add_list_unit(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a6de0usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`InitUnitOrderNormal()` overload"]pub fn init_unit_order_normal()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a6c00usize)as*mut u8,();
+)}
+}
+#[doc="`InitUnitOrderRelay()` overload"]pub fn init_unit_order_relay()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a69a0usize)as*mut u8,();
+)}
+}
+#[doc="`SortUnitOrder()` overload"]pub fn sort_unit_order()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a3940usize)as*mut u8,();
+)}
+}
+#[doc="`GetSortValue(crate::app::unit::Unit, crate::app::trooplistsortmenu::TroopListSortMenu_SortType)` overload"]pub fn get_sort_value(unit:impl::core::convert::Into<crate::app::unit::Unit> ,r#type:impl::core::convert::Into<crate::app::trooplistsortmenu::TroopListSortMenu_SortType>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a70e0usize)as*mut u8,i32;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::trooplistsortmenu::TroopListSortMenu_SortType)::core::convert::Into::into(r#type))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a8910usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-trooplistmenu")]pub trait ITroopListMenuMethods:ITroopListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trooplistmenucontent::TroopListMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::trooplistmenucontent::TroopListMenuContent>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a3e20usize)as*mut u8,();
+(TroopListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::trooplistmenucontent::TroopListMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a4470usize)as*mut u8, ::unity2::Il2CppString;
+(TroopListMenu)__receiver)}
+}
+#[doc="`MoveUp(bool)` overload"]fn move_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a44c0usize)as*mut u8,();
+(TroopListMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`MoveDown(bool)` overload"]fn move_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a4a30usize)as*mut u8,();
+(TroopListMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a4e10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TroopListMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a6260usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TroopListMenu)__receiver)}
+}
+#[doc="`GetCurrentPage()` overload"]fn get_current_page(self,)->i32{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a6720usize)as*mut u8,i32;
+(TroopListMenu)__receiver)}
+}
+#[doc="`IncPage(bool)` overload"]fn inc_page(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a5f40usize)as*mut u8,();
+(TroopListMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`DecPage(bool)` overload"]fn dec_page(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a59a0usize)as*mut u8,();
+(TroopListMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`IncSort(bool)` overload"]fn inc_sort(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a5cf0usize)as*mut u8,();
+(TroopListMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`DecSort(bool)` overload"]fn dec_sort(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a5750usize)as*mut u8,();
+(TroopListMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`GetSortUnit(i32)` overload"]fn get_sort_unit(self,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a8740usize)as*mut u8,crate::app::unit::Unit;
+(TroopListMenu)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetSortTmpUnit(i32)` overload"]fn get_sort_tmp_unit(self,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a8820usize)as*mut u8,crate::app::unit::Unit;
+(TroopListMenu)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsSelectSort()` overload"]fn is_select_sort(self,)->bool{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a8900usize)as*mut u8,bool;
+(TroopListMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-trooplistmenu")]impl<__T:ITroopListMenu>ITroopListMenuMethods for __T{}
+
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn move_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn move_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_current_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn inc_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn dec_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn inc_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn dec_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn init_unit_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn add_list_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn init_unit_order_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn init_unit_order_relay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn sort_unit_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_sort_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_sort_tmp_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_select_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trooplistmenucontent::TroopListMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::trooplistmenucontent::TroopListMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TroopListMenu), ::core::stringify!(new),));
+ <Self as ITroopListMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-trooplistmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TroopListMenu;
-    pub use super::ITroopListMenu;
-    pub use super::ITroopListMenuMethods;
-    pub use super::TroopListMenu_TroopListMenuItem;
-    pub use super::ITroopListMenu_TroopListMenuItem;
-    pub use super::ITroopListMenu_TroopListMenuItemMethods;
     pub use super::TroopListMenu_ConfirmBattleSequence;
     pub use super::ITroopListMenu_ConfirmBattleSequence;
     pub use super::ITroopListMenu_ConfirmBattleSequenceMethods;
+    pub use super::TroopListMenu_TroopListMenuItem;
+    pub use super::ITroopListMenu_TroopListMenuItem;
+    pub use super::ITroopListMenu_TroopListMenuItemMethods;
+    pub use super::TroopListMenu;
+    pub use super::ITroopListMenu;
+    pub use super::ITroopListMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

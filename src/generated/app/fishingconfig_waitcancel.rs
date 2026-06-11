@@ -4,43 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_waitcancel/FishingConfig_WaitCancel.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingConfig_WaitCancel")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingConfig_WaitCancel {
-# [offset (24)] # [rename (name = "m_CancelTime")] pub m_cancel_time : f32 ,
-# [offset (28)] # [rename (name = "m_CancelPullTime")] pub m_cancel_pull_time : f32 ,
-# [offset (32)] # [rename (name = "m_CancelFadeOutTime")] pub m_cancel_fade_out_time : f32 ,
-# [offset (36)] # [rename (name = "m_CancelFadeInTime")] pub m_cancel_fade_in_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingconfig_waitcancel/FishingConfig_WaitCancel.md"))]#[::unity2::class(namespace="App",name="FishingConfig_WaitCancel")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FishingConfig_WaitCancel{#[offset(24)]#[rename(name="m_CancelTime")]pub m_cancel_time:f32, #[offset(28)]#[rename(name="m_CancelPullTime")]pub m_cancel_pull_time:f32, #[offset(32)]#[rename(name="m_CancelFadeOutTime")]pub m_cancel_fade_out_time:f32, #[offset(36)]#[rename(name="m_CancelFadeInTime")]pub m_cancel_fade_in_time:f32,}
 
 }
 
 #[cfg(feature = "app-fishingconfig_waitcancel-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingconfig_waitcancel")]
-pub trait IFishingConfig_WaitCancelMethods : IFishingConfig_WaitCancel { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingConfig_WaitCancel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingConfig_WaitCancel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f01b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingconfig_waitcancel")]pub trait IFishingConfig_WaitCancelMethods:IFishingConfig_WaitCancel{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingConfig_WaitCancel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f01b0usize)as*mut u8,();
+(FishingConfig_WaitCancel)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingconfig_waitcancel")]
-impl < __T : IFishingConfig_WaitCancel > IFishingConfig_WaitCancelMethods for __T { }
+#[cfg(feature="app-fishingconfig_waitcancel")]impl<__T:IFishingConfig_WaitCancel>IFishingConfig_WaitCancelMethods for __T{}
 
-#[cfg(feature = "app-fishingconfig_waitcancel")]
-impl FishingConfig_WaitCancel { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingConfig_WaitCancel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-fishingconfig_waitcancel")]impl FishingConfig_WaitCancel{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-fishingconfig_waitcancel")]
-impl FishingConfig_WaitCancel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingConfig_WaitCancel) , :: core :: stringify ! (new) ,)) ; < Self as IFishingConfig_WaitCancelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingconfig_waitcancel")]impl FishingConfig_WaitCancel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingConfig_WaitCancel), ::core::stringify!(new),));
+ <Self as IFishingConfig_WaitCancelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingconfig_waitcancel")]

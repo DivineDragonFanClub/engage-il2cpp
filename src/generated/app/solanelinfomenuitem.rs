@@ -4,85 +4,121 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenuitem/SolanelInfoMenuItem_ConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "SolanelInfoMenuItem.ConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct SolanelInfoMenuItem_ConfirmDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenuitem/SolanelInfoMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuItem.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct SolanelInfoMenuItem_ConfirmDialog{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenuitem/SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SolanelInfoMenuItem.ConfirmDialog.ConfirmYesDialogItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem {
-# [offset (112)] # [rename (name = "m_HubAreaData")] pub m_hub_area_data : crate :: app :: hubareadata :: HubAreaData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenuitem/SolanelInfoMenuItem.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct SolanelInfoMenuItem{#[offset(104)]#[rename(name="m_HubAreaData")]pub m_hub_area_data:crate::app::hubareadata::HubAreaData,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenuitem/SolanelInfoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SolanelInfoMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct SolanelInfoMenuItem {
-# [offset (104)] # [rename (name = "m_HubAreaData")] pub m_hub_area_data : crate :: app :: hubareadata :: HubAreaData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenuitem/SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuItem.ConfirmDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem{#[offset(112)]#[rename(name="m_HubAreaData")]pub m_hub_area_data:crate::app::hubareadata::HubAreaData,}
 
 }
 
 #[cfg(feature = "app-solanelinfomenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl SolanelInfoMenuItem_ConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubareadata::HubAreaData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , hub_area_data : impl :: core :: convert :: Into < crate :: app :: hubareadata :: HubAreaData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubareadata :: HubAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d72170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (hub_area_data) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-pub trait ISolanelInfoMenuItem_ConfirmDialogMethods : ISolanelInfoMenuItem_ConfirmDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { let __receiver = < SolanelInfoMenuItem_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenuItem_ConfirmDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d72410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl < __T : ISolanelInfoMenuItem_ConfirmDialog > ISolanelInfoMenuItem_ConfirmDialogMethods for __T { }
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl SolanelInfoMenuItem_ConfirmDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl SolanelInfoMenuItem_ConfirmDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SolanelInfoMenuItem_ConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as ISolanelInfoMenuItem_ConfirmDialogMethods > :: ctor (this , menu_item_list) ; this }
+#[cfg(feature="app-solanelinfomenuitem")]impl SolanelInfoMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubareadata::HubAreaData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,hub_area_data:impl::core::convert::Into<crate::app::hubareadata::HubAreaData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d72170usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubareadata::HubAreaData)::core::convert::Into::into(hub_area_data))}
+}
 }
 
-#[cfg(feature = "app-solanelinfomenuitem")]
-pub trait ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods : ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::hubareadata::HubAreaData)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , hub_area_data : impl :: core :: convert :: Into < crate :: app :: hubareadata :: HubAreaData >) -> () { unsafe { let __receiver = < SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem , :: unity2 :: Il2CppString , crate :: app :: hubareadata :: HubAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22edc50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (hub_area_data) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22edc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl < __T : ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem > ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods for __T { }
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::hubareadata::HubAreaData)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString , hub_area_data : crate :: app :: hubareadata :: HubAreaData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem) , :: core :: stringify ! (new) ,)) ; < Self as ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods > :: ctor (this , text , hub_area_data) ; this }
+#[cfg(feature="app-solanelinfomenuitem")]pub trait ISolanelInfoMenuItem_ConfirmDialogMethods:ISolanelInfoMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <SolanelInfoMenuItem_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d72410usize)as*mut u8,();
+(SolanelInfoMenuItem_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
 }
 
-#[cfg(feature = "app-solanelinfomenuitem")]
-pub trait ISolanelInfoMenuItemMethods : ISolanelInfoMenuItem { # [doc = "`.ctor(i32)` overload"] fn ctor (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SolanelInfoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdf010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetHubAreaData()` overload"] fn get_hub_area_data (self ,) -> crate :: app :: hubareadata :: HubAreaData { unsafe { let __receiver = < SolanelInfoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubareadata :: HubAreaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe1be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SolanelInfoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe1bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < SolanelInfoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe1c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SolanelInfoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe1d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-solanelinfomenuitem")]impl<__T:ISolanelInfoMenuItem_ConfirmDialog>ISolanelInfoMenuItem_ConfirmDialogMethods for __T{}
 
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl < __T : ISolanelInfoMenuItem > ISolanelInfoMenuItemMethods for __T { }
+#[cfg(feature="app-solanelinfomenuitem")]impl SolanelInfoMenuItem_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl SolanelInfoMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hub_area_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-solanelinfomenuitem")]impl SolanelInfoMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SolanelInfoMenuItem_ConfirmDialog), ::core::stringify!(new),));
+ <Self as ISolanelInfoMenuItem_ConfirmDialogMethods> ::ctor(this,menu_item_list);
+this}
+}
 
-#[cfg(feature = "app-solanelinfomenuitem")]
-impl SolanelInfoMenuItem {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SolanelInfoMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ISolanelInfoMenuItemMethods > :: ctor (this , index) ; this }
+#[cfg(feature="app-solanelinfomenuitem")]pub trait ISolanelInfoMenuItemMethods:ISolanelInfoMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SolanelInfoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdf010usize)as*mut u8,();
+(SolanelInfoMenuItem)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetHubAreaData()` overload"]fn get_hub_area_data(self,)->crate::app::hubareadata::HubAreaData{unsafe{let __receiver= <SolanelInfoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe1be0usize)as*mut u8,crate::app::hubareadata::HubAreaData;
+(SolanelInfoMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SolanelInfoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe1bf0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SolanelInfoMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SolanelInfoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe1c00usize)as*mut u8,();
+(SolanelInfoMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SolanelInfoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe1d10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SolanelInfoMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-solanelinfomenuitem")]impl<__T:ISolanelInfoMenuItem>ISolanelInfoMenuItemMethods for __T{}
+
+#[cfg(feature="app-solanelinfomenuitem")]impl SolanelInfoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hub_area_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-solanelinfomenuitem")]impl SolanelInfoMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SolanelInfoMenuItem), ::core::stringify!(new),));
+ <Self as ISolanelInfoMenuItemMethods> ::ctor(this,index);
+this}
+}
+
+#[cfg(feature="app-solanelinfomenuitem")]pub trait ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods:ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::hubareadata::HubAreaData)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,hub_area_data:impl::core::convert::Into<crate::app::hubareadata::HubAreaData>)->(){unsafe{let __receiver= <SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22edc50usize)as*mut u8,();
+(SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::hubareadata::HubAreaData)::core::convert::Into::into(hub_area_data))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22edc90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-solanelinfomenuitem")]impl<__T:ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem>ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods for __T{}
+
+#[cfg(feature="app-solanelinfomenuitem")]impl SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-solanelinfomenuitem")]impl SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::hubareadata::HubAreaData)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,hub_area_data:crate::app::hubareadata::HubAreaData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
+ <Self as ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods> ::ctor(this,text,hub_area_data);
+this}
 }
 
 #[cfg(feature = "app-solanelinfomenuitem")]
@@ -91,12 +127,12 @@ pub mod prelude {
     pub use super::SolanelInfoMenuItem_ConfirmDialog;
     pub use super::ISolanelInfoMenuItem_ConfirmDialog;
     pub use super::ISolanelInfoMenuItem_ConfirmDialogMethods;
-    pub use super::SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem;
-    pub use super::ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem;
-    pub use super::ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods;
     pub use super::SolanelInfoMenuItem;
     pub use super::ISolanelInfoMenuItem;
     pub use super::ISolanelInfoMenuItemMethods;
+    pub use super::SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem;
+    pub use super::ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem;
+    pub use super::ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

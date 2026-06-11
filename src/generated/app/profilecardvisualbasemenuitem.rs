@@ -4,37 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualbasemenuitem/ProfileCardVisualBaseMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualBaseMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ProfileCardVisualBaseMenuItem {
-# [offset (100)] # [rename (name = "m_Decided")] pub m_decided : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualbasemenuitem/ProfileCardVisualBaseMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualBaseMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardVisualBaseMenuItem{#[offset(100)]#[rename(name="m_Decided")]pub m_decided:bool,}
 
 }
 
 #[cfg(feature = "app-profilecardvisualbasemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardvisualbasemenuitem")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardVisualBaseMenuItem_unity2_raw { use super :: * ; pub unsafe fn is_new_arrival (this : ProfileCardVisualBaseMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsNewArrival") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsNewArrival" , < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn set_already_read (this : ProfileCardVisualBaseMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("SetAlreadyRead") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "SetAlreadyRead" , < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="app-profilecardvisualbasemenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardVisualBaseMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn is_new_arrival(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsNewArrival").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsNewArrival", <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_already_read(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetAlreadyRead").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","SetAlreadyRead", <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "app-profilecardvisualbasemenuitem")]
-pub trait IProfileCardVisualBaseMenuItemMethods : IProfileCardVisualBaseMenuItem { # [doc = "`.ctor(bool)` overload"] fn ctor (self , initial_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c02a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (initial_select) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c02ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c02c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInitialColor()` overload"] fn set_initial_color (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c02ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateFixedCursor()` overload"] fn update_fixed_cursor (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c02c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateNewIcon()` overload"] fn update_new_icon (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c02db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNewArrival()` overload"] fn is_new_arrival (self ,) -> bool { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualBaseMenuItem_unity2_raw :: is_new_arrival (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetAlreadyRead()` overload"] fn set_already_read (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVisualBaseMenuItem_unity2_raw :: set_already_read (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetDecided(bool)` overload"] fn set_decided (self , decided : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c030d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decided) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCursorMoveEnd()` overload"] fn on_cursor_move_end (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardVisualBaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBaseMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvisualbasemenuitem")]pub trait IProfileCardVisualBaseMenuItemMethods:IProfileCardVisualBaseMenuItem{#[doc="`.ctor(bool)` overload"]fn ctor(self,initial_select:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02a80usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver,(bool)::core::convert::Into::into(initial_select))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02ab0usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02c20usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+#[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02ac0usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+#[doc="`UpdateFixedCursor()` overload"]fn update_fixed_cursor(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02c50usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+#[doc="`UpdateNewIcon()` overload"]fn update_new_icon(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02db0usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+#[doc="`IsNewArrival()` overload"]fn is_new_arrival(self,)->bool{unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ProfileCardVisualBaseMenuItem_unity2_raw::is_new_arrival(__receiver, ::core::option::Option::None)}
+}
+#[doc="`SetAlreadyRead()` overload"]fn set_already_read(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ProfileCardVisualBaseMenuItem_unity2_raw::set_already_read(__receiver, ::core::option::Option::None)}
+}
+#[doc="`SetDecided(bool)` overload"]fn set_decided(self,decided:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c030d0usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver,(bool)::core::convert::Into::into(decided))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03110usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03510usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03520usize)as*mut u8,();
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03550usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardVisualBaseMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardvisualbasemenuitem")]
-impl < __T : IProfileCardVisualBaseMenuItem > IProfileCardVisualBaseMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardvisualbasemenuitem")]impl<__T:IProfileCardVisualBaseMenuItem>IProfileCardVisualBaseMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardvisualbasemenuitem")]
-impl ProfileCardVisualBaseMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_initial_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_fixed_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_new_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_new_arrival_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_already_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_decided_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_cursor_move_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-profilecardvisualbasemenuitem")]impl ProfileCardVisualBaseMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_initial_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_fixed_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_new_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_new_arrival_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_already_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-profilecardvisualbasemenuitem")]
-impl ProfileCardVisualBaseMenuItem {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (initial_select : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualBaseMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualBaseMenuItemMethods > :: ctor (this , initial_select) ; this }
+#[cfg(feature="app-profilecardvisualbasemenuitem")]impl ProfileCardVisualBaseMenuItem{#[doc="`.ctor(bool)` — overload selector"]pub fn new(initial_select:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualBaseMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardVisualBaseMenuItemMethods> ::ctor(this,initial_select);
+this}
 }
 
 #[cfg(feature = "app-profilecardvisualbasemenuitem")]

@@ -4,38 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayserverdata/RelayServerData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayServerData")] # [parent (crate :: system :: object :: Object)] pub struct RelayServerData {
-# [static_field] # [rename (name = "BufferSize")] pub buffer_size : i32 ,
-# [static_field] # [rename (name = "Version")] pub version : u16 ,
-# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
-# [offset (24)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
-# [offset (32)] # [rename (name = "m_Message")] pub m_message : u8 ,
-# [offset (40)] # [rename (name = "m_LeavingUnitData")] pub m_leaving_unit_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayleavingunitdata :: RelayLeavingUnitData > ,
-# [offset (48)] # [rename (name = "m_IsEmpty")] pub m_is_empty : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayserverdata/RelayServerData.md"))]#[::unity2::class(namespace="App",name="RelayServerData")]#[parent(crate::system::object::Object)]pub struct RelayServerData{#[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[static_field]#[rename(name="Version")]pub version:u16, #[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(24)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(32)]#[rename(name="m_Message")]pub m_message:u8, #[offset(40)]#[rename(name="m_LeavingUnitData")]pub m_leaving_unit_data:crate::system::collections::generic::list_1::List_1<crate::app::relayleavingunitdata::RelayLeavingUnitData> , #[offset(48)]#[rename(name="m_IsEmpty")]pub m_is_empty:bool,}
 
 }
 
 #[cfg(feature = "app-relayserverdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayserverdata")]
-pub trait IRelayServerDataMethods : IRelayServerData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetBinary(::unity2::Array<u8>)` overload"] fn set_binary (self , bin : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20077e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bin) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> bool { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2005630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Buffer()` overload"] fn get_buffer (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Size()` overload"] fn get_size (self ,) -> i32 { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEmpty()` overload"] fn get_is_empty (self ,) -> bool { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Message()` overload"] fn get_message (self ,) -> u8 { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Message(u8)` overload"] fn set_message (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LeavingUnitData()` overload"] fn get_leaving_unit_data (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayleavingunitdata :: RelayLeavingUnitData > { unsafe { let __receiver = < RelayServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayServerData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayleavingunitdata :: RelayLeavingUnitData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2007c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayserverdata")]pub trait IRelayServerDataMethods:IRelayServerData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007610usize)as*mut u8,();
+(RelayServerData)__receiver)}
+}
+#[doc="`SetBinary(::unity2::Array<u8>)` overload"]fn set_binary(self,bin:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20077e0usize)as*mut u8,();
+(RelayServerData)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(bin))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007770usize)as*mut u8,();
+(RelayServerData)__receiver)}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007880usize)as*mut u8,();
+(RelayServerData)__receiver)}
+}
+#[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2005630usize)as*mut u8,bool;
+(RelayServerData)__receiver)}
+}
+#[doc="`get_Buffer()` overload"]fn get_buffer(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007bc0usize)as*mut u8, ::unity2::Array<u8> ;
+(RelayServerData)__receiver)}
+}
+#[doc="`get_Size()` overload"]fn get_size(self,)->i32{unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007bd0usize)as*mut u8,i32;
+(RelayServerData)__receiver)}
+}
+#[doc="`get_IsEmpty()` overload"]fn get_is_empty(self,)->bool{unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007be0usize)as*mut u8,bool;
+(RelayServerData)__receiver)}
+}
+#[doc="`get_Message()` overload"]fn get_message(self,)->u8{unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007bf0usize)as*mut u8,u8;
+(RelayServerData)__receiver)}
+}
+#[doc="`set_Message(u8)` overload"]fn set_message(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007c00usize)as*mut u8,();
+(RelayServerData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_LeavingUnitData()` overload"]fn get_leaving_unit_data(self,)->crate::system::collections::generic::list_1::List_1<crate::app::relayleavingunitdata::RelayLeavingUnitData>{unsafe{let __receiver= <RelayServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2007c10usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::relayleavingunitdata::RelayLeavingUnitData> ;
+(RelayServerData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayserverdata")]
-impl < __T : IRelayServerData > IRelayServerDataMethods for __T { }
+#[cfg(feature="app-relayserverdata")]impl<__T:IRelayServerData>IRelayServerDataMethods for __T{}
 
-#[cfg(feature = "app-relayserverdata")]
-impl RelayServerData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_binary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_is_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_leaving_unit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-relayserverdata")]impl RelayServerData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_is_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_leaving_unit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-relayserverdata")]
-impl RelayServerData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayServerData) , :: core :: stringify ! (new) ,)) ; < Self as IRelayServerDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayserverdata")]impl RelayServerData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayServerData), ::core::stringify!(new),));
+ <Self as IRelayServerDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayserverdata")]

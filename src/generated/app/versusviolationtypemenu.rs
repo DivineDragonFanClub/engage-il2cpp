@@ -4,75 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_DecideCallback.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusViolationTypeMenu.DecideCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct VersusViolationTypeMenu_DecideCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusviolationtypemenu/VersusViolationTypeMenu_DecideCallback.md"))]#[::unity2::class(namespace="App",name="VersusViolationTypeMenu.DecideCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusViolationTypeMenu_DecideCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusViolationTypeMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct VersusViolationTypeMenu {
-# [offset (200)] # [rename (name = "m_DecideCallback")] pub m_decide_callback : crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusviolationtypemenu/VersusViolationTypeMenu_VersusViolationTypeMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusViolationTypeMenu.VersusViolationTypeMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusViolationTypeMenu_VersusViolationTypeMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_VersusViolationTypeMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusViolationTypeMenu.VersusViolationTypeMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct VersusViolationTypeMenu_VersusViolationTypeMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md"))]#[::unity2::class(namespace="App",name="VersusViolationTypeMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusViolationTypeMenu{#[offset(200)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,}
 
 }
 
 #[cfg(feature = "app-versusviolationtypemenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusviolationtypemenu")]
-pub trait IVersusViolationTypeMenu_DecideCallbackMethods : IVersusViolationTypeMenu_DecideCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < VersusViolationTypeMenu_DecideCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTypeMenu_DecideCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl < __T : IVersusViolationTypeMenu_DecideCallback > IVersusViolationTypeMenu_DecideCallbackMethods for __T { }
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu_DecideCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTypeMenu_DecideCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu_DecideCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusViolationTypeMenu_DecideCallback) , :: core :: stringify ! (new) ,)) ; < Self as IVersusViolationTypeMenu_DecideCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-versusviolationtypemenu")]pub trait IVersusViolationTypeMenu_DecideCallbackMethods:IVersusViolationTypeMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VersusViolationTypeMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b28820usize)as*mut u8,();
+(VersusViolationTypeMenu_DecideCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
 }
 
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: versusviolationtypemenucontent :: VersusViolationTypeMenuContent > , decide_callback : impl :: core :: convert :: Into < crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: versusviolationtypemenucontent :: VersusViolationTypeMenuContent , crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (decide_callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusviolationtypemenu")]impl<__T:IVersusViolationTypeMenu_DecideCallback>IVersusViolationTypeMenu_DecideCallbackMethods for __T{}
 
-#[cfg(feature = "app-versusviolationtypemenu")]
-pub trait IVersusViolationTypeMenuMethods : IVersusViolationTypeMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: versusviolationtypemenucontent :: VersusViolationTypeMenuContent > , decide_callback : impl :: core :: convert :: Into < crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback >) -> () { unsafe { let __receiver = < VersusViolationTypeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTypeMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: versusviolationtypemenucontent :: VersusViolationTypeMenuContent , crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (decide_callback) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusViolationTypeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTypeMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd8c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusViolationTypeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTypeMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl < __T : IVersusViolationTypeMenu > IVersusViolationTypeMenuMethods for __T { }
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTypeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTypeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTypeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTypeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: versusviolationtypemenucontent :: VersusViolationTypeMenuContent , decide_callback : crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusViolationTypeMenu) , :: core :: stringify ! (new) ,)) ; < Self as IVersusViolationTypeMenuMethods > :: ctor (this , menu_item_list , menu_content , decide_callback) ; this }
+#[cfg(feature="app-versusviolationtypemenu")]impl VersusViolationTypeMenu_DecideCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "app-versusviolationtypemenu")]
-pub trait IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods : IVersusViolationTypeMenu_VersusViolationTypeMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusViolationTypeMenu_VersusViolationTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTypeMenu_VersusViolationTypeMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusviolationtypemenu")]impl VersusViolationTypeMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusViolationTypeMenu_DecideCallback), ::core::stringify!(new),));
+ <Self as IVersusViolationTypeMenu_DecideCallbackMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl < __T : IVersusViolationTypeMenu_VersusViolationTypeMenuItem > IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods for __T { }
+#[cfg(feature="app-versusviolationtypemenu")]pub trait IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods:IVersusViolationTypeMenu_VersusViolationTypeMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusViolationTypeMenu_VersusViolationTypeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b28b70usize)as*mut u8, ::unity2::Il2CppString;
+(VersusViolationTypeMenu_VersusViolationTypeMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu_VersusViolationTypeMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTypeMenu_VersusViolationTypeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-versusviolationtypemenu")]impl<__T:IVersusViolationTypeMenu_VersusViolationTypeMenuItem>IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods for __T{}
+
+#[cfg(feature="app-versusviolationtypemenu")]impl VersusViolationTypeMenu_VersusViolationTypeMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versusviolationtypemenu")]impl VersusViolationTypeMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent> ,decide_callback:impl::core::convert::Into<crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bd620usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent)::core::convert::Into::into(menu_content),(crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)::core::convert::Into::into(decide_callback))}
+}
+}
+
+#[cfg(feature="app-versusviolationtypemenu")]pub trait IVersusViolationTypeMenuMethods:IVersusViolationTypeMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent> ,decide_callback:impl::core::convert::Into<crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback>)->(){unsafe{let __receiver= <VersusViolationTypeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd880usize)as*mut u8,();
+(VersusViolationTypeMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent)::core::convert::Into::into(menu_content),(crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)::core::convert::Into::into(decide_callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusViolationTypeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd8c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusViolationTypeMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusViolationTypeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd980usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusViolationTypeMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-versusviolationtypemenu")]impl<__T:IVersusViolationTypeMenu>IVersusViolationTypeMenuMethods for __T{}
+
+#[cfg(feature="app-versusviolationtypemenu")]impl VersusViolationTypeMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versusviolationtypemenu")]impl VersusViolationTypeMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,decide_callback:crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusViolationTypeMenu), ::core::stringify!(new),));
+ <Self as IVersusViolationTypeMenuMethods> ::ctor(this,menu_item_list,menu_content,decide_callback);
+this}
+}
 
 #[cfg(feature = "app-versusviolationtypemenu")]
 #[doc(hidden)]
@@ -80,12 +101,12 @@ pub mod prelude {
     pub use super::VersusViolationTypeMenu_DecideCallback;
     pub use super::IVersusViolationTypeMenu_DecideCallback;
     pub use super::IVersusViolationTypeMenu_DecideCallbackMethods;
-    pub use super::VersusViolationTypeMenu;
-    pub use super::IVersusViolationTypeMenu;
-    pub use super::IVersusViolationTypeMenuMethods;
     pub use super::VersusViolationTypeMenu_VersusViolationTypeMenuItem;
     pub use super::IVersusViolationTypeMenu_VersusViolationTypeMenuItem;
     pub use super::IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods;
+    pub use super::VersusViolationTypeMenu;
+    pub use super::IVersusViolationTypeMenu;
+    pub use super::IVersusViolationTypeMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

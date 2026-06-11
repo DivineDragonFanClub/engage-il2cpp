@@ -4,44 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/instancestate/InstanceState.md"))] # [:: unity2 :: class (namespace = "" , name = "InstanceState")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct InstanceState {
-# [offset (24)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [offset (40)] # [rename (name = "m_ColorAttr")] pub m_color_attr : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_Render")] pub m_render : crate :: unity_engine :: renderer :: Renderer ,
-# [offset (56)] # [rename (name = "m_PropertyBlock")] pub m_property_block : crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock ,
-# [offset (64)] # [rename (name = "m_ColorOld")] pub m_color_old : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/instancestate/InstanceState.md"))]#[::unity2::class(namespace="",name="InstanceState")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InstanceState{#[offset(24)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(40)]#[rename(name="m_ColorAttr")]pub m_color_attr: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Render")]pub m_render:crate::unity_engine::renderer::Renderer, #[offset(56)]#[rename(name="m_PropertyBlock")]pub m_property_block:crate::unity_engine::materialpropertyblock::MaterialPropertyBlock, #[offset(64)]#[rename(name="m_ColorOld")]pub m_color_old:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "root-instancestate-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-instancestate")]
-pub trait IInstanceStateMethods : IInstanceState { # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < InstanceState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Color(crate::unity_engine::color::Color)` overload"] fn set_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < InstanceState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceState , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29178a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateState()` overload"] fn try_create_state (self ,) -> () { unsafe { let __receiver = < InstanceState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29178c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < InstanceState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < InstanceState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateColor()` overload"] fn update_color (self ,) -> () { unsafe { let __receiver = < InstanceState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InstanceState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InstanceState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-instancestate")]pub trait IInstanceStateMethods:IInstanceState{#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <InstanceState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917890usize)as*mut u8,crate::unity_engine::color::Color;
+(InstanceState)__receiver)}
+}
+#[doc="`set_Color(crate::unity_engine::color::Color)` overload"]fn set_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <InstanceState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29178a0usize)as*mut u8,();
+(InstanceState)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`TryCreateState()` overload"]fn try_create_state(self,)->(){unsafe{let __receiver= <InstanceState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29178c0usize)as*mut u8,();
+(InstanceState)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <InstanceState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917aa0usize)as*mut u8,();
+(InstanceState)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <InstanceState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917ab0usize)as*mut u8,();
+(InstanceState)__receiver)}
+}
+#[doc="`UpdateColor()` overload"]fn update_color(self,)->(){unsafe{let __receiver= <InstanceState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917a30usize)as*mut u8,();
+(InstanceState)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InstanceState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917ac0usize)as*mut u8,();
+(InstanceState)__receiver)}
+}
+}
 
-#[cfg(feature = "root-instancestate")]
-impl < __T : IInstanceState > IInstanceStateMethods for __T { }
+#[cfg(feature="root-instancestate")]impl<__T:IInstanceState>IInstanceStateMethods for __T{}
 
-#[cfg(feature = "root-instancestate")]
-impl InstanceState { pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_create_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstanceState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-instancestate")]impl InstanceState{pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_create_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-instancestate")]
-impl InstanceState {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InstanceState) , :: core :: stringify ! (new) ,)) ; < Self as IInstanceStateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-instancestate")]impl InstanceState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InstanceState), ::core::stringify!(new),));
+ <Self as IInstanceStateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-instancestate")]

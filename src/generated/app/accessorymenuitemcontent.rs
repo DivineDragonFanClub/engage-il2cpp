@@ -4,48 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitemcontent/AccessoryMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct AccessoryMenuItemContent {
-# [offset (72)] # [rename (name = "m_FixedCursorObject")] pub m_fixed_cursor_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_FixedCursorImage")] pub m_fixed_cursor_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_FixedCursorFrameImage")] pub m_fixed_cursor_frame_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (96)] # [rename (name = "m_KindIconObject")] pub m_kind_icon_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_KindIconImage")] pub m_kind_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (112)] # [rename (name = "m_NameObject")] pub m_name_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorymenuitemcontent/AccessoryMenuItemContent.md"))]#[::unity2::class(namespace="App",name="AccessoryMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct AccessoryMenuItemContent{#[offset(72)]#[rename(name="m_FixedCursorObject")]pub m_fixed_cursor_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_FixedCursorImage")]pub m_fixed_cursor_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_FixedCursorFrameImage")]pub m_fixed_cursor_frame_image:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_KindIconObject")]pub m_kind_icon_object:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_KindIconImage")]pub m_kind_icon_image:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_NameObject")]pub m_name_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-accessorymenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessorymenuitemcontent")]
-pub trait IAccessoryMenuItemContentMethods : IAccessoryMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowFixedCursor()` overload"] fn show_fixed_cursor (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b7f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideFixedCursor()` overload"] fn hide_fixed_cursor (self ,) -> () { unsafe { let __receiver = < AccessoryMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessorymenuitemcontent")]pub trait IAccessoryMenuItemContentMethods:IAccessoryMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8500usize)as*mut u8,();
+(AccessoryMenuItemContent)__receiver)}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <AccessoryMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8510usize)as*mut u8,();
+(AccessoryMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <AccessoryMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8aa0usize)as*mut u8,();
+(AccessoryMenuItemContent)__receiver)}
+}
+#[doc="`ShowFixedCursor()` overload"]fn show_fixed_cursor(self,)->(){unsafe{let __receiver= <AccessoryMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b7f00usize)as*mut u8,();
+(AccessoryMenuItemContent)__receiver)}
+}
+#[doc="`HideFixedCursor()` overload"]fn hide_fixed_cursor(self,)->(){unsafe{let __receiver= <AccessoryMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b8320usize)as*mut u8,();
+(AccessoryMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessorymenuitemcontent")]
-impl < __T : IAccessoryMenuItemContent > IAccessoryMenuItemContentMethods for __T { }
+#[cfg(feature="app-accessorymenuitemcontent")]impl<__T:IAccessoryMenuItemContent>IAccessoryMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-accessorymenuitemcontent")]
-impl AccessoryMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn show_fixed_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn hide_fixed_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-accessorymenuitemcontent")]impl AccessoryMenuItemContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn show_fixed_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn hide_fixed_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-accessorymenuitemcontent")]
-impl AccessoryMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessorymenuitemcontent")]impl AccessoryMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryMenuItemContent), ::core::stringify!(new),));
+ <Self as IAccessoryMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-accessorymenuitemcontent")]

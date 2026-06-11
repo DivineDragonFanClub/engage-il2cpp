@@ -4,34 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefineresult/GodWeaponRefineResult.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodWeaponRefineResult")] # [parent (crate :: system :: object :: Object)] pub struct GodWeaponRefineResult {
-# [offset (16)] # [rename (name = "m_Enhance")] pub m_enhance : crate :: app :: capabilitysbyte :: CapabilitySbyte ,
-# [offset (24)] # [rename (name = "m_EquipSkills")] pub m_equip_skills : crate :: app :: skillarray :: SkillArray ,
-# [offset (32)] # [rename (name = "m_EnchantSkills")] pub m_enchant_skills : crate :: app :: skillarray :: SkillArray ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godweaponrefineresult/GodWeaponRefineResult.md"))]#[::unity2::class(namespace="App",name="GodWeaponRefineResult")]#[parent(crate::system::object::Object)]pub struct GodWeaponRefineResult{#[offset(16)]#[rename(name="m_Enhance")]pub m_enhance:crate::app::capabilitysbyte::CapabilitySbyte, #[offset(24)]#[rename(name="m_EquipSkills")]pub m_equip_skills:crate::app::skillarray::SkillArray, #[offset(32)]#[rename(name="m_EnchantSkills")]pub m_enchant_skills:crate::app::skillarray::SkillArray,}
 
 }
 
 #[cfg(feature = "app-godweaponrefineresult-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godweaponrefineresult")]
-pub trait IGodWeaponRefineResultMethods : IGodWeaponRefineResult { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2343ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23490b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::app::godweaponrefineresult::GodWeaponRefineResult)` overload"] fn copy_from (self , from : impl :: core :: convert :: Into < crate :: app :: godweaponrefineresult :: GodWeaponRefineResult >) -> () { unsafe { let __receiver = < GodWeaponRefineResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineResult , crate :: app :: godweaponrefineresult :: GodWeaponRefineResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2344db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godweaponrefineresult")]pub trait IGodWeaponRefineResultMethods:IGodWeaponRefineResult{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodWeaponRefineResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2343ab0usize)as*mut u8,();
+(GodWeaponRefineResult)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <GodWeaponRefineResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23490b0usize)as*mut u8,();
+(GodWeaponRefineResult)__receiver)}
+}
+#[doc="`CopyFrom(crate::app::godweaponrefineresult::GodWeaponRefineResult)` overload"]fn copy_from(self,from:impl::core::convert::Into<crate::app::godweaponrefineresult::GodWeaponRefineResult>)->(){unsafe{let __receiver= <GodWeaponRefineResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2344db0usize)as*mut u8,();
+(GodWeaponRefineResult)__receiver,(crate::app::godweaponrefineresult::GodWeaponRefineResult)::core::convert::Into::into(from))}
+}
+}
 
-#[cfg(feature = "app-godweaponrefineresult")]
-impl < __T : IGodWeaponRefineResult > IGodWeaponRefineResultMethods for __T { }
+#[cfg(feature="app-godweaponrefineresult")]impl<__T:IGodWeaponRefineResult>IGodWeaponRefineResultMethods for __T{}
 
-#[cfg(feature = "app-godweaponrefineresult")]
-impl GodWeaponRefineResult { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-godweaponrefineresult")]impl GodWeaponRefineResult{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-godweaponrefineresult")]
-impl GodWeaponRefineResult {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodWeaponRefineResult) , :: core :: stringify ! (new) ,)) ; < Self as IGodWeaponRefineResultMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godweaponrefineresult")]impl GodWeaponRefineResult{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodWeaponRefineResult), ::core::stringify!(new),));
+ <Self as IGodWeaponRefineResultMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godweaponrefineresult")]

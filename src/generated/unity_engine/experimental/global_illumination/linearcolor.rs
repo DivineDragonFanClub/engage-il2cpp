@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/linearcolor/LinearColor.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LinearColor {
-    pub m_red: f32,
-    pub m_green: f32,
-    pub m_blue: f32,
-    pub m_intensity: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/global_illumination/linearcolor/LinearColor.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LinearColor{pub m_red:f32,pub m_green:f32,pub m_blue:f32,pub m_intensity:f32,}
+impl::unity2::ClassIdentity for LinearColor{const NAMESPACE: &'static str="UnityEngine.Experimental.GlobalIllumination";
+const NAME: &'static str="LinearColor";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for LinearColor {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
-
-    const NAME: &'static str = "LinearColor";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LinearColor {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LinearColor{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,14 +26,43 @@ impl ::unity2::IlType for LinearColor {
 #[cfg(feature = "unity_engine-experimental-global_illumination-linearcolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-linearcolor")]
-impl LinearColor { # [doc = "`Convert(crate::unity_engine::color::Color, f32)` overload"] pub fn convert (color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , intensity : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (intensity) , :: core :: option :: Option :: None) } } } # [doc = "`Black()` overload"] pub fn black () -> crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c59660usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-global_illumination-linearcolor")]impl LinearColor{#[doc="`Convert(crate::unity_engine::color::Color, f32)` overload"]pub fn convert(color:impl::core::convert::Into<crate::unity_engine::color::Color> ,intensity:impl::core::convert::Into<f32>)->crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56700usize)as*mut u8,crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor;
+(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(intensity))}
+}
+#[doc="`Black()` overload"]pub fn black()->crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c59660usize)as*mut u8,crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-linearcolor")]
-impl LinearColor { # [doc = "`get_red()` overload"] pub fn get_red (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut LinearColor , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56b60usize) as * mut u8) ; __inner (self as * mut LinearColor , :: core :: option :: Option :: None) } } } # [doc = "`set_red(f32)` overload"] pub fn set_red (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut LinearColor , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56b70usize) as * mut u8) ; __inner (self as * mut LinearColor , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_green()` overload"] pub fn get_green (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut LinearColor , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56c30usize) as * mut u8) ; __inner (self as * mut LinearColor , :: core :: option :: Option :: None) } } } # [doc = "`set_green(f32)` overload"] pub fn set_green (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut LinearColor , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56c40usize) as * mut u8) ; __inner (self as * mut LinearColor , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_blue()` overload"] pub fn get_blue (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut LinearColor , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56d00usize) as * mut u8) ; __inner (self as * mut LinearColor , :: core :: option :: Option :: None) } } } # [doc = "`set_blue(f32)` overload"] pub fn set_blue (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut LinearColor , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56d10usize) as * mut u8) ; __inner (self as * mut LinearColor , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-global_illumination-linearcolor")]impl LinearColor{#[doc="`get_red()` overload"]pub fn get_red(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56b60usize)as*mut u8,f32;
+(*mut LinearColor)self as*mut LinearColor)}
+}
+#[doc="`set_red(f32)` overload"]pub fn set_red(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56b70usize)as*mut u8,();
+(*mut LinearColor)self as*mut LinearColor,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_green()` overload"]pub fn get_green(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56c30usize)as*mut u8,f32;
+(*mut LinearColor)self as*mut LinearColor)}
+}
+#[doc="`set_green(f32)` overload"]pub fn set_green(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56c40usize)as*mut u8,();
+(*mut LinearColor)self as*mut LinearColor,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_blue()` overload"]pub fn get_blue(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56d00usize)as*mut u8,f32;
+(*mut LinearColor)self as*mut LinearColor)}
+}
+#[doc="`set_blue(f32)` overload"]pub fn set_blue(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56d10usize)as*mut u8,();
+(*mut LinearColor)self as*mut LinearColor,(f32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-linearcolor")]
-impl LinearColor { pub fn get_red_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LinearColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_red_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LinearColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_green_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LinearColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_green_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LinearColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_blue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LinearColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_blue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LinearColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LinearColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn black_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LinearColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-experimental-global_illumination-linearcolor")]impl LinearColor{pub fn get_red_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_red_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_green_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_green_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_blue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_blue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn black_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-linearcolor")]
 #[doc(hidden)]

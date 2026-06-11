@@ -4,39 +4,121 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographpausedata/PhotographPauseData.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographPauseData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: photographpausedata :: PhotographPauseData >)] pub struct PhotographPauseData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographpausedata/PhotographPauseData.md"))]#[::unity2::class(namespace="App",name="PhotographPauseData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::photographpausedata::PhotographPauseData>)]pub struct PhotographPauseData{}
 
 }
 
 #[cfg(feature = "app-photographpausedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographpausedata")]
-impl PhotographPauseData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26948b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographpausedata")]impl PhotographPauseData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26948b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-photographpausedata")]
-pub trait IPhotographPauseDataMethods : IPhotographPauseData { # [doc = "`get_PauseName()` overload"] fn get_pause_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PauseName(::unity2::Il2CppString)` overload"] fn set_pause_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_No()` overload"] fn get_no (self ,) -> i32 { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_No(i32)` overload"] fn set_no (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Mid()` overload"] fn get_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26949a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mid(::unity2::Il2CppString)` overload"] fn set_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26949b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AnimeFrame()` overload"] fn get_anime_frame (self ,) -> i32 { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26949c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AnimeFrame(i32)` overload"] fn set_anime_frame (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26949d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FaceAnime()` overload"] fn get_face_anime (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26949e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FaceAnime(::unity2::Il2CppString)` overload"] fn set_face_anime (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26949f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CharaIdList()` overload"] fn get_chara_id_list (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CharaIdList(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_chara_id_list (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2693830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_WeaponKind()` overload"] fn get_weapon_kind (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268dbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryGetOverridePauseData(::unity2::Il2CppString)` overload"] fn try_get_override_pause_data (self , chara_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: photographpausedata :: PhotographPauseData { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographpausedata :: PhotographPauseData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268dd50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara_id) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographPauseData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographPauseData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographpausedata")]pub trait IPhotographPauseDataMethods:IPhotographPauseData{#[doc="`get_PauseName()` overload"]fn get_pause_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694960usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographPauseData)__receiver)}
+}
+#[doc="`set_PauseName(::unity2::Il2CppString)` overload"]fn set_pause_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694970usize)as*mut u8,();
+(PhotographPauseData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_No()` overload"]fn get_no(self,)->i32{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694980usize)as*mut u8,i32;
+(PhotographPauseData)__receiver)}
+}
+#[doc="`set_No(i32)` overload"]fn set_no(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694990usize)as*mut u8,();
+(PhotographPauseData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Mid()` overload"]fn get_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26949a0usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographPauseData)__receiver)}
+}
+#[doc="`set_Mid(::unity2::Il2CppString)` overload"]fn set_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26949b0usize)as*mut u8,();
+(PhotographPauseData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AnimeFrame()` overload"]fn get_anime_frame(self,)->i32{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26949c0usize)as*mut u8,i32;
+(PhotographPauseData)__receiver)}
+}
+#[doc="`set_AnimeFrame(i32)` overload"]fn set_anime_frame(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26949d0usize)as*mut u8,();
+(PhotographPauseData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_FaceAnime()` overload"]fn get_face_anime(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26949e0usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographPauseData)__receiver)}
+}
+#[doc="`set_FaceAnime(::unity2::Il2CppString)` overload"]fn set_face_anime(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26949f0usize)as*mut u8,();
+(PhotographPauseData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_CharaIdList()` overload"]fn get_chara_id_list(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694a00usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PhotographPauseData)__receiver)}
+}
+#[doc="`set_CharaIdList(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_chara_id_list(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694a10usize)as*mut u8,();
+(PhotographPauseData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2693830usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographPauseData)__receiver)}
+}
+#[doc="`get_WeaponKind()` overload"]fn get_weapon_kind(self,)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268dbb0usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(PhotographPauseData)__receiver)}
+}
+#[doc="`TryGetOverridePauseData(::unity2::Il2CppString)` overload"]fn try_get_override_pause_data(self,chara_id:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::photographpausedata::PhotographPauseData{unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268dd50usize)as*mut u8,crate::app::photographpausedata::PhotographPauseData;
+(PhotographPauseData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(chara_id))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographPauseData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694a20usize)as*mut u8,();
+(PhotographPauseData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographpausedata")]
-impl < __T : IPhotographPauseData > IPhotographPauseDataMethods for __T { }
+#[cfg(feature="app-photographpausedata")]impl<__T:IPhotographPauseData>IPhotographPauseDataMethods for __T{}
 
-#[cfg(feature = "app-photographpausedata")]
-impl PhotographPauseData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_pause_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_pause_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_anime_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_anime_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_face_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_face_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_chara_id_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_chara_id_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_weapon_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn try_get_override_pause_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographPauseData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-photographpausedata")]impl PhotographPauseData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_pause_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_pause_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_anime_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_anime_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_face_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_face_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_chara_id_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_chara_id_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_weapon_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn try_get_override_pause_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-photographpausedata")]
-impl PhotographPauseData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographPauseData) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographPauseDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographpausedata")]impl PhotographPauseData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographPauseData), ::core::stringify!(new),));
+ <Self as IPhotographPauseDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photographpausedata")]

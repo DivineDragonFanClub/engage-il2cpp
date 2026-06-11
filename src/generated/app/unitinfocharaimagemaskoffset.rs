@@ -4,98 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviourlist_1 :: { ISingletonMonoBehaviourList_1 , SingletonMonoBehaviourList_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviourlist_1::{ISingletonMonoBehaviourList_1,SingletonMonoBehaviourList_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoCharaImageMaskOffset")] # [parent (crate :: app :: singletonmonobehaviourlist_1 :: SingletonMonoBehaviourList_1 < crate :: app :: unitinfocharaimagemaskoffset :: UnitInfoCharaImageMaskOffset >)] pub struct UnitInfoCharaImageMaskOffset {
-# [static_field] # [rename (name = "c_DefaultWidth")] pub c_default_width : i32 ,
-# [offset (24)] # [rename (name = "m_Type")] pub m_type : crate :: app :: unitinfocharaimagemaskoffset :: UnitInfoCharaImageMaskOffset_Type ,
-# [offset (28)] # [rename (name = "m_OffsetU")] pub m_offset_u : f32 ,
-# [offset (32)] # [rename (name = "m_MaskTexture")] pub m_mask_texture : crate :: unity_engine :: texture :: Texture ,
-# [offset (40)] # [rename (name = "m_MaskTextureOld")] pub m_mask_texture_old : crate :: unity_engine :: texture :: Texture ,
-# [offset (48)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (52)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (64)] # [rename (name = "m_CanvasManager")] pub m_canvas_manager : crate :: app :: canvasmanager :: CanvasManager ,
-# [offset (72)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (80)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_MaterialStart")] pub m_material_start : crate :: unity_engine :: material :: Material ,
-# [offset (96)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (104)] # [rename (name = "m_Texture")] pub m_texture : crate :: unity_engine :: rendertexture :: RenderTexture ,
-# [offset (112)] # [rename (name = "m_IsStartup")] pub m_is_startup : bool ,
-# [offset (113)] # [rename (name = "m_IsShow")] pub m_is_show : bool ,
-# [offset (114)] # [rename (name = "m_IsShowFromUnitInfo")] pub m_is_show_from_unit_info : bool ,
-# [offset (115)] # [rename (name = "m_IsSetAlphaForced")] pub m_is_set_alpha_forced : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset.md"))]#[::unity2::class(namespace="App",name="UnitInfoCharaImageMaskOffset")]#[parent(crate::app::singletonmonobehaviourlist_1::SingletonMonoBehaviourList_1<crate::app::unitinfocharaimagemaskoffset::UnitInfoCharaImageMaskOffset>)]pub struct UnitInfoCharaImageMaskOffset{#[static_field]#[rename(name="c_DefaultWidth")]pub c_default_width:i32, #[offset(24)]#[rename(name="m_Type")]pub m_type:crate::app::unitinfocharaimagemaskoffset::UnitInfoCharaImageMaskOffset_Type, #[offset(28)]#[rename(name="m_OffsetU")]pub m_offset_u:f32, #[offset(32)]#[rename(name="m_MaskTexture")]pub m_mask_texture:crate::unity_engine::texture::Texture, #[offset(40)]#[rename(name="m_MaskTextureOld")]pub m_mask_texture_old:crate::unity_engine::texture::Texture, #[offset(48)]#[rename(name="m_Time")]pub m_time:f32, #[offset(52)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector2::Vector2, #[offset(64)]#[rename(name="m_CanvasManager")]pub m_canvas_manager:crate::app::canvasmanager::CanvasManager, #[offset(72)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(80)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_MaterialStart")]pub m_material_start:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_Texture")]pub m_texture:crate::unity_engine::rendertexture::RenderTexture, #[offset(112)]#[rename(name="m_IsStartup")]pub m_is_startup:bool, #[offset(113)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(114)]#[rename(name="m_IsShowFromUnitInfo")]pub m_is_show_from_unit_info:bool, #[offset(115)]#[rename(name="m_IsSetAlphaForced")]pub m_is_set_alpha_forced:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfoCharaImageMaskOffset_Type{pub value:i32,}
+impl::unity2::ClassIdentity for UnitInfoCharaImageMaskOffset_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfoCharaImageMaskOffset.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfoCharaImageMaskOffset_Type  {
-    pub value: i32,
+impl::unity2::IlType for UnitInfoCharaImageMaskOffset_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for UnitInfoCharaImageMaskOffset_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoCharaImageMaskOffset.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl UnitInfoCharaImageMaskOffset_Type{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for UnitInfoCharaImageMaskOffset_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn left()->Self{Self{value:1}
 }
-
-
-impl  UnitInfoCharaImageMaskOffset_Type  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn right()->Self{Self{value:2}
+}
 }
 
 }
@@ -103,18 +48,102 @@ impl  UnitInfoCharaImageMaskOffset_Type  {
 #[cfg(feature = "app-unitinfocharaimagemaskoffset-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitinfocharaimagemaskoffset")]
-pub trait IUnitInfoCharaImageMaskOffsetMethods : IUnitInfoCharaImageMaskOffset { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8b8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8be20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8be30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8b980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8be40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetAlpha()` overload"] fn reset_alpha (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f89660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAlphaForced(f32, bool)` overload"] fn set_alpha_forced (self , alpha : impl :: core :: convert :: Into < f32 > , is_show : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (alpha) , :: core :: convert :: Into :: into (is_show) , :: core :: option :: Option :: None) } } } # [doc = "`SetShowFormUnitInfo(bool)` overload"] fn set_show_form_unit_info (self , is_show : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f893e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_show) , :: core :: option :: Option :: None) } } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCamera(crate::app::unitinfo::UnitInfo_Side)` overload"] fn update_camera (self , side : impl :: core :: convert :: Into < crate :: app :: unitinfo :: UnitInfo_Side >) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , crate :: app :: unitinfo :: UnitInfo_Side , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8bff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`SetCustomOffscreenCameraEnabled(crate::app::unitinfo::UnitInfo_Side, bool)` overload"] fn set_custom_offscreen_camera_enabled (self , side : impl :: core :: convert :: Into < crate :: app :: unitinfo :: UnitInfo_Side > , is_enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , crate :: app :: unitinfo :: UnitInfo_Side , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (is_enabled) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RenderTexture()` overload"] fn get_render_texture (self ,) -> crate :: unity_engine :: rendertexture :: RenderTexture { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexture :: RenderTexture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Image()` overload"] fn get_image (self ,) -> crate :: unity_engine :: ui :: image :: Image { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: image :: Image = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVisible()` overload"] fn is_visible (self ,) -> bool { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfoCharaImageMaskOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoCharaImageMaskOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8c7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinfocharaimagemaskoffset")]pub trait IUnitInfoCharaImageMaskOffsetMethods:IUnitInfoCharaImageMaskOffset{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8b8e0usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8be20usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8be30usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8b980usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8be40usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`ResetAlpha()` overload"]fn reset_alpha(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f89660usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`SetAlphaForced(f32, bool)` overload"]fn set_alpha_forced(self,alpha:impl::core::convert::Into<f32> ,is_show:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c200usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver,(f32)::core::convert::Into::into(alpha),(bool)::core::convert::Into::into(is_show))}
+}
+#[doc="`SetShowFormUnitInfo(bool)` overload"]fn set_show_form_unit_info(self,is_show:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f893e0usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver,(bool)::core::convert::Into::into(is_show))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c360usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c3d0usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`UpdateCamera(crate::app::unitinfo::UnitInfo_Side)` overload"]fn update_camera(self,side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8bff0usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver,(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`SetCustomOffscreenCameraEnabled(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]fn set_custom_offscreen_camera_enabled(self,side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c0c0usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver,(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_enabled))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c410usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`get_RenderTexture()` overload"]fn get_render_texture(self,)->crate::unity_engine::rendertexture::RenderTexture{unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c7a0usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`get_Image()` overload"]fn get_image(self,)->crate::unity_engine::ui::image::Image{unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c7b0usize)as*mut u8,crate::unity_engine::ui::image::Image;
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`IsVisible()` overload"]fn is_visible(self,)->bool{unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c600usize)as*mut u8,bool;
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoCharaImageMaskOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8c7c0usize)as*mut u8,();
+(UnitInfoCharaImageMaskOffset)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitinfocharaimagemaskoffset")]
-impl < __T : IUnitInfoCharaImageMaskOffset > IUnitInfoCharaImageMaskOffsetMethods for __T { }
+#[cfg(feature="app-unitinfocharaimagemaskoffset")]impl<__T:IUnitInfoCharaImageMaskOffset>IUnitInfoCharaImageMaskOffsetMethods for __T{}
 
-#[cfg(feature = "app-unitinfocharaimagemaskoffset")]
-impl UnitInfoCharaImageMaskOffset { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn reset_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_alpha_forced_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_show_form_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_custom_offscreen_camera_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_render_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoCharaImageMaskOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-unitinfocharaimagemaskoffset")]impl UnitInfoCharaImageMaskOffset{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn reset_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_alpha_forced_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_show_form_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_custom_offscreen_camera_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-unitinfocharaimagemaskoffset")]
-impl UnitInfoCharaImageMaskOffset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfoCharaImageMaskOffset) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfoCharaImageMaskOffsetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitinfocharaimagemaskoffset")]impl UnitInfoCharaImageMaskOffset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfoCharaImageMaskOffset), ::core::stringify!(new),));
+ <Self as IUnitInfoCharaImageMaskOffsetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitinfocharaimagemaskoffset")]

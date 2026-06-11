@@ -4,30 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structreader/StructReader.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructReader")] # [parent (crate :: system :: object :: Object)] pub struct StructReader {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structreader/StructReader.md"))]#[::unity2::class(namespace="App",name="StructReader")]#[parent(crate::system::object::Object)]pub struct StructReader{}
 
 }
 
 #[cfg(feature = "app-structreader-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-structreader")]
-pub trait IStructReaderMethods : IStructReader { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StructReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ac300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-structreader")]pub trait IStructReaderMethods:IStructReader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StructReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ac300usize)as*mut u8,();
+(StructReader)__receiver)}
+}
+}
 
-#[cfg(feature = "app-structreader")]
-impl < __T : IStructReader > IStructReaderMethods for __T { }
+#[cfg(feature="app-structreader")]impl<__T:IStructReader>IStructReaderMethods for __T{}
 
-#[cfg(feature = "app-structreader")]
-impl StructReader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-structreader")]impl StructReader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-structreader")]
-impl StructReader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructReader) , :: core :: stringify ! (new) ,)) ; < Self as IStructReaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-structreader")]impl StructReader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructReader), ::core::stringify!(new),));
+ <Self as IStructReaderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-structreader")]

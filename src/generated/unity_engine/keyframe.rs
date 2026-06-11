@@ -4,50 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/keyframe/Keyframe.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Keyframe {
-    pub m_time: f32,
-    pub m_value: f32,
-    pub m_in_tangent: f32,
-    pub m_out_tangent: f32,
-    pub m_weighted_mode: i32,
-    pub m_in_weight: f32,
-    pub m_out_weight: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/keyframe/Keyframe.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Keyframe{pub m_time:f32,pub m_value:f32,pub m_in_tangent:f32,pub m_out_tangent:f32,pub m_weighted_mode:i32,pub m_in_weight:f32,pub m_out_weight:f32,}
+impl::unity2::ClassIdentity for Keyframe{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Keyframe";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Keyframe {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Keyframe";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Keyframe {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Keyframe{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -55,11 +26,49 @@ impl ::unity2::IlType for Keyframe {
 #[cfg(feature = "unity_engine-keyframe-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-keyframe")]
-impl Keyframe { # [doc = "`.ctor(f32, f32)` overload"] pub fn ctor (& mut self , time : impl :: core :: convert :: Into < f32 > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Keyframe , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35240usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32, f32, f32)` overload"] pub fn ctor_2 (& mut self , time : impl :: core :: convert :: Into < f32 > , value : impl :: core :: convert :: Into < f32 > , in_tangent : impl :: core :: convert :: Into < f32 > , out_tangent : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Keyframe , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c352c0usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (in_tangent) , :: core :: convert :: Into :: into (out_tangent) , :: core :: option :: Option :: None) } } } # [doc = "`get_time()` overload"] pub fn get_time (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Keyframe , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c527d0usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: option :: Option :: None) } } } # [doc = "`set_time(f32)` overload"] pub fn set_time (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Keyframe , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c527e0usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_value()` overload"] pub fn get_value (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Keyframe , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c527f0usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: option :: Option :: None) } } } # [doc = "`set_value(f32)` overload"] pub fn set_value (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Keyframe , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52800usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_inTangent()` overload"] pub fn get_in_tangent (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Keyframe , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52810usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: option :: Option :: None) } } } # [doc = "`set_inTangent(f32)` overload"] pub fn set_in_tangent (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Keyframe , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52820usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_outTangent()` overload"] pub fn get_out_tangent (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Keyframe , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52830usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: option :: Option :: None) } } } # [doc = "`set_outTangent(f32)` overload"] pub fn set_out_tangent (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Keyframe , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52840usize) as * mut u8) ; __inner (self as * mut Keyframe , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-keyframe")]impl Keyframe{#[doc="`.ctor(f32, f32)` overload"]pub fn ctor(&mut self,time:impl::core::convert::Into<f32> ,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35240usize)as*mut u8,();
+(*mut Keyframe)self as*mut Keyframe,(f32)::core::convert::Into::into(time),(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(f32, f32, f32, f32)` overload"]pub fn ctor_2(&mut self,time:impl::core::convert::Into<f32> ,value:impl::core::convert::Into<f32> ,in_tangent:impl::core::convert::Into<f32> ,out_tangent:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c352c0usize)as*mut u8,();
+(*mut Keyframe)self as*mut Keyframe,(f32)::core::convert::Into::into(time),(f32)::core::convert::Into::into(value),(f32)::core::convert::Into::into(in_tangent),(f32)::core::convert::Into::into(out_tangent))}
+}
+#[doc="`get_time()` overload"]pub fn get_time(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c527d0usize)as*mut u8,f32;
+(*mut Keyframe)self as*mut Keyframe)}
+}
+#[doc="`set_time(f32)` overload"]pub fn set_time(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c527e0usize)as*mut u8,();
+(*mut Keyframe)self as*mut Keyframe,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_value()` overload"]pub fn get_value(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c527f0usize)as*mut u8,f32;
+(*mut Keyframe)self as*mut Keyframe)}
+}
+#[doc="`set_value(f32)` overload"]pub fn set_value(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52800usize)as*mut u8,();
+(*mut Keyframe)self as*mut Keyframe,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_inTangent()` overload"]pub fn get_in_tangent(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52810usize)as*mut u8,f32;
+(*mut Keyframe)self as*mut Keyframe)}
+}
+#[doc="`set_inTangent(f32)` overload"]pub fn set_in_tangent(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52820usize)as*mut u8,();
+(*mut Keyframe)self as*mut Keyframe,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_outTangent()` overload"]pub fn get_out_tangent(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52830usize)as*mut u8,f32;
+(*mut Keyframe)self as*mut Keyframe)}
+}
+#[doc="`set_outTangent(f32)` overload"]pub fn set_out_tangent(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52840usize)as*mut u8,();
+(*mut Keyframe)self as*mut Keyframe,(f32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-keyframe")]
-impl Keyframe { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_in_tangent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_in_tangent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_out_tangent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_out_tangent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Keyframe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-keyframe")]impl Keyframe{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_in_tangent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_in_tangent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_out_tangent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_out_tangent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
 #[cfg(feature = "unity_engine-keyframe")]
 #[doc(hidden)]

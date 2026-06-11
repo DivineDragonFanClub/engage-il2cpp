@@ -4,39 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelpdata/KeyHelpData.md"))] # [:: unity2 :: class (namespace = "App" , name = "KeyHelpData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: keyhelpdata :: KeyHelpData >)] pub struct KeyHelpData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelpdata/KeyHelpData.md"))]#[::unity2::class(namespace="App",name="KeyHelpData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::keyhelpdata::KeyHelpData>)]pub struct KeyHelpData{}
 
 }
 
 #[cfg(feature = "app-keyhelpdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-keyhelpdata")]
-impl KeyHelpData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd9e40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-keyhelpdata")]impl KeyHelpData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9e40usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-keyhelpdata")]
-pub trait IKeyHelpDataMethods : IKeyHelpData { # [doc = "`get_ButtonIndex()` overload"] fn get_button_index (self ,) -> i8 { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd9ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ButtonIndex(i8)` overload"] fn set_button_index (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd9f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MID()` overload"] fn get_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd9f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MID(::unity2::Il2CppString)` overload"] fn set_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd9f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < KeyHelpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd9f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-keyhelpdata")]pub trait IKeyHelpDataMethods:IKeyHelpData{#[doc="`get_ButtonIndex()` overload"]fn get_button_index(self,)->i8{unsafe{let __receiver= <KeyHelpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9ef0usize)as*mut u8,i8;
+(KeyHelpData)__receiver)}
+}
+#[doc="`set_ButtonIndex(i8)` overload"]fn set_button_index(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <KeyHelpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9f00usize)as*mut u8,();
+(KeyHelpData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MID()` overload"]fn get_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <KeyHelpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9f10usize)as*mut u8, ::unity2::Il2CppString;
+(KeyHelpData)__receiver)}
+}
+#[doc="`set_MID(::unity2::Il2CppString)` overload"]fn set_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KeyHelpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9f20usize)as*mut u8,();
+(KeyHelpData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KeyHelpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9f30usize)as*mut u8,();
+(KeyHelpData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-keyhelpdata")]
-impl < __T : IKeyHelpData > IKeyHelpDataMethods for __T { }
+#[cfg(feature="app-keyhelpdata")]impl<__T:IKeyHelpData>IKeyHelpDataMethods for __T{}
 
-#[cfg(feature = "app-keyhelpdata")]
-impl KeyHelpData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_button_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_button_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-keyhelpdata")]impl KeyHelpData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_button_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_button_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-keyhelpdata")]
-impl KeyHelpData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KeyHelpData) , :: core :: stringify ! (new) ,)) ; < Self as IKeyHelpDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-keyhelpdata")]impl KeyHelpData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KeyHelpData), ::core::stringify!(new),));
+ <Self as IKeyHelpDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-keyhelpdata")]

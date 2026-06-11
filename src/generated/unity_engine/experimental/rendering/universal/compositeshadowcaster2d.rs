@@ -4,40 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: { IShadowCasterGroup2D , ShadowCasterGroup2D }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::{IShadowCasterGroup2D,ShadowCasterGroup2D}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/compositeshadowcaster2d/CompositeShadowCaster2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "CompositeShadowCaster2D")] # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D)] pub struct CompositeShadowCaster2D {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/compositeshadowcaster2d/CompositeShadowCaster2D.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="CompositeShadowCaster2D")]#[parent(crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)]pub struct CompositeShadowCaster2D{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-compositeshadowcaster2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]
-pub trait ICompositeShadowCaster2DMethods : ICompositeShadowCaster2D { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CompositeShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CompositeShadowCaster2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a41050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CompositeShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CompositeShadowCaster2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a410c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CompositeShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CompositeShadowCaster2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a41130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]pub trait ICompositeShadowCaster2DMethods:ICompositeShadowCaster2D{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CompositeShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a41050usize)as*mut u8,();
+(CompositeShadowCaster2D)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <CompositeShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a410c0usize)as*mut u8,();
+(CompositeShadowCaster2D)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CompositeShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a41130usize)as*mut u8,();
+(CompositeShadowCaster2D)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]
-impl < __T : ICompositeShadowCaster2D > ICompositeShadowCaster2DMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]impl<__T:ICompositeShadowCaster2D>ICompositeShadowCaster2DMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]
-impl CompositeShadowCaster2D { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompositeShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompositeShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CompositeShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]impl CompositeShadowCaster2D{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]
-impl CompositeShadowCaster2D {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CompositeShadowCaster2D) , :: core :: stringify ! (new) ,)) ; < Self as ICompositeShadowCaster2DMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]impl CompositeShadowCaster2D{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CompositeShadowCaster2D), ::core::stringify!(new),));
+ <Self as ICompositeShadowCaster2DMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]

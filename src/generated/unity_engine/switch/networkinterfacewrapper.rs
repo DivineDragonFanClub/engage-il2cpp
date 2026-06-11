@@ -4,115 +4,147 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "NetworkInterfaceWrapper")] # [parent (crate :: system :: object :: Object)] pub struct NetworkInterfaceWrapper {
-# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="NetworkInterfaceWrapper.NetworkConnectedHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NetworkInterfaceWrapper_NetworkConnectedHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NetworkInterfaceWrapper_NetworkConnectedResult{pub value:i32,}
+impl::unity2::ClassIdentity for NetworkInterfaceWrapper_NetworkConnectedResult{const NAMESPACE: &'static str="UnityEngine.Switch";
+const NAME: &'static str="NetworkInterfaceWrapper.NetworkConnectedResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NetworkInterfaceWrapper_NetworkConnectedResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NetworkInterfaceWrapper_NetworkConnectedResult{pub fn pending()->Self{Self{value: -1}
+}
+pub fn denied()->Self{Self{value:0}
+}
+pub fn accepted()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NetworkInterfaceWrapper_NetworkConnectedResult  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for NetworkInterfaceWrapper_NetworkConnectedResult  {
-    const NAMESPACE: &'static str = "UnityEngine.Switch";
-
-    const NAME: &'static str = "NetworkInterfaceWrapper.NetworkConnectedResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for NetworkInterfaceWrapper_NetworkConnectedResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  NetworkInterfaceWrapper_NetworkConnectedResult  {
-    pub fn pending() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn denied() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn accepted() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "NetworkInterfaceWrapper.NetworkConnectedHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct NetworkInterfaceWrapper_NetworkConnectedHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="NetworkInterfaceWrapper")]#[parent(crate::system::object::Object)]pub struct NetworkInterfaceWrapper{#[static_field]#[rename(name="_networkConnected")]pub network_connected:crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler,}
 
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl NetworkInterfaceWrapper { # [doc = "`EnterNetworkConnecting(bool)` overload"] pub fn enter_network_connecting (is_local_network_mode : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f408a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_local_network_mode) , :: core :: option :: Option :: None) } } } # [doc = "`EnterNetworkConnecting(bool, bool)` overload"] pub fn enter_network_connecting_2 (is_local_network_mode : impl :: core :: convert :: Into < bool > , report_if_unavailable : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (bool , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f408f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_local_network_mode) , :: core :: convert :: Into :: into (report_if_unavailable) , :: core :: option :: Option :: None) } } } # [doc = "`WeakEnterNetworkConnecting()` overload"] pub fn weak_enter_network_connecting () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`LeaveNetworkConnecting()` overload"] pub fn leave_network_connecting () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40980usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsNetworkConnecting()` overload"] pub fn is_network_connecting () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f409c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`WaitForNetworkConnecting()` overload"] pub fn wait_for_network_connecting () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40a00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsNetworkAccepted()` overload"] pub fn is_network_accepted () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40a40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsNetworkFinished()` overload"] pub fn is_network_finished () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40a80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetNetworkReferenceCount()` overload"] pub fn get_network_reference_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40ac0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsNetworkAvailable()` overload"] pub fn is_network_available () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsNetworkConnectingOnBackground()` overload"] pub fn is_network_connecting_on_background () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40b40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetNetworkConnectingOnBackground(bool)` overload"] pub fn set_network_connecting_on_background (is_background : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40b80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_background) , :: core :: option :: Option :: None) } } } # [doc = "`SetNetworkConnectedEnabled(bool)` overload"] pub fn set_network_connected_enabled (is_enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_enabled) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeNetworkConnected()` overload"] pub fn invoke_network_connected () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40c20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`add_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"] pub fn add_network_connected (value : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40e90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"] pub fn remove_network_connected (value : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f41040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]pub trait INetworkInterfaceWrapper_NetworkConnectedHandlerMethods:INetworkInterfaceWrapper_NetworkConnectedHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f41d90usize)as*mut u8,();
+(NetworkInterfaceWrapper_NetworkConnectedHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult{unsafe{let __receiver= <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f40c80usize)as*mut u8,crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult;
+(NetworkInterfaceWrapper_NetworkConnectedHandler)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl NetworkInterfaceWrapper { pub fn enter_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn enter_network_connecting_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn weak_enter_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn leave_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn wait_for_network_connecting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_network_accepted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_network_finished_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_network_reference_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_network_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_network_connecting_on_background_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_network_connecting_on_background_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_network_connected_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn invoke_network_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn add_network_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn remove_network_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]impl<__T:INetworkInterfaceWrapper_NetworkConnectedHandler>INetworkInterfaceWrapper_NetworkConnectedHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-pub trait INetworkInterfaceWrapper_NetworkConnectedHandlerMethods : INetworkInterfaceWrapper_NetworkConnectedHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NetworkInterfaceWrapper_NetworkConnectedHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f41d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult { unsafe { let __receiver = < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NetworkInterfaceWrapper_NetworkConnectedHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]impl NetworkInterfaceWrapper_NetworkConnectedHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl < __T : INetworkInterfaceWrapper_NetworkConnectedHandler > INetworkInterfaceWrapper_NetworkConnectedHandlerMethods for __T { }
+#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]impl NetworkInterfaceWrapper_NetworkConnectedHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NetworkInterfaceWrapper_NetworkConnectedHandler), ::core::stringify!(new),));
+ <Self as INetworkInterfaceWrapper_NetworkConnectedHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl NetworkInterfaceWrapper_NetworkConnectedHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkInterfaceWrapper_NetworkConnectedHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]impl NetworkInterfaceWrapper{#[doc="`EnterNetworkConnecting(bool)` overload"]pub fn enter_network_connecting(is_local_network_mode:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f408a0usize)as*mut u8,bool;
+(bool)::core::convert::Into::into(is_local_network_mode))}
+}
+#[doc="`EnterNetworkConnecting(bool, bool)` overload"]pub fn enter_network_connecting_2(is_local_network_mode:impl::core::convert::Into<bool> ,report_if_unavailable:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f408f0usize)as*mut u8,bool;
+(bool)::core::convert::Into::into(is_local_network_mode),(bool)::core::convert::Into::into(report_if_unavailable))}
+}
+#[doc="`WeakEnterNetworkConnecting()` overload"]pub fn weak_enter_network_connecting()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40940usize)as*mut u8,bool;
+)}
+}
+#[doc="`LeaveNetworkConnecting()` overload"]pub fn leave_network_connecting()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40980usize)as*mut u8,();
+)}
+}
+#[doc="`IsNetworkConnecting()` overload"]pub fn is_network_connecting()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f409c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`WaitForNetworkConnecting()` overload"]pub fn wait_for_network_connecting()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40a00usize)as*mut u8,();
+)}
+}
+#[doc="`IsNetworkAccepted()` overload"]pub fn is_network_accepted()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40a40usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsNetworkFinished()` overload"]pub fn is_network_finished()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40a80usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetNetworkReferenceCount()` overload"]pub fn get_network_reference_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40ac0usize)as*mut u8,i32;
+)}
+}
+#[doc="`IsNetworkAvailable()` overload"]pub fn is_network_available()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40b00usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsNetworkConnectingOnBackground()` overload"]pub fn is_network_connecting_on_background()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40b40usize)as*mut u8,bool;
+)}
+}
+#[doc="`SetNetworkConnectingOnBackground(bool)` overload"]pub fn set_network_connecting_on_background(is_background:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40b80usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_background))}
+}
+#[doc="`SetNetworkConnectedEnabled(bool)` overload"]pub fn set_network_connected_enabled(is_enabled:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40bd0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_enabled))}
+}
+#[doc="`InvokeNetworkConnected()` overload"]pub fn invoke_network_connected()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40c20usize)as*mut u8,i32;
+)}
+}
+#[doc="`add_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"]pub fn add_network_connected(value:impl::core::convert::Into<crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40e90usize)as*mut u8,();
+(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)::core::convert::Into::into(value))}
+}
+#[doc="`remove_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"]pub fn remove_network_connected(value:impl::core::convert::Into<crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f41040usize)as*mut u8,();
+(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-impl NetworkInterfaceWrapper_NetworkConnectedHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NetworkInterfaceWrapper_NetworkConnectedHandler) , :: core :: stringify ! (new) ,)) ; < Self as INetworkInterfaceWrapper_NetworkConnectedHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]impl NetworkInterfaceWrapper{pub fn enter_network_connecting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn enter_network_connecting_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn weak_enter_network_connecting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn leave_network_connecting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_network_connecting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn wait_for_network_connecting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_network_accepted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_network_finished_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_network_reference_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_network_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_network_connecting_on_background_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_network_connecting_on_background_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_network_connected_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn invoke_network_connected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn add_network_connected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn remove_network_connected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NetworkInterfaceWrapper;
-    pub use super::INetworkInterfaceWrapper;
-    pub use super::NetworkInterfaceWrapper_NetworkConnectedResult;
     pub use super::NetworkInterfaceWrapper_NetworkConnectedHandler;
     pub use super::INetworkInterfaceWrapper_NetworkConnectedHandler;
     pub use super::INetworkInterfaceWrapper_NetworkConnectedHandlerMethods;
+    pub use super::NetworkInterfaceWrapper_NetworkConnectedResult;
+    pub use super::NetworkInterfaceWrapper;
+    pub use super::INetworkInterfaceWrapper;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

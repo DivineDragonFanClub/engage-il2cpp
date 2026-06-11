@@ -4,44 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: instanceitem_1 :: { IInstanceItem_1 , InstanceItem_1 }
- ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: app :: paramitem :: { IParamItem , ParamItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::instanceitem_1::{IInstanceItem_1,InstanceItem_1}
+;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::app::paramitem::{IParamItem,ParamItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/boolitem_1/BoolItem_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "BoolItem`1")] # [parent (crate :: app :: instanceitem_1 :: InstanceItem_1 < T0 >)] # [parent (crate :: app :: paramitem :: ParamItem)] # [parent (crate :: app :: menuitem :: MenuItem)] # [parent (crate :: system :: object :: Object)] pub struct BoolItem_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/boolitem_1/BoolItem_1.md"))]#[::unity2::class(namespace="App",name="BoolItem`1")]#[parent(crate::app::instanceitem_1::InstanceItem_1<T0>)]#[parent(crate::app::paramitem::ParamItem)]#[parent(crate::app::menuitem::MenuItem)]#[parent(crate::system::object::Object)]pub struct BoolItem_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "app-boolitem_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-boolitem_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > BoolItem_1 < T0 > {
-# [doc = "`.ctor(T0)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , instance : T0) -> () ;
-
-# [doc = "`GetBool()` overload"] # [method (name = "GetBool" , args = 0)] pub fn get_bool (self ,) -> bool ;
-
-# [doc = "`SetBool(bool)` overload"] # [method (name = "SetBool" , args = 1)] pub fn set_bool (self , value : bool) -> () ;
-
-# [doc = "`SwapBool()` overload"] # [method (name = "SwapBool" , args = 0)] pub fn swap_bool (self ,) -> () ;
-
-# [doc = "`GetColumnName1()` overload"] # [method (name = "GetColumnName1" , args = 0)] pub fn get_column_name1 (self ,) -> :: unity2 :: Il2CppString ;
-
-# [doc = "`ACall()` overload"] # [method (name = "ACall" , args = 0)] pub fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result ;
-
-# [doc = "`OnLeftRight(i32, bool)` overload"] # [method (name = "OnLeftRight" , args = 2)] pub fn on_left_right (self , step : i32 , is_trigger : bool) -> () ;
+#[cfg(feature="app-boolitem_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>BoolItem_1<T0>{#[doc="`.ctor(T0)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,instance:T0)->();
+ #[doc="`GetBool()` overload"]#[method(name="GetBool",args=0)]pub fn get_bool(self,)->bool;
+ #[doc="`SetBool(bool)` overload"]#[method(name="SetBool",args=1)]pub fn set_bool(self,value:bool)->();
+ #[doc="`SwapBool()` overload"]#[method(name="SwapBool",args=0)]pub fn swap_bool(self,)->();
+ #[doc="`GetColumnName1()` overload"]#[method(name="GetColumnName1",args=0)]pub fn get_column_name1(self,)-> ::unity2::Il2CppString;
+ #[doc="`ACall()` overload"]#[method(name="ACall",args=0)]pub fn a_call(self,)->crate::app::menuitem::MenuItem_Result;
+ #[doc="`OnLeftRight(i32, bool)` overload"]#[method(name="OnLeftRight",args=2)]pub fn on_left_right(self,step:i32,is_trigger:bool)->();
 }
 
-#[cfg(feature = "app-boolitem_1")]
-impl < T0 : :: unity2 :: ClassIdentity > BoolItem_1 < T0 > {
-# [doc = "`.ctor(T0)` — overload selector"] pub fn new (instance : T0) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BoolItem_1) , :: core :: stringify ! (new) ,)) ; < Self as IBoolItem_1Methods < T0 > > :: ctor (this , instance) ; this }
+#[cfg(feature="app-boolitem_1")]impl<T0: ::unity2::ClassIdentity>BoolItem_1<T0>{#[doc="`.ctor(T0)` — overload selector"]pub fn new(instance:T0)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BoolItem_1), ::core::stringify!(new),));
+ <Self as IBoolItem_1Methods<T0> > ::ctor(this,instance);
+this}
 }
 
 #[cfg(feature = "app-boolitem_1")]

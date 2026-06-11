@@ -4,23 +4,113 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/noallochelpers/NoAllocHelpers.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "NoAllocHelpers")] # [parent (crate :: system :: object :: Object)] pub struct NoAllocHelpers {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/noallochelpers/NoAllocHelpers.md"))]#[::unity2::class(namespace="UnityEngine",name="NoAllocHelpers")]#[parent(crate::system::object::Object)]pub struct NoAllocHelpers{}
 
 }
 
 #[cfg(feature = "unity_engine-noallochelpers-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-noallochelpers")]
-impl NoAllocHelpers { pub fn resize_list < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > > , size : impl :: core :: convert :: Into < i32 >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< NoAllocHelpers as :: unity2 :: ClassIdentity > :: class () , "ResizeList" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoAllocHelpers as :: unity2 :: ClassIdentity > :: NAME , "ResizeList" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn ensure_list_elem_count < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > > , count : impl :: core :: convert :: Into < i32 >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< NoAllocHelpers as :: unity2 :: ClassIdentity > :: class () , "EnsureListElemCount" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoAllocHelpers as :: unity2 :: ClassIdentity > :: NAME , "EnsureListElemCount" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`SafeLength(::unity2::IlInstance)` overload"] pub fn safe_length (values : impl :: core :: convert :: Into < :: unity2 :: IlInstance >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: IlInstance , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32e6650usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } pub fn safe_length_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (values : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > >) -> i32 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< NoAllocHelpers as :: unity2 :: ClassIdentity > :: class () , "SafeLength" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoAllocHelpers as :: unity2 :: ClassIdentity > :: NAME , "SafeLength" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn extract_array_from_list_t < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > >) -> :: unity2 :: Array < M0 > { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< NoAllocHelpers as :: unity2 :: ClassIdentity > :: class () , "ExtractArrayFromListT" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoAllocHelpers as :: unity2 :: ClassIdentity > :: NAME , "ExtractArrayFromListT" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`Internal_ResizeList(crate::system::object::Object, i32)` overload"] pub fn internal_resize_list (list : impl :: core :: convert :: Into < crate :: system :: object :: Object > , size : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ede40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`ExtractArrayFromList(crate::system::object::Object)` overload"] pub fn extract_array_from_list (list : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> :: unity2 :: IlInstance { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IlInstance = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32dc4b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-noallochelpers")]impl NoAllocHelpers{pub fn resize_list<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0> > ,size:impl::core::convert::Into<i32>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<NoAllocHelpers as::unity2::ClassIdentity> ::class(),"ResizeList",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <NoAllocHelpers as::unity2::ClassIdentity> ::NAME,"ResizeList",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::list_1::List_1<M0> ,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(size), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn ensure_list_elem_count<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0> > ,count:impl::core::convert::Into<i32>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<NoAllocHelpers as::unity2::ClassIdentity> ::class(),"EnsureListElemCount",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <NoAllocHelpers as::unity2::ClassIdentity> ::NAME,"EnsureListElemCount",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::list_1::List_1<M0> ,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(count), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`SafeLength(::unity2::IlInstance)` overload"]pub fn safe_length(values:impl::core::convert::Into< ::unity2::IlInstance>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e6650usize)as*mut u8,i32;
+(::unity2::IlInstance)::core::convert::Into::into(values))}
+}
+pub fn safe_length_2<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(values:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0> >)->i32{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<NoAllocHelpers as::unity2::ClassIdentity> ::class(),"SafeLength",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <NoAllocHelpers as::unity2::ClassIdentity> ::NAME,"SafeLength",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::list_1::List_1<M0> , ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(values), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn extract_array_from_list_t<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0> >)-> ::unity2::Array<M0>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<NoAllocHelpers as::unity2::ClassIdentity> ::class(),"ExtractArrayFromListT",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <NoAllocHelpers as::unity2::ClassIdentity> ::NAME,"ExtractArrayFromListT",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::list_1::List_1<M0> , ::unity2::OptionalMethod,)-> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`Internal_ResizeList(crate::system::object::Object, i32)` overload"]pub fn internal_resize_list(list:impl::core::convert::Into<crate::system::object::Object> ,size:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32ede40usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(list),(i32)::core::convert::Into::into(size))}
+}
+#[doc="`ExtractArrayFromList(crate::system::object::Object)` overload"]pub fn extract_array_from_list(list:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::IlInstance{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32dc4b0usize)as*mut u8, ::unity2::IlInstance;
+(crate::system::object::Object)::core::convert::Into::into(list))}
+}
+}
 
-#[cfg(feature = "unity_engine-noallochelpers")]
-impl NoAllocHelpers { pub fn safe_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoAllocHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn internal_resize_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoAllocHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn extract_array_from_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoAllocHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-noallochelpers")]impl NoAllocHelpers{pub fn safe_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn internal_resize_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn extract_array_from_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-noallochelpers")]
 #[doc(hidden)]

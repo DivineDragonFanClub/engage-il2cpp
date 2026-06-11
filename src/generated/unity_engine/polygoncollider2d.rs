@@ -4,34 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: collider2d :: { Collider2D , ICollider2D }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::collider2d::{Collider2D,ICollider2D}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/polygoncollider2d/PolygonCollider2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "PolygonCollider2D")] # [parent (crate :: unity_engine :: collider2d :: Collider2D)] pub struct PolygonCollider2D {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/polygoncollider2d/PolygonCollider2D.md"))]#[::unity2::class(namespace="UnityEngine",name="PolygonCollider2D")]#[parent(crate::unity_engine::collider2d::Collider2D)]pub struct PolygonCollider2D{}
 
 }
 
 #[cfg(feature = "unity_engine-polygoncollider2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-polygoncollider2d")]
-pub trait IPolygonCollider2DMethods : IPolygonCollider2D { # [doc = "`GetTotalPointCount()` overload"] fn get_total_point_count (self ,) -> i32 { unsafe { let __receiver = < PolygonCollider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PolygonCollider2D , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f33d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pathCount()` overload"] fn get_path_count (self ,) -> i32 { unsafe { let __receiver = < PolygonCollider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PolygonCollider2D , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f33dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPath(i32)` overload"] fn get_path (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > { unsafe { let __receiver = < PolygonCollider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PolygonCollider2D , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f33e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetPath_Internal(i32)` overload"] fn get_path_internal (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > { unsafe { let __receiver = < PolygonCollider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PolygonCollider2D , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f33f40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-polygoncollider2d")]pub trait IPolygonCollider2DMethods:IPolygonCollider2D{#[doc="`GetTotalPointCount()` overload"]fn get_total_point_count(self,)->i32{unsafe{let __receiver= <PolygonCollider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f33d80usize)as*mut u8,i32;
+(PolygonCollider2D)__receiver)}
+}
+#[doc="`get_pathCount()` overload"]fn get_path_count(self,)->i32{unsafe{let __receiver= <PolygonCollider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f33dd0usize)as*mut u8,i32;
+(PolygonCollider2D)__receiver)}
+}
+#[doc="`GetPath(i32)` overload"]fn get_path(self,index:impl::core::convert::Into<i32>)-> ::unity2::Array<crate::unity_engine::vector2::Vector2>{unsafe{let __receiver= <PolygonCollider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f33e20usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector2::Vector2> ;
+(PolygonCollider2D)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetPath_Internal(i32)` overload"]fn get_path_internal(self,index:impl::core::convert::Into<i32>)-> ::unity2::Array<crate::unity_engine::vector2::Vector2>{unsafe{let __receiver= <PolygonCollider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f33f40usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector2::Vector2> ;
+(PolygonCollider2D)__receiver,(i32)::core::convert::Into::into(index))}
+}
+}
 
-#[cfg(feature = "unity_engine-polygoncollider2d")]
-impl < __T : IPolygonCollider2D > IPolygonCollider2DMethods for __T { }
+#[cfg(feature="unity_engine-polygoncollider2d")]impl<__T:IPolygonCollider2D>IPolygonCollider2DMethods for __T{}
 
-#[cfg(feature = "unity_engine-polygoncollider2d")]
-impl PolygonCollider2D { pub fn get_total_point_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PolygonCollider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_path_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PolygonCollider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PolygonCollider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_path_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PolygonCollider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-polygoncollider2d")]impl PolygonCollider2D{pub fn get_total_point_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_path_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_path_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-polygoncollider2d")]
 #[doc(hidden)]

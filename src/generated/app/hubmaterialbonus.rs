@@ -4,39 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialbonus/HubMaterialBonus.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMaterialBonus")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: hubmaterialbonus :: HubMaterialBonus >)] pub struct HubMaterialBonus {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmaterialbonus/HubMaterialBonus.md"))]#[::unity2::class(namespace="App",name="HubMaterialBonus")]#[parent(crate::app::structdata_1::StructData_1<crate::app::hubmaterialbonus::HubMaterialBonus>)]pub struct HubMaterialBonus{}
 
 }
 
 #[cfg(feature = "app-hubmaterialbonus-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmaterialbonus")]
-impl HubMaterialBonus { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b63e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmaterialbonus")]impl HubMaterialBonus{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b63e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubmaterialbonus")]
-pub trait IHubMaterialBonusMethods : IHubMaterialBonus { # [doc = "`get_CID()` overload"] fn get_cid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMaterialBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialBonus , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b63a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CID(::unity2::Il2CppString)` overload"] fn set_cid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMaterialBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialBonus , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b63b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < HubMaterialBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialBonus , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b63c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Count(i32)` overload"] fn set_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMaterialBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialBonus , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b63d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMaterialBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmaterialbonus")]pub trait IHubMaterialBonusMethods:IHubMaterialBonus{#[doc="`get_CID()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMaterialBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b63a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMaterialBonus)__receiver)}
+}
+#[doc="`set_CID(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMaterialBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b63b0usize)as*mut u8,();
+(HubMaterialBonus)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <HubMaterialBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b63c0usize)as*mut u8,i32;
+(HubMaterialBonus)__receiver)}
+}
+#[doc="`set_Count(i32)` overload"]fn set_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMaterialBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b63d0usize)as*mut u8,();
+(HubMaterialBonus)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMaterialBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b6490usize)as*mut u8,();
+(HubMaterialBonus)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmaterialbonus")]
-impl < __T : IHubMaterialBonus > IHubMaterialBonusMethods for __T { }
+#[cfg(feature="app-hubmaterialbonus")]impl<__T:IHubMaterialBonus>IHubMaterialBonusMethods for __T{}
 
-#[cfg(feature = "app-hubmaterialbonus")]
-impl HubMaterialBonus { pub fn get_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-hubmaterialbonus")]impl HubMaterialBonus{pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-hubmaterialbonus")]
-impl HubMaterialBonus {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMaterialBonus) , :: core :: stringify ! (new) ,)) ; < Self as IHubMaterialBonusMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmaterialbonus")]impl HubMaterialBonus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMaterialBonus), ::core::stringify!(new),));
+ <Self as IHubMaterialBonusMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmaterialbonus")]

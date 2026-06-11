@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/color/Color.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Color {
-    pub r: f32,
-    pub g: f32,
-    pub b: f32,
-    pub a: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/color/Color.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Color{pub r:f32,pub g:f32,pub b:f32,pub a:f32,}
+impl::unity2::ClassIdentity for Color{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Color";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Color {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Color";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Color {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Color{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,14 +26,131 @@ impl ::unity2::IlType for Color {
 #[cfg(feature = "unity_engine-color-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-color")]
-impl Color { # [doc = "`op_Addition(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] pub fn op_addition (a : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , b : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] pub fn op_multiply (a : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , b : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(crate::unity_engine::color::Color, f32)` overload"] pub fn op_multiply_2 (a : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , b : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(f32, crate::unity_engine::color::Color)` overload"] pub fn op_multiply_3 (b : impl :: core :: convert :: Into < f32 > , a : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (f32 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41080usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c410a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`Lerp(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"] pub fn lerp (a : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , b : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41240usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`get_red()` overload"] pub fn get_red () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c412f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_green()` overload"] pub fn get_green () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41310usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_blue()` overload"] pub fn get_blue () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41330usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_white()` overload"] pub fn get_white () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41350usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_black()` overload"] pub fn get_black () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_yellow()` overload"] pub fn get_yellow () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_cyan()` overload"] pub fn get_cyan () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c413c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_magenta()` overload"] pub fn get_magenta () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c413e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_gray()` overload"] pub fn get_gray () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_grey()` overload"] pub fn get_grey () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41420usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_clear()` overload"] pub fn get_clear () -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41440usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(crate::unity_engine::color::Color)` overload"] pub fn op_implicit (c : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c40e70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(crate::unity_engine::vector4::Vector4)` overload"] pub fn op_implicit_2 (v : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-color")]impl Color{#[doc="`op_Addition(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]pub fn op_addition(a:impl::core::convert::Into<crate::unity_engine::color::Color> ,b:impl::core::convert::Into<crate::unity_engine::color::Color>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41020usize)as*mut u8,crate::unity_engine::color::Color;
+(crate::unity_engine::color::Color)::core::convert::Into::into(a),(crate::unity_engine::color::Color)::core::convert::Into::into(b))}
+}
+#[doc="`op_Multiply(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]pub fn op_multiply(a:impl::core::convert::Into<crate::unity_engine::color::Color> ,b:impl::core::convert::Into<crate::unity_engine::color::Color>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41040usize)as*mut u8,crate::unity_engine::color::Color;
+(crate::unity_engine::color::Color)::core::convert::Into::into(a),(crate::unity_engine::color::Color)::core::convert::Into::into(b))}
+}
+#[doc="`op_Multiply(crate::unity_engine::color::Color, f32)` overload"]pub fn op_multiply_2(a:impl::core::convert::Into<crate::unity_engine::color::Color> ,b:impl::core::convert::Into<f32>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41060usize)as*mut u8,crate::unity_engine::color::Color;
+(crate::unity_engine::color::Color)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`op_Multiply(f32, crate::unity_engine::color::Color)` overload"]pub fn op_multiply_3(b:impl::core::convert::Into<f32> ,a:impl::core::convert::Into<crate::unity_engine::color::Color>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41080usize)as*mut u8,crate::unity_engine::color::Color;
+(f32)::core::convert::Into::into(b),(crate::unity_engine::color::Color)::core::convert::Into::into(a))}
+}
+#[doc="`op_Equality(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::color::Color> ,rhs:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c410a0usize)as*mut u8,bool;
+(crate::unity_engine::color::Color)::core::convert::Into::into(lhs),(crate::unity_engine::color::Color)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::unity_engine::color::Color> ,rhs:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41170usize)as*mut u8,bool;
+(crate::unity_engine::color::Color)::core::convert::Into::into(lhs),(crate::unity_engine::color::Color)::core::convert::Into::into(rhs))}
+}
+#[doc="`Lerp(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"]pub fn lerp(a:impl::core::convert::Into<crate::unity_engine::color::Color> ,b:impl::core::convert::Into<crate::unity_engine::color::Color> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41240usize)as*mut u8,crate::unity_engine::color::Color;
+(crate::unity_engine::color::Color)::core::convert::Into::into(a),(crate::unity_engine::color::Color)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`get_red()` overload"]pub fn get_red()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c412f0usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_green()` overload"]pub fn get_green()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41310usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_blue()` overload"]pub fn get_blue()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41330usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_white()` overload"]pub fn get_white()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41350usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_black()` overload"]pub fn get_black()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41370usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_yellow()` overload"]pub fn get_yellow()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41390usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_cyan()` overload"]pub fn get_cyan()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c413c0usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_magenta()` overload"]pub fn get_magenta()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c413e0usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_gray()` overload"]pub fn get_gray()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41400usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_grey()` overload"]pub fn get_grey()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41420usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`get_clear()` overload"]pub fn get_clear()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41440usize)as*mut u8,crate::unity_engine::color::Color;
+)}
+}
+#[doc="`op_Implicit(crate::unity_engine::color::Color)` overload"]pub fn op_implicit(c:impl::core::convert::Into<crate::unity_engine::color::Color>)->crate::unity_engine::vector4::Vector4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40e70usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(crate::unity_engine::color::Color)::core::convert::Into::into(c))}
+}
+#[doc="`op_Implicit(crate::unity_engine::vector4::Vector4)` overload"]pub fn op_implicit_2(v:impl::core::convert::Into<crate::unity_engine::vector4::Vector4>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41550usize)as*mut u8,crate::unity_engine::color::Color;
+(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(v))}
+}
+}
 
-#[cfg(feature = "unity_engine-color")]
-impl Color { # [doc = "`.ctor(f32, f32, f32, f32)` overload"] pub fn ctor (& mut self , r : impl :: core :: convert :: Into < f32 > , g : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 > , a : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Color , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c40b50usize) as * mut u8) ; __inner (self as * mut Color , :: core :: convert :: Into :: into (r) , :: core :: convert :: Into :: into (g) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32, f32)` overload"] pub fn ctor_2 (& mut self , r : impl :: core :: convert :: Into < f32 > , g : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Color , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c40b70usize) as * mut u8) ; __inner (self as * mut Color , :: core :: convert :: Into :: into (r) , :: core :: convert :: Into :: into (g) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Color , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c40b90usize) as * mut u8) ; __inner (self as * mut Color , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Color , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c40e20usize) as * mut u8) ; __inner (self as * mut Color , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Color , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c40ea0usize) as * mut u8) ; __inner (self as * mut Color , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::color::Color)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c40f90usize) as * mut u8) ; __inner (self as * mut Color , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`RGBMultiplied(f32)` overload"] pub fn rgb_multiplied (& mut self , multiplier : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (* mut Color , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c412d0usize) as * mut u8) ; __inner (self as * mut Color , :: core :: convert :: Into :: into (multiplier) , :: core :: option :: Option :: None) } } } # [doc = "`get_linear()` overload"] pub fn get_linear (& mut self ,) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (* mut Color , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41460usize) as * mut u8) ; __inner (self as * mut Color , :: core :: option :: Option :: None) } } } # [doc = "`get_gamma()` overload"] pub fn get_gamma (& mut self ,) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (* mut Color , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c414c0usize) as * mut u8) ; __inner (self as * mut Color , :: core :: option :: Option :: None) } } } # [doc = "`get_maxColorComponent()` overload"] pub fn get_max_color_component (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Color , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41520usize) as * mut u8) ; __inner (self as * mut Color , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-color")]impl Color{#[doc="`.ctor(f32, f32, f32, f32)` overload"]pub fn ctor(&mut self,r:impl::core::convert::Into<f32> ,g:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32> ,a:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40b50usize)as*mut u8,();
+(*mut Color)self as*mut Color,(f32)::core::convert::Into::into(r),(f32)::core::convert::Into::into(g),(f32)::core::convert::Into::into(b),(f32)::core::convert::Into::into(a))}
+}
+#[doc="`.ctor(f32, f32, f32)` overload"]pub fn ctor_2(&mut self,r:impl::core::convert::Into<f32> ,g:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40b70usize)as*mut u8,();
+(*mut Color)self as*mut Color,(f32)::core::convert::Into::into(r),(f32)::core::convert::Into::into(g),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40b90usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Color)self as*mut Color)}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40e20usize)as*mut u8,i32;
+(*mut Color)self as*mut Color)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40ea0usize)as*mut u8,bool;
+(*mut Color)self as*mut Color,(crate::system::object::Object)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::color::Color)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40f90usize)as*mut u8,bool;
+(*mut Color)self as*mut Color,(crate::unity_engine::color::Color)::core::convert::Into::into(other))}
+}
+#[doc="`RGBMultiplied(f32)` overload"]pub fn rgb_multiplied(&mut self,multiplier:impl::core::convert::Into<f32>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c412d0usize)as*mut u8,crate::unity_engine::color::Color;
+(*mut Color)self as*mut Color,(f32)::core::convert::Into::into(multiplier))}
+}
+#[doc="`get_linear()` overload"]pub fn get_linear(&mut self,)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41460usize)as*mut u8,crate::unity_engine::color::Color;
+(*mut Color)self as*mut Color)}
+}
+#[doc="`get_gamma()` overload"]pub fn get_gamma(&mut self,)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c414c0usize)as*mut u8,crate::unity_engine::color::Color;
+(*mut Color)self as*mut Color)}
+}
+#[doc="`get_maxColorComponent()` overload"]pub fn get_max_color_component(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41520usize)as*mut u8,f32;
+(*mut Color)self as*mut Color)}
+}
+}
 
-#[cfg(feature = "unity_engine-color")]
-impl Color { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn op_multiply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn op_multiply_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn op_multiply_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn rgb_multiplied_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_red_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_green_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_blue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_white_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_black_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_yellow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_cyan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_magenta_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_gray_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_grey_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_linear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_gamma_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_max_color_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn op_implicit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Color as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } }
+#[cfg(feature="unity_engine-color")]impl Color{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_addition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn op_multiply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn op_multiply_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn op_multiply_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn rgb_multiplied_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_red_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_green_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_blue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_white_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_black_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_yellow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_cyan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_magenta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_gray_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_grey_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_linear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_gamma_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_max_color_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn op_implicit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+}
 
 #[cfg(feature = "unity_engine-color")]
 #[doc(hidden)]

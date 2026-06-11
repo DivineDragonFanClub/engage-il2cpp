@@ -4,44 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: app :: itemshopbuymenuitemcontent :: { IItemShopBuyMenuItemContent , ItemShopBuyMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::app::itemshopbuymenuitemcontent::{IItemShopBuyMenuItemContent,ItemShopBuyMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fleamarketbuymenuitemcontent/FleaMarketBuyMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "FleaMarketBuyMenuItemContent")] # [parent (crate :: app :: itemshopbuymenuitemcontent :: ItemShopBuyMenuItemContent)] pub struct FleaMarketBuyMenuItemContent {
-# [offset (152)] # [rename (name = "m_KindIconImage")] pub m_kind_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fleamarketbuymenuitemcontent/FleaMarketBuyMenuItemContent.md"))]#[::unity2::class(namespace="App",name="FleaMarketBuyMenuItemContent")]#[parent(crate::app::itemshopbuymenuitemcontent::ItemShopBuyMenuItemContent)]pub struct FleaMarketBuyMenuItemContent{#[offset(152)]#[rename(name="m_KindIconImage")]pub m_kind_icon_image:crate::unity_engine::ui::image::Image,}
 
 }
 
 #[cfg(feature = "app-fleamarketbuymenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fleamarketbuymenuitemcontent")]
-pub trait IFleaMarketBuyMenuItemContentMethods : IFleaMarketBuyMenuItemContent { # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < FleaMarketBuyMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FleaMarketBuyMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260cb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < FleaMarketBuyMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FleaMarketBuyMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260cd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FleaMarketBuyMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FleaMarketBuyMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ce70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fleamarketbuymenuitemcontent")]pub trait IFleaMarketBuyMenuItemContentMethods:IFleaMarketBuyMenuItemContent{#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <FleaMarketBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260cb60usize)as*mut u8,();
+(FleaMarketBuyMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <FleaMarketBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260cd30usize)as*mut u8,();
+(FleaMarketBuyMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FleaMarketBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260ce70usize)as*mut u8,();
+(FleaMarketBuyMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fleamarketbuymenuitemcontent")]
-impl < __T : IFleaMarketBuyMenuItemContent > IFleaMarketBuyMenuItemContentMethods for __T { }
+#[cfg(feature="app-fleamarketbuymenuitemcontent")]impl<__T:IFleaMarketBuyMenuItemContent>IFleaMarketBuyMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-fleamarketbuymenuitemcontent")]
-impl FleaMarketBuyMenuItemContent { pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketBuyMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketBuyMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketBuyMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-fleamarketbuymenuitemcontent")]impl FleaMarketBuyMenuItemContent{pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-fleamarketbuymenuitemcontent")]
-impl FleaMarketBuyMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FleaMarketBuyMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IFleaMarketBuyMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fleamarketbuymenuitemcontent")]impl FleaMarketBuyMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FleaMarketBuyMenuItemContent), ::core::stringify!(new),));
+ <Self as IFleaMarketBuyMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fleamarketbuymenuitemcontent")]

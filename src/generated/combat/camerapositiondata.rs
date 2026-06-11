@@ -4,147 +4,291 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerapositiondata/CameraPositionData_TargetJoint.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CameraPositionData_TargetJoint  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerapositiondata/CameraPositionData_TargetJoint.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CameraPositionData_TargetJoint{pub value:i32,}
+impl::unity2::ClassIdentity for CameraPositionData_TargetJoint{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="CameraPositionData.TargetJoint";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CameraPositionData_TargetJoint{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CameraPositionData_TargetJoint{pub fn center()->Self{Self{value:0}
+}
+pub fn look_at_loc()->Self{Self{value:1}
+}
+pub fn neck_jnt()->Self{Self{value:2}
+}
+pub fn head_loc()->Self{Self{value:3}
+}
+pub fn look_at_loc_human()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for CameraPositionData_TargetJoint  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CameraPositionData.TargetJoint";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]#[::unity2::class(namespace="Combat",name="CameraPositionData.CameraShakeSettings")]#[parent(crate::system::object::Object)]pub struct CameraPositionData_CameraShakeSettings{#[offset(16)]#[rename(name="ShakeDuration")]pub shake_duration:i32, #[offset(20)]#[rename(name="ShakeRadius")]pub shake_radius:f32, #[offset(24)]#[rename(name="ArmorStepDuraton")]pub armor_step_duraton:i32, #[offset(28)]#[rename(name="ArmorStepMagnitude")]pub armor_step_magnitude:f32, #[offset(32)]#[rename(name="ScaleCurveDistance")]pub scale_curve_distance:crate::unity_engine::animationcurve::AnimationCurve,}
 
 
-impl  ::unity2::IlType for CameraPositionData_TargetJoint  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CameraPositionData_TargetJoint  {
-    pub fn center() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn look_at_loc() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn neck_jnt() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn head_loc() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn look_at_loc_human() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraPositionData")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CameraPositionData {
-# [offset (24)] # [rename (name = "ShakeSetting")] pub shake_setting : crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings ,
-# [offset (128)] # [rename (name = "m_DrawCount")] pub m_draw_count : crate :: app :: gameparam :: GameParam_Holder ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraPositionData.CameraShakeSettings")] # [parent (crate :: system :: object :: Object)] pub struct CameraPositionData_CameraShakeSettings {
-# [offset (16)] # [rename (name = "ShakeDuration")] pub shake_duration : i32 ,
-# [offset (20)] # [rename (name = "ShakeRadius")] pub shake_radius : f32 ,
-# [offset (24)] # [rename (name = "ArmorStepDuraton")] pub armor_step_duraton : i32 ,
-# [offset (28)] # [rename (name = "ArmorStepMagnitude")] pub armor_step_magnitude : f32 ,
-# [offset (32)] # [rename (name = "ScaleCurveDistance")] pub scale_curve_distance : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerapositiondata/CameraPositionData.md"))]#[::unity2::class(namespace="Combat",name="CameraPositionData")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CameraPositionData{#[offset(24)]#[rename(name="ShakeSetting")]pub shake_setting:crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, #[offset(128)]#[rename(name="m_DrawCount")]pub m_draw_count:crate::app::gameparam::GameParam_Holder,}
 
 }
 
 #[cfg(feature = "combat-camerapositiondata-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-camerapositiondata")]
-pub trait ICameraPositionDataMethods : ICameraPositionData { # [doc = "`get_IsReverse()` overload"] fn get_is_reverse (self ,) -> bool { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b99a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsReverse(bool)` overload"] fn set_is_reverse (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b99b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BattleCenter()` overload"] fn get_battle_center (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b99c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BattleCenter(crate::unity_engine::vector3::Vector3)` overload"] fn set_battle_center (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b99d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BattleVector()` overload"] fn get_battle_vector (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b99e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BattleVector(crate::unity_engine::vector3::Vector3)` overload"] fn set_battle_vector (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b99f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BattleNormalVector()` overload"] fn get_battle_normal_vector (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BattleNormalVector(crate::unity_engine::vector3::Vector3)` overload"] fn set_battle_normal_vector (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BattleDistance()` overload"] fn get_battle_distance (self ,) -> f32 { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BattleDistance(f32)` overload"] fn set_battle_distance (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BasePosition()` overload"] fn get_base_position (self ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BasePosition(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"] fn set_base_position (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CharaArray()` overload"] fn get_chara_array (self ,) -> :: unity2 :: Array < crate :: combat :: character :: Character > { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: combat :: character :: Character > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CharaArray(::unity2::Array<crate::combat::character::Character>)` overload"] fn set_chara_array (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: character :: Character > >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: Array < crate :: combat :: character :: Character > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_DeadHeight()` overload"] fn get_m_dead_height (self ,) -> :: unity2 :: Array < f32 > { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < f32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_DeadHeight(::unity2::Array<f32>)` overload"] fn set_m_dead_height (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitTall()` overload"] fn get_unit_tall (self ,) -> :: unity2 :: Array < f32 > { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < f32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_UnitTall(::unity2::Array<f32>)` overload"] fn set_unit_tall (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_JointList()` overload"] fn get_joint_list (self ,) -> :: unity2 :: Array < crate :: combat :: characterjoint :: CharacterJoint > { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: combat :: characterjoint :: CharacterJoint > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_JointList(::unity2::Array<crate::combat::characterjoint::CharacterJoint>)` overload"] fn set_joint_list (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: characterjoint :: CharacterJoint > >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: Array < crate :: combat :: characterjoint :: CharacterJoint > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsBeforeDragonChange()` overload"] fn get_is_before_dragon_change (self ,) -> :: unity2 :: Array < bool > { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < bool > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsBeforeDragonChange(::unity2::Array<bool>)` overload"] fn set_is_before_dragon_change (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < bool > >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: Array < bool > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9af0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsInitialized()` overload"] fn get_is_initialized (self ,) -> bool { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsCharacterLoadFinished()` overload"] fn get_is_character_load_finished (self ,) -> bool { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25afd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateImpl()` overload"] fn update_impl (self ,) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b1ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize(crate::combat::combatrecord::CombatRecord)` overload"] fn initialize (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b8100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize(::unity2::Array<crate::combat::character::Character>)` overload"] fn initialize_2 (self , chara : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: character :: Character > >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: Array < crate :: combat :: character :: Character > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b8bc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } } # [doc = "`GetCenter(i32)` overload"] fn get_center (self , side : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ae680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`GeTall(i32)` overload"] fn ge_tall (self , side : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba3a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`LoadTall(crate::combat::combatrecord::CombatRecord)` overload"] fn load_tall (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } } # [doc = "`LoadTall(::unity2::Array<crate::combat::character::Character>)` overload"] fn load_tall_2 (self , chara_array : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: character :: Character > >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: Array < crate :: combat :: character :: Character > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara_array) , :: core :: option :: Option :: None) } } } # [doc = "`LoadJoint()` overload"] fn load_joint (self ,) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CulculateInfo(bool, crate::combat::combatrecord::CombatRecord)` overload"] fn culculate_info (self , is_initialize : impl :: core :: convert :: Into < bool > , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , bool , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_initialize) , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } } # [doc = "`GetJointPos(i32, crate::combat::camerapositiondata::CameraPositionData_TargetJoint)` overload"] fn get_joint_pos (self , side : impl :: core :: convert :: Into < i32 > , target : impl :: core :: convert :: Into < crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , i32 , crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25af4d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`GetJoint(i32, crate::combat::camerapositiondata::CameraPositionData_TargetJoint)` overload"] fn get_joint (self , side : impl :: core :: convert :: Into < i32 > , t : impl :: core :: convert :: Into < crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , i32 , crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b1180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`get_LookAtStacks()` overload"] fn get_look_at_stacks (self ,) -> :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > > { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba3e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Lines()` overload"] fn get_lines (self ,) -> :: unity2 :: Array < crate :: unity_engine :: linerenderer :: LineRenderer > { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: linerenderer :: LineRenderer > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraPositionData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ba400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "combat-camerapositiondata")]
-impl < __T : ICameraPositionData > ICameraPositionDataMethods for __T { }
-
-#[cfg(feature = "combat-camerapositiondata")]
-impl CameraPositionData { pub fn get_is_reverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_reverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_battle_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_battle_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_battle_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_battle_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_battle_normal_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_battle_normal_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_battle_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_battle_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_base_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_base_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_chara_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_chara_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_m_dead_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_m_dead_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_unit_tall_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_unit_tall_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_joint_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_joint_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_is_before_dragon_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_is_before_dragon_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_is_initialized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_is_character_load_finished_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn update_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn initialize_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn ge_tall_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn load_tall_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn load_tall_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn load_joint_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn culculate_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_joint_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_joint_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_look_at_stacks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_lines_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } }
-
-#[cfg(feature = "combat-camerapositiondata")]
-impl CameraPositionData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraPositionData) , :: core :: stringify ! (new) ,)) ; < Self as ICameraPositionDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-camerapositiondata")]pub trait ICameraPositionData_CameraShakeSettingsMethods:ICameraPositionData_CameraShakeSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraPositionData_CameraShakeSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd8e0usize)as*mut u8,();
+(CameraPositionData_CameraShakeSettings)__receiver)}
+}
 }
 
-#[cfg(feature = "combat-camerapositiondata")]
-pub trait ICameraPositionData_CameraShakeSettingsMethods : ICameraPositionData_CameraShakeSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraPositionData_CameraShakeSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraPositionData_CameraShakeSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bd8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-camerapositiondata")]impl<__T:ICameraPositionData_CameraShakeSettings>ICameraPositionData_CameraShakeSettingsMethods for __T{}
 
-#[cfg(feature = "combat-camerapositiondata")]
-impl < __T : ICameraPositionData_CameraShakeSettings > ICameraPositionData_CameraShakeSettingsMethods for __T { }
+#[cfg(feature="combat-camerapositiondata")]impl CameraPositionData_CameraShakeSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "combat-camerapositiondata")]
-impl CameraPositionData_CameraShakeSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraPositionData_CameraShakeSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-camerapositiondata")]impl CameraPositionData_CameraShakeSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraPositionData_CameraShakeSettings), ::core::stringify!(new),));
+ <Self as ICameraPositionData_CameraShakeSettingsMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "combat-camerapositiondata")]
-impl CameraPositionData_CameraShakeSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraPositionData_CameraShakeSettings) , :: core :: stringify ! (new) ,)) ; < Self as ICameraPositionData_CameraShakeSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-camerapositiondata")]pub trait ICameraPositionDataMethods:ICameraPositionData{#[doc="`get_IsReverse()` overload"]fn get_is_reverse(self,)->bool{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b99a0usize)as*mut u8,bool;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_IsReverse(bool)` overload"]fn set_is_reverse(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b99b0usize)as*mut u8,();
+(CameraPositionData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_BattleCenter()` overload"]fn get_battle_center(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b99c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_BattleCenter(crate::unity_engine::vector3::Vector3)` overload"]fn set_battle_center(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b99d0usize)as*mut u8,();
+(CameraPositionData)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_BattleVector()` overload"]fn get_battle_vector(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b99e0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_BattleVector(crate::unity_engine::vector3::Vector3)` overload"]fn set_battle_vector(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b99f0usize)as*mut u8,();
+(CameraPositionData)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_BattleNormalVector()` overload"]fn get_battle_normal_vector(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_BattleNormalVector(crate::unity_engine::vector3::Vector3)` overload"]fn set_battle_normal_vector(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a10usize)as*mut u8,();
+(CameraPositionData)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_BattleDistance()` overload"]fn get_battle_distance(self,)->f32{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a20usize)as*mut u8,f32;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_BattleDistance(f32)` overload"]fn set_battle_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a30usize)as*mut u8,();
+(CameraPositionData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BasePosition()` overload"]fn get_base_position(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a40usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_BasePosition(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]fn set_base_position(self,value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> >)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a50usize)as*mut u8,();
+(CameraPositionData)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(value))}
+}
+#[doc="`get_CharaArray()` overload"]fn get_chara_array(self,)-> ::unity2::Array<crate::combat::character::Character>{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a60usize)as*mut u8, ::unity2::Array<crate::combat::character::Character> ;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_CharaArray(::unity2::Array<crate::combat::character::Character>)` overload"]fn set_chara_array(self,value:impl::core::convert::Into< ::unity2::Array<crate::combat::character::Character> >)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a70usize)as*mut u8,();
+(CameraPositionData)__receiver,(::unity2::Array<crate::combat::character::Character>)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_DeadHeight()` overload"]fn get_m_dead_height(self,)-> ::unity2::Array<f32>{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a80usize)as*mut u8, ::unity2::Array<f32> ;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_m_DeadHeight(::unity2::Array<f32>)` overload"]fn set_m_dead_height(self,value:impl::core::convert::Into< ::unity2::Array<f32> >)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9a90usize)as*mut u8,();
+(CameraPositionData)__receiver,(::unity2::Array<f32>)::core::convert::Into::into(value))}
+}
+#[doc="`get_UnitTall()` overload"]fn get_unit_tall(self,)-> ::unity2::Array<f32>{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9aa0usize)as*mut u8, ::unity2::Array<f32> ;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_UnitTall(::unity2::Array<f32>)` overload"]fn set_unit_tall(self,value:impl::core::convert::Into< ::unity2::Array<f32> >)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9ab0usize)as*mut u8,();
+(CameraPositionData)__receiver,(::unity2::Array<f32>)::core::convert::Into::into(value))}
+}
+#[doc="`get_JointList()` overload"]fn get_joint_list(self,)-> ::unity2::Array<crate::combat::characterjoint::CharacterJoint>{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9ac0usize)as*mut u8, ::unity2::Array<crate::combat::characterjoint::CharacterJoint> ;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_JointList(::unity2::Array<crate::combat::characterjoint::CharacterJoint>)` overload"]fn set_joint_list(self,value:impl::core::convert::Into< ::unity2::Array<crate::combat::characterjoint::CharacterJoint> >)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9ad0usize)as*mut u8,();
+(CameraPositionData)__receiver,(::unity2::Array<crate::combat::characterjoint::CharacterJoint>)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsBeforeDragonChange()` overload"]fn get_is_before_dragon_change(self,)-> ::unity2::Array<bool>{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9ae0usize)as*mut u8, ::unity2::Array<bool> ;
+(CameraPositionData)__receiver)}
+}
+#[doc="`set_IsBeforeDragonChange(::unity2::Array<bool>)` overload"]fn set_is_before_dragon_change(self,value:impl::core::convert::Into< ::unity2::Array<bool> >)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9af0usize)as*mut u8,();
+(CameraPositionData)__receiver,(::unity2::Array<bool>)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsInitialized()` overload"]fn get_is_initialized(self,)->bool{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9b00usize)as*mut u8,bool;
+(CameraPositionData)__receiver)}
+}
+#[doc="`get_IsCharacterLoadFinished()` overload"]fn get_is_character_load_finished(self,)->bool{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25afd40usize)as*mut u8,bool;
+(CameraPositionData)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9160usize)as*mut u8,();
+(CameraPositionData)__receiver)}
+}
+#[doc="`UpdateImpl()` overload"]fn update_impl(self,)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b1ae0usize)as*mut u8,();
+(CameraPositionData)__receiver)}
+}
+#[doc="`Initialize(crate::combat::combatrecord::CombatRecord)` overload"]fn initialize(self,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b8100usize)as*mut u8,();
+(CameraPositionData)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
+}
+#[doc="`Initialize(::unity2::Array<crate::combat::character::Character>)` overload"]fn initialize_2(self,chara:impl::core::convert::Into< ::unity2::Array<crate::combat::character::Character> >)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b8bc0usize)as*mut u8,();
+(CameraPositionData)__receiver,(::unity2::Array<crate::combat::character::Character>)::core::convert::Into::into(chara))}
+}
+#[doc="`GetCenter(i32)` overload"]fn get_center(self,side:impl::core::convert::Into<i32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ae680usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraPositionData)__receiver,(i32)::core::convert::Into::into(side))}
+}
+#[doc="`GeTall(i32)` overload"]fn ge_tall(self,side:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba3a0usize)as*mut u8,f32;
+(CameraPositionData)__receiver,(i32)::core::convert::Into::into(side))}
+}
+#[doc="`LoadTall(crate::combat::combatrecord::CombatRecord)` overload"]fn load_tall(self,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba150usize)as*mut u8,();
+(CameraPositionData)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
+}
+#[doc="`LoadTall(::unity2::Array<crate::combat::character::Character>)` overload"]fn load_tall_2(self,chara_array:impl::core::convert::Into< ::unity2::Array<crate::combat::character::Character> >)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba280usize)as*mut u8,();
+(CameraPositionData)__receiver,(::unity2::Array<crate::combat::character::Character>)::core::convert::Into::into(chara_array))}
+}
+#[doc="`LoadJoint()` overload"]fn load_joint(self,)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9b10usize)as*mut u8,();
+(CameraPositionData)__receiver)}
+}
+#[doc="`CulculateInfo(bool, crate::combat::combatrecord::CombatRecord)` overload"]fn culculate_info(self,is_initialize:impl::core::convert::Into<bool> ,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9d60usize)as*mut u8,();
+(CameraPositionData)__receiver,(bool)::core::convert::Into::into(is_initialize),(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
+}
+#[doc="`GetJointPos(i32, crate::combat::camerapositiondata::CameraPositionData_TargetJoint)` overload"]fn get_joint_pos(self,side:impl::core::convert::Into<i32> ,target:impl::core::convert::Into<crate::combat::camerapositiondata::CameraPositionData_TargetJoint>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25af4d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraPositionData)__receiver,(i32)::core::convert::Into::into(side),(crate::combat::camerapositiondata::CameraPositionData_TargetJoint)::core::convert::Into::into(target))}
+}
+#[doc="`GetJoint(i32, crate::combat::camerapositiondata::CameraPositionData_TargetJoint)` overload"]fn get_joint(self,side:impl::core::convert::Into<i32> ,t:impl::core::convert::Into<crate::combat::camerapositiondata::CameraPositionData_TargetJoint>)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b1180usize)as*mut u8,crate::unity_engine::transform::Transform;
+(CameraPositionData)__receiver,(i32)::core::convert::Into::into(side),(crate::combat::camerapositiondata::CameraPositionData_TargetJoint)::core::convert::Into::into(t))}
+}
+#[doc="`get_LookAtStacks()` overload"]fn get_look_at_stacks(self,)-> ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> >{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba3e0usize)as*mut u8, ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> > ;
+(CameraPositionData)__receiver)}
+}
+#[doc="`get_Lines()` overload"]fn get_lines(self,)-> ::unity2::Array<crate::unity_engine::linerenderer::LineRenderer>{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba3f0usize)as*mut u8, ::unity2::Array<crate::unity_engine::linerenderer::LineRenderer> ;
+(CameraPositionData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ba400usize)as*mut u8,();
+(CameraPositionData)__receiver)}
+}
+}
+
+#[cfg(feature="combat-camerapositiondata")]impl<__T:ICameraPositionData>ICameraPositionDataMethods for __T{}
+
+#[cfg(feature="combat-camerapositiondata")]impl CameraPositionData{pub fn get_is_reverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_reverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_battle_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_battle_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_battle_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_battle_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_battle_normal_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_battle_normal_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_battle_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_battle_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_base_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_base_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_chara_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_chara_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_m_dead_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_m_dead_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_unit_tall_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_unit_tall_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_joint_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_joint_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_is_before_dragon_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_is_before_dragon_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_is_character_load_finished_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn update_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn initialize_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn ge_tall_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn load_tall_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn load_tall_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn load_joint_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn culculate_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_joint_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_joint_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_look_at_stacks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_lines_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+}
+
+#[cfg(feature="combat-camerapositiondata")]impl CameraPositionData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraPositionData), ::core::stringify!(new),));
+ <Self as ICameraPositionDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-camerapositiondata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CameraPositionData_TargetJoint;
-    pub use super::CameraPositionData;
-    pub use super::ICameraPositionData;
-    pub use super::ICameraPositionDataMethods;
     pub use super::CameraPositionData_CameraShakeSettings;
     pub use super::ICameraPositionData_CameraShakeSettings;
     pub use super::ICameraPositionData_CameraShakeSettingsMethods;
+    pub use super::CameraPositionData;
+    pub use super::ICameraPositionData;
+    pub use super::ICameraPositionDataMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

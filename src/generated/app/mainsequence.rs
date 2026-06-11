@@ -4,273 +4,346 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: procscenesequence_1 :: { IProcSceneSequence_1 , ProcSceneSequence_1 }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::procscenesequence_1::{IProcSceneSequence_1,ProcSceneSequence_1}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mainsequence/MainSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MainSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mainsequence :: MainSequence >)] pub struct MainSequence {
-# [static_field] # [rename (name = "s_JumpLabel")] pub s_jump_label : crate :: app :: mainsequence :: MainSequence_Label ,
-# [static_field] # [rename (name = "s_FakeLabel")] pub s_fake_label : crate :: app :: mainsequence :: MainSequence_Label ,
-# [static_field] # [rename (name = "s_Initialized")] pub s_initialized : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainsequence/MainSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MainSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MainSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MainSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MainSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MainSequence_Label{pub fn none()->Self{Self{value:0}
+}
+pub fn startup()->Self{Self{value:1}
+}
+pub fn title_loop()->Self{Self{value:2}
+}
+pub fn title_loop_from_main_menu()->Self{Self{value:3}
+}
+pub fn main_menu()->Self{Self{value:4}
+}
+pub fn chapter()->Self{Self{value:5}
+}
+pub fn gmap()->Self{Self{value:6}
+}
+pub fn kizuna()->Self{Self{value:7}
+}
+pub fn hub()->Self{Self{value:8}
+}
+pub fn hub_to_save_position()->Self{Self{value:9}
+}
+pub fn ending()->Self{Self{value:10}
+}
+pub fn next_chapter()->Self{Self{value:11}
+}
+pub fn map()->Self{Self{value:12}
+}
+pub fn complete()->Self{Self{value:13}
+}
+pub fn game_over()->Self{Self{value:14}
+}
+pub fn chapter_save()->Self{Self{value:15}
+}
+pub fn after_chapter_save()->Self{Self{value:16}
+}
+pub fn set_save_data_load_target()->Self{Self{value:17}
+}
+pub fn save_data_load()->Self{Self{value:18}
+}
+pub fn save_data_load_failed()->Self{Self{value:19}
+}
+pub fn save_data_version_failed()->Self{Self{value:20}
+}
+pub fn data_load_failed()->Self{Self{value:21}
+}
+pub fn after_load_failed()->Self{Self{value:22}
+}
+pub fn contents_resume()->Self{Self{value:23}
+}
+pub fn relay_debug()->Self{Self{value:24}
+}
+pub fn relay()->Self{Self{value:25}
+}
+pub fn versus()->Self{Self{value:26}
+}
+pub fn challenge()->Self{Self{value:27}
+}
+pub fn back_to_title()->Self{Self{value:28}
+}
+pub fn end()->Self{Self{value:29}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mainsequence/MainSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MainSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MainSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MainSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MainSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MainSequence_Label  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn startup() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn title_loop() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn title_loop_from_main_menu() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn main_menu() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn chapter() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn gmap() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn kizuna() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn hub_to_save_position() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn ending() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn next_chapter() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn map() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn complete() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn game_over() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn chapter_save() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn after_chapter_save() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn set_save_data_load_target() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn save_data_load() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn save_data_load_failed() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn save_data_version_failed() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn data_load_failed() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn after_load_failed() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn contents_resume() -> Self {
-        Self { value: 23 }
-
-    }
-
-
-    pub fn relay_debug() -> Self {
-        Self { value: 24 }
-
-    }
-
-
-    pub fn relay() -> Self {
-        Self { value: 25 }
-
-    }
-
-
-    pub fn versus() -> Self {
-        Self { value: 26 }
-
-    }
-
-
-    pub fn challenge() -> Self {
-        Self { value: 27 }
-
-    }
-
-
-    pub fn back_to_title() -> Self {
-        Self { value: 28 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 29 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainsequence/MainSequence.md"))]#[::unity2::class(namespace="App",name="MainSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::mainsequence::MainSequence>)]pub struct MainSequence{#[static_field]#[rename(name="s_JumpLabel")]pub s_jump_label:crate::app::mainsequence::MainSequence_Label, #[static_field]#[rename(name="s_FakeLabel")]pub s_fake_label:crate::app::mainsequence::MainSequence_Label, #[static_field]#[rename(name="s_Initialized")]pub s_initialized:bool,}
 
 }
 
 #[cfg(feature = "app-mainsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mainsequence")]
-impl MainSequence { # [doc = "`GetCurrent(crate::app::procinst::ProcInst)` overload"] pub fn get_current (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd2e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`GetCurrent()` overload"] pub fn get_current_2 () -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetJumpSeq(crate::app::mainsequence::MainSequence_Label)` overload"] pub fn set_jump_seq (label : impl :: core :: convert :: Into < crate :: app :: mainsequence :: MainSequence_Label >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: mainsequence :: MainSequence_Label , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd4c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsInitialized()` overload"] pub fn is_initialized () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ee39a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ee3a80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mainsequence")]impl MainSequence{#[doc="`GetCurrent(crate::app::procinst::ProcInst)` overload"]pub fn get_current(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1edd2e0usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`GetCurrent()` overload"]pub fn get_current_2()->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1edd390usize)as*mut u8,crate::app::procinst::ProcInst;
+)}
+}
+#[doc="`SetJumpSeq(crate::app::mainsequence::MainSequence_Label)` overload"]pub fn set_jump_seq(label:impl::core::convert::Into<crate::app::mainsequence::MainSequence_Label>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1edd4c0usize)as*mut u8,();
+(crate::app::mainsequence::MainSequence_Label)::core::convert::Into::into(label))}
+}
+#[doc="`Create()` overload"]pub fn create()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1edf400usize)as*mut u8,();
+)}
+}
+#[doc="`IsInitialized()` overload"]pub fn is_initialized()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ee39a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ee3a80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mainsequence")]
-pub trait IMainSequenceMethods : IMainSequence { # [doc = "`JumpToLabel()` overload"] fn jump_to_label (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`JumpToLabelNoGCCollect()` overload"] fn jump_to_label_no_gc_collect (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`JumpToLabelImpl(bool)` overload"] fn jump_to_label_impl (self , is_gc_collect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_gc_collect) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostInitialize()` overload"] fn post_initialize (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadPublic()` overload"] fn load_public (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edda10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edda80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostLoadResource()` overload"] fn post_load_resource (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eddc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BeginSilentVolume()` overload"] fn begin_silent_volume (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eddce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSilentVolume()` overload"] fn end_silent_volume (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eddcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnPersistent()` overload"] fn on_persistent (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eddd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BranchStart()` overload"] fn branch_start (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eddd80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BranchChapterStart()` overload"] fn branch_chapter_start (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edddf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadChapterBank()` overload"] fn load_chapter_bank (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eddf20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryJumpToKizuna()` overload"] fn try_jump_to_kizuna (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryJumpToContinueMap()` overload"] fn try_jump_to_continue_map (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryJumpToHub()` overload"] fn try_jump_to_hub (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryJumpToGmap()` overload"] fn try_jump_to_gmap (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryJumpToNextChapter()` overload"] fn try_jump_to_next_chapter (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HubToSavePosition()` overload"] fn hub_to_save_position (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GameReset()` overload"] fn game_reset (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AutoSave()` overload"] fn auto_save (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSaveDataLoadTarget()` overload"] fn set_save_data_load_target (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveDataLoad()` overload"] fn save_data_load (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ede990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveDataLoadResult()` overload"] fn save_data_load_result (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edec40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveDataRelease()` overload"] fn save_data_release (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eded70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveDataNormalize()` overload"] fn save_data_normalize (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edee40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveDataBranchFirst()` overload"] fn save_data_branch_first (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edee50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveDataBranchSecond()` overload"] fn save_data_branch_second (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edef90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveDataLoadFailed()` overload"] fn save_data_load_failed (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveDataVersionFailed()` overload"] fn save_data_version_failed (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DataLoadFailed()` overload"] fn data_load_failed (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteTemporary()` overload"] fn delete_temporary (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GameSoundReset()` overload"] fn game_sound_reset (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DumpMemory(crate::app::mainsequence::MainSequence_Label)` overload"] fn dump_memory (self , label : impl :: core :: convert :: Into < crate :: app :: mainsequence :: MainSequence_Label >) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , crate :: app :: mainsequence :: MainSequence_Label , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edd2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`DumpMemory(::unity2::Il2CppString)` overload"] fn dump_memory_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`LoadLogo()` overload"] fn load_logo (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowLogo()` overload"] fn show_logo (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowIcon()` overload"] fn show_icon (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1edf3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ee3940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mainsequence")]pub trait IMainSequenceMethods:IMainSequence{#[doc="`JumpToLabel()` overload"]fn jump_to_label(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edd120usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`JumpToLabelNoGCCollect()` overload"]fn jump_to_label_no_gc_collect(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edd2c0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`JumpToLabelImpl(bool)` overload"]fn jump_to_label_impl(self,is_gc_collect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edd130usize)as*mut u8,();
+(MainSequence)__receiver,(bool)::core::convert::Into::into(is_gc_collect))}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edd530usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`PostInitialize()` overload"]fn post_initialize(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edd920usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`LoadPublic()` overload"]fn load_public(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edda10usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edda80usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`PostLoadResource()` overload"]fn post_load_resource(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eddc40usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`BeginSilentVolume()` overload"]fn begin_silent_volume(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eddce0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`EndSilentVolume()` overload"]fn end_silent_volume(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eddcf0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eddd00usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`BranchStart()` overload"]fn branch_start(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eddd80usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`BranchChapterStart()` overload"]fn branch_chapter_start(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edddf0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`LoadChapterBank()` overload"]fn load_chapter_bank(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eddf20usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`TryJumpToKizuna()` overload"]fn try_jump_to_kizuna(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede020usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`TryJumpToContinueMap()` overload"]fn try_jump_to_continue_map(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede310usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`TryJumpToHub()` overload"]fn try_jump_to_hub(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede4f0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`TryJumpToGmap()` overload"]fn try_jump_to_gmap(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede610usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`TryJumpToNextChapter()` overload"]fn try_jump_to_next_chapter(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede3f0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`HubToSavePosition()` overload"]fn hub_to_save_position(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede6e0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`GameReset()` overload"]fn game_reset(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede760usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`AutoSave()` overload"]fn auto_save(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede820usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SetSaveDataLoadTarget()` overload"]fn set_save_data_load_target(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede840usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SaveDataLoad()` overload"]fn save_data_load(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ede990usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SaveDataLoadResult()` overload"]fn save_data_load_result(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edec40usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SaveDataRelease()` overload"]fn save_data_release(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eded70usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SaveDataNormalize()` overload"]fn save_data_normalize(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edee40usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SaveDataBranchFirst()` overload"]fn save_data_branch_first(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edee50usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SaveDataBranchSecond()` overload"]fn save_data_branch_second(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edef90usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SaveDataLoadFailed()` overload"]fn save_data_load_failed(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf090usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`SaveDataVersionFailed()` overload"]fn save_data_version_failed(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf120usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`DataLoadFailed()` overload"]fn data_load_failed(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf1b0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`DeleteTemporary()` overload"]fn delete_temporary(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf240usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`GameSoundReset()` overload"]fn game_sound_reset(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf250usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`DumpMemory(crate::app::mainsequence::MainSequence_Label)` overload"]fn dump_memory(self,label:impl::core::convert::Into<crate::app::mainsequence::MainSequence_Label>)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edd2d0usize)as*mut u8,();
+(MainSequence)__receiver,(crate::app::mainsequence::MainSequence_Label)::core::convert::Into::into(label))}
+}
+#[doc="`DumpMemory(::unity2::Il2CppString)` overload"]fn dump_memory_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf320usize)as*mut u8,();
+(MainSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`LoadLogo()` overload"]fn load_logo(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf330usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`ShowLogo()` overload"]fn show_logo(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf3a0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`ShowIcon()` overload"]fn show_icon(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1edf3d0usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ee3940usize)as*mut u8,();
+(MainSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mainsequence")]
-impl < __T : IMainSequence > IMainSequenceMethods for __T { }
+#[cfg(feature="app-mainsequence")]impl<__T:IMainSequence>IMainSequenceMethods for __T{}
 
-#[cfg(feature = "app-mainsequence")]
-impl MainSequence { pub fn jump_to_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn jump_to_label_no_gc_collect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn jump_to_label_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_current_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_jump_seq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn post_initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn load_public_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn post_load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn begin_silent_volume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn end_silent_volume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn branch_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn branch_chapter_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn load_chapter_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn try_jump_to_kizuna_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn try_jump_to_continue_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn try_jump_to_hub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn try_jump_to_gmap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn try_jump_to_next_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn hub_to_save_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn game_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn auto_save_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_save_data_load_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn save_data_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn save_data_load_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn save_data_release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn save_data_normalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn save_data_branch_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn save_data_branch_second_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn save_data_load_failed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn save_data_version_failed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn data_load_failed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn delete_temporary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn game_sound_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn dump_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn dump_memory_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn load_logo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn show_logo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn show_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn is_initialized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } }
+#[cfg(feature="app-mainsequence")]impl MainSequence{pub fn jump_to_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn jump_to_label_no_gc_collect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn jump_to_label_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_current_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_jump_seq_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn post_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_public_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn post_load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn begin_silent_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn end_silent_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_persistent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn branch_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn branch_chapter_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn load_chapter_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn try_jump_to_kizuna_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn try_jump_to_continue_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn try_jump_to_hub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn try_jump_to_gmap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn try_jump_to_next_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn hub_to_save_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn game_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn auto_save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_save_data_load_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn save_data_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn save_data_load_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn save_data_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn save_data_normalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn save_data_branch_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn save_data_branch_second_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn save_data_load_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn save_data_version_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn data_load_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn delete_temporary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn game_sound_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn dump_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn dump_memory_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn load_logo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn show_logo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn show_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+}
 
-#[cfg(feature = "app-mainsequence")]
-impl MainSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MainSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMainSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mainsequence")]impl MainSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainSequence), ::core::stringify!(new),));
+ <Self as IMainSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mainsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MainSequence_Label;
     pub use super::MainSequence;
     pub use super::IMainSequence;
     pub use super::IMainSequenceMethods;
-    pub use super::MainSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

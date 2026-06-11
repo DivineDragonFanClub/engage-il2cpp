@@ -4,154 +4,146 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshConfirmDialog.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshConfirmDialog_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog_DialogMenuItem.md"))]#[::unity2::class(namespace="App",name="RefreshConfirmDialog.DialogMenuItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct RefreshConfirmDialog_DialogMenuItem{#[offset(112)]#[rename(name="m_Result")]pub m_result:crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog_DialogMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshConfirmDialog.DialogMenuItem")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct RefreshConfirmDialog_DialogMenuItem {
-# [offset (112)] # [rename (name = "m_Result")] pub m_result : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 ,
-# [offset (120)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RefreshConfirmDialog")]#[parent(crate::system::object::Object)]pub struct RefreshConfirmDialog{#[static_field]#[rename(name="m_PosX")]pub m_pos_x:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefreshConfirmDialog_Result2{pub value:i32,}
+impl::unity2::ClassIdentity for RefreshConfirmDialog_Result2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RefreshConfirmDialog.Result2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RefreshConfirmDialog_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RefreshConfirmDialog_Result2{pub fn ok()->Self{Self{value:0}
+}
+pub fn ok_without_demo()->Self{Self{value:1}
+}
+pub fn cancel()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshconfirmdialog/RefreshConfirmDialog_Result2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RefreshConfirmDialog_Result2  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RefreshConfirmDialog_Result2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefreshConfirmDialog.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RefreshConfirmDialog_Result2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RefreshConfirmDialog_Result2  {
-    pub fn ok() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn ok_without_demo() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn cancel() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshConfirmDialog")] # [parent (crate :: system :: object :: Object)] pub struct RefreshConfirmDialog {
-# [static_field] # [rename (name = "m_PosX")] pub m_pos_x : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshConfirmDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshConfirmDialog_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-refreshconfirmdialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshconfirmdialog")]
-pub trait IRefreshConfirmDialog_DecideEventHandlerMethods : IRefreshConfirmDialog_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefreshConfirmDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshConfirmDialog_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 >) -> () { unsafe { let __receiver = < RefreshConfirmDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshConfirmDialog_DecideEventHandler , crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl < __T : IRefreshConfirmDialog_DecideEventHandler > IRefreshConfirmDialog_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl RefreshConfirmDialog_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshConfirmDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshConfirmDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl RefreshConfirmDialog_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshConfirmDialog_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshConfirmDialog_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refreshconfirmdialog")]pub trait IRefreshConfirmDialog_DialogMenuItemMethods:IRefreshConfirmDialog_DialogMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,result:impl::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler>)->(){unsafe{let __receiver= <RefreshConfirmDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe660usize)as*mut u8,();
+(RefreshConfirmDialog_DialogMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2)::core::convert::Into::into(result),(crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshConfirmDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe6b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefreshConfirmDialog_DialogMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshConfirmDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe6f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefreshConfirmDialog_DialogMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-refreshconfirmdialog")]
-pub trait IRefreshConfirmDialog_DialogMenuItemMethods : IRefreshConfirmDialog_DialogMenuItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` overload"] fn ctor (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , result : impl :: core :: convert :: Into < crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler >) -> () { unsafe { let __receiver = < RefreshConfirmDialog_DialogMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshConfirmDialog_DialogMenuItem , :: unity2 :: Il2CppString , crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 , crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: convert :: Into :: into (result) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefreshConfirmDialog_DialogMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshConfirmDialog_DialogMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefreshConfirmDialog_DialogMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshConfirmDialog_DialogMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshconfirmdialog")]impl<__T:IRefreshConfirmDialog_DialogMenuItem>IRefreshConfirmDialog_DialogMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl < __T : IRefreshConfirmDialog_DialogMenuItem > IRefreshConfirmDialog_DialogMenuItemMethods for __T { }
-
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl RefreshConfirmDialog_DialogMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshConfirmDialog_DialogMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshConfirmDialog_DialogMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshConfirmDialog_DialogMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl RefreshConfirmDialog_DialogMenuItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` — overload selector"] pub fn new (message : :: unity2 :: Il2CppString , result : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 , decide_event_handler : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshConfirmDialog_DialogMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshConfirmDialog_DialogMenuItemMethods > :: ctor (this , message , result , decide_event_handler) ; this }
+#[cfg(feature="app-refreshconfirmdialog")]impl RefreshConfirmDialog_DialogMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl RefreshConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler >) -> crate :: app :: basicdialog :: BasicDialog { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b87c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b8ae0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshconfirmdialog")]impl RefreshConfirmDialog_DialogMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,result:crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,decide_event_handler:crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshConfirmDialog_DialogMenuItem), ::core::stringify!(new),));
+ <Self as IRefreshConfirmDialog_DialogMenuItemMethods> ::ctor(this,message,result,decide_event_handler);
+this}
+}
 
-#[cfg(feature = "app-refreshconfirmdialog")]
-pub trait IRefreshConfirmDialogMethods : IRefreshConfirmDialog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefreshConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshConfirmDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b8ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshconfirmdialog")]impl RefreshConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler>)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b87c0usize)as*mut u8,crate::app::basicdialog::BasicDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b8ae0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl < __T : IRefreshConfirmDialog > IRefreshConfirmDialogMethods for __T { }
+#[cfg(feature="app-refreshconfirmdialog")]pub trait IRefreshConfirmDialogMethods:IRefreshConfirmDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefreshConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b8ad0usize)as*mut u8,();
+(RefreshConfirmDialog)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl RefreshConfirmDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-refreshconfirmdialog")]impl<__T:IRefreshConfirmDialog>IRefreshConfirmDialogMethods for __T{}
 
-#[cfg(feature = "app-refreshconfirmdialog")]
-impl RefreshConfirmDialog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshConfirmDialogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refreshconfirmdialog")]impl RefreshConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-refreshconfirmdialog")]impl RefreshConfirmDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshConfirmDialog), ::core::stringify!(new),));
+ <Self as IRefreshConfirmDialogMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-refreshconfirmdialog")]pub trait IRefreshConfirmDialog_DecideEventHandlerMethods:IRefreshConfirmDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe340usize)as*mut u8,();
+(RefreshConfirmDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2>)->(){unsafe{let __receiver= <RefreshConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe360usize)as*mut u8,();
+(RefreshConfirmDialog_DecideEventHandler)__receiver,(crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-refreshconfirmdialog")]impl<__T:IRefreshConfirmDialog_DecideEventHandler>IRefreshConfirmDialog_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refreshconfirmdialog")]impl RefreshConfirmDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refreshconfirmdialog")]impl RefreshConfirmDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshConfirmDialog_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshConfirmDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-refreshconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefreshConfirmDialog_DecideEventHandler;
-    pub use super::IRefreshConfirmDialog_DecideEventHandler;
-    pub use super::IRefreshConfirmDialog_DecideEventHandlerMethods;
     pub use super::RefreshConfirmDialog_DialogMenuItem;
     pub use super::IRefreshConfirmDialog_DialogMenuItem;
     pub use super::IRefreshConfirmDialog_DialogMenuItemMethods;
-    pub use super::RefreshConfirmDialog_Result2;
     pub use super::RefreshConfirmDialog;
     pub use super::IRefreshConfirmDialog;
     pub use super::IRefreshConfirmDialogMethods;
+    pub use super::RefreshConfirmDialog_Result2;
+    pub use super::RefreshConfirmDialog_DecideEventHandler;
+    pub use super::IRefreshConfirmDialog_DecideEventHandler;
+    pub use super::IRefreshConfirmDialog_DecideEventHandlerMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::delegate::IDelegate;

@@ -4,28 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/certificatehandler/CertificateHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "CertificateHandler")] # [parent (crate :: system :: object :: Object)] pub struct CertificateHandler {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/certificatehandler/CertificateHandler.md"))]#[::unity2::class(namespace="UnityEngine.Networking",name="CertificateHandler")]#[parent(crate::system::object::Object)]pub struct CertificateHandler{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-networking-certificatehandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-networking-certificatehandler")]
-pub trait ICertificateHandlerMethods : ICertificateHandler { # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < CertificateHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CertificateHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ValidateCertificate(::unity2::Array<u8>)` overload"] fn validate_certificate (self , certificate_data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> bool { unsafe { let __receiver = < CertificateHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CertificateHandler , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (certificate_data) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateCertificateNative(::unity2::Array<u8>)` overload"] fn validate_certificate_native (self , certificate_data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> bool { unsafe { let __receiver = < CertificateHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CertificateHandler , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (certificate_data) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < CertificateHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CertificateHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f182a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-certificatehandler")]pub trait ICertificateHandlerMethods:ICertificateHandler{#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <CertificateHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18230usize)as*mut u8,();
+(CertificateHandler)__receiver)}
+}
+#[doc="`ValidateCertificate(::unity2::Array<u8>)` overload"]fn validate_certificate(self,certificate_data:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{let __receiver= <CertificateHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18280usize)as*mut u8,bool;
+(CertificateHandler)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(certificate_data))}
+}
+#[doc="`ValidateCertificateNative(::unity2::Array<u8>)` overload"]fn validate_certificate_native(self,certificate_data:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{let __receiver= <CertificateHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18290usize)as*mut u8,bool;
+(CertificateHandler)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(certificate_data))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <CertificateHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f182a0usize)as*mut u8,();
+(CertificateHandler)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-certificatehandler")]
-impl < __T : ICertificateHandler > ICertificateHandlerMethods for __T { }
+#[cfg(feature="unity_engine-networking-certificatehandler")]impl<__T:ICertificateHandler>ICertificateHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-networking-certificatehandler")]
-impl CertificateHandler { pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CertificateHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn validate_certificate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CertificateHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn validate_certificate_native_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CertificateHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CertificateHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-networking-certificatehandler")]impl CertificateHandler{pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn validate_certificate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn validate_certificate_native_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-networking-certificatehandler")]
 #[doc(hidden)]

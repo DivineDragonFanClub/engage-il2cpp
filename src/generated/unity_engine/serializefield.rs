@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/serializefield/SerializeField.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SerializeField")] pub struct SerializeField {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/serializefield/SerializeField.md"))]#[::unity2::class(namespace="UnityEngine",name="SerializeField")]pub struct SerializeField{}
 
 }
 
 #[cfg(feature = "unity_engine-serializefield-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-serializefield")]
-pub trait ISerializeFieldMethods : ISerializeField { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SerializeField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SerializeField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-serializefield")]pub trait ISerializeFieldMethods:ISerializeField{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SerializeField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e820usize)as*mut u8,();
+(SerializeField)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-serializefield")]
-impl < __T : ISerializeField > ISerializeFieldMethods for __T { }
+#[cfg(feature="unity_engine-serializefield")]impl<__T:ISerializeField>ISerializeFieldMethods for __T{}
 
-#[cfg(feature = "unity_engine-serializefield")]
-impl SerializeField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SerializeField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-serializefield")]impl SerializeField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-serializefield")]
-impl SerializeField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SerializeField) , :: core :: stringify ! (new) ,)) ; < Self as ISerializeFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-serializefield")]impl SerializeField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SerializeField), ::core::stringify!(new),));
+ <Self as ISerializeFieldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-serializefield")]

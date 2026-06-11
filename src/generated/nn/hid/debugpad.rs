@@ -4,25 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/debugpad/DebugPad.md"))] # [:: unity2 :: class (namespace = "nn.hid" , name = "DebugPad")] # [parent (crate :: system :: object :: Object)] pub struct DebugPad {
-# [static_field] # [rename (name = "StateCountMax")] pub state_count_max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/debugpad/DebugPad.md"))]#[::unity2::class(namespace="nn.hid",name="DebugPad")]#[parent(crate::system::object::Object)]pub struct DebugPad{#[static_field]#[rename(name="StateCountMax")]pub state_count_max:i32,}
 
 }
 
 #[cfg(feature = "nn-hid-debugpad-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-debugpad")]
-impl DebugPad { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0f7c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetState(*mutcrate::nn::hid::debugpadstate::DebugPadState)` overload"] pub fn get_state () -> crate :: nn :: hid :: debugpadstate :: DebugPadState { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: debugpadstate :: DebugPadState > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: nn :: hid :: debugpadstate :: DebugPadState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0f7d0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`GetStates(::unity2::Array<crate::nn::hid::debugpadstate::DebugPadState>, i32)` overload"] pub fn get_states (p_out_values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: debugpadstate :: DebugPadState > > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: nn :: hid :: debugpadstate :: DebugPadState > , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0f7e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p_out_values) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-debugpad")]impl DebugPad{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a0f7c0usize)as*mut u8,();
+)}
+}
+#[doc="`GetState(*mutcrate::nn::hid::debugpadstate::DebugPadState)` overload"]pub fn get_state()->crate::nn::hid::debugpadstate::DebugPadState{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::debugpadstate::DebugPadState> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0f7d0usize)as*mut u8,();
+(*mut crate::nn::hid::debugpadstate::DebugPadState)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`GetStates(::unity2::Array<crate::nn::hid::debugpadstate::DebugPadState>, i32)` overload"]pub fn get_states(p_out_values:impl::core::convert::Into< ::unity2::Array<crate::nn::hid::debugpadstate::DebugPadState> > ,count:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a0f7e0usize)as*mut u8,i32;
+(::unity2::Array<crate::nn::hid::debugpadstate::DebugPadState>)::core::convert::Into::into(p_out_values),(i32)::core::convert::Into::into(count))}
+}
+}
 
-#[cfg(feature = "nn-hid-debugpad")]
-impl DebugPad { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugPad as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugPad as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_states_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugPad as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="nn-hid-debugpad")]impl DebugPad{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_states_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "nn-hid-debugpad")]
 #[doc(hidden)]

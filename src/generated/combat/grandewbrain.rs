@@ -4,34 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/grandewbrain/GrandewBrain.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "GrandewBrain")] # [parent (crate :: system :: object :: Object)] pub struct GrandewBrain {
-# [offset (16)] # [rename (name = "CP")] pub cp : crate :: combat :: character :: Character ,
-# [offset (24)] # [rename (name = "m_Master")] pub m_master : crate :: combat :: character :: Character ,
-# [offset (32)] # [rename (name = "m_Enemy")] pub m_enemy : crate :: combat :: character :: Character ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/grandewbrain/GrandewBrain.md"))]#[::unity2::class(namespace="Combat",name="GrandewBrain")]#[parent(crate::system::object::Object)]pub struct GrandewBrain{#[offset(16)]#[rename(name="CP")]pub cp:crate::combat::character::Character, #[offset(24)]#[rename(name="m_Master")]pub m_master:crate::combat::character::Character, #[offset(32)]#[rename(name="m_Enemy")]pub m_enemy:crate::combat::character::Character,}
 
 }
 
 #[cfg(feature = "combat-grandewbrain-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-grandewbrain")]
-pub trait IGrandewBrainMethods : IGrandewBrain { # [doc = "`.ctor(crate::combat::character::Character)` overload"] fn ctor (self , grandew : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < GrandewBrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GrandewBrain , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x234ab60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (grandew) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < GrandewBrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GrandewBrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x234b0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-grandewbrain")]pub trait IGrandewBrainMethods:IGrandewBrain{#[doc="`.ctor(crate::combat::character::Character)` overload"]fn ctor(self,grandew:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <GrandewBrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x234ab60usize)as*mut u8,();
+(GrandewBrain)__receiver,(crate::combat::character::Character)::core::convert::Into::into(grandew))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <GrandewBrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x234b0c0usize)as*mut u8,();
+(GrandewBrain)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-grandewbrain")]
-impl < __T : IGrandewBrain > IGrandewBrainMethods for __T { }
+#[cfg(feature="combat-grandewbrain")]impl<__T:IGrandewBrain>IGrandewBrainMethods for __T{}
 
-#[cfg(feature = "combat-grandewbrain")]
-impl GrandewBrain { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GrandewBrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GrandewBrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-grandewbrain")]impl GrandewBrain{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "combat-grandewbrain")]
-impl GrandewBrain {
-# [doc = "`.ctor(crate::combat::character::Character)` — overload selector"] pub fn new (grandew : crate :: combat :: character :: Character) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GrandewBrain) , :: core :: stringify ! (new) ,)) ; < Self as IGrandewBrainMethods > :: ctor (this , grandew) ; this }
+#[cfg(feature="combat-grandewbrain")]impl GrandewBrain{#[doc="`.ctor(crate::combat::character::Character)` — overload selector"]pub fn new(grandew:crate::combat::character::Character)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GrandewBrain), ::core::stringify!(new),));
+ <Self as IGrandewBrainMethods> ::ctor(this,grandew);
+this}
 }
 
 #[cfg(feature = "combat-grandewbrain")]

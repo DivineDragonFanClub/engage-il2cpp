@@ -4,31 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/displayinfoattribute/DisplayInfoAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "DisplayInfoAttribute")] pub struct DisplayInfoAttribute {
-# [offset (16)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "order")] pub order : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/displayinfoattribute/DisplayInfoAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="DisplayInfoAttribute")]pub struct DisplayInfoAttribute{#[offset(16)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="order")]pub order:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-displayinfoattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-displayinfoattribute")]
-pub trait IDisplayInfoAttributeMethods : IDisplayInfoAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DisplayInfoAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DisplayInfoAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a92e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-displayinfoattribute")]pub trait IDisplayInfoAttributeMethods:IDisplayInfoAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DisplayInfoAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a92e0usize)as*mut u8,();
+(DisplayInfoAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-displayinfoattribute")]
-impl < __T : IDisplayInfoAttribute > IDisplayInfoAttributeMethods for __T { }
+#[cfg(feature="unity_engine-rendering-displayinfoattribute")]impl<__T:IDisplayInfoAttribute>IDisplayInfoAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-displayinfoattribute")]
-impl DisplayInfoAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisplayInfoAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-displayinfoattribute")]impl DisplayInfoAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-displayinfoattribute")]
-impl DisplayInfoAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisplayInfoAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IDisplayInfoAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-displayinfoattribute")]impl DisplayInfoAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisplayInfoAttribute), ::core::stringify!(new),));
+ <Self as IDisplayInfoAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-displayinfoattribute")]

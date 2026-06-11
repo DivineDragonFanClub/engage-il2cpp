@@ -4,246 +4,337 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ngc/Ngc_MaskTextSequenceBase_Data.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Ngc_MaskTextSequenceBase_Data {
-    pub original_text: :: unity2 :: Il2CppString,
-    pub is_success: bool,
-    pub result_text: :: unity2 :: Il2CppString,
-    pub ng_word_count: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc_CheckMultiTextResultFunction.md"))]#[::unity2::class(namespace="App",name="Ngc.CheckMultiTextResultFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Ngc_CheckMultiTextResultFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc_MaskTextResultFunction.md"))]#[::unity2::class(namespace="App",name="Ngc.MaskTextResultFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Ngc_MaskTextResultFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc_CheckMultiTextSequence.md"))]#[::unity2::class(namespace="App",name="Ngc.CheckMultiTextSequence")]#[parent(crate::app::ngc::Ngc_MaskTextSequenceBase)]pub struct Ngc_CheckMultiTextSequence{#[offset(128)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::ngc::Ngc_CheckMultiTextResultFunction,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc_CheckTextResultFunction.md"))]#[::unity2::class(namespace="App",name="Ngc.CheckTextResultFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Ngc_CheckTextResultFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc.md"))]#[::unity2::class(namespace="App",name="Ngc")]#[parent(crate::system::object::Object)]pub struct Ngc{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc_CheckTextSequence.md"))]#[::unity2::class(namespace="App",name="Ngc.CheckTextSequence")]#[parent(crate::app::ngc::Ngc_MaskTextSequenceBase)]pub struct Ngc_CheckTextSequence{#[offset(128)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::ngc::Ngc_CheckTextResultFunction,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc_MaskTextSequenceBase.md"))]#[::unity2::class(namespace="App",name="Ngc.MaskTextSequenceBase")]#[parent(crate::app::procinst::ProcInst)]pub struct Ngc_MaskTextSequenceBase{#[offset(112)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<crate::app::ngc::Ngc_MaskTextSequenceBase_Data> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc_MaskTextSequenceBase_Data.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Ngc_MaskTextSequenceBase_Data{pub original_text: ::unity2::Il2CppString,pub is_success:bool,pub result_text: ::unity2::Il2CppString,pub ng_word_count:i32,}
+impl::unity2::ClassIdentity for Ngc_MaskTextSequenceBase_Data{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Ngc.MaskTextSequenceBase.Data";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Ngc_MaskTextSequenceBase_Data{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for Ngc_MaskTextSequenceBase_Data {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Ngc.MaskTextSequenceBase.Data";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Ngc_MaskTextSequenceBase_Data {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ngc/Ngc_MaskTextResultFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ngc.MaskTextResultFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Ngc_MaskTextResultFunction {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ngc/Ngc_CheckMultiTextResultFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ngc.CheckMultiTextResultFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Ngc_CheckMultiTextResultFunction {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ngc/Ngc_CheckTextSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ngc.CheckTextSequence")] # [parent (crate :: app :: ngc :: Ngc_MaskTextSequenceBase)] pub struct Ngc_CheckTextSequence {
-# [offset (128)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: ngc :: Ngc_CheckTextResultFunction ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ngc/Ngc_CheckMultiTextSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ngc.CheckMultiTextSequence")] # [parent (crate :: app :: ngc :: Ngc_MaskTextSequenceBase)] pub struct Ngc_CheckMultiTextSequence {
-# [offset (128)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: ngc :: Ngc_CheckMultiTextResultFunction ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ngc/Ngc_MaskTextSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ngc.MaskTextSequence")] # [parent (crate :: app :: ngc :: Ngc_MaskTextSequenceBase)] pub struct Ngc_MaskTextSequence {
-# [offset (128)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: ngc :: Ngc_MaskTextResultFunction ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ngc/Ngc.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ngc")] # [parent (crate :: system :: object :: Object)] pub struct Ngc {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ngc/Ngc_CheckTextResultFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ngc.CheckTextResultFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Ngc_CheckTextResultFunction {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ngc/Ngc_MaskTextSequenceBase.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ngc.MaskTextSequenceBase")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct Ngc_MaskTextSequenceBase {
-# [offset (112)] # [rename (name = "m_Data")] pub m_data : :: unity2 :: Array < crate :: app :: ngc :: Ngc_MaskTextSequenceBase_Data > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ngc/Ngc_MaskTextSequence.md"))]#[::unity2::class(namespace="App",name="Ngc.MaskTextSequence")]#[parent(crate::app::ngc::Ngc_MaskTextSequenceBase)]pub struct Ngc_MaskTextSequence{#[offset(128)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::ngc::Ngc_MaskTextResultFunction,}
 
 }
 
 #[cfg(feature = "app-ngc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextSequenceBase_Data { # [doc = "`Initialize(::unity2::Il2CppString)` overload"] pub fn initialize (& mut self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut Ngc_MaskTextSequenceBase_Data , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b78ec0usize) as * mut u8) ; __inner (self as * mut Ngc_MaskTextSequenceBase_Data , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`IsOk()` overload"] pub fn is_ok (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut Ngc_MaskTextSequenceBase_Data , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b78f50usize) as * mut u8) ; __inner (self as * mut Ngc_MaskTextSequenceBase_Data , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextSequenceBase_Data { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_ok_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-ngc")]
-pub trait INgc_MaskTextResultFunctionMethods : INgc_MaskTextResultFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Ngc_MaskTextResultFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextResultFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(bool, ::unity2::Il2CppString, i32)` overload"] fn invoke (self , is_success : impl :: core :: convert :: Into < bool > , result_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , ng_word_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Ngc_MaskTextResultFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextResultFunction , bool , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e8d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_success) , :: core :: convert :: Into :: into (result_text) , :: core :: convert :: Into :: into (ng_word_count) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-impl < __T : INgc_MaskTextResultFunction > INgc_MaskTextResultFunctionMethods for __T { }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextResultFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextResultFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextResultFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextResultFunction {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ngc_MaskTextResultFunction) , :: core :: stringify ! (new) ,)) ; < Self as INgc_MaskTextResultFunctionMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-ngc")]pub trait INgc_CheckMultiTextResultFunctionMethods:INgc_CheckMultiTextResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Ngc_CheckMultiTextResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225dae0usize)as*mut u8,();
+(Ngc_CheckMultiTextResultFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<bool>)` overload"]fn invoke(self,is_ok:impl::core::convert::Into< ::unity2::Array<bool> >)->(){unsafe{let __receiver= <Ngc_CheckMultiTextResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225db00usize)as*mut u8,();
+(Ngc_CheckMultiTextResultFunction)__receiver,(::unity2::Array<bool>)::core::convert::Into::into(is_ok))}
+}
 }
 
-#[cfg(feature = "app-ngc")]
-pub trait INgc_CheckMultiTextResultFunctionMethods : INgc_CheckMultiTextResultFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Ngc_CheckMultiTextResultFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_CheckMultiTextResultFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225dae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Array<bool>)` overload"] fn invoke (self , is_ok : impl :: core :: convert :: Into < :: unity2 :: Array < bool > >) -> () { unsafe { let __receiver = < Ngc_CheckMultiTextResultFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_CheckMultiTextResultFunction , :: unity2 :: Array < bool > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225db00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_ok) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ngc")]impl<__T:INgc_CheckMultiTextResultFunction>INgc_CheckMultiTextResultFunctionMethods for __T{}
 
-#[cfg(feature = "app-ngc")]
-impl < __T : INgc_CheckMultiTextResultFunction > INgc_CheckMultiTextResultFunctionMethods for __T { }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckMultiTextResultFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckMultiTextResultFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckMultiTextResultFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckMultiTextResultFunction {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ngc_CheckMultiTextResultFunction) , :: core :: stringify ! (new) ,)) ; < Self as INgc_CheckMultiTextResultFunctionMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-ngc")]impl Ngc_CheckMultiTextResultFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckTextSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::ngc::Ngc_CheckTextResultFunction)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_CheckTextResultFunction >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: ngc :: Ngc_CheckTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-pub trait INgc_CheckTextSequenceMethods : INgc_CheckTextSequence { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::ngc::Ngc_CheckTextResultFunction)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_CheckTextResultFunction >) -> () { unsafe { let __receiver = < Ngc_CheckTextSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_CheckTextSequence , :: unity2 :: Il2CppString , crate :: app :: ngc :: Ngc_CheckTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } # [doc = "`CallResultFunc()` overload"] fn call_result_func (self ,) -> () { unsafe { let __receiver = < Ngc_CheckTextSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_CheckTextSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-impl < __T : INgc_CheckTextSequence > INgc_CheckTextSequenceMethods for __T { }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckTextSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn call_result_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckTextSequence {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::ngc::Ngc_CheckTextResultFunction)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString , result_func : crate :: app :: ngc :: Ngc_CheckTextResultFunction) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ngc_CheckTextSequence) , :: core :: stringify ! (new) ,)) ; < Self as INgc_CheckTextSequenceMethods > :: ctor (this , text , result_func) ; this }
+#[cfg(feature="app-ngc")]impl Ngc_CheckMultiTextResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ngc_CheckMultiTextResultFunction), ::core::stringify!(new),));
+ <Self as INgc_CheckMultiTextResultFunctionMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckMultiTextSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, crate::app::ngc::Ngc_CheckMultiTextResultFunction)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , texts : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_CheckMultiTextResultFunction >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , crate :: app :: ngc :: Ngc_CheckMultiTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e0f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (texts) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-pub trait INgc_CheckMultiTextSequenceMethods : INgc_CheckMultiTextSequence { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, crate::app::ngc::Ngc_CheckMultiTextResultFunction)` overload"] fn ctor (self , texts : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_CheckMultiTextResultFunction >) -> () { unsafe { let __receiver = < Ngc_CheckMultiTextSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_CheckMultiTextSequence , crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , crate :: app :: ngc :: Ngc_CheckMultiTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225dea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (texts) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } # [doc = "`CallResultFunc()` overload"] fn call_result_func (self ,) -> () { unsafe { let __receiver = < Ngc_CheckMultiTextSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_CheckMultiTextSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225dff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-impl < __T : INgc_CheckMultiTextSequence > INgc_CheckMultiTextSequenceMethods for __T { }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckMultiTextSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckMultiTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn call_result_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckMultiTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckMultiTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckMultiTextSequence {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, crate::app::ngc::Ngc_CheckMultiTextResultFunction)` — overload selector"] pub fn new (texts : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , result_func : crate :: app :: ngc :: Ngc_CheckMultiTextResultFunction) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ngc_CheckMultiTextSequence) , :: core :: stringify ! (new) ,)) ; < Self as INgc_CheckMultiTextSequenceMethods > :: ctor (this , texts , result_func) ; this }
+#[cfg(feature="app-ngc")]pub trait INgc_MaskTextResultFunctionMethods:INgc_MaskTextResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Ngc_MaskTextResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225e8b0usize)as*mut u8,();
+(Ngc_MaskTextResultFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool, ::unity2::Il2CppString, i32)` overload"]fn invoke(self,is_success:impl::core::convert::Into<bool> ,result_text:impl::core::convert::Into< ::unity2::Il2CppString> ,ng_word_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Ngc_MaskTextResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225e8d0usize)as*mut u8,();
+(Ngc_MaskTextResultFunction)__receiver,(bool)::core::convert::Into::into(is_success),(::unity2::Il2CppString)::core::convert::Into::into(result_text),(i32)::core::convert::Into::into(ng_word_count))}
+}
 }
 
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::ngc::Ngc_MaskTextResultFunction)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_MaskTextResultFunction >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: ngc :: Ngc_MaskTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225ec90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ngc")]impl<__T:INgc_MaskTextResultFunction>INgc_MaskTextResultFunctionMethods for __T{}
 
-#[cfg(feature = "app-ngc")]
-pub trait INgc_MaskTextSequenceMethods : INgc_MaskTextSequence { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::ngc::Ngc_MaskTextResultFunction)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_MaskTextResultFunction >) -> () { unsafe { let __receiver = < Ngc_MaskTextSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextSequence , :: unity2 :: Il2CppString , crate :: app :: ngc :: Ngc_MaskTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225ec10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } # [doc = "`CallResultFunc()` overload"] fn call_result_func (self ,) -> () { unsafe { let __receiver = < Ngc_MaskTextSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225ec40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-impl < __T : INgc_MaskTextSequence > INgc_MaskTextSequenceMethods for __T { }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn call_result_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextSequence {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::ngc::Ngc_MaskTextResultFunction)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString , result_func : crate :: app :: ngc :: Ngc_MaskTextResultFunction) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ngc_MaskTextSequence) , :: core :: stringify ! (new) ,)) ; < Self as INgc_MaskTextSequenceMethods > :: ctor (this , text , result_func) ; this }
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextResultFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-ngc")]
-impl Ngc { # [doc = "`CreateBindMaskText(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::ngc::Ngc_MaskTextResultFunction)` overload"] pub fn create_bind_mask_text (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_MaskTextResultFunction >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: ngc :: Ngc_MaskTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f187c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCheckText(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::ngc::Ngc_CheckTextResultFunction)` overload"] pub fn create_bind_check_text (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_CheckTextResultFunction >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: ngc :: Ngc_CheckTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f187d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCheckMultiText(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, crate::app::ngc::Ngc_CheckMultiTextResultFunction)` overload"] pub fn create_bind_check_multi_text (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , texts : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > , result_func : impl :: core :: convert :: Into < crate :: app :: ngc :: Ngc_CheckMultiTextResultFunction >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , crate :: app :: ngc :: Ngc_CheckMultiTextResultFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f187e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (texts) , :: core :: convert :: Into :: into (result_func) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc { pub fn create_bind_mask_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_check_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_check_multi_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-ngc")]
-pub trait INgc_CheckTextResultFunctionMethods : INgc_CheckTextResultFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Ngc_CheckTextResultFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_CheckTextResultFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e3f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(bool)` overload"] fn invoke (self , is_ok : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Ngc_CheckTextResultFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_CheckTextResultFunction , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_ok) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ngc")]
-impl < __T : INgc_CheckTextResultFunction > INgc_CheckTextResultFunctionMethods for __T { }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckTextResultFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckTextResultFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_CheckTextResultFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-ngc")]
-impl Ngc_CheckTextResultFunction {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ngc_CheckTextResultFunction) , :: core :: stringify ! (new) ,)) ; < Self as INgc_CheckTextResultFunctionMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ngc_MaskTextResultFunction), ::core::stringify!(new),));
+ <Self as INgc_MaskTextResultFunctionMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-ngc")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Ngc_MaskTextSequenceBase_unity2_raw { use super :: * ; pub unsafe fn call_result_func (this : Ngc_MaskTextSequenceBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CallResultFunc") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CallResultFunc" , < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (Ngc_MaskTextSequenceBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="app-ngc")]impl Ngc_CheckMultiTextSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, crate::app::ngc::Ngc_CheckMultiTextResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,texts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> > ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_CheckMultiTextResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225e0f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)::core::convert::Into::into(texts),(crate::app::ngc::Ngc_CheckMultiTextResultFunction)::core::convert::Into::into(result_func))}
+}
+}
 
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextSequenceBase { # [doc = "`ThreadFunc(crate::system::object::Object)` overload"] pub fn thread_func (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225ee60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ngc")]pub trait INgc_CheckMultiTextSequenceMethods:INgc_CheckMultiTextSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, crate::app::ngc::Ngc_CheckMultiTextResultFunction)` overload"]fn ctor(self,texts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> > ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_CheckMultiTextResultFunction>)->(){unsafe{let __receiver= <Ngc_CheckMultiTextSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225dea0usize)as*mut u8,();
+(Ngc_CheckMultiTextSequence)__receiver,(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)::core::convert::Into::into(texts),(crate::app::ngc::Ngc_CheckMultiTextResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`CallResultFunc()` overload"]fn call_result_func(self,)->(){unsafe{let __receiver= <Ngc_CheckMultiTextSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225dff0usize)as*mut u8,();
+(Ngc_CheckMultiTextSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ngc")]
-pub trait INgc_MaskTextSequenceBaseMethods : INgc_MaskTextSequenceBase { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Ngc_MaskTextSequenceBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextSequenceBase , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"] fn ctor_2 (self , texts : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < Ngc_MaskTextSequenceBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextSequenceBase , crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225ded0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (texts) , :: core :: option :: Option :: None) } } } # [doc = "`StartThread()` overload"] fn start_thread (self ,) -> () { unsafe { let __receiver = < Ngc_MaskTextSequenceBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextSequenceBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225ed20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitThread()` overload"] fn wait_thread (self ,) -> () { unsafe { let __receiver = < Ngc_MaskTextSequenceBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextSequenceBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225ee00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CallResultFunc()` overload"] fn call_result_func (self ,) -> () { unsafe { let __receiver = < Ngc_MaskTextSequenceBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Ngc_MaskTextSequenceBase_unity2_raw :: call_result_func (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Result()` overload"] fn result (self ,) -> () { unsafe { let __receiver = < Ngc_MaskTextSequenceBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextSequenceBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225ee50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst)` overload"] fn create_bind_impl (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < Ngc_MaskTextSequenceBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ngc_MaskTextSequenceBase , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x225e180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ngc")]impl<__T:INgc_CheckMultiTextSequence>INgc_CheckMultiTextSequenceMethods for __T{}
 
-#[cfg(feature = "app-ngc")]
-impl < __T : INgc_MaskTextSequenceBase > INgc_MaskTextSequenceBaseMethods for __T { }
+#[cfg(feature="app-ngc")]impl Ngc_CheckMultiTextSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn call_result_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextSequenceBase { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_thread_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn wait_thread_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn call_result_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn thread_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ngc_MaskTextSequenceBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-ngc")]impl Ngc_CheckMultiTextSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, crate::app::ngc::Ngc_CheckMultiTextResultFunction)` — overload selector"]pub fn new(texts:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,result_func:crate::app::ngc::Ngc_CheckMultiTextResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ngc_CheckMultiTextSequence), ::core::stringify!(new),));
+ <Self as INgc_CheckMultiTextSequenceMethods> ::ctor(this,texts,result_func);
+this}
+}
 
-#[cfg(feature = "app-ngc")]
-impl Ngc_MaskTextSequenceBase {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ngc_MaskTextSequenceBase) , :: core :: stringify ! (new) ,)) ; < Self as INgc_MaskTextSequenceBaseMethods > :: ctor (this , text) ; this }
+#[cfg(feature="app-ngc")]pub trait INgc_CheckTextResultFunctionMethods:INgc_CheckTextResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Ngc_CheckTextResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225e3f0usize)as*mut u8,();
+(Ngc_CheckTextResultFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool)` overload"]fn invoke(self,is_ok:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Ngc_CheckTextResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225e410usize)as*mut u8,();
+(Ngc_CheckTextResultFunction)__receiver,(bool)::core::convert::Into::into(is_ok))}
+}
+}
 
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` — overload selector"] pub fn new_2 (texts : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ngc_MaskTextSequenceBase) , :: core :: stringify ! (new_2) ,)) ; < Self as INgc_MaskTextSequenceBaseMethods > :: ctor_2 (this , texts) ; this }
+#[cfg(feature="app-ngc")]impl<__T:INgc_CheckTextResultFunction>INgc_CheckTextResultFunctionMethods for __T{}
+
+#[cfg(feature="app-ngc")]impl Ngc_CheckTextResultFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_CheckTextResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ngc_CheckTextResultFunction), ::core::stringify!(new),));
+ <Self as INgc_CheckTextResultFunctionMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc{#[doc="`CreateBindMaskText(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::ngc::Ngc_MaskTextResultFunction)` overload"]pub fn create_bind_mask_text(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,text:impl::core::convert::Into< ::unity2::Il2CppString> ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_MaskTextResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f187c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::ngc::Ngc_MaskTextResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`CreateBindCheckText(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::ngc::Ngc_CheckTextResultFunction)` overload"]pub fn create_bind_check_text(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,text:impl::core::convert::Into< ::unity2::Il2CppString> ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_CheckTextResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f187d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::ngc::Ngc_CheckTextResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`CreateBindCheckMultiText(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, crate::app::ngc::Ngc_CheckMultiTextResultFunction)` overload"]pub fn create_bind_check_multi_text(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,texts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> > ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_CheckMultiTextResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f187e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)::core::convert::Into::into(texts),(crate::app::ngc::Ngc_CheckMultiTextResultFunction)::core::convert::Into::into(result_func))}
+}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc{pub fn create_bind_mask_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_check_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_check_multi_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_CheckTextSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::ngc::Ngc_CheckTextResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,text:impl::core::convert::Into< ::unity2::Il2CppString> ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_CheckTextResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225e820usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::ngc::Ngc_CheckTextResultFunction)::core::convert::Into::into(result_func))}
+}
+}
+
+#[cfg(feature="app-ngc")]pub trait INgc_CheckTextSequenceMethods:INgc_CheckTextSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::ngc::Ngc_CheckTextResultFunction)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_CheckTextResultFunction>)->(){unsafe{let __receiver= <Ngc_CheckTextSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225e6f0usize)as*mut u8,();
+(Ngc_CheckTextSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::ngc::Ngc_CheckTextResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`CallResultFunc()` overload"]fn call_result_func(self,)->(){unsafe{let __receiver= <Ngc_CheckTextSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225e7c0usize)as*mut u8,();
+(Ngc_CheckTextSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-ngc")]impl<__T:INgc_CheckTextSequence>INgc_CheckTextSequenceMethods for __T{}
+
+#[cfg(feature="app-ngc")]impl Ngc_CheckTextSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn call_result_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_CheckTextSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::ngc::Ngc_CheckTextResultFunction)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,result_func:crate::app::ngc::Ngc_CheckTextResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ngc_CheckTextSequence), ::core::stringify!(new),));
+ <Self as INgc_CheckTextSequenceMethods> ::ctor(this,text,result_func);
+this}
+}
+
+#[cfg(feature="app-ngc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Ngc_MaskTextSequenceBase_unity2_raw{use super:: * ;
+pub unsafe fn call_result_func(this:Ngc_MaskTextSequenceBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CallResultFunc").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CallResultFunc", <Ngc_MaskTextSequenceBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(Ngc_MaskTextSequenceBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextSequenceBase{#[doc="`ThreadFunc(crate::system::object::Object)` overload"]pub fn thread_func(obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225ee60usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+}
+
+#[cfg(feature="app-ngc")]pub trait INgc_MaskTextSequenceBaseMethods:INgc_MaskTextSequenceBase{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Ngc_MaskTextSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225e720usize)as*mut u8,();
+(Ngc_MaskTextSequenceBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]fn ctor_2(self,texts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <Ngc_MaskTextSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225ded0usize)as*mut u8,();
+(Ngc_MaskTextSequenceBase)__receiver,(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)::core::convert::Into::into(texts))}
+}
+#[doc="`StartThread()` overload"]fn start_thread(self,)->(){unsafe{let __receiver= <Ngc_MaskTextSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225ed20usize)as*mut u8,();
+(Ngc_MaskTextSequenceBase)__receiver)}
+}
+#[doc="`WaitThread()` overload"]fn wait_thread(self,)->(){unsafe{let __receiver= <Ngc_MaskTextSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225ee00usize)as*mut u8,();
+(Ngc_MaskTextSequenceBase)__receiver)}
+}
+#[doc="`CallResultFunc()` overload"]fn call_result_func(self,)->(){unsafe{let __receiver= <Ngc_MaskTextSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__Ngc_MaskTextSequenceBase_unity2_raw::call_result_func(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Result()` overload"]fn result(self,)->(){unsafe{let __receiver= <Ngc_MaskTextSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225ee50usize)as*mut u8,();
+(Ngc_MaskTextSequenceBase)__receiver)}
+}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst)` overload"]fn create_bind_impl(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <Ngc_MaskTextSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225e180usize)as*mut u8,();
+(Ngc_MaskTextSequenceBase)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-ngc")]impl<__T:INgc_MaskTextSequenceBase>INgc_MaskTextSequenceBaseMethods for __T{}
+
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextSequenceBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn wait_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn call_result_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn thread_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextSequenceBase{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ngc_MaskTextSequenceBase), ::core::stringify!(new),));
+ <Self as INgc_MaskTextSequenceBaseMethods> ::ctor(this,text);
+this}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` — overload selector"]pub fn new_2(texts:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ngc_MaskTextSequenceBase), ::core::stringify!(new_2),));
+ <Self as INgc_MaskTextSequenceBaseMethods> ::ctor_2(this,texts);
+this}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextSequenceBase_Data{#[doc="`Initialize(::unity2::Il2CppString)` overload"]pub fn initialize(&mut self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b78ec0usize)as*mut u8,();
+(*mut Ngc_MaskTextSequenceBase_Data)self as*mut Ngc_MaskTextSequenceBase_Data,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`IsOk()` overload"]pub fn is_ok(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b78f50usize)as*mut u8,bool;
+(*mut Ngc_MaskTextSequenceBase_Data)self as*mut Ngc_MaskTextSequenceBase_Data)}
+}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextSequenceBase_Data{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_ok_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::ngc::Ngc_MaskTextResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,text:impl::core::convert::Into< ::unity2::Il2CppString> ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_MaskTextResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225ec90usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::ngc::Ngc_MaskTextResultFunction)::core::convert::Into::into(result_func))}
+}
+}
+
+#[cfg(feature="app-ngc")]pub trait INgc_MaskTextSequenceMethods:INgc_MaskTextSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::ngc::Ngc_MaskTextResultFunction)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,result_func:impl::core::convert::Into<crate::app::ngc::Ngc_MaskTextResultFunction>)->(){unsafe{let __receiver= <Ngc_MaskTextSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225ec10usize)as*mut u8,();
+(Ngc_MaskTextSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::ngc::Ngc_MaskTextResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`CallResultFunc()` overload"]fn call_result_func(self,)->(){unsafe{let __receiver= <Ngc_MaskTextSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225ec40usize)as*mut u8,();
+(Ngc_MaskTextSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-ngc")]impl<__T:INgc_MaskTextSequence>INgc_MaskTextSequenceMethods for __T{}
+
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn call_result_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ngc")]impl Ngc_MaskTextSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::ngc::Ngc_MaskTextResultFunction)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,result_func:crate::app::ngc::Ngc_MaskTextResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ngc_MaskTextSequence), ::core::stringify!(new),));
+ <Self as INgc_MaskTextSequenceMethods> ::ctor(this,text,result_func);
+this}
 }
 
 #[cfg(feature = "app-ngc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Ngc_MaskTextSequenceBase_Data;
-    pub use super::Ngc_MaskTextResultFunction;
-    pub use super::INgc_MaskTextResultFunction;
-    pub use super::INgc_MaskTextResultFunctionMethods;
     pub use super::Ngc_CheckMultiTextResultFunction;
     pub use super::INgc_CheckMultiTextResultFunction;
     pub use super::INgc_CheckMultiTextResultFunctionMethods;
-    pub use super::Ngc_CheckTextSequence;
-    pub use super::INgc_CheckTextSequence;
-    pub use super::INgc_CheckTextSequenceMethods;
+    pub use super::Ngc_MaskTextResultFunction;
+    pub use super::INgc_MaskTextResultFunction;
+    pub use super::INgc_MaskTextResultFunctionMethods;
     pub use super::Ngc_CheckMultiTextSequence;
     pub use super::INgc_CheckMultiTextSequence;
     pub use super::INgc_CheckMultiTextSequenceMethods;
-    pub use super::Ngc_MaskTextSequence;
-    pub use super::INgc_MaskTextSequence;
-    pub use super::INgc_MaskTextSequenceMethods;
-    pub use super::Ngc;
-    pub use super::INgc;
     pub use super::Ngc_CheckTextResultFunction;
     pub use super::INgc_CheckTextResultFunction;
     pub use super::INgc_CheckTextResultFunctionMethods;
+    pub use super::Ngc;
+    pub use super::INgc;
+    pub use super::Ngc_CheckTextSequence;
+    pub use super::INgc_CheckTextSequence;
+    pub use super::INgc_CheckTextSequenceMethods;
     pub use super::Ngc_MaskTextSequenceBase;
     pub use super::INgc_MaskTextSequenceBase;
     pub use super::INgc_MaskTextSequenceBaseMethods;
+    pub use super::Ngc_MaskTextSequenceBase_Data;
+    pub use super::Ngc_MaskTextSequence;
+    pub use super::INgc_MaskTextSequence;
+    pub use super::INgc_MaskTextSequenceMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

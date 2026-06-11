@@ -4,373 +4,608 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct InventorySubMenu {
-# [static_field] # [rename (name = "MenuOffsetX")] pub menu_offset_x : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog.DecideCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.UseMenuItem")] # [parent (crate :: app :: inventorysubmenu :: InventorySubMenu_BaseMenuItem)] pub struct InventorySubMenu_UseMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.UseMenuItem.ConfirmDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.UseMenuItem.ConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct InventorySubMenu_UseMenuItem_ConfirmDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_ReceiveMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.ReceiveMenuItem")]#[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]pub struct InventorySubMenu_ReceiveMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.ThrowAwayMenuItem")] # [parent (crate :: app :: inventorysubmenu :: InventorySubMenu_BaseMenuItem)] pub struct InventorySubMenu_ThrowAwayMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_TradeMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.TradeMenuItem")]#[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]pub struct InventorySubMenu_TradeMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_EquipMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.EquipMenuItem")] # [parent (crate :: app :: inventorysubmenu :: InventorySubMenu_BaseMenuItem)] pub struct InventorySubMenu_EquipMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_BaseMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.BaseMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct InventorySubMenu_BaseMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_StoreMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.StoreMenuItem")] # [parent (crate :: app :: inventorysubmenu :: InventorySubMenu_BaseMenuItem)] pub struct InventorySubMenu_StoreMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_TakeOffMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.TakeOffMenuItem")]#[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]pub struct InventorySubMenu_TakeOffMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ReceiveMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.ReceiveMenuItem")] # [parent (crate :: app :: inventorysubmenu :: InventorySubMenu_BaseMenuItem)] pub struct InventorySubMenu_ReceiveMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_StoreMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.StoreMenuItem")]#[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]pub struct InventorySubMenu_StoreMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct InventorySubMenu{#[static_field]#[rename(name="MenuOffsetX")]pub menu_offset_x:f32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_TakeOffMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.TakeOffMenuItem")] # [parent (crate :: app :: inventorysubmenu :: InventorySubMenu_BaseMenuItem)] pub struct InventorySubMenu_TakeOffMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.ThrowAwayMenuItem")]#[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]pub struct InventorySubMenu_ThrowAwayMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_TradeMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.TradeMenuItem")] # [parent (crate :: app :: inventorysubmenu :: InventorySubMenu_BaseMenuItem)] pub struct InventorySubMenu_TradeMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_UnitItemIndex")]pub m_unit_item_index:i32, #[offset(128)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_SortMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.SortMenuItem")] # [parent (crate :: app :: inventorysubmenu :: InventorySubMenu_BaseMenuItem)] pub struct InventorySubMenu_SortMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.UseMenuItem.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct InventorySubMenu_UseMenuItem_ConfirmDialog{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog.ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_UnitItemIndex")] pub m_unit_item_index : i32 ,
-# [offset (128)] # [rename (name = "m_DecideCallback")] pub m_decide_callback : crate :: app :: inventorysubmenu :: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_EquipMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.EquipMenuItem")]#[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]pub struct InventorySubMenu_EquipMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.UseMenuItem.ConfirmDialog.YesMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem {
-# [offset (112)] # [rename (name = "m_YesEventHandler")] pub m_yes_event_handler : crate :: app :: inventorysubmenu :: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_SortMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.SortMenuItem")]#[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]pub struct InventorySubMenu_SortMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog.DecideCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.UseMenuItem.ConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.UseMenuItem.ConfirmDialog.YesEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_BaseMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventorySubMenu.BaseMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct InventorySubMenu_BaseMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem.md"))]#[::unity2::class(namespace="App",name="InventorySubMenu.UseMenuItem")]#[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]pub struct InventorySubMenu_UseMenuItem{}
 
 }
 
 #[cfg(feature = "app-inventorysubmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , parent_menu : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279c840usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenuMethods : IInventorySubMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < InventorySubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279cba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279cc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu > IInventorySubMenuMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods:IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff6e0usize)as*mut u8,();
+(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff4d0usize)as*mut u8,();
+(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)__receiver)}
+}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_UseMenuItemMethods : IInventorySubMenu_UseMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu_UseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcaf60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventorySubMenu_UseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcafe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_UseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcb770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnConfirmYes()` overload"] fn on_confirm_yes (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_UseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcb890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UseItem()` overload"] fn use_item (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_UseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcbaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_UseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcbe30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback>IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods for __T{}
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_UseMenuItem > IInventorySubMenu_UseMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_confirm_yes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn use_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_UseMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_UseMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , item_data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , yes_event_handler : impl :: core :: convert :: Into < crate :: app :: inventorysubmenu :: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler >) -> crate :: app :: inventorysubmenu :: InventorySubMenu_UseMenuItem_ConfirmDialog { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: itemdata :: ItemData , crate :: app :: inventorysubmenu :: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: inventorysubmenu :: InventorySubMenu_UseMenuItem_ConfirmDialog = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b668c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (item_data) , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_UseMenuItem_ConfirmDialogMethods : IInventorySubMenu_UseMenuItem_ConfirmDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , dialog_content : impl :: core :: convert :: Into < crate :: app :: basicdialogcontent :: BasicDialogContent >) -> () { unsafe { let __receiver = < InventorySubMenu_UseMenuItem_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem_ConfirmDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicdialogcontent :: BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b66b00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (dialog_content) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_UseMenuItem_ConfirmDialog > IInventorySubMenu_UseMenuItem_ConfirmDialogMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , dialog_content : crate :: app :: basicdialogcontent :: BasicDialogContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_UseMenuItem_ConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_UseMenuItem_ConfirmDialogMethods > :: ctor (this , menu_item_list , dialog_content) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_ThrowAwayMenuItemMethods : IInventorySubMenu_ThrowAwayMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ThrowAway()` overload"] fn throw_away (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcaa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_ThrowAwayMenuItem > IInventorySubMenu_ThrowAwayMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn throw_away_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_ThrowAwayMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_ThrowAwayMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods:IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff740usize)as*mut u8,();
+(InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff760usize)as*mut u8,();
+(InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)__receiver)}
+}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_EquipMenuItemMethods : IInventorySubMenu_EquipMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu_EquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_EquipMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc8db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventorySubMenu_EquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_EquipMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc8e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_EquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_EquipMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_EquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_EquipMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler>IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_EquipMenuItem > IInventorySubMenu_EquipMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_EquipMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_EquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_EquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_EquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_EquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_EquipMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_EquipMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_EquipMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_StoreMenuItemMethods : IInventorySubMenu_StoreMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu_StoreMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_StoreMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventorySubMenu_StoreMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_StoreMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_StoreMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_StoreMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_StoreMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_StoreMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_StoreMenuItem > IInventorySubMenu_StoreMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_StoreMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_StoreMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_StoreMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_StoreMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_StoreMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_StoreMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_StoreMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_StoreMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_ReceiveMenuItemMethods : IInventorySubMenu_ReceiveMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu_ReceiveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ReceiveMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventorySubMenu_ReceiveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ReceiveMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_ReceiveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ReceiveMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_ReceiveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ReceiveMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_ReceiveMenuItem > IInventorySubMenu_ReceiveMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ReceiveMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ReceiveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ReceiveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ReceiveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ReceiveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ReceiveMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_ReceiveMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_ReceiveMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_ReceiveMenuItemMethods:IInventorySubMenu_ReceiveMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu_ReceiveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9580usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu_ReceiveMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventorySubMenu_ReceiveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9600usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventorySubMenu_ReceiveMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_ReceiveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9780usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_ReceiveMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_ReceiveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9ab0usize)as*mut u8,();
+(InventorySubMenu_ReceiveMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_item_index : impl :: core :: convert :: Into < i32 > , decide_callback : impl :: core :: convert :: Into < crate :: app :: inventorysubmenu :: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , i32 , crate :: app :: inventorysubmenu :: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b662c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (unit_item_index) , :: core :: convert :: Into :: into (decide_callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_ReceiveMenuItem>IInventorySubMenu_ReceiveMenuItemMethods for __T{}
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods : IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b66240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog > IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods > :: ctor (this , menu_item_list) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ReceiveMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_TakeOffMenuItemMethods : IInventorySubMenu_TakeOffMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu_TakeOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_TakeOffMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventorySubMenu_TakeOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_TakeOffMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_TakeOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_TakeOffMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_TakeOffMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_TakeOffMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fca400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_TakeOffMenuItem > IInventorySubMenu_TakeOffMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_TakeOffMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_TakeOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_TakeOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_TakeOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_TakeOffMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_TakeOffMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_TakeOffMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_TakeOffMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ReceiveMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_ReceiveMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_ReceiveMenuItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_TradeMenuItemMethods : IInventorySubMenu_TradeMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu_TradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_TradeMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcaa70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventorySubMenu_TradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_TradeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcaaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_TradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_TradeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcabd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_TradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_TradeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcaf50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_TradeMenuItem > IInventorySubMenu_TradeMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_TradeMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_TradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_TradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_TradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_TradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_TradeMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_TradeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_TradeMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_TradeMenuItemMethods:IInventorySubMenu_TradeMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu_TradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcaa70usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu_TradeMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventorySubMenu_TradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcaaf0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventorySubMenu_TradeMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_TradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcabd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_TradeMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_TradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcaf50usize)as*mut u8,();
+(InventorySubMenu_TradeMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_SortMenuItemMethods : IInventorySubMenu_SortMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InventorySubMenu_SortMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_SortMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventorySubMenu_SortMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_SortMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_SortMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_SortMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_SortMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_SortMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc9d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_TradeMenuItem>IInventorySubMenu_TradeMenuItemMethods for __T{}
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_SortMenuItem > IInventorySubMenu_SortMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_SortMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_SortMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_SortMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_SortMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_SortMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_SortMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_SortMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_SortMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_TradeMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods : IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32, crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_item_index : impl :: core :: convert :: Into < i32 > , decide_callback : impl :: core :: convert :: Into < crate :: app :: inventorysubmenu :: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback >) -> () { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes , :: unity2 :: Il2CppString , crate :: app :: unit :: Unit , i32 , crate :: app :: inventorysubmenu :: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ff450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (unit_item_index) , :: core :: convert :: Into :: into (decide_callback) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ff4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes > IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32, crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString , unit : crate :: app :: unit :: Unit , unit_item_index : i32 , decide_callback : crate :: app :: inventorysubmenu :: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods > :: ctor (this , text , unit , unit_item_index , decide_callback) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_TradeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_TradeMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_TradeMenuItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods : IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem { # [doc = "`.ctor(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` overload"] fn ctor (self , yes_event_handler : impl :: core :: convert :: Into < crate :: app :: inventorysubmenu :: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler >) -> () { unsafe { let __receiver = < InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem , crate :: app :: inventorysubmenu :: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ff9b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ffa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem > IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem {
-# [doc = "`.ctor(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` — overload selector"] pub fn new (yes_event_handler : crate :: app :: inventorysubmenu :: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods > :: ctor (this , yes_event_handler) ; this }
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_BaseMenuItemMethods:IInventorySubMenu_BaseMenuItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc8c40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_BaseMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <InventorySubMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc8cf0usize)as*mut u8,();
+(InventorySubMenu_BaseMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc8da0usize)as*mut u8,();
+(InventorySubMenu_BaseMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods : IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ff6e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ff4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_BaseMenuItem>IInventorySubMenu_BaseMenuItemMethods for __T{}
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback > IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_BaseMenuItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods : IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ff740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ff760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler > IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_BaseMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_BaseMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_BaseMenuItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_BaseMenuItemMethods : IInventorySubMenu_BaseMenuItem { # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventorySubMenu_BaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_BaseMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc8c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_BaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_BaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc8cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InventorySubMenu_BaseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventorySubMenu_BaseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fc8da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_TakeOffMenuItemMethods:IInventorySubMenu_TakeOffMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu_TakeOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca1a0usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu_TakeOffMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventorySubMenu_TakeOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca220usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventorySubMenu_TakeOffMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_TakeOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca2e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_TakeOffMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_TakeOffMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca400usize)as*mut u8,();
+(InventorySubMenu_TakeOffMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl < __T : IInventorySubMenu_BaseMenuItem > IInventorySubMenu_BaseMenuItemMethods for __T { }
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_TakeOffMenuItem>IInventorySubMenu_TakeOffMenuItemMethods for __T{}
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_BaseMenuItem { pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_BaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_BaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventorySubMenu_BaseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_TakeOffMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_BaseMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventorySubMenu_BaseMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventorySubMenu_BaseMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_TakeOffMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_TakeOffMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_TakeOffMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_StoreMenuItemMethods:IInventorySubMenu_StoreMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu_StoreMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9da0usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu_StoreMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventorySubMenu_StoreMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9e20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventorySubMenu_StoreMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_StoreMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9ed0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_StoreMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_StoreMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca190usize)as*mut u8,();
+(InventorySubMenu_StoreMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_StoreMenuItem>IInventorySubMenu_StoreMenuItemMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_StoreMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_StoreMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_StoreMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_StoreMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,parent_menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x279c840usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(parent_menu),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenuMethods:IInventorySubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <InventorySubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279cba0usize)as*mut u8,();
+(InventorySubMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279cc30usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu>IInventorySubMenuMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu), ::core::stringify!(new),));
+ <Self as IInventorySubMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_ThrowAwayMenuItemMethods:IInventorySubMenu_ThrowAwayMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca410usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu_ThrowAwayMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca490usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventorySubMenu_ThrowAwayMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca690usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_ThrowAwayMenuItem)__receiver)}
+}
+#[doc="`ThrowAway()` overload"]fn throw_away(self,)->(){unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fca7a0usize)as*mut u8,();
+(InventorySubMenu_ThrowAwayMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcaa60usize)as*mut u8,();
+(InventorySubMenu_ThrowAwayMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_ThrowAwayMenuItem>IInventorySubMenu_ThrowAwayMenuItemMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn throw_away_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_ThrowAwayMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_ThrowAwayMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods:IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32, crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item_index:impl::core::convert::Into<i32> ,decide_callback:impl::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback>)->(){unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff450usize)as*mut u8,();
+(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(unit_item_index),(crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)::core::convert::Into::into(decide_callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff4b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes>IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, i32, crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,unit:crate::app::unit::Unit,unit_item_index:i32,decide_callback:crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,text,unit,unit_item_index,decide_callback);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,item_data:impl::core::convert::Into<crate::app::itemdata::ItemData> ,yes_event_handler:impl::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler>)->crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b668c0usize)as*mut u8,crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::itemdata::ItemData)::core::convert::Into::into(item_data),(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_UseMenuItem_ConfirmDialogMethods:IInventorySubMenu_UseMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,dialog_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <InventorySubMenu_UseMenuItem_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66b00usize)as*mut u8,();
+(InventorySubMenu_UseMenuItem_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(dialog_content))}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_UseMenuItem_ConfirmDialog>IInventorySubMenu_UseMenuItem_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,dialog_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_UseMenuItem_ConfirmDialogMethods> ::ctor(this,menu_item_list,dialog_content);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_EquipMenuItemMethods:IInventorySubMenu_EquipMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu_EquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc8db0usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu_EquipMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventorySubMenu_EquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc8e30usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventorySubMenu_EquipMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_EquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9440usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_EquipMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_EquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9570usize)as*mut u8,();
+(InventorySubMenu_EquipMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_EquipMenuItem>IInventorySubMenu_EquipMenuItemMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_EquipMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_EquipMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_EquipMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_EquipMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_SortMenuItemMethods:IInventorySubMenu_SortMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu_SortMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9ac0usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu_SortMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventorySubMenu_SortMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9b40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventorySubMenu_SortMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_SortMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_SortMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_SortMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc9d90usize)as*mut u8,();
+(InventorySubMenu_SortMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_SortMenuItem>IInventorySubMenu_SortMenuItemMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_SortMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_SortMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_SortMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_SortMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods:IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler>)->(){unsafe{let __receiver= <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff9b0usize)as*mut u8,();
+(InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem)__receiver,(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ffa60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem>IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` — overload selector"]pub fn new(yes_event_handler:crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods> ::ctor(this,yes_event_handler);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item_index:impl::core::convert::Into<i32> ,decide_callback:impl::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b662c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(unit_item_index),(crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)::core::convert::Into::into(decide_callback))}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods:IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66240usize)as*mut u8,();
+(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog>IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods> ::ctor(this,menu_item_list);
+this}
+}
+
+#[cfg(feature="app-inventorysubmenu")]pub trait IInventorySubMenu_UseMenuItemMethods:IInventorySubMenu_UseMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventorySubMenu_UseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcaf60usize)as*mut u8, ::unity2::Il2CppString;
+(InventorySubMenu_UseMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventorySubMenu_UseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcafe0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventorySubMenu_UseMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventorySubMenu_UseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcb770usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventorySubMenu_UseMenuItem)__receiver)}
+}
+#[doc="`OnConfirmYes()` overload"]fn on_confirm_yes(self,)->(){unsafe{let __receiver= <InventorySubMenu_UseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcb890usize)as*mut u8,();
+(InventorySubMenu_UseMenuItem)__receiver)}
+}
+#[doc="`UseItem()` overload"]fn use_item(self,)->(){unsafe{let __receiver= <InventorySubMenu_UseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcbaf0usize)as*mut u8,();
+(InventorySubMenu_UseMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventorySubMenu_UseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcbe30usize)as*mut u8,();
+(InventorySubMenu_UseMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl<__T:IInventorySubMenu_UseMenuItem>IInventorySubMenu_UseMenuItemMethods for __T{}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_confirm_yes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn use_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-inventorysubmenu")]impl InventorySubMenu_UseMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventorySubMenu_UseMenuItem), ::core::stringify!(new),));
+ <Self as IInventorySubMenu_UseMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InventorySubMenu;
-    pub use super::IInventorySubMenu;
-    pub use super::IInventorySubMenuMethods;
-    pub use super::InventorySubMenu_UseMenuItem;
-    pub use super::IInventorySubMenu_UseMenuItem;
-    pub use super::IInventorySubMenu_UseMenuItemMethods;
-    pub use super::InventorySubMenu_UseMenuItem_ConfirmDialog;
-    pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialog;
-    pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialogMethods;
-    pub use super::InventorySubMenu_ThrowAwayMenuItem;
-    pub use super::IInventorySubMenu_ThrowAwayMenuItem;
-    pub use super::IInventorySubMenu_ThrowAwayMenuItemMethods;
-    pub use super::InventorySubMenu_EquipMenuItem;
-    pub use super::IInventorySubMenu_EquipMenuItem;
-    pub use super::IInventorySubMenu_EquipMenuItemMethods;
-    pub use super::InventorySubMenu_StoreMenuItem;
-    pub use super::IInventorySubMenu_StoreMenuItem;
-    pub use super::IInventorySubMenu_StoreMenuItemMethods;
-    pub use super::InventorySubMenu_ReceiveMenuItem;
-    pub use super::IInventorySubMenu_ReceiveMenuItem;
-    pub use super::IInventorySubMenu_ReceiveMenuItemMethods;
-    pub use super::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog;
-    pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog;
-    pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods;
-    pub use super::InventorySubMenu_TakeOffMenuItem;
-    pub use super::IInventorySubMenu_TakeOffMenuItem;
-    pub use super::IInventorySubMenu_TakeOffMenuItemMethods;
-    pub use super::InventorySubMenu_TradeMenuItem;
-    pub use super::IInventorySubMenu_TradeMenuItem;
-    pub use super::IInventorySubMenu_TradeMenuItemMethods;
-    pub use super::InventorySubMenu_SortMenuItem;
-    pub use super::IInventorySubMenu_SortMenuItem;
-    pub use super::IInventorySubMenu_SortMenuItemMethods;
-    pub use super::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods;
-    pub use super::InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem;
-    pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem;
-    pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods;
     pub use super::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback;
     pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback;
     pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods;
     pub use super::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler;
     pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler;
     pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods;
+    pub use super::InventorySubMenu_ReceiveMenuItem;
+    pub use super::IInventorySubMenu_ReceiveMenuItem;
+    pub use super::IInventorySubMenu_ReceiveMenuItemMethods;
+    pub use super::InventorySubMenu_TradeMenuItem;
+    pub use super::IInventorySubMenu_TradeMenuItem;
+    pub use super::IInventorySubMenu_TradeMenuItemMethods;
     pub use super::InventorySubMenu_BaseMenuItem;
     pub use super::IInventorySubMenu_BaseMenuItem;
     pub use super::IInventorySubMenu_BaseMenuItemMethods;
+    pub use super::InventorySubMenu_TakeOffMenuItem;
+    pub use super::IInventorySubMenu_TakeOffMenuItem;
+    pub use super::IInventorySubMenu_TakeOffMenuItemMethods;
+    pub use super::InventorySubMenu_StoreMenuItem;
+    pub use super::IInventorySubMenu_StoreMenuItem;
+    pub use super::IInventorySubMenu_StoreMenuItemMethods;
+    pub use super::InventorySubMenu;
+    pub use super::IInventorySubMenu;
+    pub use super::IInventorySubMenuMethods;
+    pub use super::InventorySubMenu_ThrowAwayMenuItem;
+    pub use super::IInventorySubMenu_ThrowAwayMenuItem;
+    pub use super::IInventorySubMenu_ThrowAwayMenuItemMethods;
+    pub use super::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods;
+    pub use super::InventorySubMenu_UseMenuItem_ConfirmDialog;
+    pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialog;
+    pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialogMethods;
+    pub use super::InventorySubMenu_EquipMenuItem;
+    pub use super::IInventorySubMenu_EquipMenuItem;
+    pub use super::IInventorySubMenu_EquipMenuItemMethods;
+    pub use super::InventorySubMenu_SortMenuItem;
+    pub use super::IInventorySubMenu_SortMenuItem;
+    pub use super::IInventorySubMenu_SortMenuItemMethods;
+    pub use super::InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem;
+    pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem;
+    pub use super::IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods;
+    pub use super::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog;
+    pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog;
+    pub use super::IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods;
+    pub use super::InventorySubMenu_UseMenuItem;
+    pub use super::IInventorySubMenu_UseMenuItem;
+    pub use super::IInventorySubMenu_UseMenuItemMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

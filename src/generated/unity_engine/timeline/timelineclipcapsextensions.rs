@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclipcapsextensions/TimelineClipCapsExtensions.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineClipCapsExtensions")] # [parent (crate :: system :: object :: Object)] pub struct TimelineClipCapsExtensions {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclipcapsextensions/TimelineClipCapsExtensions.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClipCapsExtensions")]#[parent(crate::system::object::Object)]pub struct TimelineClipCapsExtensions{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions")]
-impl TimelineClipCapsExtensions { # [doc = "`SupportsExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"] pub fn supports_extrapolation (clip : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: timelineclip :: TimelineClip , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (clip) , :: core :: option :: Option :: None) } } } # [doc = "`HasAny(crate::unity_engine::timeline::clipcaps::ClipCaps, crate::unity_engine::timeline::clipcaps::ClipCaps)` overload"] pub fn has_any (caps : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: clipcaps :: ClipCaps > , flags : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: clipcaps :: ClipCaps >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: clipcaps :: ClipCaps , crate :: unity_engine :: timeline :: clipcaps :: ClipCaps , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35e12a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (caps) , :: core :: convert :: Into :: into (flags) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-timelineclipcapsextensions")]impl TimelineClipCapsExtensions{#[doc="`SupportsExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]pub fn supports_extrapolation(clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6a00usize)as*mut u8,bool;
+(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip))}
+}
+#[doc="`HasAny(crate::unity_engine::timeline::clipcaps::ClipCaps, crate::unity_engine::timeline::clipcaps::ClipCaps)` overload"]pub fn has_any(caps:impl::core::convert::Into<crate::unity_engine::timeline::clipcaps::ClipCaps> ,flags:impl::core::convert::Into<crate::unity_engine::timeline::clipcaps::ClipCaps>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35e12a0usize)as*mut u8,bool;
+(crate::unity_engine::timeline::clipcaps::ClipCaps)::core::convert::Into::into(caps),(crate::unity_engine::timeline::clipcaps::ClipCaps)::core::convert::Into::into(flags))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions")]
-impl TimelineClipCapsExtensions { pub fn supports_extrapolation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineClipCapsExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn has_any_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineClipCapsExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-timeline-timelineclipcapsextensions")]impl TimelineClipCapsExtensions{pub fn supports_extrapolation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn has_any_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions")]
 #[doc(hidden)]

@@ -4,107 +4,197 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: gridmenu :: { GridMenu , IGridMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::gridmenu::{GridMenu,IGridMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampListMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardStampListMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstamplistmenu/ProfileCardStampListMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampListMenu")]#[parent(crate::app::gridmenu::GridMenu)]pub struct ProfileCardStampListMenu{#[static_field]#[rename(name="m_MenuItemIndexNone")]pub m_menu_item_index_none:i32, #[static_field]#[rename(name="m_MenuItemIndexEmpty")]pub m_menu_item_index_empty:i32, #[offset(216)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(224)]#[rename(name="m_Category")]pub m_category:crate::app::profilecardstampdata::ProfileCardStampData_Categories, #[offset(232)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, #[offset(240)]#[rename(name="m_CloseEventHandler")]pub m_close_event_handler:crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler, #[offset(248)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampListMenu.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardStampListMenu_DisposeEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampListMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampListMenu_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_CloseEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampListMenu.CloseEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardStampListMenu_CloseEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampListMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampListMenu_DisposeEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampListMenu")] # [parent (crate :: app :: gridmenu :: GridMenu)] pub struct ProfileCardStampListMenu {
-# [static_field] # [rename (name = "m_MenuItemIndexNone")] pub m_menu_item_index_none : i32 ,
-# [static_field] # [rename (name = "m_MenuItemIndexEmpty")] pub m_menu_item_index_empty : i32 ,
-# [offset (216)] # [rename (name = "m_Selects")] pub m_selects : :: unity2 :: Array < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
-# [offset (224)] # [rename (name = "m_Category")] pub m_category : crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories ,
-# [offset (232)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler ,
-# [offset (240)] # [rename (name = "m_CloseEventHandler")] pub m_close_event_handler : crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_CloseEventHandler ,
-# [offset (248)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DisposeEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_CloseEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampListMenu.CloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampListMenu_CloseEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-pub trait IProfileCardStampListMenu_DecideEventHandlerMethods : IProfileCardStampListMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226bc60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::profilecardstampdata::ProfileCardStampData)` overload"] fn invoke (self , stamp_data : impl :: core :: convert :: Into < crate :: app :: profilecardstampdata :: ProfileCardStampData >) -> () { unsafe { let __receiver = < ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu_DecideEventHandler , crate :: app :: profilecardstampdata :: ProfileCardStampData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226bc80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stamp_data) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl < __T : IProfileCardStampListMenu_DecideEventHandler > IProfileCardStampListMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampListMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampListMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent, crate::app::profilecardstampdata::ProfileCardStampData, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent> ,initial_stamp_data:impl::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler> ,close_event_handler:impl::core::convert::Into<crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler>)->crate::app::profilecardstamplistmenu::ProfileCardStampListMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1680usize)as*mut u8,crate::app::profilecardstamplistmenu::ProfileCardStampListMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecardstampdata::ProfileCardStampData)::core::convert::Into::into(initial_stamp_data),(crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler)::core::convert::Into::into(close_event_handler),(crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
+}
+#[doc="`CreateMenuItem(crate::app::profilecardstampdata::ProfileCardStampData_Categories, crate::app::profilecardstampdata::ProfileCardStampData, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, *muti32)` overload"]pub fn create_menu_item(category:impl::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData_Categories> ,initial_stamp_data:impl::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler>)->(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2bf17f0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+(crate::app::profilecardstampdata::ProfileCardStampData_Categories)::core::convert::Into::into(category),(crate::app::profilecardstampdata::ProfileCardStampData)::core::convert::Into::into(initial_stamp_data),(crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(*mut i32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bf2c90usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-pub trait IProfileCardStampListMenu_DisposeEventHandlerMethods : IProfileCardStampListMenu_DisposeEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardStampListMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu_DisposeEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226c020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226c040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl < __T : IProfileCardStampListMenu_DisposeEventHandler > IProfileCardStampListMenu_DisposeEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_DisposeEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_DisposeEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampListMenu_DisposeEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampListMenu_DisposeEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-profilecardstamplistmenu")]pub trait IProfileCardStampListMenuMethods:IProfileCardStampListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardstampdata::ProfileCardStampData_Categories, i32, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::gridmenucontent::GridMenuContent> ,initial_category:impl::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData_Categories> ,initial_selected_index:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler> ,close_event_handler:impl::core::convert::Into<crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler>)->(){unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1b60usize)as*mut u8,();
+(ProfileCardStampListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::gridmenucontent::GridMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecardstampdata::ProfileCardStampData_Categories)::core::convert::Into::into(initial_category),(i32)::core::convert::Into::into(initial_selected_index),(crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler)::core::convert::Into::into(close_event_handler),(crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
+}
+#[doc="`OnBuild(bool)` overload"]fn on_build(self,is_first_build:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1f30usize)as*mut u8,();
+(ProfileCardStampListMenu)__receiver,(bool)::core::convert::Into::into(is_first_build))}
+}
+#[doc="`RebuildMenu()` overload"]fn rebuild_menu(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf2070usize)as*mut u8,();
+(ProfileCardStampListMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf2230usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardStampListMenu)__receiver)}
+}
+#[doc="`GetSelect()` overload"]fn get_select(self,)->crate::app::basicmenuselect::BasicMenuSelect{unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf21c0usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
+(ProfileCardStampListMenu)__receiver)}
+}
+#[doc="`UpdateContent()` overload"]fn update_content(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1dc0usize)as*mut u8,();
+(ProfileCardStampListMenu)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf2400usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardStampListMenu)__receiver)}
+}
+#[doc="`LRepeatCall(bool)` overload"]fn l_repeat_call(self,is_trigger:impl::core::convert::Into<bool>)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf2970usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardStampListMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`RRepeatCall(bool)` overload"]fn r_repeat_call(self,is_trigger:impl::core::convert::Into<bool>)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf2a80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardStampListMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf2b90usize)as*mut u8,();
+(ProfileCardStampListMenu)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf2bb0usize)as*mut u8,();
+(ProfileCardStampListMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-pub trait IProfileCardStampListMenu_CloseEventHandlerMethods : IProfileCardStampListMenu_CloseEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardStampListMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu_CloseEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226b9f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu_CloseEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ba10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardstamplistmenu")]impl<__T:IProfileCardStampListMenu>IProfileCardStampListMenuMethods for __T{}
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl < __T : IProfileCardStampListMenu_CloseEventHandler > IProfileCardStampListMenu_CloseEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_CloseEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_CloseEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampListMenu_CloseEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampListMenu_CloseEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn l_repeat_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn r_repeat_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 }
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent, crate::app::profilecardstampdata::ProfileCardStampData, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenucontent :: ProfileCardStampListMenuContent > , initial_stamp_data : impl :: core :: convert :: Into < crate :: app :: profilecardstampdata :: ProfileCardStampData > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler > , close_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_CloseEventHandler > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DisposeEventHandler >) -> crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardstamplistmenucontent :: ProfileCardStampListMenuContent , crate :: app :: profilecardstampdata :: ProfileCardStampData , crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler , crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_CloseEventHandler , crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1680usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (initial_stamp_data) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (close_event_handler) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenuItem(crate::app::profilecardstampdata::ProfileCardStampData_Categories, crate::app::profilecardstampdata::ProfileCardStampData, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, *muti32)` overload"] pub fn create_menu_item (category : impl :: core :: convert :: Into < crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories > , initial_stamp_data : impl :: core :: convert :: Into < crate :: app :: profilecardstampdata :: ProfileCardStampData > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler >) -> (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories , crate :: app :: profilecardstampdata :: ProfileCardStampData , crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler , * mut i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf17f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (category) , :: core :: convert :: Into :: into (initial_stamp_data) , :: core :: convert :: Into :: into (decide_event_handler) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf2c90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardstampdata::ProfileCardStampData_Categories, i32, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::gridmenucontent::GridMenuContent,initial_category:crate::app::profilecardstampdata::ProfileCardStampData_Categories,initial_selected_index:i32,decide_event_handler:crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler,close_event_handler:crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler,dispose_event_handler:crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampListMenu), ::core::stringify!(new),));
+ <Self as IProfileCardStampListMenuMethods> ::ctor(this,menu_item_list,menu_content,initial_category,initial_selected_index,decide_event_handler,close_event_handler,dispose_event_handler);
+this}
+}
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-pub trait IProfileCardStampListMenuMethods : IProfileCardStampListMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardstampdata::ProfileCardStampData_Categories, i32, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: gridmenucontent :: GridMenuContent > , initial_category : impl :: core :: convert :: Into < crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories > , initial_selected_index : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler > , close_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_CloseEventHandler > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DisposeEventHandler >) -> () { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: gridmenucontent :: GridMenuContent , crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories , i32 , crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler , crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_CloseEventHandler , crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (initial_category) , :: core :: convert :: Into :: into (initial_selected_index) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (close_event_handler) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild(bool)` overload"] fn on_build (self , is_first_build : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_first_build) , :: core :: option :: Option :: None) } } } # [doc = "`RebuildMenu()` overload"] fn rebuild_menu (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf2070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf2230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSelect()` overload"] fn get_select (self ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf21c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateContent()` overload"] fn update_content (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf2400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LRepeatCall(bool)` overload"] fn l_repeat_call (self , is_trigger : impl :: core :: convert :: Into < bool >) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf2970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`RRepeatCall(bool)` overload"] fn r_repeat_call (self , is_trigger : impl :: core :: convert :: Into < bool >) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf2a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf2b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf2bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardstamplistmenu")]pub trait IProfileCardStampListMenu_DecideEventHandlerMethods:IProfileCardStampListMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardStampListMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226bc60usize)as*mut u8,();
+(ProfileCardStampListMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::profilecardstampdata::ProfileCardStampData)` overload"]fn invoke(self,stamp_data:impl::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>)->(){unsafe{let __receiver= <ProfileCardStampListMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226bc80usize)as*mut u8,();
+(ProfileCardStampListMenu_DecideEventHandler)__receiver,(crate::app::profilecardstampdata::ProfileCardStampData)::core::convert::Into::into(stamp_data))}
+}
+}
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl < __T : IProfileCardStampListMenu > IProfileCardStampListMenuMethods for __T { }
+#[cfg(feature="app-profilecardstamplistmenu")]impl<__T:IProfileCardStampListMenu_DecideEventHandler>IProfileCardStampListMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn rebuild_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn l_repeat_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn r_repeat_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardstampdata::ProfileCardStampData_Categories, i32, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_CloseEventHandler, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: gridmenucontent :: GridMenuContent , initial_category : crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories , initial_selected_index : i32 , decide_event_handler : crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler , close_event_handler : crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_CloseEventHandler , dispose_event_handler : crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DisposeEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampListMenu) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampListMenuMethods > :: ctor (this , menu_item_list , menu_content , initial_category , initial_selected_index , decide_event_handler , close_event_handler , dispose_event_handler) ; this }
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampListMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardStampListMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-profilecardstamplistmenu")]pub trait IProfileCardStampListMenu_DisposeEventHandlerMethods:IProfileCardStampListMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardStampListMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226c020usize)as*mut u8,();
+(ProfileCardStampListMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226c040usize)as*mut u8,();
+(ProfileCardStampListMenu_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardstamplistmenu")]impl<__T:IProfileCardStampListMenu_DisposeEventHandler>IProfileCardStampListMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampListMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardStampListMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-profilecardstamplistmenu")]pub trait IProfileCardStampListMenu_CloseEventHandlerMethods:IProfileCardStampListMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardStampListMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226b9f0usize)as*mut u8,();
+(ProfileCardStampListMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ba10usize)as*mut u8,();
+(ProfileCardStampListMenu_CloseEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardstamplistmenu")]impl<__T:IProfileCardStampListMenu_CloseEventHandler>IProfileCardStampListMenu_CloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardstamplistmenu")]impl ProfileCardStampListMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampListMenu_CloseEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardStampListMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardStampListMenu;
+    pub use super::IProfileCardStampListMenu;
+    pub use super::IProfileCardStampListMenuMethods;
     pub use super::ProfileCardStampListMenu_DecideEventHandler;
     pub use super::IProfileCardStampListMenu_DecideEventHandler;
     pub use super::IProfileCardStampListMenu_DecideEventHandlerMethods;
@@ -114,9 +204,6 @@ pub mod prelude {
     pub use super::ProfileCardStampListMenu_CloseEventHandler;
     pub use super::IProfileCardStampListMenu_CloseEventHandler;
     pub use super::IProfileCardStampListMenu_CloseEventHandlerMethods;
-    pub use super::ProfileCardStampListMenu;
-    pub use super::IProfileCardStampListMenu;
-    pub use super::IProfileCardStampListMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::gridmenu::IGridMenu;
     pub use crate::app::procinst::IProcInst;

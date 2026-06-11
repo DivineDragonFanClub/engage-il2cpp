@@ -4,165 +4,266 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingSynthesisSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringsynthesissequence :: RingSynthesisSequence >)] pub struct RingSynthesisSequence {
-# [offset (120)] # [rename (name = "m_MenuResult")] pub m_menu_result : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result ,
-# [offset (128)] # [rename (name = "m_MaterialRing")] pub m_material_ring : crate :: app :: ringdata :: RingData ,
-# [offset (136)] # [rename (name = "m_NextRing")] pub m_next_ring : crate :: app :: ringdata :: RingData ,
-# [offset (144)] # [rename (name = "m_EngageZonePrefabPath")] pub m_engage_zone_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_SceneResourceHandle")] pub m_scene_resource_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (160)] # [rename (name = "m_DisableList")] pub m_disable_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (168)] # [rename (name = "SceneName")] pub scene_name : :: unity2 :: Il2CppString ,
-# [offset (176)] # [rename (name = "m_RingMergeScene")] pub m_ring_merge_scene : crate :: unity_engine :: scene_management :: scene :: Scene ,
-# [offset (184)] # [rename (name = "m_EffectObject")] pub m_effect_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (192)] # [rename (name = "m_MaterialRingHandle")] pub m_material_ring_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (200)] # [rename (name = "m_NextRingHandle")] pub m_next_ring_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (208)] # [rename (name = "m_NextRingController")] pub m_next_ring_controller : crate :: app :: commonringcontroller :: CommonRingController ,
-# [offset (216)] # [rename (name = "m_NextRingObject")] pub m_next_ring_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (224)] # [rename (name = "m_RingRoot")] pub m_ring_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (232)] # [rename (name = "m_RingRotateRoot")] pub m_ring_rotate_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_EndEventHandler")] pub m_end_event_handler : crate :: system :: action :: Action ,
-# [offset (248)] # [rename (name = "m_SkipListenerProc")] pub m_skip_listener_proc : crate :: app :: ringsynthesissequence :: RingSynthesisSequence_SkipListenerProc ,
-# [offset (256)] # [rename (name = "m_IsSkipped")] pub m_is_skipped : bool ,
-# [offset (260)] # [rename (name = "InitRotate")] pub init_rotate : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (272)] # [rename (name = "CreateEffectPaths")] pub create_effect_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (280)] # [rename (name = "LoopEffectPaths")] pub loop_effect_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (288)] # [rename (name = "EmitEffect")] pub emit_effect : :: unity2 :: Il2CppString ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingSynthesisSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RingSynthesisSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingSynthesisSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingSynthesisSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingSynthesisSequence_Label{pub fn skip()->Self{Self{value:0}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingSynthesisSequence_Label  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))]#[::unity2::class(namespace="App",name="RingSynthesisSequence.SkipListenerProc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingSynthesisSequence_SkipListenerProc{}
 
 
-impl  ::unity2::ClassIdentity for RingSynthesisSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingSynthesisSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence.md"))]#[::unity2::class(namespace="App",name="RingSynthesisSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringsynthesissequence::RingSynthesisSequence>)]pub struct RingSynthesisSequence{#[offset(120)]#[rename(name="m_MenuResult")]pub m_menu_result:crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, #[offset(128)]#[rename(name="m_MaterialRing")]pub m_material_ring:crate::app::ringdata::RingData, #[offset(136)]#[rename(name="m_NextRing")]pub m_next_ring:crate::app::ringdata::RingData, #[offset(144)]#[rename(name="m_EngageZonePrefabPath")]pub m_engage_zone_prefab_path: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_SceneResourceHandle")]pub m_scene_resource_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(160)]#[rename(name="m_DisableList")]pub m_disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(168)]#[rename(name="SceneName")]pub scene_name: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_RingMergeScene")]pub m_ring_merge_scene:crate::unity_engine::scene_management::scene::Scene, #[offset(184)]#[rename(name="m_EffectObject")]pub m_effect_object:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_MaterialRingHandle")]pub m_material_ring_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(200)]#[rename(name="m_NextRingHandle")]pub m_next_ring_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(208)]#[rename(name="m_NextRingController")]pub m_next_ring_controller:crate::app::commonringcontroller::CommonRingController, #[offset(216)]#[rename(name="m_NextRingObject")]pub m_next_ring_object:crate::unity_engine::gameobject::GameObject, #[offset(224)]#[rename(name="m_RingRoot")]pub m_ring_root:crate::unity_engine::gameobject::GameObject, #[offset(232)]#[rename(name="m_RingRotateRoot")]pub m_ring_rotate_root:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_EndEventHandler")]pub m_end_event_handler:crate::system::action::Action, #[offset(248)]#[rename(name="m_SkipListenerProc")]pub m_skip_listener_proc:crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc, #[offset(256)]#[rename(name="m_IsSkipped")]pub m_is_skipped:bool, #[offset(260)]#[rename(name="InitRotate")]pub init_rotate:crate::unity_engine::vector3::Vector3, #[offset(272)]#[rename(name="CreateEffectPaths")]pub create_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(280)]#[rename(name="LoopEffectPaths")]pub loop_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(288)]#[rename(name="EmitEffect")]pub emit_effect: ::unity2::Il2CppString,}
 
 
-impl  ::unity2::IlType for RingSynthesisSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RingSynthesisSequence_Label  {
-    pub fn skip() -> Self {
-        Self { value: 0 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingSynthesisSequence.Result1Proc")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RingSynthesisSequence_Result1Proc {
-# [offset (112)] # [rename (name = "m_RefineRingResult1Window")] pub m_refine_ring_result1_window : crate :: app :: refineringresult1window :: RefineRingResult1Window ,
-# [offset (120)] # [rename (name = "m_RingData")] pub m_ring_data : crate :: app :: ringdata :: RingData ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingSynthesisSequence.SkipListenerProc")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RingSynthesisSequence_SkipListenerProc {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md"))]#[::unity2::class(namespace="App",name="RingSynthesisSequence.Result1Proc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingSynthesisSequence_Result1Proc{#[offset(112)]#[rename(name="m_RefineRingResult1Window")]pub m_refine_ring_result1_window:crate::app::refineringresult1window::RefineRingResult1Window, #[offset(120)]#[rename(name="m_RingData")]pub m_ring_data:crate::app::ringdata::RingData,}
 
 }
 
 #[cfg(feature = "app-ringsynthesissequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_result : impl :: core :: convert :: Into < crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result > , end_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebfa80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_result) , :: core :: convert :: Into :: into (end_event_handler) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringsynthesissequence")]
-pub trait IRingSynthesisSequenceMethods : IRingSynthesisSequence { # [doc = "`get_ReturnSceneName()` overload"] fn get_return_scene_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebde30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` overload"] fn ctor (self , result : impl :: core :: convert :: Into < crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result > , end_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebdea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: convert :: Into :: into (end_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebe390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebe500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebe7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ActiveScene()` overload"] fn active_scene (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebe8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetGameObjects()` overload"] fn set_game_objects (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebec30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetParameter(crate::app::commonringcontroller::CommonRingController, crate::app::ringdata::RingData)` overload"] fn set_parameter (self , controller : impl :: core :: convert :: Into < crate :: app :: commonringcontroller :: CommonRingController > , data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , crate :: app :: commonringcontroller :: CommonRingController , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (controller) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`StartAnimation()` overload"] fn start_animation (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlaySynthesisSound()` overload"] fn play_synthesis_sound (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitTick()` overload"] fn wait_tick (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowNextRing()` overload"] fn show_next_ring (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenDialog()` overload"] fn open_dialog (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResources()` overload"] fn unload_resources (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReturnScene()` overload"] fn return_scene (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BeginSkipListener()` overload"] fn begin_skip_listener (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSkipLisnter()` overload"] fn end_skip_lisnter (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebf9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCreateEffectPath(crate::app::ringdata::RingData)` overload"] fn get_create_effect_path (self , ring : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebe770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring) , :: core :: option :: Option :: None) } } } # [doc = "`GetLoopEffectPath(crate::app::ringdata::RingData)` overload"] fn get_loop_effect_path (self , ring : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingSynthesisSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ebe7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl < __T : IRingSynthesisSequence > IRingSynthesisSequenceMethods for __T { }
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence { pub fn get_return_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn active_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_game_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn play_synthesis_sound_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn wait_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn show_next_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn open_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn return_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn begin_skip_listener_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn end_skip_lisnter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_create_effect_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_loop_effect_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence {
-# [doc = "`.ctor(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` — overload selector"] pub fn new (result : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result , end_event_handler : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingSynthesisSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRingSynthesisSequenceMethods > :: ctor (this , result , end_event_handler) ; this }
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_SkipListenerProc{#[doc="`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::ringsynthesissequence::RingSynthesisSequence>)->crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d626d0usize)as*mut u8,crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc;
+(crate::app::ringsynthesissequence::RingSynthesisSequence)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_Result1Proc { # [doc = "`CreateBind(crate::app::ringsynthesissequence::RingSynthesisSequence, crate::app::ringdata::RingData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: ringsynthesissequence :: RingSynthesisSequence > , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> crate :: app :: ringsynthesissequence :: RingSynthesisSequence_Result1Proc { unsafe { { let __inner : extern "C" fn (crate :: app :: ringsynthesissequence :: RingSynthesisSequence , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringsynthesissequence :: RingSynthesisSequence_Result1Proc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d61e30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (ring_data) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringsynthesissequence")]
-pub trait IRingSynthesisSequence_Result1ProcMethods : IRingSynthesisSequence_Result1Proc { # [doc = "`.ctor(crate::app::ringdata::RingData)` overload"] fn ctor (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> () { unsafe { let __receiver = < RingSynthesisSequence_Result1Proc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_Result1Proc , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d621e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence_Result1Proc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_Result1Proc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d62220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < RingSynthesisSequence_Result1Proc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_Result1Proc , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d622f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsKeyInputted()` overload"] fn is_key_inputted (self ,) -> bool { unsafe { let __receiver = < RingSynthesisSequence_Result1Proc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_Result1Proc , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d62390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < RingSynthesisSequence_Result1Proc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_Result1Proc , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d62580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence_Result1Proc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_Result1Proc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d62620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl < __T : IRingSynthesisSequence_Result1Proc > IRingSynthesisSequence_Result1ProcMethods for __T { }
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_Result1Proc { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_Result1Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_Result1Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_Result1Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_Result1Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_key_inputted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_Result1Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_Result1Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_Result1Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_Result1Proc {
-# [doc = "`.ctor(crate::app::ringdata::RingData)` — overload selector"] pub fn new (ring_data : crate :: app :: ringdata :: RingData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingSynthesisSequence_Result1Proc) , :: core :: stringify ! (new) ,)) ; < Self as IRingSynthesisSequence_Result1ProcMethods > :: ctor (this , ring_data) ; this }
+#[cfg(feature="app-ringsynthesissequence")]pub trait IRingSynthesisSequence_SkipListenerProcMethods:IRingSynthesisSequence_SkipListenerProc{#[doc="`get_m_Pause()` overload"]fn get_m_pause(self,)->bool{unsafe{let __receiver= <RingSynthesisSequence_SkipListenerProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d626b0usize)as*mut u8,bool;
+(RingSynthesisSequence_SkipListenerProc)__receiver)}
+}
+#[doc="`set_m_Pause(bool)` overload"]fn set_m_pause(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingSynthesisSequence_SkipListenerProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d626c0usize)as*mut u8,();
+(RingSynthesisSequence_SkipListenerProc)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <RingSynthesisSequence_SkipListenerProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62760usize)as*mut u8,();
+(RingSynthesisSequence_SkipListenerProc)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingSynthesisSequence_SkipListenerProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62750usize)as*mut u8,();
+(RingSynthesisSequence_SkipListenerProc)__receiver)}
+}
 }
 
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_SkipListenerProc { # [doc = "`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: ringsynthesissequence :: RingSynthesisSequence >) -> crate :: app :: ringsynthesissequence :: RingSynthesisSequence_SkipListenerProc { unsafe { { let __inner : extern "C" fn (crate :: app :: ringsynthesissequence :: RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringsynthesissequence :: RingSynthesisSequence_SkipListenerProc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d626d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringsynthesissequence")]impl<__T:IRingSynthesisSequence_SkipListenerProc>IRingSynthesisSequence_SkipListenerProcMethods for __T{}
 
-#[cfg(feature = "app-ringsynthesissequence")]
-pub trait IRingSynthesisSequence_SkipListenerProcMethods : IRingSynthesisSequence_SkipListenerProc { # [doc = "`get_m_Pause()` overload"] fn get_m_pause (self ,) -> bool { unsafe { let __receiver = < RingSynthesisSequence_SkipListenerProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_SkipListenerProc , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d626b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Pause(bool)` overload"] fn set_m_pause (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingSynthesisSequence_SkipListenerProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_SkipListenerProc , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d626c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence_SkipListenerProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_SkipListenerProc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d62760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingSynthesisSequence_SkipListenerProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSynthesisSequence_SkipListenerProc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d62750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_SkipListenerProc{pub fn get_m_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-ringsynthesissequence")]
-impl < __T : IRingSynthesisSequence_SkipListenerProc > IRingSynthesisSequence_SkipListenerProcMethods for __T { }
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_SkipListenerProc{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingSynthesisSequence_SkipListenerProc), ::core::stringify!(new),));
+ <Self as IRingSynthesisSequence_SkipListenerProcMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_SkipListenerProc { pub fn get_m_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_SkipListenerProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_SkipListenerProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_SkipListenerProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_SkipListenerProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSynthesisSequence_SkipListenerProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_result:impl::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result> ,end_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ebfa80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)::core::convert::Into::into(menu_result),(crate::system::action::Action)::core::convert::Into::into(end_event_handler))}
+}
+}
 
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_SkipListenerProc {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingSynthesisSequence_SkipListenerProc) , :: core :: stringify ! (new) ,)) ; < Self as IRingSynthesisSequence_SkipListenerProcMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringsynthesissequence")]pub trait IRingSynthesisSequenceMethods:IRingSynthesisSequence{#[doc="`get_ReturnSceneName()` overload"]fn get_return_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebde30usize)as*mut u8, ::unity2::Il2CppString;
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`.ctor(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` overload"]fn ctor(self,result:impl::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result> ,end_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebdea0usize)as*mut u8,();
+(RingSynthesisSequence)__receiver,(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)::core::convert::Into::into(result),(crate::system::action::Action)::core::convert::Into::into(end_event_handler))}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebe390usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebe500usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebe7f0usize)as*mut u8,bool;
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`ActiveScene()` overload"]fn active_scene(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebe8f0usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`SetGameObjects()` overload"]fn set_game_objects(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebec30usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`SetParameter(crate::app::commonringcontroller::CommonRingController, crate::app::ringdata::RingData)` overload"]fn set_parameter(self,controller:impl::core::convert::Into<crate::app::commonringcontroller::CommonRingController> ,data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf120usize)as*mut u8,();
+(RingSynthesisSequence)__receiver,(crate::app::commonringcontroller::CommonRingController)::core::convert::Into::into(controller),(crate::app::ringdata::RingData)::core::convert::Into::into(data))}
+}
+#[doc="`StartAnimation()` overload"]fn start_animation(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf170usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`PlaySynthesisSound()` overload"]fn play_synthesis_sound(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf240usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`WaitTick()` overload"]fn wait_tick(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf330usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`ShowNextRing()` overload"]fn show_next_ring(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf390usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`OpenDialog()` overload"]fn open_dialog(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf580usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`UnloadResources()` overload"]fn unload_resources(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf590usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`ReturnScene()` overload"]fn return_scene(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf710usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf910usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`BeginSkipListener()` overload"]fn begin_skip_listener(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf9a0usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`EndSkipLisnter()` overload"]fn end_skip_lisnter(self,)->(){unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebf9d0usize)as*mut u8,();
+(RingSynthesisSequence)__receiver)}
+}
+#[doc="`GetCreateEffectPath(crate::app::ringdata::RingData)` overload"]fn get_create_effect_path(self,ring:impl::core::convert::Into<crate::app::ringdata::RingData>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebe770usize)as*mut u8, ::unity2::Il2CppString;
+(RingSynthesisSequence)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring))}
+}
+#[doc="`GetLoopEffectPath(crate::app::ringdata::RingData)` overload"]fn get_loop_effect_path(self,ring:impl::core::convert::Into<crate::app::ringdata::RingData>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingSynthesisSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebe7b0usize)as*mut u8, ::unity2::Il2CppString;
+(RingSynthesisSequence)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring))}
+}
+}
+
+#[cfg(feature="app-ringsynthesissequence")]impl<__T:IRingSynthesisSequence>IRingSynthesisSequenceMethods for __T{}
+
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence{pub fn get_return_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn active_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_game_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn play_synthesis_sound_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn wait_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn show_next_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn open_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn return_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn begin_skip_listener_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn end_skip_lisnter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_create_effect_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_loop_effect_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence{#[doc="`.ctor(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` — overload selector"]pub fn new(result:crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,end_event_handler:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingSynthesisSequence), ::core::stringify!(new),));
+ <Self as IRingSynthesisSequenceMethods> ::ctor(this,result,end_event_handler);
+this}
+}
+
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_Result1Proc{#[doc="`CreateBind(crate::app::ringsynthesissequence::RingSynthesisSequence, crate::app::ringdata::RingData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::ringsynthesissequence::RingSynthesisSequence> ,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->crate::app::ringsynthesissequence::RingSynthesisSequence_Result1Proc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d61e30usize)as*mut u8,crate::app::ringsynthesissequence::RingSynthesisSequence_Result1Proc;
+(crate::app::ringsynthesissequence::RingSynthesisSequence)::core::convert::Into::into(super_),(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+}
+
+#[cfg(feature="app-ringsynthesissequence")]pub trait IRingSynthesisSequence_Result1ProcMethods:IRingSynthesisSequence_Result1Proc{#[doc="`.ctor(crate::app::ringdata::RingData)` overload"]fn ctor(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingSynthesisSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d621e0usize)as*mut u8,();
+(RingSynthesisSequence_Result1Proc)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <RingSynthesisSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62220usize)as*mut u8,();
+(RingSynthesisSequence_Result1Proc)__receiver)}
+}
+#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <RingSynthesisSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d622f0usize)as*mut u8,bool;
+(RingSynthesisSequence_Result1Proc)__receiver)}
+}
+#[doc="`IsKeyInputted()` overload"]fn is_key_inputted(self,)->bool{unsafe{let __receiver= <RingSynthesisSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62390usize)as*mut u8,bool;
+(RingSynthesisSequence_Result1Proc)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <RingSynthesisSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62580usize)as*mut u8,bool;
+(RingSynthesisSequence_Result1Proc)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RingSynthesisSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62620usize)as*mut u8,();
+(RingSynthesisSequence_Result1Proc)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringsynthesissequence")]impl<__T:IRingSynthesisSequence_Result1Proc>IRingSynthesisSequence_Result1ProcMethods for __T{}
+
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_Result1Proc{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_key_inputted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_Result1Proc{#[doc="`.ctor(crate::app::ringdata::RingData)` — overload selector"]pub fn new(ring_data:crate::app::ringdata::RingData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingSynthesisSequence_Result1Proc), ::core::stringify!(new),));
+ <Self as IRingSynthesisSequence_Result1ProcMethods> ::ctor(this,ring_data);
+this}
 }
 
 #[cfg(feature = "app-ringsynthesissequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingSynthesisSequence;
-    pub use super::IRingSynthesisSequence;
-    pub use super::IRingSynthesisSequenceMethods;
     pub use super::RingSynthesisSequence_Label;
-    pub use super::RingSynthesisSequence_Result1Proc;
-    pub use super::IRingSynthesisSequence_Result1Proc;
-    pub use super::IRingSynthesisSequence_Result1ProcMethods;
     pub use super::RingSynthesisSequence_SkipListenerProc;
     pub use super::IRingSynthesisSequence_SkipListenerProc;
     pub use super::IRingSynthesisSequence_SkipListenerProcMethods;
+    pub use super::RingSynthesisSequence;
+    pub use super::IRingSynthesisSequence;
+    pub use super::IRingSynthesisSequenceMethods;
+    pub use super::RingSynthesisSequence_Result1Proc;
+    pub use super::IRingSynthesisSequence_Result1Proc;
+    pub use super::IRingSynthesisSequence_Result1ProcMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

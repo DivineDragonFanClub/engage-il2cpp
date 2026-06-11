@@ -4,36 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nationalsymbol/NationalSymbol.md"))] # [:: unity2 :: class (namespace = "App" , name = "NationalSymbol")] # [parent (crate :: system :: object :: Object)] pub struct NationalSymbol {
-# [static_field] # [rename (name = "Path")] pub path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_NationalSymbol")] pub s_national_symbol : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nationalsymbol/NationalSymbol.md"))]#[::unity2::class(namespace="App",name="NationalSymbol")]#[parent(crate::system::object::Object)]pub struct NationalSymbol{#[static_field]#[rename(name="Path")]pub path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_NationalSymbol")]pub s_national_symbol:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,}
 
 }
 
 #[cfg(feature = "app-nationalsymbol-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-nationalsymbol")]
-impl NationalSymbol { # [doc = "`LoadAsync()` overload"] pub fn load_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f105c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f106b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString)` overload"] pub fn get (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f10770usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f10840usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-nationalsymbol")]impl NationalSymbol{#[doc="`LoadAsync()` overload"]pub fn load_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f105c0usize)as*mut u8,();
+)}
+}
+#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f106b0usize)as*mut u8,();
+)}
+}
+#[doc="`Get(::unity2::Il2CppString)` overload"]pub fn get(icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f10770usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f10840usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-nationalsymbol")]
-pub trait INationalSymbolMethods : INationalSymbol { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NationalSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NationalSymbol , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f10830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-nationalsymbol")]pub trait INationalSymbolMethods:INationalSymbol{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NationalSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f10830usize)as*mut u8,();
+(NationalSymbol)__receiver)}
+}
+}
 
-#[cfg(feature = "app-nationalsymbol")]
-impl < __T : INationalSymbol > INationalSymbolMethods for __T { }
+#[cfg(feature="app-nationalsymbol")]impl<__T:INationalSymbol>INationalSymbolMethods for __T{}
 
-#[cfg(feature = "app-nationalsymbol")]
-impl NationalSymbol { pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NationalSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NationalSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NationalSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NationalSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NationalSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-nationalsymbol")]impl NationalSymbol{pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-nationalsymbol")]
-impl NationalSymbol {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NationalSymbol) , :: core :: stringify ! (new) ,)) ; < Self as INationalSymbolMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-nationalsymbol")]impl NationalSymbol{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NationalSymbol), ::core::stringify!(new),));
+ <Self as INationalSymbolMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-nationalsymbol")]

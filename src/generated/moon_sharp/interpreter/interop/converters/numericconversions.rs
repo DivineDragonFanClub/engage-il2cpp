@@ -4,29 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/numericconversions/NumericConversions.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.Converters" , name = "NumericConversions")] # [parent (crate :: system :: object :: Object)] pub struct NumericConversions {
-# [static_field] # [rename (name = "NumericTypes")] pub numeric_types : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: SystemType > ,
-# [static_field] # [rename (name = "NumericTypesOrdered")] pub numeric_types_ordered : :: unity2 :: Array < :: unity2 :: SystemType > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/converters/numericconversions/NumericConversions.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.Converters",name="NumericConversions")]#[parent(crate::system::object::Object)]pub struct NumericConversions{#[static_field]#[rename(name="NumericTypes")]pub numeric_types:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::SystemType> , #[static_field]#[rename(name="NumericTypesOrdered")]pub numeric_types_ordered: ::unity2::Array< ::unity2::SystemType> ,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-numericconversions-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interop-converters-numericconversions")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NumericConversions_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NumericConversions as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NumericConversions as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_double_to_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < f64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NumericConversions as :: unity2 :: ClassIdentity > :: class () , "DoubleToType" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NumericConversions as :: unity2 :: ClassIdentity > :: NAME , "DoubleToType" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_type_to_double { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NumericConversions as :: unity2 :: ClassIdentity > :: class () , "TypeToDouble" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NumericConversions as :: unity2 :: ClassIdentity > :: NAME , "TypeToDouble" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-converters-numericconversions")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NumericConversions_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_cctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<NumericConversions as::unity2::ClassIdentity> ::class(),".cctor",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <NumericConversions as::unity2::ClassIdentity> ::NAME,".cctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_double_to_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), <f64 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<NumericConversions as::unity2::ClassIdentity> ::class(),"DoubleToType",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <NumericConversions as::unity2::ClassIdentity> ::NAME,"DoubleToType",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_type_to_double{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<NumericConversions as::unity2::ClassIdentity> ::class(),"TypeToDouble",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <NumericConversions as::unity2::ClassIdentity> ::NAME,"TypeToDouble",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-converters-numericconversions")]
-impl NumericConversions { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__NumericConversions_unity2_raw :: __lookup_cctor :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DoubleToType(::unity2::SystemType, f64)` overload"] pub fn double_to_type (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , d : impl :: core :: convert :: Into < f64 >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , f64 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__NumericConversions_unity2_raw :: __lookup_double_to_type :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (d) , :: core :: option :: Option :: None) } } } # [doc = "`TypeToDouble(::unity2::SystemType, crate::system::object::Object)` overload"] pub fn type_to_double (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , d : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> f64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__NumericConversions_unity2_raw :: __lookup_type_to_double :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (d) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-converters-numericconversions")]impl NumericConversions{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!(__NumericConversions_unity2_raw::__lookup_cctor::get_method_info().method_ptr,();
+)}
+}
+#[doc="`DoubleToType(::unity2::SystemType, f64)` overload"]pub fn double_to_type(r#type:impl::core::convert::Into< ::unity2::SystemType> ,d:impl::core::convert::Into<f64>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!(__NumericConversions_unity2_raw::__lookup_double_to_type::get_method_info().method_ptr,crate::system::object::Object;
+(::unity2::SystemType)::core::convert::Into::into(r#type),(f64)::core::convert::Into::into(d))}
+}
+#[doc="`TypeToDouble(::unity2::SystemType, crate::system::object::Object)` overload"]pub fn type_to_double(r#type:impl::core::convert::Into< ::unity2::SystemType> ,d:impl::core::convert::Into<crate::system::object::Object>)->f64{unsafe{::unity2::il2cpp_call!(__NumericConversions_unity2_raw::__lookup_type_to_double::get_method_info().method_ptr,f64;
+(::unity2::SystemType)::core::convert::Into::into(r#type),(crate::system::object::Object)::core::convert::Into::into(d))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-converters-numericconversions")]
-impl NumericConversions { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NumericConversions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn double_to_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NumericConversions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn type_to_double_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NumericConversions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="moon_sharp-interpreter-interop-converters-numericconversions")]impl NumericConversions{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn double_to_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn type_to_double_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-numericconversions")]
 #[doc(hidden)]

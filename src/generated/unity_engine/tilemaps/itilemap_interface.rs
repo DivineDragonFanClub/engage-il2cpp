@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/itilemap_interface/ITilemap_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Tilemaps" , name = "ITilemap")] # [parent (crate :: system :: object :: Object)] pub struct ITilemap_Interface {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: unity_engine :: tilemaps :: itilemap_interface :: ITilemap_Interface ,
-# [offset (16)] # [rename (name = "m_Tilemap")] pub m_tilemap : crate :: unity_engine :: tilemaps :: tilemap :: Tilemap ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/itilemap_interface/ITilemap_Interface.md"))]#[::unity2::class(namespace="UnityEngine.Tilemaps",name="ITilemap")]#[parent(crate::system::object::Object)]pub struct ITilemap_Interface{#[static_field]#[rename(name="s_Instance")]pub s_instance:crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, #[offset(16)]#[rename(name="m_Tilemap")]pub m_tilemap:crate::unity_engine::tilemaps::tilemap::Tilemap,}
 
 }
 
 #[cfg(feature = "unity_engine-tilemaps-itilemap_interface-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-impl ITilemap_Interface { # [doc = "`CreateInstance()` overload"] pub fn create_instance () -> crate :: unity_engine :: tilemaps :: itilemap_interface :: ITilemap_Interface { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: tilemaps :: itilemap_interface :: ITilemap_Interface = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42ad0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-tilemaps-itilemap_interface")]impl ITilemap_Interface{#[doc="`CreateInstance()` overload"]pub fn create_instance()->crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f42ad0usize)as*mut u8,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-pub trait IITilemap_InterfaceMethods : IITilemap_Interface { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ITilemap_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ITilemap_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RefreshTile(crate::unity_engine::vector3int::Vector3Int)` overload"] fn refresh_tile (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3int :: Vector3Int >) -> () { unsafe { let __receiver = < ITilemap_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ITilemap_Interface , crate :: unity_engine :: vector3int :: Vector3Int , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-tilemaps-itilemap_interface")]pub trait IITilemap_InterfaceMethods:IITilemap_Interface{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ITilemap_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42a00usize)as*mut u8,();
+(ITilemap_Interface)__receiver)}
+}
+#[doc="`RefreshTile(crate::unity_engine::vector3int::Vector3Int)` overload"]fn refresh_tile(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int>)->(){unsafe{let __receiver= <ITilemap_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42a10usize)as*mut u8,();
+(ITilemap_Interface)__receiver,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(position))}
+}
+}
 
-#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-impl < __T : IITilemap_Interface > IITilemap_InterfaceMethods for __T { }
+#[cfg(feature="unity_engine-tilemaps-itilemap_interface")]impl<__T:IITilemap_Interface>IITilemap_InterfaceMethods for __T{}
 
-#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-impl ITilemap_Interface { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITilemap_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn refresh_tile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITilemap_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITilemap_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-tilemaps-itilemap_interface")]impl ITilemap_Interface{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn refresh_tile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
-impl ITilemap_Interface {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ITilemap_Interface) , :: core :: stringify ! (new) ,)) ; < Self as IITilemap_InterfaceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-tilemaps-itilemap_interface")]impl ITilemap_Interface{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ITilemap_Interface), ::core::stringify!(new),));
+ <Self as IITilemap_InterfaceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]

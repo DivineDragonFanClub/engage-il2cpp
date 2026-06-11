@@ -4,129 +4,367 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineAsset.EditorSettings")] # [parent (crate :: system :: object :: Object)] pub struct TimelineAsset_EditorSettings {
-# [static_field] # [rename (name = "kMinFps")] pub k_min_fps : f32 ,
-# [static_field] # [rename (name = "kMaxFps")] pub k_max_fps : f32 ,
-# [static_field] # [rename (name = "kDefaultFps")] pub k_default_fps : f32 ,
-# [offset (16)] # [rename (name = "m_Framerate")] pub m_framerate : f32 ,
-# [offset (20)] # [rename (name = "m_ScenePreview")] pub m_scene_preview : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset.EditorSettings")]#[parent(crate::system::object::Object)]pub struct TimelineAsset_EditorSettings{#[static_field]#[rename(name="kMinFps")]pub k_min_fps:f32, #[static_field]#[rename(name="kMaxFps")]pub k_max_fps:f32, #[static_field]#[rename(name="kDefaultFps")]pub k_default_fps:f32, #[offset(16)]#[rename(name="m_Framerate")]pub m_framerate:f32, #[offset(20)]#[rename(name="m_ScenePreview")]pub m_scene_preview:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimelineAsset_DurationMode{pub value:i32,}
+impl::unity2::ClassIdentity for TimelineAsset_DurationMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
+const NAME: &'static str="TimelineAsset.DurationMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TimelineAsset_DurationMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TimelineAsset_DurationMode{pub fn based_on_clips()->Self{Self{value:0}
+}
+pub fn fixed_length()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TimelineAsset_DurationMode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TimelineAsset_DurationMode  {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-    const NAME: &'static str = "TimelineAsset.DurationMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TimelineAsset_DurationMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TimelineAsset_DurationMode  {
-    pub fn based_on_clips() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn fixed_length() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineAsset")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct TimelineAsset {
-# [static_field] # [rename (name = "k_LatestVersion")] pub k_latest_version : i32 ,
-# [offset (24)] # [rename (name = "m_Version")] pub m_version : i32 ,
-# [offset (32)] # [rename (name = "m_Tracks")] pub m_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > ,
-# [offset (40)] # [rename (name = "m_FixedDuration")] pub m_fixed_duration : f64 ,
-# [offset (48)] # [rename (name = "m_CacheOutputTracks")] pub m_cache_output_tracks : :: unity2 :: Array < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
-# [offset (56)] # [rename (name = "m_CacheRootTracks")] pub m_cache_root_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
-# [offset (64)] # [rename (name = "m_CacheFlattenedTracks")] pub m_cache_flattened_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
-# [offset (72)] # [rename (name = "m_EditorSettings")] pub m_editor_settings : crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_EditorSettings ,
-# [offset (80)] # [rename (name = "m_DurationMode")] pub m_duration_mode : crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_DurationMode ,
-# [offset (88)] # [rename (name = "m_MarkerTrack")] pub m_marker_track : crate :: unity_engine :: timeline :: markertrack :: MarkerTrack ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct TimelineAsset{#[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(24)]#[rename(name="m_Version")]pub m_version:i32, #[offset(32)]#[rename(name="m_Tracks")]pub m_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> , #[offset(40)]#[rename(name="m_FixedDuration")]pub m_fixed_duration:f64, #[offset(48)]#[rename(name="m_CacheOutputTracks")]pub m_cache_output_tracks: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(56)]#[rename(name="m_CacheRootTracks")]pub m_cache_root_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(64)]#[rename(name="m_CacheFlattenedTracks")]pub m_cache_flattened_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(72)]#[rename(name="m_EditorSettings")]pub m_editor_settings:crate::unity_engine::timeline::timelineasset::TimelineAsset_EditorSettings, #[offset(80)]#[rename(name="m_DurationMode")]pub m_duration_mode:crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode, #[offset(88)]#[rename(name="m_MarkerTrack")]pub m_marker_track:crate::unity_engine::timeline::markertrack::MarkerTrack,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineasset-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl TimelineAsset_EditorSettings { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35eb750usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-pub trait ITimelineAsset_EditorSettingsMethods : ITimelineAsset_EditorSettings { # [doc = "`get_fps()` overload"] fn get_fps (self ,) -> f32 { unsafe { let __receiver = < TimelineAsset_EditorSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset_EditorSettings , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35eb740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fps(f32)` overload"] fn set_fps (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TimelineAsset_EditorSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset_EditorSettings , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dd9c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TimelineAsset_EditorSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset_EditorSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35e0e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl < __T : ITimelineAsset_EditorSettings > ITimelineAsset_EditorSettingsMethods for __T { }
-
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl TimelineAsset_EditorSettings { pub fn get_fps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset_EditorSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_fps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset_EditorSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset_EditorSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset_EditorSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl TimelineAsset_EditorSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TimelineAsset_EditorSettings) , :: core :: stringify ! (new) ,)) ; < Self as ITimelineAsset_EditorSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35eb750usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl TimelineAsset { # [doc = "`GetValidFramerate(f32)` overload"] pub fn get_valid_framerate (framerate : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dd940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (framerate) , :: core :: option :: Option :: None) } } } # [doc = "`AddSubTracksRecursive(crate::unity_engine::timeline::trackasset::TrackAsset, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>)` overload"] pub fn add_sub_tracks_recursive (track : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > > :: uninit () ; { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: trackasset :: TrackAsset , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ddc90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (track) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-timeline-timelineasset")]pub trait ITimelineAsset_EditorSettingsMethods:ITimelineAsset_EditorSettings{#[doc="`get_fps()` overload"]fn get_fps(self,)->f32{unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35eb740usize)as*mut u8,f32;
+(TimelineAsset_EditorSettings)__receiver)}
+}
+#[doc="`set_fps(f32)` overload"]fn set_fps(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd9c0usize)as*mut u8,();
+(TimelineAsset_EditorSettings)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35e0e90usize)as*mut u8,();
+(TimelineAsset_EditorSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-pub trait ITimelineAssetMethods : ITimelineAsset { # [doc = "`UpgradeToLatestVersion()` overload"] fn upgrade_to_latest_version (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dc320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_editorSettings()` overload"] fn get_editor_settings (self ,) -> crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_EditorSettings { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_EditorSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dc330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_duration()` overload"] fn get_duration (self ,) -> f64 { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dc340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_fixedDuration()` overload"] fn get_fixed_duration (self ,) -> f64 { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dc9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fixedDuration(f64)` overload"] fn set_fixed_duration (self , value : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dcb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_durationMode()` overload"] fn get_duration_mode (self ,) -> crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_DurationMode { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_DurationMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dcbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_durationMode(crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode)` overload"] fn set_duration_mode (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_DurationMode >) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_DurationMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dcc00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_outputs()` overload"] fn get_outputs (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dcc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_clipCaps()` overload"] fn get_clip_caps (self ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dcce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_outputTrackCount()` overload"] fn get_output_track_count (self ,) -> i32 { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dd100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_rootTrackCount()` overload"] fn get_root_track_count (self ,) -> i32 { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dd540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dd860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRootTrack(i32)` overload"] fn get_root_track (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dda50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetRootTracks()` overload"] fn get_root_tracks (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dcfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetOutputTrack(i32)` overload"] fn get_output_track (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ddad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetOutputTracks()` overload"] fn get_output_tracks (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ddb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateRootTrackCache()` overload"] fn update_root_track_cache (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dd590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateOutputTrackCache()` overload"] fn update_output_track_cache (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dd130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_flattenedTracks()` overload"] fn get_flattened_tracks (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ddb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_markerTrack()` overload"] fn get_marker_track (self ,) -> crate :: unity_engine :: timeline :: markertrack :: MarkerTrack { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: markertrack :: MarkerTrack = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ddf90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_trackObjects()` overload"] fn get_track_objects (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ddfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddTrackInternal(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] fn add_track_internal (self , track : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ddfb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (track) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveTrack(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] fn remove_track (self , track : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35de0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (track) , :: core :: option :: Option :: None) } } } # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35de2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"] fn unity_engine_i_serialization_callback_receiver_on_before_serialize (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35de6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"] fn unity_engine_i_serialization_callback_receiver_on_after_deserialize (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35de6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`__internalAwake()` overload"] fn internal_awake (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35de710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"] fn gather_properties (self , director : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playabledirector :: PlayableDirector > , driver : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector >) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: playables :: playabledirector :: PlayableDirector , crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35de8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (director) , :: core :: convert :: Into :: into (driver) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMarkerTrack()` overload"] fn create_marker_track (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ded70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Invalidate()` overload"] fn invalidate (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35de050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateFixedDurationWithItemsDuration()` overload"] fn update_fixed_duration_with_items_duration (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35deea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateItemsDuration()` overload"] fn calculate_items_duration (self ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dc4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateTrack(::unity2::SystemType, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::Il2CppString)` overload"] fn create_track (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: SystemType , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35df060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } fn create_track_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > , track_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< TimelineAsset as :: unity2 :: ClassIdentity > :: class () , "CreateTrack" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TimelineAsset as :: unity2 :: ClassIdentity > :: NAME , "CreateTrack" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (track_name) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } fn create_track_3 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , track_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< TimelineAsset as :: unity2 :: ClassIdentity > :: class () , "CreateTrack" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TimelineAsset as :: unity2 :: ClassIdentity > :: NAME , "CreateTrack" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (TimelineAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (track_name) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } fn create_track_4 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< TimelineAsset as :: unity2 :: ClassIdentity > :: class () , "CreateTrack" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TimelineAsset as :: unity2 :: ClassIdentity > :: NAME , "CreateTrack" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`DeleteClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"] fn delete_clip (self , clip : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip >) -> bool { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: timelineclip :: TimelineClip , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dfd70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clip) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteTrack(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] fn delete_track (self , track : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> bool { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35e0310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (track) , :: core :: option :: Option :: None) } } } # [doc = "`MoveLastTrackBefore(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] fn move_last_track_before (self , asset : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35e0a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset) , :: core :: option :: Option :: None) } } } # [doc = "`AllocateTrack(crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::Il2CppString, ::unity2::SystemType)` overload"] fn allocate_track (self , track_asset_parent : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > , track_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , track_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35dfab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (track_asset_parent) , :: core :: convert :: Into :: into (track_name) , :: core :: convert :: Into :: into (track_type) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteRecordedAnimation(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] fn delete_recorded_animation (self , track : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35e0850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (track) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteRecordedAnimation(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"] fn delete_recorded_animation_2 (self , clip : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip >) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , crate :: unity_engine :: timeline :: timelineclip :: TimelineClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35e0060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clip) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TimelineAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35e0dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl<__T:ITimelineAsset_EditorSettings>ITimelineAsset_EditorSettingsMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl < __T : ITimelineAsset > ITimelineAssetMethods for __T { }
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{pub fn get_fps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_fps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl TimelineAsset { pub fn upgrade_to_latest_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_editor_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_fixed_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_fixed_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_duration_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_duration_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_outputs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_clip_caps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_output_track_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_root_track_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_valid_framerate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_root_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_root_tracks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_output_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_output_tracks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn update_root_track_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn update_output_track_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_flattened_tracks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_marker_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_track_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn add_track_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn remove_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn internal_awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn gather_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn create_marker_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn invalidate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn update_fixed_duration_with_items_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn calculate_items_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn add_sub_tracks_recursive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn create_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn delete_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn delete_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn move_last_track_before_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn allocate_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn delete_recorded_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn delete_recorded_animation_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } }
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TimelineAsset_EditorSettings), ::core::stringify!(new),));
+ <Self as ITimelineAsset_EditorSettingsMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl TimelineAsset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TimelineAsset) , :: core :: stringify ! (new) ,)) ; < Self as ITimelineAssetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset{#[doc="`GetValidFramerate(f32)` overload"]pub fn get_valid_framerate(framerate:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35dd940usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(framerate))}
+}
+#[doc="`AddSubTracksRecursive(crate::unity_engine::timeline::trackasset::TrackAsset, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>)` overload"]pub fn add_sub_tracks_recursive(track:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ddc90usize)as*mut u8,();
+(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track),(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]pub trait ITimelineAssetMethods:ITimelineAsset{#[doc="`UpgradeToLatestVersion()` overload"]fn upgrade_to_latest_version(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dc320usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_editorSettings()` overload"]fn get_editor_settings(self,)->crate::unity_engine::timeline::timelineasset::TimelineAsset_EditorSettings{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dc330usize)as*mut u8,crate::unity_engine::timeline::timelineasset::TimelineAsset_EditorSettings;
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dc340usize)as*mut u8,f64;
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_fixedDuration()` overload"]fn get_fixed_duration(self,)->f64{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dc9c0usize)as*mut u8,f64;
+(TimelineAsset)__receiver)}
+}
+#[doc="`set_fixedDuration(f64)` overload"]fn set_fixed_duration(self,value:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dcb60usize)as*mut u8,();
+(TimelineAsset)__receiver,(f64)::core::convert::Into::into(value))}
+}
+#[doc="`get_durationMode()` overload"]fn get_duration_mode(self,)->crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dcbf0usize)as*mut u8,crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode;
+(TimelineAsset)__receiver)}
+}
+#[doc="`set_durationMode(crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode)` overload"]fn set_duration_mode(self,value:impl::core::convert::Into<crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dcc00usize)as*mut u8,();
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_outputs()` overload"]fn get_outputs(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dcc10usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> ;
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_clipCaps()` overload"]fn get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dcce0usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_outputTrackCount()` overload"]fn get_output_track_count(self,)->i32{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd100usize)as*mut u8,i32;
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_rootTrackCount()` overload"]fn get_root_track_count(self,)->i32{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd540usize)as*mut u8,i32;
+(TimelineAsset)__receiver)}
+}
+#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd860usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`GetRootTrack(i32)` overload"]fn get_root_track(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dda50usize)as*mut u8,crate::unity_engine::timeline::trackasset::TrackAsset;
+(TimelineAsset)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetRootTracks()` overload"]fn get_root_tracks(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dcfd0usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset> ;
+(TimelineAsset)__receiver)}
+}
+#[doc="`GetOutputTrack(i32)` overload"]fn get_output_track(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ddad0usize)as*mut u8,crate::unity_engine::timeline::trackasset::TrackAsset;
+(TimelineAsset)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetOutputTracks()` overload"]fn get_output_tracks(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ddb20usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset> ;
+(TimelineAsset)__receiver)}
+}
+#[doc="`UpdateRootTrackCache()` overload"]fn update_root_track_cache(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd590usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`UpdateOutputTrackCache()` overload"]fn update_output_track_cache(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd130usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_flattenedTracks()` overload"]fn get_flattened_tracks(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ddb50usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset> ;
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_markerTrack()` overload"]fn get_marker_track(self,)->crate::unity_engine::timeline::markertrack::MarkerTrack{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ddf90usize)as*mut u8,crate::unity_engine::timeline::markertrack::MarkerTrack;
+(TimelineAsset)__receiver)}
+}
+#[doc="`get_trackObjects()` overload"]fn get_track_objects(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ddfa0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> ;
+(TimelineAsset)__receiver)}
+}
+#[doc="`AddTrackInternal(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn add_track_internal(self,track:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ddfb0usize)as*mut u8,();
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track))}
+}
+#[doc="`RemoveTrack(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn remove_track(self,track:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35de0a0usize)as*mut u8,();
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track))}
+}
+#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35de2e0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(TimelineAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35de6b0usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35de6c0usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`__internalAwake()` overload"]fn internal_awake(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35de710usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]fn gather_properties(self,director:impl::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector> ,driver:impl::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35de8e0usize)as*mut u8,();
+(TimelineAsset)__receiver,(crate::unity_engine::playables::playabledirector::PlayableDirector)::core::convert::Into::into(director),(crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)::core::convert::Into::into(driver))}
+}
+#[doc="`CreateMarkerTrack()` overload"]fn create_marker_track(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ded70usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`Invalidate()` overload"]fn invalidate(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35de050usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`UpdateFixedDurationWithItemsDuration()` overload"]fn update_fixed_duration_with_items_duration(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35deea0usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+#[doc="`CalculateItemsDuration()` overload"]fn calculate_items_duration(self,)->crate::unity_engine::timeline::discretetime::DiscreteTime{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dc4d0usize)as*mut u8,crate::unity_engine::timeline::discretetime::DiscreteTime;
+(TimelineAsset)__receiver)}
+}
+#[doc="`CreateTrack(::unity2::SystemType, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::Il2CppString)` overload"]fn create_track(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,parent:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35df060usize)as*mut u8,crate::unity_engine::timeline::trackasset::TrackAsset;
+(TimelineAsset)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(parent),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+fn create_track_2<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,parent:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset> ,track_name:impl::core::convert::Into< ::unity2::Il2CppString>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<TimelineAsset as::unity2::ClassIdentity> ::class(),"CreateTrack",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <TimelineAsset as::unity2::ClassIdentity> ::NAME,"CreateTrack",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(TimelineAsset,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::convert::Into::into(parent), ::core::convert::Into::into(track_name), ::core::option::Option::Some(__mi_opaque),)}
+}
+fn create_track_3<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,track_name:impl::core::convert::Into< ::unity2::Il2CppString>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<TimelineAsset as::unity2::ClassIdentity> ::class(),"CreateTrack",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <TimelineAsset as::unity2::ClassIdentity> ::NAME,"CreateTrack",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(TimelineAsset, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::convert::Into::into(track_name), ::core::option::Option::Some(__mi_opaque),)}
+}
+fn create_track_4<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<TimelineAsset as::unity2::ClassIdentity> ::class(),"CreateTrack",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <TimelineAsset as::unity2::ClassIdentity> ::NAME,"CreateTrack",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(TimelineAsset, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`DeleteClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]fn delete_clip(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->bool{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dfd70usize)as*mut u8,bool;
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip))}
+}
+#[doc="`DeleteTrack(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn delete_track(self,track:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->bool{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35e0310usize)as*mut u8,bool;
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track))}
+}
+#[doc="`MoveLastTrackBefore(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn move_last_track_before(self,asset:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35e0a80usize)as*mut u8,();
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(asset))}
+}
+#[doc="`AllocateTrack(crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn allocate_track(self,track_asset_parent:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset> ,track_name:impl::core::convert::Into< ::unity2::Il2CppString> ,track_type:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dfab0usize)as*mut u8,crate::unity_engine::timeline::trackasset::TrackAsset;
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track_asset_parent),(::unity2::Il2CppString)::core::convert::Into::into(track_name),(::unity2::SystemType)::core::convert::Into::into(track_type))}
+}
+#[doc="`DeleteRecordedAnimation(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn delete_recorded_animation(self,track:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35e0850usize)as*mut u8,();
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track))}
+}
+#[doc="`DeleteRecordedAnimation(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]fn delete_recorded_animation_2(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35e0060usize)as*mut u8,();
+(TimelineAsset)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35e0dc0usize)as*mut u8,();
+(TimelineAsset)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl<__T:ITimelineAsset>ITimelineAssetMethods for __T{}
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset{pub fn upgrade_to_latest_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_editor_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_fixed_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_fixed_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_duration_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_duration_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_outputs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_clip_caps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_output_track_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_root_track_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_valid_framerate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_root_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_root_tracks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_output_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_output_tracks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn update_root_track_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn update_output_track_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_flattened_tracks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_marker_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_track_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn add_track_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn remove_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn internal_awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn gather_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn create_marker_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn invalidate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn update_fixed_duration_with_items_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn calculate_items_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn add_sub_tracks_recursive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn create_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn delete_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn delete_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn move_last_track_before_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn allocate_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn delete_recorded_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn delete_recorded_animation_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+}
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TimelineAsset), ::core::stringify!(new),));
+ <Self as ITimelineAssetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineasset")]

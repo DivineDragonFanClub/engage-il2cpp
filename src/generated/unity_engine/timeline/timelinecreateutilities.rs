@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelinecreateutilities/TimelineCreateUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineCreateUtilities")] # [parent (crate :: system :: object :: Object)] pub struct TimelineCreateUtilities {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelinecreateutilities/TimelineCreateUtilities.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineCreateUtilities")]#[parent(crate::system::object::Object)]pub struct TimelineCreateUtilities{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-timelinecreateutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-timelinecreateutilities")]
-impl TimelineCreateUtilities { # [doc = "`GenerateUniqueActorName(crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>, ::unity2::Il2CppString)` overload"] pub fn generate_unique_actor_name (tracks : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35df710usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tracks) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SaveAssetIntoObject(crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"] pub fn save_asset_into_object (child_asset : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 > , master_asset : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d82e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (child_asset) , :: core :: convert :: Into :: into (master_asset) , :: core :: option :: Option :: None) } } } # [doc = "`CreateAnimationClipForTrack(::unity2::Il2CppString, crate::unity_engine::timeline::trackasset::TrackAsset, bool)` overload"] pub fn create_animation_clip_for_track (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , track : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > , is_legacy : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: animationclip :: AnimationClip { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d19c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (track) , :: core :: convert :: Into :: into (is_legacy) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateParentTrack(crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::SystemType)` overload"] pub fn validate_parent_track (parent : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > , child_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35df3d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (child_type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-timelinecreateutilities")]impl TimelineCreateUtilities{#[doc="`GenerateUniqueActorName(crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>, ::unity2::Il2CppString)` overload"]pub fn generate_unique_actor_name(tracks:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35df710usize)as*mut u8, ::unity2::Il2CppString;
+(crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>)::core::convert::Into::into(tracks),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SaveAssetIntoObject(crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"]pub fn save_asset_into_object(child_asset:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,master_asset:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d82e0usize)as*mut u8,();
+(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(child_asset),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(master_asset))}
+}
+#[doc="`CreateAnimationClipForTrack(::unity2::Il2CppString, crate::unity_engine::timeline::trackasset::TrackAsset, bool)` overload"]pub fn create_animation_clip_for_track(name:impl::core::convert::Into< ::unity2::Il2CppString> ,track:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset> ,is_legacy:impl::core::convert::Into<bool>)->crate::unity_engine::animationclip::AnimationClip{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d19c0usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track),(bool)::core::convert::Into::into(is_legacy))}
+}
+#[doc="`ValidateParentTrack(crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::SystemType)` overload"]pub fn validate_parent_track(parent:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset> ,child_type:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35df3d0usize)as*mut u8,bool;
+(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(parent),(::unity2::SystemType)::core::convert::Into::into(child_type))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-timelinecreateutilities")]
-impl TimelineCreateUtilities { pub fn generate_unique_actor_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineCreateUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn save_asset_into_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineCreateUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_animation_clip_for_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineCreateUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn validate_parent_track_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineCreateUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-timeline-timelinecreateutilities")]impl TimelineCreateUtilities{pub fn generate_unique_actor_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn save_asset_into_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_animation_clip_for_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn validate_parent_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-timeline-timelinecreateutilities")]
 #[doc(hidden)]

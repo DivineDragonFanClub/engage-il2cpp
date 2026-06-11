@@ -4,139 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/magiccommand/MagicCommand.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MagicCommand  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/magiccommand/MagicCommand.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MagicCommand{pub value:i32,}
+impl::unity2::ClassIdentity for MagicCommand{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="MagicCommand";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MagicCommand  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "MagicCommand";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MagicCommand{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MagicCommand  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MagicCommand{pub fn なし()->Self{Self{value:0}
 }
-
-
-impl  MagicCommand  {
-    pub fn なし() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn エフェ生成() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn エフェ削除() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn 魔弾発射() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn 魔弾衝突() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn 魔弾停止() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn 目標変更() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn サウンド() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn カット切替() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn カメラ() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn カメラ戻す() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn ラジブラー() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn 背景暗さ() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn ノード移動() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn 新エフェ生成() -> Self {
-        Self { value: 14 }
-
-    }
-
+pub fn エフェ生成()->Self{Self{value:1}
+}
+pub fn エフェ削除()->Self{Self{value:2}
+}
+pub fn 魔弾発射()->Self{Self{value:3}
+}
+pub fn 魔弾衝突()->Self{Self{value:4}
+}
+pub fn 魔弾停止()->Self{Self{value:5}
+}
+pub fn 目標変更()->Self{Self{value:6}
+}
+pub fn サウンド()->Self{Self{value:7}
+}
+pub fn カット切替()->Self{Self{value:8}
+}
+pub fn カメラ()->Self{Self{value:9}
+}
+pub fn カメラ戻す()->Self{Self{value:10}
+}
+pub fn ラジブラー()->Self{Self{value:11}
+}
+pub fn 背景暗さ()->Self{Self{value:12}
+}
+pub fn ノード移動()->Self{Self{value:13}
+}
+pub fn 新エフェ生成()->Self{Self{value:14}
+}
 }
 
 }

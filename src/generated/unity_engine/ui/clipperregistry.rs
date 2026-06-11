@@ -4,36 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/clipperregistry/ClipperRegistry.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ClipperRegistry")] # [parent (crate :: system :: object :: Object)] pub struct ClipperRegistry {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: unity_engine :: ui :: clipperregistry :: ClipperRegistry ,
-# [offset (16)] # [rename (name = "m_Clippers")] pub m_clippers : crate :: unity_engine :: ui :: collections :: indexedset_1 :: IndexedSet_1 < crate :: unity_engine :: ui :: iclipper :: IClipper > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/clipperregistry/ClipperRegistry.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ClipperRegistry")]#[parent(crate::system::object::Object)]pub struct ClipperRegistry{#[static_field]#[rename(name="s_Instance")]pub s_instance:crate::unity_engine::ui::clipperregistry::ClipperRegistry, #[offset(16)]#[rename(name="m_Clippers")]pub m_clippers:crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<crate::unity_engine::ui::iclipper::IClipper> ,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-clipperregistry-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-clipperregistry")]
-impl ClipperRegistry { # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: unity_engine :: ui :: clipperregistry :: ClipperRegistry { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: clipperregistry :: ClipperRegistry = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317e100usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Register(crate::unity_engine::ui::iclipper::IClipper)` overload"] pub fn register (c : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: iclipper :: IClipper >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: iclipper :: IClipper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317eee0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`Unregister(crate::unity_engine::ui::iclipper::IClipper)` overload"] pub fn unregister (c : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: iclipper :: IClipper >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: iclipper :: IClipper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317ef50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-clipperregistry")]impl ClipperRegistry{#[doc="`get_instance()` overload"]pub fn get_instance()->crate::unity_engine::ui::clipperregistry::ClipperRegistry{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317e100usize)as*mut u8,crate::unity_engine::ui::clipperregistry::ClipperRegistry;
+)}
+}
+#[doc="`Register(crate::unity_engine::ui::iclipper::IClipper)` overload"]pub fn register(c:impl::core::convert::Into<crate::unity_engine::ui::iclipper::IClipper>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317eee0usize)as*mut u8,();
+(crate::unity_engine::ui::iclipper::IClipper)::core::convert::Into::into(c))}
+}
+#[doc="`Unregister(crate::unity_engine::ui::iclipper::IClipper)` overload"]pub fn unregister(c:impl::core::convert::Into<crate::unity_engine::ui::iclipper::IClipper>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317ef50usize)as*mut u8,();
+(crate::unity_engine::ui::iclipper::IClipper)::core::convert::Into::into(c))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-clipperregistry")]
-pub trait IClipperRegistryMethods : IClipperRegistry { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ClipperRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClipperRegistry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317ee50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cull()` overload"] fn cull (self ,) -> () { unsafe { let __receiver = < ClipperRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClipperRegistry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317e200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-clipperregistry")]pub trait IClipperRegistryMethods:IClipperRegistry{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ClipperRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317ee50usize)as*mut u8,();
+(ClipperRegistry)__receiver)}
+}
+#[doc="`Cull()` overload"]fn cull(self,)->(){unsafe{let __receiver= <ClipperRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317e200usize)as*mut u8,();
+(ClipperRegistry)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-clipperregistry")]
-impl < __T : IClipperRegistry > IClipperRegistryMethods for __T { }
+#[cfg(feature="unity_engine-ui-clipperregistry")]impl<__T:IClipperRegistry>IClipperRegistryMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-clipperregistry")]
-impl ClipperRegistry { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClipperRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClipperRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cull_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClipperRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn register_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClipperRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unregister_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClipperRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-ui-clipperregistry")]impl ClipperRegistry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cull_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn register_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unregister_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-ui-clipperregistry")]
-impl ClipperRegistry {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClipperRegistry) , :: core :: stringify ! (new) ,)) ; < Self as IClipperRegistryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-clipperregistry")]impl ClipperRegistry{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ClipperRegistry), ::core::stringify!(new),));
+ <Self as IClipperRegistryMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-clipperregistry")]

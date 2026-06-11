@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: yieldinstruction :: { IYieldInstruction , YieldInstruction }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/waitforfixedupdate/WaitForFixedUpdate.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "WaitForFixedUpdate")] # [parent (crate :: unity_engine :: yieldinstruction :: YieldInstruction)] pub struct WaitForFixedUpdate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/waitforfixedupdate/WaitForFixedUpdate.md"))]#[::unity2::class(namespace="UnityEngine",name="WaitForFixedUpdate")]#[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]pub struct WaitForFixedUpdate{}
 
 }
 
 #[cfg(feature = "unity_engine-waitforfixedupdate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-waitforfixedupdate")]
-pub trait IWaitForFixedUpdateMethods : IWaitForFixedUpdate { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WaitForFixedUpdate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaitForFixedUpdate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379ab40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-waitforfixedupdate")]pub trait IWaitForFixedUpdateMethods:IWaitForFixedUpdate{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WaitForFixedUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379ab40usize)as*mut u8,();
+(WaitForFixedUpdate)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-waitforfixedupdate")]
-impl < __T : IWaitForFixedUpdate > IWaitForFixedUpdateMethods for __T { }
+#[cfg(feature="unity_engine-waitforfixedupdate")]impl<__T:IWaitForFixedUpdate>IWaitForFixedUpdateMethods for __T{}
 
-#[cfg(feature = "unity_engine-waitforfixedupdate")]
-impl WaitForFixedUpdate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaitForFixedUpdate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-waitforfixedupdate")]impl WaitForFixedUpdate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-waitforfixedupdate")]
-impl WaitForFixedUpdate {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WaitForFixedUpdate) , :: core :: stringify ! (new) ,)) ; < Self as IWaitForFixedUpdateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-waitforfixedupdate")]impl WaitForFixedUpdate{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WaitForFixedUpdate), ::core::stringify!(new),));
+ <Self as IWaitForFixedUpdateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-waitforfixedupdate")]

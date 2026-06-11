@@ -4,65 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/rendertargethandle/RenderTargetHandle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderTargetHandle {}
-
-
-impl ::unity2::ClassIdentity for RenderTargetHandle {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "RenderTargetHandle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/rendertargethandle/RenderTargetHandle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderTargetHandle{}
+impl::unity2::ClassIdentity for RenderTargetHandle{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
+const NAME: &'static str="RenderTargetHandle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for RenderTargetHandle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RenderTargetHandle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl RenderTargetHandle {
-    #[inline]
-    pub fn camera_target() -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "CameraTarget");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_camera_target(value: crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "CameraTarget");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl RenderTargetHandle{#[inline]pub fn camera_target()->crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"CameraTarget");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_camera_target(value:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"CameraTarget");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -70,14 +34,75 @@ impl RenderTargetHandle {
 #[cfg(feature = "unity_engine-rendering-universal-rendertargethandle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-rendertargethandle")]
-impl RenderTargetHandle { # [doc = "`GetCameraTarget(crate::unity_engine::rendering::universal::xrpass::XRPass)` overload"] pub fn get_camera_target (xr : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass >) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a24f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xr) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"] pub fn op_equality (c1 : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle > , c2 : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3197eb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c1) , :: core :: convert :: Into :: into (c2) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"] pub fn op_inequality (c1 : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle > , c2 : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5d30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c1) , :: core :: convert :: Into :: into (c2) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa630usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-rendertargethandle")]impl RenderTargetHandle{#[doc="`GetCameraTarget(crate::unity_engine::rendering::universal::xrpass::XRPass)` overload"]pub fn get_camera_target(xr:impl::core::convert::Into<crate::unity_engine::rendering::universal::xrpass::XRPass>)->crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31a24f0usize)as*mut u8,crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
+(crate::unity_engine::rendering::universal::xrpass::XRPass)::core::convert::Into::into(xr))}
+}
+#[doc="`op_Equality(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]pub fn op_equality(c1:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle> ,c2:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3197eb0usize)as*mut u8,bool;
+(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(c1),(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(c2))}
+}
+#[doc="`op_Inequality(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]pub fn op_inequality(c1:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle> ,c2:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31a5d30usize)as*mut u8,bool;
+(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(c1),(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(c2))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa630usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-rendertargethandle")]
-impl RenderTargetHandle { # [doc = "`set_id(i32)` overload"] pub fn set_id (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa300usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_id()` overload"] pub fn get_id (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa310usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: option :: Option :: None) } } } # [doc = "`set_rtid(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"] pub fn set_rtid (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa320usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_rtid()` overload"] pub fn get_rtid (& mut self ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa340usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"] pub fn ctor (& mut self , render_target_identifier : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa360usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: convert :: Into :: into (render_target_identifier) , :: core :: option :: Option :: None) } } } # [doc = "`Init(::unity2::Il2CppString)` overload"] pub fn init (& mut self , shader_property : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa380usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: convert :: Into :: into (shader_property) , :: core :: option :: Option :: None) } } } # [doc = "`Init(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"] pub fn init_2 (& mut self , render_target_identifier : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa3b0usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: convert :: Into :: into (render_target_identifier) , :: core :: option :: Option :: None) } } } # [doc = "`Identifier()` overload"] pub fn identifier (& mut self ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x319dfd0usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: option :: Option :: None) } } } # [doc = "`HasInternalRenderTargetId()` overload"] pub fn has_internal_render_target_id (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3197ef0usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa3d0usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa570usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aa620usize) as * mut u8) ; __inner (self as * mut RenderTargetHandle , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-rendertargethandle")]impl RenderTargetHandle{#[doc="`set_id(i32)` overload"]pub fn set_id(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa300usize)as*mut u8,();
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_id()` overload"]pub fn get_id(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa310usize)as*mut u8,i32;
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle)}
+}
+#[doc="`set_rtid(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]pub fn set_rtid(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa320usize)as*mut u8,();
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle,(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(value))}
+}
+#[doc="`get_rtid()` overload"]pub fn get_rtid(&mut self,)->crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa340usize)as*mut u8,crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle)}
+}
+#[doc="`.ctor(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]pub fn ctor(&mut self,render_target_identifier:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa360usize)as*mut u8,();
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle,(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(render_target_identifier))}
+}
+#[doc="`Init(::unity2::Il2CppString)` overload"]pub fn init(&mut self,shader_property:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa380usize)as*mut u8,();
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle,(::unity2::Il2CppString)::core::convert::Into::into(shader_property))}
+}
+#[doc="`Init(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]pub fn init_2(&mut self,render_target_identifier:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa3b0usize)as*mut u8,();
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle,(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(render_target_identifier))}
+}
+#[doc="`Identifier()` overload"]pub fn identifier(&mut self,)->crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x319dfd0usize)as*mut u8,crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle)}
+}
+#[doc="`HasInternalRenderTargetId()` overload"]pub fn has_internal_render_target_id(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3197ef0usize)as*mut u8,bool;
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle)}
+}
+#[doc="`Equals(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa3d0usize)as*mut u8,bool;
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle,(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa570usize)as*mut u8,bool;
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31aa620usize)as*mut u8,i32;
+(*mut RenderTargetHandle)self as*mut RenderTargetHandle)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-rendertargethandle")]
-impl RenderTargetHandle { pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_rtid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_rtid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_camera_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn identifier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn has_internal_render_target_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="unity_engine-rendering-universal-rendertargethandle")]impl RenderTargetHandle{pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_rtid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_rtid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_camera_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn identifier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn has_internal_render_target_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-rendertargethandle")]
 #[doc(hidden)]

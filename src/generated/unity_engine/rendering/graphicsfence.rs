@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/graphicsfence/GraphicsFence.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GraphicsFence {
-    pub m_ptr: :: unity2 :: IntPtr,
-    pub m_version: i32,
-    pub m_fence_type: crate :: unity_engine :: rendering :: graphicsfencetype :: GraphicsFenceType,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/graphicsfence/GraphicsFence.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GraphicsFence{pub m_ptr: ::unity2::IntPtr,pub m_version:i32,pub m_fence_type:crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType,}
+impl::unity2::ClassIdentity for GraphicsFence{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="GraphicsFence";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for GraphicsFence {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "GraphicsFence";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for GraphicsFence {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for GraphicsFence{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,14 +26,35 @@ impl ::unity2::IlType for GraphicsFence {
 #[cfg(feature = "unity_engine-rendering-graphicsfence-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-graphicsfence")]
-impl GraphicsFence { # [doc = "`TranslateSynchronizationStageToFlags(crate::unity_engine::rendering::synchronisationstage::SynchronisationStage)` overload"] pub fn translate_synchronization_stage_to_flags (s : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: synchronisationstage :: SynchronisationStage >) -> crate :: unity_engine :: rendering :: synchronisationstageflags :: SynchronisationStageFlags { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: synchronisationstage :: SynchronisationStage , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: synchronisationstageflags :: SynchronisationStageFlags = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c450e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`GetVersionNumber(::unity2::IntPtr)` overload"] pub fn get_version_number (fence_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c50500usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (fence_ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-graphicsfence")]impl GraphicsFence{#[doc="`TranslateSynchronizationStageToFlags(crate::unity_engine::rendering::synchronisationstage::SynchronisationStage)` overload"]pub fn translate_synchronization_stage_to_flags(s:impl::core::convert::Into<crate::unity_engine::rendering::synchronisationstage::SynchronisationStage>)->crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c450e0usize)as*mut u8,crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags;
+(crate::unity_engine::rendering::synchronisationstage::SynchronisationStage)::core::convert::Into::into(s))}
+}
+#[doc="`GetVersionNumber(::unity2::IntPtr)` overload"]pub fn get_version_number(fence_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c50500usize)as*mut u8,i32;
+(::unity2::IntPtr)::core::convert::Into::into(fence_ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-graphicsfence")]
-impl GraphicsFence { # [doc = "`InitPostAllocation()` overload"] pub fn init_post_allocation (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut GraphicsFence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c44f40usize) as * mut u8) ; __inner (self as * mut GraphicsFence , :: core :: option :: Option :: None) } } } # [doc = "`IsFencePending()` overload"] pub fn is_fence_pending (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut GraphicsFence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c45280usize) as * mut u8) ; __inner (self as * mut GraphicsFence , :: core :: option :: Option :: None) } } } # [doc = "`Validate()` overload"] pub fn validate (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut GraphicsFence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c45030usize) as * mut u8) ; __inner (self as * mut GraphicsFence , :: core :: option :: Option :: None) } } } # [doc = "`GetPlatformNotSupportedVersion()` overload"] pub fn get_platform_not_supported_version (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut GraphicsFence , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c504f0usize) as * mut u8) ; __inner (self as * mut GraphicsFence , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-graphicsfence")]impl GraphicsFence{#[doc="`InitPostAllocation()` overload"]pub fn init_post_allocation(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c44f40usize)as*mut u8,();
+(*mut GraphicsFence)self as*mut GraphicsFence)}
+}
+#[doc="`IsFencePending()` overload"]pub fn is_fence_pending(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c45280usize)as*mut u8,bool;
+(*mut GraphicsFence)self as*mut GraphicsFence)}
+}
+#[doc="`Validate()` overload"]pub fn validate(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c45030usize)as*mut u8,();
+(*mut GraphicsFence)self as*mut GraphicsFence)}
+}
+#[doc="`GetPlatformNotSupportedVersion()` overload"]pub fn get_platform_not_supported_version(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c504f0usize)as*mut u8,i32;
+(*mut GraphicsFence)self as*mut GraphicsFence)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-graphicsfence")]
-impl GraphicsFence { pub fn translate_synchronization_stage_to_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicsFence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn init_post_allocation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicsFence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_fence_pending_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicsFence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicsFence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_platform_not_supported_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicsFence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_version_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicsFence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-rendering-graphicsfence")]impl GraphicsFence{pub fn translate_synchronization_stage_to_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_post_allocation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_fence_pending_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_platform_not_supported_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_version_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-rendering-graphicsfence")]
 #[doc(hidden)]

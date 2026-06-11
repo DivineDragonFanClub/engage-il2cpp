@@ -4,63 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencerevive/MapSequenceRevive.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceRevive")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceRevive {
-# [offset (112)] # [rename (name = "m_Units")] pub m_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (120)] # [rename (name = "m_Index")] pub m_index : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencerevive/MapSequenceRevive.md"))]#[::unity2::class(namespace="App",name="MapSequenceRevive")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceRevive{#[offset(112)]#[rename(name="m_Units")]pub m_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(120)]#[rename(name="m_Index")]pub m_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencerevive/MapSequenceRevive_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceRevive_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceRevive_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceRevive.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencerevive/MapSequenceRevive_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceRevive_Label  {
-    pub value: i32,
+impl::unity2::IlType for MapSequenceRevive_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for MapSequenceRevive_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceRevive.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl MapSequenceRevive_Label{pub fn revive()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for MapSequenceRevive_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceRevive_Label  {
-    pub fn revive() -> Self {
-        Self { value: 0 }
-
-    }
-
 }
 
 }
@@ -68,21 +36,109 @@ impl  MapSequenceRevive_Label  {
 #[cfg(feature = "app-mapsequencerevive-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencerevive")]
-impl MapSequenceRevive { # [doc = "`CreateBindAfterBattle(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"] pub fn create_bind_after_battle (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , dead_units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f341f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (dead_units) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindTurnBegin(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_turn_begin (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f34af0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindDeadEvent(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] pub fn create_bind_dead_event (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f34cc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f343b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (units) , :: core :: option :: Option :: None) } } } # [doc = "`IsTimingTurnBegin(crate::app::unit::Unit)` overload"] pub fn is_timing_turn_begin (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f343a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencerevive")]impl MapSequenceRevive{#[doc="`CreateBindAfterBattle(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]pub fn create_bind_after_battle(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,dead_units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f341f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(dead_units))}
+}
+#[doc="`CreateBindTurnBegin(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_turn_begin(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f34af0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindDeadEvent(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind_dead_event(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f34cc0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f343b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(units))}
+}
+#[doc="`IsTimingTurnBegin(crate::app::unit::Unit)` overload"]pub fn is_timing_turn_begin(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f343a0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
 
-#[cfg(feature = "app-mapsequencerevive")]
-pub trait IMapSequenceReviveMethods : IMapSequenceRevive { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"] fn ctor (self , units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > >) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (units) , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Focus()` overload"] fn focus (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f334d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReviveBefre()` overload"] fn revive_befre (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ControlHpStock()` overload"] fn control_hp_stock (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReviveExec()` overload"] fn revive_exec (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReviveWait()` overload"] fn revive_wait (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideHpStock()` overload"] fn hide_hp_stock (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayHpStockEffect()` overload"] fn play_hp_stock_effect (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayingHpStockBreakEffect()` overload"] fn is_playing_hp_stock_break_effect (self ,) -> bool { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowHpStock()` overload"] fn show_hp_stock (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReleaseHpStock()` overload"] fn release_hp_stock (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReviveAfter()` overload"] fn revive_after (self ,) -> () { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNext()` overload"] fn is_next (self ,) -> bool { unsafe { let __receiver = < MapSequenceRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceRevive , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f341a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencerevive")]pub trait IMapSequenceReviveMethods:IMapSequenceRevive{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]fn ctor(self,units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> >)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33420usize)as*mut u8,();
+(MapSequenceRevive)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(units))}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33460usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`Focus()` overload"]fn focus(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f334d0usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`ReviveBefre()` overload"]fn revive_befre(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33680usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`ControlHpStock()` overload"]fn control_hp_stock(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33700usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`ReviveExec()` overload"]fn revive_exec(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33780usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`ReviveWait()` overload"]fn revive_wait(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33bb0usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`HideHpStock()` overload"]fn hide_hp_stock(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33c50usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`PlayHpStockEffect()` overload"]fn play_hp_stock_effect(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33d30usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`IsPlayingHpStockBreakEffect()` overload"]fn is_playing_hp_stock_break_effect(self,)->bool{unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33e00usize)as*mut u8,bool;
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`ShowHpStock()` overload"]fn show_hp_stock(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33e70usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`ReleaseHpStock()` overload"]fn release_hp_stock(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33f60usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`ReviveAfter()` overload"]fn revive_after(self,)->(){unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33fe0usize)as*mut u8,();
+(MapSequenceRevive)__receiver)}
+}
+#[doc="`IsNext()` overload"]fn is_next(self,)->bool{unsafe{let __receiver= <MapSequenceRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f341a0usize)as*mut u8,bool;
+(MapSequenceRevive)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencerevive")]
-impl < __T : IMapSequenceRevive > IMapSequenceReviveMethods for __T { }
+#[cfg(feature="app-mapsequencerevive")]impl<__T:IMapSequenceRevive>IMapSequenceReviveMethods for __T{}
 
-#[cfg(feature = "app-mapsequencerevive")]
-impl MapSequenceRevive { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn focus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn revive_befre_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn control_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn revive_exec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn revive_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn hide_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn play_hp_stock_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_playing_hp_stock_break_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn show_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn release_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn revive_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn create_bind_after_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn create_bind_turn_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn create_bind_dead_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_timing_turn_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-mapsequencerevive")]impl MapSequenceRevive{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn focus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn revive_befre_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn control_hp_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn revive_exec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn revive_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn hide_hp_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn play_hp_stock_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_playing_hp_stock_break_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn show_hp_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn release_hp_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn revive_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn create_bind_after_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn create_bind_turn_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn create_bind_dead_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_timing_turn_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-mapsequencerevive")]
-impl MapSequenceRevive {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` — overload selector"] pub fn new (units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceRevive) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceReviveMethods > :: ctor (this , units) ; this }
+#[cfg(feature="app-mapsequencerevive")]impl MapSequenceRevive{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` — overload selector"]pub fn new(units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceRevive), ::core::stringify!(new),));
+ <Self as IMapSequenceReviveMethods> ::ctor(this,units);
+this}
 }
 
 #[cfg(feature = "app-mapsequencerevive")]

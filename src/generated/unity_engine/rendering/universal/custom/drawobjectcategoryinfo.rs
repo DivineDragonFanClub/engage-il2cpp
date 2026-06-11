@@ -4,35 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/drawobjectcategoryinfo/DrawObjectCategoryInfo.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "DrawObjectCategoryInfo")] # [parent (crate :: system :: object :: Object)] pub struct DrawObjectCategoryInfo {
-# [static_field] # [rename (name = "s_DrawObjectVisibilities")] pub s_draw_object_visibilities : :: unity2 :: Array < bool > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/drawobjectcategoryinfo/DrawObjectCategoryInfo.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="DrawObjectCategoryInfo")]#[parent(crate::system::object::Object)]pub struct DrawObjectCategoryInfo{#[static_field]#[rename(name="s_DrawObjectVisibilities")]pub s_draw_object_visibilities: ::unity2::Array<bool> ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-impl DrawObjectCategoryInfo { # [doc = "`GetNoOverrideStateIndexBegin()` overload"] pub fn get_no_override_state_index_begin () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee8640usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee8650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsVisible(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory)` overload"] pub fn is_visible (category : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee8780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (category) , :: core :: option :: Option :: None) } } } # [doc = "`SetVisibility(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory, bool)` overload"] pub fn set_visibility (category : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory > , visibility : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee8820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (category) , :: core :: convert :: Into :: into (visibility) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]impl DrawObjectCategoryInfo{#[doc="`GetNoOverrideStateIndexBegin()` overload"]pub fn get_no_override_state_index_begin()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee8640usize)as*mut u8,i32;
+)}
+}
+#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee8650usize)as*mut u8,();
+)}
+}
+#[doc="`IsVisible(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory)` overload"]pub fn is_visible(category:impl::core::convert::Into<crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee8780usize)as*mut u8,bool;
+(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory)::core::convert::Into::into(category))}
+}
+#[doc="`SetVisibility(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory, bool)` overload"]pub fn set_visibility(category:impl::core::convert::Into<crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory> ,visibility:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee8820usize)as*mut u8,();
+(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory)::core::convert::Into::into(category),(bool)::core::convert::Into::into(visibility))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-pub trait IDrawObjectCategoryInfoMethods : IDrawObjectCategoryInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DrawObjectCategoryInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DrawObjectCategoryInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee88b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]pub trait IDrawObjectCategoryInfoMethods:IDrawObjectCategoryInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DrawObjectCategoryInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee88b0usize)as*mut u8,();
+(DrawObjectCategoryInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-impl < __T : IDrawObjectCategoryInfo > IDrawObjectCategoryInfoMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]impl<__T:IDrawObjectCategoryInfo>IDrawObjectCategoryInfoMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-impl DrawObjectCategoryInfo { pub fn get_no_override_state_index_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_visibility_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrawObjectCategoryInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]impl DrawObjectCategoryInfo{pub fn get_no_override_state_index_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_visibility_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
-impl DrawObjectCategoryInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DrawObjectCategoryInfo) , :: core :: stringify ! (new) ,)) ; < Self as IDrawObjectCategoryInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]impl DrawObjectCategoryInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DrawObjectCategoryInfo), ::core::stringify!(new),));
+ <Self as IDrawObjectCategoryInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]

@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gridmenuitem/GridMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GridMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct GridMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gridmenuitem/GridMenuItem.md"))]#[::unity2::class(namespace="App",name="GridMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GridMenuItem{}
 
 }
 
 #[cfg(feature = "app-gridmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gridmenuitem")]
-pub trait IGridMenuItemMethods : IGridMenuItem { # [doc = "`GetWidth()` overload"] fn get_width (self ,) -> f32 { unsafe { let __receiver = < GridMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenuItem , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296f280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHeight()` overload"] fn get_height (self ,) -> f32 { unsafe { let __receiver = < GridMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenuItem , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296f370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GridMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296f460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gridmenuitem")]pub trait IGridMenuItemMethods:IGridMenuItem{#[doc="`GetWidth()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <GridMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296f280usize)as*mut u8,f32;
+(GridMenuItem)__receiver)}
+}
+#[doc="`GetHeight()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <GridMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296f370usize)as*mut u8,f32;
+(GridMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GridMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296f460usize)as*mut u8,();
+(GridMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gridmenuitem")]
-impl < __T : IGridMenuItem > IGridMenuItemMethods for __T { }
+#[cfg(feature="app-gridmenuitem")]impl<__T:IGridMenuItem>IGridMenuItemMethods for __T{}
 
-#[cfg(feature = "app-gridmenuitem")]
-impl GridMenuItem { pub fn get_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-gridmenuitem")]impl GridMenuItem{pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-gridmenuitem")]
-impl GridMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GridMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IGridMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gridmenuitem")]impl GridMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GridMenuItem), ::core::stringify!(new),));
+ <Self as IGridMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gridmenuitem")]

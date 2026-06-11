@@ -4,40 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundlelocalresource/AssetBundleLocalResource.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceProviders" , name = "AssetBundleLocalResource")] # [parent (crate :: system :: object :: Object)] pub struct AssetBundleLocalResource {
-# [offset (16)] # [rename (name = "m_AssetBundle")] pub m_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
-# [offset (24)] # [rename (name = "m_RequestOperation")] pub m_request_operation : crate :: unity_engine :: asyncoperation :: AsyncOperation ,
-# [offset (32)] # [rename (name = "m_ProgressHandler")] pub m_progress_handler : crate :: system :: func_1 :: Func_1 < f32 > ,
-# [offset (40)] # [rename (name = "m_WaitForCompletionHandler")] pub m_wait_for_completion_handler : crate :: system :: func_1 :: Func_1 < bool > ,
-# [offset (48)] # [rename (name = "m_CompleteHandler")] pub m_complete_handler : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: asyncoperation :: AsyncOperation > ,
-# [offset (56)] # [rename (name = "m_ProvideHandle")] pub m_provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
-# [offset (80)] # [rename (name = "m_Key")] pub m_key : :: unity2 :: Il2CppString ,
-# [offset (88)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (92)] # [rename (name = "m_Completed")] pub m_completed : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/assetbundlelocalresource/AssetBundleLocalResource.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="AssetBundleLocalResource")]#[parent(crate::system::object::Object)]pub struct AssetBundleLocalResource{#[offset(16)]#[rename(name="m_AssetBundle")]pub m_asset_bundle:crate::unity_engine::assetbundle::AssetBundle, #[offset(24)]#[rename(name="m_RequestOperation")]pub m_request_operation:crate::unity_engine::asyncoperation::AsyncOperation, #[offset(32)]#[rename(name="m_ProgressHandler")]pub m_progress_handler:crate::system::func_1::Func_1<f32> , #[offset(40)]#[rename(name="m_WaitForCompletionHandler")]pub m_wait_for_completion_handler:crate::system::func_1::Func_1<bool> , #[offset(48)]#[rename(name="m_CompleteHandler")]pub m_complete_handler:crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation> , #[offset(56)]#[rename(name="m_ProvideHandle")]pub m_provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, #[offset(80)]#[rename(name="m_Key")]pub m_key: ::unity2::Il2CppString, #[offset(88)]#[rename(name="m_Time")]pub m_time:f32, #[offset(92)]#[rename(name="m_Completed")]pub m_completed:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
-pub trait IAssetBundleLocalResourceMethods : IAssetBundleLocalResource { # [doc = "`GetAssetBundle()` overload"] fn get_asset_bundle (self ,) -> crate :: unity_engine :: assetbundle :: AssetBundle { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: assetbundle :: AssetBundle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PercentComplete()` overload"] fn percent_complete (self ,) -> f32 { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LocalRequestOperationCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"] fn local_request_operation_completed (self , op : impl :: core :: convert :: Into < crate :: unity_engine :: asyncoperation :: AsyncOperation >) -> () { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleLocalResource , crate :: unity_engine :: asyncoperation :: AsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`WaitForCompletionHandler()` overload"] fn wait_for_completion_handler (self ,) -> bool { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString, crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"] fn load (self , key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >) -> () { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (provide_handle) , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < AssetBundleLocalResource as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211a5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlelocalresource")]pub trait IAssetBundleLocalResourceMethods:IAssetBundleLocalResource{#[doc="`GetAssetBundle()` overload"]fn get_asset_bundle(self,)->crate::unity_engine::assetbundle::AssetBundle{unsafe{let __receiver= <AssetBundleLocalResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211a0d0usize)as*mut u8,crate::unity_engine::assetbundle::AssetBundle;
+(AssetBundleLocalResource)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetBundleLocalResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211a1c0usize)as*mut u8,();
+(AssetBundleLocalResource)__receiver)}
+}
+#[doc="`PercentComplete()` overload"]fn percent_complete(self,)->f32{unsafe{let __receiver= <AssetBundleLocalResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211a350usize)as*mut u8,f32;
+(AssetBundleLocalResource)__receiver)}
+}
+#[doc="`LocalRequestOperationCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]fn local_request_operation_completed(self,op:impl::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>)->(){unsafe{let __receiver= <AssetBundleLocalResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211a370usize)as*mut u8,();
+(AssetBundleLocalResource)__receiver,(crate::unity_engine::asyncoperation::AsyncOperation)::core::convert::Into::into(op))}
+}
+#[doc="`WaitForCompletionHandler()` overload"]fn wait_for_completion_handler(self,)->bool{unsafe{let __receiver= <AssetBundleLocalResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211a4a0usize)as*mut u8,bool;
+(AssetBundleLocalResource)__receiver)}
+}
+#[doc="`Load(::unity2::Il2CppString, crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn load(self,key:impl::core::convert::Into< ::unity2::Il2CppString> ,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <AssetBundleLocalResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211a4f0usize)as*mut u8,();
+(AssetBundleLocalResource)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key),(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)::core::convert::Into::into(provide_handle))}
+}
+#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <AssetBundleLocalResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211a5c0usize)as*mut u8,();
+(AssetBundleLocalResource)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
-impl < __T : IAssetBundleLocalResource > IAssetBundleLocalResourceMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlelocalresource")]impl<__T:IAssetBundleLocalResource>IAssetBundleLocalResourceMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
-impl AssetBundleLocalResource { pub fn get_asset_bundle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn percent_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn local_request_operation_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn wait_for_completion_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleLocalResource as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlelocalresource")]impl AssetBundleLocalResource{pub fn get_asset_bundle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn percent_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn local_request_operation_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn wait_for_completion_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
-impl AssetBundleLocalResource {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetBundleLocalResource) , :: core :: stringify ! (new) ,)) ; < Self as IAssetBundleLocalResourceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-resource_management-resource_providers-assetbundlelocalresource")]impl AssetBundleLocalResource{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetBundleLocalResource), ::core::stringify!(new),));
+ <Self as IAssetBundleLocalResourceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]

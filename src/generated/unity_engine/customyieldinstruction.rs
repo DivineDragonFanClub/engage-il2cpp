@@ -4,33 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/customyieldinstruction/CustomYieldInstruction.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CustomYieldInstruction")] # [parent (crate :: system :: object :: Object)] pub struct CustomYieldInstruction {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/customyieldinstruction/CustomYieldInstruction.md"))]#[::unity2::class(namespace="UnityEngine",name="CustomYieldInstruction")]#[parent(crate::system::object::Object)]pub struct CustomYieldInstruction{}
 
 }
 
 #[cfg(feature = "unity_engine-customyieldinstruction-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-customyieldinstruction")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CustomYieldInstruction_unity2_raw { use super :: * ; pub unsafe fn get_keep_waiting (this : CustomYieldInstruction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_keepWaiting") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_keepWaiting" , < CustomYieldInstruction as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CustomYieldInstruction , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-customyieldinstruction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CustomYieldInstruction_unity2_raw{use super:: * ;
+pub unsafe fn get_keep_waiting(this:CustomYieldInstruction,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_keepWaiting").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_keepWaiting", <CustomYieldInstruction as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CustomYieldInstruction, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-customyieldinstruction")]
-pub trait ICustomYieldInstructionMethods : ICustomYieldInstruction { # [doc = "`get_keepWaiting()` overload"] fn get_keep_waiting (self ,) -> bool { unsafe { let __receiver = < CustomYieldInstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CustomYieldInstruction_unity2_raw :: get_keep_waiting (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < CustomYieldInstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomYieldInstruction , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> bool { unsafe { let __receiver = < CustomYieldInstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomYieldInstruction , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < CustomYieldInstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomYieldInstruction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomYieldInstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomYieldInstruction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-customyieldinstruction")]pub trait ICustomYieldInstructionMethods:ICustomYieldInstruction{#[doc="`get_keepWaiting()` overload"]fn get_keep_waiting(self,)->bool{unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CustomYieldInstruction_unity2_raw::get_keep_waiting(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a470usize)as*mut u8,crate::system::object::Object;
+(CustomYieldInstruction)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a480usize)as*mut u8,bool;
+(CustomYieldInstruction)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a490usize)as*mut u8,();
+(CustomYieldInstruction)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a4a0usize)as*mut u8,();
+(CustomYieldInstruction)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-customyieldinstruction")]
-impl < __T : ICustomYieldInstruction > ICustomYieldInstructionMethods for __T { }
+#[cfg(feature="unity_engine-customyieldinstruction")]impl<__T:ICustomYieldInstruction>ICustomYieldInstructionMethods for __T{}
 
-#[cfg(feature = "unity_engine-customyieldinstruction")]
-impl CustomYieldInstruction { pub fn get_keep_waiting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomYieldInstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomYieldInstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomYieldInstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomYieldInstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomYieldInstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-customyieldinstruction")]impl CustomYieldInstruction{pub fn get_keep_waiting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-customyieldinstruction")]
-impl CustomYieldInstruction {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomYieldInstruction) , :: core :: stringify ! (new) ,)) ; < Self as ICustomYieldInstructionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-customyieldinstruction")]impl CustomYieldInstruction{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomYieldInstruction), ::core::stringify!(new),));
+ <Self as ICustomYieldInstructionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-customyieldinstruction")]

@@ -4,39 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventbehaviour/MyRoomEventBehaviour.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomEventBehaviour")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct MyRoomEventBehaviour {
-# [offset (16)] # [rename (name = "eventType")] pub event_type : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipType ,
-# [offset (24)] # [rename (name = "eventName")] pub event_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "eventLayer")] pub event_layer : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipLayer ,
-# [offset (36)] # [rename (name = "isOut")] pub is_out : bool ,
-# [offset (40)] # [rename (name = "effectObject")] pub effect_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "soundHandle")] pub sound_handle : crate :: app :: gamesound :: GameSound_Handle ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeventbehaviour/MyRoomEventBehaviour.md"))]#[::unity2::class(namespace="App",name="MyRoomEventBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct MyRoomEventBehaviour{#[offset(16)]#[rename(name="eventType")]pub event_type:crate::app::myroomeventclip::MyRoomEventClip_EventClipType, #[offset(24)]#[rename(name="eventName")]pub event_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="eventLayer")]pub event_layer:crate::app::myroomeventclip::MyRoomEventClip_EventClipLayer, #[offset(36)]#[rename(name="isOut")]pub is_out:bool, #[offset(40)]#[rename(name="effectObject")]pub effect_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="soundHandle")]pub sound_handle:crate::app::gamesound::GameSound_Handle,}
 
 }
 
 #[cfg(feature = "app-myroomeventbehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomeventbehaviour")]
-pub trait IMyRoomEventBehaviourMethods : IMyRoomEventBehaviour { # [doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_play (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238dfd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_pause (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238e220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238e300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } } # [doc = "`CreateEffect(::unity2::Il2CppString)` overload"] fn create_effect (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventBehaviour , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238e0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetLayerParent()` overload"] fn get_layer_parent (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ec00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomEventBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ece0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomeventbehaviour")]pub trait IMyRoomEventBehaviourMethods:IMyRoomEventBehaviour{#[doc="`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <MyRoomEventBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238dfd0usize)as*mut u8,();
+(MyRoomEventBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_pause(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <MyRoomEventBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238e220usize)as*mut u8,();
+(MyRoomEventBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <MyRoomEventBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238e300usize)as*mut u8,();
+(MyRoomEventBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+}
+#[doc="`CreateEffect(::unity2::Il2CppString)` overload"]fn create_effect(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MyRoomEventBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238e0a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(MyRoomEventBehaviour)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetLayerParent()` overload"]fn get_layer_parent(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <MyRoomEventBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ec00usize)as*mut u8,crate::unity_engine::transform::Transform;
+(MyRoomEventBehaviour)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomEventBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ece0usize)as*mut u8,();
+(MyRoomEventBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomeventbehaviour")]
-impl < __T : IMyRoomEventBehaviour > IMyRoomEventBehaviourMethods for __T { }
+#[cfg(feature="app-myroomeventbehaviour")]impl<__T:IMyRoomEventBehaviour>IMyRoomEventBehaviourMethods for __T{}
 
-#[cfg(feature = "app-myroomeventbehaviour")]
-impl MyRoomEventBehaviour { pub fn on_behaviour_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_behaviour_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_layer_parent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-myroomeventbehaviour")]impl MyRoomEventBehaviour{pub fn on_behaviour_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_behaviour_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_layer_parent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-myroomeventbehaviour")]
-impl MyRoomEventBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomEventBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomEventBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomeventbehaviour")]impl MyRoomEventBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomEventBehaviour), ::core::stringify!(new),));
+ <Self as IMyRoomEventBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomeventbehaviour")]

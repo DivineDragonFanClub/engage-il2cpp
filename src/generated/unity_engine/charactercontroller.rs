@@ -4,18 +4,18 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: collider :: { Collider , ICollider }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::collider::{Collider,ICollider}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/charactercontroller/CharacterController.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CharacterController")] # [parent (crate :: unity_engine :: collider :: Collider)] pub struct CharacterController {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/charactercontroller/CharacterController.md"))]#[::unity2::class(namespace="UnityEngine",name="CharacterController")]#[parent(crate::unity_engine::collider::Collider)]pub struct CharacterController{}
 
 }
 

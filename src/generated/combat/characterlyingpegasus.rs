@@ -4,54 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: characterlying :: { CharacterLying , ICharacterLying }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::characterlying::{CharacterLying,ICharacterLying}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyingpegasus/CharacterLyingPegasus.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterLyingPegasus")] # [parent (crate :: combat :: characterlying :: CharacterLying)] pub struct CharacterLyingPegasus {
-# [offset (33)] # [rename (name = "m_WasHumanLanded")] pub m_was_human_landed : bool ,
-# [offset (34)] # [rename (name = "m_WasRideLanded")] pub m_was_ride_landed : bool ,
-# [offset (36)] # [rename (name = "m_HumanOrient")] pub m_human_orient : crate :: combat :: tr :: TR ,
-# [offset (64)] # [rename (name = "m_RideOrient")] pub m_ride_orient : crate :: combat :: tr :: TR ,
-# [offset (92)] # [rename (name = "m_SkipFrames")] pub m_skip_frames : i32 ,
-# [offset (96)] # [rename (name = "m_RidePushedLocalRotation")] pub m_ride_pushed_local_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (112)] # [rename (name = "m_IsCollide")] pub m_is_collide : bool ,
-# [offset (116)] # [rename (name = "m_LastSafetyCTransXZ")] pub m_last_safety_c_trans_xz : crate :: combat :: fxz :: FXZ ,
-# [offset (124)] # [rename (name = "m_LastLookAtRideLoc")] pub m_last_look_at_ride_loc : crate :: combat :: fxz :: FXZ ,
-# [offset (136)] # [rename (name = "c_hip_ride_jnt")] pub c_hip_ride_jnt : crate :: unity_engine :: transform :: Transform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterlyingpegasus/CharacterLyingPegasus.md"))]#[::unity2::class(namespace="Combat",name="CharacterLyingPegasus")]#[parent(crate::combat::characterlying::CharacterLying)]pub struct CharacterLyingPegasus{#[offset(33)]#[rename(name="m_WasHumanLanded")]pub m_was_human_landed:bool, #[offset(34)]#[rename(name="m_WasRideLanded")]pub m_was_ride_landed:bool, #[offset(36)]#[rename(name="m_HumanOrient")]pub m_human_orient:crate::combat::tr::TR, #[offset(64)]#[rename(name="m_RideOrient")]pub m_ride_orient:crate::combat::tr::TR, #[offset(92)]#[rename(name="m_SkipFrames")]pub m_skip_frames:i32, #[offset(96)]#[rename(name="m_RidePushedLocalRotation")]pub m_ride_pushed_local_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(112)]#[rename(name="m_IsCollide")]pub m_is_collide:bool, #[offset(116)]#[rename(name="m_LastSafetyCTransXZ")]pub m_last_safety_c_trans_xz:crate::combat::fxz::FXZ, #[offset(124)]#[rename(name="m_LastLookAtRideLoc")]pub m_last_look_at_ride_loc:crate::combat::fxz::FXZ, #[offset(136)]#[rename(name="c_hip_ride_jnt")]pub c_hip_ride_jnt:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "combat-characterlyingpegasus-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterlyingpegasus")]
-impl CharacterLyingPegasus { # [doc = "`IsNeedToWork(crate::combat::character::Character)` overload"] pub fn is_need_to_work (chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } } # [doc = "`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn get_ground_tr () -> (crate :: combat :: tr :: TR , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e53f0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector4::Vector4)` overload"] pub fn get_ground_tr_2 () -> (crate :: combat :: tr :: TR , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector4 :: Vector4) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector4 :: Vector4 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5b10usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="combat-characterlyingpegasus")]impl CharacterLyingPegasus{#[doc="`IsNeedToWork(crate::combat::character::Character)` overload"]pub fn is_need_to_work(chr:impl::core::convert::Into<crate::combat::character::Character>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25e5060usize)as*mut u8,bool;
+(crate::combat::character::Character)::core::convert::Into::into(chr))}
+}
+#[doc="`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn get_ground_tr()->(crate::combat::tr::TR,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25e53f0usize)as*mut u8,crate::combat::tr::TR;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetGroundTR(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector4::Vector4)` overload"]pub fn get_ground_tr_2()->(crate::combat::tr::TR,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector4::Vector4){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector4::Vector4> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25e5b10usize)as*mut u8,crate::combat::tr::TR;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector4::Vector4)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+}
 
-#[cfg(feature = "combat-characterlyingpegasus")]
-pub trait ICharacterLyingPegasusMethods : ICharacterLyingPegasus { # [doc = "`MyStart(i32)` overload"] fn my_start (self , die_hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingPegasus , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (die_hash) , :: core :: option :: Option :: None) } } } # [doc = "`MakeMyDeadPose()` overload"] fn make_my_dead_pose (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyUpdate()` overload"] fn my_update (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyLateUpdate()` overload"] fn my_late_update (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnLandHuman()` overload"] fn on_land_human (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnLandPegasus()` overload"] fn on_land_pegasus (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterLyingPegasus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingPegasus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e6210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterlyingpegasus")]pub trait ICharacterLyingPegasusMethods:ICharacterLyingPegasus{#[doc="`MyStart(i32)` overload"]fn my_start(self,die_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterLyingPegasus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5080usize)as*mut u8,();
+(CharacterLyingPegasus)__receiver,(i32)::core::convert::Into::into(die_hash))}
+}
+#[doc="`MakeMyDeadPose()` overload"]fn make_my_dead_pose(self,)->(){unsafe{let __receiver= <CharacterLyingPegasus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5160usize)as*mut u8,();
+(CharacterLyingPegasus)__receiver)}
+}
+#[doc="`MyUpdate()` overload"]fn my_update(self,)->(){unsafe{let __receiver= <CharacterLyingPegasus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5520usize)as*mut u8,();
+(CharacterLyingPegasus)__receiver)}
+}
+#[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterLyingPegasus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5570usize)as*mut u8,();
+(CharacterLyingPegasus)__receiver)}
+}
+#[doc="`OnLandHuman()` overload"]fn on_land_human(self,)->(){unsafe{let __receiver= <CharacterLyingPegasus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5bf0usize)as*mut u8,();
+(CharacterLyingPegasus)__receiver)}
+}
+#[doc="`OnLandPegasus()` overload"]fn on_land_pegasus(self,)->(){unsafe{let __receiver= <CharacterLyingPegasus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5e00usize)as*mut u8,();
+(CharacterLyingPegasus)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterLyingPegasus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e6210usize)as*mut u8,();
+(CharacterLyingPegasus)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterlyingpegasus")]
-impl < __T : ICharacterLyingPegasus > ICharacterLyingPegasusMethods for __T { }
+#[cfg(feature="combat-characterlyingpegasus")]impl<__T:ICharacterLyingPegasus>ICharacterLyingPegasusMethods for __T{}
 
-#[cfg(feature = "combat-characterlyingpegasus")]
-impl CharacterLyingPegasus { pub fn is_need_to_work_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn make_my_dead_pose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn my_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn my_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_ground_tr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_ground_tr_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_land_human_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_land_pegasus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingPegasus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="combat-characterlyingpegasus")]impl CharacterLyingPegasus{pub fn is_need_to_work_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn make_my_dead_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn my_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn my_late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_ground_tr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_ground_tr_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_land_human_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_land_pegasus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "combat-characterlyingpegasus")]
-impl CharacterLyingPegasus {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterLyingPegasus) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterLyingPegasusMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterlyingpegasus")]impl CharacterLyingPegasus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterLyingPegasus), ::core::stringify!(new),));
+ <Self as ICharacterLyingPegasusMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterlyingpegasus")]

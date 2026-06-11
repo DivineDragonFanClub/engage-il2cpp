@@ -4,41 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akrtpcplayable/AkRTPCPlayable.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRTPCPlayable")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct AkRTPCPlayable {
-# [offset (24)] # [rename (name = "overrideTrackObject")] pub override_track_object : bool ,
-# [offset (32)] # [rename (name = "RTPCObject")] pub rtpc_object : crate :: unity_engine :: exposedreference_1 :: ExposedReference_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (48)] # [rename (name = "setRTPCGlobally")] pub set_rtpc_globally : bool ,
-# [offset (56)] # [rename (name = "template")] pub template : crate :: root :: akrtpcplayablebehaviour :: AkRTPCPlayableBehaviour ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akrtpcplayable/AkRTPCPlayable.md"))]#[::unity2::class(namespace="",name="AkRTPCPlayable")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct AkRTPCPlayable{#[offset(24)]#[rename(name="overrideTrackObject")]pub override_track_object:bool, #[offset(32)]#[rename(name="RTPCObject")]pub rtpc_object:crate::unity_engine::exposedreference_1::ExposedReference_1<crate::unity_engine::gameobject::GameObject> , #[offset(48)]#[rename(name="setRTPCGlobally")]pub set_rtpc_globally:bool, #[offset(56)]#[rename(name="template")]pub template:crate::root::akrtpcplayablebehaviour::AkRTPCPlayableBehaviour,}
 
 }
 
 #[cfg(feature = "root-akrtpcplayable-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akrtpcplayable")]
-pub trait IAkRTPCPlayableMethods : IAkRTPCPlayable { # [doc = "`get_OwningClip()` overload"] fn get_owning_clip (self ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip { unsafe { let __receiver = < AkRTPCPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2f7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OwningClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"] fn set_owning_clip (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip >) -> () { unsafe { let __receiver = < AkRTPCPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayable , crate :: unity_engine :: timeline :: timelineclip :: TimelineClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2f800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.Timeline.ITimelineClipAsset.get_clipCaps()` overload"] fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps (self ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { unsafe { let __receiver = < AkRTPCPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2f810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < AkRTPCPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayable , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2f820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRTPCPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2f9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akrtpcplayable")]pub trait IAkRTPCPlayableMethods:IAkRTPCPlayable{#[doc="`get_OwningClip()` overload"]fn get_owning_clip(self,)->crate::unity_engine::timeline::timelineclip::TimelineClip{unsafe{let __receiver= <AkRTPCPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2f7f0usize)as*mut u8,crate::unity_engine::timeline::timelineclip::TimelineClip;
+(AkRTPCPlayable)__receiver)}
+}
+#[doc="`set_OwningClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]fn set_owning_clip(self,value:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->(){unsafe{let __receiver= <AkRTPCPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2f800usize)as*mut u8,();
+(AkRTPCPlayable)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(value))}
+}
+#[doc="`UnityEngine.Timeline.ITimelineClipAsset.get_clipCaps()` overload"]fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <AkRTPCPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2f810usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
+(AkRTPCPlayable)__receiver)}
+}
+#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AkRTPCPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2f820usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(AkRTPCPlayable)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRTPCPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2f9c0usize)as*mut u8,();
+(AkRTPCPlayable)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akrtpcplayable")]
-impl < __T : IAkRTPCPlayable > IAkRTPCPlayableMethods for __T { }
+#[cfg(feature="root-akrtpcplayable")]impl<__T:IAkRTPCPlayable>IAkRTPCPlayableMethods for __T{}
 
-#[cfg(feature = "root-akrtpcplayable")]
-impl AkRTPCPlayable { pub fn get_owning_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_owning_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-akrtpcplayable")]impl AkRTPCPlayable{pub fn get_owning_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_owning_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-akrtpcplayable")]
-impl AkRTPCPlayable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRTPCPlayable) , :: core :: stringify ! (new) ,)) ; < Self as IAkRTPCPlayableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akrtpcplayable")]impl AkRTPCPlayable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRTPCPlayable), ::core::stringify!(new),));
+ <Self as IAkRTPCPlayableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akrtpcplayable")]

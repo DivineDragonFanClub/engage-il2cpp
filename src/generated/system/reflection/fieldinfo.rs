@@ -4,38 +4,176 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/fieldinfo/FieldInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "FieldInfo")] # [parent (crate :: system :: reflection :: memberinfo :: MemberInfo)] pub struct FieldInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/fieldinfo/FieldInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="FieldInfo")]#[parent(crate::system::reflection::memberinfo::MemberInfo)]pub struct FieldInfo{}
 
 }
 
 #[cfg(feature = "system-reflection-fieldinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-fieldinfo")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FieldInfo_unity2_raw { use super :: * ; pub unsafe fn get_attributes (this : FieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: fieldattributes :: FieldAttributes { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Attributes") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Attributes" , < FieldInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: fieldattributes :: FieldAttributes = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_field_type (this : FieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_FieldType") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_FieldType" , < FieldInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_value (this : FieldInfo , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetValue") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetValue" , < FieldInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (FieldInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , obj , __mi) } }
+#[cfg(feature="system-reflection-fieldinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FieldInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_attributes(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::fieldattributes::FieldAttributes{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Attributes").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Attributes", <FieldInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->crate::system::reflection::fieldattributes::FieldAttributes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_field_type(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_FieldType").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_FieldType", <FieldInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value(this:FieldInfo,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetValue").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetValue", <FieldInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(FieldInfo,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+}
 
-#[cfg(feature = "system-reflection-fieldinfo")]
-impl FieldInfo { # [doc = "`internal_from_handle_type(::unity2::IntPtr, ::unity2::IntPtr)` overload"] pub fn internal_from_handle_type (field_handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , type_handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: system :: reflection :: fieldinfo :: FieldInfo { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: fieldinfo :: FieldInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9720usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (field_handle) , :: core :: convert :: Into :: into (type_handle) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::system::reflection::fieldinfo::FieldInfo, crate::system::reflection::fieldinfo::FieldInfo)` overload"] pub fn op_equality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: fieldinfo :: FieldInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: fieldinfo :: FieldInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: fieldinfo :: FieldInfo , crate :: system :: reflection :: fieldinfo :: FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad98b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::system::reflection::fieldinfo::FieldInfo, crate::system::reflection::fieldinfo::FieldInfo)` overload"] pub fn op_inequality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: fieldinfo :: FieldInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: fieldinfo :: FieldInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: fieldinfo :: FieldInfo , crate :: system :: reflection :: fieldinfo :: FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-fieldinfo")]impl FieldInfo{#[doc="`internal_from_handle_type(::unity2::IntPtr, ::unity2::IntPtr)` overload"]pub fn internal_from_handle_type(field_handle:impl::core::convert::Into< ::unity2::IntPtr> ,type_handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::system::reflection::fieldinfo::FieldInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9720usize)as*mut u8,crate::system::reflection::fieldinfo::FieldInfo;
+(::unity2::IntPtr)::core::convert::Into::into(field_handle),(::unity2::IntPtr)::core::convert::Into::into(type_handle))}
+}
+#[doc="`op_Equality(crate::system::reflection::fieldinfo::FieldInfo, crate::system::reflection::fieldinfo::FieldInfo)` overload"]pub fn op_equality(left:impl::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo> ,right:impl::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ad98b0usize)as*mut u8,bool;
+(crate::system::reflection::fieldinfo::FieldInfo)::core::convert::Into::into(left),(crate::system::reflection::fieldinfo::FieldInfo)::core::convert::Into::into(right))}
+}
+#[doc="`op_Inequality(crate::system::reflection::fieldinfo::FieldInfo, crate::system::reflection::fieldinfo::FieldInfo)` overload"]pub fn op_inequality(left:impl::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo> ,right:impl::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9c70usize)as*mut u8,bool;
+(crate::system::reflection::fieldinfo::FieldInfo)::core::convert::Into::into(left),(crate::system::reflection::fieldinfo::FieldInfo)::core::convert::Into::into(right))}
+}
+}
 
-#[cfg(feature = "system-reflection-fieldinfo")]
-pub trait IFieldInfoMethods : IFieldInfo { # [doc = "`get_Attributes()` overload"] fn get_attributes (self ,) -> crate :: system :: reflection :: fieldattributes :: FieldAttributes { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FieldInfo_unity2_raw :: get_attributes (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad94d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FieldType()` overload"] fn get_field_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FieldInfo_unity2_raw :: get_field_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetValue(crate::system::object::Object)` overload"] fn get_value (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FieldInfo_unity2_raw :: get_value (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`get_MemberType()` overload"] fn get_member_type (self ,) -> crate :: system :: reflection :: membertypes :: MemberTypes { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: membertypes :: MemberTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad94e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLiteral()` overload"] fn get_is_literal (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad94f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsStatic()` overload"] fn get_is_static (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsInitOnly()` overload"] fn get_is_init_only (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPublic()` overload"] fn get_is_public (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPrivate()` overload"] fn get_is_private (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad95b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFamily()` overload"] fn get_is_family (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad95e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsAssembly()` overload"] fn get_is_assembly (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFamilyAndAssembly()` overload"] fn get_is_family_and_assembly (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFamilyOrAssembly()` overload"] fn get_is_family_or_assembly (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSpecialName()` overload"] fn get_is_special_name (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad96a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsNotSerialized()` overload"] fn get_is_not_serialized (self ,) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad96d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetValue(crate::system::object::Object, crate::system::object::Object)` overload"] fn set_value (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetFieldOffset()` overload"] fn get_field_offset (self ,) -> i32 { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad98f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPseudoCustomAttributes()` overload"] fn get_pseudo_custom_attributes (self ,) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad99c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRawConstantValue()` overload"] fn get_raw_constant_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < FieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-fieldinfo")]pub trait IFieldInfoMethods:IFieldInfo{#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::fieldattributes::FieldAttributes{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__FieldInfo_unity2_raw::get_attributes(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad94d0usize)as*mut u8,();
+(FieldInfo)__receiver)}
+}
+#[doc="`get_FieldType()` overload"]fn get_field_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__FieldInfo_unity2_raw::get_field_type(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetValue(crate::system::object::Object)` overload"]fn get_value(self,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__FieldInfo_unity2_raw::get_value(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+}
+#[doc="`get_MemberType()` overload"]fn get_member_type(self,)->crate::system::reflection::membertypes::MemberTypes{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad94e0usize)as*mut u8,crate::system::reflection::membertypes::MemberTypes;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsLiteral()` overload"]fn get_is_literal(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad94f0usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsStatic()` overload"]fn get_is_static(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9520usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsInitOnly()` overload"]fn get_is_init_only(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9550usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsPublic()` overload"]fn get_is_public(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9580usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsPrivate()` overload"]fn get_is_private(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad95b0usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsFamily()` overload"]fn get_is_family(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad95e0usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsAssembly()` overload"]fn get_is_assembly(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9610usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsFamilyAndAssembly()` overload"]fn get_is_family_and_assembly(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9640usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsFamilyOrAssembly()` overload"]fn get_is_family_or_assembly(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9670usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsSpecialName()` overload"]fn get_is_special_name(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad96a0usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`get_IsNotSerialized()` overload"]fn get_is_not_serialized(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad96d0usize)as*mut u8,bool;
+(FieldInfo)__receiver)}
+}
+#[doc="`SetValue(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_value(self,obj:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9700usize)as*mut u8,();
+(FieldInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`GetFieldOffset()` overload"]fn get_field_offset(self,)->i32{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad98f0usize)as*mut u8,i32;
+(FieldInfo)__receiver)}
+}
+#[doc="`GetPseudoCustomAttributes()` overload"]fn get_pseudo_custom_attributes(self,)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad99c0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(FieldInfo)__receiver)}
+}
+#[doc="`GetRawConstantValue()` overload"]fn get_raw_constant_value(self,)->crate::system::object::Object{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9bf0usize)as*mut u8,crate::system::object::Object;
+(FieldInfo)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9c50usize)as*mut u8,bool;
+(FieldInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9c60usize)as*mut u8,i32;
+(FieldInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-fieldinfo")]
-impl < __T : IFieldInfo > IFieldInfoMethods for __T { }
+#[cfg(feature="system-reflection-fieldinfo")]impl<__T:IFieldInfo>IFieldInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-fieldinfo")]
-impl FieldInfo { pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_field_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_member_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_literal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_is_static_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_init_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_is_public_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_private_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_is_family_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_is_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_is_family_and_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_is_family_or_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_is_special_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_is_not_serialized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn internal_from_handle_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_field_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_pseudo_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_raw_constant_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } }
+#[cfg(feature="system-reflection-fieldinfo")]impl FieldInfo{pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_field_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_member_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_literal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_is_static_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_init_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_is_public_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_private_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_is_family_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_is_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_is_family_and_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_is_family_or_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_is_special_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_is_not_serialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn internal_from_handle_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_field_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_pseudo_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_raw_constant_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+}
 
-#[cfg(feature = "system-reflection-fieldinfo")]
-impl FieldInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FieldInfo) , :: core :: stringify ! (new) ,)) ; < Self as IFieldInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-fieldinfo")]impl FieldInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FieldInfo), ::core::stringify!(new),));
+ <Self as IFieldInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-fieldinfo")]

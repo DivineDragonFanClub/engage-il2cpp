@@ -4,35 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: assetreferenceuirestriction :: { AssetReferenceUIRestriction , IAssetReferenceUIRestriction }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::assetreferenceuirestriction::{AssetReferenceUIRestriction,IAssetReferenceUIRestriction}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetreferenceuilabelrestriction/AssetReferenceUILabelRestriction.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AssetReferenceUILabelRestriction")] # [parent (crate :: unity_engine :: assetreferenceuirestriction :: AssetReferenceUIRestriction)] pub struct AssetReferenceUILabelRestriction {
-# [offset (16)] # [rename (name = "m_AllowedLabels")] pub m_allowed_labels : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (24)] # [rename (name = "m_CachedToString")] pub m_cached_to_string : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/assetreferenceuilabelrestriction/AssetReferenceUILabelRestriction.md"))]#[::unity2::class(namespace="UnityEngine",name="AssetReferenceUILabelRestriction")]#[parent(crate::unity_engine::assetreferenceuirestriction::AssetReferenceUIRestriction)]pub struct AssetReferenceUILabelRestriction{#[offset(16)]#[rename(name="m_AllowedLabels")]pub m_allowed_labels: ::unity2::Array< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="m_CachedToString")]pub m_cached_to_string: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-assetreferenceuilabelrestriction-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
-pub trait IAssetReferenceUILabelRestrictionMethods : IAssetReferenceUILabelRestriction { # [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"] fn ctor (self , allowed_labels : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < AssetReferenceUILabelRestriction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceUILabelRestriction , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (allowed_labels) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"] fn validate_asset (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> bool { unsafe { let __receiver = < AssetReferenceUILabelRestriction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceUILabelRestriction , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateAsset(::unity2::Il2CppString)` overload"] fn validate_asset_2 (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < AssetReferenceUILabelRestriction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceUILabelRestriction , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssetReferenceUILabelRestriction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceUILabelRestriction , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db31a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-assetreferenceuilabelrestriction")]pub trait IAssetReferenceUILabelRestrictionMethods:IAssetReferenceUILabelRestriction{#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,allowed_labels:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <AssetReferenceUILabelRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3130usize)as*mut u8,();
+(AssetReferenceUILabelRestriction)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(allowed_labels))}
+}
+#[doc="`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]fn validate_asset(self,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->bool{unsafe{let __receiver= <AssetReferenceUILabelRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3180usize)as*mut u8,bool;
+(AssetReferenceUILabelRestriction)__receiver,(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
+}
+#[doc="`ValidateAsset(::unity2::Il2CppString)` overload"]fn validate_asset_2(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AssetReferenceUILabelRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3190usize)as*mut u8,bool;
+(AssetReferenceUILabelRestriction)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetReferenceUILabelRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db31a0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetReferenceUILabelRestriction)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
-impl < __T : IAssetReferenceUILabelRestriction > IAssetReferenceUILabelRestrictionMethods for __T { }
+#[cfg(feature="unity_engine-assetreferenceuilabelrestriction")]impl<__T:IAssetReferenceUILabelRestriction>IAssetReferenceUILabelRestrictionMethods for __T{}
 
-#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
-impl AssetReferenceUILabelRestriction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceUILabelRestriction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn validate_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceUILabelRestriction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn validate_asset_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceUILabelRestriction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceUILabelRestriction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-assetreferenceuilabelrestriction")]impl AssetReferenceUILabelRestriction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn validate_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn validate_asset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
-impl AssetReferenceUILabelRestriction {
-# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"] pub fn new (allowed_labels : :: unity2 :: Array < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetReferenceUILabelRestriction) , :: core :: stringify ! (new) ,)) ; < Self as IAssetReferenceUILabelRestrictionMethods > :: ctor (this , allowed_labels) ; this }
+#[cfg(feature="unity_engine-assetreferenceuilabelrestriction")]impl AssetReferenceUILabelRestriction{#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(allowed_labels: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetReferenceUILabelRestriction), ::core::stringify!(new),));
+ <Self as IAssetReferenceUILabelRestrictionMethods> ::ctor(this,allowed_labels);
+this}
 }
 
 #[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]

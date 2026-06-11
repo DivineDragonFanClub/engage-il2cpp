@@ -4,245 +4,225 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structproperty/StructProperty.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructProperty")] # [parent (crate :: system :: object :: Object)] pub struct StructProperty {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structproperty/StructProperty_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct StructProperty_Kind  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structproperty/StructProperty_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct StructProperty_Kind{pub value:i32,}
+impl::unity2::ClassIdentity for StructProperty_Kind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="StructProperty.Kind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for StructProperty_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl StructProperty_Kind{pub fn public_string()->Self{Self{value:0}
+}
+pub fn string()->Self{Self{value:1}
+}
+pub fn string_array()->Self{Self{value:2}
+}
+pub fn public_label()->Self{Self{value:3}
+}
+pub fn public_array()->Self{Self{value:4}
+}
+pub fn public_file()->Self{Self{value:5}
+}
+pub fn u8()->Self{Self{value:6}
+}
+pub fn u8_array()->Self{Self{value:7}
+}
+pub fn s8()->Self{Self{value:8}
+}
+pub fn s8_array()->Self{Self{value:9}
+}
+pub fn u16()->Self{Self{value:10}
+}
+pub fn s16()->Self{Self{value:11}
+}
+pub fn u32()->Self{Self{value:12}
+}
+pub fn s32()->Self{Self{value:13}
+}
+pub fn s32_array()->Self{Self{value:14}
+}
+pub fn u64()->Self{Self{value:15}
+}
+pub fn s64()->Self{Self{value:16}
+}
+pub fn f32()->Self{Self{value:17}
+}
+pub fn f32_array()->Self{Self{value:18}
+}
+pub fn bool()->Self{Self{value:19}
+}
+pub fn b8()->Self{Self{value:20}
+}
+pub fn b16()->Self{Self{value:21}
+}
+pub fn b32()->Self{Self{value:22}
+}
+pub fn b64()->Self{Self{value:23}
+}
+pub fn flag32()->Self{Self{value:24}
+}
+pub fn flag64()->Self{Self{value:25}
+}
+pub fn none()->Self{Self{value:26}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for StructProperty_Kind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "StructProperty.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for StructProperty_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  StructProperty_Kind  {
-    pub fn public_string() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn string() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn string_array() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn public_label() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn public_array() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn public_file() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn u8() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn u8_array() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn s8() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn s8_array() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn u16() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn s16() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn u32() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn s32() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn s32_array() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn u64() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn s64() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn f32() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn f32_array() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn bool() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn b8() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn b16() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn b32() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn b64() -> Self {
-        Self { value: 23 }
-
-    }
-
-
-    pub fn flag32() -> Self {
-        Self { value: 24 }
-
-    }
-
-
-    pub fn flag64() -> Self {
-        Self { value: 25 }
-
-    }
-
-
-    pub fn none() -> Self {
-        Self { value: 26 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structproperty/StructProperty.md"))]#[::unity2::class(namespace="App",name="StructProperty")]#[parent(crate::system::object::Object)]pub struct StructProperty{}
 
 }
 
 #[cfg(feature = "app-structproperty-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-structproperty")]
-impl StructProperty { # [doc = "`GetKind(::unity2::Il2CppString)` overload"] pub fn get_kind_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: structproperty :: StructProperty_Kind { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: structproperty :: StructProperty_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`CheckFlagKind(::unity2::Il2CppString)` overload"] pub fn check_flag_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bb10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`CheckReplaceKind(::unity2::Il2CppString)` overload"] pub fn check_replace_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bb30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`ReplaceKind(::unity2::Il2CppString)` overload"] pub fn replace_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bc10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`CheckIntFloatKind(::unity2::Il2CppString)` overload"] pub fn check_int_float_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bd30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`CheckArrayKind(::unity2::Il2CppString)` overload"] pub fn check_array_kind (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bd80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-structproperty")]impl StructProperty{#[doc="`GetKind(::unity2::Il2CppString)` overload"]pub fn get_kind_2(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::structproperty::StructProperty_Kind{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250b260usize)as*mut u8,crate::app::structproperty::StructProperty_Kind;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`CheckFlagKind(::unity2::Il2CppString)` overload"]pub fn check_flag_kind(kind:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bb10usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(kind))}
+}
+#[doc="`CheckReplaceKind(::unity2::Il2CppString)` overload"]pub fn check_replace_kind(kind:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bb30usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(kind))}
+}
+#[doc="`ReplaceKind(::unity2::Il2CppString)` overload"]pub fn replace_kind(kind:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bc10usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(kind))}
+}
+#[doc="`CheckIntFloatKind(::unity2::Il2CppString)` overload"]pub fn check_int_float_kind(kind:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bd30usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(kind))}
+}
+#[doc="`CheckArrayKind(::unity2::Il2CppString)` overload"]pub fn check_array_kind(kind:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bd80usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(kind))}
+}
+}
 
-#[cfg(feature = "app-structproperty")]
-pub trait IStructPropertyMethods : IStructProperty { # [doc = "`get_kind()` overload"] fn get_kind (self ,) -> crate :: app :: structproperty :: StructProperty_Kind { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> crate :: app :: structproperty :: StructProperty_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_kind(crate::app::structproperty::StructProperty_Kind)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < crate :: app :: structproperty :: StructProperty_Kind >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , crate :: app :: structproperty :: StructProperty_Kind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_property()` overload"] fn get_property (self ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_property(crate::system::reflection::propertyinfo::PropertyInfo)` overload"] fn set_property (self , value : impl :: core :: convert :: Into < crate :: system :: reflection :: propertyinfo :: PropertyInfo >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , crate :: system :: reflection :: propertyinfo :: PropertyInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_objProperty()` overload"] fn get_obj_property (self ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyinfo :: PropertyInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_objProperty(crate::system::reflection::propertyinfo::PropertyInfo)` overload"] fn set_obj_property (self , value : impl :: core :: convert :: Into < crate :: system :: reflection :: propertyinfo :: PropertyInfo >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , crate :: system :: reflection :: propertyinfo :: PropertyInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_isStruct()` overload"] fn get_is_struct (self ,) -> bool { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isStruct(bool)` overload"] fn set_is_struct (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_isSetter()` overload"] fn get_is_setter (self ,) -> bool { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isSetter(bool)` overload"] fn set_is_setter (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_setter()` overload"] fn get_setter (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_setter(crate::system::object::Object)` overload"] fn set_setter (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b1a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } fn set_value < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity , M1 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < M1 >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< StructProperty as :: unity2 :: ClassIdentity > :: class () , "SetValue" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructProperty as :: unity2 :: ClassIdentity > :: NAME , "SetValue" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = (< M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ^ (< M1 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type () , < M1 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (StructProperty , crate :: system :: object :: Object , M1 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`SetValue(crate::system::object::Object, crate::system::object::Object)` overload"] fn set_value_2 (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250b240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StructProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructProperty , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bdd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-structproperty")]pub trait IStructPropertyMethods:IStructProperty{#[doc="`get_kind()` overload"]fn get_kind(self,)->crate::app::structproperty::StructProperty_Kind{unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b0f0usize)as*mut u8,crate::app::structproperty::StructProperty_Kind;
+(StructProperty)__receiver)}
+}
+#[doc="`set_kind(crate::app::structproperty::StructProperty_Kind)` overload"]fn set_kind(self,value:impl::core::convert::Into<crate::app::structproperty::StructProperty_Kind>)->(){unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b100usize)as*mut u8,();
+(StructProperty)__receiver,(crate::app::structproperty::StructProperty_Kind)::core::convert::Into::into(value))}
+}
+#[doc="`get_property()` overload"]fn get_property(self,)->crate::system::reflection::propertyinfo::PropertyInfo{unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b110usize)as*mut u8,crate::system::reflection::propertyinfo::PropertyInfo;
+(StructProperty)__receiver)}
+}
+#[doc="`set_property(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]fn set_property(self,value:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>)->(){unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b120usize)as*mut u8,();
+(StructProperty)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(value))}
+}
+#[doc="`get_objProperty()` overload"]fn get_obj_property(self,)->crate::system::reflection::propertyinfo::PropertyInfo{unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b130usize)as*mut u8,crate::system::reflection::propertyinfo::PropertyInfo;
+(StructProperty)__receiver)}
+}
+#[doc="`set_objProperty(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]fn set_obj_property(self,value:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>)->(){unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b140usize)as*mut u8,();
+(StructProperty)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(value))}
+}
+#[doc="`get_isStruct()` overload"]fn get_is_struct(self,)->bool{unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b150usize)as*mut u8,bool;
+(StructProperty)__receiver)}
+}
+#[doc="`set_isStruct(bool)` overload"]fn set_is_struct(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b160usize)as*mut u8,();
+(StructProperty)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_isSetter()` overload"]fn get_is_setter(self,)->bool{unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b170usize)as*mut u8,bool;
+(StructProperty)__receiver)}
+}
+#[doc="`set_isSetter(bool)` overload"]fn set_is_setter(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b180usize)as*mut u8,();
+(StructProperty)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_setter()` overload"]fn get_setter(self,)->crate::system::object::Object{unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b190usize)as*mut u8,crate::system::object::Object;
+(StructProperty)__receiver)}
+}
+#[doc="`set_setter(crate::system::object::Object)` overload"]fn set_setter(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b1a0usize)as*mut u8,();
+(StructProperty)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+fn set_value<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity,M1: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,obj:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<M1>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<StructProperty as::unity2::ClassIdentity> ::class(),"SetValue",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <StructProperty as::unity2::ClassIdentity> ::NAME,"SetValue",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize=(<M0 as::unity2::IlType> ::il_type()as*const _ as usize)^(<M1 as::unity2::IlType> ::il_type()as*const _ as usize);
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type(), <M1 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(StructProperty,crate::system::object::Object,M1, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(value), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`SetValue(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_value_2(self,obj:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250b240usize)as*mut u8,();
+(StructProperty)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StructProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250bdd0usize)as*mut u8,();
+(StructProperty)__receiver)}
+}
+}
 
-#[cfg(feature = "app-structproperty")]
-impl < __T : IStructProperty > IStructPropertyMethods for __T { }
+#[cfg(feature="app-structproperty")]impl<__T:IStructProperty>IStructPropertyMethods for __T{}
 
-#[cfg(feature = "app-structproperty")]
-impl StructProperty { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_obj_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_obj_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_struct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_is_struct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_is_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_value_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_kind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn check_flag_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn check_replace_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn replace_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn check_int_float_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn check_array_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="app-structproperty")]impl StructProperty{pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_property_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_property_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_obj_property_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_obj_property_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_struct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_is_struct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_setter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_is_setter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_setter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_setter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_kind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn check_flag_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn check_replace_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn replace_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn check_int_float_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn check_array_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "app-structproperty")]
-impl StructProperty {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructProperty) , :: core :: stringify ! (new) ,)) ; < Self as IStructPropertyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-structproperty")]impl StructProperty{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructProperty), ::core::stringify!(new),));
+ <Self as IStructPropertyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-structproperty")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::StructProperty_Kind;
     pub use super::StructProperty;
     pub use super::IStructProperty;
     pub use super::IStructPropertyMethods;
-    pub use super::StructProperty_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

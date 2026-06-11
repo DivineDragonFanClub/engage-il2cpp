@@ -4,34 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenumflagattribute/AkEnumFlagAttribute.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEnumFlagAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct AkEnumFlagAttribute {
-# [offset (16)] # [rename (name = "Type")] pub r#type : :: unity2 :: SystemType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akenumflagattribute/AkEnumFlagAttribute.md"))]#[::unity2::class(namespace="",name="AkEnumFlagAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct AkEnumFlagAttribute{#[offset(16)]#[rename(name="Type")]pub r#type: ::unity2::SystemType,}
 
 }
 
 #[cfg(feature = "root-akenumflagattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akenumflagattribute")]
-pub trait IAkEnumFlagAttributeMethods : IAkEnumFlagAttribute { # [doc = "`.ctor(::unity2::SystemType)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < AkEnumFlagAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEnumFlagAttribute , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f19f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akenumflagattribute")]pub trait IAkEnumFlagAttributeMethods:IAkEnumFlagAttribute{#[doc="`.ctor(::unity2::SystemType)` overload"]fn ctor(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <AkEnumFlagAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f19f10usize)as*mut u8,();
+(AkEnumFlagAttribute)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "root-akenumflagattribute")]
-impl < __T : IAkEnumFlagAttribute > IAkEnumFlagAttributeMethods for __T { }
+#[cfg(feature="root-akenumflagattribute")]impl<__T:IAkEnumFlagAttribute>IAkEnumFlagAttributeMethods for __T{}
 
-#[cfg(feature = "root-akenumflagattribute")]
-impl AkEnumFlagAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEnumFlagAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akenumflagattribute")]impl AkEnumFlagAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akenumflagattribute")]
-impl AkEnumFlagAttribute {
-# [doc = "`.ctor(::unity2::SystemType)` — overload selector"] pub fn new (r#type : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEnumFlagAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAkEnumFlagAttributeMethods > :: ctor (this , r#type) ; this }
+#[cfg(feature="root-akenumflagattribute")]impl AkEnumFlagAttribute{#[doc="`.ctor(::unity2::SystemType)` — overload selector"]pub fn new(r#type: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEnumFlagAttribute), ::core::stringify!(new),));
+ <Self as IAkEnumFlagAttributeMethods> ::ctor(this,r#type);
+this}
 }
 
 #[cfg(feature = "root-akenumflagattribute")]

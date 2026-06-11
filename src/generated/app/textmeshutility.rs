@@ -4,33 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshutility/TextMeshUtility.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextMeshUtility")] # [parent (crate :: system :: object :: Object)] pub struct TextMeshUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textmeshutility/TextMeshUtility.md"))]#[::unity2::class(namespace="App",name="TextMeshUtility")]#[parent(crate::system::object::Object)]pub struct TextMeshUtility{}
 
 }
 
 #[cfg(feature = "app-textmeshutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-textmeshutility")]
-impl TextMeshUtility { # [doc = "`ParseInputText(crate::unity_engine::gameobject::GameObject)` overload"] pub fn parse_input_text (root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ea3a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-textmeshutility")]impl TextMeshUtility{#[doc="`ParseInputText(crate::unity_engine::gameobject::GameObject)` overload"]pub fn parse_input_text(root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ea3a0usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+}
 
-#[cfg(feature = "app-textmeshutility")]
-pub trait ITextMeshUtilityMethods : ITextMeshUtility { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextMeshUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshUtility , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ea520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-textmeshutility")]pub trait ITextMeshUtilityMethods:ITextMeshUtility{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextMeshUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea520usize)as*mut u8,();
+(TextMeshUtility)__receiver)}
+}
+}
 
-#[cfg(feature = "app-textmeshutility")]
-impl < __T : ITextMeshUtility > ITextMeshUtilityMethods for __T { }
+#[cfg(feature="app-textmeshutility")]impl<__T:ITextMeshUtility>ITextMeshUtilityMethods for __T{}
 
-#[cfg(feature = "app-textmeshutility")]
-impl TextMeshUtility { pub fn parse_input_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-textmeshutility")]impl TextMeshUtility{pub fn parse_input_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-textmeshutility")]
-impl TextMeshUtility {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextMeshUtility) , :: core :: stringify ! (new) ,)) ; < Self as ITextMeshUtilityMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-textmeshutility")]impl TextMeshUtility{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextMeshUtility), ::core::stringify!(new),));
+ <Self as ITextMeshUtilityMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-textmeshutility")]

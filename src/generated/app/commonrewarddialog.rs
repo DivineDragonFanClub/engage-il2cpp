@@ -4,33 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewarddialog/CommonRewardDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRewardDialog")] # [parent (crate :: system :: object :: Object)] pub struct CommonRewardDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewarddialog/CommonRewardDialog.md"))]#[::unity2::class(namespace="App",name="CommonRewardDialog")]#[parent(crate::system::object::Object)]pub struct CommonRewardDialog{}
 
 }
 
 #[cfg(feature = "app-commonrewarddialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonrewarddialog")]
-impl CommonRewardDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , title_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > > , money : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252ff50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (title_text) , :: core :: convert :: Into :: into (item_param_list) , :: core :: convert :: Into :: into (money) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewarddialog")]impl CommonRewardDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,title_text:impl::core::convert::Into< ::unity2::Il2CppString> ,item_param_list:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32> > ,money:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x252ff50usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(title_text),(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>)::core::convert::Into::into(item_param_list),(i32)::core::convert::Into::into(money))}
+}
+}
 
-#[cfg(feature = "app-commonrewarddialog")]
-pub trait ICommonRewardDialogMethods : ICommonRewardDialog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CommonRewardDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25305d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewarddialog")]pub trait ICommonRewardDialogMethods:ICommonRewardDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRewardDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25305d0usize)as*mut u8,();
+(CommonRewardDialog)__receiver)}
+}
+}
 
-#[cfg(feature = "app-commonrewarddialog")]
-impl < __T : ICommonRewardDialog > ICommonRewardDialogMethods for __T { }
+#[cfg(feature="app-commonrewarddialog")]impl<__T:ICommonRewardDialog>ICommonRewardDialogMethods for __T{}
 
-#[cfg(feature = "app-commonrewarddialog")]
-impl CommonRewardDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-commonrewarddialog")]impl CommonRewardDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-commonrewarddialog")]
-impl CommonRewardDialog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRewardDialog) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRewardDialogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-commonrewarddialog")]impl CommonRewardDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRewardDialog), ::core::stringify!(new),));
+ <Self as ICommonRewardDialogMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-commonrewarddialog")]

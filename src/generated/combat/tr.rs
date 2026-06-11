@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/tr/TR.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TR {
-    pub position: crate :: unity_engine :: vector3 :: Vector3,
-    pub rotation: crate :: unity_engine :: quaternion :: Quaternion,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/tr/TR.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TR{pub position:crate::unity_engine::vector3::Vector3,pub rotation:crate::unity_engine::quaternion::Quaternion,}
+impl::unity2::ClassIdentity for TR{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="TR";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TR {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "TR";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TR {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TR{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,14 +26,63 @@ impl ::unity2::IlType for TR {
 #[cfg(feature = "combat-tr-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-tr")]
-impl TR { # [doc = "`get_identity()` overload"] pub fn get_identity () -> crate :: combat :: tr :: TR { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7720usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Lerp(*mutcrate::combat::tr::TR, *mutcrate::combat::tr::TR, f32, *mutcrate::combat::tr::TR)` overload"] pub fn lerp (t : impl :: core :: convert :: Into < f32 >) -> (crate :: combat :: tr :: TR , crate :: combat :: tr :: TR , crate :: combat :: tr :: TR) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: combat :: tr :: TR > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: combat :: tr :: TR > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: combat :: tr :: TR > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: combat :: tr :: TR , * mut crate :: combat :: tr :: TR , f32 , * mut crate :: combat :: tr :: TR , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7930usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (t) , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`LerpAndMakeMatrix(crate::combat::tr::TR, crate::combat::tr::TR, f32, f32, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn lerp_and_make_matrix (a : impl :: core :: convert :: Into < crate :: combat :: tr :: TR > , b : impl :: core :: convert :: Into < crate :: combat :: tr :: TR > , scale : impl :: core :: convert :: Into < f32 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > :: uninit () ; { let __inner : extern "C" fn (crate :: combat :: tr :: TR , crate :: combat :: tr :: TR , f32 , f32 , * mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7a70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (scale) , :: core :: convert :: Into :: into (t) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="combat-tr")]impl TR{#[doc="`get_identity()` overload"]pub fn get_identity()->crate::combat::tr::TR{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b7720usize)as*mut u8,crate::combat::tr::TR;
+)}
+}
+#[doc="`Lerp(*mutcrate::combat::tr::TR, *mutcrate::combat::tr::TR, f32, *mutcrate::combat::tr::TR)` overload"]pub fn lerp(t:impl::core::convert::Into<f32>)->(crate::combat::tr::TR,crate::combat::tr::TR,crate::combat::tr::TR){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::combat::tr::TR> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::combat::tr::TR> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::combat::tr::TR> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7930usize)as*mut u8,();
+(*mut crate::combat::tr::TR)__out_0.as_mut_ptr(),(*mut crate::combat::tr::TR)__out_1.as_mut_ptr(),(f32)::core::convert::Into::into(t),(*mut crate::combat::tr::TR)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`LerpAndMakeMatrix(crate::combat::tr::TR, crate::combat::tr::TR, f32, f32, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]pub fn lerp_and_make_matrix(a:impl::core::convert::Into<crate::combat::tr::TR> ,b:impl::core::convert::Into<crate::combat::tr::TR> ,scale:impl::core::convert::Into<f32> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::matrix4x4::Matrix4x4> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7a70usize)as*mut u8,();
+(crate::combat::tr::TR)::core::convert::Into::into(a),(crate::combat::tr::TR)::core::convert::Into::into(b),(f32)::core::convert::Into::into(scale),(f32)::core::convert::Into::into(t),(*mut crate::unity_engine::matrix4x4::Matrix4x4)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "combat-tr")]
-impl TR { # [doc = "`get_forward()` overload"] pub fn get_forward (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut TR , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b77c0usize) as * mut u8) ; __inner (self as * mut TR , :: core :: option :: Option :: None) } } } # [doc = "`set_forward(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_forward (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TR , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7810usize) as * mut u8) ; __inner (self as * mut TR , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion)` overload"] pub fn ctor (& mut self ,) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: quaternion :: Quaternion) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: quaternion :: Quaternion > :: uninit () ; { let __inner : extern "C" fn (* mut TR , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7790usize) as * mut u8) ; __inner (self as * mut TR , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`.ctor(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn ctor_2 (& mut self ,) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (* mut TR , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7850usize) as * mut u8) ; __inner (self as * mut TR , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"] pub fn ctor_3 (& mut self , t : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { { let __inner : extern "C" fn (* mut TR , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b78a0usize) as * mut u8) ; __inner (self as * mut TR , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::tr::TR)` overload"] pub fn ctor_4 (& mut self , rhs : impl :: core :: convert :: Into < crate :: combat :: tr :: TR >) -> () { unsafe { { let __inner : extern "C" fn (* mut TR , crate :: combat :: tr :: TR , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7900usize) as * mut u8) ; __inner (self as * mut TR , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`TransformPoint(crate::unity_engine::vector3::Vector3)` overload"] pub fn transform_point (& mut self , in_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut TR , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b79c0usize) as * mut u8) ; __inner (self as * mut TR , :: core :: convert :: Into :: into (in_pos) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-tr")]impl TR{#[doc="`get_forward()` overload"]pub fn get_forward(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b77c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut TR)self as*mut TR)}
+}
+#[doc="`set_forward(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_forward(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b7810usize)as*mut u8,();
+(*mut TR)self as*mut TR,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]pub fn ctor(&mut self,)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::quaternion::Quaternion){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7790usize)as*mut u8,();
+(*mut TR)self as*mut TR,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::quaternion::Quaternion)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`.ctor(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn ctor_2(&mut self,)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7850usize)as*mut u8,();
+(*mut TR)self as*mut TR,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]pub fn ctor_3(&mut self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b78a0usize)as*mut u8,();
+(*mut TR)self as*mut TR,(crate::unity_engine::transform::Transform)::core::convert::Into::into(t))}
+}
+#[doc="`.ctor(crate::combat::tr::TR)` overload"]pub fn ctor_4(&mut self,rhs:impl::core::convert::Into<crate::combat::tr::TR>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b7900usize)as*mut u8,();
+(*mut TR)self as*mut TR,(crate::combat::tr::TR)::core::convert::Into::into(rhs))}
+}
+#[doc="`TransformPoint(crate::unity_engine::vector3::Vector3)` overload"]pub fn transform_point(&mut self,in_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b79c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut TR)self as*mut TR,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_pos))}
+}
+}
 
-#[cfg(feature = "combat-tr")]
-impl TR { pub fn get_identity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_forward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_forward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn transform_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn lerp_and_make_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TR as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="combat-tr")]impl TR{pub fn get_identity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_forward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_forward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn transform_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn lerp_and_make_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
 #[cfg(feature = "combat-tr")]
 #[doc(hidden)]

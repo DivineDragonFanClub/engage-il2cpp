@@ -4,54 +4,115 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditcontent/VersusMapEditContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusMapEditContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct VersusMapEditContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "SpriteAtlasThumbPath")] pub sprite_atlas_thumb_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "SpriteAtlasCategoryPath")] pub sprite_atlas_category_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_ThumbSpriteAtlas")] pub m_thumb_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (32)] # [rename (name = "m_ThumbSprite")] pub m_thumb_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (40)] # [rename (name = "m_CategorySpriteAtlas")] pub m_category_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (48)] # [rename (name = "m_CategorySprite")] pub m_category_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (56)] # [rename (name = "m_ThumbImage")] pub m_thumb_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_CategoryImage")] pub m_category_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (72)] # [rename (name = "m_HelpNum")] pub m_help_num : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_Anim")] pub m_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (88)] # [rename (name = "m_CategoryItems")] pub m_category_items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: versusmapeditcategorycontent :: VersusMapEditCategoryContent > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmapeditcontent/VersusMapEditContent.md"))]#[::unity2::class(namespace="App",name="VersusMapEditContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct VersusMapEditContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasThumbPath")]pub sprite_atlas_thumb_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasCategoryPath")]pub sprite_atlas_category_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_ThumbSpriteAtlas")]pub m_thumb_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(32)]#[rename(name="m_ThumbSprite")]pub m_thumb_sprite:crate::unity_engine::sprite::Sprite, #[offset(40)]#[rename(name="m_CategorySpriteAtlas")]pub m_category_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(48)]#[rename(name="m_CategorySprite")]pub m_category_sprite:crate::unity_engine::sprite::Sprite, #[offset(56)]#[rename(name="m_ThumbImage")]pub m_thumb_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_CategoryImage")]pub m_category_image:crate::unity_engine::ui::image::Image, #[offset(72)]#[rename(name="m_HelpNum")]pub m_help_num:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_Anim")]pub m_anim:crate::unity_engine::animator::Animator, #[offset(88)]#[rename(name="m_CategoryItems")]pub m_category_items:crate::system::collections::generic::list_1::List_1<crate::app::versusmapeditcategorycontent::VersusMapEditCategoryContent> ,}
 
 }
 
 #[cfg(feature = "app-versusmapeditcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusmapeditcontent")]
-impl VersusMapEditContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ac960usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26aca60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26acb80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: versusmapeditcontent :: VersusMapEditContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: versusmapeditcontent :: VersusMapEditContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26acc40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmapeditcontent")]impl VersusMapEditContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ac960usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26aca60usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26acb80usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::versusmapeditcontent::VersusMapEditContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26acc40usize)as*mut u8,crate::app::versusmapeditcontent::VersusMapEditContent;
+)}
+}
+}
 
-#[cfg(feature = "app-versusmapeditcontent")]
-pub trait IVersusMapEditContentMethods : IVersusMapEditContent { # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26acf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26acd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetImage(crate::app::mapeditorobjectdata::MapEditorObjectData)` overload"] fn set_image (self , data : impl :: core :: convert :: Into < crate :: app :: mapeditorobjectdata :: MapEditorObjectData >) -> () { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , crate :: app :: mapeditorobjectdata :: MapEditorObjectData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ad090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`SetTextNum(crate::app::mapeditorcategorydata::MapEditorCategoryData, i32, i32)` overload"] fn set_text_num (self , category : impl :: core :: convert :: Into < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData > , num : impl :: core :: convert :: Into < i32 > , num_max : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ad250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (category) , :: core :: convert :: Into :: into (num) , :: core :: convert :: Into :: into (num_max) , :: core :: option :: Option :: None) } } } # [doc = "`SetHighlight(crate::app::mapeditorcategorydata::MapEditorCategoryData)` overload"] fn set_highlight (self , category : impl :: core :: convert :: Into < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData >) -> () { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ad380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (category) , :: core :: option :: Option :: None) } } } # [doc = "`GetThumbSprite(::unity2::Il2CppString)` overload"] fn get_thumb_sprite (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ab8f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetCategorySprite(::unity2::Il2CppString)` overload"] fn get_category_sprite (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ab980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`OpenToOne()` overload"] fn open_to_one (self ,) -> () { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenToEveryone()` overload"] fn open_to_everyone (self ,) -> () { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ad570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOpenToEveryone()` overload"] fn is_open_to_everyone (self ,) -> bool { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ad6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOpenToEveryoneEnd()` overload"] fn is_open_to_everyone_end (self ,) -> bool { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ad7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusMapEditContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ad920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmapeditcontent")]pub trait IVersusMapEditContentMethods:IVersusMapEditContent{#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26acf30usize)as*mut u8,();
+(VersusMapEditContent)__receiver)}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26acd40usize)as*mut u8,();
+(VersusMapEditContent)__receiver)}
+}
+#[doc="`SetImage(crate::app::mapeditorobjectdata::MapEditorObjectData)` overload"]fn set_image(self,data:impl::core::convert::Into<crate::app::mapeditorobjectdata::MapEditorObjectData>)->(){unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ad090usize)as*mut u8,();
+(VersusMapEditContent)__receiver,(crate::app::mapeditorobjectdata::MapEditorObjectData)::core::convert::Into::into(data))}
+}
+#[doc="`SetTextNum(crate::app::mapeditorcategorydata::MapEditorCategoryData, i32, i32)` overload"]fn set_text_num(self,category:impl::core::convert::Into<crate::app::mapeditorcategorydata::MapEditorCategoryData> ,num:impl::core::convert::Into<i32> ,num_max:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ad250usize)as*mut u8,();
+(VersusMapEditContent)__receiver,(crate::app::mapeditorcategorydata::MapEditorCategoryData)::core::convert::Into::into(category),(i32)::core::convert::Into::into(num),(i32)::core::convert::Into::into(num_max))}
+}
+#[doc="`SetHighlight(crate::app::mapeditorcategorydata::MapEditorCategoryData)` overload"]fn set_highlight(self,category:impl::core::convert::Into<crate::app::mapeditorcategorydata::MapEditorCategoryData>)->(){unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ad380usize)as*mut u8,();
+(VersusMapEditContent)__receiver,(crate::app::mapeditorcategorydata::MapEditorCategoryData)::core::convert::Into::into(category))}
+}
+#[doc="`GetThumbSprite(::unity2::Il2CppString)` overload"]fn get_thumb_sprite(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ab8f0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(VersusMapEditContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetCategorySprite(::unity2::Il2CppString)` overload"]fn get_category_sprite(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ab980usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(VersusMapEditContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`OpenToOne()` overload"]fn open_to_one(self,)->(){unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abac0usize)as*mut u8,();
+(VersusMapEditContent)__receiver)}
+}
+#[doc="`OpenToEveryone()` overload"]fn open_to_everyone(self,)->(){unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ad570usize)as*mut u8,();
+(VersusMapEditContent)__receiver)}
+}
+#[doc="`IsOpenToEveryone()` overload"]fn is_open_to_everyone(self,)->bool{unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ad6c0usize)as*mut u8,bool;
+(VersusMapEditContent)__receiver)}
+}
+#[doc="`IsOpenToEveryoneEnd()` overload"]fn is_open_to_everyone_end(self,)->bool{unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ad7a0usize)as*mut u8,bool;
+(VersusMapEditContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusMapEditContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ad920usize)as*mut u8,();
+(VersusMapEditContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusmapeditcontent")]
-impl < __T : IVersusMapEditContent > IVersusMapEditContentMethods for __T { }
+#[cfg(feature="app-versusmapeditcontent")]impl<__T:IVersusMapEditContent>IVersusMapEditContentMethods for __T{}
 
-#[cfg(feature = "app-versusmapeditcontent")]
-impl VersusMapEditContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_text_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_highlight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_thumb_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_category_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn open_to_one_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn open_to_everyone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_open_to_everyone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_open_to_everyone_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-versusmapeditcontent")]impl VersusMapEditContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_text_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_highlight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_thumb_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_category_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn open_to_one_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn open_to_everyone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_open_to_everyone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_open_to_everyone_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-versusmapeditcontent")]
-impl VersusMapEditContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusMapEditContent) , :: core :: stringify ! (new) ,)) ; < Self as IVersusMapEditContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusmapeditcontent")]impl VersusMapEditContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusMapEditContent), ::core::stringify!(new),));
+ <Self as IVersusMapEditContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusmapeditcontent")]

@@ -4,35 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayunsettledsequence/RelayUnsettledSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayUnsettledSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RelayUnsettledSequence {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayunsettledsequence/RelayUnsettledSequence.md"))]#[::unity2::class(namespace="App",name="RelayUnsettledSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayUnsettledSequence{}
 
 }
 
 #[cfg(feature = "app-relayunsettledsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayunsettledsequence")]
-impl RelayUnsettledSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200dcd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayunsettledsequence")]impl RelayUnsettledSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200dcd0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-relayunsettledsequence")]
-pub trait IRelayUnsettledSequenceMethods : IRelayUnsettledSequence { # [doc = "`NotifyPlayEnd()` overload"] fn notify_play_end (self ,) -> () { unsafe { let __receiver = < RelayUnsettledSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayUnsettledSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200dc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayUnsettledSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayUnsettledSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200df20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayunsettledsequence")]pub trait IRelayUnsettledSequenceMethods:IRelayUnsettledSequence{#[doc="`NotifyPlayEnd()` overload"]fn notify_play_end(self,)->(){unsafe{let __receiver= <RelayUnsettledSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200dc40usize)as*mut u8,();
+(RelayUnsettledSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayUnsettledSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200df20usize)as*mut u8,();
+(RelayUnsettledSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayunsettledsequence")]
-impl < __T : IRelayUnsettledSequence > IRelayUnsettledSequenceMethods for __T { }
+#[cfg(feature="app-relayunsettledsequence")]impl<__T:IRelayUnsettledSequence>IRelayUnsettledSequenceMethods for __T{}
 
-#[cfg(feature = "app-relayunsettledsequence")]
-impl RelayUnsettledSequence { pub fn notify_play_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayUnsettledSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayUnsettledSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayUnsettledSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-relayunsettledsequence")]impl RelayUnsettledSequence{pub fn notify_play_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-relayunsettledsequence")]
-impl RelayUnsettledSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayUnsettledSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRelayUnsettledSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayunsettledsequence")]impl RelayUnsettledSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayUnsettledSequence), ::core::stringify!(new),));
+ <Self as IRelayUnsettledSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayunsettledsequence")]

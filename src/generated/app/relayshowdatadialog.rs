@@ -4,101 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatadialog/RelayShowDataDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayShowDataDialog")] # [parent (crate :: system :: object :: Object)] pub struct RelayShowDataDialog {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatadialog/RelayShowDataDialog_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayShowDataDialog_Mode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayshowdatadialog/RelayShowDataDialog_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayShowDataDialog_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for RelayShowDataDialog_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayShowDataDialog.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RelayShowDataDialog_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RelayShowDataDialog_Mode{pub fn take_over()->Self{Self{value:0}
+}
+pub fn upload()->Self{Self{value:1}
+}
+pub fn result()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for RelayShowDataDialog_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayShowDataDialog.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RelayShowDataDialog_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RelayShowDataDialog_Mode  {
-    pub fn take_over() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn upload() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn result() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayshowdatadialog/RelayShowDataDialog.md"))]#[::unity2::class(namespace="App",name="RelayShowDataDialog")]#[parent(crate::system::object::Object)]pub struct RelayShowDataDialog{}
 
 }
 
 #[cfg(feature = "app-relayshowdatadialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayshowdatadialog")]
-impl RelayShowDataDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , mode : impl :: core :: convert :: Into < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: relayservermetadata :: RelayServerMetaData , crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayshowdatadialog")]impl RelayShowDataDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,mode:impl::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200a060usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)::core::convert::Into::into(mode))}
+}
+}
 
-#[cfg(feature = "app-relayshowdatadialog")]
-pub trait IRelayShowDataDialogMethods : IRelayShowDataDialog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayShowDataDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayShowDataDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayshowdatadialog")]pub trait IRelayShowDataDialogMethods:IRelayShowDataDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayShowDataDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200a250usize)as*mut u8,();
+(RelayShowDataDialog)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayshowdatadialog")]
-impl < __T : IRelayShowDataDialog > IRelayShowDataDialogMethods for __T { }
+#[cfg(feature="app-relayshowdatadialog")]impl<__T:IRelayShowDataDialog>IRelayShowDataDialogMethods for __T{}
 
-#[cfg(feature = "app-relayshowdatadialog")]
-impl RelayShowDataDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-relayshowdatadialog")]impl RelayShowDataDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-relayshowdatadialog")]
-impl RelayShowDataDialog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayShowDataDialog) , :: core :: stringify ! (new) ,)) ; < Self as IRelayShowDataDialogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayshowdatadialog")]impl RelayShowDataDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayShowDataDialog), ::core::stringify!(new),));
+ <Self as IRelayShowDataDialogMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayshowdatadialog")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RelayShowDataDialog_Mode;
     pub use super::RelayShowDataDialog;
     pub use super::IRelayShowDataDialog;
     pub use super::IRelayShowDataDialogMethods;
-    pub use super::RelayShowDataDialog_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

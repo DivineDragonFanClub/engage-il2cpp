@@ -4,32 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2dcullresult/Light2DCullResult.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "Light2DCullResult")] # [parent (crate :: system :: object :: Object)] pub struct Light2DCullResult {
-# [offset (16)] # [rename (name = "m_VisibleLights")] pub m_visible_lights : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dcullresult/Light2DCullResult.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="Light2DCullResult")]#[parent(crate::system::object::Object)]pub struct Light2DCullResult{#[offset(16)]#[rename(name="m_VisibleLights")]pub m_visible_lights:crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> ,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult")]
-pub trait ILight2DCullResultMethods : ILight2DCullResult { # [doc = "`get_visibleLights()` overload"] fn get_visible_lights (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 > { unsafe { let __receiver = < Light2DCullResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Light2DCullResult , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef4750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSceneLit()` overload"] fn is_scene_lit (self ,) -> bool { unsafe { let __receiver = < Light2DCullResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Light2DCullResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef4760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLightStatsByLayer(i32)` overload"] fn get_light_stats_by_layer (self , layer : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: experimental :: rendering :: universal :: lightstats :: LightStats { unsafe { let __receiver = < Light2DCullResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Light2DCullResult , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lightstats :: LightStats = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef4970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`SetupCulling(*mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, crate::unity_engine::camera::Camera)` overload"] fn setup_culling (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters { unsafe { let __receiver = < Light2DCullResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ; { let __inner : extern "C" fn (Light2DCullResult , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef4b20usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Light2DCullResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Light2DCullResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef4f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-light2dcullresult")]pub trait ILight2DCullResultMethods:ILight2DCullResult{#[doc="`get_visibleLights()` overload"]fn get_visible_lights(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>{unsafe{let __receiver= <Light2DCullResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef4750usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> ;
+(Light2DCullResult)__receiver)}
+}
+#[doc="`IsSceneLit()` overload"]fn is_scene_lit(self,)->bool{unsafe{let __receiver= <Light2DCullResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef4760usize)as*mut u8,bool;
+(Light2DCullResult)__receiver)}
+}
+#[doc="`GetLightStatsByLayer(i32)` overload"]fn get_light_stats_by_layer(self,layer:impl::core::convert::Into<i32>)->crate::unity_engine::experimental::rendering::universal::lightstats::LightStats{unsafe{let __receiver= <Light2DCullResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef4970usize)as*mut u8,crate::unity_engine::experimental::rendering::universal::lightstats::LightStats;
+(Light2DCullResult)__receiver,(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`SetupCulling(*mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, crate::unity_engine::camera::Camera)` overload"]fn setup_culling(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters{unsafe{let __receiver= <Light2DCullResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef4b20usize)as*mut u8,();
+(Light2DCullResult)__receiver,(*mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)__out_0.as_mut_ptr(),(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera));
+__out_0.assume_init()}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Light2DCullResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef4f70usize)as*mut u8,();
+(Light2DCullResult)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult")]
-impl < __T : ILight2DCullResult > ILight2DCullResultMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-universal-light2dcullresult")]impl<__T:ILight2DCullResult>ILight2DCullResultMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult")]
-impl Light2DCullResult { pub fn get_visible_lights_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DCullResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_scene_lit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DCullResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_light_stats_by_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DCullResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DCullResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DCullResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-light2dcullresult")]impl Light2DCullResult{pub fn get_visible_lights_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_scene_lit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_light_stats_by_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult")]
-impl Light2DCullResult {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Light2DCullResult) , :: core :: stringify ! (new) ,)) ; < Self as ILight2DCullResultMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-light2dcullresult")]impl Light2DCullResult{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Light2DCullResult), ::core::stringify!(new),));
+ <Self as ILight2DCullResultMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult")]

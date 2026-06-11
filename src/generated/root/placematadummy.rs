@@ -4,38 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/placematadummy/PlaceMatADummy.md"))] # [:: unity2 :: class (namespace = "" , name = "PlaceMatADummy")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PlaceMatADummy {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/placematadummy/PlaceMatADummy.md"))]#[::unity2::class(namespace="",name="PlaceMatADummy")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct PlaceMatADummy{}
 
 }
 
 #[cfg(feature = "root-placematadummy-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-placematadummy")]
-pub trait IPlaceMatADummyMethods : IPlaceMatADummy { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < PlaceMatADummy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlaceMatADummy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < PlaceMatADummy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlaceMatADummy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlaceMatADummy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlaceMatADummy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-placematadummy")]pub trait IPlaceMatADummyMethods:IPlaceMatADummy{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <PlaceMatADummy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b9d0usize)as*mut u8,();
+(PlaceMatADummy)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <PlaceMatADummy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b9e0usize)as*mut u8,();
+(PlaceMatADummy)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlaceMatADummy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b9f0usize)as*mut u8,();
+(PlaceMatADummy)__receiver)}
+}
+}
 
-#[cfg(feature = "root-placematadummy")]
-impl < __T : IPlaceMatADummy > IPlaceMatADummyMethods for __T { }
+#[cfg(feature="root-placematadummy")]impl<__T:IPlaceMatADummy>IPlaceMatADummyMethods for __T{}
 
-#[cfg(feature = "root-placematadummy")]
-impl PlaceMatADummy { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlaceMatADummy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlaceMatADummy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlaceMatADummy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-placematadummy")]impl PlaceMatADummy{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-placematadummy")]
-impl PlaceMatADummy {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlaceMatADummy) , :: core :: stringify ! (new) ,)) ; < Self as IPlaceMatADummyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-placematadummy")]impl PlaceMatADummy{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlaceMatADummy), ::core::stringify!(new),));
+ <Self as IPlaceMatADummyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-placematadummy")]

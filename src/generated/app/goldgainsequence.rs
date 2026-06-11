@@ -4,35 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goldgainsequence/GoldGainSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GoldGainSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GoldGainSequence {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goldgainsequence/GoldGainSequence.md"))]#[::unity2::class(namespace="App",name="GoldGainSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GoldGainSequence{}
 
 }
 
 #[cfg(feature = "app-goldgainsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-goldgainsequence")]
-impl GoldGainSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, i32, ::unity2::Il2CppString)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , gold : impl :: core :: convert :: Into < i32 > , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2349260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (gold) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-goldgainsequence")]impl GoldGainSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,gold:impl::core::convert::Into<i32> ,label:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2349260usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(gold),(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+}
 
-#[cfg(feature = "app-goldgainsequence")]
-pub trait IGoldGainSequenceMethods : IGoldGainSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GoldGainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoldGainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2349390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-goldgainsequence")]pub trait IGoldGainSequenceMethods:IGoldGainSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GoldGainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2349390usize)as*mut u8,();
+(GoldGainSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-goldgainsequence")]
-impl < __T : IGoldGainSequence > IGoldGainSequenceMethods for __T { }
+#[cfg(feature="app-goldgainsequence")]impl<__T:IGoldGainSequence>IGoldGainSequenceMethods for __T{}
 
-#[cfg(feature = "app-goldgainsequence")]
-impl GoldGainSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoldGainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoldGainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-goldgainsequence")]impl GoldGainSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-goldgainsequence")]
-impl GoldGainSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GoldGainSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGoldGainSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-goldgainsequence")]impl GoldGainSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GoldGainSequence), ::core::stringify!(new),));
+ <Self as IGoldGainSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-goldgainsequence")]

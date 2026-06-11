@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assettabledemo/AssetTableDemo.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AssetTableDemo")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct AssetTableDemo {
-# [offset (24)] # [rename (name = "Items")] pub items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: assettableitem :: AssetTableItem > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/assettabledemo/AssetTableDemo.md"))]#[::unity2::class(namespace="Combat",name="AssetTableDemo")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct AssetTableDemo{#[offset(24)]#[rename(name="Items")]pub items:crate::system::collections::generic::list_1::List_1<crate::combat::assettableitem::AssetTableItem> ,}
 
 }
 
 #[cfg(feature = "combat-assettabledemo-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-assettabledemo")]
-pub trait IAssetTableDemoMethods : IAssetTableDemo { # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AssetTableDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetTableDemo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211d670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetTableDemo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetTableDemo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211d6d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-assettabledemo")]pub trait IAssetTableDemoMethods:IAssetTableDemo{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AssetTableDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211d670usize)as*mut u8,();
+(AssetTableDemo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTableDemo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211d6d0usize)as*mut u8,();
+(AssetTableDemo)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-assettabledemo")]
-impl < __T : IAssetTableDemo > IAssetTableDemoMethods for __T { }
+#[cfg(feature="combat-assettabledemo")]impl<__T:IAssetTableDemo>IAssetTableDemoMethods for __T{}
 
-#[cfg(feature = "combat-assettabledemo")]
-impl AssetTableDemo { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetTableDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetTableDemo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-assettabledemo")]impl AssetTableDemo{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "combat-assettabledemo")]
-impl AssetTableDemo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetTableDemo) , :: core :: stringify ! (new) ,)) ; < Self as IAssetTableDemoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-assettabledemo")]impl AssetTableDemo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetTableDemo), ::core::stringify!(new),));
+ <Self as IAssetTableDemoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-assettabledemo")]

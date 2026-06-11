@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/runtimeeditorprefs/RuntimeEditorPrefs.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "RuntimeEditorPrefs")] # [parent (crate :: system :: object :: Object)] pub struct RuntimeEditorPrefs {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/runtimeeditorprefs/RuntimeEditorPrefs.md"))]#[::unity2::class(namespace="Combat",name="RuntimeEditorPrefs")]#[parent(crate::system::object::Object)]pub struct RuntimeEditorPrefs{}
 
 }
 
 #[cfg(feature = "combat-runtimeeditorprefs-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-runtimeeditorprefs")]
-impl RuntimeEditorPrefs { # [doc = "`GetFloat(::unity2::Il2CppString, f32, i32)` overload"] pub fn get_float (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , default_value : impl :: core :: convert :: Into < f32 > , suffix : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3c60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (default_value) , :: core :: convert :: Into :: into (suffix) , :: core :: option :: Option :: None) } } } # [doc = "`SetFloat(::unity2::Il2CppString, f32, i32)` overload"] pub fn set_float (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < f32 > , suffix : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , f32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (suffix) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-runtimeeditorprefs")]impl RuntimeEditorPrefs{#[doc="`GetFloat(::unity2::Il2CppString, f32, i32)` overload"]pub fn get_float(key:impl::core::convert::Into< ::unity2::Il2CppString> ,default_value:impl::core::convert::Into<f32> ,suffix:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3c60usize)as*mut u8,f32;
+(::unity2::Il2CppString)::core::convert::Into::into(key),(f32)::core::convert::Into::into(default_value),(i32)::core::convert::Into::into(suffix))}
+}
+#[doc="`SetFloat(::unity2::Il2CppString, f32, i32)` overload"]pub fn set_float(key:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32> ,suffix:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3c70usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(f32)::core::convert::Into::into(value),(i32)::core::convert::Into::into(suffix))}
+}
+}
 
-#[cfg(feature = "combat-runtimeeditorprefs")]
-impl RuntimeEditorPrefs { pub fn get_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeEditorPrefs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeEditorPrefs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-runtimeeditorprefs")]impl RuntimeEditorPrefs{pub fn get_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "combat-runtimeeditorprefs")]
 #[doc(hidden)]

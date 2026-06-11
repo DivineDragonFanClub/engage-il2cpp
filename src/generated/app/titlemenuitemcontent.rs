@@ -4,42 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: app :: mainmenusequence :: { IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent , MainMenuSequence_TopMenuSequence_Menu_MenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::app::mainmenusequence::{IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent,MainMenuSequence_TopMenuSequence_Menu_MenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlemenuitemcontent/TitleMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "TitleMenuItemContent")] # [parent (crate :: app :: mainmenusequence :: MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)] pub struct TitleMenuItemContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlemenuitemcontent/TitleMenuItemContent.md"))]#[::unity2::class(namespace="App",name="TitleMenuItemContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)]pub struct TitleMenuItemContent{}
 
 }
 
 #[cfg(feature = "app-titlemenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-titlemenuitemcontent")]
-pub trait ITitleMenuItemContentMethods : ITitleMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TitleMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22971d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-titlemenuitemcontent")]pub trait ITitleMenuItemContentMethods:ITitleMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TitleMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22971d0usize)as*mut u8,();
+(TitleMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-titlemenuitemcontent")]
-impl < __T : ITitleMenuItemContent > ITitleMenuItemContentMethods for __T { }
+#[cfg(feature="app-titlemenuitemcontent")]impl<__T:ITitleMenuItemContent>ITitleMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-titlemenuitemcontent")]
-impl TitleMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-titlemenuitemcontent")]impl TitleMenuItemContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-titlemenuitemcontent")]
-impl TitleMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TitleMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as ITitleMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-titlemenuitemcontent")]impl TitleMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TitleMenuItemContent), ::core::stringify!(new),));
+ <Self as ITitleMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-titlemenuitemcontent")]

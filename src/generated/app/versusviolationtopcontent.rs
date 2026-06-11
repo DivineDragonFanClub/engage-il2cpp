@@ -4,53 +4,104 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtopcontent/VersusViolationTopContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusViolationTopContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct VersusViolationTopContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_CaptureImage")] pub m_capture_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_CategoryText")] pub m_category_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_ReasonText")] pub m_reason_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_CaptureTitle")] pub m_capture_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_CategoryTitle")] pub m_category_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "m_ReasonTitle")] pub m_reason_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "m_CategoryWindow")] pub m_category_window : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_ReasonWindow")] pub m_reason_window : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "EnableAlpha")] pub enable_alpha : f32 ,
-# [offset (92)] # [rename (name = "DisableAlpha")] pub disable_alpha : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusviolationtopcontent/VersusViolationTopContent.md"))]#[::unity2::class(namespace="App",name="VersusViolationTopContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct VersusViolationTopContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_CaptureImage")]pub m_capture_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_CategoryText")]pub m_category_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_ReasonText")]pub m_reason_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_CaptureTitle")]pub m_capture_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_CategoryTitle")]pub m_category_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_ReasonTitle")]pub m_reason_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_CategoryWindow")]pub m_category_window:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_ReasonWindow")]pub m_reason_window:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="EnableAlpha")]pub enable_alpha:f32, #[offset(92)]#[rename(name="DisableAlpha")]pub disable_alpha:f32,}
 
 }
 
 #[cfg(feature = "app-versusviolationtopcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusviolationtopcontent")]
-impl VersusViolationTopContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bcd10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bcdb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bce30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: versusviolationtopcontent :: VersusViolationTopContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: versusviolationtopcontent :: VersusViolationTopContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bceb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::versusviolationtopcontent::VersusViolationTopContent)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: versusviolationtopcontent :: VersusViolationTopContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: versusviolationtopcontent :: VersusViolationTopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bcf60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusviolationtopcontent")]impl VersusViolationTopContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bcd10usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bcdb0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bce30usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::versusviolationtopcontent::VersusViolationTopContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bceb0usize)as*mut u8,crate::app::versusviolationtopcontent::VersusViolationTopContent;
+)}
+}
+#[doc="`Destroy(crate::app::versusviolationtopcontent::VersusViolationTopContent)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::versusviolationtopcontent::VersusViolationTopContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bcf60usize)as*mut u8,();
+(crate::app::versusviolationtopcontent::VersusViolationTopContent)::core::convert::Into::into(content))}
+}
+}
 
-#[cfg(feature = "app-versusviolationtopcontent")]
-pub trait IVersusViolationTopContentMethods : IVersusViolationTopContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bcfe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCapture(crate::unity_engine::texture2d::Texture2D)` overload"] fn set_capture (self , tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D >) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tex) , :: core :: option :: Option :: None) } } } # [doc = "`SetCategoryText(::unity2::Il2CppString)` overload"] fn set_category_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`SetReasonText(::unity2::Il2CppString)` overload"] fn set_reason_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`HideCategory()` overload"] fn hide_category (self ,) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowCategory()` overload"] fn show_category (self ,) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideReason()` overload"] fn hide_reason (self ,) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowReason()` overload"] fn show_reason (self ,) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusViolationTopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusViolationTopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bd600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusviolationtopcontent")]pub trait IVersusViolationTopContentMethods:IVersusViolationTopContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bcfe0usize)as*mut u8,();
+(VersusViolationTopContent)__receiver)}
+}
+#[doc="`SetCapture(crate::unity_engine::texture2d::Texture2D)` overload"]fn set_capture(self,tex:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D>)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd150usize)as*mut u8,();
+(VersusViolationTopContent)__receiver,(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(tex))}
+}
+#[doc="`SetCategoryText(::unity2::Il2CppString)` overload"]fn set_category_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd200usize)as*mut u8,();
+(VersusViolationTopContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`SetReasonText(::unity2::Il2CppString)` overload"]fn set_reason_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd280usize)as*mut u8,();
+(VersusViolationTopContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`HideCategory()` overload"]fn hide_category(self,)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd300usize)as*mut u8,();
+(VersusViolationTopContent)__receiver)}
+}
+#[doc="`ShowCategory()` overload"]fn show_category(self,)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd3c0usize)as*mut u8,();
+(VersusViolationTopContent)__receiver)}
+}
+#[doc="`HideReason()` overload"]fn hide_reason(self,)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd480usize)as*mut u8,();
+(VersusViolationTopContent)__receiver)}
+}
+#[doc="`ShowReason()` overload"]fn show_reason(self,)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd540usize)as*mut u8,();
+(VersusViolationTopContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusViolationTopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bd600usize)as*mut u8,();
+(VersusViolationTopContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusviolationtopcontent")]
-impl < __T : IVersusViolationTopContent > IVersusViolationTopContentMethods for __T { }
+#[cfg(feature="app-versusviolationtopcontent")]impl<__T:IVersusViolationTopContent>IVersusViolationTopContentMethods for __T{}
 
-#[cfg(feature = "app-versusviolationtopcontent")]
-impl VersusViolationTopContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_category_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_reason_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn hide_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn show_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn hide_reason_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn show_reason_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusViolationTopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-versusviolationtopcontent")]impl VersusViolationTopContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_capture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_category_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_reason_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn hide_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn show_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn hide_reason_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn show_reason_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-versusviolationtopcontent")]
-impl VersusViolationTopContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusViolationTopContent) , :: core :: stringify ! (new) ,)) ; < Self as IVersusViolationTopContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusviolationtopcontent")]impl VersusViolationTopContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusViolationTopContent), ::core::stringify!(new),));
+ <Self as IVersusViolationTopContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusviolationtopcontent")]

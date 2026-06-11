@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: marker :: { IMarker , Marker }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::marker::{IMarker,Marker}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonriderestartwindmarker/DragonRideRestartWindMarker.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideRestartWindMarker")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct DragonRideRestartWindMarker {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonriderestartwindmarker/DragonRideRestartWindMarker.md"))]#[::unity2::class(namespace="App",name="DragonRideRestartWindMarker")]#[parent(crate::unity_engine::timeline::marker::Marker)]pub struct DragonRideRestartWindMarker{}
 
 }
 
 #[cfg(feature = "app-dragonriderestartwindmarker-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonriderestartwindmarker")]
-pub trait IDragonRideRestartWindMarkerMethods : IDragonRideRestartWindMarker { # [doc = "`get_id()` overload"] fn get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < DragonRideRestartWindMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideRestartWindMarker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideRestartWindMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideRestartWindMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonriderestartwindmarker")]pub trait IDragonRideRestartWindMarkerMethods:IDragonRideRestartWindMarker{#[doc="`get_id()` overload"]fn get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <DragonRideRestartWindMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3ae0usize)as*mut u8,crate::unity_engine::propertyname::PropertyName;
+(DragonRideRestartWindMarker)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideRestartWindMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3b40usize)as*mut u8,();
+(DragonRideRestartWindMarker)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonriderestartwindmarker")]
-impl < __T : IDragonRideRestartWindMarker > IDragonRideRestartWindMarkerMethods for __T { }
+#[cfg(feature="app-dragonriderestartwindmarker")]impl<__T:IDragonRideRestartWindMarker>IDragonRideRestartWindMarkerMethods for __T{}
 
-#[cfg(feature = "app-dragonriderestartwindmarker")]
-impl DragonRideRestartWindMarker { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideRestartWindMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideRestartWindMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-dragonriderestartwindmarker")]impl DragonRideRestartWindMarker{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-dragonriderestartwindmarker")]
-impl DragonRideRestartWindMarker {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideRestartWindMarker) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideRestartWindMarkerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonriderestartwindmarker")]impl DragonRideRestartWindMarker{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideRestartWindMarker), ::core::stringify!(new),));
+ <Self as IDragonRideRestartWindMarkerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonriderestartwindmarker")]

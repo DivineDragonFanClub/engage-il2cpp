@@ -4,51 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/iron19charactersuperengage/Iron19CharacterSuperEngage.md"))] # [:: unity2 :: class (namespace = "" , name = "Iron19CharacterSuperEngage")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Iron19CharacterSuperEngage {
-# [static_field] # [rename (name = "EditorPrefsDisable")] pub editor_prefs_disable : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_bInitialized")] pub m_b_initialized : bool ,
-# [offset (25)] # [rename (name = "m_Dirty")] pub m_dirty : bool ,
-# [offset (32)] # [rename (name = "m_ModifiableMaterials")] pub m_modifiable_materials : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: material :: Material > ,
-# [offset (40)] # [rename (name = "m_InstancedMaterials")] pub m_instanced_materials : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: material :: Material > ,
-# [offset (48)] # [rename (name = "m_isSuperEngage")] pub m_is_super_engage : bool ,
-# [static_field] # [rename (name = "SUPER_ENGAGE_KEYWORD")] pub super_engage_keyword : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "SUPER_ENGAGE_PROPERTY_NAME")] pub super_engage_property_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "m_superEngagePropertyID")] pub m_super_engage_property_id : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/iron19charactersuperengage/Iron19CharacterSuperEngage.md"))]#[::unity2::class(namespace="",name="Iron19CharacterSuperEngage")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct Iron19CharacterSuperEngage{#[static_field]#[rename(name="EditorPrefsDisable")]pub editor_prefs_disable: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_bInitialized")]pub m_b_initialized:bool, #[offset(25)]#[rename(name="m_Dirty")]pub m_dirty:bool, #[offset(32)]#[rename(name="m_ModifiableMaterials")]pub m_modifiable_materials:crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material> , #[offset(40)]#[rename(name="m_InstancedMaterials")]pub m_instanced_materials:crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material> , #[offset(48)]#[rename(name="m_isSuperEngage")]pub m_is_super_engage:bool, #[static_field]#[rename(name="SUPER_ENGAGE_KEYWORD")]pub super_engage_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="SUPER_ENGAGE_PROPERTY_NAME")]pub super_engage_property_name: ::unity2::Il2CppString, #[static_field]#[rename(name="m_superEngagePropertyID")]pub m_super_engage_property_id:i32,}
 
 }
 
 #[cfg(feature = "root-iron19charactersuperengage-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-iron19charactersuperengage")]
-impl Iron19CharacterSuperEngage { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a9680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-iron19charactersuperengage")]impl Iron19CharacterSuperEngage{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27a9680usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-iron19charactersuperengage")]
-pub trait IIron19CharacterSuperEngageMethods : IIron19CharacterSuperEngage { # [doc = "`IsSuperEngage()` overload"] fn is_super_engage (self ,) -> bool { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a8e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a8e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMaterials(bool)` overload"] fn update_materials (self , is_force : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Iron19CharacterSuperEngage , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a8f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_force) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a9250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSuperEngage(bool)` overload"] fn set_super_engage (self , is_super_engage : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Iron19CharacterSuperEngage , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a9440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_super_engage) , :: core :: option :: Option :: None) } } } # [doc = "`MyUpdate()` overload"] fn my_update (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a9460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateShader()` overload"] fn update_shader (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a9470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Iron19CharacterSuperEngage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Iron19CharacterSuperEngage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a9670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-iron19charactersuperengage")]pub trait IIron19CharacterSuperEngageMethods:IIron19CharacterSuperEngage{#[doc="`IsSuperEngage()` overload"]fn is_super_engage(self,)->bool{unsafe{let __receiver= <Iron19CharacterSuperEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a8e00usize)as*mut u8,bool;
+(Iron19CharacterSuperEngage)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <Iron19CharacterSuperEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a8e10usize)as*mut u8,();
+(Iron19CharacterSuperEngage)__receiver)}
+}
+#[doc="`UpdateMaterials(bool)` overload"]fn update_materials(self,is_force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Iron19CharacterSuperEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a8f00usize)as*mut u8,();
+(Iron19CharacterSuperEngage)__receiver,(bool)::core::convert::Into::into(is_force))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <Iron19CharacterSuperEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a9250usize)as*mut u8,();
+(Iron19CharacterSuperEngage)__receiver)}
+}
+#[doc="`SetSuperEngage(bool)` overload"]fn set_super_engage(self,is_super_engage:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Iron19CharacterSuperEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a9440usize)as*mut u8,();
+(Iron19CharacterSuperEngage)__receiver,(bool)::core::convert::Into::into(is_super_engage))}
+}
+#[doc="`MyUpdate()` overload"]fn my_update(self,)->(){unsafe{let __receiver= <Iron19CharacterSuperEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a9460usize)as*mut u8,();
+(Iron19CharacterSuperEngage)__receiver)}
+}
+#[doc="`UpdateShader()` overload"]fn update_shader(self,)->(){unsafe{let __receiver= <Iron19CharacterSuperEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a9470usize)as*mut u8,();
+(Iron19CharacterSuperEngage)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Iron19CharacterSuperEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a9670usize)as*mut u8,();
+(Iron19CharacterSuperEngage)__receiver)}
+}
+}
 
-#[cfg(feature = "root-iron19charactersuperengage")]
-impl < __T : IIron19CharacterSuperEngage > IIron19CharacterSuperEngageMethods for __T { }
+#[cfg(feature="root-iron19charactersuperengage")]impl<__T:IIron19CharacterSuperEngage>IIron19CharacterSuperEngageMethods for __T{}
 
-#[cfg(feature = "root-iron19charactersuperengage")]
-impl Iron19CharacterSuperEngage { pub fn is_super_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_super_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn my_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Iron19CharacterSuperEngage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="root-iron19charactersuperengage")]impl Iron19CharacterSuperEngage{pub fn is_super_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_super_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn my_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "root-iron19charactersuperengage")]
-impl Iron19CharacterSuperEngage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Iron19CharacterSuperEngage) , :: core :: stringify ! (new) ,)) ; < Self as IIron19CharacterSuperEngageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-iron19charactersuperengage")]impl Iron19CharacterSuperEngage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Iron19CharacterSuperEngage), ::core::stringify!(new),));
+ <Self as IIron19CharacterSuperEngageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-iron19charactersuperengage")]

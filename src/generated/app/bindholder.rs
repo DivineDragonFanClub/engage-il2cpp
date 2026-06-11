@@ -4,33 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bindholder/BindHolder.md"))] # [:: unity2 :: class (namespace = "App" , name = "BindHolder")] # [parent (crate :: system :: object :: Object)] pub struct BindHolder {
-# [static_field] # [rename (name = "BindMax")] pub bind_max : i32 ,
-# [offset (16)] # [rename (name = "m_Bind")] pub m_bind : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bindholder/BindHolder.md"))]#[::unity2::class(namespace="App",name="BindHolder")]#[parent(crate::system::object::Object)]pub struct BindHolder{#[static_field]#[rename(name="BindMax")]pub bind_max:i32, #[offset(16)]#[rename(name="m_Bind")]pub m_bind:i32,}
 
 }
 
 #[cfg(feature = "app-bindholder-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bindholder")]
-pub trait IBindHolderMethods : IBindHolder { # [doc = "`Bind()` overload"] fn bind (self ,) -> bool { unsafe { let __receiver = < BindHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BindHolder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e98d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Unbind()` overload"] fn unbind (self ,) -> bool { unsafe { let __receiver = < BindHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BindHolder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e98d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsBind()` overload"] fn is_bind (self ,) -> bool { unsafe { let __receiver = < BindHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BindHolder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e98df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NonBind()` overload"] fn non_bind (self ,) -> bool { unsafe { let __receiver = < BindHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BindHolder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e98e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < BindHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BindHolder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e98e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < BindHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BindHolder , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e98e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BindHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BindHolder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e98e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bindholder")]pub trait IBindHolderMethods:IBindHolder{#[doc="`Bind()` overload"]fn bind(self,)->bool{unsafe{let __receiver= <BindHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e98d40usize)as*mut u8,bool;
+(BindHolder)__receiver)}
+}
+#[doc="`Unbind()` overload"]fn unbind(self,)->bool{unsafe{let __receiver= <BindHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e98d60usize)as*mut u8,bool;
+(BindHolder)__receiver)}
+}
+#[doc="`IsBind()` overload"]fn is_bind(self,)->bool{unsafe{let __receiver= <BindHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e98df0usize)as*mut u8,bool;
+(BindHolder)__receiver)}
+}
+#[doc="`NonBind()` overload"]fn non_bind(self,)->bool{unsafe{let __receiver= <BindHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e98e00usize)as*mut u8,bool;
+(BindHolder)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <BindHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e98e10usize)as*mut u8,();
+(BindHolder)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <BindHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e98e20usize)as*mut u8,i32;
+(BindHolder)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BindHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e98e30usize)as*mut u8,();
+(BindHolder)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bindholder")]
-impl < __T : IBindHolder > IBindHolderMethods for __T { }
+#[cfg(feature="app-bindholder")]impl<__T:IBindHolder>IBindHolderMethods for __T{}
 
-#[cfg(feature = "app-bindholder")]
-impl BindHolder { pub fn bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BindHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BindHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BindHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn non_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BindHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BindHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BindHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BindHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-bindholder")]impl BindHolder{pub fn bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn non_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-bindholder")]
-impl BindHolder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BindHolder) , :: core :: stringify ! (new) ,)) ; < Self as IBindHolderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bindholder")]impl BindHolder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BindHolder), ::core::stringify!(new),));
+ <Self as IBindHolderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bindholder")]

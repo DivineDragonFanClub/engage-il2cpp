@@ -4,127 +4,229 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographTopSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: photographtopsequence :: PhotographTopSequence >)] pub struct PhotographTopSequence {
-# [offset (116)] # [rename (name = "m_NextLabel")] pub m_next_label : crate :: app :: photographtopsequence :: PhotographTopSequence_Label ,
-# [offset (120)] # [rename (name = "m_SelectAreaData")] pub m_select_area_data : crate :: app :: photographspotdata :: PhotographSpotData ,
-# [offset (128)] # [rename (name = "m_UnitAccDataSetList")] pub m_unit_acc_data_set_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: photographtopsequence :: PhotographTopSequence_UnitAccDataSet > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographtopsequence/PhotographTopSequence.md"))]#[::unity2::class(namespace="App",name="PhotographTopSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::photographtopsequence::PhotographTopSequence>)]pub struct PhotographTopSequence{#[offset(116)]#[rename(name="m_NextLabel")]pub m_next_label:crate::app::photographtopsequence::PhotographTopSequence_Label, #[offset(120)]#[rename(name="m_SelectAreaData")]pub m_select_area_data:crate::app::photographspotdata::PhotographSpotData, #[offset(128)]#[rename(name="m_UnitAccDataSetList")]pub m_unit_acc_data_set_list:crate::system::collections::generic::list_1::List_1<crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographtopsequence/PhotographTopSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotographTopSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for PhotographTopSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PhotographTopSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PhotographTopSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PhotographTopSequence_Label{pub fn entry()->Self{Self{value:0}
+}
+pub fn select_area()->Self{Self{value:1}
+}
+pub fn setup_photograph()->Self{Self{value:2}
+}
+pub fn exit()->Self{Self{value:3}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence_UnitAccDataSet.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographTopSequence.UnitAccDataSet")] # [parent (crate :: system :: object :: Object)] pub struct PhotographTopSequence_UnitAccDataSet {
-# [offset (40)] # [rename (name = "m_RecordPid")] pub m_record_pid : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_RecordBodyAccData")] pub m_record_body_acc_data : crate :: app :: accessorydata :: AccessoryData ,
-# [offset (56)] # [rename (name = "m_RecordFaceAccData")] pub m_record_face_acc_data : crate :: app :: accessorydata :: AccessoryData ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographtopsequence/PhotographTopSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PhotographTopSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for PhotographTopSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhotographTopSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for PhotographTopSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PhotographTopSequence_Label  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn select_area() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn setup_photograph() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographtopsequence/PhotographTopSequence_UnitAccDataSet.md"))]#[::unity2::class(namespace="App",name="PhotographTopSequence.UnitAccDataSet")]#[parent(crate::system::object::Object)]pub struct PhotographTopSequence_UnitAccDataSet{#[offset(40)]#[rename(name="m_RecordPid")]pub m_record_pid: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_RecordBodyAccData")]pub m_record_body_acc_data:crate::app::accessorydata::AccessoryData, #[offset(56)]#[rename(name="m_RecordFaceAccData")]pub m_record_face_acc_data:crate::app::accessorydata::AccessoryData,}
 
 }
 
 #[cfg(feature = "app-photographtopsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographtopsequence")]
-impl PhotographTopSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809950usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-photographtopsequence")]
-pub trait IPhotographTopSequenceMethods : IPhotographTopSequence { # [doc = "`set_NextLabel(crate::app::photographtopsequence::PhotographTopSequence_Label)` overload"] fn set_next_label (self , value : impl :: core :: convert :: Into < crate :: app :: photographtopsequence :: PhotographTopSequence_Label >) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , crate :: app :: photographtopsequence :: PhotographTopSequence_Label , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectAreaData()` overload"] fn get_select_area_data (self ,) -> crate :: app :: photographspotdata :: PhotographSpotData { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographspotdata :: PhotographSpotData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SelectAreaData(crate::app::photographspotdata::PhotographSpotData)` overload"] fn set_select_area_data (self , value : impl :: core :: convert :: Into < crate :: app :: photographspotdata :: PhotographSpotData >) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , crate :: app :: photographspotdata :: PhotographSpotData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetAccDataSet(crate::app::unit::Unit)` overload"] fn get_acc_data_set (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: photographtopsequence :: PhotographTopSequence_UnitAccDataSet { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographtopsequence :: PhotographTopSequence_UnitAccDataSet = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`get_MascotBodyAccData()` overload"] fn get_mascot_body_acc_data (self ,) -> crate :: app :: accessorydata :: AccessoryData { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28098f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MascotBodyAccData(crate::app::accessorydata::AccessoryData)` overload"] fn set_mascot_body_acc_data (self , value : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MascotFaceAccData()` overload"] fn get_mascot_face_acc_data (self ,) -> crate :: app :: accessorydata :: AccessoryData { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MascotFaceAccData(crate::app::accessorydata::AccessoryData)` overload"] fn set_mascot_face_acc_data (self , value : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MascotColorIdx()` overload"] fn get_mascot_color_idx (self ,) -> i32 { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MascotColorIdx(i32)` overload"] fn set_mascot_color_idx (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280aab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectAreaMenu()` overload"] fn open_select_area_menu (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280ace0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseSelectAreaMenu()` overload"] fn close_select_area_menu (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280ae70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartPhotographSequence()` overload"] fn start_photograph_sequence (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280af40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndPhotographSequence()` overload"] fn end_photograph_sequence (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResource()` overload"] fn is_loading_resource (self ,) -> bool { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResource()` overload"] fn unload_resource (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28099d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-photographtopsequence")]
-impl < __T : IPhotographTopSequence > IPhotographTopSequenceMethods for __T { }
-
-#[cfg(feature = "app-photographtopsequence")]
-impl PhotographTopSequence { pub fn set_next_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_select_area_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_select_area_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_acc_data_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_mascot_body_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_mascot_body_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_mascot_face_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_mascot_face_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_mascot_color_idx_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_mascot_color_idx_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn open_select_area_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn close_select_area_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn start_photograph_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn end_photograph_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
-
-#[cfg(feature = "app-photographtopsequence")]
-impl PhotographTopSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographTopSequence) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographTopSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographtopsequence")]impl PhotographTopSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2809950usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-photographtopsequence")]
-pub trait IPhotographTopSequence_UnitAccDataSetMethods : IPhotographTopSequence_UnitAccDataSet { # [doc = "`get_Pid()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pid(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BodyAccData()` overload"] fn get_body_acc_data (self ,) -> crate :: app :: accessorydata :: AccessoryData { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BodyAccData(crate::app::accessorydata::AccessoryData)` overload"] fn set_body_acc_data (self , value : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FaceAccData()` overload"] fn get_face_acc_data (self ,) -> crate :: app :: accessorydata :: AccessoryData { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22649a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FaceAccData(crate::app::accessorydata::AccessoryData)` overload"] fn set_face_acc_data (self , value : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22649b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::unit::Unit)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22649c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SaveAccDataSet()` overload"] fn save_acc_data_set (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadAccDataSet()` overload"] fn load_acc_data_set (self ,) -> () { unsafe { let __receiver = < PhotographTopSequence_UnitAccDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographTopSequence_UnitAccDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographtopsequence")]pub trait IPhotographTopSequenceMethods:IPhotographTopSequence{#[doc="`set_NextLabel(crate::app::photographtopsequence::PhotographTopSequence_Label)` overload"]fn set_next_label(self,value:impl::core::convert::Into<crate::app::photographtopsequence::PhotographTopSequence_Label>)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809740usize)as*mut u8,();
+(PhotographTopSequence)__receiver,(crate::app::photographtopsequence::PhotographTopSequence_Label)::core::convert::Into::into(value))}
+}
+#[doc="`get_SelectAreaData()` overload"]fn get_select_area_data(self,)->crate::app::photographspotdata::PhotographSpotData{unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809750usize)as*mut u8,crate::app::photographspotdata::PhotographSpotData;
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`set_SelectAreaData(crate::app::photographspotdata::PhotographSpotData)` overload"]fn set_select_area_data(self,value:impl::core::convert::Into<crate::app::photographspotdata::PhotographSpotData>)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809760usize)as*mut u8,();
+(PhotographTopSequence)__receiver,(crate::app::photographspotdata::PhotographSpotData)::core::convert::Into::into(value))}
+}
+#[doc="`GetAccDataSet(crate::app::unit::Unit)` overload"]fn get_acc_data_set(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet{unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809770usize)as*mut u8,crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet;
+(PhotographTopSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`get_MascotBodyAccData()` overload"]fn get_mascot_body_acc_data(self,)->crate::app::accessorydata::AccessoryData{unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28098f0usize)as*mut u8,crate::app::accessorydata::AccessoryData;
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`set_MascotBodyAccData(crate::app::accessorydata::AccessoryData)` overload"]fn set_mascot_body_acc_data(self,value:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809900usize)as*mut u8,();
+(PhotographTopSequence)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(value))}
+}
+#[doc="`get_MascotFaceAccData()` overload"]fn get_mascot_face_acc_data(self,)->crate::app::accessorydata::AccessoryData{unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809910usize)as*mut u8,crate::app::accessorydata::AccessoryData;
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`set_MascotFaceAccData(crate::app::accessorydata::AccessoryData)` overload"]fn set_mascot_face_acc_data(self,value:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809920usize)as*mut u8,();
+(PhotographTopSequence)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(value))}
+}
+#[doc="`get_MascotColorIdx()` overload"]fn get_mascot_color_idx(self,)->i32{unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809930usize)as*mut u8,i32;
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`set_MascotColorIdx(i32)` overload"]fn set_mascot_color_idx(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809940usize)as*mut u8,();
+(PhotographTopSequence)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809ab0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280aab0usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`OpenSelectAreaMenu()` overload"]fn open_select_area_menu(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280ace0usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`CloseSelectAreaMenu()` overload"]fn close_select_area_menu(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280ae70usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`StartPhotographSequence()` overload"]fn start_photograph_sequence(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280af40usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`EndPhotographSequence()` overload"]fn end_photograph_sequence(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b1e0usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b340usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b3b0usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`IsLoadingResource()` overload"]fn is_loading_resource(self,)->bool{unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b420usize)as*mut u8,bool;
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`UnloadResource()` overload"]fn unload_resource(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b490usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographTopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28099d0usize)as*mut u8,();
+(PhotographTopSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographtopsequence")]
-impl < __T : IPhotographTopSequence_UnitAccDataSet > IPhotographTopSequence_UnitAccDataSetMethods for __T { }
+#[cfg(feature="app-photographtopsequence")]impl<__T:IPhotographTopSequence>IPhotographTopSequenceMethods for __T{}
 
-#[cfg(feature = "app-photographtopsequence")]
-impl PhotographTopSequence_UnitAccDataSet { pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_body_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_body_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_face_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_face_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn save_acc_data_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn load_acc_data_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographTopSequence_UnitAccDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-photographtopsequence")]impl PhotographTopSequence{pub fn set_next_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_select_area_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_select_area_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_acc_data_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_mascot_body_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_mascot_body_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_mascot_face_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_mascot_face_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_mascot_color_idx_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_mascot_color_idx_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn open_select_area_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn close_select_area_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn start_photograph_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn end_photograph_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_loading_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-photographtopsequence")]
-impl PhotographTopSequence_UnitAccDataSet {
-# [doc = "`.ctor(crate::app::unit::Unit)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographTopSequence_UnitAccDataSet) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographTopSequence_UnitAccDataSetMethods > :: ctor (this , unit) ; this }
+#[cfg(feature="app-photographtopsequence")]impl PhotographTopSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographTopSequence), ::core::stringify!(new),));
+ <Self as IPhotographTopSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-photographtopsequence")]pub trait IPhotographTopSequence_UnitAccDataSetMethods:IPhotographTopSequence_UnitAccDataSet{#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2264960usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographTopSequence_UnitAccDataSet)__receiver)}
+}
+#[doc="`set_Pid(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2264970usize)as*mut u8,();
+(PhotographTopSequence_UnitAccDataSet)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BodyAccData()` overload"]fn get_body_acc_data(self,)->crate::app::accessorydata::AccessoryData{unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2264980usize)as*mut u8,crate::app::accessorydata::AccessoryData;
+(PhotographTopSequence_UnitAccDataSet)__receiver)}
+}
+#[doc="`set_BodyAccData(crate::app::accessorydata::AccessoryData)` overload"]fn set_body_acc_data(self,value:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2264990usize)as*mut u8,();
+(PhotographTopSequence_UnitAccDataSet)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(value))}
+}
+#[doc="`get_FaceAccData()` overload"]fn get_face_acc_data(self,)->crate::app::accessorydata::AccessoryData{unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22649a0usize)as*mut u8,crate::app::accessorydata::AccessoryData;
+(PhotographTopSequence_UnitAccDataSet)__receiver)}
+}
+#[doc="`set_FaceAccData(crate::app::accessorydata::AccessoryData)` overload"]fn set_face_acc_data(self,value:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22649b0usize)as*mut u8,();
+(PhotographTopSequence_UnitAccDataSet)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22649c0usize)as*mut u8,();
+(PhotographTopSequence_UnitAccDataSet)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SaveAccDataSet()` overload"]fn save_acc_data_set(self,)->(){unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2264b20usize)as*mut u8,();
+(PhotographTopSequence_UnitAccDataSet)__receiver)}
+}
+#[doc="`LoadAccDataSet()` overload"]fn load_acc_data_set(self,)->(){unsafe{let __receiver= <PhotographTopSequence_UnitAccDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2264b70usize)as*mut u8,();
+(PhotographTopSequence_UnitAccDataSet)__receiver)}
+}
+}
+
+#[cfg(feature="app-photographtopsequence")]impl<__T:IPhotographTopSequence_UnitAccDataSet>IPhotographTopSequence_UnitAccDataSetMethods for __T{}
+
+#[cfg(feature="app-photographtopsequence")]impl PhotographTopSequence_UnitAccDataSet{pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_body_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_body_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_face_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_face_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn save_acc_data_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_acc_data_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-photographtopsequence")]impl PhotographTopSequence_UnitAccDataSet{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographTopSequence_UnitAccDataSet), ::core::stringify!(new),));
+ <Self as IPhotographTopSequence_UnitAccDataSetMethods> ::ctor(this,unit);
+this}
 }
 
 #[cfg(feature = "app-photographtopsequence")]
@@ -133,10 +235,10 @@ pub mod prelude {
     pub use super::PhotographTopSequence;
     pub use super::IPhotographTopSequence;
     pub use super::IPhotographTopSequenceMethods;
+    pub use super::PhotographTopSequence_Label;
     pub use super::PhotographTopSequence_UnitAccDataSet;
     pub use super::IPhotographTopSequence_UnitAccDataSet;
     pub use super::IPhotographTopSequence_UnitAccDataSetMethods;
-    pub use super::PhotographTopSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

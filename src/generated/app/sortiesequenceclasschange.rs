@@ -4,101 +4,140 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceclasschange/SortieSequenceClassChange_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSequenceClassChange_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceclasschange/SortieSequenceClassChange_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequenceClassChange_Label{pub value:i32,}
+impl::unity2::ClassIdentity for SortieSequenceClassChange_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieSequenceClassChange.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SortieSequenceClassChange_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SortieSequenceClassChange_Label{pub fn main()->Self{Self{value:0}
+}
+pub fn class_change()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SortieSequenceClassChange_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSequenceClassChange.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SortieSequenceClassChange_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieSequenceClassChange_Label  {
-    pub fn main() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn class_change() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceclasschange/SortieSequenceClassChange.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceClassChange")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceclasschange :: SortieSequenceClassChange >)] pub struct SortieSequenceClassChange {
-# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_Window")] pub m_window : crate :: app :: classchangeroot :: ClassChangeRoot ,
-# [offset (128)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_classChangeJobMenu")] pub m_class_change_job_menu : crate :: app :: classchangejobmenu :: ClassChangeJobMenu ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceclasschange/SortieSequenceClassChange.md"))]#[::unity2::class(namespace="App",name="SortieSequenceClassChange")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequenceclasschange::SortieSequenceClassChange>)]pub struct SortieSequenceClassChange{#[static_field]#[rename(name="ResNameC")]pub res_name_c: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_Window")]pub m_window:crate::app::classchangeroot::ClassChangeRoot, #[offset(128)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_classChangeJobMenu")]pub m_class_change_job_menu:crate::app::classchangejobmenu::ClassChangeJobMenu,}
 
 }
 
 #[cfg(feature = "app-sortiesequenceclasschange-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortiesequenceclasschange")]
-impl SortieSequenceClassChange { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1feb1c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCommon(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_common (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1feb1d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequenceclasschange")]impl SortieSequenceClassChange{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1feb1c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindCommon(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_common(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1feb1d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-sortiesequenceclasschange")]
-pub trait ISortieSequenceClassChangeMethods : ISortieSequenceClassChange { # [doc = "`LoadRes()` overload"] fn load_res (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1febe50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingRes()` overload"] fn is_loading_res (self ,) -> bool { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1febef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1febf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1febff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fec420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCloseAll()` overload"] fn is_close_all (self ,) -> bool { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fec440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseEnd()` overload"] fn close_end (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fec460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideFooter()` overload"] fn hide_footer (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fec580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowFooter()` overload"] fn show_footer (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fec650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fec770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClassChangeSetup()` overload"] fn class_change_setup (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fec780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClassChangeEnd()` overload"] fn class_change_end (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fec9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MenuInputEnable()` overload"] fn menu_input_enable (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fecd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClassChange()` overload"] fn class_change (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fecd10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieSequenceClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1febdd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequenceclasschange")]pub trait ISortieSequenceClassChangeMethods:ISortieSequenceClassChange{#[doc="`LoadRes()` overload"]fn load_res(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1febe50usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`IsLoadingRes()` overload"]fn is_loading_res(self,)->bool{unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1febef0usize)as*mut u8,bool;
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1febf70usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1febff0usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fec420usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`IsCloseAll()` overload"]fn is_close_all(self,)->bool{unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fec440usize)as*mut u8,bool;
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`CloseEnd()` overload"]fn close_end(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fec460usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`HideFooter()` overload"]fn hide_footer(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fec580usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`ShowFooter()` overload"]fn show_footer(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fec650usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fec770usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`ClassChangeSetup()` overload"]fn class_change_setup(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fec780usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`ClassChangeEnd()` overload"]fn class_change_end(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fec9c0usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`MenuInputEnable()` overload"]fn menu_input_enable(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fecd00usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`ClassChange()` overload"]fn class_change(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fecd10usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieSequenceClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1febdd0usize)as*mut u8,();
+(SortieSequenceClassChange)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortiesequenceclasschange")]
-impl < __T : ISortieSequenceClassChange > ISortieSequenceClassChangeMethods for __T { }
+#[cfg(feature="app-sortiesequenceclasschange")]impl<__T:ISortieSequenceClassChange>ISortieSequenceClassChangeMethods for __T{}
 
-#[cfg(feature = "app-sortiesequenceclasschange")]
-impl SortieSequenceClassChange { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_common_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_close_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn close_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn hide_footer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn show_footer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn class_change_setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn class_change_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn menu_input_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-sortiesequenceclasschange")]impl SortieSequenceClassChange{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_close_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn close_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn hide_footer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn show_footer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn class_change_setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn class_change_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn menu_input_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn class_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-sortiesequenceclasschange")]
-impl SortieSequenceClassChange {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSequenceClassChange) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSequenceClassChangeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortiesequenceclasschange")]impl SortieSequenceClassChange{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieSequenceClassChange), ::core::stringify!(new),));
+ <Self as ISortieSequenceClassChangeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortiesequenceclasschange")]

@@ -4,283 +4,313 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire.md"))] # [:: unity2 :: class (namespace = "App" , name = "AICrossfire")] # [parent (crate :: system :: object :: Object)] pub struct AICrossfire {
-# [static_field] # [rename (name = "PositionMax")] pub position_max : i32 ,
-# [static_field] # [rename (name = "RangeFar")] pub range_far : i32 ,
-# [static_field] # [rename (name = "aPositionTable")] pub a_position_table : crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: app :: aicrossfire :: AICrossfire_PositionTable > ,
-# [offset (16)] # [rename (name = "m_aCrossfire")] pub m_a_crossfire : :: unity2 :: Array < crate :: app :: aicrossfire :: AICrossfire_Crossfire > ,
-# [offset (24)] # [rename (name = "m_Num")] pub m_num : i32 ,
-# [offset (28)] # [rename (name = "m_Ahead")] pub m_ahead : crate :: app :: aicrossfire :: AICrossfire_Ahead ,
-# [offset (40)] # [rename (name = "m_SimulatorForAhead")] pub m_simulator_for_ahead : crate :: app :: aibattlesimulator :: AIBattleSimulator ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicrossfire/AICrossfire_Ahead.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AICrossfire_Ahead{pub kill:f32,pub x:i32,pub z:i32,}
+impl::unity2::ClassIdentity for AICrossfire_Ahead{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AICrossfire.Ahead";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AICrossfire_Ahead{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicrossfire/AICrossfire_Ahead.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AICrossfire_Ahead {
-    pub kill: f32,
-    pub x: i32,
-    pub z: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicrossfire/AICrossfire_Crossfire.md"))]#[::unity2::class(namespace="App",name="AICrossfire.Crossfire")]#[parent(crate::system::object::Object)]pub struct AICrossfire_Crossfire{#[offset(16)]#[rename(name="m_Target")]pub m_target:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_aFire")]pub m_a_fire: ::unity2::Array<crate::app::aicrossfire::AICrossfire_Fire> , #[offset(32)]#[rename(name="m_Num")]pub m_num:i32, #[offset(36)]#[rename(name="m_ActorFireIndex")]pub m_actor_fire_index:i32, #[offset(40)]#[rename(name="m_ActorPositionIndex")]pub m_actor_position_index:i32, #[offset(44)]#[rename(name="m_Times")]pub m_times:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicrossfire/AICrossfire_PositionTable.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AICrossfire_PositionTable{pub m_x:i8,pub m_z:i8,pub m_range:i8,}
+impl::unity2::ClassIdentity for AICrossfire_PositionTable{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AICrossfire.PositionTable";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AICrossfire_PositionTable{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for AICrossfire_Ahead {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AICrossfire.Ahead";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicrossfire/AICrossfire_Fire_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AICrossfire_Fire_Type{pub value:i32,}
+impl::unity2::ClassIdentity for AICrossfire_Fire_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AICrossfire.Fire.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AICrossfire_Fire_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AICrossfire_Fire_Type{pub fn none()->Self{Self{value: -1}
+}
+pub fn direct()->Self{Self{value:0}
+}
+pub fn indirect()->Self{Self{value:1}
+}
+pub fn indirect3()->Self{Self{value:2}
+}
+pub fn far()->Self{Self{value:3}
+}
+pub fn num()->Self{Self{value:4}
+}
 }
 
 
-impl ::unity2::IlType for AICrossfire_Ahead {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicrossfire/AICrossfire.md"))]#[::unity2::class(namespace="App",name="AICrossfire")]#[parent(crate::system::object::Object)]pub struct AICrossfire{#[static_field]#[rename(name="PositionMax")]pub position_max:i32, #[static_field]#[rename(name="RangeFar")]pub range_far:i32, #[static_field]#[rename(name="aPositionTable")]pub a_position_table:crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aicrossfire::AICrossfire_PositionTable> , #[offset(16)]#[rename(name="m_aCrossfire")]pub m_a_crossfire: ::unity2::Array<crate::app::aicrossfire::AICrossfire_Crossfire> , #[offset(24)]#[rename(name="m_Num")]pub m_num:i32, #[offset(28)]#[rename(name="m_Ahead")]pub m_ahead:crate::app::aicrossfire::AICrossfire_Ahead, #[offset(40)]#[rename(name="m_SimulatorForAhead")]pub m_simulator_for_ahead:crate::app::aibattlesimulator::AIBattleSimulator,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicrossfire/AICrossfire_Fire_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AICrossfire_Fire_Type  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicrossfire/AICrossfire_Fire.md"))]#[::unity2::class(namespace="App",name="AICrossfire.Fire")]#[parent(crate::system::object::Object)]pub struct AICrossfire_Fire{#[offset(16)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_Mask")]pub m_mask:u32, #[offset(32)]#[rename(name="m_aSimulator")]pub m_a_simulator: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator> , #[offset(40)]#[rename(name="m_aItemIndex")]pub m_a_item_index: ::unity2::Array<i8> , #[offset(48)]#[rename(name="m_Strongest")]pub m_strongest:crate::app::aicrossfire::AICrossfire_Fire_Type,}
 
 
-impl  ::unity2::ClassIdentity for AICrossfire_Fire_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AICrossfire.Fire.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AICrossfire_Fire_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AICrossfire_Fire_Type  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn direct() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn indirect() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn indirect3() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn far() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicrossfire/AICrossfire_PositionTable.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AICrossfire_PositionTable {
-    pub m_x: i8,
-    pub m_z: i8,
-    pub m_range: i8,
-}
-
-
-impl ::unity2::ClassIdentity for AICrossfire_PositionTable {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AICrossfire.PositionTable";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AICrossfire_PositionTable {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire_FireComparer.md"))] # [:: unity2 :: class (namespace = "App" , name = "AICrossfire.FireComparer")] # [parent (crate :: system :: object :: Object)] pub struct AICrossfire_FireComparer {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire_Crossfire.md"))] # [:: unity2 :: class (namespace = "App" , name = "AICrossfire.Crossfire")] # [parent (crate :: system :: object :: Object)] pub struct AICrossfire_Crossfire {
-# [offset (16)] # [rename (name = "m_Target")] pub m_target : crate :: app :: unit :: Unit ,
-# [offset (24)] # [rename (name = "m_aFire")] pub m_a_fire : :: unity2 :: Array < crate :: app :: aicrossfire :: AICrossfire_Fire > ,
-# [offset (32)] # [rename (name = "m_Num")] pub m_num : i32 ,
-# [offset (36)] # [rename (name = "m_ActorFireIndex")] pub m_actor_fire_index : i32 ,
-# [offset (40)] # [rename (name = "m_ActorPositionIndex")] pub m_actor_position_index : i32 ,
-# [offset (44)] # [rename (name = "m_Times")] pub m_times : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire_Fire.md"))] # [:: unity2 :: class (namespace = "App" , name = "AICrossfire.Fire")] # [parent (crate :: system :: object :: Object)] pub struct AICrossfire_Fire {
-# [offset (16)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (24)] # [rename (name = "m_Mask")] pub m_mask : u32 ,
-# [offset (32)] # [rename (name = "m_aSimulator")] pub m_a_simulator : :: unity2 :: Array < crate :: app :: aibattlesimulator :: AIBattleSimulator > ,
-# [offset (40)] # [rename (name = "m_aItemIndex")] pub m_a_item_index : :: unity2 :: Array < i8 > ,
-# [offset (48)] # [rename (name = "m_Strongest")] pub m_strongest : crate :: app :: aicrossfire :: AICrossfire_Fire_Type ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicrossfire/AICrossfire_FireComparer.md"))]#[::unity2::class(namespace="App",name="AICrossfire.FireComparer")]#[parent(crate::system::object::Object)]pub struct AICrossfire_FireComparer{}
 
 }
 
 #[cfg(feature = "app-aicrossfire-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192e5c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-aicrossfire")]
-pub trait IAICrossfireMethods : IAICrossfire { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AICrossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19263e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Think()` overload"] fn think (self ,) -> bool { unsafe { let __receiver = < AICrossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1926640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Calculate()` overload"] fn calculate (self ,) -> () { unsafe { let __receiver = < AICrossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192d0e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateAhead(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32)` overload"] fn calculate_ahead (self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AICrossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192d430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsPermission(crate::app::unit::Unit)` overload"] fn is_permission (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < AICrossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192db00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetAttackRange(crate::app::unit::Unit, *mutu64, bool)` overload"] fn get_attack_range (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , far : impl :: core :: convert :: Into < bool >) -> (i32 , u64) { unsafe { let __receiver = < AICrossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (AICrossfire , crate :: app :: unit :: Unit , * mut u64 , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192de90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (far) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
-
-#[cfg(feature = "app-aicrossfire")]
-impl < __T : IAICrossfire > IAICrossfireMethods for __T { }
-
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn think_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calculate_ahead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_permission_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_attack_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AICrossfire) , :: core :: stringify ! (new) ,)) ; < Self as IAICrossfireMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aicrossfire")]pub trait IAICrossfire_CrossfireMethods:IAICrossfire_Crossfire{#[doc="`get_Target()` overload"]fn get_target(self,)->crate::app::unit::Unit{unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2942e10usize)as*mut u8,crate::app::unit::Unit;
+(AICrossfire_Crossfire)__receiver)}
+}
+#[doc="`set_Target(crate::app::unit::Unit)` overload"]fn set_target(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2942e20usize)as*mut u8,();
+(AICrossfire_Crossfire)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_Num()` overload"]fn get_num(self,)->i32{unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2942e30usize)as*mut u8,i32;
+(AICrossfire_Crossfire)__receiver)}
+}
+#[doc="`set_Num(i32)` overload"]fn set_num(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2942e40usize)as*mut u8,();
+(AICrossfire_Crossfire)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ActorFireIndex()` overload"]fn get_actor_fire_index(self,)->i32{unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2942e50usize)as*mut u8,i32;
+(AICrossfire_Crossfire)__receiver)}
+}
+#[doc="`get_ActorPositionIndex()` overload"]fn get_actor_position_index(self,)->i32{unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2942e60usize)as*mut u8,i32;
+(AICrossfire_Crossfire)__receiver)}
+}
+#[doc="`GetFire(i32)` overload"]fn get_fire(self,index:impl::core::convert::Into<i32>)->crate::app::aicrossfire::AICrossfire_Fire{unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2942450usize)as*mut u8,crate::app::aicrossfire::AICrossfire_Fire;
+(AICrossfire_Crossfire)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2942e70usize)as*mut u8,();
+(AICrossfire_Crossfire)__receiver)}
+}
+#[doc="`CalculateScore(crate::app::aicrossfire::AICrossfire_FireComparer)` overload"]fn calculate_score(self,fire_comparer:impl::core::convert::Into<crate::app::aicrossfire::AICrossfire_FireComparer>)->i32{unsafe{let __receiver= <AICrossfire_Crossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29431c0usize)as*mut u8,i32;
+(AICrossfire_Crossfire)__receiver,(crate::app::aicrossfire::AICrossfire_FireComparer)::core::convert::Into::into(fire_comparer))}
+}
 }
 
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_PositionTable { # [doc = "`.ctor(i8, i8, i8)` overload"] pub fn ctor (& mut self , x : impl :: core :: convert :: Into < i8 > , z : impl :: core :: convert :: Into < i8 > , range : impl :: core :: convert :: Into < i8 >) -> () { unsafe { { let __inner : extern "C" fn (* mut AICrossfire_PositionTable , i8 , i8 , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943b10usize) as * mut u8) ; __inner (self as * mut AICrossfire_PositionTable , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (range) , :: core :: option :: Option :: None) } } } # [doc = "`IsFar()` overload"] pub fn is_far (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut AICrossfire_PositionTable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943870usize) as * mut u8) ; __inner (self as * mut AICrossfire_PositionTable , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aicrossfire")]impl<__T:IAICrossfire_Crossfire>IAICrossfire_CrossfireMethods for __T{}
 
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_PositionTable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_PositionTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_far_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_PositionTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-aicrossfire")]
-pub trait IAICrossfire_FireComparerMethods : IAICrossfire_FireComparer { # [doc = "`Compare(crate::app::aicrossfire::AICrossfire_Fire, crate::app::aicrossfire::AICrossfire_Fire)` overload"] fn compare (self , x : impl :: core :: convert :: Into < crate :: app :: aicrossfire :: AICrossfire_Fire > , y : impl :: core :: convert :: Into < crate :: app :: aicrossfire :: AICrossfire_Fire >) -> i32 { unsafe { let __receiver = < AICrossfire_FireComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_FireComparer , crate :: app :: aicrossfire :: AICrossfire_Fire , crate :: app :: aicrossfire :: AICrossfire_Fire , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29439c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AICrossfire_FireComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_FireComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-aicrossfire")]
-impl < __T : IAICrossfire_FireComparer > IAICrossfire_FireComparerMethods for __T { }
-
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_FireComparer { pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_FireComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_FireComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_FireComparer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AICrossfire_FireComparer) , :: core :: stringify ! (new) ,)) ; < Self as IAICrossfire_FireComparerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_Crossfire{pub fn get_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_actor_fire_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_actor_position_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_fire_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn calculate_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
-#[cfg(feature = "app-aicrossfire")]
-pub trait IAICrossfire_CrossfireMethods : IAICrossfire_Crossfire { # [doc = "`get_Target()` overload"] fn get_target (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target(crate::app::unit::Unit)` overload"] fn set_target (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Num()` overload"] fn get_num (self ,) -> i32 { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Num(i32)` overload"] fn set_num (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ActorFireIndex()` overload"] fn get_actor_fire_index (self ,) -> i32 { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ActorPositionIndex()` overload"] fn get_actor_position_index (self ,) -> i32 { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFire(i32)` overload"] fn get_fire (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: aicrossfire :: AICrossfire_Fire { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: aicrossfire :: AICrossfire_Fire = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateScore(crate::app::aicrossfire::AICrossfire_FireComparer)` overload"] fn calculate_score (self , fire_comparer : impl :: core :: convert :: Into < crate :: app :: aicrossfire :: AICrossfire_FireComparer >) -> i32 { unsafe { let __receiver = < AICrossfire_Crossfire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Crossfire , crate :: app :: aicrossfire :: AICrossfire_FireComparer , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29431c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fire_comparer) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-aicrossfire")]
-impl < __T : IAICrossfire_Crossfire > IAICrossfire_CrossfireMethods for __T { }
-
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_Crossfire { pub fn get_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_actor_fire_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_actor_position_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_fire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn calculate_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Crossfire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_Crossfire {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AICrossfire_Crossfire) , :: core :: stringify ! (new) ,)) ; < Self as IAICrossfire_CrossfireMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_Crossfire{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AICrossfire_Crossfire), ::core::stringify!(new),));
+ <Self as IAICrossfire_CrossfireMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_Fire { # [doc = "`RangeToType(i32)` overload"] pub fn range_to_type (range : impl :: core :: convert :: Into < i32 >) -> crate :: app :: aicrossfire :: AICrossfire_Fire_Type { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: aicrossfire :: AICrossfire_Fire_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (range) , :: core :: option :: Option :: None) } } } # [doc = "`TypeToRange(crate::app::aicrossfire::AICrossfire_Fire_Type)` overload"] pub fn type_to_range (r#type : impl :: core :: convert :: Into < crate :: app :: aicrossfire :: AICrossfire_Fire_Type >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: aicrossfire :: AICrossfire_Fire_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29439b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_PositionTable{#[doc="`.ctor(i8, i8, i8)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i8> ,z:impl::core::convert::Into<i8> ,range:impl::core::convert::Into<i8>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2943b10usize)as*mut u8,();
+(*mut AICrossfire_PositionTable)self as*mut AICrossfire_PositionTable,(i8)::core::convert::Into::into(x),(i8)::core::convert::Into::into(z),(i8)::core::convert::Into::into(range))}
+}
+#[doc="`IsFar()` overload"]pub fn is_far(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2943870usize)as*mut u8,bool;
+(*mut AICrossfire_PositionTable)self as*mut AICrossfire_PositionTable)}
+}
+}
 
-#[cfg(feature = "app-aicrossfire")]
-pub trait IAICrossfire_FireMethods : IAICrossfire_Fire { # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29438c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Unit(crate::app::unit::Unit)` overload"] fn set_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29438d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Mask()` overload"] fn get_mask (self ,) -> u32 { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29438e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mask(u32)` overload"] fn set_mask (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29438f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_StrongestScore()` overload"] fn get_strongest_score (self ,) -> u32 { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Simulator(crate::app::aicrossfire::AICrossfire_Fire_Type)` overload"] fn simulator (self , r#type : impl :: core :: convert :: Into < crate :: app :: aicrossfire :: AICrossfire_Fire_Type >) -> crate :: app :: aibattlesimulator :: AIBattleSimulator { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , crate :: app :: aicrossfire :: AICrossfire_Fire_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: aibattlesimulator :: AIBattleSimulator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`ItemIndex(i32)` overload"] fn item_index (self , index : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Score(crate::app::aicrossfire::AICrossfire_Fire_Type)` overload"] fn score (self , r#type : impl :: core :: convert :: Into < crate :: app :: aicrossfire :: AICrossfire_Fire_Type >) -> u32 { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , crate :: app :: aicrossfire :: AICrossfire_Fire_Type , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2943020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateSimulator(crate::app::aicrossfire::AICrossfire_Fire_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn calculate_simulator (self , r#type : impl :: core :: convert :: Into < crate :: app :: aicrossfire :: AICrossfire_Fire_Type > , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AICrossfire_Fire as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICrossfire_Fire , crate :: app :: aicrossfire :: AICrossfire_Fire_Type , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29424a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_PositionTable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_far_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-aicrossfire")]
-impl < __T : IAICrossfire_Fire > IAICrossfire_FireMethods for __T { }
+#[cfg(feature="app-aicrossfire")]impl AICrossfire{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x192e5c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_Fire { pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_strongest_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn simulator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn calculate_simulator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn range_to_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn type_to_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICrossfire_Fire as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-aicrossfire")]pub trait IAICrossfireMethods:IAICrossfire{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AICrossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19263e0usize)as*mut u8,();
+(AICrossfire)__receiver)}
+}
+#[doc="`Think()` overload"]fn think(self,)->bool{unsafe{let __receiver= <AICrossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1926640usize)as*mut u8,bool;
+(AICrossfire)__receiver)}
+}
+#[doc="`Calculate()` overload"]fn calculate(self,)->(){unsafe{let __receiver= <AICrossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192d0e0usize)as*mut u8,();
+(AICrossfire)__receiver)}
+}
+#[doc="`CalculateAhead(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32)` overload"]fn calculate_ahead(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AICrossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192d430usize)as*mut u8,();
+(AICrossfire)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::unit::Unit)::core::convert::Into::into(target),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsPermission(crate::app::unit::Unit)` overload"]fn is_permission(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <AICrossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192db00usize)as*mut u8,bool;
+(AICrossfire)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetAttackRange(crate::app::unit::Unit, *mutu64, bool)` overload"]fn get_attack_range(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,far:impl::core::convert::Into<bool>)->(i32,u64){unsafe{let __receiver= <AICrossfire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x192de90usize)as*mut u8,i32;
+(AICrossfire)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(*mut u64)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(far))}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_Fire {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AICrossfire_Fire) , :: core :: stringify ! (new) ,)) ; < Self as IAICrossfire_FireMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aicrossfire")]impl<__T:IAICrossfire>IAICrossfireMethods for __T{}
+
+#[cfg(feature="app-aicrossfire")]impl AICrossfire{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn think_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calculate_ahead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_permission_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_attack_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-aicrossfire")]impl AICrossfire{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AICrossfire), ::core::stringify!(new),));
+ <Self as IAICrossfireMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_Fire{#[doc="`RangeToType(i32)` overload"]pub fn range_to_type(range:impl::core::convert::Into<i32>)->crate::app::aicrossfire::AICrossfire_Fire_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2943800usize)as*mut u8,crate::app::aicrossfire::AICrossfire_Fire_Type;
+(i32)::core::convert::Into::into(range))}
+}
+#[doc="`TypeToRange(crate::app::aicrossfire::AICrossfire_Fire_Type)` overload"]pub fn type_to_range(r#type:impl::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire_Type>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29439b0usize)as*mut u8,i32;
+(crate::app::aicrossfire::AICrossfire_Fire_Type)::core::convert::Into::into(r#type))}
+}
+}
+
+#[cfg(feature="app-aicrossfire")]pub trait IAICrossfire_FireMethods:IAICrossfire_Fire{#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29438c0usize)as*mut u8,crate::app::unit::Unit;
+(AICrossfire_Fire)__receiver)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]fn set_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29438d0usize)as*mut u8,();
+(AICrossfire_Fire)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_Mask()` overload"]fn get_mask(self,)->u32{unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29438e0usize)as*mut u8,u32;
+(AICrossfire_Fire)__receiver)}
+}
+#[doc="`set_Mask(u32)` overload"]fn set_mask(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29438f0usize)as*mut u8,();
+(AICrossfire_Fire)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_StrongestScore()` overload"]fn get_strongest_score(self,)->u32{unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2943900usize)as*mut u8,u32;
+(AICrossfire_Fire)__receiver)}
+}
+#[doc="`Simulator(crate::app::aicrossfire::AICrossfire_Fire_Type)` overload"]fn simulator(self,r#type:impl::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire_Type>)->crate::app::aibattlesimulator::AIBattleSimulator{unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2943880usize)as*mut u8,crate::app::aibattlesimulator::AIBattleSimulator;
+(AICrossfire_Fire)__receiver,(crate::app::aicrossfire::AICrossfire_Fire_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`ItemIndex(i32)` overload"]fn item_index(self,index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2943960usize)as*mut u8,i32;
+(AICrossfire_Fire)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Score(crate::app::aicrossfire::AICrossfire_Fire_Type)` overload"]fn score(self,r#type:impl::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire_Type>)->u32{unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2943820usize)as*mut u8,u32;
+(AICrossfire_Fire)__receiver,(crate::app::aicrossfire::AICrossfire_Fire_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2943020usize)as*mut u8,();
+(AICrossfire_Fire)__receiver)}
+}
+#[doc="`CalculateSimulator(crate::app::aicrossfire::AICrossfire_Fire_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn calculate_simulator(self,r#type:impl::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire_Type> ,actor:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AICrossfire_Fire as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29424a0usize)as*mut u8,();
+(AICrossfire_Fire)__receiver,(crate::app::aicrossfire::AICrossfire_Fire_Type)::core::convert::Into::into(r#type),(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+}
+
+#[cfg(feature="app-aicrossfire")]impl<__T:IAICrossfire_Fire>IAICrossfire_FireMethods for __T{}
+
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_Fire{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_strongest_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn simulator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn calculate_simulator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn range_to_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn type_to_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_Fire{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AICrossfire_Fire), ::core::stringify!(new),));
+ <Self as IAICrossfire_FireMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-aicrossfire")]pub trait IAICrossfire_FireComparerMethods:IAICrossfire_FireComparer{#[doc="`Compare(crate::app::aicrossfire::AICrossfire_Fire, crate::app::aicrossfire::AICrossfire_Fire)` overload"]fn compare(self,x:impl::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire> ,y:impl::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire>)->i32{unsafe{let __receiver= <AICrossfire_FireComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29439c0usize)as*mut u8,i32;
+(AICrossfire_FireComparer)__receiver,(crate::app::aicrossfire::AICrossfire_Fire)::core::convert::Into::into(x),(crate::app::aicrossfire::AICrossfire_Fire)::core::convert::Into::into(y))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AICrossfire_FireComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2943b00usize)as*mut u8,();
+(AICrossfire_FireComparer)__receiver)}
+}
+}
+
+#[cfg(feature="app-aicrossfire")]impl<__T:IAICrossfire_FireComparer>IAICrossfire_FireComparerMethods for __T{}
+
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_FireComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-aicrossfire")]impl AICrossfire_FireComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AICrossfire_FireComparer), ::core::stringify!(new),));
+ <Self as IAICrossfire_FireComparerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-aicrossfire")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AICrossfire;
-    pub use super::IAICrossfire;
-    pub use super::IAICrossfireMethods;
     pub use super::AICrossfire_Ahead;
-    pub use super::AICrossfire_Fire_Type;
-    pub use super::AICrossfire_PositionTable;
-    pub use super::AICrossfire_FireComparer;
-    pub use super::IAICrossfire_FireComparer;
-    pub use super::IAICrossfire_FireComparerMethods;
     pub use super::AICrossfire_Crossfire;
     pub use super::IAICrossfire_Crossfire;
     pub use super::IAICrossfire_CrossfireMethods;
+    pub use super::AICrossfire_PositionTable;
+    pub use super::AICrossfire_Fire_Type;
+    pub use super::AICrossfire;
+    pub use super::IAICrossfire;
+    pub use super::IAICrossfireMethods;
     pub use super::AICrossfire_Fire;
     pub use super::IAICrossfire_Fire;
     pub use super::IAICrossfire_FireMethods;
+    pub use super::AICrossfire_FireComparer;
+    pub use super::IAICrossfire_FireComparer;
+    pub use super::IAICrossfire_FireComparerMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

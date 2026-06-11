@@ -4,39 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/belongdata/BelongData.md"))] # [:: unity2 :: class (namespace = "App" , name = "BelongData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: belongdata :: BelongData >)] pub struct BelongData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/belongdata/BelongData.md"))]#[::unity2::class(namespace="App",name="BelongData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::belongdata::BelongData>)]pub struct BelongData{}
 
 }
 
 #[cfg(feature = "app-belongdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-belongdata")]
-impl BelongData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-belongdata")]impl BelongData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e95080usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-belongdata")]
-pub trait IBelongDataMethods : IBelongData { # [doc = "`get_Bid()` overload"] fn get_bid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BelongData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BelongData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Bid(::unity2::Il2CppString)` overload"] fn set_bid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BelongData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BelongData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BelongData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BelongData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BelongData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BelongData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DefeatAchieve()` overload"] fn get_defeat_achieve (self ,) -> crate :: app :: achievedata :: AchieveData_Kinds { unsafe { let __receiver = < BelongData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BelongData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DefeatAchieve(crate::app::achievedata::AchieveData_Kinds)` overload"] fn set_defeat_achieve (self , value : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> () { unsafe { let __receiver = < BelongData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BelongData , crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BelongData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BelongData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BelongData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BelongData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e951a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-belongdata")]pub trait IBelongDataMethods:IBelongData{#[doc="`get_Bid()` overload"]fn get_bid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BelongData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95130usize)as*mut u8, ::unity2::Il2CppString;
+(BelongData)__receiver)}
+}
+#[doc="`set_Bid(::unity2::Il2CppString)` overload"]fn set_bid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BelongData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95140usize)as*mut u8,();
+(BelongData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BelongData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95150usize)as*mut u8, ::unity2::Il2CppString;
+(BelongData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BelongData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95160usize)as*mut u8,();
+(BelongData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_DefeatAchieve()` overload"]fn get_defeat_achieve(self,)->crate::app::achievedata::AchieveData_Kinds{unsafe{let __receiver= <BelongData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95170usize)as*mut u8,crate::app::achievedata::AchieveData_Kinds;
+(BelongData)__receiver)}
+}
+#[doc="`set_DefeatAchieve(crate::app::achievedata::AchieveData_Kinds)` overload"]fn set_defeat_achieve(self,value:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>)->(){unsafe{let __receiver= <BelongData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95180usize)as*mut u8,();
+(BelongData)__receiver,(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BelongData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95190usize)as*mut u8, ::unity2::Il2CppString;
+(BelongData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BelongData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e951a0usize)as*mut u8,();
+(BelongData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-belongdata")]
-impl < __T : IBelongData > IBelongDataMethods for __T { }
+#[cfg(feature="app-belongdata")]impl<__T:IBelongData>IBelongDataMethods for __T{}
 
-#[cfg(feature = "app-belongdata")]
-impl BelongData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_bid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_bid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_defeat_achieve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_defeat_achieve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BelongData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-belongdata")]impl BelongData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_bid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_bid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_defeat_achieve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_defeat_achieve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-belongdata")]
-impl BelongData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BelongData) , :: core :: stringify ! (new) ,)) ; < Self as IBelongDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-belongdata")]impl BelongData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BelongData), ::core::stringify!(new),));
+ <Self as IBelongDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-belongdata")]

@@ -4,32 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugeditmenuitem/DebugEditMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugEditMenuItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct DebugEditMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugeditmenuitem/DebugEditMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugEditMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugEditMenuItem{}
 
 }
 
 #[cfg(feature = "app-debugeditmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugeditmenuitem")]
-pub trait IDebugEditMenuItemMethods : IDebugEditMenuItem { # [doc = "`TickValue()` overload"] fn tick_value (self ,) -> bool { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a034e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSkip(i32)` overload"] fn is_skip (self , v : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(i32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MinValue()` overload"] fn get_min_value (self ,) -> i32 { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MaxValue()` overload"] fn get_max_value (self ,) -> i32 { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Step()` overload"] fn get_step (self ,) -> i32 { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Fast()` overload"] fn get_fast (self ,) -> i32 { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLoop()` overload"] fn get_is_loop (self ,) -> bool { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanIncrement(i32)` overload"] fn can_increment (self , value : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugEditMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a042a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugeditmenuitem")]pub trait IDebugEditMenuItemMethods:IDebugEditMenuItem{#[doc="`TickValue()` overload"]fn tick_value(self,)->bool{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a034e0usize)as*mut u8,bool;
+(DebugEditMenuItem)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04210usize)as*mut u8,();
+(DebugEditMenuItem)__receiver)}
+}
+#[doc="`IsSkip(i32)` overload"]fn is_skip(self,v:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04220usize)as*mut u8,bool;
+(DebugEditMenuItem)__receiver,(i32)::core::convert::Into::into(v))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04230usize)as*mut u8,i32;
+(DebugEditMenuItem)__receiver)}
+}
+#[doc="`set_Value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04240usize)as*mut u8,();
+(DebugEditMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MinValue()` overload"]fn get_min_value(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04250usize)as*mut u8,i32;
+(DebugEditMenuItem)__receiver)}
+}
+#[doc="`get_MaxValue()` overload"]fn get_max_value(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04260usize)as*mut u8,i32;
+(DebugEditMenuItem)__receiver)}
+}
+#[doc="`get_Step()` overload"]fn get_step(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04270usize)as*mut u8,i32;
+(DebugEditMenuItem)__receiver)}
+}
+#[doc="`get_Fast()` overload"]fn get_fast(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04280usize)as*mut u8,i32;
+(DebugEditMenuItem)__receiver)}
+}
+#[doc="`get_IsLoop()` overload"]fn get_is_loop(self,)->bool{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04290usize)as*mut u8,bool;
+(DebugEditMenuItem)__receiver)}
+}
+#[doc="`CanIncrement(i32)` overload"]fn can_increment(self,value:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04180usize)as*mut u8,bool;
+(DebugEditMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a042a0usize)as*mut u8,();
+(DebugEditMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debugeditmenuitem")]
-impl < __T : IDebugEditMenuItem > IDebugEditMenuItemMethods for __T { }
+#[cfg(feature="app-debugeditmenuitem")]impl<__T:IDebugEditMenuItem>IDebugEditMenuItemMethods for __T{}
 
-#[cfg(feature = "app-debugeditmenuitem")]
-impl DebugEditMenuItem { pub fn tick_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_min_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_max_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_step_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_fast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_is_loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn can_increment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-debugeditmenuitem")]impl DebugEditMenuItem{pub fn tick_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_min_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_max_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_fast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_is_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn can_increment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-debugeditmenuitem")]
-impl DebugEditMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugEditMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IDebugEditMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debugeditmenuitem")]impl DebugEditMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugEditMenuItem), ::core::stringify!(new),));
+ <Self as IDebugEditMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debugeditmenuitem")]

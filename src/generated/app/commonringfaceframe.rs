@@ -4,36 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonringfaceframe/CommonRingFaceFrame.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRingFaceFrame")] # [parent (crate :: system :: object :: Object)] pub struct CommonRingFaceFrame {
-# [static_field] # [rename (name = "Path")] pub path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_CommonRingFaceFrame")] pub s_common_ring_face_frame : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonringfaceframe/CommonRingFaceFrame.md"))]#[::unity2::class(namespace="App",name="CommonRingFaceFrame")]#[parent(crate::system::object::Object)]pub struct CommonRingFaceFrame{#[static_field]#[rename(name="Path")]pub path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_CommonRingFaceFrame")]pub s_common_ring_face_frame:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,}
 
 }
 
 #[cfg(feature = "app-commonringfaceframe-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonringfaceframe")]
-impl CommonRingFaceFrame { # [doc = "`LoadAsync()` overload"] pub fn load_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25359e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] pub fn is_loading () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2535ad0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2535b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Get(crate::app::ringdata::RingData_Ranks)` overload"] pub fn get (rank : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData_Ranks >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (crate :: app :: ringdata :: RingData_Ranks , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2535c40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rank) , :: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString)` overload"] pub fn get_2 (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2535db0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2535e80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonringfaceframe")]impl CommonRingFaceFrame{#[doc="`LoadAsync()` overload"]pub fn load_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25359e0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoading()` overload"]pub fn is_loading()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2535ad0usize)as*mut u8,bool;
+)}
+}
+#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2535b80usize)as*mut u8,();
+)}
+}
+#[doc="`Get(crate::app::ringdata::RingData_Ranks)` overload"]pub fn get(rank:impl::core::convert::Into<crate::app::ringdata::RingData_Ranks>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2535c40usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(crate::app::ringdata::RingData_Ranks)::core::convert::Into::into(rank))}
+}
+#[doc="`Get(::unity2::Il2CppString)` overload"]pub fn get_2(icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2535db0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2535e80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-commonringfaceframe")]
-pub trait ICommonRingFaceFrameMethods : ICommonRingFaceFrame { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CommonRingFaceFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRingFaceFrame , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2535e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonringfaceframe")]pub trait ICommonRingFaceFrameMethods:ICommonRingFaceFrame{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRingFaceFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2535e70usize)as*mut u8,();
+(CommonRingFaceFrame)__receiver)}
+}
+}
 
-#[cfg(feature = "app-commonringfaceframe")]
-impl < __T : ICommonRingFaceFrame > ICommonRingFaceFrameMethods for __T { }
+#[cfg(feature="app-commonringfaceframe")]impl<__T:ICommonRingFaceFrame>ICommonRingFaceFrameMethods for __T{}
 
-#[cfg(feature = "app-commonringfaceframe")]
-impl CommonRingFaceFrame { pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRingFaceFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRingFaceFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRingFaceFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRingFaceFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRingFaceFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRingFaceFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRingFaceFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-commonringfaceframe")]impl CommonRingFaceFrame{pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-commonringfaceframe")]
-impl CommonRingFaceFrame {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRingFaceFrame) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRingFaceFrameMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-commonringfaceframe")]impl CommonRingFaceFrame{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRingFaceFrame), ::core::stringify!(new),));
+ <Self as ICommonRingFaceFrameMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-commonringfaceframe")]

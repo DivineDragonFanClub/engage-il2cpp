@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/collision/Collision.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Collision")] # [parent (crate :: system :: object :: Object)] pub struct Collision {
-# [offset (16)] # [rename (name = "m_Impulse")] pub m_impulse : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (28)] # [rename (name = "m_RelativeVelocity")] pub m_relative_velocity : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "m_Body")] pub m_body : crate :: unity_engine :: component :: Component ,
-# [offset (48)] # [rename (name = "m_Collider")] pub m_collider : crate :: unity_engine :: collider :: Collider ,
-# [offset (56)] # [rename (name = "m_ContactCount")] pub m_contact_count : i32 ,
-# [offset (64)] # [rename (name = "m_ReusedContacts")] pub m_reused_contacts : :: unity2 :: Array < crate :: unity_engine :: contactpoint :: ContactPoint > ,
-# [offset (72)] # [rename (name = "m_LegacyContacts")] pub m_legacy_contacts : :: unity2 :: Array < crate :: unity_engine :: contactpoint :: ContactPoint > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/collision/Collision.md"))]#[::unity2::class(namespace="UnityEngine",name="Collision")]#[parent(crate::system::object::Object)]pub struct Collision{#[offset(16)]#[rename(name="m_Impulse")]pub m_impulse:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="m_RelativeVelocity")]pub m_relative_velocity:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="m_Body")]pub m_body:crate::unity_engine::component::Component, #[offset(48)]#[rename(name="m_Collider")]pub m_collider:crate::unity_engine::collider::Collider, #[offset(56)]#[rename(name="m_ContactCount")]pub m_contact_count:i32, #[offset(64)]#[rename(name="m_ReusedContacts")]pub m_reused_contacts: ::unity2::Array<crate::unity_engine::contactpoint::ContactPoint> , #[offset(72)]#[rename(name="m_LegacyContacts")]pub m_legacy_contacts: ::unity2::Array<crate::unity_engine::contactpoint::ContactPoint> ,}
 
 }
 
 #[cfg(feature = "unity_engine-collision-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-collision")]
-pub trait ICollisionMethods : ICollision { # [doc = "`get_relativeVelocity()` overload"] fn get_relative_velocity (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Collision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Collision , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef53d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_collider()` overload"] fn get_collider (self ,) -> crate :: unity_engine :: collider :: Collider { unsafe { let __receiver = < Collision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Collision , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: collider :: Collider = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef53e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_gameObject()` overload"] fn get_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < Collision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Collision , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef53f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-collision")]pub trait ICollisionMethods:ICollision{#[doc="`get_relativeVelocity()` overload"]fn get_relative_velocity(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Collision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef53d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Collision)__receiver)}
+}
+#[doc="`get_collider()` overload"]fn get_collider(self,)->crate::unity_engine::collider::Collider{unsafe{let __receiver= <Collision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef53e0usize)as*mut u8,crate::unity_engine::collider::Collider;
+(Collision)__receiver)}
+}
+#[doc="`get_gameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <Collision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef53f0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(Collision)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-collision")]
-impl < __T : ICollision > ICollisionMethods for __T { }
+#[cfg(feature="unity_engine-collision")]impl<__T:ICollision>ICollisionMethods for __T{}
 
-#[cfg(feature = "unity_engine-collision")]
-impl Collision { pub fn get_relative_velocity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Collision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Collision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Collision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-collision")]impl Collision{pub fn get_relative_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_collider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-collision")]
 #[doc(hidden)]

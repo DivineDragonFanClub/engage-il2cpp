@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scene_management/loadsceneparameters/LoadSceneParameters.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LoadSceneParameters {
-    pub m_load_scene_mode: crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode,
-    pub m_local_physics_mode: crate :: unity_engine :: scene_management :: localphysicsmode :: LocalPhysicsMode,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scene_management/loadsceneparameters/LoadSceneParameters.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LoadSceneParameters{pub m_load_scene_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,pub m_local_physics_mode:crate::unity_engine::scene_management::localphysicsmode::LocalPhysicsMode,}
+impl::unity2::ClassIdentity for LoadSceneParameters{const NAMESPACE: &'static str="UnityEngine.SceneManagement";
+const NAME: &'static str="LoadSceneParameters";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for LoadSceneParameters {
-    const NAMESPACE: &'static str = "UnityEngine.SceneManagement";
-
-    const NAME: &'static str = "LoadSceneParameters";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LoadSceneParameters {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LoadSceneParameters{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,13 @@ impl ::unity2::IlType for LoadSceneParameters {
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
-impl LoadSceneParameters { # [doc = "`set_loadSceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] pub fn set_load_scene_mode (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode >) -> () { unsafe { { let __inner : extern "C" fn (* mut LoadSceneParameters , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32d8050usize) as * mut u8) ; __inner (self as * mut LoadSceneParameters , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scene_management-loadsceneparameters")]impl LoadSceneParameters{#[doc="`set_loadSceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]pub fn set_load_scene_mode(&mut self,value:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32d8050usize)as*mut u8,();
+(*mut LoadSceneParameters)self as*mut LoadSceneParameters,(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
-impl LoadSceneParameters { pub fn set_load_scene_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadSceneParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-scene_management-loadsceneparameters")]impl LoadSceneParameters{pub fn set_load_scene_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
 #[doc(hidden)]

@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/finishstyleex/FinishStyleEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FinishStyleEx")] # [parent (crate :: system :: object :: Object)] pub struct FinishStyleEx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/finishstyleex/FinishStyleEx.md"))]#[::unity2::class(namespace="Combat",name="FinishStyleEx")]#[parent(crate::system::object::Object)]pub struct FinishStyleEx{}
 
 }
 
 #[cfg(feature = "combat-finishstyleex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-finishstyleex")]
-impl FinishStyleEx { # [doc = "`IsEnemyGroupKilled(crate::combat::finishstyle::FinishStyle)` overload"] pub fn is_enemy_group_killed (s : impl :: core :: convert :: Into < crate :: combat :: finishstyle :: FinishStyle >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: finishstyle :: FinishStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec5b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsSlow(crate::combat::finishstyle::FinishStyle)` overload"] pub fn is_slow (s : impl :: core :: convert :: Into < crate :: combat :: finishstyle :: FinishStyle >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: finishstyle :: FinishStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec5c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-finishstyleex")]impl FinishStyleEx{#[doc="`IsEnemyGroupKilled(crate::combat::finishstyle::FinishStyle)` overload"]pub fn is_enemy_group_killed(s:impl::core::convert::Into<crate::combat::finishstyle::FinishStyle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ec5b0usize)as*mut u8,bool;
+(crate::combat::finishstyle::FinishStyle)::core::convert::Into::into(s))}
+}
+#[doc="`IsSlow(crate::combat::finishstyle::FinishStyle)` overload"]pub fn is_slow(s:impl::core::convert::Into<crate::combat::finishstyle::FinishStyle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ec5c0usize)as*mut u8,bool;
+(crate::combat::finishstyle::FinishStyle)::core::convert::Into::into(s))}
+}
+}
 
-#[cfg(feature = "combat-finishstyleex")]
-impl FinishStyleEx { pub fn is_enemy_group_killed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FinishStyleEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_slow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FinishStyleEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-finishstyleex")]impl FinishStyleEx{pub fn is_enemy_group_killed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_slow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "combat-finishstyleex")]
 #[doc(hidden)]

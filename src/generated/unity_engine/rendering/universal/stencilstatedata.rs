@@ -4,37 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/stencilstatedata/StencilStateData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "StencilStateData")] # [parent (crate :: system :: object :: Object)] pub struct StencilStateData {
-# [offset (16)] # [rename (name = "overrideStencilState")] pub override_stencil_state : bool ,
-# [offset (20)] # [rename (name = "stencilReference")] pub stencil_reference : i32 ,
-# [offset (24)] # [rename (name = "stencilCompareFunction")] pub stencil_compare_function : crate :: unity_engine :: rendering :: comparefunction :: CompareFunction ,
-# [offset (28)] # [rename (name = "passOperation")] pub pass_operation : crate :: unity_engine :: rendering :: stencilop :: StencilOp ,
-# [offset (32)] # [rename (name = "failOperation")] pub fail_operation : crate :: unity_engine :: rendering :: stencilop :: StencilOp ,
-# [offset (36)] # [rename (name = "zFailOperation")] pub z_fail_operation : crate :: unity_engine :: rendering :: stencilop :: StencilOp ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/stencilstatedata/StencilStateData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="StencilStateData")]#[parent(crate::system::object::Object)]pub struct StencilStateData{#[offset(16)]#[rename(name="overrideStencilState")]pub override_stencil_state:bool, #[offset(20)]#[rename(name="stencilReference")]pub stencil_reference:i32, #[offset(24)]#[rename(name="stencilCompareFunction")]pub stencil_compare_function:crate::unity_engine::rendering::comparefunction::CompareFunction, #[offset(28)]#[rename(name="passOperation")]pub pass_operation:crate::unity_engine::rendering::stencilop::StencilOp, #[offset(32)]#[rename(name="failOperation")]pub fail_operation:crate::unity_engine::rendering::stencilop::StencilOp, #[offset(36)]#[rename(name="zFailOperation")]pub z_fail_operation:crate::unity_engine::rendering::stencilop::StencilOp,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-stencilstatedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-stencilstatedata")]
-pub trait IStencilStateDataMethods : IStencilStateData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StencilStateData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StencilStateData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2edf9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-stencilstatedata")]pub trait IStencilStateDataMethods:IStencilStateData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StencilStateData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2edf9d0usize)as*mut u8,();
+(StencilStateData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-stencilstatedata")]
-impl < __T : IStencilStateData > IStencilStateDataMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-stencilstatedata")]impl<__T:IStencilStateData>IStencilStateDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-stencilstatedata")]
-impl StencilStateData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StencilStateData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-universal-stencilstatedata")]impl StencilStateData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-stencilstatedata")]
-impl StencilStateData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StencilStateData) , :: core :: stringify ! (new) ,)) ; < Self as IStencilStateDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-stencilstatedata")]impl StencilStateData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StencilStateData), ::core::stringify!(new),));
+ <Self as IStencilStateDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-stencilstatedata")]

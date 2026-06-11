@@ -4,96 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapuiicon/MapUIIcon_IconIndex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapUIIcon_IconIndex  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapuiicon/MapUIIcon.md"))]#[::unity2::class(namespace="",name="MapUIIcon")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::root::mapuiicon::MapUIIcon>)]pub struct MapUIIcon{#[static_field]#[rename(name="IconNames")]pub icon_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_IconLocatorRoot")]pub m_icon_locator_root:crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot, #[offset(40)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(48)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(56)]#[rename(name="m_IconPool")]pub m_icon_pool:crate::root::mapinfoiconpool::MapInfoIconPool, #[offset(64)]#[rename(name="m_IconTable")]pub m_icon_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(72)]#[rename(name="m_TempTable")]pub m_temp_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(80)]#[rename(name="m_RemoveTable")]pub m_remove_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(88)]#[rename(name="m_IsUpdate")]pub m_is_update:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapuiicon/MapUIIcon_IconIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapUIIcon_IconIndex{pub value:i32,}
+impl::unity2::ClassIdentity for MapUIIcon_IconIndex{const NAMESPACE: &'static str="";
+const NAME: &'static str="MapUIIcon.IconIndex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MapUIIcon_IconIndex  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapUIIcon.IconIndex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MapUIIcon_IconIndex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MapUIIcon_IconIndex  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MapUIIcon_IconIndex{pub fn breakable_wall()->Self{Self{value:0}
 }
-
-
-impl  MapUIIcon_IconIndex  {
-    pub fn breakable_wall() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn door() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn cannon() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn door()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapuiicon/MapUIIcon.md"))] # [:: unity2 :: class (namespace = "" , name = "MapUIIcon")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapuiicon :: MapUIIcon >)] pub struct MapUIIcon {
-# [static_field] # [rename (name = "IconNames")] pub icon_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (32)] # [rename (name = "m_IconLocatorRoot")] pub m_icon_locator_root : crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot ,
-# [offset (40)] # [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (48)] # [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (56)] # [rename (name = "m_IconPool")] pub m_icon_pool : crate :: root :: mapinfoiconpool :: MapInfoIconPool ,
-# [offset (64)] # [rename (name = "m_IconTable")] pub m_icon_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot > ,
-# [offset (72)] # [rename (name = "m_TempTable")] pub m_temp_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot > ,
-# [offset (80)] # [rename (name = "m_RemoveTable")] pub m_remove_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot > ,
-# [offset (88)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
+pub fn cannon()->Self{Self{value:2}
+}
+pub fn num()->Self{Self{value:3}
+}
 }
 
 }
@@ -101,30 +50,97 @@ impl  MapUIIcon_IconIndex  {
 #[cfg(feature = "root-mapuiicon-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapuiicon")]
-impl MapUIIcon { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202b130usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapuiicon")]impl MapUIIcon{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202b130usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-mapuiicon")]
-pub trait IMapUIIconMethods : IMapUIIcon { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202a2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202a7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202a820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSprites()` overload"] fn get_sprites (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202a5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSprite(i32)` overload"] fn get_sprite (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202abf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SetIcon()` overload"] fn set_icon (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202a3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegisteIconTable(i32)` overload"] fn registe_icon_table (self , key : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202ac30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`UnregisteIconTable()` overload"] fn unregiste_icon_table (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202aa30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateIconTable()` overload"] fn update_icon_table (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202a850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRemove(crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>, i32)` overload"] fn is_remove (self , inspectors : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapinspector :: MapInspector > > , key : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapinspector :: MapInspector > , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202acf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspectors) , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`ClearIconTable()` overload"] fn clear_icon_table (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202aeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsUpdate(bool)` overload"] fn set_is_update (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202b000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202b010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapuiicon")]pub trait IMapUIIconMethods:IMapUIIcon{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202a2d0usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202a7a0usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202a820usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+#[doc="`GetSprites()` overload"]fn get_sprites(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202a5a0usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+#[doc="`GetSprite(i32)` overload"]fn get_sprite(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202abf0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(MapUIIcon)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SetIcon()` overload"]fn set_icon(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202a3a0usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+#[doc="`RegisteIconTable(i32)` overload"]fn registe_icon_table(self,key:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202ac30usize)as*mut u8,();
+(MapUIIcon)__receiver,(i32)::core::convert::Into::into(key))}
+}
+#[doc="`UnregisteIconTable()` overload"]fn unregiste_icon_table(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202aa30usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+#[doc="`UpdateIconTable()` overload"]fn update_icon_table(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202a850usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+#[doc="`IsRemove(crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>, i32)` overload"]fn is_remove(self,inspectors:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector> > ,key:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202acf0usize)as*mut u8,bool;
+(MapUIIcon)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>)::core::convert::Into::into(inspectors),(i32)::core::convert::Into::into(key))}
+}
+#[doc="`ClearIconTable()` overload"]fn clear_icon_table(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202aeb0usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+#[doc="`set_IsUpdate(bool)` overload"]fn set_is_update(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202b000usize)as*mut u8,();
+(MapUIIcon)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapUIIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202b010usize)as*mut u8,();
+(MapUIIcon)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapuiicon")]
-impl < __T : IMapUIIcon > IMapUIIconMethods for __T { }
+#[cfg(feature="root-mapuiicon")]impl<__T:IMapUIIcon>IMapUIIconMethods for __T{}
 
-#[cfg(feature = "root-mapuiicon")]
-impl MapUIIcon { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_sprites_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn registe_icon_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn unregiste_icon_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_icon_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn clear_icon_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_is_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUIIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="root-mapuiicon")]impl MapUIIcon{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_sprites_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn registe_icon_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn unregiste_icon_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_icon_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_icon_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_is_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "root-mapuiicon")]
-impl MapUIIcon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapUIIcon) , :: core :: stringify ! (new) ,)) ; < Self as IMapUIIconMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapuiicon")]impl MapUIIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapUIIcon), ::core::stringify!(new),));
+ <Self as IMapUIIconMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapuiicon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapUIIcon_IconIndex;
     pub use super::MapUIIcon;
     pub use super::IMapUIIcon;
     pub use super::IMapUIIconMethods;
+    pub use super::MapUIIcon_IconIndex;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

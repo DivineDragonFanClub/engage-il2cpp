@@ -4,70 +4,130 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc_EventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpProc.EventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct HelpProc_EventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpproc/HelpProc_EventHandler.md"))]#[::unity2::class(namespace="App",name="HelpProc.EventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct HelpProc_EventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpProc")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: helpproc :: HelpProc >)] pub struct HelpProc {
-# [static_field] # [rename (name = "m_isTempGod")] pub m_is_temp_god : bool ,
-# [static_field] # [rename (name = "m_TempGod")] pub m_temp_god : crate :: app :: godunit :: GodUnit ,
-# [static_field] # [rename (name = "m_isTempCommon")] pub m_is_temp_common : bool ,
-# [static_field] # [rename (name = "m_TempCommon")] pub m_temp_common : crate :: app :: unitring :: UnitRing ,
-# [static_field] # [rename (name = "m_isTempUnit")] pub m_is_temp_unit : bool ,
-# [static_field] # [rename (name = "m_TempUnit")] pub m_temp_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_helpManager")] pub m_help_manager : crate :: app :: helpmanager :: HelpManager ,
-# [offset (128)] # [rename (name = "m_helpParamSetter")] pub m_help_param_setter : crate :: app :: helpparamsetter :: HelpParamSetter ,
-# [static_field] # [rename (name = "m_enter")] pub m_enter : crate :: app :: helpproc :: HelpProc_EventHandler ,
-# [static_field] # [rename (name = "m_exit")] pub m_exit : crate :: app :: helpproc :: HelpProc_EventHandler ,
-# [static_field] # [rename (name = "m_isDisable")] pub m_is_disable : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpproc/HelpProc.md"))]#[::unity2::class(namespace="App",name="HelpProc")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::helpproc::HelpProc>)]pub struct HelpProc{#[static_field]#[rename(name="m_isTempGod")]pub m_is_temp_god:bool, #[static_field]#[rename(name="m_TempGod")]pub m_temp_god:crate::app::godunit::GodUnit, #[static_field]#[rename(name="m_isTempCommon")]pub m_is_temp_common:bool, #[static_field]#[rename(name="m_TempCommon")]pub m_temp_common:crate::app::unitring::UnitRing, #[static_field]#[rename(name="m_isTempUnit")]pub m_is_temp_unit:bool, #[static_field]#[rename(name="m_TempUnit")]pub m_temp_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_helpManager")]pub m_help_manager:crate::app::helpmanager::HelpManager, #[offset(128)]#[rename(name="m_helpParamSetter")]pub m_help_param_setter:crate::app::helpparamsetter::HelpParamSetter, #[static_field]#[rename(name="m_enter")]pub m_enter:crate::app::helpproc::HelpProc_EventHandler, #[static_field]#[rename(name="m_exit")]pub m_exit:crate::app::helpproc::HelpProc_EventHandler, #[static_field]#[rename(name="m_isDisable")]pub m_is_disable:bool,}
 
 }
 
 #[cfg(feature = "app-helpproc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpproc")]
-pub trait IHelpProc_EventHandlerMethods : IHelpProc_EventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < HelpProc_EventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpProc_EventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce13c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < HelpProc_EventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpProc_EventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce13e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-helpproc")]
-impl < __T : IHelpProc_EventHandler > IHelpProc_EventHandlerMethods for __T { }
-
-#[cfg(feature = "app-helpproc")]
-impl HelpProc_EventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc_EventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc_EventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-helpproc")]
-impl HelpProc_EventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpProc_EventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IHelpProc_EventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-helpproc")]pub trait IHelpProc_EventHandlerMethods:IHelpProc_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <HelpProc_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce13c0usize)as*mut u8,();
+(HelpProc_EventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <HelpProc_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce13e0usize)as*mut u8,();
+(HelpProc_EventHandler)__receiver)}
+}
 }
 
-#[cfg(feature = "app-helpproc")]
-impl HelpProc { # [doc = "`Enable()` overload"] pub fn enable () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2164b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Disable()` overload"] pub fn disable () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2164b70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, bool, crate::app::godunit::GodUnit, bool, crate::app::unitring::UnitRing, bool, crate::app::unit::Unit)` overload"] pub fn create_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , target_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , enter : impl :: core :: convert :: Into < crate :: app :: helpproc :: HelpProc_EventHandler > , exit : impl :: core :: convert :: Into < crate :: app :: helpproc :: HelpProc_EventHandler > , is_temp_god : impl :: core :: convert :: Into < bool > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , is_temp_ring : impl :: core :: convert :: Into < bool > , ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing > , is_temp_unit : impl :: core :: convert :: Into < bool > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: helpproc :: HelpProc_EventHandler , crate :: app :: helpproc :: HelpProc_EventHandler , bool , crate :: app :: godunit :: GodUnit , bool , crate :: app :: unitring :: UnitRing , bool , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2164be0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (target_object) , :: core :: convert :: Into :: into (enter) , :: core :: convert :: Into :: into (exit) , :: core :: convert :: Into :: into (is_temp_god) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (is_temp_ring) , :: core :: convert :: Into :: into (ring) , :: core :: convert :: Into :: into (is_temp_unit) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindUnitStatus(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, crate::app::unit::Unit)` overload"] pub fn create_bind_unit_status (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , enter : impl :: core :: convert :: Into < crate :: app :: helpproc :: HelpProc_EventHandler > , exit : impl :: core :: convert :: Into < crate :: app :: helpproc :: HelpProc_EventHandler > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: helpproc :: HelpProc_EventHandler , crate :: app :: helpproc :: HelpProc_EventHandler , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2165160usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (enter) , :: core :: convert :: Into :: into (exit) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindUnitInfo(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler)` overload"] pub fn create_bind_unit_info (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , enter : impl :: core :: convert :: Into < crate :: app :: helpproc :: HelpProc_EventHandler > , exit : impl :: core :: convert :: Into < crate :: app :: helpproc :: HelpProc_EventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: helpproc :: HelpProc_EventHandler , crate :: app :: helpproc :: HelpProc_EventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2165250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (enter) , :: core :: convert :: Into :: into (exit) , :: core :: option :: Option :: None) } } } # [doc = "`CraeteBindEngageLink(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"] pub fn craete_bind_engage_link (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , enter : impl :: core :: convert :: Into < crate :: app :: helpproc :: HelpProc_EventHandler > , exit : impl :: core :: convert :: Into < crate :: app :: helpproc :: HelpProc_EventHandler > , target_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: helpproc :: HelpProc_EventHandler , crate :: app :: helpproc :: HelpProc_EventHandler , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2165330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (enter) , :: core :: convert :: Into :: into (exit) , :: core :: convert :: Into :: into (target_object) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindGodRingSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"] pub fn create_bind_god_ring_select (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , target_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21653f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (target_object) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCommonRingSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unitring::UnitRing, crate::app::unit::Unit)` overload"] pub fn create_bind_common_ring_select (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , target_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: unitring :: UnitRing , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21654a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (target_object) , :: core :: convert :: Into :: into (ring) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindShopUnitSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_bind_shop_unit_select (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2165550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (game_object) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21655f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpproc")]impl<__T:IHelpProc_EventHandler>IHelpProc_EventHandlerMethods for __T{}
 
-#[cfg(feature = "app-helpproc")]
-pub trait IHelpProcMethods : IHelpProc { # [doc = "`Begin()` overload"] fn begin (self ,) -> () { unsafe { let __receiver = < HelpProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpProc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2163430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < HelpProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpProc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2163770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommitMapPanelTarget()` overload"] fn commit_map_panel_target (self ,) -> () { unsafe { let __receiver = < HelpProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpProc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2164390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < HelpProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpProc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21648e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpProc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21650e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpproc")]impl HelpProc_EventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-helpproc")]
-impl < __T : IHelpProc > IHelpProcMethods for __T { }
+#[cfg(feature="app-helpproc")]impl HelpProc_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpProc_EventHandler), ::core::stringify!(new),));
+ <Self as IHelpProc_EventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-helpproc")]
-impl HelpProc { pub fn begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn commit_map_panel_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_bind_unit_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_bind_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn craete_bind_engage_link_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_god_ring_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_bind_common_ring_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_bind_shop_unit_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-helpproc")]impl HelpProc{#[doc="`Enable()` overload"]pub fn enable()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2164b00usize)as*mut u8,();
+)}
+}
+#[doc="`Disable()` overload"]pub fn disable()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2164b70usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, bool, crate::app::godunit::GodUnit, bool, crate::app::unitring::UnitRing, bool, crate::app::unit::Unit)` overload"]pub fn create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,enter:impl::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler> ,exit:impl::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler> ,is_temp_god:impl::core::convert::Into<bool> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,is_temp_ring:impl::core::convert::Into<bool> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing> ,is_temp_unit:impl::core::convert::Into<bool> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2164be0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(target_object),(crate::app::helpproc::HelpProc_EventHandler)::core::convert::Into::into(enter),(crate::app::helpproc::HelpProc_EventHandler)::core::convert::Into::into(exit),(bool)::core::convert::Into::into(is_temp_god),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(bool)::core::convert::Into::into(is_temp_ring),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring),(bool)::core::convert::Into::into(is_temp_unit),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBindUnitStatus(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, crate::app::unit::Unit)` overload"]pub fn create_bind_unit_status(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,enter:impl::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler> ,exit:impl::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2165160usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::app::helpproc::HelpProc_EventHandler)::core::convert::Into::into(enter),(crate::app::helpproc::HelpProc_EventHandler)::core::convert::Into::into(exit),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBindUnitInfo(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler)` overload"]pub fn create_bind_unit_info(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,enter:impl::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler> ,exit:impl::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2165250usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::app::helpproc::HelpProc_EventHandler)::core::convert::Into::into(enter),(crate::app::helpproc::HelpProc_EventHandler)::core::convert::Into::into(exit))}
+}
+#[doc="`CraeteBindEngageLink(crate::app::procinst::ProcInst, crate::app::helpproc::HelpProc_EventHandler, crate::app::helpproc::HelpProc_EventHandler, crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]pub fn craete_bind_engage_link(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,enter:impl::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler> ,exit:impl::core::convert::Into<crate::app::helpproc::HelpProc_EventHandler> ,target_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2165330usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::app::helpproc::HelpProc_EventHandler)::core::convert::Into::into(enter),(crate::app::helpproc::HelpProc_EventHandler)::core::convert::Into::into(exit),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(target_object),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBindGodRingSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]pub fn create_bind_god_ring_select(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21653f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(target_object),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBindCommonRingSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unitring::UnitRing, crate::app::unit::Unit)` overload"]pub fn create_bind_common_ring_select(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21654a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(target_object),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBindShopUnitSelect(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_bind_shop_unit_select(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2165550usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21655f0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-helpproc")]
-impl HelpProc {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpProc) , :: core :: stringify ! (new) ,)) ; < Self as IHelpProcMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpproc")]pub trait IHelpProcMethods:IHelpProc{#[doc="`Begin()` overload"]fn begin(self,)->(){unsafe{let __receiver= <HelpProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2163430usize)as*mut u8,();
+(HelpProc)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <HelpProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2163770usize)as*mut u8,();
+(HelpProc)__receiver)}
+}
+#[doc="`CommitMapPanelTarget()` overload"]fn commit_map_panel_target(self,)->(){unsafe{let __receiver= <HelpProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2164390usize)as*mut u8,();
+(HelpProc)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <HelpProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21648e0usize)as*mut u8,();
+(HelpProc)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21650e0usize)as*mut u8,();
+(HelpProc)__receiver)}
+}
+}
+
+#[cfg(feature="app-helpproc")]impl<__T:IHelpProc>IHelpProcMethods for __T{}
+
+#[cfg(feature="app-helpproc")]impl HelpProc{pub fn begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn commit_map_panel_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_unit_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn craete_bind_engage_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_god_ring_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_bind_common_ring_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_bind_shop_unit_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-helpproc")]impl HelpProc{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpProc), ::core::stringify!(new),));
+ <Self as IHelpProcMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpproc")]

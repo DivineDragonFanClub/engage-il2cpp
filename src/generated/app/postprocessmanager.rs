@@ -4,47 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/postprocessmanager/PostProcessManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "PostProcessManager")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: postprocessmanager :: PostProcessManager >)] pub struct PostProcessManager {
-# [offset (32)] # [rename (name = "m_Root")] pub m_root : crate :: unity_engine :: rendering :: volume :: Volume ,
-# [offset (40)] # [rename (name = "m_Bmap")] pub m_bmap : crate :: unity_engine :: rendering :: volume :: Volume ,
-# [offset (48)] # [rename (name = "m_Combat")] pub m_combat : crate :: unity_engine :: rendering :: volume :: Volume ,
-# [offset (56)] # [rename (name = "BmapCombatChangeTime")] pub bmap_combat_change_time : f32 ,
-# [offset (64)] # [rename (name = "CurveInterpolate")] pub curve_interpolate : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (72)] # [rename (name = "CurveBlur")] pub curve_blur : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/postprocessmanager/PostProcessManager.md"))]#[::unity2::class(namespace="App",name="PostProcessManager")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::postprocessmanager::PostProcessManager>)]pub struct PostProcessManager{#[offset(32)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::rendering::volume::Volume, #[offset(40)]#[rename(name="m_Bmap")]pub m_bmap:crate::unity_engine::rendering::volume::Volume, #[offset(48)]#[rename(name="m_Combat")]pub m_combat:crate::unity_engine::rendering::volume::Volume, #[offset(56)]#[rename(name="BmapCombatChangeTime")]pub bmap_combat_change_time:f32, #[offset(64)]#[rename(name="CurveInterpolate")]pub curve_interpolate:crate::unity_engine::animationcurve::AnimationCurve, #[offset(72)]#[rename(name="CurveBlur")]pub curve_blur:crate::unity_engine::animationcurve::AnimationCurve,}
 
 }
 
 #[cfg(feature = "app-postprocessmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-postprocessmanager")]
-pub trait IPostProcessManagerMethods : IPostProcessManager { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PostProcessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryAddCustomRadialBlur()` overload"] fn try_add_custom_radial_blur (self ,) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PostProcessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetWeight(crate::unity_engine::rendering::volume::Volume, f32)` overload"] fn set_weight (self , volume : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volume :: Volume > , weight : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PostProcessManager , crate :: unity_engine :: rendering :: volume :: Volume , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (volume) , :: core :: convert :: Into :: into (weight) , :: core :: option :: Option :: None) } } } # [doc = "`SetEnabled(crate::unity_engine::rendering::volume::Volume, bool)` overload"] fn set_enabled (self , volume : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volume :: Volume > , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PostProcessManager , crate :: unity_engine :: rendering :: volume :: Volume , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (volume) , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`SetLayer(crate::unity_engine::rendering::volume::Volume, ::unity2::Il2CppString)` overload"] fn set_layer (self , volume : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volume :: Volume > , layer : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PostProcessManager , crate :: unity_engine :: rendering :: volume :: Volume , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (volume) , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`GetVolume(::unity2::Il2CppString)` overload"] fn get_volume (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: rendering :: volume :: Volume { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PostProcessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volume :: Volume = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SetTransition(f32)` overload"] fn set_transition (self , transition : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PostProcessManager , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PostProcessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PostProcessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2816140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-postprocessmanager")]pub trait IPostProcessManagerMethods:IPostProcessManager{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <PostProcessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815700usize)as*mut u8,();
+(PostProcessManager)__receiver)}
+}
+#[doc="`TryAddCustomRadialBlur()` overload"]fn try_add_custom_radial_blur(self,)->(){unsafe{let __receiver= <PostProcessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815ba0usize)as*mut u8,();
+(PostProcessManager)__receiver)}
+}
+#[doc="`SetWeight(crate::unity_engine::rendering::volume::Volume, f32)` overload"]fn set_weight(self,volume:impl::core::convert::Into<crate::unity_engine::rendering::volume::Volume> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PostProcessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815e10usize)as*mut u8,();
+(PostProcessManager)__receiver,(crate::unity_engine::rendering::volume::Volume)::core::convert::Into::into(volume),(f32)::core::convert::Into::into(weight))}
+}
+#[doc="`SetEnabled(crate::unity_engine::rendering::volume::Volume, bool)` overload"]fn set_enabled(self,volume:impl::core::convert::Into<crate::unity_engine::rendering::volume::Volume> ,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PostProcessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815d70usize)as*mut u8,();
+(PostProcessManager)__receiver,(crate::unity_engine::rendering::volume::Volume)::core::convert::Into::into(volume),(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`SetLayer(crate::unity_engine::rendering::volume::Volume, ::unity2::Il2CppString)` overload"]fn set_layer(self,volume:impl::core::convert::Into<crate::unity_engine::rendering::volume::Volume> ,layer:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PostProcessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815ea0usize)as*mut u8,();
+(PostProcessManager)__receiver,(crate::unity_engine::rendering::volume::Volume)::core::convert::Into::into(volume),(::unity2::Il2CppString)::core::convert::Into::into(layer))}
+}
+#[doc="`GetVolume(::unity2::Il2CppString)` overload"]fn get_volume(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::rendering::volume::Volume{unsafe{let __receiver= <PostProcessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815ad0usize)as*mut u8,crate::unity_engine::rendering::volume::Volume;
+(PostProcessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SetTransition(f32)` overload"]fn set_transition(self,transition:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PostProcessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815f60usize)as*mut u8,();
+(PostProcessManager)__receiver,(f32)::core::convert::Into::into(transition))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PostProcessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2816140usize)as*mut u8,();
+(PostProcessManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-postprocessmanager")]
-impl < __T : IPostProcessManager > IPostProcessManagerMethods for __T { }
+#[cfg(feature="app-postprocessmanager")]impl<__T:IPostProcessManager>IPostProcessManagerMethods for __T{}
 
-#[cfg(feature = "app-postprocessmanager")]
-impl PostProcessManager { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PostProcessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn try_add_custom_radial_blur_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PostProcessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PostProcessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PostProcessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PostProcessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_volume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PostProcessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PostProcessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PostProcessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-postprocessmanager")]impl PostProcessManager{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_add_custom_radial_blur_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-postprocessmanager")]
-impl PostProcessManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PostProcessManager) , :: core :: stringify ! (new) ,)) ; < Self as IPostProcessManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-postprocessmanager")]impl PostProcessManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PostProcessManager), ::core::stringify!(new),));
+ <Self as IPostProcessManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-postprocessmanager")]

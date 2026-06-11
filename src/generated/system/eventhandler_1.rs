@@ -4,32 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/eventhandler_1/EventHandler_1.md"))] # [:: unity2 :: class (namespace = "System" , name = "EventHandler`1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct EventHandler_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/eventhandler_1/EventHandler_1.md"))]#[::unity2::class(namespace="System",name="EventHandler`1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct EventHandler_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "system-eventhandler_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-eventhandler_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > EventHandler_1 < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(crate::system::object::Object, T0)` overload"] # [method (name = "Invoke" , args = 2)] pub fn invoke (self , sender : crate :: system :: object :: Object , e : T0) -> () ;
+#[cfg(feature="system-eventhandler_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>EventHandler_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(crate::system::object::Object, T0)` overload"]#[method(name="Invoke",args=2)]pub fn invoke(self,sender:crate::system::object::Object,e:T0)->();
 }
 
-#[cfg(feature = "system-eventhandler_1")]
-impl < T0 : :: unity2 :: ClassIdentity > EventHandler_1 < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventHandler_1) , :: core :: stringify ! (new) ,)) ; < Self as IEventHandler_1Methods < T0 > > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-eventhandler_1")]impl<T0: ::unity2::ClassIdentity>EventHandler_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventHandler_1), ::core::stringify!(new),));
+ <Self as IEventHandler_1Methods<T0> > ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "system-eventhandler_1")]

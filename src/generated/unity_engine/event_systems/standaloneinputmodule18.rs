@@ -4,123 +4,270 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: baseinputmodule :: { BaseInputModule , IBaseInputModule }
- ;
- use crate :: unity_engine :: event_systems :: pointerinputmodule :: { IPointerInputModule , PointerInputModule }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::baseinputmodule::{BaseInputModule,IBaseInputModule}
+;
+use crate::unity_engine::event_systems::pointerinputmodule::{IPointerInputModule,PointerInputModule}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "StandaloneInputModule18")] # [parent (crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule)] pub struct StandaloneInputModule18 {
-# [offset (88)] # [rename (name = "m_PrevActionTime")] pub m_prev_action_time : f32 ,
-# [offset (92)] # [rename (name = "m_LastMoveVector")] pub m_last_move_vector : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (100)] # [rename (name = "m_ConsecutiveMoveCount")] pub m_consecutive_move_count : i32 ,
-# [offset (104)] # [rename (name = "m_LastMousePosition")] pub m_last_mouse_position : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (112)] # [rename (name = "m_MousePosition")] pub m_mouse_position : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (120)] # [rename (name = "m_CurrentFocusedGameObject")] pub m_current_focused_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_HorizontalAxis")] pub m_horizontal_axis : :: unity2 :: Il2CppString ,
-# [offset (136)] # [rename (name = "m_VerticalAxis")] pub m_vertical_axis : :: unity2 :: Il2CppString ,
-# [offset (144)] # [rename (name = "m_SubmitButton")] pub m_submit_button : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_CancelButton")] pub m_cancel_button : :: unity2 :: Il2CppString ,
-# [offset (160)] # [rename (name = "m_InputActionsPerSecond")] pub m_input_actions_per_second : f32 ,
-# [offset (164)] # [rename (name = "m_RepeatDelay")] pub m_repeat_delay : f32 ,
-# [offset (168)] # [rename (name = "m_ForceModuleActive")] pub m_force_module_active : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18_InputMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct StandaloneInputModule18_InputMode{pub value:i32,}
+impl::unity2::ClassIdentity for StandaloneInputModule18_InputMode{const NAMESPACE: &'static str="UnityEngine.EventSystems";
+const NAME: &'static str="StandaloneInputModule18.InputMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for StandaloneInputModule18_InputMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl StandaloneInputModule18_InputMode{pub fn mouse()->Self{Self{value:0}
+}
+pub fn buttons()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18_InputMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct StandaloneInputModule18_InputMode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for StandaloneInputModule18_InputMode  {
-    const NAMESPACE: &'static str = "UnityEngine.EventSystems";
-
-    const NAME: &'static str = "StandaloneInputModule18.InputMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for StandaloneInputModule18_InputMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  StandaloneInputModule18_InputMode  {
-    pub fn mouse() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn buttons() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="StandaloneInputModule18")]#[parent(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule)]pub struct StandaloneInputModule18{#[offset(88)]#[rename(name="m_PrevActionTime")]pub m_prev_action_time:f32, #[offset(92)]#[rename(name="m_LastMoveVector")]pub m_last_move_vector:crate::unity_engine::vector2::Vector2, #[offset(100)]#[rename(name="m_ConsecutiveMoveCount")]pub m_consecutive_move_count:i32, #[offset(104)]#[rename(name="m_LastMousePosition")]pub m_last_mouse_position:crate::unity_engine::vector2::Vector2, #[offset(112)]#[rename(name="m_MousePosition")]pub m_mouse_position:crate::unity_engine::vector2::Vector2, #[offset(120)]#[rename(name="m_CurrentFocusedGameObject")]pub m_current_focused_game_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_HorizontalAxis")]pub m_horizontal_axis: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_VerticalAxis")]pub m_vertical_axis: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_SubmitButton")]pub m_submit_button: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_CancelButton")]pub m_cancel_button: ::unity2::Il2CppString, #[offset(160)]#[rename(name="m_InputActionsPerSecond")]pub m_input_actions_per_second:f32, #[offset(164)]#[rename(name="m_RepeatDelay")]pub m_repeat_delay:f32, #[offset(168)]#[rename(name="m_ForceModuleActive")]pub m_force_module_active:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18")]
-impl StandaloneInputModule18 { # [doc = "`A()` overload"] pub fn a () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500570usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`B()` overload"] pub fn b () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25006b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`X()` overload"] pub fn x () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25007f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Y()` overload"] pub fn y () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25009e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]impl StandaloneInputModule18{#[doc="`A()` overload"]pub fn a()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2500570usize)as*mut u8,bool;
+)}
+}
+#[doc="`B()` overload"]pub fn b()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25006b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`X()` overload"]pub fn x()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25007f0usize)as*mut u8,f32;
+)}
+}
+#[doc="`Y()` overload"]pub fn y()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25009e0usize)as*mut u8,f32;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18")]
-pub trait IStandaloneInputModule18Methods : IStandaloneInputModule18 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_inputMode()` overload"] fn get_input_mode (self ,) -> crate :: unity_engine :: event_systems :: standaloneinputmodule18 :: StandaloneInputModule18_InputMode { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: standaloneinputmodule18 :: StandaloneInputModule18_InputMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_allowActivationOnMobileDevice()` overload"] fn get_allow_activation_on_mobile_device (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_allowActivationOnMobileDevice(bool)` overload"] fn set_allow_activation_on_mobile_device (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_forceModuleActive()` overload"] fn get_force_module_active (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_forceModuleActive(bool)` overload"] fn set_force_module_active (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_inputActionsPerSecond()` overload"] fn get_input_actions_per_second (self ,) -> f32 { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_inputActionsPerSecond(f32)` overload"] fn set_input_actions_per_second (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25002a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_repeatDelay()` overload"] fn get_repeat_delay (self ,) -> f32 { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25002b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_repeatDelay(f32)` overload"] fn set_repeat_delay (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25002c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_horizontalAxis()` overload"] fn get_horizontal_axis (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25002d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_horizontalAxis(::unity2::Il2CppString)` overload"] fn set_horizontal_axis (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25002e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_verticalAxis()` overload"] fn get_vertical_axis (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25002f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_verticalAxis(::unity2::Il2CppString)` overload"] fn set_vertical_axis (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_submitButton()` overload"] fn get_submit_button (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_submitButton(::unity2::Il2CppString)` overload"] fn set_submit_button (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_cancelButton()` overload"] fn get_cancel_button (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_cancelButton(::unity2::Il2CppString)` overload"] fn set_cancel_button (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ShouldIgnoreEventsOnNoFocus()` overload"] fn should_ignore_events_on_no_focus (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateModule()` overload"] fn update_module (self ,) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsModuleSupported()` overload"] fn is_module_supported (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25003f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShouldActivateModule()` overload"] fn should_activate_module (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ActivateModule()` overload"] fn activate_module (self ,) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeactivateModule()` overload"] fn deactivate_module (self ,) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Process()` overload"] fn process (self ,) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessTouchEvents()` overload"] fn process_touch_events (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2501400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessTouchPress(crate::unity_engine::event_systems::pointereventdata::PointerEventData, bool, bool)` overload"] fn process_touch_press (self , pointer_event : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > , pressed : impl :: core :: convert :: Into < bool > , released : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25015e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pointer_event) , :: core :: convert :: Into :: into (pressed) , :: core :: convert :: Into :: into (released) , :: core :: option :: Option :: None) } } } # [doc = "`SendSubmitEventToSelectedObject()` overload"] fn send_submit_event_to_selected_object (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25011f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRawMoveVector()` overload"] fn get_raw_move_vector (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2501e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SendMoveEventToSelectedObject()` overload"] fn send_move_event_to_selected_object (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessMouseEvent()` overload"] fn process_mouse_event (self ,) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25015d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ForceAutoSelect()` overload"] fn force_auto_select (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25020c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessMouseEvent(i32)` overload"] fn process_mouse_event_2 (self , id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2501e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`SendUpdateEventToSelectedObject()` overload"] fn send_update_event_to_selected_object (self ,) -> bool { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2500de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessMousePress(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)` overload"] fn process_mouse_press (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData >) -> () { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25020d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`GetCurrentFocusedGameObject()` overload"] fn get_current_focused_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < StandaloneInputModule18 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandaloneInputModule18 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2502860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]pub trait IStandaloneInputModule18Methods:IStandaloneInputModule18{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500150usize)as*mut u8,();
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`get_inputMode()` overload"]fn get_input_mode(self,)->crate::unity_engine::event_systems::standaloneinputmodule18::StandaloneInputModule18_InputMode{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500240usize)as*mut u8,crate::unity_engine::event_systems::standaloneinputmodule18::StandaloneInputModule18_InputMode;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`get_allowActivationOnMobileDevice()` overload"]fn get_allow_activation_on_mobile_device(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500250usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`set_allowActivationOnMobileDevice(bool)` overload"]fn set_allow_activation_on_mobile_device(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500260usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_forceModuleActive()` overload"]fn get_force_module_active(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500270usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`set_forceModuleActive(bool)` overload"]fn set_force_module_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500280usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_inputActionsPerSecond()` overload"]fn get_input_actions_per_second(self,)->f32{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500290usize)as*mut u8,f32;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`set_inputActionsPerSecond(f32)` overload"]fn set_input_actions_per_second(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25002a0usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_repeatDelay()` overload"]fn get_repeat_delay(self,)->f32{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25002b0usize)as*mut u8,f32;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`set_repeatDelay(f32)` overload"]fn set_repeat_delay(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25002c0usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_horizontalAxis()` overload"]fn get_horizontal_axis(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25002d0usize)as*mut u8, ::unity2::Il2CppString;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`set_horizontalAxis(::unity2::Il2CppString)` overload"]fn set_horizontal_axis(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25002e0usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_verticalAxis()` overload"]fn get_vertical_axis(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25002f0usize)as*mut u8, ::unity2::Il2CppString;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`set_verticalAxis(::unity2::Il2CppString)` overload"]fn set_vertical_axis(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500300usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_submitButton()` overload"]fn get_submit_button(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500310usize)as*mut u8, ::unity2::Il2CppString;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`set_submitButton(::unity2::Il2CppString)` overload"]fn set_submit_button(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500320usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_cancelButton()` overload"]fn get_cancel_button(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500330usize)as*mut u8, ::unity2::Il2CppString;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`set_cancelButton(::unity2::Il2CppString)` overload"]fn set_cancel_button(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500340usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`ShouldIgnoreEventsOnNoFocus()` overload"]fn should_ignore_events_on_no_focus(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500350usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`UpdateModule()` overload"]fn update_module(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500380usize)as*mut u8,();
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`IsModuleSupported()` overload"]fn is_module_supported(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25003f0usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`ShouldActivateModule()` overload"]fn should_activate_module(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500460usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`ActivateModule()` overload"]fn activate_module(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500bd0usize)as*mut u8,();
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`DeactivateModule()` overload"]fn deactivate_module(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500d00usize)as*mut u8,();
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`Process()` overload"]fn process(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500d30usize)as*mut u8,();
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`ProcessTouchEvents()` overload"]fn process_touch_events(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2501400usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`ProcessTouchPress(crate::unity_engine::event_systems::pointereventdata::PointerEventData, bool, bool)` overload"]fn process_touch_press(self,pointer_event:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,pressed:impl::core::convert::Into<bool> ,released:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25015e0usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(pointer_event),(bool)::core::convert::Into::into(pressed),(bool)::core::convert::Into::into(released))}
+}
+#[doc="`SendSubmitEventToSelectedObject()` overload"]fn send_submit_event_to_selected_object(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25011f0usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`GetRawMoveVector()` overload"]fn get_raw_move_vector(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2501e20usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`SendMoveEventToSelectedObject()` overload"]fn send_move_event_to_selected_object(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500f60usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`ProcessMouseEvent()` overload"]fn process_mouse_event(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25015d0usize)as*mut u8,();
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`ForceAutoSelect()` overload"]fn force_auto_select(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25020c0usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`ProcessMouseEvent(i32)` overload"]fn process_mouse_event_2(self,id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2501e60usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(i32)::core::convert::Into::into(id))}
+}
+#[doc="`SendUpdateEventToSelectedObject()` overload"]fn send_update_event_to_selected_object(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2500de0usize)as*mut u8,bool;
+(StandaloneInputModule18)__receiver)}
+}
+#[doc="`ProcessMousePress(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)` overload"]fn process_mouse_press(self,data:impl::core::convert::Into<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25020d0usize)as*mut u8,();
+(StandaloneInputModule18)__receiver,(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)::core::convert::Into::into(data))}
+}
+#[doc="`GetCurrentFocusedGameObject()` overload"]fn get_current_focused_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2502860usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(StandaloneInputModule18)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18")]
-impl < __T : IStandaloneInputModule18 > IStandaloneInputModule18Methods for __T { }
+#[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]impl<__T:IStandaloneInputModule18>IStandaloneInputModule18Methods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18")]
-impl StandaloneInputModule18 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_input_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_allow_activation_on_mobile_device_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_allow_activation_on_mobile_device_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_force_module_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_force_module_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_input_actions_per_second_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_input_actions_per_second_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_repeat_delay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_repeat_delay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_horizontal_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_horizontal_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_vertical_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_vertical_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_submit_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_submit_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_cancel_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_cancel_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn should_ignore_events_on_no_focus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn update_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_module_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn should_activate_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn activate_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn deactivate_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn process_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn process_touch_events_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn process_touch_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn send_submit_event_to_selected_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_raw_move_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn send_move_event_to_selected_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn process_mouse_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn force_auto_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn process_mouse_event_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn send_update_event_to_selected_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn process_mouse_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_current_focused_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandaloneInputModule18 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } }
+#[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]impl StandaloneInputModule18{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_input_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_allow_activation_on_mobile_device_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_allow_activation_on_mobile_device_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_force_module_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_force_module_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_input_actions_per_second_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_input_actions_per_second_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_repeat_delay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_repeat_delay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_horizontal_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_horizontal_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_vertical_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_vertical_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_submit_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_submit_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_cancel_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_cancel_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn should_ignore_events_on_no_focus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn update_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_module_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn should_activate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn activate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn deactivate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn process_touch_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn process_touch_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn send_submit_event_to_selected_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_raw_move_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn send_move_event_to_selected_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn process_mouse_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn force_auto_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn process_mouse_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn send_update_event_to_selected_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn process_mouse_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_current_focused_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18")]
-impl StandaloneInputModule18 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StandaloneInputModule18) , :: core :: stringify ! (new) ,)) ; < Self as IStandaloneInputModule18Methods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]impl StandaloneInputModule18{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StandaloneInputModule18), ::core::stringify!(new),));
+ <Self as IStandaloneInputModule18Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::StandaloneInputModule18_InputMode;
     pub use super::StandaloneInputModule18;
     pub use super::IStandaloneInputModule18;
     pub use super::IStandaloneInputModule18Methods;
-    pub use super::StandaloneInputModule18_InputMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

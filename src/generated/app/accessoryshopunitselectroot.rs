@@ -4,48 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopunitselectroot/AccessoryShopUnitSelectRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopUnitSelectRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AccessoryShopUnitSelectRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_ShopUnitSelectMenuObject")] pub m_shop_unit_select_menu_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_AccessoryEquipmentInfoObject")] pub m_accessory_equipment_info_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_AccessoryEquipmentInfoWindow")] pub m_accessory_equipment_info_window : crate :: app :: accessoryequipmentinfo :: AccessoryEquipmentInfo ,
-# [offset (56)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopunitselectroot/AccessoryShopUnitSelectRoot.md"))]#[::unity2::class(namespace="App",name="AccessoryShopUnitSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AccessoryShopUnitSelectRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_ShopUnitSelectMenuObject")]pub m_shop_unit_select_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_AccessoryEquipmentInfoObject")]pub m_accessory_equipment_info_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_AccessoryEquipmentInfoWindow")]pub m_accessory_equipment_info_window:crate::app::accessoryequipmentinfo::AccessoryEquipmentInfo, #[offset(56)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-accessoryshopunitselectroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryshopunitselectroot")]
-impl AccessoryShopUnitSelectRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5120usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5280usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5300usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , default_scroll_index : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler >) -> crate :: app :: accessoryshopunitselectroot :: AccessoryShopUnitSelectRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , i32 , crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessoryshopunitselectroot :: AccessoryShopUnitSelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5380usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (default_unit) , :: core :: convert :: Into :: into (default_scroll_index) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot)` overload"] pub fn destroy (root : impl :: core :: convert :: Into < crate :: app :: accessoryshopunitselectroot :: AccessoryShopUnitSelectRoot >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: accessoryshopunitselectroot :: AccessoryShopUnitSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopunitselectroot")]impl AccessoryShopUnitSelectRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5120usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5280usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5300usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_scroll_index:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler>)->crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5380usize)as*mut u8,crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_scroll_index),(crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`Destroy(crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot)` overload"]pub fn destroy(root:impl::core::convert::Into<crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5800usize)as*mut u8,();
+(crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot)::core::convert::Into::into(root))}
+}
+}
 
-#[cfg(feature = "app-accessoryshopunitselectroot")]
-pub trait IAccessoryShopUnitSelectRootMethods : IAccessoryShopUnitSelectRoot { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , default_scroll_index : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < AccessoryShopUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopUnitSelectRoot , crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , i32 , crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (default_unit) , :: core :: convert :: Into :: into (default_scroll_index) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryShopUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopUnitSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItem(crate::app::unit::Unit)` overload"] fn on_select_menu_item (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AccessoryShopUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopUnitSelectRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecideMenuItem(crate::app::basicmenu::BasicMenu_Result, crate::app::unit::Unit, i32)` overload"] fn on_decide_menu_item (self , result : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu_Result > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , scroll_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AccessoryShopUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopUnitSelectRoot , crate :: app :: basicmenu :: BasicMenu_Result , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (scroll_index) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < AccessoryShopUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopUnitSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c5a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopunitselectroot")]pub trait IAccessoryShopUnitSelectRootMethods:IAccessoryShopUnitSelectRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_scroll_index:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <AccessoryShopUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c5530usize)as*mut u8,();
+(AccessoryShopUnitSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_scroll_index),(crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryShopUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c5880usize)as*mut u8,();
+(AccessoryShopUnitSelectRoot)__receiver)}
+}
+#[doc="`OnSelectMenuItem(crate::app::unit::Unit)` overload"]fn on_select_menu_item(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AccessoryShopUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c5890usize)as*mut u8,();
+(AccessoryShopUnitSelectRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`OnDecideMenuItem(crate::app::basicmenu::BasicMenu_Result, crate::app::unit::Unit, i32)` overload"]fn on_decide_menu_item(self,result:impl::core::convert::Into<crate::app::basicmenu::BasicMenu_Result> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,scroll_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AccessoryShopUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c5970usize)as*mut u8,();
+(AccessoryShopUnitSelectRoot)__receiver,(crate::app::basicmenu::BasicMenu_Result)::core::convert::Into::into(result),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(scroll_index))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <AccessoryShopUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c5a20usize)as*mut u8,();
+(AccessoryShopUnitSelectRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessoryshopunitselectroot")]
-impl < __T : IAccessoryShopUnitSelectRoot > IAccessoryShopUnitSelectRootMethods for __T { }
+#[cfg(feature="app-accessoryshopunitselectroot")]impl<__T:IAccessoryShopUnitSelectRoot>IAccessoryShopUnitSelectRootMethods for __T{}
 
-#[cfg(feature = "app-accessoryshopunitselectroot")]
-impl AccessoryShopUnitSelectRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_select_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_decide_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-accessoryshopunitselectroot")]impl AccessoryShopUnitSelectRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_decide_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-accessoryshopunitselectroot")]
-impl AccessoryShopUnitSelectRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopUnitSelectRoot) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopUnitSelectRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryshopunitselectroot")]impl AccessoryShopUnitSelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopUnitSelectRoot), ::core::stringify!(new),));
+ <Self as IAccessoryShopUnitSelectRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-accessoryshopunitselectroot")]

@@ -4,43 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomrelianceselectcontent/MyRoomRelianceSelectContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomRelianceSelectContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct MyRoomRelianceSelectContent {
-# [offset (232)] # [rename (name = "m_unitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_unitIcon")] pub m_unit_icon : crate :: app :: uniticon :: UnitIcon ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrelianceselectcontent/MyRoomRelianceSelectContent.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSelectContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MyRoomRelianceSelectContent{#[offset(232)]#[rename(name="m_unitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_unitIcon")]pub m_unit_icon:crate::app::uniticon::UnitIcon,}
 
 }
 
 #[cfg(feature = "app-myroomrelianceselectcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomrelianceselectcontent")]
-pub trait IMyRoomRelianceSelectContentMethods : IMyRoomRelianceSelectContent { # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < MyRoomRelianceSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2394cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < MyRoomRelianceSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSelectContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2394ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < MyRoomRelianceSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSelectContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2394da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < MyRoomRelianceSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSelectContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2394e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUnit(crate::app::unit::Unit)` overload"] fn set_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MyRoomRelianceSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSelectContent , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23947b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomRelianceSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2394e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomrelianceselectcontent")]pub trait IMyRoomRelianceSelectContentMethods:IMyRoomRelianceSelectContent{#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <MyRoomRelianceSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2394cd0usize)as*mut u8,();
+(MyRoomRelianceSelectContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MyRoomRelianceSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2394ce0usize)as*mut u8,f32;
+(MyRoomRelianceSelectContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <MyRoomRelianceSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2394da0usize)as*mut u8,f32;
+(MyRoomRelianceSelectContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <MyRoomRelianceSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2394e10usize)as*mut u8,f32;
+(MyRoomRelianceSelectContent)__receiver)}
+}
+#[doc="`SetUnit(crate::app::unit::Unit)` overload"]fn set_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MyRoomRelianceSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23947b0usize)as*mut u8,();
+(MyRoomRelianceSelectContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomRelianceSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2394e80usize)as*mut u8,();
+(MyRoomRelianceSelectContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomrelianceselectcontent")]
-impl < __T : IMyRoomRelianceSelectContent > IMyRoomRelianceSelectContentMethods for __T { }
+#[cfg(feature="app-myroomrelianceselectcontent")]impl<__T:IMyRoomRelianceSelectContent>IMyRoomRelianceSelectContentMethods for __T{}
 
-#[cfg(feature = "app-myroomrelianceselectcontent")]
-impl MyRoomRelianceSelectContent { pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-myroomrelianceselectcontent")]impl MyRoomRelianceSelectContent{pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-myroomrelianceselectcontent")]
-impl MyRoomRelianceSelectContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomRelianceSelectContent) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomRelianceSelectContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomrelianceselectcontent")]impl MyRoomRelianceSelectContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomRelianceSelectContent), ::core::stringify!(new),));
+ <Self as IMyRoomRelianceSelectContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomrelianceselectcontent")]

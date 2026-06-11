@@ -4,279 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_TasteGrade.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TasteData_TasteGrade  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tastedata/TasteData_FlagField.md"))]#[::unity2::class(namespace="App",name="TasteData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::tastedata::TasteData_Flags>)]pub struct TasteData_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tastedata/TasteData_TasteGrade.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TasteData_TasteGrade{pub value:i32,}
+impl::unity2::ClassIdentity for TasteData_TasteGrade{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TasteData.TasteGrade";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TasteData_TasteGrade{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TasteData_TasteGrade{pub fn ss()->Self{Self{value:0}
+}
+pub fn s()->Self{Self{value:1}
+}
+pub fn a()->Self{Self{value:2}
+}
+pub fn b()->Self{Self{value:3}
+}
+pub fn c()->Self{Self{value:4}
+}
+pub fn d()->Self{Self{value:5}
+}
+pub fn e()->Self{Self{value:6}
+}
+pub fn f()->Self{Self{value:7}
+}
+pub fn g()->Self{Self{value:8}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TasteData_TasteGrade  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tastedata/TasteData.md"))]#[::unity2::class(namespace="App",name="TasteData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::tastedata::TasteData>)]pub struct TasteData{}
 
-    const NAME: &'static str = "TasteData.TasteGrade";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tastedata/TasteData_ConditionType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TasteData_ConditionType{pub value:i32,}
+impl::unity2::ClassIdentity for TasteData_ConditionType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TasteData.ConditionType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TasteData_ConditionType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TasteData_ConditionType{pub fn none()->Self{Self{value:0}
+}
+pub fn come_from_brodia()->Self{Self{value:1}
+}
+pub fn come_from_filene()->Self{Self{value:2}
+}
+pub fn come_from_solum()->Self{Self{value:3}
+}
+pub fn come_from_ircion()->Self{Self{value:4}
+}
+pub fn come_from_lithos()->Self{Self{value:5}
+}
+pub fn is_male()->Self{Self{value:6}
+}
+pub fn is_female()->Self{Self{value:7}
+}
+pub fn is_adult()->Self{Self{value:8}
+}
+pub fn is_child()->Self{Self{value:9}
+}
+pub fn is_lueur()->Self{Self{value:10}
+}
 }
 
 
-impl  ::unity2::IlType for TasteData_TasteGrade  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tastedata/TasteData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TasteData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for TasteData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TasteData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  TasteData_TasteGrade  {
-    pub fn ss() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn s() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn a() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn b() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn c() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn d() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn e() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn f() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn g() -> Self {
-        Self { value: 8 }
-
-    }
-
+impl::unity2::IlType for TasteData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "TasteData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: tastedata :: TasteData_Flags >)] pub struct TasteData_FlagField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TasteData_Flags  {
-    pub value: i32,
+impl TasteData_Flags{pub fn is_bad()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for TasteData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TasteData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn disable_food_enhance()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::IlType for TasteData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn is_make_bento()->Self{Self{value:4}
 }
-
-
-impl  TasteData_Flags  {
-    pub fn is_bad() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn disable_food_enhance() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn is_make_bento() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TasteData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: tastedata :: TasteData >)] pub struct TasteData {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_ConditionType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TasteData_ConditionType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TasteData_ConditionType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TasteData.ConditionType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TasteData_ConditionType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TasteData_ConditionType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn come_from_brodia() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn come_from_filene() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn come_from_solum() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn come_from_ircion() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn come_from_lithos() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn is_male() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn is_female() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn is_adult() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn is_child() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn is_lueur() -> Self {
-        Self { value: 10 }
-
-    }
-
 }
 
 }
@@ -284,51 +117,215 @@ impl  TasteData_ConditionType  {
 #[cfg(feature = "app-tastedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-tastedata")]
-pub trait ITasteData_FlagFieldMethods : ITasteData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TasteData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ff710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::tastedata::TasteData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData_Flags >) -> () { unsafe { let __receiver = < TasteData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData_FlagField , crate :: app :: tastedata :: TasteData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ff770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::tastedata::TasteData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData_Flags >) -> i32 { unsafe { let __receiver = < TasteData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData_FlagField , crate :: app :: tastedata :: TasteData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ff7d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-tastedata")]
-impl < __T : ITasteData_FlagField > ITasteData_FlagFieldMethods for __T { }
-
-#[cfg(feature = "app-tastedata")]
-impl TasteData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-tastedata")]
-impl TasteData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TasteData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as ITasteData_FlagFieldMethods > :: ctor (this , f) ; this }
-
-# [doc = "`.ctor(crate::app::tastedata::TasteData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: tastedata :: TasteData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TasteData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as ITasteData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+#[cfg(feature="app-tastedata")]pub trait ITasteData_FlagFieldMethods:ITasteData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TasteData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ff710usize)as*mut u8,();
+(TasteData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::tastedata::TasteData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::tastedata::TasteData_Flags>)->(){unsafe{let __receiver= <TasteData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ff770usize)as*mut u8,();
+(TasteData_FlagField)__receiver,(crate::app::tastedata::TasteData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::tastedata::TasteData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::tastedata::TasteData_Flags>)->i32{unsafe{let __receiver= <TasteData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ff7d0usize)as*mut u8,i32;
+(TasteData_FlagField)__receiver,(crate::app::tastedata::TasteData_Flags)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-tastedata")]
-impl TasteData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21deea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-tastedata")]impl<__T:ITasteData_FlagField>ITasteData_FlagFieldMethods for __T{}
 
-#[cfg(feature = "app-tastedata")]
-pub trait ITasteDataMethods : ITasteData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21dede0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Tid()` overload"] fn get_tid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21def50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Tid(::unity2::Il2CppString)` overload"] fn set_tid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21def60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21def70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21def80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Grade()` overload"] fn get_grade (self ,) -> crate :: app :: tastedata :: TasteData_TasteGrade { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> crate :: app :: tastedata :: TasteData_TasteGrade = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21def90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Grade(crate::app::tastedata::TasteData_TasteGrade)` overload"] fn set_grade (self , value : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData_TasteGrade >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , crate :: app :: tastedata :: TasteData_TasteGrade , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21defa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Augment()` overload"] fn get_augment (self ,) -> i8 { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21defb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Augment(i8)` overload"] fn set_augment (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21defc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OtherEnhance()` overload"] fn get_other_enhance (self ,) -> i8 { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21defd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OtherEnhance(i8)` overload"] fn set_other_enhance (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21defe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Enhance()` overload"] fn get_enhance (self ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21deff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Enhance(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn set_enhance (self , value : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: tastedata :: TasteData_FlagField { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> crate :: app :: tastedata :: TasteData_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::tastedata::TasteData_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData_FlagField >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , crate :: app :: tastedata :: TasteData_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Cid()` overload"] fn get_cid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Cid(::unity2::Il2CppString)` overload"] fn set_cid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AlternativeTaste()` overload"] fn get_alternative_taste (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AlternativeTaste(::unity2::Il2CppString)` overload"] fn set_alternative_taste (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DerivingProbability()` overload"] fn get_deriving_probability (self ,) -> i8 { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DerivingProbability(i8)` overload"] fn set_deriving_probability (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DerivedTid()` overload"] fn get_derived_tid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DerivedTid(::unity2::Il2CppString)` overload"] fn set_derived_tid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsConditional()` overload"] fn is_conditional (self ,) -> bool { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetConditionFunc()` overload"] fn get_condition_func (self ,) -> crate :: app :: tasteconditiondata :: TasteConditionData_ConditionFunc { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> crate :: app :: tasteconditiondata :: TasteConditionData_ConditionFunc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDisableFoodEnhance()` overload"] fn is_disable_food_enhance (self ,) -> bool { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsMakeBento()` overload"] fn is_make_bento (self ,) -> bool { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGradeString()` overload"] fn get_grade_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TasteData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TasteData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-tastedata")]impl TasteData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-tastedata")]
-impl < __T : ITasteData > ITasteDataMethods for __T { }
+#[cfg(feature="app-tastedata")]impl TasteData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TasteData_FlagField), ::core::stringify!(new),));
+ <Self as ITasteData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::tastedata::TasteData_Flags)` — overload selector"]pub fn new_2(f:crate::app::tastedata::TasteData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TasteData_FlagField), ::core::stringify!(new_2),));
+ <Self as ITasteData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
 
-#[cfg(feature = "app-tastedata")]
-impl TasteData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_grade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_grade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_augment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_augment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_other_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_other_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_alternative_taste_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_alternative_taste_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_deriving_probability_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_deriving_probability_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_derived_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_derived_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn is_conditional_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_condition_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn is_disable_food_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn is_make_bento_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_grade_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TasteData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } }
+#[cfg(feature="app-tastedata")]impl TasteData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21deea0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-tastedata")]
-impl TasteData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TasteData) , :: core :: stringify ! (new) ,)) ; < Self as ITasteDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-tastedata")]pub trait ITasteDataMethods:ITasteData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21dede0usize)as*mut u8,();
+(TasteData)__receiver)}
+}
+#[doc="`get_Tid()` overload"]fn get_tid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21def50usize)as*mut u8, ::unity2::Il2CppString;
+(TasteData)__receiver)}
+}
+#[doc="`set_Tid(::unity2::Il2CppString)` overload"]fn set_tid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21def60usize)as*mut u8,();
+(TasteData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21def70usize)as*mut u8, ::unity2::Il2CppString;
+(TasteData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21def80usize)as*mut u8,();
+(TasteData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Grade()` overload"]fn get_grade(self,)->crate::app::tastedata::TasteData_TasteGrade{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21def90usize)as*mut u8,crate::app::tastedata::TasteData_TasteGrade;
+(TasteData)__receiver)}
+}
+#[doc="`set_Grade(crate::app::tastedata::TasteData_TasteGrade)` overload"]fn set_grade(self,value:impl::core::convert::Into<crate::app::tastedata::TasteData_TasteGrade>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21defa0usize)as*mut u8,();
+(TasteData)__receiver,(crate::app::tastedata::TasteData_TasteGrade)::core::convert::Into::into(value))}
+}
+#[doc="`get_Augment()` overload"]fn get_augment(self,)->i8{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21defb0usize)as*mut u8,i8;
+(TasteData)__receiver)}
+}
+#[doc="`set_Augment(i8)` overload"]fn set_augment(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21defc0usize)as*mut u8,();
+(TasteData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_OtherEnhance()` overload"]fn get_other_enhance(self,)->i8{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21defd0usize)as*mut u8,i8;
+(TasteData)__receiver)}
+}
+#[doc="`set_OtherEnhance(i8)` overload"]fn set_other_enhance(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21defe0usize)as*mut u8,();
+(TasteData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Enhance()` overload"]fn get_enhance(self,)->crate::app::capabilitysbyte::CapabilitySbyte{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21deff0usize)as*mut u8,crate::app::capabilitysbyte::CapabilitySbyte;
+(TasteData)__receiver)}
+}
+#[doc="`set_Enhance(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]fn set_enhance(self,value:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df000usize)as*mut u8,();
+(TasteData)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::tastedata::TasteData_FlagField{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df010usize)as*mut u8,crate::app::tastedata::TasteData_FlagField;
+(TasteData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::tastedata::TasteData_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::tastedata::TasteData_FlagField>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df020usize)as*mut u8,();
+(TasteData)__receiver,(crate::app::tastedata::TasteData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df030usize)as*mut u8, ::unity2::Il2CppString;
+(TasteData)__receiver)}
+}
+#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df040usize)as*mut u8,();
+(TasteData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AlternativeTaste()` overload"]fn get_alternative_taste(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df050usize)as*mut u8, ::unity2::Il2CppString;
+(TasteData)__receiver)}
+}
+#[doc="`set_AlternativeTaste(::unity2::Il2CppString)` overload"]fn set_alternative_taste(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df060usize)as*mut u8,();
+(TasteData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_DerivingProbability()` overload"]fn get_deriving_probability(self,)->i8{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df070usize)as*mut u8,i8;
+(TasteData)__receiver)}
+}
+#[doc="`set_DerivingProbability(i8)` overload"]fn set_deriving_probability(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df080usize)as*mut u8,();
+(TasteData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_DerivedTid()` overload"]fn get_derived_tid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df090usize)as*mut u8, ::unity2::Il2CppString;
+(TasteData)__receiver)}
+}
+#[doc="`set_DerivedTid(::unity2::Il2CppString)` overload"]fn set_derived_tid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df0a0usize)as*mut u8,();
+(TasteData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df0b0usize)as*mut u8, ::unity2::Il2CppString;
+(TasteData)__receiver)}
+}
+#[doc="`IsConditional()` overload"]fn is_conditional(self,)->bool{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df130usize)as*mut u8,bool;
+(TasteData)__receiver)}
+}
+#[doc="`GetConditionFunc()` overload"]fn get_condition_func(self,)->crate::app::tasteconditiondata::TasteConditionData_ConditionFunc{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df190usize)as*mut u8,crate::app::tasteconditiondata::TasteConditionData_ConditionFunc;
+(TasteData)__receiver)}
+}
+#[doc="`IsDisableFoodEnhance()` overload"]fn is_disable_food_enhance(self,)->bool{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df220usize)as*mut u8,bool;
+(TasteData)__receiver)}
+}
+#[doc="`IsMakeBento()` overload"]fn is_make_bento(self,)->bool{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df280usize)as*mut u8,bool;
+(TasteData)__receiver)}
+}
+#[doc="`GetGradeString()` overload"]fn get_grade_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df2e0usize)as*mut u8, ::unity2::Il2CppString;
+(TasteData)__receiver)}
+}
+}
+
+#[cfg(feature="app-tastedata")]impl<__T:ITasteData>ITasteDataMethods for __T{}
+
+#[cfg(feature="app-tastedata")]impl TasteData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_tid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_tid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_grade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_grade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_augment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_augment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_other_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_other_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_alternative_taste_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_alternative_taste_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_deriving_probability_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_deriving_probability_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_derived_tid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_derived_tid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn is_conditional_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_condition_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn is_disable_food_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn is_make_bento_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_grade_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+}
+
+#[cfg(feature="app-tastedata")]impl TasteData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TasteData), ::core::stringify!(new),));
+ <Self as ITasteDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-tastedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TasteData_TasteGrade;
     pub use super::TasteData_FlagField;
     pub use super::ITasteData_FlagField;
     pub use super::ITasteData_FlagFieldMethods;
-    pub use super::TasteData_Flags;
+    pub use super::TasteData_TasteGrade;
     pub use super::TasteData;
     pub use super::ITasteData;
     pub use super::ITasteDataMethods;
     pub use super::TasteData_ConditionType;
+    pub use super::TasteData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

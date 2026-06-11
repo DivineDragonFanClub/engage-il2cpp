@@ -4,102 +4,161 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudioinputmanager/AkAudioInputManager_AudioFormatDelegate.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAudioInputManager.AudioFormatDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkAudioInputManager_AudioFormatDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudioinputmanager/AkAudioInputManager_AudioFormatDelegate.md"))]#[::unity2::class(namespace="",name="AkAudioInputManager.AudioFormatDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkAudioInputManager_AudioFormatDelegate{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudioinputmanager/AkAudioInputManager_AudioSamplesInteropDelegate.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAudioInputManager.AudioSamplesInteropDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkAudioInputManager_AudioSamplesInteropDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudioinputmanager/AkAudioInputManager_AudioSamplesDelegate.md"))]#[::unity2::class(namespace="",name="AkAudioInputManager.AudioSamplesDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkAudioInputManager_AudioSamplesDelegate{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudioinputmanager/AkAudioInputManager_AudioFormatInteropDelegate.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAudioInputManager.AudioFormatInteropDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkAudioInputManager_AudioFormatInteropDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudioinputmanager/AkAudioInputManager_AudioFormatInteropDelegate.md"))]#[::unity2::class(namespace="",name="AkAudioInputManager.AudioFormatInteropDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkAudioInputManager_AudioFormatInteropDelegate{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudioinputmanager/AkAudioInputManager_AudioSamplesDelegate.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAudioInputManager.AudioSamplesDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkAudioInputManager_AudioSamplesDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudioinputmanager/AkAudioInputManager_AudioSamplesInteropDelegate.md"))]#[::unity2::class(namespace="",name="AkAudioInputManager.AudioSamplesInteropDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkAudioInputManager_AudioSamplesInteropDelegate{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudioinputmanager/AkAudioInputManager.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAudioInputManager")] # [parent (crate :: system :: object :: Object)] pub struct AkAudioInputManager {
-# [static_field] # [rename (name = "initialized")] pub initialized : bool ,
-# [static_field] # [rename (name = "audioSamplesDelegates")] pub audio_samples_delegates : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioSamplesDelegate > ,
-# [static_field] # [rename (name = "audioFormatDelegates")] pub audio_format_delegates : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioFormatDelegate > ,
-# [static_field] # [rename (name = "audioFormat")] pub audio_format : crate :: root :: akaudioformat :: AkAudioFormat ,
-# [static_field] # [rename (name = "audioSamplesDelegate")] pub audio_samples_delegate : crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioSamplesInteropDelegate ,
-# [static_field] # [rename (name = "audioFormatDelegate")] pub audio_format_delegate : crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioFormatInteropDelegate ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudioinputmanager/AkAudioInputManager.md"))]#[::unity2::class(namespace="",name="AkAudioInputManager")]#[parent(crate::system::object::Object)]pub struct AkAudioInputManager{#[static_field]#[rename(name="initialized")]pub initialized:bool, #[static_field]#[rename(name="audioSamplesDelegates")]pub audio_samples_delegates:crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate> , #[static_field]#[rename(name="audioFormatDelegates")]pub audio_format_delegates:crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate> , #[static_field]#[rename(name="audioFormat")]pub audio_format:crate::root::akaudioformat::AkAudioFormat, #[static_field]#[rename(name="audioSamplesDelegate")]pub audio_samples_delegate:crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesInteropDelegate, #[static_field]#[rename(name="audioFormatDelegate")]pub audio_format_delegate:crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatInteropDelegate,}
 
 }
 
 #[cfg(feature = "root-akaudioinputmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akaudioinputmanager")]
-pub trait IAkAudioInputManager_AudioFormatDelegateMethods : IAkAudioInputManager_AudioFormatDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAudioInputManager_AudioFormatDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInputManager_AudioFormatDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9aec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(u32, crate::root::akaudioformat::AkAudioFormat)` overload"] fn invoke (self , playing_id : impl :: core :: convert :: Into < u32 > , format : impl :: core :: convert :: Into < crate :: root :: akaudioformat :: AkAudioFormat >) -> () { unsafe { let __receiver = < AkAudioInputManager_AudioFormatDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInputManager_AudioFormatDelegate , u32 , crate :: root :: akaudioformat :: AkAudioFormat , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9aee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playing_id) , :: core :: convert :: Into :: into (format) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl < __T : IAkAudioInputManager_AudioFormatDelegate > IAkAudioInputManager_AudioFormatDelegateMethods for __T { }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager_AudioFormatDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager_AudioFormatDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager_AudioFormatDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager_AudioFormatDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAudioInputManager_AudioFormatDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IAkAudioInputManager_AudioFormatDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-akaudioinputmanager")]pub trait IAkAudioInputManager_AudioFormatDelegateMethods:IAkAudioInputManager_AudioFormatDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAudioInputManager_AudioFormatDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9aec0usize)as*mut u8,();
+(AkAudioInputManager_AudioFormatDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(u32, crate::root::akaudioformat::AkAudioFormat)` overload"]fn invoke(self,playing_id:impl::core::convert::Into<u32> ,format:impl::core::convert::Into<crate::root::akaudioformat::AkAudioFormat>)->(){unsafe{let __receiver= <AkAudioInputManager_AudioFormatDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9aee0usize)as*mut u8,();
+(AkAudioInputManager_AudioFormatDelegate)__receiver,(u32)::core::convert::Into::into(playing_id),(crate::root::akaudioformat::AkAudioFormat)::core::convert::Into::into(format))}
+}
 }
 
-#[cfg(feature = "root-akaudioinputmanager")]
-pub trait IAkAudioInputManager_AudioSamplesInteropDelegateMethods : IAkAudioInputManager_AudioSamplesInteropDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAudioInputManager_AudioSamplesInteropDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInputManager_AudioSamplesInteropDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9b860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(u32, ::unity2::Array<f32>, u32, u32)` overload"] fn invoke (self , playing_id : impl :: core :: convert :: Into < u32 > , samples : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > > , channel_index : impl :: core :: convert :: Into < u32 > , frames : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { let __receiver = < AkAudioInputManager_AudioSamplesInteropDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInputManager_AudioSamplesInteropDelegate , u32 , :: unity2 :: Array < f32 > , u32 , u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9b880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playing_id) , :: core :: convert :: Into :: into (samples) , :: core :: convert :: Into :: into (channel_index) , :: core :: convert :: Into :: into (frames) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akaudioinputmanager")]impl<__T:IAkAudioInputManager_AudioFormatDelegate>IAkAudioInputManager_AudioFormatDelegateMethods for __T{}
 
-#[cfg(feature = "root-akaudioinputmanager")]
-impl < __T : IAkAudioInputManager_AudioSamplesInteropDelegate > IAkAudioInputManager_AudioSamplesInteropDelegateMethods for __T { }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager_AudioSamplesInteropDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager_AudioSamplesInteropDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager_AudioSamplesInteropDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager_AudioSamplesInteropDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAudioInputManager_AudioSamplesInteropDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IAkAudioInputManager_AudioSamplesInteropDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager_AudioFormatDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "root-akaudioinputmanager")]
-pub trait IAkAudioInputManager_AudioFormatInteropDelegateMethods : IAkAudioInputManager_AudioFormatInteropDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAudioInputManager_AudioFormatInteropDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInputManager_AudioFormatInteropDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9b1d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(u32, ::unity2::IntPtr)` overload"] fn invoke (self , playing_id : impl :: core :: convert :: Into < u32 > , format : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAudioInputManager_AudioFormatInteropDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInputManager_AudioFormatInteropDelegate , u32 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9b1f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playing_id) , :: core :: convert :: Into :: into (format) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl < __T : IAkAudioInputManager_AudioFormatInteropDelegate > IAkAudioInputManager_AudioFormatInteropDelegateMethods for __T { }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager_AudioFormatInteropDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager_AudioFormatInteropDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager_AudioFormatInteropDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager_AudioFormatInteropDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAudioInputManager_AudioFormatInteropDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IAkAudioInputManager_AudioFormatInteropDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager_AudioFormatDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioInputManager_AudioFormatDelegate), ::core::stringify!(new),));
+ <Self as IAkAudioInputManager_AudioFormatDelegateMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "root-akaudioinputmanager")]
-pub trait IAkAudioInputManager_AudioSamplesDelegateMethods : IAkAudioInputManager_AudioSamplesDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAudioInputManager_AudioSamplesDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInputManager_AudioSamplesDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9b500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(u32, u32, ::unity2::Array<f32>)` overload"] fn invoke (self , playing_id : impl :: core :: convert :: Into < u32 > , channel_index : impl :: core :: convert :: Into < u32 > , samples : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> bool { unsafe { let __receiver = < AkAudioInputManager_AudioSamplesDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInputManager_AudioSamplesDelegate , u32 , u32 , :: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9b520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playing_id) , :: core :: convert :: Into :: into (channel_index) , :: core :: convert :: Into :: into (samples) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl < __T : IAkAudioInputManager_AudioSamplesDelegate > IAkAudioInputManager_AudioSamplesDelegateMethods for __T { }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager_AudioSamplesDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager_AudioSamplesDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager_AudioSamplesDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager_AudioSamplesDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAudioInputManager_AudioSamplesDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IAkAudioInputManager_AudioSamplesDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-akaudioinputmanager")]pub trait IAkAudioInputManager_AudioSamplesDelegateMethods:IAkAudioInputManager_AudioSamplesDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAudioInputManager_AudioSamplesDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9b500usize)as*mut u8,();
+(AkAudioInputManager_AudioSamplesDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(u32, u32, ::unity2::Array<f32>)` overload"]fn invoke(self,playing_id:impl::core::convert::Into<u32> ,channel_index:impl::core::convert::Into<u32> ,samples:impl::core::convert::Into< ::unity2::Array<f32> >)->bool{unsafe{let __receiver= <AkAudioInputManager_AudioSamplesDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9b520usize)as*mut u8,bool;
+(AkAudioInputManager_AudioSamplesDelegate)__receiver,(u32)::core::convert::Into::into(playing_id),(u32)::core::convert::Into::into(channel_index),(::unity2::Array<f32>)::core::convert::Into::into(samples))}
+}
 }
 
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager { # [doc = "`PostAudioInputEvent(u32, crate::unity_engine::gameobject::GameObject, crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate, crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)` overload"] pub fn post_audio_input_event (ak_event_id : impl :: core :: convert :: Into < u32 > , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , sample_delegate : impl :: core :: convert :: Into < crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioSamplesDelegate > , format_delegate : impl :: core :: convert :: Into < crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioFormatDelegate >) -> u32 { unsafe { { let __inner : extern "C" fn (u32 , crate :: unity_engine :: gameobject :: GameObject , crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioSamplesDelegate , crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioFormatDelegate , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcecb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ak_event_id) , :: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (sample_delegate) , :: core :: convert :: Into :: into (format_delegate) , :: core :: option :: Option :: None) } } } # [doc = "`PostAudioInputEvent(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate, crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)` overload"] pub fn post_audio_input_event_2 (ak_event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , sample_delegate : impl :: core :: convert :: Into < crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioSamplesDelegate > , format_delegate : impl :: core :: convert :: Into < crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioFormatDelegate >) -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: gameobject :: GameObject , crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioSamplesDelegate , crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioFormatDelegate , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcede0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ak_event_name) , :: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (sample_delegate) , :: core :: convert :: Into :: into (format_delegate) , :: core :: option :: Option :: None) } } } # [doc = "`InternalAudioSamplesDelegate(u32, ::unity2::Array<f32>, u32, u32)` overload"] pub fn internal_audio_samples_delegate (playing_id : impl :: core :: convert :: Into < u32 > , samples : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > > , channel_index : impl :: core :: convert :: Into < u32 > , frames : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: Array < f32 > , u32 , u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (playing_id) , :: core :: convert :: Into :: into (samples) , :: core :: convert :: Into :: into (channel_index) , :: core :: convert :: Into :: into (frames) , :: core :: option :: Option :: None) } } } # [doc = "`InternalAudioFormatDelegate(u32, ::unity2::IntPtr)` overload"] pub fn internal_audio_format_delegate (playing_id : impl :: core :: convert :: Into < u32 > , format : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (playing_id) , :: core :: convert :: Into :: into (format) , :: core :: option :: Option :: None) } } } # [doc = "`TryInitialize()` overload"] pub fn try_initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bceab0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddPlayingID(u32, crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate, crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)` overload"] pub fn add_playing_id (playing_id : impl :: core :: convert :: Into < u32 > , sample_delegate : impl :: core :: convert :: Into < crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioSamplesDelegate > , format_delegate : impl :: core :: convert :: Into < crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioFormatDelegate >) -> () { unsafe { { let __inner : extern "C" fn (u32 , crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioSamplesDelegate , crate :: root :: akaudioinputmanager :: AkAudioInputManager_AudioFormatDelegate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bceba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (playing_id) , :: core :: convert :: Into :: into (sample_delegate) , :: core :: convert :: Into :: into (format_delegate) , :: core :: option :: Option :: None) } } } # [doc = "`EventCallback(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"] pub fn event_callback (cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object > , r#type : impl :: core :: convert :: Into < crate :: root :: akcallbacktype :: AkCallbackType > , callback_info : impl :: core :: convert :: Into < crate :: root :: akcallbackinfo :: AkCallbackInfo >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , crate :: root :: akcallbacktype :: AkCallbackType , crate :: root :: akcallbackinfo :: AkCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcef10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cookie) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (callback_info) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcf050usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akaudioinputmanager")]impl<__T:IAkAudioInputManager_AudioSamplesDelegate>IAkAudioInputManager_AudioSamplesDelegateMethods for __T{}
 
-#[cfg(feature = "root-akaudioinputmanager")]
-impl AkAudioInputManager { pub fn post_audio_input_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn post_audio_input_event_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn internal_audio_samples_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn internal_audio_format_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn try_initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_playing_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn event_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInputManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager_AudioSamplesDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager_AudioSamplesDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioInputManager_AudioSamplesDelegate), ::core::stringify!(new),));
+ <Self as IAkAudioInputManager_AudioSamplesDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]pub trait IAkAudioInputManager_AudioFormatInteropDelegateMethods:IAkAudioInputManager_AudioFormatInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAudioInputManager_AudioFormatInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9b1d0usize)as*mut u8,();
+(AkAudioInputManager_AudioFormatInteropDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(u32, ::unity2::IntPtr)` overload"]fn invoke(self,playing_id:impl::core::convert::Into<u32> ,format:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAudioInputManager_AudioFormatInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9b1f0usize)as*mut u8,();
+(AkAudioInputManager_AudioFormatInteropDelegate)__receiver,(u32)::core::convert::Into::into(playing_id),(::unity2::IntPtr)::core::convert::Into::into(format))}
+}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]impl<__T:IAkAudioInputManager_AudioFormatInteropDelegate>IAkAudioInputManager_AudioFormatInteropDelegateMethods for __T{}
+
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager_AudioFormatInteropDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager_AudioFormatInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioInputManager_AudioFormatInteropDelegate), ::core::stringify!(new),));
+ <Self as IAkAudioInputManager_AudioFormatInteropDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]pub trait IAkAudioInputManager_AudioSamplesInteropDelegateMethods:IAkAudioInputManager_AudioSamplesInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAudioInputManager_AudioSamplesInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9b860usize)as*mut u8,();
+(AkAudioInputManager_AudioSamplesInteropDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(u32, ::unity2::Array<f32>, u32, u32)` overload"]fn invoke(self,playing_id:impl::core::convert::Into<u32> ,samples:impl::core::convert::Into< ::unity2::Array<f32> > ,channel_index:impl::core::convert::Into<u32> ,frames:impl::core::convert::Into<u32>)->bool{unsafe{let __receiver= <AkAudioInputManager_AudioSamplesInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9b880usize)as*mut u8,bool;
+(AkAudioInputManager_AudioSamplesInteropDelegate)__receiver,(u32)::core::convert::Into::into(playing_id),(::unity2::Array<f32>)::core::convert::Into::into(samples),(u32)::core::convert::Into::into(channel_index),(u32)::core::convert::Into::into(frames))}
+}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]impl<__T:IAkAudioInputManager_AudioSamplesInteropDelegate>IAkAudioInputManager_AudioSamplesInteropDelegateMethods for __T{}
+
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager_AudioSamplesInteropDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager_AudioSamplesInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioInputManager_AudioSamplesInteropDelegate), ::core::stringify!(new),));
+ <Self as IAkAudioInputManager_AudioSamplesInteropDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager{#[doc="`PostAudioInputEvent(u32, crate::unity_engine::gameobject::GameObject, crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate, crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)` overload"]pub fn post_audio_input_event(ak_event_id:impl::core::convert::Into<u32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,sample_delegate:impl::core::convert::Into<crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate> ,format_delegate:impl::core::convert::Into<crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcecb0usize)as*mut u8,u32;
+(u32)::core::convert::Into::into(ak_event_id),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate)::core::convert::Into::into(sample_delegate),(crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)::core::convert::Into::into(format_delegate))}
+}
+#[doc="`PostAudioInputEvent(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate, crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)` overload"]pub fn post_audio_input_event_2(ak_event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,sample_delegate:impl::core::convert::Into<crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate> ,format_delegate:impl::core::convert::Into<crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcede0usize)as*mut u8,u32;
+(::unity2::Il2CppString)::core::convert::Into::into(ak_event_name),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate)::core::convert::Into::into(sample_delegate),(crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)::core::convert::Into::into(format_delegate))}
+}
+#[doc="`InternalAudioSamplesDelegate(u32, ::unity2::Array<f32>, u32, u32)` overload"]pub fn internal_audio_samples_delegate(playing_id:impl::core::convert::Into<u32> ,samples:impl::core::convert::Into< ::unity2::Array<f32> > ,channel_index:impl::core::convert::Into<u32> ,frames:impl::core::convert::Into<u32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bce780usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(playing_id),(::unity2::Array<f32>)::core::convert::Into::into(samples),(u32)::core::convert::Into::into(channel_index),(u32)::core::convert::Into::into(frames))}
+}
+#[doc="`InternalAudioFormatDelegate(u32, ::unity2::IntPtr)` overload"]pub fn internal_audio_format_delegate(playing_id:impl::core::convert::Into<u32> ,format:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bce890usize)as*mut u8,();
+(u32)::core::convert::Into::into(playing_id),(::unity2::IntPtr)::core::convert::Into::into(format))}
+}
+#[doc="`TryInitialize()` overload"]pub fn try_initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bceab0usize)as*mut u8,();
+)}
+}
+#[doc="`AddPlayingID(u32, crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate, crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)` overload"]pub fn add_playing_id(playing_id:impl::core::convert::Into<u32> ,sample_delegate:impl::core::convert::Into<crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate> ,format_delegate:impl::core::convert::Into<crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bceba0usize)as*mut u8,();
+(u32)::core::convert::Into::into(playing_id),(crate::root::akaudioinputmanager::AkAudioInputManager_AudioSamplesDelegate)::core::convert::Into::into(sample_delegate),(crate::root::akaudioinputmanager::AkAudioInputManager_AudioFormatDelegate)::core::convert::Into::into(format_delegate))}
+}
+#[doc="`EventCallback(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]pub fn event_callback(cookie:impl::core::convert::Into<crate::system::object::Object> ,r#type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,callback_info:impl::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcef10usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(cookie),(crate::root::akcallbacktype::AkCallbackType)::core::convert::Into::into(r#type),(crate::root::akcallbackinfo::AkCallbackInfo)::core::convert::Into::into(callback_info))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf050usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="root-akaudioinputmanager")]impl AkAudioInputManager{pub fn post_audio_input_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn post_audio_input_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn internal_audio_samples_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn internal_audio_format_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_playing_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn event_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "root-akaudioinputmanager")]
 #[doc(hidden)]
@@ -107,15 +166,15 @@ pub mod prelude {
     pub use super::AkAudioInputManager_AudioFormatDelegate;
     pub use super::IAkAudioInputManager_AudioFormatDelegate;
     pub use super::IAkAudioInputManager_AudioFormatDelegateMethods;
-    pub use super::AkAudioInputManager_AudioSamplesInteropDelegate;
-    pub use super::IAkAudioInputManager_AudioSamplesInteropDelegate;
-    pub use super::IAkAudioInputManager_AudioSamplesInteropDelegateMethods;
-    pub use super::AkAudioInputManager_AudioFormatInteropDelegate;
-    pub use super::IAkAudioInputManager_AudioFormatInteropDelegate;
-    pub use super::IAkAudioInputManager_AudioFormatInteropDelegateMethods;
     pub use super::AkAudioInputManager_AudioSamplesDelegate;
     pub use super::IAkAudioInputManager_AudioSamplesDelegate;
     pub use super::IAkAudioInputManager_AudioSamplesDelegateMethods;
+    pub use super::AkAudioInputManager_AudioFormatInteropDelegate;
+    pub use super::IAkAudioInputManager_AudioFormatInteropDelegate;
+    pub use super::IAkAudioInputManager_AudioFormatInteropDelegateMethods;
+    pub use super::AkAudioInputManager_AudioSamplesInteropDelegate;
+    pub use super::IAkAudioInputManager_AudioSamplesInteropDelegate;
+    pub use super::IAkAudioInputManager_AudioSamplesInteropDelegateMethods;
     pub use super::AkAudioInputManager;
     pub use super::IAkAudioInputManager;
     pub use crate::system::delegate::IDelegate;

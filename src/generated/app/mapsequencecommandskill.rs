@@ -4,121 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Action.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceCommandSkill_Action  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecommandskill/MapSequenceCommandSkill.md"))]#[::unity2::class(namespace="App",name="MapSequenceCommandSkill")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencecommandskill::MapSequenceCommandSkill>)]pub struct MapSequenceCommandSkill{#[offset(116)]#[rename(name="m_Action")]pub m_action:crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action, #[offset(120)]#[rename(name="m_Results")]pub m_results:crate::app::mapskill::MapSkill_Results, #[offset(176)]#[rename(name="m_Signal")]pub m_signal:crate::app::unitsignal::UnitSignal,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Action.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceCommandSkill_Action{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceCommandSkill_Action{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceCommandSkill.Action";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceCommandSkill_Action{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceCommandSkill_Action{pub fn none()->Self{Self{value:0}
+}
+pub fn charge()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapSequenceCommandSkill_Action  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceCommandSkill.Action";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceCommandSkill_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceCommandSkill_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceCommandSkill.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for MapSequenceCommandSkill_Action  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MapSequenceCommandSkill_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  MapSequenceCommandSkill_Action  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn charge() -> Self {
-        Self { value: 1 }
-
-    }
-
+impl MapSequenceCommandSkill_Label{pub fn none()->Self{Self{value:0}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceCommandSkill_Label  {
-    pub value: i32,
+pub fn impact()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for MapSequenceCommandSkill_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceCommandSkill.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSequenceCommandSkill_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceCommandSkill_Label  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn impact() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecommandskill/MapSequenceCommandSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceCommandSkill")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill >)] pub struct MapSequenceCommandSkill {
-# [offset (116)] # [rename (name = "m_Action")] pub m_action : crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action ,
-# [offset (120)] # [rename (name = "m_Results")] pub m_results : crate :: app :: mapskill :: MapSkill_Results ,
-# [offset (176)] # [rename (name = "m_Signal")] pub m_signal : crate :: app :: unitsignal :: UnitSignal ,
 }
 
 }
@@ -126,31 +56,86 @@ impl  MapSequenceCommandSkill_Label  {
 #[cfg(feature = "app-mapsequencecommandskill-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencecommandskill")]
-impl MapSequenceCommandSkill { # [doc = "`Commit(crate::app::mapskill::MapSkill_Results)` overload"] pub fn commit_2 (results : impl :: core :: convert :: Into < crate :: app :: mapskill :: MapSkill_Results >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: mapskill :: MapSkill_Results , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c5f70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (results) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveForceSkill(crate::app::force::Force_Type, crate::app::skilldata::SkillData)` overload"] pub fn remove_force_skill (force : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c64e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (force) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`AddGiveSkills(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"] pub fn add_give_skills (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c6280usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , current : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , reverse : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , action : impl :: core :: convert :: Into < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: skilldata :: SkillData , crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c68a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"] pub fn create_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , results : impl :: core :: convert :: Into < crate :: app :: mapskill :: MapSkill_Results > , action : impl :: core :: convert :: Into < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: mapskill :: MapSkill_Results , crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23bbd90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (results) , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencecommandskill")]impl MapSequenceCommandSkill{#[doc="`Commit(crate::app::mapskill::MapSkill_Results)` overload"]pub fn commit_2(results:impl::core::convert::Into<crate::app::mapskill::MapSkill_Results>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23c5f70usize)as*mut u8,();
+(crate::app::mapskill::MapSkill_Results)::core::convert::Into::into(results))}
+}
+#[doc="`RemoveForceSkill(crate::app::force::Force_Type, crate::app::skilldata::SkillData)` overload"]pub fn remove_force_skill(force:impl::core::convert::Into<crate::app::force::Force_Type> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23c64e0usize)as*mut u8,();
+(crate::app::force::Force_Type)::core::convert::Into::into(force),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`AddGiveSkills(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]pub fn add_give_skills(unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23c6280usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,current:impl::core::convert::Into<crate::app::unit::Unit> ,reverse:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,action:impl::core::convert::Into<crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23c68a0usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(current),(crate::app::unit::Unit)::core::convert::Into::into(reverse),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)::core::convert::Into::into(action))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,results:impl::core::convert::Into<crate::app::mapskill::MapSkill_Results> ,action:impl::core::convert::Into<crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23bbd90usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapskill::MapSkill_Results)::core::convert::Into::into(results),(crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)::core::convert::Into::into(action))}
+}
+}
 
-#[cfg(feature = "app-mapsequencecommandskill")]
-pub trait IMapSequenceCommandSkillMethods : IMapSequenceCommandSkill { # [doc = "`.ctor(*mutcrate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"] fn ctor (self , action : impl :: core :: convert :: Into < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action >) -> crate :: app :: mapskill :: MapSkill_Results { unsafe { let __receiver = < MapSequenceCommandSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: mapskill :: MapSkill_Results > :: uninit () ; { let __inner : extern "C" fn (MapSequenceCommandSkill , * mut crate :: app :: mapskill :: MapSkill_Results , crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c5a30usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapSequenceCommandSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceCommandSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c5af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitSkip(crate::app::unitsignal::UnitSignal)` overload"] fn wait_skip (self , signal : impl :: core :: convert :: Into < crate :: app :: unitsignal :: UnitSignal >) -> () { unsafe { let __receiver = < MapSequenceCommandSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceCommandSkill , crate :: app :: unitsignal :: UnitSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c5bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (signal) , :: core :: option :: Option :: None) } } } # [doc = "`BeginSignal()` overload"] fn begin_signal (self ,) -> () { unsafe { let __receiver = < MapSequenceCommandSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceCommandSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c5bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSignal()` overload"] fn end_signal (self ,) -> () { unsafe { let __receiver = < MapSequenceCommandSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceCommandSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c5ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Impact()` overload"] fn impact (self ,) -> () { unsafe { let __receiver = < MapSequenceCommandSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceCommandSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c5d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < MapSequenceCommandSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceCommandSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c5f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencecommandskill")]pub trait IMapSequenceCommandSkillMethods:IMapSequenceCommandSkill{#[doc="`.ctor(*mutcrate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action>)->crate::app::mapskill::MapSkill_Results{unsafe{let __receiver= <MapSequenceCommandSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::mapskill::MapSkill_Results> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c5a30usize)as*mut u8,();
+(MapSequenceCommandSkill)__receiver,(*mut crate::app::mapskill::MapSkill_Results)__out_0.as_mut_ptr(),(crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)::core::convert::Into::into(action));
+__out_0.assume_init()}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapSequenceCommandSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c5af0usize)as*mut u8,();
+(MapSequenceCommandSkill)__receiver)}
+}
+#[doc="`WaitSkip(crate::app::unitsignal::UnitSignal)` overload"]fn wait_skip(self,signal:impl::core::convert::Into<crate::app::unitsignal::UnitSignal>)->(){unsafe{let __receiver= <MapSequenceCommandSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c5bb0usize)as*mut u8,();
+(MapSequenceCommandSkill)__receiver,(crate::app::unitsignal::UnitSignal)::core::convert::Into::into(signal))}
+}
+#[doc="`BeginSignal()` overload"]fn begin_signal(self,)->(){unsafe{let __receiver= <MapSequenceCommandSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c5bc0usize)as*mut u8,();
+(MapSequenceCommandSkill)__receiver)}
+}
+#[doc="`EndSignal()` overload"]fn end_signal(self,)->(){unsafe{let __receiver= <MapSequenceCommandSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c5ce0usize)as*mut u8,();
+(MapSequenceCommandSkill)__receiver)}
+}
+#[doc="`Impact()` overload"]fn impact(self,)->(){unsafe{let __receiver= <MapSequenceCommandSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c5d90usize)as*mut u8,();
+(MapSequenceCommandSkill)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <MapSequenceCommandSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c5f30usize)as*mut u8,();
+(MapSequenceCommandSkill)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencecommandskill")]
-impl < __T : IMapSequenceCommandSkill > IMapSequenceCommandSkillMethods for __T { }
+#[cfg(feature="app-mapsequencecommandskill")]impl<__T:IMapSequenceCommandSkill>IMapSequenceCommandSkillMethods for __T{}
 
-#[cfg(feature = "app-mapsequencecommandskill")]
-impl MapSequenceCommandSkill { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn wait_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn begin_signal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn end_signal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn impact_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn commit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn remove_force_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_give_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceCommandSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-mapsequencecommandskill")]impl MapSequenceCommandSkill{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn wait_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn begin_signal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn end_signal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn impact_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn commit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn remove_force_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_give_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-mapsequencecommandskill")]
-impl MapSequenceCommandSkill {
-# [doc = "`.ctor(*mutcrate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` — overload selector"] pub fn new (action : crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceCommandSkill) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceCommandSkillMethods > :: ctor (this , action) ; this }
+#[cfg(feature="app-mapsequencecommandskill")]impl MapSequenceCommandSkill{#[doc="`.ctor(*mutcrate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` — overload selector"]pub fn new(action:crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceCommandSkill), ::core::stringify!(new),));
+ <Self as IMapSequenceCommandSkillMethods> ::ctor(this,action);
+this}
 }
 
 #[cfg(feature = "app-mapsequencecommandskill")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceCommandSkill_Action;
-    pub use super::MapSequenceCommandSkill_Label;
     pub use super::MapSequenceCommandSkill;
     pub use super::IMapSequenceCommandSkill;
     pub use super::IMapSequenceCommandSkillMethods;
+    pub use super::MapSequenceCommandSkill_Action;
+    pub use super::MapSequenceCommandSkill_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

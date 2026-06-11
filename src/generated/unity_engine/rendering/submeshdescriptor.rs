@@ -4,42 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/submeshdescriptor/SubMeshDescriptor.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SubMeshDescriptor {}
-
-
-impl ::unity2::ClassIdentity for SubMeshDescriptor {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "SubMeshDescriptor";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/submeshdescriptor/SubMeshDescriptor.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SubMeshDescriptor{}
+impl::unity2::ClassIdentity for SubMeshDescriptor{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="SubMeshDescriptor";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for SubMeshDescriptor {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SubMeshDescriptor{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -47,11 +26,41 @@ impl ::unity2::IlType for SubMeshDescriptor {
 #[cfg(feature = "unity_engine-rendering-submeshdescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-submeshdescriptor")]
-impl SubMeshDescriptor { # [doc = "`get_bounds()` overload"] pub fn get_bounds (& mut self ,) -> crate :: unity_engine :: bounds :: Bounds { unsafe { { let __inner : extern "C" fn (* mut SubMeshDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9a9a0usize) as * mut u8) ; __inner (self as * mut SubMeshDescriptor , :: core :: option :: Option :: None) } } } # [doc = "`get_topology()` overload"] pub fn get_topology (& mut self ,) -> crate :: unity_engine :: meshtopology :: MeshTopology { unsafe { { let __inner : extern "C" fn (* mut SubMeshDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: meshtopology :: MeshTopology = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9a9c0usize) as * mut u8) ; __inner (self as * mut SubMeshDescriptor , :: core :: option :: Option :: None) } } } # [doc = "`get_indexStart()` overload"] pub fn get_index_start (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SubMeshDescriptor , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9a9d0usize) as * mut u8) ; __inner (self as * mut SubMeshDescriptor , :: core :: option :: Option :: None) } } } # [doc = "`get_indexCount()` overload"] pub fn get_index_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SubMeshDescriptor , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9a9e0usize) as * mut u8) ; __inner (self as * mut SubMeshDescriptor , :: core :: option :: Option :: None) } } } # [doc = "`get_baseVertex()` overload"] pub fn get_base_vertex (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SubMeshDescriptor , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9a9f0usize) as * mut u8) ; __inner (self as * mut SubMeshDescriptor , :: core :: option :: Option :: None) } } } # [doc = "`get_firstVertex()` overload"] pub fn get_first_vertex (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SubMeshDescriptor , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aa00usize) as * mut u8) ; __inner (self as * mut SubMeshDescriptor , :: core :: option :: Option :: None) } } } # [doc = "`get_vertexCount()` overload"] pub fn get_vertex_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SubMeshDescriptor , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aa10usize) as * mut u8) ; __inner (self as * mut SubMeshDescriptor , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut SubMeshDescriptor , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aa20usize) as * mut u8) ; __inner (self as * mut SubMeshDescriptor , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-submeshdescriptor")]impl SubMeshDescriptor{#[doc="`get_bounds()` overload"]pub fn get_bounds(&mut self,)->crate::unity_engine::bounds::Bounds{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9a9a0usize)as*mut u8,crate::unity_engine::bounds::Bounds;
+(*mut SubMeshDescriptor)self as*mut SubMeshDescriptor)}
+}
+#[doc="`get_topology()` overload"]pub fn get_topology(&mut self,)->crate::unity_engine::meshtopology::MeshTopology{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9a9c0usize)as*mut u8,crate::unity_engine::meshtopology::MeshTopology;
+(*mut SubMeshDescriptor)self as*mut SubMeshDescriptor)}
+}
+#[doc="`get_indexStart()` overload"]pub fn get_index_start(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9a9d0usize)as*mut u8,i32;
+(*mut SubMeshDescriptor)self as*mut SubMeshDescriptor)}
+}
+#[doc="`get_indexCount()` overload"]pub fn get_index_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9a9e0usize)as*mut u8,i32;
+(*mut SubMeshDescriptor)self as*mut SubMeshDescriptor)}
+}
+#[doc="`get_baseVertex()` overload"]pub fn get_base_vertex(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9a9f0usize)as*mut u8,i32;
+(*mut SubMeshDescriptor)self as*mut SubMeshDescriptor)}
+}
+#[doc="`get_firstVertex()` overload"]pub fn get_first_vertex(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aa00usize)as*mut u8,i32;
+(*mut SubMeshDescriptor)self as*mut SubMeshDescriptor)}
+}
+#[doc="`get_vertexCount()` overload"]pub fn get_vertex_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aa10usize)as*mut u8,i32;
+(*mut SubMeshDescriptor)self as*mut SubMeshDescriptor)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aa20usize)as*mut u8, ::unity2::Il2CppString;
+(*mut SubMeshDescriptor)self as*mut SubMeshDescriptor)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-submeshdescriptor")]
-impl SubMeshDescriptor { pub fn get_bounds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubMeshDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_topology_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubMeshDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_index_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubMeshDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_index_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubMeshDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_base_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubMeshDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_first_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubMeshDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_vertex_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubMeshDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubMeshDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-rendering-submeshdescriptor")]impl SubMeshDescriptor{pub fn get_bounds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_topology_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_index_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_index_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_base_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_first_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_vertex_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-rendering-submeshdescriptor")]
 #[doc(hidden)]

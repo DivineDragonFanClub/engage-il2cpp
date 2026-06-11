@@ -4,73 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenuitemcontent/TroopListMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct TroopListMenuItemContent {
-# [offset (72)] # [rename (name = "m_name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_face")] pub m_face : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_faceBase")] pub m_face_base : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (96)] # [rename (name = "m_statusBase")] pub m_status_base : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (104)] # [rename (name = "m_faceFrame")] pub m_face_frame : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (112)] # [rename (name = "m_statusFrame")] pub m_status_frame : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (120)] # [rename (name = "m_symbolIcon")] pub m_symbol_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_checkIcon")] pub m_check_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_relayOthersIcon")] pub m_relay_others_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (144)] # [rename (name = "m_job")] pub m_job : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (152)] # [rename (name = "m_level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (160)] # [rename (name = "m_exp")] pub m_exp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (168)] # [rename (name = "m_expSlash")] pub m_exp_slash : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (176)] # [rename (name = "m_expMax")] pub m_exp_max : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (184)] # [rename (name = "m_hp")] pub m_hp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (192)] # [rename (name = "m_hpSlash")] pub m_hp_slash : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (200)] # [rename (name = "m_hpMax")] pub m_hp_max : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (208)] # [rename (name = "m_phys")] pub m_phys : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (216)] # [rename (name = "m_str")] pub m_str : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (224)] # [rename (name = "m_magic")] pub m_magic : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (232)] # [rename (name = "m_tech")] pub m_tech : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_quick")] pub m_quick : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_luck")] pub m_luck : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (256)] # [rename (name = "m_def")] pub m_def : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (264)] # [rename (name = "m_mdef")] pub m_mdef : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_atk")] pub m_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (280)] # [rename (name = "m_hit")] pub m_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (288)] # [rename (name = "m_crit")] pub m_crit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (296)] # [rename (name = "m_avoid")] pub m_avoid : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (304)] # [rename (name = "m_critAvoid")] pub m_crit_avoid : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (312)] # [rename (name = "m_move")] pub m_move : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (320)] # [rename (name = "m_pageRoot")] pub m_page_root : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistmenuitemcontent/TroopListMenuItemContent.md"))]#[::unity2::class(namespace="App",name="TroopListMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct TroopListMenuItemContent{#[offset(72)]#[rename(name="m_name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_face")]pub m_face:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_faceBase")]pub m_face_base:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_statusBase")]pub m_status_base:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_faceFrame")]pub m_face_frame:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_statusFrame")]pub m_status_frame:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_symbolIcon")]pub m_symbol_icon:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_checkIcon")]pub m_check_icon:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_relayOthersIcon")]pub m_relay_others_icon:crate::unity_engine::gameobject::GameObject, #[offset(144)]#[rename(name="m_job")]pub m_job:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(152)]#[rename(name="m_level")]pub m_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_exp")]pub m_exp:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(168)]#[rename(name="m_expSlash")]pub m_exp_slash:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(176)]#[rename(name="m_expMax")]pub m_exp_max:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_hp")]pub m_hp:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_hpSlash")]pub m_hp_slash:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(200)]#[rename(name="m_hpMax")]pub m_hp_max:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_phys")]pub m_phys:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_str")]pub m_str:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(224)]#[rename(name="m_magic")]pub m_magic:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(232)]#[rename(name="m_tech")]pub m_tech:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_quick")]pub m_quick:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_luck")]pub m_luck:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_def")]pub m_def:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_mdef")]pub m_mdef:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_atk")]pub m_atk:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_hit")]pub m_hit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_crit")]pub m_crit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_avoid")]pub m_avoid:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_critAvoid")]pub m_crit_avoid:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(312)]#[rename(name="m_move")]pub m_move:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(320)]#[rename(name="m_pageRoot")]pub m_page_root: ::unity2::Array<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-trooplistmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-trooplistmenuitemcontent")]
-pub trait ITroopListMenuItemContentMethods : ITroopListMenuItemContent { # [doc = "`GetMenuItemUnit()` overload"] fn get_menu_item_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a9100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemTmpUnit()` overload"] fn get_menu_item_tmp_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a9180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a9200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ab080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSortieStatus()` overload"] fn update_sortie_status (self ,) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22aada0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCheckMark()` overload"] fn set_check_mark (self ,) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ab950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPage(i32)` overload"] fn set_page (self , page : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenuItemContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22aaf50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (page) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TroopListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22aba90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-trooplistmenuitemcontent")]pub trait ITroopListMenuItemContentMethods:ITroopListMenuItemContent{#[doc="`GetMenuItemUnit()` overload"]fn get_menu_item_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a9100usize)as*mut u8,crate::app::unit::Unit;
+(TroopListMenuItemContent)__receiver)}
+}
+#[doc="`GetMenuItemTmpUnit()` overload"]fn get_menu_item_tmp_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a9180usize)as*mut u8,crate::app::unit::Unit;
+(TroopListMenuItemContent)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a9200usize)as*mut u8,();
+(TroopListMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ab080usize)as*mut u8,();
+(TroopListMenuItemContent)__receiver)}
+}
+#[doc="`UpdateSortieStatus()` overload"]fn update_sortie_status(self,)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22aada0usize)as*mut u8,();
+(TroopListMenuItemContent)__receiver)}
+}
+#[doc="`SetCheckMark()` overload"]fn set_check_mark(self,)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ab950usize)as*mut u8,();
+(TroopListMenuItemContent)__receiver)}
+}
+#[doc="`SetPage(i32)` overload"]fn set_page(self,page:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22aaf50usize)as*mut u8,();
+(TroopListMenuItemContent)__receiver,(i32)::core::convert::Into::into(page))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22aba90usize)as*mut u8,();
+(TroopListMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-trooplistmenuitemcontent")]
-impl < __T : ITroopListMenuItemContent > ITroopListMenuItemContentMethods for __T { }
+#[cfg(feature="app-trooplistmenuitemcontent")]impl<__T:ITroopListMenuItemContent>ITroopListMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-trooplistmenuitemcontent")]
-impl TroopListMenuItemContent { pub fn get_menu_item_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_menu_item_tmp_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_sortie_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_check_mark_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-trooplistmenuitemcontent")]impl TroopListMenuItemContent{pub fn get_menu_item_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_menu_item_tmp_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_sortie_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_check_mark_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-trooplistmenuitemcontent")]
-impl TroopListMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TroopListMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as ITroopListMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-trooplistmenuitemcontent")]impl TroopListMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TroopListMenuItemContent), ::core::stringify!(new),));
+ <Self as ITroopListMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-trooplistmenuitemcontent")]

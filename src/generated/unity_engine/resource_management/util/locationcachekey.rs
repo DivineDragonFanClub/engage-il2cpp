@@ -4,36 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/locationcachekey/LocationCacheKey.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "LocationCacheKey")] # [parent (crate :: system :: object :: Object)] pub struct LocationCacheKey {
-# [offset (16)] # [rename (name = "m_Location")] pub m_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ,
-# [offset (24)] # [rename (name = "m_DesiredType")] pub m_desired_type : :: unity2 :: SystemType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/locationcachekey/LocationCacheKey.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="LocationCacheKey")]#[parent(crate::system::object::Object)]pub struct LocationCacheKey{#[offset(16)]#[rename(name="m_Location")]pub m_location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, #[offset(24)]#[rename(name="m_DesiredType")]pub m_desired_type: ::unity2::SystemType,}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-locationcachekey-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-util-locationcachekey")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LocationCacheKey_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LocationCacheKey as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LocationCacheKey as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LocationCacheKey as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LocationCacheKey as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LocationCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LocationCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LocationCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LocationCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: locationcachekey :: LocationCacheKey as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LocationCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LocationCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-util-locationcachekey")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LocationCacheKey_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type(), < ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_hash_code{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),"GetHashCode",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"GetHashCode",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals_3{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::util::locationcachekey::LocationCacheKey as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-locationcachekey")]
-pub trait ILocationCacheKeyMethods : ILocationCacheKey { # [doc = "`.ctor(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::SystemType)` overload"] fn ctor (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , desired_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < LocationCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LocationCacheKey , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LocationCacheKey_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (location) , :: core :: convert :: Into :: into (desired_type) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < LocationCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LocationCacheKey , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__LocationCacheKey_unity2_raw :: __lookup_get_hash_code :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < LocationCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LocationCacheKey , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__LocationCacheKey_unity2_raw :: __lookup_equals :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"] fn equals_2 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey >) -> bool { unsafe { let __receiver = < LocationCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LocationCacheKey , crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__LocationCacheKey_unity2_raw :: __lookup_equals_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::resource_management::util::locationcachekey::LocationCacheKey)` overload"] fn equals_3 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: util :: locationcachekey :: LocationCacheKey >) -> bool { unsafe { let __receiver = < LocationCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LocationCacheKey , crate :: unity_engine :: resource_management :: util :: locationcachekey :: LocationCacheKey , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__LocationCacheKey_unity2_raw :: __lookup_equals_3 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-util-locationcachekey")]pub trait ILocationCacheKeyMethods:ILocationCacheKey{#[doc="`.ctor(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::SystemType)` overload"]fn ctor(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,desired_type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(LocationCacheKey)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(::unity2::SystemType)::core::convert::Into::into(desired_type))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_get_hash_code::get_method_info().method_ptr,i32;
+(LocationCacheKey)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_equals::get_method_info().method_ptr,bool;
+(LocationCacheKey)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]fn equals_2(self,other:impl::core::convert::Into<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey>)->bool{unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_equals_2::get_method_info().method_ptr,bool;
+(LocationCacheKey)__receiver,(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::resource_management::util::locationcachekey::LocationCacheKey)` overload"]fn equals_3(self,other:impl::core::convert::Into<crate::unity_engine::resource_management::util::locationcachekey::LocationCacheKey>)->bool{unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_equals_3::get_method_info().method_ptr,bool;
+(LocationCacheKey)__receiver,(crate::unity_engine::resource_management::util::locationcachekey::LocationCacheKey)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-locationcachekey")]
-impl < __T : ILocationCacheKey > ILocationCacheKeyMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-util-locationcachekey")]impl<__T:ILocationCacheKey>ILocationCacheKeyMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-util-locationcachekey")]
-impl LocationCacheKey { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocationCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocationCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocationCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocationCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocationCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-resource_management-util-locationcachekey")]impl LocationCacheKey{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-locationcachekey")]
-impl LocationCacheKey {
-# [doc = "`.ctor(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::SystemType)` — overload selector"] pub fn new (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , desired_type : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LocationCacheKey) , :: core :: stringify ! (new) ,)) ; < Self as ILocationCacheKeyMethods > :: ctor (this , location , desired_type) ; this }
+#[cfg(feature="unity_engine-resource_management-util-locationcachekey")]impl LocationCacheKey{#[doc="`.ctor(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::SystemType)` — overload selector"]pub fn new(location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,desired_type: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LocationCacheKey), ::core::stringify!(new),));
+ <Self as ILocationCacheKeyMethods> ::ctor(this,location,desired_type);
+this}
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-locationcachekey")]

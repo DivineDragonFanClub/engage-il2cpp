@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/bitarray16/BitArray16.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BitArray16 {
-    pub data: u16,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/bitarray16/BitArray16.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BitArray16{pub data:u16,}
+impl::unity2::ClassIdentity for BitArray16{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="BitArray16";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for BitArray16 {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "BitArray16";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for BitArray16 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for BitArray16{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,83 @@ impl ::unity2::IlType for BitArray16 {
 #[cfg(feature = "unity_engine-rendering-bitarray16-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-bitarray16")]
-impl BitArray16 { # [doc = "`op_OnesComplement(crate::unity_engine::rendering::bitarray16::BitArray16)` overload"] pub fn op_ones_complement (a : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 >) -> crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b7c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`op_BitwiseOr(crate::unity_engine::rendering::bitarray16::BitArray16, crate::unity_engine::rendering::bitarray16::BitArray16)` overload"] pub fn op_bitwise_or (a : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 >) -> crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b7d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_BitwiseAnd(crate::unity_engine::rendering::bitarray16::BitArray16, crate::unity_engine::rendering::bitarray16::BitArray16)` overload"] pub fn op_bitwise_and (a : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 >) -> crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b7e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::unity_engine::rendering::bitarray16::BitArray16, crate::unity_engine::rendering::bitarray16::BitArray16)` overload"] pub fn op_equality (a : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b9a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::rendering::bitarray16::BitArray16, crate::unity_engine::rendering::bitarray16::BitArray16)` overload"] pub fn op_inequality (a : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , crate :: unity_engine :: rendering :: bitarray16 :: BitArray16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b9b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-bitarray16")]impl BitArray16{#[doc="`op_OnesComplement(crate::unity_engine::rendering::bitarray16::BitArray16)` overload"]pub fn op_ones_complement(a:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16>)->crate::unity_engine::rendering::bitarray16::BitArray16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b7c0usize)as*mut u8,crate::unity_engine::rendering::bitarray16::BitArray16;
+(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(a))}
+}
+#[doc="`op_BitwiseOr(crate::unity_engine::rendering::bitarray16::BitArray16, crate::unity_engine::rendering::bitarray16::BitArray16)` overload"]pub fn op_bitwise_or(a:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16> ,b:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16>)->crate::unity_engine::rendering::bitarray16::BitArray16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b7d0usize)as*mut u8,crate::unity_engine::rendering::bitarray16::BitArray16;
+(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(a),(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(b))}
+}
+#[doc="`op_BitwiseAnd(crate::unity_engine::rendering::bitarray16::BitArray16, crate::unity_engine::rendering::bitarray16::BitArray16)` overload"]pub fn op_bitwise_and(a:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16> ,b:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16>)->crate::unity_engine::rendering::bitarray16::BitArray16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b7e0usize)as*mut u8,crate::unity_engine::rendering::bitarray16::BitArray16;
+(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(a),(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(b))}
+}
+#[doc="`op_Equality(crate::unity_engine::rendering::bitarray16::BitArray16, crate::unity_engine::rendering::bitarray16::BitArray16)` overload"]pub fn op_equality(a:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16> ,b:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b9a0usize)as*mut u8,bool;
+(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(a),(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(b))}
+}
+#[doc="`op_Inequality(crate::unity_engine::rendering::bitarray16::BitArray16, crate::unity_engine::rendering::bitarray16::BitArray16)` overload"]pub fn op_inequality(a:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16> ,b:impl::core::convert::Into<crate::unity_engine::rendering::bitarray16::BitArray16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b9b0usize)as*mut u8,bool;
+(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(a),(crate::unity_engine::rendering::bitarray16::BitArray16)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-bitarray16")]
-impl BitArray16 { # [doc = "`get_capacity()` overload"] pub fn get_capacity (& mut self ,) -> u32 { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b470usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: option :: Option :: None) } } } # [doc = "`get_allFalse()` overload"] pub fn get_all_false (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b480usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: option :: Option :: None) } } } # [doc = "`get_allTrue()` overload"] pub fn get_all_true (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b490usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: option :: Option :: None) } } } # [doc = "`get_humanizedData()` overload"] pub fn get_humanized_data (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b4a0usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(u32)` overload"] pub fn get_item (& mut self , index : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b660usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(u32, bool)` overload"] pub fn set_item (& mut self , index : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , u32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b680usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u16)` overload"] pub fn ctor (& mut self , init_value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b6e0usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: convert :: Into :: into (init_value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32>)` overload"] pub fn ctor_2 (& mut self , bit_index_true : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < u32 > >) -> () { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < u32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b6f0usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: convert :: Into :: into (bit_index_true) , :: core :: option :: Option :: None) } } } # [doc = "`BitAnd(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"] pub fn bit_and (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ibitarray :: IBitArray >) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , crate :: unity_engine :: rendering :: ibitarray :: IBitArray , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b7f0usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`BitOr(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"] pub fn bit_or (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ibitarray :: IBitArray >) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , crate :: unity_engine :: rendering :: ibitarray :: IBitArray , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b890usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`BitNot()` overload"] pub fn bit_not (& mut self ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b930usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b9c0usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut BitArray16 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352ba50usize) as * mut u8) ; __inner (self as * mut BitArray16 , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-bitarray16")]impl BitArray16{#[doc="`get_capacity()` overload"]pub fn get_capacity(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b470usize)as*mut u8,u32;
+(*mut BitArray16)self as*mut BitArray16)}
+}
+#[doc="`get_allFalse()` overload"]pub fn get_all_false(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b480usize)as*mut u8,bool;
+(*mut BitArray16)self as*mut BitArray16)}
+}
+#[doc="`get_allTrue()` overload"]pub fn get_all_true(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b490usize)as*mut u8,bool;
+(*mut BitArray16)self as*mut BitArray16)}
+}
+#[doc="`get_humanizedData()` overload"]pub fn get_humanized_data(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b4a0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut BitArray16)self as*mut BitArray16)}
+}
+#[doc="`get_Item(u32)` overload"]pub fn get_item(&mut self,index:impl::core::convert::Into<u32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b660usize)as*mut u8,bool;
+(*mut BitArray16)self as*mut BitArray16,(u32)::core::convert::Into::into(index))}
+}
+#[doc="`set_Item(u32, bool)` overload"]pub fn set_item(&mut self,index:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b680usize)as*mut u8,();
+(*mut BitArray16)self as*mut BitArray16,(u32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(u16)` overload"]pub fn ctor(&mut self,init_value:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b6e0usize)as*mut u8,();
+(*mut BitArray16)self as*mut BitArray16,(u16)::core::convert::Into::into(init_value))}
+}
+#[doc="`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32>)` overload"]pub fn ctor_2(&mut self,bit_index_true:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b6f0usize)as*mut u8,();
+(*mut BitArray16)self as*mut BitArray16,(crate::system::collections::generic::ienumerable_1::IEnumerable_1<u32>)::core::convert::Into::into(bit_index_true))}
+}
+#[doc="`BitAnd(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"]pub fn bit_and(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::ibitarray::IBitArray>)->crate::unity_engine::rendering::ibitarray::IBitArray{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b7f0usize)as*mut u8,crate::unity_engine::rendering::ibitarray::IBitArray;
+(*mut BitArray16)self as*mut BitArray16,(crate::unity_engine::rendering::ibitarray::IBitArray)::core::convert::Into::into(other))}
+}
+#[doc="`BitOr(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"]pub fn bit_or(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::ibitarray::IBitArray>)->crate::unity_engine::rendering::ibitarray::IBitArray{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b890usize)as*mut u8,crate::unity_engine::rendering::ibitarray::IBitArray;
+(*mut BitArray16)self as*mut BitArray16,(crate::unity_engine::rendering::ibitarray::IBitArray)::core::convert::Into::into(other))}
+}
+#[doc="`BitNot()` overload"]pub fn bit_not(&mut self,)->crate::unity_engine::rendering::ibitarray::IBitArray{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b930usize)as*mut u8,crate::unity_engine::rendering::ibitarray::IBitArray;
+(*mut BitArray16)self as*mut BitArray16)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b9c0usize)as*mut u8,bool;
+(*mut BitArray16)self as*mut BitArray16,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352ba50usize)as*mut u8,i32;
+(*mut BitArray16)self as*mut BitArray16)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-bitarray16")]
-impl BitArray16 { pub fn get_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_all_false_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_all_true_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_humanized_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn op_ones_complement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn op_bitwise_or_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn op_bitwise_and_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn bit_and_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn bit_or_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn bit_not_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray16 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="unity_engine-rendering-bitarray16")]impl BitArray16{pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_all_false_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_all_true_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_humanized_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn op_ones_complement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn op_bitwise_or_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn op_bitwise_and_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn bit_and_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn bit_or_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn bit_not_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
 #[cfg(feature = "unity_engine-rendering-bitarray16")]
 #[doc(hidden)]

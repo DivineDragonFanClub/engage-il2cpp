@@ -4,35 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scene_management/scenemanagerapi/SceneManagerAPI.md"))] # [:: unity2 :: class (namespace = "UnityEngine.SceneManagement" , name = "SceneManagerAPI")] # [parent (crate :: system :: object :: Object)] pub struct SceneManagerAPI {
-# [static_field] # [rename (name = "s_DefaultAPI")] pub s_default_api : crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scene_management/scenemanagerapi/SceneManagerAPI.md"))]#[::unity2::class(namespace="UnityEngine.SceneManagement",name="SceneManagerAPI")]#[parent(crate::system::object::Object)]pub struct SceneManagerAPI{#[static_field]#[rename(name="s_DefaultAPI")]pub s_default_api:crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI,}
 
 }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-impl SceneManagerAPI { # [doc = "`get_ActiveAPI()` overload"] pub fn get_active_api () -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8a9f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_overrideAPI()` overload"] pub fn get_override_api () -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scene_management :: scenemanagerapi :: SceneManagerAPI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b6d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b840usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scene_management-scenemanagerapi")]impl SceneManagerAPI{#[doc="`get_ActiveAPI()` overload"]pub fn get_active_api()->crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8a9f0usize)as*mut u8,crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI;
+)}
+}
+#[doc="`get_overrideAPI()` overload"]pub fn get_override_api()->crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b6d0usize)as*mut u8,crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b840usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-pub trait ISceneManagerAPIMethods : ISceneManagerAPI { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SceneManagerAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SceneManagerAPI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadSceneAsyncByNameOrIndex(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"] fn load_scene_async_by_name_or_index (self , scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , scene_build_index : impl :: core :: convert :: Into < i32 > , parameters : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters > , must_complete_next_frame : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { unsafe { let __receiver = < SceneManagerAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SceneManagerAPI , :: unity2 :: Il2CppString , i32 , crate :: unity_engine :: scene_management :: loadsceneparameters :: LoadSceneParameters , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (scene_build_index) , :: core :: convert :: Into :: into (parameters) , :: core :: convert :: Into :: into (must_complete_next_frame) , :: core :: option :: Option :: None) } } } # [doc = "`LoadFirstScene(bool)` overload"] fn load_first_scene (self , must_load_async : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: asyncoperation :: AsyncOperation { unsafe { let __receiver = < SceneManagerAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SceneManagerAPI , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (must_load_async) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scene_management-scenemanagerapi")]pub trait ISceneManagerAPIMethods:ISceneManagerAPI{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SceneManagerAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b740usize)as*mut u8,();
+(SceneManagerAPI)__receiver)}
+}
+#[doc="`LoadSceneAsyncByNameOrIndex(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]fn load_scene_async_by_name_or_index(self,scene_name:impl::core::convert::Into< ::unity2::Il2CppString> ,scene_build_index:impl::core::convert::Into<i32> ,parameters:impl::core::convert::Into<crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters> ,must_complete_next_frame:impl::core::convert::Into<bool>)->crate::unity_engine::asyncoperation::AsyncOperation{unsafe{let __receiver= <SceneManagerAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b750usize)as*mut u8,crate::unity_engine::asyncoperation::AsyncOperation;
+(SceneManagerAPI)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(scene_name),(i32)::core::convert::Into::into(scene_build_index),(crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters)::core::convert::Into::into(parameters),(bool)::core::convert::Into::into(must_complete_next_frame))}
+}
+#[doc="`LoadFirstScene(bool)` overload"]fn load_first_scene(self,must_load_async:impl::core::convert::Into<bool>)->crate::unity_engine::asyncoperation::AsyncOperation{unsafe{let __receiver= <SceneManagerAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b830usize)as*mut u8,crate::unity_engine::asyncoperation::AsyncOperation;
+(SceneManagerAPI)__receiver,(bool)::core::convert::Into::into(must_load_async))}
+}
+}
 
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-impl < __T : ISceneManagerAPI > ISceneManagerAPIMethods for __T { }
+#[cfg(feature="unity_engine-scene_management-scenemanagerapi")]impl<__T:ISceneManagerAPI>ISceneManagerAPIMethods for __T{}
 
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-impl SceneManagerAPI { pub fn get_active_api_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_override_api_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_scene_async_by_name_or_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_first_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneManagerAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-scene_management-scenemanagerapi")]impl SceneManagerAPI{pub fn get_active_api_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_override_api_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_scene_async_by_name_or_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_first_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]
-impl SceneManagerAPI {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SceneManagerAPI) , :: core :: stringify ! (new) ,)) ; < Self as ISceneManagerAPIMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-scene_management-scenemanagerapi")]impl SceneManagerAPI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SceneManagerAPI), ::core::stringify!(new),));
+ <Self as ISceneManagerAPIMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi")]

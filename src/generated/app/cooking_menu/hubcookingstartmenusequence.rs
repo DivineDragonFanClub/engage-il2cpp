@@ -4,152 +4,188 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "HubCookingStartMenuSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubCookingStartMenuSequence {
-# [offset (112)] # [rename (name = "m_DecideCallback")] pub m_decide_callback : crate :: app :: cooking_menu :: hubcookingstartmenusequence :: HubCookingStartMenuSequence_DecideEventHandler ,
-# [offset (120)] # [rename (name = "m_EndCallback")] pub m_end_callback : crate :: system :: action :: Action ,
-# [offset (128)] # [rename (name = "m_SelectUnitList")] pub m_select_unit_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (136)] # [rename (name = "m_SelectFood")] pub m_select_food : crate :: app :: fooddata :: FoodData ,
-# [offset (144)] # [rename (name = "m_SelectFoodstuffList")] pub m_select_foodstuff_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: foodstuffdata :: FoodstuffData > ,
-# [offset (152)] # [rename (name = "m_AllContent")] pub m_all_content : crate :: app :: cooking_menu :: dishallmenucontent :: DishAllMenuContent ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubCookingStartMenuSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for HubCookingStartMenuSequence_Label{const NAMESPACE: &'static str="App.CookingMenu";
+const NAME: &'static str="HubCookingStartMenuSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubCookingStartMenuSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubCookingStartMenuSequence_Label{pub fn select_unit()->Self{Self{value:0}
+}
+pub fn select_food()->Self{Self{value:1}
+}
+pub fn select_foodstuff()->Self{Self{value:2}
+}
+pub fn confirm()->Self{Self{value:3}
+}
+pub fn decide()->Self{Self{value:4}
+}
+pub fn end()->Self{Self{value:5}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubCookingStartMenuSequence_Label  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_DecideEventHandler.md"))]#[::unity2::class(namespace="App.CookingMenu",name="HubCookingStartMenuSequence.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct HubCookingStartMenuSequence_DecideEventHandler{}
 
 
-impl  ::unity2::ClassIdentity for HubCookingStartMenuSequence_Label  {
-    const NAMESPACE: &'static str = "App.CookingMenu";
-
-    const NAME: &'static str = "HubCookingStartMenuSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubCookingStartMenuSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubCookingStartMenuSequence_Label  {
-    pub fn select_unit() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn select_food() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn select_foodstuff() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn confirm() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn decide() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "HubCookingStartMenuSequence.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct HubCookingStartMenuSequence_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence.md"))]#[::unity2::class(namespace="App.CookingMenu",name="HubCookingStartMenuSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct HubCookingStartMenuSequence{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, #[offset(120)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::system::action::Action, #[offset(128)]#[rename(name="m_SelectUnitList")]pub m_select_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(136)]#[rename(name="m_SelectFood")]pub m_select_food:crate::app::fooddata::FoodData, #[offset(144)]#[rename(name="m_SelectFoodstuffList")]pub m_select_foodstuff_list:crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> , #[offset(152)]#[rename(name="m_AllContent")]pub m_all_content:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,}
 
 }
 
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-impl HubCookingStartMenuSequence { # [doc = "`LoadResources()` overload"] pub fn load_resources () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d80570usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] pub fn is_loading_resources () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d805b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadResources()` overload"] pub fn unload_resources () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d844b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: hubcookingstartmenusequence :: HubCookingStartMenuSequence_DecideEventHandler > , end_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: cooking_menu :: hubcookingstartmenusequence :: HubCookingStartMenuSequence_DecideEventHandler , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d809e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (end_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetCook()` overload"] pub fn get_cook () -> crate :: app :: cookdata :: CookData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: cookdata :: CookData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86ce0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-pub trait IHubCookingStartMenuSequenceMethods : IHubCookingStartMenuSequence { # [doc = "`.ctor(crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, crate::system::action::Action)` overload"] fn ctor (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: hubcookingstartmenusequence :: HubCookingStartMenuSequence_DecideEventHandler > , end_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , crate :: app :: cooking_menu :: hubcookingstartmenusequence :: HubCookingStartMenuSequence_DecideEventHandler , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (end_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`CreateHistory()` overload"] fn create_history (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d864b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectUnitMenu()` overload"] fn open_select_unit_menu (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d864e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostSelectUnit()` overload"] fn post_select_unit (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d865b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectFoodMenu()` overload"] fn open_select_food_menu (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d866a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostOpenFoodMenu()` overload"] fn post_open_food_menu (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d868e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectFoodstuffMenu()` overload"] fn open_select_foodstuff_menu (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenConfirmDialog()` overload"] fn open_confirm_dialog (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReturnSelectFoodstuff()` overload"] fn return_select_foodstuff (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Decide()` overload"] fn decide (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseAllContent()` overload"] fn close_all_content (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteHistory()` overload"] fn delete_history (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d86cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-impl < __T : IHubCookingStartMenuSequence > IHubCookingStartMenuSequenceMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-impl HubCookingStartMenuSequence { pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_history_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn open_select_unit_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn post_select_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn open_select_food_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn post_open_food_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn open_select_foodstuff_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn open_confirm_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn return_select_foodstuff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn close_all_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn delete_history_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_cook_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
-
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-impl HubCookingStartMenuSequence {
-# [doc = "`.ctor(crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, crate::system::action::Action)` — overload selector"] pub fn new (decide_event_handler : crate :: app :: cooking_menu :: hubcookingstartmenusequence :: HubCookingStartMenuSequence_DecideEventHandler , end_event_handler : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubCookingStartMenuSequence) , :: core :: stringify ! (new) ,)) ; < Self as IHubCookingStartMenuSequenceMethods > :: ctor (this , decide_event_handler , end_event_handler) ; this }
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]pub trait IHubCookingStartMenuSequence_DecideEventHandlerMethods:IHubCookingStartMenuSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <HubCookingStartMenuSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce4d30usize)as*mut u8,();
+(HubCookingStartMenuSequence_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::fooddata::FoodData, crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>, crate::system::action::Action)` overload"]fn invoke(self,units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> > ,food:impl::core::convert::Into<crate::app::fooddata::FoodData> ,foodstuffs:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> > ,add_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <HubCookingStartMenuSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce4d50usize)as*mut u8,();
+(HubCookingStartMenuSequence_DecideEventHandler)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(units),(crate::app::fooddata::FoodData)::core::convert::Into::into(food),(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs),(crate::system::action::Action)::core::convert::Into::into(add_action))}
+}
 }
 
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-pub trait IHubCookingStartMenuSequence_DecideEventHandlerMethods : IHubCookingStartMenuSequence_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce4d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::fooddata::FoodData, crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>, crate::system::action::Action)` overload"] fn invoke (self , units : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > > , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData > , foodstuffs : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: foodstuffdata :: FoodstuffData > > , add_action : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < HubCookingStartMenuSequence_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCookingStartMenuSequence_DecideEventHandler , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , crate :: app :: fooddata :: FoodData , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: foodstuffdata :: FoodstuffData > , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce4d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (units) , :: core :: convert :: Into :: into (food) , :: core :: convert :: Into :: into (foodstuffs) , :: core :: convert :: Into :: into (add_action) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl<__T:IHubCookingStartMenuSequence_DecideEventHandler>IHubCookingStartMenuSequence_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-impl < __T : IHubCookingStartMenuSequence_DecideEventHandler > IHubCookingStartMenuSequence_DecideEventHandlerMethods for __T { }
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-impl HubCookingStartMenuSequence_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCookingStartMenuSequence_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubCookingStartMenuSequence_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IHubCookingStartMenuSequence_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-impl HubCookingStartMenuSequence_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubCookingStartMenuSequence_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IHubCookingStartMenuSequence_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence{#[doc="`LoadResources()` overload"]pub fn load_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d80570usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingResources()` overload"]pub fn is_loading_resources()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d805b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadResources()` overload"]pub fn unload_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d844b0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler> ,end_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d809e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::system::action::Action)::core::convert::Into::into(end_event_handler))}
+}
+#[doc="`GetCook()` overload"]pub fn get_cook()->crate::app::cookdata::CookData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d86ce0usize)as*mut u8,crate::app::cookdata::CookData;
+)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]pub trait IHubCookingStartMenuSequenceMethods:IHubCookingStartMenuSequence{#[doc="`.ctor(crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, crate::system::action::Action)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler> ,end_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d86390usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver,(crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::system::action::Action)::core::convert::Into::into(end_event_handler))}
+}
+#[doc="`CreateHistory()` overload"]fn create_history(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d864b0usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`OpenSelectUnitMenu()` overload"]fn open_select_unit_menu(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d864e0usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`PostSelectUnit()` overload"]fn post_select_unit(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d865b0usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`OpenSelectFoodMenu()` overload"]fn open_select_food_menu(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d866a0usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`PostOpenFoodMenu()` overload"]fn post_open_food_menu(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d868e0usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`OpenSelectFoodstuffMenu()` overload"]fn open_select_foodstuff_menu(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d86960usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`OpenConfirmDialog()` overload"]fn open_confirm_dialog(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d86a60usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`ReturnSelectFoodstuff()` overload"]fn return_select_foodstuff(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d86b00usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`Decide()` overload"]fn decide(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d86b70usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`CloseAllContent()` overload"]fn close_all_content(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d86c40usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`DeleteHistory()` overload"]fn delete_history(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d86c50usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(HubCookingStartMenuSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <HubCookingStartMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d86cd0usize)as*mut u8,();
+(HubCookingStartMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl<__T:IHubCookingStartMenuSequence>IHubCookingStartMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence{pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_history_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn open_select_unit_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn post_select_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn open_select_food_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn post_open_food_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn open_select_foodstuff_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn open_confirm_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn return_select_foodstuff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn close_all_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn delete_history_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_cook_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence{#[doc="`.ctor(crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, crate::system::action::Action)` — overload selector"]pub fn new(decide_event_handler:crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler,end_event_handler:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubCookingStartMenuSequence), ::core::stringify!(new),));
+ <Self as IHubCookingStartMenuSequenceMethods> ::ctor(this,decide_event_handler,end_event_handler);
+this}
 }
 
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubCookingStartMenuSequence;
-    pub use super::IHubCookingStartMenuSequence;
-    pub use super::IHubCookingStartMenuSequenceMethods;
     pub use super::HubCookingStartMenuSequence_Label;
     pub use super::HubCookingStartMenuSequence_DecideEventHandler;
     pub use super::IHubCookingStartMenuSequence_DecideEventHandler;
     pub use super::IHubCookingStartMenuSequence_DecideEventHandlerMethods;
+    pub use super::HubCookingStartMenuSequence;
+    pub use super::IHubCookingStartMenuSequence;
+    pub use super::IHubCookingStartMenuSequenceMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

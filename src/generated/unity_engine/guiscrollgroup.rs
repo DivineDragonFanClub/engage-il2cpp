@@ -4,47 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: guilayoutentry :: { GUILayoutEntry , IGUILayoutEntry }
- ;
- use crate :: unity_engine :: guilayoutgroup :: { GUILayoutGroup , IGUILayoutGroup }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::guilayoutentry::{GUILayoutEntry,IGUILayoutEntry}
+;
+use crate::unity_engine::guilayoutgroup::{GUILayoutGroup,IGUILayoutGroup}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiscrollgroup/GUIScrollGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUIScrollGroup")] # [parent (crate :: unity_engine :: guilayoutgroup :: GUILayoutGroup)] pub struct GUIScrollGroup {
-# [offset (144)] # [rename (name = "calcMinWidth")] pub calc_min_width : f32 ,
-# [offset (148)] # [rename (name = "calcMaxWidth")] pub calc_max_width : f32 ,
-# [offset (152)] # [rename (name = "calcMinHeight")] pub calc_min_height : f32 ,
-# [offset (156)] # [rename (name = "calcMaxHeight")] pub calc_max_height : f32 ,
-# [offset (160)] # [rename (name = "clientWidth")] pub client_width : f32 ,
-# [offset (164)] # [rename (name = "clientHeight")] pub client_height : f32 ,
-# [offset (168)] # [rename (name = "allowHorizontalScroll")] pub allow_horizontal_scroll : bool ,
-# [offset (169)] # [rename (name = "allowVerticalScroll")] pub allow_vertical_scroll : bool ,
-# [offset (170)] # [rename (name = "needsHorizontalScrollbar")] pub needs_horizontal_scrollbar : bool ,
-# [offset (171)] # [rename (name = "needsVerticalScrollbar")] pub needs_vertical_scrollbar : bool ,
-# [offset (176)] # [rename (name = "horizontalScrollbar")] pub horizontal_scrollbar : crate :: unity_engine :: guistyle :: GUIStyle ,
-# [offset (184)] # [rename (name = "verticalScrollbar")] pub vertical_scrollbar : crate :: unity_engine :: guistyle :: GUIStyle ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guiscrollgroup/GUIScrollGroup.md"))]#[::unity2::class(namespace="UnityEngine",name="GUIScrollGroup")]#[parent(crate::unity_engine::guilayoutgroup::GUILayoutGroup)]pub struct GUIScrollGroup{#[offset(144)]#[rename(name="calcMinWidth")]pub calc_min_width:f32, #[offset(148)]#[rename(name="calcMaxWidth")]pub calc_max_width:f32, #[offset(152)]#[rename(name="calcMinHeight")]pub calc_min_height:f32, #[offset(156)]#[rename(name="calcMaxHeight")]pub calc_max_height:f32, #[offset(160)]#[rename(name="clientWidth")]pub client_width:f32, #[offset(164)]#[rename(name="clientHeight")]pub client_height:f32, #[offset(168)]#[rename(name="allowHorizontalScroll")]pub allow_horizontal_scroll:bool, #[offset(169)]#[rename(name="allowVerticalScroll")]pub allow_vertical_scroll:bool, #[offset(170)]#[rename(name="needsHorizontalScrollbar")]pub needs_horizontal_scrollbar:bool, #[offset(171)]#[rename(name="needsVerticalScrollbar")]pub needs_vertical_scrollbar:bool, #[offset(176)]#[rename(name="horizontalScrollbar")]pub horizontal_scrollbar:crate::unity_engine::guistyle::GUIStyle, #[offset(184)]#[rename(name="verticalScrollbar")]pub vertical_scrollbar:crate::unity_engine::guistyle::GUIStyle,}
 
 }
 
 #[cfg(feature = "unity_engine-guiscrollgroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-guiscrollgroup")]
-pub trait IGUIScrollGroupMethods : IGUIScrollGroup { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIScrollGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c4ae00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcWidth()` overload"] fn calc_width (self ,) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIScrollGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c4ae70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHorizontal(f32, f32)` overload"] fn set_horizontal (self , x : impl :: core :: convert :: Into < f32 > , width : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIScrollGroup , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c4af00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (width) , :: core :: option :: Option :: None) } } } # [doc = "`CalcHeight()` overload"] fn calc_height (self ,) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIScrollGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c4b0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetVertical(f32, f32)` overload"] fn set_vertical (self , y : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GUIScrollGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIScrollGroup , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c4b260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-guiscrollgroup")]pub trait IGUIScrollGroupMethods:IGUIScrollGroup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c4ae00usize)as*mut u8,();
+(GUIScrollGroup)__receiver)}
+}
+#[doc="`CalcWidth()` overload"]fn calc_width(self,)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c4ae70usize)as*mut u8,();
+(GUIScrollGroup)__receiver)}
+}
+#[doc="`SetHorizontal(f32, f32)` overload"]fn set_horizontal(self,x:impl::core::convert::Into<f32> ,width:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c4af00usize)as*mut u8,();
+(GUIScrollGroup)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(width))}
+}
+#[doc="`CalcHeight()` overload"]fn calc_height(self,)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c4b0c0usize)as*mut u8,();
+(GUIScrollGroup)__receiver)}
+}
+#[doc="`SetVertical(f32, f32)` overload"]fn set_vertical(self,y:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c4b260usize)as*mut u8,();
+(GUIScrollGroup)__receiver,(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(height))}
+}
+}
 
-#[cfg(feature = "unity_engine-guiscrollgroup")]
-impl < __T : IGUIScrollGroup > IGUIScrollGroupMethods for __T { }
+#[cfg(feature="unity_engine-guiscrollgroup")]impl<__T:IGUIScrollGroup>IGUIScrollGroupMethods for __T{}
 
-#[cfg(feature = "unity_engine-guiscrollgroup")]
-impl GUIScrollGroup { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIScrollGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-guiscrollgroup")]impl GUIScrollGroup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-guiscrollgroup")]
-impl GUIScrollGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUIScrollGroup) , :: core :: stringify ! (new) ,)) ; < Self as IGUIScrollGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-guiscrollgroup")]impl GUIScrollGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUIScrollGroup), ::core::stringify!(new),));
+ <Self as IGUIScrollGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]

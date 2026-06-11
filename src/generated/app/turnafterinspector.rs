@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: app :: turncommoninspector :: { ITurnCommonInspector , TurnCommonInspector }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::app::turncommoninspector::{ITurnCommonInspector,TurnCommonInspector}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/turnafterinspector/TurnAfterInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "TurnAfterInspector")] # [parent (crate :: app :: turncommoninspector :: TurnCommonInspector)] pub struct TurnAfterInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turnafterinspector/TurnAfterInspector.md"))]#[::unity2::class(namespace="App",name="TurnAfterInspector")]#[parent(crate::app::turncommoninspector::TurnCommonInspector)]pub struct TurnAfterInspector{}
 
 }
 
 #[cfg(feature = "app-turnafterinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-turnafterinspector")]
-pub trait ITurnAfterInspectorMethods : ITurnAfterInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < TurnAfterInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnAfterInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22acaf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-turnafterinspector")]pub trait ITurnAfterInspectorMethods:ITurnAfterInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <TurnAfterInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22acaf0usize)as*mut u8,();
+(TurnAfterInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+}
 
-#[cfg(feature = "app-turnafterinspector")]
-impl < __T : ITurnAfterInspector > ITurnAfterInspectorMethods for __T { }
+#[cfg(feature="app-turnafterinspector")]impl<__T:ITurnAfterInspector>ITurnAfterInspectorMethods for __T{}
 
-#[cfg(feature = "app-turnafterinspector")]
-impl TurnAfterInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnAfterInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-turnafterinspector")]impl TurnAfterInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-turnafterinspector")]
-impl TurnAfterInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TurnAfterInspector) , :: core :: stringify ! (new) ,)) ; < Self as ITurnAfterInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-turnafterinspector")]impl TurnAfterInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TurnAfterInspector), ::core::stringify!(new),));
+ <Self as ITurnAfterInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-turnafterinspector")]

@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/bounds/Bounds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Bounds {
-    pub m_center: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_extents: crate :: unity_engine :: vector3 :: Vector3,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bounds/Bounds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Bounds{pub m_center:crate::unity_engine::vector3::Vector3,pub m_extents:crate::unity_engine::vector3::Vector3,}
+impl::unity2::ClassIdentity for Bounds{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Bounds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Bounds {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Bounds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Bounds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Bounds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,14 +26,95 @@ impl ::unity2::IlType for Bounds {
 #[cfg(feature = "unity_engine-bounds-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bounds")]
-impl Bounds { # [doc = "`op_Equality(crate::unity_engine::bounds::Bounds, crate::unity_engine::bounds::Bounds)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: bounds :: Bounds > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: bounds :: Bounds >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: bounds :: Bounds , crate :: unity_engine :: bounds :: Bounds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::bounds::Bounds, crate::unity_engine::bounds::Bounds)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: bounds :: Bounds > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: bounds :: Bounds >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: bounds :: Bounds , crate :: unity_engine :: bounds :: Bounds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c386c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bounds")]impl Bounds{#[doc="`op_Equality(crate::unity_engine::bounds::Bounds, crate::unity_engine::bounds::Bounds)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::bounds::Bounds> ,rhs:impl::core::convert::Into<crate::unity_engine::bounds::Bounds>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38660usize)as*mut u8,bool;
+(crate::unity_engine::bounds::Bounds)::core::convert::Into::into(lhs),(crate::unity_engine::bounds::Bounds)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::unity_engine::bounds::Bounds, crate::unity_engine::bounds::Bounds)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::unity_engine::bounds::Bounds> ,rhs:impl::core::convert::Into<crate::unity_engine::bounds::Bounds>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c386c0usize)as*mut u8,bool;
+(crate::unity_engine::bounds::Bounds)::core::convert::Into::into(lhs),(crate::unity_engine::bounds::Bounds)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "unity_engine-bounds")]
-impl Bounds { # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn ctor (& mut self , center : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , size : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38280usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (center) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Bounds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c382b0usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38340usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::bounds::Bounds)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: bounds :: Bounds >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: bounds :: Bounds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38430usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`get_center()` overload"] pub fn get_center (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut Bounds , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38320usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: option :: Option :: None) } } } # [doc = "`set_center(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_center (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c384b0usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_size()` overload"] pub fn get_size (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut Bounds , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c384c0usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: option :: Option :: None) } } } # [doc = "`set_size(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_size (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c384e0usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_extents()` overload"] pub fn get_extents (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut Bounds , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38330usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: option :: Option :: None) } } } # [doc = "`set_extents(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_extents (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38500usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_min()` overload"] pub fn get_min (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut Bounds , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38510usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: option :: Option :: None) } } } # [doc = "`set_min(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_min (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38530usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_max()` overload"] pub fn get_max (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut Bounds , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38590usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: option :: Option :: None) } } } # [doc = "`set_max(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_max (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38600usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetMinMax(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn set_min_max (& mut self , min : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , max : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c385b0usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`Encapsulate(crate::unity_engine::vector3::Vector3)` overload"] pub fn encapsulate (& mut self , point : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38740usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (point) , :: core :: option :: Option :: None) } } } # [doc = "`Encapsulate(crate::unity_engine::bounds::Bounds)` overload"] pub fn encapsulate_2 (& mut self , bounds : impl :: core :: convert :: Into < crate :: unity_engine :: bounds :: Bounds >) -> () { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: bounds :: Bounds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38870usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (bounds) , :: core :: option :: Option :: None) } } } # [doc = "`Intersects(crate::unity_engine::bounds::Bounds)` overload"] pub fn intersects (& mut self , bounds : impl :: core :: convert :: Into < crate :: unity_engine :: bounds :: Bounds >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Bounds , crate :: unity_engine :: bounds :: Bounds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c388d0usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: convert :: Into :: into (bounds) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Bounds , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38960usize) as * mut u8) ; __inner (self as * mut Bounds , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bounds")]impl Bounds{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn ctor(&mut self,center:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,size:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38280usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(center),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(size))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c382b0usize)as*mut u8,i32;
+(*mut Bounds)self as*mut Bounds)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38340usize)as*mut u8,bool;
+(*mut Bounds)self as*mut Bounds,(crate::system::object::Object)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::bounds::Bounds)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::bounds::Bounds>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38430usize)as*mut u8,bool;
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::bounds::Bounds)::core::convert::Into::into(other))}
+}
+#[doc="`get_center()` overload"]pub fn get_center(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38320usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut Bounds)self as*mut Bounds)}
+}
+#[doc="`set_center(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_center(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c384b0usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_size()` overload"]pub fn get_size(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c384c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut Bounds)self as*mut Bounds)}
+}
+#[doc="`set_size(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_size(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c384e0usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_extents()` overload"]pub fn get_extents(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38330usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut Bounds)self as*mut Bounds)}
+}
+#[doc="`set_extents(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_extents(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38500usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_min()` overload"]pub fn get_min(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38510usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut Bounds)self as*mut Bounds)}
+}
+#[doc="`set_min(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_min(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38530usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_max()` overload"]pub fn get_max(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38590usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut Bounds)self as*mut Bounds)}
+}
+#[doc="`set_max(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_max(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38600usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`SetMinMax(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn set_min_max(&mut self,min:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,max:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c385b0usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(min),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(max))}
+}
+#[doc="`Encapsulate(crate::unity_engine::vector3::Vector3)` overload"]pub fn encapsulate(&mut self,point:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38740usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(point))}
+}
+#[doc="`Encapsulate(crate::unity_engine::bounds::Bounds)` overload"]pub fn encapsulate_2(&mut self,bounds:impl::core::convert::Into<crate::unity_engine::bounds::Bounds>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38870usize)as*mut u8,();
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::bounds::Bounds)::core::convert::Into::into(bounds))}
+}
+#[doc="`Intersects(crate::unity_engine::bounds::Bounds)` overload"]pub fn intersects(&mut self,bounds:impl::core::convert::Into<crate::unity_engine::bounds::Bounds>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c388d0usize)as*mut u8,bool;
+(*mut Bounds)self as*mut Bounds,(crate::unity_engine::bounds::Bounds)::core::convert::Into::into(bounds))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38960usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Bounds)self as*mut Bounds)}
+}
+}
 
-#[cfg(feature = "unity_engine-bounds")]
-impl Bounds { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_extents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_extents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_min_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn encapsulate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn encapsulate_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn intersects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bounds as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="unity_engine-bounds")]impl Bounds{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_extents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_extents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_min_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn encapsulate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn encapsulate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn intersects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
 #[cfg(feature = "unity_engine-bounds")]
 #[doc(hidden)]

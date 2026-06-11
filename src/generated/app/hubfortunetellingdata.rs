@@ -4,39 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubfortunetellingdata/HubFortuneTellingData.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubFortuneTellingData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: hubfortunetellingdata :: HubFortuneTellingData >)] pub struct HubFortuneTellingData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubfortunetellingdata/HubFortuneTellingData.md"))]#[::unity2::class(namespace="App",name="HubFortuneTellingData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::hubfortunetellingdata::HubFortuneTellingData>)]pub struct HubFortuneTellingData{}
 
 }
 
 #[cfg(feature = "app-hubfortunetellingdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubfortunetellingdata")]
-impl HubFortuneTellingData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9f60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubfortunetellingdata")]impl HubFortuneTellingData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28a9f60usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubfortunetellingdata")]
-pub trait IHubFortuneTellingDataMethods : IHubFortuneTellingData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TextureName()` overload"] fn get_texture_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TextureName(::unity2::Il2CppString)` overload"] fn set_texture_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PrimaryText()` overload"] fn get_primary_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PrimaryText(::unity2::Il2CppString)` overload"] fn set_primary_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PrimaryTextEx()` overload"] fn get_primary_text_ex (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PrimaryTextEx(::unity2::Il2CppString)` overload"] fn set_primary_text_ex (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReverseText()` overload"] fn get_reverse_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReverseText(::unity2::Il2CppString)` overload"] fn set_reverse_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReverseTextEx()` overload"] fn get_reverse_text_ex (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReverseTextEx(::unity2::Il2CppString)` overload"] fn set_reverse_text_ex (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubFortuneTellingData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFortuneTellingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubfortunetellingdata")]pub trait IHubFortuneTellingDataMethods:IHubFortuneTellingData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa010usize)as*mut u8, ::unity2::Il2CppString;
+(HubFortuneTellingData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa020usize)as*mut u8,();
+(HubFortuneTellingData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_TextureName()` overload"]fn get_texture_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa030usize)as*mut u8, ::unity2::Il2CppString;
+(HubFortuneTellingData)__receiver)}
+}
+#[doc="`set_TextureName(::unity2::Il2CppString)` overload"]fn set_texture_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa040usize)as*mut u8,();
+(HubFortuneTellingData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PrimaryText()` overload"]fn get_primary_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa050usize)as*mut u8, ::unity2::Il2CppString;
+(HubFortuneTellingData)__receiver)}
+}
+#[doc="`set_PrimaryText(::unity2::Il2CppString)` overload"]fn set_primary_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa060usize)as*mut u8,();
+(HubFortuneTellingData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PrimaryTextEx()` overload"]fn get_primary_text_ex(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa070usize)as*mut u8, ::unity2::Il2CppString;
+(HubFortuneTellingData)__receiver)}
+}
+#[doc="`set_PrimaryTextEx(::unity2::Il2CppString)` overload"]fn set_primary_text_ex(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa080usize)as*mut u8,();
+(HubFortuneTellingData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ReverseText()` overload"]fn get_reverse_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa090usize)as*mut u8, ::unity2::Il2CppString;
+(HubFortuneTellingData)__receiver)}
+}
+#[doc="`set_ReverseText(::unity2::Il2CppString)` overload"]fn set_reverse_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa0a0usize)as*mut u8,();
+(HubFortuneTellingData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ReverseTextEx()` overload"]fn get_reverse_text_ex(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa0b0usize)as*mut u8, ::unity2::Il2CppString;
+(HubFortuneTellingData)__receiver)}
+}
+#[doc="`set_ReverseTextEx(::unity2::Il2CppString)` overload"]fn set_reverse_text_ex(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa0c0usize)as*mut u8,();
+(HubFortuneTellingData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubFortuneTellingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa0d0usize)as*mut u8,();
+(HubFortuneTellingData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubfortunetellingdata")]
-impl < __T : IHubFortuneTellingData > IHubFortuneTellingDataMethods for __T { }
+#[cfg(feature="app-hubfortunetellingdata")]impl<__T:IHubFortuneTellingData>IHubFortuneTellingDataMethods for __T{}
 
-#[cfg(feature = "app-hubfortunetellingdata")]
-impl HubFortuneTellingData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_texture_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_texture_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_primary_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_primary_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_primary_text_ex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_primary_text_ex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_reverse_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_reverse_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_reverse_text_ex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_reverse_text_ex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFortuneTellingData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-hubfortunetellingdata")]impl HubFortuneTellingData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_texture_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_texture_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_primary_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_primary_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_primary_text_ex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_primary_text_ex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_reverse_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_reverse_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_reverse_text_ex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_reverse_text_ex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-hubfortunetellingdata")]
-impl HubFortuneTellingData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubFortuneTellingData) , :: core :: stringify ! (new) ,)) ; < Self as IHubFortuneTellingDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubfortunetellingdata")]impl HubFortuneTellingData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubFortuneTellingData), ::core::stringify!(new),));
+ <Self as IHubFortuneTellingDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubfortunetellingdata")]

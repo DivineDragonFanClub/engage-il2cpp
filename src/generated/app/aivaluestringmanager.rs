@@ -4,37 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aivaluestringmanager/AIValueStringManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIValueStringManager")] # [parent (crate :: system :: object :: Object)] pub struct AIValueStringManager {
-# [static_field] # [rename (name = "s_List")] pub s_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "s_AIDataStrings")] pub s_ai_data_strings : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "s_IsLoadingAIData")] pub s_is_loading_ai_data : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aivaluestringmanager/AIValueStringManager.md"))]#[::unity2::class(namespace="App",name="AIValueStringManager")]#[parent(crate::system::object::Object)]pub struct AIValueStringManager{#[static_field]#[rename(name="s_List")]pub s_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_AIDataStrings")]pub s_ai_data_strings:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_IsLoadingAIData")]pub s_is_loading_ai_data:bool,}
 
 }
 
 #[cfg(feature = "app-aivaluestringmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-aivaluestringmanager")]
-impl AIValueStringManager { # [doc = "`BeginLoadAIData()` overload"] pub fn begin_load_ai_data () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3b70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EndLoadAIData()` overload"] pub fn end_load_ai_data () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3ca0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Register(::unity2::Il2CppString)` overload"] pub fn register (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b33f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] pub fn reset () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3e30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ClearAll()` overload"] pub fn clear_all () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3be0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetString(i32)` overload"] pub fn get_string (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b39d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] pub fn serialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b40c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`GetIndex(::unity2::Il2CppString)` overload"] pub fn get_index (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3d10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`Dump(::unity2::Il2CppString)` overload"] pub fn dump (msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b4460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (msg) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b4870usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aivaluestringmanager")]impl AIValueStringManager{#[doc="`BeginLoadAIData()` overload"]pub fn begin_load_ai_data()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b3b70usize)as*mut u8,();
+)}
+}
+#[doc="`EndLoadAIData()` overload"]pub fn end_load_ai_data()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b3ca0usize)as*mut u8,();
+)}
+}
+#[doc="`Register(::unity2::Il2CppString)` overload"]pub fn register(str:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b33f0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`Reset()` overload"]pub fn reset()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b3e30usize)as*mut u8,();
+)}
+}
+#[doc="`ClearAll()` overload"]pub fn clear_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b3be0usize)as*mut u8,();
+)}
+}
+#[doc="`GetString(i32)` overload"]pub fn get_string(index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b39d0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b3f90usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b40c0usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`GetIndex(::unity2::Il2CppString)` overload"]pub fn get_index(str:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b3d10usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`Dump(::unity2::Il2CppString)` overload"]pub fn dump(msg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b4460usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(msg))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b4870usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-aivaluestringmanager")]
-pub trait IAIValueStringManagerMethods : IAIValueStringManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AIValueStringManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValueStringManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b4860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aivaluestringmanager")]pub trait IAIValueStringManagerMethods:IAIValueStringManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIValueStringManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b4860usize)as*mut u8,();
+(AIValueStringManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-aivaluestringmanager")]
-impl < __T : IAIValueStringManager > IAIValueStringManagerMethods for __T { }
+#[cfg(feature="app-aivaluestringmanager")]impl<__T:IAIValueStringManager>IAIValueStringManagerMethods for __T{}
 
-#[cfg(feature = "app-aivaluestringmanager")]
-impl AIValueStringManager { pub fn begin_load_ai_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn end_load_ai_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn register_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValueStringManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-aivaluestringmanager")]impl AIValueStringManager{pub fn begin_load_ai_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn end_load_ai_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn register_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-aivaluestringmanager")]
-impl AIValueStringManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AIValueStringManager) , :: core :: stringify ! (new) ,)) ; < Self as IAIValueStringManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aivaluestringmanager")]impl AIValueStringManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIValueStringManager), ::core::stringify!(new),));
+ <Self as IAIValueStringManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-aivaluestringmanager")]

@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: fsmbuilder :: { FSMBuilder , IFSMBuilder }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::fsmbuilder::{FSMBuilder,IFSMBuilder}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderfullbullet/FSMBuilderFullBullet.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSMBuilderFullBullet")] # [parent (crate :: combat :: fsmbuilder :: FSMBuilder)] pub struct FSMBuilderFullBullet {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fsmbuilderfullbullet/FSMBuilderFullBullet.md"))]#[::unity2::class(namespace="Combat",name="FSMBuilderFullBullet")]#[parent(crate::combat::fsmbuilder::FSMBuilder)]pub struct FSMBuilderFullBullet{}
 
 }
 
 #[cfg(feature = "combat-fsmbuilderfullbullet-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fsmbuilderfullbullet")]
-pub trait IFSMBuilderFullBulletMethods : IFSMBuilderFullBullet { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < FSMBuilderFullBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderFullBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d49ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildSkipover()` overload"] fn build_skipover (self ,) -> () { unsafe { let __receiver = < FSMBuilderFullBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderFullBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4a060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSMBuilderFullBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderFullBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d478a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuilderfullbullet")]pub trait IFSMBuilderFullBulletMethods:IFSMBuilderFullBullet{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilderFullBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d49ba0usize)as*mut u8,();
+(FSMBuilderFullBullet)__receiver)}
+}
+#[doc="`BuildSkipover()` overload"]fn build_skipover(self,)->(){unsafe{let __receiver= <FSMBuilderFullBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4a060usize)as*mut u8,();
+(FSMBuilderFullBullet)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilderFullBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d478a0usize)as*mut u8,();
+(FSMBuilderFullBullet)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuilderfullbullet")]
-impl < __T : IFSMBuilderFullBullet > IFSMBuilderFullBulletMethods for __T { }
+#[cfg(feature="combat-fsmbuilderfullbullet")]impl<__T:IFSMBuilderFullBullet>IFSMBuilderFullBulletMethods for __T{}
 
-#[cfg(feature = "combat-fsmbuilderfullbullet")]
-impl FSMBuilderFullBullet { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderFullBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_skipover_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderFullBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderFullBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-fsmbuilderfullbullet")]impl FSMBuilderFullBullet{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_skipover_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-fsmbuilderfullbullet")]
-impl FSMBuilderFullBullet {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSMBuilderFullBullet) , :: core :: stringify ! (new) ,)) ; < Self as IFSMBuilderFullBulletMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fsmbuilderfullbullet")]impl FSMBuilderFullBullet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FSMBuilderFullBullet), ::core::stringify!(new),));
+ <Self as IFSMBuilderFullBulletMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fsmbuilderfullbullet")]

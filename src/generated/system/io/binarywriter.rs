@@ -4,42 +4,145 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/binarywriter/BinaryWriter.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "BinaryWriter")] # [parent (crate :: system :: object :: Object)] pub struct BinaryWriter {
-# [static_field] # [rename (name = "Null")] pub null : crate :: system :: io :: binarywriter :: BinaryWriter ,
-# [offset (16)] # [rename (name = "OutStream")] pub out_stream : crate :: system :: io :: stream :: Stream ,
-# [offset (24)] # [rename (name = "_buffer")] pub buffer : :: unity2 :: Array < u8 > ,
-# [offset (48)] # [rename (name = "_leaveOpen")] pub leave_open : bool ,
-# [offset (56)] # [rename (name = "_largeByteBuffer")] pub large_byte_buffer : :: unity2 :: Array < u8 > ,
-# [offset (64)] # [rename (name = "_maxChars")] pub max_chars : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/binarywriter/BinaryWriter.md"))]#[::unity2::class(namespace="System.IO",name="BinaryWriter")]#[parent(crate::system::object::Object)]pub struct BinaryWriter{#[static_field]#[rename(name="Null")]pub null:crate::system::io::binarywriter::BinaryWriter, #[offset(16)]#[rename(name="OutStream")]pub out_stream:crate::system::io::stream::Stream, #[offset(24)]#[rename(name="_buffer")]pub buffer: ::unity2::Array<u8> , #[offset(48)]#[rename(name="_leaveOpen")]pub leave_open:bool, #[offset(56)]#[rename(name="_largeByteBuffer")]pub large_byte_buffer: ::unity2::Array<u8> , #[offset(64)]#[rename(name="_maxChars")]pub max_chars:i32,}
 
 }
 
 #[cfg(feature = "system-io-binarywriter-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-binarywriter")]
-impl BinaryWriter { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390bb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-binarywriter")]impl BinaryWriter{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3390bb0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-io-binarywriter")]
-pub trait IBinaryWriterMethods : IBinaryWriter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338fcb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream)` overload"] fn ctor_2 (self , output : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338fdd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (output) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose_2 (self ,) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Flush()` overload"] fn flush (self ,) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Write(bool)` overload"] fn write (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(u8)` overload"] fn write_2 (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33900c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(i8)` overload"] fn write_3 (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33900e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u8>)` overload"] fn write_4 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u8>, i32, i32)` overload"] fn write_5 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Write(u16)` overload"] fn write_6 (self , ch : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33901a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ch) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u16>)` overload"] fn write_7 (self , chars : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , :: unity2 :: Array < u16 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33902e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chars) , :: core :: option :: Option :: None) } } } # [doc = "`Write(f64)` overload"] fn write_8 (self , value : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(i16)` overload"] fn write_9 (self , value : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(i32)` overload"] fn write_10 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33904c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(u32)` overload"] fn write_11 (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(i64)` overload"] fn write_12 (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33905e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(u64)` overload"] fn write_13 (self , value : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33906d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(f32)` overload"] fn write_14 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33907c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Il2CppString)` overload"] fn write_15 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write7BitEncodedInt(i32)` overload"] fn write7_bit_encoded_int (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryWriter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-binarywriter")]pub trait IBinaryWriterMethods:IBinaryWriter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338fcb0usize)as*mut u8,();
+(BinaryWriter)__receiver)}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor_2(self,output:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338fdd0usize)as*mut u8,();
+(BinaryWriter)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(output))}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390010usize)as*mut u8,();
+(BinaryWriter)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390040usize)as*mut u8,();
+(BinaryWriter)__receiver)}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390050usize)as*mut u8,();
+(BinaryWriter)__receiver)}
+}
+#[doc="`Write(bool)` overload"]fn write(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390070usize)as*mut u8,();
+(BinaryWriter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Write(u8)` overload"]fn write_2(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33900c0usize)as*mut u8,();
+(BinaryWriter)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`Write(i8)` overload"]fn write_3(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33900e0usize)as*mut u8,();
+(BinaryWriter)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`Write(::unity2::Array<u8>)` overload"]fn write_4(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390100usize)as*mut u8,();
+(BinaryWriter)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer))}
+}
+#[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write_5(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390180usize)as*mut u8,();
+(BinaryWriter)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Write(u16)` overload"]fn write_6(self,ch:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33901a0usize)as*mut u8,();
+(BinaryWriter)__receiver,(u16)::core::convert::Into::into(ch))}
+}
+#[doc="`Write(::unity2::Array<u16>)` overload"]fn write_7(self,chars:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33902e0usize)as*mut u8,();
+(BinaryWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(chars))}
+}
+#[doc="`Write(f64)` overload"]fn write_8(self,value:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390380usize)as*mut u8,();
+(BinaryWriter)__receiver,(f64)::core::convert::Into::into(value))}
+}
+#[doc="`Write(i16)` overload"]fn write_9(self,value:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390400usize)as*mut u8,();
+(BinaryWriter)__receiver,(i16)::core::convert::Into::into(value))}
+}
+#[doc="`Write(i32)` overload"]fn write_10(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33904c0usize)as*mut u8,();
+(BinaryWriter)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Write(u32)` overload"]fn write_11(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390550usize)as*mut u8,();
+(BinaryWriter)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`Write(i64)` overload"]fn write_12(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33905e0usize)as*mut u8,();
+(BinaryWriter)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`Write(u64)` overload"]fn write_13(self,value:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33906d0usize)as*mut u8,();
+(BinaryWriter)__receiver,(u64)::core::convert::Into::into(value))}
+}
+#[doc="`Write(f32)` overload"]fn write_14(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33907c0usize)as*mut u8,();
+(BinaryWriter)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_15(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390840usize)as*mut u8,();
+(BinaryWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`Write7BitEncodedInt(i32)` overload"]fn write7_bit_encoded_int(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390b40usize)as*mut u8,();
+(BinaryWriter)__receiver,(i32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-io-binarywriter")]
-impl < __T : IBinaryWriter > IBinaryWriterMethods for __T { }
+#[cfg(feature="system-io-binarywriter")]impl<__T:IBinaryWriter>IBinaryWriterMethods for __T{}
 
-#[cfg(feature = "system-io-binarywriter")]
-impl BinaryWriter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn dispose_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn write_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn write_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn write_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn write_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn write_6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn write_7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn write_8_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn write_9_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn write_10_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn write_11_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn write_12_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn write_13_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn write_14_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn write_15_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn write7_bit_encoded_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } }
+#[cfg(feature="system-io-binarywriter")]impl BinaryWriter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn write_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn write_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn write_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn write_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn write_7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn write_8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn write_9_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn write_10_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn write_11_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn write_12_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn write_13_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn write_14_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn write_15_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn write7_bit_encoded_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
 
-#[cfg(feature = "system-io-binarywriter")]
-impl BinaryWriter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BinaryWriter) , :: core :: stringify ! (new) ,)) ; < Self as IBinaryWriterMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::system::io::stream::Stream)` — overload selector"] pub fn new_2 (output : crate :: system :: io :: stream :: Stream) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BinaryWriter) , :: core :: stringify ! (new_2) ,)) ; < Self as IBinaryWriterMethods > :: ctor_2 (this , output) ; this }
+#[cfg(feature="system-io-binarywriter")]impl BinaryWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BinaryWriter), ::core::stringify!(new),));
+ <Self as IBinaryWriterMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream)` — overload selector"]pub fn new_2(output:crate::system::io::stream::Stream)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BinaryWriter), ::core::stringify!(new_2),));
+ <Self as IBinaryWriterMethods> ::ctor_2(this,output);
+this}
 }
 
 #[cfg(feature = "system-io-binarywriter")]

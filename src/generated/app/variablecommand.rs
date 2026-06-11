@@ -4,35 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/variablecommand/VariableCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "VariableCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct VariableCommand {
-# [offset (24)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_Value")] pub m_value : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/variablecommand/VariableCommand.md"))]#[::unity2::class(namespace="App",name="VariableCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct VariableCommand{#[offset(24)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Value")]pub m_value:f32,}
 
 }
 
 #[cfg(feature = "app-variablecommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-variablecommand")]
-pub trait IVariableCommandMethods : IVariableCommand { # [doc = "`.ctor(::unity2::Il2CppString, f32)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < VariableCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VariableCommand , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VariableCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VariableCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get()` overload"] fn get (self ,) -> f32 { unsafe { let __receiver = < VariableCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VariableCommand , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Set(f32)` overload"] fn set (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < VariableCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VariableCommand , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-variablecommand")]pub trait IVariableCommandMethods:IVariableCommand{#[doc="`.ctor(::unity2::Il2CppString, f32)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VariableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5eb0usize)as*mut u8,();
+(VariableCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VariableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5f00usize)as*mut u8, ::unity2::Il2CppString;
+(VariableCommand)__receiver)}
+}
+#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <VariableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5f10usize)as*mut u8,f32;
+(VariableCommand)__receiver)}
+}
+#[doc="`Set(f32)` overload"]fn set(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VariableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5f20usize)as*mut u8,();
+(VariableCommand)__receiver,(f32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-variablecommand")]
-impl < __T : IVariableCommand > IVariableCommandMethods for __T { }
+#[cfg(feature="app-variablecommand")]impl<__T:IVariableCommand>IVariableCommandMethods for __T{}
 
-#[cfg(feature = "app-variablecommand")]
-impl VariableCommand { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VariableCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VariableCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VariableCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VariableCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-variablecommand")]impl VariableCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-variablecommand")]
-impl VariableCommand {
-# [doc = "`.ctor(::unity2::Il2CppString, f32)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , value : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VariableCommand) , :: core :: stringify ! (new) ,)) ; < Self as IVariableCommandMethods > :: ctor (this , name , value) ; this }
+#[cfg(feature="app-variablecommand")]impl VariableCommand{#[doc="`.ctor(::unity2::Il2CppString, f32)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,value:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VariableCommand), ::core::stringify!(new),));
+ <Self as IVariableCommandMethods> ::ctor(this,name,value);
+this}
 }
 
 #[cfg(feature = "app-variablecommand")]

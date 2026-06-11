@@ -4,38 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapsoundlabel/MapSoundLabel.md"))] # [:: unity2 :: class (namespace = "" , name = "MapSoundLabel")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct MapSoundLabel {
-# [offset (24)] # [rename (name = "起動音")] pub 起動音 : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "停止音")] pub 停止音 : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "破壊音")] pub 破壊音 : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapsoundlabel/MapSoundLabel.md"))]#[::unity2::class(namespace="",name="MapSoundLabel")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct MapSoundLabel{#[offset(24)]#[rename(name="起動音")]pub 起動音: ::unity2::Il2CppString, #[offset(32)]#[rename(name="停止音")]pub 停止音: ::unity2::Il2CppString, #[offset(40)]#[rename(name="破壊音")]pub 破壊音: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "root-mapsoundlabel-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapsoundlabel")]
-pub trait IMapSoundLabelMethods : IMapSoundLabel { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSoundLabel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSoundLabel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f515f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapsoundlabel")]pub trait IMapSoundLabelMethods:IMapSoundLabel{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSoundLabel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f515f0usize)as*mut u8,();
+(MapSoundLabel)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapsoundlabel")]
-impl < __T : IMapSoundLabel > IMapSoundLabelMethods for __T { }
+#[cfg(feature="root-mapsoundlabel")]impl<__T:IMapSoundLabel>IMapSoundLabelMethods for __T{}
 
-#[cfg(feature = "root-mapsoundlabel")]
-impl MapSoundLabel { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSoundLabel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-mapsoundlabel")]impl MapSoundLabel{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-mapsoundlabel")]
-impl MapSoundLabel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSoundLabel) , :: core :: stringify ! (new) ,)) ; < Self as IMapSoundLabelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapsoundlabel")]impl MapSoundLabel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSoundLabel), ::core::stringify!(new),));
+ <Self as IMapSoundLabelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapsoundlabel")]

@@ -4,50 +4,156 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/levelupsequnece/LevelUpSequnece.md"))] # [:: unity2 :: class (namespace = "App" , name = "LevelUpSequnece")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct LevelUpSequnece {
-# [offset (112)] # [rename (name = "ResNameLevelUp")] pub res_name_level_up : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "ResNameClassChange")] pub res_name_class_change : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (136)] # [rename (name = "m_Grow")] pub m_grow : crate :: app :: unit :: Unit ,
-# [offset (144)] # [rename (name = "m_Level")] pub m_level : i32 ,
-# [offset (148)] # [rename (name = "m_IsClassChange")] pub m_is_class_change : bool ,
-# [offset (152)] # [rename (name = "m_TalkMid")] pub m_talk_mid : :: unity2 :: Il2CppString ,
-# [offset (160)] # [rename (name = "m_Window")] pub m_window : crate :: app :: levelupwindowcontroller :: LevelUpWindowController ,
-# [offset (168)] # [rename (name = "m_IsShowCharaImage")] pub m_is_show_chara_image : bool ,
-# [offset (169)] # [rename (name = "m_IsTalk")] pub m_is_talk : bool ,
-# [offset (172)] # [rename (name = "m_NowCapabilityIndex")] pub m_now_capability_index : i32 ,
-# [offset (176)] # [rename (name = "m_CapabilityOrder")] pub m_capability_order : :: unity2 :: Array < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/levelupsequnece/LevelUpSequnece.md"))]#[::unity2::class(namespace="App",name="LevelUpSequnece")]#[parent(crate::app::procinst::ProcInst)]pub struct LevelUpSequnece{#[offset(112)]#[rename(name="ResNameLevelUp")]pub res_name_level_up: ::unity2::Il2CppString, #[offset(120)]#[rename(name="ResNameClassChange")]pub res_name_class_change: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(136)]#[rename(name="m_Grow")]pub m_grow:crate::app::unit::Unit, #[offset(144)]#[rename(name="m_Level")]pub m_level:i32, #[offset(148)]#[rename(name="m_IsClassChange")]pub m_is_class_change:bool, #[offset(152)]#[rename(name="m_TalkMid")]pub m_talk_mid: ::unity2::Il2CppString, #[offset(160)]#[rename(name="m_Window")]pub m_window:crate::app::levelupwindowcontroller::LevelUpWindowController, #[offset(168)]#[rename(name="m_IsShowCharaImage")]pub m_is_show_chara_image:bool, #[offset(169)]#[rename(name="m_IsTalk")]pub m_is_talk:bool, #[offset(172)]#[rename(name="m_NowCapabilityIndex")]pub m_now_capability_index:i32, #[offset(176)]#[rename(name="m_CapabilityOrder")]pub m_capability_order: ::unity2::Array<crate::app::capabilitydefinition::CapabilityDefinition_Type> ,}
 
 }
 
 #[cfg(feature = "app-levelupsequnece-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-levelupsequnece")]
-impl LevelUpSequnece { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, bool, bool)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , level : impl :: core :: convert :: Into < i32 > , is_show_chara_image : impl :: core :: convert :: Into < bool > , is_talk : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , i32 , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be9600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (is_show_chara_image) , :: core :: convert :: Into :: into (is_talk) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindClassChange(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn create_bind_class_change (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , before_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , after_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be9f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (before_unit) , :: core :: convert :: Into :: into (after_unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-levelupsequnece")]impl LevelUpSequnece{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, bool, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,level:impl::core::convert::Into<i32> ,is_show_chara_image:impl::core::convert::Into<bool> ,is_talk:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1be9600usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(level),(bool)::core::convert::Into::into(is_show_chara_image),(bool)::core::convert::Into::into(is_talk))}
+}
+#[doc="`CreateBindClassChange(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn create_bind_class_change(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,before_unit:impl::core::convert::Into<crate::app::unit::Unit> ,after_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1be9f40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(before_unit),(crate::app::unit::Unit)::core::convert::Into::into(after_unit))}
+}
+}
 
-#[cfg(feature = "app-levelupsequnece")]
-pub trait ILevelUpSequneceMethods : ILevelUpSequnece { # [doc = "`.ctor(crate::app::unit::Unit, i32, bool, bool)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , level : impl :: core :: convert :: Into < i32 > , is_show_chara_image : impl :: core :: convert :: Into < bool > , is_talk : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , crate :: app :: unit :: Unit , i32 , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (is_show_chara_image) , :: core :: convert :: Into :: into (is_talk) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn ctor_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , grow : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be10c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (grow) , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be1220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be1230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResName()` overload"] fn get_res_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be1240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Prepare()` overload"] fn prepare (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be1260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reflect()` overload"] fn reflect (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be13a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReloadActor()` overload"] fn reload_actor (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be19a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitReloadActor()` overload"] fn wait_reload_actor (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be1af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Effect()` overload"] fn effect (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be1ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingRes()` overload"] fn is_loading_res (self ,) -> bool { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be1c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be1cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitAnime()` overload"] fn wait_anime (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be5040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckParamChange()` overload"] fn check_param_change (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be5260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUpParamCount()` overload"] fn get_up_param_count (self ,) -> i32 { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be7200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLimitParamCount()` overload"] fn get_limit_param_count (self ,) -> i32 { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be8d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcTalkMid()` overload"] fn calc_talk_mid (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be8e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Talk()` overload"] fn talk (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be9100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyWait()` overload"] fn key_wait (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be9150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be93c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LearnJobSkill()` overload"] fn learn_job_skill (self ,) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be94b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst)` overload"] fn create_bind_impl (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < LevelUpSequnece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LevelUpSequnece , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be96a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-levelupsequnece")]pub trait ILevelUpSequneceMethods:ILevelUpSequnece{#[doc="`.ctor(crate::app::unit::Unit, i32, bool, bool)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,level:impl::core::convert::Into<i32> ,is_show_chara_image:impl::core::convert::Into<bool> ,is_talk:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0f50usize)as*mut u8,();
+(LevelUpSequnece)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(level),(bool)::core::convert::Into::into(is_show_chara_image),(bool)::core::convert::Into::into(is_talk))}
+}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn ctor_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,grow:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be10c0usize)as*mut u8,();
+(LevelUpSequnece)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(grow))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1220usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1230usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`GetResName()` overload"]fn get_res_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1240usize)as*mut u8, ::unity2::Il2CppString;
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1260usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`Reflect()` overload"]fn reflect(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be13a0usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`ReloadActor()` overload"]fn reload_actor(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be19a0usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`WaitReloadActor()` overload"]fn wait_reload_actor(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1af0usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`Effect()` overload"]fn effect(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1ba0usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`IsLoadingRes()` overload"]fn is_loading_res(self,)->bool{unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1c60usize)as*mut u8,bool;
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1cf0usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`WaitAnime()` overload"]fn wait_anime(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be5040usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`CheckParamChange()` overload"]fn check_param_change(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be5260usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`GetUpParamCount()` overload"]fn get_up_param_count(self,)->i32{unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be7200usize)as*mut u8,i32;
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`GetLimitParamCount()` overload"]fn get_limit_param_count(self,)->i32{unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be8d20usize)as*mut u8,i32;
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`CalcTalkMid()` overload"]fn calc_talk_mid(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be8e80usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`Talk()` overload"]fn talk(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be9100usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`KeyWait()` overload"]fn key_wait(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be9150usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be93c0usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`LearnJobSkill()` overload"]fn learn_job_skill(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be94b0usize)as*mut u8,();
+(LevelUpSequnece)__receiver)}
+}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst)` overload"]fn create_bind_impl(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be96a0usize)as*mut u8,();
+(LevelUpSequnece)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-levelupsequnece")]
-impl < __T : ILevelUpSequnece > ILevelUpSequneceMethods for __T { }
+#[cfg(feature="app-levelupsequnece")]impl<__T:ILevelUpSequnece>ILevelUpSequneceMethods for __T{}
 
-#[cfg(feature = "app-levelupsequnece")]
-impl LevelUpSequnece { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_res_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reflect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reload_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn wait_reload_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_loading_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn wait_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn check_param_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_up_param_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_limit_param_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn calc_talk_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn key_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn learn_job_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn create_bind_class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LevelUpSequnece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="app-levelupsequnece")]impl LevelUpSequnece{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_res_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reflect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reload_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn wait_reload_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_loading_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn wait_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn check_param_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_up_param_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_limit_param_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn calc_talk_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn key_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn learn_job_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn create_bind_class_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "app-levelupsequnece")]
-impl LevelUpSequnece {
-# [doc = "`.ctor(crate::app::unit::Unit, i32, bool, bool)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , level : i32 , is_show_chara_image : bool , is_talk : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LevelUpSequnece) , :: core :: stringify ! (new) ,)) ; < Self as ILevelUpSequneceMethods > :: ctor (this , unit , level , is_show_chara_image , is_talk) ; this }
-
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"] pub fn new_2 (unit : crate :: app :: unit :: Unit , grow : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LevelUpSequnece) , :: core :: stringify ! (new_2) ,)) ; < Self as ILevelUpSequneceMethods > :: ctor_2 (this , unit , grow) ; this }
+#[cfg(feature="app-levelupsequnece")]impl LevelUpSequnece{#[doc="`.ctor(crate::app::unit::Unit, i32, bool, bool)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,level:i32,is_show_chara_image:bool,is_talk:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LevelUpSequnece), ::core::stringify!(new),));
+ <Self as ILevelUpSequneceMethods> ::ctor(this,unit,level,is_show_chara_image,is_talk);
+this}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]pub fn new_2(unit:crate::app::unit::Unit,grow:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LevelUpSequnece), ::core::stringify!(new_2),));
+ <Self as ILevelUpSequneceMethods> ::ctor_2(this,unit,grow);
+this}
 }
 
 #[cfg(feature = "app-levelupsequnece")]

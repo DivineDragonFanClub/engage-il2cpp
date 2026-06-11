@@ -4,39 +4,101 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/supportdata/SupportData.md"))] # [:: unity2 :: class (namespace = "App" , name = "SupportData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: supportdata :: SupportData >)] pub struct SupportData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/supportdata/SupportData.md"))]#[::unity2::class(namespace="App",name="SupportData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::supportdata::SupportData>)]pub struct SupportData{}
 
 }
 
 #[cfg(feature = "app-supportdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-supportdata")]
-impl SupportData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ae9e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-supportdata")]impl SupportData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ae9e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-supportdata")]
-pub trait ISupportDataMethods : ISupportData { # [doc = "`get_Level()` overload"] fn get_level (self ,) -> i8 { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aea90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(i8)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeaa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Hit()` overload"] fn get_hit (self ,) -> i8 { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Hit(i8)` overload"] fn set_hit (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Critical()` overload"] fn get_critical (self ,) -> i8 { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aead0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Critical(i8)` overload"] fn set_critical (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Avoid()` overload"] fn get_avoid (self ,) -> i8 { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Avoid(i8)` overload"] fn set_avoid (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeb00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Secure()` overload"] fn get_secure (self ,) -> i8 { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Secure(i8)` overload"] fn set_secure (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeb20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SupportData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aeba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-supportdata")]pub trait ISupportDataMethods:ISupportData{#[doc="`get_Level()` overload"]fn get_level(self,)->i8{unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aea90usize)as*mut u8,i8;
+(SupportData)__receiver)}
+}
+#[doc="`set_Level(i8)` overload"]fn set_level(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeaa0usize)as*mut u8,();
+(SupportData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Hit()` overload"]fn get_hit(self,)->i8{unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeab0usize)as*mut u8,i8;
+(SupportData)__receiver)}
+}
+#[doc="`set_Hit(i8)` overload"]fn set_hit(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeac0usize)as*mut u8,();
+(SupportData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Critical()` overload"]fn get_critical(self,)->i8{unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aead0usize)as*mut u8,i8;
+(SupportData)__receiver)}
+}
+#[doc="`set_Critical(i8)` overload"]fn set_critical(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeae0usize)as*mut u8,();
+(SupportData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Avoid()` overload"]fn get_avoid(self,)->i8{unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeaf0usize)as*mut u8,i8;
+(SupportData)__receiver)}
+}
+#[doc="`set_Avoid(i8)` overload"]fn set_avoid(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeb00usize)as*mut u8,();
+(SupportData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Secure()` overload"]fn get_secure(self,)->i8{unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeb10usize)as*mut u8,i8;
+(SupportData)__receiver)}
+}
+#[doc="`set_Secure(i8)` overload"]fn set_secure(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeb20usize)as*mut u8,();
+(SupportData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeb30usize)as*mut u8, ::unity2::Il2CppString;
+(SupportData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SupportData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aeba0usize)as*mut u8,();
+(SupportData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-supportdata")]
-impl < __T : ISupportData > ISupportDataMethods for __T { }
+#[cfg(feature="app-supportdata")]impl<__T:ISupportData>ISupportDataMethods for __T{}
 
-#[cfg(feature = "app-supportdata")]
-impl SupportData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_avoid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_avoid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_secure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_secure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-supportdata")]impl SupportData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_avoid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_avoid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_secure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_secure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-supportdata")]
-impl SupportData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SupportData) , :: core :: stringify ! (new) ,)) ; < Self as ISupportDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-supportdata")]impl SupportData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SupportData), ::core::stringify!(new),));
+ <Self as ISupportDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-supportdata")]

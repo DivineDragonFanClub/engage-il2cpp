@@ -4,38 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/turncommoninspector/TurnCommonInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "TurnCommonInspector")] # [parent (crate :: app :: mapinspector :: MapInspector)] pub struct TurnCommonInspector {
-# [offset (48)] # [rename (name = "m_Min")] pub m_min : i32 ,
-# [offset (52)] # [rename (name = "m_Max")] pub m_max : i32 ,
-# [offset (56)] # [rename (name = "m_Force")] pub m_force : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turncommoninspector/TurnCommonInspector.md"))]#[::unity2::class(namespace="App",name="TurnCommonInspector")]#[parent(crate::app::mapinspector::MapInspector)]pub struct TurnCommonInspector{#[offset(48)]#[rename(name="m_Min")]pub m_min:i32, #[offset(52)]#[rename(name="m_Max")]pub m_max:i32, #[offset(56)]#[rename(name="m_Force")]pub m_force:i32,}
 
 }
 
 #[cfg(feature = "app-turncommoninspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-turncommoninspector")]
-pub trait ITurnCommonInspectorMethods : ITurnCommonInspector { # [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < TurnCommonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnCommonInspector , crate :: app :: mapinspector :: MapInspector_Kind , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22acb00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`IsEanble(i32, i32)` overload"] fn is_eanble (self , turn : impl :: core :: convert :: Into < i32 > , force : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < TurnCommonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnCommonInspector , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22acd50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (turn) , :: core :: convert :: Into :: into (force) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-turncommoninspector")]pub trait ITurnCommonInspectorMethods:ITurnCommonInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <TurnCommonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22acb00usize)as*mut u8,();
+(TurnCommonInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`IsEanble(i32, i32)` overload"]fn is_eanble(self,turn:impl::core::convert::Into<i32> ,force:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <TurnCommonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22acd50usize)as*mut u8,bool;
+(TurnCommonInspector)__receiver,(i32)::core::convert::Into::into(turn),(i32)::core::convert::Into::into(force))}
+}
+}
 
-#[cfg(feature = "app-turncommoninspector")]
-impl < __T : ITurnCommonInspector > ITurnCommonInspectorMethods for __T { }
+#[cfg(feature="app-turncommoninspector")]impl<__T:ITurnCommonInspector>ITurnCommonInspectorMethods for __T{}
 
-#[cfg(feature = "app-turncommoninspector")]
-impl TurnCommonInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnCommonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_eanble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnCommonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-turncommoninspector")]impl TurnCommonInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_eanble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-turncommoninspector")]
-impl TurnCommonInspector {
-# [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (kind : crate :: app :: mapinspector :: MapInspector_Kind , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TurnCommonInspector) , :: core :: stringify ! (new) ,)) ; < Self as ITurnCommonInspectorMethods > :: ctor (this , kind , args) ; this }
+#[cfg(feature="app-turncommoninspector")]impl TurnCommonInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(kind:crate::app::mapinspector::MapInspector_Kind,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TurnCommonInspector), ::core::stringify!(new),));
+ <Self as ITurnCommonInspectorMethods> ::ctor(this,kind,args);
+this}
 }
 
 #[cfg(feature = "app-turncommoninspector")]

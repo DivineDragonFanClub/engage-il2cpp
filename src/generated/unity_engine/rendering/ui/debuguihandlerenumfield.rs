@@ -4,44 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: { DebugUIHandlerWidget , IDebugUIHandlerWidget }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWidget,IDebugUIHandlerWidget}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerenumfield/DebugUIHandlerEnumField.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerEnumField")] # [parent (crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget)] pub struct DebugUIHandlerEnumField {
-# [offset (88)] # [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
-# [offset (96)] # [rename (name = "valueLabel")] pub value_label : crate :: unity_engine :: ui :: text :: Text ,
-# [offset (104)] # [rename (name = "m_Field")] pub m_field : crate :: unity_engine :: rendering :: debugui :: DebugUI_EnumField ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlerenumfield/DebugUIHandlerEnumField.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerEnumField")]#[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]pub struct DebugUIHandlerEnumField{#[offset(88)]#[rename(name="nameLabel")]pub name_label:crate::unity_engine::ui::text::Text, #[offset(96)]#[rename(name="valueLabel")]pub value_label:crate::unity_engine::ui::text::Text, #[offset(104)]#[rename(name="m_Field")]pub m_field:crate::unity_engine::rendering::debugui::DebugUI_EnumField,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumfield-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumfield")]
-pub trait IDebugUIHandlerEnumFieldMethods : IDebugUIHandlerEnumField { # [doc = "`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"] fn set_widget (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget >) -> () { unsafe { let __receiver = < DebugUIHandlerEnumField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumField , crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353f700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn on_selection (self , from_next : impl :: core :: convert :: Into < bool > , previous : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> bool { unsafe { let __receiver = < DebugUIHandlerEnumField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumField , bool , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353f7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from_next) , :: core :: convert :: Into :: into (previous) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselection()` overload"] fn on_deselection (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerEnumField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353f810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnAction()` overload"] fn on_action (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerEnumField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353f860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnIncrement(bool)` overload"] fn on_increment (self , fast : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerEnumField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumField , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353f870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecrement(bool)` overload"] fn on_decrement (self , fast : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerEnumField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumField , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353fa00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateValueLabel()` overload"] fn update_value_label (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerEnumField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353fba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerEnumField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353fc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumfield")]pub trait IDebugUIHandlerEnumFieldMethods:IDebugUIHandlerEnumField{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerEnumField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353f700usize)as*mut u8,();
+(DebugUIHandlerEnumField)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+}
+#[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerEnumField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353f7b0usize)as*mut u8,bool;
+(DebugUIHandlerEnumField)__receiver,(bool)::core::convert::Into::into(from_next),(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(previous))}
+}
+#[doc="`OnDeselection()` overload"]fn on_deselection(self,)->(){unsafe{let __receiver= <DebugUIHandlerEnumField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353f810usize)as*mut u8,();
+(DebugUIHandlerEnumField)__receiver)}
+}
+#[doc="`OnAction()` overload"]fn on_action(self,)->(){unsafe{let __receiver= <DebugUIHandlerEnumField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353f860usize)as*mut u8,();
+(DebugUIHandlerEnumField)__receiver)}
+}
+#[doc="`OnIncrement(bool)` overload"]fn on_increment(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerEnumField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353f870usize)as*mut u8,();
+(DebugUIHandlerEnumField)__receiver,(bool)::core::convert::Into::into(fast))}
+}
+#[doc="`OnDecrement(bool)` overload"]fn on_decrement(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerEnumField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353fa00usize)as*mut u8,();
+(DebugUIHandlerEnumField)__receiver,(bool)::core::convert::Into::into(fast))}
+}
+#[doc="`UpdateValueLabel()` overload"]fn update_value_label(self,)->(){unsafe{let __receiver= <DebugUIHandlerEnumField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353fba0usize)as*mut u8,();
+(DebugUIHandlerEnumField)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerEnumField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353fc70usize)as*mut u8,();
+(DebugUIHandlerEnumField)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumfield")]
-impl < __T : IDebugUIHandlerEnumField > IDebugUIHandlerEnumFieldMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumfield")]impl<__T:IDebugUIHandlerEnumField>IDebugUIHandlerEnumFieldMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumfield")]
-impl DebugUIHandlerEnumField { pub fn set_widget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_deselection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_increment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_decrement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_value_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumfield")]impl DebugUIHandlerEnumField{pub fn set_widget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_deselection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_increment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_decrement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_value_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumfield")]
-impl DebugUIHandlerEnumField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerEnumField) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerEnumFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumfield")]impl DebugUIHandlerEnumField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerEnumField), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerEnumFieldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumfield")]

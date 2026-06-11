@@ -4,41 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: app :: stringitem :: { IStringItem , StringItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::app::stringitem::{IStringItem,StringItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/groupbeginitem/GroupBeginItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GroupBeginItem")] # [parent (crate :: app :: stringitem :: StringItem)] pub struct GroupBeginItem {
-# [static_field] # [rename (name = "FontColor")] pub font_color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/groupbeginitem/GroupBeginItem.md"))]#[::unity2::class(namespace="App",name="GroupBeginItem")]#[parent(crate::app::stringitem::StringItem)]pub struct GroupBeginItem{#[static_field]#[rename(name="FontColor")]pub font_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-groupbeginitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-groupbeginitem")]
-impl GroupBeginItem { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-groupbeginitem")]impl GroupBeginItem{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2978170usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-groupbeginitem")]
-pub trait IGroupBeginItemMethods : IGroupBeginItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2977ec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , english : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2977ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (english) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2977f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelp()` overload"] fn get_help (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2977fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetKind()` overload"] fn get_kind (self ,) -> crate :: app :: menuitem :: MenuItem_Kind { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFontColor()` overload"] fn get_font_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LeftCall()` overload"] fn left_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29780f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RightCall()` overload"] fn right_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangeState(crate::app::menuitem::MenuItem_State)` overload"] fn change_state (self , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupBeginItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupBeginItem , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29780d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-groupbeginitem")]pub trait IGroupBeginItemMethods:IGroupBeginItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,state:impl::core::convert::Into<crate::app::menuitem::MenuItem_State>)->(){unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2977ec0usize)as*mut u8,();
+(GroupBeginItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,english:impl::core::convert::Into< ::unity2::Il2CppString> ,state:impl::core::convert::Into<crate::app::menuitem::MenuItem_State>)->(){unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2977ef0usize)as*mut u8,();
+(GroupBeginItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(english),(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2977f20usize)as*mut u8, ::unity2::Il2CppString;
+(GroupBeginItem)__receiver)}
+}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2977fa0usize)as*mut u8, ::unity2::Il2CppString;
+(GroupBeginItem)__receiver)}
+}
+#[doc="`GetKind()` overload"]fn get_kind(self,)->crate::app::menuitem::MenuItem_Kind{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978010usize)as*mut u8,crate::app::menuitem::MenuItem_Kind;
+(GroupBeginItem)__receiver)}
+}
+#[doc="`GetFontColor()` overload"]fn get_font_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978020usize)as*mut u8,crate::unity_engine::color::Color;
+(GroupBeginItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978090usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(GroupBeginItem)__receiver)}
+}
+#[doc="`LeftCall()` overload"]fn left_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29780f0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(GroupBeginItem)__receiver)}
+}
+#[doc="`RightCall()` overload"]fn right_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978130usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(GroupBeginItem)__receiver)}
+}
+#[doc="`ChangeState(crate::app::menuitem::MenuItem_State)` overload"]fn change_state(self,state:impl::core::convert::Into<crate::app::menuitem::MenuItem_State>)->(){unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29780d0usize)as*mut u8,();
+(GroupBeginItem)__receiver,(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
+}
+}
 
-#[cfg(feature = "app-groupbeginitem")]
-impl < __T : IGroupBeginItem > IGroupBeginItemMethods for __T { }
+#[cfg(feature="app-groupbeginitem")]impl<__T:IGroupBeginItem>IGroupBeginItemMethods for __T{}
 
-#[cfg(feature = "app-groupbeginitem")]
-impl GroupBeginItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_font_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn left_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn right_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn change_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupBeginItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-groupbeginitem")]impl GroupBeginItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_font_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn left_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn right_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn change_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-groupbeginitem")]
-impl GroupBeginItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GroupBeginItem) , :: core :: stringify ! (new) ,)) ; < Self as IGroupBeginItemMethods > :: ctor (this , name , state) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString , english : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GroupBeginItem) , :: core :: stringify ! (new_2) ,)) ; < Self as IGroupBeginItemMethods > :: ctor_2 (this , name , english , state) ; this }
+#[cfg(feature="app-groupbeginitem")]impl GroupBeginItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,state:crate::app::menuitem::MenuItem_State)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GroupBeginItem), ::core::stringify!(new),));
+ <Self as IGroupBeginItemMethods> ::ctor(this,name,state);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString,english: ::unity2::Il2CppString,state:crate::app::menuitem::MenuItem_State)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GroupBeginItem), ::core::stringify!(new_2),));
+ <Self as IGroupBeginItemMethods> ::ctor_2(this,name,english,state);
+this}
 }
 
 #[cfg(feature = "app-groupbeginitem")]

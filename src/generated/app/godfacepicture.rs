@@ -4,36 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godfacepicture/GodFacePicture.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodFacePicture")] # [parent (crate :: system :: object :: Object)] pub struct GodFacePicture {
-# [static_field] # [rename (name = "Path")] pub path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_FacePicture")] pub s_face_picture : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godfacepicture/GodFacePicture.md"))]#[::unity2::class(namespace="App",name="GodFacePicture")]#[parent(crate::system::object::Object)]pub struct GodFacePicture{#[static_field]#[rename(name="Path")]pub path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_FacePicture")]pub s_face_picture:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,}
 
 }
 
 #[cfg(feature = "app-godfacepicture-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godfacepicture")]
-impl GodFacePicture { # [doc = "`LoadAsync()` overload"] pub fn load_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f590usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] pub fn is_loading () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoaded()` overload"] pub fn is_loaded () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f730usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f7e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Get(crate::app::goddata::GodData)` overload"] pub fn get (god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f8a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetPath(crate::app::goddata::GodData)` overload"] pub fn get_path (god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232fa20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232fc00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godfacepicture")]impl GodFacePicture{#[doc="`LoadAsync()` overload"]pub fn load_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232f590usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoading()` overload"]pub fn is_loading()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232f680usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsLoaded()` overload"]pub fn is_loaded()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232f730usize)as*mut u8,bool;
+)}
+}
+#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232f7e0usize)as*mut u8,();
+)}
+}
+#[doc="`Get(crate::app::goddata::GodData)` overload"]pub fn get(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232f8a0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`GetPath(crate::app::goddata::GodData)` overload"]pub fn get_path(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232fa20usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232fc00usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-godfacepicture")]
-pub trait IGodFacePictureMethods : IGodFacePicture { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodFacePicture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodFacePicture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232fbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godfacepicture")]pub trait IGodFacePictureMethods:IGodFacePicture{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodFacePicture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232fbf0usize)as*mut u8,();
+(GodFacePicture)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godfacepicture")]
-impl < __T : IGodFacePicture > IGodFacePictureMethods for __T { }
+#[cfg(feature="app-godfacepicture")]impl<__T:IGodFacePicture>IGodFacePictureMethods for __T{}
 
-#[cfg(feature = "app-godfacepicture")]
-impl GodFacePicture { pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-godfacepicture")]impl GodFacePicture{pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-godfacepicture")]
-impl GodFacePicture {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodFacePicture) , :: core :: stringify ! (new) ,)) ; < Self as IGodFacePictureMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godfacepicture")]impl GodFacePicture{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodFacePicture), ::core::stringify!(new),));
+ <Self as IGodFacePictureMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godfacepicture")]

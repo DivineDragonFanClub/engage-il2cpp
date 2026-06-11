@@ -4,40 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
- use crate :: system :: reflection :: methodbase :: { IMethodBase , MethodBase }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
+use crate::system::reflection::methodbase::{IMethodBase,MethodBase}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/constructorinfo/ConstructorInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "ConstructorInfo")] # [parent (crate :: system :: reflection :: methodbase :: MethodBase)] pub struct ConstructorInfo {
-# [static_field] # [rename (name = "ConstructorName")] pub constructor_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "TypeConstructorName")] pub type_constructor_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/constructorinfo/ConstructorInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="ConstructorInfo")]#[parent(crate::system::reflection::methodbase::MethodBase)]pub struct ConstructorInfo{#[static_field]#[rename(name="ConstructorName")]pub constructor_name: ::unity2::Il2CppString, #[static_field]#[rename(name="TypeConstructorName")]pub type_constructor_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-constructorinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-constructorinfo")]
-impl ConstructorInfo { # [doc = "`op_Equality(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::constructorinfo::ConstructorInfo)` overload"] pub fn op_equality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: constructorinfo :: ConstructorInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: constructorinfo :: ConstructorInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: constructorinfo :: ConstructorInfo , crate :: system :: reflection :: constructorinfo :: ConstructorInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::constructorinfo::ConstructorInfo)` overload"] pub fn op_inequality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: constructorinfo :: ConstructorInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: constructorinfo :: ConstructorInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: constructorinfo :: ConstructorInfo , crate :: system :: reflection :: constructorinfo :: ConstructorInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31e5290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31e52f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-constructorinfo")]impl ConstructorInfo{#[doc="`op_Equality(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::constructorinfo::ConstructorInfo)` overload"]pub fn op_equality(left:impl::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo> ,right:impl::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0260usize)as*mut u8,bool;
+(crate::system::reflection::constructorinfo::ConstructorInfo)::core::convert::Into::into(left),(crate::system::reflection::constructorinfo::ConstructorInfo)::core::convert::Into::into(right))}
+}
+#[doc="`op_Inequality(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::constructorinfo::ConstructorInfo)` overload"]pub fn op_inequality(left:impl::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo> ,right:impl::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31e5290usize)as*mut u8,bool;
+(crate::system::reflection::constructorinfo::ConstructorInfo)::core::convert::Into::into(left),(crate::system::reflection::constructorinfo::ConstructorInfo)::core::convert::Into::into(right))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31e52f0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-reflection-constructorinfo")]
-pub trait IConstructorInfoMethods : IConstructorInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConstructorInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31e5250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MemberType()` overload"] fn get_member_type (self ,) -> crate :: system :: reflection :: membertypes :: MemberTypes { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConstructorInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: membertypes :: MemberTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31e5260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Array<crate::system::object::Object>)` overload"] fn invoke (self , parameters : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: system :: object :: Object { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConstructorInfo , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d02a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parameters) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConstructorInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31e5270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < ConstructorInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConstructorInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31e5280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-constructorinfo")]pub trait IConstructorInfoMethods:IConstructorInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ConstructorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31e5250usize)as*mut u8,();
+(ConstructorInfo)__receiver)}
+}
+#[doc="`get_MemberType()` overload"]fn get_member_type(self,)->crate::system::reflection::membertypes::MemberTypes{unsafe{let __receiver= <ConstructorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31e5260usize)as*mut u8,crate::system::reflection::membertypes::MemberTypes;
+(ConstructorInfo)__receiver)}
+}
+#[doc="`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,parameters:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <ConstructorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31d02a0usize)as*mut u8,crate::system::object::Object;
+(ConstructorInfo)__receiver,(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(parameters))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ConstructorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31e5270usize)as*mut u8,bool;
+(ConstructorInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <ConstructorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31e5280usize)as*mut u8,i32;
+(ConstructorInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-constructorinfo")]
-impl < __T : IConstructorInfo > IConstructorInfoMethods for __T { }
+#[cfg(feature="system-reflection-constructorinfo")]impl<__T:IConstructorInfo>IConstructorInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-constructorinfo")]
-impl ConstructorInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConstructorInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_member_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConstructorInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConstructorInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConstructorInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConstructorInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConstructorInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConstructorInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConstructorInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="system-reflection-constructorinfo")]impl ConstructorInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_member_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "system-reflection-constructorinfo")]
-impl ConstructorInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConstructorInfo) , :: core :: stringify ! (new) ,)) ; < Self as IConstructorInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-constructorinfo")]impl ConstructorInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConstructorInfo), ::core::stringify!(new),));
+ <Self as IConstructorInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-constructorinfo")]

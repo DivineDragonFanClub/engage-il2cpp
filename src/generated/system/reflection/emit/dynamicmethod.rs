@@ -4,32 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
- use crate :: system :: reflection :: methodbase :: { IMethodBase , MethodBase }
- ;
- use crate :: system :: reflection :: methodinfo :: { IMethodInfo , MethodInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
+use crate::system::reflection::methodbase::{IMethodBase,MethodBase}
+;
+use crate::system::reflection::methodinfo::{IMethodInfo,MethodInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/dynamicmethod/DynamicMethod.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "DynamicMethod")] # [parent (crate :: system :: reflection :: methodinfo :: MethodInfo)] pub struct DynamicMethod {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/emit/dynamicmethod/DynamicMethod.md"))]#[::unity2::class(namespace="System.Reflection.Emit",name="DynamicMethod")]#[parent(crate::system::reflection::methodinfo::MethodInfo)]pub struct DynamicMethod{}
 
 }
 
 #[cfg(feature = "system-reflection-emit-dynamicmethod-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-emit-dynamicmethod")]
-pub trait IDynamicMethodMethods : IDynamicMethod { # [doc = "`get_Attributes()` overload"] fn get_attributes (self ,) -> crate :: system :: reflection :: methodattributes :: MethodAttributes { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodattributes :: MethodAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3640060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DeclaringType()` overload"] fn get_declaring_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x36400a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3640120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReflectedType()` overload"] fn get_reflected_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3640160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(bool)` overload"] fn get_custom_attributes (self , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x36401a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes_2 (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x36401e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetMethodImplementationFlags()` overload"] fn get_method_implementation_flags (self ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3640220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetParameters()` overload"] fn get_parameters (self ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3640260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < DynamicMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicMethod , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x36402e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-emit-dynamicmethod")]pub trait IDynamicMethodMethods:IDynamicMethod{#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::methodattributes::MethodAttributes{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3640060usize)as*mut u8,crate::system::reflection::methodattributes::MethodAttributes;
+(DynamicMethod)__receiver)}
+}
+#[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x36400a0usize)as*mut u8, ::unity2::SystemType;
+(DynamicMethod)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3640120usize)as*mut u8, ::unity2::Il2CppString;
+(DynamicMethod)__receiver)}
+}
+#[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3640160usize)as*mut u8, ::unity2::SystemType;
+(DynamicMethod)__receiver)}
+}
+#[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x36401a0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(DynamicMethod)__receiver,(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x36401e0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(DynamicMethod)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetMethodImplementationFlags()` overload"]fn get_method_implementation_flags(self,)->crate::system::reflection::methodimplattributes::MethodImplAttributes{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3640220usize)as*mut u8,crate::system::reflection::methodimplattributes::MethodImplAttributes;
+(DynamicMethod)__receiver)}
+}
+#[doc="`GetParameters()` overload"]fn get_parameters(self,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3640260usize)as*mut u8, ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> ;
+(DynamicMethod)__receiver)}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <DynamicMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x36402e0usize)as*mut u8,bool;
+(DynamicMethod)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+}
 
-#[cfg(feature = "system-reflection-emit-dynamicmethod")]
-impl < __T : IDynamicMethod > IDynamicMethodMethods for __T { }
+#[cfg(feature="system-reflection-emit-dynamicmethod")]impl<__T:IDynamicMethod>IDynamicMethodMethods for __T{}
 
-#[cfg(feature = "system-reflection-emit-dynamicmethod")]
-impl DynamicMethod { pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_declaring_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_reflected_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_custom_attributes_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_method_implementation_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="system-reflection-emit-dynamicmethod")]impl DynamicMethod{pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_declaring_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_reflected_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_custom_attributes_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_method_implementation_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "system-reflection-emit-dynamicmethod")]
 #[doc(hidden)]

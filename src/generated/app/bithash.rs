@@ -4,40 +4,115 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bithash/BitHash.md"))] # [:: unity2 :: class (namespace = "App" , name = "BitHash")] # [parent (crate :: system :: object :: Object)] pub struct BitHash {
-# [offset (16)] # [rename (name = "m_Shift")] pub m_shift : i32 ,
-# [offset (20)] # [rename (name = "m_Mask")] pub m_mask : i32 ,
-# [offset (24)] # [rename (name = "m_List")] pub m_list : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
-# [offset (32)] # [rename (name = "m_Names")] pub m_names : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (40)] # [rename (name = "m_Dictionary")] pub m_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 > ,
-# [offset (48)] # [rename (name = "m_Bits")] pub m_bits : :: unity2 :: Array < u8 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bithash/BitHash.md"))]#[::unity2::class(namespace="App",name="BitHash")]#[parent(crate::system::object::Object)]pub struct BitHash{#[offset(16)]#[rename(name="m_Shift")]pub m_shift:i32, #[offset(20)]#[rename(name="m_Mask")]pub m_mask:i32, #[offset(24)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<i32> , #[offset(32)]#[rename(name="m_Names")]pub m_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="m_Dictionary")]pub m_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,i32> , #[offset(48)]#[rename(name="m_Bits")]pub m_bits: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "app-bithash-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bithash")]
-impl BitHash { # [doc = "`CalcKey(::unity2::Il2CppString, i32)` overload"] pub fn calc_key (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988cc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bithash")]impl BitHash{#[doc="`CalcKey(::unity2::Il2CppString, i32)` overload"]pub fn calc_key(name:impl::core::convert::Into< ::unity2::Il2CppString> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2988cc0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(shift))}
+}
+}
 
-#[cfg(feature = "app-bithash")]
-pub trait IBitHashMethods : IBitHash { # [doc = "`.ctor(i32)` overload"] fn ctor (self , shift : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString)` overload"] fn add (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Array<::unity2::Il2CppString>)` overload"] fn add_2 (self , conditions : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (conditions) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Test(i32)` overload"] fn test (self , key : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`Test(i32, i32)` overload"] fn test_2 (self , key1 : impl :: core :: convert :: Into < i32 > , key2 : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29887e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key1) , :: core :: convert :: Into :: into (key2) , :: core :: option :: Option :: None) } } } # [doc = "`Test(i32, i32, i32)` overload"] fn test_3 (self , key1 : impl :: core :: convert :: Into < i32 > , key2 : impl :: core :: convert :: Into < i32 > , key3 : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key1) , :: core :: convert :: Into :: into (key2) , :: core :: convert :: Into :: into (key3) , :: core :: option :: Option :: None) } } } # [doc = "`Test(i32, i32, i32, i32)` overload"] fn test_4 (self , key1 : impl :: core :: convert :: Into < i32 > , key2 : impl :: core :: convert :: Into < i32 > , key3 : impl :: core :: convert :: Into < i32 > , key4 : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29888f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key1) , :: core :: convert :: Into :: into (key2) , :: core :: convert :: Into :: into (key3) , :: core :: convert :: Into :: into (key4) , :: core :: option :: Option :: None) } } } # [doc = "`Test(::unity2::Array<i32>)` overload"] fn test_5 (self , keys : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29889b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keys) , :: core :: option :: Option :: None) } } } # [doc = "`Test(crate::system::collections::generic::list_1::List_1<i32>)` overload"] fn test_6 (self , keys : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keys) , :: core :: option :: Option :: None) } } } # [doc = "`Not(i32)` overload"] fn not (self , key : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`Not(::unity2::Array<i32>)` overload"] fn not_2 (self , keys : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keys) , :: core :: option :: Option :: None) } } } # [doc = "`Not(crate::system::collections::generic::list_1::List_1<i32>)` overload"] fn not_3 (self , keys : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keys) , :: core :: option :: Option :: None) } } } # [doc = "`Test(::unity2::Il2CppString)` overload"] fn test_7 (self , key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`get_Names()` overload"] fn get_names (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { let __receiver = < BitHash as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHash , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bithash")]pub trait IBitHashMethods:IBitHash{#[doc="`.ctor(i32)` overload"]fn ctor(self,shift:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988120usize)as*mut u8,();
+(BitHash)__receiver,(i32)::core::convert::Into::into(shift))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988310usize)as*mut u8,();
+(BitHash)__receiver)}
+}
+#[doc="`Add(::unity2::Il2CppString)` overload"]fn add(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988370usize)as*mut u8,();
+(BitHash)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Add(::unity2::Array<::unity2::Il2CppString>)` overload"]fn add_2(self,conditions:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988570usize)as*mut u8,();
+(BitHash)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(conditions))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988670usize)as*mut u8,();
+(BitHash)__receiver)}
+}
+#[doc="`Test(i32)` overload"]fn test(self,key:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988790usize)as*mut u8,bool;
+(BitHash)__receiver,(i32)::core::convert::Into::into(key))}
+}
+#[doc="`Test(i32, i32)` overload"]fn test_2(self,key1:impl::core::convert::Into<i32> ,key2:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29887e0usize)as*mut u8,bool;
+(BitHash)__receiver,(i32)::core::convert::Into::into(key1),(i32)::core::convert::Into::into(key2))}
+}
+#[doc="`Test(i32, i32, i32)` overload"]fn test_3(self,key1:impl::core::convert::Into<i32> ,key2:impl::core::convert::Into<i32> ,key3:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988850usize)as*mut u8,bool;
+(BitHash)__receiver,(i32)::core::convert::Into::into(key1),(i32)::core::convert::Into::into(key2),(i32)::core::convert::Into::into(key3))}
+}
+#[doc="`Test(i32, i32, i32, i32)` overload"]fn test_4(self,key1:impl::core::convert::Into<i32> ,key2:impl::core::convert::Into<i32> ,key3:impl::core::convert::Into<i32> ,key4:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29888f0usize)as*mut u8,bool;
+(BitHash)__receiver,(i32)::core::convert::Into::into(key1),(i32)::core::convert::Into::into(key2),(i32)::core::convert::Into::into(key3),(i32)::core::convert::Into::into(key4))}
+}
+#[doc="`Test(::unity2::Array<i32>)` overload"]fn test_5(self,keys:impl::core::convert::Into< ::unity2::Array<i32> >)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29889b0usize)as*mut u8,bool;
+(BitHash)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(keys))}
+}
+#[doc="`Test(crate::system::collections::generic::list_1::List_1<i32>)` overload"]fn test_6(self,keys:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32> >)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988a30usize)as*mut u8,bool;
+(BitHash)__receiver,(crate::system::collections::generic::list_1::List_1<i32>)::core::convert::Into::into(keys))}
+}
+#[doc="`Not(i32)` overload"]fn not(self,key:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988b10usize)as*mut u8,bool;
+(BitHash)__receiver,(i32)::core::convert::Into::into(key))}
+}
+#[doc="`Not(::unity2::Array<i32>)` overload"]fn not_2(self,keys:impl::core::convert::Into< ::unity2::Array<i32> >)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988b60usize)as*mut u8,bool;
+(BitHash)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(keys))}
+}
+#[doc="`Not(crate::system::collections::generic::list_1::List_1<i32>)` overload"]fn not_3(self,keys:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32> >)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988be0usize)as*mut u8,bool;
+(BitHash)__receiver,(crate::system::collections::generic::list_1::List_1<i32>)::core::convert::Into::into(keys))}
+}
+#[doc="`Test(::unity2::Il2CppString)` overload"]fn test_7(self,key:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988d00usize)as*mut u8,bool;
+(BitHash)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key))}
+}
+#[doc="`get_Names()` overload"]fn get_names(self,)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988d80usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+(BitHash)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bithash")]
-impl < __T : IBitHash > IBitHashMethods for __T { }
+#[cfg(feature="app-bithash")]impl<__T:IBitHash>IBitHashMethods for __T{}
 
-#[cfg(feature = "app-bithash")]
-impl BitHash { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn test_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn test_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn test_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn test_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn test_6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn not_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn not_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn not_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn calc_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn test_7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-bithash")]impl BitHash{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn test_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn test_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn test_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn test_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn test_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn not_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn not_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn not_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn calc_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn test_7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-bithash")]
-impl BitHash {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (shift : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitHash) , :: core :: stringify ! (new) ,)) ; < Self as IBitHashMethods > :: ctor (this , shift) ; this }
+#[cfg(feature="app-bithash")]impl BitHash{#[doc="`.ctor(i32)` — overload selector"]pub fn new(shift:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitHash), ::core::stringify!(new),));
+ <Self as IBitHashMethods> ::ctor(this,shift);
+this}
 }
 
 #[cfg(feature = "app-bithash")]

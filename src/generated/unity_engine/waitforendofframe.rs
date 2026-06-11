@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: yieldinstruction :: { IYieldInstruction , YieldInstruction }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/waitforendofframe/WaitForEndOfFrame.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "WaitForEndOfFrame")] # [parent (crate :: unity_engine :: yieldinstruction :: YieldInstruction)] pub struct WaitForEndOfFrame {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/waitforendofframe/WaitForEndOfFrame.md"))]#[::unity2::class(namespace="UnityEngine",name="WaitForEndOfFrame")]#[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]pub struct WaitForEndOfFrame{}
 
 }
 
 #[cfg(feature = "unity_engine-waitforendofframe-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-waitforendofframe")]
-pub trait IWaitForEndOfFrameMethods : IWaitForEndOfFrame { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WaitForEndOfFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaitForEndOfFrame , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379ab20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-waitforendofframe")]pub trait IWaitForEndOfFrameMethods:IWaitForEndOfFrame{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WaitForEndOfFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379ab20usize)as*mut u8,();
+(WaitForEndOfFrame)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-waitforendofframe")]
-impl < __T : IWaitForEndOfFrame > IWaitForEndOfFrameMethods for __T { }
+#[cfg(feature="unity_engine-waitforendofframe")]impl<__T:IWaitForEndOfFrame>IWaitForEndOfFrameMethods for __T{}
 
-#[cfg(feature = "unity_engine-waitforendofframe")]
-impl WaitForEndOfFrame { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaitForEndOfFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-waitforendofframe")]impl WaitForEndOfFrame{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-waitforendofframe")]
-impl WaitForEndOfFrame {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WaitForEndOfFrame) , :: core :: stringify ! (new) ,)) ; < Self as IWaitForEndOfFrameMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-waitforendofframe")]impl WaitForEndOfFrame{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WaitForEndOfFrame), ::core::stringify!(new),));
+ <Self as IWaitForEndOfFrameMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-waitforendofframe")]

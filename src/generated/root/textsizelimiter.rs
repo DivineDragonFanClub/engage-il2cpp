@@ -4,42 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/textsizelimiter/TextSizeLimiter.md"))] # [:: unity2 :: class (namespace = "" , name = "TextSizeLimiter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TextSizeLimiter {
-# [offset (24)] # [rename (name = "m_LimitMaxWidth")] pub m_limit_max_width : f32 ,
-# [offset (32)] # [rename (name = "m_Text")] pub m_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_Layout")] pub m_layout : crate :: unity_engine :: ui :: layoutelement :: LayoutElement ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/textsizelimiter/TextSizeLimiter.md"))]#[::unity2::class(namespace="",name="TextSizeLimiter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TextSizeLimiter{#[offset(24)]#[rename(name="m_LimitMaxWidth")]pub m_limit_max_width:f32, #[offset(32)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_Layout")]pub m_layout:crate::unity_engine::ui::layoutelement::LayoutElement,}
 
 }
 
 #[cfg(feature = "root-textsizelimiter-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-textsizelimiter")]
-pub trait ITextSizeLimiterMethods : ITextSizeLimiter { # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < TextSizeLimiter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextSizeLimiter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ea530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextSizeLimiter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextSizeLimiter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ea700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-textsizelimiter")]pub trait ITextSizeLimiterMethods:ITextSizeLimiter{#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <TextSizeLimiter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea530usize)as*mut u8,();
+(TextSizeLimiter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextSizeLimiter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea700usize)as*mut u8,();
+(TextSizeLimiter)__receiver)}
+}
+}
 
-#[cfg(feature = "root-textsizelimiter")]
-impl < __T : ITextSizeLimiter > ITextSizeLimiterMethods for __T { }
+#[cfg(feature="root-textsizelimiter")]impl<__T:ITextSizeLimiter>ITextSizeLimiterMethods for __T{}
 
-#[cfg(feature = "root-textsizelimiter")]
-impl TextSizeLimiter { pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextSizeLimiter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextSizeLimiter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-textsizelimiter")]impl TextSizeLimiter{pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-textsizelimiter")]
-impl TextSizeLimiter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextSizeLimiter) , :: core :: stringify ! (new) ,)) ; < Self as ITextSizeLimiterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-textsizelimiter")]impl TextSizeLimiter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextSizeLimiter), ::core::stringify!(new),));
+ <Self as ITextSizeLimiterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-textsizelimiter")]

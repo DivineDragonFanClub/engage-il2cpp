@@ -4,47 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: combat :: basetransitioncameracontroller :: { BaseTransitionCameraController , IBaseTransitionCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::combat::basetransitioncameracontroller::{BaseTransitionCameraController,IBaseTransitionCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerconfrontation/CameraControllerConfrontation.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerConfrontation")] # [parent (crate :: combat :: basetransitioncameracontroller :: BaseTransitionCameraController)] pub struct CameraControllerConfrontation {
-# [offset (192)] # [rename (name = "FollowCurve")] pub follow_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (200)] # [rename (name = "LookatCurve")] pub lookat_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (208)] # [rename (name = "FollowPosition")] pub follow_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (220)] # [rename (name = "LookatPosition")] pub lookat_position : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerconfrontation/CameraControllerConfrontation.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerConfrontation")]#[parent(crate::combat::basetransitioncameracontroller::BaseTransitionCameraController)]pub struct CameraControllerConfrontation{#[offset(192)]#[rename(name="FollowCurve")]pub follow_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(200)]#[rename(name="LookatCurve")]pub lookat_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(208)]#[rename(name="FollowPosition")]pub follow_position:crate::unity_engine::vector3::Vector3, #[offset(220)]#[rename(name="LookatPosition")]pub lookat_position:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollerconfrontation-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerconfrontation")]
-pub trait ICameraControllerConfrontationMethods : ICameraControllerConfrontation { # [doc = "`get_CurveLength()` overload"] fn get_curve_length (self ,) -> f32 { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25afb90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TransitionTimeStart()` overload"] fn get_transition_time_start (self ,) -> f32 { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25afc00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TransitionTimeReturn()` overload"] fn get_transition_time_return (self ,) -> f32 { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25afc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsActiveVCam()` overload"] fn get_is_active_v_cam (self ,) -> bool { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25afc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25afc90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25afeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn start_transition (self , next_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25afec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (next_cam) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeTaget(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn change_taget (self , next_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25aff00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (next_cam) , :: core :: option :: Option :: None) } } } # [doc = "`ReturnTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn return_transition (self , current_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25aff10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current_cam) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b06d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerConfrontation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerConfrontation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b0770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerconfrontation")]pub trait ICameraControllerConfrontationMethods:ICameraControllerConfrontation{#[doc="`get_CurveLength()` overload"]fn get_curve_length(self,)->f32{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25afb90usize)as*mut u8,f32;
+(CameraControllerConfrontation)__receiver)}
+}
+#[doc="`get_TransitionTimeStart()` overload"]fn get_transition_time_start(self,)->f32{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25afc00usize)as*mut u8,f32;
+(CameraControllerConfrontation)__receiver)}
+}
+#[doc="`get_TransitionTimeReturn()` overload"]fn get_transition_time_return(self,)->f32{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25afc70usize)as*mut u8,f32;
+(CameraControllerConfrontation)__receiver)}
+}
+#[doc="`get_IsActiveVCam()` overload"]fn get_is_active_v_cam(self,)->bool{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25afc80usize)as*mut u8,bool;
+(CameraControllerConfrontation)__receiver)}
+}
+#[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25afc90usize)as*mut u8,();
+(CameraControllerConfrontation)__receiver,(bool)::core::convert::Into::into(is_routine))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25afeb0usize)as*mut u8,();
+(CameraControllerConfrontation)__receiver)}
+}
+#[doc="`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn start_transition(self,next_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25afec0usize)as*mut u8,();
+(CameraControllerConfrontation)__receiver,(crate::combat::basecameracontroller::BaseCameraController)::core::convert::Into::into(next_cam))}
+}
+#[doc="`ChangeTaget(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn change_taget(self,next_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25aff00usize)as*mut u8,();
+(CameraControllerConfrontation)__receiver,(crate::combat::basecameracontroller::BaseCameraController)::core::convert::Into::into(next_cam))}
+}
+#[doc="`ReturnTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn return_transition(self,current_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25aff10usize)as*mut u8,();
+(CameraControllerConfrontation)__receiver,(crate::combat::basecameracontroller::BaseCameraController)::core::convert::Into::into(current_cam))}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b06d0usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerConfrontation)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b0770usize)as*mut u8,();
+(CameraControllerConfrontation)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollerconfrontation")]
-impl < __T : ICameraControllerConfrontation > ICameraControllerConfrontationMethods for __T { }
+#[cfg(feature="combat-cameracontrollerconfrontation")]impl<__T:ICameraControllerConfrontation>ICameraControllerConfrontationMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerconfrontation")]
-impl CameraControllerConfrontation { pub fn get_curve_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_transition_time_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_transition_time_return_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_is_active_v_cam_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn change_taget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn return_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerConfrontation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="combat-cameracontrollerconfrontation")]impl CameraControllerConfrontation{pub fn get_curve_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_transition_time_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_transition_time_return_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_active_v_cam_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn check_usable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn change_taget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn return_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "combat-cameracontrollerconfrontation")]
-impl CameraControllerConfrontation {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerConfrontation) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerConfrontationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerconfrontation")]impl CameraControllerConfrontation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerConfrontation), ::core::stringify!(new),));
+ <Self as ICameraControllerConfrontationMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollerconfrontation")]

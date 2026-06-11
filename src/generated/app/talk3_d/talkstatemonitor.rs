@@ -4,45 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkstatemonitor/TalkStateMonitor.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkStateMonitor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TalkStateMonitor {
-# [offset (24)] # [rename (name = "m_CharaName")] pub m_chara_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_TextPid")] pub m_text_pid : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_TextPause")] pub m_text_pause : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_TextFace")] pub m_text_face : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_TextLook")] pub m_text_look : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "m_OffstY")] pub m_offst_y : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkstatemonitor/TalkStateMonitor.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkStateMonitor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TalkStateMonitor{#[offset(24)]#[rename(name="m_CharaName")]pub m_chara_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_TextPid")]pub m_text_pid:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_TextPause")]pub m_text_pause:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_TextFace")]pub m_text_face:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_TextLook")]pub m_text_look:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_OffstY")]pub m_offst_y:i32,}
 
 }
 
 #[cfg(feature = "app-talk3_d-talkstatemonitor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talkstatemonitor")]
-pub trait ITalkStateMonitorMethods : ITalkStateMonitor { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AdjustPosition(crate::unity_engine::vector2::Vector2)` overload"] fn adjust_position (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } } # [doc = "`AdjustPosition(crate::unity_engine::camera::Camera, crate::combat::character::Character)` overload"] fn adjust_position_2 (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , crate :: unity_engine :: camera :: Camera , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d83a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } } # [doc = "`SetCharaName(::unity2::Il2CppString)` overload"] fn set_chara_name (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SetPid(::unity2::Il2CppString)` overload"] fn set_pid (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`SetBodyAnime(::unity2::Il2CppString)` overload"] fn set_body_anime (self , anime_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d85a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (anime_name) , :: core :: option :: Option :: None) } } } # [doc = "`SetFaceAnime(::unity2::Il2CppString)` overload"] fn set_face_anime (self , anime_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d85c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (anime_name) , :: core :: option :: Option :: None) } } } # [doc = "`SetLookAt(::unity2::Il2CppString)` overload"] fn set_look_at (self , locator_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d85e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkStateMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkStateMonitor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkstatemonitor")]pub trait ITalkStateMonitorMethods:ITalkStateMonitor{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8300usize)as*mut u8,();
+(TalkStateMonitor)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8310usize)as*mut u8,();
+(TalkStateMonitor)__receiver)}
+}
+#[doc="`AdjustPosition(crate::unity_engine::vector2::Vector2)` overload"]fn adjust_position(self,position:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8320usize)as*mut u8,();
+(TalkStateMonitor)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(position))}
+}
+#[doc="`AdjustPosition(crate::unity_engine::camera::Camera, crate::combat::character::Character)` overload"]fn adjust_position_2(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d83a0usize)as*mut u8,();
+(TalkStateMonitor)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
+#[doc="`SetCharaName(::unity2::Il2CppString)` overload"]fn set_chara_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8560usize)as*mut u8,();
+(TalkStateMonitor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SetPid(::unity2::Il2CppString)` overload"]fn set_pid(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8580usize)as*mut u8,();
+(TalkStateMonitor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`SetBodyAnime(::unity2::Il2CppString)` overload"]fn set_body_anime(self,anime_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d85a0usize)as*mut u8,();
+(TalkStateMonitor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anime_name))}
+}
+#[doc="`SetFaceAnime(::unity2::Il2CppString)` overload"]fn set_face_anime(self,anime_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d85c0usize)as*mut u8,();
+(TalkStateMonitor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anime_name))}
+}
+#[doc="`SetLookAt(::unity2::Il2CppString)` overload"]fn set_look_at(self,locator_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d85e0usize)as*mut u8,();
+(TalkStateMonitor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(locator_name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkStateMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8600usize)as*mut u8,();
+(TalkStateMonitor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkstatemonitor")]
-impl < __T : ITalkStateMonitor > ITalkStateMonitorMethods for __T { }
+#[cfg(feature="app-talk3_d-talkstatemonitor")]impl<__T:ITalkStateMonitor>ITalkStateMonitorMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talkstatemonitor")]
-impl TalkStateMonitor { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn adjust_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn adjust_position_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_chara_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_body_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_face_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_look_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkStateMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-talk3_d-talkstatemonitor")]impl TalkStateMonitor{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn adjust_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn adjust_position_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_chara_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_body_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_face_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_look_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-talk3_d-talkstatemonitor")]
-impl TalkStateMonitor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkStateMonitor) , :: core :: stringify ! (new) ,)) ; < Self as ITalkStateMonitorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talkstatemonitor")]impl TalkStateMonitor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkStateMonitor), ::core::stringify!(new),));
+ <Self as ITalkStateMonitorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talkstatemonitor")]

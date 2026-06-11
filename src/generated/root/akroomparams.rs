@@ -4,40 +4,145 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroomparams/AkRoomParams.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoomParams")] # [parent (crate :: system :: object :: Object)] pub struct AkRoomParams {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akroomparams/AkRoomParams.md"))]#[::unity2::class(namespace="",name="AkRoomParams")]#[parent(crate::system::object::Object)]pub struct AkRoomParams{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akroomparams-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akroomparams")]
-impl AkRoomParams { # [doc = "`getCPtr(crate::root::akroomparams::AkRoomParams)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akroomparams :: AkRoomParams >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akroomparams :: AkRoomParams , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35380usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akroomparams")]impl AkRoomParams{#[doc="`getCPtr(crate::root::akroomparams::AkRoomParams)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akroomparams::AkRoomParams>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f35380usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akroomparams::AkRoomParams)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akroomparams")]
-pub trait IAkRoomParamsMethods : IAkRoomParams { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f353e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::root::akroomparams::AkRoomParams)` overload"] fn ctor_3 (self , in_rhs : impl :: core :: convert :: Into < crate :: root :: akroomparams :: AkRoomParams >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , crate :: root :: akroomparams :: AkRoomParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_rhs) , :: core :: option :: Option :: None) } } } # [doc = "`set_Up(crate::unity_engine::vector3::Vector3)` overload"] fn set_up (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Up()` overload"] fn get_up (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f356f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Front(crate::unity_engine::vector3::Vector3)` overload"] fn set_front (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Front()` overload"] fn get_front (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReverbAuxBus(u32)` overload"] fn set_reverb_aux_bus (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReverbAuxBus()` overload"] fn get_reverb_aux_bus (self ,) -> u32 { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f357d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReverbLevel(f32)` overload"] fn set_reverb_level (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReverbLevel()` overload"] fn get_reverb_level (self ,) -> f32 { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WallOcclusion(f32)` overload"] fn set_wall_occlusion (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WallOcclusion()` overload"] fn get_wall_occlusion (self ,) -> f32 { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f358b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RoomGameObj_AuxSendLevelToSelf(f32)` overload"] fn set_room_game_obj_aux_send_level_to_self (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RoomGameObj_AuxSendLevelToSelf()` overload"] fn get_room_game_obj_aux_send_level_to_self (self ,) -> f32 { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RoomGameObj_KeepRegistered(bool)` overload"] fn set_room_game_obj_keep_registered (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RoomGameObj_KeepRegistered()` overload"] fn get_room_game_obj_keep_registered (self ,) -> bool { unsafe { let __receiver = < AkRoomParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomParams , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akroomparams")]pub trait IAkRoomParamsMethods:IAkRoomParams{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35340usize)as*mut u8,();
+(AkRoomParams)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f353e0usize)as*mut u8,();
+(AkRoomParams)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35410usize)as*mut u8,();
+(AkRoomParams)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35480usize)as*mut u8,();
+(AkRoomParams)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32a00usize)as*mut u8,();
+(AkRoomParams)__receiver)}
+}
+#[doc="`.ctor(crate::root::akroomparams::AkRoomParams)` overload"]fn ctor_3(self,in_rhs:impl::core::convert::Into<crate::root::akroomparams::AkRoomParams>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35610usize)as*mut u8,();
+(AkRoomParams)__receiver,(crate::root::akroomparams::AkRoomParams)::core::convert::Into::into(in_rhs))}
+}
+#[doc="`set_Up(crate::unity_engine::vector3::Vector3)` overload"]fn set_up(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32a90usize)as*mut u8,();
+(AkRoomParams)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_Up()` overload"]fn get_up(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f356f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AkRoomParams)__receiver)}
+}
+#[doc="`set_Front(crate::unity_engine::vector3::Vector3)` overload"]fn set_front(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32b30usize)as*mut u8,();
+(AkRoomParams)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_Front()` overload"]fn get_front(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35760usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AkRoomParams)__receiver)}
+}
+#[doc="`set_ReverbAuxBus(u32)` overload"]fn set_reverb_aux_bus(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32bd0usize)as*mut u8,();
+(AkRoomParams)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ReverbAuxBus()` overload"]fn get_reverb_aux_bus(self,)->u32{unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f357d0usize)as*mut u8,u32;
+(AkRoomParams)__receiver)}
+}
+#[doc="`set_ReverbLevel(f32)` overload"]fn set_reverb_level(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32c50usize)as*mut u8,();
+(AkRoomParams)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ReverbLevel()` overload"]fn get_reverb_level(self,)->f32{unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35840usize)as*mut u8,f32;
+(AkRoomParams)__receiver)}
+}
+#[doc="`set_WallOcclusion(f32)` overload"]fn set_wall_occlusion(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32cd0usize)as*mut u8,();
+(AkRoomParams)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_WallOcclusion()` overload"]fn get_wall_occlusion(self,)->f32{unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f358b0usize)as*mut u8,f32;
+(AkRoomParams)__receiver)}
+}
+#[doc="`set_RoomGameObj_AuxSendLevelToSelf(f32)` overload"]fn set_room_game_obj_aux_send_level_to_self(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32d50usize)as*mut u8,();
+(AkRoomParams)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_RoomGameObj_AuxSendLevelToSelf()` overload"]fn get_room_game_obj_aux_send_level_to_self(self,)->f32{unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35920usize)as*mut u8,f32;
+(AkRoomParams)__receiver)}
+}
+#[doc="`set_RoomGameObj_KeepRegistered(bool)` overload"]fn set_room_game_obj_keep_registered(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32dd0usize)as*mut u8,();
+(AkRoomParams)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_RoomGameObj_KeepRegistered()` overload"]fn get_room_game_obj_keep_registered(self,)->bool{unsafe{let __receiver= <AkRoomParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35990usize)as*mut u8,bool;
+(AkRoomParams)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akroomparams")]
-impl < __T : IAkRoomParams > IAkRoomParamsMethods for __T { }
+#[cfg(feature="root-akroomparams")]impl<__T:IAkRoomParams>IAkRoomParamsMethods for __T{}
 
-#[cfg(feature = "root-akroomparams")]
-impl AkRoomParams { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_front_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_front_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_reverb_aux_bus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_reverb_aux_bus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_reverb_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_reverb_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_wall_occlusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_wall_occlusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_room_game_obj_aux_send_level_to_self_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_room_game_obj_aux_send_level_to_self_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_room_game_obj_keep_registered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_room_game_obj_keep_registered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="root-akroomparams")]impl AkRoomParams{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_front_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_front_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_reverb_aux_bus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_reverb_aux_bus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_reverb_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_reverb_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_wall_occlusion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_wall_occlusion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_room_game_obj_aux_send_level_to_self_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_room_game_obj_aux_send_level_to_self_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_room_game_obj_keep_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_room_game_obj_keep_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "root-akroomparams")]
-impl AkRoomParams {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoomParams) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoomParamsMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoomParams) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkRoomParamsMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(crate::root::akroomparams::AkRoomParams)` — overload selector"] pub fn new_3 (in_rhs : crate :: root :: akroomparams :: AkRoomParams) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoomParams) , :: core :: stringify ! (new_3) ,)) ; < Self as IAkRoomParamsMethods > :: ctor_3 (this , in_rhs) ; this }
+#[cfg(feature="root-akroomparams")]impl AkRoomParams{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoomParams), ::core::stringify!(new),));
+ <Self as IAkRoomParamsMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoomParams), ::core::stringify!(new_2),));
+ <Self as IAkRoomParamsMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(crate::root::akroomparams::AkRoomParams)` — overload selector"]pub fn new_3(in_rhs:crate::root::akroomparams::AkRoomParams)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoomParams), ::core::stringify!(new_3),));
+ <Self as IAkRoomParamsMethods> ::ctor_3(this,in_rhs);
+this}
 }
 
 #[cfg(feature = "root-akroomparams")]

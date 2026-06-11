@@ -4,43 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_result/FishingConfig_Result.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingConfig_Result")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingConfig_Result {
-# [offset (24)] # [rename (name = "m_ResultTime")] pub m_result_time : f32 ,
-# [offset (28)] # [rename (name = "m_ResultFadeInType")] pub m_result_fade_in_type : crate :: app :: fishing :: fadetype :: FadeType ,
-# [offset (32)] # [rename (name = "m_ResultCamera")] pub m_result_camera : crate :: app :: fishing :: config :: fixcameraconfig :: FixCameraConfig ,
-# [offset (40)] # [rename (name = "m_ResultPlayerRotY")] pub m_result_player_rot_y : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingconfig_result/FishingConfig_Result.md"))]#[::unity2::class(namespace="App",name="FishingConfig_Result")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FishingConfig_Result{#[offset(24)]#[rename(name="m_ResultTime")]pub m_result_time:f32, #[offset(28)]#[rename(name="m_ResultFadeInType")]pub m_result_fade_in_type:crate::app::fishing::fadetype::FadeType, #[offset(32)]#[rename(name="m_ResultCamera")]pub m_result_camera:crate::app::fishing::config::fixcameraconfig::FixCameraConfig, #[offset(40)]#[rename(name="m_ResultPlayerRotY")]pub m_result_player_rot_y:f32,}
 
 }
 
 #[cfg(feature = "app-fishingconfig_result-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingconfig_result")]
-pub trait IFishingConfig_ResultMethods : IFishingConfig_Result { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingConfig_Result as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingConfig_Result , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26efff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingconfig_result")]pub trait IFishingConfig_ResultMethods:IFishingConfig_Result{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingConfig_Result as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26efff0usize)as*mut u8,();
+(FishingConfig_Result)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingconfig_result")]
-impl < __T : IFishingConfig_Result > IFishingConfig_ResultMethods for __T { }
+#[cfg(feature="app-fishingconfig_result")]impl<__T:IFishingConfig_Result>IFishingConfig_ResultMethods for __T{}
 
-#[cfg(feature = "app-fishingconfig_result")]
-impl FishingConfig_Result { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingConfig_Result as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-fishingconfig_result")]impl FishingConfig_Result{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-fishingconfig_result")]
-impl FishingConfig_Result {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingConfig_Result) , :: core :: stringify ! (new) ,)) ; < Self as IFishingConfig_ResultMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingconfig_result")]impl FishingConfig_Result{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingConfig_Result), ::core::stringify!(new),));
+ <Self as IFishingConfig_ResultMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingconfig_result")]

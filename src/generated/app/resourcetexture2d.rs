@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: resourcehandle_2 :: { IResourceHandle_2 , ResourceHandle_2 }
- ;
- use crate :: app :: tresourcehandle_1 :: { ITResourceHandle_1 , TResourceHandle_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::resourcehandle_2::{IResourceHandle_2,ResourceHandle_2}
+;
+use crate::app::tresourcehandle_1::{ITResourceHandle_1,TResourceHandle_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourcetexture2d/ResourceTexture2D.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceTexture2D")] # [parent (crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: texture2d :: Texture2D >)] pub struct ResourceTexture2D {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourcetexture2d/ResourceTexture2D.md"))]#[::unity2::class(namespace="App",name="ResourceTexture2D")]#[parent(crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::texture2d::Texture2D>)]pub struct ResourceTexture2D{}
 
 }
 
 #[cfg(feature = "app-resourcetexture2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-resourcetexture2d")]
-pub trait IResourceTexture2DMethods : IResourceTexture2D { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ResourceTexture2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceTexture2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2018390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-resourcetexture2d")]pub trait IResourceTexture2DMethods:IResourceTexture2D{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ResourceTexture2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2018390usize)as*mut u8,();
+(ResourceTexture2D)__receiver)}
+}
+}
 
-#[cfg(feature = "app-resourcetexture2d")]
-impl < __T : IResourceTexture2D > IResourceTexture2DMethods for __T { }
+#[cfg(feature="app-resourcetexture2d")]impl<__T:IResourceTexture2D>IResourceTexture2DMethods for __T{}
 
-#[cfg(feature = "app-resourcetexture2d")]
-impl ResourceTexture2D { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceTexture2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-resourcetexture2d")]impl ResourceTexture2D{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-resourcetexture2d")]
-impl ResourceTexture2D {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourceTexture2D) , :: core :: stringify ! (new) ,)) ; < Self as IResourceTexture2DMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-resourcetexture2d")]impl ResourceTexture2D{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourceTexture2D), ::core::stringify!(new),));
+ <Self as IResourceTexture2DMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-resourcetexture2d")]

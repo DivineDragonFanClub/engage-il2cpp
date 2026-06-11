@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionenablelookik/ActionEnableLookIK.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionEnableLookIK")] # [parent (crate :: combat :: state :: State)] pub struct ActionEnableLookIK {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionenablelookik/ActionEnableLookIK.md"))]#[::unity2::class(namespace="Combat",name="ActionEnableLookIK")]#[parent(crate::combat::state::State)]pub struct ActionEnableLookIK{}
 
 }
 
 #[cfg(feature = "combat-actionenablelookik-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionenablelookik")]
-pub trait IActionEnableLookIKMethods : IActionEnableLookIK { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionEnableLookIK as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionEnableLookIK , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionEnableLookIK as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionEnableLookIK , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ActionEnableLookIK as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionEnableLookIK , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionenablelookik")]pub trait IActionEnableLookIKMethods:IActionEnableLookIK{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionEnableLookIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4be0usize)as*mut u8, ::unity2::Il2CppString;
+(ActionEnableLookIK)__receiver)}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionEnableLookIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4c30usize)as*mut u8,();
+(ActionEnableLookIK)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ActionEnableLookIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4d60usize)as*mut u8,();
+(ActionEnableLookIK)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actionenablelookik")]
-impl < __T : IActionEnableLookIK > IActionEnableLookIKMethods for __T { }
+#[cfg(feature="combat-actionenablelookik")]impl<__T:IActionEnableLookIK>IActionEnableLookIKMethods for __T{}
 
-#[cfg(feature = "combat-actionenablelookik")]
-impl ActionEnableLookIK { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionEnableLookIK as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionEnableLookIK as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionEnableLookIK as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actionenablelookik")]impl ActionEnableLookIK{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actionenablelookik")]
-impl ActionEnableLookIK {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionEnableLookIK) , :: core :: stringify ! (new) ,)) ; < Self as IActionEnableLookIKMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-actionenablelookik")]impl ActionEnableLookIK{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionEnableLookIK), ::core::stringify!(new),));
+ <Self as IActionEnableLookIKMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-actionenablelookik")]

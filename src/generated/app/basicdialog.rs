@@ -4,41 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicdialog/BasicDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicDialog")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct BasicDialog {
-# [offset (200)] # [rename (name = "m_dialogContent")] pub m_dialog_content : crate :: app :: basicdialogcontent :: BasicDialogContent ,
-# [offset (208)] # [rename (name = "m_bBindBg")] pub m_b_bind_bg : bool ,
-# [offset (209)] # [rename (name = "m_IsNotBindBg")] pub m_is_not_bind_bg : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicdialog/BasicDialog.md"))]#[::unity2::class(namespace="App",name="BasicDialog")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct BasicDialog{#[offset(200)]#[rename(name="m_dialogContent")]pub m_dialog_content:crate::app::basicdialogcontent::BasicDialogContent, #[offset(208)]#[rename(name="m_bBindBg")]pub m_b_bind_bg:bool, #[offset(209)]#[rename(name="m_IsNotBindBg")]pub m_is_not_bind_bg:bool,}
 
 }
 
 #[cfg(feature = "app-basicdialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-basicdialog")]
-impl BasicDialog { # [doc = "`CreateBasicDialogBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] pub fn create_basic_dialog_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> crate :: app :: basicdialog :: BasicDialog { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicdialog")]impl BasicDialog{#[doc="`CreateBasicDialogBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]pub fn create_basic_dialog_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2454120usize)as*mut u8,crate::app::basicdialog::BasicDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
 
-#[cfg(feature = "app-basicdialog")]
-pub trait IBasicDialogMethods : IBasicDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicdialogcontent :: BasicDialogContent >) -> () { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicdialogcontent :: BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24533c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDefaultDesc()` overload"] fn create_default_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24535f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BindBg()` overload"] fn bind_bg (self ,) -> () { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetOpenSoundEvent()` overload"] fn get_open_sound_event (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetText(::unity2::Il2CppString)` overload"] fn set_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`SetShadowOff()` overload"] fn set_shadow_off (self ,) -> () { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPos(f32, f32)` overload"] fn set_pos (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`SetBackgroundBlurOff()` overload"] fn set_background_blur_off (self ,) -> () { unsafe { let __receiver = < BasicDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicdialog")]pub trait IBasicDialogMethods:IBasicDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24533c0usize)as*mut u8,();
+(BasicDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`CreateDefaultDesc()` overload"]fn create_default_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24535f0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(BasicDialog)__receiver)}
+}
+#[doc="`BindBg()` overload"]fn bind_bg(self,)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453ae0usize)as*mut u8,();
+(BasicDialog)__receiver)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453b70usize)as*mut u8,();
+(BasicDialog)__receiver)}
+}
+#[doc="`GetOpenSoundEvent()` overload"]fn get_open_sound_event(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453c70usize)as*mut u8, ::unity2::Il2CppString;
+(BasicDialog)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453cc0usize)as*mut u8,();
+(BasicDialog)__receiver)}
+}
+#[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453d90usize)as*mut u8,();
+(BasicDialog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`SetShadowOff()` overload"]fn set_shadow_off(self,)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453e70usize)as*mut u8,();
+(BasicDialog)__receiver)}
+}
+#[doc="`SetPos(f32, f32)` overload"]fn set_pos(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453fb0usize)as*mut u8,();
+(BasicDialog)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`SetBackgroundBlurOff()` overload"]fn set_background_blur_off(self,)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2454110usize)as*mut u8,();
+(BasicDialog)__receiver)}
+}
+}
 
-#[cfg(feature = "app-basicdialog")]
-impl < __T : IBasicDialog > IBasicDialogMethods for __T { }
+#[cfg(feature="app-basicdialog")]impl<__T:IBasicDialog>IBasicDialogMethods for __T{}
 
-#[cfg(feature = "app-basicdialog")]
-impl BasicDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_default_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn bind_bg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_open_sound_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_shadow_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_background_blur_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_basic_dialog_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-basicdialog")]impl BasicDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_default_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn bind_bg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_open_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_shadow_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_background_blur_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_basic_dialog_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-basicdialog")]
-impl BasicDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicdialogcontent :: BasicDialogContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicDialog) , :: core :: stringify ! (new) ,)) ; < Self as IBasicDialogMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-basicdialog")]impl BasicDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicDialog), ::core::stringify!(new),));
+ <Self as IBasicDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-basicdialog")]

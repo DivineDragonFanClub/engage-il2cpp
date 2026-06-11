@@ -4,47 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: basemesheffect :: { BaseMeshEffect , IBaseMeshEffect }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::basemesheffect::{BaseMeshEffect,IBaseMeshEffect}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/shadow/Shadow.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Shadow")] # [parent (crate :: unity_engine :: ui :: basemesheffect :: BaseMeshEffect)] pub struct Shadow {
-# [offset (32)] # [rename (name = "m_EffectColor")] pub m_effect_color : crate :: unity_engine :: color :: Color ,
-# [offset (48)] # [rename (name = "m_EffectDistance")] pub m_effect_distance : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (56)] # [rename (name = "m_UseGraphicAlpha")] pub m_use_graphic_alpha : bool ,
-# [static_field] # [rename (name = "kMaxEffectDistance")] pub k_max_effect_distance : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/shadow/Shadow.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Shadow")]#[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]pub struct Shadow{#[offset(32)]#[rename(name="m_EffectColor")]pub m_effect_color:crate::unity_engine::color::Color, #[offset(48)]#[rename(name="m_EffectDistance")]pub m_effect_distance:crate::unity_engine::vector2::Vector2, #[offset(56)]#[rename(name="m_UseGraphicAlpha")]pub m_use_graphic_alpha:bool, #[static_field]#[rename(name="kMaxEffectDistance")]pub k_max_effect_distance:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-shadow-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-shadow")]
-pub trait IShadowMethods : IShadow { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_effectColor()` overload"] fn get_effect_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_effectColor(crate::unity_engine::color::Color)` overload"] fn set_effect_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_effectDistance()` overload"] fn get_effect_distance (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_effectDistance(crate::unity_engine::vector2::Vector2)` overload"] fn set_effect_distance (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_useGraphicAlpha()` overload"] fn get_use_graphic_alpha (self ,) -> bool { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_useGraphicAlpha(bool)` overload"] fn set_use_graphic_alpha (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ApplyShadowZeroAlloc(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>, crate::unity_engine::color32::Color32, i32, i32, f32, f32)` overload"] fn apply_shadow_zero_alloc (self , verts : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: uivertex :: UIVertex > > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color32 :: Color32 > , start : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: uivertex :: UIVertex > , crate :: unity_engine :: color32 :: Color32 , i32 , i32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371dbf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (verts) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (start) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`ApplyShadow(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>, crate::unity_engine::color32::Color32, i32, i32, f32, f32)` overload"] fn apply_shadow (self , verts : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: uivertex :: UIVertex > > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color32 :: Color32 > , start : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: uivertex :: UIVertex > , crate :: unity_engine :: color32 :: Color32 , i32 , i32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (verts) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (start) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn modify_mesh (self , vh : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < Shadow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Shadow , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vh) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-shadow")]pub trait IShadowMethods:IShadow{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371d920usize)as*mut u8,();
+(Shadow)__receiver)}
+}
+#[doc="`get_effectColor()` overload"]fn get_effect_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e170usize)as*mut u8,crate::unity_engine::color::Color;
+(Shadow)__receiver)}
+}
+#[doc="`set_effectColor(crate::unity_engine::color::Color)` overload"]fn set_effect_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e180usize)as*mut u8,();
+(Shadow)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`get_effectDistance()` overload"]fn get_effect_distance(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e260usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(Shadow)__receiver)}
+}
+#[doc="`set_effectDistance(crate::unity_engine::vector2::Vector2)` overload"]fn set_effect_distance(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e270usize)as*mut u8,();
+(Shadow)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_useGraphicAlpha()` overload"]fn get_use_graphic_alpha(self,)->bool{unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e3b0usize)as*mut u8,bool;
+(Shadow)__receiver)}
+}
+#[doc="`set_useGraphicAlpha(bool)` overload"]fn set_use_graphic_alpha(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e3c0usize)as*mut u8,();
+(Shadow)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`ApplyShadowZeroAlloc(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>, crate::unity_engine::color32::Color32, i32, i32, f32, f32)` overload"]fn apply_shadow_zero_alloc(self,verts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> > ,color:impl::core::convert::Into<crate::unity_engine::color32::Color32> ,start:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32> ,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371dbf0usize)as*mut u8,();
+(Shadow)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)::core::convert::Into::into(verts),(crate::unity_engine::color32::Color32)::core::convert::Into::into(color),(i32)::core::convert::Into::into(start),(i32)::core::convert::Into::into(end),(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`ApplyShadow(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>, crate::unity_engine::color32::Color32, i32, i32, f32, f32)` overload"]fn apply_shadow(self,verts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> > ,color:impl::core::convert::Into<crate::unity_engine::color32::Color32> ,start:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32> ,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e480usize)as*mut u8,();
+(Shadow)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)::core::convert::Into::into(verts),(crate::unity_engine::color32::Color32)::core::convert::Into::into(color),(i32)::core::convert::Into::into(start),(i32)::core::convert::Into::into(end),(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e490usize)as*mut u8,();
+(Shadow)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vh))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-shadow")]
-impl < __T : IShadow > IShadowMethods for __T { }
+#[cfg(feature="unity_engine-ui-shadow")]impl<__T:IShadow>IShadowMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-shadow")]
-impl Shadow { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_effect_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_effect_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_effect_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_effect_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_use_graphic_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_use_graphic_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn apply_shadow_zero_alloc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn apply_shadow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn modify_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Shadow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-ui-shadow")]impl Shadow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_effect_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_effect_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_effect_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_effect_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_use_graphic_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_use_graphic_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn apply_shadow_zero_alloc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn apply_shadow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn modify_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "unity_engine-ui-shadow")]
-impl Shadow {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Shadow) , :: core :: stringify ! (new) ,)) ; < Self as IShadowMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-shadow")]impl Shadow{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Shadow), ::core::stringify!(new),));
+ <Self as IShadowMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-shadow")]

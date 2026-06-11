@@ -4,41 +4,132 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: stream :: { IStream , Stream }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::stream::{IStream,Stream}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/gzipstream/GZipStream.md"))] # [:: unity2 :: class (namespace = "System.IO.Compression" , name = "GZipStream")] # [parent (crate :: system :: io :: stream :: Stream)] pub struct GZipStream {
-# [offset (40)] # [rename (name = "_deflateStream")] pub deflate_stream : crate :: system :: io :: compression :: deflatestream :: DeflateStream ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/gzipstream/GZipStream.md"))]#[::unity2::class(namespace="System.IO.Compression",name="GZipStream")]#[parent(crate::system::io::stream::Stream)]pub struct GZipStream{#[offset(40)]#[rename(name="_deflateStream")]pub deflate_stream:crate::system::io::compression::deflatestream::DeflateStream,}
 
 }
 
 #[cfg(feature = "system-io-compression-gzipstream-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-compression-gzipstream")]
-impl GZipStream { # [doc = "`ThrowStreamClosedException()` overload"] pub fn throw_stream_closed_exception () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1d90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-compression-gzipstream")]impl GZipStream{#[doc="`ThrowStreamClosedException()` overload"]pub fn throw_stream_closed_exception()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34a1d90usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-io-compression-gzipstream")]
-pub trait IGZipStreamMethods : IGZipStream { # [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` overload"] fn ctor (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , mode : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionmode :: CompressionMode >) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionmode :: CompressionMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a15c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool)` overload"] fn ctor_2 (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , mode : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionmode :: CompressionMode > , leave_open : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionmode :: CompressionMode , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a15d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (leave_open) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool)` overload"] fn ctor_3 (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , compression_level : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionlevel :: CompressionLevel > , leave_open : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionlevel :: CompressionLevel , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a16a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (compression_level) , :: core :: convert :: Into :: into (leave_open) , :: core :: option :: Option :: None) } } } # [doc = "`get_CanRead()` overload"] fn get_can_read (self ,) -> bool { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanWrite()` overload"] fn get_can_write (self ,) -> bool { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanSeek()` overload"] fn get_can_seek (self ,) -> bool { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a17b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Length()` overload"] fn get_length (self ,) -> i64 { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a17d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Position()` overload"] fn get_position (self ,) -> i64 { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Position(i64)` overload"] fn set_position (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Flush()` overload"] fn flush (self ,) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a18f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"] fn seek (self , offset : impl :: core :: convert :: Into < i64 > , origin : impl :: core :: convert :: Into < crate :: system :: io :: seekorigin :: SeekOrigin >) -> i64 { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , i64 , crate :: system :: io :: seekorigin :: SeekOrigin , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (origin) , :: core :: option :: Option :: None) } } } # [doc = "`SetLength(i64)` overload"] fn set_length (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a19a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ReadByte()` overload"] fn read_byte (self ,) -> i32 { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u8>, i32, i32)` overload"] fn read (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u8>, i32, i32)` overload"] fn write (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1c80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`CheckDeflateStream()` overload"] fn check_deflate_stream (self ,) -> () { unsafe { let __receiver = < GZipStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GZipStream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34a1920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-compression-gzipstream")]pub trait IGZipStreamMethods:IGZipStream{#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` overload"]fn ctor(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a15c0usize)as*mut u8,();
+(GZipStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionmode::CompressionMode)::core::convert::Into::into(mode))}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool)` overload"]fn ctor_2(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode> ,leave_open:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a15d0usize)as*mut u8,();
+(GZipStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionmode::CompressionMode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(leave_open))}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool)` overload"]fn ctor_3(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,compression_level:impl::core::convert::Into<crate::system::io::compression::compressionlevel::CompressionLevel> ,leave_open:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a16a0usize)as*mut u8,();
+(GZipStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionlevel::CompressionLevel)::core::convert::Into::into(compression_level),(bool)::core::convert::Into::into(leave_open))}
+}
+#[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1770usize)as*mut u8,bool;
+(GZipStream)__receiver)}
+}
+#[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1790usize)as*mut u8,bool;
+(GZipStream)__receiver)}
+}
+#[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a17b0usize)as*mut u8,bool;
+(GZipStream)__receiver)}
+}
+#[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a17d0usize)as*mut u8,i64;
+(GZipStream)__receiver)}
+}
+#[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1830usize)as*mut u8,i64;
+(GZipStream)__receiver)}
+}
+#[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1890usize)as*mut u8,();
+(GZipStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a18f0usize)as*mut u8,();
+(GZipStream)__receiver)}
+}
+#[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1940usize)as*mut u8,i64;
+(GZipStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(origin))}
+}
+#[doc="`SetLength(i64)` overload"]fn set_length(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a19a0usize)as*mut u8,();
+(GZipStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1a00usize)as*mut u8,i32;
+(GZipStream)__receiver)}
+}
+#[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1b50usize)as*mut u8,i32;
+(GZipStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1c50usize)as*mut u8,();
+(GZipStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1c80usize)as*mut u8,();
+(GZipStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`CheckDeflateStream()` overload"]fn check_deflate_stream(self,)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1920usize)as*mut u8,();
+(GZipStream)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-compression-gzipstream")]
-impl < __T : IGZipStream > IGZipStreamMethods for __T { }
+#[cfg(feature="system-io-compression-gzipstream")]impl<__T:IGZipStream>IGZipStreamMethods for __T{}
 
-#[cfg(feature = "system-io-compression-gzipstream")]
-impl GZipStream { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_can_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_can_write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_can_seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn read_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn check_deflate_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn throw_stream_closed_exception_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GZipStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="system-io-compression-gzipstream")]impl GZipStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_can_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_can_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_can_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn read_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn check_deflate_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn throw_stream_closed_exception_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "system-io-compression-gzipstream")]
-impl GZipStream {
-# [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` — overload selector"] pub fn new (stream : crate :: system :: io :: stream :: Stream , mode : crate :: system :: io :: compression :: compressionmode :: CompressionMode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GZipStream) , :: core :: stringify ! (new) ,)) ; < Self as IGZipStreamMethods > :: ctor (this , stream , mode) ; this }
-
-# [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool)` — overload selector"] pub fn new_2 (stream : crate :: system :: io :: stream :: Stream , mode : crate :: system :: io :: compression :: compressionmode :: CompressionMode , leave_open : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GZipStream) , :: core :: stringify ! (new_2) ,)) ; < Self as IGZipStreamMethods > :: ctor_2 (this , stream , mode , leave_open) ; this }
-
-# [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool)` — overload selector"] pub fn new_3 (stream : crate :: system :: io :: stream :: Stream , compression_level : crate :: system :: io :: compression :: compressionlevel :: CompressionLevel , leave_open : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GZipStream) , :: core :: stringify ! (new_3) ,)) ; < Self as IGZipStreamMethods > :: ctor_3 (this , stream , compression_level , leave_open) ; this }
+#[cfg(feature="system-io-compression-gzipstream")]impl GZipStream{#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` — overload selector"]pub fn new(stream:crate::system::io::stream::Stream,mode:crate::system::io::compression::compressionmode::CompressionMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GZipStream), ::core::stringify!(new),));
+ <Self as IGZipStreamMethods> ::ctor(this,stream,mode);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool)` — overload selector"]pub fn new_2(stream:crate::system::io::stream::Stream,mode:crate::system::io::compression::compressionmode::CompressionMode,leave_open:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GZipStream), ::core::stringify!(new_2),));
+ <Self as IGZipStreamMethods> ::ctor_2(this,stream,mode,leave_open);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool)` — overload selector"]pub fn new_3(stream:crate::system::io::stream::Stream,compression_level:crate::system::io::compression::compressionlevel::CompressionLevel,leave_open:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GZipStream), ::core::stringify!(new_3),));
+ <Self as IGZipStreamMethods> ::ctor_3(this,stream,compression_level,leave_open);
+this}
 }
 
 #[cfg(feature = "system-io-compression-gzipstream")]

@@ -4,47 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volume/Volume.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "Volume")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Volume {
-# [offset (24)] # [rename (name = "isGlobal")] pub is_global : bool ,
-# [offset (28)] # [rename (name = "priority")] pub priority : f32 ,
-# [offset (32)] # [rename (name = "blendDistance")] pub blend_distance : f32 ,
-# [offset (36)] # [rename (name = "weight")] pub weight : f32 ,
-# [offset (40)] # [rename (name = "sharedProfile")] pub shared_profile : crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile ,
-# [offset (48)] # [rename (name = "m_PreviousLayer")] pub m_previous_layer : i32 ,
-# [offset (52)] # [rename (name = "m_PreviousPriority")] pub m_previous_priority : f32 ,
-# [offset (56)] # [rename (name = "m_InternalProfile")] pub m_internal_profile : crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volume/Volume.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="Volume")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct Volume{#[offset(24)]#[rename(name="isGlobal")]pub is_global:bool, #[offset(28)]#[rename(name="priority")]pub priority:f32, #[offset(32)]#[rename(name="blendDistance")]pub blend_distance:f32, #[offset(36)]#[rename(name="weight")]pub weight:f32, #[offset(40)]#[rename(name="sharedProfile")]pub shared_profile:crate::unity_engine::rendering::volumeprofile::VolumeProfile, #[offset(48)]#[rename(name="m_PreviousLayer")]pub m_previous_layer:i32, #[offset(52)]#[rename(name="m_PreviousPriority")]pub m_previous_priority:f32, #[offset(56)]#[rename(name="m_InternalProfile")]pub m_internal_profile:crate::unity_engine::rendering::volumeprofile::VolumeProfile,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-volume-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-volume")]
-pub trait IVolumeMethods : IVolume { # [doc = "`get_profile()` overload"] fn get_profile (self ,) -> crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e49c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_profile(crate::unity_engine::rendering::volumeprofile::VolumeProfile)` overload"] fn set_profile (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile >) -> () { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_profileRef()` overload"] fn get_profile_ref (self ,) -> crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HasInstantiatedProfile()` overload"] fn has_instantiated_profile (self ,) -> bool { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e5040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e52c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateLayer()` overload"] fn update_layer (self ,) -> () { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e53e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Volume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Volume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e5690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-volume")]pub trait IVolumeMethods:IVolume{#[doc="`get_profile()` overload"]fn get_profile(self,)->crate::unity_engine::rendering::volumeprofile::VolumeProfile{unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e49c0usize)as*mut u8,crate::unity_engine::rendering::volumeprofile::VolumeProfile;
+(Volume)__receiver)}
+}
+#[doc="`set_profile(crate::unity_engine::rendering::volumeprofile::VolumeProfile)` overload"]fn set_profile(self,value:impl::core::convert::Into<crate::unity_engine::rendering::volumeprofile::VolumeProfile>)->(){unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4be0usize)as*mut u8,();
+(Volume)__receiver,(crate::unity_engine::rendering::volumeprofile::VolumeProfile)::core::convert::Into::into(value))}
+}
+#[doc="`get_profileRef()` overload"]fn get_profile_ref(self,)->crate::unity_engine::rendering::volumeprofile::VolumeProfile{unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4bf0usize)as*mut u8,crate::unity_engine::rendering::volumeprofile::VolumeProfile;
+(Volume)__receiver)}
+}
+#[doc="`HasInstantiatedProfile()` overload"]fn has_instantiated_profile(self,)->bool{unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4c80usize)as*mut u8,bool;
+(Volume)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4d00usize)as*mut u8,();
+(Volume)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e5040usize)as*mut u8,();
+(Volume)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e52c0usize)as*mut u8,();
+(Volume)__receiver)}
+}
+#[doc="`UpdateLayer()` overload"]fn update_layer(self,)->(){unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e53e0usize)as*mut u8,();
+(Volume)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Volume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e5690usize)as*mut u8,();
+(Volume)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-volume")]
-impl < __T : IVolume > IVolumeMethods for __T { }
+#[cfg(feature="unity_engine-rendering-volume")]impl<__T:IVolume>IVolumeMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-volume")]
-impl Volume { pub fn get_profile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_profile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_profile_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn has_instantiated_profile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Volume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-rendering-volume")]impl Volume{pub fn get_profile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_profile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_profile_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn has_instantiated_profile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "unity_engine-rendering-volume")]
-impl Volume {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Volume) , :: core :: stringify ! (new) ,)) ; < Self as IVolumeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-volume")]impl Volume{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Volume), ::core::stringify!(new),));
+ <Self as IVolumeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-volume")]

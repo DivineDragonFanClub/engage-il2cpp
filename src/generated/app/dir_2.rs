@@ -4,149 +4,115 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dir_2/Dir_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "Dir")] # [parent (crate :: system :: object :: Object)] pub struct Dir_2 {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dir_2/Dir_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Dir_Type  {
-    pub value: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dir_2/Dir_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Dir_Type{pub value:u8,}
+impl::unity2::ClassIdentity for Dir_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Dir.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Dir_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Dir_Type{pub fn left()->Self{Self{value:1}
+}
+pub fn right()->Self{Self{value:2}
+}
+pub fn down()->Self{Self{value:4}
+}
+pub fn up()->Self{Self{value:8}
+}
+pub fn center()->Self{Self{value:32}
+}
+pub fn terminate()->Self{Self{value:128}
+}
+pub fn none()->Self{Self{value:0}
+}
+pub fn up_left()->Self{Self{value:9}
+}
+pub fn up_right()->Self{Self{value:10}
+}
+pub fn down_left()->Self{Self{value:5}
+}
+pub fn down_right()->Self{Self{value:6}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Dir_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Dir.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Dir_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Dir_Type  {
-    pub fn left() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn down() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn up() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn center() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn terminate() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn up_left() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn up_right() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn down_left() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn down_right() -> Self {
-        Self { value: 6 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dir_2/Dir_2.md"))]#[::unity2::class(namespace="App",name="Dir")]#[parent(crate::system::object::Object)]pub struct Dir_2{}
 
 }
 
 #[cfg(feature = "app-dir_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dir_2")]
-impl Dir_2 { # [doc = "`GetDir(i32, i32, i32, i32)` overload"] pub fn get_dir (sx : impl :: core :: convert :: Into < i32 > , sz : impl :: core :: convert :: Into < i32 > , tx : impl :: core :: convert :: Into < i32 > , tz : impl :: core :: convert :: Into < i32 >) -> crate :: app :: dir_2 :: Dir_Type { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee110usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sx) , :: core :: convert :: Into :: into (sz) , :: core :: convert :: Into :: into (tx) , :: core :: convert :: Into :: into (tz) , :: core :: option :: Option :: None) } } } # [doc = "`GetReverse(crate::app::dir_2::Dir_Type)` overload"] pub fn get_reverse (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> crate :: app :: dir_2 :: Dir_Type { unsafe { { let __inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`GetX(crate::app::dir_2::Dir_Type)` overload"] pub fn get_x (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee180usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`GetZ(crate::app::dir_2::Dir_Type)` overload"] pub fn get_z (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee1a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`IsTerminate(crate::app::dir_2::Dir_Type)` overload"] pub fn is_terminate (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee1c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`GetAngle(crate::app::dir_2::Dir_Type)` overload"] pub fn get_angle (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee1d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`GetRotateL90(crate::app::dir_2::Dir_Type)` overload"] pub fn get_rotate_l90 (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> crate :: app :: dir_2 :: Dir_Type { unsafe { { let __inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`GetRotateR90(crate::app::dir_2::Dir_Type)` overload"] pub fn get_rotate_r90 (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> crate :: app :: dir_2 :: Dir_Type { unsafe { { let __inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee240usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dir_2")]impl Dir_2{#[doc="`GetDir(i32, i32, i32, i32)` overload"]pub fn get_dir(sx:impl::core::convert::Into<i32> ,sz:impl::core::convert::Into<i32> ,tx:impl::core::convert::Into<i32> ,tz:impl::core::convert::Into<i32>)->crate::app::dir_2::Dir_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cee110usize)as*mut u8,crate::app::dir_2::Dir_Type;
+(i32)::core::convert::Into::into(sx),(i32)::core::convert::Into::into(sz),(i32)::core::convert::Into::into(tx),(i32)::core::convert::Into::into(tz))}
+}
+#[doc="`GetReverse(crate::app::dir_2::Dir_Type)` overload"]pub fn get_reverse(dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->crate::app::dir_2::Dir_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cee150usize)as*mut u8,crate::app::dir_2::Dir_Type;
+(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+#[doc="`GetX(crate::app::dir_2::Dir_Type)` overload"]pub fn get_x(dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cee180usize)as*mut u8,i32;
+(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+#[doc="`GetZ(crate::app::dir_2::Dir_Type)` overload"]pub fn get_z(dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cee1a0usize)as*mut u8,i32;
+(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+#[doc="`IsTerminate(crate::app::dir_2::Dir_Type)` overload"]pub fn is_terminate(dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cee1c0usize)as*mut u8,bool;
+(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+#[doc="`GetAngle(crate::app::dir_2::Dir_Type)` overload"]pub fn get_angle(dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cee1d0usize)as*mut u8,i32;
+(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+#[doc="`GetRotateL90(crate::app::dir_2::Dir_Type)` overload"]pub fn get_rotate_l90(dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->crate::app::dir_2::Dir_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cee200usize)as*mut u8,crate::app::dir_2::Dir_Type;
+(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+#[doc="`GetRotateR90(crate::app::dir_2::Dir_Type)` overload"]pub fn get_rotate_r90(dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->crate::app::dir_2::Dir_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cee240usize)as*mut u8,crate::app::dir_2::Dir_Type;
+(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+}
 
-#[cfg(feature = "app-dir_2")]
-pub trait IDir_2Methods : IDir_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Dir_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dir_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dir_2")]pub trait IDir_2Methods:IDir_2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Dir_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cee280usize)as*mut u8,();
+(Dir_2)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dir_2")]
-impl < __T : IDir_2 > IDir_2Methods for __T { }
+#[cfg(feature="app-dir_2")]impl<__T:IDir_2>IDir_2Methods for __T{}
 
-#[cfg(feature = "app-dir_2")]
-impl Dir_2 { pub fn get_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_reverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_terminate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_rotate_l90_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_rotate_r90_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dir_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-dir_2")]impl Dir_2{pub fn get_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_reverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_terminate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_rotate_l90_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_rotate_r90_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-dir_2")]
-impl Dir_2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Dir_2) , :: core :: stringify ! (new) ,)) ; < Self as IDir_2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dir_2")]impl Dir_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Dir_2), ::core::stringify!(new),));
+ <Self as IDir_2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dir_2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Dir_Type;
     pub use super::Dir_2;
     pub use super::IDir_2;
     pub use super::IDir_2Methods;
-    pub use super::Dir_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

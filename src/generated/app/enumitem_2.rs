@@ -4,42 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: instanceitem_1 :: { IInstanceItem_1 , InstanceItem_1 }
- ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: app :: paramitem :: { IParamItem , ParamItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::instanceitem_1::{IInstanceItem_1,InstanceItem_1}
+;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::app::paramitem::{IParamItem,ParamItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/enumitem_2/EnumItem_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "EnumItem`2")] # [parent (crate :: app :: instanceitem_1 :: InstanceItem_1 < T0 >)] # [parent (crate :: app :: paramitem :: ParamItem)] # [parent (crate :: app :: menuitem :: MenuItem)] # [parent (crate :: system :: object :: Object)] pub struct EnumItem_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/enumitem_2/EnumItem_2.md"))]#[::unity2::class(namespace="App",name="EnumItem`2")]#[parent(crate::app::instanceitem_1::InstanceItem_1<T0>)]#[parent(crate::app::paramitem::ParamItem)]#[parent(crate::app::menuitem::MenuItem)]#[parent(crate::system::object::Object)]pub struct EnumItem_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "app-enumitem_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-enumitem_2")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > EnumItem_2 < T0 , T1 > {
-# [doc = "`.ctor(T0)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , instance : T0) -> () ;
-
-# [doc = "`GetValue()` overload"] # [method (name = "GetValue" , args = 0)] pub fn get_value (self ,) -> T1 ;
-
-# [doc = "`SetValue(T1)` overload"] # [method (name = "SetValue" , args = 1)] pub fn set_value (self , value : T1) -> () ;
-
-# [doc = "`GetColumnName0()` overload"] # [method (name = "GetColumnName0" , args = 0)] pub fn get_column_name0 (self ,) -> :: unity2 :: Il2CppString ;
-
-# [doc = "`GetColumnName1()` overload"] # [method (name = "GetColumnName1" , args = 0)] pub fn get_column_name1 (self ,) -> :: unity2 :: Il2CppString ;
-
-# [doc = "`OnLeftRight(i32, bool)` overload"] # [method (name = "OnLeftRight" , args = 2)] pub fn on_left_right (self , step : i32 , is_trigger : bool) -> () ;
+#[cfg(feature="app-enumitem_2")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>EnumItem_2<T0,T1>{#[doc="`.ctor(T0)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,instance:T0)->();
+ #[doc="`GetValue()` overload"]#[method(name="GetValue",args=0)]pub fn get_value(self,)->T1;
+ #[doc="`SetValue(T1)` overload"]#[method(name="SetValue",args=1)]pub fn set_value(self,value:T1)->();
+ #[doc="`GetColumnName0()` overload"]#[method(name="GetColumnName0",args=0)]pub fn get_column_name0(self,)-> ::unity2::Il2CppString;
+ #[doc="`GetColumnName1()` overload"]#[method(name="GetColumnName1",args=0)]pub fn get_column_name1(self,)-> ::unity2::Il2CppString;
+ #[doc="`OnLeftRight(i32, bool)` overload"]#[method(name="OnLeftRight",args=2)]pub fn on_left_right(self,step:i32,is_trigger:bool)->();
 }
 
-#[cfg(feature = "app-enumitem_2")]
-impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > EnumItem_2 < T0 , T1 > {
-# [doc = "`.ctor(T0)` — overload selector"] pub fn new (instance : T0) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EnumItem_2) , :: core :: stringify ! (new) ,)) ; < Self as IEnumItem_2Methods < T0 , T1 > > :: ctor (this , instance) ; this }
+#[cfg(feature="app-enumitem_2")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>EnumItem_2<T0,T1>{#[doc="`.ctor(T0)` — overload selector"]pub fn new(instance:T0)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EnumItem_2), ::core::stringify!(new),));
+ <Self as IEnumItem_2Methods<T0,T1> > ::ctor(this,instance);
+this}
 }
 
 #[cfg(feature = "app-enumitem_2")]

@@ -4,63 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: root :: mappanelbase_1 :: { IMapPanelBase_1 , MapPanelBase_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::root::mappanelbase_1::{IMapPanelBase_1,MapPanelBase_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldebug/MapPanelDebug_Entity.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapPanelDebug_Entity {
-    pub x: i32,
-    pub z: i32,
-    pub color: crate :: unity_engine :: color :: Color,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldebug/MapPanelDebug.md"))]#[::unity2::class(namespace="App",name="MapPanelDebug")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappaneldebug::MapPanelDebug>)]pub struct MapPanelDebug{#[offset(64)]#[rename(name="m_Entitys")]pub m_entitys:crate::system::collections::generic::list_1::List_1<crate::app::mappaneldebug::MapPanelDebug_Entity> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldebug/MapPanelDebug_Entity.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapPanelDebug_Entity{pub x:i32,pub z:i32,pub color:crate::unity_engine::color::Color,}
+impl::unity2::ClassIdentity for MapPanelDebug_Entity{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapPanelDebug.Entity";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for MapPanelDebug_Entity {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPanelDebug.Entity";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapPanelDebug_Entity {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldebug/MapPanelDebug.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelDebug")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldebug :: MapPanelDebug >)] pub struct MapPanelDebug {
-# [offset (64)] # [rename (name = "m_Entitys")] pub m_entitys : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mappaneldebug :: MapPanelDebug_Entity > ,
+impl::unity2::IlType for MapPanelDebug_Entity{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -68,30 +41,37 @@ impl ::unity2::IlType for MapPanelDebug_Entity {
 #[cfg(feature = "app-mappaneldebug-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mappaneldebug")]
-impl MapPanelDebug { # [doc = "`Draw(i32, i32, crate::unity_engine::color::Color)` overload"] pub fn draw (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (i32 , i32 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x234e530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappaneldebug")]impl MapPanelDebug{#[doc="`Draw(i32, i32, crate::unity_engine::color::Color)` overload"]pub fn draw(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x234e530usize)as*mut u8,();
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+}
 
-#[cfg(feature = "app-mappaneldebug")]
-pub trait IMapPanelDebugMethods : IMapPanelDebug { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelDebug , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x234e540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappaneldebug")]pub trait IMapPanelDebugMethods:IMapPanelDebug{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelDebug as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x234e540usize)as*mut u8,();
+(MapPanelDebug)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mappaneldebug")]
-impl < __T : IMapPanelDebug > IMapPanelDebugMethods for __T { }
+#[cfg(feature="app-mappaneldebug")]impl<__T:IMapPanelDebug>IMapPanelDebugMethods for __T{}
 
-#[cfg(feature = "app-mappaneldebug")]
-impl MapPanelDebug { pub fn draw_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-mappaneldebug")]impl MapPanelDebug{pub fn draw_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-mappaneldebug")]
-impl MapPanelDebug {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelDebug) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelDebugMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mappaneldebug")]impl MapPanelDebug{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelDebug), ::core::stringify!(new),));
+ <Self as IMapPanelDebugMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mappaneldebug")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelDebug_Entity;
     pub use super::MapPanelDebug;
     pub use super::IMapPanelDebug;
     pub use super::IMapPanelDebugMethods;
+    pub use super::MapPanelDebug_Entity;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

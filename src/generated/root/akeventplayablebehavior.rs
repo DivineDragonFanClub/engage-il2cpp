@@ -4,148 +4,160 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akeventplayablebehavior/AkEventPlayableBehavior.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEventPlayableBehavior")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct AkEventPlayableBehavior {
-# [offset (16)] # [rename (name = "currentDuration")] pub current_duration : f32 ,
-# [offset (20)] # [rename (name = "currentDurationProportion")] pub current_duration_proportion : f32 ,
-# [offset (24)] # [rename (name = "eventIsPlaying")] pub event_is_playing : bool ,
-# [offset (25)] # [rename (name = "fadeinTriggered")] pub fadein_triggered : bool ,
-# [offset (26)] # [rename (name = "fadeoutTriggered")] pub fadeout_triggered : bool ,
-# [offset (28)] # [rename (name = "previousEventStartTime")] pub previous_event_start_time : f32 ,
-# [static_field] # [rename (name = "CallbackFlags")] pub callback_flags : u32 ,
-# [offset (32)] # [rename (name = "requiredActions")] pub required_actions : crate :: root :: akeventplayablebehavior :: AkEventPlayableBehavior_Actions ,
-# [static_field] # [rename (name = "scrubPlaybackLengthMs")] pub scrub_playback_length_ms : i32 ,
-# [offset (48)] # [rename (name = "eventDurationMax")] pub event_duration_max : f32 ,
-# [offset (52)] # [rename (name = "eventDurationMin")] pub event_duration_min : f32 ,
-# [offset (56)] # [rename (name = "blendInDuration")] pub blend_in_duration : f32 ,
-# [offset (60)] # [rename (name = "blendOutDuration")] pub blend_out_duration : f32 ,
-# [offset (64)] # [rename (name = "easeInDuration")] pub ease_in_duration : f32 ,
-# [offset (68)] # [rename (name = "easeOutDuration")] pub ease_out_duration : f32 ,
-# [offset (72)] # [rename (name = "blendInCurve")] pub blend_in_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
-# [offset (76)] # [rename (name = "blendOutCurve")] pub blend_out_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
-# [offset (80)] # [rename (name = "eventObject")] pub event_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "retriggerEvent")] pub retrigger_event_field : bool ,
-# [offset (89)] # [rename (name = "wasScrubbingAndRequiresRetrigger")] pub was_scrubbing_and_requires_retrigger : bool ,
-# [offset (90)] # [rename (name = "StopEventAtClipEnd")] pub stop_event_at_clip_end : bool ,
-# [offset (91)] # [rename (name = "overrideTrackEmitterObject")] pub override_track_emitter_object : bool ,
-# [static_field] # [rename (name = "alph")] pub alph : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akeventplayablebehavior/AkEventPlayableBehavior_Actions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkEventPlayableBehavior_Actions{pub value:i32,}
+impl::unity2::ClassIdentity for AkEventPlayableBehavior_Actions{const NAMESPACE: &'static str="";
+const NAME: &'static str="AkEventPlayableBehavior.Actions";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AkEventPlayableBehavior_Actions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AkEventPlayableBehavior_Actions{pub fn none()->Self{Self{value:0}
+}
+pub fn playback()->Self{Self{value:1}
+}
+pub fn retrigger()->Self{Self{value:2}
+}
+pub fn delayed_stop()->Self{Self{value:4}
+}
+pub fn seek()->Self{Self{value:8}
+}
+pub fn fade_in()->Self{Self{value:16}
+}
+pub fn fade_out()->Self{Self{value:32}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akeventplayablebehavior/AkEventPlayableBehavior_Actions.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AkEventPlayableBehavior_Actions  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for AkEventPlayableBehavior_Actions  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "AkEventPlayableBehavior.Actions";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AkEventPlayableBehavior_Actions  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AkEventPlayableBehavior_Actions  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn playback() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn retrigger() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn delayed_stop() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn seek() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn fade_in() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn fade_out() -> Self {
-        Self { value: 32 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akeventplayablebehavior/AkEventPlayableBehavior.md"))]#[::unity2::class(namespace="",name="AkEventPlayableBehavior")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct AkEventPlayableBehavior{#[offset(16)]#[rename(name="currentDuration")]pub current_duration:f32, #[offset(20)]#[rename(name="currentDurationProportion")]pub current_duration_proportion:f32, #[offset(24)]#[rename(name="eventIsPlaying")]pub event_is_playing:bool, #[offset(25)]#[rename(name="fadeinTriggered")]pub fadein_triggered:bool, #[offset(26)]#[rename(name="fadeoutTriggered")]pub fadeout_triggered:bool, #[offset(28)]#[rename(name="previousEventStartTime")]pub previous_event_start_time:f32, #[static_field]#[rename(name="CallbackFlags")]pub callback_flags:u32, #[offset(32)]#[rename(name="requiredActions")]pub required_actions:crate::root::akeventplayablebehavior::AkEventPlayableBehavior_Actions, #[static_field]#[rename(name="scrubPlaybackLengthMs")]pub scrub_playback_length_ms:i32, #[offset(48)]#[rename(name="eventDurationMax")]pub event_duration_max:f32, #[offset(52)]#[rename(name="eventDurationMin")]pub event_duration_min:f32, #[offset(56)]#[rename(name="blendInDuration")]pub blend_in_duration:f32, #[offset(60)]#[rename(name="blendOutDuration")]pub blend_out_duration:f32, #[offset(64)]#[rename(name="easeInDuration")]pub ease_in_duration:f32, #[offset(68)]#[rename(name="easeOutDuration")]pub ease_out_duration:f32, #[offset(72)]#[rename(name="blendInCurve")]pub blend_in_curve:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(76)]#[rename(name="blendOutCurve")]pub blend_out_curve:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(80)]#[rename(name="eventObject")]pub event_object:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="retriggerEvent")]pub retrigger_event_field:bool, #[offset(89)]#[rename(name="wasScrubbingAndRequiresRetrigger")]pub was_scrubbing_and_requires_retrigger:bool, #[offset(90)]#[rename(name="StopEventAtClipEnd")]pub stop_event_at_clip_end:bool, #[offset(91)]#[rename(name="overrideTrackEmitterObject")]pub override_track_emitter_object:bool, #[static_field]#[rename(name="alph")]pub alph:f32,}
 
 }
 
 #[cfg(feature = "root-akeventplayablebehavior-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akeventplayablebehavior")]
-pub trait IAkEventPlayableBehaviorMethods : IAkEventPlayableBehavior { # [doc = "`CallbackHandler(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"] fn callback_handler (self , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object > , in_type : impl :: core :: convert :: Into < crate :: root :: akcallbacktype :: AkCallbackType > , in_info : impl :: core :: convert :: Into < crate :: root :: akcallbackinfo :: AkCallbackInfo >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: system :: object :: Object , crate :: root :: akcallbacktype :: AkCallbackType , crate :: root :: akcallbackinfo :: AkCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_cookie) , :: core :: convert :: Into :: into (in_type) , :: core :: convert :: Into :: into (in_info) , :: core :: option :: Option :: None) } } } # [doc = "`IsScrubbing(crate::unity_engine::playables::framedata::FrameData)` overload"] fn is_scrubbing (self , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> bool { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b4b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn prepare_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_play (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b9d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_pause (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1bbd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1bd00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } } # [doc = "`ShouldPlay(crate::unity_engine::playables::playable::Playable)` overload"] fn should_play (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> bool { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b6a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`CheckForFadeInFadeOut(crate::unity_engine::playables::playable::Playable)` overload"] fn check_for_fade_in_fade_out (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`CheckForFadeOut(crate::unity_engine::playables::playable::Playable, f64)` overload"] fn check_for_fade_out (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , current_clip_time : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (current_clip_time) , :: core :: option :: Option :: None) } } } # [doc = "`TriggerFadeIn(crate::unity_engine::playables::playable::Playable)` overload"] fn trigger_fade_in (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1c2a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`TriggerFadeOut(crate::unity_engine::playables::playable::Playable)` overload"] fn trigger_fade_out (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1c3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`StopEvent(i32)` overload"] fn stop_event (self , transition : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1bcd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } } # [doc = "`PostEvent()` overload"] fn post_event (self ,) -> bool { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1c4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayEvent()` overload"] fn play_event (self ,) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RetriggerEvent(crate::unity_engine::playables::playable::Playable)` overload"] fn retrigger_event (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1c170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`GetProportionalTime(crate::unity_engine::playables::playable::Playable)` overload"] fn get_proportional_time (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> f32 { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1bae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`SeekToTime(crate::unity_engine::playables::playable::Playable)` overload"] fn seek_to_time (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> f32 { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1c0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEventPlayableBehavior as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayableBehavior , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1c570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akeventplayablebehavior")]pub trait IAkEventPlayableBehaviorMethods:IAkEventPlayableBehavior{#[doc="`CallbackHandler(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]fn callback_handler(self,in_cookie:impl::core::convert::Into<crate::system::object::Object> ,in_type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,in_info:impl::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b390usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::system::object::Object)::core::convert::Into::into(in_cookie),(crate::root::akcallbacktype::AkCallbackType)::core::convert::Into::into(in_type),(crate::root::akcallbackinfo::AkCallbackInfo)::core::convert::Into::into(in_info))}
+}
+#[doc="`IsScrubbing(crate::unity_engine::playables::framedata::FrameData)` overload"]fn is_scrubbing(self,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->bool{unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b4b0usize)as*mut u8,bool;
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn prepare_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b4e0usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b9d0usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_pause(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1bbd0usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1bd00usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+}
+#[doc="`ShouldPlay(crate::unity_engine::playables::playable::Playable)` overload"]fn should_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->bool{unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b6a0usize)as*mut u8,bool;
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`CheckForFadeInFadeOut(crate::unity_engine::playables::playable::Playable)` overload"]fn check_for_fade_in_fade_out(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b810usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`CheckForFadeOut(crate::unity_engine::playables::playable::Playable, f64)` overload"]fn check_for_fade_out(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,current_clip_time:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b920usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(f64)::core::convert::Into::into(current_clip_time))}
+}
+#[doc="`TriggerFadeIn(crate::unity_engine::playables::playable::Playable)` overload"]fn trigger_fade_in(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1c2a0usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`TriggerFadeOut(crate::unity_engine::playables::playable::Playable)` overload"]fn trigger_fade_out(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1c3c0usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`StopEvent(i32)` overload"]fn stop_event(self,transition:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1bcd0usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(i32)::core::convert::Into::into(transition))}
+}
+#[doc="`PostEvent()` overload"]fn post_event(self,)->bool{unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1c4b0usize)as*mut u8,bool;
+(AkEventPlayableBehavior)__receiver)}
+}
+#[doc="`PlayEvent()` overload"]fn play_event(self,)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1bfd0usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver)}
+}
+#[doc="`RetriggerEvent(crate::unity_engine::playables::playable::Playable)` overload"]fn retrigger_event(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1c170usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`GetProportionalTime(crate::unity_engine::playables::playable::Playable)` overload"]fn get_proportional_time(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->f32{unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1bae0usize)as*mut u8,f32;
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`SeekToTime(crate::unity_engine::playables::playable::Playable)` overload"]fn seek_to_time(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->f32{unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1c0a0usize)as*mut u8,f32;
+(AkEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1c570usize)as*mut u8,();
+(AkEventPlayableBehavior)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akeventplayablebehavior")]
-impl < __T : IAkEventPlayableBehavior > IAkEventPlayableBehaviorMethods for __T { }
+#[cfg(feature="root-akeventplayablebehavior")]impl<__T:IAkEventPlayableBehavior>IAkEventPlayableBehaviorMethods for __T{}
 
-#[cfg(feature = "root-akeventplayablebehavior")]
-impl AkEventPlayableBehavior { pub fn callback_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_scrubbing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn prepare_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_behaviour_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_behaviour_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn should_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn check_for_fade_in_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn check_for_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn trigger_fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn trigger_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn stop_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn post_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn play_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn retrigger_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_proportional_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn seek_to_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayableBehavior as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="root-akeventplayablebehavior")]impl AkEventPlayableBehavior{pub fn callback_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_scrubbing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn prepare_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_behaviour_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_behaviour_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn should_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn check_for_fade_in_fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn check_for_fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn trigger_fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn trigger_fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn stop_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn post_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn play_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn retrigger_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_proportional_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn seek_to_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "root-akeventplayablebehavior")]
-impl AkEventPlayableBehavior {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEventPlayableBehavior) , :: core :: stringify ! (new) ,)) ; < Self as IAkEventPlayableBehaviorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akeventplayablebehavior")]impl AkEventPlayableBehavior{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEventPlayableBehavior), ::core::stringify!(new),));
+ <Self as IAkEventPlayableBehaviorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akeventplayablebehavior")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkEventPlayableBehavior_Actions;
     pub use super::AkEventPlayableBehavior;
     pub use super::IAkEventPlayableBehavior;
     pub use super::IAkEventPlayableBehaviorMethods;
-    pub use super::AkEventPlayableBehavior_Actions;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

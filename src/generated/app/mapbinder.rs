@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbinder/MapBinder.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapBinder")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapbinder :: MapBinder >)] pub struct MapBinder {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbinder/MapBinder.md"))]#[::unity2::class(namespace="App",name="MapBinder")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapbinder::MapBinder>)]pub struct MapBinder{}
 
 }
 
 #[cfg(feature = "app-mapbinder-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapbinder")]
-pub trait IMapBinderMethods : IMapBinder { # [doc = "`OnBind()` overload"] fn on_bind (self ,) -> () { unsafe { let __receiver = < MapBinder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBinder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUnbind()` overload"] fn on_unbind (self ,) -> () { unsafe { let __receiver = < MapBinder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBinder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapBinder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBinder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a0a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapbinder")]pub trait IMapBinderMethods:IMapBinder{#[doc="`OnBind()` overload"]fn on_bind(self,)->(){unsafe{let __receiver= <MapBinder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299a080usize)as*mut u8,();
+(MapBinder)__receiver)}
+}
+#[doc="`OnUnbind()` overload"]fn on_unbind(self,)->(){unsafe{let __receiver= <MapBinder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299a090usize)as*mut u8,();
+(MapBinder)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBinder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299a0a0usize)as*mut u8,();
+(MapBinder)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapbinder")]
-impl < __T : IMapBinder > IMapBinderMethods for __T { }
+#[cfg(feature="app-mapbinder")]impl<__T:IMapBinder>IMapBinderMethods for __T{}
 
-#[cfg(feature = "app-mapbinder")]
-impl MapBinder { pub fn on_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBinder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBinder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBinder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-mapbinder")]impl MapBinder{pub fn on_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-mapbinder")]
-impl MapBinder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapBinder) , :: core :: stringify ! (new) ,)) ; < Self as IMapBinderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapbinder")]impl MapBinder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapBinder), ::core::stringify!(new),));
+ <Self as IMapBinderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapbinder")]

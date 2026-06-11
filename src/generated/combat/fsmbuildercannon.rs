@@ -4,37 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: fsmbuilder :: { FSMBuilder , IFSMBuilder }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::fsmbuilder::{FSMBuilder,IFSMBuilder}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuildercannon/FSMBuilderCannon.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSMBuilderCannon")] # [parent (crate :: combat :: fsmbuilder :: FSMBuilder)] pub struct FSMBuilderCannon {
-# [offset (16)] # [rename (name = "m_Cannon")] pub m_cannon : crate :: app :: mapobject :: MapObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fsmbuildercannon/FSMBuilderCannon.md"))]#[::unity2::class(namespace="Combat",name="FSMBuilderCannon")]#[parent(crate::combat::fsmbuilder::FSMBuilder)]pub struct FSMBuilderCannon{#[offset(16)]#[rename(name="m_Cannon")]pub m_cannon:crate::app::mapobject::MapObject,}
 
 }
 
 #[cfg(feature = "combat-fsmbuildercannon-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fsmbuildercannon")]
-impl FSMBuilderCannon { # [doc = "`Rotate()` overload"] pub fn rotate () -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d488c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuildercannon")]impl FSMBuilderCannon{#[doc="`Rotate()` overload"]pub fn rotate()->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d488c0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuildercannon")]
-pub trait IFSMBuilderCannonMethods : IFSMBuilderCannon { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < FSMBuilderCannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderCannon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d48330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildSkipover()` overload"] fn build_skipover (self ,) -> () { unsafe { let __receiver = < FSMBuilderCannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderCannon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d48920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSMBuilderCannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderCannon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuildercannon")]pub trait IFSMBuilderCannonMethods:IFSMBuilderCannon{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilderCannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d48330usize)as*mut u8,();
+(FSMBuilderCannon)__receiver)}
+}
+#[doc="`BuildSkipover()` overload"]fn build_skipover(self,)->(){unsafe{let __receiver= <FSMBuilderCannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d48920usize)as*mut u8,();
+(FSMBuilderCannon)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilderCannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47890usize)as*mut u8,();
+(FSMBuilderCannon)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuildercannon")]
-impl < __T : IFSMBuilderCannon > IFSMBuilderCannonMethods for __T { }
+#[cfg(feature="combat-fsmbuildercannon")]impl<__T:IFSMBuilderCannon>IFSMBuilderCannonMethods for __T{}
 
-#[cfg(feature = "combat-fsmbuildercannon")]
-impl FSMBuilderCannon { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderCannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderCannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_skipover_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderCannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderCannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-fsmbuildercannon")]impl FSMBuilderCannon{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn rotate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_skipover_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-fsmbuildercannon")]
-impl FSMBuilderCannon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSMBuilderCannon) , :: core :: stringify ! (new) ,)) ; < Self as IFSMBuilderCannonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fsmbuildercannon")]impl FSMBuilderCannon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FSMBuilderCannon), ::core::stringify!(new),));
+ <Self as IFSMBuilderCannonMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fsmbuildercannon")]

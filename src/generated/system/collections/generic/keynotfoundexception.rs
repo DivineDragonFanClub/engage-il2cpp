@@ -4,30 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/keynotfoundexception/KeyNotFoundException.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "KeyNotFoundException")] pub struct KeyNotFoundException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/keynotfoundexception/KeyNotFoundException.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="KeyNotFoundException")]pub struct KeyNotFoundException{}
 
 }
 
 #[cfg(feature = "system-collections-generic-keynotfoundexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-keynotfoundexception")]
-pub trait IKeyNotFoundExceptionMethods : IKeyNotFoundException { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < KeyNotFoundException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyNotFoundException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3269c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < KeyNotFoundException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyNotFoundException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3269cb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-keynotfoundexception")]pub trait IKeyNotFoundExceptionMethods:IKeyNotFoundException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KeyNotFoundException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3269c30usize)as*mut u8,();
+(KeyNotFoundException)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KeyNotFoundException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3269cb0usize)as*mut u8,();
+(KeyNotFoundException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+}
 
-#[cfg(feature = "system-collections-generic-keynotfoundexception")]
-impl < __T : IKeyNotFoundException > IKeyNotFoundExceptionMethods for __T { }
+#[cfg(feature="system-collections-generic-keynotfoundexception")]impl<__T:IKeyNotFoundException>IKeyNotFoundExceptionMethods for __T{}
 
-#[cfg(feature = "system-collections-generic-keynotfoundexception")]
-impl KeyNotFoundException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyNotFoundException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyNotFoundException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-collections-generic-keynotfoundexception")]impl KeyNotFoundException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-collections-generic-keynotfoundexception")]
-impl KeyNotFoundException {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KeyNotFoundException) , :: core :: stringify ! (new) ,)) ; < Self as IKeyNotFoundExceptionMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KeyNotFoundException) , :: core :: stringify ! (new_2) ,)) ; < Self as IKeyNotFoundExceptionMethods > :: ctor_2 (this , message) ; this }
+#[cfg(feature="system-collections-generic-keynotfoundexception")]impl KeyNotFoundException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KeyNotFoundException), ::core::stringify!(new),));
+ <Self as IKeyNotFoundExceptionMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KeyNotFoundException), ::core::stringify!(new_2),));
+ <Self as IKeyNotFoundExceptionMethods> ::ctor_2(this,message);
+this}
 }
 
 #[cfg(feature = "system-collections-generic-keynotfoundexception")]

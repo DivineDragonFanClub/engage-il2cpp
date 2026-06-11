@@ -4,39 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationdefinedata/VibrationDefineData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VibrationDefineData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: vibrationdefinedata :: VibrationDefineData >)] pub struct VibrationDefineData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/vibrationdefinedata/VibrationDefineData.md"))]#[::unity2::class(namespace="App",name="VibrationDefineData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::vibrationdefinedata::VibrationDefineData>)]pub struct VibrationDefineData{}
 
 }
 
 #[cfg(feature = "app-vibrationdefinedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-vibrationdefinedata")]
-impl VibrationDefineData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-vibrationdefinedata")]impl VibrationDefineData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bf700usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-vibrationdefinedata")]
-pub trait IVibrationDefineDataMethods : IVibrationDefineData { # [doc = "`get_EventName()` overload"] fn get_event_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VibrationDefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationDefineData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EventName(::unity2::Il2CppString)` overload"] fn set_event_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VibrationDefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationDefineData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_VibrationFileName()` overload"] fn get_vibration_file_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VibrationDefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationDefineData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_VibrationFileName(::unity2::Il2CppString)` overload"] fn set_vibration_file_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VibrationDefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationDefineData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AmplitudeMagnitude()` overload"] fn get_amplitude_magnitude (self ,) -> f32 { unsafe { let __receiver = < VibrationDefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationDefineData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AmplitudeMagnitude(f32)` overload"] fn set_amplitude_magnitude (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < VibrationDefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationDefineData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VibrationDefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VibrationDefineData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-vibrationdefinedata")]pub trait IVibrationDefineDataMethods:IVibrationDefineData{#[doc="`get_EventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VibrationDefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf620usize)as*mut u8, ::unity2::Il2CppString;
+(VibrationDefineData)__receiver)}
+}
+#[doc="`set_EventName(::unity2::Il2CppString)` overload"]fn set_event_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VibrationDefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf630usize)as*mut u8,();
+(VibrationDefineData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_VibrationFileName()` overload"]fn get_vibration_file_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VibrationDefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf640usize)as*mut u8, ::unity2::Il2CppString;
+(VibrationDefineData)__receiver)}
+}
+#[doc="`set_VibrationFileName(::unity2::Il2CppString)` overload"]fn set_vibration_file_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VibrationDefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf650usize)as*mut u8,();
+(VibrationDefineData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AmplitudeMagnitude()` overload"]fn get_amplitude_magnitude(self,)->f32{unsafe{let __receiver= <VibrationDefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf660usize)as*mut u8,f32;
+(VibrationDefineData)__receiver)}
+}
+#[doc="`set_AmplitudeMagnitude(f32)` overload"]fn set_amplitude_magnitude(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VibrationDefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf670usize)as*mut u8,();
+(VibrationDefineData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VibrationDefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf680usize)as*mut u8,();
+(VibrationDefineData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-vibrationdefinedata")]
-impl < __T : IVibrationDefineData > IVibrationDefineDataMethods for __T { }
+#[cfg(feature="app-vibrationdefinedata")]impl<__T:IVibrationDefineData>IVibrationDefineDataMethods for __T{}
 
-#[cfg(feature = "app-vibrationdefinedata")]
-impl VibrationDefineData { pub fn get_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_vibration_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_vibration_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_amplitude_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_amplitude_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-vibrationdefinedata")]impl VibrationDefineData{pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_vibration_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_vibration_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_amplitude_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_amplitude_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-vibrationdefinedata")]
-impl VibrationDefineData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VibrationDefineData) , :: core :: stringify ! (new) ,)) ; < Self as IVibrationDefineDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-vibrationdefinedata")]impl VibrationDefineData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VibrationDefineData), ::core::stringify!(new),));
+ <Self as IVibrationDefineDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-vibrationdefinedata")]

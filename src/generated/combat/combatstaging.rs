@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatstaging/CombatStaging.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatStaging")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CombatStaging {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatstaging/CombatStaging.md"))]#[::unity2::class(namespace="Combat",name="CombatStaging")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatStaging{}
 
 }
 
 #[cfg(feature = "combat-combatstaging-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatstaging")]
-pub trait ICombatStagingMethods : ICombatStaging { # [doc = "`Attach(i32, crate::combat::character::Character)` overload"] fn attach (self , side : impl :: core :: convert :: Into < i32 > , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < CombatStaging as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatStaging , i32 , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ff00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatStaging as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatStaging , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292ff70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatstaging")]pub trait ICombatStagingMethods:ICombatStaging{#[doc="`Attach(i32, crate::combat::character::Character)` overload"]fn attach(self,side:impl::core::convert::Into<i32> ,chr:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <CombatStaging as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ff00usize)as*mut u8,();
+(CombatStaging)__receiver,(i32)::core::convert::Into::into(side),(crate::combat::character::Character)::core::convert::Into::into(chr))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatStaging as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x292ff70usize)as*mut u8,();
+(CombatStaging)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatstaging")]
-impl < __T : ICombatStaging > ICombatStagingMethods for __T { }
+#[cfg(feature="combat-combatstaging")]impl<__T:ICombatStaging>ICombatStagingMethods for __T{}
 
-#[cfg(feature = "combat-combatstaging")]
-impl CombatStaging { pub fn attach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatStaging as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatStaging as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-combatstaging")]impl CombatStaging{pub fn attach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "combat-combatstaging")]
-impl CombatStaging {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatStaging) , :: core :: stringify ! (new) ,)) ; < Self as ICombatStagingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatstaging")]impl CombatStaging{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatStaging), ::core::stringify!(new),));
+ <Self as ICombatStagingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combatstaging")]

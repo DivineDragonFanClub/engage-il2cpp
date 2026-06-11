@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/cameraextensions/CameraExtensions.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "CameraExtensions")] # [parent (crate :: system :: object :: Object)] pub struct CameraExtensions {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/cameraextensions/CameraExtensions.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="CameraExtensions")]#[parent(crate::system::object::Object)]pub struct CameraExtensions{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-cameraextensions-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-cameraextensions")]
-impl CameraExtensions { # [doc = "`GetUniversalAdditionalCameraData(crate::unity_engine::camera::Camera)` overload"] pub fn get_universal_additional_camera_data (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3dc40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-cameraextensions")]impl CameraExtensions{#[doc="`GetUniversalAdditionalCameraData(crate::unity_engine::camera::Camera)` overload"]pub fn get_universal_additional_camera_data(camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3dc40usize)as*mut u8,crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData;
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-cameraextensions")]
-impl CameraExtensions { pub fn get_universal_additional_camera_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-universal-cameraextensions")]impl CameraExtensions{pub fn get_universal_additional_camera_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-cameraextensions")]
 #[doc(hidden)]

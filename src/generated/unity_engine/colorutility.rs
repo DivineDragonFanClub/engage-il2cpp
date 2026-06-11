@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/colorutility/ColorUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ColorUtility")] # [parent (crate :: system :: object :: Object)] pub struct ColorUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/colorutility/ColorUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="ColorUtility")]#[parent(crate::system::object::Object)]pub struct ColorUtility{}
 
 }
 
 #[cfg(feature = "unity_engine-colorutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-colorutility")]
-impl ColorUtility { # [doc = "`ToHtmlStringRGB(crate::unity_engine::color::Color)` overload"] pub fn to_html_string_rgb (color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-colorutility")]impl ColorUtility{#[doc="`ToHtmlStringRGB(crate::unity_engine::color::Color)` overload"]pub fn to_html_string_rgb(color:impl::core::convert::Into<crate::unity_engine::color::Color>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41b70usize)as*mut u8, ::unity2::Il2CppString;
+(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+}
 
-#[cfg(feature = "unity_engine-colorutility")]
-impl ColorUtility { pub fn to_html_string_rgb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-colorutility")]impl ColorUtility{pub fn to_html_string_rgb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-colorutility")]
 #[doc(hidden)]

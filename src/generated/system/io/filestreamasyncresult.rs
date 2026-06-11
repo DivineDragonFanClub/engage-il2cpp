@@ -4,33 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filestreamasyncresult/FileStreamAsyncResult.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "FileStreamAsyncResult")] # [parent (crate :: system :: object :: Object)] pub struct FileStreamAsyncResult {
-# [offset (16)] # [rename (name = "state")] pub state : :: unity2 :: IlInstance ,
-# [offset (24)] # [rename (name = "completed")] pub completed : bool ,
-# [offset (48)] # [rename (name = "completedSynch")] pub completed_synch : bool ,
-# [offset (52)] # [rename (name = "Count")] pub count : i32 ,
-# [offset (56)] # [rename (name = "OriginalCount")] pub original_count : i32 ,
-# [offset (60)] # [rename (name = "BytesRead")] pub bytes_read : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestreamasyncresult/FileStreamAsyncResult.md"))]#[::unity2::class(namespace="System.IO",name="FileStreamAsyncResult")]#[parent(crate::system::object::Object)]pub struct FileStreamAsyncResult{#[offset(16)]#[rename(name="state")]pub state: ::unity2::IlInstance, #[offset(24)]#[rename(name="completed")]pub completed:bool, #[offset(48)]#[rename(name="completedSynch")]pub completed_synch:bool, #[offset(52)]#[rename(name="Count")]pub count:i32, #[offset(56)]#[rename(name="OriginalCount")]pub original_count:i32, #[offset(60)]#[rename(name="BytesRead")]pub bytes_read:i32,}
 
 }
 
 #[cfg(feature = "system-io-filestreamasyncresult-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-filestreamasyncresult")]
-pub trait IFileStreamAsyncResultMethods : IFileStreamAsyncResult { # [doc = "`get_AsyncState()` overload"] fn get_async_state (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < FileStreamAsyncResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileStreamAsyncResult , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3812140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CompletedSynchronously()` overload"] fn get_completed_synchronously (self ,) -> bool { unsafe { let __receiver = < FileStreamAsyncResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileStreamAsyncResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3812150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsCompleted()` overload"] fn get_is_completed (self ,) -> bool { unsafe { let __receiver = < FileStreamAsyncResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileStreamAsyncResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3812170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-filestreamasyncresult")]pub trait IFileStreamAsyncResultMethods:IFileStreamAsyncResult{#[doc="`get_AsyncState()` overload"]fn get_async_state(self,)->crate::system::object::Object{unsafe{let __receiver= <FileStreamAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3812140usize)as*mut u8,crate::system::object::Object;
+(FileStreamAsyncResult)__receiver)}
+}
+#[doc="`get_CompletedSynchronously()` overload"]fn get_completed_synchronously(self,)->bool{unsafe{let __receiver= <FileStreamAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3812150usize)as*mut u8,bool;
+(FileStreamAsyncResult)__receiver)}
+}
+#[doc="`get_IsCompleted()` overload"]fn get_is_completed(self,)->bool{unsafe{let __receiver= <FileStreamAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3812170usize)as*mut u8,bool;
+(FileStreamAsyncResult)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-filestreamasyncresult")]
-impl < __T : IFileStreamAsyncResult > IFileStreamAsyncResultMethods for __T { }
+#[cfg(feature="system-io-filestreamasyncresult")]impl<__T:IFileStreamAsyncResult>IFileStreamAsyncResultMethods for __T{}
 
-#[cfg(feature = "system-io-filestreamasyncresult")]
-impl FileStreamAsyncResult { pub fn get_async_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_completed_synchronously_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileStreamAsyncResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="system-io-filestreamasyncresult")]impl FileStreamAsyncResult{pub fn get_async_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_completed_synchronously_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "system-io-filestreamasyncresult")]
 #[doc(hidden)]

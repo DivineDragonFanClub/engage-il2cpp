@@ -4,39 +4,144 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographspotdata/PhotographSpotData.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSpotData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: photographspotdata :: PhotographSpotData >)] pub struct PhotographSpotData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographspotdata/PhotographSpotData.md"))]#[::unity2::class(namespace="App",name="PhotographSpotData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::photographspotdata::PhotographSpotData>)]pub struct PhotographSpotData{}
 
 }
 
 #[cfg(feature = "app-photographspotdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographspotdata")]
-impl PhotographSpotData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28090d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809410usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdateStoryProgress()` overload"] pub fn update_story_progress () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28094d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographspotdata")]impl PhotographSpotData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28090d0usize)as*mut u8,();
+)}
+}
+#[doc="`RegistGlobalFlags()` overload"]pub fn regist_global_flags()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2809410usize)as*mut u8,();
+)}
+}
+#[doc="`UpdateStoryProgress()` overload"]pub fn update_story_progress()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28094d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-photographspotdata")]
-pub trait IPhotographSpotDataMethods : IPhotographSpotData { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MID()` overload"] fn get_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28091a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MID(::unity2::Il2CppString)` overload"] fn set_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28091b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ConditionCid()` overload"] fn get_condition_cid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28091c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ConditionCid(::unity2::Il2CppString)` overload"] fn set_condition_cid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28091d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LocatorCount()` overload"] fn get_locator_count (self ,) -> i32 { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28091e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LocatorCount(i32)` overload"] fn set_locator_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28091f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PauseGroupNameList1()` overload"] fn get_pause_group_name_list1 (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PauseGroupNameList1(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_pause_group_name_list1 (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PauseGroupNameList2()` overload"] fn get_pause_group_name_list2 (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PauseGroupNameList2(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_pause_group_name_list2 (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PauseGroupNameList3()` overload"] fn get_pause_group_name_list3 (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PauseGroupNameList3(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_pause_group_name_list3 (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PauseGroupNameList4()` overload"] fn get_pause_group_name_list4 (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PauseGroupNameList4(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_pause_group_name_list4 (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetPauseGroupNameList(i32)` overload"] fn get_pause_group_name_list (self , locator_no : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2809280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator_no) , :: core :: option :: Option :: None) } } } # [doc = "`IsNew()` overload"] fn is_new (self ,) -> bool { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28092b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographSpotData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSpotData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28096c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographspotdata")]pub trait IPhotographSpotDataMethods:IPhotographSpotData{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809180usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809190usize)as*mut u8,();
+(PhotographSpotData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_MID()` overload"]fn get_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28091a0usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`set_MID(::unity2::Il2CppString)` overload"]fn set_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28091b0usize)as*mut u8,();
+(PhotographSpotData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ConditionCid()` overload"]fn get_condition_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28091c0usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`set_ConditionCid(::unity2::Il2CppString)` overload"]fn set_condition_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28091d0usize)as*mut u8,();
+(PhotographSpotData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LocatorCount()` overload"]fn get_locator_count(self,)->i32{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28091e0usize)as*mut u8,i32;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`set_LocatorCount(i32)` overload"]fn set_locator_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28091f0usize)as*mut u8,();
+(PhotographSpotData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PauseGroupNameList1()` overload"]fn get_pause_group_name_list1(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809200usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`set_PauseGroupNameList1(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_pause_group_name_list1(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809210usize)as*mut u8,();
+(PhotographSpotData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_PauseGroupNameList2()` overload"]fn get_pause_group_name_list2(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809220usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`set_PauseGroupNameList2(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_pause_group_name_list2(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809230usize)as*mut u8,();
+(PhotographSpotData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_PauseGroupNameList3()` overload"]fn get_pause_group_name_list3(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809240usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`set_PauseGroupNameList3(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_pause_group_name_list3(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809250usize)as*mut u8,();
+(PhotographSpotData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_PauseGroupNameList4()` overload"]fn get_pause_group_name_list4(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809260usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`set_PauseGroupNameList4(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_pause_group_name_list4(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809270usize)as*mut u8,();
+(PhotographSpotData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`GetPauseGroupNameList(i32)` overload"]fn get_pause_group_name_list(self,locator_no:impl::core::convert::Into<i32>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2809280usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PhotographSpotData)__receiver,(i32)::core::convert::Into::into(locator_no))}
+}
+#[doc="`IsNew()` overload"]fn is_new(self,)->bool{unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28092b0usize)as*mut u8,bool;
+(PhotographSpotData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographSpotData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28096c0usize)as*mut u8,();
+(PhotographSpotData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographspotdata")]
-impl < __T : IPhotographSpotData > IPhotographSpotDataMethods for __T { }
+#[cfg(feature="app-photographspotdata")]impl<__T:IPhotographSpotData>IPhotographSpotDataMethods for __T{}
 
-#[cfg(feature = "app-photographspotdata")]
-impl PhotographSpotData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_condition_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_condition_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_locator_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_locator_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_pause_group_name_list1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_pause_group_name_list1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_pause_group_name_list2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_pause_group_name_list2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_pause_group_name_list3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_pause_group_name_list3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_pause_group_name_list4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_pause_group_name_list4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_pause_group_name_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_new_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn update_story_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSpotData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-photographspotdata")]impl PhotographSpotData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_condition_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_condition_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_locator_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_locator_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_pause_group_name_list1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_pause_group_name_list1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_pause_group_name_list2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_pause_group_name_list2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_pause_group_name_list3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_pause_group_name_list3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_pause_group_name_list4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_pause_group_name_list4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_pause_group_name_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn regist_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn update_story_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-photographspotdata")]
-impl PhotographSpotData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSpotData) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSpotDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographspotdata")]impl PhotographSpotData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSpotData), ::core::stringify!(new),));
+ <Self as IPhotographSpotDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photographspotdata")]

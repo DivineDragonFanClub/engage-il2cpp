@@ -4,46 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characteraura/CharacterAura.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterAura")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterAura {
-# [offset (24)] # [rename (name = "m_AppearEffect")] pub m_appear_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_DisappearEffect")] pub m_disappear_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "AppearDuration")] pub appear_duration : f32 ,
-# [offset (44)] # [rename (name = "DisappearDuration")] pub disappear_duration : f32 ,
-# [offset (48)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [offset (64)] # [rename (name = "m_IsAppear")] pub m_is_appear : bool ,
-# [offset (68)] # [rename (name = "m_DisappearDelayTime")] pub m_disappear_delay_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characteraura/CharacterAura.md"))]#[::unity2::class(namespace="Combat",name="CharacterAura")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterAura{#[offset(24)]#[rename(name="m_AppearEffect")]pub m_appear_effect:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_DisappearEffect")]pub m_disappear_effect:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="AppearDuration")]pub appear_duration:f32, #[offset(44)]#[rename(name="DisappearDuration")]pub disappear_duration:f32, #[offset(48)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(64)]#[rename(name="m_IsAppear")]pub m_is_appear:bool, #[offset(68)]#[rename(name="m_DisappearDelayTime")]pub m_disappear_delay_time:f32,}
 
 }
 
 #[cfg(feature = "combat-characteraura-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characteraura")]
-pub trait ICharacterAuraMethods : ICharacterAura { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d43c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_fader()` overload"] fn get_fader (self ,) -> crate :: root :: iron19characterfader :: Iron19CharacterFader { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> crate :: root :: iron19characterfader :: Iron19CharacterFader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsVisible()` overload"] fn get_is_visible (self ,) -> bool { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d44a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_LastDisappearPosition()` overload"] fn get_last_disappear_position (self ,) -> crate :: combat :: fxz :: FXZ { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d44b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LastDisappearPosition(crate::combat::fxz::FXZ)` overload"] fn set_last_disappear_position (self , value : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d44c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d44d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyStart()` overload"] fn my_start (self ,) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAppear(bool)` overload"] fn set_appear (self , visible : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (visible) , :: core :: option :: Option :: None) } } } # [doc = "`Appear(bool)` overload"] fn appear (self , is_end_of_combat : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_end_of_combat) , :: core :: option :: Option :: None) } } } # [doc = "`RelocateToSpace()` overload"] fn relocate_to_space (self ,) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RelocateForCombatEnd()` overload"] fn relocate_for_combat_end (self ,) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Disappear(f32, bool)` overload"] fn disappear (self , delay_time : impl :: core :: convert :: Into < f32 > , silent : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (delay_time) , :: core :: convert :: Into :: into (silent) , :: core :: option :: Option :: None) } } } # [doc = "`PlayTriggerEffect(crate::unity_engine::gameobject::GameObject)` overload"] fn play_trigger_effect (self , fx : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fx) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d5470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterAura as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAura , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d54f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characteraura")]pub trait ICharacterAuraMethods:ICharacterAura{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d43c0usize)as*mut u8,crate::combat::character::Character;
+(CharacterAura)__receiver)}
+}
+#[doc="`get_fader()` overload"]fn get_fader(self,)->crate::root::iron19characterfader::Iron19CharacterFader{unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4480usize)as*mut u8,crate::root::iron19characterfader::Iron19CharacterFader;
+(CharacterAura)__receiver)}
+}
+#[doc="`get_IsVisible()` overload"]fn get_is_visible(self,)->bool{unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d44a0usize)as*mut u8,bool;
+(CharacterAura)__receiver)}
+}
+#[doc="`get_LastDisappearPosition()` overload"]fn get_last_disappear_position(self,)->crate::combat::fxz::FXZ{unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d44b0usize)as*mut u8,crate::combat::fxz::FXZ;
+(CharacterAura)__receiver)}
+}
+#[doc="`set_LastDisappearPosition(crate::combat::fxz::FXZ)` overload"]fn set_last_disappear_position(self,value:impl::core::convert::Into<crate::combat::fxz::FXZ>)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d44c0usize)as*mut u8,();
+(CharacterAura)__receiver,(crate::combat::fxz::FXZ)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d44d0usize)as*mut u8,();
+(CharacterAura)__receiver)}
+}
+#[doc="`MyStart()` overload"]fn my_start(self,)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4570usize)as*mut u8,();
+(CharacterAura)__receiver)}
+}
+#[doc="`SetAppear(bool)` overload"]fn set_appear(self,visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4630usize)as*mut u8,();
+(CharacterAura)__receiver,(bool)::core::convert::Into::into(visible))}
+}
+#[doc="`Appear(bool)` overload"]fn appear(self,is_end_of_combat:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4790usize)as*mut u8,();
+(CharacterAura)__receiver,(bool)::core::convert::Into::into(is_end_of_combat))}
+}
+#[doc="`RelocateToSpace()` overload"]fn relocate_to_space(self,)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4b70usize)as*mut u8,();
+(CharacterAura)__receiver)}
+}
+#[doc="`RelocateForCombatEnd()` overload"]fn relocate_for_combat_end(self,)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4e30usize)as*mut u8,();
+(CharacterAura)__receiver)}
+}
+#[doc="`Disappear(f32, bool)` overload"]fn disappear(self,delay_time:impl::core::convert::Into<f32> ,silent:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4fa0usize)as*mut u8,();
+(CharacterAura)__receiver,(f32)::core::convert::Into::into(delay_time),(bool)::core::convert::Into::into(silent))}
+}
+#[doc="`PlayTriggerEffect(crate::unity_engine::gameobject::GameObject)` overload"]fn play_trigger_effect(self,fx:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4950usize)as*mut u8,();
+(CharacterAura)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(fx))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d5470usize)as*mut u8,();
+(CharacterAura)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterAura as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d54f0usize)as*mut u8,();
+(CharacterAura)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characteraura")]
-impl < __T : ICharacterAura > ICharacterAuraMethods for __T { }
+#[cfg(feature="combat-characteraura")]impl<__T:ICharacterAura>ICharacterAuraMethods for __T{}
 
-#[cfg(feature = "combat-characteraura")]
-impl CharacterAura { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_fader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_last_disappear_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_last_disappear_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_appear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn appear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn relocate_to_space_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn relocate_for_combat_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn disappear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn play_trigger_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAura as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="combat-characteraura")]impl CharacterAura{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_last_disappear_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_last_disappear_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_appear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn appear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn relocate_to_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn relocate_for_combat_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn disappear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn play_trigger_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "combat-characteraura")]
-impl CharacterAura {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterAura) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterAuraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characteraura")]impl CharacterAura{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterAura), ::core::stringify!(new),));
+ <Self as ICharacterAuraMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characteraura")]

@@ -4,45 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: ui :: debuguihandlerenumfield :: { DebugUIHandlerEnumField , IDebugUIHandlerEnumField }
- ;
- use crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: { DebugUIHandlerWidget , IDebugUIHandlerWidget }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::ui::debuguihandlerenumfield::{DebugUIHandlerEnumField,IDebugUIHandlerEnumField}
+;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWidget,IDebugUIHandlerWidget}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerenumhistory/DebugUIHandlerEnumHistory.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerEnumHistory")] # [parent (crate :: unity_engine :: rendering :: ui :: debuguihandlerenumfield :: DebugUIHandlerEnumField)] pub struct DebugUIHandlerEnumHistory {
-# [offset (112)] # [rename (name = "historyValues")] pub history_values : :: unity2 :: Array < crate :: unity_engine :: ui :: text :: Text > ,
-# [static_field] # [rename (name = "xDecal")] pub x_decal : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlerenumhistory/DebugUIHandlerEnumHistory.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerEnumHistory")]#[parent(crate::unity_engine::rendering::ui::debuguihandlerenumfield::DebugUIHandlerEnumField)]pub struct DebugUIHandlerEnumHistory{#[offset(112)]#[rename(name="historyValues")]pub history_values: ::unity2::Array<crate::unity_engine::ui::text::Text> , #[static_field]#[rename(name="xDecal")]pub x_decal:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumhistory-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumhistory")]
-pub trait IDebugUIHandlerEnumHistoryMethods : IDebugUIHandlerEnumHistory { # [doc = "`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"] fn set_widget (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget >) -> () { unsafe { let __receiver = < DebugUIHandlerEnumHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumHistory , crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353fc80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateValueLabel()` overload"] fn update_value_label (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerEnumHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353ffa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RefreshAfterSanitization()` overload"] fn refresh_after_sanitization (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < DebugUIHandlerEnumHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumHistory , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3540200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerEnumHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerEnumHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3540280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumhistory")]pub trait IDebugUIHandlerEnumHistoryMethods:IDebugUIHandlerEnumHistory{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerEnumHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353fc80usize)as*mut u8,();
+(DebugUIHandlerEnumHistory)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+}
+#[doc="`UpdateValueLabel()` overload"]fn update_value_label(self,)->(){unsafe{let __receiver= <DebugUIHandlerEnumHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353ffa0usize)as*mut u8,();
+(DebugUIHandlerEnumHistory)__receiver)}
+}
+#[doc="`RefreshAfterSanitization()` overload"]fn refresh_after_sanitization(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <DebugUIHandlerEnumHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3540200usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(DebugUIHandlerEnumHistory)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerEnumHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3540280usize)as*mut u8,();
+(DebugUIHandlerEnumHistory)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumhistory")]
-impl < __T : IDebugUIHandlerEnumHistory > IDebugUIHandlerEnumHistoryMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumhistory")]impl<__T:IDebugUIHandlerEnumHistory>IDebugUIHandlerEnumHistoryMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumhistory")]
-impl DebugUIHandlerEnumHistory { pub fn set_widget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_value_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn refresh_after_sanitization_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerEnumHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumhistory")]impl DebugUIHandlerEnumHistory{pub fn set_widget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_value_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn refresh_after_sanitization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumhistory")]
-impl DebugUIHandlerEnumHistory {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerEnumHistory) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerEnumHistoryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumhistory")]impl DebugUIHandlerEnumHistory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerEnumHistory), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerEnumHistoryMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumhistory")]

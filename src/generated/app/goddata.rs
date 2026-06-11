@@ -4,276 +4,110 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goddata/GodData_AIEngageAttackTypes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GodData_AIEngageAttackTypes  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_RelianceLevel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_RelianceLevel{pub value:i32,}
+impl::unity2::ClassIdentity for GodData_RelianceLevel{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GodData.RelianceLevel";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GodData_RelianceLevel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GodData_RelianceLevel{pub fn d()->Self{Self{value:0}
+}
+pub fn c()->Self{Self{value:1}
+}
+pub fn b()->Self{Self{value:2}
+}
+pub fn a()->Self{Self{value:3}
+}
+pub fn s()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for GodData_AIEngageAttackTypes  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_FlagField.md"))]#[::unity2::class(namespace="App",name="GodData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::goddata::GodData_Flags>)]pub struct GodData_FlagField{}
 
-    const NAME: &'static str = "GodData.AIEngageAttackTypes";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_AIEngageAttackTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_AIEngageAttackTypes{pub value:i32,}
+impl::unity2::ClassIdentity for GodData_AIEngageAttackTypes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GodData.AIEngageAttackTypes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GodData_AIEngageAttackTypes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GodData_AIEngageAttackTypes{pub fn none()->Self{Self{value:0}
+}
+pub fn attack()->Self{Self{value:1}
+}
+pub fn attack_pierce()->Self{Self{value:2}
+}
+pub fn attack_charge()->Self{Self{value:3}
+}
+pub fn heal()->Self{Self{value:4}
+}
+pub fn dance()->Self{Self{value:5}
+}
+pub fn bless()->Self{Self{value:6}
+}
+pub fn attack_wait()->Self{Self{value:7}
+}
+pub fn overlap()->Self{Self{value:8}
+}
+pub fn summon()->Self{Self{value:9}
+}
 }
 
 
-impl  ::unity2::IlType for GodData_AIEngageAttackTypes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData.md"))]#[::unity2::class(namespace="App",name="GodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::goddata::GodData>)]pub struct GodData{#[offset(328)]#[rename(name="m_EngageHauntUnit")]pub m_engage_haunt_unit:crate::app::unit::Unit, #[static_field]#[rename(name="s_LinkDics")]pub s_link_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::goddata::GodData> ,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for GodData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GodData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  GodData_AIEngageAttackTypes  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn attack_pierce() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn attack_charge() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn heal() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn dance() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn bless() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn attack_wait() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn overlap() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn summon() -> Self {
-        Self { value: 9 }
-
-    }
-
+impl::unity2::IlType for GodData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: goddata :: GodData_Flags >)] pub struct GodData_FlagField {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: goddata :: GodData >)] pub struct GodData {
-# [offset (328)] # [rename (name = "m_EngageHauntUnit")] pub m_engage_haunt_unit : crate :: app :: unit :: Unit ,
-# [static_field] # [rename (name = "s_LinkDics")] pub s_link_dics : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: goddata :: GodData > ,
+impl GodData_Flags{pub fn no_add_exp()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goddata/GodData_RelianceLevel.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GodData_RelianceLevel  {
-    pub value: i32,
+pub fn enable_ring_list()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for GodData_RelianceLevel  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GodData.RelianceLevel";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn unit_icon_darkness()->Self{Self{value:4}
 }
-
-
-impl  ::unity2::IlType for GodData_RelianceLevel  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn gauge_darkness()->Self{Self{value:8}
 }
-
-
-impl  GodData_RelianceLevel  {
-    pub fn d() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn c() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn b() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn a() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn s() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn only_engage_weapon()->Self{Self{value:16}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goddata/GodData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GodData_Flags  {
-    pub value: i32,
+pub fn armlet()->Self{Self{value:32}
 }
-
-
-impl  ::unity2::ClassIdentity for GodData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GodData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn hero()->Self{Self{value: -2147483648}
 }
-
-
-impl  ::unity2::IlType for GodData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GodData_Flags  {
-    pub fn no_add_exp() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn enable_ring_list() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn unit_icon_darkness() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn gauge_darkness() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn only_engage_weapon() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn armlet() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn hero() -> Self {
-        Self { value: -2147483648 }
-
-    }
-
 }
 
 }
@@ -281,50 +115,616 @@ impl  GodData_Flags  {
 #[cfg(feature = "app-goddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-goddata")]
-pub trait IGodData_FlagFieldMethods : IGodData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GodData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::goddata::GodData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData_Flags >) -> () { unsafe { let __receiver = < GodData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData_FlagField , crate :: app :: goddata :: GodData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::goddata::GodData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData_Flags >) -> i32 { unsafe { let __receiver = < GodData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData_FlagField , crate :: app :: goddata :: GodData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd65d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-goddata")]
-impl < __T : IGodData_FlagField > IGodData_FlagFieldMethods for __T { }
-
-#[cfg(feature = "app-goddata")]
-impl GodData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-goddata")]
-impl GodData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IGodData_FlagFieldMethods > :: ctor (this , f) ; this }
-
-# [doc = "`.ctor(crate::app::goddata::GodData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: goddata :: GodData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IGodData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+#[cfg(feature="app-goddata")]pub trait IGodData_FlagFieldMethods:IGodData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6510usize)as*mut u8,();
+(GodData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::goddata::GodData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::goddata::GodData_Flags>)->(){unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6570usize)as*mut u8,();
+(GodData_FlagField)__receiver,(crate::app::goddata::GodData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::goddata::GodData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::goddata::GodData_Flags>)->i32{unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd65d0usize)as*mut u8,i32;
+(GodData_FlagField)__receiver,(crate::app::goddata::GodData_Flags)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-goddata")]
-impl GodData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d780usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetLink(crate::app::persondata::PersonData)` overload"] pub fn try_get_link (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> crate :: app :: goddata :: GodData { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e0e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`GetEngageZonePrefabPath(::unity2::Il2CppString)` overload"] pub fn get_engage_zone_prefab_path (gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f4f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-goddata")]impl<__T:IGodData_FlagField>IGodData_FlagFieldMethods for __T{}
 
-#[cfg(feature = "app-goddata")]
-pub trait IGodDataMethods : IGodData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Gid()` overload"] fn get_gid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Gid(::unity2::Il2CppString)` overload"] fn set_gid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Mid()` overload"] fn get_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mid(::unity2::Il2CppString)` overload"] fn set_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Nickname()` overload"] fn get_nickname (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Nickname(::unity2::Il2CppString)` overload"] fn set_nickname (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Help()` overload"] fn get_help (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Help(::unity2::Il2CppString)` overload"] fn set_help (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SoundID()` overload"] fn get_sound_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SoundID(::unity2::Il2CppString)` overload"] fn set_sound_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AssetID()` overload"] fn get_asset_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AssetID(::unity2::Il2CppString)` overload"] fn set_asset_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d9a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FaceIconName()` overload"] fn get_face_icon_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FaceIconName(::unity2::Il2CppString)` overload"] fn set_face_icon_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d9c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FaceIconNameDarkness()` overload"] fn get_face_icon_name_darkness (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FaceIconNameDarkness(::unity2::Il2CppString)` overload"] fn set_face_icon_name_darkness (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d9e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Ringname()` overload"] fn get_ringname (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232d9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Ringname(::unity2::Il2CppString)` overload"] fn set_ringname (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Ringhelp()` overload"] fn get_ringhelp (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Ringhelp(::unity2::Il2CppString)` overload"] fn set_ringhelp (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitIconID()` overload"] fn get_unit_icon_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_UnitIconID(::unity2::Il2CppString)` overload"] fn set_unit_icon_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Change()` overload"] fn get_change (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Change(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_change (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Link()` overload"] fn get_link (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Link(::unity2::Il2CppString)` overload"] fn set_link (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngageHaunt()` overload"] fn get_engage_haunt (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232da90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageHaunt(::unity2::Il2CppString)` overload"] fn set_engage_haunt (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232daa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> i32 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(i32)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ForceType()` overload"] fn get_force_type (self ,) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ForceType(crate::app::force::Force_Type)` overload"] fn set_force_type (self , value : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Female()` overload"] fn get_female (self ,) -> i8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232daf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Female(i8)` overload"] fn set_female (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GoodWeapon()` overload"] fn get_good_weapon (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GoodWeapon(crate::app::itemdata::ItemData_Kinds)` overload"] fn set_good_weapon (self , value : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Sort()` overload"] fn get_sort (self ,) -> i16 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Sort(i16)` overload"] fn set_sort (self , value : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngageCount()` overload"] fn get_engage_count (self ,) -> u8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageCount(u8)` overload"] fn set_engage_count (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngageAttack()` overload"] fn get_engage_attack (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageAttack(::unity2::Il2CppString)` overload"] fn set_engage_attack (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngageAttackRampage()` overload"] fn get_engage_attack_rampage (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232db90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageAttackRampage(::unity2::Il2CppString)` overload"] fn set_engage_attack_rampage (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngageAttackLink()` overload"] fn get_engage_attack_link (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageAttackLink(::unity2::Il2CppString)` overload"] fn set_engage_attack_link (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dbc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LinkGid()` overload"] fn get_link_gid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LinkGid(::unity2::Il2CppString)` overload"] fn set_link_gid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dbe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Gbid()` overload"] fn get_gbid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Gbid(::unity2::Il2CppString)` overload"] fn set_gbid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GrowTable()` overload"] fn get_grow_table (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GrowTable(::unity2::Il2CppString)` overload"] fn set_grow_table (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LevelCap()` overload"] fn get_level_cap (self ,) -> u8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LevelCap(u8)` overload"] fn set_level_cap (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnlockLevelCapVarName()` overload"] fn get_unlock_level_cap_var_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_UnlockLevelCapVarName(::unity2::Il2CppString)` overload"] fn set_unlock_level_cap_var_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngraveWord()` overload"] fn get_engrave_word (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngraveWord(::unity2::Il2CppString)` overload"] fn set_engrave_word (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngravePower()` overload"] fn get_engrave_power (self ,) -> i8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngravePower(i8)` overload"] fn set_engrave_power (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngraveWeight()` overload"] fn get_engrave_weight (self ,) -> i8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dcb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngraveWeight(i8)` overload"] fn set_engrave_weight (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dcc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngraveHit()` overload"] fn get_engrave_hit (self ,) -> i8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dcd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngraveHit(i8)` overload"] fn set_engrave_hit (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngraveCritical()` overload"] fn get_engrave_critical (self ,) -> i8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngraveCritical(i8)` overload"] fn set_engrave_critical (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngraveAvoid()` overload"] fn get_engrave_avoid (self ,) -> i8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngraveAvoid(i8)` overload"] fn set_engrave_avoid (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngraveSecure()` overload"] fn get_engrave_secure (self ,) -> i8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngraveSecure(i8)` overload"] fn set_engrave_secure (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SynchroEnhance()` overload"] fn get_synchro_enhance (self ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SynchroEnhance(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn set_synchro_enhance (self , value : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MainData()` overload"] fn get_main_data (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MainData(crate::app::goddata::GodData)` overload"] fn set_main_data (self , value : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ChangeData()` overload"] fn get_change_data (self ,) -> :: unity2 :: Array < crate :: app :: goddata :: GodData > { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: goddata :: GodData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dd90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ChangeData(::unity2::Array<crate::app::goddata::GodData>)` overload"] fn set_change_data (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: goddata :: GodData > >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Array < crate :: app :: goddata :: GodData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dda0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ChangeIndex()` overload"] fn get_change_index (self ,) -> i32 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232ddb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ChangeIndex(i32)` overload"] fn set_change_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232ddc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AsciiName()` overload"] fn get_ascii_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232ddd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AsciiName(::unity2::Il2CppString)` overload"] fn set_ascii_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232dde0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: goddata :: GodData_FlagField { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232ddf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::goddata::GodData_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData_FlagField >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , crate :: app :: goddata :: GodData_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NetRankingIndex()` overload"] fn get_net_ranking_index (self ,) -> u8 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NetRankingIndex(u8)` overload"] fn set_net_ranking_index (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HeroFaceIconName()` overload"] fn get_hero_face_icon_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HeroFaceIconName(::unity2::Il2CppString)` overload"] fn set_hero_face_icon_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HeroineFaceIconName()` overload"] fn get_heroine_face_icon_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HeroineFaceIconName(::unity2::Il2CppString)` overload"] fn set_heroine_face_icon_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AIEngageAttackType()` overload"] fn get_ai_engage_attack_type (self ,) -> crate :: app :: goddata :: GodData_AIEngageAttackTypes { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData_AIEngageAttackTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AIEngageAttackType(crate::app::goddata::GodData_AIEngageAttackTypes)` overload"] fn set_ai_engage_attack_type (self , value : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData_AIEngageAttackTypes >) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , crate :: app :: goddata :: GodData_AIEngageAttackTypes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232de80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetLinkGodData()` overload"] fn get_link_god_data (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEngageHauntUnit()` overload"] fn get_engage_haunt_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcChangeData()` overload"] fn calc_change_data (self ,) -> :: unity2 :: Array < crate :: app :: goddata :: GodData > { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: goddata :: GodData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcChangeIndex()` overload"] fn calc_change_index (self ,) -> i32 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCompleted()` overload"] fn on_completed (self ,) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRelease()` overload"] fn on_release (self ,) -> () { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGender()` overload"] fn get_gender (self ,) -> crate :: app :: gender :: Gender { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: gender :: Gender = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPrefixlessGid()` overload"] fn get_prefixless_gid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsHero()` overload"] fn is_hero (self ,) -> bool { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232e900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetChangeDataCount()` overload"] fn get_change_data_count (self ,) -> i32 { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetChangeData(i32)` overload"] fn get_change_data_2 (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f3b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetRandomChangeData(crate::app::random_2::Random_2)` overload"] fn get_random_change_data (self , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } } # [doc = "`GetNextChangeData()` overload"] fn get_next_change_data (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetInfoData()` overload"] fn get_info_data (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < GodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x232f4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-goddata")]impl GodData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-goddata")]
-impl < __T : IGodData > IGodDataMethods for __T { }
+#[cfg(feature="app-goddata")]impl GodData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodData_FlagField), ::core::stringify!(new),));
+ <Self as IGodData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::goddata::GodData_Flags)` — overload selector"]pub fn new_2(f:crate::app::goddata::GodData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodData_FlagField), ::core::stringify!(new_2),));
+ <Self as IGodData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
 
-#[cfg(feature = "app-goddata")]
-impl GodData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_nickname_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_nickname_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_sound_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_sound_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_asset_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_asset_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_face_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_face_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_face_icon_name_darkness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_face_icon_name_darkness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_ringname_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_ringname_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_ringhelp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_ringhelp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_unit_icon_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_unit_icon_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_link_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_link_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_engage_haunt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_engage_haunt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn set_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_female_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn set_female_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_good_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn set_good_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn set_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_engage_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn set_engage_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn set_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_engage_attack_rampage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn set_engage_attack_rampage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_engage_attack_link_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn set_engage_attack_link_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_link_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn set_link_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn get_gbid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn set_gbid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn get_grow_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn set_grow_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn get_level_cap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn set_level_cap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn get_unlock_level_cap_var_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn set_unlock_level_cap_var_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn get_engrave_word_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn set_engrave_word_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn get_engrave_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn set_engrave_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn get_engrave_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn set_engrave_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn get_engrave_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn set_engrave_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn get_engrave_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn set_engrave_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn get_engrave_avoid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn set_engrave_avoid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn get_engrave_secure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn set_engrave_secure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn get_synchro_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn set_synchro_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn get_main_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn set_main_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn get_change_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn set_change_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn get_change_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn set_change_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn get_ascii_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn set_ascii_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [82] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [83] } pub fn get_net_ranking_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [84] } pub fn set_net_ranking_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [85] } pub fn get_hero_face_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [86] } pub fn set_hero_face_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [87] } pub fn get_heroine_face_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [88] } pub fn set_heroine_face_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [89] } pub fn get_ai_engage_attack_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [90] } pub fn set_ai_engage_attack_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [91] } pub fn get_link_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [95] } pub fn get_engage_haunt_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [96] } pub fn try_get_link_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [97] } pub fn calc_change_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [98] } pub fn calc_change_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [99] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [100] } pub fn on_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [101] } pub fn on_release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [102] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [103] } pub fn get_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [104] } pub fn get_prefixless_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [105] } pub fn is_hero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [106] } pub fn get_engage_zone_prefab_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [107] } pub fn get_change_data_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [108] } pub fn get_change_data_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [110] } pub fn get_random_change_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [111] } pub fn get_next_change_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [112] } pub fn get_info_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [113] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [114] } }
+#[cfg(feature="app-goddata")]impl GodData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232d780usize)as*mut u8,();
+)}
+}
+#[doc="`TryGetLink(crate::app::persondata::PersonData)` overload"]pub fn try_get_link(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->crate::app::goddata::GodData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232e0e0usize)as*mut u8,crate::app::goddata::GodData;
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`GetEngageZonePrefabPath(::unity2::Il2CppString)` overload"]pub fn get_engage_zone_prefab_path(gid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232e960usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232f4f0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-goddata")]
-impl GodData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodData) , :: core :: stringify ! (new) ,)) ; < Self as IGodDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-goddata")]pub trait IGodDataMethods:IGodData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d830usize)as*mut u8,();
+(GodData)__receiver)}
+}
+#[doc="`get_Gid()` overload"]fn get_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d8f0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_Gid(::unity2::Il2CppString)` overload"]fn set_gid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d900usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Mid()` overload"]fn get_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d910usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_Mid(::unity2::Il2CppString)` overload"]fn set_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d920usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Nickname()` overload"]fn get_nickname(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d930usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_Nickname(::unity2::Il2CppString)` overload"]fn set_nickname(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d940usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Help()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d950usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_Help(::unity2::Il2CppString)` overload"]fn set_help(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d960usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SoundID()` overload"]fn get_sound_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d970usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_SoundID(::unity2::Il2CppString)` overload"]fn set_sound_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d980usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AssetID()` overload"]fn get_asset_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d990usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_AssetID(::unity2::Il2CppString)` overload"]fn set_asset_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d9a0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_FaceIconName()` overload"]fn get_face_icon_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d9b0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_FaceIconName(::unity2::Il2CppString)` overload"]fn set_face_icon_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d9c0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_FaceIconNameDarkness()` overload"]fn get_face_icon_name_darkness(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d9d0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_FaceIconNameDarkness(::unity2::Il2CppString)` overload"]fn set_face_icon_name_darkness(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d9e0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Ringname()` overload"]fn get_ringname(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232d9f0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_Ringname(::unity2::Il2CppString)` overload"]fn set_ringname(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da00usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Ringhelp()` overload"]fn get_ringhelp(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da10usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_Ringhelp(::unity2::Il2CppString)` overload"]fn set_ringhelp(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da20usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_UnitIconID()` overload"]fn get_unit_icon_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da30usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_UnitIconID(::unity2::Il2CppString)` overload"]fn set_unit_icon_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da40usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Change()` overload"]fn get_change(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da50usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(GodData)__receiver)}
+}
+#[doc="`set_Change(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_change(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da60usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Link()` overload"]fn get_link(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da70usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_Link(::unity2::Il2CppString)` overload"]fn set_link(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da80usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngageHaunt()` overload"]fn get_engage_haunt(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232da90usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_EngageHaunt(::unity2::Il2CppString)` overload"]fn set_engage_haunt(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232daa0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->i32{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dab0usize)as*mut u8,i32;
+(GodData)__receiver)}
+}
+#[doc="`set_Level(i32)` overload"]fn set_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dac0usize)as*mut u8,();
+(GodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ForceType()` overload"]fn get_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dad0usize)as*mut u8,crate::app::force::Force_Type;
+(GodData)__receiver)}
+}
+#[doc="`set_ForceType(crate::app::force::Force_Type)` overload"]fn set_force_type(self,value:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dae0usize)as*mut u8,();
+(GodData)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_Female()` overload"]fn get_female(self,)->i8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232daf0usize)as*mut u8,i8;
+(GodData)__receiver)}
+}
+#[doc="`set_Female(i8)` overload"]fn set_female(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db00usize)as*mut u8,();
+(GodData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_GoodWeapon()` overload"]fn get_good_weapon(self,)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db10usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(GodData)__receiver)}
+}
+#[doc="`set_GoodWeapon(crate::app::itemdata::ItemData_Kinds)` overload"]fn set_good_weapon(self,value:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db20usize)as*mut u8,();
+(GodData)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(value))}
+}
+#[doc="`get_Sort()` overload"]fn get_sort(self,)->i16{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db30usize)as*mut u8,i16;
+(GodData)__receiver)}
+}
+#[doc="`set_Sort(i16)` overload"]fn set_sort(self,value:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db40usize)as*mut u8,();
+(GodData)__receiver,(i16)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngageCount()` overload"]fn get_engage_count(self,)->u8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db50usize)as*mut u8,u8;
+(GodData)__receiver)}
+}
+#[doc="`set_EngageCount(u8)` overload"]fn set_engage_count(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db60usize)as*mut u8,();
+(GodData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngageAttack()` overload"]fn get_engage_attack(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db70usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_EngageAttack(::unity2::Il2CppString)` overload"]fn set_engage_attack(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db80usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngageAttackRampage()` overload"]fn get_engage_attack_rampage(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232db90usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_EngageAttackRampage(::unity2::Il2CppString)` overload"]fn set_engage_attack_rampage(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dba0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngageAttackLink()` overload"]fn get_engage_attack_link(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dbb0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_EngageAttackLink(::unity2::Il2CppString)` overload"]fn set_engage_attack_link(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dbc0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LinkGid()` overload"]fn get_link_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dbd0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_LinkGid(::unity2::Il2CppString)` overload"]fn set_link_gid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dbe0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Gbid()` overload"]fn get_gbid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dbf0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_Gbid(::unity2::Il2CppString)` overload"]fn set_gbid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc00usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_GrowTable()` overload"]fn get_grow_table(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc10usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_GrowTable(::unity2::Il2CppString)` overload"]fn set_grow_table(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc20usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LevelCap()` overload"]fn get_level_cap(self,)->u8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc30usize)as*mut u8,u8;
+(GodData)__receiver)}
+}
+#[doc="`set_LevelCap(u8)` overload"]fn set_level_cap(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc40usize)as*mut u8,();
+(GodData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_UnlockLevelCapVarName()` overload"]fn get_unlock_level_cap_var_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc50usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_UnlockLevelCapVarName(::unity2::Il2CppString)` overload"]fn set_unlock_level_cap_var_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc60usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngraveWord()` overload"]fn get_engrave_word(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc70usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_EngraveWord(::unity2::Il2CppString)` overload"]fn set_engrave_word(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc80usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngravePower()` overload"]fn get_engrave_power(self,)->i8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dc90usize)as*mut u8,i8;
+(GodData)__receiver)}
+}
+#[doc="`set_EngravePower(i8)` overload"]fn set_engrave_power(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dca0usize)as*mut u8,();
+(GodData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngraveWeight()` overload"]fn get_engrave_weight(self,)->i8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dcb0usize)as*mut u8,i8;
+(GodData)__receiver)}
+}
+#[doc="`set_EngraveWeight(i8)` overload"]fn set_engrave_weight(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dcc0usize)as*mut u8,();
+(GodData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngraveHit()` overload"]fn get_engrave_hit(self,)->i8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dcd0usize)as*mut u8,i8;
+(GodData)__receiver)}
+}
+#[doc="`set_EngraveHit(i8)` overload"]fn set_engrave_hit(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dce0usize)as*mut u8,();
+(GodData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngraveCritical()` overload"]fn get_engrave_critical(self,)->i8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dcf0usize)as*mut u8,i8;
+(GodData)__receiver)}
+}
+#[doc="`set_EngraveCritical(i8)` overload"]fn set_engrave_critical(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd00usize)as*mut u8,();
+(GodData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngraveAvoid()` overload"]fn get_engrave_avoid(self,)->i8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd10usize)as*mut u8,i8;
+(GodData)__receiver)}
+}
+#[doc="`set_EngraveAvoid(i8)` overload"]fn set_engrave_avoid(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd20usize)as*mut u8,();
+(GodData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngraveSecure()` overload"]fn get_engrave_secure(self,)->i8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd30usize)as*mut u8,i8;
+(GodData)__receiver)}
+}
+#[doc="`set_EngraveSecure(i8)` overload"]fn set_engrave_secure(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd40usize)as*mut u8,();
+(GodData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_SynchroEnhance()` overload"]fn get_synchro_enhance(self,)->crate::app::capabilitysbyte::CapabilitySbyte{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd50usize)as*mut u8,crate::app::capabilitysbyte::CapabilitySbyte;
+(GodData)__receiver)}
+}
+#[doc="`set_SynchroEnhance(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]fn set_synchro_enhance(self,value:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd60usize)as*mut u8,();
+(GodData)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(value))}
+}
+#[doc="`get_MainData()` overload"]fn get_main_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd70usize)as*mut u8,crate::app::goddata::GodData;
+(GodData)__receiver)}
+}
+#[doc="`set_MainData(crate::app::goddata::GodData)` overload"]fn set_main_data(self,value:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd80usize)as*mut u8,();
+(GodData)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(value))}
+}
+#[doc="`get_ChangeData()` overload"]fn get_change_data(self,)-> ::unity2::Array<crate::app::goddata::GodData>{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dd90usize)as*mut u8, ::unity2::Array<crate::app::goddata::GodData> ;
+(GodData)__receiver)}
+}
+#[doc="`set_ChangeData(::unity2::Array<crate::app::goddata::GodData>)` overload"]fn set_change_data(self,value:impl::core::convert::Into< ::unity2::Array<crate::app::goddata::GodData> >)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dda0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Array<crate::app::goddata::GodData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_ChangeIndex()` overload"]fn get_change_index(self,)->i32{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232ddb0usize)as*mut u8,i32;
+(GodData)__receiver)}
+}
+#[doc="`set_ChangeIndex(i32)` overload"]fn set_change_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232ddc0usize)as*mut u8,();
+(GodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AsciiName()` overload"]fn get_ascii_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232ddd0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_AsciiName(::unity2::Il2CppString)` overload"]fn set_ascii_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232dde0usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::goddata::GodData_FlagField{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232ddf0usize)as*mut u8,crate::app::goddata::GodData_FlagField;
+(GodData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::goddata::GodData_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::goddata::GodData_FlagField>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de00usize)as*mut u8,();
+(GodData)__receiver,(crate::app::goddata::GodData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`get_NetRankingIndex()` overload"]fn get_net_ranking_index(self,)->u8{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de10usize)as*mut u8,u8;
+(GodData)__receiver)}
+}
+#[doc="`set_NetRankingIndex(u8)` overload"]fn set_net_ranking_index(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de20usize)as*mut u8,();
+(GodData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_HeroFaceIconName()` overload"]fn get_hero_face_icon_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de30usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_HeroFaceIconName(::unity2::Il2CppString)` overload"]fn set_hero_face_icon_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de40usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_HeroineFaceIconName()` overload"]fn get_heroine_face_icon_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de50usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`set_HeroineFaceIconName(::unity2::Il2CppString)` overload"]fn set_heroine_face_icon_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de60usize)as*mut u8,();
+(GodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AIEngageAttackType()` overload"]fn get_ai_engage_attack_type(self,)->crate::app::goddata::GodData_AIEngageAttackTypes{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de70usize)as*mut u8,crate::app::goddata::GodData_AIEngageAttackTypes;
+(GodData)__receiver)}
+}
+#[doc="`set_AIEngageAttackType(crate::app::goddata::GodData_AIEngageAttackTypes)` overload"]fn set_ai_engage_attack_type(self,value:impl::core::convert::Into<crate::app::goddata::GodData_AIEngageAttackTypes>)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232de80usize)as*mut u8,();
+(GodData)__receiver,(crate::app::goddata::GodData_AIEngageAttackTypes)::core::convert::Into::into(value))}
+}
+#[doc="`GetLinkGodData()` overload"]fn get_link_god_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e040usize)as*mut u8,crate::app::goddata::GodData;
+(GodData)__receiver)}
+}
+#[doc="`GetEngageHauntUnit()` overload"]fn get_engage_haunt_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e0d0usize)as*mut u8,crate::app::unit::Unit;
+(GodData)__receiver)}
+}
+#[doc="`CalcChangeData()` overload"]fn calc_change_data(self,)-> ::unity2::Array<crate::app::goddata::GodData>{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e1a0usize)as*mut u8, ::unity2::Array<crate::app::goddata::GodData> ;
+(GodData)__receiver)}
+}
+#[doc="`CalcChangeIndex()` overload"]fn calc_change_index(self,)->i32{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e350usize)as*mut u8,i32;
+(GodData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e3b0usize)as*mut u8,();
+(GodData)__receiver)}
+}
+#[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e590usize)as*mut u8,();
+(GodData)__receiver)}
+}
+#[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e6b0usize)as*mut u8,();
+(GodData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e750usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`GetGender()` overload"]fn get_gender(self,)->crate::app::gender::Gender{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e760usize)as*mut u8,crate::app::gender::Gender;
+(GodData)__receiver)}
+}
+#[doc="`GetPrefixlessGid()` overload"]fn get_prefixless_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e8f0usize)as*mut u8, ::unity2::Il2CppString;
+(GodData)__receiver)}
+}
+#[doc="`IsHero()` overload"]fn is_hero(self,)->bool{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232e900usize)as*mut u8,bool;
+(GodData)__receiver)}
+}
+#[doc="`GetChangeDataCount()` overload"]fn get_change_data_count(self,)->i32{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232f380usize)as*mut u8,i32;
+(GodData)__receiver)}
+}
+#[doc="`GetChangeData(i32)` overload"]fn get_change_data_2(self,index:impl::core::convert::Into<i32>)->crate::app::goddata::GodData{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232f3b0usize)as*mut u8,crate::app::goddata::GodData;
+(GodData)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetRandomChangeData(crate::app::random_2::Random_2)` overload"]fn get_random_change_data(self,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->crate::app::goddata::GodData{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232f400usize)as*mut u8,crate::app::goddata::GodData;
+(GodData)__receiver,(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+}
+#[doc="`GetNextChangeData()` overload"]fn get_next_change_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232f470usize)as*mut u8,crate::app::goddata::GodData;
+(GodData)__receiver)}
+}
+#[doc="`GetInfoData()` overload"]fn get_info_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x232f4d0usize)as*mut u8,crate::app::goddata::GodData;
+(GodData)__receiver)}
+}
+}
+
+#[cfg(feature="app-goddata")]impl<__T:IGodData>IGodDataMethods for __T{}
+
+#[cfg(feature="app-goddata")]impl GodData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_nickname_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_nickname_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_sound_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_sound_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_asset_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_asset_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_face_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_face_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_face_icon_name_darkness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_face_icon_name_darkness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_ringname_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_ringname_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_ringhelp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_ringhelp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_unit_icon_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_unit_icon_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_engage_haunt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_engage_haunt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_female_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_female_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_good_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn set_good_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn set_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_engage_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn set_engage_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_engage_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn set_engage_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_engage_attack_rampage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn set_engage_attack_rampage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_engage_attack_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn set_engage_attack_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_link_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn set_link_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn get_gbid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn set_gbid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn get_grow_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn set_grow_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn get_level_cap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn set_level_cap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn get_unlock_level_cap_var_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn set_unlock_level_cap_var_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn get_engrave_word_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn set_engrave_word_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn get_engrave_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn set_engrave_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn get_engrave_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn set_engrave_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn get_engrave_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn set_engrave_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn get_engrave_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn set_engrave_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn get_engrave_avoid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn set_engrave_avoid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn get_engrave_secure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn set_engrave_secure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn get_synchro_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn set_synchro_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn get_main_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn set_main_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn get_change_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn set_change_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn get_change_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn set_change_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn get_ascii_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn set_ascii_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn get_net_ranking_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+pub fn set_net_ranking_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
+pub fn get_hero_face_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
+pub fn set_hero_face_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
+pub fn get_heroine_face_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+pub fn set_heroine_face_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
+pub fn get_ai_engage_attack_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+pub fn set_ai_engage_attack_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
+pub fn get_link_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
+pub fn get_engage_haunt_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
+pub fn try_get_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
+pub fn calc_change_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
+pub fn calc_change_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[100]}
+pub fn on_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[101]}
+pub fn on_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[102]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[103]}
+pub fn get_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[104]}
+pub fn get_prefixless_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[105]}
+pub fn is_hero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[106]}
+pub fn get_engage_zone_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[107]}
+pub fn get_change_data_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[108]}
+pub fn get_change_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[110]}
+pub fn get_random_change_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[111]}
+pub fn get_next_change_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[112]}
+pub fn get_info_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[113]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[114]}
+}
+
+#[cfg(feature="app-goddata")]impl GodData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodData), ::core::stringify!(new),));
+ <Self as IGodDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-goddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodData_AIEngageAttackTypes;
+    pub use super::GodData_RelianceLevel;
     pub use super::GodData_FlagField;
     pub use super::IGodData_FlagField;
     pub use super::IGodData_FlagFieldMethods;
+    pub use super::GodData_AIEngageAttackTypes;
     pub use super::GodData;
     pub use super::IGodData;
     pub use super::IGodDataMethods;
-    pub use super::GodData_RelianceLevel;
     pub use super::GodData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;

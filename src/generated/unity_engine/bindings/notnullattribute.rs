@@ -4,28 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/notnullattribute/NotNullAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "NotNullAttribute")] pub struct NotNullAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/notnullattribute/NotNullAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="NotNullAttribute")]pub struct NotNullAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-notnullattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-notnullattribute")]
-pub trait INotNullAttributeMethods : INotNullAttribute { # [doc = "`set_Exception(::unity2::Il2CppString)` overload"] fn set_exception (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NotNullAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NotNullAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f384b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , exception : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NotNullAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NotNullAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f384c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (exception) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-notnullattribute")]pub trait INotNullAttributeMethods:INotNullAttribute{#[doc="`set_Exception(::unity2::Il2CppString)` overload"]fn set_exception(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NotNullAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f384b0usize)as*mut u8,();
+(NotNullAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,exception:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NotNullAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f384c0usize)as*mut u8,();
+(NotNullAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(exception))}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-notnullattribute")]
-impl < __T : INotNullAttribute > INotNullAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-notnullattribute")]impl<__T:INotNullAttribute>INotNullAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-notnullattribute")]
-impl NotNullAttribute { pub fn set_exception_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NotNullAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NotNullAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-bindings-notnullattribute")]impl NotNullAttribute{pub fn set_exception_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-bindings-notnullattribute")]
-impl NotNullAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (exception : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NotNullAttribute) , :: core :: stringify ! (new) ,)) ; < Self as INotNullAttributeMethods > :: ctor (this , exception) ; this }
+#[cfg(feature="unity_engine-bindings-notnullattribute")]impl NotNullAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(exception: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NotNullAttribute), ::core::stringify!(new),));
+ <Self as INotNullAttributeMethods> ::ctor(this,exception);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-notnullattribute")]

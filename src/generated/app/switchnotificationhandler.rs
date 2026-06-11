@@ -4,26 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/switchnotificationhandler/SwitchNotificationHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "SwitchNotificationHandler")] # [parent (crate :: system :: object :: Object)] pub struct SwitchNotificationHandler {
-# [static_field] # [rename (name = "OperationModeInitialized")] pub operation_mode_initialized : bool ,
-# [static_field] # [rename (name = "PerformanceModeInitialized")] pub performance_mode_initialized : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/switchnotificationhandler/SwitchNotificationHandler.md"))]#[::unity2::class(namespace="App",name="SwitchNotificationHandler")]#[parent(crate::system::object::Object)]pub struct SwitchNotificationHandler{#[static_field]#[rename(name="OperationModeInitialized")]pub operation_mode_initialized:bool, #[static_field]#[rename(name="PerformanceModeInitialized")]pub performance_mode_initialized:bool,}
 
 }
 
 #[cfg(feature = "app-switchnotificationhandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-switchnotificationhandler")]
-impl SwitchNotificationHandler { # [doc = "`get_IsDocked()` overload"] pub fn get_is_docked () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aee90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_IsBoosted()` overload"] pub fn get_is_boosted () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af0a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_OperationMode()` overload"] pub fn get_operation_mode () -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af2a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_OperationMode(crate::unity_engine::switch::operation::Operation_OperationMode)` overload"] pub fn set_operation_mode (value : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: operation :: Operation_OperationMode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: switch :: operation :: Operation_OperationMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PerformanceMode()` overload"] pub fn get_performance_mode () -> crate :: unity_engine :: switch :: performance :: Performance_PerformanceMode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: performance :: Performance_PerformanceMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_PerformanceMode(crate::unity_engine::switch::performance::Performance_PerformanceMode)` overload"] pub fn set_performance_mode (value : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: performance :: Performance_PerformanceMode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: switch :: performance :: Performance_PerformanceMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af3f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnRuntimeMethodLoad()` overload"] pub fn on_runtime_method_load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OnNotificationMessage(crate::unity_engine::switch::notification::Notification_Message)` overload"] pub fn on_notification_message (message : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: notification :: Notification_Message >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: switch :: notification :: Notification_Message , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateOperationMode()` overload"] pub fn update_operation_mode () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20aefb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdatePerformanceMode()` overload"] pub fn update_performance_mode () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af1c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20af600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-switchnotificationhandler")]impl SwitchNotificationHandler{#[doc="`get_IsDocked()` overload"]pub fn get_is_docked()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20aee90usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_IsBoosted()` overload"]pub fn get_is_boosted()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af0a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_OperationMode()` overload"]pub fn get_operation_mode()->crate::unity_engine::switch::operation::Operation_OperationMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af2a0usize)as*mut u8,crate::unity_engine::switch::operation::Operation_OperationMode;
+)}
+}
+#[doc="`set_OperationMode(crate::unity_engine::switch::operation::Operation_OperationMode)` overload"]pub fn set_operation_mode(value:impl::core::convert::Into<crate::unity_engine::switch::operation::Operation_OperationMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af310usize)as*mut u8,();
+(crate::unity_engine::switch::operation::Operation_OperationMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_PerformanceMode()` overload"]pub fn get_performance_mode()->crate::unity_engine::switch::performance::Performance_PerformanceMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af380usize)as*mut u8,crate::unity_engine::switch::performance::Performance_PerformanceMode;
+)}
+}
+#[doc="`set_PerformanceMode(crate::unity_engine::switch::performance::Performance_PerformanceMode)` overload"]pub fn set_performance_mode(value:impl::core::convert::Into<crate::unity_engine::switch::performance::Performance_PerformanceMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af3f0usize)as*mut u8,();
+(crate::unity_engine::switch::performance::Performance_PerformanceMode)::core::convert::Into::into(value))}
+}
+#[doc="`OnRuntimeMethodLoad()` overload"]pub fn on_runtime_method_load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af460usize)as*mut u8,();
+)}
+}
+#[doc="`OnNotificationMessage(crate::unity_engine::switch::notification::Notification_Message)` overload"]pub fn on_notification_message(message:impl::core::convert::Into<crate::unity_engine::switch::notification::Notification_Message>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af540usize)as*mut u8,();
+(crate::unity_engine::switch::notification::Notification_Message)::core::convert::Into::into(message))}
+}
+#[doc="`UpdateOperationMode()` overload"]pub fn update_operation_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20aefb0usize)as*mut u8,();
+)}
+}
+#[doc="`UpdatePerformanceMode()` overload"]pub fn update_performance_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af1c0usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20af600usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-switchnotificationhandler")]
-impl SwitchNotificationHandler { pub fn get_is_docked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_boosted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_operation_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_operation_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_performance_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_performance_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_runtime_method_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_notification_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_operation_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_performance_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchNotificationHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-switchnotificationhandler")]impl SwitchNotificationHandler{pub fn get_is_docked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_boosted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_operation_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_operation_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_performance_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_performance_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_runtime_method_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_notification_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_operation_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_performance_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "app-switchnotificationhandler")]
 #[doc(hidden)]

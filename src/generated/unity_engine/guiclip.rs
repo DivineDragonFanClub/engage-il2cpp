@@ -4,23 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiclip/GUIClip.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUIClip")] # [parent (crate :: system :: object :: Object)] pub struct GUIClip {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guiclip/GUIClip.md"))]#[::unity2::class(namespace="UnityEngine",name="GUIClip")]#[parent(crate::system::object::Object)]pub struct GUIClip{}
 
 }
 
 #[cfg(feature = "unity_engine-guiclip-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-guiclip")]
-impl GUIClip { # [doc = "`get_visibleRect()` overload"] pub fn get_visible_rect () -> crate :: unity_engine :: rect :: Rect { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c3d520usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Internal_Push(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool)` overload"] pub fn internal_push (screen_rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , scroll_offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , render_offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , reset_offset : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (screen_rect) , :: core :: convert :: Into :: into (scroll_offset) , :: core :: convert :: Into :: into (render_offset) , :: core :: convert :: Into :: into (reset_offset) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_Pop()` overload"] pub fn internal_pop () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c3f810usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetMatrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn set_matrix (m : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c3a600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (m) , :: core :: option :: Option :: None) } } } # [doc = "`Push(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool)` overload"] pub fn push (screen_rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , scroll_offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , render_offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , reset_offset : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c3f750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (screen_rect) , :: core :: convert :: Into :: into (scroll_offset) , :: core :: convert :: Into :: into (render_offset) , :: core :: convert :: Into :: into (reset_offset) , :: core :: option :: Option :: None) } } } # [doc = "`Pop()` overload"] pub fn pop () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c3f950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_visibleRect_Injected(*mutcrate::unity_engine::rect::Rect)` overload"] pub fn get_visible_rect_injected () -> crate :: unity_engine :: rect :: Rect { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rect :: Rect > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c430d0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Internal_Push_Injected(*mutcrate::unity_engine::rect::Rect, *mutcrate::unity_engine::vector2::Vector2, *mutcrate::unity_engine::vector2::Vector2, bool)` overload"] pub fn internal_push_injected (reset_offset : impl :: core :: convert :: Into < bool >) -> (crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rect :: Rect > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: rect :: Rect , * mut crate :: unity_engine :: vector2 :: Vector2 , * mut crate :: unity_engine :: vector2 :: Vector2 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43190usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: convert :: Into :: into (reset_offset) , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`SetMatrix_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn set_matrix_injected () -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43200usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-guiclip")]impl GUIClip{#[doc="`get_visibleRect()` overload"]pub fn get_visible_rect()->crate::unity_engine::rect::Rect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c3d520usize)as*mut u8,crate::unity_engine::rect::Rect;
+)}
+}
+#[doc="`Internal_Push(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool)` overload"]pub fn internal_push(screen_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,scroll_offset:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,render_offset:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,reset_offset:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c43120usize)as*mut u8,();
+(crate::unity_engine::rect::Rect)::core::convert::Into::into(screen_rect),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(scroll_offset),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(render_offset),(bool)::core::convert::Into::into(reset_offset))}
+}
+#[doc="`Internal_Pop()` overload"]pub fn internal_pop()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c3f810usize)as*mut u8,();
+)}
+}
+#[doc="`SetMatrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]pub fn set_matrix(m:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c3a600usize)as*mut u8,();
+(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(m))}
+}
+#[doc="`Push(crate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, bool)` overload"]pub fn push(screen_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,scroll_offset:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,render_offset:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,reset_offset:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c3f750usize)as*mut u8,();
+(crate::unity_engine::rect::Rect)::core::convert::Into::into(screen_rect),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(scroll_offset),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(render_offset),(bool)::core::convert::Into::into(reset_offset))}
+}
+#[doc="`Pop()` overload"]pub fn pop()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c3f950usize)as*mut u8,();
+)}
+}
+#[doc="`get_visibleRect_Injected(*mutcrate::unity_engine::rect::Rect)` overload"]pub fn get_visible_rect_injected()->crate::unity_engine::rect::Rect{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rect::Rect> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c430d0usize)as*mut u8,();
+(*mut crate::unity_engine::rect::Rect)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Internal_Push_Injected(*mutcrate::unity_engine::rect::Rect, *mutcrate::unity_engine::vector2::Vector2, *mutcrate::unity_engine::vector2::Vector2, bool)` overload"]pub fn internal_push_injected(reset_offset:impl::core::convert::Into<bool>)->(crate::unity_engine::rect::Rect,crate::unity_engine::vector2::Vector2,crate::unity_engine::vector2::Vector2){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rect::Rect> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43190usize)as*mut u8,();
+(*mut crate::unity_engine::rect::Rect)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector2::Vector2)__out_1.as_mut_ptr(),(*mut crate::unity_engine::vector2::Vector2)__out_2.as_mut_ptr(),(bool)::core::convert::Into::into(reset_offset));
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`SetMatrix_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]pub fn set_matrix_injected()->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::matrix4x4::Matrix4x4> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43200usize)as*mut u8,();
+(*mut crate::unity_engine::matrix4x4::Matrix4x4)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-guiclip")]
-impl GUIClip { pub fn get_visible_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn internal_push_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn internal_pop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn push_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn pop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_visible_rect_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn internal_push_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_matrix_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-guiclip")]impl GUIClip{pub fn get_visible_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn internal_push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn internal_pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_visible_rect_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn internal_push_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_matrix_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-guiclip")]
 #[doc(hidden)]

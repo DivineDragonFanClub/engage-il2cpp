@@ -4,25 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/raycastermanager/RaycasterManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "RaycasterManager")] # [parent (crate :: system :: object :: Object)] pub struct RaycasterManager {
-# [static_field] # [rename (name = "s_Raycasters")] pub s_raycasters : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/raycastermanager/RaycasterManager.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="RaycasterManager")]#[parent(crate::system::object::Object)]pub struct RaycasterManager{#[static_field]#[rename(name="s_Raycasters")]pub s_raycasters:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster> ,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-raycastermanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-raycastermanager")]
-impl RaycasterManager { # [doc = "`AddRaycaster(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)` overload"] pub fn add_raycaster (base_raycaster : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (base_raycaster) , :: core :: option :: Option :: None) } } } # [doc = "`GetRaycasters()` overload"] pub fn get_raycasters () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722510usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RemoveRaycasters(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)` overload"] pub fn remove_raycasters (base_raycaster : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722580usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (base_raycaster) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722670usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-raycastermanager")]impl RaycasterManager{#[doc="`AddRaycaster(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)` overload"]pub fn add_raycaster(base_raycaster:impl::core::convert::Into<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3722420usize)as*mut u8,();
+(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)::core::convert::Into::into(base_raycaster))}
+}
+#[doc="`GetRaycasters()` overload"]pub fn get_raycasters()->crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3722510usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster> ;
+)}
+}
+#[doc="`RemoveRaycasters(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)` overload"]pub fn remove_raycasters(base_raycaster:impl::core::convert::Into<crate::unity_engine::event_systems::baseraycaster::BaseRaycaster>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3722580usize)as*mut u8,();
+(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)::core::convert::Into::into(base_raycaster))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3722670usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-raycastermanager")]
-impl RaycasterManager { pub fn add_raycaster_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycasterManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_raycasters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycasterManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn remove_raycasters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycasterManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycasterManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-event_systems-raycastermanager")]impl RaycasterManager{pub fn add_raycaster_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_raycasters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_raycasters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-event_systems-raycastermanager")]
 #[doc(hidden)]

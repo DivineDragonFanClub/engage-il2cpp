@@ -4,41 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenuitem/TutorialListSelectMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListSelectMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct TutorialListSelectMenuItem {
-# [offset (104)] # [rename (name = "m_TutorialID")] pub m_tutorial_id : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_TutorialData")] pub m_tutorial_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: tutorialdata :: TutorialData > ,
-# [offset (120)] # [rename (name = "m_MainSpriteAtlas")] pub m_main_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (128)] # [rename (name = "m_SubSpriteAtlas")] pub m_sub_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (136)] # [rename (name = "m_Root")] pub m_root : crate :: root :: tutoriallistroot :: TutorialListRoot ,
-# [offset (144)] # [rename (name = "m_IsUnread")] pub m_is_unread : bool ,
-# [static_field] # [rename (name = "FirstPage")] pub first_page : i32 ,
-# [offset (148)] # [rename (name = "m_Page")] pub m_page : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistselectmenuitem/TutorialListSelectMenuItem.md"))]#[::unity2::class(namespace="",name="TutorialListSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct TutorialListSelectMenuItem{#[offset(104)]#[rename(name="m_TutorialID")]pub m_tutorial_id: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_TutorialData")]pub m_tutorial_data:crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData> , #[offset(120)]#[rename(name="m_MainSpriteAtlas")]pub m_main_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(128)]#[rename(name="m_SubSpriteAtlas")]pub m_sub_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(136)]#[rename(name="m_Root")]pub m_root:crate::root::tutoriallistroot::TutorialListRoot, #[offset(144)]#[rename(name="m_IsUnread")]pub m_is_unread:bool, #[static_field]#[rename(name="FirstPage")]pub first_page:i32, #[offset(148)]#[rename(name="m_Page")]pub m_page:i32,}
 
 }
 
 #[cfg(feature = "root-tutoriallistselectmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-tutoriallistselectmenuitem")]
-pub trait ITutorialListSelectMenuItemMethods : ITutorialListSelectMenuItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::root::tutoriallistroot::TutorialListRoot)` overload"] fn ctor (self , tutorial_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , root : impl :: core :: convert :: Into < crate :: root :: tutoriallistroot :: TutorialListRoot >) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: Il2CppString , crate :: root :: tutoriallistroot :: TutorialListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tutorial_id) , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b1020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b1280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b12c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitParam()` overload"] fn init_param (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitColor()` overload"] fn init_color (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateText()` overload"] fn update_text (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TurnTutorial()` overload"] fn turn_tutorial (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b12e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTutorialImage()` overload"] fn set_tutorial_image (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b10b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTutorialText()` overload"] fn set_tutorial_text (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetArrow()` overload"] fn set_arrow (self ,) -> () { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsUnread()` overload"] fn get_is_unread (self ,) -> bool { unsafe { let __receiver = < TutorialListSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListSelectMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b1820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-tutoriallistselectmenuitem")]pub trait ITutorialListSelectMenuItemMethods:ITutorialListSelectMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::root::tutoriallistroot::TutorialListRoot)` overload"]fn ctor(self,tutorial_id:impl::core::convert::Into< ::unity2::Il2CppString> ,root:impl::core::convert::Into<crate::root::tutoriallistroot::TutorialListRoot>)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0180usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(tutorial_id),(crate::root::tutoriallistroot::TutorialListRoot)::core::convert::Into::into(root))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0a10usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0b30usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0b40usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0fb0usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b1020usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b1280usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b12c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`InitParam()` overload"]fn init_param(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0ca0usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`InitColor()` overload"]fn init_color(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0a20usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`UpdateText()` overload"]fn update_text(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0920usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`TurnTutorial()` overload"]fn turn_tutorial(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b12e0usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`SetTutorialImage()` overload"]fn set_tutorial_image(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b10b0usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`SetTutorialText()` overload"]fn set_tutorial_text(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0cc0usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`SetArrow()` overload"]fn set_arrow(self,)->(){unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b0ed0usize)as*mut u8,();
+(TutorialListSelectMenuItem)__receiver)}
+}
+#[doc="`get_IsUnread()` overload"]fn get_is_unread(self,)->bool{unsafe{let __receiver= <TutorialListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b1820usize)as*mut u8,bool;
+(TutorialListSelectMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-tutoriallistselectmenuitem")]
-impl < __T : ITutorialListSelectMenuItem > ITutorialListSelectMenuItemMethods for __T { }
+#[cfg(feature="root-tutoriallistselectmenuitem")]impl<__T:ITutorialListSelectMenuItem>ITutorialListSelectMenuItemMethods for __T{}
 
-#[cfg(feature = "root-tutoriallistselectmenuitem")]
-impl TutorialListSelectMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn init_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn init_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn turn_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_tutorial_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_tutorial_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_is_unread_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="root-tutoriallistselectmenuitem")]impl TutorialListSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn init_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn init_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn turn_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_tutorial_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_tutorial_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_arrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_is_unread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "root-tutoriallistselectmenuitem")]
-impl TutorialListSelectMenuItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::root::tutoriallistroot::TutorialListRoot)` — overload selector"] pub fn new (tutorial_id : :: unity2 :: Il2CppString , root : crate :: root :: tutoriallistroot :: TutorialListRoot) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TutorialListSelectMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ITutorialListSelectMenuItemMethods > :: ctor (this , tutorial_id , root) ; this }
+#[cfg(feature="root-tutoriallistselectmenuitem")]impl TutorialListSelectMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::root::tutoriallistroot::TutorialListRoot)` — overload selector"]pub fn new(tutorial_id: ::unity2::Il2CppString,root:crate::root::tutoriallistroot::TutorialListRoot)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TutorialListSelectMenuItem), ::core::stringify!(new),));
+ <Self as ITutorialListSelectMenuItemMethods> ::ctor(this,tutorial_id,root);
+this}
 }
 
 #[cfg(feature = "root-tutoriallistselectmenuitem")]

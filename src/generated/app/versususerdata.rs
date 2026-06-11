@@ -4,34 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versususerdata/VersusUserData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusUserData")] # [parent (crate :: system :: object :: Object)] pub struct VersusUserData {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_Rate")] pub m_rate : i16 ,
-# [offset (24)] # [rename (name = "m_DataId")] pub m_data_id : u64 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versususerdata/VersusUserData.md"))]#[::unity2::class(namespace="App",name="VersusUserData")]#[parent(crate::system::object::Object)]pub struct VersusUserData{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Rate")]pub m_rate:i16, #[offset(24)]#[rename(name="m_DataId")]pub m_data_id:u64,}
 
 }
 
 #[cfg(feature = "app-versususerdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versususerdata")]
-pub trait IVersusUserDataMethods : IVersusUserData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUploadedInfo(u64)` overload"] fn set_uploaded_info (self , data_id : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbbf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data_id) , :: core :: option :: Option :: None) } } } # [doc = "`SetRate(i32)` overload"] fn set_rate (self , rate : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbc00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } } # [doc = "`Dump(::unity2::Il2CppString)` overload"] fn dump (self , mess : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbc10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mess) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbdf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbe50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`get_DataId()` overload"] fn get_data_id (self ,) -> u64 { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Rate()` overload"] fn get_rate (self ,) -> i32 { unsafe { let __receiver = < VersusUserData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbfe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versususerdata")]pub trait IVersusUserDataMethods:IVersusUserData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbbb0usize)as*mut u8,();
+(VersusUserData)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbbe0usize)as*mut u8,();
+(VersusUserData)__receiver)}
+}
+#[doc="`SetUploadedInfo(u64)` overload"]fn set_uploaded_info(self,data_id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbbf0usize)as*mut u8,();
+(VersusUserData)__receiver,(u64)::core::convert::Into::into(data_id))}
+}
+#[doc="`SetRate(i32)` overload"]fn set_rate(self,rate:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbc00usize)as*mut u8,();
+(VersusUserData)__receiver,(i32)::core::convert::Into::into(rate))}
+}
+#[doc="`Dump(::unity2::Il2CppString)` overload"]fn dump(self,mess:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbc10usize)as*mut u8,();
+(VersusUserData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mess))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbdf0usize)as*mut u8,();
+(VersusUserData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbe50usize)as*mut u8,();
+(VersusUserData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`get_DataId()` overload"]fn get_data_id(self,)->u64{unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbfd0usize)as*mut u8,u64;
+(VersusUserData)__receiver)}
+}
+#[doc="`get_Rate()` overload"]fn get_rate(self,)->i32{unsafe{let __receiver= <VersusUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbfe0usize)as*mut u8,i32;
+(VersusUserData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versususerdata")]
-impl < __T : IVersusUserData > IVersusUserDataMethods for __T { }
+#[cfg(feature="app-versususerdata")]impl<__T:IVersusUserData>IVersusUserDataMethods for __T{}
 
-#[cfg(feature = "app-versususerdata")]
-impl VersusUserData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_uploaded_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_data_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-versususerdata")]impl VersusUserData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_uploaded_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_data_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-versususerdata")]
-impl VersusUserData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusUserData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusUserDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versususerdata")]impl VersusUserData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusUserData), ::core::stringify!(new),));
+ <Self as IVersusUserDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versususerdata")]

@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/customsignaleventdrawer/CustomSignalEventDrawer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "CustomSignalEventDrawer")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct CustomSignalEventDrawer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/customsignaleventdrawer/CustomSignalEventDrawer.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="CustomSignalEventDrawer")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct CustomSignalEventDrawer{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-customsignaleventdrawer-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-customsignaleventdrawer")]
-pub trait ICustomSignalEventDrawerMethods : ICustomSignalEventDrawer { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomSignalEventDrawer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomSignalEventDrawer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d5cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-customsignaleventdrawer")]pub trait ICustomSignalEventDrawerMethods:ICustomSignalEventDrawer{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomSignalEventDrawer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d5cb0usize)as*mut u8,();
+(CustomSignalEventDrawer)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-customsignaleventdrawer")]
-impl < __T : ICustomSignalEventDrawer > ICustomSignalEventDrawerMethods for __T { }
+#[cfg(feature="unity_engine-timeline-customsignaleventdrawer")]impl<__T:ICustomSignalEventDrawer>ICustomSignalEventDrawerMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-customsignaleventdrawer")]
-impl CustomSignalEventDrawer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSignalEventDrawer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-customsignaleventdrawer")]impl CustomSignalEventDrawer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-timeline-customsignaleventdrawer")]
-impl CustomSignalEventDrawer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomSignalEventDrawer) , :: core :: stringify ! (new) ,)) ; < Self as ICustomSignalEventDrawerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-customsignaleventdrawer")]impl CustomSignalEventDrawer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomSignalEventDrawer), ::core::stringify!(new),));
+ <Self as ICustomSignalEventDrawerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-customsignaleventdrawer")]

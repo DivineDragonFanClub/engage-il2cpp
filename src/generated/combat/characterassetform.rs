@@ -4,52 +4,162 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterassetform/CharacterAssetForm.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterAssetForm")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterAssetForm {
-# [offset (24)] # [rename (name = "Appearance")] pub appearance : crate :: combat :: characterappearance :: CharacterAppearance ,
-# [offset (32)] # [rename (name = "m_bSelfAppearance")] pub m_b_self_appearance : bool ,
-# [offset (36)] # [rename (name = "ViewerPresetIndex")] pub viewer_preset_index : i32 ,
-# [offset (40)] # [rename (name = "ViewerPersonIndex")] pub viewer_person_index : i32 ,
-# [offset (44)] # [rename (name = "ViewerJobIndex")] pub viewer_job_index : i32 ,
-# [offset (48)] # [rename (name = "ViewerWeaponIndex")] pub viewer_weapon_index : i32 ,
-# [offset (54)] # [rename (name = "isBuilding_WatchFromCharacterAssetForm")] pub is_building_watch_from_character_asset_form : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterassetform/CharacterAssetForm.md"))]#[::unity2::class(namespace="Combat",name="CharacterAssetForm")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterAssetForm{#[offset(24)]#[rename(name="Appearance")]pub appearance:crate::combat::characterappearance::CharacterAppearance, #[offset(32)]#[rename(name="m_bSelfAppearance")]pub m_b_self_appearance:bool, #[offset(36)]#[rename(name="ViewerPresetIndex")]pub viewer_preset_index:i32, #[offset(40)]#[rename(name="ViewerPersonIndex")]pub viewer_person_index:i32, #[offset(44)]#[rename(name="ViewerJobIndex")]pub viewer_job_index:i32, #[offset(48)]#[rename(name="ViewerWeaponIndex")]pub viewer_weapon_index:i32, #[offset(54)]#[rename(name="isBuilding_WatchFromCharacterAssetForm")]pub is_building_watch_from_character_asset_form:bool,}
 
 }
 
 #[cfg(feature = "combat-characterassetform-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterassetform")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterAssetForm_unity2_raw { use super :: * ; pub unsafe fn build_hierarchy (this : CharacterAssetForm , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("BuildHierarchy") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "BuildHierarchy" , < CharacterAssetForm as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn co_build_hierarchy (this : CharacterAssetForm , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CoBuildHierarchy") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CoBuildHierarchy" , < CharacterAssetForm as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="combat-characterassetform")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterAssetForm_unity2_raw{use super:: * ;
+pub unsafe fn build_hierarchy(this:CharacterAssetForm,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("BuildHierarchy").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","BuildHierarchy", <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn co_build_hierarchy(this:CharacterAssetForm,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CoBuildHierarchy").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CoBuildHierarchy", <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "combat-characterassetform")]
-impl CharacterAssetForm { # [doc = "`Attach(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"] pub fn attach (me : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3f30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (me) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`LoadDatabase()` overload"] pub fn load_database () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3da0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterassetform")]impl CharacterAssetForm{#[doc="`Attach(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"]pub fn attach(me:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d3f30usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(me),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent))}
+}
+#[doc="`LoadDatabase()` overload"]pub fn load_database()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d3da0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-characterassetform")]
-pub trait ICharacterAssetFormMethods : ICharacterAssetForm { # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: characterasset :: CharacterAsset { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: characterasset :: CharacterAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3a40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(crate::combat::assettype::AssetType)` overload"] fn get_item_2 (self , r#type : impl :: core :: convert :: Into < crate :: combat :: assettype :: AssetType >) -> crate :: combat :: characterasset :: CharacterAsset { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , crate :: combat :: assettype :: AssetType , :: unity2 :: OptionalMethod ,) -> crate :: combat :: characterasset :: CharacterAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`get_InitialInvisibility()` overload"] fn get_initial_invisibility (self ,) -> bool { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InitialInvisibility(bool)` overload"] fn set_initial_invisibility (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDone()` overload"] fn get_is_done (self ,) -> bool { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsDone(bool)` overload"] fn set_is_done (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::combat::characterappearance::CharacterAppearance, bool)` overload"] fn build (self , appearance : impl :: core :: convert :: Into < crate :: combat :: characterappearance :: CharacterAppearance > , invisible : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , crate :: combat :: characterappearance :: CharacterAppearance , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (appearance) , :: core :: convert :: Into :: into (invisible) , :: core :: option :: Option :: None) } } } # [doc = "`BuildForTest()` overload"] fn build_for_test (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildCoroutine()` overload"] fn build_coroutine (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildHierarchy()` overload"] fn build_hierarchy (self ,) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterAssetForm_unity2_raw :: build_hierarchy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CoBuildHierarchy()` overload"] fn co_build_hierarchy (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterAssetForm_unity2_raw :: co_build_hierarchy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BeginContentsChange()` overload"] fn begin_contents_change (self ,) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndContentsChange()` overload"] fn end_contents_change (self ,) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetViaTableResult(crate::app::assettable::AssetTable_Result)` overload"] fn set_via_table_result (self , r : impl :: core :: convert :: Into < crate :: app :: assettable :: AssetTable_Result >) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , crate :: app :: assettable :: AssetTable_Result , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadD(crate::unity_engine::transform::Transform)` overload"] fn unload_d (self , chr : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } } # [doc = "`Attach(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"] fn attach_2 (self , me : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , parent : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (me) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`FindInChildren(::unity2::Il2CppString)` overload"] fn find_in_children (self , parent : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`GetAccessories()` overload"] fn get_accessories (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: combat :: characterasset :: CharacterAsset > { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: combat :: characterasset :: CharacterAsset > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d4220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d42a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterAssetForm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAssetForm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d42c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterassetform")]pub trait ICharacterAssetFormMethods:ICharacterAssetForm{#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::combat::characterasset::CharacterAsset{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3a40usize)as*mut u8,crate::combat::characterasset::CharacterAsset;
+(CharacterAssetForm)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_Item(crate::combat::assettype::AssetType)` overload"]fn get_item_2(self,r#type:impl::core::convert::Into<crate::combat::assettype::AssetType>)->crate::combat::characterasset::CharacterAsset{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3a50usize)as*mut u8,crate::combat::characterasset::CharacterAsset;
+(CharacterAssetForm)__receiver,(crate::combat::assettype::AssetType)::core::convert::Into::into(r#type))}
+}
+#[doc="`get_InitialInvisibility()` overload"]fn get_initial_invisibility(self,)->bool{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3a60usize)as*mut u8,bool;
+(CharacterAssetForm)__receiver)}
+}
+#[doc="`set_InitialInvisibility(bool)` overload"]fn set_initial_invisibility(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3a70usize)as*mut u8,();
+(CharacterAssetForm)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDone()` overload"]fn get_is_done(self,)->bool{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3a80usize)as*mut u8,bool;
+(CharacterAssetForm)__receiver)}
+}
+#[doc="`set_IsDone(bool)` overload"]fn set_is_done(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3a90usize)as*mut u8,();
+(CharacterAssetForm)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Build(crate::combat::characterappearance::CharacterAppearance, bool)` overload"]fn build(self,appearance:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance> ,invisible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3aa0usize)as*mut u8,();
+(CharacterAssetForm)__receiver,(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(appearance),(bool)::core::convert::Into::into(invisible))}
+}
+#[doc="`BuildForTest()` overload"]fn build_for_test(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3bf0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(CharacterAssetForm)__receiver)}
+}
+#[doc="`BuildCoroutine()` overload"]fn build_coroutine(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3c70usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(CharacterAssetForm)__receiver)}
+}
+#[doc="`BuildHierarchy()` overload"]fn build_hierarchy(self,)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CharacterAssetForm_unity2_raw::build_hierarchy(__receiver, ::core::option::Option::None)}
+}
+#[doc="`CoBuildHierarchy()` overload"]fn co_build_hierarchy(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CharacterAssetForm_unity2_raw::co_build_hierarchy(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BeginContentsChange()` overload"]fn begin_contents_change(self,)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3cf0usize)as*mut u8,();
+(CharacterAssetForm)__receiver)}
+}
+#[doc="`EndContentsChange()` overload"]fn end_contents_change(self,)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3d00usize)as*mut u8,();
+(CharacterAssetForm)__receiver)}
+}
+#[doc="`SetViaTableResult(crate::app::assettable::AssetTable_Result)` overload"]fn set_via_table_result(self,r:impl::core::convert::Into<crate::app::assettable::AssetTable_Result>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3d10usize)as*mut u8,();
+(CharacterAssetForm)__receiver,(crate::app::assettable::AssetTable_Result)::core::convert::Into::into(r))}
+}
+#[doc="`UnloadD(crate::unity_engine::transform::Transform)` overload"]fn unload_d(self,chr:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3db0usize)as*mut u8,();
+(CharacterAssetForm)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(chr))}
+}
+#[doc="`Attach(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn attach_2(self,me:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,parent:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4020usize)as*mut u8,();
+(CharacterAssetForm)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(me),(::unity2::Il2CppString)::core::convert::Into::into(parent))}
+}
+#[doc="`FindInChildren(::unity2::Il2CppString)` overload"]fn find_in_children(self,parent:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4190usize)as*mut u8,crate::unity_engine::transform::Transform;
+(CharacterAssetForm)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(parent))}
+}
+#[doc="`GetAccessories()` overload"]fn get_accessories(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::combat::characterasset::CharacterAsset>{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4220usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::combat::characterasset::CharacterAsset> ;
+(CharacterAssetForm)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d42a0usize)as*mut u8,();
+(CharacterAssetForm)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d42c0usize)as*mut u8,();
+(CharacterAssetForm)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterassetform")]
-impl < __T : ICharacterAssetForm > ICharacterAssetFormMethods for __T { }
+#[cfg(feature="combat-characterassetform")]impl<__T:ICharacterAssetForm>ICharacterAssetFormMethods for __T{}
 
-#[cfg(feature = "combat-characterassetform")]
-impl CharacterAssetForm { pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_initial_invisibility_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_initial_invisibility_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_is_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn build_for_test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn build_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn build_hierarchy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn co_build_hierarchy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn begin_contents_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn end_contents_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_via_table_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn unload_d_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn attach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn attach_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn find_in_children_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_accessories_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn load_database_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAssetForm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="combat-characterassetform")]impl CharacterAssetForm{pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_initial_invisibility_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_initial_invisibility_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_is_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn build_for_test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn build_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn build_hierarchy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn co_build_hierarchy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn begin_contents_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn end_contents_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_via_table_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn unload_d_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn attach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn attach_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn find_in_children_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_accessories_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn load_database_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "combat-characterassetform")]
-impl CharacterAssetForm {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterAssetForm) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterAssetFormMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterassetform")]impl CharacterAssetForm{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterAssetForm), ::core::stringify!(new),));
+ <Self as ICharacterAssetFormMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterassetform")]

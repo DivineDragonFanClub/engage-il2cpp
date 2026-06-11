@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/multiitemgainsequence/MultiItemGainSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MultiItemGainSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MultiItemGainSequence {
-# [offset (112)] # [rename (name = "m_Items")] pub m_items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > ,
-# [offset (120)] # [rename (name = "m_Index")] pub m_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/multiitemgainsequence/MultiItemGainSequence.md"))]#[::unity2::class(namespace="App",name="MultiItemGainSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MultiItemGainSequence{#[offset(112)]#[rename(name="m_Items")]pub m_items:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> , #[offset(120)]#[rename(name="m_Index")]pub m_index:i32,}
 
 }
 
 #[cfg(feature = "app-multiitemgainsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-multiitemgainsequence")]
-impl MultiItemGainSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , items : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2782f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (items) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-multiitemgainsequence")]impl MultiItemGainSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,items:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2782f90usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(items))}
+}
+}
 
-#[cfg(feature = "app-multiitemgainsequence")]
-pub trait IMultiItemGainSequenceMethods : IMultiItemGainSequence { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"] fn ctor (self , items : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > >) -> () { unsafe { let __receiver = < MultiItemGainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MultiItemGainSequence , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2782e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (items) , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MultiItemGainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MultiItemGainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2782ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-multiitemgainsequence")]pub trait IMultiItemGainSequenceMethods:IMultiItemGainSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]fn ctor(self,items:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> >)->(){unsafe{let __receiver= <MultiItemGainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2782e90usize)as*mut u8,();
+(MultiItemGainSequence)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(items))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MultiItemGainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2782ed0usize)as*mut u8,();
+(MultiItemGainSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-multiitemgainsequence")]
-impl < __T : IMultiItemGainSequence > IMultiItemGainSequenceMethods for __T { }
+#[cfg(feature="app-multiitemgainsequence")]impl<__T:IMultiItemGainSequence>IMultiItemGainSequenceMethods for __T{}
 
-#[cfg(feature = "app-multiitemgainsequence")]
-impl MultiItemGainSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MultiItemGainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MultiItemGainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MultiItemGainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-multiitemgainsequence")]impl MultiItemGainSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-multiitemgainsequence")]
-impl MultiItemGainSequence {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` — overload selector"] pub fn new (items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MultiItemGainSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMultiItemGainSequenceMethods > :: ctor (this , items) ; this }
+#[cfg(feature="app-multiitemgainsequence")]impl MultiItemGainSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` — overload selector"]pub fn new(items:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MultiItemGainSequence), ::core::stringify!(new),));
+ <Self as IMultiItemGainSequenceMethods> ::ctor(this,items);
+this}
 }
 
 #[cfg(feature = "app-multiitemgainsequence")]

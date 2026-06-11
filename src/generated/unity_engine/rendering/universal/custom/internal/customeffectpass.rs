@@ -4,40 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customeffectpass/CustomEffectPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomEffectPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomEffectPass {
-# [static_field] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [offset (120)] # [rename (name = "m_FilteringSettings")] pub m_filtering_settings : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings ,
-# [offset (144)] # [rename (name = "m_EffectTagId")] pub m_effect_tag_id : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
-# [offset (148)] # [rename (name = "m_EffectFullTagId")] pub m_effect_full_tag_id : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
-# [offset (152)] # [rename (name = "m_ShouldSetEffectDepth")] pub m_should_set_effect_depth : bool ,
-# [offset (160)] # [rename (name = "m_EffectDepthId")] pub m_effect_depth_id : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/internal/customeffectpass/CustomEffectPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom.Internal",name="CustomEffectPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct CustomEffectPass{#[static_field]#[rename(name="m_ProfilerTag")]pub m_profiler_tag: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_ProfilingSampler")]pub m_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[offset(120)]#[rename(name="m_FilteringSettings")]pub m_filtering_settings:crate::unity_engine::rendering::filteringsettings::FilteringSettings, #[offset(144)]#[rename(name="m_EffectTagId")]pub m_effect_tag_id:crate::unity_engine::rendering::shadertagid::ShaderTagId, #[offset(148)]#[rename(name="m_EffectFullTagId")]pub m_effect_full_tag_id:crate::unity_engine::rendering::shadertagid::ShaderTagId, #[offset(152)]#[rename(name="m_ShouldSetEffectDepth")]pub m_should_set_effect_depth:bool, #[offset(160)]#[rename(name="m_EffectDepthId")]pub m_effect_depth_id:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]
-pub trait ICustomEffectPassMethods : ICustomEffectPass { # [doc = "`get_forceHalfEffectToDrawFull()` overload"] fn get_force_half_effect_to_draw_full (self ,) -> bool { unsafe { let __receiver = < CustomEffectPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEffectPass , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a464a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_forceHalfEffectToDrawFull(bool)` overload"] fn set_force_half_effect_to_draw_full (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CustomEffectPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEffectPass , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a464b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , layer_mask : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < CustomEffectPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEffectPass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a464c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } } # [doc = "`SetEffectDepth(i32)` overload"] fn set_effect_depth (self , id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CustomEffectPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEffectPass , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < CustomEffectPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (CustomEffectPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a466f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customeffectpass")]pub trait ICustomEffectPassMethods:ICustomEffectPass{#[doc="`get_forceHalfEffectToDrawFull()` overload"]fn get_force_half_effect_to_draw_full(self,)->bool{unsafe{let __receiver= <CustomEffectPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a464a0usize)as*mut u8,bool;
+(CustomEffectPass)__receiver)}
+}
+#[doc="`set_forceHalfEffectToDrawFull(bool)` overload"]fn set_force_half_effect_to_draw_full(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CustomEffectPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a464b0usize)as*mut u8,();
+(CustomEffectPass)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent> ,layer_mask:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{let __receiver= <CustomEffectPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a464c0usize)as*mut u8,();
+(CustomEffectPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(layer_mask))}
+}
+#[doc="`SetEffectDepth(i32)` overload"]fn set_effect_depth(self,id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CustomEffectPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a46690usize)as*mut u8,();
+(CustomEffectPass)__receiver,(i32)::core::convert::Into::into(id))}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <CustomEffectPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a466f0usize)as*mut u8,();
+(CustomEffectPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]
-impl < __T : ICustomEffectPass > ICustomEffectPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customeffectpass")]impl<__T:ICustomEffectPass>ICustomEffectPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]
-impl CustomEffectPass { pub fn get_force_half_effect_to_draw_full_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEffectPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_force_half_effect_to_draw_full_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEffectPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEffectPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_effect_depth_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEffectPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEffectPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customeffectpass")]impl CustomEffectPass{pub fn get_force_half_effect_to_draw_full_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_force_half_effect_to_draw_full_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_effect_depth_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]
-impl CustomEffectPass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , layer_mask : crate :: unity_engine :: layermask :: LayerMask) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomEffectPass) , :: core :: stringify ! (new) ,)) ; < Self as ICustomEffectPassMethods > :: ctor (this , evt , layer_mask) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customeffectpass")]impl CustomEffectPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,layer_mask:crate::unity_engine::layermask::LayerMask)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomEffectPass), ::core::stringify!(new),));
+ <Self as ICustomEffectPassMethods> ::ctor(this,evt,layer_mask);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]

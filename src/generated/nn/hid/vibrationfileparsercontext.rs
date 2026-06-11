@@ -4,110 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext_IntPtrArray10.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VibrationFileParserContext_IntPtrArray10 {
-    pub value0: :: unity2 :: IntPtr,
-    pub value1: :: unity2 :: IntPtr,
-    pub value2: :: unity2 :: IntPtr,
-    pub value3: :: unity2 :: IntPtr,
-    pub value4: :: unity2 :: IntPtr,
-    pub value5: :: unity2 :: IntPtr,
-    pub value6: :: unity2 :: IntPtr,
-    pub value7: :: unity2 :: IntPtr,
-    pub value8: :: unity2 :: IntPtr,
-    pub value9: :: unity2 :: IntPtr,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VibrationFileParserContext{pub storage:crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext_IntPtrArray10,}
+impl::unity2::ClassIdentity for VibrationFileParserContext{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="VibrationFileParserContext";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VibrationFileParserContext{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for VibrationFileParserContext_IntPtrArray10 {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "VibrationFileParserContext.IntPtrArray10";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext_IntPtrArray10.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VibrationFileParserContext_IntPtrArray10{pub value0: ::unity2::IntPtr,pub value1: ::unity2::IntPtr,pub value2: ::unity2::IntPtr,pub value3: ::unity2::IntPtr,pub value4: ::unity2::IntPtr,pub value5: ::unity2::IntPtr,pub value6: ::unity2::IntPtr,pub value7: ::unity2::IntPtr,pub value8: ::unity2::IntPtr,pub value9: ::unity2::IntPtr,}
+impl::unity2::ClassIdentity for VibrationFileParserContext_IntPtrArray10{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="VibrationFileParserContext.IntPtrArray10";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for VibrationFileParserContext_IntPtrArray10 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for VibrationFileParserContext_IntPtrArray10{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl VibrationFileParserContext_IntPtrArray10 {
-    #[inline]
-    pub fn length() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "_Length");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_length(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "_Length");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl VibrationFileParserContext_IntPtrArray10{#[inline]pub fn length()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_length(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VibrationFileParserContext {
-    pub storage: crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext_IntPtrArray10,
-}
-
-
-impl ::unity2::ClassIdentity for VibrationFileParserContext {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "VibrationFileParserContext";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for VibrationFileParserContext {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
 }
 
 }
@@ -115,17 +45,79 @@ impl ::unity2::IlType for VibrationFileParserContext {
 #[cfg(feature = "nn-hid-vibrationfileparsercontext-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-vibrationfileparsercontext")]
-impl VibrationFileParserContext_IntPtrArray10 { # [doc = "`get_Length()` overload"] pub fn get_length (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28d80usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] pub fn get_item (& mut self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28d90usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(i32, ::unity2::IntPtr)` overload"] pub fn set_item (& mut self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , i32 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28eb0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] pub fn get_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28fb0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: option :: Option :: None) } } } # [doc = "`get_IsReadOnly()` overload"] pub fn get_is_read_only (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28fc0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: option :: Option :: None) } } } # [doc = "`Contains(::unity2::IntPtr)` overload"] pub fn contains (& mut self , item : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> bool { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28fd0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`IndexOf(::unity2::IntPtr)` overload"] pub fn index_of (& mut self , item : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b290c0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::Array<::unity2::IntPtr>, i32)` overload"] pub fn copy_to (& mut self , array : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: IntPtr > > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: Array < :: unity2 :: IntPtr > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b29240usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b29430usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (& mut self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < :: unity2 :: IntPtr > { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < :: unity2 :: IntPtr > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b297e0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] pub fn system_collections_i_enumerable_get_enumerator (& mut self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b29860usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::IntPtr)` overload"] pub fn add (& mut self , item : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b298e0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b29920usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: option :: Option :: None) } } } # [doc = "`Insert(i32, ::unity2::IntPtr)` overload"] pub fn insert (& mut self , index : impl :: core :: convert :: Into < i32 > , item : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , i32 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b29960usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(::unity2::IntPtr)` overload"] pub fn remove (& mut self , item : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> bool { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b299a0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveAt(i32)` overload"] pub fn remove_at (& mut self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut VibrationFileParserContext_IntPtrArray10 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b299e0usize) as * mut u8) ; __inner (self as * mut VibrationFileParserContext_IntPtrArray10 , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-vibrationfileparsercontext")]impl VibrationFileParserContext_IntPtrArray10{#[doc="`get_Length()` overload"]pub fn get_length(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b28d80usize)as*mut u8,i32;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10)}
+}
+#[doc="`get_Item(i32)` overload"]pub fn get_item(&mut self,index:impl::core::convert::Into<i32>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b28d90usize)as*mut u8, ::unity2::IntPtr;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`set_Item(i32, ::unity2::IntPtr)` overload"]pub fn set_item(&mut self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b28eb0usize)as*mut u8,();
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(i32)::core::convert::Into::into(index),(::unity2::IntPtr)::core::convert::Into::into(value))}
+}
+#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b28fb0usize)as*mut u8,i32;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10)}
+}
+#[doc="`get_IsReadOnly()` overload"]pub fn get_is_read_only(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b28fc0usize)as*mut u8,bool;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10)}
+}
+#[doc="`Contains(::unity2::IntPtr)` overload"]pub fn contains(&mut self,item:impl::core::convert::Into< ::unity2::IntPtr>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b28fd0usize)as*mut u8,bool;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(::unity2::IntPtr)::core::convert::Into::into(item))}
+}
+#[doc="`IndexOf(::unity2::IntPtr)` overload"]pub fn index_of(&mut self,item:impl::core::convert::Into< ::unity2::IntPtr>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b290c0usize)as*mut u8,i32;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(::unity2::IntPtr)::core::convert::Into::into(item))}
+}
+#[doc="`CopyTo(::unity2::Array<::unity2::IntPtr>, i32)` overload"]pub fn copy_to(&mut self,array:impl::core::convert::Into< ::unity2::Array< ::unity2::IntPtr> > ,array_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b29240usize)as*mut u8,();
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(::unity2::Array< ::unity2::IntPtr>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b29430usize)as*mut u8, ::unity2::Il2CppString;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10)}
+}
+#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1< ::unity2::IntPtr>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b297e0usize)as*mut u8,crate::system::collections::generic::ienumerator_1::IEnumerator_1< ::unity2::IntPtr> ;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10)}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b29860usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10)}
+}
+#[doc="`Add(::unity2::IntPtr)` overload"]pub fn add(&mut self,item:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b298e0usize)as*mut u8,();
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(::unity2::IntPtr)::core::convert::Into::into(item))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b29920usize)as*mut u8,();
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10)}
+}
+#[doc="`Insert(i32, ::unity2::IntPtr)` overload"]pub fn insert(&mut self,index:impl::core::convert::Into<i32> ,item:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b29960usize)as*mut u8,();
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(i32)::core::convert::Into::into(index),(::unity2::IntPtr)::core::convert::Into::into(item))}
+}
+#[doc="`Remove(::unity2::IntPtr)` overload"]pub fn remove(&mut self,item:impl::core::convert::Into< ::unity2::IntPtr>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b299a0usize)as*mut u8,bool;
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(::unity2::IntPtr)::core::convert::Into::into(item))}
+}
+#[doc="`RemoveAt(i32)` overload"]pub fn remove_at(&mut self,index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b299e0usize)as*mut u8,();
+(*mut VibrationFileParserContext_IntPtrArray10)self as*mut VibrationFileParserContext_IntPtrArray10,(i32)::core::convert::Into::into(index))}
+}
+}
 
-#[cfg(feature = "nn-hid-vibrationfileparsercontext")]
-impl VibrationFileParserContext_IntPtrArray10 { pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn insert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn remove_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileParserContext_IntPtrArray10 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="nn-hid-vibrationfileparsercontext")]impl VibrationFileParserContext_IntPtrArray10{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn insert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
 #[cfg(feature = "nn-hid-vibrationfileparsercontext")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VibrationFileParserContext_IntPtrArray10;
     pub use super::VibrationFileParserContext;
+    pub use super::VibrationFileParserContext_IntPtrArray10;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

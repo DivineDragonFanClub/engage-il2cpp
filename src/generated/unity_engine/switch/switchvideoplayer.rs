@@ -4,129 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "SwitchVideoPlayer")] # [parent (crate :: system :: object :: Object)] pub struct SwitchVideoPlayer {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_MovieEvent")] pub m_movie_event : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_MovieEventDelegate ,
-# [static_field] # [rename (name = "OnMovieEvent")] pub on_movie_event : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_MovieEventDelegate ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SwitchVideoPlayer_Event{pub value:i32,}
+impl::unity2::ClassIdentity for SwitchVideoPlayer_Event{const NAMESPACE: &'static str="UnityEngine.Switch";
+const NAME: &'static str="SwitchVideoPlayer.Event";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SwitchVideoPlayer_Event{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SwitchVideoPlayer_Event{pub fn none()->Self{Self{value:0}
+}
+pub fn created()->Self{Self{value:1}
+}
+pub fn end_of_stream()->Self{Self{value:2}
+}
+pub fn loop_point_reached()->Self{Self{value:3}
+}
+pub fn first_frame_ready()->Self{Self{value:4}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "SwitchVideoPlayer.MovieEventDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct SwitchVideoPlayer_MovieEventDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="SwitchVideoPlayer")]#[parent(crate::system::object::Object)]pub struct SwitchVideoPlayer{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_MovieEvent")]pub m_movie_event:crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate, #[static_field]#[rename(name="OnMovieEvent")]pub on_movie_event:crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SwitchVideoPlayer_Event  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SwitchVideoPlayer_Event  {
-    const NAMESPACE: &'static str = "UnityEngine.Switch";
-
-    const NAME: &'static str = "SwitchVideoPlayer.Event";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SwitchVideoPlayer_Event  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SwitchVideoPlayer_Event  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn created() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end_of_stream() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn loop_point_reached() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn first_frame_ready() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="SwitchVideoPlayer.MovieEventDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SwitchVideoPlayer_MovieEventDelegate{}
 
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl SwitchVideoPlayer { # [doc = "`FireMovieEvent(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"] pub fn fire_movie_event (event_value : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f419e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (event_value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f41d00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-switch-switchvideoplayer")]impl SwitchVideoPlayer{#[doc="`FireMovieEvent(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]pub fn fire_movie_event(event_value:impl::core::convert::Into<crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f419e0usize)as*mut u8,();
+(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)::core::convert::Into::into(event_value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f41d00usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl SwitchVideoPlayer { pub fn fire_movie_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchVideoPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchVideoPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-switch-switchvideoplayer")]impl SwitchVideoPlayer{pub fn fire_movie_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-pub trait ISwitchVideoPlayer_MovieEventDelegateMethods : ISwitchVideoPlayer_MovieEventDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SwitchVideoPlayer_MovieEventDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f41e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"] fn invoke (self , eventtype : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event >) -> () { unsafe { let __receiver = < SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SwitchVideoPlayer_MovieEventDelegate , crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f41aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (eventtype) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-switch-switchvideoplayer")]pub trait ISwitchVideoPlayer_MovieEventDelegateMethods:ISwitchVideoPlayer_MovieEventDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SwitchVideoPlayer_MovieEventDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f41e60usize)as*mut u8,();
+(SwitchVideoPlayer_MovieEventDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]fn invoke(self,eventtype:impl::core::convert::Into<crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event>)->(){unsafe{let __receiver= <SwitchVideoPlayer_MovieEventDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f41aa0usize)as*mut u8,();
+(SwitchVideoPlayer_MovieEventDelegate)__receiver,(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)::core::convert::Into::into(eventtype))}
+}
+}
 
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl < __T : ISwitchVideoPlayer_MovieEventDelegate > ISwitchVideoPlayer_MovieEventDelegateMethods for __T { }
+#[cfg(feature="unity_engine-switch-switchvideoplayer")]impl<__T:ISwitchVideoPlayer_MovieEventDelegate>ISwitchVideoPlayer_MovieEventDelegateMethods for __T{}
 
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl SwitchVideoPlayer_MovieEventDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SwitchVideoPlayer_MovieEventDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-switch-switchvideoplayer")]impl SwitchVideoPlayer_MovieEventDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl SwitchVideoPlayer_MovieEventDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SwitchVideoPlayer_MovieEventDelegate) , :: core :: stringify ! (new) ,)) ; < Self as ISwitchVideoPlayer_MovieEventDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-switch-switchvideoplayer")]impl SwitchVideoPlayer_MovieEventDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SwitchVideoPlayer_MovieEventDelegate), ::core::stringify!(new),));
+ <Self as ISwitchVideoPlayer_MovieEventDelegateMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SwitchVideoPlayer_Event;
     pub use super::SwitchVideoPlayer;
     pub use super::ISwitchVideoPlayer;
     pub use super::SwitchVideoPlayer_MovieEventDelegate;
     pub use super::ISwitchVideoPlayer_MovieEventDelegate;
     pub use super::ISwitchVideoPlayer_MovieEventDelegateMethods;
-    pub use super::SwitchVideoPlayer_Event;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

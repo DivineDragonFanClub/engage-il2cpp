@@ -4,124 +4,129 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardsequence/NoticeBoardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NoticeBoardSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NoticeBoardSequence {
-# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_InfoMenuResult")] pub m_info_menu_result : crate :: app :: solanelinfomenu :: SolanelInfoMenu_InfoResult ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardsequence/NoticeBoardSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NoticeBoardSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NoticeBoardSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NoticeBoardSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NoticeBoardSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NoticeBoardSequence_Label{pub fn entry()->Self{Self{value:0}
+}
+pub fn top()->Self{Self{value:1}
+}
+pub fn investment()->Self{Self{value:2}
+}
+pub fn solanel_info()->Self{Self{value:3}
+}
+pub fn achievement()->Self{Self{value:4}
+}
+pub fn end()->Self{Self{value:5}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticeboardsequence/NoticeBoardSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NoticeBoardSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for NoticeBoardSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NoticeBoardSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for NoticeBoardSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  NoticeBoardSequence_Label  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn investment() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn solanel_info() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn achievement() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardsequence/NoticeBoardSequence.md"))]#[::unity2::class(namespace="App",name="NoticeBoardSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NoticeBoardSequence{#[offset(112)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2, #[offset(116)]#[rename(name="m_InfoMenuResult")]pub m_info_menu_result:crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,}
 
 }
 
 #[cfg(feature = "app-noticeboardsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-noticeboardsequence")]
-impl NoticeBoardSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f19b30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-noticeboardsequence")]impl NoticeBoardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f19b30usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-noticeboardsequence")]
-pub trait INoticeBoardSequenceMethods : INoticeBoardSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f19c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f19c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1a960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1a970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1a980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateTopMenu()` overload"] fn create_top_menu (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1ab40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1aee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateInvestment()` overload"] fn create_investment (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1b060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateSolanelInfo()` overload"] fn create_solanel_info (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1b140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateAchievement()` overload"] fn create_achievement (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1b260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReturnTitle()` overload"] fn return_title (self ,) -> () { unsafe { let __receiver = < NoticeBoardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeBoardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1a990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-noticeboardsequence")]pub trait INoticeBoardSequenceMethods:INoticeBoardSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f19c30usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f19c40usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1a960usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1a970usize)as*mut u8,bool;
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1a980usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`CreateTopMenu()` overload"]fn create_top_menu(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1ab40usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1aee0usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`CreateInvestment()` overload"]fn create_investment(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b060usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`CreateSolanelInfo()` overload"]fn create_solanel_info(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b140usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`CreateAchievement()` overload"]fn create_achievement(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b260usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+#[doc="`ReturnTitle()` overload"]fn return_title(self,)->(){unsafe{let __receiver= <NoticeBoardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1a990usize)as*mut u8,();
+(NoticeBoardSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-noticeboardsequence")]
-impl < __T : INoticeBoardSequence > INoticeBoardSequenceMethods for __T { }
+#[cfg(feature="app-noticeboardsequence")]impl<__T:INoticeBoardSequence>INoticeBoardSequenceMethods for __T{}
 
-#[cfg(feature = "app-noticeboardsequence")]
-impl NoticeBoardSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_investment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_solanel_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_achievement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn return_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeBoardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-noticeboardsequence")]impl NoticeBoardSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_investment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_solanel_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_achievement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn return_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-noticeboardsequence")]
-impl NoticeBoardSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoticeBoardSequence) , :: core :: stringify ! (new) ,)) ; < Self as INoticeBoardSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-noticeboardsequence")]impl NoticeBoardSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoticeBoardSequence), ::core::stringify!(new),));
+ <Self as INoticeBoardSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-noticeboardsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NoticeBoardSequence_Label;
     pub use super::NoticeBoardSequence;
     pub use super::INoticeBoardSequence;
     pub use super::INoticeBoardSequenceMethods;
-    pub use super::NoticeBoardSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

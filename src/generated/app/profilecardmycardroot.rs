@@ -4,52 +4,125 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardroot/ProfileCardMyCardRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardMyCardRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ProfileCardMyCardRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_ProfileCardRoot")] pub m_profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
-# [offset (32)] # [rename (name = "m_SelectEditMenuContent")] pub m_select_edit_menu_content : crate :: app :: profilecardselecteditmenucontent :: ProfileCardSelectEditMenuContent ,
-# [offset (40)] # [rename (name = "m_MessageSelectMenuContent")] pub m_message_select_menu_content : crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent ,
-# [offset (48)] # [rename (name = "m_MessageListMenuContent")] pub m_message_list_menu_content : crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent ,
-# [offset (56)] # [rename (name = "m_TextListMenuContent")] pub m_text_list_menu_content : crate :: app :: profilecardtextlistmenucontent :: ProfileCardTextListMenuContent ,
-# [offset (64)] # [rename (name = "m_VisualMenuContent")] pub m_visual_menu_content : crate :: app :: profilecardvisualmenucontent :: ProfileCardVisualMenuContent ,
-# [offset (72)] # [rename (name = "m_StampRoot")] pub m_stamp_root : crate :: app :: profilecardstamproot :: ProfileCardStampRoot ,
-# [offset (80)] # [rename (name = "m_StampListMenuContent")] pub m_stamp_list_menu_content : crate :: app :: profilecardstamplistmenucontent :: ProfileCardStampListMenuContent ,
-# [offset (88)] # [rename (name = "m_PlayTime")] pub m_play_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmycardroot/ProfileCardMyCardRoot.md"))]#[::unity2::class(namespace="App",name="ProfileCardMyCardRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ProfileCardMyCardRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_ProfileCardRoot")]pub m_profile_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(32)]#[rename(name="m_SelectEditMenuContent")]pub m_select_edit_menu_content:crate::app::profilecardselecteditmenucontent::ProfileCardSelectEditMenuContent, #[offset(40)]#[rename(name="m_MessageSelectMenuContent")]pub m_message_select_menu_content:crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent, #[offset(48)]#[rename(name="m_MessageListMenuContent")]pub m_message_list_menu_content:crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent, #[offset(56)]#[rename(name="m_TextListMenuContent")]pub m_text_list_menu_content:crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent, #[offset(64)]#[rename(name="m_VisualMenuContent")]pub m_visual_menu_content:crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent, #[offset(72)]#[rename(name="m_StampRoot")]pub m_stamp_root:crate::app::profilecardstamproot::ProfileCardStampRoot, #[offset(80)]#[rename(name="m_StampListMenuContent")]pub m_stamp_list_menu_content:crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent, #[offset(88)]#[rename(name="m_PlayTime")]pub m_play_time:f32,}
 
 }
 
 #[cfg(feature = "app-profilecardmycardroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardmycardroot")]
-impl ProfileCardMyCardRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c510usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c5b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c630usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateRoot()` overload"] pub fn create_root () -> crate :: app :: profilecardmycardroot :: ProfileCardMyCardRoot { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardmycardroot :: ProfileCardMyCardRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c6b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardmycardroot")]impl ProfileCardMyCardRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x231c510usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x231c5b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x231c630usize)as*mut u8,();
+)}
+}
+#[doc="`CreateRoot()` overload"]pub fn create_root()->crate::app::profilecardmycardroot::ProfileCardMyCardRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x231c6b0usize)as*mut u8,crate::app::profilecardmycardroot::ProfileCardMyCardRoot;
+)}
+}
+}
 
-#[cfg(feature = "app-profilecardmycardroot")]
-pub trait IProfileCardMyCardRootMethods : IProfileCardMyCardRoot { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardRoot()` overload"] fn get_profile_card_root (self ,) -> crate :: app :: profilecardroot :: ProfileCardRoot { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardroot :: ProfileCardRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ca20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardSelectEditMenuContent()` overload"] fn get_profile_card_select_edit_menu_content (self ,) -> crate :: app :: profilecardselecteditmenucontent :: ProfileCardSelectEditMenuContent { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardselecteditmenucontent :: ProfileCardSelectEditMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ca30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardVisualMenuContent()` overload"] fn get_profile_card_visual_menu_content (self ,) -> crate :: app :: profilecardvisualmenucontent :: ProfileCardVisualMenuContent { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardvisualmenucontent :: ProfileCardVisualMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ca40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetProfileCardStampRootActive(bool)` overload"] fn set_profile_card_stamp_root_active (self , actived : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ca50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actived) , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardStampRoot()` overload"] fn get_profile_card_stamp_root (self ,) -> crate :: app :: profilecardstamproot :: ProfileCardStampRoot { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardstamproot :: ProfileCardStampRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ca90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardStampListMenuContent()` overload"] fn get_profile_card_stamp_list_menu_content (self ,) -> crate :: app :: profilecardstamplistmenucontent :: ProfileCardStampListMenuContent { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardstamplistmenucontent :: ProfileCardStampListMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231caa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardMessageSelectMenuContent()` overload"] fn get_profile_card_message_select_menu_content (self ,) -> crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardMessageListMenuContent()` overload"] fn get_profile_card_message_list_menu_content (self ,) -> crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardmessagelistmenucontent :: ProfileCardMessageListMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardTextListMenuContent()` overload"] fn get_profile_card_text_list_menu_content (self ,) -> crate :: app :: profilecardtextlistmenucontent :: ProfileCardTextListMenuContent { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtextlistmenucontent :: ProfileCardTextListMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231caf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardmycardroot")]pub trait IProfileCardMyCardRootMethods:IProfileCardMyCardRoot{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c820usize)as*mut u8,();
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c830usize)as*mut u8,();
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`GetProfileCardRoot()` overload"]fn get_profile_card_root(self,)->crate::app::profilecardroot::ProfileCardRoot{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ca20usize)as*mut u8,crate::app::profilecardroot::ProfileCardRoot;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`GetProfileCardSelectEditMenuContent()` overload"]fn get_profile_card_select_edit_menu_content(self,)->crate::app::profilecardselecteditmenucontent::ProfileCardSelectEditMenuContent{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ca30usize)as*mut u8,crate::app::profilecardselecteditmenucontent::ProfileCardSelectEditMenuContent;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`GetProfileCardVisualMenuContent()` overload"]fn get_profile_card_visual_menu_content(self,)->crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ca40usize)as*mut u8,crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`SetProfileCardStampRootActive(bool)` overload"]fn set_profile_card_stamp_root_active(self,actived:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ca50usize)as*mut u8,();
+(ProfileCardMyCardRoot)__receiver,(bool)::core::convert::Into::into(actived))}
+}
+#[doc="`GetProfileCardStampRoot()` overload"]fn get_profile_card_stamp_root(self,)->crate::app::profilecardstamproot::ProfileCardStampRoot{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ca90usize)as*mut u8,crate::app::profilecardstamproot::ProfileCardStampRoot;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`GetProfileCardStampListMenuContent()` overload"]fn get_profile_card_stamp_list_menu_content(self,)->crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231caa0usize)as*mut u8,crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`GetProfileCardMessageSelectMenuContent()` overload"]fn get_profile_card_message_select_menu_content(self,)->crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cab0usize)as*mut u8,crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`GetProfileCardMessageListMenuContent()` overload"]fn get_profile_card_message_list_menu_content(self,)->crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cac0usize)as*mut u8,crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`GetProfileCardTextListMenuContent()` overload"]fn get_profile_card_text_list_menu_content(self,)->crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cad0usize)as*mut u8,crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cae0usize)as*mut u8,();
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231caf0usize)as*mut u8,bool;
+(ProfileCardMyCardRoot)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <ProfileCardMyCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cc10usize)as*mut u8,();
+(ProfileCardMyCardRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardmycardroot")]
-impl < __T : IProfileCardMyCardRoot > IProfileCardMyCardRootMethods for __T { }
+#[cfg(feature="app-profilecardmycardroot")]impl<__T:IProfileCardMyCardRoot>IProfileCardMyCardRootMethods for __T{}
 
-#[cfg(feature = "app-profilecardmycardroot")]
-impl ProfileCardMyCardRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_profile_card_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_profile_card_select_edit_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_profile_card_visual_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_profile_card_stamp_root_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_profile_card_stamp_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_profile_card_stamp_list_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_profile_card_message_select_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_profile_card_message_list_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_profile_card_text_list_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="app-profilecardmycardroot")]impl ProfileCardMyCardRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_profile_card_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_profile_card_select_edit_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_profile_card_visual_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_profile_card_stamp_root_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_profile_card_stamp_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_profile_card_stamp_list_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_profile_card_message_select_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_profile_card_message_list_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_profile_card_text_list_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-profilecardmycardroot")]
-impl ProfileCardMyCardRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardMyCardRoot) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardMyCardRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardmycardroot")]impl ProfileCardMyCardRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardMyCardRoot), ::core::stringify!(new),));
+ <Self as IProfileCardMyCardRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardmycardroot")]

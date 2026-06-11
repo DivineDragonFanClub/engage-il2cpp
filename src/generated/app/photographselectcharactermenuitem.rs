@@ -4,38 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectcharactermenuitem/PhotographSelectCharacterMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectCharacterMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct PhotographSelectCharacterMenuItem {
-# [offset (104)] # [rename (name = "m_CharacterId")] pub m_character_id : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_IsCurrentCharacter")] pub m_is_current_character : bool ,
-# [offset (120)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
-# [offset (128)] # [rename (name = "m_PauseData")] pub m_pause_data : crate :: app :: photographpausedata :: PhotographPauseData ,
-# [offset (136)] # [rename (name = "m_WeaponData")] pub m_weapon_data : crate :: app :: itemdata :: ItemData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectcharactermenuitem/PhotographSelectCharacterMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectCharacterMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct PhotographSelectCharacterMenuItem{#[offset(104)]#[rename(name="m_CharacterId")]pub m_character_id: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_IsCurrentCharacter")]pub m_is_current_character:bool, #[offset(120)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(128)]#[rename(name="m_PauseData")]pub m_pause_data:crate::app::photographpausedata::PhotographPauseData, #[offset(136)]#[rename(name="m_WeaponData")]pub m_weapon_data:crate::app::itemdata::ItemData,}
 
 }
 
 #[cfg(feature = "app-photographselectcharactermenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographselectcharactermenuitem")]
-pub trait IPhotographSelectCharacterMenuItemMethods : IPhotographSelectCharacterMenuItem { # [doc = "`get_CharacterId()` overload"] fn get_character_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26973d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsCurrentCharacter()` overload"] fn get_is_current_character (self ,) -> bool { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26973e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"] fn ctor (self , character_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager > , is_current_character : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: Il2CppString , crate :: app :: photographdisposmanager :: PhotographDisposManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2696ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character_id) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: convert :: Into :: into (is_current_character) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26973f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2697430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectCharacterMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectCharacterMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2697450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectcharactermenuitem")]pub trait IPhotographSelectCharacterMenuItemMethods:IPhotographSelectCharacterMenuItem{#[doc="`get_CharacterId()` overload"]fn get_character_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectCharacterMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26973d0usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographSelectCharacterMenuItem)__receiver)}
+}
+#[doc="`get_IsCurrentCharacter()` overload"]fn get_is_current_character(self,)->bool{unsafe{let __receiver= <PhotographSelectCharacterMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26973e0usize)as*mut u8,bool;
+(PhotographSelectCharacterMenuItem)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"]fn ctor(self,character_id:impl::core::convert::Into< ::unity2::Il2CppString> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,is_current_character:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectCharacterMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2696ef0usize)as*mut u8,();
+(PhotographSelectCharacterMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(character_id),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(bool)::core::convert::Into::into(is_current_character))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <PhotographSelectCharacterMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26973f0usize)as*mut u8,();
+(PhotographSelectCharacterMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectCharacterMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2697430usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectCharacterMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectCharacterMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2697450usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectCharacterMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographselectcharactermenuitem")]
-impl < __T : IPhotographSelectCharacterMenuItem > IPhotographSelectCharacterMenuItemMethods for __T { }
+#[cfg(feature="app-photographselectcharactermenuitem")]impl<__T:IPhotographSelectCharacterMenuItem>IPhotographSelectCharacterMenuItemMethods for __T{}
 
-#[cfg(feature = "app-photographselectcharactermenuitem")]
-impl PhotographSelectCharacterMenuItem { pub fn get_character_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_current_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectCharacterMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-photographselectcharactermenuitem")]impl PhotographSelectCharacterMenuItem{pub fn get_character_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_current_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-photographselectcharactermenuitem")]
-impl PhotographSelectCharacterMenuItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"] pub fn new (character_id : :: unity2 :: Il2CppString , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , is_current_character : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectCharacterMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectCharacterMenuItemMethods > :: ctor (this , character_id , dispos_manager , is_current_character) ; this }
+#[cfg(feature="app-photographselectcharactermenuitem")]impl PhotographSelectCharacterMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"]pub fn new(character_id: ::unity2::Il2CppString,dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager,is_current_character:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectCharacterMenuItem), ::core::stringify!(new),));
+ <Self as IPhotographSelectCharacterMenuItemMethods> ::ctor(this,character_id,dispos_manager,is_current_character);
+this}
 }
 
 #[cfg(feature = "app-photographselectcharactermenuitem")]

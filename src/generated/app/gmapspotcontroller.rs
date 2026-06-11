@@ -4,126 +4,116 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspotcontroller/GmapSpotController.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapSpotController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GmapSpotController {
-# [offset (24)] # [rename (name = "m_StandMeshRenderer")] pub m_stand_mesh_renderer : crate :: unity_engine :: meshrenderer :: MeshRenderer ,
-# [offset (32)] # [rename (name = "m_StoneMeshRenderer")] pub m_stone_mesh_renderer : crate :: unity_engine :: meshrenderer :: MeshRenderer ,
-# [offset (40)] # [rename (name = "m_Materials")] pub m_materials : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: material :: Material > ,
-# [offset (48)] # [rename (name = "m_MeshRenderer")] pub m_mesh_renderer : crate :: unity_engine :: meshrenderer :: MeshRenderer ,
-# [offset (56)] # [rename (name = "m_Spot")] pub m_spot : crate :: app :: gmapspot :: GmapSpot ,
-# [static_field] # [rename (name = "NextSpotEffectPath")] pub next_spot_effect_path : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "m_Effect")] pub m_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_IsInitialized")] pub m_is_initialized : bool ,
-# [offset (80)] # [rename (name = "m_StandEmissionColor")] pub m_stand_emission_color : crate :: app :: interpolatorcolor :: InterpolatorColor ,
-# [offset (88)] # [rename (name = "m_StoneEmissionColor")] pub m_stone_emission_color : crate :: app :: interpolatorcolor :: InterpolatorColor ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspotcontroller/GmapSpotController_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSpotController_Type{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSpotController_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSpotController.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSpotController_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSpotController_Type{pub fn main_chapter()->Self{Self{value:0}
+}
+pub fn sub_chapter()->Self{Self{value:1}
+}
+pub fn cleared()->Self{Self{value:2}
+}
+pub fn encount()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotcontroller/GmapSpotController_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapSpotController_Type  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GmapSpotController_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpotController.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GmapSpotController_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GmapSpotController_Type  {
-    pub fn main_chapter() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn sub_chapter() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn cleared() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn encount() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspotcontroller/GmapSpotController.md"))]#[::unity2::class(namespace="App",name="GmapSpotController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapSpotController{#[offset(24)]#[rename(name="m_StandMeshRenderer")]pub m_stand_mesh_renderer:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(32)]#[rename(name="m_StoneMeshRenderer")]pub m_stone_mesh_renderer:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(40)]#[rename(name="m_Materials")]pub m_materials:crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material> , #[offset(48)]#[rename(name="m_MeshRenderer")]pub m_mesh_renderer:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(56)]#[rename(name="m_Spot")]pub m_spot:crate::app::gmapspot::GmapSpot, #[static_field]#[rename(name="NextSpotEffectPath")]pub next_spot_effect_path: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_Effect")]pub m_effect:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_IsInitialized")]pub m_is_initialized:bool, #[offset(80)]#[rename(name="m_StandEmissionColor")]pub m_stand_emission_color:crate::app::interpolatorcolor::InterpolatorColor, #[offset(88)]#[rename(name="m_StoneEmissionColor")]pub m_stone_emission_color:crate::app::interpolatorcolor::InterpolatorColor,}
 
 }
 
 #[cfg(feature = "app-gmapspotcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapspotcontroller")]
-impl GmapSpotController { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b48600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapspotcontroller")]impl GmapSpotController{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b48600usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-gmapspotcontroller")]
-pub trait IGmapSpotControllerMethods : IGmapSpotController { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < GmapSpotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b482e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < GmapSpotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b3bb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartAppear()` overload"] fn start_appear (self ,) -> bool { unsafe { let __receiver = < GmapSpotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotController , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AppearTick()` overload"] fn appear_tick (self ,) -> bool { unsafe { let __receiver = < GmapSpotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotController , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b45f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSpotColor()` overload"] fn update_spot_color (self ,) -> () { unsafe { let __receiver = < GmapSpotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b44fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMaterial(crate::app::gmapspotcontroller::GmapSpotController_Type)` overload"] fn set_material (self , r#type : impl :: core :: convert :: Into < crate :: app :: gmapspotcontroller :: GmapSpotController_Type >) -> () { unsafe { let __receiver = < GmapSpotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotController , crate :: app :: gmapspotcontroller :: GmapSpotController_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b484b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`AdjustPos()` overload"] fn adjust_pos (self ,) -> () { unsafe { let __receiver = < GmapSpotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b483d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapSpotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b48550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapspotcontroller")]pub trait IGmapSpotControllerMethods:IGmapSpotController{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <GmapSpotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b482e0usize)as*mut u8,();
+(GmapSpotController)__receiver)}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <GmapSpotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b3bb20usize)as*mut u8,();
+(GmapSpotController)__receiver)}
+}
+#[doc="`StartAppear()` overload"]fn start_appear(self,)->bool{unsafe{let __receiver= <GmapSpotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45d40usize)as*mut u8,bool;
+(GmapSpotController)__receiver)}
+}
+#[doc="`AppearTick()` overload"]fn appear_tick(self,)->bool{unsafe{let __receiver= <GmapSpotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b45f40usize)as*mut u8,bool;
+(GmapSpotController)__receiver)}
+}
+#[doc="`UpdateSpotColor()` overload"]fn update_spot_color(self,)->(){unsafe{let __receiver= <GmapSpotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44fb0usize)as*mut u8,();
+(GmapSpotController)__receiver)}
+}
+#[doc="`SetMaterial(crate::app::gmapspotcontroller::GmapSpotController_Type)` overload"]fn set_material(self,r#type:impl::core::convert::Into<crate::app::gmapspotcontroller::GmapSpotController_Type>)->(){unsafe{let __receiver= <GmapSpotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b484b0usize)as*mut u8,();
+(GmapSpotController)__receiver,(crate::app::gmapspotcontroller::GmapSpotController_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`AdjustPos()` overload"]fn adjust_pos(self,)->(){unsafe{let __receiver= <GmapSpotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b483d0usize)as*mut u8,();
+(GmapSpotController)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSpotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b48550usize)as*mut u8,();
+(GmapSpotController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmapspotcontroller")]
-impl < __T : IGmapSpotController > IGmapSpotControllerMethods for __T { }
+#[cfg(feature="app-gmapspotcontroller")]impl<__T:IGmapSpotController>IGmapSpotControllerMethods for __T{}
 
-#[cfg(feature = "app-gmapspotcontroller")]
-impl GmapSpotController { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_appear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn appear_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_spot_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn adjust_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-gmapspotcontroller")]impl GmapSpotController{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_appear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn appear_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_spot_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn adjust_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-gmapspotcontroller")]
-impl GmapSpotController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapSpotController) , :: core :: stringify ! (new) ,)) ; < Self as IGmapSpotControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmapspotcontroller")]impl GmapSpotController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapSpotController), ::core::stringify!(new),));
+ <Self as IGmapSpotControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gmapspotcontroller")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GmapSpotController_Type;
     pub use super::GmapSpotController;
     pub use super::IGmapSpotController;
     pub use super::IGmapSpotControllerMethods;
-    pub use super::GmapSpotController_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

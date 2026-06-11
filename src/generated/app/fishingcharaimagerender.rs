@@ -4,44 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingcharaimagerender/FishingCharaImageRender.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingCharaImageRender")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingCharaImageRender {
-# [offset (24)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (32)] # [rename (name = "m_Chara")] pub m_chara : crate :: combat :: character :: Character ,
-# [offset (40)] # [rename (name = "m_Sola")] pub m_sola : crate :: combat :: character :: Character ,
-# [offset (48)] # [rename (name = "m_Lure")] pub m_lure : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_IsPlayingHitAnime")] pub m_is_playing_hit_anime : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingcharaimagerender/FishingCharaImageRender.md"))]#[::unity2::class(namespace="App",name="FishingCharaImageRender")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FishingCharaImageRender{#[offset(24)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(32)]#[rename(name="m_Chara")]pub m_chara:crate::combat::character::Character, #[offset(40)]#[rename(name="m_Sola")]pub m_sola:crate::combat::character::Character, #[offset(48)]#[rename(name="m_Lure")]pub m_lure:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_IsPlayingHitAnime")]pub m_is_playing_hit_anime:bool,}
 
 }
 
 #[cfg(feature = "app-fishingcharaimagerender-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingcharaimagerender")]
-pub trait IFishingCharaImageRenderMethods : IFishingCharaImageRender { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ee4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ee500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ee760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayer(crate::unity_engine::gameobject::GameObject, i32)` overload"] fn set_layer (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , set_layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ee970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (set_layer) , :: core :: option :: Option :: None) } } } # [doc = "`PlayCharaAnime(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"] fn play_chara_anime (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , face_state : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , change_soon : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ee840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (face_state) , :: core :: convert :: Into :: into (change_soon) , :: core :: option :: Option :: None) } } } # [doc = "`StartHitAnime()` overload"] fn start_hit_anime (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26eec70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartAssistAnime()` overload"] fn start_assist_anime (self ,) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26eecf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init(::unity2::Il2CppString)` overload"] fn init (self , rod_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26eed60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rod_id) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeRodType(::unity2::Il2CppString)` overload"] fn change_rod_type (self , rod_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ef430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rod_id) , :: core :: option :: Option :: None) } } } # [doc = "`SetSolaVisible(bool)` overload"] fn set_sola_visible (self , set : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ef640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set) , :: core :: option :: Option :: None) } } } # [doc = "`PlaySolaAnime(::unity2::Il2CppString)` overload"] fn play_sola_anime (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingCharaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingCharaImageRender , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ef670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingcharaimagerender")]pub trait IFishingCharaImageRenderMethods:IFishingCharaImageRender{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ee4f0usize)as*mut u8,();
+(FishingCharaImageRender)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ee500usize)as*mut u8,();
+(FishingCharaImageRender)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ee760usize)as*mut u8,();
+(FishingCharaImageRender)__receiver)}
+}
+#[doc="`SetLayer(crate::unity_engine::gameobject::GameObject, i32)` overload"]fn set_layer(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,set_layer:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ee970usize)as*mut u8,();
+(FishingCharaImageRender)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj),(i32)::core::convert::Into::into(set_layer))}
+}
+#[doc="`PlayCharaAnime(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]fn play_chara_anime(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,face_state:impl::core::convert::Into< ::unity2::Il2CppString> ,change_soon:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ee840usize)as*mut u8,();
+(FishingCharaImageRender)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(face_state),(bool)::core::convert::Into::into(change_soon))}
+}
+#[doc="`StartHitAnime()` overload"]fn start_hit_anime(self,)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26eec70usize)as*mut u8,();
+(FishingCharaImageRender)__receiver)}
+}
+#[doc="`StartAssistAnime()` overload"]fn start_assist_anime(self,)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26eecf0usize)as*mut u8,();
+(FishingCharaImageRender)__receiver)}
+}
+#[doc="`Init(::unity2::Il2CppString)` overload"]fn init(self,rod_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26eed60usize)as*mut u8,();
+(FishingCharaImageRender)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(rod_id))}
+}
+#[doc="`ChangeRodType(::unity2::Il2CppString)` overload"]fn change_rod_type(self,rod_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ef430usize)as*mut u8,();
+(FishingCharaImageRender)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(rod_id))}
+}
+#[doc="`SetSolaVisible(bool)` overload"]fn set_sola_visible(self,set:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ef640usize)as*mut u8,();
+(FishingCharaImageRender)__receiver,(bool)::core::convert::Into::into(set))}
+}
+#[doc="`PlaySolaAnime(::unity2::Il2CppString)` overload"]fn play_sola_anime(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FishingCharaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ef670usize)as*mut u8,();
+(FishingCharaImageRender)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "app-fishingcharaimagerender")]
-impl < __T : IFishingCharaImageRender > IFishingCharaImageRenderMethods for __T { }
+#[cfg(feature="app-fishingcharaimagerender")]impl<__T:IFishingCharaImageRender>IFishingCharaImageRenderMethods for __T{}
 
-#[cfg(feature = "app-fishingcharaimagerender")]
-impl FishingCharaImageRender { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn play_chara_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_hit_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_assist_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn change_rod_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_sola_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn play_sola_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingCharaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-fishingcharaimagerender")]impl FishingCharaImageRender{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn play_chara_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_hit_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_assist_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn change_rod_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_sola_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn play_sola_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-fishingcharaimagerender")]
-impl FishingCharaImageRender {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingCharaImageRender) , :: core :: stringify ! (new) ,)) ; < Self as IFishingCharaImageRenderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingcharaimagerender")]impl FishingCharaImageRender{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingCharaImageRender), ::core::stringify!(new),));
+ <Self as IFishingCharaImageRenderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingcharaimagerender")]

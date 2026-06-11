@@ -4,36 +4,55 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: asyncoperation :: { AsyncOperation , IAsyncOperation }
- ;
- use crate :: unity_engine :: resourcerequest :: { IResourceRequest , ResourceRequest }
- ;
- use crate :: unity_engine :: yieldinstruction :: { IYieldInstruction , YieldInstruction }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::asyncoperation::{AsyncOperation,IAsyncOperation}
+;
+use crate::unity_engine::resourcerequest::{IResourceRequest,ResourceRequest}
+;
+use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetbundlerequest/AssetBundleRequest.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AssetBundleRequest")] # [parent (crate :: unity_engine :: resourcerequest :: ResourceRequest)] pub struct AssetBundleRequest {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/assetbundlerequest/AssetBundleRequest.md"))]#[::unity2::class(namespace="UnityEngine",name="AssetBundleRequest")]#[parent(crate::unity_engine::resourcerequest::ResourceRequest)]pub struct AssetBundleRequest{}
 
 }
 
 #[cfg(feature = "unity_engine-assetbundlerequest-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-assetbundlerequest")]
-pub trait IAssetBundleRequestMethods : IAssetBundleRequest { # [doc = "`GetResult()` overload"] fn get_result (self ,) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { let __receiver = < AssetBundleRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_asset()` overload"] fn get_asset (self ,) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { let __receiver = < AssetBundleRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_allAssets()` overload"] fn get_all_assets (self ,) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > { unsafe { let __receiver = < AssetBundleRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleRequest , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f429a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetBundleRequest as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f429f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-assetbundlerequest")]pub trait IAssetBundleRequestMethods:IAssetBundleRequest{#[doc="`GetResult()` overload"]fn get_result(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <AssetBundleRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42940usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(AssetBundleRequest)__receiver)}
+}
+#[doc="`get_asset()` overload"]fn get_asset(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <AssetBundleRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42990usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(AssetBundleRequest)__receiver)}
+}
+#[doc="`get_allAssets()` overload"]fn get_all_assets(self,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{let __receiver= <AssetBundleRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f429a0usize)as*mut u8, ::unity2::Array<crate::unity_engine::object_2::Object_2> ;
+(AssetBundleRequest)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetBundleRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f429f0usize)as*mut u8,();
+(AssetBundleRequest)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-assetbundlerequest")]
-impl < __T : IAssetBundleRequest > IAssetBundleRequestMethods for __T { }
+#[cfg(feature="unity_engine-assetbundlerequest")]impl<__T:IAssetBundleRequest>IAssetBundleRequestMethods for __T{}
 
-#[cfg(feature = "unity_engine-assetbundlerequest")]
-impl AssetBundleRequest { pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleRequest as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleRequest as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_all_assets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleRequest as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleRequest as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-assetbundlerequest")]impl AssetBundleRequest{pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_all_assets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-assetbundlerequest")]
-impl AssetBundleRequest {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetBundleRequest) , :: core :: stringify ! (new) ,)) ; < Self as IAssetBundleRequestMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-assetbundlerequest")]impl AssetBundleRequest{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetBundleRequest), ::core::stringify!(new),));
+ <Self as IAssetBundleRequestMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-assetbundlerequest")]

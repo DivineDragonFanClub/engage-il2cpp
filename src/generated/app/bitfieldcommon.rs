@@ -4,30 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfieldcommon/BitFieldCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "BitFieldCommon")] # [parent (crate :: system :: object :: Object)] pub struct BitFieldCommon {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bitfieldcommon/BitFieldCommon.md"))]#[::unity2::class(namespace="App",name="BitFieldCommon")]#[parent(crate::system::object::Object)]pub struct BitFieldCommon{}
 
 }
 
 #[cfg(feature = "app-bitfieldcommon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bitfieldcommon")]
-pub trait IBitFieldCommonMethods : IBitFieldCommon { # [doc = "`get_ValueType()` overload"] fn get_value_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < BitFieldCommon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitFieldCommon , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BitFieldCommon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitFieldCommon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29873d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bitfieldcommon")]pub trait IBitFieldCommonMethods:IBitFieldCommon{#[doc="`get_ValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <BitFieldCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988090usize)as*mut u8, ::unity2::SystemType;
+(BitFieldCommon)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BitFieldCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29873d0usize)as*mut u8,();
+(BitFieldCommon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bitfieldcommon")]
-impl < __T : IBitFieldCommon > IBitFieldCommonMethods for __T { }
+#[cfg(feature="app-bitfieldcommon")]impl<__T:IBitFieldCommon>IBitFieldCommonMethods for __T{}
 
-#[cfg(feature = "app-bitfieldcommon")]
-impl BitFieldCommon { pub fn get_value_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitFieldCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitFieldCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-bitfieldcommon")]impl BitFieldCommon{pub fn get_value_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-bitfieldcommon")]
-impl BitFieldCommon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitFieldCommon) , :: core :: stringify ! (new) ,)) ; < Self as IBitFieldCommonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bitfieldcommon")]impl BitFieldCommon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitFieldCommon), ::core::stringify!(new),));
+ <Self as IBitFieldCommonMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bitfieldcommon")]

@@ -4,39 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubtalkrelative/HubTalkRelative.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubTalkRelative")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: hubtalkrelative :: HubTalkRelative >)] pub struct HubTalkRelative {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubtalkrelative/HubTalkRelative.md"))]#[::unity2::class(namespace="App",name="HubTalkRelative")]#[parent(crate::app::structdata_1::StructData_1<crate::app::hubtalkrelative::HubTalkRelative>)]pub struct HubTalkRelative{}
 
 }
 
 #[cfg(feature = "app-hubtalkrelative-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubtalkrelative")]
-impl HubTalkRelative { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b320usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubtalkrelative")]impl HubTalkRelative{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b320usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubtalkrelative")]
-pub trait IHubTalkRelativeMethods : IHubTalkRelative { # [doc = "`get_PID()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PID(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PID1()` overload"] fn get_pid1 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PID1(::unity2::Il2CppString)` overload"] fn set_pid1 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b2b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PID2()` overload"] fn get_pid2 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PID2(::unity2::Il2CppString)` overload"] fn set_pid2 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PID3()` overload"] fn get_pid3 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PID3(::unity2::Il2CppString)` overload"] fn set_pid3 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b2f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PID4()` overload"] fn get_pid4 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PID4(::unity2::Il2CppString)` overload"] fn set_pid4 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubTalkRelative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubTalkRelative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5b3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubtalkrelative")]pub trait IHubTalkRelativeMethods:IHubTalkRelative{#[doc="`get_PID()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b280usize)as*mut u8, ::unity2::Il2CppString;
+(HubTalkRelative)__receiver)}
+}
+#[doc="`set_PID(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b290usize)as*mut u8,();
+(HubTalkRelative)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PID1()` overload"]fn get_pid1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b2a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubTalkRelative)__receiver)}
+}
+#[doc="`set_PID1(::unity2::Il2CppString)` overload"]fn set_pid1(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b2b0usize)as*mut u8,();
+(HubTalkRelative)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PID2()` overload"]fn get_pid2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b2c0usize)as*mut u8, ::unity2::Il2CppString;
+(HubTalkRelative)__receiver)}
+}
+#[doc="`set_PID2(::unity2::Il2CppString)` overload"]fn set_pid2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b2d0usize)as*mut u8,();
+(HubTalkRelative)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PID3()` overload"]fn get_pid3(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b2e0usize)as*mut u8, ::unity2::Il2CppString;
+(HubTalkRelative)__receiver)}
+}
+#[doc="`set_PID3(::unity2::Il2CppString)` overload"]fn set_pid3(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b2f0usize)as*mut u8,();
+(HubTalkRelative)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PID4()` overload"]fn get_pid4(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b300usize)as*mut u8, ::unity2::Il2CppString;
+(HubTalkRelative)__receiver)}
+}
+#[doc="`set_PID4(::unity2::Il2CppString)` overload"]fn set_pid4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b310usize)as*mut u8,();
+(HubTalkRelative)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubTalkRelative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5b3d0usize)as*mut u8,();
+(HubTalkRelative)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubtalkrelative")]
-impl < __T : IHubTalkRelative > IHubTalkRelativeMethods for __T { }
+#[cfg(feature="app-hubtalkrelative")]impl<__T:IHubTalkRelative>IHubTalkRelativeMethods for __T{}
 
-#[cfg(feature = "app-hubtalkrelative")]
-impl HubTalkRelative { pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_pid1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_pid1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_pid2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_pid2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_pid3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_pid3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_pid4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_pid4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubTalkRelative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-hubtalkrelative")]impl HubTalkRelative{pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_pid1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_pid1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_pid2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_pid2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_pid3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_pid3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_pid4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_pid4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-hubtalkrelative")]
-impl HubTalkRelative {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubTalkRelative) , :: core :: stringify ! (new) ,)) ; < Self as IHubTalkRelativeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubtalkrelative")]impl HubTalkRelative{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubTalkRelative), ::core::stringify!(new),));
+ <Self as IHubTalkRelativeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubtalkrelative")]

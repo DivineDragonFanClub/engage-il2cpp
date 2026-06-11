@@ -4,34 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structbase/StructBase.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructBase")] # [parent (crate :: system :: object :: Object)] pub struct StructBase {
-# [offset (16)] # [rename (name = "Index")] pub index : i32 ,
-# [offset (20)] # [rename (name = "Hash")] pub hash : i32 ,
-# [offset (24)] # [rename (name = "Key")] pub key : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structbase/StructBase.md"))]#[::unity2::class(namespace="App",name="StructBase")]#[parent(crate::system::object::Object)]pub struct StructBase{#[offset(16)]#[rename(name="Index")]pub index:i32, #[offset(20)]#[rename(name="Hash")]pub hash:i32, #[offset(24)]#[rename(name="Key")]pub key: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-structbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-structbase")]
-pub trait IStructBaseMethods : IStructBase { # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < StructBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250adc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCompleted()` overload"] fn on_completed (self ,) -> () { unsafe { let __receiver = < StructBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250add0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCompletedEnd()` overload"] fn on_completed_end (self ,) -> () { unsafe { let __receiver = < StructBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250ade0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRelease()` overload"] fn on_release (self ,) -> () { unsafe { let __receiver = < StructBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250adf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructBase , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250ae00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetIndex()` overload"] fn get_index (self ,) -> i32 { unsafe { let __receiver = < StructBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructBase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250ae50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StructBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250ae60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-structbase")]pub trait IStructBaseMethods:IStructBase{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <StructBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250adc0usize)as*mut u8,();
+(StructBase)__receiver)}
+}
+#[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <StructBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250add0usize)as*mut u8,();
+(StructBase)__receiver)}
+}
+#[doc="`OnCompletedEnd()` overload"]fn on_completed_end(self,)->(){unsafe{let __receiver= <StructBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250ade0usize)as*mut u8,();
+(StructBase)__receiver)}
+}
+#[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <StructBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250adf0usize)as*mut u8,();
+(StructBase)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250ae00usize)as*mut u8, ::unity2::Il2CppString;
+(StructBase)__receiver)}
+}
+#[doc="`GetIndex()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <StructBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250ae50usize)as*mut u8,i32;
+(StructBase)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StructBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250ae60usize)as*mut u8,();
+(StructBase)__receiver)}
+}
+}
 
-#[cfg(feature = "app-structbase")]
-impl < __T : IStructBase > IStructBaseMethods for __T { }
+#[cfg(feature="app-structbase")]impl<__T:IStructBase>IStructBaseMethods for __T{}
 
-#[cfg(feature = "app-structbase")]
-impl StructBase { pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_completed_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-structbase")]impl StructBase{pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_completed_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-structbase")]
-impl StructBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructBase) , :: core :: stringify ! (new) ,)) ; < Self as IStructBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-structbase")]impl StructBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructBase), ::core::stringify!(new),));
+ <Self as IStructBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-structbase")]

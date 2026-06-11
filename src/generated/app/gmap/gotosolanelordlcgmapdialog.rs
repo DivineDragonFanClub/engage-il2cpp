@@ -4,84 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog.md"))] # [:: unity2 :: class (namespace = "App.Gmap" , name = "GoToSolanelOrDlcGmapDialog")] # [parent (crate :: app :: basicdialog :: BasicDialog)] pub struct GoToSolanelOrDlcGmapDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog.md"))]#[::unity2::class(namespace="App.Gmap",name="GoToSolanelOrDlcGmapDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct GoToSolanelOrDlcGmapDialog{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogItem.md"))] # [:: unity2 :: class (namespace = "App.Gmap" , name = "GoToSolanelOrDlcGmapDialog.DialogItem")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct GoToSolanelOrDlcGmapDialog_DialogItem {
-# [offset (112)] # [rename (name = "m_func")] pub m_func : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogItem.md"))]#[::unity2::class(namespace="App.Gmap",name="GoToSolanelOrDlcGmapDialog.DialogItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct GoToSolanelOrDlcGmapDialog_DialogItem{#[offset(112)]#[rename(name="m_func")]pub m_func:crate::system::action::Action,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogGmapItem.md"))] # [:: unity2 :: class (namespace = "App.Gmap" , name = "GoToSolanelOrDlcGmapDialog.DialogGmapItem")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct GoToSolanelOrDlcGmapDialog_DialogGmapItem {
-# [offset (112)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: gmapmode :: GmapMode_Mode ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogGmapItem.md"))]#[::unity2::class(namespace="App.Gmap",name="GoToSolanelOrDlcGmapDialog.DialogGmapItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct GoToSolanelOrDlcGmapDialog_DialogGmapItem{#[offset(112)]#[rename(name="m_Mode")]pub m_mode:crate::app::gmapmode::GmapMode_Mode,}
 
 }
 
 #[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , solanel_cb : impl :: core :: convert :: Into < crate :: system :: action :: Action > , gmap_cb : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: app :: gmapmode :: GmapMode_Mode > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , crate :: system :: action_1 :: Action_1 < crate :: app :: gmapmode :: GmapMode_Mode > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4cb50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (solanel_cb) , :: core :: convert :: Into :: into (gmap_cb) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-pub trait IGoToSolanelOrDlcGmapDialogMethods : IGoToSolanelOrDlcGmapDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicdialogcontent :: BasicDialogContent >) -> () { unsafe { let __receiver = < GoToSolanelOrDlcGmapDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelOrDlcGmapDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicdialogcontent :: BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4cb40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl < __T : IGoToSolanelOrDlcGmapDialog > IGoToSolanelOrDlcGmapDialogMethods for __T { }
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelOrDlcGmapDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelOrDlcGmapDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicdialogcontent :: BasicDialogContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GoToSolanelOrDlcGmapDialog) , :: core :: stringify ! (new) ,)) ; < Self as IGoToSolanelOrDlcGmapDialogMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl GoToSolanelOrDlcGmapDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,solanel_cb:impl::core::convert::Into<crate::system::action::Action> ,gmap_cb:impl::core::convert::Into<crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4cb50usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(solanel_cb),(crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>)::core::convert::Into::into(gmap_cb))}
+}
 }
 
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-pub trait IGoToSolanelOrDlcGmapDialog_DialogItemMethods : IGoToSolanelOrDlcGmapDialog_DialogItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < GoToSolanelOrDlcGmapDialog_DialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelOrDlcGmapDialog_DialogItem , :: unity2 :: Il2CppString , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GoToSolanelOrDlcGmapDialog_DialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelOrDlcGmapDialog_DialogItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd64e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl < __T : IGoToSolanelOrDlcGmapDialog_DialogItem > IGoToSolanelOrDlcGmapDialog_DialogItemMethods for __T { }
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog_DialogItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelOrDlcGmapDialog_DialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelOrDlcGmapDialog_DialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog_DialogItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"] pub fn new (label : :: unity2 :: Il2CppString , func : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GoToSolanelOrDlcGmapDialog_DialogItem) , :: core :: stringify ! (new) ,)) ; < Self as IGoToSolanelOrDlcGmapDialog_DialogItemMethods > :: ctor (this , label , func) ; this }
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]pub trait IGoToSolanelOrDlcGmapDialogMethods:IGoToSolanelOrDlcGmapDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <GoToSolanelOrDlcGmapDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b4cb40usize)as*mut u8,();
+(GoToSolanelOrDlcGmapDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
 }
 
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog_DialogGmapItem { # [doc = "`get_s_MoveGmapCallback()` overload"] pub fn get_s_move_gmap_callback () -> crate :: system :: action_1 :: Action_1 < crate :: app :: gmapmode :: GmapMode_Mode > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: action_1 :: Action_1 < crate :: app :: gmapmode :: GmapMode_Mode > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6260usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_s_MoveGmapCallback(crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>)` overload"] pub fn set_s_move_gmap_callback (value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: app :: gmapmode :: GmapMode_Mode > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: app :: gmapmode :: GmapMode_Mode > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd62b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl<__T:IGoToSolanelOrDlcGmapDialog>IGoToSolanelOrDlcGmapDialogMethods for __T{}
 
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-pub trait IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods : IGoToSolanelOrDlcGmapDialog_DialogGmapItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> () { unsafe { let __receiver = < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelOrDlcGmapDialog_DialogGmapItem , :: unity2 :: Il2CppString , crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelOrDlcGmapDialog_DialogGmapItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd63b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl GoToSolanelOrDlcGmapDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl < __T : IGoToSolanelOrDlcGmapDialog_DialogGmapItem > IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods for __T { }
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl GoToSolanelOrDlcGmapDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GoToSolanelOrDlcGmapDialog), ::core::stringify!(new),));
+ <Self as IGoToSolanelOrDlcGmapDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
 
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog_DialogGmapItem { pub fn get_s_move_gmap_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_s_move_gmap_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]pub trait IGoToSolanelOrDlcGmapDialog_DialogItemMethods:IGoToSolanelOrDlcGmapDialog_DialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <GoToSolanelOrDlcGmapDialog_DialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6440usize)as*mut u8,();
+(GoToSolanelOrDlcGmapDialog_DialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::action::Action)::core::convert::Into::into(func))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GoToSolanelOrDlcGmapDialog_DialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd64e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GoToSolanelOrDlcGmapDialog_DialogItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog_DialogGmapItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` — overload selector"] pub fn new (label : :: unity2 :: Il2CppString , mode : crate :: app :: gmapmode :: GmapMode_Mode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GoToSolanelOrDlcGmapDialog_DialogGmapItem) , :: core :: stringify ! (new) ,)) ; < Self as IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods > :: ctor (this , label , mode) ; this }
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl<__T:IGoToSolanelOrDlcGmapDialog_DialogItem>IGoToSolanelOrDlcGmapDialog_DialogItemMethods for __T{}
+
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl GoToSolanelOrDlcGmapDialog_DialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl GoToSolanelOrDlcGmapDialog_DialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(label: ::unity2::Il2CppString,func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GoToSolanelOrDlcGmapDialog_DialogItem), ::core::stringify!(new),));
+ <Self as IGoToSolanelOrDlcGmapDialog_DialogItemMethods> ::ctor(this,label,func);
+this}
+}
+
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl GoToSolanelOrDlcGmapDialog_DialogGmapItem{#[doc="`get_s_MoveGmapCallback()` overload"]pub fn get_s_move_gmap_callback()->crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6260usize)as*mut u8,crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode> ;
+)}
+}
+#[doc="`set_s_MoveGmapCallback(crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>)` overload"]pub fn set_s_move_gmap_callback(value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd62b0usize)as*mut u8,();
+(crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]pub trait IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods:IGoToSolanelOrDlcGmapDialog_DialogGmapItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` overload"]fn ctor(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,mode:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)->(){unsafe{let __receiver= <GoToSolanelOrDlcGmapDialog_DialogGmapItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6310usize)as*mut u8,();
+(GoToSolanelOrDlcGmapDialog_DialogGmapItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GoToSolanelOrDlcGmapDialog_DialogGmapItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd63b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GoToSolanelOrDlcGmapDialog_DialogGmapItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl<__T:IGoToSolanelOrDlcGmapDialog_DialogGmapItem>IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods for __T{}
+
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl GoToSolanelOrDlcGmapDialog_DialogGmapItem{pub fn get_s_move_gmap_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_s_move_gmap_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-gmap-gotosolanelordlcgmapdialog")]impl GoToSolanelOrDlcGmapDialog_DialogGmapItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` — overload selector"]pub fn new(label: ::unity2::Il2CppString,mode:crate::app::gmapmode::GmapMode_Mode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GoToSolanelOrDlcGmapDialog_DialogGmapItem), ::core::stringify!(new),));
+ <Self as IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods> ::ctor(this,label,mode);
+this}
 }
 
 #[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]

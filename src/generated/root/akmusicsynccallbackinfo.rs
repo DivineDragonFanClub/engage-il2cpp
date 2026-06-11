@@ -4,39 +4,127 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akcallbackinfo :: { AkCallbackInfo , IAkCallbackInfo }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akcallbackinfo::{AkCallbackInfo,IAkCallbackInfo}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmusicsynccallbackinfo/AkMusicSyncCallbackInfo.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMusicSyncCallbackInfo")] # [parent (crate :: root :: akcallbackinfo :: AkCallbackInfo)] pub struct AkMusicSyncCallbackInfo {
-# [offset (32)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmusicsynccallbackinfo/AkMusicSyncCallbackInfo.md"))]#[::unity2::class(namespace="",name="AkMusicSyncCallbackInfo")]#[parent(crate::root::akcallbackinfo::AkCallbackInfo)]pub struct AkMusicSyncCallbackInfo{#[offset(32)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "root-akmusicsynccallbackinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akmusicsynccallbackinfo")]
-impl AkMusicSyncCallbackInfo { # [doc = "`getCPtr(crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmusicsynccallbackinfo :: AkMusicSyncCallbackInfo >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmusicsynccallbackinfo :: AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f285b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmusicsynccallbackinfo")]impl AkMusicSyncCallbackInfo{#[doc="`getCPtr(crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f285b0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akmusicsynccallbackinfo")]
-pub trait IAkMusicSyncCallbackInfoMethods : IAkMusicSyncCallbackInfo { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f286a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_playingID()` overload"] fn get_playing_id (self ,) -> u32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f288a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_iCurrentPosition()` overload"] fn get_segment_info_i_current_position (self ,) -> i32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_iPreEntryDuration()` overload"] fn get_segment_info_i_pre_entry_duration (self ,) -> i32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_iActiveDuration()` overload"] fn get_segment_info_i_active_duration (self ,) -> i32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f289f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_iPostExitDuration()` overload"] fn get_segment_info_i_post_exit_duration (self ,) -> i32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_iRemainingLookAheadTime()` overload"] fn get_segment_info_i_remaining_look_ahead_time (self ,) -> i32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_fBeatDuration()` overload"] fn get_segment_info_f_beat_duration (self ,) -> f32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_fBarDuration()` overload"] fn get_segment_info_f_bar_duration (self ,) -> f32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_fGridDuration()` overload"] fn get_segment_info_f_grid_duration (self ,) -> f32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_segmentInfo_fGridOffset()` overload"] fn get_segment_info_f_grid_offset (self ,) -> f32 { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_musicSyncType()` overload"] fn get_music_sync_type (self ,) -> crate :: root :: akcallbacktype :: AkCallbackType { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcallbacktype :: AkCallbackType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_userCueName()` overload"] fn get_user_cue_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMusicSyncCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMusicSyncCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f28e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmusicsynccallbackinfo")]pub trait IAkMusicSyncCallbackInfoMethods:IAkMusicSyncCallbackInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28510usize)as*mut u8,();
+(AkMusicSyncCallbackInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28610usize)as*mut u8,();
+(AkMusicSyncCallbackInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f286a0usize)as*mut u8,();
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28710usize)as*mut u8,();
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_playingID()` overload"]fn get_playing_id(self,)->u32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f288a0usize)as*mut u8,u32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_iCurrentPosition()` overload"]fn get_segment_info_i_current_position(self,)->i32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28910usize)as*mut u8,i32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_iPreEntryDuration()` overload"]fn get_segment_info_i_pre_entry_duration(self,)->i32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28980usize)as*mut u8,i32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_iActiveDuration()` overload"]fn get_segment_info_i_active_duration(self,)->i32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f289f0usize)as*mut u8,i32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_iPostExitDuration()` overload"]fn get_segment_info_i_post_exit_duration(self,)->i32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28a60usize)as*mut u8,i32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_iRemainingLookAheadTime()` overload"]fn get_segment_info_i_remaining_look_ahead_time(self,)->i32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28ad0usize)as*mut u8,i32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_fBeatDuration()` overload"]fn get_segment_info_f_beat_duration(self,)->f32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28b40usize)as*mut u8,f32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_fBarDuration()` overload"]fn get_segment_info_f_bar_duration(self,)->f32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28bb0usize)as*mut u8,f32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_fGridDuration()` overload"]fn get_segment_info_f_grid_duration(self,)->f32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28c20usize)as*mut u8,f32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_segmentInfo_fGridOffset()` overload"]fn get_segment_info_f_grid_offset(self,)->f32{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28c90usize)as*mut u8,f32;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_musicSyncType()` overload"]fn get_music_sync_type(self,)->crate::root::akcallbacktype::AkCallbackType{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28d00usize)as*mut u8,crate::root::akcallbacktype::AkCallbackType;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`get_userCueName()` overload"]fn get_user_cue_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28d70usize)as*mut u8, ::unity2::Il2CppString;
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMusicSyncCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f28e20usize)as*mut u8,();
+(AkMusicSyncCallbackInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akmusicsynccallbackinfo")]
-impl < __T : IAkMusicSyncCallbackInfo > IAkMusicSyncCallbackInfoMethods for __T { }
+#[cfg(feature="root-akmusicsynccallbackinfo")]impl<__T:IAkMusicSyncCallbackInfo>IAkMusicSyncCallbackInfoMethods for __T{}
 
-#[cfg(feature = "root-akmusicsynccallbackinfo")]
-impl AkMusicSyncCallbackInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_playing_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_segment_info_i_current_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_segment_info_i_pre_entry_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_segment_info_i_active_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_segment_info_i_post_exit_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_segment_info_i_remaining_look_ahead_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_segment_info_f_beat_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_segment_info_f_bar_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_segment_info_f_grid_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_segment_info_f_grid_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_music_sync_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_user_cue_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMusicSyncCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="root-akmusicsynccallbackinfo")]impl AkMusicSyncCallbackInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_playing_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_segment_info_i_current_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_segment_info_i_pre_entry_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_segment_info_i_active_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_segment_info_i_post_exit_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_segment_info_i_remaining_look_ahead_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_segment_info_f_beat_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_segment_info_f_bar_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_segment_info_f_grid_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_segment_info_f_grid_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_music_sync_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_user_cue_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "root-akmusicsynccallbackinfo")]
-impl AkMusicSyncCallbackInfo {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMusicSyncCallbackInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAkMusicSyncCallbackInfoMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMusicSyncCallbackInfo) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMusicSyncCallbackInfoMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmusicsynccallbackinfo")]impl AkMusicSyncCallbackInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMusicSyncCallbackInfo), ::core::stringify!(new),));
+ <Self as IAkMusicSyncCallbackInfoMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMusicSyncCallbackInfo), ::core::stringify!(new_2),));
+ <Self as IAkMusicSyncCallbackInfoMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akmusicsynccallbackinfo")]

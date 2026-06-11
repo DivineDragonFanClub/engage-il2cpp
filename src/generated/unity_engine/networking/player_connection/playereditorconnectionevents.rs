@@ -4,101 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
- ;
- use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::events::unityevent_1::{IUnityEvent_1,UnityEvent_1}
+;
+use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/player_connection/playereditorconnectionevents/PlayerEditorConnectionEvents_ConnectionChangeEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking.PlayerConnection" , name = "PlayerEditorConnectionEvents.ConnectionChangeEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < i32 >)] pub struct PlayerEditorConnectionEvents_ConnectionChangeEvent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/player_connection/playereditorconnectionevents/PlayerEditorConnectionEvents_MessageTypeSubscribers.md"))]#[::unity2::class(namespace="UnityEngine.Networking.PlayerConnection",name="PlayerEditorConnectionEvents.MessageTypeSubscribers")]#[parent(crate::system::object::Object)]pub struct PlayerEditorConnectionEvents_MessageTypeSubscribers{#[offset(16)]#[rename(name="m_messageTypeId")]pub m_message_type_id: ::unity2::Il2CppString, #[offset(24)]#[rename(name="subscriberCount")]pub subscriber_count:i32, #[offset(32)]#[rename(name="messageCallback")]pub message_callback:crate::unity_engine::networking::player_connection::playereditorconnectionevents::PlayerEditorConnectionEvents_MessageEvent,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/player_connection/playereditorconnectionevents/PlayerEditorConnectionEvents_MessageTypeSubscribers.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking.PlayerConnection" , name = "PlayerEditorConnectionEvents.MessageTypeSubscribers")] # [parent (crate :: system :: object :: Object)] pub struct PlayerEditorConnectionEvents_MessageTypeSubscribers {
-# [offset (16)] # [rename (name = "m_messageTypeId")] pub m_message_type_id : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "subscriberCount")] pub subscriber_count : i32 ,
-# [offset (32)] # [rename (name = "messageCallback")] pub message_callback : crate :: unity_engine :: networking :: player_connection :: playereditorconnectionevents :: PlayerEditorConnectionEvents_MessageEvent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/player_connection/playereditorconnectionevents/PlayerEditorConnectionEvents_MessageEvent.md"))]#[::unity2::class(namespace="UnityEngine.Networking.PlayerConnection",name="PlayerEditorConnectionEvents.MessageEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::networking::player_connection::messageeventargs::MessageEventArgs>)]pub struct PlayerEditorConnectionEvents_MessageEvent{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/player_connection/playereditorconnectionevents/PlayerEditorConnectionEvents_MessageEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking.PlayerConnection" , name = "PlayerEditorConnectionEvents.MessageEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: networking :: player_connection :: messageeventargs :: MessageEventArgs >)] pub struct PlayerEditorConnectionEvents_MessageEvent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/player_connection/playereditorconnectionevents/PlayerEditorConnectionEvents.md"))]#[::unity2::class(namespace="UnityEngine.Networking.PlayerConnection",name="PlayerEditorConnectionEvents")]#[parent(crate::system::object::Object)]pub struct PlayerEditorConnectionEvents{#[offset(16)]#[rename(name="messageTypeSubscribers")]pub message_type_subscribers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::networking::player_connection::playereditorconnectionevents::PlayerEditorConnectionEvents_MessageTypeSubscribers> , #[offset(24)]#[rename(name="connectionEvent")]pub connection_event:crate::unity_engine::networking::player_connection::playereditorconnectionevents::PlayerEditorConnectionEvents_ConnectionChangeEvent, #[offset(32)]#[rename(name="disconnectionEvent")]pub disconnection_event:crate::unity_engine::networking::player_connection::playereditorconnectionevents::PlayerEditorConnectionEvents_ConnectionChangeEvent,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/player_connection/playereditorconnectionevents/PlayerEditorConnectionEvents.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking.PlayerConnection" , name = "PlayerEditorConnectionEvents")] # [parent (crate :: system :: object :: Object)] pub struct PlayerEditorConnectionEvents {
-# [offset (16)] # [rename (name = "messageTypeSubscribers")] pub message_type_subscribers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: networking :: player_connection :: playereditorconnectionevents :: PlayerEditorConnectionEvents_MessageTypeSubscribers > ,
-# [offset (24)] # [rename (name = "connectionEvent")] pub connection_event : crate :: unity_engine :: networking :: player_connection :: playereditorconnectionevents :: PlayerEditorConnectionEvents_ConnectionChangeEvent ,
-# [offset (32)] # [rename (name = "disconnectionEvent")] pub disconnection_event : crate :: unity_engine :: networking :: player_connection :: playereditorconnectionevents :: PlayerEditorConnectionEvents_ConnectionChangeEvent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/player_connection/playereditorconnectionevents/PlayerEditorConnectionEvents_ConnectionChangeEvent.md"))]#[::unity2::class(namespace="UnityEngine.Networking.PlayerConnection",name="PlayerEditorConnectionEvents.ConnectionChangeEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<i32>)]pub struct PlayerEditorConnectionEvents_ConnectionChangeEvent{}
 
 }
 
 #[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-pub trait IPlayerEditorConnectionEvents_ConnectionChangeEventMethods : IPlayerEditorConnectionEvents_ConnectionChangeEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayerEditorConnectionEvents_ConnectionChangeEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerEditorConnectionEvents_ConnectionChangeEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379e000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl < __T : IPlayerEditorConnectionEvents_ConnectionChangeEvent > IPlayerEditorConnectionEvents_ConnectionChangeEventMethods for __T { }
-
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl PlayerEditorConnectionEvents_ConnectionChangeEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerEditorConnectionEvents_ConnectionChangeEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl PlayerEditorConnectionEvents_ConnectionChangeEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayerEditorConnectionEvents_ConnectionChangeEvent) , :: core :: stringify ! (new) ,)) ; < Self as IPlayerEditorConnectionEvents_ConnectionChangeEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]pub trait IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods:IPlayerEditorConnectionEvents_MessageTypeSubscribers{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayerEditorConnectionEvents_MessageTypeSubscribers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379e110usize)as*mut u8,();
+(PlayerEditorConnectionEvents_MessageTypeSubscribers)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-pub trait IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods : IPlayerEditorConnectionEvents_MessageTypeSubscribers { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayerEditorConnectionEvents_MessageTypeSubscribers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerEditorConnectionEvents_MessageTypeSubscribers , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379e110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl<__T:IPlayerEditorConnectionEvents_MessageTypeSubscribers>IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods for __T{}
 
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl < __T : IPlayerEditorConnectionEvents_MessageTypeSubscribers > IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods for __T { }
-
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl PlayerEditorConnectionEvents_MessageTypeSubscribers { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerEditorConnectionEvents_MessageTypeSubscribers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl PlayerEditorConnectionEvents_MessageTypeSubscribers {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayerEditorConnectionEvents_MessageTypeSubscribers) , :: core :: stringify ! (new) ,)) ; < Self as IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl PlayerEditorConnectionEvents_MessageTypeSubscribers{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-pub trait IPlayerEditorConnectionEvents_MessageEventMethods : IPlayerEditorConnectionEvents_MessageEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayerEditorConnectionEvents_MessageEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerEditorConnectionEvents_MessageEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379e060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl < __T : IPlayerEditorConnectionEvents_MessageEvent > IPlayerEditorConnectionEvents_MessageEventMethods for __T { }
-
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl PlayerEditorConnectionEvents_MessageEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerEditorConnectionEvents_MessageEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl PlayerEditorConnectionEvents_MessageEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayerEditorConnectionEvents_MessageEvent) , :: core :: stringify ! (new) ,)) ; < Self as IPlayerEditorConnectionEvents_MessageEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl PlayerEditorConnectionEvents_MessageTypeSubscribers{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayerEditorConnectionEvents_MessageTypeSubscribers), ::core::stringify!(new),));
+ <Self as IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-pub trait IPlayerEditorConnectionEventsMethods : IPlayerEditorConnectionEvents { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayerEditorConnectionEvents as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerEditorConnectionEvents , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f7ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]pub trait IPlayerEditorConnectionEvents_MessageEventMethods:IPlayerEditorConnectionEvents_MessageEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayerEditorConnectionEvents_MessageEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379e060usize)as*mut u8,();
+(PlayerEditorConnectionEvents_MessageEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl < __T : IPlayerEditorConnectionEvents > IPlayerEditorConnectionEventsMethods for __T { }
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl<__T:IPlayerEditorConnectionEvents_MessageEvent>IPlayerEditorConnectionEvents_MessageEventMethods for __T{}
 
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl PlayerEditorConnectionEvents { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerEditorConnectionEvents as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl PlayerEditorConnectionEvents_MessageEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
-impl PlayerEditorConnectionEvents {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayerEditorConnectionEvents) , :: core :: stringify ! (new) ,)) ; < Self as IPlayerEditorConnectionEventsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl PlayerEditorConnectionEvents_MessageEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayerEditorConnectionEvents_MessageEvent), ::core::stringify!(new),));
+ <Self as IPlayerEditorConnectionEvents_MessageEventMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]pub trait IPlayerEditorConnectionEventsMethods:IPlayerEditorConnectionEvents{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayerEditorConnectionEvents as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f7ae0usize)as*mut u8,();
+(PlayerEditorConnectionEvents)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl<__T:IPlayerEditorConnectionEvents>IPlayerEditorConnectionEventsMethods for __T{}
+
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl PlayerEditorConnectionEvents{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl PlayerEditorConnectionEvents{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayerEditorConnectionEvents), ::core::stringify!(new),));
+ <Self as IPlayerEditorConnectionEventsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]pub trait IPlayerEditorConnectionEvents_ConnectionChangeEventMethods:IPlayerEditorConnectionEvents_ConnectionChangeEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayerEditorConnectionEvents_ConnectionChangeEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379e000usize)as*mut u8,();
+(PlayerEditorConnectionEvents_ConnectionChangeEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl<__T:IPlayerEditorConnectionEvents_ConnectionChangeEvent>IPlayerEditorConnectionEvents_ConnectionChangeEventMethods for __T{}
+
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl PlayerEditorConnectionEvents_ConnectionChangeEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-networking-player_connection-playereditorconnectionevents")]impl PlayerEditorConnectionEvents_ConnectionChangeEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayerEditorConnectionEvents_ConnectionChangeEvent), ::core::stringify!(new),));
+ <Self as IPlayerEditorConnectionEvents_ConnectionChangeEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PlayerEditorConnectionEvents_ConnectionChangeEvent;
-    pub use super::IPlayerEditorConnectionEvents_ConnectionChangeEvent;
-    pub use super::IPlayerEditorConnectionEvents_ConnectionChangeEventMethods;
     pub use super::PlayerEditorConnectionEvents_MessageTypeSubscribers;
     pub use super::IPlayerEditorConnectionEvents_MessageTypeSubscribers;
     pub use super::IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods;
@@ -108,6 +113,9 @@ pub mod prelude {
     pub use super::PlayerEditorConnectionEvents;
     pub use super::IPlayerEditorConnectionEvents;
     pub use super::IPlayerEditorConnectionEventsMethods;
+    pub use super::PlayerEditorConnectionEvents_ConnectionChangeEvent;
+    pub use super::IPlayerEditorConnectionEvents_ConnectionChangeEvent;
+    pub use super::IPlayerEditorConnectionEvents_ConnectionChangeEventMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
     pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;

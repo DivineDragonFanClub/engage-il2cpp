@@ -4,67 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/computebufferhandle/ComputeBufferHandle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ComputeBufferHandle {
-    pub handle: crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/computebufferhandle/ComputeBufferHandle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ComputeBufferHandle{pub handle:crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle,}
+impl::unity2::ClassIdentity for ComputeBufferHandle{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
+const NAME: &'static str="ComputeBufferHandle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ComputeBufferHandle {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "ComputeBufferHandle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for ComputeBufferHandle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for ComputeBufferHandle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl ComputeBufferHandle{#[inline]pub fn s_null_handle()->crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_NullHandle");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_null_handle(value:crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_NullHandle");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl ComputeBufferHandle {
-    #[inline]
-    pub fn s_null_handle() -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_NullHandle");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_null_handle(value: crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_NullHandle");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -72,14 +34,31 @@ impl ComputeBufferHandle {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferhandle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]
-impl ComputeBufferHandle { # [doc = "`get_nullHandle()` overload"] pub fn get_null_handle () -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530a00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"] pub fn op_implicit (buffer : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle >) -> crate :: unity_engine :: computebuffer :: ComputeBuffer { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: computebuffer :: ComputeBuffer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530ab0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (buffer) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530bb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]impl ComputeBufferHandle{#[doc="`get_nullHandle()` overload"]pub fn get_null_handle()->crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530a00usize)as*mut u8,crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle;
+)}
+}
+#[doc="`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)` overload"]pub fn op_implicit(buffer:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle>)->crate::unity_engine::computebuffer::ComputeBuffer{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530ab0usize)as*mut u8,crate::unity_engine::computebuffer::ComputeBuffer;
+(crate::unity_engine::experimental::rendering::render_graph_module::computebufferhandle::ComputeBufferHandle)::core::convert::Into::into(buffer))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530bb0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]
-impl ComputeBufferHandle { # [doc = "`.ctor(i32)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ComputeBufferHandle , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530a70usize) as * mut u8) ; __inner (self as * mut ComputeBufferHandle , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] pub fn is_valid (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut ComputeBufferHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530ba0usize) as * mut u8) ; __inner (self as * mut ComputeBufferHandle , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]impl ComputeBufferHandle{#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530a70usize)as*mut u8,();
+(*mut ComputeBufferHandle)self as*mut ComputeBufferHandle,(i32)::core::convert::Into::into(handle))}
+}
+#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530ba0usize)as*mut u8,bool;
+(*mut ComputeBufferHandle)self as*mut ComputeBufferHandle)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]
-impl ComputeBufferHandle { pub fn get_null_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]impl ComputeBufferHandle{pub fn get_null_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]
 #[doc(hidden)]

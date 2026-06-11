@@ -4,89 +4,198 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: script :: { IScript , Script }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::moon_sharp::interpreter::script::{IScript,Script}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventscript/EventScript_FunctionArgs.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventScript.FunctionArgs")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct EventScript_FunctionArgs {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventscript/EventScript_ActionArgs.md"))]#[::unity2::class(namespace="App",name="EventScript.ActionArgs")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventScript_ActionArgs{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventscript/EventScript.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventScript")] # [parent (crate :: moon_sharp :: interpreter :: script :: Script)] pub struct EventScript {
-# [static_field] # [rename (name = "s_Stack")] pub s_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: eventscript :: EventScript > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventscript/EventScript.md"))]#[::unity2::class(namespace="App",name="EventScript")]#[parent(crate::moon_sharp::interpreter::script::Script)]pub struct EventScript{#[static_field]#[rename(name="s_Stack")]pub s_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::eventscript::EventScript> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventscript/EventScript_ActionArgs.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventScript.ActionArgs")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct EventScript_ActionArgs {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventscript/EventScript_FunctionArgs.md"))]#[::unity2::class(namespace="App",name="EventScript.FunctionArgs")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventScript_FunctionArgs{}
 
 }
 
 #[cfg(feature = "app-eventscript-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-eventscript")]
-pub trait IEventScript_FunctionArgsMethods : IEventScript_FunctionArgs { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < EventScript_FunctionArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript_FunctionArgs , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e584f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn invoke (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < EventScript_FunctionArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript_FunctionArgs , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e58510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-eventscript")]
-impl < __T : IEventScript_FunctionArgs > IEventScript_FunctionArgsMethods for __T { }
-
-#[cfg(feature = "app-eventscript")]
-impl EventScript_FunctionArgs { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript_FunctionArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript_FunctionArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-eventscript")]
-impl EventScript_FunctionArgs {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventScript_FunctionArgs) , :: core :: stringify ! (new) ,)) ; < Self as IEventScript_FunctionArgsMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-eventscript")]pub trait IEventScript_ActionArgsMethods:IEventScript_ActionArgs{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventScript_ActionArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58130usize)as*mut u8,();
+(EventScript_ActionArgs)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn invoke(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EventScript_ActionArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58150usize)as*mut u8,();
+(EventScript_ActionArgs)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
 }
 
-#[cfg(feature = "app-eventscript")]
-impl EventScript { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString)` overload"] pub fn load (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2990usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2b60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Instance()` overload"] pub fn get_instance () -> crate :: app :: eventscript :: EventScript { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: eventscript :: EventScript = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2c70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2d80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eventscript")]impl<__T:IEventScript_ActionArgs>IEventScript_ActionArgsMethods for __T{}
 
-#[cfg(feature = "app-eventscript")]
-pub trait IEventScriptMethods : IEventScript { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetFunc(::unity2::Il2CppString)` overload"] fn get_func (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Call(::unity2::Il2CppString, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn call (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateCoroutine(::unity2::Il2CppString)` overload"] fn try_create_coroutine (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateCoroutine(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] fn try_create_coroutine_2 (self , function : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`IsDead(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] fn is_dead (self , coroutine : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> bool { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (coroutine) , :: core :: option :: Option :: None) } } } # [doc = "`DoCoroutine(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn do_coroutine (self , coroutine : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e1f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (coroutine) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`Dump()` overload"] fn dump (self ,) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegistFunction(crate::app::eventscript::EventScript_FunctionArgs, ::unity2::Il2CppString)` overload"] fn regist_function (self , func : impl :: core :: convert :: Into < crate :: app :: eventscript :: EventScript_FunctionArgs > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , crate :: app :: eventscript :: EventScript_FunctionArgs , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e23e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (func) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`RegistAction(crate::app::eventscript::EventScript_ActionArgs, ::unity2::Il2CppString)` overload"] fn regist_action (self , func : impl :: core :: convert :: Into < crate :: app :: eventscript :: EventScript_ActionArgs > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , crate :: app :: eventscript :: EventScript_ActionArgs , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (func) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Regist()` overload"] fn regist (self ,) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadImpl(::unity2::Il2CppString)` overload"] fn load_impl (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadImpl()` overload"] fn unload_impl (self ,) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventScript as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e2af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-eventscript")]
-impl < __T : IEventScript > IEventScriptMethods for __T { }
-
-#[cfg(feature = "app-eventscript")]
-impl EventScript { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn try_create_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn try_create_coroutine_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_dead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn do_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn regist_function_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn regist_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn regist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn load_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn unload_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
-
-#[cfg(feature = "app-eventscript")]
-impl EventScript {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventScript) , :: core :: stringify ! (new) ,)) ; < Self as IEventScriptMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-eventscript")]impl EventScript_ActionArgs{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-eventscript")]
-pub trait IEventScript_ActionArgsMethods : IEventScript_ActionArgs { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < EventScript_ActionArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript_ActionArgs , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e58130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn invoke (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < EventScript_ActionArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventScript_ActionArgs , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e58150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eventscript")]impl EventScript_ActionArgs{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventScript_ActionArgs), ::core::stringify!(new),));
+ <Self as IEventScript_ActionArgsMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-eventscript")]
-impl < __T : IEventScript_ActionArgs > IEventScript_ActionArgsMethods for __T { }
+#[cfg(feature="app-eventscript")]impl EventScript{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e2500usize)as*mut u8,();
+)}
+}
+#[doc="`Load(::unity2::Il2CppString)` overload"]pub fn load(path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e2990usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e2b60usize)as*mut u8,();
+)}
+}
+#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::app::eventscript::EventScript{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e2c70usize)as*mut u8,crate::app::eventscript::EventScript;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e2d80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-eventscript")]
-impl EventScript_ActionArgs { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript_ActionArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventScript_ActionArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-eventscript")]pub trait IEventScriptMethods:IEventScript{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1ce0usize)as*mut u8, ::unity2::Il2CppString;
+(EventScript)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1cf0usize)as*mut u8,();
+(EventScript)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetFunc(::unity2::Il2CppString)` overload"]fn get_func(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1d00usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(EventScript)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Call(::unity2::Il2CppString, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn call(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1d30usize)as*mut u8,();
+(EventScript)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`TryCreateCoroutine(::unity2::Il2CppString)` overload"]fn try_create_coroutine(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1da0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(EventScript)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`TryCreateCoroutine(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn try_create_coroutine_2(self,function:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1de0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(EventScript)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(function))}
+}
+#[doc="`IsDead(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn is_dead(self,coroutine:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->bool{unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1ea0usize)as*mut u8,bool;
+(EventScript)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(coroutine))}
+}
+#[doc="`DoCoroutine(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn do_coroutine(self,coroutine:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1f00usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(EventScript)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(coroutine),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`Dump()` overload"]fn dump(self,)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e2150usize)as*mut u8,();
+(EventScript)__receiver)}
+}
+#[doc="`RegistFunction(crate::app::eventscript::EventScript_FunctionArgs, ::unity2::Il2CppString)` overload"]fn regist_function(self,func:impl::core::convert::Into<crate::app::eventscript::EventScript_FunctionArgs> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e23e0usize)as*mut u8,();
+(EventScript)__receiver,(crate::app::eventscript::EventScript_FunctionArgs)::core::convert::Into::into(func),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`RegistAction(crate::app::eventscript::EventScript_ActionArgs, ::unity2::Il2CppString)` overload"]fn regist_action(self,func:impl::core::convert::Into<crate::app::eventscript::EventScript_ActionArgs> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e2430usize)as*mut u8,();
+(EventScript)__receiver,(crate::app::eventscript::EventScript_ActionArgs)::core::convert::Into::into(func),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Regist()` overload"]fn regist(self,)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e2480usize)as*mut u8,();
+(EventScript)__receiver)}
+}
+#[doc="`LoadImpl(::unity2::Il2CppString)` overload"]fn load_impl(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e2620usize)as*mut u8,();
+(EventScript)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`UnloadImpl()` overload"]fn unload_impl(self,)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e2980usize)as*mut u8,();
+(EventScript)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventScript as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e2af0usize)as*mut u8,();
+(EventScript)__receiver)}
+}
+}
 
-#[cfg(feature = "app-eventscript")]
-impl EventScript_ActionArgs {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventScript_ActionArgs) , :: core :: stringify ! (new) ,)) ; < Self as IEventScript_ActionArgsMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-eventscript")]impl<__T:IEventScript>IEventScriptMethods for __T{}
+
+#[cfg(feature="app-eventscript")]impl EventScript{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn try_create_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_create_coroutine_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn do_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn regist_function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn regist_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn regist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn load_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn unload_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
+
+#[cfg(feature="app-eventscript")]impl EventScript{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventScript), ::core::stringify!(new),));
+ <Self as IEventScriptMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-eventscript")]pub trait IEventScript_FunctionArgsMethods:IEventScript_FunctionArgs{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventScript_FunctionArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e584f0usize)as*mut u8,();
+(EventScript_FunctionArgs)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn invoke(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventScript_FunctionArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58510usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(EventScript_FunctionArgs)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+}
+
+#[cfg(feature="app-eventscript")]impl<__T:IEventScript_FunctionArgs>IEventScript_FunctionArgsMethods for __T{}
+
+#[cfg(feature="app-eventscript")]impl EventScript_FunctionArgs{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-eventscript")]impl EventScript_FunctionArgs{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventScript_FunctionArgs), ::core::stringify!(new),));
+ <Self as IEventScript_FunctionArgsMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-eventscript")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventScript_FunctionArgs;
-    pub use super::IEventScript_FunctionArgs;
-    pub use super::IEventScript_FunctionArgsMethods;
-    pub use super::EventScript;
-    pub use super::IEventScript;
-    pub use super::IEventScriptMethods;
     pub use super::EventScript_ActionArgs;
     pub use super::IEventScript_ActionArgs;
     pub use super::IEventScript_ActionArgsMethods;
+    pub use super::EventScript;
+    pub use super::IEventScript;
+    pub use super::IEventScriptMethods;
+    pub use super::EventScript_FunctionArgs;
+    pub use super::IEventScript_FunctionArgs;
+    pub use super::IEventScript_FunctionArgsMethods;
     pub use crate::moon_sharp::interpreter::script::IScript;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

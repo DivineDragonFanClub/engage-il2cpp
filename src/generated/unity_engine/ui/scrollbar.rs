@@ -4,190 +4,326 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
- ;
- use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: selectable :: { ISelectable , Selectable }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::events::unityevent_1::{IUnityEvent_1,UnityEvent_1}
+;
+use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Scrollbar")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Scrollbar {
-# [offset (248)] # [rename (name = "m_HandleRect")] pub m_handle_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (256)] # [rename (name = "m_Direction")] pub m_direction : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction ,
-# [offset (260)] # [rename (name = "m_Value")] pub m_value : f32 ,
-# [offset (264)] # [rename (name = "m_Size")] pub m_size : f32 ,
-# [offset (268)] # [rename (name = "m_NumberOfSteps")] pub m_number_of_steps : i32 ,
-# [offset (272)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent ,
-# [offset (280)] # [rename (name = "m_ContainerRect")] pub m_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (288)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (296)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
-# [offset (304)] # [rename (name = "m_PointerDownRepeat")] pub m_pointer_down_repeat : crate :: unity_engine :: coroutine :: Coroutine ,
-# [offset (312)] # [rename (name = "isPointerDownAndNotDragging")] pub is_pointer_down_and_not_dragging : bool ,
-# [offset (313)] # [rename (name = "m_DelayedUpdateVisuals")] pub m_delayed_update_visuals : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Scrollbar")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Scrollbar{#[offset(248)]#[rename(name="m_HandleRect")]pub m_handle_rect:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_Direction")]pub m_direction:crate::unity_engine::ui::scrollbar::Scrollbar_Direction, #[offset(260)]#[rename(name="m_Value")]pub m_value:f32, #[offset(264)]#[rename(name="m_Size")]pub m_size:f32, #[offset(268)]#[rename(name="m_NumberOfSteps")]pub m_number_of_steps:i32, #[offset(272)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent, #[offset(280)]#[rename(name="m_ContainerRect")]pub m_container_rect:crate::unity_engine::recttransform::RectTransform, #[offset(288)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector2::Vector2, #[offset(296)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker, #[offset(304)]#[rename(name="m_PointerDownRepeat")]pub m_pointer_down_repeat:crate::unity_engine::coroutine::Coroutine, #[offset(312)]#[rename(name="isPointerDownAndNotDragging")]pub is_pointer_down_and_not_dragging:bool, #[offset(313)]#[rename(name="m_DelayedUpdateVisuals")]pub m_delayed_update_visuals:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Scrollbar_Direction{pub value:i32,}
+impl::unity2::ClassIdentity for Scrollbar_Direction{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Scrollbar.Direction";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Scrollbar_Direction{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Scrollbar_Direction{pub fn left_to_right()->Self{Self{value:0}
+}
+pub fn right_to_left()->Self{Self{value:1}
+}
+pub fn bottom_to_top()->Self{Self{value:2}
+}
+pub fn top_to_bottom()->Self{Self{value:3}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Scrollbar.ScrollEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Scrollbar_ScrollEvent {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Scrollbar_Direction  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Scrollbar_Axis{pub value:i32,}
+impl::unity2::ClassIdentity for Scrollbar_Axis{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Scrollbar.Axis";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Scrollbar_Axis{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Scrollbar_Axis{pub fn horizontal()->Self{Self{value:0}
+}
+pub fn vertical()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Scrollbar_Direction  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Scrollbar.Direction";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Scrollbar_Direction  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Scrollbar_Direction  {
-    pub fn left_to_right() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right_to_left() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn bottom_to_top() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn top_to_bottom() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Scrollbar_Axis  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Scrollbar_Axis  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Scrollbar.Axis";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Scrollbar_Axis  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Scrollbar_Axis  {
-    pub fn horizontal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn vertical() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Scrollbar.ScrollEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<f32>)]pub struct Scrollbar_ScrollEvent{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-scrollbar")]
-pub trait IScrollbarMethods : IScrollbar { # [doc = "`get_handleRect()` overload"] fn get_handle_rect (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_handleRect(crate::unity_engine::recttransform::RectTransform)` overload"] fn set_handle_rect (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: recttransform :: RectTransform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_direction()` overload"] fn get_direction (self ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_direction(crate::unity_engine::ui::scrollbar::Scrollbar_Direction)` overload"] fn set_direction (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37296b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37298c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_value(f32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3727b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetValueWithoutNotify(f32)` overload"] fn set_value_without_notify (self , input : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (input) , :: core :: option :: Option :: None) } } } # [doc = "`get_size()` overload"] fn get_size (self ,) -> f32 { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_size(f32)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37279f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_numberOfSteps()` overload"] fn get_number_of_steps (self ,) -> i32 { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_numberOfSteps(i32)` overload"] fn set_number_of_steps (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729bc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_onValueChanged()` overload"] fn get_on_value_changed (self ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_onValueChanged(crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent)` overload"] fn set_on_value_changed (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729c60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_stepSize()` overload"] fn get_step_size (self ,) -> f32 { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"] fn rebuild (self , executing : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (executing) , :: core :: option :: Option :: None) } } } # [doc = "`LayoutComplete()` overload"] fn layout_complete (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GraphicUpdateComplete()` overload"] fn graphic_update_complete (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCachedReferences()` overload"] fn update_cached_references (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37292d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Set(f32, bool)` overload"] fn set (self , input : impl :: core :: convert :: Into < f32 > , send_callback : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (input) , :: core :: convert :: Into :: into (send_callback) , :: core :: option :: Option :: None) } } } # [doc = "`OnRectTransformDimensionsChange()` overload"] fn on_rect_transform_dimensions_change (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_axis()` overload"] fn get_axis (self ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Axis { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Axis = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_reverseValue()` overload"] fn get_reverse_value (self ,) -> bool { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVisuals()` overload"] fn update_visuals (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37293f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn update_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`DoUpdateDrag(crate::unity_engine::vector2::Vector2, f32)` overload"] fn do_update_drag (self , handle_corner : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , remaining_size : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: vector2 :: Vector2 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (handle_corner) , :: core :: convert :: Into :: into (remaining_size) , :: core :: option :: Option :: None) } } } # [doc = "`MayDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn may_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> bool { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_begin_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_down (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a9d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`ClickRepeat(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn click_repeat (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372add0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`ClickRepeat(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"] fn click_repeat_2 (self , screen_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ad20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (screen_position) , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_up (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372aee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"] fn on_move (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnLeft()` overload"] fn find_selectable_on_left (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnRight()` overload"] fn find_selectable_on_right (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnUp()` overload"] fn find_selectable_on_up (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnDown()` overload"] fn find_selectable_on_down (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_initialize_potential_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetDirection(crate::unity_engine::ui::scrollbar::Scrollbar_Direction, bool)` overload"] fn set_direction_2 (self , direction : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction > , include_rect_layouts : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b8f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (direction) , :: core :: convert :: Into :: into (include_rect_layouts) , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.UI.ICanvasElement.get_transform()` overload"] fn unity_engine_ui_i_canvas_element_get_transform (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-ui-scrollbar")]
-impl < __T : IScrollbar > IScrollbarMethods for __T { }
-
-#[cfg(feature = "unity_engine-ui-scrollbar")]
-impl Scrollbar { pub fn get_handle_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_handle_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_value_without_notify_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_number_of_steps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_number_of_steps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_on_value_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_on_value_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_step_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn layout_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn graphic_update_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn update_cached_references_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn on_rect_transform_dimensions_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_reverse_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn update_visuals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn update_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn do_update_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn may_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn on_begin_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn on_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn on_pointer_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn click_repeat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn click_repeat_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn on_pointer_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn on_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn find_selectable_on_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn find_selectable_on_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn find_selectable_on_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn find_selectable_on_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn on_initialize_potential_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn set_direction_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn unity_engine_ui_i_canvas_element_get_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } }
-
-#[cfg(feature = "unity_engine-ui-scrollbar")]
-impl Scrollbar {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Scrollbar) , :: core :: stringify ! (new) ,)) ; < Self as IScrollbarMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-scrollbar")]pub trait IScrollbarMethods:IScrollbar{#[doc="`get_handleRect()` overload"]fn get_handle_rect(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729240usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(Scrollbar)__receiver)}
+}
+#[doc="`set_handleRect(crate::unity_engine::recttransform::RectTransform)` overload"]fn set_handle_rect(self,value:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729250usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(value))}
+}
+#[doc="`get_direction()` overload"]fn get_direction(self,)->crate::unity_engine::ui::scrollbar::Scrollbar_Direction{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729620usize)as*mut u8,crate::unity_engine::ui::scrollbar::Scrollbar_Direction;
+(Scrollbar)__receiver)}
+}
+#[doc="`set_direction(crate::unity_engine::ui::scrollbar::Scrollbar_Direction)` overload"]fn set_direction(self,value:impl::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar_Direction>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729630usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::ui::scrollbar::Scrollbar_Direction)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37296b0usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`get_value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37298c0usize)as*mut u8,f32;
+(Scrollbar)__receiver)}
+}
+#[doc="`set_value(f32)` overload"]fn set_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3727b90usize)as*mut u8,();
+(Scrollbar)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`SetValueWithoutNotify(f32)` overload"]fn set_value_without_notify(self,input:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729b90usize)as*mut u8,();
+(Scrollbar)__receiver,(f32)::core::convert::Into::into(input))}
+}
+#[doc="`get_size()` overload"]fn get_size(self,)->f32{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729ba0usize)as*mut u8,f32;
+(Scrollbar)__receiver)}
+}
+#[doc="`set_size(f32)` overload"]fn set_size(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37279f0usize)as*mut u8,();
+(Scrollbar)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_numberOfSteps()` overload"]fn get_number_of_steps(self,)->i32{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729bb0usize)as*mut u8,i32;
+(Scrollbar)__receiver)}
+}
+#[doc="`set_numberOfSteps(i32)` overload"]fn set_number_of_steps(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729bc0usize)as*mut u8,();
+(Scrollbar)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_onValueChanged()` overload"]fn get_on_value_changed(self,)->crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729c50usize)as*mut u8,crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent;
+(Scrollbar)__receiver)}
+}
+#[doc="`set_onValueChanged(crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent)` overload"]fn set_on_value_changed(self,value:impl::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729c60usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent)::core::convert::Into::into(value))}
+}
+#[doc="`get_stepSize()` overload"]fn get_step_size(self,)->f32{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729c70usize)as*mut u8,f32;
+(Scrollbar)__receiver)}
+}
+#[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,executing:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729ca0usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::ui::canvasupdate::CanvasUpdate)::core::convert::Into::into(executing))}
+}
+#[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729cb0usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729cc0usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729cd0usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a000usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a1a0usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`UpdateCachedReferences()` overload"]fn update_cached_references(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37292d0usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`Set(f32, bool)` overload"]fn set(self,input:impl::core::convert::Into<f32> ,send_callback:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729990usize)as*mut u8,();
+(Scrollbar)__receiver,(f32)::core::convert::Into::into(input),(bool)::core::convert::Into::into(send_callback))}
+}
+#[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a1c0usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`get_axis()` overload"]fn get_axis(self,)->crate::unity_engine::ui::scrollbar::Scrollbar_Axis{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a210usize)as*mut u8,crate::unity_engine::ui::scrollbar::Scrollbar_Axis;
+(Scrollbar)__receiver)}
+}
+#[doc="`get_reverseValue()` overload"]fn get_reverse_value(self,)->bool{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a220usize)as*mut u8,bool;
+(Scrollbar)__receiver)}
+}
+#[doc="`UpdateVisuals()` overload"]fn update_visuals(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37293f0usize)as*mut u8,();
+(Scrollbar)__receiver)}
+}
+#[doc="`UpdateDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn update_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a240usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`DoUpdateDrag(crate::unity_engine::vector2::Vector2, f32)` overload"]fn do_update_drag(self,handle_corner:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,remaining_size:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a580usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(handle_corner),(f32)::core::convert::Into::into(remaining_size))}
+}
+#[doc="`MayDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn may_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->bool{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a600usize)as*mut u8,bool;
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_begin_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a670usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a900usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a9d0usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`ClickRepeat(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn click_repeat(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372add0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`ClickRepeat(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn click_repeat_2(self,screen_position:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ad20usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(Scrollbar)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(screen_position),(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_up(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372aee0usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]fn on_move(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b070usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::axiseventdata::AxisEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`FindSelectableOnLeft()` overload"]fn find_selectable_on_left(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b560usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Scrollbar)__receiver)}
+}
+#[doc="`FindSelectableOnRight()` overload"]fn find_selectable_on_right(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b640usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Scrollbar)__receiver)}
+}
+#[doc="`FindSelectableOnUp()` overload"]fn find_selectable_on_up(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b720usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Scrollbar)__receiver)}
+}
+#[doc="`FindSelectableOnDown()` overload"]fn find_selectable_on_down(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b800usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Scrollbar)__receiver)}
+}
+#[doc="`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_initialize_potential_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b8e0usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`SetDirection(crate::unity_engine::ui::scrollbar::Scrollbar_Direction, bool)` overload"]fn set_direction_2(self,direction:impl::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar_Direction> ,include_rect_layouts:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b8f0usize)as*mut u8,();
+(Scrollbar)__receiver,(crate::unity_engine::ui::scrollbar::Scrollbar_Direction)::core::convert::Into::into(direction),(bool)::core::convert::Into::into(include_rect_layouts))}
+}
+#[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372bae0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Scrollbar)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-ui-scrollbar")]
-pub trait IScrollbar_ScrollEventMethods : IScrollbar_ScrollEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Scrollbar_ScrollEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Scrollbar_ScrollEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c10120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-scrollbar")]impl<__T:IScrollbar>IScrollbarMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-scrollbar")]
-impl < __T : IScrollbar_ScrollEvent > IScrollbar_ScrollEventMethods for __T { }
+#[cfg(feature="unity_engine-ui-scrollbar")]impl Scrollbar{pub fn get_handle_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_handle_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_value_without_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_number_of_steps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_number_of_steps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_on_value_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_on_value_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_step_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn layout_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn graphic_update_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn update_cached_references_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn on_rect_transform_dimensions_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_reverse_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn update_visuals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn update_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn do_update_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn may_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn on_begin_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn on_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn on_pointer_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn click_repeat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn click_repeat_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn on_pointer_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn on_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn find_selectable_on_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn find_selectable_on_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn find_selectable_on_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn find_selectable_on_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn on_initialize_potential_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn set_direction_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn unity_engine_ui_i_canvas_element_get_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+}
 
-#[cfg(feature = "unity_engine-ui-scrollbar")]
-impl Scrollbar_ScrollEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scrollbar_ScrollEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-ui-scrollbar")]impl Scrollbar{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Scrollbar), ::core::stringify!(new),));
+ <Self as IScrollbarMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-ui-scrollbar")]
-impl Scrollbar_ScrollEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Scrollbar_ScrollEvent) , :: core :: stringify ! (new) ,)) ; < Self as IScrollbar_ScrollEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-scrollbar")]pub trait IScrollbar_ScrollEventMethods:IScrollbar_ScrollEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Scrollbar_ScrollEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c10120usize)as*mut u8,();
+(Scrollbar_ScrollEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-scrollbar")]impl<__T:IScrollbar_ScrollEvent>IScrollbar_ScrollEventMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-scrollbar")]impl Scrollbar_ScrollEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-scrollbar")]impl Scrollbar_ScrollEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Scrollbar_ScrollEvent), ::core::stringify!(new),));
+ <Self as IScrollbar_ScrollEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
@@ -196,11 +332,11 @@ pub mod prelude {
     pub use super::Scrollbar;
     pub use super::IScrollbar;
     pub use super::IScrollbarMethods;
+    pub use super::Scrollbar_Direction;
+    pub use super::Scrollbar_Axis;
     pub use super::Scrollbar_ScrollEvent;
     pub use super::IScrollbar_ScrollEvent;
     pub use super::IScrollbar_ScrollEventMethods;
-    pub use super::Scrollbar_Direction;
-    pub use super::Scrollbar_Axis;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

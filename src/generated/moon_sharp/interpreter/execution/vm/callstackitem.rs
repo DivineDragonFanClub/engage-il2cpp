@@ -4,46 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/callstackitem/CallStackItem.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Execution.VM" , name = "CallStackItem")] # [parent (crate :: system :: object :: Object)] pub struct CallStackItem {
-# [offset (16)] # [rename (name = "Debug_EntryPoint")] pub debug_entry_point : i32 ,
-# [offset (24)] # [rename (name = "Debug_Symbols")] pub debug_symbols : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > ,
-# [offset (32)] # [rename (name = "CallingSourceRef")] pub calling_source_ref : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef ,
-# [offset (40)] # [rename (name = "ClrFunction")] pub clr_function : crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction ,
-# [offset (48)] # [rename (name = "Continuation")] pub continuation : crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction ,
-# [offset (56)] # [rename (name = "ErrorHandler")] pub error_handler : crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction ,
-# [offset (64)] # [rename (name = "ErrorHandlerBeforeUnwind")] pub error_handler_before_unwind : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue ,
-# [offset (72)] # [rename (name = "BasePointer")] pub base_pointer : i32 ,
-# [offset (76)] # [rename (name = "ReturnAddress")] pub return_address : i32 ,
-# [offset (80)] # [rename (name = "LocalScope")] pub local_scope : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > ,
-# [offset (88)] # [rename (name = "ClosureScope")] pub closure_scope : crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext ,
-# [offset (96)] # [rename (name = "Flags")] pub flags : crate :: moon_sharp :: interpreter :: execution :: vm :: callstackitemflags :: CallStackItemFlags ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/vm/callstackitem/CallStackItem.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Execution.VM",name="CallStackItem")]#[parent(crate::system::object::Object)]pub struct CallStackItem{#[offset(16)]#[rename(name="Debug_EntryPoint")]pub debug_entry_point:i32, #[offset(24)]#[rename(name="Debug_Symbols")]pub debug_symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef> , #[offset(32)]#[rename(name="CallingSourceRef")]pub calling_source_ref:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, #[offset(40)]#[rename(name="ClrFunction")]pub clr_function:crate::moon_sharp::interpreter::callbackfunction::CallbackFunction, #[offset(48)]#[rename(name="Continuation")]pub continuation:crate::moon_sharp::interpreter::callbackfunction::CallbackFunction, #[offset(56)]#[rename(name="ErrorHandler")]pub error_handler:crate::moon_sharp::interpreter::callbackfunction::CallbackFunction, #[offset(64)]#[rename(name="ErrorHandlerBeforeUnwind")]pub error_handler_before_unwind:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(72)]#[rename(name="BasePointer")]pub base_pointer:i32, #[offset(76)]#[rename(name="ReturnAddress")]pub return_address:i32, #[offset(80)]#[rename(name="LocalScope")]pub local_scope: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> , #[offset(88)]#[rename(name="ClosureScope")]pub closure_scope:crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext, #[offset(96)]#[rename(name="Flags")]pub flags:crate::moon_sharp::interpreter::execution::vm::callstackitemflags::CallStackItemFlags,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CallStackItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CallStackItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CallStackItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-callstackitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CallStackItem_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<CallStackItem as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <CallStackItem as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem")]
-pub trait ICallStackItemMethods : ICallStackItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CallStackItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CallStackItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__CallStackItem_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-callstackitem")]pub trait ICallStackItemMethods:ICallStackItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CallStackItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__CallStackItem_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(CallStackItem)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem")]
-impl < __T : ICallStackItem > ICallStackItemMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-callstackitem")]impl<__T:ICallStackItem>ICallStackItemMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem")]
-impl CallStackItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CallStackItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-callstackitem")]impl CallStackItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem")]
-impl CallStackItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CallStackItem) , :: core :: stringify ! (new) ,)) ; < Self as ICallStackItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-execution-vm-callstackitem")]impl CallStackItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CallStackItem), ::core::stringify!(new),));
+ <Self as ICallStackItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem")]

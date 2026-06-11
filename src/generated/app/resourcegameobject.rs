@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: resourcehandle_2 :: { IResourceHandle_2 , ResourceHandle_2 }
- ;
- use crate :: app :: tresourcehandle_1 :: { ITResourceHandle_1 , TResourceHandle_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::resourcehandle_2::{IResourceHandle_2,ResourceHandle_2}
+;
+use crate::app::tresourcehandle_1::{ITResourceHandle_1,TResourceHandle_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourcegameobject/ResourceGameObject.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceGameObject")] # [parent (crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject >)] pub struct ResourceGameObject {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourcegameobject/ResourceGameObject.md"))]#[::unity2::class(namespace="App",name="ResourceGameObject")]#[parent(crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>)]pub struct ResourceGameObject{}
 
 }
 
 #[cfg(feature = "app-resourcegameobject-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-resourcegameobject")]
-pub trait IResourceGameObjectMethods : IResourceGameObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ResourceGameObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceGameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-resourcegameobject")]pub trait IResourceGameObjectMethods:IResourceGameObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ResourceGameObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2013ae0usize)as*mut u8,();
+(ResourceGameObject)__receiver)}
+}
+}
 
-#[cfg(feature = "app-resourcegameobject")]
-impl < __T : IResourceGameObject > IResourceGameObjectMethods for __T { }
+#[cfg(feature="app-resourcegameobject")]impl<__T:IResourceGameObject>IResourceGameObjectMethods for __T{}
 
-#[cfg(feature = "app-resourcegameobject")]
-impl ResourceGameObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceGameObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-resourcegameobject")]impl ResourceGameObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-resourcegameobject")]
-impl ResourceGameObject {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourceGameObject) , :: core :: stringify ! (new) ,)) ; < Self as IResourceGameObjectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-resourcegameobject")]impl ResourceGameObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourceGameObject), ::core::stringify!(new),));
+ <Self as IResourceGameObjectMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-resourcegameobject")]

@@ -4,52 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/visiblereflectionprobe/VisibleReflectionProbe.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VisibleReflectionProbe {
-    pub m_bounds: crate :: unity_engine :: bounds :: Bounds,
-    pub m_local_to_world_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub m_hdr_data: crate :: unity_engine :: vector4 :: Vector4,
-    pub m_center: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_blend_distance: f32,
-    pub m_importance: i32,
-    pub m_box_projection: i32,
-    pub m_instance_id: i32,
-    pub m_texture_id: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/visiblereflectionprobe/VisibleReflectionProbe.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VisibleReflectionProbe{pub m_bounds:crate::unity_engine::bounds::Bounds,pub m_local_to_world_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub m_hdr_data:crate::unity_engine::vector4::Vector4,pub m_center:crate::unity_engine::vector3::Vector3,pub m_blend_distance:f32,pub m_importance:i32,pub m_box_projection:i32,pub m_instance_id:i32,pub m_texture_id:i32,}
+impl::unity2::ClassIdentity for VisibleReflectionProbe{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="VisibleReflectionProbe";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for VisibleReflectionProbe {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "VisibleReflectionProbe";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for VisibleReflectionProbe {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for VisibleReflectionProbe{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -57,11 +26,21 @@ impl ::unity2::IlType for VisibleReflectionProbe {
 #[cfg(feature = "unity_engine-rendering-visiblereflectionprobe-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-visiblereflectionprobe")]
-impl VisibleReflectionProbe { # [doc = "`Equals(crate::unity_engine::rendering::visiblereflectionprobe::VisibleReflectionProbe)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: visiblereflectionprobe :: VisibleReflectionProbe >) -> bool { unsafe { { let __inner : extern "C" fn (* mut VisibleReflectionProbe , crate :: unity_engine :: rendering :: visiblereflectionprobe :: VisibleReflectionProbe , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a7f0usize) as * mut u8) ; __inner (self as * mut VisibleReflectionProbe , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut VisibleReflectionProbe , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379a960usize) as * mut u8) ; __inner (self as * mut VisibleReflectionProbe , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut VisibleReflectionProbe , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379aa00usize) as * mut u8) ; __inner (self as * mut VisibleReflectionProbe , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-visiblereflectionprobe")]impl VisibleReflectionProbe{#[doc="`Equals(crate::unity_engine::rendering::visiblereflectionprobe::VisibleReflectionProbe)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::visiblereflectionprobe::VisibleReflectionProbe>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a7f0usize)as*mut u8,bool;
+(*mut VisibleReflectionProbe)self as*mut VisibleReflectionProbe,(crate::unity_engine::rendering::visiblereflectionprobe::VisibleReflectionProbe)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379a960usize)as*mut u8,bool;
+(*mut VisibleReflectionProbe)self as*mut VisibleReflectionProbe,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379aa00usize)as*mut u8,i32;
+(*mut VisibleReflectionProbe)self as*mut VisibleReflectionProbe)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-visiblereflectionprobe")]
-impl VisibleReflectionProbe { pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleReflectionProbe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleReflectionProbe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisibleReflectionProbe as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-visiblereflectionprobe")]impl VisibleReflectionProbe{pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-rendering-visiblereflectionprobe")]
 #[doc(hidden)]

@@ -4,35 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusserverdata/VersusServerData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusServerData")] # [parent (crate :: system :: object :: Object)] pub struct VersusServerData {
-# [static_field] # [rename (name = "BufferSize")] pub buffer_size : i32 ,
-# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
-# [offset (24)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
-# [offset (32)] # [rename (name = "m_IsEmpty")] pub m_is_empty : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusserverdata/VersusServerData.md"))]#[::unity2::class(namespace="App",name="VersusServerData")]#[parent(crate::system::object::Object)]pub struct VersusServerData{#[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(24)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(32)]#[rename(name="m_IsEmpty")]pub m_is_empty:bool,}
 
 }
 
 #[cfg(feature = "app-versusserverdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusserverdata")]
-pub trait IVersusServerDataMethods : IVersusServerData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b49e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < VersusServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetBinary(::unity2::Array<u8>)` overload"] fn set_binary (self , bin : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < VersusServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerData , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bin) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b4d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> bool { unsafe { let __receiver = < VersusServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Buffer()` overload"] fn get_buffer (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < VersusServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b81a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Size()` overload"] fn get_size (self ,) -> i32 { unsafe { let __receiver = < VersusServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b81b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEmpty()` overload"] fn get_is_empty (self ,) -> bool { unsafe { let __receiver = < VersusServerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b81c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusserverdata")]pub trait IVersusServerDataMethods:IVersusServerData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b49e0usize)as*mut u8,();
+(VersusServerData)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8100usize)as*mut u8,();
+(VersusServerData)__receiver)}
+}
+#[doc="`SetBinary(::unity2::Array<u8>)` overload"]fn set_binary(self,bin:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8130usize)as*mut u8,();
+(VersusServerData)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(bin))}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b4d70usize)as*mut u8,();
+(VersusServerData)__receiver)}
+}
+#[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8190usize)as*mut u8,bool;
+(VersusServerData)__receiver)}
+}
+#[doc="`get_Buffer()` overload"]fn get_buffer(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b81a0usize)as*mut u8, ::unity2::Array<u8> ;
+(VersusServerData)__receiver)}
+}
+#[doc="`get_Size()` overload"]fn get_size(self,)->i32{unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b81b0usize)as*mut u8,i32;
+(VersusServerData)__receiver)}
+}
+#[doc="`get_IsEmpty()` overload"]fn get_is_empty(self,)->bool{unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b81c0usize)as*mut u8,bool;
+(VersusServerData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusserverdata")]
-impl < __T : IVersusServerData > IVersusServerDataMethods for __T { }
+#[cfg(feature="app-versusserverdata")]impl<__T:IVersusServerData>IVersusServerDataMethods for __T{}
 
-#[cfg(feature = "app-versusserverdata")]
-impl VersusServerData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_binary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_is_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-versusserverdata")]impl VersusServerData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_is_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-versusserverdata")]
-impl VersusServerData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusServerData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusServerDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusserverdata")]impl VersusServerData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusServerData), ::core::stringify!(new),));
+ <Self as IVersusServerDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusserverdata")]

@@ -4,36 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/serialization/json/jsonnull/JsonNull.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Serialization.Json" , name = "JsonNull")] # [parent (crate :: system :: object :: Object)] pub struct JsonNull {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/serialization/json/jsonnull/JsonNull.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Serialization.Json",name="JsonNull")]#[parent(crate::system::object::Object)]pub struct JsonNull{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __JsonNull_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_null { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonNull as :: unity2 :: ClassIdentity > :: class () , "isNull" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonNull as :: unity2 :: ClassIdentity > :: NAME , "isNull" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_json_null { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonNull as :: unity2 :: ClassIdentity > :: class () , "IsJsonNull" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonNull as :: unity2 :: ClassIdentity > :: NAME , "IsJsonNull" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonNull as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonNull as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< JsonNull as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < JsonNull as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-serialization-json-jsonnull")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __JsonNull_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_null{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<JsonNull as::unity2::ClassIdentity> ::class(),"isNull",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <JsonNull as::unity2::ClassIdentity> ::NAME,"isNull",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_json_null{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<JsonNull as::unity2::ClassIdentity> ::class(),"IsJsonNull",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <JsonNull as::unity2::ClassIdentity> ::NAME,"IsJsonNull",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_create{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<JsonNull as::unity2::ClassIdentity> ::class(),"Create",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <JsonNull as::unity2::ClassIdentity> ::NAME,"Create",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<JsonNull as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <JsonNull as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]
-impl JsonNull { # [doc = "`isNull()` overload"] pub fn is_null () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__JsonNull_unity2_raw :: __lookup_is_null :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsJsonNull(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn is_json_null (v : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__JsonNull_unity2_raw :: __lookup_is_json_null :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__JsonNull_unity2_raw :: __lookup_create :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-serialization-json-jsonnull")]impl JsonNull{#[doc="`isNull()` overload"]pub fn is_null()->bool{unsafe{::unity2::il2cpp_call!(__JsonNull_unity2_raw::__lookup_is_null::get_method_info().method_ptr,bool;
+)}
+}
+#[doc="`IsJsonNull(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]pub fn is_json_null(v:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->bool{unsafe{::unity2::il2cpp_call!(__JsonNull_unity2_raw::__lookup_is_json_null::get_method_info().method_ptr,bool;
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(v))}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__JsonNull_unity2_raw::__lookup_create::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]
-pub trait IJsonNullMethods : IJsonNull { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < JsonNull as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JsonNull , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__JsonNull_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-serialization-json-jsonnull")]pub trait IJsonNullMethods:IJsonNull{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <JsonNull as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__JsonNull_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(JsonNull)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]
-impl < __T : IJsonNull > IJsonNullMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-serialization-json-jsonnull")]impl<__T:IJsonNull>IJsonNullMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]
-impl JsonNull { pub fn is_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonNull as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_json_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonNull as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonNull as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JsonNull as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="moon_sharp-interpreter-serialization-json-jsonnull")]impl JsonNull{pub fn is_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_json_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]
-impl JsonNull {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (JsonNull) , :: core :: stringify ! (new) ,)) ; < Self as IJsonNullMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-serialization-json-jsonnull")]impl JsonNull{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(JsonNull), ::core::stringify!(new),));
+ <Self as IJsonNullMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]

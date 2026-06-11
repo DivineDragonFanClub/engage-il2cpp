@@ -4,45 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponmodelmanager/WeaponModelManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "WeaponModelManager")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WeaponModelManager {
-# [static_field] # [rename (name = "s_AssetTableResult")] pub s_asset_table_result : crate :: app :: assettable :: AssetTable_Result ,
-# [offset (24)] # [rename (name = "m_Resources")] pub m_resources : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: resourcegameobject :: ResourceGameObject > ,
-# [offset (32)] # [rename (name = "m_GmaeObjects")] pub m_gmae_objects : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmodelmanager/WeaponModelManager.md"))]#[::unity2::class(namespace="App",name="WeaponModelManager")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct WeaponModelManager{#[static_field]#[rename(name="s_AssetTableResult")]pub s_asset_table_result:crate::app::assettable::AssetTable_Result, #[offset(24)]#[rename(name="m_Resources")]pub m_resources:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::resourcegameobject::ResourceGameObject> , #[offset(32)]#[rename(name="m_GmaeObjects")]pub m_gmae_objects:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-weaponmodelmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-weaponmodelmanager")]
-impl WeaponModelManager { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21cb280usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-weaponmodelmanager")]impl WeaponModelManager{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21cb280usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-weaponmodelmanager")]
-pub trait IWeaponModelManagerMethods : IWeaponModelManager { # [doc = "`TryCreateGameObject(i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn try_create_game_object (self , key : impl :: core :: convert :: Into < i32 > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , child : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < WeaponModelManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponModelManager , i32 , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca3a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (child) , :: core :: option :: Option :: None) } } } # [doc = "`Show(::unity2::Il2CppString)` overload"] fn show (self , iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WeaponModelManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponModelManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`Show(crate::unity_engine::gameobject::GameObject)` overload"] fn show_2 (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < WeaponModelManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponModelManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`Show(crate::app::itemdata::ItemData)` overload"] fn show_3 (self , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < WeaponModelManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponModelManager , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < WeaponModelManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponModelManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21cad80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < WeaponModelManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponModelManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21caeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < WeaponModelManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponModelManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21cb190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponModelManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponModelManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21cb1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-weaponmodelmanager")]pub trait IWeaponModelManagerMethods:IWeaponModelManager{#[doc="`TryCreateGameObject(i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn try_create_game_object(self,key:impl::core::convert::Into<i32> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,child:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <WeaponModelManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca3a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(WeaponModelManager)__receiver,(i32)::core::convert::Into::into(key),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(child))}
+}
+#[doc="`Show(::unity2::Il2CppString)` overload"]fn show(self,iid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <WeaponModelManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca8e0usize)as*mut u8,();
+(WeaponModelManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`Show(crate::unity_engine::gameobject::GameObject)` overload"]fn show_2(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <WeaponModelManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca760usize)as*mut u8,();
+(WeaponModelManager)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`Show(crate::app::itemdata::ItemData)` overload"]fn show_3(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <WeaponModelManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca970usize)as*mut u8,();
+(WeaponModelManager)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <WeaponModelManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21cad80usize)as*mut u8,();
+(WeaponModelManager)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <WeaponModelManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21caeb0usize)as*mut u8,();
+(WeaponModelManager)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <WeaponModelManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21cb190usize)as*mut u8,();
+(WeaponModelManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WeaponModelManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21cb1a0usize)as*mut u8,();
+(WeaponModelManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-weaponmodelmanager")]
-impl < __T : IWeaponModelManager > IWeaponModelManagerMethods for __T { }
+#[cfg(feature="app-weaponmodelmanager")]impl<__T:IWeaponModelManager>IWeaponModelManagerMethods for __T{}
 
-#[cfg(feature = "app-weaponmodelmanager")]
-impl WeaponModelManager { pub fn try_create_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn show_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn show_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponModelManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-weaponmodelmanager")]impl WeaponModelManager{pub fn try_create_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn show_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn show_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-weaponmodelmanager")]
-impl WeaponModelManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponModelManager) , :: core :: stringify ! (new) ,)) ; < Self as IWeaponModelManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-weaponmodelmanager")]impl WeaponModelManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponModelManager), ::core::stringify!(new),));
+ <Self as IWeaponModelManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-weaponmodelmanager")]

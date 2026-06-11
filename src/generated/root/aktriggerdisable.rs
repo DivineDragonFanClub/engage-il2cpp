@@ -4,40 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: aktriggerbase :: { AkTriggerBase , IAkTriggerBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::aktriggerbase::{AkTriggerBase,IAkTriggerBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggerdisable/AkTriggerDisable.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTriggerDisable")] # [parent (crate :: root :: aktriggerbase :: AkTriggerBase)] pub struct AkTriggerDisable {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriggerdisable/AkTriggerDisable.md"))]#[::unity2::class(namespace="",name="AkTriggerDisable")]#[parent(crate::root::aktriggerbase::AkTriggerBase)]pub struct AkTriggerDisable{}
 
 }
 
 #[cfg(feature = "root-aktriggerdisable-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aktriggerdisable")]
-pub trait IAkTriggerDisableMethods : IAkTriggerDisable { # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AkTriggerDisable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerDisable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2ae10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTriggerDisable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerDisable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2ae30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktriggerdisable")]pub trait IAkTriggerDisableMethods:IAkTriggerDisable{#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AkTriggerDisable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2ae10usize)as*mut u8,();
+(AkTriggerDisable)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTriggerDisable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2ae30usize)as*mut u8,();
+(AkTriggerDisable)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aktriggerdisable")]
-impl < __T : IAkTriggerDisable > IAkTriggerDisableMethods for __T { }
+#[cfg(feature="root-aktriggerdisable")]impl<__T:IAkTriggerDisable>IAkTriggerDisableMethods for __T{}
 
-#[cfg(feature = "root-aktriggerdisable")]
-impl AkTriggerDisable { pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerDisable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerDisable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-aktriggerdisable")]impl AkTriggerDisable{pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-aktriggerdisable")]
-impl AkTriggerDisable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriggerDisable) , :: core :: stringify ! (new) ,)) ; < Self as IAkTriggerDisableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aktriggerdisable")]impl AkTriggerDisable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriggerDisable), ::core::stringify!(new),));
+ <Self as IAkTriggerDisableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aktriggerdisable")]

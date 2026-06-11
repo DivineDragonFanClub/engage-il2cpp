@@ -4,34 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodemptymenuitem/RefineShopEngraveGodEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveGodEmptyMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefineShopEngraveGodEmptyMenuItem {
-# [offset (104)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_SelectEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopengravegodemptymenuitem/RefineShopEngraveGodEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopEngraveGodEmptyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefineShopEngraveGodEmptyMenuItem{#[offset(104)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler,}
 
 }
 
 #[cfg(feature = "app-refineshopengravegodemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopengravegodemptymenuitem")]
-pub trait IRefineShopEngraveGodEmptyMenuItemMethods : IRefineShopEngraveGodEmptyMenuItem { # [doc = "`.ctor(crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler)` overload"] fn ctor (self , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_SelectEventHandler >) -> () { unsafe { let __receiver = < RefineShopEngraveGodEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveGodEmptyMenuItem , crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295ace0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RefineShopEngraveGodEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveGodEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295ad60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveGodEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveGodEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295ad70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineShopEngraveGodEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveGodEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295adc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopengravegodemptymenuitem")]pub trait IRefineShopEngraveGodEmptyMenuItemMethods:IRefineShopEngraveGodEmptyMenuItem{#[doc="`.ctor(crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler)` overload"]fn ctor(self,select_event_handler:impl::core::convert::Into<crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler>)->(){unsafe{let __receiver= <RefineShopEngraveGodEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295ace0usize)as*mut u8,();
+(RefineShopEngraveGodEmptyMenuItem)__receiver,(crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefineShopEngraveGodEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295ad60usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RefineShopEngraveGodEmptyMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RefineShopEngraveGodEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295ad70usize)as*mut u8,();
+(RefineShopEngraveGodEmptyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopEngraveGodEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295adc0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineShopEngraveGodEmptyMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopengravegodemptymenuitem")]
-impl < __T : IRefineShopEngraveGodEmptyMenuItem > IRefineShopEngraveGodEmptyMenuItemMethods for __T { }
+#[cfg(feature="app-refineshopengravegodemptymenuitem")]impl<__T:IRefineShopEngraveGodEmptyMenuItem>IRefineShopEngraveGodEmptyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refineshopengravegodemptymenuitem")]
-impl RefineShopEngraveGodEmptyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveGodEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveGodEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveGodEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveGodEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-refineshopengravegodemptymenuitem")]impl RefineShopEngraveGodEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-refineshopengravegodemptymenuitem")]
-impl RefineShopEngraveGodEmptyMenuItem {
-# [doc = "`.ctor(crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler)` — overload selector"] pub fn new (select_event_handler : crate :: app :: refineshopengravegodmenu :: RefineShopEngraveGodMenu_SelectEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveGodEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveGodEmptyMenuItemMethods > :: ctor (this , select_event_handler) ; this }
+#[cfg(feature="app-refineshopengravegodemptymenuitem")]impl RefineShopEngraveGodEmptyMenuItem{#[doc="`.ctor(crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler)` — overload selector"]pub fn new(select_event_handler:crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopEngraveGodEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IRefineShopEngraveGodEmptyMenuItemMethods> ::ctor(this,select_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refineshopengravegodemptymenuitem")]

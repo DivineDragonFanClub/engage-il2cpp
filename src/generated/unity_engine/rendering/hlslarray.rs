@@ -4,31 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hlslarray/HLSLArray.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "HLSLArray")] pub struct HLSLArray {
-# [offset (16)] # [rename (name = "arraySize")] pub array_size : i32 ,
-# [offset (24)] # [rename (name = "elementType")] pub element_type : :: unity2 :: SystemType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hlslarray/HLSLArray.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HLSLArray")]pub struct HLSLArray{#[offset(16)]#[rename(name="arraySize")]pub array_size:i32, #[offset(24)]#[rename(name="elementType")]pub element_type: ::unity2::SystemType,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-hlslarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-hlslarray")]
-pub trait IHLSLArrayMethods : IHLSLArray { # [doc = "`.ctor(i32, ::unity2::SystemType)` overload"] fn ctor (self , array_size : impl :: core :: convert :: Into < i32 > , element_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < HLSLArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HLSLArray , i32 , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array_size) , :: core :: convert :: Into :: into (element_type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-hlslarray")]pub trait IHLSLArrayMethods:IHLSLArray{#[doc="`.ctor(i32, ::unity2::SystemType)` overload"]fn ctor(self,array_size:impl::core::convert::Into<i32> ,element_type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <HLSLArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa610usize)as*mut u8,();
+(HLSLArray)__receiver,(i32)::core::convert::Into::into(array_size),(::unity2::SystemType)::core::convert::Into::into(element_type))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-hlslarray")]
-impl < __T : IHLSLArray > IHLSLArrayMethods for __T { }
+#[cfg(feature="unity_engine-rendering-hlslarray")]impl<__T:IHLSLArray>IHLSLArrayMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-hlslarray")]
-impl HLSLArray { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HLSLArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-hlslarray")]impl HLSLArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-hlslarray")]
-impl HLSLArray {
-# [doc = "`.ctor(i32, ::unity2::SystemType)` — overload selector"] pub fn new (array_size : i32 , element_type : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HLSLArray) , :: core :: stringify ! (new) ,)) ; < Self as IHLSLArrayMethods > :: ctor (this , array_size , element_type) ; this }
+#[cfg(feature="unity_engine-rendering-hlslarray")]impl HLSLArray{#[doc="`.ctor(i32, ::unity2::SystemType)` — overload selector"]pub fn new(array_size:i32,element_type: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HLSLArray), ::core::stringify!(new),));
+ <Self as IHLSLArrayMethods> ::ctor(this,array_size,element_type);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-hlslarray")]

@@ -4,25 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/crc32/Crc32.md"))] # [:: unity2 :: class (namespace = "App" , name = "Crc32")] # [parent (crate :: system :: object :: Object)] pub struct Crc32 {
-# [static_field] # [rename (name = "s_Table")] pub s_table : :: unity2 :: Array < u32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/crc32/Crc32.md"))]#[::unity2::class(namespace="App",name="Crc32")]#[parent(crate::system::object::Object)]pub struct Crc32{#[static_field]#[rename(name="s_Table")]pub s_table: ::unity2::Array<u32> ,}
 
 }
 
 #[cfg(feature = "app-crc32-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-crc32")]
-impl Crc32 { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2545930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Calculate(::unity2::Array<u8>)` overload"] pub fn calculate (buf : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2545a80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (buf) , :: core :: option :: Option :: None) } } } # [doc = "`Calculate(::unity2::Array<u8>, i32)` overload"] pub fn calculate_2 (buf : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , len : impl :: core :: convert :: Into < i32 >) -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2545ab0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (buf) , :: core :: convert :: Into :: into (len) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCrc(u32, ::unity2::Array<u8>, i32)` overload"] pub fn update_crc (crc : impl :: core :: convert :: Into < u32 > , buf : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , len : impl :: core :: convert :: Into < i32 >) -> u32 { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: Array < u8 > , i32 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2545ae0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (crc) , :: core :: convert :: Into :: into (buf) , :: core :: convert :: Into :: into (len) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-crc32")]impl Crc32{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2545930usize)as*mut u8,();
+)}
+}
+#[doc="`Calculate(::unity2::Array<u8>)` overload"]pub fn calculate(buf:impl::core::convert::Into< ::unity2::Array<u8> >)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2545a80usize)as*mut u8,u32;
+(::unity2::Array<u8>)::core::convert::Into::into(buf))}
+}
+#[doc="`Calculate(::unity2::Array<u8>, i32)` overload"]pub fn calculate_2(buf:impl::core::convert::Into< ::unity2::Array<u8> > ,len:impl::core::convert::Into<i32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2545ab0usize)as*mut u8,u32;
+(::unity2::Array<u8>)::core::convert::Into::into(buf),(i32)::core::convert::Into::into(len))}
+}
+#[doc="`UpdateCrc(u32, ::unity2::Array<u8>, i32)` overload"]pub fn update_crc(crc:impl::core::convert::Into<u32> ,buf:impl::core::convert::Into< ::unity2::Array<u8> > ,len:impl::core::convert::Into<i32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2545ae0usize)as*mut u8,u32;
+(u32)::core::convert::Into::into(crc),(::unity2::Array<u8>)::core::convert::Into::into(buf),(i32)::core::convert::Into::into(len))}
+}
+}
 
-#[cfg(feature = "app-crc32")]
-impl Crc32 { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Crc32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Crc32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calculate_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Crc32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_crc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Crc32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-crc32")]impl Crc32{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_crc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "app-crc32")]
 #[doc(hidden)]

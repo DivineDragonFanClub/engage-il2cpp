@@ -4,37 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdesccallbase :: { IProcDescCallBase , ProcDescCallBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdesccallbase::{IProcDescCallBase,ProcDescCallBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescargs/ProcDescArgS.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescArgS")] # [parent (crate :: app :: procdesccallbase :: ProcDescCallBase)] pub struct ProcDescArgS {
-# [offset (24)] # [rename (name = "m_Function")] pub m_function : crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString > ,
-# [offset (32)] # [rename (name = "m_Arg")] pub m_arg : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescargs/ProcDescArgS.md"))]#[::unity2::class(namespace="App",name="ProcDescArgS")]#[parent(crate::app::procdesccallbase::ProcDescCallBase)]pub struct ProcDescArgS{#[offset(24)]#[rename(name="m_Function")]pub m_function:crate::system::action_2::Action_2<crate::app::procinst::ProcInst, ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_Arg")]pub m_arg: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-procdescargs-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescargs")]
-pub trait IProcDescArgSMethods : IProcDescArgS { # [doc = "`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"] fn ctor (self , function : impl :: core :: convert :: Into < crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString > > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProcDescArgS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescArgS , crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b3e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescArgS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescArgS , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281cdc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescargs")]pub trait IProcDescArgSMethods:IProcDescArgS{#[doc="`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]fn ctor(self,function:impl::core::convert::Into<crate::system::action_2::Action_2<crate::app::procinst::ProcInst, ::unity2::Il2CppString> > ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProcDescArgS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281b3e0usize)as*mut u8,();
+(ProcDescArgS)__receiver,(crate::system::action_2::Action_2<crate::app::procinst::ProcInst, ::unity2::Il2CppString>)::core::convert::Into::into(function),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescArgS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281cdc0usize)as*mut u8,();
+(ProcDescArgS)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescargs")]
-impl < __T : IProcDescArgS > IProcDescArgSMethods for __T { }
+#[cfg(feature="app-procdescargs")]impl<__T:IProcDescArgS>IProcDescArgSMethods for __T{}
 
-#[cfg(feature = "app-procdescargs")]
-impl ProcDescArgS { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescArgS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescArgS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdescargs")]impl ProcDescArgS{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdescargs")]
-impl ProcDescArgS {
-# [doc = "`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,::unity2::Il2CppString>, ::unity2::Il2CppString)` — overload selector"] pub fn new (function : crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString > , arg : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescArgS) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescArgSMethods > :: ctor (this , function , arg) ; this }
+#[cfg(feature="app-procdescargs")]impl ProcDescArgS{#[doc="`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,::unity2::Il2CppString>, ::unity2::Il2CppString)` — overload selector"]pub fn new(function:crate::system::action_2::Action_2<crate::app::procinst::ProcInst, ::unity2::Il2CppString> ,arg: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescArgS), ::core::stringify!(new),));
+ <Self as IProcDescArgSMethods> ::ctor(this,function,arg);
+this}
 }
 
 #[cfg(feature = "app-procdescargs")]

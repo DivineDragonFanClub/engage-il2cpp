@@ -4,27 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/attributehelperengine/AttributeHelperEngine.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AttributeHelperEngine")] # [parent (crate :: system :: object :: Object)] pub struct AttributeHelperEngine {
-# [static_field] # [rename (name = "_disallowMultipleComponentArray")] pub disallow_multiple_component_array : :: unity2 :: Array < crate :: unity_engine :: disallowmultiplecomponent :: DisallowMultipleComponent > ,
-# [static_field] # [rename (name = "_executeInEditModeArray")] pub execute_in_edit_mode_array : :: unity2 :: Array < crate :: unity_engine :: executeineditmode :: ExecuteInEditMode > ,
-# [static_field] # [rename (name = "_requireComponentArray")] pub require_component_array : :: unity2 :: Array < crate :: unity_engine :: requirecomponent :: RequireComponent > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/attributehelperengine/AttributeHelperEngine.md"))]#[::unity2::class(namespace="UnityEngine",name="AttributeHelperEngine")]#[parent(crate::system::object::Object)]pub struct AttributeHelperEngine{#[static_field]#[rename(name="_disallowMultipleComponentArray")]pub disallow_multiple_component_array: ::unity2::Array<crate::unity_engine::disallowmultiplecomponent::DisallowMultipleComponent> , #[static_field]#[rename(name="_executeInEditModeArray")]pub execute_in_edit_mode_array: ::unity2::Array<crate::unity_engine::executeineditmode::ExecuteInEditMode> , #[static_field]#[rename(name="_requireComponentArray")]pub require_component_array: ::unity2::Array<crate::unity_engine::requirecomponent::RequireComponent> ,}
 
 }
 
 #[cfg(feature = "unity_engine-attributehelperengine-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-attributehelperengine")]
-impl AttributeHelperEngine { # [doc = "`GetParentTypeDisallowingMultipleInclusion(::unity2::SystemType)` overload"] pub fn get_parent_type_disallowing_multiple_inclusion (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> :: unity2 :: SystemType { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetRequiredComponents(::unity2::SystemType)` overload"] pub fn get_required_components (klass : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> :: unity2 :: Array < :: unity2 :: SystemType > { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: SystemType > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (klass) , :: core :: option :: Option :: None) } } } # [doc = "`GetExecuteMode(::unity2::SystemType)` overload"] pub fn get_execute_mode (klass : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36d20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (klass) , :: core :: option :: Option :: None) } } } # [doc = "`CheckIsEditorScript(::unity2::SystemType)` overload"] pub fn check_is_editor_script (klass : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (klass) , :: core :: option :: Option :: None) } } } # [doc = "`GetDefaultExecutionOrderFor(::unity2::SystemType)` overload"] pub fn get_default_execution_order_for (klass : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (klass) , :: core :: option :: Option :: None) } } } pub fn get_custom_attribute_of_type < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (klass : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< AttributeHelperEngine as :: unity2 :: ClassIdentity > :: class () , "GetCustomAttributeOfType" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AttributeHelperEngine as :: unity2 :: ClassIdentity > :: NAME , "GetCustomAttributeOfType" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (klass) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36ff0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-attributehelperengine")]impl AttributeHelperEngine{#[doc="`GetParentTypeDisallowingMultipleInclusion(::unity2::SystemType)` overload"]pub fn get_parent_type_disallowing_multiple_inclusion(r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::SystemType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36850usize)as*mut u8, ::unity2::SystemType;
+(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetRequiredComponents(::unity2::SystemType)` overload"]pub fn get_required_components(klass:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36970usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
+(::unity2::SystemType)::core::convert::Into::into(klass))}
+}
+#[doc="`GetExecuteMode(::unity2::SystemType)` overload"]pub fn get_execute_mode(klass:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36d20usize)as*mut u8,i32;
+(::unity2::SystemType)::core::convert::Into::into(klass))}
+}
+#[doc="`CheckIsEditorScript(::unity2::SystemType)` overload"]pub fn check_is_editor_script(klass:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36e40usize)as*mut u8,i32;
+(::unity2::SystemType)::core::convert::Into::into(klass))}
+}
+#[doc="`GetDefaultExecutionOrderFor(::unity2::SystemType)` overload"]pub fn get_default_execution_order_for(klass:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36f40usize)as*mut u8,i32;
+(::unity2::SystemType)::core::convert::Into::into(klass))}
+}
+pub fn get_custom_attribute_of_type<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(klass:impl::core::convert::Into< ::unity2::SystemType>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<AttributeHelperEngine as::unity2::ClassIdentity> ::class(),"GetCustomAttributeOfType",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AttributeHelperEngine as::unity2::ClassIdentity> ::NAME,"GetCustomAttributeOfType",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(klass), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36ff0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-attributehelperengine")]
-impl AttributeHelperEngine { pub fn get_parent_type_disallowing_multiple_inclusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AttributeHelperEngine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_required_components_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AttributeHelperEngine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_execute_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AttributeHelperEngine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn check_is_editor_script_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AttributeHelperEngine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_default_execution_order_for_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AttributeHelperEngine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AttributeHelperEngine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-attributehelperengine")]impl AttributeHelperEngine{pub fn get_parent_type_disallowing_multiple_inclusion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_required_components_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_execute_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn check_is_editor_script_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_default_execution_order_for_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-attributehelperengine")]
 #[doc(hidden)]

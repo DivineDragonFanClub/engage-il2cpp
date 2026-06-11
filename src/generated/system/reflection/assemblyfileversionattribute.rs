@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyfileversionattribute/AssemblyFileVersionAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyFileVersionAttribute")] pub struct AssemblyFileVersionAttribute {
-# [offset (16)] # [rename (name = "_version")] pub version : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblyfileversionattribute/AssemblyFileVersionAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyFileVersionAttribute")]pub struct AssemblyFileVersionAttribute{#[offset(16)]#[rename(name="_version")]pub version: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblyfileversionattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblyfileversionattribute")]
-pub trait IAssemblyFileVersionAttributeMethods : IAssemblyFileVersionAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , version : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyFileVersionAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyFileVersionAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblyfileversionattribute")]pub trait IAssemblyFileVersionAttributeMethods:IAssemblyFileVersionAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,version:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyFileVersionAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401c10usize)as*mut u8,();
+(AssemblyFileVersionAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(version))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblyfileversionattribute")]
-impl < __T : IAssemblyFileVersionAttribute > IAssemblyFileVersionAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblyfileversionattribute")]impl<__T:IAssemblyFileVersionAttribute>IAssemblyFileVersionAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblyfileversionattribute")]
-impl AssemblyFileVersionAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyFileVersionAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblyfileversionattribute")]impl AssemblyFileVersionAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblyfileversionattribute")]
-impl AssemblyFileVersionAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (version : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyFileVersionAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyFileVersionAttributeMethods > :: ctor (this , version) ; this }
+#[cfg(feature="system-reflection-assemblyfileversionattribute")]impl AssemblyFileVersionAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(version: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyFileVersionAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyFileVersionAttributeMethods> ::ctor(this,version);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblyfileversionattribute")]

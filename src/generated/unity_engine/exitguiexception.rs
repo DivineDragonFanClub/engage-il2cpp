@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/exitguiexception/ExitGUIException.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ExitGUIException")] pub struct ExitGUIException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/exitguiexception/ExitGUIException.md"))]#[::unity2::class(namespace="UnityEngine",name="ExitGUIException")]pub struct ExitGUIException{}
 
 }
 
 #[cfg(feature = "unity_engine-exitguiexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-exitguiexception")]
-pub trait IExitGUIExceptionMethods : IExitGUIException { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ExitGUIException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExitGUIException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c39450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-exitguiexception")]pub trait IExitGUIExceptionMethods:IExitGUIException{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ExitGUIException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c39450usize)as*mut u8,();
+(ExitGUIException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+}
 
-#[cfg(feature = "unity_engine-exitguiexception")]
-impl < __T : IExitGUIException > IExitGUIExceptionMethods for __T { }
+#[cfg(feature="unity_engine-exitguiexception")]impl<__T:IExitGUIException>IExitGUIExceptionMethods for __T{}
 
-#[cfg(feature = "unity_engine-exitguiexception")]
-impl ExitGUIException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExitGUIException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-exitguiexception")]impl ExitGUIException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-exitguiexception")]
-impl ExitGUIException {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExitGUIException) , :: core :: stringify ! (new) ,)) ; < Self as IExitGUIExceptionMethods > :: ctor (this , message) ; this }
+#[cfg(feature="unity_engine-exitguiexception")]impl ExitGUIException{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExitGUIException), ::core::stringify!(new),));
+ <Self as IExitGUIExceptionMethods> ::ctor(this,message);
+this}
 }
 
 #[cfg(feature = "unity_engine-exitguiexception")]

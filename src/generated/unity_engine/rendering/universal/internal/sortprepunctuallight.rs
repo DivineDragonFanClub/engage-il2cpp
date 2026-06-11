@@ -4,30 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/sortprepunctuallight/SortPrePunctualLight.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "SortPrePunctualLight")] # [parent (crate :: system :: object :: Object)] pub struct SortPrePunctualLight {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/sortprepunctuallight/SortPrePunctualLight.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Internal",name="SortPrePunctualLight")]#[parent(crate::system::object::Object)]pub struct SortPrePunctualLight{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight")]
-pub trait ISortPrePunctualLightMethods : ISortPrePunctualLight { # [doc = "`Compare(crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight, crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight)` overload"] fn compare (self , a : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight > , b : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight >) -> i32 { unsafe { let __receiver = < SortPrePunctualLight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortPrePunctualLight , crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight , crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2edda30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortPrePunctualLight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortPrePunctualLight , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2edda50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-internal-sortprepunctuallight")]pub trait ISortPrePunctualLightMethods:ISortPrePunctualLight{#[doc="`Compare(crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight, crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight)` overload"]fn compare(self,a:impl::core::convert::Into<crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight> ,b:impl::core::convert::Into<crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight>)->i32{unsafe{let __receiver= <SortPrePunctualLight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2edda30usize)as*mut u8,i32;
+(SortPrePunctualLight)__receiver,(crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight)::core::convert::Into::into(a),(crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight)::core::convert::Into::into(b))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortPrePunctualLight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2edda50usize)as*mut u8,();
+(SortPrePunctualLight)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight")]
-impl < __T : ISortPrePunctualLight > ISortPrePunctualLightMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-internal-sortprepunctuallight")]impl<__T:ISortPrePunctualLight>ISortPrePunctualLightMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight")]
-impl SortPrePunctualLight { pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortPrePunctualLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortPrePunctualLight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-universal-internal-sortprepunctuallight")]impl SortPrePunctualLight{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight")]
-impl SortPrePunctualLight {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortPrePunctualLight) , :: core :: stringify ! (new) ,)) ; < Self as ISortPrePunctualLightMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-internal-sortprepunctuallight")]impl SortPrePunctualLight{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortPrePunctualLight), ::core::stringify!(new),));
+ <Self as ISortPrePunctualLightMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight")]

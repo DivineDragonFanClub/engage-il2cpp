@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/icomparer_interface/IComparer_Interface.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IComparer")] pub struct IComparer_Interface {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/icomparer_interface/IComparer_Interface.md"))]#[::unity2::class(namespace="System.Collections",name="IComparer")]pub struct IComparer_Interface{}
 
 }
 
 #[cfg(feature = "system-collections-icomparer_interface-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-icomparer_interface")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IComparer_Interface_unity2_raw { use super :: * ; pub unsafe fn compare (this : IComparer_Interface , x : crate :: system :: object :: Object , y : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Compare") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Compare" , < IComparer_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IComparer_Interface , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , x , y , __mi) } }
+#[cfg(feature="system-collections-icomparer_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IComparer_Interface_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:IComparer_Interface,x:crate::system::object::Object,y:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Compare").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Compare", <IComparer_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IComparer_Interface,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,__mi)}
+}
 
-#[cfg(feature = "system-collections-icomparer_interface")]
-pub trait IIComparer_InterfaceMethods : IIComparer_Interface { # [doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"] fn compare (self , x : impl :: core :: convert :: Into < crate :: system :: object :: Object > , y : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < IComparer_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IComparer_Interface_unity2_raw :: compare (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="system-collections-icomparer_interface")]pub trait IIComparer_InterfaceMethods:IIComparer_Interface{#[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,x:impl::core::convert::Into<crate::system::object::Object> ,y:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <IComparer_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IComparer_Interface_unity2_raw::compare(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "system-collections-icomparer_interface")]
-impl < __T : IIComparer_Interface > IIComparer_InterfaceMethods for __T { }
+#[cfg(feature="system-collections-icomparer_interface")]impl<__T:IIComparer_Interface>IIComparer_InterfaceMethods for __T{}
 
-#[cfg(feature = "system-collections-icomparer_interface")]
-impl IComparer_Interface { pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IComparer_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-collections-icomparer_interface")]impl IComparer_Interface{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "system-collections-icomparer_interface")]
 #[doc(hidden)]

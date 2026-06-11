@@ -4,32 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardlistdata/ProfileCardListData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardListData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: profilecardlistdata :: ProfileCardListData >)] pub struct ProfileCardListData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardlistdata/ProfileCardListData.md"))]#[::unity2::class(namespace="App",name="ProfileCardListData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::profilecardlistdata::ProfileCardListData>)]pub struct ProfileCardListData{}
 
 }
 
 #[cfg(feature = "app-profilecardlistdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardlistdata")]
-pub trait IProfileCardListDataMethods : IProfileCardListData { # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < ProfileCardListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardListData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231aea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < ProfileCardListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardListData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231aeb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProfileCardListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardListData , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231aec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`get_List()` overload"] fn get_list (self ,) -> crate :: app :: profilelist :: ProfileList { unsafe { let __receiver = < ProfileCardListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardListData , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilelist :: ProfileList = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231aed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardListData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231aee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardlistdata")]pub trait IProfileCardListDataMethods:IProfileCardListData{#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <ProfileCardListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231aea0usize)as*mut u8,i32;
+(ProfileCardListData)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <ProfileCardListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231aeb0usize)as*mut u8,();
+(ProfileCardListData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231aec0usize)as*mut u8,();
+(ProfileCardListData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`get_List()` overload"]fn get_list(self,)->crate::app::profilelist::ProfileList{unsafe{let __receiver= <ProfileCardListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231aed0usize)as*mut u8,crate::app::profilelist::ProfileList;
+(ProfileCardListData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231aee0usize)as*mut u8,();
+(ProfileCardListData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardlistdata")]
-impl < __T : IProfileCardListData > IProfileCardListDataMethods for __T { }
+#[cfg(feature="app-profilecardlistdata")]impl<__T:IProfileCardListData>IProfileCardListDataMethods for __T{}
 
-#[cfg(feature = "app-profilecardlistdata")]
-impl ProfileCardListData { pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-profilecardlistdata")]impl ProfileCardListData{pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-profilecardlistdata")]
-impl ProfileCardListData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardListData) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardListDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardlistdata")]impl ProfileCardListData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardListData), ::core::stringify!(new),));
+ <Self as IProfileCardListDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardlistdata")]

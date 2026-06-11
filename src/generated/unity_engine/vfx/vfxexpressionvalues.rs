@@ -4,35 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxexpressionvalues/VFXExpressionValues.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VFXExpressionValues")] # [parent (crate :: system :: object :: Object)] pub struct VFXExpressionValues {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/vfxexpressionvalues/VFXExpressionValues.md"))]#[::unity2::class(namespace="UnityEngine.VFX",name="VFXExpressionValues")]#[parent(crate::system::object::Object)]pub struct VFXExpressionValues{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxexpressionvalues-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
-impl VFXExpressionValues { # [doc = "`CreateExpressionValuesWrapper(::unity2::IntPtr)` overload"] pub fn create_expression_values_wrapper (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-vfxexpressionvalues")]impl VFXExpressionValues{#[doc="`CreateExpressionValuesWrapper(::unity2::IntPtr)` overload"]pub fn create_expression_values_wrapper(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f44820usize)as*mut u8,crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues;
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
-pub trait IVFXExpressionValuesMethods : IVFXExpressionValues { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VFXExpressionValues as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXExpressionValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-vfxexpressionvalues")]pub trait IVFXExpressionValuesMethods:IVFXExpressionValues{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VFXExpressionValues as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44810usize)as*mut u8,();
+(VFXExpressionValues)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
-impl < __T : IVFXExpressionValues > IVFXExpressionValuesMethods for __T { }
+#[cfg(feature="unity_engine-vfx-vfxexpressionvalues")]impl<__T:IVFXExpressionValues>IVFXExpressionValuesMethods for __T{}
 
-#[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
-impl VFXExpressionValues { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXExpressionValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_expression_values_wrapper_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXExpressionValues as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-vfx-vfxexpressionvalues")]impl VFXExpressionValues{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_expression_values_wrapper_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
-impl VFXExpressionValues {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VFXExpressionValues) , :: core :: stringify ! (new) ,)) ; < Self as IVFXExpressionValuesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-vfx-vfxexpressionvalues")]impl VFXExpressionValues{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VFXExpressionValues), ::core::stringify!(new),));
+ <Self as IVFXExpressionValuesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]

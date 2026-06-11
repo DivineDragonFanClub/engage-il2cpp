@@ -4,35 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bgmplayer :: { BgmPlayer , IBgmPlayer }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bgmplayer::{BgmPlayer,IBgmPlayer}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bgmselectplayer/BgmSelectPlayer.md"))] # [:: unity2 :: class (namespace = "App" , name = "BgmSelectPlayer")] # [parent (crate :: app :: bgmplayer :: BgmPlayer)] pub struct BgmSelectPlayer {
-# [offset (16)] # [rename (name = "m_handle")] pub m_handle : crate :: app :: gamesound :: GameSound_Handle ,
-# [offset (24)] # [rename (name = "m_soundList")] pub m_sound_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gamesound :: GameSound_Handle > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bgmselectplayer/BgmSelectPlayer.md"))]#[::unity2::class(namespace="App",name="BgmSelectPlayer")]#[parent(crate::app::bgmplayer::BgmPlayer)]pub struct BgmSelectPlayer{#[offset(16)]#[rename(name="m_handle")]pub m_handle:crate::app::gamesound::GameSound_Handle, #[offset(24)]#[rename(name="m_soundList")]pub m_sound_list:crate::system::collections::generic::list_1::List_1<crate::app::gamesound::GameSound_Handle> ,}
 
 }
 
 #[cfg(feature = "app-bgmselectplayer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bgmselectplayer")]
-pub trait IBgmSelectPlayerMethods : IBgmSelectPlayer { # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < BgmSelectPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BgmSelectPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e953b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlaying(::unity2::Il2CppString)` overload"] fn is_playing (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < BgmSelectPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BgmSelectPlayer , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e953c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`PauseCurrentBgm()` overload"] fn pause_current_bgm (self ,) -> () { unsafe { let __receiver = < BgmSelectPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BgmSelectPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlaySelect(::unity2::Il2CppString)` overload"] fn play_select (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BgmSelectPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BgmSelectPlayer , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < BgmSelectPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BgmSelectPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e957b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BgmSelectPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BgmSelectPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bgmselectplayer")]pub trait IBgmSelectPlayerMethods:IBgmSelectPlayer{#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e953b0usize)as*mut u8,();
+(BgmSelectPlayer)__receiver)}
+}
+#[doc="`IsPlaying(::unity2::Il2CppString)` overload"]fn is_playing(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e953c0usize)as*mut u8,bool;
+(BgmSelectPlayer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`PauseCurrentBgm()` overload"]fn pause_current_bgm(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95430usize)as*mut u8,();
+(BgmSelectPlayer)__receiver)}
+}
+#[doc="`PlaySelect(::unity2::Il2CppString)` overload"]fn play_select(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95760usize)as*mut u8,();
+(BgmSelectPlayer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e957b0usize)as*mut u8,();
+(BgmSelectPlayer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95a60usize)as*mut u8,();
+(BgmSelectPlayer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bgmselectplayer")]
-impl < __T : IBgmSelectPlayer > IBgmSelectPlayerMethods for __T { }
+#[cfg(feature="app-bgmselectplayer")]impl<__T:IBgmSelectPlayer>IBgmSelectPlayerMethods for __T{}
 
-#[cfg(feature = "app-bgmselectplayer")]
-impl BgmSelectPlayer { pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BgmSelectPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BgmSelectPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn pause_current_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BgmSelectPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn play_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BgmSelectPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BgmSelectPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BgmSelectPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-bgmselectplayer")]impl BgmSelectPlayer{pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn pause_current_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn play_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-bgmselectplayer")]
-impl BgmSelectPlayer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BgmSelectPlayer) , :: core :: stringify ! (new) ,)) ; < Self as IBgmSelectPlayerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bgmselectplayer")]impl BgmSelectPlayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BgmSelectPlayer), ::core::stringify!(new),));
+ <Self as IBgmSelectPlayerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bgmselectplayer")]

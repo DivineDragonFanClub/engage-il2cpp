@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: tutoriallisttopbasicmenuitem :: { ITutorialListTopBasicMenuItem , TutorialListTopBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::tutoriallisttopbasicmenuitem::{ITutorialListTopBasicMenuItem,TutorialListTopBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/kizunagmapmenuitem/KizunaGmapMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "KizunaGmapMenuItem")] # [parent (crate :: root :: tutoriallisttopbasicmenuitem :: TutorialListTopBasicMenuItem)] pub struct KizunaGmapMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/kizunagmapmenuitem/KizunaGmapMenuItem.md"))]#[::unity2::class(namespace="",name="KizunaGmapMenuItem")]#[parent(crate::root::tutoriallisttopbasicmenuitem::TutorialListTopBasicMenuItem)]pub struct KizunaGmapMenuItem{}
 
 }
 
 #[cfg(feature = "root-kizunagmapmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-kizunagmapmenuitem")]
-pub trait IKizunaGmapMenuItemMethods : IKizunaGmapMenuItem { # [doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"] fn ctor (self , is_get_all_tutorial : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < KizunaGmapMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KizunaGmapMenuItem , bool , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdaf00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_get_all_tutorial) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < KizunaGmapMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KizunaGmapMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdafd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-kizunagmapmenuitem")]pub trait IKizunaGmapMenuItemMethods:IKizunaGmapMenuItem{#[doc="`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"]fn ctor(self,is_get_all_tutorial:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <KizunaGmapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdaf00usize)as*mut u8,();
+(KizunaGmapMenuItem)__receiver,(bool)::core::convert::Into::into(is_get_all_tutorial),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <KizunaGmapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdafd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(KizunaGmapMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-kizunagmapmenuitem")]
-impl < __T : IKizunaGmapMenuItem > IKizunaGmapMenuItemMethods for __T { }
+#[cfg(feature="root-kizunagmapmenuitem")]impl<__T:IKizunaGmapMenuItem>IKizunaGmapMenuItemMethods for __T{}
 
-#[cfg(feature = "root-kizunagmapmenuitem")]
-impl KizunaGmapMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KizunaGmapMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KizunaGmapMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-kizunagmapmenuitem")]impl KizunaGmapMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-kizunagmapmenuitem")]
-impl KizunaGmapMenuItem {
-# [doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"] pub fn new (is_get_all_tutorial : bool , decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KizunaGmapMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IKizunaGmapMenuItemMethods > :: ctor (this , is_get_all_tutorial , decide_event_handler) ; this }
+#[cfg(feature="root-kizunagmapmenuitem")]impl KizunaGmapMenuItem{#[doc="`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"]pub fn new(is_get_all_tutorial:bool,decide_event_handler:crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KizunaGmapMenuItem), ::core::stringify!(new),));
+ <Self as IKizunaGmapMenuItemMethods> ::ctor(this,is_get_all_tutorial,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "root-kizunagmapmenuitem")]

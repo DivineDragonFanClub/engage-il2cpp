@@ -4,115 +4,90 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographmodesequence/PhotographModeSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographModeSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct PhotographModeSequence {
-# [offset (112)] # [rename (name = "m_AllMenuContent")] pub m_all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent ,
-# [offset (120)] # [rename (name = "m_CameraController")] pub m_camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController ,
-# [offset (128)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
-# [offset (136)] # [rename (name = "m_IsHelpVisible")] pub m_is_help_visible : bool ,
-# [offset (140)] # [rename (name = "m_ReservedLabel")] pub m_reserved_label : crate :: app :: photographmodesequence :: PhotographModeSequence_Label ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographmodesequence/PhotographModeSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotographModeSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for PhotographModeSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PhotographModeSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PhotographModeSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PhotographModeSequence_Label{pub fn entry()->Self{Self{value:0}
+}
+pub fn tick()->Self{Self{value:1}
+}
+pub fn photograph()->Self{Self{value:2}
+}
+pub fn exit()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographmodesequence/PhotographModeSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PhotographModeSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for PhotographModeSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhotographModeSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for PhotographModeSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PhotographModeSequence_Label  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn tick() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn photograph() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographmodesequence/PhotographModeSequence.md"))]#[::unity2::class(namespace="App",name="PhotographModeSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct PhotographModeSequence{#[offset(112)]#[rename(name="m_AllMenuContent")]pub m_all_menu_content:crate::app::photographallmenucontent::PhotographAllMenuContent, #[offset(120)]#[rename(name="m_CameraController")]pub m_camera_controller:crate::app::photographcameracontroller::PhotographCameraController, #[offset(128)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(136)]#[rename(name="m_IsHelpVisible")]pub m_is_help_visible:bool, #[offset(140)]#[rename(name="m_ReservedLabel")]pub m_reserved_label:crate::app::photographmodesequence::PhotographModeSequence_Label,}
 
 }
 
 #[cfg(feature = "app-photographmodesequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographmodesequence")]
-impl PhotographModeSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , all_menu_content : impl :: core :: convert :: Into < crate :: app :: photographallmenucontent :: PhotographAllMenuContent > , camera_controller : impl :: core :: convert :: Into < crate :: app :: photographcameracontroller :: PhotographCameraController > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: photographallmenucontent :: PhotographAllMenuContent , crate :: app :: photographcameracontroller :: PhotographCameraController , crate :: app :: photographdisposmanager :: PhotographDisposManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2693cd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (all_menu_content) , :: core :: convert :: Into :: into (camera_controller) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographmodesequence")]impl PhotographModeSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,all_menu_content:impl::core::convert::Into<crate::app::photographallmenucontent::PhotographAllMenuContent> ,camera_controller:impl::core::convert::Into<crate::app::photographcameracontroller::PhotographCameraController> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2693cd0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::photographallmenucontent::PhotographAllMenuContent)::core::convert::Into::into(all_menu_content),(crate::app::photographcameracontroller::PhotographCameraController)::core::convert::Into::into(camera_controller),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager))}
+}
+}
 
-#[cfg(feature = "app-photographmodesequence")]
-pub trait IPhotographModeSequenceMethods : IPhotographModeSequence { # [doc = "`JumpReservedLabel()` overload"] fn jump_reserved_label (self ,) -> () { unsafe { let __receiver = < PhotographModeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographModeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` overload"] fn ctor (self , all_menu_content : impl :: core :: convert :: Into < crate :: app :: photographallmenucontent :: PhotographAllMenuContent > , camera_controller : impl :: core :: convert :: Into < crate :: app :: photographcameracontroller :: PhotographCameraController > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager >) -> () { unsafe { let __receiver = < PhotographModeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographModeSequence , crate :: app :: photographallmenucontent :: PhotographAllMenuContent , crate :: app :: photographcameracontroller :: PhotographCameraController , crate :: app :: photographdisposmanager :: PhotographDisposManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26940d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (all_menu_content) , :: core :: convert :: Into :: into (camera_controller) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < PhotographModeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographModeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26941b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PhotographCoroutine()` overload"] fn photograph_coroutine (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < PhotographModeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographModeSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographmodesequence")]pub trait IPhotographModeSequenceMethods:IPhotographModeSequence{#[doc="`JumpReservedLabel()` overload"]fn jump_reserved_label(self,)->(){unsafe{let __receiver= <PhotographModeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694140usize)as*mut u8,();
+(PhotographModeSequence)__receiver)}
+}
+#[doc="`.ctor(crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]fn ctor(self,all_menu_content:impl::core::convert::Into<crate::app::photographallmenucontent::PhotographAllMenuContent> ,camera_controller:impl::core::convert::Into<crate::app::photographcameracontroller::PhotographCameraController> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>)->(){unsafe{let __receiver= <PhotographModeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26940d0usize)as*mut u8,();
+(PhotographModeSequence)__receiver,(crate::app::photographallmenucontent::PhotographAllMenuContent)::core::convert::Into::into(all_menu_content),(crate::app::photographcameracontroller::PhotographCameraController)::core::convert::Into::into(camera_controller),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <PhotographModeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26941b0usize)as*mut u8,();
+(PhotographModeSequence)__receiver)}
+}
+#[doc="`PhotographCoroutine()` overload"]fn photograph_coroutine(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <PhotographModeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694830usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(PhotographModeSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographmodesequence")]
-impl < __T : IPhotographModeSequence > IPhotographModeSequenceMethods for __T { }
+#[cfg(feature="app-photographmodesequence")]impl<__T:IPhotographModeSequence>IPhotographModeSequenceMethods for __T{}
 
-#[cfg(feature = "app-photographmodesequence")]
-impl PhotographModeSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn jump_reserved_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn photograph_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographModeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-photographmodesequence")]impl PhotographModeSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn jump_reserved_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn photograph_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-photographmodesequence")]
-impl PhotographModeSequence {
-# [doc = "`.ctor(crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` — overload selector"] pub fn new (all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent , camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographModeSequence) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographModeSequenceMethods > :: ctor (this , all_menu_content , camera_controller , dispos_manager) ; this }
+#[cfg(feature="app-photographmodesequence")]impl PhotographModeSequence{#[doc="`.ctor(crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager)` — overload selector"]pub fn new(all_menu_content:crate::app::photographallmenucontent::PhotographAllMenuContent,camera_controller:crate::app::photographcameracontroller::PhotographCameraController,dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographModeSequence), ::core::stringify!(new),));
+ <Self as IPhotographModeSequenceMethods> ::ctor(this,all_menu_content,camera_controller,dispos_manager);
+this}
 }
 
 #[cfg(feature = "app-photographmodesequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PhotographModeSequence_Label;
     pub use super::PhotographModeSequence;
     pub use super::IPhotographModeSequence;
     pub use super::IPhotographModeSequenceMethods;
-    pub use super::PhotographModeSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

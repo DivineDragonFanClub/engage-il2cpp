@@ -4,118 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Navigation {
-    pub m_mode: crate :: unity_engine :: ui :: navigation :: Navigation_Mode,
-    pub m_wrap_around: bool,
-    pub m_select_on_up: crate :: unity_engine :: ui :: selectable :: Selectable,
-    pub m_select_on_down: crate :: unity_engine :: ui :: selectable :: Selectable,
-    pub m_select_on_left: crate :: unity_engine :: ui :: selectable :: Selectable,
-    pub m_select_on_right: crate :: unity_engine :: ui :: selectable :: Selectable,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/navigation/Navigation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Navigation{pub m_mode:crate::unity_engine::ui::navigation::Navigation_Mode,pub m_wrap_around:bool,pub m_select_on_up:crate::unity_engine::ui::selectable::Selectable,pub m_select_on_down:crate::unity_engine::ui::selectable::Selectable,pub m_select_on_left:crate::unity_engine::ui::selectable::Selectable,pub m_select_on_right:crate::unity_engine::ui::selectable::Selectable,}
+impl::unity2::ClassIdentity for Navigation{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Navigation";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Navigation{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for Navigation {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Navigation";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/navigation/Navigation_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Navigation_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for Navigation_Mode{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Navigation.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for Navigation {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Navigation_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Navigation_Mode  {
-    pub value: i32,
+impl Navigation_Mode{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::ClassIdentity for Navigation_Mode  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Navigation.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn horizontal()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for Navigation_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn vertical()->Self{Self{value:2}
 }
-
-
-impl  Navigation_Mode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn horizontal() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn vertical() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn automatic() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn explicit() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn automatic()->Self{Self{value:3}
+}
+pub fn explicit()->Self{Self{value:4}
+}
 }
 
 }
@@ -123,14 +50,67 @@ impl  Navigation_Mode  {
 #[cfg(feature = "unity_engine-ui-navigation-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-navigation")]
-impl Navigation { # [doc = "`get_defaultNavigation()` overload"] pub fn get_default_navigation () -> crate :: unity_engine :: ui :: navigation :: Navigation { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: navigation :: Navigation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d720usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-navigation")]impl Navigation{#[doc="`get_defaultNavigation()` overload"]pub fn get_default_navigation()->crate::unity_engine::ui::navigation::Navigation{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d720usize)as*mut u8,crate::unity_engine::ui::navigation::Navigation;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-navigation")]
-impl Navigation { # [doc = "`get_mode()` overload"] pub fn get_mode (& mut self ,) -> crate :: unity_engine :: ui :: navigation :: Navigation_Mode { unsafe { { let __inner : extern "C" fn (* mut Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: navigation :: Navigation_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d660usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: option :: Option :: None) } } } # [doc = "`set_mode(crate::unity_engine::ui::navigation::Navigation_Mode)` overload"] pub fn set_mode (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: navigation :: Navigation_Mode >) -> () { unsafe { { let __inner : extern "C" fn (* mut Navigation , crate :: unity_engine :: ui :: navigation :: Navigation_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d670usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_wrapAround()` overload"] pub fn get_wrap_around (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut Navigation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d680usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: option :: Option :: None) } } } # [doc = "`set_wrapAround(bool)` overload"] pub fn set_wrap_around (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut Navigation , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d690usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_selectOnUp()` overload"] pub fn get_select_on_up (& mut self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { { let __inner : extern "C" fn (* mut Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d6a0usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: option :: Option :: None) } } } # [doc = "`set_selectOnUp(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_select_on_up (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { { let __inner : extern "C" fn (* mut Navigation , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d6b0usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_selectOnDown()` overload"] pub fn get_select_on_down (& mut self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { { let __inner : extern "C" fn (* mut Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d6c0usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: option :: Option :: None) } } } # [doc = "`set_selectOnDown(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_select_on_down (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { { let __inner : extern "C" fn (* mut Navigation , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d6d0usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_selectOnLeft()` overload"] pub fn get_select_on_left (& mut self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { { let __inner : extern "C" fn (* mut Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d6e0usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: option :: Option :: None) } } } # [doc = "`set_selectOnLeft(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_select_on_left (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { { let __inner : extern "C" fn (* mut Navigation , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d6f0usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_selectOnRight()` overload"] pub fn get_select_on_right (& mut self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { { let __inner : extern "C" fn (* mut Navigation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d700usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: option :: Option :: None) } } } # [doc = "`set_selectOnRight(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_select_on_right (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { { let __inner : extern "C" fn (* mut Navigation , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d710usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::ui::navigation::Navigation)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: navigation :: Navigation >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Navigation , crate :: unity_engine :: ui :: navigation :: Navigation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371d750usize) as * mut u8) ; __inner (self as * mut Navigation , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-navigation")]impl Navigation{#[doc="`get_mode()` overload"]pub fn get_mode(&mut self,)->crate::unity_engine::ui::navigation::Navigation_Mode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d660usize)as*mut u8,crate::unity_engine::ui::navigation::Navigation_Mode;
+(*mut Navigation)self as*mut Navigation)}
+}
+#[doc="`set_mode(crate::unity_engine::ui::navigation::Navigation_Mode)` overload"]pub fn set_mode(&mut self,value:impl::core::convert::Into<crate::unity_engine::ui::navigation::Navigation_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d670usize)as*mut u8,();
+(*mut Navigation)self as*mut Navigation,(crate::unity_engine::ui::navigation::Navigation_Mode)::core::convert::Into::into(value))}
+}
+#[doc="`get_wrapAround()` overload"]pub fn get_wrap_around(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d680usize)as*mut u8,bool;
+(*mut Navigation)self as*mut Navigation)}
+}
+#[doc="`set_wrapAround(bool)` overload"]pub fn set_wrap_around(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d690usize)as*mut u8,();
+(*mut Navigation)self as*mut Navigation,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_selectOnUp()` overload"]pub fn get_select_on_up(&mut self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d6a0usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(*mut Navigation)self as*mut Navigation)}
+}
+#[doc="`set_selectOnUp(crate::unity_engine::ui::selectable::Selectable)` overload"]pub fn set_select_on_up(&mut self,value:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d6b0usize)as*mut u8,();
+(*mut Navigation)self as*mut Navigation,(crate::unity_engine::ui::selectable::Selectable)::core::convert::Into::into(value))}
+}
+#[doc="`get_selectOnDown()` overload"]pub fn get_select_on_down(&mut self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d6c0usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(*mut Navigation)self as*mut Navigation)}
+}
+#[doc="`set_selectOnDown(crate::unity_engine::ui::selectable::Selectable)` overload"]pub fn set_select_on_down(&mut self,value:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d6d0usize)as*mut u8,();
+(*mut Navigation)self as*mut Navigation,(crate::unity_engine::ui::selectable::Selectable)::core::convert::Into::into(value))}
+}
+#[doc="`get_selectOnLeft()` overload"]pub fn get_select_on_left(&mut self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d6e0usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(*mut Navigation)self as*mut Navigation)}
+}
+#[doc="`set_selectOnLeft(crate::unity_engine::ui::selectable::Selectable)` overload"]pub fn set_select_on_left(&mut self,value:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d6f0usize)as*mut u8,();
+(*mut Navigation)self as*mut Navigation,(crate::unity_engine::ui::selectable::Selectable)::core::convert::Into::into(value))}
+}
+#[doc="`get_selectOnRight()` overload"]pub fn get_select_on_right(&mut self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d700usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(*mut Navigation)self as*mut Navigation)}
+}
+#[doc="`set_selectOnRight(crate::unity_engine::ui::selectable::Selectable)` overload"]pub fn set_select_on_right(&mut self,value:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d710usize)as*mut u8,();
+(*mut Navigation)self as*mut Navigation,(crate::unity_engine::ui::selectable::Selectable)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::unity_engine::ui::navigation::Navigation)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::ui::navigation::Navigation>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371d750usize)as*mut u8,bool;
+(*mut Navigation)self as*mut Navigation,(crate::unity_engine::ui::navigation::Navigation)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-navigation")]
-impl Navigation { pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_wrap_around_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_wrap_around_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_select_on_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_select_on_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_select_on_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_select_on_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_select_on_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_select_on_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_select_on_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_select_on_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_default_navigation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Navigation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="unity_engine-ui-navigation")]impl Navigation{pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_wrap_around_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_wrap_around_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_select_on_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_select_on_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_select_on_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_select_on_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_select_on_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_select_on_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_select_on_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_select_on_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_default_navigation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
 #[cfg(feature = "unity_engine-ui-navigation")]
 #[doc(hidden)]

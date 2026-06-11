@@ -4,47 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangeroot/RefineShopExchangeRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopExchangeRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineShopExchangeRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_TargetMenuObject")] pub m_target_menu_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_SourceMenuObject")] pub m_source_menu_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_CountMenuObject")] pub m_count_menu_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_ResultPopupObject")] pub m_result_popup_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangeroot/RefineShopExchangeRoot.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineShopExchangeRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_TargetMenuObject")]pub m_target_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_SourceMenuObject")]pub m_source_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_CountMenuObject")]pub m_count_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_ResultPopupObject")]pub m_result_popup_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-refineshopexchangeroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopexchangeroot")]
-impl RefineShopExchangeRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2963d50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2963e10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2963eb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateRoot()` overload"] pub fn create_root () -> crate :: app :: refineshopexchangeroot :: RefineShopExchangeRoot { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopexchangeroot :: RefineShopExchangeRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29621f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2964100usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopexchangeroot")]impl RefineShopExchangeRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2963d50usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2963e10usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2963eb0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateRoot()` overload"]pub fn create_root()->crate::app::refineshopexchangeroot::RefineShopExchangeRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29621f0usize)as*mut u8,crate::app::refineshopexchangeroot::RefineShopExchangeRoot;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2964100usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-refineshopexchangeroot")]
-pub trait IRefineShopExchangeRootMethods : IRefineShopExchangeRoot { # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2963f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2963c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29640f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTargetMenuContent()` overload"] fn get_target_menu_content (self ,) -> crate :: app :: refineshopexchangetargetmenucontent :: RefineShopExchangeTargetMenuContent { unsafe { let __receiver = < RefineShopExchangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopexchangetargetmenucontent :: RefineShopExchangeTargetMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2962500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSourceMenuContent()` overload"] fn get_source_menu_content (self ,) -> crate :: app :: refineshopexchangesourcemenucontent :: RefineShopExchangeSourceMenuContent { unsafe { let __receiver = < RefineShopExchangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopexchangesourcemenucontent :: RefineShopExchangeSourceMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2962aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCountMenuContent()` overload"] fn get_count_menu_content (self ,) -> crate :: app :: refineshopexchangecountmenucontent :: RefineShopExchangeCountMenuContent { unsafe { let __receiver = < RefineShopExchangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopexchangecountmenucontent :: RefineShopExchangeCountMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2963120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResultPopup()` overload"] fn get_result_popup (self ,) -> crate :: app :: refineshopexchangeresultpopup :: RefineShopExchangeResultPopup { unsafe { let __receiver = < RefineShopExchangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopexchangeresultpopup :: RefineShopExchangeResultPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29635d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopexchangeroot")]pub trait IRefineShopExchangeRootMethods:IRefineShopExchangeRoot{#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <RefineShopExchangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2963f50usize)as*mut u8,();
+(RefineShopExchangeRoot)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineShopExchangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2963c90usize)as*mut u8,();
+(RefineShopExchangeRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopExchangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29640f0usize)as*mut u8,();
+(RefineShopExchangeRoot)__receiver)}
+}
+#[doc="`GetTargetMenuContent()` overload"]fn get_target_menu_content(self,)->crate::app::refineshopexchangetargetmenucontent::RefineShopExchangeTargetMenuContent{unsafe{let __receiver= <RefineShopExchangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2962500usize)as*mut u8,crate::app::refineshopexchangetargetmenucontent::RefineShopExchangeTargetMenuContent;
+(RefineShopExchangeRoot)__receiver)}
+}
+#[doc="`GetSourceMenuContent()` overload"]fn get_source_menu_content(self,)->crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent{unsafe{let __receiver= <RefineShopExchangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2962aa0usize)as*mut u8,crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent;
+(RefineShopExchangeRoot)__receiver)}
+}
+#[doc="`GetCountMenuContent()` overload"]fn get_count_menu_content(self,)->crate::app::refineshopexchangecountmenucontent::RefineShopExchangeCountMenuContent{unsafe{let __receiver= <RefineShopExchangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2963120usize)as*mut u8,crate::app::refineshopexchangecountmenucontent::RefineShopExchangeCountMenuContent;
+(RefineShopExchangeRoot)__receiver)}
+}
+#[doc="`GetResultPopup()` overload"]fn get_result_popup(self,)->crate::app::refineshopexchangeresultpopup::RefineShopExchangeResultPopup{unsafe{let __receiver= <RefineShopExchangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29635d0usize)as*mut u8,crate::app::refineshopexchangeresultpopup::RefineShopExchangeResultPopup;
+(RefineShopExchangeRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopexchangeroot")]
-impl < __T : IRefineShopExchangeRoot > IRefineShopExchangeRootMethods for __T { }
+#[cfg(feature="app-refineshopexchangeroot")]impl<__T:IRefineShopExchangeRoot>IRefineShopExchangeRootMethods for __T{}
 
-#[cfg(feature = "app-refineshopexchangeroot")]
-impl RefineShopExchangeRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_target_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_source_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_count_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_result_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-refineshopexchangeroot")]impl RefineShopExchangeRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_target_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_source_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_count_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_result_popup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-refineshopexchangeroot")]
-impl RefineShopExchangeRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopExchangeRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopExchangeRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineshopexchangeroot")]impl RefineShopExchangeRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeRoot), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineshopexchangeroot")]

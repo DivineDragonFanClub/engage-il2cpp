@@ -4,44 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/meshdeliver/MeshDeliver.md"))] # [:: unity2 :: class (namespace = "" , name = "MeshDeliver")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MeshDeliver {
-# [offset (24)] # [rename (name = "m_SMRs")] pub m_sm_rs : :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > ,
-# [offset (32)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (40)] # [rename (name = "m_mf")] pub m_mf : crate :: unity_engine :: meshfilter :: MeshFilter ,
-# [offset (48)] # [rename (name = "m_Meshes")] pub m_meshes : :: unity2 :: Array < crate :: unity_engine :: mesh :: Mesh > ,
-# [offset (56)] # [rename (name = "m_MaterialsBB")] pub m_materials_bb : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/meshdeliver/MeshDeliver.md"))]#[::unity2::class(namespace="",name="MeshDeliver")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MeshDeliver{#[offset(24)]#[rename(name="m_SMRs")]pub m_sm_rs: ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer> , #[offset(32)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(40)]#[rename(name="m_mf")]pub m_mf:crate::unity_engine::meshfilter::MeshFilter, #[offset(48)]#[rename(name="m_Meshes")]pub m_meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh> , #[offset(56)]#[rename(name="m_MaterialsBB")]pub m_materials_bb: ::unity2::Array<crate::unity_engine::material::Material> ,}
 
 }
 
 #[cfg(feature = "root-meshdeliver-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-meshdeliver")]
-pub trait IMeshDeliverMethods : IMeshDeliver { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MeshDeliver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshDeliver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d1ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MeshDeliver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshDeliver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAllMesh(crate::unity_engine::gameobject::GameObject)` overload"] fn set_all_mesh (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < MeshDeliver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshDeliver , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MeshDeliver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshDeliver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-meshdeliver")]pub trait IMeshDeliverMethods:IMeshDeliver{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MeshDeliver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d1ed0usize)as*mut u8,();
+(MeshDeliver)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MeshDeliver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2240usize)as*mut u8,();
+(MeshDeliver)__receiver)}
+}
+#[doc="`SetAllMesh(crate::unity_engine::gameobject::GameObject)` overload"]fn set_all_mesh(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MeshDeliver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2010usize)as*mut u8,();
+(MeshDeliver)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshDeliver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2410usize)as*mut u8,();
+(MeshDeliver)__receiver)}
+}
+}
 
-#[cfg(feature = "root-meshdeliver")]
-impl < __T : IMeshDeliver > IMeshDeliverMethods for __T { }
+#[cfg(feature="root-meshdeliver")]impl<__T:IMeshDeliver>IMeshDeliverMethods for __T{}
 
-#[cfg(feature = "root-meshdeliver")]
-impl MeshDeliver { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshDeliver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshDeliver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_all_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshDeliver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshDeliver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-meshdeliver")]impl MeshDeliver{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_all_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "root-meshdeliver")]
-impl MeshDeliver {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MeshDeliver) , :: core :: stringify ! (new) ,)) ; < Self as IMeshDeliverMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-meshdeliver")]impl MeshDeliver{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MeshDeliver), ::core::stringify!(new),));
+ <Self as IMeshDeliverMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-meshdeliver")]

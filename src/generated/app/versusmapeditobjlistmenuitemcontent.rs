@@ -4,48 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditobjlistmenuitemcontent/VersusMapEditObjListMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusMapEditObjListMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct VersusMapEditObjListMenuItemContent {
-# [offset (72)] # [rename (name = "m_ThumbImage")] pub m_thumb_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (80)] # [rename (name = "m_CategoryImage")] pub m_category_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_Anim")] pub m_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (96)] # [rename (name = "m_SelectBgImage")] pub m_select_bg_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (104)] # [rename (name = "m_IsMax")] pub m_is_max : bool ,
-# [offset (112)] # [rename (name = "m_ThumbSprite")] pub m_thumb_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (120)] # [rename (name = "m_CategorySprite")] pub m_category_sprite : crate :: unity_engine :: sprite :: Sprite ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmapeditobjlistmenuitemcontent/VersusMapEditObjListMenuItemContent.md"))]#[::unity2::class(namespace="App",name="VersusMapEditObjListMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct VersusMapEditObjListMenuItemContent{#[offset(72)]#[rename(name="m_ThumbImage")]pub m_thumb_image:crate::unity_engine::ui::image::Image, #[offset(80)]#[rename(name="m_CategoryImage")]pub m_category_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_Anim")]pub m_anim:crate::unity_engine::animator::Animator, #[offset(96)]#[rename(name="m_SelectBgImage")]pub m_select_bg_image:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_IsMax")]pub m_is_max:bool, #[offset(112)]#[rename(name="m_ThumbSprite")]pub m_thumb_sprite:crate::unity_engine::sprite::Sprite, #[offset(120)]#[rename(name="m_CategorySprite")]pub m_category_sprite:crate::unity_engine::sprite::Sprite,}
 
 }
 
 #[cfg(feature = "app-versusmapeditobjlistmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusmapeditobjlistmenuitemcontent")]
-pub trait IVersusMapEditObjListMenuItemContentMethods : IVersusMapEditObjListMenuItemContent { # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < VersusMapEditObjListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditObjListMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26addb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < VersusMapEditObjListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditObjListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayUnSelect()` overload"] fn play_un_select (self ,) -> () { unsafe { let __receiver = < VersusMapEditObjListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditObjListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlaySelect()` overload"] fn play_select (self ,) -> () { unsafe { let __receiver = < VersusMapEditObjListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditObjListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26aa410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < VersusMapEditObjListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditObjListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMenuItemColor(bool)` overload"] fn set_menu_item_color (self , is_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < VersusMapEditObjListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditObjListMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26aa480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_select) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusMapEditObjListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapEditObjListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ae450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmapeditobjlistmenuitemcontent")]pub trait IVersusMapEditObjListMenuItemContentMethods:IVersusMapEditObjListMenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <VersusMapEditObjListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26addb0usize)as*mut u8,();
+(VersusMapEditObjListMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <VersusMapEditObjListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ae1f0usize)as*mut u8,();
+(VersusMapEditObjListMenuItemContent)__receiver)}
+}
+#[doc="`PlayUnSelect()` overload"]fn play_un_select(self,)->(){unsafe{let __receiver= <VersusMapEditObjListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ae180usize)as*mut u8,();
+(VersusMapEditObjListMenuItemContent)__receiver)}
+}
+#[doc="`PlaySelect()` overload"]fn play_select(self,)->(){unsafe{let __receiver= <VersusMapEditObjListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26aa410usize)as*mut u8,();
+(VersusMapEditObjListMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <VersusMapEditObjListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ae270usize)as*mut u8,();
+(VersusMapEditObjListMenuItemContent)__receiver)}
+}
+#[doc="`SetMenuItemColor(bool)` overload"]fn set_menu_item_color(self,is_select:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VersusMapEditObjListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26aa480usize)as*mut u8,();
+(VersusMapEditObjListMenuItemContent)__receiver,(bool)::core::convert::Into::into(is_select))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusMapEditObjListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ae450usize)as*mut u8,();
+(VersusMapEditObjListMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusmapeditobjlistmenuitemcontent")]
-impl < __T : IVersusMapEditObjListMenuItemContent > IVersusMapEditObjListMenuItemContentMethods for __T { }
+#[cfg(feature="app-versusmapeditobjlistmenuitemcontent")]impl<__T:IVersusMapEditObjListMenuItemContent>IVersusMapEditObjListMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-versusmapeditobjlistmenuitemcontent")]
-impl VersusMapEditObjListMenuItemContent { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditObjListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditObjListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn play_un_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditObjListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn play_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditObjListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditObjListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_menu_item_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditObjListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapEditObjListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-versusmapeditobjlistmenuitemcontent")]impl VersusMapEditObjListMenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn play_un_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn play_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_menu_item_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-versusmapeditobjlistmenuitemcontent")]
-impl VersusMapEditObjListMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusMapEditObjListMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IVersusMapEditObjListMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusmapeditobjlistmenuitemcontent")]impl VersusMapEditObjListMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusMapEditObjListMenuItemContent), ::core::stringify!(new),));
+ <Self as IVersusMapEditObjListMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusmapeditobjlistmenuitemcontent")]

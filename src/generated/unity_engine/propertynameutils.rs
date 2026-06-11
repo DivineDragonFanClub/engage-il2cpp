@@ -4,23 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/propertynameutils/PropertyNameUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "PropertyNameUtils")] # [parent (crate :: system :: object :: Object)] pub struct PropertyNameUtils {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/propertynameutils/PropertyNameUtils.md"))]#[::unity2::class(namespace="UnityEngine",name="PropertyNameUtils")]#[parent(crate::system::object::Object)]pub struct PropertyNameUtils{}
 
 }
 
 #[cfg(feature = "unity_engine-propertynameutils-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-propertynameutils")]
-impl PropertyNameUtils { # [doc = "`PropertyNameFromString(::unity2::Il2CppString)` overload"] pub fn property_name_from_string (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8d00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`PropertyNameFromString_Injected(::unity2::Il2CppString, *mutcrate::unity_engine::propertyname::PropertyName)` overload"] pub fn property_name_from_string_injected (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: propertyname :: PropertyName > :: uninit () ; { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut crate :: unity_engine :: propertyname :: PropertyName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-propertynameutils")]impl PropertyNameUtils{#[doc="`PropertyNameFromString(::unity2::Il2CppString)` overload"]pub fn property_name_from_string(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::propertyname::PropertyName{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8d00usize)as*mut u8,crate::unity_engine::propertyname::PropertyName;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`PropertyNameFromString_Injected(::unity2::Il2CppString, *mutcrate::unity_engine::propertyname::PropertyName)` overload"]pub fn property_name_from_string_injected(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::propertyname::PropertyName{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::propertyname::PropertyName> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f8ec0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name),(*mut crate::unity_engine::propertyname::PropertyName)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-propertynameutils")]
-impl PropertyNameUtils { pub fn property_name_from_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyNameUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn property_name_from_string_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyNameUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-propertynameutils")]impl PropertyNameUtils{pub fn property_name_from_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn property_name_from_string_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-propertynameutils")]
 #[doc(hidden)]

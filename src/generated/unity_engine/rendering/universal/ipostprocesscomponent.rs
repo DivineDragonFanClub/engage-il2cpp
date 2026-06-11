@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/ipostprocesscomponent/IPostProcessComponent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "IPostProcessComponent")] pub struct IPostProcessComponent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/ipostprocesscomponent/IPostProcessComponent.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="IPostProcessComponent")]pub struct IPostProcessComponent{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IPostProcessComponent_unity2_raw { use super :: * ; pub unsafe fn is_active (this : IPostProcessComponent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsActive") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsActive" , < IPostProcessComponent as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IPostProcessComponent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn is_tile_compatible (this : IPostProcessComponent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsTileCompatible") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsTileCompatible" , < IPostProcessComponent as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IPostProcessComponent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-rendering-universal-ipostprocesscomponent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPostProcessComponent_unity2_raw{use super:: * ;
+pub unsafe fn is_active(this:IPostProcessComponent,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsActive").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsActive", <IPostProcessComponent as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IPostProcessComponent, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_tile_compatible(this:IPostProcessComponent,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsTileCompatible").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsTileCompatible", <IPostProcessComponent as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IPostProcessComponent, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
-pub trait IIPostProcessComponentMethods : IIPostProcessComponent { # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < IPostProcessComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPostProcessComponent_unity2_raw :: is_active (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsTileCompatible()` overload"] fn is_tile_compatible (self ,) -> bool { unsafe { let __receiver = < IPostProcessComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPostProcessComponent_unity2_raw :: is_tile_compatible (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-rendering-universal-ipostprocesscomponent")]pub trait IIPostProcessComponentMethods:IIPostProcessComponent{#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <IPostProcessComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IPostProcessComponent_unity2_raw::is_active(__receiver, ::core::option::Option::None)}
+}
+#[doc="`IsTileCompatible()` overload"]fn is_tile_compatible(self,)->bool{unsafe{let __receiver= <IPostProcessComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IPostProcessComponent_unity2_raw::is_tile_compatible(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
-impl < __T : IIPostProcessComponent > IIPostProcessComponentMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-ipostprocesscomponent")]impl<__T:IIPostProcessComponent>IIPostProcessComponentMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
-impl IPostProcessComponent { pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IPostProcessComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_tile_compatible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IPostProcessComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-universal-ipostprocesscomponent")]impl IPostProcessComponent{pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_tile_compatible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
 #[doc(hidden)]

@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/iinterval/IInterval.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "IInterval")] pub struct IInterval {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/iinterval/IInterval.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="IInterval")]pub struct IInterval{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-iinterval-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-iinterval")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IInterval_unity2_raw { use super :: * ; pub unsafe fn get_interval_start (this : IInterval , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_intervalStart") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_intervalStart" , < IInterval as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IInterval , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_interval_end (this : IInterval , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_intervalEnd") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_intervalEnd" , < IInterval as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IInterval , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-timeline-iinterval")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IInterval_unity2_raw{use super:: * ;
+pub unsafe fn get_interval_start(this:IInterval,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_intervalStart").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_intervalStart", <IInterval as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IInterval, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_interval_end(this:IInterval,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_intervalEnd").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_intervalEnd", <IInterval as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IInterval, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-timeline-iinterval")]
-pub trait IIIntervalMethods : IIInterval { # [doc = "`get_intervalStart()` overload"] fn get_interval_start (self ,) -> i64 { unsafe { let __receiver = < IInterval as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IInterval_unity2_raw :: get_interval_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_intervalEnd()` overload"] fn get_interval_end (self ,) -> i64 { unsafe { let __receiver = < IInterval as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IInterval_unity2_raw :: get_interval_end (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-timeline-iinterval")]pub trait IIIntervalMethods:IIInterval{#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <IInterval as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IInterval_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <IInterval as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IInterval_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-iinterval")]
-impl < __T : IIInterval > IIIntervalMethods for __T { }
+#[cfg(feature="unity_engine-timeline-iinterval")]impl<__T:IIInterval>IIIntervalMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-iinterval")]
-impl IInterval { pub fn get_interval_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IInterval as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_interval_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IInterval as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-timeline-iinterval")]impl IInterval{pub fn get_interval_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_interval_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-timeline-iinterval")]
 #[doc(hidden)]

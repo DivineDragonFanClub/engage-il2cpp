@@ -4,122 +4,179 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardMyCardMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardMyCardMenu {
-# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_DecideEventHandler ,
-# [offset (120)] # [rename (name = "m_Root")] pub m_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
-# [offset (128)] # [rename (name = "m_MyProfileCardTemp")] pub m_my_profile_card_temp : crate :: app :: profilecard :: ProfileCard ,
-# [offset (136)] # [rename (name = "m_result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (140)] # [rename (name = "m_NeededUpdateCardOnBuild")] pub m_needed_update_card_on_build : bool ,
-# [offset (141)] # [rename (name = "m_CloseCalled")] pub m_close_called : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmycardmenu/ProfileCardMyCardMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardMyCardMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardMyCardMenu{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_Root")]pub m_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(128)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(136)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(140)]#[rename(name="m_NeededUpdateCardOnBuild")]pub m_needed_update_card_on_build:bool, #[offset(141)]#[rename(name="m_CloseCalled")]pub m_close_called:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardMyCardMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardMyCardMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardMyCardMenu_Result2{pub value:i32,}
+impl::unity2::ClassIdentity for ProfileCardMyCardMenu_Result2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProfileCardMyCardMenu.Result2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_Result2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ProfileCardMyCardMenu_Result2  {
-    pub value: i32,
+impl::unity2::IlType for ProfileCardMyCardMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for ProfileCardMyCardMenu_Result2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProfileCardMyCardMenu.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl ProfileCardMyCardMenu_Result2{pub fn edit()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for ProfileCardMyCardMenu_Result2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn save()->Self{Self{value:1}
 }
-
-
-impl  ProfileCardMyCardMenu_Result2  {
-    pub fn edit() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn save() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn cancel() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn cancel()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardMyCardMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardMyCardMenu_DecideEventHandler {}
+}
 
 }
 
 #[cfg(feature = "app-profilecardmycardmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardmycardmenu")]
-impl ProfileCardMyCardMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, bool, crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , profiled_card_root : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot > , my_profile_card_temp : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , needed_update_card_on_build : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_DecideEventHandler >) -> crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , bool , crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231b680usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (profiled_card_root) , :: core :: convert :: Into :: into (my_profile_card_temp) , :: core :: convert :: Into :: into (needed_update_card_on_build) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-profilecardmycardmenu")]
-pub trait IProfileCardMyCardMenuMethods : IProfileCardMyCardMenu { # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231b800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, bool, crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)` overload"] fn ctor (self , menu_root : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot > , my_profile_card_temp : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , needed_update_card_on_build : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , bool , crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231b770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_root) , :: core :: convert :: Into :: into (my_profile_card_temp) , :: core :: convert :: Into :: into (needed_update_card_on_build) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ba80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231baa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenAnime()` overload"] fn open_anime (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231baf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231bb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickInput()` overload"] fn tick_input (self ,) -> bool { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231bc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSwitchingPages()` overload"] fn is_switching_pages (self ,) -> bool { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231bbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231bbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c3e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LCall()` overload"] fn l_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RCall()` overload"] fn r_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231c480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-profilecardmycardmenu")]
-impl < __T : IProfileCardMyCardMenu > IProfileCardMyCardMenuMethods for __T { }
-
-#[cfg(feature = "app-profilecardmycardmenu")]
-impl ProfileCardMyCardMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn open_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn tick_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_switching_pages_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn l_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn r_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
-
-#[cfg(feature = "app-profilecardmycardmenu")]
-impl ProfileCardMyCardMenu {
-# [doc = "`.ctor(crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, bool, crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_root : crate :: app :: profilecardroot :: ProfileCardRoot , my_profile_card_temp : crate :: app :: profilecard :: ProfileCard , needed_update_card_on_build : bool , decide_event_handler : crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardMyCardMenu) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardMyCardMenuMethods > :: ctor (this , menu_root , my_profile_card_temp , needed_update_card_on_build , decide_event_handler) ; this }
+#[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, bool, crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,profiled_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,needed_update_card_on_build:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler>)->crate::app::profilecardmycardmenu::ProfileCardMyCardMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x231b680usize)as*mut u8,crate::app::profilecardmycardmenu::ProfileCardMyCardMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(profiled_card_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(bool)::core::convert::Into::into(needed_update_card_on_build),(crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
 }
 
-#[cfg(feature = "app-profilecardmycardmenu")]
-pub trait IProfileCardMyCardMenu_DecideEventHandlerMethods : IProfileCardMyCardMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2269950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2)` overload"] fn invoke (self , result2 : impl :: core :: convert :: Into < crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_Result2 >) -> () { unsafe { let __receiver = < ProfileCardMyCardMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyCardMenu_DecideEventHandler , crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_Result2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2269970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result2) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardmycardmenu")]pub trait IProfileCardMyCardMenuMethods:IProfileCardMyCardMenu{#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231b800usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`.ctor(crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, bool, crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)` overload"]fn ctor(self,menu_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,needed_update_card_on_build:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231b770usize)as*mut u8,();
+(ProfileCardMyCardMenu)__receiver,(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(menu_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(bool)::core::convert::Into::into(needed_update_card_on_build),(crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ba80usize)as*mut u8,();
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231baa0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`OpenAnime()` overload"]fn open_anime(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231baf0usize)as*mut u8,();
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231bb00usize)as*mut u8,();
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`TickInput()` overload"]fn tick_input(self,)->bool{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231bc90usize)as*mut u8,bool;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`IsSwitchingPages()` overload"]fn is_switching_pages(self,)->bool{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231bbf0usize)as*mut u8,bool;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c450usize)as*mut u8,();
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231bbe0usize)as*mut u8,bool;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c470usize)as*mut u8,bool;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c380usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c3b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c3e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`LCall()` overload"]fn l_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c410usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`RCall()` overload"]fn r_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c430usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c460usize)as*mut u8,();
+(ProfileCardMyCardMenu)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231c480usize)as*mut u8,();
+(ProfileCardMyCardMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardmycardmenu")]
-impl < __T : IProfileCardMyCardMenu_DecideEventHandler > IProfileCardMyCardMenu_DecideEventHandlerMethods for __T { }
+#[cfg(feature="app-profilecardmycardmenu")]impl<__T:IProfileCardMyCardMenu>IProfileCardMyCardMenuMethods for __T{}
 
-#[cfg(feature = "app-profilecardmycardmenu")]
-impl ProfileCardMyCardMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyCardMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn open_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn tick_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_switching_pages_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn l_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn r_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-profilecardmycardmenu")]
-impl ProfileCardMyCardMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardMyCardMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardMyCardMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu{#[doc="`.ctor(crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, bool, crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_root:crate::app::profilecardroot::ProfileCardRoot,my_profile_card_temp:crate::app::profilecard::ProfileCard,needed_update_card_on_build:bool,decide_event_handler:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardMyCardMenu), ::core::stringify!(new),));
+ <Self as IProfileCardMyCardMenuMethods> ::ctor(this,menu_root,my_profile_card_temp,needed_update_card_on_build,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-profilecardmycardmenu")]pub trait IProfileCardMyCardMenu_DecideEventHandlerMethods:IProfileCardMyCardMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardMyCardMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2269950usize)as*mut u8,();
+(ProfileCardMyCardMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2)` overload"]fn invoke(self,result2:impl::core::convert::Into<crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2>)->(){unsafe{let __receiver= <ProfileCardMyCardMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2269970usize)as*mut u8,();
+(ProfileCardMyCardMenu_DecideEventHandler)__receiver,(crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2)::core::convert::Into::into(result2))}
+}
+}
+
+#[cfg(feature="app-profilecardmycardmenu")]impl<__T:IProfileCardMyCardMenu_DecideEventHandler>IProfileCardMyCardMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardMyCardMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardMyCardMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-profilecardmycardmenu")]
@@ -128,10 +185,10 @@ pub mod prelude {
     pub use super::ProfileCardMyCardMenu;
     pub use super::IProfileCardMyCardMenu;
     pub use super::IProfileCardMyCardMenuMethods;
-    pub use super::ProfileCardMyCardMenu_Result2;
     pub use super::ProfileCardMyCardMenu_DecideEventHandler;
     pub use super::IProfileCardMyCardMenu_DecideEventHandler;
     pub use super::IProfileCardMyCardMenu_DecideEventHandlerMethods;
+    pub use super::ProfileCardMyCardMenu_Result2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

@@ -4,74 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaithread/MapAiThread.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAiThread")] # [parent (crate :: system :: object :: Object)] pub struct MapAiThread {
-# [offset (24)] # [rename (name = "m_Lock")] pub m_lock : :: unity2 :: IlInstance ,
-# [offset (40)] # [rename (name = "m_IsFirstRun")] pub m_is_first_run : bool ,
-# [offset (44)] # [rename (name = "m_Status")] pub m_status : crate :: app :: mapaithread :: MapAiThread_Status ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaithread/MapAiThread.md"))]#[::unity2::class(namespace="App",name="MapAiThread")]#[parent(crate::system::object::Object)]pub struct MapAiThread{#[offset(24)]#[rename(name="m_Lock")]pub m_lock: ::unity2::IlInstance, #[offset(40)]#[rename(name="m_IsFirstRun")]pub m_is_first_run:bool, #[offset(44)]#[rename(name="m_Status")]pub m_status:crate::app::mapaithread::MapAiThread_Status,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaithread/MapAiThread_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapAiThread_Status{pub value:i32,}
+impl::unity2::ClassIdentity for MapAiThread_Status{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapAiThread.Status";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapaithread/MapAiThread_Status.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapAiThread_Status  {
-    pub value: i32,
+impl::unity2::IlType for MapAiThread_Status{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for MapAiThread_Status  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapAiThread.Status";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl MapAiThread_Status{pub fn wait()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for MapAiThread_Status  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn run()->Self{Self{value:1}
 }
-
-
-impl  MapAiThread_Status  {
-    pub fn wait() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn run() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn finalize() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn finalize()->Self{Self{value:2}
+}
 }
 
 }
@@ -79,21 +38,48 @@ impl  MapAiThread_Status  {
 #[cfg(feature = "app-mapaithread-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapaithread")]
-impl MapAiThread { # [doc = "`Function(crate::system::object::Object)` overload"] pub fn function (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efb480usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapaithread")]impl MapAiThread{#[doc="`Function(crate::system::object::Object)` overload"]pub fn function(obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1efb480usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "app-mapaithread")]
-pub trait IMapAiThreadMethods : IMapAiThread { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapAiThread as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAiThread , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efb2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destruct()` overload"] fn destruct (self ,) -> () { unsafe { let __receiver = < MapAiThread as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAiThread , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efb430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetFirstRunFlag()` overload"] fn set_first_run_flag (self ,) -> () { unsafe { let __receiver = < MapAiThread as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAiThread , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efb730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Run()` overload"] fn run (self ,) -> () { unsafe { let __receiver = < MapAiThread as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAiThread , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efb760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsWait()` overload"] fn is_wait (self ,) -> bool { unsafe { let __receiver = < MapAiThread as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAiThread , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efb790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapaithread")]pub trait IMapAiThreadMethods:IMapAiThread{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapAiThread as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1efb2b0usize)as*mut u8,();
+(MapAiThread)__receiver)}
+}
+#[doc="`Destruct()` overload"]fn destruct(self,)->(){unsafe{let __receiver= <MapAiThread as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1efb430usize)as*mut u8,();
+(MapAiThread)__receiver)}
+}
+#[doc="`SetFirstRunFlag()` overload"]fn set_first_run_flag(self,)->(){unsafe{let __receiver= <MapAiThread as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1efb730usize)as*mut u8,();
+(MapAiThread)__receiver)}
+}
+#[doc="`Run()` overload"]fn run(self,)->(){unsafe{let __receiver= <MapAiThread as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1efb760usize)as*mut u8,();
+(MapAiThread)__receiver)}
+}
+#[doc="`IsWait()` overload"]fn is_wait(self,)->bool{unsafe{let __receiver= <MapAiThread as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1efb790usize)as*mut u8,bool;
+(MapAiThread)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapaithread")]
-impl < __T : IMapAiThread > IMapAiThreadMethods for __T { }
+#[cfg(feature="app-mapaithread")]impl<__T:IMapAiThread>IMapAiThreadMethods for __T{}
 
-#[cfg(feature = "app-mapaithread")]
-impl MapAiThread { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAiThread as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn destruct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAiThread as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn function_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAiThread as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_first_run_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAiThread as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAiThread as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAiThread as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-mapaithread")]impl MapAiThread{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn destruct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_first_run_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn run_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-mapaithread")]
-impl MapAiThread {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAiThread) , :: core :: stringify ! (new) ,)) ; < Self as IMapAiThreadMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapaithread")]impl MapAiThread{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAiThread), ::core::stringify!(new),));
+ <Self as IMapAiThreadMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapaithread")]

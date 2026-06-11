@@ -4,27 +4,123 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_locations/iresourcelocation/IResourceLocation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceLocations" , name = "IResourceLocation")] pub struct IResourceLocation {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_locations/iresourcelocation/IResourceLocation.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceLocations",name="IResourceLocation")]pub struct IResourceLocation{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IResourceLocation_unity2_raw { use super :: * ; pub unsafe fn get_internal_id (this : IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_InternalId") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_InternalId" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_provider_id (this : IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_ProviderId") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_ProviderId" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_dependencies (this : IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Dependencies") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Dependencies" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn hash (this : IResourceLocation , result_type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Hash") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Hash" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , result_type , __mi) } pub unsafe fn get_dependency_hash_code (this : IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_DependencyHashCode") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_DependencyHashCode" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_has_dependencies (this : IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_HasDependencies") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_HasDependencies" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_data (this : IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Data") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Data" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_primary_key (this : IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_PrimaryKey") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_PrimaryKey" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_resource_type (this : IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_ResourceType") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_ResourceType" , < IResourceLocation as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IResourceLocation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-resource_management-resource_locations-iresourcelocation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IResourceLocation_unity2_raw{use super:: * ;
+pub unsafe fn get_internal_id(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_InternalId").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_InternalId", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_provider_id(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ProviderId").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_ProviderId", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_dependencies(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Dependencies").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Dependencies", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn hash(this:IResourceLocation,result_type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Hash").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Hash", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::SystemType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result_type,__mi)}
+pub unsafe fn get_dependency_hash_code(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_DependencyHashCode").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_DependencyHashCode", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_has_dependencies(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_HasDependencies").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_HasDependencies", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_data(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Data").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Data", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_primary_key(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_PrimaryKey").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_PrimaryKey", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_resource_type(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ResourceType").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_ResourceType", <IResourceLocation as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation")]
-pub trait IIResourceLocationMethods : IIResourceLocation { # [doc = "`get_InternalId()` overload"] fn get_internal_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: get_internal_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ProviderId()` overload"] fn get_provider_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: get_provider_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Dependencies()` overload"] fn get_dependencies (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: get_dependencies (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Hash(::unity2::SystemType)` overload"] fn hash (self , result_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> i32 { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: hash (__receiver , :: core :: convert :: Into :: into (result_type) , :: core :: option :: Option :: None) } } # [doc = "`get_DependencyHashCode()` overload"] fn get_dependency_hash_code (self ,) -> i32 { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: get_dependency_hash_code (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_HasDependencies()` overload"] fn get_has_dependencies (self ,) -> bool { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: get_has_dependencies (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: get_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_PrimaryKey()` overload"] fn get_primary_key (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: get_primary_key (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ResourceType()` overload"] fn get_resource_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < IResourceLocation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IResourceLocation_unity2_raw :: get_resource_type (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-resource_management-resource_locations-iresourcelocation")]pub trait IIResourceLocationMethods:IIResourceLocation{#[doc="`get_InternalId()` overload"]fn get_internal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::get_internal_id(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::get_provider_id(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Dependencies()` overload"]fn get_dependencies(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::get_dependencies(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Hash(::unity2::SystemType)` overload"]fn hash(self,result_type:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::hash(__receiver, ::core::convert::Into::into(result_type), ::core::option::Option::None)}
+}
+#[doc="`get_DependencyHashCode()` overload"]fn get_dependency_hash_code(self,)->i32{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::get_dependency_hash_code(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_HasDependencies()` overload"]fn get_has_dependencies(self,)->bool{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::get_has_dependencies(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::object::Object{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::get_data(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_PrimaryKey()` overload"]fn get_primary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::get_primary_key(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_ResourceType()` overload"]fn get_resource_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IResourceLocation_unity2_raw::get_resource_type(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation")]
-impl < __T : IIResourceLocation > IIResourceLocationMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-resource_locations-iresourcelocation")]impl<__T:IIResourceLocation>IIResourceLocationMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation")]
-impl IResourceLocation { pub fn get_internal_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_provider_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_dependencies_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_dependency_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_has_dependencies_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_primary_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_resource_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IResourceLocation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-resource_management-resource_locations-iresourcelocation")]impl IResourceLocation{pub fn get_internal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_provider_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_dependency_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_has_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_primary_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_resource_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation")]
 #[doc(hidden)]

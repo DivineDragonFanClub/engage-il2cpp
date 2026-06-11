@@ -4,36 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bgmplayer :: { BgmPlayer , IBgmPlayer }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bgmplayer::{BgmPlayer,IBgmPlayer}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundtestplayer/SoundTestPlayer.md"))] # [:: unity2 :: class (namespace = "App" , name = "SoundTestPlayer")] # [parent (crate :: app :: bgmplayer :: BgmPlayer)] pub struct SoundTestPlayer {
-# [offset (16)] # [rename (name = "m_handle")] pub m_handle : crate :: app :: gamesound :: GameSound_Handle ,
-# [offset (24)] # [rename (name = "m_currentPause")] pub m_current_pause : bool ,
-# [offset (32)] # [rename (name = "m_soundList")] pub m_sound_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gamesound :: GameSound_Handle > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundtestplayer/SoundTestPlayer.md"))]#[::unity2::class(namespace="App",name="SoundTestPlayer")]#[parent(crate::app::bgmplayer::BgmPlayer)]pub struct SoundTestPlayer{#[offset(16)]#[rename(name="m_handle")]pub m_handle:crate::app::gamesound::GameSound_Handle, #[offset(24)]#[rename(name="m_currentPause")]pub m_current_pause:bool, #[offset(32)]#[rename(name="m_soundList")]pub m_sound_list:crate::system::collections::generic::list_1::List_1<crate::app::gamesound::GameSound_Handle> ,}
 
 }
 
 #[cfg(feature = "app-soundtestplayer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-soundtestplayer")]
-pub trait ISoundTestPlayerMethods : ISoundTestPlayer { # [doc = "`PauseCurrentBgm()` overload"] fn pause_current_bgm (self ,) -> () { unsafe { let __receiver = < SoundTestPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoundTestPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fbfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlaying()` overload"] fn is_playing (self ,) -> bool { unsafe { let __receiver = < SoundTestPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoundTestPlayer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fc060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlaying(::unity2::Il2CppString)` overload"] fn is_playing_2 (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < SoundTestPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoundTestPlayer , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fc080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`Play(::unity2::Il2CppString)` overload"] fn play (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SoundTestPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoundTestPlayer , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fc0f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < SoundTestPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoundTestPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fc2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick(crate::app::myroomsoundmenu::MyRoomSoundMenu)` overload"] fn tick (self , menu : impl :: core :: convert :: Into < crate :: app :: myroomsoundmenu :: MyRoomSoundMenu >) -> () { unsafe { let __receiver = < SoundTestPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoundTestPlayer , crate :: app :: myroomsoundmenu :: MyRoomSoundMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fc460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < SoundTestPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoundTestPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fc4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SoundTestPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoundTestPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fc6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-soundtestplayer")]pub trait ISoundTestPlayerMethods:ISoundTestPlayer{#[doc="`PauseCurrentBgm()` overload"]fn pause_current_bgm(self,)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fbfa0usize)as*mut u8,();
+(SoundTestPlayer)__receiver)}
+}
+#[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fc060usize)as*mut u8,bool;
+(SoundTestPlayer)__receiver)}
+}
+#[doc="`IsPlaying(::unity2::Il2CppString)` overload"]fn is_playing_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fc080usize)as*mut u8,bool;
+(SoundTestPlayer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`Play(::unity2::Il2CppString)` overload"]fn play(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fc0f0usize)as*mut u8,();
+(SoundTestPlayer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fc2b0usize)as*mut u8,();
+(SoundTestPlayer)__receiver)}
+}
+#[doc="`Tick(crate::app::myroomsoundmenu::MyRoomSoundMenu)` overload"]fn tick(self,menu:impl::core::convert::Into<crate::app::myroomsoundmenu::MyRoomSoundMenu>)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fc460usize)as*mut u8,();
+(SoundTestPlayer)__receiver,(crate::app::myroomsoundmenu::MyRoomSoundMenu)::core::convert::Into::into(menu))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fc4d0usize)as*mut u8,();
+(SoundTestPlayer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fc6a0usize)as*mut u8,();
+(SoundTestPlayer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-soundtestplayer")]
-impl < __T : ISoundTestPlayer > ISoundTestPlayerMethods for __T { }
+#[cfg(feature="app-soundtestplayer")]impl<__T:ISoundTestPlayer>ISoundTestPlayerMethods for __T{}
 
-#[cfg(feature = "app-soundtestplayer")]
-impl SoundTestPlayer { pub fn pause_current_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoundTestPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoundTestPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_playing_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoundTestPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoundTestPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoundTestPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoundTestPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoundTestPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoundTestPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-soundtestplayer")]impl SoundTestPlayer{pub fn pause_current_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_playing_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-soundtestplayer")]
-impl SoundTestPlayer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SoundTestPlayer) , :: core :: stringify ! (new) ,)) ; < Self as ISoundTestPlayerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-soundtestplayer")]impl SoundTestPlayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundTestPlayer), ::core::stringify!(new),));
+ <Self as ISoundTestPlayerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-soundtestplayer")]

@@ -4,38 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rectoffset/RectOffset.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "RectOffset")] # [parent (crate :: system :: object :: Object)] pub struct RectOffset {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_SourceStyle")] pub m_source_style : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rectoffset/RectOffset.md"))]#[::unity2::class(namespace="UnityEngine",name="RectOffset")]#[parent(crate::system::object::Object)]pub struct RectOffset{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_SourceStyle")]pub m_source_style: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "unity_engine-rectoffset-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rectoffset")]
-impl RectOffset { # [doc = "`InternalCreate()` overload"] pub fn internal_create () -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7ba50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`InternalDestroy(::unity2::IntPtr)` overload"] pub fn internal_destroy (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7c0b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rectoffset")]impl RectOffset{#[doc="`InternalCreate()` overload"]pub fn internal_create()-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7ba50usize)as*mut u8, ::unity2::IntPtr;
+)}
+}
+#[doc="`InternalDestroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7c0b0usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-rectoffset")]
-pub trait IRectOffsetMethods : IRectOffset { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7ba00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor_2 (self , source_style : impl :: core :: convert :: Into < crate :: system :: object :: Object > , source : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7ba90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (source_style) , :: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7bae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7bc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7bbc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_left()` overload"] fn get_left (self ,) -> i32 { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7bf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_right()` overload"] fn get_right (self ,) -> i32 { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7bfc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_top()` overload"] fn get_top (self ,) -> i32 { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7c010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_bottom()` overload"] fn get_bottom (self ,) -> i32 { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7c060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_horizontal()` overload"] fn get_horizontal (self ,) -> i32 { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7c100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_vertical()` overload"] fn get_vertical (self ,) -> i32 { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7c150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::unity_engine::rect::Rect)` overload"] fn remove (self , rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RectOffset , crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7c1a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rect) , :: core :: option :: Option :: None) } } } # [doc = "`Remove_Injected(*mutcrate::unity_engine::rect::Rect, *mutcrate::unity_engine::rect::Rect)` overload"] fn remove_injected (self ,) -> (crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: rect :: Rect) { unsafe { let __receiver = < RectOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rect :: Rect > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rect :: Rect > :: uninit () ; { let __inner : extern "C" fn (RectOffset , * mut crate :: unity_engine :: rect :: Rect , * mut crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7c210usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="unity_engine-rectoffset")]pub trait IRectOffsetMethods:IRectOffset{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7ba00usize)as*mut u8,();
+(RectOffset)__receiver)}
+}
+#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor_2(self,source_style:impl::core::convert::Into<crate::system::object::Object> ,source:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7ba90usize)as*mut u8,();
+(RectOffset)__receiver,(crate::system::object::Object)::core::convert::Into::into(source_style),(::unity2::IntPtr)::core::convert::Into::into(source))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7bae0usize)as*mut u8,();
+(RectOffset)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7bc50usize)as*mut u8, ::unity2::Il2CppString;
+(RectOffset)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7bbc0usize)as*mut u8,();
+(RectOffset)__receiver)}
+}
+#[doc="`get_left()` overload"]fn get_left(self,)->i32{unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7bf70usize)as*mut u8,i32;
+(RectOffset)__receiver)}
+}
+#[doc="`get_right()` overload"]fn get_right(self,)->i32{unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7bfc0usize)as*mut u8,i32;
+(RectOffset)__receiver)}
+}
+#[doc="`get_top()` overload"]fn get_top(self,)->i32{unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7c010usize)as*mut u8,i32;
+(RectOffset)__receiver)}
+}
+#[doc="`get_bottom()` overload"]fn get_bottom(self,)->i32{unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7c060usize)as*mut u8,i32;
+(RectOffset)__receiver)}
+}
+#[doc="`get_horizontal()` overload"]fn get_horizontal(self,)->i32{unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7c100usize)as*mut u8,i32;
+(RectOffset)__receiver)}
+}
+#[doc="`get_vertical()` overload"]fn get_vertical(self,)->i32{unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7c150usize)as*mut u8,i32;
+(RectOffset)__receiver)}
+}
+#[doc="`Remove(crate::unity_engine::rect::Rect)` overload"]fn remove(self,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7c1a0usize)as*mut u8,crate::unity_engine::rect::Rect;
+(RectOffset)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect))}
+}
+#[doc="`Remove_Injected(*mutcrate::unity_engine::rect::Rect, *mutcrate::unity_engine::rect::Rect)` overload"]fn remove_injected(self,)->(crate::unity_engine::rect::Rect,crate::unity_engine::rect::Rect){unsafe{let __receiver= <RectOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rect::Rect> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::rect::Rect> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7c210usize)as*mut u8,();
+(RectOffset)__receiver,(*mut crate::unity_engine::rect::Rect)__out_0.as_mut_ptr(),(*mut crate::unity_engine::rect::Rect)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-rectoffset")]
-impl < __T : IRectOffset > IRectOffsetMethods for __T { }
+#[cfg(feature="unity_engine-rectoffset")]impl<__T:IRectOffset>IRectOffsetMethods for __T{}
 
-#[cfg(feature = "unity_engine-rectoffset")]
-impl RectOffset { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn internal_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn internal_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_bottom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn remove_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="unity_engine-rectoffset")]impl RectOffset{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn internal_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn internal_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_bottom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn remove_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "unity_engine-rectoffset")]
-impl RectOffset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RectOffset) , :: core :: stringify ! (new) ,)) ; < Self as IRectOffsetMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new_2 (source_style : crate :: system :: object :: Object , source : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RectOffset) , :: core :: stringify ! (new_2) ,)) ; < Self as IRectOffsetMethods > :: ctor_2 (this , source_style , source) ; this }
+#[cfg(feature="unity_engine-rectoffset")]impl RectOffset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RectOffset), ::core::stringify!(new),));
+ <Self as IRectOffsetMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new_2(source_style:crate::system::object::Object,source: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RectOffset), ::core::stringify!(new_2),));
+ <Self as IRectOffsetMethods> ::ctor_2(this,source_style,source);
+this}
 }
 
 #[cfg(feature = "unity_engine-rectoffset")]

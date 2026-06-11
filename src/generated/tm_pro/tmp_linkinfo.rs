@@ -4,50 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_linkinfo/TMP_LinkInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_LinkInfo {
-    pub text_component: crate :: tm_pro :: tmp_text :: TMP_Text,
-    pub hash_code: i32,
-    pub link_id_first_character_index: i32,
-    pub link_id_length: i32,
-    pub link_textfirst_character_index: i32,
-    pub link_text_length: i32,
-    pub link_id: :: unity2 :: Array < u16 >,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_linkinfo/TMP_LinkInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_LinkInfo{pub text_component:crate::tm_pro::tmp_text::TMP_Text,pub hash_code:i32,pub link_id_first_character_index:i32,pub link_id_length:i32,pub link_textfirst_character_index:i32,pub link_text_length:i32,pub link_id: ::unity2::Array<u16>,}
+impl::unity2::ClassIdentity for TMP_LinkInfo{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_LinkInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TMP_LinkInfo {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_LinkInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TMP_LinkInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TMP_LinkInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -55,11 +26,21 @@ impl ::unity2::IlType for TMP_LinkInfo {
 #[cfg(feature = "tm_pro-tmp_linkinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_linkinfo")]
-impl TMP_LinkInfo { # [doc = "`SetLinkID(::unity2::Array<u16>, i32, i32)` overload"] pub fn set_link_id (& mut self , text : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , start_index : impl :: core :: convert :: Into < i32 > , length : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_LinkInfo , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b1ad0usize) as * mut u8) ; __inner (self as * mut TMP_LinkInfo , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (start_index) , :: core :: convert :: Into :: into (length) , :: core :: option :: Option :: None) } } } # [doc = "`GetLinkText()` overload"] pub fn get_link_text (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut TMP_LinkInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b1bd0usize) as * mut u8) ; __inner (self as * mut TMP_LinkInfo , :: core :: option :: Option :: None) } } } # [doc = "`GetLinkID()` overload"] pub fn get_link_id (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut TMP_LinkInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b1cb0usize) as * mut u8) ; __inner (self as * mut TMP_LinkInfo , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_linkinfo")]impl TMP_LinkInfo{#[doc="`SetLinkID(::unity2::Array<u16>, i32, i32)` overload"]pub fn set_link_id(&mut self,text:impl::core::convert::Into< ::unity2::Array<u16> > ,start_index:impl::core::convert::Into<i32> ,length:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b1ad0usize)as*mut u8,();
+(*mut TMP_LinkInfo)self as*mut TMP_LinkInfo,(::unity2::Array<u16>)::core::convert::Into::into(text),(i32)::core::convert::Into::into(start_index),(i32)::core::convert::Into::into(length))}
+}
+#[doc="`GetLinkText()` overload"]pub fn get_link_text(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b1bd0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut TMP_LinkInfo)self as*mut TMP_LinkInfo)}
+}
+#[doc="`GetLinkID()` overload"]pub fn get_link_id(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b1cb0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut TMP_LinkInfo)self as*mut TMP_LinkInfo)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_linkinfo")]
-impl TMP_LinkInfo { pub fn set_link_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_LinkInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_link_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_LinkInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_link_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_LinkInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="tm_pro-tmp_linkinfo")]impl TMP_LinkInfo{pub fn set_link_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_link_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_link_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "tm_pro-tmp_linkinfo")]
 #[doc(hidden)]

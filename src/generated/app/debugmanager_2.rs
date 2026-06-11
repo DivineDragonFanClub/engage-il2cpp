@@ -4,93 +4,150 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugManager")] # [parent (crate :: system :: object :: Object)] pub struct DebugManager_2 {
-# [static_field] # [rename (name = "s_LogStack")] pub s_log_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: debugmanager_2 :: DebugManager_LogArg > ,
-# [static_field] # [rename (name = "s_LogLock")] pub s_log_lock : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_2.md"))]#[::unity2::class(namespace="App",name="DebugManager")]#[parent(crate::system::object::Object)]pub struct DebugManager_2{#[static_field]#[rename(name="s_LogStack")]pub s_log_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::debugmanager_2::DebugManager_LogArg> , #[static_field]#[rename(name="s_LogLock")]pub s_log_lock:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogArg.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugManager.LogArg")] # [parent (crate :: system :: object :: Object)] pub struct DebugManager_LogArg {
-# [offset (24)] # [rename (name = "m_Func")] pub m_func : crate :: app :: debugmanager_2 :: DebugManager_LogFunc ,
-# [offset (32)] # [rename (name = "m_Args")] pub m_args : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_LogArg.md"))]#[::unity2::class(namespace="App",name="DebugManager.LogArg")]#[parent(crate::system::object::Object)]pub struct DebugManager_LogArg{#[offset(24)]#[rename(name="m_Func")]pub m_func:crate::app::debugmanager_2::DebugManager_LogFunc, #[offset(32)]#[rename(name="m_Args")]pub m_args: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogFunc.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugManager.LogFunc")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct DebugManager_LogFunc {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_LogFunc.md"))]#[::unity2::class(namespace="App",name="DebugManager.LogFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DebugManager_LogFunc{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogScope.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugManager.LogScope")] # [parent (crate :: system :: object :: Object)] pub struct DebugManager_LogScope {
-# [offset (16)] # [rename (name = "m_Disposed")] pub m_disposed : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_LogScope.md"))]#[::unity2::class(namespace="App",name="DebugManager.LogScope")]#[parent(crate::system::object::Object)]pub struct DebugManager_LogScope{#[offset(16)]#[rename(name="m_Disposed")]pub m_disposed:bool,}
 
 }
 
 #[cfg(feature = "app-debugmanager_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_2 { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a05a10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OnMessage(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"] pub fn on_message (log_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , stack_trace : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: logtype :: LogType >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: unity_engine :: logtype :: LogType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a05b40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (log_text) , :: core :: convert :: Into :: into (stack_trace) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a05b50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetStackMethodName(i32)` overload"] pub fn get_stack_method_name (depth : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a05b60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (depth) , :: core :: option :: Option :: None) } } } # [doc = "`Stop(::unity2::Il2CppString)` overload"] pub fn stop (ex : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a05bb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ex) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a05c50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-debugmanager_2")]
-pub trait IDebugManager_2Methods : IDebugManager_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugManager_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a05c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-debugmanager_2")]
-impl < __T : IDebugManager_2 > IDebugManager_2Methods for __T { }
-
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_2 { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_stack_method_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugManager_2) , :: core :: stringify ! (new) ,)) ; < Self as IDebugManager_2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_2{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a05a10usize)as*mut u8,();
+)}
+}
+#[doc="`OnMessage(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]pub fn on_message(log_text:impl::core::convert::Into< ::unity2::Il2CppString> ,stack_trace:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::unity_engine::logtype::LogType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a05b40usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(log_text),(::unity2::Il2CppString)::core::convert::Into::into(stack_trace),(crate::unity_engine::logtype::LogType)::core::convert::Into::into(r#type))}
+}
+#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a05b50usize)as*mut u8,();
+)}
+}
+#[doc="`GetStackMethodName(i32)` overload"]pub fn get_stack_method_name(depth:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a05b60usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(depth))}
+}
+#[doc="`Stop(::unity2::Il2CppString)` overload"]pub fn stop(ex:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a05bb0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(ex))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a05c50usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-debugmanager_2")]
-pub trait IDebugManager_LogArgMethods : IDebugManager_LogArg { # [doc = "`Call()` overload"] fn call (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DebugManager_LogArg as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_LogArg , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < DebugManager_LogArg as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_LogArg , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-debugmanager_2")]
-impl < __T : IDebugManager_LogArg > IDebugManager_LogArgMethods for __T { }
-
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_LogArg { pub fn call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_LogArg as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_LogArg as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-debugmanager_2")]
-pub trait IDebugManager_LogFuncMethods : IDebugManager_LogFunc { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < DebugManager_LogFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_LogFunc , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DebugManager_LogFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_LogFunc , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-debugmanager_2")]
-impl < __T : IDebugManager_LogFunc > IDebugManager_LogFuncMethods for __T { }
-
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_LogFunc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_LogFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_LogFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_LogFunc {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugManager_LogFunc) , :: core :: stringify ! (new) ,)) ; < Self as IDebugManager_LogFuncMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_2Methods:IDebugManager_2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugManager_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a05c40usize)as*mut u8,();
+(DebugManager_2)__receiver)}
+}
 }
 
-#[cfg(feature = "app-debugmanager_2")]
-pub trait IDebugManager_LogScopeMethods : IDebugManager_LogScope { # [doc = "`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` overload"] fn ctor (self , func : impl :: core :: convert :: Into < crate :: app :: debugmanager_2 :: DebugManager_LogFunc > , args : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < DebugManager_LogScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_LogScope , crate :: app :: debugmanager_2 :: DebugManager_LogFunc , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (func) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"] fn ctor_2 (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < DebugManager_LogScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_LogScope , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < DebugManager_LogScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_LogScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < DebugManager_LogScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugManager_LogScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_2>IDebugManager_2Methods for __T{}
 
-#[cfg(feature = "app-debugmanager_2")]
-impl < __T : IDebugManager_LogScope > IDebugManager_LogScopeMethods for __T { }
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_2{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_stack_method_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_LogScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_LogScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_LogScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_LogScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugManager_LogScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugManager_2), ::core::stringify!(new),));
+ <Self as IDebugManager_2Methods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_LogScope {
-# [doc = "`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"] pub fn new (func : crate :: app :: debugmanager_2 :: DebugManager_LogFunc , args : :: unity2 :: Array < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugManager_LogScope) , :: core :: stringify ! (new) ,)) ; < Self as IDebugManager_LogScopeMethods > :: ctor (this , func , args) ; this }
+#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogArgMethods:IDebugManager_LogArg{#[doc="`Call()` overload"]fn call(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugManager_LogArg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4690usize)as*mut u8, ::unity2::Il2CppString;
+(DebugManager_LogArg)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DebugManager_LogArg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4a90usize)as*mut u8,();
+(DebugManager_LogArg)__receiver)}
+}
+}
 
-# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"] pub fn new_2 (args : :: unity2 :: Array < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugManager_LogScope) , :: core :: stringify ! (new_2) ,)) ; < Self as IDebugManager_LogScopeMethods > :: ctor_2 (this , args) ; this }
+#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogArg>IDebugManager_LogArgMethods for __T{}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogArg{pub fn call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogFuncMethods:IDebugManager_LogFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DebugManager_LogFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4ae0usize)as*mut u8,();
+(DebugManager_LogFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugManager_LogFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4880usize)as*mut u8, ::unity2::Il2CppString;
+(DebugManager_LogFunc)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogFunc>IDebugManager_LogFuncMethods for __T{}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugManager_LogFunc), ::core::stringify!(new),));
+ <Self as IDebugManager_LogFuncMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogScopeMethods:IDebugManager_LogScope{#[doc="`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,func:impl::core::convert::Into<crate::app::debugmanager_2::DebugManager_LogFunc> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b40usize)as*mut u8,();
+(DebugManager_LogScope)__receiver,(crate::app::debugmanager_2::DebugManager_LogFunc)::core::convert::Into::into(func),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor_2(self,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b50usize)as*mut u8,();
+(DebugManager_LogScope)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b60usize)as*mut u8,();
+(DebugManager_LogScope)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b70usize)as*mut u8,();
+(DebugManager_LogScope)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogScope>IDebugManager_LogScopeMethods for __T{}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogScope{#[doc="`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(func:crate::app::debugmanager_2::DebugManager_LogFunc,args: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugManager_LogScope), ::core::stringify!(new),));
+ <Self as IDebugManager_LogScopeMethods> ::ctor(this,func,args);
+this}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new_2(args: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugManager_LogScope), ::core::stringify!(new_2),));
+ <Self as IDebugManager_LogScopeMethods> ::ctor_2(this,args);
+this}
 }
 
 #[cfg(feature = "app-debugmanager_2")]

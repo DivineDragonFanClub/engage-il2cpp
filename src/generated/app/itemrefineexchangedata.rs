@@ -4,39 +4,159 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemrefineexchangedata/ItemRefineExchangeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemRefineExchangeData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData >)] pub struct ItemRefineExchangeData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemrefineexchangedata/ItemRefineExchangeData.md"))]#[::unity2::class(namespace="App",name="ItemRefineExchangeData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::itemrefineexchangedata::ItemRefineExchangeData>)]pub struct ItemRefineExchangeData{}
 
 }
 
 #[cfg(feature = "app-itemrefineexchangedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-itemrefineexchangedata")]
-impl ItemRefineExchangeData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049d80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemrefineexchangedata")]impl ItemRefineExchangeData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2049d80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-itemrefineexchangedata")]
-pub trait IItemRefineExchangeDataMethods : IItemRefineExchangeData { # [doc = "`get_Operation()` overload"] fn get_operation (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Operation(::unity2::Il2CppString)` overload"] fn set_operation (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Icon()` overload"] fn get_icon (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Icon(::unity2::Il2CppString)` overload"] fn set_icon (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ToIron()` overload"] fn get_to_iron (self ,) -> u16 { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ToIron(u16)` overload"] fn set_to_iron (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ToSteel()` overload"] fn get_to_steel (self ,) -> u16 { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ToSteel(u16)` overload"] fn set_to_steel (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049ec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ToSilver()` overload"] fn get_to_silver (self ,) -> u16 { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ToSilver(u16)` overload"] fn set_to_silver (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049ee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ForIron()` overload"] fn get_for_iron (self ,) -> u16 { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ForIron(u16)` overload"] fn set_for_iron (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ForSteel()` overload"] fn get_for_steel (self ,) -> u16 { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ForSteel(u16)` overload"] fn set_for_steel (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ForSilver()` overload"] fn get_for_silver (self ,) -> u16 { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ForSilver(u16)` overload"] fn set_for_silver (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049f40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetExchangeCost(::unity2::Il2CppString, *muti32, *muti32)` overload"] fn get_exchange_cost (self , material_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (i32 , i32) { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: Il2CppString , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (material_id) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetExchangeCostTo(::unity2::Il2CppString)` overload"] fn get_exchange_cost_to (self , material_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> u16 { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049fd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (material_id) , :: core :: option :: Option :: None) } } } # [doc = "`GetExchangeCostFor(::unity2::Il2CppString)` overload"] fn get_exchange_cost_for (self , material_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> u16 { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x204a0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (material_id) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemRefineExchangeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x204a1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemrefineexchangedata")]pub trait IItemRefineExchangeDataMethods:IItemRefineExchangeData{#[doc="`get_Operation()` overload"]fn get_operation(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049e30usize)as*mut u8, ::unity2::Il2CppString;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_Operation(::unity2::Il2CppString)` overload"]fn set_operation(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049e40usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049e50usize)as*mut u8, ::unity2::Il2CppString;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049e60usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Icon()` overload"]fn get_icon(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049e70usize)as*mut u8, ::unity2::Il2CppString;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_Icon(::unity2::Il2CppString)` overload"]fn set_icon(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049e80usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ToIron()` overload"]fn get_to_iron(self,)->u16{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049e90usize)as*mut u8,u16;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_ToIron(u16)` overload"]fn set_to_iron(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049ea0usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_ToSteel()` overload"]fn get_to_steel(self,)->u16{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049eb0usize)as*mut u8,u16;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_ToSteel(u16)` overload"]fn set_to_steel(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049ec0usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_ToSilver()` overload"]fn get_to_silver(self,)->u16{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049ed0usize)as*mut u8,u16;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_ToSilver(u16)` overload"]fn set_to_silver(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049ee0usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_ForIron()` overload"]fn get_for_iron(self,)->u16{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049ef0usize)as*mut u8,u16;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_ForIron(u16)` overload"]fn set_for_iron(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049f00usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_ForSteel()` overload"]fn get_for_steel(self,)->u16{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049f10usize)as*mut u8,u16;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_ForSteel(u16)` overload"]fn set_for_steel(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049f20usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_ForSilver()` overload"]fn get_for_silver(self,)->u16{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049f30usize)as*mut u8,u16;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`set_ForSilver(u16)` overload"]fn set_for_silver(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049f40usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049f50usize)as*mut u8, ::unity2::Il2CppString;
+(ItemRefineExchangeData)__receiver)}
+}
+#[doc="`GetExchangeCost(::unity2::Il2CppString, *muti32, *muti32)` overload"]fn get_exchange_cost(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(i32,i32){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049f60usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_id),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetExchangeCostTo(::unity2::Il2CppString)` overload"]fn get_exchange_cost_to(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->u16{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049fd0usize)as*mut u8,u16;
+(ItemRefineExchangeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_id))}
+}
+#[doc="`GetExchangeCostFor(::unity2::Il2CppString)` overload"]fn get_exchange_cost_for(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->u16{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x204a0e0usize)as*mut u8,u16;
+(ItemRefineExchangeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_id))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x204a1f0usize)as*mut u8,();
+(ItemRefineExchangeData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-itemrefineexchangedata")]
-impl < __T : IItemRefineExchangeData > IItemRefineExchangeDataMethods for __T { }
+#[cfg(feature="app-itemrefineexchangedata")]impl<__T:IItemRefineExchangeData>IItemRefineExchangeDataMethods for __T{}
 
-#[cfg(feature = "app-itemrefineexchangedata")]
-impl ItemRefineExchangeData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_operation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_operation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_to_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_to_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_to_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_to_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_to_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_to_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_for_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_for_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_for_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_for_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_for_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_for_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_exchange_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_exchange_cost_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_exchange_cost_for_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineExchangeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="app-itemrefineexchangedata")]impl ItemRefineExchangeData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_operation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_operation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_to_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_to_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_to_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_to_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_to_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_to_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_for_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_for_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_for_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_for_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_for_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_for_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_exchange_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_exchange_cost_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_exchange_cost_for_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "app-itemrefineexchangedata")]
-impl ItemRefineExchangeData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemRefineExchangeData) , :: core :: stringify ! (new) ,)) ; < Self as IItemRefineExchangeDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-itemrefineexchangedata")]impl ItemRefineExchangeData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemRefineExchangeData), ::core::stringify!(new),));
+ <Self as IItemRefineExchangeDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-itemrefineexchangedata")]

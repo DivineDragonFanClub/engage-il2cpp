@@ -4,224 +4,233 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencenet/MapSequenceNet_ProcDownload_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceNet_ProcDownload_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencenet/MapSequenceNet_ProcDownload.md"))]#[::unity2::class(namespace="App",name="MapSequenceNet.ProcDownload")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceNet_ProcDownload{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencenet/MapSequenceNet_ProcShowError.md"))]#[::unity2::class(namespace="App",name="MapSequenceNet.ProcShowError")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceNet_ProcShowError{#[static_field]#[rename(name="WaitSec")]pub wait_sec:f32, #[static_field]#[rename(name="WaitDelayedSec")]pub wait_delayed_sec:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencenet/MapSequenceNet_ProcUpload.md"))]#[::unity2::class(namespace="App",name="MapSequenceNet.ProcUpload")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceNet_ProcUpload{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencenet/MapSequenceNet_ProcUpload_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceNet_ProcUpload_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceNet_ProcUpload_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceNet.ProcUpload.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceNet_ProcUpload_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceNet_ProcUpload_Label{pub fn ranking()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapSequenceNet_ProcDownload_Label  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencenet/MapSequenceNet_ProcShowError_ProcDelayedHideError.md"))]#[::unity2::class(namespace="App",name="MapSequenceNet.ProcShowError.ProcDelayedHideError")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceNet_ProcShowError_ProcDelayedHideError{}
 
-    const NAME: &'static str = "MapSequenceNet.ProcDownload.Label";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencenet/MapSequenceNet.md"))]#[::unity2::class(namespace="App",name="MapSequenceNet")]#[parent(crate::system::object::Object)]pub struct MapSequenceNet{}
 
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencenet/MapSequenceNet_ProcDownload_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceNet_ProcDownload_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceNet_ProcDownload_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceNet.ProcDownload.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for MapSequenceNet_ProcDownload_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MapSequenceNet_ProcDownload_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  MapSequenceNet_ProcDownload_Label  {
-    pub fn end() -> Self {
-        Self { value: 0 }
-
-    }
-
+impl MapSequenceNet_ProcDownload_Label{pub fn end()->Self{Self{value:0}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet.ProcShowError")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceNet_ProcShowError {
-# [static_field] # [rename (name = "WaitSec")] pub wait_sec : f32 ,
-# [static_field] # [rename (name = "WaitDelayedSec")] pub wait_delayed_sec : f32 ,
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcDownload.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet.ProcDownload")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceNet_ProcDownload {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencenet/MapSequenceNet_ProcUpload_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceNet_ProcUpload_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapSequenceNet_ProcUpload_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceNet.ProcUpload.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSequenceNet_ProcUpload_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceNet_ProcUpload_Label  {
-    pub fn ranking() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet")] # [parent (crate :: system :: object :: Object)] pub struct MapSequenceNet {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcUpload.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet.ProcUpload")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceNet_ProcUpload {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencenet/MapSequenceNet_ProcShowError_ProcDelayedHideError.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceNet.ProcShowError.ProcDelayedHideError")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceNet_ProcShowError_ProcDelayedHideError {}
 
 }
 
 #[cfg(feature = "app-mapsequencenet-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a380usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencenet")]
-pub trait IMapSequenceNet_ProcShowErrorMethods : IMapSequenceNet_ProcShowError { # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcShowError as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcShowError , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcShowError as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcShowError , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl < __T : IMapSequenceNet_ProcShowError > IMapSequenceNet_ProcShowErrorMethods for __T { }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError { pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcShowError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceNet_ProcShowError) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceNet_ProcShowErrorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcDownload{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a5f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcDownload { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a5f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencenet")]
-pub trait IMapSequenceNet_ProcDownloadMethods : IMapSequenceNet_ProcDownload { # [doc = "`Download()` overload"] fn download (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcDownload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcDownload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Postdownload()` overload"] fn postdownload (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcDownload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcDownload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcDownload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcDownload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl < __T : IMapSequenceNet_ProcDownload > IMapSequenceNet_ProcDownloadMethods for __T { }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcDownload { pub fn download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn postdownload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcDownload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcDownload {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceNet_ProcDownload) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceNet_ProcDownloadMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencenet")]pub trait IMapSequenceNet_ProcDownloadMethods:IMapSequenceNet_ProcDownload{#[doc="`Download()` overload"]fn download(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcDownload as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a1f0usize)as*mut u8,();
+(MapSequenceNet_ProcDownload)__receiver)}
+}
+#[doc="`Postdownload()` overload"]fn postdownload(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcDownload as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a2c0usize)as*mut u8,();
+(MapSequenceNet_ProcDownload)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcDownload as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a880usize)as*mut u8,();
+(MapSequenceNet_ProcDownload)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet { # [doc = "`Download(crate::app::procinst::ProcInst, bool)` overload"] pub fn download (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , is_resume : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2e750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (is_resume) , :: core :: option :: Option :: None) } } } # [doc = "`Upload(crate::app::procinst::ProcInst)` overload"] pub fn upload (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2e810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencenet")]impl<__T:IMapSequenceNet_ProcDownload>IMapSequenceNet_ProcDownloadMethods for __T{}
 
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet { pub fn download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcUpload { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3ac10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencenet")]
-pub trait IMapSequenceNet_ProcUploadMethods : IMapSequenceNet_ProcUpload { # [doc = "`UploadKillBonus()` overload"] fn upload_kill_bonus (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostuploadKillBonus()` overload"] fn postupload_kill_bonus (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UploadRanking()` overload"] fn upload_ranking (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3aa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostuploadRanking()` overload"] fn postupload_ranking (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3ab30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcUpload as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcUpload , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3b060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl < __T : IMapSequenceNet_ProcUpload > IMapSequenceNet_ProcUploadMethods for __T { }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcUpload { pub fn upload_kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn postupload_kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn upload_ranking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn postupload_ranking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcUpload as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcUpload {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceNet_ProcUpload) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceNet_ProcUploadMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcDownload{pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postdownload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError_ProcDelayedHideError { # [doc = "`Create()` overload"] pub fn create () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b6dbf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcDownload{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceNet_ProcDownload), ::core::stringify!(new),));
+ <Self as IMapSequenceNet_ProcDownloadMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapsequencenet")]
-pub trait IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods : IMapSequenceNet_ProcShowError_ProcDelayedHideError { # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcShowError_ProcDelayedHideError , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b6dbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceNet_ProcShowError_ProcDelayedHideError , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b6ddf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcShowError{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a380usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-mapsequencenet")]
-impl < __T : IMapSequenceNet_ProcShowError_ProcDelayedHideError > IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods for __T { }
+#[cfg(feature="app-mapsequencenet")]pub trait IMapSequenceNet_ProcShowErrorMethods:IMapSequenceNet_ProcShowError{#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcShowError as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a890usize)as*mut u8,();
+(MapSequenceNet_ProcShowError)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcShowError as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a8a0usize)as*mut u8,();
+(MapSequenceNet_ProcShowError)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError_ProcDelayedHideError { pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceNet_ProcShowError_ProcDelayedHideError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-mapsequencenet")]impl<__T:IMapSequenceNet_ProcShowError>IMapSequenceNet_ProcShowErrorMethods for __T{}
 
-#[cfg(feature = "app-mapsequencenet")]
-impl MapSequenceNet_ProcShowError_ProcDelayedHideError {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceNet_ProcShowError_ProcDelayedHideError) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcShowError{pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcShowError{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceNet_ProcShowError), ::core::stringify!(new),));
+ <Self as IMapSequenceNet_ProcShowErrorMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcUpload{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3ac10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapsequencenet")]pub trait IMapSequenceNet_ProcUploadMethods:IMapSequenceNet_ProcUpload{#[doc="`UploadKillBonus()` overload"]fn upload_kill_bonus(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcUpload as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a8b0usize)as*mut u8,();
+(MapSequenceNet_ProcUpload)__receiver)}
+}
+#[doc="`PostuploadKillBonus()` overload"]fn postupload_kill_bonus(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcUpload as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a980usize)as*mut u8,();
+(MapSequenceNet_ProcUpload)__receiver)}
+}
+#[doc="`UploadRanking()` overload"]fn upload_ranking(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcUpload as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3aa60usize)as*mut u8,();
+(MapSequenceNet_ProcUpload)__receiver)}
+}
+#[doc="`PostuploadRanking()` overload"]fn postupload_ranking(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcUpload as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3ab30usize)as*mut u8,();
+(MapSequenceNet_ProcUpload)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcUpload as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b060usize)as*mut u8,();
+(MapSequenceNet_ProcUpload)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl<__T:IMapSequenceNet_ProcUpload>IMapSequenceNet_ProcUploadMethods for __T{}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcUpload{pub fn upload_kill_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postupload_kill_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn upload_ranking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn postupload_ranking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcUpload{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceNet_ProcUpload), ::core::stringify!(new),));
+ <Self as IMapSequenceNet_ProcUploadMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcShowError_ProcDelayedHideError{#[doc="`Create()` overload"]pub fn create()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6dbf0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-mapsequencenet")]pub trait IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods:IMapSequenceNet_ProcShowError_ProcDelayedHideError{#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcShowError_ProcDelayedHideError as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6dbe0usize)as*mut u8,();
+(MapSequenceNet_ProcShowError_ProcDelayedHideError)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceNet_ProcShowError_ProcDelayedHideError as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6ddf0usize)as*mut u8,();
+(MapSequenceNet_ProcShowError_ProcDelayedHideError)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl<__T:IMapSequenceNet_ProcShowError_ProcDelayedHideError>IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods for __T{}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcShowError_ProcDelayedHideError{pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet_ProcShowError_ProcDelayedHideError{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceNet_ProcShowError_ProcDelayedHideError), ::core::stringify!(new),));
+ <Self as IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet{#[doc="`Download(crate::app::procinst::ProcInst, bool)` overload"]pub fn download(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_resume:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2e750usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_resume))}
+}
+#[doc="`Upload(crate::app::procinst::ProcInst)` overload"]pub fn upload(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2e810usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapsequencenet")]impl MapSequenceNet{pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
 #[cfg(feature = "app-mapsequencenet")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceNet_ProcDownload_Label;
-    pub use super::MapSequenceNet_ProcShowError;
-    pub use super::IMapSequenceNet_ProcShowError;
-    pub use super::IMapSequenceNet_ProcShowErrorMethods;
     pub use super::MapSequenceNet_ProcDownload;
     pub use super::IMapSequenceNet_ProcDownload;
     pub use super::IMapSequenceNet_ProcDownloadMethods;
-    pub use super::MapSequenceNet_ProcUpload_Label;
-    pub use super::MapSequenceNet;
-    pub use super::IMapSequenceNet;
+    pub use super::MapSequenceNet_ProcShowError;
+    pub use super::IMapSequenceNet_ProcShowError;
+    pub use super::IMapSequenceNet_ProcShowErrorMethods;
     pub use super::MapSequenceNet_ProcUpload;
     pub use super::IMapSequenceNet_ProcUpload;
     pub use super::IMapSequenceNet_ProcUploadMethods;
+    pub use super::MapSequenceNet_ProcUpload_Label;
     pub use super::MapSequenceNet_ProcShowError_ProcDelayedHideError;
     pub use super::IMapSequenceNet_ProcShowError_ProcDelayedHideError;
     pub use super::IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods;
+    pub use super::MapSequenceNet;
+    pub use super::IMapSequenceNet;
+    pub use super::MapSequenceNet_ProcDownload_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

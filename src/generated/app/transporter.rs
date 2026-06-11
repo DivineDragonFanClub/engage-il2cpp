@@ -4,69 +4,175 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transporter/Transporter_Data.md"))] # [:: unity2 :: class (namespace = "App" , name = "Transporter.Data")] # [parent (crate :: system :: object :: Object)] pub struct Transporter_Data {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_UnitItem")] pub m_unit_item : crate :: app :: unititem :: UnitItem ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transporter/Transporter.md"))]#[::unity2::class(namespace="App",name="Transporter")]#[parent(crate::system::object::Object)]pub struct Transporter{#[static_field]#[rename(name="MaxOld")]pub max_old:i32, #[static_field]#[rename(name="MaxData")]pub max_data:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="s_Data")]pub s_data: ::unity2::Array<crate::app::transporter::Transporter_Data> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transporter/Transporter.md"))] # [:: unity2 :: class (namespace = "App" , name = "Transporter")] # [parent (crate :: system :: object :: Object)] pub struct Transporter {
-# [static_field] # [rename (name = "MaxOld")] pub max_old : i32 ,
-# [static_field] # [rename (name = "MaxData")] pub max_data : i32 ,
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [static_field] # [rename (name = "s_Data")] pub s_data : :: unity2 :: Array < crate :: app :: transporter :: Transporter_Data > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transporter/Transporter_Data.md"))]#[::unity2::class(namespace="App",name="Transporter.Data")]#[parent(crate::system::object::Object)]pub struct Transporter_Data{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem,}
 
 }
 
 #[cfg(feature = "app-transporter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-transporter")]
-pub trait ITransporter_DataMethods : ITransporter_Data { # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < Transporter_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Transporter_Data , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f5a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < Transporter_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Transporter_Data , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f5e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < Transporter_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Transporter_Data , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Transporter_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Transporter_Data , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-transporter")]
-impl < __T : ITransporter_Data > ITransporter_DataMethods for __T { }
-
-#[cfg(feature = "app-transporter")]
-impl Transporter_Data { pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-transporter")]
-impl Transporter_Data {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Transporter_Data) , :: core :: stringify ! (new) ,)) ; < Self as ITransporter_DataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-transporter")]impl Transporter{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1060usize)as*mut u8,();
+)}
+}
+#[doc="`Reset()` overload"]pub fn reset()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1180usize)as*mut u8,();
+)}
+}
+#[doc="`IsAvailable()` overload"]pub fn is_available()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a12d0usize)as*mut u8,bool;
+)}
+}
+#[doc="`Get(i32)` overload"]pub fn get(index:impl::core::convert::Into<i32>)->crate::app::transporter::Transporter_Data{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a13d0usize)as*mut u8,crate::app::transporter::Transporter_Data;
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetIndex(crate::app::unititem::UnitItem)` overload"]pub fn get_index(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1450usize)as*mut u8,i32;
+(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`CanAdd()` overload"]pub fn can_add()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1570usize)as*mut u8,bool;
+)}
+}
+#[doc="`TryGetLowestItemIndex(*muti32, *mutu64)` overload"]pub fn try_get_lowest_item_index()->(bool,i32,u64){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x22a1610usize)as*mut u8,bool;
+(*mut i32)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetEmptyIndex()` overload"]pub fn get_empty_index()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1990usize)as*mut u8,i32;
+)}
+}
+#[doc="`Discard(crate::app::unititem::UnitItem)` overload"]pub fn discard(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1a30usize)as*mut u8,();
+(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`Add(crate::app::unititem::UnitItem)` overload"]pub fn add(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1b70usize)as*mut u8,i32;
+(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`Add(crate::app::itemdata::ItemData)` overload"]pub fn add_2(item_data:impl::core::convert::Into<crate::app::itemdata::ItemData>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a2040usize)as*mut u8,i32;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item_data))}
+}
+#[doc="`Sub(i32)` overload"]pub fn sub(index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a20c0usize)as*mut u8,();
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Delete(i32)` overload"]pub fn delete(index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a2260usize)as*mut u8,();
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a2390usize)as*mut u8,();
+)}
+}
+#[doc="`GetCount()` overload"]pub fn get_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a24e0usize)as*mut u8,i32;
+)}
+}
+#[doc="`DeleteItem(crate::app::itemdata::ItemData)` overload"]pub fn delete_item(data:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a2570usize)as*mut u8,();
+(crate::app::itemdata::ItemData)::core::convert::Into::into(data))}
+}
+#[doc="`GetItemCount(crate::app::itemdata::ItemData)` overload"]pub fn get_item_count(data:impl::core::convert::Into<crate::app::itemdata::ItemData>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a2630usize)as*mut u8,i32;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(data))}
+}
+#[doc="`GetTypeItemCount(crate::app::itemdata::ItemData_UseTypes)` overload"]pub fn get_type_item_count(r#type:impl::core::convert::Into<crate::app::itemdata::ItemData_UseTypes>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a26d0usize)as*mut u8,i32;
+(crate::app::itemdata::ItemData_UseTypes)::core::convert::Into::into(r#type))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a2780usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a2840usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`IsRare(crate::app::unititem::UnitItem)` overload"]pub fn is_rare(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1840usize)as*mut u8,bool;
+(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`CalcWorth(crate::app::unititem::UnitItem)` overload"]pub fn calc_worth(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a18b0usize)as*mut u8,u64;
+(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
 }
 
-#[cfg(feature = "app-transporter")]
-impl Transporter { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1060usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] pub fn reset () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1180usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsAvailable()` overload"] pub fn is_available () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a12d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Get(i32)` overload"] pub fn get (index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: transporter :: Transporter_Data { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: transporter :: Transporter_Data = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a13d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetIndex(crate::app::unititem::UnitItem)` overload"] pub fn get_index (unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1450usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`CanAdd()` overload"] pub fn can_add () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1570usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetLowestItemIndex(*muti32, *mutu64)` overload"] pub fn try_get_lowest_item_index () -> (bool , i32 , u64) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut i32 , * mut u64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1610usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetEmptyIndex()` overload"] pub fn get_empty_index () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1990usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Discard(crate::app::unititem::UnitItem)` overload"] pub fn discard (unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1a30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::unititem::UnitItem)` overload"] pub fn add (unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::itemdata::ItemData)` overload"] pub fn add_2 (item_data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item_data) , :: core :: option :: Option :: None) } } } # [doc = "`Sub(i32)` overload"] pub fn sub (index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a20c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(i32)` overload"] pub fn delete (index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCount()` overload"] pub fn get_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a24e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DeleteItem(crate::app::itemdata::ItemData)` overload"] pub fn delete_item (data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2570usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`GetItemCount(crate::app::itemdata::ItemData)` overload"] pub fn get_item_count (data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2630usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`GetTypeItemCount(crate::app::itemdata::ItemData_UseTypes)` overload"] pub fn get_type_item_count (r#type : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_UseTypes >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData_UseTypes , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a26d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] pub fn serialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2840usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`IsRare(crate::app::unititem::UnitItem)` overload"] pub fn is_rare (unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a1840usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`CalcWorth(crate::app::unititem::UnitItem)` overload"] pub fn calc_worth (unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> u64 { unsafe { { let __inner : extern "C" fn (crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a18b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-transporter")]pub trait ITransporterMethods:ITransporter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Transporter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a2c00usize)as*mut u8,();
+(Transporter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-transporter")]
-pub trait ITransporterMethods : ITransporter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Transporter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Transporter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-transporter")]impl<__T:ITransporter>ITransporterMethods for __T{}
 
-#[cfg(feature = "app-transporter")]
-impl < __T : ITransporter > ITransporterMethods for __T { }
+#[cfg(feature="app-transporter")]impl Transporter{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn can_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn try_get_lowest_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_empty_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn discard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn delete_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_type_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_rare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn calc_worth_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-#[cfg(feature = "app-transporter")]
-impl Transporter { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn can_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn try_get_lowest_item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_empty_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn discard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn delete_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_item_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_type_item_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_rare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn calc_worth_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Transporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="app-transporter")]impl Transporter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Transporter), ::core::stringify!(new),));
+ <Self as ITransporterMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-transporter")]
-impl Transporter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Transporter) , :: core :: stringify ! (new) ,)) ; < Self as ITransporterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-transporter")]pub trait ITransporter_DataMethods:ITransporter_Data{#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f5a0usize)as*mut u8,();
+(Transporter_Data)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f5e0usize)as*mut u8,();
+(Transporter_Data)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`get_UnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f6f0usize)as*mut u8,crate::app::unititem::UnitItem;
+(Transporter_Data)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f700usize)as*mut u8,();
+(Transporter_Data)__receiver)}
+}
+}
+
+#[cfg(feature="app-transporter")]impl<__T:ITransporter_Data>ITransporter_DataMethods for __T{}
+
+#[cfg(feature="app-transporter")]impl Transporter_Data{pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-transporter")]impl Transporter_Data{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Transporter_Data), ::core::stringify!(new),));
+ <Self as ITransporter_DataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-transporter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Transporter_Data;
-    pub use super::ITransporter_Data;
-    pub use super::ITransporter_DataMethods;
     pub use super::Transporter;
     pub use super::ITransporter;
     pub use super::ITransporterMethods;
+    pub use super::Transporter_Data;
+    pub use super::ITransporter_Data;
+    pub use super::ITransporter_DataMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -4,44 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: helpitembase :: { HelpItemBase , IHelpItemBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::helpitembase::{HelpItemBase,IHelpItemBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemunitskill/HelpItemUnitSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemUnitSkill")] # [parent (crate :: app :: helpitembase :: HelpItemBase)] pub struct HelpItemUnitSkill {
-# [offset (80)] # [rename (name = "m_Index")] pub m_index : i32 ,
-# [offset (84)] # [rename (name = "m_IsPack")] pub m_is_pack : bool ,
-# [offset (88)] # [rename (name = "m_tempUnit")] pub m_temp_unit : crate :: app :: unit :: Unit ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitemunitskill/HelpItemUnitSkill.md"))]#[::unity2::class(namespace="App",name="HelpItemUnitSkill")]#[parent(crate::app::helpitembase::HelpItemBase)]pub struct HelpItemUnitSkill{#[offset(80)]#[rename(name="m_Index")]pub m_index:i32, #[offset(84)]#[rename(name="m_IsPack")]pub m_is_pack:bool, #[offset(88)]#[rename(name="m_tempUnit")]pub m_temp_unit:crate::app::unit::Unit,}
 
 }
 
 #[cfg(feature = "app-helpitemunitskill-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitemunitskill")]
-pub trait IHelpItemUnitSkillMethods : IHelpItemUnitSkill { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297e7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSkillList(crate::app::unit::Unit)` overload"] fn get_skill_list (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> :: unity2 :: Array < crate :: app :: infoutil :: InfoUtil_StatusSkill > { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: infoutil :: InfoUtil_StatusSkill > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297e830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetIndexSkill(crate::app::unit::Unit, i32)` overload"] fn get_index_skill (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , icon_index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: skilldata :: SkillData { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297e9f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (icon_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetIndexSkillCategory(crate::app::unit::Unit, i32)` overload"] fn get_index_skill_category (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , icon_index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: skilldata :: SkillData_Categorys { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Categorys = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297ea60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (icon_index) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297ead0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297ebb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297ee00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297ee10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemUnitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297ee20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitemunitskill")]pub trait IHelpItemUnitSkillMethods:IHelpItemUnitSkill{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297e7c0usize)as*mut u8,();
+(HelpItemUnitSkill)__receiver)}
+}
+#[doc="`GetSkillList(crate::app::unit::Unit)` overload"]fn get_skill_list(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)-> ::unity2::Array<crate::app::infoutil::InfoUtil_StatusSkill>{unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297e830usize)as*mut u8, ::unity2::Array<crate::app::infoutil::InfoUtil_StatusSkill> ;
+(HelpItemUnitSkill)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetIndexSkill(crate::app::unit::Unit, i32)` overload"]fn get_index_skill(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,icon_index:impl::core::convert::Into<i32>)->crate::app::skilldata::SkillData{unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297e9f0usize)as*mut u8,crate::app::skilldata::SkillData;
+(HelpItemUnitSkill)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(icon_index))}
+}
+#[doc="`GetIndexSkillCategory(crate::app::unit::Unit, i32)` overload"]fn get_index_skill_category(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,icon_index:impl::core::convert::Into<i32>)->crate::app::skilldata::SkillData_Categorys{unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297ea60usize)as*mut u8,crate::app::skilldata::SkillData_Categorys;
+(HelpItemUnitSkill)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(icon_index))}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297ead0usize)as*mut u8,bool;
+(HelpItemUnitSkill)__receiver)}
+}
+#[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297ebb0usize)as*mut u8,();
+(HelpItemUnitSkill)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297ee00usize)as*mut u8,();
+(HelpItemUnitSkill)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297ee10usize)as*mut u8,();
+(HelpItemUnitSkill)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemUnitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297ee20usize)as*mut u8,();
+(HelpItemUnitSkill)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitemunitskill")]
-impl < __T : IHelpItemUnitSkill > IHelpItemUnitSkillMethods for __T { }
+#[cfg(feature="app-helpitemunitskill")]impl<__T:IHelpItemUnitSkill>IHelpItemUnitSkillMethods for __T{}
 
-#[cfg(feature = "app-helpitemunitskill")]
-impl HelpItemUnitSkill { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_skill_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_index_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_index_skill_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-helpitemunitskill")]impl HelpItemUnitSkill{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_skill_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_index_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_index_skill_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-helpitemunitskill")]
-impl HelpItemUnitSkill {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemUnitSkill) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemUnitSkillMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitemunitskill")]impl HelpItemUnitSkill{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemUnitSkill), ::core::stringify!(new),));
+ <Self as IHelpItemUnitSkillMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitemunitskill")]

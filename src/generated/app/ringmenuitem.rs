@@ -4,87 +4,216 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringmenuitem/RingMenuItem_SelectEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingMenuItem.SelectEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RingMenuItem_SelectEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringmenuitem/RingMenuItem.md"))]#[::unity2::class(namespace="App",name="RingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingMenuItem{#[offset(136)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::ringmenuitem::RingMenuItem_SelectEventHandler, #[offset(144)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::ringmenuitem::RingMenuItem_DecideEventHandler,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringmenuitem/RingMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RingMenuItem {
-# [offset (136)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: ringmenuitem :: RingMenuItem_SelectEventHandler ,
-# [offset (144)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: ringmenuitem :: RingMenuItem_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringmenuitem/RingMenuItem_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RingMenuItem.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingMenuItem_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringmenuitem/RingMenuItem_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingMenuItem.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RingMenuItem_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringmenuitem/RingMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RingMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingMenuItem_SelectEventHandler{}
 
 }
 
 #[cfg(feature = "app-ringmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringmenuitem")]
-pub trait IRingMenuItem_SelectEventHandlerMethods : IRingMenuItem_SelectEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RingMenuItem_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem_SelectEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d5f640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::ringdata::RingData)` overload"] fn invoke (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> () { unsafe { let __receiver = < RingMenuItem_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem_SelectEventHandler , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d5f660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringmenuitem")]
-impl < __T : IRingMenuItem_SelectEventHandler > IRingMenuItem_SelectEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-ringmenuitem")]
-impl RingMenuItem_SelectEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-ringmenuitem")]
-impl RingMenuItem_SelectEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingMenuItem_SelectEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRingMenuItem_SelectEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-ringmenuitem")]pub trait IRingMenuItemMethods:IRingMenuItem{#[doc="`get_m_RingData()` overload"]fn get_m_ring_data(self,)->crate::app::ringdata::RingData{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430ec0usize)as*mut u8,crate::app::ringdata::RingData;
+(RingMenuItem)__receiver)}
+}
+#[doc="`set_m_RingData(crate::app::ringdata::RingData)` overload"]fn set_m_ring_data(self,value:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430ed0usize)as*mut u8,();
+(RingMenuItem)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_IsEquipped()` overload"]fn get_m_is_equipped(self,)->bool{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430ee0usize)as*mut u8,bool;
+(RingMenuItem)__receiver)}
+}
+#[doc="`set_m_IsEquipped(bool)` overload"]fn set_m_is_equipped(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430ef0usize)as*mut u8,();
+(RingMenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_Count()` overload"]fn get_m_count(self,)->i32{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f00usize)as*mut u8,i32;
+(RingMenuItem)__receiver)}
+}
+#[doc="`set_m_Count(i32)` overload"]fn set_m_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f10usize)as*mut u8,();
+(RingMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_NeededCountToNext()` overload"]fn get_m_needed_count_to_next(self,)->i32{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f20usize)as*mut u8,i32;
+(RingMenuItem)__receiver)}
+}
+#[doc="`set_m_NeededCountToNext(i32)` overload"]fn set_m_needed_count_to_next(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f30usize)as*mut u8,();
+(RingMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_NeededPieceOfBondsToNext()` overload"]fn get_m_needed_piece_of_bonds_to_next(self,)->i32{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f40usize)as*mut u8,i32;
+(RingMenuItem)__receiver)}
+}
+#[doc="`set_m_NeededPieceOfBondsToNext(i32)` overload"]fn set_m_needed_piece_of_bonds_to_next(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f50usize)as*mut u8,();
+(RingMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_IsEnoughCount()` overload"]fn get_m_is_enough_count(self,)->bool{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f60usize)as*mut u8,bool;
+(RingMenuItem)__receiver)}
+}
+#[doc="`set_m_IsEnoughCount(bool)` overload"]fn set_m_is_enough_count(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f70usize)as*mut u8,();
+(RingMenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_IsEnoughPieceOfBond()` overload"]fn get_m_is_enough_piece_of_bond(self,)->bool{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f80usize)as*mut u8,bool;
+(RingMenuItem)__receiver)}
+}
+#[doc="`set_m_IsEnoughPieceOfBond(bool)` overload"]fn set_m_is_enough_piece_of_bond(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430f90usize)as*mut u8,();
+(RingMenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`IsEmpty()` overload"]fn is_empty(self,)->bool{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430fa0usize)as*mut u8,bool;
+(RingMenuItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::ringdata::RingData, bool, i32, crate::app::ringmenuitem::RingMenuItem_SelectEventHandler, crate::app::ringmenuitem::RingMenuItem_DecideEventHandler)` overload"]fn ctor(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData> ,is_equipped:impl::core::convert::Into<bool> ,count:impl::core::convert::Into<i32> ,select_event_handler:impl::core::convert::Into<crate::app::ringmenuitem::RingMenuItem_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::ringmenuitem::RingMenuItem_DecideEventHandler>)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24268a0usize)as*mut u8,();
+(RingMenuItem)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data),(bool)::core::convert::Into::into(is_equipped),(i32)::core::convert::Into::into(count),(crate::app::ringmenuitem::RingMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::ringmenuitem::RingMenuItem_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430fb0usize)as*mut u8, ::unity2::Il2CppString;
+(RingMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2431080usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RingMenuItem)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24310c0usize)as*mut u8,();
+(RingMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24312b0usize)as*mut u8,();
+(RingMenuItem)__receiver)}
+}
+#[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24310d0usize)as*mut u8,();
+(RingMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24312c0usize)as*mut u8,();
+(RingMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2431300usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RingMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-ringmenuitem")]
-pub trait IRingMenuItemMethods : IRingMenuItem { # [doc = "`get_m_RingData()` overload"] fn get_m_ring_data (self ,) -> crate :: app :: ringdata :: RingData { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringdata :: RingData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_RingData(crate::app::ringdata::RingData)` overload"] fn set_m_ring_data (self , value : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_IsEquipped()` overload"] fn get_m_is_equipped (self ,) -> bool { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_IsEquipped(bool)` overload"] fn set_m_is_equipped (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Count()` overload"] fn get_m_count (self ,) -> i32 { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Count(i32)` overload"] fn set_m_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_NeededCountToNext()` overload"] fn get_m_needed_count_to_next (self ,) -> i32 { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_NeededCountToNext(i32)` overload"] fn set_m_needed_count_to_next (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_NeededPieceOfBondsToNext()` overload"] fn get_m_needed_piece_of_bonds_to_next (self ,) -> i32 { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_NeededPieceOfBondsToNext(i32)` overload"] fn set_m_needed_piece_of_bonds_to_next (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_IsEnoughCount()` overload"] fn get_m_is_enough_count (self ,) -> bool { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_IsEnoughCount(bool)` overload"] fn set_m_is_enough_count (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_IsEnoughPieceOfBond()` overload"] fn get_m_is_enough_piece_of_bond (self ,) -> bool { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_IsEnoughPieceOfBond(bool)` overload"] fn set_m_is_enough_piece_of_bond (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`IsEmpty()` overload"] fn is_empty (self ,) -> bool { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::ringdata::RingData, bool, i32, crate::app::ringmenuitem::RingMenuItem_SelectEventHandler, crate::app::ringmenuitem::RingMenuItem_DecideEventHandler)` overload"] fn ctor (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData > , is_equipped : impl :: core :: convert :: Into < bool > , count : impl :: core :: convert :: Into < i32 > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: ringmenuitem :: RingMenuItem_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: ringmenuitem :: RingMenuItem_DecideEventHandler >) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , crate :: app :: ringdata :: RingData , bool , i32 , crate :: app :: ringmenuitem :: RingMenuItem_SelectEventHandler , crate :: app :: ringmenuitem :: RingMenuItem_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24268a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: convert :: Into :: into (is_equipped) , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2431080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24310c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24312b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInitialColor()` overload"] fn set_initial_color (self ,) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24310d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24312c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2431300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringmenuitem")]impl<__T:IRingMenuItem>IRingMenuItemMethods for __T{}
 
-#[cfg(feature = "app-ringmenuitem")]
-impl < __T : IRingMenuItem > IRingMenuItemMethods for __T { }
-
-#[cfg(feature = "app-ringmenuitem")]
-impl RingMenuItem { pub fn get_m_ring_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_ring_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_is_equipped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_is_equipped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_m_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_m_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_m_needed_count_to_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_m_needed_count_to_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_m_needed_piece_of_bonds_to_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_m_needed_piece_of_bonds_to_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_m_is_enough_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_m_is_enough_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_m_is_enough_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_m_is_enough_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_initial_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
-
-#[cfg(feature = "app-ringmenuitem")]
-impl RingMenuItem {
-# [doc = "`.ctor(crate::app::ringdata::RingData, bool, i32, crate::app::ringmenuitem::RingMenuItem_SelectEventHandler, crate::app::ringmenuitem::RingMenuItem_DecideEventHandler)` — overload selector"] pub fn new (ring_data : crate :: app :: ringdata :: RingData , is_equipped : bool , count : i32 , select_event_handler : crate :: app :: ringmenuitem :: RingMenuItem_SelectEventHandler , decide_event_handler : crate :: app :: ringmenuitem :: RingMenuItem_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRingMenuItemMethods > :: ctor (this , ring_data , is_equipped , count , select_event_handler , decide_event_handler) ; this }
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem{pub fn get_m_ring_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_ring_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_is_equipped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_is_equipped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_m_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_m_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_m_needed_count_to_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_m_needed_count_to_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_m_needed_piece_of_bonds_to_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_m_needed_piece_of_bonds_to_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_m_is_enough_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_m_is_enough_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_m_is_enough_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_m_is_enough_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_initial_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
 }
 
-#[cfg(feature = "app-ringmenuitem")]
-pub trait IRingMenuItem_DecideEventHandlerMethods : IRingMenuItem_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RingMenuItem_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d5f170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::ringdata::RingData, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"] fn invoke (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData > , base_ring_count : impl :: core :: convert :: Into < i32 > , piece_of_bonds_count : impl :: core :: convert :: Into < i32 > , god_unit_index : impl :: core :: convert :: Into < i32 > , menu_select : impl :: core :: convert :: Into < crate :: app :: basicmenuselect :: BasicMenuSelect >) -> () { unsafe { let __receiver = < RingMenuItem_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingMenuItem_DecideEventHandler , crate :: app :: ringdata :: RingData , i32 , i32 , i32 , crate :: app :: basicmenuselect :: BasicMenuSelect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d5f190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: convert :: Into :: into (base_ring_count) , :: core :: convert :: Into :: into (piece_of_bonds_count) , :: core :: convert :: Into :: into (god_unit_index) , :: core :: convert :: Into :: into (menu_select) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem{#[doc="`.ctor(crate::app::ringdata::RingData, bool, i32, crate::app::ringmenuitem::RingMenuItem_SelectEventHandler, crate::app::ringmenuitem::RingMenuItem_DecideEventHandler)` — overload selector"]pub fn new(ring_data:crate::app::ringdata::RingData,is_equipped:bool,count:i32,select_event_handler:crate::app::ringmenuitem::RingMenuItem_SelectEventHandler,decide_event_handler:crate::app::ringmenuitem::RingMenuItem_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingMenuItem), ::core::stringify!(new),));
+ <Self as IRingMenuItemMethods> ::ctor(this,ring_data,is_equipped,count,select_event_handler,decide_event_handler);
+this}
+}
 
-#[cfg(feature = "app-ringmenuitem")]
-impl < __T : IRingMenuItem_DecideEventHandler > IRingMenuItem_DecideEventHandlerMethods for __T { }
+#[cfg(feature="app-ringmenuitem")]pub trait IRingMenuItem_DecideEventHandlerMethods:IRingMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f170usize)as*mut u8,();
+(RingMenuItem_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::ringdata::RingData, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]fn invoke(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData> ,base_ring_count:impl::core::convert::Into<i32> ,piece_of_bonds_count:impl::core::convert::Into<i32> ,god_unit_index:impl::core::convert::Into<i32> ,menu_select:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>)->(){unsafe{let __receiver= <RingMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f190usize)as*mut u8,();
+(RingMenuItem_DecideEventHandler)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data),(i32)::core::convert::Into::into(base_ring_count),(i32)::core::convert::Into::into(piece_of_bonds_count),(i32)::core::convert::Into::into(god_unit_index),(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(menu_select))}
+}
+}
 
-#[cfg(feature = "app-ringmenuitem")]
-impl RingMenuItem_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingMenuItem_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-ringmenuitem")]impl<__T:IRingMenuItem_DecideEventHandler>IRingMenuItem_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-ringmenuitem")]
-impl RingMenuItem_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingMenuItem_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRingMenuItem_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingMenuItem_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRingMenuItem_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-ringmenuitem")]pub trait IRingMenuItem_SelectEventHandlerMethods:IRingMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f640usize)as*mut u8,();
+(RingMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::ringdata::RingData)` overload"]fn invoke(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f660usize)as*mut u8,();
+(RingMenuItem_SelectEventHandler)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+}
+
+#[cfg(feature="app-ringmenuitem")]impl<__T:IRingMenuItem_SelectEventHandler>IRingMenuItem_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingMenuItem_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IRingMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-ringmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingMenuItem_SelectEventHandler;
-    pub use super::IRingMenuItem_SelectEventHandler;
-    pub use super::IRingMenuItem_SelectEventHandlerMethods;
     pub use super::RingMenuItem;
     pub use super::IRingMenuItem;
     pub use super::IRingMenuItemMethods;
     pub use super::RingMenuItem_DecideEventHandler;
     pub use super::IRingMenuItem_DecideEventHandler;
     pub use super::IRingMenuItem_DecideEventHandlerMethods;
+    pub use super::RingMenuItem_SelectEventHandler;
+    pub use super::IRingMenuItem_SelectEventHandler;
+    pub use super::IRingMenuItem_SelectEventHandlerMethods;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

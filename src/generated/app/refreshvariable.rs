@@ -4,37 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshvariable/RefreshVariable.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshVariable")] # [parent (crate :: system :: object :: Object)] pub struct RefreshVariable {
-# [static_field] # [rename (name = "m_FlagPrefix")] pub m_flag_prefix : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "m_FacilityAid")] pub m_facility_aid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "m_UnitCount")] pub m_unit_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshvariable/RefreshVariable.md"))]#[::unity2::class(namespace="App",name="RefreshVariable")]#[parent(crate::system::object::Object)]pub struct RefreshVariable{#[static_field]#[rename(name="m_FlagPrefix")]pub m_flag_prefix: ::unity2::Il2CppString, #[static_field]#[rename(name="m_FacilityAid")]pub m_facility_aid: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="m_UnitCount")]pub m_unit_count:i32,}
 
 }
 
 #[cfg(feature = "app-refreshvariable-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshvariable")]
-impl RefreshVariable { # [doc = "`GetFlagName(::unity2::Il2CppString)` overload"] pub fn get_flag_name (aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c7250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aid) , :: core :: option :: Option :: None) } } } # [doc = "`GetFlagName(::unity2::Il2CppString, i32)` overload"] pub fn get_flag_name_2 (aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , unit_index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c7310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aid) , :: core :: convert :: Into :: into (unit_index) , :: core :: option :: Option :: None) } } } # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c7440usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c7690usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OnCompletedChapter()` overload"] pub fn on_completed_chapter () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c7b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`HadVisited(::unity2::Il2CppString)` overload"] pub fn had_visited (aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bd330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aid) , :: core :: option :: Option :: None) } } } # [doc = "`SetVisited(::unity2::Il2CppString, bool)` overload"] pub fn set_visited (aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , visited : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c0430usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aid) , :: core :: convert :: Into :: into (visited) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit(::unity2::Il2CppString, i32)` overload"] pub fn get_unit (aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22befb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aid) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnit(::unity2::Il2CppString, i32, crate::app::unit::Unit)` overload"] pub fn set_unit (aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bf1a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aid) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CleanUpUnits()` overload"] pub fn clean_up_units () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bd850usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c7d70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshvariable")]impl RefreshVariable{#[doc="`GetFlagName(::unity2::Il2CppString)` overload"]pub fn get_flag_name(aid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c7250usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(aid))}
+}
+#[doc="`GetFlagName(::unity2::Il2CppString, i32)` overload"]pub fn get_flag_name_2(aid:impl::core::convert::Into< ::unity2::Il2CppString> ,unit_index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c7310usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(aid),(i32)::core::convert::Into::into(unit_index))}
+}
+#[doc="`RegistGlobalFlags()` overload"]pub fn regist_global_flags()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c7440usize)as*mut u8,();
+)}
+}
+#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c7690usize)as*mut u8,();
+)}
+}
+#[doc="`OnCompletedChapter()` overload"]pub fn on_completed_chapter()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c7b00usize)as*mut u8,();
+)}
+}
+#[doc="`HadVisited(::unity2::Il2CppString)` overload"]pub fn had_visited(aid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22bd330usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(aid))}
+}
+#[doc="`SetVisited(::unity2::Il2CppString, bool)` overload"]pub fn set_visited(aid:impl::core::convert::Into< ::unity2::Il2CppString> ,visited:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c0430usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(aid),(bool)::core::convert::Into::into(visited))}
+}
+#[doc="`GetUnit(::unity2::Il2CppString, i32)` overload"]pub fn get_unit(aid:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22befb0usize)as*mut u8,crate::app::unit::Unit;
+(::unity2::Il2CppString)::core::convert::Into::into(aid),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SetUnit(::unity2::Il2CppString, i32, crate::app::unit::Unit)` overload"]pub fn set_unit(aid:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22bf1a0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(aid),(i32)::core::convert::Into::into(index),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CleanUpUnits()` overload"]pub fn clean_up_units()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22bd850usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c7d70usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-refreshvariable")]
-pub trait IRefreshVariableMethods : IRefreshVariable { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefreshVariable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshVariable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c7d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshvariable")]pub trait IRefreshVariableMethods:IRefreshVariable{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefreshVariable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c7d60usize)as*mut u8,();
+(RefreshVariable)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refreshvariable")]
-impl < __T : IRefreshVariable > IRefreshVariableMethods for __T { }
+#[cfg(feature="app-refreshvariable")]impl<__T:IRefreshVariable>IRefreshVariableMethods for __T{}
 
-#[cfg(feature = "app-refreshvariable")]
-impl RefreshVariable { pub fn get_flag_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_flag_name_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_completed_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn had_visited_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_visited_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn clean_up_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-refreshvariable")]impl RefreshVariable{pub fn get_flag_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_flag_name_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn regist_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_completed_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn had_visited_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_visited_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clean_up_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-refreshvariable")]
-impl RefreshVariable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshVariable) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshVariableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refreshvariable")]impl RefreshVariable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshVariable), ::core::stringify!(new),));
+ <Self as IRefreshVariableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refreshvariable")]

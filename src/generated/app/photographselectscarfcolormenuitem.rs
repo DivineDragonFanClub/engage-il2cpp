@@ -4,37 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectscarfcolormenuitem/PhotographSelectScarfColorMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectScarfColorMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct PhotographSelectScarfColorMenuItem {
-# [offset (100)] # [rename (name = "m_IsCurrent")] pub m_is_current : bool ,
-# [offset (104)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
-# [offset (112)] # [rename (name = "m_ColorIdx")] pub m_color_idx : i32 ,
-# [offset (116)] # [rename (name = "m_ColorIdxOld")] pub m_color_idx_old : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectscarfcolormenuitem/PhotographSelectScarfColorMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectScarfColorMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct PhotographSelectScarfColorMenuItem{#[offset(100)]#[rename(name="m_IsCurrent")]pub m_is_current:bool, #[offset(104)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(112)]#[rename(name="m_ColorIdx")]pub m_color_idx:i32, #[offset(116)]#[rename(name="m_ColorIdxOld")]pub m_color_idx_old:i32,}
 
 }
 
 #[cfg(feature = "app-photographselectscarfcolormenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographselectscarfcolormenuitem")]
-pub trait IPhotographSelectScarfColorMenuItemMethods : IPhotographSelectScarfColorMenuItem { # [doc = "`get_IsCurrent()` overload"] fn get_is_current (self ,) -> bool { unsafe { let __receiver = < PhotographSelectScarfColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectScarfColorMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269bd70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"] fn ctor (self , color_idx : impl :: core :: convert :: Into < i32 > , color_idx_old : impl :: core :: convert :: Into < i32 > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager > , is_current : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographSelectScarfColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectScarfColorMenuItem , i32 , i32 , crate :: app :: photographdisposmanager :: PhotographDisposManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269b800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color_idx) , :: core :: convert :: Into :: into (color_idx_old) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: convert :: Into :: into (is_current) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < PhotographSelectScarfColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectScarfColorMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269bd80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectScarfColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectScarfColorMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269bec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectScarfColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectScarfColorMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269bed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectscarfcolormenuitem")]pub trait IPhotographSelectScarfColorMenuItemMethods:IPhotographSelectScarfColorMenuItem{#[doc="`get_IsCurrent()` overload"]fn get_is_current(self,)->bool{unsafe{let __receiver= <PhotographSelectScarfColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269bd70usize)as*mut u8,bool;
+(PhotographSelectScarfColorMenuItem)__receiver)}
+}
+#[doc="`.ctor(i32, i32, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"]fn ctor(self,color_idx:impl::core::convert::Into<i32> ,color_idx_old:impl::core::convert::Into<i32> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,is_current:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectScarfColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269b800usize)as*mut u8,();
+(PhotographSelectScarfColorMenuItem)__receiver,(i32)::core::convert::Into::into(color_idx),(i32)::core::convert::Into::into(color_idx_old),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(bool)::core::convert::Into::into(is_current))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <PhotographSelectScarfColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269bd80usize)as*mut u8,();
+(PhotographSelectScarfColorMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectScarfColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269bec0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectScarfColorMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectScarfColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269bed0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectScarfColorMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographselectscarfcolormenuitem")]
-impl < __T : IPhotographSelectScarfColorMenuItem > IPhotographSelectScarfColorMenuItemMethods for __T { }
+#[cfg(feature="app-photographselectscarfcolormenuitem")]impl<__T:IPhotographSelectScarfColorMenuItem>IPhotographSelectScarfColorMenuItemMethods for __T{}
 
-#[cfg(feature = "app-photographselectscarfcolormenuitem")]
-impl PhotographSelectScarfColorMenuItem { pub fn get_is_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectScarfColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectScarfColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectScarfColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectScarfColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectScarfColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-photographselectscarfcolormenuitem")]impl PhotographSelectScarfColorMenuItem{pub fn get_is_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-photographselectscarfcolormenuitem")]
-impl PhotographSelectScarfColorMenuItem {
-# [doc = "`.ctor(i32, i32, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"] pub fn new (color_idx : i32 , color_idx_old : i32 , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , is_current : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectScarfColorMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectScarfColorMenuItemMethods > :: ctor (this , color_idx , color_idx_old , dispos_manager , is_current) ; this }
+#[cfg(feature="app-photographselectscarfcolormenuitem")]impl PhotographSelectScarfColorMenuItem{#[doc="`.ctor(i32, i32, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"]pub fn new(color_idx:i32,color_idx_old:i32,dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager,is_current:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectScarfColorMenuItem), ::core::stringify!(new),));
+ <Self as IPhotographSelectScarfColorMenuItemMethods> ::ctor(this,color_idx,color_idx_old,dispos_manager,is_current);
+this}
 }
 
 #[cfg(feature = "app-photographselectscarfcolormenuitem")]

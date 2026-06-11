@@ -4,34 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: asyncoperation :: { AsyncOperation , IAsyncOperation }
- ;
- use crate :: unity_engine :: yieldinstruction :: { IYieldInstruction , YieldInstruction }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::asyncoperation::{AsyncOperation,IAsyncOperation}
+;
+use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequestasyncoperation/UnityWebRequestAsyncOperation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "UnityWebRequestAsyncOperation")] # [parent (crate :: unity_engine :: asyncoperation :: AsyncOperation)] pub struct UnityWebRequestAsyncOperation {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/unitywebrequestasyncoperation/UnityWebRequestAsyncOperation.md"))]#[::unity2::class(namespace="UnityEngine.Networking",name="UnityWebRequestAsyncOperation")]#[parent(crate::unity_engine::asyncoperation::AsyncOperation)]pub struct UnityWebRequestAsyncOperation{}
 
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
-pub trait IUnityWebRequestAsyncOperationMethods : IUnityWebRequestAsyncOperation { # [doc = "`get_webRequest()` overload"] fn get_web_request (self ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest { unsafe { let __receiver = < UnityWebRequestAsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityWebRequestAsyncOperation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_webRequest(crate::unity_engine::networking::unitywebrequest::UnityWebRequest)` overload"] fn set_web_request (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest >) -> () { unsafe { let __receiver = < UnityWebRequestAsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityWebRequestAsyncOperation , crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cb10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnityWebRequestAsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityWebRequestAsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-unitywebrequestasyncoperation")]pub trait IUnityWebRequestAsyncOperationMethods:IUnityWebRequestAsyncOperation{#[doc="`get_webRequest()` overload"]fn get_web_request(self,)->crate::unity_engine::networking::unitywebrequest::UnityWebRequest{unsafe{let __receiver= <UnityWebRequestAsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cb00usize)as*mut u8,crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+(UnityWebRequestAsyncOperation)__receiver)}
+}
+#[doc="`set_webRequest(crate::unity_engine::networking::unitywebrequest::UnityWebRequest)` overload"]fn set_web_request(self,value:impl::core::convert::Into<crate::unity_engine::networking::unitywebrequest::UnityWebRequest>)->(){unsafe{let __receiver= <UnityWebRequestAsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cb10usize)as*mut u8,();
+(UnityWebRequestAsyncOperation)__receiver,(crate::unity_engine::networking::unitywebrequest::UnityWebRequest)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnityWebRequestAsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cb20usize)as*mut u8,();
+(UnityWebRequestAsyncOperation)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
-impl < __T : IUnityWebRequestAsyncOperation > IUnityWebRequestAsyncOperationMethods for __T { }
+#[cfg(feature="unity_engine-networking-unitywebrequestasyncoperation")]impl<__T:IUnityWebRequestAsyncOperation>IUnityWebRequestAsyncOperationMethods for __T{}
 
-#[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
-impl UnityWebRequestAsyncOperation { pub fn get_web_request_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityWebRequestAsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_web_request_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityWebRequestAsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityWebRequestAsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-networking-unitywebrequestasyncoperation")]impl UnityWebRequestAsyncOperation{pub fn get_web_request_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_web_request_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
-impl UnityWebRequestAsyncOperation {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnityWebRequestAsyncOperation) , :: core :: stringify ! (new) ,)) ; < Self as IUnityWebRequestAsyncOperationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-networking-unitywebrequestasyncoperation")]impl UnityWebRequestAsyncOperation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnityWebRequestAsyncOperation), ::core::stringify!(new),));
+ <Self as IUnityWebRequestAsyncOperationMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]

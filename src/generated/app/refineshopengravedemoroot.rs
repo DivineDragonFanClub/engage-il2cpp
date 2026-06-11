@@ -4,57 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravedemoroot/RefineShopEngraveDemoRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveDemoRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineShopEngraveDemoRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_WeaponModelObject")] pub m_weapon_model_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_GodSymbolFront")] pub m_god_symbol_front : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_GodSymbolBack")] pub m_god_symbol_back : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_GodSymbolEff")] pub m_god_symbol_eff : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_EffLight")] pub m_eff_light : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_WeaponIconFrameBefore")] pub m_weapon_icon_frame_before : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_WeaponNameTextBefore")] pub m_weapon_name_text_before : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_WeaponIconFrameAfter")] pub m_weapon_icon_frame_after : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_WeaponNameTextAfter")] pub m_weapon_name_text_after : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (96)] # [rename (name = "m_RefineShopEngraveDemo")] pub m_refine_shop_engrave_demo : crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo ,
-# [offset (104)] # [rename (name = "m_ShopWeaponModelRenderer")] pub m_shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
-# [offset (112)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (120)] # [rename (name = "m_UnitItem")] pub m_unit_item : crate :: app :: unititem :: UnitItem ,
-# [offset (128)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopengravedemoroot/RefineShopEngraveDemoRoot.md"))]#[::unity2::class(namespace="App",name="RefineShopEngraveDemoRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineShopEngraveDemoRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_WeaponModelObject")]pub m_weapon_model_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_GodSymbolFront")]pub m_god_symbol_front:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_GodSymbolBack")]pub m_god_symbol_back:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_GodSymbolEff")]pub m_god_symbol_eff:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_EffLight")]pub m_eff_light:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_WeaponIconFrameBefore")]pub m_weapon_icon_frame_before:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_WeaponNameTextBefore")]pub m_weapon_name_text_before:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_WeaponIconFrameAfter")]pub m_weapon_icon_frame_after:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_WeaponNameTextAfter")]pub m_weapon_name_text_after:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_RefineShopEngraveDemo")]pub m_refine_shop_engrave_demo:crate::app::refineshopengravedemo::RefineShopEngraveDemo, #[offset(104)]#[rename(name="m_ShopWeaponModelRenderer")]pub m_shop_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, #[offset(112)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(120)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(128)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "app-refineshopengravedemoroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopengravedemoroot")]
-impl RefineShopEngraveDemoRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2959080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29591a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295aa10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::refineshopengravedemo::RefineShopEngraveDemo, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem)` overload"] pub fn create (refine_shop_engrave_demo : impl :: core :: convert :: Into < crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , base_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29592d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (refine_shop_engrave_demo) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (base_unit_item) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopengravedemoroot")]impl RefineShopEngraveDemoRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2959080usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29591a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x295aa10usize)as*mut u8,();
+)}
+}
+#[doc="`Create(crate::app::refineshopengravedemo::RefineShopEngraveDemo, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem)` overload"]pub fn create(refine_shop_engrave_demo:impl::core::convert::Into<crate::app::refineshopengravedemo::RefineShopEngraveDemo> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,base_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29592d0usize)as*mut u8,crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot;
+(crate::app::refineshopengravedemo::RefineShopEngraveDemo)::core::convert::Into::into(refine_shop_engrave_demo),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unititem::UnitItem)::core::convert::Into::into(base_unit_item))}
+}
+}
 
-#[cfg(feature = "app-refineshopengravedemoroot")]
-pub trait IRefineShopEngraveDemoRootMethods : IRefineShopEngraveDemoRoot { # [doc = "`CreateInside(crate::app::refineshopengravedemo::RefineShopEngraveDemo, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem)` overload"] fn create_inside (self , refine_shop_engrave_demo : impl :: core :: convert :: Into < crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , base_unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemoRoot , crate :: app :: refineshopengravedemo :: RefineShopEngraveDemo , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295aa90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (refine_shop_engrave_demo) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (base_unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2959450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlaying()` overload"] fn is_playing (self ,) -> bool { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295a640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDestroyed()` overload"] fn is_destroyed (self ,) -> bool { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295ac50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295a7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveDemoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveDemoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295acd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopengravedemoroot")]pub trait IRefineShopEngraveDemoRootMethods:IRefineShopEngraveDemoRoot{#[doc="`CreateInside(crate::app::refineshopengravedemo::RefineShopEngraveDemo, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unititem::UnitItem)` overload"]fn create_inside(self,refine_shop_engrave_demo:impl::core::convert::Into<crate::app::refineshopengravedemo::RefineShopEngraveDemo> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,base_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopEngraveDemoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295aa90usize)as*mut u8,();
+(RefineShopEngraveDemoRoot)__receiver,(crate::app::refineshopengravedemo::RefineShopEngraveDemo)::core::convert::Into::into(refine_shop_engrave_demo),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unititem::UnitItem)::core::convert::Into::into(base_unit_item))}
+}
+#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <RefineShopEngraveDemoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2959450usize)as*mut u8,();
+(RefineShopEngraveDemoRoot)__receiver)}
+}
+#[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <RefineShopEngraveDemoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295a640usize)as*mut u8,bool;
+(RefineShopEngraveDemoRoot)__receiver)}
+}
+#[doc="`IsDestroyed()` overload"]fn is_destroyed(self,)->bool{unsafe{let __receiver= <RefineShopEngraveDemoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295ac50usize)as*mut u8,bool;
+(RefineShopEngraveDemoRoot)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineShopEngraveDemoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295a7f0usize)as*mut u8,();
+(RefineShopEngraveDemoRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopEngraveDemoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295acd0usize)as*mut u8,();
+(RefineShopEngraveDemoRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopengravedemoroot")]
-impl < __T : IRefineShopEngraveDemoRoot > IRefineShopEngraveDemoRootMethods for __T { }
+#[cfg(feature="app-refineshopengravedemoroot")]impl<__T:IRefineShopEngraveDemoRoot>IRefineShopEngraveDemoRootMethods for __T{}
 
-#[cfg(feature = "app-refineshopengravedemoroot")]
-impl RefineShopEngraveDemoRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_destroyed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveDemoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-refineshopengravedemoroot")]impl RefineShopEngraveDemoRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_destroyed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-refineshopengravedemoroot")]
-impl RefineShopEngraveDemoRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveDemoRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveDemoRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineshopengravedemoroot")]impl RefineShopEngraveDemoRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopEngraveDemoRoot), ::core::stringify!(new),));
+ <Self as IRefineShopEngraveDemoRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineshopengravedemoroot")]

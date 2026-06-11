@@ -4,88 +4,176 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager_BankHandle.md"))] # [:: unity2 :: class (namespace = "" , name = "AkBankManager.BankHandle")] # [parent (crate :: system :: object :: Object)] pub struct AkBankManager_BankHandle {
-# [offset (16)] # [rename (name = "bankName")] pub bank_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_BankID")] pub m_bank_id : u32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akbankmanager/AkBankManager_BankHandle.md"))]#[::unity2::class(namespace="",name="AkBankManager.BankHandle")]#[parent(crate::system::object::Object)]pub struct AkBankManager_BankHandle{#[offset(16)]#[rename(name="bankName")]pub bank_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_BankID")]pub m_bank_id:u32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager.md"))] # [:: unity2 :: class (namespace = "" , name = "AkBankManager")] # [parent (crate :: system :: object :: Object)] pub struct AkBankManager {
-# [static_field] # [rename (name = "m_BankHandles")] pub m_bank_handles : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: root :: akbankmanager :: AkBankManager_BankHandle > ,
-# [static_field] # [rename (name = "BanksToUnload")] pub banks_to_unload : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akbankmanager :: AkBankManager_BankHandle > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akbankmanager/AkBankManager_DecodableBankHandle.md"))]#[::unity2::class(namespace="",name="AkBankManager.DecodableBankHandle")]#[parent(crate::root::akbankmanager::AkBankManager_BankHandle)]pub struct AkBankManager_DecodableBankHandle{#[offset(32)]#[rename(name="decodeBank")]pub decode_bank:bool, #[offset(40)]#[rename(name="decodedBankPath")]pub decoded_bank_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="saveDecodedBank")]pub save_decoded_bank:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager_AsyncBankHandle.md"))] # [:: unity2 :: class (namespace = "" , name = "AkBankManager.AsyncBankHandle")] # [parent (crate :: root :: akbankmanager :: AkBankManager_BankHandle)] pub struct AkBankManager_AsyncBankHandle {
-# [offset (32)] # [rename (name = "bankCallback")] pub bank_callback : crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akbankmanager/AkBankManager_AsyncBankHandle.md"))]#[::unity2::class(namespace="",name="AkBankManager.AsyncBankHandle")]#[parent(crate::root::akbankmanager::AkBankManager_BankHandle)]pub struct AkBankManager_AsyncBankHandle{#[offset(32)]#[rename(name="bankCallback")]pub bank_callback:crate::root::akcallbackmanager::AkCallbackManager_BankCallback,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager_DecodableBankHandle.md"))] # [:: unity2 :: class (namespace = "" , name = "AkBankManager.DecodableBankHandle")] # [parent (crate :: root :: akbankmanager :: AkBankManager_BankHandle)] pub struct AkBankManager_DecodableBankHandle {
-# [offset (32)] # [rename (name = "decodeBank")] pub decode_bank : bool ,
-# [offset (40)] # [rename (name = "decodedBankPath")] pub decoded_bank_path : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "saveDecodedBank")] pub save_decoded_bank : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akbankmanager/AkBankManager.md"))]#[::unity2::class(namespace="",name="AkBankManager")]#[parent(crate::system::object::Object)]pub struct AkBankManager{#[static_field]#[rename(name="m_BankHandles")]pub m_bank_handles:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::root::akbankmanager::AkBankManager_BankHandle> , #[static_field]#[rename(name="BanksToUnload")]pub banks_to_unload:crate::system::collections::generic::list_1::List_1<crate::root::akbankmanager::AkBankManager_BankHandle> ,}
 
 }
 
 #[cfg(feature = "root-akbankmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akbankmanager")]
-pub trait IAkBankManager_BankHandleMethods : IAkBankManager_BankHandle { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`get_RefCount()` overload"] fn get_ref_count (self ,) -> i32 { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RefCount(i32)` overload"] fn set_ref_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c9d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`DoLoadBank()` overload"] fn do_load_bank (self ,) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadBank()` overload"] fn load_bank (self ,) -> () { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ca60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadBank()` overload"] fn unload_bank (self ,) -> () { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9cc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IncRef()` overload"] fn inc_ref (self ,) -> () { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9cb90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DecRef()` overload"] fn dec_ref (self ,) -> () { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9cde0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LogLoadResult(crate::root::akresult::AKRESULT)` overload"] fn log_load_result (self , result : impl :: core :: convert :: Into < crate :: root :: akresult :: AKRESULT >) -> () { unsafe { let __receiver = < AkBankManager_BankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_BankHandle , crate :: root :: akresult :: AKRESULT , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akbankmanager")]
-impl < __T : IAkBankManager_BankHandle > IAkBankManager_BankHandleMethods for __T { }
-
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_BankHandle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_ref_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_ref_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn do_load_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn unload_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn inc_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn dec_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn log_load_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_BankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_BankHandle {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkBankManager_BankHandle) , :: core :: stringify ! (new) ,)) ; < Self as IAkBankManager_BankHandleMethods > :: ctor (this , name) ; this }
+#[cfg(feature="root-akbankmanager")]pub trait IAkBankManager_BankHandleMethods:IAkBankManager_BankHandle{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c130usize)as*mut u8,();
+(AkBankManager_BankHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`get_RefCount()` overload"]fn get_ref_count(self,)->i32{unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c9c0usize)as*mut u8,i32;
+(AkBankManager_BankHandle)__receiver)}
+}
+#[doc="`set_RefCount(i32)` overload"]fn set_ref_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c9d0usize)as*mut u8,();
+(AkBankManager_BankHandle)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`DoLoadBank()` overload"]fn do_load_bank(self,)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c9e0usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkBankManager_BankHandle)__receiver)}
+}
+#[doc="`LoadBank()` overload"]fn load_bank(self,)->(){unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ca60usize)as*mut u8,();
+(AkBankManager_BankHandle)__receiver)}
+}
+#[doc="`UnloadBank()` overload"]fn unload_bank(self,)->(){unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9cc30usize)as*mut u8,();
+(AkBankManager_BankHandle)__receiver)}
+}
+#[doc="`IncRef()` overload"]fn inc_ref(self,)->(){unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9cb90usize)as*mut u8,();
+(AkBankManager_BankHandle)__receiver)}
+}
+#[doc="`DecRef()` overload"]fn dec_ref(self,)->(){unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9cde0usize)as*mut u8,();
+(AkBankManager_BankHandle)__receiver)}
+}
+#[doc="`LogLoadResult(crate::root::akresult::AKRESULT)` overload"]fn log_load_result(self,result:impl::core::convert::Into<crate::root::akresult::AKRESULT>)->(){unsafe{let __receiver= <AkBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c370usize)as*mut u8,();
+(AkBankManager_BankHandle)__receiver,(crate::root::akresult::AKRESULT)::core::convert::Into::into(result))}
+}
 }
 
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager { # [doc = "`DoUnloadBanks()` overload"] pub fn do_unload_banks () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] pub fn reset () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd25c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`LoadInitBank(bool)` overload"] pub fn load_init_bank (do_reset : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (do_reset) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadInitBank()` overload"] pub fn unload_init_bank () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd27f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`LoadBank(::unity2::Il2CppString, bool, bool)` overload"] pub fn load_bank (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , decode_bank : impl :: core :: convert :: Into < bool > , save_decoded_bank : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (decode_bank) , :: core :: convert :: Into :: into (save_decoded_bank) , :: core :: option :: Option :: None) } } } # [doc = "`LoadBankAsync(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` overload"] pub fn load_bank_async (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , callback : impl :: core :: convert :: Into < crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2aa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadBank(::unity2::Il2CppString)` overload"] pub fn unload_bank (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2cd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2e50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akbankmanager")]impl<__T:IAkBankManager_BankHandle>IAkBankManager_BankHandleMethods for __T{}
 
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager { pub fn do_unload_banks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_init_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_init_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_bank_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unload_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_AsyncBankHandle { # [doc = "`GlobalBankCallback(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"] pub fn global_bank_callback (in_bank_id : impl :: core :: convert :: Into < u32 > , in_p_in_memory_bank_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , in_e_load_result : impl :: core :: convert :: Into < crate :: root :: akresult :: AKRESULT > , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: IntPtr , crate :: root :: akresult :: AKRESULT , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_bank_id) , :: core :: convert :: Into :: into (in_p_in_memory_bank_ptr) , :: core :: convert :: Into :: into (in_e_load_result) , :: core :: convert :: Into :: into (in_cookie) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akbankmanager")]
-pub trait IAkBankManager_AsyncBankHandleMethods : IAkBankManager_AsyncBankHandle { # [doc = "`.ctor(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , callback : impl :: core :: convert :: Into < crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback >) -> () { unsafe { let __receiver = < AkBankManager_AsyncBankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_AsyncBankHandle , :: unity2 :: Il2CppString , crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`DoLoadBank()` overload"] fn do_load_bank (self ,) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkBankManager_AsyncBankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_AsyncBankHandle , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c8c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akbankmanager")]
-impl < __T : IAkBankManager_AsyncBankHandle > IAkBankManager_AsyncBankHandleMethods for __T { }
-
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_AsyncBankHandle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_AsyncBankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn global_bank_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_AsyncBankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn do_load_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_AsyncBankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_AsyncBankHandle {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , callback : crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkBankManager_AsyncBankHandle) , :: core :: stringify ! (new) ,)) ; < Self as IAkBankManager_AsyncBankHandleMethods > :: ctor (this , name , callback) ; this }
+#[cfg(feature="root-akbankmanager")]impl AkBankManager_BankHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_ref_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_ref_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn do_load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn unload_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn log_load_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
-#[cfg(feature = "root-akbankmanager")]
-pub trait IAkBankManager_DecodableBankHandleMethods : IAkBankManager_DecodableBankHandle { # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , save : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkBankManager_DecodableBankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_DecodableBankHandle , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ce80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (save) , :: core :: option :: Option :: None) } } } # [doc = "`DoLoadBank()` overload"] fn do_load_bank (self ,) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkBankManager_DecodableBankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_DecodableBankHandle , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9d240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadBank()` overload"] fn unload_bank (self ,) -> () { unsafe { let __receiver = < AkBankManager_DecodableBankHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBankManager_DecodableBankHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9d410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akbankmanager")]impl AkBankManager_BankHandle{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkBankManager_BankHandle), ::core::stringify!(new),));
+ <Self as IAkBankManager_BankHandleMethods> ::ctor(this,name);
+this}
+}
 
-#[cfg(feature = "root-akbankmanager")]
-impl < __T : IAkBankManager_DecodableBankHandle > IAkBankManager_DecodableBankHandleMethods for __T { }
+#[cfg(feature="root-akbankmanager")]pub trait IAkBankManager_DecodableBankHandleMethods:IAkBankManager_DecodableBankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,save:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkBankManager_DecodableBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ce80usize)as*mut u8,();
+(AkBankManager_DecodableBankHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(save))}
+}
+#[doc="`DoLoadBank()` overload"]fn do_load_bank(self,)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkBankManager_DecodableBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9d240usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkBankManager_DecodableBankHandle)__receiver)}
+}
+#[doc="`UnloadBank()` overload"]fn unload_bank(self,)->(){unsafe{let __receiver= <AkBankManager_DecodableBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9d410usize)as*mut u8,();
+(AkBankManager_DecodableBankHandle)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_DecodableBankHandle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_DecodableBankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn do_load_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_DecodableBankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBankManager_DecodableBankHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-akbankmanager")]impl<__T:IAkBankManager_DecodableBankHandle>IAkBankManager_DecodableBankHandleMethods for __T{}
 
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_DecodableBankHandle {
-# [doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , save : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkBankManager_DecodableBankHandle) , :: core :: stringify ! (new) ,)) ; < Self as IAkBankManager_DecodableBankHandleMethods > :: ctor (this , name , save) ; this }
+#[cfg(feature="root-akbankmanager")]impl AkBankManager_DecodableBankHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn do_load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root-akbankmanager")]impl AkBankManager_DecodableBankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,save:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkBankManager_DecodableBankHandle), ::core::stringify!(new),));
+ <Self as IAkBankManager_DecodableBankHandleMethods> ::ctor(this,name,save);
+this}
+}
+
+#[cfg(feature="root-akbankmanager")]impl AkBankManager_AsyncBankHandle{#[doc="`GlobalBankCallback(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]pub fn global_bank_callback(in_bank_id:impl::core::convert::Into<u32> ,in_p_in_memory_bank_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,in_e_load_result:impl::core::convert::Into<crate::root::akresult::AKRESULT> ,in_cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c170usize)as*mut u8,();
+(u32)::core::convert::Into::into(in_bank_id),(::unity2::IntPtr)::core::convert::Into::into(in_p_in_memory_bank_ptr),(crate::root::akresult::AKRESULT)::core::convert::Into::into(in_e_load_result),(crate::system::object::Object)::core::convert::Into::into(in_cookie))}
+}
+}
+
+#[cfg(feature="root-akbankmanager")]pub trait IAkBankManager_AsyncBankHandleMethods:IAkBankManager_AsyncBankHandle{#[doc="`.ctor(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_BankCallback>)->(){unsafe{let __receiver= <AkBankManager_AsyncBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c0e0usize)as*mut u8,();
+(AkBankManager_AsyncBankHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::root::akcallbackmanager::AkCallbackManager_BankCallback)::core::convert::Into::into(callback))}
+}
+#[doc="`DoLoadBank()` overload"]fn do_load_bank(self,)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkBankManager_AsyncBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c8c0usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkBankManager_AsyncBankHandle)__receiver)}
+}
+}
+
+#[cfg(feature="root-akbankmanager")]impl<__T:IAkBankManager_AsyncBankHandle>IAkBankManager_AsyncBankHandleMethods for __T{}
+
+#[cfg(feature="root-akbankmanager")]impl AkBankManager_AsyncBankHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn global_bank_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn do_load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root-akbankmanager")]impl AkBankManager_AsyncBankHandle{#[doc="`.ctor(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,callback:crate::root::akcallbackmanager::AkCallbackManager_BankCallback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkBankManager_AsyncBankHandle), ::core::stringify!(new),));
+ <Self as IAkBankManager_AsyncBankHandleMethods> ::ctor(this,name,callback);
+this}
+}
+
+#[cfg(feature="root-akbankmanager")]impl AkBankManager{#[doc="`DoUnloadBanks()` overload"]pub fn do_unload_banks()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2460usize)as*mut u8,();
+)}
+}
+#[doc="`Reset()` overload"]pub fn reset()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd25c0usize)as*mut u8,();
+)}
+}
+#[doc="`LoadInitBank(bool)` overload"]pub fn load_init_bank(do_reset:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2670usize)as*mut u8,();
+(bool)::core::convert::Into::into(do_reset))}
+}
+#[doc="`UnloadInitBank()` overload"]pub fn unload_init_bank()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd27f0usize)as*mut u8,();
+)}
+}
+#[doc="`LoadBank(::unity2::Il2CppString, bool, bool)` overload"]pub fn load_bank(name:impl::core::convert::Into< ::unity2::Il2CppString> ,decode_bank:impl::core::convert::Into<bool> ,save_decoded_bank:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2880usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(decode_bank),(bool)::core::convert::Into::into(save_decoded_bank))}
+}
+#[doc="`LoadBankAsync(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` overload"]pub fn load_bank_async(name:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_BankCallback>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2aa0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::root::akcallbackmanager::AkCallbackManager_BankCallback)::core::convert::Into::into(callback))}
+}
+#[doc="`UnloadBank(::unity2::Il2CppString)` overload"]pub fn unload_bank(name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2cd0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2e50usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="root-akbankmanager")]impl AkBankManager{pub fn do_unload_banks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_init_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_init_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_bank_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unload_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
 #[cfg(feature = "root-akbankmanager")]
@@ -94,14 +182,14 @@ pub mod prelude {
     pub use super::AkBankManager_BankHandle;
     pub use super::IAkBankManager_BankHandle;
     pub use super::IAkBankManager_BankHandleMethods;
-    pub use super::AkBankManager;
-    pub use super::IAkBankManager;
-    pub use super::AkBankManager_AsyncBankHandle;
-    pub use super::IAkBankManager_AsyncBankHandle;
-    pub use super::IAkBankManager_AsyncBankHandleMethods;
     pub use super::AkBankManager_DecodableBankHandle;
     pub use super::IAkBankManager_DecodableBankHandle;
     pub use super::IAkBankManager_DecodableBankHandleMethods;
+    pub use super::AkBankManager_AsyncBankHandle;
+    pub use super::IAkBankManager_AsyncBankHandle;
+    pub use super::IAkBankManager_AsyncBankHandleMethods;
+    pub use super::AkBankManager;
+    pub use super::IAkBankManager;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

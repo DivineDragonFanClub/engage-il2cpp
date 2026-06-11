@@ -4,37 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/unityevent/UnityEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Events" , name = "UnityEvent")] # [parent (crate :: unity_engine :: events :: unityeventbase :: UnityEventBase)] pub struct UnityEvent {
-# [offset (40)] # [rename (name = "m_InvokeArray")] pub m_invoke_array : :: unity2 :: Array < crate :: system :: object :: Object > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/events/unityevent/UnityEvent.md"))]#[::unity2::class(namespace="UnityEngine.Events",name="UnityEvent")]#[parent(crate::unity_engine::events::unityeventbase::UnityEventBase)]pub struct UnityEvent{#[offset(40)]#[rename(name="m_InvokeArray")]pub m_invoke_array: ::unity2::Array<crate::system::object::Object> ,}
 
 }
 
 #[cfg(feature = "unity_engine-events-unityevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-events-unityevent")]
-impl UnityEvent { # [doc = "`GetDelegate(crate::unity_engine::events::unityaction::UnityAction)` overload"] pub fn get_delegate_2 (action : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction :: UnityAction >) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: events :: unityaction :: UnityAction , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793bf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-events-unityevent")]impl UnityEvent{#[doc="`GetDelegate(crate::unity_engine::events::unityaction::UnityAction)` overload"]pub fn get_delegate_2(action:impl::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>)->crate::unity_engine::events::baseinvokablecall::BaseInvokableCall{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3793bf0usize)as*mut u8,crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
+(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(action))}
+}
+}
 
-#[cfg(feature = "unity_engine-events-unityevent")]
-pub trait IUnityEventMethods : IUnityEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnityEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddListener(crate::unity_engine::events::unityaction::UnityAction)` overload"] fn add_listener (self , call : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction :: UnityAction >) -> () { unsafe { let __receiver = < UnityEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityEvent , crate :: unity_engine :: events :: unityaction :: UnityAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793b70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (call) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveListener(crate::unity_engine::events::unityaction::UnityAction)` overload"] fn remove_listener (self , call : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction :: UnityAction >) -> () { unsafe { let __receiver = < UnityEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityEvent , crate :: unity_engine :: events :: unityaction :: UnityAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793c70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (call) , :: core :: option :: Option :: None) } } } # [doc = "`FindMethod_Impl(::unity2::Il2CppString, ::unity2::SystemType)` overload"] fn find_method_impl (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , target_obj_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < UnityEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityEvent , :: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (target_obj_type) , :: core :: option :: Option :: None) } } } # [doc = "`GetDelegate(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"] fn get_delegate (self , target : impl :: core :: convert :: Into < crate :: system :: object :: Object > , the_function : impl :: core :: convert :: Into < crate :: system :: reflection :: methodinfo :: MethodInfo >) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall { unsafe { let __receiver = < UnityEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityEvent , crate :: system :: object :: Object , crate :: system :: reflection :: methodinfo :: MethodInfo , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793ee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (the_function) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < UnityEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnityEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3793f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-events-unityevent")]pub trait IUnityEventMethods:IUnityEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3793a80usize)as*mut u8,();
+(UnityEvent)__receiver)}
+}
+#[doc="`AddListener(crate::unity_engine::events::unityaction::UnityAction)` overload"]fn add_listener(self,call:impl::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>)->(){unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3793b70usize)as*mut u8,();
+(UnityEvent)__receiver,(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(call))}
+}
+#[doc="`RemoveListener(crate::unity_engine::events::unityaction::UnityAction)` overload"]fn remove_listener(self,call:impl::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>)->(){unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3793c70usize)as*mut u8,();
+(UnityEvent)__receiver,(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(call))}
+}
+#[doc="`FindMethod_Impl(::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn find_method_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,target_obj_type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3793cc0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(UnityEvent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::SystemType)::core::convert::Into::into(target_obj_type))}
+}
+#[doc="`GetDelegate(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]fn get_delegate(self,target:impl::core::convert::Into<crate::system::object::Object> ,the_function:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->crate::unity_engine::events::baseinvokablecall::BaseInvokableCall{unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3793ee0usize)as*mut u8,crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
+(UnityEvent)__receiver,(crate::system::object::Object)::core::convert::Into::into(target),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(the_function))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3793f50usize)as*mut u8,();
+(UnityEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-events-unityevent")]
-impl < __T : IUnityEvent > IUnityEventMethods for __T { }
+#[cfg(feature="unity_engine-events-unityevent")]impl<__T:IUnityEvent>IUnityEventMethods for __T{}
 
-#[cfg(feature = "unity_engine-events-unityevent")]
-impl UnityEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_listener_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn remove_listener_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn find_method_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_delegate_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-events-unityevent")]impl UnityEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_listener_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_listener_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn find_method_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_delegate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-events-unityevent")]
-impl UnityEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnityEvent) , :: core :: stringify ! (new) ,)) ; < Self as IUnityEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-events-unityevent")]impl UnityEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnityEvent), ::core::stringify!(new),));
+ <Self as IUnityEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-events-unityevent")]

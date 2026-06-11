@@ -4,34 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/localvariableinfo/LocalVariableInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "LocalVariableInfo")] # [parent (crate :: system :: object :: Object)] pub struct LocalVariableInfo {
-# [offset (16)] # [rename (name = "type")] pub r#type : :: unity2 :: SystemType ,
-# [offset (24)] # [rename (name = "is_pinned")] pub is_pinned : bool ,
-# [offset (26)] # [rename (name = "position")] pub position : u16 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/localvariableinfo/LocalVariableInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="LocalVariableInfo")]#[parent(crate::system::object::Object)]pub struct LocalVariableInfo{#[offset(16)]#[rename(name="type")]pub r#type: ::unity2::SystemType, #[offset(24)]#[rename(name="is_pinned")]pub is_pinned:bool, #[offset(26)]#[rename(name="position")]pub position:u16,}
 
 }
 
 #[cfg(feature = "system-reflection-localvariableinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-localvariableinfo")]
-pub trait ILocalVariableInfoMethods : ILocalVariableInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LocalVariableInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LocalVariableInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3270da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < LocalVariableInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LocalVariableInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3270db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-localvariableinfo")]pub trait ILocalVariableInfoMethods:ILocalVariableInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LocalVariableInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3270da0usize)as*mut u8,();
+(LocalVariableInfo)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LocalVariableInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3270db0usize)as*mut u8, ::unity2::Il2CppString;
+(LocalVariableInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-localvariableinfo")]
-impl < __T : ILocalVariableInfo > ILocalVariableInfoMethods for __T { }
+#[cfg(feature="system-reflection-localvariableinfo")]impl<__T:ILocalVariableInfo>ILocalVariableInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-localvariableinfo")]
-impl LocalVariableInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocalVariableInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocalVariableInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-reflection-localvariableinfo")]impl LocalVariableInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-reflection-localvariableinfo")]
-impl LocalVariableInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LocalVariableInfo) , :: core :: stringify ! (new) ,)) ; < Self as ILocalVariableInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-localvariableinfo")]impl LocalVariableInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LocalVariableInfo), ::core::stringify!(new),));
+ <Self as ILocalVariableInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-localvariableinfo")]

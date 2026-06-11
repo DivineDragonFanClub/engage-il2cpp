@@ -4,38 +4,125 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akresourcemonitordatasummary/AkResourceMonitorDataSummary.md"))] # [:: unity2 :: class (namespace = "" , name = "AkResourceMonitorDataSummary")] # [parent (crate :: system :: object :: Object)] pub struct AkResourceMonitorDataSummary {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akresourcemonitordatasummary/AkResourceMonitorDataSummary.md"))]#[::unity2::class(namespace="",name="AkResourceMonitorDataSummary")]#[parent(crate::system::object::Object)]pub struct AkResourceMonitorDataSummary{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akresourcemonitordatasummary-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akresourcemonitordatasummary")]
-impl AkResourceMonitorDataSummary { # [doc = "`getCPtr(crate::root::akresourcemonitordatasummary::AkResourceMonitorDataSummary)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akresourcemonitordatasummary :: AkResourceMonitorDataSummary >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akresourcemonitordatasummary :: AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f316f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akresourcemonitordatasummary")]impl AkResourceMonitorDataSummary{#[doc="`getCPtr(crate::root::akresourcemonitordatasummary::AkResourceMonitorDataSummary)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akresourcemonitordatasummary::AkResourceMonitorDataSummary>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f316f0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akresourcemonitordatasummary::AkResourceMonitorDataSummary)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akresourcemonitordatasummary")]
-pub trait IAkResourceMonitorDataSummaryMethods : IAkResourceMonitorDataSummary { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f316b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f317f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_totalCPU(f32)` overload"] fn set_total_cpu (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_totalCPU()` overload"] fn get_total_cpu (self ,) -> f32 { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pluginCPU(f32)` overload"] fn set_plugin_cpu (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pluginCPU()` overload"] fn get_plugin_cpu (self ,) -> f32 { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_physicalVoices(u32)` overload"] fn set_physical_voices (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_physicalVoices()` overload"] fn get_physical_voices (self ,) -> u32 { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_virtualVoices(u32)` overload"] fn set_virtual_voices (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_virtualVoices()` overload"] fn get_virtual_voices (self ,) -> u32 { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_totalVoices(u32)` overload"] fn set_total_voices (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31d40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_totalVoices()` overload"] fn get_total_voices (self ,) -> u32 { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_nbActiveEvents(u32)` overload"] fn set_nb_active_events (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_nbActiveEvents()` overload"] fn get_nb_active_events (self ,) -> u32 { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkResourceMonitorDataSummary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkResourceMonitorDataSummary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akresourcemonitordatasummary")]pub trait IAkResourceMonitorDataSummaryMethods:IAkResourceMonitorDataSummary{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f316b0usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31750usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31780usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f317f0usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver)}
+}
+#[doc="`set_totalCPU(f32)` overload"]fn set_total_cpu(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31980usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_totalCPU()` overload"]fn get_total_cpu(self,)->f32{unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31a00usize)as*mut u8,f32;
+(AkResourceMonitorDataSummary)__receiver)}
+}
+#[doc="`set_pluginCPU(f32)` overload"]fn set_plugin_cpu(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31a70usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_pluginCPU()` overload"]fn get_plugin_cpu(self,)->f32{unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31af0usize)as*mut u8,f32;
+(AkResourceMonitorDataSummary)__receiver)}
+}
+#[doc="`set_physicalVoices(u32)` overload"]fn set_physical_voices(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31b60usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_physicalVoices()` overload"]fn get_physical_voices(self,)->u32{unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31be0usize)as*mut u8,u32;
+(AkResourceMonitorDataSummary)__receiver)}
+}
+#[doc="`set_virtualVoices(u32)` overload"]fn set_virtual_voices(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31c50usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_virtualVoices()` overload"]fn get_virtual_voices(self,)->u32{unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31cd0usize)as*mut u8,u32;
+(AkResourceMonitorDataSummary)__receiver)}
+}
+#[doc="`set_totalVoices(u32)` overload"]fn set_total_voices(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31d40usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_totalVoices()` overload"]fn get_total_voices(self,)->u32{unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31dc0usize)as*mut u8,u32;
+(AkResourceMonitorDataSummary)__receiver)}
+}
+#[doc="`set_nbActiveEvents(u32)` overload"]fn set_nb_active_events(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31e30usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_nbActiveEvents()` overload"]fn get_nb_active_events(self,)->u32{unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31eb0usize)as*mut u8,u32;
+(AkResourceMonitorDataSummary)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkResourceMonitorDataSummary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31f20usize)as*mut u8,();
+(AkResourceMonitorDataSummary)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akresourcemonitordatasummary")]
-impl < __T : IAkResourceMonitorDataSummary > IAkResourceMonitorDataSummaryMethods for __T { }
+#[cfg(feature="root-akresourcemonitordatasummary")]impl<__T:IAkResourceMonitorDataSummary>IAkResourceMonitorDataSummaryMethods for __T{}
 
-#[cfg(feature = "root-akresourcemonitordatasummary")]
-impl AkResourceMonitorDataSummary { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_total_cpu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_total_cpu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_plugin_cpu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_plugin_cpu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_physical_voices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_physical_voices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_virtual_voices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_virtual_voices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_total_voices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_total_voices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_nb_active_events_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_nb_active_events_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkResourceMonitorDataSummary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="root-akresourcemonitordatasummary")]impl AkResourceMonitorDataSummary{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_total_cpu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_total_cpu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_plugin_cpu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_plugin_cpu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_physical_voices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_physical_voices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_virtual_voices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_virtual_voices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_total_voices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_total_voices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_nb_active_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_nb_active_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "root-akresourcemonitordatasummary")]
-impl AkResourceMonitorDataSummary {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkResourceMonitorDataSummary) , :: core :: stringify ! (new) ,)) ; < Self as IAkResourceMonitorDataSummaryMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkResourceMonitorDataSummary) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkResourceMonitorDataSummaryMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akresourcemonitordatasummary")]impl AkResourceMonitorDataSummary{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkResourceMonitorDataSummary), ::core::stringify!(new),));
+ <Self as IAkResourceMonitorDataSummaryMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkResourceMonitorDataSummary), ::core::stringify!(new_2),));
+ <Self as IAkResourceMonitorDataSummaryMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akresourcemonitordatasummary")]

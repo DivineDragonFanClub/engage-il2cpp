@@ -4,135 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubrefineshopsequence/HubRefineShopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubRefineShopSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubRefineShopSequence {
-# [offset (112)] # [rename (name = "m_WeaponModelRenderer")] pub m_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
-# [offset (120)] # [rename (name = "m_RefineShopRefineBaseRoot")] pub m_refine_shop_refine_base_root : crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot ,
-# [offset (128)] # [rename (name = "m_RefineShopRefineTargetRoot")] pub m_refine_shop_refine_target_root : crate :: app :: refineshoprefinetargetroot :: RefineShopRefineTargetRoot ,
-# [offset (136)] # [rename (name = "m_RefineShopEngraveItemSelectRoot")] pub m_refine_shop_engrave_item_select_root : crate :: app :: refineshopengraveitemselectroot :: RefineShopEngraveItemSelectRoot ,
-# [offset (144)] # [rename (name = "m_RefineShopEngraveGodRoot")] pub m_refine_shop_engrave_god_root : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot ,
-# [offset (152)] # [rename (name = "m_RefineShopEngraveDemoRoot")] pub m_refine_shop_engrave_demo_root : crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot ,
-# [offset (160)] # [rename (name = "m_RefineShopExchangeMenuTop")] pub m_refine_shop_exchange_menu_top : crate :: app :: refineshopexchangemenutop :: RefineShopExchangeMenuTop ,
-# [offset (172)] # [rename (name = "m_Result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (176)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (184)] # [rename (name = "m_OwnerItemIndex")] pub m_owner_item_index : i32 ,
-# [offset (192)] # [rename (name = "m_BaseUnitItem")] pub m_base_unit_item : crate :: app :: unititem :: UnitItem ,
-# [offset (200)] # [rename (name = "m_AfterUnitItem")] pub m_after_unit_item : crate :: app :: unititem :: UnitItem ,
-# [offset (208)] # [rename (name = "m_GodData")] pub m_god_data : crate :: app :: goddata :: GodData ,
-# [offset (216)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: itemdata :: ItemData_Kinds ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubrefineshopsequence/HubRefineShopSequence.md"))]#[::unity2::class(namespace="App",name="HubRefineShopSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct HubRefineShopSequence{#[offset(112)]#[rename(name="m_WeaponModelRenderer")]pub m_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, #[offset(120)]#[rename(name="m_RefineShopRefineBaseRoot")]pub m_refine_shop_refine_base_root:crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot, #[offset(128)]#[rename(name="m_RefineShopRefineTargetRoot")]pub m_refine_shop_refine_target_root:crate::app::refineshoprefinetargetroot::RefineShopRefineTargetRoot, #[offset(136)]#[rename(name="m_RefineShopEngraveItemSelectRoot")]pub m_refine_shop_engrave_item_select_root:crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot, #[offset(144)]#[rename(name="m_RefineShopEngraveGodRoot")]pub m_refine_shop_engrave_god_root:crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot, #[offset(152)]#[rename(name="m_RefineShopEngraveDemoRoot")]pub m_refine_shop_engrave_demo_root:crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot, #[offset(160)]#[rename(name="m_RefineShopExchangeMenuTop")]pub m_refine_shop_exchange_menu_top:crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop, #[offset(172)]#[rename(name="m_Result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(176)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(184)]#[rename(name="m_OwnerItemIndex")]pub m_owner_item_index:i32, #[offset(192)]#[rename(name="m_BaseUnitItem")]pub m_base_unit_item:crate::app::unititem::UnitItem, #[offset(200)]#[rename(name="m_AfterUnitItem")]pub m_after_unit_item:crate::app::unititem::UnitItem, #[offset(208)]#[rename(name="m_GodData")]pub m_god_data:crate::app::goddata::GodData, #[offset(216)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubrefineshopsequence/HubRefineShopSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubRefineShopSequence_Label2{pub value:i32,}
+impl::unity2::ClassIdentity for HubRefineShopSequence_Label2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubRefineShopSequence.Label2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubrefineshopsequence/HubRefineShopSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubRefineShopSequence_Label2  {
-    pub value: i32,
+impl::unity2::IlType for HubRefineShopSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for HubRefineShopSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubRefineShopSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl HubRefineShopSequence_Label2{pub fn entry()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for HubRefineShopSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn top()->Self{Self{value:1}
 }
-
-
-impl  HubRefineShopSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn refine() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn refine_list() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn engrave() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn engrave_god_list() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn execute_engrave() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn exchange() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn exchange_yes_no() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn execute_exchange() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 10 }
-
-    }
-
+pub fn refine()->Self{Self{value:2}
+}
+pub fn refine_list()->Self{Self{value:3}
+}
+pub fn engrave()->Self{Self{value:4}
+}
+pub fn engrave_god_list()->Self{Self{value:5}
+}
+pub fn execute_engrave()->Self{Self{value:6}
+}
+pub fn exchange()->Self{Self{value:7}
+}
+pub fn exchange_yes_no()->Self{Self{value:8}
+}
+pub fn execute_exchange()->Self{Self{value:9}
+}
+pub fn end()->Self{Self{value:10}
+}
 }
 
 }
@@ -140,21 +56,148 @@ impl  HubRefineShopSequence_Label2  {
 #[cfg(feature = "app-hubrefineshopsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubrefineshopsequence")]
-impl HubRefineShopSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23dccb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubrefineshopsequence")]impl HubRefineShopSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23dccb0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-hubrefineshopsequence")]
-pub trait IHubRefineShopSequenceMethods : IHubRefineShopSequence { # [doc = "`get_m_TopMenuResult()` overload"] fn get_m_top_menu_result (self ,) -> crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e80a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_TopMenuResult(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"] fn set_m_top_menu_result (self , value : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 >) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e80b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e80c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e80d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e94f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e95f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e96d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineShopTopMenu()` overload"] fn create_refine_shop_top_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e97b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineShopRefineMenu()` overload"] fn create_refine_shop_refine_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e9a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyRefineShopRefineMenu()` overload"] fn destroy_refine_shop_refine_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e9ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineShopRefineTargetMenu()` overload"] fn create_refine_shop_refine_target_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e9d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyRefineShopRefineTargetMenu()` overload"] fn destroy_refine_shop_refine_target_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e9ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineShopEngraveItemSelectMenu()` overload"] fn create_refine_shop_engrave_item_select_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e9f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyRefineShopEngraveItemSelectMenu()` overload"] fn destroy_refine_shop_engrave_item_select_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineShopEngraveGodMenu()` overload"] fn create_refine_shop_engrave_god_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyRefineShopEngraveGodMenu()` overload"] fn destroy_refine_shop_engrave_god_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea3e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PrepareRefineShopEngraveDemo()` overload"] fn prepare_refine_shop_engrave_demo (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitPreparingRefineShopEngraveDemo()` overload"] fn wait_preparing_refine_shop_engrave_demo (self ,) -> bool { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineShopEngraveDemo()` overload"] fn create_refine_shop_engrave_demo (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyRefineShopEngraveDemo()` overload"] fn destroy_refine_shop_engrave_demo (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineShopExchangeMenu()` overload"] fn create_refine_shop_exchange_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyRefineShopExchangeMenu()` overload"] fn destroy_refine_shop_exchange_menu (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideTitle()` overload"] fn hide_title (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowTitle()` overload"] fn show_title (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23ea920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < HubRefineShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubRefineShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23eaa40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubrefineshopsequence")]pub trait IHubRefineShopSequenceMethods:IHubRefineShopSequence{#[doc="`get_m_TopMenuResult()` overload"]fn get_m_top_menu_result(self,)->crate::app::refineshoptopmenu::RefineShopTopMenu_Result2{unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e80a0usize)as*mut u8,crate::app::refineshoptopmenu::RefineShopTopMenu_Result2;
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`set_m_TopMenuResult(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"]fn set_m_top_menu_result(self,value:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2>)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e80b0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver,(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e80c0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e80d0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e94f0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e95f0usize)as*mut u8,bool;
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e96d0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`CreateRefineShopTopMenu()` overload"]fn create_refine_shop_top_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e97b0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`CreateRefineShopRefineMenu()` overload"]fn create_refine_shop_refine_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e9a40usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`DestroyRefineShopRefineMenu()` overload"]fn destroy_refine_shop_refine_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e9ce0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`CreateRefineShopRefineTargetMenu()` overload"]fn create_refine_shop_refine_target_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e9d20usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`DestroyRefineShopRefineTargetMenu()` overload"]fn destroy_refine_shop_refine_target_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e9ef0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`CreateRefineShopEngraveItemSelectMenu()` overload"]fn create_refine_shop_engrave_item_select_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e9f30usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`DestroyRefineShopEngraveItemSelectMenu()` overload"]fn destroy_refine_shop_engrave_item_select_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea1d0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`CreateRefineShopEngraveGodMenu()` overload"]fn create_refine_shop_engrave_god_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea210usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`DestroyRefineShopEngraveGodMenu()` overload"]fn destroy_refine_shop_engrave_god_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea3e0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`PrepareRefineShopEngraveDemo()` overload"]fn prepare_refine_shop_engrave_demo(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea420usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`WaitPreparingRefineShopEngraveDemo()` overload"]fn wait_preparing_refine_shop_engrave_demo(self,)->bool{unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea430usize)as*mut u8,bool;
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`CreateRefineShopEngraveDemo()` overload"]fn create_refine_shop_engrave_demo(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea440usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`DestroyRefineShopEngraveDemo()` overload"]fn destroy_refine_shop_engrave_demo(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea460usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`CreateRefineShopExchangeMenu()` overload"]fn create_refine_shop_exchange_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea510usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`DestroyRefineShopExchangeMenu()` overload"]fn destroy_refine_shop_exchange_menu(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea7f0usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`HideTitle()` overload"]fn hide_title(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea800usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`ShowTitle()` overload"]fn show_title(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23ea920usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <HubRefineShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23eaa40usize)as*mut u8,();
+(HubRefineShopSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubrefineshopsequence")]
-impl < __T : IHubRefineShopSequence > IHubRefineShopSequenceMethods for __T { }
+#[cfg(feature="app-hubrefineshopsequence")]impl<__T:IHubRefineShopSequence>IHubRefineShopSequenceMethods for __T{}
 
-#[cfg(feature = "app-hubrefineshopsequence")]
-impl HubRefineShopSequence { pub fn get_m_top_menu_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_top_menu_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_refine_shop_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_refine_shop_refine_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn destroy_refine_shop_refine_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_refine_shop_refine_target_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn destroy_refine_shop_refine_target_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_refine_shop_engrave_item_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn destroy_refine_shop_engrave_item_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn create_refine_shop_engrave_god_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn destroy_refine_shop_engrave_god_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn prepare_refine_shop_engrave_demo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn wait_preparing_refine_shop_engrave_demo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn create_refine_shop_engrave_demo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn destroy_refine_shop_engrave_demo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn create_refine_shop_exchange_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn destroy_refine_shop_exchange_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn hide_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn show_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubRefineShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } }
+#[cfg(feature="app-hubrefineshopsequence")]impl HubRefineShopSequence{pub fn get_m_top_menu_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_top_menu_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_refine_shop_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_refine_shop_refine_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn destroy_refine_shop_refine_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_refine_shop_refine_target_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn destroy_refine_shop_refine_target_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_refine_shop_engrave_item_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn destroy_refine_shop_engrave_item_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn create_refine_shop_engrave_god_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn destroy_refine_shop_engrave_god_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn prepare_refine_shop_engrave_demo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn wait_preparing_refine_shop_engrave_demo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn create_refine_shop_engrave_demo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn destroy_refine_shop_engrave_demo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn create_refine_shop_exchange_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn destroy_refine_shop_exchange_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn hide_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn show_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+}
 
-#[cfg(feature = "app-hubrefineshopsequence")]
-impl HubRefineShopSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubRefineShopSequence) , :: core :: stringify ! (new) ,)) ; < Self as IHubRefineShopSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubrefineshopsequence")]impl HubRefineShopSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubRefineShopSequence), ::core::stringify!(new),));
+ <Self as IHubRefineShopSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubrefineshopsequence")]

@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/inotificationreceiver/INotificationReceiver.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Playables" , name = "INotificationReceiver")] pub struct INotificationReceiver {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/inotificationreceiver/INotificationReceiver.md"))]#[::unity2::class(namespace="UnityEngine.Playables",name="INotificationReceiver")]pub struct INotificationReceiver{}
 
 }
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playables-inotificationreceiver")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __INotificationReceiver_unity2_raw { use super :: * ; pub unsafe fn on_notify (this : INotificationReceiver , origin : crate :: unity_engine :: playables :: playable :: Playable , notification : crate :: unity_engine :: playables :: inotification :: INotification , context : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnNotify") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnNotify" , < INotificationReceiver as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (INotificationReceiver , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: inotification :: INotification , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , origin , notification , context , __mi) } }
+#[cfg(feature="unity_engine-playables-inotificationreceiver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __INotificationReceiver_unity2_raw{use super:: * ;
+pub unsafe fn on_notify(this:INotificationReceiver,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnNotify").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnNotify", <INotificationReceiver as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(INotificationReceiver,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,origin,notification,context,__mi)}
+}
 
-#[cfg(feature = "unity_engine-playables-inotificationreceiver")]
-pub trait IINotificationReceiverMethods : IINotificationReceiver { # [doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"] fn on_notify (self , origin : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , notification : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: inotification :: INotification > , context : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < INotificationReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __INotificationReceiver_unity2_raw :: on_notify (__receiver , :: core :: convert :: Into :: into (origin) , :: core :: convert :: Into :: into (notification) , :: core :: convert :: Into :: into (context) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-playables-inotificationreceiver")]pub trait IINotificationReceiverMethods:IINotificationReceiver{#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <INotificationReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__INotificationReceiver_unity2_raw::on_notify(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-inotificationreceiver")]
-impl < __T : IINotificationReceiver > IINotificationReceiverMethods for __T { }
+#[cfg(feature="unity_engine-playables-inotificationreceiver")]impl<__T:IINotificationReceiver>IINotificationReceiverMethods for __T{}
 
-#[cfg(feature = "unity_engine-playables-inotificationreceiver")]
-impl INotificationReceiver { pub fn on_notify_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < INotificationReceiver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-playables-inotificationreceiver")]impl INotificationReceiver{pub fn on_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver")]
 #[doc(hidden)]

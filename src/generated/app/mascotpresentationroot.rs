@@ -4,46 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotpresentationroot/MascotPresentationRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotPresentationRoot")] # [parent (crate :: system :: object :: Object)] pub struct MascotPresentationRoot {
-# [offset (16)] # [rename (name = "Root")] pub root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "MascotRoot")] pub mascot_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "PlayerRoot")] pub player_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "CameraRoot")] pub camera_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "PlayerReserveRoot")] pub player_reserve_root : crate :: unity_engine :: transform :: Transform ,
-# [offset (56)] # [rename (name = "PlayerReservePosition")] pub player_reserve_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (68)] # [rename (name = "PlayerReserveRotationY")] pub player_reserve_rotation_y : f32 ,
-# [offset (72)] # [rename (name = "MascotReserveRoot")] pub mascot_reserve_root : crate :: unity_engine :: transform :: Transform ,
-# [offset (80)] # [rename (name = "MascotReservePosition")] pub mascot_reserve_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (92)] # [rename (name = "MascotReserveRotation")] pub mascot_reserve_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (112)] # [rename (name = "CameraReserveRoot")] pub camera_reserve_root : crate :: unity_engine :: transform :: Transform ,
-# [offset (120)] # [rename (name = "m_Apply")] pub m_apply : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotpresentationroot/MascotPresentationRoot.md"))]#[::unity2::class(namespace="App",name="MascotPresentationRoot")]#[parent(crate::system::object::Object)]pub struct MascotPresentationRoot{#[offset(16)]#[rename(name="Root")]pub root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="MascotRoot")]pub mascot_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="PlayerRoot")]pub player_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="CameraRoot")]pub camera_root:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="PlayerReserveRoot")]pub player_reserve_root:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="PlayerReservePosition")]pub player_reserve_position:crate::unity_engine::vector3::Vector3, #[offset(68)]#[rename(name="PlayerReserveRotationY")]pub player_reserve_rotation_y:f32, #[offset(72)]#[rename(name="MascotReserveRoot")]pub mascot_reserve_root:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="MascotReservePosition")]pub mascot_reserve_position:crate::unity_engine::vector3::Vector3, #[offset(92)]#[rename(name="MascotReserveRotation")]pub mascot_reserve_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(112)]#[rename(name="CameraReserveRoot")]pub camera_reserve_root:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="m_Apply")]pub m_apply:bool,}
 
 }
 
 #[cfg(feature = "app-mascotpresentationroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotpresentationroot")]
-impl MascotPresentationRoot { # [doc = "`GetLocation()` overload"] pub fn get_location () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20358f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetRotation()` overload"] pub fn get_rotation () -> crate :: unity_engine :: quaternion :: Quaternion { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: quaternion :: Quaternion = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035a60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotpresentationroot")]impl MascotPresentationRoot{#[doc="`GetLocation()` overload"]pub fn get_location()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20358f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`GetRotation()` overload"]pub fn get_rotation()->crate::unity_engine::quaternion::Quaternion{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2035a60usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+)}
+}
+}
 
-#[cfg(feature = "app-mascotpresentationroot")]
-pub trait IMascotPresentationRootMethods : IMascotPresentationRoot { # [doc = "`Setup(crate::unity_engine::gameobject::GameObject)` overload"] fn setup (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotPresentationRoot , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`Apply()` overload"] fn apply (self ,) -> () { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Revert()` overload"] fn revert (self ,) -> () { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2036570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayerController()` overload"] fn get_player_controller (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203d9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MascotController()` overload"] fn get_mascot_controller (self ,) -> crate :: app :: hubmascotcontroller :: HubMascotController { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203d9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotPresentationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotPresentationRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203d7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotpresentationroot")]pub trait IMascotPresentationRootMethods:IMascotPresentationRoot{#[doc="`Setup(crate::unity_engine::gameobject::GameObject)` overload"]fn setup(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MascotPresentationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039b90usize)as*mut u8,();
+(MascotPresentationRoot)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`Apply()` overload"]fn apply(self,)->(){unsafe{let __receiver= <MascotPresentationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2035b20usize)as*mut u8,();
+(MascotPresentationRoot)__receiver)}
+}
+#[doc="`Revert()` overload"]fn revert(self,)->(){unsafe{let __receiver= <MascotPresentationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2036570usize)as*mut u8,();
+(MascotPresentationRoot)__receiver)}
+}
+#[doc="`get_PlayerController()` overload"]fn get_player_controller(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <MascotPresentationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203d9b0usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
+(MascotPresentationRoot)__receiver)}
+}
+#[doc="`get_MascotController()` overload"]fn get_mascot_controller(self,)->crate::app::hubmascotcontroller::HubMascotController{unsafe{let __receiver= <MascotPresentationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203d9c0usize)as*mut u8,crate::app::hubmascotcontroller::HubMascotController;
+(MascotPresentationRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotPresentationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203d7b0usize)as*mut u8,();
+(MascotPresentationRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotpresentationroot")]
-impl < __T : IMascotPresentationRoot > IMascotPresentationRootMethods for __T { }
+#[cfg(feature="app-mascotpresentationroot")]impl<__T:IMascotPresentationRoot>IMascotPresentationRootMethods for __T{}
 
-#[cfg(feature = "app-mascotpresentationroot")]
-impl MascotPresentationRoot { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn apply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn revert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_mascot_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotPresentationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-mascotpresentationroot")]impl MascotPresentationRoot{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn revert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_player_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_mascot_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-mascotpresentationroot")]
-impl MascotPresentationRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotPresentationRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMascotPresentationRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mascotpresentationroot")]impl MascotPresentationRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotPresentationRoot), ::core::stringify!(new),));
+ <Self as IMascotPresentationRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mascotpresentationroot")]

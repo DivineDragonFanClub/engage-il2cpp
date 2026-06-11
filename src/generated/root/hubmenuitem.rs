@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: tutoriallisttopbasicmenuitem :: { ITutorialListTopBasicMenuItem , TutorialListTopBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::tutoriallisttopbasicmenuitem::{ITutorialListTopBasicMenuItem,TutorialListTopBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/hubmenuitem/HubMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "HubMenuItem")] # [parent (crate :: root :: tutoriallisttopbasicmenuitem :: TutorialListTopBasicMenuItem)] pub struct HubMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/hubmenuitem/HubMenuItem.md"))]#[::unity2::class(namespace="",name="HubMenuItem")]#[parent(crate::root::tutoriallisttopbasicmenuitem::TutorialListTopBasicMenuItem)]pub struct HubMenuItem{}
 
 }
 
 #[cfg(feature = "root-hubmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-hubmenuitem")]
-pub trait IHubMenuItemMethods : IHubMenuItem { # [doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"] fn ctor (self , is_get_all_tutorial : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenuItem , bool , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b8a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_get_all_tutorial) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b8b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-hubmenuitem")]pub trait IHubMenuItemMethods:IHubMenuItem{#[doc="`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"]fn ctor(self,is_get_all_tutorial:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b8a80usize)as*mut u8,();
+(HubMenuItem)__receiver,(bool)::core::convert::Into::into(is_get_all_tutorial),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b8b50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-hubmenuitem")]
-impl < __T : IHubMenuItem > IHubMenuItemMethods for __T { }
+#[cfg(feature="root-hubmenuitem")]impl<__T:IHubMenuItem>IHubMenuItemMethods for __T{}
 
-#[cfg(feature = "root-hubmenuitem")]
-impl HubMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-hubmenuitem")]impl HubMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-hubmenuitem")]
-impl HubMenuItem {
-# [doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"] pub fn new (is_get_all_tutorial : bool , decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenuItemMethods > :: ctor (this , is_get_all_tutorial , decide_event_handler) ; this }
+#[cfg(feature="root-hubmenuitem")]impl HubMenuItem{#[doc="`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"]pub fn new(is_get_all_tutorial:bool,decide_event_handler:crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenuItem), ::core::stringify!(new),));
+ <Self as IHubMenuItemMethods> ::ctor(this,is_get_all_tutorial,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "root-hubmenuitem")]

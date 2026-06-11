@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/itaginfo/ITagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "ITagInfo")] pub struct ITagInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/itaginfo/ITagInfo.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="ITagInfo")]pub struct ITagInfo{}
 
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ITagInfo_unity2_raw { use super :: * ; pub unsafe fn get_tag_group (this : ITagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_TagGroup") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_TagGroup" , < ITagInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ITagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_tag (this : ITagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Tag") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Tag" , < ITagInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ITagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="nintendo-message_studio-lib-itaginfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ITagInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_tag_group(this:ITagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_TagGroup").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_TagGroup", <ITagInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ITagInfo, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_tag(this:ITagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Tag").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Tag", <ITagInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ITagInfo, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
-pub trait IITagInfoMethods : IITagInfo { # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < ITagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITagInfo_unity2_raw :: get_tag_group (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < ITagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITagInfo_unity2_raw :: get_tag (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="nintendo-message_studio-lib-itaginfo")]pub trait IITagInfoMethods:IITagInfo{#[doc="`get_TagGroup()` overload"]fn get_tag_group(self,)->u16{unsafe{let __receiver= <ITagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ITagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Tag()` overload"]fn get_tag(self,)->u16{unsafe{let __receiver= <ITagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ITagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
-impl < __T : IITagInfo > IITagInfoMethods for __T { }
+#[cfg(feature="nintendo-message_studio-lib-itaginfo")]impl<__T:IITagInfo>IITagInfoMethods for __T{}
 
-#[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
-impl ITagInfo { pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="nintendo-message_studio-lib-itaginfo")]impl ITagInfo{pub fn get_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
 #[doc(hidden)]

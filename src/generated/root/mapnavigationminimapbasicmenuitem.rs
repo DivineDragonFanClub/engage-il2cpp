@@ -4,34 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationminimapbasicmenuitem/MapNavigationMiniMapBasicMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationMiniMapBasicMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MapNavigationMiniMapBasicMenuItem {
-# [offset (104)] # [rename (name = "m_MiniMapText")] pub m_mini_map_text : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapnavigationminimapbasicmenuitem/MapNavigationMiniMapBasicMenuItem.md"))]#[::unity2::class(namespace="",name="MapNavigationMiniMapBasicMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MapNavigationMiniMapBasicMenuItem{#[offset(104)]#[rename(name="m_MiniMapText")]pub m_mini_map_text: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
-pub trait IMapNavigationMiniMapBasicMenuItemMethods : IMapNavigationMiniMapBasicMenuItem { # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateText()` overload"] fn update_text (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMiniMapText(::unity2::Il2CppString)` overload"] fn set_mini_map_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapNavigationMiniMapBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapBasicMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationminimapbasicmenuitem")]pub trait IMapNavigationMiniMapBasicMenuItemMethods:IMapNavigationMiniMapBasicMenuItem{#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapNavigationMiniMapBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6c60usize)as*mut u8,();
+(MapNavigationMiniMapBasicMenuItem)__receiver)}
+}
+#[doc="`UpdateText()` overload"]fn update_text(self,)->(){unsafe{let __receiver= <MapNavigationMiniMapBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6ce0usize)as*mut u8,();
+(MapNavigationMiniMapBasicMenuItem)__receiver)}
+}
+#[doc="`SetMiniMapText(::unity2::Il2CppString)` overload"]fn set_mini_map_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapNavigationMiniMapBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6dd0usize)as*mut u8,();
+(MapNavigationMiniMapBasicMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapNavigationMiniMapBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6de0usize)as*mut u8,();
+(MapNavigationMiniMapBasicMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
-impl < __T : IMapNavigationMiniMapBasicMenuItem > IMapNavigationMiniMapBasicMenuItemMethods for __T { }
+#[cfg(feature="root-mapnavigationminimapbasicmenuitem")]impl<__T:IMapNavigationMiniMapBasicMenuItem>IMapNavigationMiniMapBasicMenuItemMethods for __T{}
 
-#[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
-impl MapNavigationMiniMapBasicMenuItem { pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_mini_map_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-mapnavigationminimapbasicmenuitem")]impl MapNavigationMiniMapBasicMenuItem{pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_mini_map_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
-impl MapNavigationMiniMapBasicMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapNavigationMiniMapBasicMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapNavigationMiniMapBasicMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapnavigationminimapbasicmenuitem")]impl MapNavigationMiniMapBasicMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapNavigationMiniMapBasicMenuItem), ::core::stringify!(new),));
+ <Self as IMapNavigationMiniMapBasicMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]

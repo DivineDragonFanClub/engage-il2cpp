@@ -4,33 +4,117 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilder/FSMBuilder.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSMBuilder")] # [parent (crate :: system :: object :: Object)] pub struct FSMBuilder {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fsmbuilder/FSMBuilder.md"))]#[::unity2::class(namespace="Combat",name="FSMBuilder")]#[parent(crate::system::object::Object)]pub struct FSMBuilder{}
 
 }
 
 #[cfg(feature = "combat-fsmbuilder-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fsmbuilder")]
-impl FSMBuilder { # [doc = "`get_world()` overload"] pub fn get_world () -> crate :: combat :: combatworld :: CombatWorld { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: combatworld :: CombatWorld = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47110usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_record()` overload"] pub fn get_record () -> crate :: combat :: combatrecord :: CombatRecord { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: combatrecord :: CombatRecord = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47120usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_chrs()` overload"] pub fn get_chrs () -> :: unity2 :: Array < crate :: combat :: character :: Character > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: combat :: character :: Character > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_cam()` overload"] pub fn get_cam () -> crate :: combat :: cameramanager :: CameraManager { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: cameramanager :: CameraManager = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47160usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_style()` overload"] pub fn get_style () -> crate :: combat :: combatstyle :: CombatStyle { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: combatstyle :: CombatStyle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d471e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_anyone()` overload"] pub fn get_anyone () -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47220usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_FirstAttackPhase()` overload"] pub fn get_first_attack_phase () -> crate :: combat :: phase :: Phase { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: phase :: Phase = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d472e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_FirstAttacker()` overload"] pub fn get_first_attacker () -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47450usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PreLoad()` overload"] pub fn pre_load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d474c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateAndRun()` overload"] pub fn create_and_run () -> crate :: combat :: fsmbuilder :: FSMBuilder { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: fsmbuilder :: FSMBuilder = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RunEternalCombatAppendObserver()` overload"] pub fn run_eternal_combat_append_observer () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47a70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FSMAdd_WaitForTransitionCamera(f32)` overload"] pub fn fsm_add_wait_for_transition_camera (rate : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47bb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } } # [doc = "`ActionWairForTransitionCamera(f32)` overload"] pub fn action_wair_for_transition_camera (rate : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: actionbase :: ActionBase { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: actionbase :: ActionBase = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } } # [doc = "`FSMAdd_SyncEveryone(bool)` overload"] pub fn fsm_add_sync_everyone (include_grandew : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47e70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (include_grandew) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuilder")]impl FSMBuilder{#[doc="`get_world()` overload"]pub fn get_world()->crate::combat::combatworld::CombatWorld{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47110usize)as*mut u8,crate::combat::combatworld::CombatWorld;
+)}
+}
+#[doc="`get_record()` overload"]pub fn get_record()->crate::combat::combatrecord::CombatRecord{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47120usize)as*mut u8,crate::combat::combatrecord::CombatRecord;
+)}
+}
+#[doc="`get_chrs()` overload"]pub fn get_chrs()-> ::unity2::Array<crate::combat::character::Character>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47140usize)as*mut u8, ::unity2::Array<crate::combat::character::Character> ;
+)}
+}
+#[doc="`get_cam()` overload"]pub fn get_cam()->crate::combat::cameramanager::CameraManager{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47160usize)as*mut u8,crate::combat::cameramanager::CameraManager;
+)}
+}
+#[doc="`get_style()` overload"]pub fn get_style()->crate::combat::combatstyle::CombatStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d471e0usize)as*mut u8,crate::combat::combatstyle::CombatStyle;
+)}
+}
+#[doc="`get_anyone()` overload"]pub fn get_anyone()->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47220usize)as*mut u8,crate::combat::character::Character;
+)}
+}
+#[doc="`get_FirstAttackPhase()` overload"]pub fn get_first_attack_phase()->crate::combat::phase::Phase{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d472e0usize)as*mut u8,crate::combat::phase::Phase;
+)}
+}
+#[doc="`get_FirstAttacker()` overload"]pub fn get_first_attacker()->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47450usize)as*mut u8,crate::combat::character::Character;
+)}
+}
+#[doc="`PreLoad()` overload"]pub fn pre_load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d474c0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateAndRun()` overload"]pub fn create_and_run()->crate::combat::fsmbuilder::FSMBuilder{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47700usize)as*mut u8,crate::combat::fsmbuilder::FSMBuilder;
+)}
+}
+#[doc="`RunEternalCombatAppendObserver()` overload"]pub fn run_eternal_combat_append_observer()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47a70usize)as*mut u8,();
+)}
+}
+#[doc="`FSMAdd_WaitForTransitionCamera(f32)` overload"]pub fn fsm_add_wait_for_transition_camera(rate:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47bb0usize)as*mut u8,();
+(f32)::core::convert::Into::into(rate))}
+}
+#[doc="`ActionWairForTransitionCamera(f32)` overload"]pub fn action_wair_for_transition_camera(rate:impl::core::convert::Into<f32>)->crate::combat::actionbase::ActionBase{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47d70usize)as*mut u8,crate::combat::actionbase::ActionBase;
+(f32)::core::convert::Into::into(rate))}
+}
+#[doc="`FSMAdd_SyncEveryone(bool)` overload"]pub fn fsm_add_sync_everyone(include_grandew:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47e70usize)as*mut u8,();
+(bool)::core::convert::Into::into(include_grandew))}
+}
+}
 
-#[cfg(feature = "combat-fsmbuilder")]
-pub trait IFSMBuilderMethods : IFSMBuilder { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < FSMBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d478d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildStart()` overload"] fn build_start (self ,) -> () { unsafe { let __receiver = < FSMBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMain()` overload"] fn build_main (self ,) -> () { unsafe { let __receiver = < FSMBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildEnd()` overload"] fn build_end (self ,) -> () { unsafe { let __receiver = < FSMBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildSkipover()` overload"] fn build_skipover (self ,) -> () { unsafe { let __receiver = < FSMBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSMBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d48320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuilder")]pub trait IFSMBuilderMethods:IFSMBuilder{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d478d0usize)as*mut u8,();
+(FSMBuilder)__receiver)}
+}
+#[doc="`BuildStart()` overload"]fn build_start(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47920usize)as*mut u8,();
+(FSMBuilder)__receiver)}
+}
+#[doc="`BuildMain()` overload"]fn build_main(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47930usize)as*mut u8,();
+(FSMBuilder)__receiver)}
+}
+#[doc="`BuildEnd()` overload"]fn build_end(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47940usize)as*mut u8,();
+(FSMBuilder)__receiver)}
+}
+#[doc="`BuildSkipover()` overload"]fn build_skipover(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47950usize)as*mut u8,();
+(FSMBuilder)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d48320usize)as*mut u8,();
+(FSMBuilder)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuilder")]
-impl < __T : IFSMBuilder > IFSMBuilderMethods for __T { }
+#[cfg(feature="combat-fsmbuilder")]impl<__T:IFSMBuilder>IFSMBuilderMethods for __T{}
 
-#[cfg(feature = "combat-fsmbuilder")]
-impl FSMBuilder { pub fn get_world_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_record_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_chrs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_cam_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_anyone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_first_attack_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_first_attacker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn pre_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_and_run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn build_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn build_main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn build_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn build_skipover_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn run_eternal_combat_append_observer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn fsm_add_wait_for_transition_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn action_wair_for_transition_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn fsm_add_sync_everyone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="combat-fsmbuilder")]impl FSMBuilder{pub fn get_world_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_chrs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_cam_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_anyone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_first_attack_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_first_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn pre_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_and_run_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn build_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn build_main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn build_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn build_skipover_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn run_eternal_combat_append_observer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn fsm_add_wait_for_transition_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn action_wair_for_transition_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn fsm_add_sync_everyone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "combat-fsmbuilder")]
-impl FSMBuilder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSMBuilder) , :: core :: stringify ! (new) ,)) ; < Self as IFSMBuilderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fsmbuilder")]impl FSMBuilder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FSMBuilder), ::core::stringify!(new),));
+ <Self as IFSMBuilderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fsmbuilder")]

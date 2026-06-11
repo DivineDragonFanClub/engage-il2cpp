@@ -4,192 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TalkSequence_PlayMode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkSequence_PlayMode{pub value:i32,}
+impl::unity2::ClassIdentity for TalkSequence_PlayMode{const NAMESPACE: &'static str="App.Talk3D";
+const NAME: &'static str="TalkSequence.PlayMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TalkSequence_PlayMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TalkSequence_PlayMode{pub fn manual()->Self{Self{value:0}
+}
+pub fn auto_play()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TalkSequence_PlayMode  {
-    const NAMESPACE: &'static str = "App.Talk3D";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::talk3_d::talksequence::TalkSequence>)]pub struct TalkSequence{#[static_field]#[rename(name="sm_IsContinue")]pub sm_is_continue:bool, #[static_field]#[rename(name="sm_ReservedPrefabRootObject")]pub sm_reserved_prefab_root_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_PrefabRootObject")]pub m_prefab_root_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_TalkSound")]pub m_talk_sound:crate::app::talksound::TalkSound, #[offset(136)]#[rename(name="m_TagParser")]pub m_tag_parser:crate::app::talk3_d::talktagparser::TalkTagParser, #[offset(144)]#[rename(name="m_TalkPtr")]pub m_talk_ptr:crate::app::talk3_d::talkptr::TalkPtr, #[offset(152)]#[rename(name="m_ReservedTag")]pub m_reserved_tag:crate::app::talk3_d::talktag::TalkTag, #[offset(160)]#[rename(name="m_ReplaceText")]pub m_replace_text:crate::app::talk3_d::talksequence::TalkSequence_ReplaceText, #[offset(168)]#[rename(name="m_BindProc")]pub m_bind_proc:crate::app::procinst::ProcInst, #[offset(176)]#[rename(name="m_ErrorMessageBuilder")]pub m_error_message_builder:crate::app::talk3_d::talkbuilder::TalkBuilder, #[offset(184)]#[rename(name="m_IsStartByContinuousNumber")]pub m_is_start_by_continuous_number:bool, #[offset(185)]#[rename(name="m_IsFlushedSoundList")]pub m_is_flushed_sound_list:bool, #[offset(186)]#[rename(name="m_IsShowMapTerrainInfo")]pub m_is_show_map_terrain_info:bool, #[offset(187)]#[rename(name="m_IsBindMapCamera")]pub m_is_bind_map_camera:bool, #[offset(188)]#[rename(name="m_IsPushedUnitInfo")]pub m_is_pushed_unit_info:bool, #[offset(192)]#[rename(name="m_LoadedSoundBankNameList")]pub m_loaded_sound_bank_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(227)]#[rename(name="m_IsLoadingCharacter")]pub m_is_loading_character:bool, #[static_field]#[rename(name="LoadingCharacterTimeoutCounterMax")]pub loading_character_timeout_counter_max:f32, #[offset(228)]#[rename(name="m_LoadingCharacterTimeoutCounter")]pub m_loading_character_timeout_counter:f32, #[offset(232)]#[rename(name="m_ReplaceTalkerNameDictionary")]pub m_replace_talker_name_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> ,}
 
-    const NAME: &'static str = "TalkSequence.PlayMode";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkSequence.ReplaceText")]#[parent(crate::system::object::Object)]pub struct TalkSequence_ReplaceText{#[offset(16)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Index")]pub m_index:i32,}
 
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for TalkSequence_Label{const NAMESPACE: &'static str="App.Talk3D";
+const NAME: &'static str="TalkSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for TalkSequence_PlayMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TalkSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  TalkSequence_PlayMode  {
-    pub fn manual() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn auto_play() -> Self {
-        Self { value: 1 }
-
-    }
-
+impl TalkSequence_Label{pub fn load()->Self{Self{value:0}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TalkSequence_Label  {
-    pub value: i32,
+pub fn fade_in()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for TalkSequence_Label  {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "TalkSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn sound_before()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::IlType for TalkSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn main()->Self{Self{value:3}
 }
-
-
-impl  TalkSequence_Label  {
-    pub fn load() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn fade_in() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn sound_before() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn main() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn sound_after() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn check_continue() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn skip() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn close() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn skip_wait_to_end() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 9 }
-
-    }
-
+pub fn sound_after()->Self{Self{value:4}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talksequence :: TalkSequence >)] pub struct TalkSequence {
-# [static_field] # [rename (name = "sm_IsContinue")] pub sm_is_continue : bool ,
-# [static_field] # [rename (name = "sm_ReservedPrefabRootObject")] pub sm_reserved_prefab_root_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_PrefabRootObject")] pub m_prefab_root_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_TalkSound")] pub m_talk_sound : crate :: app :: talksound :: TalkSound ,
-# [offset (136)] # [rename (name = "m_TagParser")] pub m_tag_parser : crate :: app :: talk3_d :: talktagparser :: TalkTagParser ,
-# [offset (144)] # [rename (name = "m_TalkPtr")] pub m_talk_ptr : crate :: app :: talk3_d :: talkptr :: TalkPtr ,
-# [offset (152)] # [rename (name = "m_ReservedTag")] pub m_reserved_tag : crate :: app :: talk3_d :: talktag :: TalkTag ,
-# [offset (160)] # [rename (name = "m_ReplaceText")] pub m_replace_text : crate :: app :: talk3_d :: talksequence :: TalkSequence_ReplaceText ,
-# [offset (168)] # [rename (name = "m_BindProc")] pub m_bind_proc : crate :: app :: procinst :: ProcInst ,
-# [offset (176)] # [rename (name = "m_ErrorMessageBuilder")] pub m_error_message_builder : crate :: app :: talk3_d :: talkbuilder :: TalkBuilder ,
-# [offset (184)] # [rename (name = "m_IsStartByContinuousNumber")] pub m_is_start_by_continuous_number : bool ,
-# [offset (185)] # [rename (name = "m_IsFlushedSoundList")] pub m_is_flushed_sound_list : bool ,
-# [offset (186)] # [rename (name = "m_IsShowMapTerrainInfo")] pub m_is_show_map_terrain_info : bool ,
-# [offset (187)] # [rename (name = "m_IsBindMapCamera")] pub m_is_bind_map_camera : bool ,
-# [offset (188)] # [rename (name = "m_IsPushedUnitInfo")] pub m_is_pushed_unit_info : bool ,
-# [offset (192)] # [rename (name = "m_LoadedSoundBankNameList")] pub m_loaded_sound_bank_name_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (227)] # [rename (name = "m_IsLoadingCharacter")] pub m_is_loading_character : bool ,
-# [static_field] # [rename (name = "LoadingCharacterTimeoutCounterMax")] pub loading_character_timeout_counter_max : f32 ,
-# [offset (228)] # [rename (name = "m_LoadingCharacterTimeoutCounter")] pub m_loading_character_timeout_counter : f32 ,
-# [offset (232)] # [rename (name = "m_ReplaceTalkerNameDictionary")] pub m_replace_talker_name_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,
+pub fn check_continue()->Self{Self{value:5}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkSequence.ReplaceText")] # [parent (crate :: system :: object :: Object)] pub struct TalkSequence_ReplaceText {
-# [offset (16)] # [rename (name = "m_Text")] pub m_text : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Index")] pub m_index : i32 ,
+pub fn skip()->Self{Self{value:6}
+}
+pub fn close()->Self{Self{value:7}
+}
+pub fn skip_wait_to_end()->Self{Self{value:8}
+}
+pub fn end()->Self{Self{value:9}
+}
 }
 
 }
@@ -197,48 +75,393 @@ impl  TalkSequence_Label  {
 #[cfg(feature = "app-talk3_d-talksequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talksequence")]
-impl TalkSequence { # [doc = "`ReserveTalkPrefab()` overload"] pub fn reserve_talk_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateTalkPrefab()` overload"] pub fn create_talk_prefab () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c58b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsFastForward()` overload"] pub fn is_fast_forward () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8840usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`BeginContinueTalk()` overload"] pub fn begin_continue_talk () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b85e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EndContinueTalk()` overload"] pub fn end_continue_talk () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::procinst::ProcInst)` overload"] pub fn create (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: talk3_d :: talksequence :: TalkSequence { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talksequence :: TalkSequence = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8360usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-talk3_d-talksequence")]
-pub trait ITalkSequenceMethods : ITalkSequence { # [doc = "`get_Mid()` overload"] fn get_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mid(::unity2::Il2CppString)` overload"] fn set_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TalkType()` overload"] fn get_talk_type (self ,) -> crate :: app :: talk3_d :: talk_2 :: Talk_TalkType { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talk_2 :: Talk_TalkType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TalkType(crate::app::talk3_d::talk_2::Talk_TalkType)` overload"] fn set_talk_type (self , value : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talk_2 :: Talk_TalkType >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , crate :: app :: talk3_d :: talk_2 :: Talk_TalkType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ActivePid()` overload"] fn get_active_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ActivePid(::unity2::Il2CppString)` overload"] fn set_active_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c55a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_StrToLowerTrigger()` overload"] fn get_str_to_lower_trigger (self ,) -> bool { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c55b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_StrToLowerTrigger(bool)` overload"] fn set_str_to_lower_trigger (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c55c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLatestStrPatchim1()` overload"] fn get_is_latest_str_patchim1 (self ,) -> bool { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c55d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsLatestStrPatchim1(bool)` overload"] fn set_is_latest_str_patchim1 (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c55e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLatestStrPatchim2()` overload"] fn get_is_latest_str_patchim2 (self ,) -> bool { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c55f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsLatestStrPatchim2(bool)` overload"] fn set_is_latest_str_patchim2 (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`EnableIsLoadingCharacter()` overload"] fn enable_is_loading_character (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bcab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableIsLoadingCharacter()` overload"] fn disable_is_loading_character (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetReplaceTalkerName(::unity2::Il2CppString)` overload"] fn get_replace_talker_name (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`AddReplaceTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn add_replace_talker_name (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , talker_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c56a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (talker_name) , :: core :: option :: Option :: None) } } } # [doc = "`Start(::unity2::Il2CppString, bool)` overload"] fn start (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_continuous_number : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b83e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: convert :: Into :: into (is_continuous_number) , :: core :: option :: Option :: None) } } } # [doc = "`Restart(::unity2::Il2CppString, bool)` overload"] fn restart (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_continuous_number : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b83f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: convert :: Into :: into (is_continuous_number) , :: core :: option :: Option :: None) } } } # [doc = "`StartImpl(::unity2::Il2CppString, bool)` overload"] fn start_impl (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_continuous_number : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c59f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: convert :: Into :: into (is_continuous_number) , :: core :: option :: Option :: None) } } } # [doc = "`InitTalk(::unity2::Il2CppString)` overload"] fn init_talk (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`TryNextLabel()` overload"] fn try_next_label (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c67b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FlushSoundList(bool)` overload"] fn flush_sound_list (self , is_exec_before_of_now_label : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_exec_before_of_now_label) , :: core :: option :: Option :: None) } } } # [doc = "`WaitCamera()` overload"] fn wait_camera (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryMapCameraBind()` overload"] fn try_map_camera_bind (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryMapCameraUnbind()` overload"] fn try_map_camera_unbind (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadSoundBank()` overload"] fn load_sound_bank (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitSoundbankLoading()` overload"] fn wait_soundbank_loading (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadScene()` overload"] fn load_scene (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finish(bool)` overload"] fn finish (self , is_end_continuous_number : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c69c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_end_continuous_number) , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c7270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetActiveCharacter()` overload"] fn get_active_character (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c7500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPersonVoice()` overload"] fn get_person_voice (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bef90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryPlayVoice(crate::combat::character::Character)` overload"] fn try_play_voice (self , character : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c76f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character) , :: core :: option :: Option :: None) } } } # [doc = "`StopAllVoice()` overload"] fn stop_all_voice (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bf980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Persistent()` overload"] fn persistent (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c78d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickSoundBefore()` overload"] fn tick_sound_before (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c78e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickSoundAfter()` overload"] fn tick_sound_after (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c7920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c79b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessMessage(i32)` overload"] fn process_message (self , add_char_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c7e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (add_char_count) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c80e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitClose()` overload"] fn wait_close (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c8210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckContinue()` overload"] fn check_continue (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c82c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartKeyWait()` overload"] fn start_key_wait (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c8400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartTimeWait(f32)` overload"] fn start_time_wait (self , sec : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c8410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sec) , :: core :: option :: Option :: None) } } } # [doc = "`StartFadeOut(f32, crate::unity_engine::color::Color)` overload"] fn start_fade_out (self , time : impl :: core :: convert :: Into < f32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , f32 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c8420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`StartFadeIn(f32)` overload"] fn start_fade_in (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c84f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`SetReplaceText(::unity2::Il2CppString)` overload"] fn set_replace_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c8590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`WaitGameSkipEnd()` overload"] fn wait_game_skip_end (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c85a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Skip()` overload"] fn skip (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c85e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartTextScroll()` overload"] fn start_text_scroll (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c86d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndTextScroll()` overload"] fn end_text_scroll (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BindParent()` overload"] fn bind_parent (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnbindParent()` overload"] fn unbind_parent (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c7220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDesc()` overload"] fn get_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c86e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c95b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-talk3_d-talksequence")]
-impl < __T : ITalkSequence > ITalkSequenceMethods for __T { }
-
-#[cfg(feature = "app-talk3_d-talksequence")]
-impl TalkSequence { pub fn get_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_talk_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_talk_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_active_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_active_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_str_to_lower_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_str_to_lower_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_latest_str_patchim1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_is_latest_str_patchim1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_latest_str_patchim2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_is_latest_str_patchim2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn enable_is_loading_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn disable_is_loading_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_replace_talker_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn add_replace_talker_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn reserve_talk_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn create_talk_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_fast_forward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn restart_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn start_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn init_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn try_next_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn flush_sound_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn wait_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn try_map_camera_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn try_map_camera_unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn load_sound_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn wait_soundbank_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn load_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_active_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_person_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn try_play_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn stop_all_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn tick_sound_before_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn tick_sound_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn process_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn wait_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn check_continue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn begin_continue_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn end_continue_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn start_key_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn start_time_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn start_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn start_fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn set_replace_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn wait_game_skip_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn start_text_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn end_text_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn bind_parent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn unbind_parent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn get_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } }
-
-#[cfg(feature = "app-talk3_d-talksequence")]
-impl TalkSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkSequence) , :: core :: stringify ! (new) ,)) ; < Self as ITalkSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talksequence")]impl TalkSequence{#[doc="`ReserveTalkPrefab()` overload"]pub fn reserve_talk_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c5770usize)as*mut u8,();
+)}
+}
+#[doc="`CreateTalkPrefab()` overload"]pub fn create_talk_prefab()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c58b0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`IsFastForward()` overload"]pub fn is_fast_forward()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8840usize)as*mut u8,bool;
+)}
+}
+#[doc="`BeginContinueTalk()` overload"]pub fn begin_continue_talk()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b85e0usize)as*mut u8,();
+)}
+}
+#[doc="`EndContinueTalk()` overload"]pub fn end_continue_talk()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8700usize)as*mut u8,();
+)}
+}
+#[doc="`Create(crate::app::procinst::ProcInst)` overload"]pub fn create(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::talk3_d::talksequence::TalkSequence{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8360usize)as*mut u8,crate::app::talk3_d::talksequence::TalkSequence;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c9680usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-talk3_d-talksequence")]
-pub trait ITalkSequence_ReplaceTextMethods : ITalkSequence_ReplaceText { # [doc = "`set_Text(::unity2::Il2CppString)` overload"] fn set_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkSequence_ReplaceText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence_ReplaceText , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21fc500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Text()` overload"] fn get_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkSequence_ReplaceText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence_ReplaceText , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21fc540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Next()` overload"] fn next (self ,) -> () { unsafe { let __receiver = < TalkSequence_ReplaceText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence_ReplaceText , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21fc550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentCharacter()` overload"] fn get_current_character (self ,) -> u16 { unsafe { let __receiver = < TalkSequence_ReplaceText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence_ReplaceText , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21fc560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NeedReplace()` overload"] fn need_replace (self ,) -> bool { unsafe { let __receiver = < TalkSequence_ReplaceText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence_ReplaceText , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21fc580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkSequence_ReplaceText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSequence_ReplaceText , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21fc5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talksequence")]pub trait ITalkSequenceMethods:ITalkSequence{#[doc="`get_Mid()` overload"]fn get_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5550usize)as*mut u8, ::unity2::Il2CppString;
+(TalkSequence)__receiver)}
+}
+#[doc="`set_Mid(::unity2::Il2CppString)` overload"]fn set_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5560usize)as*mut u8,();
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_TalkType()` overload"]fn get_talk_type(self,)->crate::app::talk3_d::talk_2::Talk_TalkType{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5570usize)as*mut u8,crate::app::talk3_d::talk_2::Talk_TalkType;
+(TalkSequence)__receiver)}
+}
+#[doc="`set_TalkType(crate::app::talk3_d::talk_2::Talk_TalkType)` overload"]fn set_talk_type(self,value:impl::core::convert::Into<crate::app::talk3_d::talk_2::Talk_TalkType>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5580usize)as*mut u8,();
+(TalkSequence)__receiver,(crate::app::talk3_d::talk_2::Talk_TalkType)::core::convert::Into::into(value))}
+}
+#[doc="`get_ActivePid()` overload"]fn get_active_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5590usize)as*mut u8, ::unity2::Il2CppString;
+(TalkSequence)__receiver)}
+}
+#[doc="`set_ActivePid(::unity2::Il2CppString)` overload"]fn set_active_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c55a0usize)as*mut u8,();
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_StrToLowerTrigger()` overload"]fn get_str_to_lower_trigger(self,)->bool{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c55b0usize)as*mut u8,bool;
+(TalkSequence)__receiver)}
+}
+#[doc="`set_StrToLowerTrigger(bool)` overload"]fn set_str_to_lower_trigger(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c55c0usize)as*mut u8,();
+(TalkSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsLatestStrPatchim1()` overload"]fn get_is_latest_str_patchim1(self,)->bool{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c55d0usize)as*mut u8,bool;
+(TalkSequence)__receiver)}
+}
+#[doc="`set_IsLatestStrPatchim1(bool)` overload"]fn set_is_latest_str_patchim1(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c55e0usize)as*mut u8,();
+(TalkSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsLatestStrPatchim2()` overload"]fn get_is_latest_str_patchim2(self,)->bool{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c55f0usize)as*mut u8,bool;
+(TalkSequence)__receiver)}
+}
+#[doc="`set_IsLatestStrPatchim2(bool)` overload"]fn set_is_latest_str_patchim2(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5600usize)as*mut u8,();
+(TalkSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`EnableIsLoadingCharacter()` overload"]fn enable_is_loading_character(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bcab0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`DisableIsLoadingCharacter()` overload"]fn disable_is_loading_character(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5610usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`GetReplaceTalkerName(::unity2::Il2CppString)` overload"]fn get_replace_talker_name(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5620usize)as*mut u8, ::unity2::Il2CppString;
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`AddReplaceTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add_replace_talker_name(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,talker_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c56a0usize)as*mut u8,();
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(talker_name))}
+}
+#[doc="`Start(::unity2::Il2CppString, bool)` overload"]fn start(self,mid:impl::core::convert::Into< ::unity2::Il2CppString> ,is_continuous_number:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b83e0usize)as*mut u8,();
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid),(bool)::core::convert::Into::into(is_continuous_number))}
+}
+#[doc="`Restart(::unity2::Il2CppString, bool)` overload"]fn restart(self,mid:impl::core::convert::Into< ::unity2::Il2CppString> ,is_continuous_number:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b83f0usize)as*mut u8,();
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid),(bool)::core::convert::Into::into(is_continuous_number))}
+}
+#[doc="`StartImpl(::unity2::Il2CppString, bool)` overload"]fn start_impl(self,mid:impl::core::convert::Into< ::unity2::Il2CppString> ,is_continuous_number:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c59f0usize)as*mut u8,();
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid),(bool)::core::convert::Into::into(is_continuous_number))}
+}
+#[doc="`InitTalk(::unity2::Il2CppString)` overload"]fn init_talk(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5ca0usize)as*mut u8,();
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`TryNextLabel()` overload"]fn try_next_label(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c67b0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`FlushSoundList(bool)` overload"]fn flush_sound_list(self,is_exec_before_of_now_label:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6190usize)as*mut u8,();
+(TalkSequence)__receiver,(bool)::core::convert::Into::into(is_exec_before_of_now_label))}
+}
+#[doc="`WaitCamera()` overload"]fn wait_camera(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6ac0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`TryMapCameraBind()` overload"]fn try_map_camera_bind(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6b00usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`TryMapCameraUnbind()` overload"]fn try_map_camera_unbind(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6ba0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`LoadSoundBank()` overload"]fn load_sound_bank(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6c30usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`WaitSoundbankLoading()` overload"]fn wait_soundbank_loading(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6e50usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`LoadScene()` overload"]fn load_scene(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6ef0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`Finish(bool)` overload"]fn finish(self,is_end_continuous_number:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c69c0usize)as*mut u8,();
+(TalkSequence)__receiver,(bool)::core::convert::Into::into(is_end_continuous_number))}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c7270usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`GetActiveCharacter()` overload"]fn get_active_character(self,)->crate::combat::character::Character{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c7500usize)as*mut u8,crate::combat::character::Character;
+(TalkSequence)__receiver)}
+}
+#[doc="`GetPersonVoice()` overload"]fn get_person_voice(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bef90usize)as*mut u8, ::unity2::Il2CppString;
+(TalkSequence)__receiver)}
+}
+#[doc="`TryPlayVoice(crate::combat::character::Character)` overload"]fn try_play_voice(self,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c76f0usize)as*mut u8,();
+(TalkSequence)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
+}
+#[doc="`StopAllVoice()` overload"]fn stop_all_voice(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bf980usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`Persistent()` overload"]fn persistent(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c78d0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`TickSoundBefore()` overload"]fn tick_sound_before(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c78e0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`TickSoundAfter()` overload"]fn tick_sound_after(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c7920usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c79b0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`ProcessMessage(i32)` overload"]fn process_message(self,add_char_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c7e90usize)as*mut u8,();
+(TalkSequence)__receiver,(i32)::core::convert::Into::into(add_char_count))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c80e0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`WaitClose()` overload"]fn wait_close(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c8210usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`CheckContinue()` overload"]fn check_continue(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c82c0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`StartKeyWait()` overload"]fn start_key_wait(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c8400usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`StartTimeWait(f32)` overload"]fn start_time_wait(self,sec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c8410usize)as*mut u8,();
+(TalkSequence)__receiver,(f32)::core::convert::Into::into(sec))}
+}
+#[doc="`StartFadeOut(f32, crate::unity_engine::color::Color)` overload"]fn start_fade_out(self,time:impl::core::convert::Into<f32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c8420usize)as*mut u8,();
+(TalkSequence)__receiver,(f32)::core::convert::Into::into(time),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`StartFadeIn(f32)` overload"]fn start_fade_in(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c84f0usize)as*mut u8,();
+(TalkSequence)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`SetReplaceText(::unity2::Il2CppString)` overload"]fn set_replace_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c8590usize)as*mut u8,();
+(TalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`WaitGameSkipEnd()` overload"]fn wait_game_skip_end(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c85a0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`Skip()` overload"]fn skip(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c85e0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`StartTextScroll()` overload"]fn start_text_scroll(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c86d0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`EndTextScroll()` overload"]fn end_text_scroll(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4650usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`BindParent()` overload"]fn bind_parent(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6610usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`UnbindParent()` overload"]fn unbind_parent(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c7220usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`GetDesc()` overload"]fn get_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c86e0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(TalkSequence)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9410usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9430usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c95b0usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9270usize)as*mut u8,();
+(TalkSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talksequence")]
-impl < __T : ITalkSequence_ReplaceText > ITalkSequence_ReplaceTextMethods for __T { }
+#[cfg(feature="app-talk3_d-talksequence")]impl<__T:ITalkSequence>ITalkSequenceMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talksequence")]
-impl TalkSequence_ReplaceText { pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence_ReplaceText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence_ReplaceText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence_ReplaceText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_current_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence_ReplaceText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn need_replace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence_ReplaceText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSequence_ReplaceText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-talk3_d-talksequence")]impl TalkSequence{pub fn get_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_talk_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_talk_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_active_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_active_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_str_to_lower_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_str_to_lower_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_latest_str_patchim1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_is_latest_str_patchim1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_latest_str_patchim2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_is_latest_str_patchim2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn enable_is_loading_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn disable_is_loading_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_replace_talker_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn add_replace_talker_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn reserve_talk_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn create_talk_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_fast_forward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn restart_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn start_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn init_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn try_next_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn flush_sound_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn wait_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn try_map_camera_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn try_map_camera_unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn load_sound_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn wait_soundbank_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn load_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn finish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_active_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_person_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn try_play_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn stop_all_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn persistent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn tick_sound_before_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn tick_sound_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn process_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn wait_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn check_continue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn begin_continue_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn end_continue_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn start_key_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn start_time_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn start_fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn start_fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn set_replace_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn wait_game_skip_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn start_text_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn end_text_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn bind_parent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn unbind_parent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn get_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+}
 
-#[cfg(feature = "app-talk3_d-talksequence")]
-impl TalkSequence_ReplaceText {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkSequence_ReplaceText) , :: core :: stringify ! (new) ,)) ; < Self as ITalkSequence_ReplaceTextMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talksequence")]impl TalkSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkSequence), ::core::stringify!(new),));
+ <Self as ITalkSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-talk3_d-talksequence")]pub trait ITalkSequence_ReplaceTextMethods:ITalkSequence_ReplaceText{#[doc="`set_Text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkSequence_ReplaceText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc500usize)as*mut u8,();
+(TalkSequence_ReplaceText)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkSequence_ReplaceText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc540usize)as*mut u8, ::unity2::Il2CppString;
+(TalkSequence_ReplaceText)__receiver)}
+}
+#[doc="`Next()` overload"]fn next(self,)->(){unsafe{let __receiver= <TalkSequence_ReplaceText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc550usize)as*mut u8,();
+(TalkSequence_ReplaceText)__receiver)}
+}
+#[doc="`get_CurrentCharacter()` overload"]fn get_current_character(self,)->u16{unsafe{let __receiver= <TalkSequence_ReplaceText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc560usize)as*mut u8,u16;
+(TalkSequence_ReplaceText)__receiver)}
+}
+#[doc="`NeedReplace()` overload"]fn need_replace(self,)->bool{unsafe{let __receiver= <TalkSequence_ReplaceText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc580usize)as*mut u8,bool;
+(TalkSequence_ReplaceText)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkSequence_ReplaceText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc5b0usize)as*mut u8,();
+(TalkSequence_ReplaceText)__receiver)}
+}
+}
+
+#[cfg(feature="app-talk3_d-talksequence")]impl<__T:ITalkSequence_ReplaceText>ITalkSequence_ReplaceTextMethods for __T{}
+
+#[cfg(feature="app-talk3_d-talksequence")]impl TalkSequence_ReplaceText{pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn need_replace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-talk3_d-talksequence")]impl TalkSequence_ReplaceText{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkSequence_ReplaceText), ::core::stringify!(new),));
+ <Self as ITalkSequence_ReplaceTextMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talksequence")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TalkSequence_PlayMode;
-    pub use super::TalkSequence_Label;
     pub use super::TalkSequence;
     pub use super::ITalkSequence;
     pub use super::ITalkSequenceMethods;
     pub use super::TalkSequence_ReplaceText;
     pub use super::ITalkSequence_ReplaceText;
     pub use super::ITalkSequence_ReplaceTextMethods;
+    pub use super::TalkSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

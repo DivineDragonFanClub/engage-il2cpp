@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_glyphadjustmentrecord/TMP_GlyphAdjustmentRecord.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_GlyphAdjustmentRecord {
-    pub m_glyph_index: u32,
-    pub m_glyph_value_record: crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_glyphadjustmentrecord/TMP_GlyphAdjustmentRecord.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_GlyphAdjustmentRecord{pub m_glyph_index:u32,pub m_glyph_value_record:crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord,}
+impl::unity2::ClassIdentity for TMP_GlyphAdjustmentRecord{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_GlyphAdjustmentRecord";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TMP_GlyphAdjustmentRecord {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_GlyphAdjustmentRecord";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TMP_GlyphAdjustmentRecord {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TMP_GlyphAdjustmentRecord{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,33 @@ impl ::unity2::IlType for TMP_GlyphAdjustmentRecord {
 #[cfg(feature = "tm_pro-tmp_glyphadjustmentrecord-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_glyphadjustmentrecord")]
-impl TMP_GlyphAdjustmentRecord { # [doc = "`get_glyphIndex()` overload"] pub fn get_glyph_index (& mut self ,) -> u32 { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2be0usize) as * mut u8) ; __inner (self as * mut TMP_GlyphAdjustmentRecord , :: core :: option :: Option :: None) } } } # [doc = "`set_glyphIndex(u32)` overload"] pub fn set_glyph_index (& mut self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphAdjustmentRecord , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2bf0usize) as * mut u8) ; __inner (self as * mut TMP_GlyphAdjustmentRecord , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_glyphValueRecord()` overload"] pub fn get_glyph_value_record (& mut self ,) -> crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2c00usize) as * mut u8) ; __inner (self as * mut TMP_GlyphAdjustmentRecord , :: core :: option :: Option :: None) } } } # [doc = "`set_glyphValueRecord(crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)` overload"] pub fn set_glyph_value_record (& mut self , value : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphAdjustmentRecord , crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2c10usize) as * mut u8) ; __inner (self as * mut TMP_GlyphAdjustmentRecord , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)` overload"] pub fn ctor (& mut self , glyph_index : impl :: core :: convert :: Into < u32 > , glyph_value_record : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphAdjustmentRecord , u32 , crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2c30usize) as * mut u8) ; __inner (self as * mut TMP_GlyphAdjustmentRecord , :: core :: convert :: Into :: into (glyph_index) , :: core :: convert :: Into :: into (glyph_value_record) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord)` overload"] pub fn ctor_2 (& mut self , adjustment_record : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphAdjustmentRecord , crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2c50usize) as * mut u8) ; __inner (self as * mut TMP_GlyphAdjustmentRecord , :: core :: convert :: Into :: into (adjustment_record) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_glyphadjustmentrecord")]impl TMP_GlyphAdjustmentRecord{#[doc="`get_glyphIndex()` overload"]pub fn get_glyph_index(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2be0usize)as*mut u8,u32;
+(*mut TMP_GlyphAdjustmentRecord)self as*mut TMP_GlyphAdjustmentRecord)}
+}
+#[doc="`set_glyphIndex(u32)` overload"]pub fn set_glyph_index(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2bf0usize)as*mut u8,();
+(*mut TMP_GlyphAdjustmentRecord)self as*mut TMP_GlyphAdjustmentRecord,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_glyphValueRecord()` overload"]pub fn get_glyph_value_record(&mut self,)->crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2c00usize)as*mut u8,crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord;
+(*mut TMP_GlyphAdjustmentRecord)self as*mut TMP_GlyphAdjustmentRecord)}
+}
+#[doc="`set_glyphValueRecord(crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)` overload"]pub fn set_glyph_value_record(&mut self,value:impl::core::convert::Into<crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2c10usize)as*mut u8,();
+(*mut TMP_GlyphAdjustmentRecord)self as*mut TMP_GlyphAdjustmentRecord,(crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(u32, crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)` overload"]pub fn ctor(&mut self,glyph_index:impl::core::convert::Into<u32> ,glyph_value_record:impl::core::convert::Into<crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2c30usize)as*mut u8,();
+(*mut TMP_GlyphAdjustmentRecord)self as*mut TMP_GlyphAdjustmentRecord,(u32)::core::convert::Into::into(glyph_index),(crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)::core::convert::Into::into(glyph_value_record))}
+}
+#[doc="`.ctor(crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord)` overload"]pub fn ctor_2(&mut self,adjustment_record:impl::core::convert::Into<crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2c50usize)as*mut u8,();
+(*mut TMP_GlyphAdjustmentRecord)self as*mut TMP_GlyphAdjustmentRecord,(crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord)::core::convert::Into::into(adjustment_record))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_glyphadjustmentrecord")]
-impl TMP_GlyphAdjustmentRecord { pub fn get_glyph_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphAdjustmentRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_glyph_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphAdjustmentRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_glyph_value_record_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphAdjustmentRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_glyph_value_record_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphAdjustmentRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphAdjustmentRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphAdjustmentRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="tm_pro-tmp_glyphadjustmentrecord")]impl TMP_GlyphAdjustmentRecord{pub fn get_glyph_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_glyph_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_glyph_value_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_glyph_value_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "tm_pro-tmp_glyphadjustmentrecord")]
 #[doc(hidden)]

@@ -4,35 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: versusserverdata :: { IVersusServerData , VersusServerData }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::versusserverdata::{IVersusServerData,VersusServerData}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusserverrankeddata/VersusServerRankedData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusServerRankedData")] # [parent (crate :: app :: versusserverdata :: VersusServerData)] pub struct VersusServerRankedData {
-# [static_field] # [rename (name = "Version")] pub version : u16 ,
-# [offset (40)] # [rename (name = "m_EditData")] pub m_edit_data : crate :: app :: mapeditdata :: MapEditData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusserverrankeddata/VersusServerRankedData.md"))]#[::unity2::class(namespace="App",name="VersusServerRankedData")]#[parent(crate::app::versusserverdata::VersusServerData)]pub struct VersusServerRankedData{#[static_field]#[rename(name="Version")]pub version:u16, #[offset(40)]#[rename(name="m_EditData")]pub m_edit_data:crate::app::mapeditdata::MapEditData,}
 
 }
 
 #[cfg(feature = "app-versusserverrankeddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusserverrankeddata")]
-pub trait IVersusServerRankedDataMethods : IVersusServerRankedData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusServerRankedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a62a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusServerRankedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b82d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> bool { unsafe { let __receiver = < VersusServerRankedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b84e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_EditData()` overload"] fn get_edit_data (self ,) -> crate :: app :: mapeditdata :: MapEditData { unsafe { let __receiver = < VersusServerRankedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedData , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b88a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusserverrankeddata")]pub trait IVersusServerRankedDataMethods:IVersusServerRankedData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerRankedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a62a0usize)as*mut u8,();
+(VersusServerRankedData)__receiver)}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerRankedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b82d0usize)as*mut u8,();
+(VersusServerRankedData)__receiver)}
+}
+#[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerRankedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b84e0usize)as*mut u8,bool;
+(VersusServerRankedData)__receiver)}
+}
+#[doc="`get_EditData()` overload"]fn get_edit_data(self,)->crate::app::mapeditdata::MapEditData{unsafe{let __receiver= <VersusServerRankedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b88a0usize)as*mut u8,crate::app::mapeditdata::MapEditData;
+(VersusServerRankedData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusserverrankeddata")]
-impl < __T : IVersusServerRankedData > IVersusServerRankedDataMethods for __T { }
+#[cfg(feature="app-versusserverrankeddata")]impl<__T:IVersusServerRankedData>IVersusServerRankedDataMethods for __T{}
 
-#[cfg(feature = "app-versusserverrankeddata")]
-impl VersusServerRankedData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_edit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-versusserverrankeddata")]impl VersusServerRankedData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_edit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-versusserverrankeddata")]
-impl VersusServerRankedData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusServerRankedData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusServerRankedDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusserverrankeddata")]impl VersusServerRankedData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusServerRankedData), ::core::stringify!(new),));
+ <Self as IVersusServerRankedDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusserverrankeddata")]

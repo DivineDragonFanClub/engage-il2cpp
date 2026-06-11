@@ -4,57 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/touch/Touch.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Touch {
-    pub m_finger_id: i32,
-    pub m_position: crate :: unity_engine :: vector2 :: Vector2,
-    pub m_raw_position: crate :: unity_engine :: vector2 :: Vector2,
-    pub m_position_delta: crate :: unity_engine :: vector2 :: Vector2,
-    pub m_time_delta: f32,
-    pub m_tap_count: i32,
-    pub m_phase: crate :: unity_engine :: touchphase :: TouchPhase,
-    pub m_type: crate :: unity_engine :: touchtype :: TouchType,
-    pub m_pressure: f32,
-    pub m_maximum_possible_pressure: f32,
-    pub m_radius: f32,
-    pub m_radius_variance: f32,
-    pub m_altitude_angle: f32,
-    pub m_azimuth_angle: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/touch/Touch.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Touch{pub m_finger_id:i32,pub m_position:crate::unity_engine::vector2::Vector2,pub m_raw_position:crate::unity_engine::vector2::Vector2,pub m_position_delta:crate::unity_engine::vector2::Vector2,pub m_time_delta:f32,pub m_tap_count:i32,pub m_phase:crate::unity_engine::touchphase::TouchPhase,pub m_type:crate::unity_engine::touchtype::TouchType,pub m_pressure:f32,pub m_maximum_possible_pressure:f32,pub m_radius:f32,pub m_radius_variance:f32,pub m_altitude_angle:f32,pub m_azimuth_angle:f32,}
+impl::unity2::ClassIdentity for Touch{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Touch";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Touch {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Touch";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Touch {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Touch{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -62,11 +26,29 @@ impl ::unity2::IlType for Touch {
 #[cfg(feature = "unity_engine-touch-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-touch")]
-impl Touch { # [doc = "`get_fingerId()` overload"] pub fn get_finger_id (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Touch , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a640usize) as * mut u8) ; __inner (self as * mut Touch , :: core :: option :: Option :: None) } } } # [doc = "`get_position()` overload"] pub fn get_position (& mut self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (* mut Touch , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a650usize) as * mut u8) ; __inner (self as * mut Touch , :: core :: option :: Option :: None) } } } # [doc = "`get_deltaPosition()` overload"] pub fn get_delta_position (& mut self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (* mut Touch , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a660usize) as * mut u8) ; __inner (self as * mut Touch , :: core :: option :: Option :: None) } } } # [doc = "`get_phase()` overload"] pub fn get_phase (& mut self ,) -> crate :: unity_engine :: touchphase :: TouchPhase { unsafe { { let __inner : extern "C" fn (* mut Touch , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: touchphase :: TouchPhase = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a670usize) as * mut u8) ; __inner (self as * mut Touch , :: core :: option :: Option :: None) } } } # [doc = "`get_type()` overload"] pub fn get_type (& mut self ,) -> crate :: unity_engine :: touchtype :: TouchType { unsafe { { let __inner : extern "C" fn (* mut Touch , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: touchtype :: TouchType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a680usize) as * mut u8) ; __inner (self as * mut Touch , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-touch")]impl Touch{#[doc="`get_fingerId()` overload"]pub fn get_finger_id(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a640usize)as*mut u8,i32;
+(*mut Touch)self as*mut Touch)}
+}
+#[doc="`get_position()` overload"]pub fn get_position(&mut self,)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a650usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(*mut Touch)self as*mut Touch)}
+}
+#[doc="`get_deltaPosition()` overload"]pub fn get_delta_position(&mut self,)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a660usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(*mut Touch)self as*mut Touch)}
+}
+#[doc="`get_phase()` overload"]pub fn get_phase(&mut self,)->crate::unity_engine::touchphase::TouchPhase{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a670usize)as*mut u8,crate::unity_engine::touchphase::TouchPhase;
+(*mut Touch)self as*mut Touch)}
+}
+#[doc="`get_type()` overload"]pub fn get_type(&mut self,)->crate::unity_engine::touchtype::TouchType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a680usize)as*mut u8,crate::unity_engine::touchtype::TouchType;
+(*mut Touch)self as*mut Touch)}
+}
+}
 
-#[cfg(feature = "unity_engine-touch")]
-impl Touch { pub fn get_finger_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Touch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Touch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_delta_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Touch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Touch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Touch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-touch")]impl Touch{pub fn get_finger_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_delta_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-touch")]
 #[doc(hidden)]

@@ -4,42 +4,118 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicitemmenuitem :: { BasicItemMenuItem , IBasicItemMenuItem }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicitemmenuitem::{BasicItemMenuItem,IBasicItemMenuItem}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietradeitemmenuitem/SortieTradeItemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTradeItemMenuItem")] # [parent (crate :: app :: basicitemmenuitem :: BasicItemMenuItem)] pub struct SortieTradeItemMenuItem {
-# [offset (104)] # [rename (name = "m_unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (112)] # [rename (name = "m_recieverUnit")] pub m_reciever_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_itemIndex")] pub m_item_index : i32 ,
-# [offset (124)] # [rename (name = "m_bDefaultSelect")] pub m_b_default_select : bool ,
-# [offset (125)] # [rename (name = "m_SelectableBlank")] pub m_selectable_blank : bool ,
-# [offset (126)] # [rename (name = "m_EnabledToSelectBlank")] pub m_enabled_to_select_blank : bool ,
-# [offset (127)] # [rename (name = "m_Disabled")] pub m_disabled : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietradeitemmenuitem/SortieTradeItemMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTradeItemMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct SortieTradeItemMenuItem{#[offset(104)]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_recieverUnit")]pub m_reciever_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_itemIndex")]pub m_item_index:i32, #[offset(124)]#[rename(name="m_bDefaultSelect")]pub m_b_default_select:bool, #[offset(125)]#[rename(name="m_SelectableBlank")]pub m_selectable_blank:bool, #[offset(126)]#[rename(name="m_EnabledToSelectBlank")]pub m_enabled_to_select_blank:bool, #[offset(127)]#[rename(name="m_Disabled")]pub m_disabled:bool,}
 
 }
 
 #[cfg(feature = "app-sortietradeitemmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortietradeitemmenuitem")]
-pub trait ISortieTradeItemMenuItemMethods : ISortieTradeItemMenuItem { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, bool, bool)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , reciever_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , index : impl :: core :: convert :: Into < i32 > , default_select : impl :: core :: convert :: Into < bool > , selectable_blank : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , i32 , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ef190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (reciever_unit) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (default_select) , :: core :: convert :: Into :: into (selectable_blank) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInitialColor()` overload"] fn set_initial_color (self ,) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCursorMoveEnd()` overload"] fn on_cursor_move_end (self ,) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f1060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSelect()` overload"] fn set_select (self ,) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24efac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearSelect()` overload"] fn clear_select (self ,) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ef840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f1180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRecieverUnit()` overload"] fn get_reciever_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f11a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSelectable()` overload"] fn is_selectable (self ,) -> bool { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSelectableBlank()` overload"] fn is_selectable_blank (self ,) -> bool { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f11b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableToSelectBlank(bool)` overload"] fn enable_to_select_blank (self , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`SetAttributeDisable(bool)` overload"] fn set_attribute_disable (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`IsNullOrEmpty()` overload"] fn is_null_or_empty (self ,) -> bool { unsafe { let __receiver = < SortieTradeItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTradeItemMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24f0340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortietradeitemmenuitem")]pub trait ISortieTradeItemMenuItemMethods:ISortieTradeItemMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, bool, bool)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,reciever_unit:impl::core::convert::Into<crate::app::unit::Unit> ,index:impl::core::convert::Into<i32> ,default_select:impl::core::convert::Into<bool> ,selectable_blank:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ef190usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(reciever_unit),(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(default_select),(bool)::core::convert::Into::into(selectable_blank))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0990usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0a70usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0c00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0cf0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0db0usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0ed0usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f1060usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`SetSelect()` overload"]fn set_select(self,)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24efac0usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`ClearSelect()` overload"]fn clear_select(self,)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ef840usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f1180usize)as*mut u8,crate::app::unititem::UnitItem;
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`GetRecieverUnit()` overload"]fn get_reciever_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f11a0usize)as*mut u8,crate::app::unit::Unit;
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`IsSelectable()` overload"]fn is_selectable(self,)->bool{unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0040usize)as*mut u8,bool;
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`IsSelectableBlank()` overload"]fn is_selectable_blank(self,)->bool{unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f11b0usize)as*mut u8,bool;
+(SortieTradeItemMenuItem)__receiver)}
+}
+#[doc="`EnableToSelectBlank(bool)` overload"]fn enable_to_select_blank(self,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0500usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver,(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`SetAttributeDisable(bool)` overload"]fn set_attribute_disable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0670usize)as*mut u8,();
+(SortieTradeItemMenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`IsNullOrEmpty()` overload"]fn is_null_or_empty(self,)->bool{unsafe{let __receiver= <SortieTradeItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24f0340usize)as*mut u8,bool;
+(SortieTradeItemMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortietradeitemmenuitem")]
-impl < __T : ISortieTradeItemMenuItem > ISortieTradeItemMenuItemMethods for __T { }
+#[cfg(feature="app-sortietradeitemmenuitem")]impl<__T:ISortieTradeItemMenuItem>ISortieTradeItemMenuItemMethods for __T{}
 
-#[cfg(feature = "app-sortietradeitemmenuitem")]
-impl SortieTradeItemMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_initial_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_cursor_move_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn clear_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_reciever_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_selectable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_selectable_blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn enable_to_select_blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_attribute_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_null_or_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTradeItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-sortietradeitemmenuitem")]impl SortieTradeItemMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_initial_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clear_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_reciever_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_selectable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_selectable_blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn enable_to_select_blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_attribute_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_null_or_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-sortietradeitemmenuitem")]
-impl SortieTradeItemMenuItem {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, bool, bool)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , reciever_unit : crate :: app :: unit :: Unit , index : i32 , default_select : bool , selectable_blank : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTradeItemMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTradeItemMenuItemMethods > :: ctor (this , unit , reciever_unit , index , default_select , selectable_blank) ; this }
+#[cfg(feature="app-sortietradeitemmenuitem")]impl SortieTradeItemMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, bool, bool)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,reciever_unit:crate::app::unit::Unit,index:i32,default_select:bool,selectable_blank:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTradeItemMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTradeItemMenuItemMethods> ::ctor(this,unit,reciever_unit,index,default_select,selectable_blank);
+this}
 }
 
 #[cfg(feature = "app-sortietradeitemmenuitem")]

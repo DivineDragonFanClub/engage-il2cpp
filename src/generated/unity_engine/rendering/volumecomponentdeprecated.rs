@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumecomponentdeprecated/VolumeComponentDeprecated.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "VolumeComponentDeprecated")] pub struct VolumeComponentDeprecated {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volumecomponentdeprecated/VolumeComponentDeprecated.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="VolumeComponentDeprecated")]pub struct VolumeComponentDeprecated{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentdeprecated-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-volumecomponentdeprecated")]
-pub trait IVolumeComponentDeprecatedMethods : IVolumeComponentDeprecated { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VolumeComponentDeprecated as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponentDeprecated , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e67c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-volumecomponentdeprecated")]pub trait IVolumeComponentDeprecatedMethods:IVolumeComponentDeprecated{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VolumeComponentDeprecated as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e67c0usize)as*mut u8,();
+(VolumeComponentDeprecated)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponentdeprecated")]
-impl < __T : IVolumeComponentDeprecated > IVolumeComponentDeprecatedMethods for __T { }
+#[cfg(feature="unity_engine-rendering-volumecomponentdeprecated")]impl<__T:IVolumeComponentDeprecated>IVolumeComponentDeprecatedMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponentdeprecated")]
-impl VolumeComponentDeprecated { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponentDeprecated as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-volumecomponentdeprecated")]impl VolumeComponentDeprecated{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponentdeprecated")]
-impl VolumeComponentDeprecated {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VolumeComponentDeprecated) , :: core :: stringify ! (new) ,)) ; < Self as IVolumeComponentDeprecatedMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-volumecomponentdeprecated")]impl VolumeComponentDeprecated{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VolumeComponentDeprecated), ::core::stringify!(new),));
+ <Self as IVolumeComponentDeprecatedMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentdeprecated")]

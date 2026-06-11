@@ -4,51 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/canvasmanager/CanvasManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "CanvasManager")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CanvasManager {
-# [offset (24)] # [rename (name = "m_LocalPosition")] pub m_local_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (36)] # [rename (name = "m_LocalRotation")] pub m_local_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (52)] # [rename (name = "m_LocalScale")] pub m_local_scale : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (64)] # [rename (name = "m_AnchorMin")] pub m_anchor_min : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (72)] # [rename (name = "m_AnchorMax")] pub m_anchor_max : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (80)] # [rename (name = "m_AnchoredPosition")] pub m_anchored_position : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (88)] # [rename (name = "m_SizeDelta")] pub m_size_delta : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (96)] # [rename (name = "m_Pivot")] pub m_pivot : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (104)] # [rename (name = "m_SelfDestroy")] pub m_self_destroy : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/canvasmanager/CanvasManager.md"))]#[::unity2::class(namespace="App",name="CanvasManager")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CanvasManager{#[offset(24)]#[rename(name="m_LocalPosition")]pub m_local_position:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="m_LocalRotation")]pub m_local_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(52)]#[rename(name="m_LocalScale")]pub m_local_scale:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="m_AnchorMin")]pub m_anchor_min:crate::unity_engine::vector2::Vector2, #[offset(72)]#[rename(name="m_AnchorMax")]pub m_anchor_max:crate::unity_engine::vector2::Vector2, #[offset(80)]#[rename(name="m_AnchoredPosition")]pub m_anchored_position:crate::unity_engine::vector2::Vector2, #[offset(88)]#[rename(name="m_SizeDelta")]pub m_size_delta:crate::unity_engine::vector2::Vector2, #[offset(96)]#[rename(name="m_Pivot")]pub m_pivot:crate::unity_engine::vector2::Vector2, #[offset(104)]#[rename(name="m_SelfDestroy")]pub m_self_destroy:bool,}
 
 }
 
 #[cfg(feature = "app-canvasmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-canvasmanager")]
-impl CanvasManager { # [doc = "`SetTargetDisplay(crate::unity_engine::canvas::Canvas, i32)` overload"] pub fn set_target_display (canvas : impl :: core :: convert :: Into < crate :: unity_engine :: canvas :: Canvas > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: canvas :: Canvas , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (canvas) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SetTargetDisplay(crate::unity_engine::canvas::Canvas, bool)` overload"] pub fn set_target_display_2 (canvas : impl :: core :: convert :: Into < crate :: unity_engine :: canvas :: Canvas > , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: canvas :: Canvas , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb5a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (canvas) , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetRootCanvas(crate::unity_engine::transform::Transform, *mutcrate::unity_engine::canvas::Canvas)` overload"] pub fn try_get_root_canvas (transform : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> (bool , crate :: unity_engine :: canvas :: Canvas) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: canvas :: Canvas > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , * mut crate :: unity_engine :: canvas :: Canvas , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (transform) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`SetVisible(crate::unity_engine::gameobject::GameObject, bool)` overload"] pub fn set_visible_2 (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bc040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`IsVisible(crate::unity_engine::gameobject::GameObject)` overload"] pub fn is_visible_2 (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bc2c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`Show(crate::unity_engine::gameobject::GameObject)` overload"] pub fn show_2 (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bc420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`Hide(crate::unity_engine::gameobject::GameObject)` overload"] pub fn hide_2 (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bc680usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-canvasmanager")]impl CanvasManager{#[doc="`SetTargetDisplay(crate::unity_engine::canvas::Canvas, i32)` overload"]pub fn set_target_display(canvas:impl::core::convert::Into<crate::unity_engine::canvas::Canvas> ,index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bb550usize)as*mut u8,();
+(crate::unity_engine::canvas::Canvas)::core::convert::Into::into(canvas),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SetTargetDisplay(crate::unity_engine::canvas::Canvas, bool)` overload"]pub fn set_target_display_2(canvas:impl::core::convert::Into<crate::unity_engine::canvas::Canvas> ,enabled:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bb5a0usize)as*mut u8,();
+(crate::unity_engine::canvas::Canvas)::core::convert::Into::into(canvas),(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`TryGetRootCanvas(crate::unity_engine::transform::Transform, *mutcrate::unity_engine::canvas::Canvas)` overload"]pub fn try_get_root_canvas(transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(bool,crate::unity_engine::canvas::Canvas){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::canvas::Canvas> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25bb700usize)as*mut u8,bool;
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform),(*mut crate::unity_engine::canvas::Canvas)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SetVisible(crate::unity_engine::gameobject::GameObject, bool)` overload"]pub fn set_visible_2(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,enabled:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bc040usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`IsVisible(crate::unity_engine::gameobject::GameObject)` overload"]pub fn is_visible_2(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bc2c0usize)as*mut u8,bool;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`Show(crate::unity_engine::gameobject::GameObject)` overload"]pub fn show_2(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bc420usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`Hide(crate::unity_engine::gameobject::GameObject)` overload"]pub fn hide_2(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bc680usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+}
 
-#[cfg(feature = "app-canvasmanager")]
-pub trait ICanvasManagerMethods : ICanvasManager { # [doc = "`IsVisible()` overload"] fn is_visible (self ,) -> bool { unsafe { let __receiver = < CanvasManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CanvasManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetVisible(bool)` overload"] fn set_visible (self , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CanvasManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CanvasManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bb960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < CanvasManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CanvasManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bbbc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < CanvasManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CanvasManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bbe00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CanvasManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CanvasManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bc8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTransformChildrenChanged()` overload"] fn on_transform_children_changed (self ,) -> () { unsafe { let __receiver = < CanvasManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CanvasManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bca50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CanvasManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CanvasManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bcb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-canvasmanager")]pub trait ICanvasManagerMethods:ICanvasManager{#[doc="`IsVisible()` overload"]fn is_visible(self,)->bool{unsafe{let __receiver= <CanvasManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb820usize)as*mut u8,bool;
+(CanvasManager)__receiver)}
+}
+#[doc="`SetVisible(bool)` overload"]fn set_visible(self,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CanvasManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bb960usize)as*mut u8,();
+(CanvasManager)__receiver,(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <CanvasManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bbbc0usize)as*mut u8,();
+(CanvasManager)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <CanvasManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bbe00usize)as*mut u8,();
+(CanvasManager)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CanvasManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bc8e0usize)as*mut u8,();
+(CanvasManager)__receiver)}
+}
+#[doc="`OnTransformChildrenChanged()` overload"]fn on_transform_children_changed(self,)->(){unsafe{let __receiver= <CanvasManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bca50usize)as*mut u8,();
+(CanvasManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CanvasManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bcb80usize)as*mut u8,();
+(CanvasManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-canvasmanager")]
-impl < __T : ICanvasManager > ICanvasManagerMethods for __T { }
+#[cfg(feature="app-canvasmanager")]impl<__T:ICanvasManager>ICanvasManagerMethods for __T{}
 
-#[cfg(feature = "app-canvasmanager")]
-impl CanvasManager { pub fn set_target_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_target_display_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_get_root_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_visible_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_visible_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn show_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn hide_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_transform_children_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CanvasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-canvasmanager")]impl CanvasManager{pub fn set_target_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_target_display_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_get_root_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_visible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_visible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn show_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn hide_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_transform_children_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-canvasmanager")]
-impl CanvasManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CanvasManager) , :: core :: stringify ! (new) ,)) ; < Self as ICanvasManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-canvasmanager")]impl CanvasManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CanvasManager), ::core::stringify!(new),));
+ <Self as ICanvasManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-canvasmanager")]

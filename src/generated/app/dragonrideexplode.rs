@@ -4,40 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideexplode/DragonRideExplode.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideExplode")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideExplode {
-# [offset (24)] # [rename (name = "m_Type")] pub m_type : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideexplode/DragonRideExplode.md"))]#[::unity2::class(namespace="App",name="DragonRideExplode")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DragonRideExplode{#[offset(24)]#[rename(name="m_Type")]pub m_type:i32,}
 
 }
 
 #[cfg(feature = "app-dragonrideexplode-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonrideexplode")]
-pub trait IDragonRideExplodeMethods : IDragonRideExplode { # [doc = "`SetExplodeStart(i32)` overload"] fn set_explode_start (self , r#type : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideExplode as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideExplode , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`OnParticleSystemStopped()` overload"] fn on_particle_system_stopped (self ,) -> () { unsafe { let __receiver = < DragonRideExplode as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideExplode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideExplode as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideExplode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonrideexplode")]pub trait IDragonRideExplodeMethods:IDragonRideExplode{#[doc="`SetExplodeStart(i32)` overload"]fn set_explode_start(self,r#type:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideExplode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5d80usize)as*mut u8,();
+(DragonRideExplode)__receiver,(i32)::core::convert::Into::into(r#type))}
+}
+#[doc="`OnParticleSystemStopped()` overload"]fn on_particle_system_stopped(self,)->(){unsafe{let __receiver= <DragonRideExplode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5df0usize)as*mut u8,();
+(DragonRideExplode)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideExplode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5fb0usize)as*mut u8,();
+(DragonRideExplode)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonrideexplode")]
-impl < __T : IDragonRideExplode > IDragonRideExplodeMethods for __T { }
+#[cfg(feature="app-dragonrideexplode")]impl<__T:IDragonRideExplode>IDragonRideExplodeMethods for __T{}
 
-#[cfg(feature = "app-dragonrideexplode")]
-impl DragonRideExplode { pub fn set_explode_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideExplode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_particle_system_stopped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideExplode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideExplode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-dragonrideexplode")]impl DragonRideExplode{pub fn set_explode_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_particle_system_stopped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-dragonrideexplode")]
-impl DragonRideExplode {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideExplode) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideExplodeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonrideexplode")]impl DragonRideExplode{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideExplode), ::core::stringify!(new),));
+ <Self as IDragonRideExplodeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonrideexplode")]

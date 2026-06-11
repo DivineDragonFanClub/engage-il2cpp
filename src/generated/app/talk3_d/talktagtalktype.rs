@@ -4,108 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: talk3_d :: talktag :: { ITalkTag , TalkTag }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::talk3_d::talktag::{ITalkTag,TalkTag}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagtalktype/TalkTagTalkType_TagID.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TalkTagTalkType_TagID  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagtalktype/TalkTagTalkType_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagTalkType_TagID{pub value:i32,}
+impl::unity2::ClassIdentity for TalkTagTalkType_TagID{const NAMESPACE: &'static str="App.Talk3D";
+const NAME: &'static str="TalkTagTalkType.TagID";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TalkTagTalkType_TagID{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TalkTagTalkType_TagID{pub fn stand()->Self{Self{value:0}
+}
+pub fn face()->Self{Self{value:1}
+}
+pub fn puppet()->Self{Self{value:2}
+}
+pub fn system()->Self{Self{value:3}
+}
+pub fn direct()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TalkTagTalkType_TagID  {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "TalkTagTalkType.TagID";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TalkTagTalkType_TagID  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TalkTagTalkType_TagID  {
-    pub fn stand() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn face() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn puppet() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn system() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn direct() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagtalktype/TalkTagTalkType.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkTagTalkType")] # [parent (crate :: app :: talk3_d :: talktag :: TalkTag)] pub struct TalkTagTalkType {
-# [offset (16)] # [rename (name = "m_TalkType")] pub m_talk_type : crate :: app :: talk3_d :: talk_2 :: Talk_TalkType ,
-# [offset (24)] # [rename (name = "m_LocationSetName")] pub m_location_set_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_IsAlreadyFrameVisible")] pub m_is_already_frame_visible : bool ,
-# [offset (36)] # [rename (name = "m_Result")] pub m_result : crate :: app :: talk3_d :: talktag :: TalkTag_Result ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagtalktype/TalkTagTalkType.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagTalkType")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagTalkType{#[offset(16)]#[rename(name="m_TalkType")]pub m_talk_type:crate::app::talk3_d::talk_2::Talk_TalkType, #[offset(24)]#[rename(name="m_LocationSetName")]pub m_location_set_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_IsAlreadyFrameVisible")]pub m_is_already_frame_visible:bool, #[offset(36)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
 
 }
 
 #[cfg(feature = "app-talk3_d-talktagtalktype-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talktagtalktype")]
-pub trait ITalkTagTalkTypeMethods : ITalkTagTalkType { # [doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"] fn initialize (self , talk_ptr : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talkptr :: TalkPtr >) -> () { unsafe { let __receiver = < TalkTagTalkType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagTalkType , crate :: app :: talk3_d :: talkptr :: TalkPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21db2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (talk_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < TalkTagTalkType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagTalkType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21db400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResult()` overload"] fn get_result (self ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result { unsafe { let __receiver = < TalkTagTalkType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagTalkType , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21db6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResultForHeadText()` overload"] fn get_result_for_head_text (self ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result { unsafe { let __receiver = < TalkTagTalkType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagTalkType , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21db6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkTagTalkType as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagTalkType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21da870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talktagtalktype")]pub trait ITalkTagTalkTypeMethods:ITalkTagTalkType{#[doc="`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn initialize(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{let __receiver= <TalkTagTalkType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21db2d0usize)as*mut u8,();
+(TalkTagTalkType)__receiver,(crate::app::talk3_d::talkptr::TalkPtr)::core::convert::Into::into(talk_ptr))}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagTalkType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21db400usize)as*mut u8,();
+(TalkTagTalkType)__receiver)}
+}
+#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagTalkType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21db6e0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
+(TalkTagTalkType)__receiver)}
+}
+#[doc="`GetResultForHeadText()` overload"]fn get_result_for_head_text(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagTalkType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21db6f0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
+(TalkTagTalkType)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagTalkType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21da870usize)as*mut u8,();
+(TalkTagTalkType)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talktagtalktype")]
-impl < __T : ITalkTagTalkType > ITalkTagTalkTypeMethods for __T { }
+#[cfg(feature="app-talk3_d-talktagtalktype")]impl<__T:ITalkTagTalkType>ITalkTagTalkTypeMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talktagtalktype")]
-impl TalkTagTalkType { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagTalkType as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagTalkType as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagTalkType as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_result_for_head_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagTalkType as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagTalkType as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-talk3_d-talktagtalktype")]impl TalkTagTalkType{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_result_for_head_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-talk3_d-talktagtalktype")]
-impl TalkTagTalkType {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkTagTalkType) , :: core :: stringify ! (new) ,)) ; < Self as ITalkTagTalkTypeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talktagtalktype")]impl TalkTagTalkType{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkTagTalkType), ::core::stringify!(new),));
+ <Self as ITalkTagTalkTypeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talktagtalktype")]

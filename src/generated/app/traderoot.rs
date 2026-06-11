@@ -4,42 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/traderoot/TradeRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "TradeRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TradeRoot {
-# [offset (24)] # [rename (name = "m_ItemListLeft")] pub m_item_list_left : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_ItemListRight")] pub m_item_list_right : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_ItemInfo")] pub m_item_info : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/traderoot/TradeRoot.md"))]#[::unity2::class(namespace="App",name="TradeRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TradeRoot{#[offset(24)]#[rename(name="m_ItemListLeft")]pub m_item_list_left:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_ItemListRight")]pub m_item_list_right:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_ItemInfo")]pub m_item_info:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-traderoot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-traderoot")]
-pub trait ITradeRootMethods : ITradeRoot { # [doc = "`SetItemInfo(crate::app::unititem::UnitItem)` overload"] fn set_item_info (self , item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeRoot , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn setup (self , from_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , to_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeRoot , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from_unit) , :: core :: convert :: Into :: into (to_unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetSelectItem(crate::app::unititem::UnitItem)` overload"] fn set_select_item (self , item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeRoot , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e2f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`SetSelectItem(crate::app::unit::Unit, i32)` overload"] fn set_select_item_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , item_no : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeRoot , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (item_no) , :: core :: option :: Option :: None) } } } # [doc = "`GetGameObjectLeft()` overload"] fn get_game_object_left (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGameObjectRight()` overload"] fn get_game_object_right (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetItemInfo()` overload"] fn get_item_info (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TradeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-traderoot")]pub trait ITradeRootMethods:ITradeRoot{#[doc="`SetItemInfo(crate::app::unititem::UnitItem)` overload"]fn set_item_info(self,item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <TradeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e170usize)as*mut u8,();
+(TradeRoot)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(item))}
+}
+#[doc="`Setup(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn setup(self,from_unit:impl::core::convert::Into<crate::app::unit::Unit> ,to_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <TradeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e2e0usize)as*mut u8,();
+(TradeRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(from_unit),(crate::app::unit::Unit)::core::convert::Into::into(to_unit))}
+}
+#[doc="`SetSelectItem(crate::app::unititem::UnitItem)` overload"]fn set_select_item(self,item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <TradeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e2f0usize)as*mut u8,();
+(TradeRoot)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(item))}
+}
+#[doc="`SetSelectItem(crate::app::unit::Unit, i32)` overload"]fn set_select_item_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,item_no:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TradeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e300usize)as*mut u8,();
+(TradeRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(item_no))}
+}
+#[doc="`GetGameObjectLeft()` overload"]fn get_game_object_left(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TradeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e340usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(TradeRoot)__receiver)}
+}
+#[doc="`GetGameObjectRight()` overload"]fn get_game_object_right(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TradeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e350usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(TradeRoot)__receiver)}
+}
+#[doc="`GetItemInfo()` overload"]fn get_item_info(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TradeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e360usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(TradeRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TradeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e370usize)as*mut u8,();
+(TradeRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-traderoot")]
-impl < __T : ITradeRoot > ITradeRootMethods for __T { }
+#[cfg(feature="app-traderoot")]impl<__T:ITradeRoot>ITradeRootMethods for __T{}
 
-#[cfg(feature = "app-traderoot")]
-impl TradeRoot { pub fn set_item_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_select_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_select_item_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_game_object_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_game_object_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_item_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-traderoot")]impl TradeRoot{pub fn set_item_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_select_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_select_item_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_game_object_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_game_object_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_item_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-traderoot")]
-impl TradeRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TradeRoot) , :: core :: stringify ! (new) ,)) ; < Self as ITradeRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-traderoot")]impl TradeRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TradeRoot), ::core::stringify!(new),));
+ <Self as ITradeRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-traderoot")]

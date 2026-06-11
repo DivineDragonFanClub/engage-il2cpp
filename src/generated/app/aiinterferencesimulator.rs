@@ -4,59 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: aisimulatorbase :: { AISimulatorBase , IAISimulatorBase }
- ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::aisimulatorbase::{AISimulatorBase,IAISimulatorBase}
+;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterferencesimulator/AIInterferenceSimulator_Flag.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIInterferenceSimulator.Flag")] # [parent (crate :: app :: bitfield32 :: BitField32)] pub struct AIInterferenceSimulator_Flag {
-# [static_field] # [rename (name = "HighMagic")] pub high_magic : i32 ,
-# [static_field] # [rename (name = "LowMagic")] pub low_magic : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterferencesimulator/AIInterferenceSimulator_Flag.md"))]#[::unity2::class(namespace="App",name="AIInterferenceSimulator.Flag")]#[parent(crate::app::bitfield32::BitField32)]pub struct AIInterferenceSimulator_Flag{#[static_field]#[rename(name="HighMagic")]pub high_magic:i32, #[static_field]#[rename(name="LowMagic")]pub low_magic:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterferencesimulator/AIInterferenceSimulator.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIInterferenceSimulator")] # [parent (crate :: app :: aisimulatorbase :: AISimulatorBase)] pub struct AIInterferenceSimulator {
-# [offset (52)] # [rename (name = "m_IsNotSuitable")] pub m_is_not_suitable : bool ,
-# [offset (56)] # [rename (name = "m_flag")] pub m_flag : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterferencesimulator/AIInterferenceSimulator.md"))]#[::unity2::class(namespace="App",name="AIInterferenceSimulator")]#[parent(crate::app::aisimulatorbase::AISimulatorBase)]pub struct AIInterferenceSimulator{#[offset(52)]#[rename(name="m_IsNotSuitable")]pub m_is_not_suitable:bool, #[offset(56)]#[rename(name="m_flag")]pub m_flag:i32,}
 
 }
 
 #[cfg(feature = "app-aiinterferencesimulator-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-aiinterferencesimulator")]
-pub trait IAIInterferenceSimulator_FlagMethods : IAIInterferenceSimulator_Flag { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AIInterferenceSimulator_Flag as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIInterferenceSimulator_Flag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29443f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-aiinterferencesimulator")]
-impl < __T : IAIInterferenceSimulator_Flag > IAIInterferenceSimulator_FlagMethods for __T { }
-
-#[cfg(feature = "app-aiinterferencesimulator")]
-impl AIInterferenceSimulator_Flag { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIInterferenceSimulator_Flag as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-aiinterferencesimulator")]
-impl AIInterferenceSimulator_Flag {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AIInterferenceSimulator_Flag) , :: core :: stringify ! (new) ,)) ; < Self as IAIInterferenceSimulator_FlagMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aiinterferencesimulator")]pub trait IAIInterferenceSimulator_FlagMethods:IAIInterferenceSimulator_Flag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIInterferenceSimulator_Flag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29443f0usize)as*mut u8,();
+(AIInterferenceSimulator_Flag)__receiver)}
+}
 }
 
-#[cfg(feature = "app-aiinterferencesimulator")]
-pub trait IAIInterferenceSimulatorMethods : IAIInterferenceSimulator { # [doc = "`get_IsNotSuitable()` overload"] fn get_is_not_suitable (self ,) -> bool { unsafe { let __receiver = < AIInterferenceSimulator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIInterferenceSimulator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19302c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Hit()` overload"] fn get_hit (self ,) -> i32 { unsafe { let __receiver = < AIInterferenceSimulator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIInterferenceSimulator , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19302d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AIInterferenceSimulator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIInterferenceSimulator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1930470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Prepare(i32)` overload"] fn prepare (self , flag : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AIInterferenceSimulator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIInterferenceSimulator , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19304a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (flag) , :: core :: option :: Option :: None) } } } # [doc = "`Calculate(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"] fn calculate (self , offense : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , defense : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , range : impl :: core :: convert :: Into < i32 > , item_index : impl :: core :: convert :: Into < i32 > , defense_x : impl :: core :: convert :: Into < i32 > , defense_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AIInterferenceSimulator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIInterferenceSimulator , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , i32 , i32 , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19304b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offense) , :: core :: convert :: Into :: into (defense) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (range) , :: core :: convert :: Into :: into (item_index) , :: core :: convert :: Into :: into (defense_x) , :: core :: convert :: Into :: into (defense_z) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateBattleInfo(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"] fn calculate_battle_info (self , offense : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , defense : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , range : impl :: core :: convert :: Into < i32 > , item_index : impl :: core :: convert :: Into < i32 > , defense_x : impl :: core :: convert :: Into < i32 > , defense_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AIInterferenceSimulator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIInterferenceSimulator , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , i32 , i32 , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1930570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offense) , :: core :: convert :: Into :: into (defense) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (range) , :: core :: convert :: Into :: into (item_index) , :: core :: convert :: Into :: into (defense_x) , :: core :: convert :: Into :: into (defense_z) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateScore()` overload"] fn calculate_score (self ,) -> () { unsafe { let __receiver = < AIInterferenceSimulator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIInterferenceSimulator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1930740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aiinterferencesimulator")]impl<__T:IAIInterferenceSimulator_Flag>IAIInterferenceSimulator_FlagMethods for __T{}
 
-#[cfg(feature = "app-aiinterferencesimulator")]
-impl < __T : IAIInterferenceSimulator > IAIInterferenceSimulatorMethods for __T { }
+#[cfg(feature="app-aiinterferencesimulator")]impl AIInterferenceSimulator_Flag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-aiinterferencesimulator")]
-impl AIInterferenceSimulator { pub fn get_is_not_suitable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIInterferenceSimulator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIInterferenceSimulator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIInterferenceSimulator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIInterferenceSimulator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIInterferenceSimulator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calculate_battle_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIInterferenceSimulator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calculate_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIInterferenceSimulator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-aiinterferencesimulator")]impl AIInterferenceSimulator_Flag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIInterferenceSimulator_Flag), ::core::stringify!(new),));
+ <Self as IAIInterferenceSimulator_FlagMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-aiinterferencesimulator")]
-impl AIInterferenceSimulator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AIInterferenceSimulator) , :: core :: stringify ! (new) ,)) ; < Self as IAIInterferenceSimulatorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aiinterferencesimulator")]pub trait IAIInterferenceSimulatorMethods:IAIInterferenceSimulator{#[doc="`get_IsNotSuitable()` overload"]fn get_is_not_suitable(self,)->bool{unsafe{let __receiver= <AIInterferenceSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19302c0usize)as*mut u8,bool;
+(AIInterferenceSimulator)__receiver)}
+}
+#[doc="`get_Hit()` overload"]fn get_hit(self,)->i32{unsafe{let __receiver= <AIInterferenceSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19302d0usize)as*mut u8,i32;
+(AIInterferenceSimulator)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIInterferenceSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1930470usize)as*mut u8,();
+(AIInterferenceSimulator)__receiver)}
+}
+#[doc="`Prepare(i32)` overload"]fn prepare(self,flag:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterferenceSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19304a0usize)as*mut u8,();
+(AIInterferenceSimulator)__receiver,(i32)::core::convert::Into::into(flag))}
+}
+#[doc="`Calculate(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]fn calculate(self,offense:impl::core::convert::Into<crate::app::unit::Unit> ,defense:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,defense_x:impl::core::convert::Into<i32> ,defense_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterferenceSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19304b0usize)as*mut u8,();
+(AIInterferenceSimulator)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(offense),(crate::app::unit::Unit)::core::convert::Into::into(defense),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(range),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(defense_x),(i32)::core::convert::Into::into(defense_z))}
+}
+#[doc="`CalculateBattleInfo(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]fn calculate_battle_info(self,offense:impl::core::convert::Into<crate::app::unit::Unit> ,defense:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,defense_x:impl::core::convert::Into<i32> ,defense_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterferenceSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1930570usize)as*mut u8,();
+(AIInterferenceSimulator)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(offense),(crate::app::unit::Unit)::core::convert::Into::into(defense),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(range),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(defense_x),(i32)::core::convert::Into::into(defense_z))}
+}
+#[doc="`CalculateScore()` overload"]fn calculate_score(self,)->(){unsafe{let __receiver= <AIInterferenceSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1930740usize)as*mut u8,();
+(AIInterferenceSimulator)__receiver)}
+}
+}
+
+#[cfg(feature="app-aiinterferencesimulator")]impl<__T:IAIInterferenceSimulator>IAIInterferenceSimulatorMethods for __T{}
+
+#[cfg(feature="app-aiinterferencesimulator")]impl AIInterferenceSimulator{pub fn get_is_not_suitable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calculate_battle_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calculate_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-aiinterferencesimulator")]impl AIInterferenceSimulator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIInterferenceSimulator), ::core::stringify!(new),));
+ <Self as IAIInterferenceSimulatorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-aiinterferencesimulator")]

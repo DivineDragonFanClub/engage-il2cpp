@@ -4,54 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenuitemcontent/FoodstuffMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "FoodstuffMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct FoodstuffMenuItemContent {
-# [offset (72)] # [rename (name = "m_FoodstuffMenuItem")] pub m_foodstuff_menu_item : crate :: app :: cooking_menu :: foodstuffmenu :: FoodstuffMenu_FoodstuffMenuItem ,
-# [offset (80)] # [rename (name = "m_Type")] pub m_type : crate :: app :: cooking_menu :: foodstuffmenu :: FoodstuffMenu_FoodstuffMenuItem_Type ,
-# [offset (88)] # [rename (name = "m_Cursor")] pub m_cursor : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_Check")] pub m_check : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_Food")] pub m_food : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (112)] # [rename (name = "m_Name")] pub m_name : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_Stock")] pub m_stock : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_Count")] pub m_count : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (144)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (152)] # [rename (name = "m_CountText")] pub m_count_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (160)] # [rename (name = "m_DecideText")] pub m_decide_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (168)] # [rename (name = "m_CursorImage")] pub m_cursor_image : crate :: unity_engine :: ui :: image :: Image ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/foodstuffmenuitemcontent/FoodstuffMenuItemContent.md"))]#[::unity2::class(namespace="App.CookingMenu",name="FoodstuffMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct FoodstuffMenuItemContent{#[offset(72)]#[rename(name="m_FoodstuffMenuItem")]pub m_foodstuff_menu_item:crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem, #[offset(80)]#[rename(name="m_Type")]pub m_type:crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type, #[offset(88)]#[rename(name="m_Cursor")]pub m_cursor:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_Check")]pub m_check:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_Food")]pub m_food:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_Name")]pub m_name:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_Stock")]pub m_stock:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_Count")]pub m_count:crate::unity_engine::gameobject::GameObject, #[offset(144)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(152)]#[rename(name="m_CountText")]pub m_count_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_DecideText")]pub m_decide_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(168)]#[rename(name="m_CursorImage")]pub m_cursor_image:crate::unity_engine::ui::image::Image,}
 
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
-pub trait IFoodstuffMenuItemContentMethods : IFoodstuffMenuItemContent { # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetName(crate::app::foodstuffdata::FoodstuffData)` overload"] fn set_name (self , foodstuff : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2614610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (foodstuff) , :: core :: option :: Option :: None) } } } # [doc = "`SetIcon(crate::app::foodstuffdata::FoodstuffData)` overload"] fn set_icon (self , foodstuff : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2614790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (foodstuff) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeSelected(bool)` overload"] fn change_selected (self , is_selected : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2614410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_selected) , :: core :: option :: Option :: None) } } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26148d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26148e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2614910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDecideTextColor()` overload"] fn update_decide_text_color (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2614d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateNotHaveTextColor()` overload"] fn update_not_have_text_color (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2614e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2614fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cooking_menu-foodstuffmenuitemcontent")]pub trait IFoodstuffMenuItemContentMethods:IFoodstuffMenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613bd0usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613d00usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver)}
+}
+#[doc="`SetName(crate::app::foodstuffdata::FoodstuffData)` overload"]fn set_name(self,foodstuff:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2614610usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(foodstuff))}
+}
+#[doc="`SetIcon(crate::app::foodstuffdata::FoodstuffData)` overload"]fn set_icon(self,foodstuff:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2614790usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(foodstuff))}
+}
+#[doc="`ChangeSelected(bool)` overload"]fn change_selected(self,is_selected:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2614410usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver,(bool)::core::convert::Into::into(is_selected))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26148d0usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26148e0usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2614910usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver)}
+}
+#[doc="`UpdateDecideTextColor()` overload"]fn update_decide_text_color(self,)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2614d40usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver)}
+}
+#[doc="`UpdateNotHaveTextColor()` overload"]fn update_not_have_text_color(self,)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2614e60usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FoodstuffMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2614fb0usize)as*mut u8,();
+(FoodstuffMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
-impl < __T : IFoodstuffMenuItemContent > IFoodstuffMenuItemContentMethods for __T { }
+#[cfg(feature="app-cooking_menu-foodstuffmenuitemcontent")]impl<__T:IFoodstuffMenuItemContent>IFoodstuffMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
-impl FoodstuffMenuItemContent { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn change_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_decide_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_not_have_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-cooking_menu-foodstuffmenuitemcontent")]impl FoodstuffMenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn change_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_decide_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_not_have_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
-impl FoodstuffMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FoodstuffMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IFoodstuffMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cooking_menu-foodstuffmenuitemcontent")]impl FoodstuffMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffMenuItemContent), ::core::stringify!(new),));
+ <Self as IFoodstuffMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]

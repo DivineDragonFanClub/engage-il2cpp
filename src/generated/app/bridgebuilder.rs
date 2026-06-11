@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bridgebuilder/BridgeBuilder.md"))] # [:: unity2 :: class (namespace = "App" , name = "BridgeBuilder")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct BridgeBuilder {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bridgebuilder/BridgeBuilder.md"))]#[::unity2::class(namespace="App",name="BridgeBuilder")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct BridgeBuilder{}
 
 }
 
 #[cfg(feature = "app-bridgebuilder-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bridgebuilder")]
-pub trait IBridgeBuilderMethods : IBridgeBuilder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BridgeBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BridgeBuilder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298c0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bridgebuilder")]pub trait IBridgeBuilderMethods:IBridgeBuilder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BridgeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298c0c0usize)as*mut u8,();
+(BridgeBuilder)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bridgebuilder")]
-impl < __T : IBridgeBuilder > IBridgeBuilderMethods for __T { }
+#[cfg(feature="app-bridgebuilder")]impl<__T:IBridgeBuilder>IBridgeBuilderMethods for __T{}
 
-#[cfg(feature = "app-bridgebuilder")]
-impl BridgeBuilder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BridgeBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-bridgebuilder")]impl BridgeBuilder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-bridgebuilder")]
-impl BridgeBuilder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BridgeBuilder) , :: core :: stringify ! (new) ,)) ; < Self as IBridgeBuilderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bridgebuilder")]impl BridgeBuilder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BridgeBuilder), ::core::stringify!(new),));
+ <Self as IBridgeBuilderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bridgebuilder")]

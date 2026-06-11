@@ -4,38 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinglure/FishingLure.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingLure")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingLure {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishinglure/FishingLure.md"))]#[::unity2::class(namespace="App",name="FishingLure")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FishingLure{}
 
 }
 
 #[cfg(feature = "app-fishinglure-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishinglure")]
-pub trait IFishingLureMethods : IFishingLure { # [doc = "`get_HitAreaName()` overload"] fn get_hit_area_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingLure , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2601f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HitAreaName(::unity2::Il2CppString)` overload"] fn set_hit_area_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingLure , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2601f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnCollisionEnter(crate::unity_engine::collision::Collision)` overload"] fn on_collision_enter (self , collision : impl :: core :: convert :: Into < crate :: unity_engine :: collision :: Collision >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingLure , crate :: unity_engine :: collision :: Collision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2601fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (collision) , :: core :: option :: Option :: None) } } } # [doc = "`OnCollisionStay(crate::unity_engine::collision::Collision)` overload"] fn on_collision_stay (self , collision : impl :: core :: convert :: Into < crate :: unity_engine :: collision :: Collision >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingLure , crate :: unity_engine :: collision :: Collision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2602050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (collision) , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_enter (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingLure , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2602100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerStay(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_stay (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingLure , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26021b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingLure as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingLure , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2602260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishinglure")]pub trait IFishingLureMethods:IFishingLure{#[doc="`get_HitAreaName()` overload"]fn get_hit_area_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingLure as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2601f80usize)as*mut u8, ::unity2::Il2CppString;
+(FishingLure)__receiver)}
+}
+#[doc="`set_HitAreaName(::unity2::Il2CppString)` overload"]fn set_hit_area_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FishingLure as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2601f90usize)as*mut u8,();
+(FishingLure)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`OnCollisionEnter(crate::unity_engine::collision::Collision)` overload"]fn on_collision_enter(self,collision:impl::core::convert::Into<crate::unity_engine::collision::Collision>)->(){unsafe{let __receiver= <FishingLure as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2601fa0usize)as*mut u8,();
+(FishingLure)__receiver,(crate::unity_engine::collision::Collision)::core::convert::Into::into(collision))}
+}
+#[doc="`OnCollisionStay(crate::unity_engine::collision::Collision)` overload"]fn on_collision_stay(self,collision:impl::core::convert::Into<crate::unity_engine::collision::Collision>)->(){unsafe{let __receiver= <FishingLure as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2602050usize)as*mut u8,();
+(FishingLure)__receiver,(crate::unity_engine::collision::Collision)::core::convert::Into::into(collision))}
+}
+#[doc="`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_enter(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <FishingLure as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2602100usize)as*mut u8,();
+(FishingLure)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(other))}
+}
+#[doc="`OnTriggerStay(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_stay(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <FishingLure as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26021b0usize)as*mut u8,();
+(FishingLure)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingLure as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2602260usize)as*mut u8,();
+(FishingLure)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishinglure")]
-impl < __T : IFishingLure > IFishingLureMethods for __T { }
+#[cfg(feature="app-fishinglure")]impl<__T:IFishingLure>IFishingLureMethods for __T{}
 
-#[cfg(feature = "app-fishinglure")]
-impl FishingLure { pub fn get_hit_area_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingLure as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_hit_area_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingLure as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_collision_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingLure as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_collision_stay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingLure as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingLure as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_trigger_stay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingLure as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingLure as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-fishinglure")]impl FishingLure{pub fn get_hit_area_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_hit_area_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_collision_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_collision_stay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_trigger_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_trigger_stay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-fishinglure")]
-impl FishingLure {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingLure) , :: core :: stringify ! (new) ,)) ; < Self as IFishingLureMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishinglure")]impl FishingLure{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingLure), ::core::stringify!(new),));
+ <Self as IFishingLureMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishinglure")]

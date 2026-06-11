@@ -4,39 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/namecheckdialog/NameCheckDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "NameCheckDialog")] # [parent (crate :: app :: basicdialog :: BasicDialog)] pub struct NameCheckDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/namecheckdialog/NameCheckDialog.md"))]#[::unity2::class(namespace="App",name="NameCheckDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct NameCheckDialog{}
 
 }
 
 #[cfg(feature = "app-namecheckdialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-namecheckdialog")]
-impl NameCheckDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitem::BasicDialogItem, crate::app::basicdialogitem::BasicDialogItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , yes_item : impl :: core :: convert :: Into < crate :: app :: basicdialogitem :: BasicDialogItem > , no_item : impl :: core :: convert :: Into < crate :: app :: basicdialogitem :: BasicDialogItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: basicdialogitem :: BasicDialogItem , crate :: app :: basicdialogitem :: BasicDialogItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0e760usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (yes_item) , :: core :: convert :: Into :: into (no_item) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-namecheckdialog")]impl NameCheckDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitem::BasicDialogItem, crate::app::basicdialogitem::BasicDialogItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_item:impl::core::convert::Into<crate::app::basicdialogitem::BasicDialogItem> ,no_item:impl::core::convert::Into<crate::app::basicdialogitem::BasicDialogItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f0e760usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::basicdialogitem::BasicDialogItem)::core::convert::Into::into(yes_item),(crate::app::basicdialogitem::BasicDialogItem)::core::convert::Into::into(no_item))}
+}
+}
 
-#[cfg(feature = "app-namecheckdialog")]
-pub trait INameCheckDialogMethods : INameCheckDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::namecheckdialogcontent::NameCheckDialogContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: namecheckdialogcontent :: NameCheckDialogContent >) -> () { unsafe { let __receiver = < NameCheckDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameCheckDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: namecheckdialogcontent :: NameCheckDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0e750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-namecheckdialog")]pub trait INameCheckDialogMethods:INameCheckDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::namecheckdialogcontent::NameCheckDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::namecheckdialogcontent::NameCheckDialogContent>)->(){unsafe{let __receiver= <NameCheckDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0e750usize)as*mut u8,();
+(NameCheckDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::namecheckdialogcontent::NameCheckDialogContent)::core::convert::Into::into(menu_content))}
+}
+}
 
-#[cfg(feature = "app-namecheckdialog")]
-impl < __T : INameCheckDialog > INameCheckDialogMethods for __T { }
+#[cfg(feature="app-namecheckdialog")]impl<__T:INameCheckDialog>INameCheckDialogMethods for __T{}
 
-#[cfg(feature = "app-namecheckdialog")]
-impl NameCheckDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameCheckDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameCheckDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-namecheckdialog")]impl NameCheckDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-namecheckdialog")]
-impl NameCheckDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::namecheckdialogcontent::NameCheckDialogContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: namecheckdialogcontent :: NameCheckDialogContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NameCheckDialog) , :: core :: stringify ! (new) ,)) ; < Self as INameCheckDialogMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-namecheckdialog")]impl NameCheckDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::namecheckdialogcontent::NameCheckDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::namecheckdialogcontent::NameCheckDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NameCheckDialog), ::core::stringify!(new),));
+ <Self as INameCheckDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-namecheckdialog")]

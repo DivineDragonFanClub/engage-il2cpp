@@ -4,40 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: marker :: { IMarker , Marker }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::marker::{IMarker,Marker}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/signalemitter/SignalEmitter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "SignalEmitter")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct SignalEmitter {
-# [offset (40)] # [rename (name = "m_Retroactive")] pub m_retroactive : bool ,
-# [offset (41)] # [rename (name = "m_EmitOnce")] pub m_emit_once : bool ,
-# [offset (48)] # [rename (name = "m_Asset")] pub m_asset : crate :: unity_engine :: timeline :: signalasset :: SignalAsset ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/signalemitter/SignalEmitter.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="SignalEmitter")]#[parent(crate::unity_engine::timeline::marker::Marker)]pub struct SignalEmitter{#[offset(40)]#[rename(name="m_Retroactive")]pub m_retroactive:bool, #[offset(41)]#[rename(name="m_EmitOnce")]pub m_emit_once:bool, #[offset(48)]#[rename(name="m_Asset")]pub m_asset:crate::unity_engine::timeline::signalasset::SignalAsset,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-signalemitter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-signalemitter")]
-pub trait ISignalEmitterMethods : ISignalEmitter { # [doc = "`get_retroactive()` overload"] fn get_retroactive (self ,) -> bool { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_retroactive(bool)` overload"] fn set_retroactive (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da3b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_emitOnce()` overload"] fn get_emit_once (self ,) -> bool { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_emitOnce(bool)` overload"] fn set_emit_once (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da3d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_asset()` overload"] fn get_asset (self ,) -> crate :: unity_engine :: timeline :: signalasset :: SignalAsset { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: signalasset :: SignalAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da3e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_asset(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"] fn set_asset (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: signalasset :: SignalAsset >) -> () { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , crate :: unity_engine :: timeline :: signalasset :: SignalAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da3f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.Playables.INotification.get_id()` overload"] fn unity_engine_playables_i_notification_get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.Timeline.INotificationOptionProvider.get_flags()` overload"] fn unity_engine_timeline_i_notification_option_provider_get_flags (self ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SignalEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SignalEmitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-signalemitter")]pub trait ISignalEmitterMethods:ISignalEmitter{#[doc="`get_retroactive()` overload"]fn get_retroactive(self,)->bool{unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da3a0usize)as*mut u8,bool;
+(SignalEmitter)__receiver)}
+}
+#[doc="`set_retroactive(bool)` overload"]fn set_retroactive(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da3b0usize)as*mut u8,();
+(SignalEmitter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_emitOnce()` overload"]fn get_emit_once(self,)->bool{unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da3c0usize)as*mut u8,bool;
+(SignalEmitter)__receiver)}
+}
+#[doc="`set_emitOnce(bool)` overload"]fn set_emit_once(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da3d0usize)as*mut u8,();
+(SignalEmitter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_asset()` overload"]fn get_asset(self,)->crate::unity_engine::timeline::signalasset::SignalAsset{unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da3e0usize)as*mut u8,crate::unity_engine::timeline::signalasset::SignalAsset;
+(SignalEmitter)__receiver)}
+}
+#[doc="`set_asset(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]fn set_asset(self,value:impl::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>)->(){unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da3f0usize)as*mut u8,();
+(SignalEmitter)__receiver,(crate::unity_engine::timeline::signalasset::SignalAsset)::core::convert::Into::into(value))}
+}
+#[doc="`UnityEngine.Playables.INotification.get_id()` overload"]fn unity_engine_playables_i_notification_get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da400usize)as*mut u8,crate::unity_engine::propertyname::PropertyName;
+(SignalEmitter)__receiver)}
+}
+#[doc="`UnityEngine.Timeline.INotificationOptionProvider.get_flags()` overload"]fn unity_engine_timeline_i_notification_option_provider_get_flags(self,)->crate::unity_engine::timeline::notificationflags::NotificationFlags{unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da4d0usize)as*mut u8,crate::unity_engine::timeline::notificationflags::NotificationFlags;
+(SignalEmitter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da4f0usize)as*mut u8,();
+(SignalEmitter)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-signalemitter")]
-impl < __T : ISignalEmitter > ISignalEmitterMethods for __T { }
+#[cfg(feature="unity_engine-timeline-signalemitter")]impl<__T:ISignalEmitter>ISignalEmitterMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-signalemitter")]
-impl SignalEmitter { pub fn get_retroactive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_retroactive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_emit_once_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_emit_once_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unity_engine_playables_i_notification_get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn unity_engine_timeline_i_notification_option_provider_get_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-timeline-signalemitter")]impl SignalEmitter{pub fn get_retroactive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_retroactive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_emit_once_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_emit_once_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unity_engine_playables_i_notification_get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn unity_engine_timeline_i_notification_option_provider_get_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "unity_engine-timeline-signalemitter")]
-impl SignalEmitter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SignalEmitter) , :: core :: stringify ! (new) ,)) ; < Self as ISignalEmitterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-signalemitter")]impl SignalEmitter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SignalEmitter), ::core::stringify!(new),));
+ <Self as ISignalEmitterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-signalemitter")]

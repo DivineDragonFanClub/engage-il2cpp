@@ -4,101 +4,257 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
- use crate :: system :: reflection :: propertyinfo :: { IPropertyInfo , PropertyInfo }
- ;
- use crate :: system :: reflection :: runtimepropertyinfo :: { IRuntimePropertyInfo , RuntimePropertyInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
+use crate::system::reflection::propertyinfo::{IPropertyInfo,PropertyInfo}
+;
+use crate::system::reflection::runtimepropertyinfo::{IRuntimePropertyInfo,RuntimePropertyInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty_Getter_2.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MonoProperty.Getter`2")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct MonoProperty_Getter_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty_GetterAdapter.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty.GetterAdapter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MonoProperty_GetterAdapter{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty_StaticGetter_1.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MonoProperty.StaticGetter`1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct MonoProperty_StaticGetter_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty_Getter_2.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty.Getter`2")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct MonoProperty_Getter_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MonoProperty")] # [parent (crate :: system :: reflection :: runtimepropertyinfo :: RuntimePropertyInfo)] pub struct MonoProperty {
-# [offset (16)] # [rename (name = "klass")] pub klass : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "prop")] pub prop : :: unity2 :: IntPtr ,
-# [offset (32)] # [rename (name = "info")] pub info : crate :: system :: reflection :: monopropertyinfo :: MonoPropertyInfo ,
-# [offset (80)] # [rename (name = "cached")] pub cached : crate :: system :: reflection :: pinfo :: PInfo ,
-# [offset (88)] # [rename (name = "cached_getter")] pub cached_getter : crate :: system :: reflection :: monoproperty :: MonoProperty_GetterAdapter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty_StaticGetter_1.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty.StaticGetter`1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct MonoProperty_StaticGetter_1<T0: ::unity2::ClassIdentity>{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoproperty/MonoProperty_GetterAdapter.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MonoProperty.GetterAdapter")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MonoProperty_GetterAdapter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty")]#[parent(crate::system::reflection::runtimepropertyinfo::RuntimePropertyInfo)]pub struct MonoProperty{#[offset(16)]#[rename(name="klass")]pub klass: ::unity2::IntPtr, #[offset(24)]#[rename(name="prop")]pub prop: ::unity2::IntPtr, #[offset(32)]#[rename(name="info")]pub info:crate::system::reflection::monopropertyinfo::MonoPropertyInfo, #[offset(80)]#[rename(name="cached")]pub cached:crate::system::reflection::pinfo::PInfo, #[offset(88)]#[rename(name="cached_getter")]pub cached_getter:crate::system::reflection::monoproperty::MonoProperty_GetterAdapter,}
 
 }
 
 #[cfg(feature = "system-reflection-monoproperty-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-monoproperty")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > MonoProperty_Getter_2 < T0 , T1 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(T0)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke (self , target_0 : T0) -> T1 ;
+#[cfg(feature="system-reflection-monoproperty")]pub trait IMonoProperty_GetterAdapterMethods:IMonoProperty_GetterAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MonoProperty_GetterAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d9b80usize)as*mut u8,();
+(MonoProperty_GetterAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object)` overload"]fn invoke(self,target_0:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <MonoProperty_GetterAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d9ba0usize)as*mut u8,crate::system::object::Object;
+(MonoProperty_GetterAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(target_0))}
+}
 }
 
-#[cfg(feature = "system-reflection-monoproperty")]
-impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > MonoProperty_Getter_2 < T0 , T1 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MonoProperty_Getter_2) , :: core :: stringify ! (new) ,)) ; < Self as IMonoProperty_Getter_2Methods < T0 , T1 > > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-reflection-monoproperty")]impl<__T:IMonoProperty_GetterAdapter>IMonoProperty_GetterAdapterMethods for __T{}
+
+#[cfg(feature="system-reflection-monoproperty")]impl MonoProperty_GetterAdapter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "system-reflection-monoproperty")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > MonoProperty_StaticGetter_1 < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke()` overload"] # [method (name = "Invoke" , args = 0)] pub fn invoke (self ,) -> T0 ;
+#[cfg(feature="system-reflection-monoproperty")]impl MonoProperty_GetterAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoProperty_GetterAdapter), ::core::stringify!(new),));
+ <Self as IMonoProperty_GetterAdapterMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "system-reflection-monoproperty")]
-impl < T0 : :: unity2 :: ClassIdentity > MonoProperty_StaticGetter_1 < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MonoProperty_StaticGetter_1) , :: core :: stringify ! (new) ,)) ; < Self as IMonoProperty_StaticGetter_1Methods < T0 > > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-reflection-monoproperty")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MonoProperty_Getter_2<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,target_0:T0)->T1;
 }
 
-#[cfg(feature = "system-reflection-monoproperty")]
-impl MonoProperty { pub fn getter_adapter_frame < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity , M1 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (getter : impl :: core :: convert :: Into < crate :: system :: reflection :: monoproperty :: MonoProperty_Getter_2 < M0 , M1 > > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< MonoProperty as :: unity2 :: ClassIdentity > :: class () , "GetterAdapterFrame" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MonoProperty as :: unity2 :: ClassIdentity > :: NAME , "GetterAdapterFrame" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = (< M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ^ (< M1 as :: unity2 :: IlType > :: il_type () as * const _ as usize) ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type () , < M1 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: reflection :: monoproperty :: MonoProperty_Getter_2 < M0 , M1 > , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (getter) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn static_getter_adapter_frame < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (getter : impl :: core :: convert :: Into < crate :: system :: reflection :: monoproperty :: MonoProperty_StaticGetter_1 < M0 > > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< MonoProperty as :: unity2 :: ClassIdentity > :: class () , "StaticGetterAdapterFrame" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MonoProperty as :: unity2 :: ClassIdentity > :: NAME , "StaticGetterAdapterFrame" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: reflection :: monoproperty :: MonoProperty_StaticGetter_1 < M0 > , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (getter) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`CreateGetterDelegate(crate::system::reflection::methodinfo::MethodInfo)` overload"] pub fn create_getter_delegate (method : impl :: core :: convert :: Into < crate :: system :: reflection :: methodinfo :: MethodInfo >) -> crate :: system :: reflection :: monoproperty :: MonoProperty_GetterAdapter { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: methodinfo :: MethodInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: monoproperty :: MonoProperty_GetterAdapter = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33842b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-reflection-monoproperty")]
-pub trait IMonoPropertyMethods : IMonoProperty { # [doc = "`CachePropertyInfo(crate::system::reflection::pinfo::PInfo)` overload"] fn cache_property_info (self , flags : impl :: core :: convert :: Into < crate :: system :: reflection :: pinfo :: PInfo >) -> () { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , crate :: system :: reflection :: pinfo :: PInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33837d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (flags) , :: core :: option :: Option :: None) } } } # [doc = "`get_Attributes()` overload"] fn get_attributes (self ,) -> crate :: system :: reflection :: propertyattributes :: PropertyAttributes { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: propertyattributes :: PropertyAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanRead()` overload"] fn get_can_read (self ,) -> bool { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanWrite()` overload"] fn get_can_write (self ,) -> bool { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33838f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PropertyType()` overload"] fn get_property_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReflectedType()` overload"] fn get_reflected_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DeclaringType()` overload"] fn get_declaring_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAccessors(bool)` overload"] fn get_accessors (self , non_public : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: reflection :: methodinfo :: MethodInfo > { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: methodinfo :: MethodInfo > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } } # [doc = "`GetGetMethod(bool)` overload"] fn get_get_method (self , non_public : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } } # [doc = "`GetIndexParameters()` overload"] fn get_index_parameters (self ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSetMethod(bool)` overload"] fn get_set_method (self , non_public : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } } # [doc = "`GetConstantValue()` overload"] fn get_constant_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRawConstantValue()` overload"] fn get_raw_constant_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(bool)` overload"] fn get_custom_attributes (self , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33841c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes_2 (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetValue(crate::system::object::Object, ::unity2::Array<crate::system::object::Object>)` overload"] fn get_value (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , index : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: system :: object :: Object { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , crate :: system :: object :: Object , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetOptionalCustomModifiers()` overload"] fn get_optional_custom_modifiers (self ,) -> :: unity2 :: Array < :: unity2 :: SystemType > { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: SystemType > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRequiredCustomModifiers()` overload"] fn get_required_custom_modifiers (self ,) -> :: unity2 :: Array < :: unity2 :: SystemType > { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: SystemType > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributesData()` overload"] fn get_custom_attributes_data (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MonoProperty as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-reflection-monoproperty")]
-impl < __T : IMonoProperty > IMonoPropertyMethods for __T { }
-
-#[cfg(feature = "system-reflection-monoproperty")]
-impl MonoProperty { pub fn cache_property_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_can_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_can_write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_property_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_reflected_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_declaring_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_accessors_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_get_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_index_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_set_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_constant_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_raw_constant_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_custom_attributes_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn create_getter_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_optional_custom_modifiers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_required_custom_modifiers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_custom_attributes_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } }
-
-#[cfg(feature = "system-reflection-monoproperty")]
-impl MonoProperty {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MonoProperty) , :: core :: stringify ! (new) ,)) ; < Self as IMonoPropertyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-monoproperty")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MonoProperty_Getter_2<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoProperty_Getter_2), ::core::stringify!(new),));
+ <Self as IMonoProperty_Getter_2Methods<T0,T1> > ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "system-reflection-monoproperty")]
-pub trait IMonoProperty_GetterAdapterMethods : IMonoProperty_GetterAdapter { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < MonoProperty_GetterAdapter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty_GetterAdapter , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d9b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::system::object::Object)` overload"] fn invoke (self , target_0 : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { let __receiver = < MonoProperty_GetterAdapter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoProperty_GetterAdapter , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d9ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target_0) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-monoproperty")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MonoProperty_StaticGetter_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke()` overload"]#[method(name="Invoke",args=0)]pub fn invoke(self,)->T0;
+}
 
-#[cfg(feature = "system-reflection-monoproperty")]
-impl < __T : IMonoProperty_GetterAdapter > IMonoProperty_GetterAdapterMethods for __T { }
+#[cfg(feature="system-reflection-monoproperty")]impl<T0: ::unity2::ClassIdentity>MonoProperty_StaticGetter_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoProperty_StaticGetter_1), ::core::stringify!(new),));
+ <Self as IMonoProperty_StaticGetter_1Methods<T0> > ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "system-reflection-monoproperty")]
-impl MonoProperty_GetterAdapter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty_GetterAdapter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoProperty_GetterAdapter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-reflection-monoproperty")]impl MonoProperty{pub fn getter_adapter_frame<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity,M1: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(getter:impl::core::convert::Into<crate::system::reflection::monoproperty::MonoProperty_Getter_2<M0,M1> > ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<MonoProperty as::unity2::ClassIdentity> ::class(),"GetterAdapterFrame",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetterAdapterFrame",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize=(<M0 as::unity2::IlType> ::il_type()as*const _ as usize)^(<M1 as::unity2::IlType> ::il_type()as*const _ as usize);
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type(), <M1 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::reflection::monoproperty::MonoProperty_Getter_2<M0,M1> ,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(getter), ::core::convert::Into::into(obj), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn static_getter_adapter_frame<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(getter:impl::core::convert::Into<crate::system::reflection::monoproperty::MonoProperty_StaticGetter_1<M0> > ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<MonoProperty as::unity2::ClassIdentity> ::class(),"StaticGetterAdapterFrame",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <MonoProperty as::unity2::ClassIdentity> ::NAME,"StaticGetterAdapterFrame",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::reflection::monoproperty::MonoProperty_StaticGetter_1<M0> ,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(getter), ::core::convert::Into::into(obj), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`CreateGetterDelegate(crate::system::reflection::methodinfo::MethodInfo)` overload"]pub fn create_getter_delegate(method:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->crate::system::reflection::monoproperty::MonoProperty_GetterAdapter{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33842b0usize)as*mut u8,crate::system::reflection::monoproperty::MonoProperty_GetterAdapter;
+(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(method))}
+}
+}
 
-#[cfg(feature = "system-reflection-monoproperty")]
-impl MonoProperty_GetterAdapter {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MonoProperty_GetterAdapter) , :: core :: stringify ! (new) ,)) ; < Self as IMonoProperty_GetterAdapterMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-reflection-monoproperty")]pub trait IMonoPropertyMethods:IMonoProperty{#[doc="`CachePropertyInfo(crate::system::reflection::pinfo::PInfo)` overload"]fn cache_property_info(self,flags:impl::core::convert::Into<crate::system::reflection::pinfo::PInfo>)->(){unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33837d0usize)as*mut u8,();
+(MonoProperty)__receiver,(crate::system::reflection::pinfo::PInfo)::core::convert::Into::into(flags))}
+}
+#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::propertyattributes::PropertyAttributes{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383830usize)as*mut u8,crate::system::reflection::propertyattributes::PropertyAttributes;
+(MonoProperty)__receiver)}
+}
+#[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383880usize)as*mut u8,bool;
+(MonoProperty)__receiver)}
+}
+#[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33838f0usize)as*mut u8,bool;
+(MonoProperty)__receiver)}
+}
+#[doc="`get_PropertyType()` overload"]fn get_property_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383960usize)as*mut u8, ::unity2::SystemType;
+(MonoProperty)__receiver)}
+}
+#[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383a50usize)as*mut u8, ::unity2::SystemType;
+(MonoProperty)__receiver)}
+}
+#[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383aa0usize)as*mut u8, ::unity2::SystemType;
+(MonoProperty)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383af0usize)as*mut u8, ::unity2::Il2CppString;
+(MonoProperty)__receiver)}
+}
+#[doc="`GetAccessors(bool)` overload"]fn get_accessors(self,non_public:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383b40usize)as*mut u8, ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> ;
+(MonoProperty)__receiver,(bool)::core::convert::Into::into(non_public))}
+}
+#[doc="`GetGetMethod(bool)` overload"]fn get_get_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383d60usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MonoProperty)__receiver,(bool)::core::convert::Into::into(non_public))}
+}
+#[doc="`GetIndexParameters()` overload"]fn get_index_parameters(self,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383e30usize)as*mut u8, ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> ;
+(MonoProperty)__receiver)}
+}
+#[doc="`GetSetMethod(bool)` overload"]fn get_set_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384040usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MonoProperty)__receiver,(bool)::core::convert::Into::into(non_public))}
+}
+#[doc="`GetConstantValue()` overload"]fn get_constant_value(self,)->crate::system::object::Object{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384110usize)as*mut u8,crate::system::object::Object;
+(MonoProperty)__receiver)}
+}
+#[doc="`GetRawConstantValue()` overload"]fn get_raw_constant_value(self,)->crate::system::object::Object{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384130usize)as*mut u8,crate::system::object::Object;
+(MonoProperty)__receiver)}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384140usize)as*mut u8,bool;
+(MonoProperty)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33841c0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(MonoProperty)__receiver,(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384230usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(MonoProperty)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetValue(crate::system::object::Object, ::unity2::Array<crate::system::object::Object>)` overload"]fn get_value(self,obj:impl::core::convert::Into<crate::system::object::Object> ,index:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384600usize)as*mut u8,crate::system::object::Object;
+(MonoProperty)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(index))}
+}
+#[doc="`GetOptionalCustomModifiers()` overload"]fn get_optional_custom_modifiers(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384a50usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
+(MonoProperty)__receiver)}
+}
+#[doc="`GetRequiredCustomModifiers()` overload"]fn get_required_custom_modifiers(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384b00usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
+(MonoProperty)__receiver)}
+}
+#[doc="`GetCustomAttributesData()` overload"]fn get_custom_attributes_data(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384ba0usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> ;
+(MonoProperty)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384bb0usize)as*mut u8,();
+(MonoProperty)__receiver)}
+}
+}
+
+#[cfg(feature="system-reflection-monoproperty")]impl<__T:IMonoProperty>IMonoPropertyMethods for __T{}
+
+#[cfg(feature="system-reflection-monoproperty")]impl MonoProperty{pub fn cache_property_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_can_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_can_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_property_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_reflected_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_declaring_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_accessors_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_get_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_index_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_set_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_constant_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_raw_constant_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_custom_attributes_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn create_getter_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_optional_custom_modifiers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_required_custom_modifiers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_custom_attributes_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
+
+#[cfg(feature="system-reflection-monoproperty")]impl MonoProperty{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoProperty), ::core::stringify!(new),));
+ <Self as IMonoPropertyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-monoproperty")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MonoProperty_GetterAdapter;
+    pub use super::IMonoProperty_GetterAdapter;
+    pub use super::IMonoProperty_GetterAdapterMethods;
     pub use super::MonoProperty_Getter_2;
     pub use super::IMonoProperty_Getter_2;
     pub use super::IMonoProperty_Getter_2Methods;
@@ -108,9 +264,6 @@ pub mod prelude {
     pub use super::MonoProperty;
     pub use super::IMonoProperty;
     pub use super::IMonoPropertyMethods;
-    pub use super::MonoProperty_GetterAdapter;
-    pub use super::IMonoProperty_GetterAdapter;
-    pub use super::IMonoProperty_GetterAdapterMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

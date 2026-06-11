@@ -4,35 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: networking :: uploadhandler :: { IUploadHandler , UploadHandler }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::networking::uploadhandler::{IUploadHandler,UploadHandler}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/uploadhandlerraw/UploadHandlerRaw.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "UploadHandlerRaw")] # [parent (crate :: unity_engine :: networking :: uploadhandler :: UploadHandler)] pub struct UploadHandlerRaw {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/uploadhandlerraw/UploadHandlerRaw.md"))]#[::unity2::class(namespace="UnityEngine.Networking",name="UploadHandlerRaw")]#[parent(crate::unity_engine::networking::uploadhandler::UploadHandler)]pub struct UploadHandlerRaw{}
 
 }
 
 #[cfg(feature = "unity_engine-networking-uploadhandlerraw-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-impl UploadHandlerRaw { # [doc = "`Create(crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw, ::unity2::Array<u8>)` overload"] pub fn create (self_ : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: uploadhandlerraw :: UploadHandlerRaw > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: networking :: uploadhandlerraw :: UploadHandlerRaw , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cd10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (self_) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-uploadhandlerraw")]impl UploadHandlerRaw{#[doc="`Create(crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw, ::unity2::Array<u8>)` overload"]pub fn create(self_:impl::core::convert::Into<crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw> ,data:impl::core::convert::Into< ::unity2::Array<u8> >)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cd10usize)as*mut u8, ::unity2::IntPtr;
+(crate::unity_engine::networking::uploadhandlerraw::UploadHandlerRaw)::core::convert::Into::into(self_),(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-pub trait IUploadHandlerRawMethods : IUploadHandlerRaw { # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < UploadHandlerRaw as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UploadHandlerRaw , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1c900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-uploadhandlerraw")]pub trait IUploadHandlerRawMethods:IUploadHandlerRaw{#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,data:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <UploadHandlerRaw as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1c900usize)as*mut u8,();
+(UploadHandlerRaw)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-impl < __T : IUploadHandlerRaw > IUploadHandlerRawMethods for __T { }
+#[cfg(feature="unity_engine-networking-uploadhandlerraw")]impl<__T:IUploadHandlerRaw>IUploadHandlerRawMethods for __T{}
 
-#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-impl UploadHandlerRaw { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UploadHandlerRaw as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UploadHandlerRaw as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-networking-uploadhandlerraw")]impl UploadHandlerRaw{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
-impl UploadHandlerRaw {
-# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (data : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UploadHandlerRaw) , :: core :: stringify ! (new) ,)) ; < Self as IUploadHandlerRawMethods > :: ctor (this , data) ; this }
+#[cfg(feature="unity_engine-networking-uploadhandlerraw")]impl UploadHandlerRaw{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(data: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UploadHandlerRaw), ::core::stringify!(new),));
+ <Self as IUploadHandlerRawMethods> ::ctor(this,data);
+this}
 }
 
 #[cfg(feature = "unity_engine-networking-uploadhandlerraw")]

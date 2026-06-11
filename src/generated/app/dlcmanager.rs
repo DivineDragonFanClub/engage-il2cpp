@@ -4,149 +4,216 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager {
-# [static_field] # [rename (name = "ApplicationId")] pub application_id : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "StreamingAssetsPath")] pub streaming_assets_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_MountData")] pub s_mount_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dlcmanager :: DLCManager_MountData > ,
-# [static_field] # [rename (name = "s_AwakeChangedEvent")] pub s_awake_changed_event : bool ,
-# [static_field] # [rename (name = "s_ChangedEventListener")] pub s_changed_event_listener : crate :: unity_engine :: events :: unityevent :: UnityEvent ,
-# [static_field] # [rename (name = "s_IsInitialized")] pub s_is_initialized : bool ,
-# [static_field] # [rename (name = "s_HasList")] pub s_has_list : :: unity2 :: Array < crate :: app :: dlcmanager :: DLCManager_DLCList > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager_DLCList.md"))]#[::unity2::class(namespace="App",name="DLCManager.DLCList")]#[parent(crate::system::object::Object)]pub struct DLCManager_DLCList{#[offset(16)]#[rename(name="content")]pub content:crate::app::dlcmanager::DLCManager_Content, #[offset(20)]#[rename(name="hasContent")]pub has_content:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager_MountData.md"))]#[::unity2::class(namespace="App",name="DLCManager.MountData")]#[parent(crate::system::object::Object)]pub struct DLCManager_MountData{#[offset(16)]#[rename(name="content")]pub content:crate::app::dlcmanager::DLCManager_Content, #[offset(24)]#[rename(name="mountBuffer")]pub mount_buffer: ::unity2::Array<u8> , #[offset(32)]#[rename(name="mountName")]pub mount_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager_Content.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DLCManager_Content{pub value:i32,}
+impl::unity2::ClassIdentity for DLCManager_Content{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DLCManager.Content";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DLCManager_Content{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl DLCManager_Content{pub fn e0()->Self{Self{value:0}
+}
+pub fn h0()->Self{Self{value:1}
+}
+pub fn num()->Self{Self{value:2}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.DLCList")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_DLCList {
-# [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
-# [offset (20)] # [rename (name = "hasContent")] pub has_content : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.MountData")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_MountData {
-# [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
-# [offset (24)] # [rename (name = "mountBuffer")] pub mount_buffer : :: unity2 :: Array < u8 > ,
-# [offset (32)] # [rename (name = "mountName")] pub mount_name : :: unity2 :: Il2CppString ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dlcmanager/DLCManager_Content.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DLCManager_Content  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for DLCManager_Content  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DLCManager.Content";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for DLCManager_Content  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  DLCManager_Content  {
-    pub fn e0() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn h0() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager.md"))]#[::unity2::class(namespace="App",name="DLCManager")]#[parent(crate::system::object::Object)]pub struct DLCManager{#[static_field]#[rename(name="ApplicationId")]pub application_id: ::unity2::Il2CppString, #[static_field]#[rename(name="StreamingAssetsPath")]pub streaming_assets_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_MountData")]pub s_mount_data:crate::system::collections::generic::list_1::List_1<crate::app::dlcmanager::DLCManager_MountData> , #[static_field]#[rename(name="s_AwakeChangedEvent")]pub s_awake_changed_event:bool, #[static_field]#[rename(name="s_ChangedEventListener")]pub s_changed_event_listener:crate::unity_engine::events::unityevent::UnityEvent, #[static_field]#[rename(name="s_IsInitialized")]pub s_is_initialized:bool, #[static_field]#[rename(name="s_HasList")]pub s_has_list: ::unity2::Array<crate::app::dlcmanager::DLCManager_DLCList> ,}
 
 }
 
 #[cfg(feature = "app-dlcmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f32b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] pub fn release () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f38d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Refresh()` overload"] pub fn refresh () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3a90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] pub fn update () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3d30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`MountDLC()` overload"] pub fn mount_dlc () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3360usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetFolderName(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn get_folder_name (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`GetAssetGroupName(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn get_asset_group_name (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3fa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`GetContent(::unity2::Il2CppString)` overload"] pub fn get_content (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: dlcmanager :: DLCManager_Content { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: dlcmanager :: DLCManager_Content = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f40c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetStreamingAssetsDLCPath(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn get_streaming_assets_dlc_path (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4180usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`HasContent(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn has_content (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4270usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`HasContents(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)` overload"] pub fn has_contents (contents : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dlcmanager :: DLCManager_Content > >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: app :: dlcmanager :: DLCManager_Content > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4470usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (contents) , :: core :: option :: Option :: None) } } } # [doc = "`HasContentError(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn has_content_error (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`GetAddOnContentIndex(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn get_add_on_content_index (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f46b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`TryIndexToContent(i32, *mutcrate::app::dlcmanager::DLCManager_Content)` overload"] pub fn try_index_to_content (index : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: app :: dlcmanager :: DLCManager_Content) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: dlcmanager :: DLCManager_Content > :: uninit () ; let __ret = { { let __inner : extern "C" fn (i32 , * mut crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`IsRequiredReleaseVersion(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn is_required_release_version (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`GetAllContents()` overload"] pub fn get_all_contents () -> :: unity2 :: Array < crate :: app :: dlcmanager :: DLCManager_Content > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: dlcmanager :: DLCManager_Content > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f46c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ShowUnacceptableVersion()` overload"] pub fn show_unacceptable_version () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4a10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ShowLostError(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn show_lost_error (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`ShowLostError(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)` overload"] pub fn show_lost_error_2 (contents : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dlcmanager :: DLCManager_Content > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: app :: dlcmanager :: DLCManager_Content > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (contents) , :: core :: option :: Option :: None) } } } # [doc = "`InitHasList()` overload"] pub fn init_has_list () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetHasList(crate::app::dlcmanager::DLCManager_Content)` overload"] pub fn get_has_list (content : impl :: core :: convert :: Into < crate :: app :: dlcmanager :: DLCManager_Content >) -> crate :: app :: dlcmanager :: DLCManager_DLCList { unsafe { { let __inner : extern "C" fn (crate :: app :: dlcmanager :: DLCManager_Content , :: unity2 :: OptionalMethod ,) -> crate :: app :: dlcmanager :: DLCManager_DLCList = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f43a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`RefreshHasList()` overload"] pub fn refresh_has_list () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`StartListChangedEvent()` overload"] pub fn start_list_changed_event () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4c60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryRunListChangedEvent()` overload"] pub fn try_run_list_changed_event () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3da0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddChangedEventListener(crate::unity_engine::events::unityaction::UnityAction)` overload"] pub fn add_changed_event_listener (add_event : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction :: UnityAction >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: events :: unityaction :: UnityAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4d10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (add_event) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveChangedEventListener(crate::unity_engine::events::unityaction::UnityAction)` overload"] pub fn remove_changed_event_listener (remove_event : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction :: UnityAction >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: events :: unityaction :: UnityAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4d90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (remove_event) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4e20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-dlcmanager")]
-pub trait IDLCManagerMethods : IDLCManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DLCManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DLCManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f4e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-dlcmanager")]
-impl < __T : IDLCManager > IDLCManagerMethods for __T { }
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn refresh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn mount_dlc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_folder_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_asset_group_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_streaming_assets_dlc_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn has_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn has_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn has_content_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_add_on_content_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn try_index_to_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_required_release_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_all_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn show_unacceptable_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn show_lost_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn show_lost_error_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn init_has_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_has_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn refresh_has_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn start_list_changed_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn try_run_list_changed_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn add_changed_event_listener_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn remove_changed_event_listener_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } }
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DLCManager) , :: core :: stringify ! (new) ,)) ; < Self as IDLCManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dlcmanager")]pub trait IDLCManager_DLCListMethods:IDLCManager_DLCList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DLCManager_DLCList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cedb0usize)as*mut u8,();
+(DLCManager_DLCList)__receiver)}
+}
 }
 
-#[cfg(feature = "app-dlcmanager")]
-pub trait IDLCManager_DLCListMethods : IDLCManager_DLCList { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DLCManager_DLCList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DLCManager_DLCList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cedb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dlcmanager")]impl<__T:IDLCManager_DLCList>IDLCManager_DLCListMethods for __T{}
 
-#[cfg(feature = "app-dlcmanager")]
-impl < __T : IDLCManager_DLCList > IDLCManager_DLCListMethods for __T { }
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager_DLCList { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager_DLCList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager_DLCList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DLCManager_DLCList) , :: core :: stringify ! (new) ,)) ; < Self as IDLCManager_DLCListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dlcmanager")]impl DLCManager_DLCList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "app-dlcmanager")]
-pub trait IDLCManager_MountDataMethods : IDLCManager_MountData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DLCManager_MountData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DLCManager_MountData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cedc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dlcmanager")]impl DLCManager_DLCList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DLCManager_DLCList), ::core::stringify!(new),));
+ <Self as IDLCManager_DLCListMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-dlcmanager")]
-impl < __T : IDLCManager_MountData > IDLCManager_MountDataMethods for __T { }
+#[cfg(feature="app-dlcmanager")]pub trait IDLCManager_MountDataMethods:IDLCManager_MountData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DLCManager_MountData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cedc0usize)as*mut u8,();
+(DLCManager_MountData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager_MountData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DLCManager_MountData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-dlcmanager")]impl<__T:IDLCManager_MountData>IDLCManager_MountDataMethods for __T{}
 
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager_MountData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DLCManager_MountData) , :: core :: stringify ! (new) ,)) ; < Self as IDLCManager_MountDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dlcmanager")]impl DLCManager_MountData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-dlcmanager")]impl DLCManager_MountData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DLCManager_MountData), ::core::stringify!(new),));
+ <Self as IDLCManager_MountDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-dlcmanager")]impl DLCManager{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f32b0usize)as*mut u8,();
+)}
+}
+#[doc="`Release()` overload"]pub fn release()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f38d0usize)as*mut u8,();
+)}
+}
+#[doc="`Refresh()` overload"]pub fn refresh()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f3a90usize)as*mut u8,();
+)}
+}
+#[doc="`Update()` overload"]pub fn update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f3d30usize)as*mut u8,();
+)}
+}
+#[doc="`MountDLC()` overload"]pub fn mount_dlc()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f3360usize)as*mut u8,();
+)}
+}
+#[doc="`GetFolderName(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn get_folder_name(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4030usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`GetAssetGroupName(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn get_asset_group_name(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f3fa0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`GetContent(::unity2::Il2CppString)` overload"]pub fn get_content(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::dlcmanager::DLCManager_Content{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f40c0usize)as*mut u8,crate::app::dlcmanager::DLCManager_Content;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetStreamingAssetsDLCPath(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn get_streaming_assets_dlc_path(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4180usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`HasContent(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn has_content(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4270usize)as*mut u8,bool;
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`HasContents(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)` overload"]pub fn has_contents(contents:impl::core::convert::Into< ::unity2::Array<crate::app::dlcmanager::DLCManager_Content> >)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4470usize)as*mut u8,bool;
+(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)::core::convert::Into::into(contents))}
+}
+#[doc="`HasContentError(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn has_content_error(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4540usize)as*mut u8,bool;
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`GetAddOnContentIndex(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn get_add_on_content_index(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f46b0usize)as*mut u8,i32;
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`TryIndexToContent(i32, *mutcrate::app::dlcmanager::DLCManager_Content)` overload"]pub fn try_index_to_content(index:impl::core::convert::Into<i32>)->(bool,crate::app::dlcmanager::DLCManager_Content){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::dlcmanager::DLCManager_Content> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x29f3ec0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(index),(*mut crate::app::dlcmanager::DLCManager_Content)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`IsRequiredReleaseVersion(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn is_required_release_version(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4460usize)as*mut u8,bool;
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`GetAllContents()` overload"]pub fn get_all_contents()-> ::unity2::Array<crate::app::dlcmanager::DLCManager_Content>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f46c0usize)as*mut u8, ::unity2::Array<crate::app::dlcmanager::DLCManager_Content> ;
+)}
+}
+#[doc="`ShowUnacceptableVersion()` overload"]pub fn show_unacceptable_version()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4a10usize)as*mut u8,();
+)}
+}
+#[doc="`ShowLostError(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn show_lost_error(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4600usize)as*mut u8,();
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`ShowLostError(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)` overload"]pub fn show_lost_error_2(contents:impl::core::convert::Into< ::unity2::Array<crate::app::dlcmanager::DLCManager_Content> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4a20usize)as*mut u8,();
+(::unity2::Array<crate::app::dlcmanager::DLCManager_Content>)::core::convert::Into::into(contents))}
+}
+#[doc="`InitHasList()` overload"]pub fn init_has_list()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f3700usize)as*mut u8,();
+)}
+}
+#[doc="`GetHasList(crate::app::dlcmanager::DLCManager_Content)` overload"]pub fn get_has_list(content:impl::core::convert::Into<crate::app::dlcmanager::DLCManager_Content>)->crate::app::dlcmanager::DLCManager_DLCList{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f43a0usize)as*mut u8,crate::app::dlcmanager::DLCManager_DLCList;
+(crate::app::dlcmanager::DLCManager_Content)::core::convert::Into::into(content))}
+}
+#[doc="`RefreshHasList()` overload"]pub fn refresh_has_list()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f3b00usize)as*mut u8,();
+)}
+}
+#[doc="`StartListChangedEvent()` overload"]pub fn start_list_changed_event()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4c60usize)as*mut u8,();
+)}
+}
+#[doc="`TryRunListChangedEvent()` overload"]pub fn try_run_list_changed_event()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f3da0usize)as*mut u8,bool;
+)}
+}
+#[doc="`AddChangedEventListener(crate::unity_engine::events::unityaction::UnityAction)` overload"]pub fn add_changed_event_listener(add_event:impl::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4d10usize)as*mut u8,();
+(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(add_event))}
+}
+#[doc="`RemoveChangedEventListener(crate::unity_engine::events::unityaction::UnityAction)` overload"]pub fn remove_changed_event_listener(remove_event:impl::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4d90usize)as*mut u8,();
+(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(remove_event))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f4e20usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-dlcmanager")]pub trait IDLCManagerMethods:IDLCManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DLCManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29f4e10usize)as*mut u8,();
+(DLCManager)__receiver)}
+}
+}
+
+#[cfg(feature="app-dlcmanager")]impl<__T:IDLCManager>IDLCManagerMethods for __T{}
+
+#[cfg(feature="app-dlcmanager")]impl DLCManager{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn refresh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn mount_dlc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_folder_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_asset_group_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_streaming_assets_dlc_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn has_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn has_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn has_content_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_add_on_content_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn try_index_to_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_required_release_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_all_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn show_unacceptable_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn show_lost_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn show_lost_error_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn init_has_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_has_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn refresh_has_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn start_list_changed_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn try_run_list_changed_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn add_changed_event_listener_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn remove_changed_event_listener_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
+
+#[cfg(feature="app-dlcmanager")]impl DLCManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DLCManager), ::core::stringify!(new),));
+ <Self as IDLCManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dlcmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DLCManager;
-    pub use super::IDLCManager;
-    pub use super::IDLCManagerMethods;
     pub use super::DLCManager_DLCList;
     pub use super::IDLCManager_DLCList;
     pub use super::IDLCManager_DLCListMethods;
@@ -154,6 +221,9 @@ pub mod prelude {
     pub use super::IDLCManager_MountData;
     pub use super::IDLCManager_MountDataMethods;
     pub use super::DLCManager_Content;
+    pub use super::DLCManager;
+    pub use super::IDLCManager;
+    pub use super::IDLCManagerMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

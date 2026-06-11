@@ -4,263 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TroopListSortMenu_SortType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistsortmenu/TroopListSortMenu.md"))]#[::unity2::class(namespace="App",name="TroopListSortMenu")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TroopListSortMenu{#[offset(24)]#[rename(name="m_pageRoot")]pub m_page_root:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_sortTitle")]pub m_sort_title:crate::system::collections::generic::list_1::List_1<crate::app::trooplistsortmenu::TroopListSortMenu_SortTitle> , #[offset(40)]#[rename(name="m_cursorRoot")]pub m_cursor_root:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_pageTitle")]pub m_page_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_pageIcon")]pub m_page_icon:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(64)]#[rename(name="m_upArrow")]pub m_up_arrow:crate::unity_engine::sprite::Sprite, #[offset(72)]#[rename(name="m_downArrow")]pub m_down_arrow:crate::unity_engine::sprite::Sprite, #[offset(80)]#[rename(name="m_selectIndex")]pub m_select_index:i32, #[offset(84)]#[rename(name="m_posX")]pub m_pos_x:f32, #[offset(88)]#[rename(name="m_posY")]pub m_pos_y:f32, #[offset(92)]#[rename(name="m_fromX")]pub m_from_x:f32, #[offset(96)]#[rename(name="m_fromY")]pub m_from_y:f32, #[offset(100)]#[rename(name="m_toX")]pub m_to_x:f32, #[offset(104)]#[rename(name="m_toY")]pub m_to_y:f32, #[offset(108)]#[rename(name="m_sizeW")]pub m_size_w:f32, #[offset(112)]#[rename(name="m_sizeH")]pub m_size_h:f32, #[offset(116)]#[rename(name="m_fromW")]pub m_from_w:f32, #[offset(120)]#[rename(name="m_fromH")]pub m_from_h:f32, #[offset(124)]#[rename(name="m_toW")]pub m_to_w:f32, #[offset(128)]#[rename(name="m_toH")]pub m_to_h:f32, #[offset(132)]#[rename(name="m_moveTick")]pub m_move_tick:f32, #[offset(136)]#[rename(name="m_moveFrame")]pub m_move_frame:f32, #[static_field]#[rename(name="m_sortOrder")]pub m_sort_order:crate::app::trooplistsortmenu::TroopListSortMenu_SortOrder, #[static_field]#[rename(name="m_sortType")]pub m_sort_type:crate::app::trooplistsortmenu::TroopListSortMenu_SortType,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistsortmenu/TroopListSortMenu_SortTitle.md"))]#[::unity2::class(namespace="App",name="TroopListSortMenu.SortTitle")]#[parent(crate::system::object::Object)]pub struct TroopListSortMenu_SortTitle{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_page")]pub m_page:i32, #[offset(28)]#[rename(name="m_sortType")]pub m_sort_type:crate::app::trooplistsortmenu::TroopListSortMenu_SortType, #[offset(32)]#[rename(name="m_title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_arrow")]pub m_arrow:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistsortmenu/TroopListSortMenu_SortType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TroopListSortMenu_SortType{pub value:i32,}
+impl::unity2::ClassIdentity for TroopListSortMenu_SortType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TroopListSortMenu.SortType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TroopListSortMenu_SortType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TroopListSortMenu_SortType{pub fn none()->Self{Self{value:0}
+}
+pub fn class()->Self{Self{value:1}
+}
+pub fn level()->Self{Self{value:2}
+}
+pub fn exp()->Self{Self{value:3}
+}
+pub fn hp()->Self{Self{value:4}
+}
+pub fn str()->Self{Self{value:5}
+}
+pub fn mgc()->Self{Self{value:6}
+}
+pub fn tec()->Self{Self{value:7}
+}
+pub fn spd()->Self{Self{value:8}
+}
+pub fn luc()->Self{Self{value:9}
+}
+pub fn def()->Self{Self{value:10}
+}
+pub fn m_def()->Self{Self{value:11}
+}
+pub fn phy()->Self{Self{value:12}
+}
+pub fn attack()->Self{Self{value:13}
+}
+pub fn hit()->Self{Self{value:14}
+}
+pub fn crit()->Self{Self{value:15}
+}
+pub fn avoid()->Self{Self{value:16}
+}
+pub fn crit_avoid()->Self{Self{value:17}
+}
+pub fn r#move()->Self{Self{value:18}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TroopListSortMenu_SortType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TroopListSortMenu.SortType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistsortmenu/TroopListSortMenu_SortOrder.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TroopListSortMenu_SortOrder{pub value:i32,}
+impl::unity2::ClassIdentity for TroopListSortMenu_SortOrder{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TroopListSortMenu.SortOrder";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for TroopListSortMenu_SortType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TroopListSortMenu_SortOrder{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  TroopListSortMenu_SortType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn class() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn level() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn exp() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn hp() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn str() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn mgc() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn tec() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn spd() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn luc() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn def() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn m_def() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn phy() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn hit() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn crit() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn avoid() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn crit_avoid() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn r#move() -> Self {
-        Self { value: 18 }
-
-    }
-
+impl TroopListSortMenu_SortOrder{pub fn none()->Self{Self{value:0}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListSortMenu")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TroopListSortMenu {
-# [offset (24)] # [rename (name = "m_pageRoot")] pub m_page_root : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (32)] # [rename (name = "m_sortTitle")] pub m_sort_title : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortTitle > ,
-# [offset (40)] # [rename (name = "m_cursorRoot")] pub m_cursor_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_pageTitle")] pub m_page_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_pageIcon")] pub m_page_icon : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (64)] # [rename (name = "m_upArrow")] pub m_up_arrow : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (72)] # [rename (name = "m_downArrow")] pub m_down_arrow : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (80)] # [rename (name = "m_selectIndex")] pub m_select_index : i32 ,
-# [offset (84)] # [rename (name = "m_posX")] pub m_pos_x : f32 ,
-# [offset (88)] # [rename (name = "m_posY")] pub m_pos_y : f32 ,
-# [offset (92)] # [rename (name = "m_fromX")] pub m_from_x : f32 ,
-# [offset (96)] # [rename (name = "m_fromY")] pub m_from_y : f32 ,
-# [offset (100)] # [rename (name = "m_toX")] pub m_to_x : f32 ,
-# [offset (104)] # [rename (name = "m_toY")] pub m_to_y : f32 ,
-# [offset (108)] # [rename (name = "m_sizeW")] pub m_size_w : f32 ,
-# [offset (112)] # [rename (name = "m_sizeH")] pub m_size_h : f32 ,
-# [offset (116)] # [rename (name = "m_fromW")] pub m_from_w : f32 ,
-# [offset (120)] # [rename (name = "m_fromH")] pub m_from_h : f32 ,
-# [offset (124)] # [rename (name = "m_toW")] pub m_to_w : f32 ,
-# [offset (128)] # [rename (name = "m_toH")] pub m_to_h : f32 ,
-# [offset (132)] # [rename (name = "m_moveTick")] pub m_move_tick : f32 ,
-# [offset (136)] # [rename (name = "m_moveFrame")] pub m_move_frame : f32 ,
-# [static_field] # [rename (name = "m_sortOrder")] pub m_sort_order : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortOrder ,
-# [static_field] # [rename (name = "m_sortType")] pub m_sort_type : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType ,
+pub fn low_to_high()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortOrder.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TroopListSortMenu_SortOrder  {
-    pub value: i32,
+pub fn high_to_low()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for TroopListSortMenu_SortOrder  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TroopListSortMenu.SortOrder";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TroopListSortMenu_SortOrder  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TroopListSortMenu_SortOrder  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn low_to_high() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn high_to_low() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu_SortTitle.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListSortMenu.SortTitle")] # [parent (crate :: system :: object :: Object)] pub struct TroopListSortMenu_SortTitle {
-# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_page")] pub m_page : i32 ,
-# [offset (28)] # [rename (name = "m_sortType")] pub m_sort_type : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType ,
-# [offset (32)] # [rename (name = "m_title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_arrow")] pub m_arrow : crate :: unity_engine :: gameobject :: GameObject ,
 }
 
 }
@@ -268,48 +99,189 @@ impl  TroopListSortMenu_SortOrder  {
 #[cfg(feature = "app-trooplistsortmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-trooplistsortmenu")]
-impl TroopListSortMenu { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22acae0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-trooplistsortmenu")]
-pub trait ITroopListSortMenuMethods : ITroopListSortMenu { # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22abb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCursorColor(crate::unity_engine::color::Color)` overload"] fn set_cursor_color (self , c : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPageNum()` overload"] fn get_page_num (self ,) -> i32 { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPage(i32)` overload"] fn set_page (self , page : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a4070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (page) , :: core :: option :: Option :: None) } } } # [doc = "`GetCursorX()` overload"] fn get_cursor_x (self ,) -> f32 { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCursorY()` overload"] fn get_cursor_y (self ,) -> f32 { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCursorPos()` overload"] fn set_cursor_pos (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetNextCursorPos()` overload"] fn set_next_cursor_pos (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IncSelect(bool)` overload"] fn inc_select (self , is_trigger : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a6800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`DecSelect(bool)` overload"] fn dec_select (self , is_trigger : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a68d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`GetSelectSortPage()` overload"] fn get_select_sort_page (self ,) -> i32 { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a6790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSortOrder()` overload"] fn get_sort_order (self ,) -> crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortOrder { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortOrder = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSortType()` overload"] fn get_sort_type (self ,) -> crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22aca60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangeSortOrder()` overload"] fn change_sort_order (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a6520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowCursor(crate::unity_engine::recttransform::RectTransform)` overload"] fn show_cursor (self , start_rect : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform >) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , crate :: unity_engine :: recttransform :: RectTransform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a48c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (start_rect) , :: core :: option :: Option :: None) } } } # [doc = "`HideCursor()` overload"] fn hide_cursor (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a4840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ac7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSortArrow()` overload"] fn update_sort_arrow (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a3e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22acad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-trooplistsortmenu")]
-impl < __T : ITroopListSortMenu > ITroopListSortMenuMethods for __T { }
-
-#[cfg(feature = "app-trooplistsortmenu")]
-impl TroopListSortMenu { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_cursor_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_page_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_cursor_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_cursor_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_cursor_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_next_cursor_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn inc_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn dec_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_select_sort_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_sort_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_sort_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn change_sort_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn show_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn hide_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn update_sort_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
-
-#[cfg(feature = "app-trooplistsortmenu")]
-impl TroopListSortMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TroopListSortMenu) , :: core :: stringify ! (new) ,)) ; < Self as ITroopListSortMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-trooplistsortmenu")]impl TroopListSortMenu{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22acae0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-trooplistsortmenu")]
-pub trait ITroopListSortMenu_SortTitleMethods : ITroopListSortMenu_SortTitle { # [doc = "`Setup(i32, ::unity2::Il2CppString, crate::app::trooplistsortmenu::TroopListSortMenu_SortType)` overload"] fn setup (self , page : impl :: core :: convert :: Into < i32 > , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType >) -> () { unsafe { let __receiver = < TroopListSortMenu_SortTitle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu_SortTitle , i32 , :: unity2 :: Il2CppString , crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b415a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (page) , :: core :: convert :: Into :: into (title) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetArrow(crate::unity_engine::sprite::Sprite)` overload"] fn set_arrow (self , set_arrow : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < TroopListSortMenu_SortTitle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu_SortTitle , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b41760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_arrow) , :: core :: option :: Option :: None) } } } # [doc = "`SetArrowHide()` overload"] fn set_arrow_hide (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu_SortTitle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu_SortTitle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b41810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPage()` overload"] fn get_page (self ,) -> i32 { unsafe { let __receiver = < TroopListSortMenu_SortTitle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu_SortTitle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b41890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSortType()` overload"] fn get_sort_type (self ,) -> crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType { unsafe { let __receiver = < TroopListSortMenu_SortTitle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu_SortTitle , :: unity2 :: OptionalMethod ,) -> crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b418a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCursorRectTransform()` overload"] fn get_cursor_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < TroopListSortMenu_SortTitle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu_SortTitle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b418b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTextColor(bool)` overload"] fn set_text_color (self , is_active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TroopListSortMenu_SortTitle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu_SortTitle , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b41910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_active) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TroopListSortMenu_SortTitle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListSortMenu_SortTitle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b41a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-trooplistsortmenu")]pub trait ITroopListSortMenuMethods:ITroopListSortMenu{#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22abb60usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`SetCursorColor(crate::unity_engine::color::Color)` overload"]fn set_cursor_color(self,c:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac230usize)as*mut u8,();
+(TroopListSortMenu)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(c))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac4d0usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`GetPageNum()` overload"]fn get_page_num(self,)->i32{unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac630usize)as*mut u8,i32;
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`SetPage(i32)` overload"]fn set_page(self,page:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a4070usize)as*mut u8,();
+(TroopListSortMenu)__receiver,(i32)::core::convert::Into::into(page))}
+}
+#[doc="`GetCursorX()` overload"]fn get_cursor_x(self,)->f32{unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac7c0usize)as*mut u8,f32;
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`GetCursorY()` overload"]fn get_cursor_y(self,)->f32{unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac7d0usize)as*mut u8,f32;
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`SetCursorPos()` overload"]fn set_cursor_pos(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac680usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`SetNextCursorPos()` overload"]fn set_next_cursor_pos(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac8b0usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`IncSelect(bool)` overload"]fn inc_select(self,is_trigger:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a6800usize)as*mut u8,bool;
+(TroopListSortMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`DecSelect(bool)` overload"]fn dec_select(self,is_trigger:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a68d0usize)as*mut u8,bool;
+(TroopListSortMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`GetSelectSortPage()` overload"]fn get_select_sort_page(self,)->i32{unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a6790usize)as*mut u8,i32;
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`GetSortOrder()` overload"]fn get_sort_order(self,)->crate::app::trooplistsortmenu::TroopListSortMenu_SortOrder{unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac9f0usize)as*mut u8,crate::app::trooplistsortmenu::TroopListSortMenu_SortOrder;
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`GetSortType()` overload"]fn get_sort_type(self,)->crate::app::trooplistsortmenu::TroopListSortMenu_SortType{unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22aca60usize)as*mut u8,crate::app::trooplistsortmenu::TroopListSortMenu_SortType;
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`ChangeSortOrder()` overload"]fn change_sort_order(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a6520usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`ShowCursor(crate::unity_engine::recttransform::RectTransform)` overload"]fn show_cursor(self,start_rect:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a48c0usize)as*mut u8,();
+(TroopListSortMenu)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(start_rect))}
+}
+#[doc="`HideCursor()` overload"]fn hide_cursor(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a4840usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ac7e0usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`UpdateSortArrow()` overload"]fn update_sort_arrow(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a3e30usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TroopListSortMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22acad0usize)as*mut u8,();
+(TroopListSortMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-trooplistsortmenu")]
-impl < __T : ITroopListSortMenu_SortTitle > ITroopListSortMenu_SortTitleMethods for __T { }
+#[cfg(feature="app-trooplistsortmenu")]impl<__T:ITroopListSortMenu>ITroopListSortMenuMethods for __T{}
 
-#[cfg(feature = "app-trooplistsortmenu")]
-impl TroopListSortMenu_SortTitle { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu_SortTitle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu_SortTitle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_arrow_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu_SortTitle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_page_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu_SortTitle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_sort_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu_SortTitle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_cursor_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu_SortTitle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu_SortTitle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListSortMenu_SortTitle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-trooplistsortmenu")]impl TroopListSortMenu{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_cursor_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_page_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_cursor_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_cursor_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_cursor_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_next_cursor_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn inc_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn dec_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_select_sort_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_sort_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_sort_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn change_sort_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn show_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn hide_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn update_sort_arrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "app-trooplistsortmenu")]
-impl TroopListSortMenu_SortTitle {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TroopListSortMenu_SortTitle) , :: core :: stringify ! (new) ,)) ; < Self as ITroopListSortMenu_SortTitleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-trooplistsortmenu")]impl TroopListSortMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TroopListSortMenu), ::core::stringify!(new),));
+ <Self as ITroopListSortMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-trooplistsortmenu")]pub trait ITroopListSortMenu_SortTitleMethods:ITroopListSortMenu_SortTitle{#[doc="`Setup(i32, ::unity2::Il2CppString, crate::app::trooplistsortmenu::TroopListSortMenu_SortType)` overload"]fn setup(self,page:impl::core::convert::Into<i32> ,title:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::app::trooplistsortmenu::TroopListSortMenu_SortType>)->(){unsafe{let __receiver= <TroopListSortMenu_SortTitle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b415a0usize)as*mut u8,();
+(TroopListSortMenu_SortTitle)__receiver,(i32)::core::convert::Into::into(page),(::unity2::Il2CppString)::core::convert::Into::into(title),(crate::app::trooplistsortmenu::TroopListSortMenu_SortType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetArrow(crate::unity_engine::sprite::Sprite)` overload"]fn set_arrow(self,set_arrow:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <TroopListSortMenu_SortTitle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b41760usize)as*mut u8,();
+(TroopListSortMenu_SortTitle)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(set_arrow))}
+}
+#[doc="`SetArrowHide()` overload"]fn set_arrow_hide(self,)->(){unsafe{let __receiver= <TroopListSortMenu_SortTitle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b41810usize)as*mut u8,();
+(TroopListSortMenu_SortTitle)__receiver)}
+}
+#[doc="`GetPage()` overload"]fn get_page(self,)->i32{unsafe{let __receiver= <TroopListSortMenu_SortTitle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b41890usize)as*mut u8,i32;
+(TroopListSortMenu_SortTitle)__receiver)}
+}
+#[doc="`GetSortType()` overload"]fn get_sort_type(self,)->crate::app::trooplistsortmenu::TroopListSortMenu_SortType{unsafe{let __receiver= <TroopListSortMenu_SortTitle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b418a0usize)as*mut u8,crate::app::trooplistsortmenu::TroopListSortMenu_SortType;
+(TroopListSortMenu_SortTitle)__receiver)}
+}
+#[doc="`GetCursorRectTransform()` overload"]fn get_cursor_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <TroopListSortMenu_SortTitle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b418b0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(TroopListSortMenu_SortTitle)__receiver)}
+}
+#[doc="`SetTextColor(bool)` overload"]fn set_text_color(self,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListSortMenu_SortTitle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b41910usize)as*mut u8,();
+(TroopListSortMenu_SortTitle)__receiver,(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TroopListSortMenu_SortTitle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b41a40usize)as*mut u8,();
+(TroopListSortMenu_SortTitle)__receiver)}
+}
+}
+
+#[cfg(feature="app-trooplistsortmenu")]impl<__T:ITroopListSortMenu_SortTitle>ITroopListSortMenu_SortTitleMethods for __T{}
+
+#[cfg(feature="app-trooplistsortmenu")]impl TroopListSortMenu_SortTitle{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_arrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_arrow_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sort_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_cursor_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-trooplistsortmenu")]impl TroopListSortMenu_SortTitle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TroopListSortMenu_SortTitle), ::core::stringify!(new),));
+ <Self as ITroopListSortMenu_SortTitleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-trooplistsortmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TroopListSortMenu_SortType;
     pub use super::TroopListSortMenu;
     pub use super::ITroopListSortMenu;
     pub use super::ITroopListSortMenuMethods;
-    pub use super::TroopListSortMenu_SortOrder;
     pub use super::TroopListSortMenu_SortTitle;
     pub use super::ITroopListSortMenu_SortTitle;
     pub use super::ITroopListSortMenu_SortTitleMethods;
+    pub use super::TroopListSortMenu_SortType;
+    pub use super::TroopListSortMenu_SortOrder;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

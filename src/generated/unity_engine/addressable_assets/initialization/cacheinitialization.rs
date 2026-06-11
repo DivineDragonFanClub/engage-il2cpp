@@ -4,62 +4,98 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: { AsyncOperationBase_1 , IAsyncOperationBase_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1,IAsyncOperationBase_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Initialization" , name = "CacheInitialization")] # [parent (crate :: system :: object :: Object)] pub struct CacheInitialization {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization_CacheInitOp.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Initialization",name="CacheInitialization.CacheInitOp")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<bool>)]pub struct CacheInitialization_CacheInitOp{#[offset(136)]#[rename(name="m_Callback")]pub m_callback:crate::system::func_1::Func_1<bool> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization_CacheInitOp.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Initialization" , name = "CacheInitialization.CacheInitOp")] # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < bool >)] pub struct CacheInitialization_CacheInitOp {
-# [offset (136)] # [rename (name = "m_Callback")] pub m_callback : crate :: system :: func_1 :: Func_1 < bool > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Initialization",name="CacheInitialization")]#[parent(crate::system::object::Object)]pub struct CacheInitialization{}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-pub trait ICacheInitializationMethods : ICacheInitialization { # [doc = "`Initialize(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn initialize (self , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data_str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < CacheInitialization as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitialization , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db32e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (data_str) , :: core :: option :: Option :: None) } } } # [doc = "`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn initialize_async (self , rm : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager > , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > { unsafe { let __receiver = < CacheInitialization as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitialization , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db32f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rm) , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CacheInitialization as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitialization , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-impl < __T : ICacheInitialization > ICacheInitializationMethods for __T { }
-
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-impl CacheInitialization { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitialization as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitialization as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitialization as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-impl CacheInitialization {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CacheInitialization) , :: core :: stringify ! (new) ,)) ; < Self as ICacheInitializationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]pub trait ICacheInitialization_CacheInitOpMethods:ICacheInitialization_CacheInitOp{#[doc="`Init(crate::system::func_1::Func_1<bool>)` overload"]fn init(self,callback:impl::core::convert::Into<crate::system::func_1::Func_1<bool> >)->(){unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb40usize)as*mut u8,();
+(CacheInitialization_CacheInitOp)__receiver,(crate::system::func_1::Func_1<bool>)::core::convert::Into::into(callback))}
+}
+#[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb50usize)as*mut u8,bool;
+(CacheInitialization_CacheInitOp)__receiver)}
+}
+#[doc="`Update(f32)` overload"]fn update(self,unscaled_delta_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb60usize)as*mut u8,();
+(CacheInitialization_CacheInitOp)__receiver,(f32)::core::convert::Into::into(unscaled_delta_time))}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbebe0usize)as*mut u8,();
+(CacheInitialization_CacheInitOp)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db34c0usize)as*mut u8,();
+(CacheInitialization_CacheInitOp)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-pub trait ICacheInitialization_CacheInitOpMethods : ICacheInitialization_CacheInitOp { # [doc = "`Init(crate::system::func_1::Func_1<bool>)` overload"] fn init (self , callback : impl :: core :: convert :: Into < crate :: system :: func_1 :: Func_1 < bool > >) -> () { unsafe { let __receiver = < CacheInitialization_CacheInitOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitialization_CacheInitOp , crate :: system :: func_1 :: Func_1 < bool > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbeb40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeWaitForCompletion()` overload"] fn invoke_wait_for_completion (self ,) -> bool { unsafe { let __receiver = < CacheInitialization_CacheInitOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitialization_CacheInitOp , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbeb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update(f32)` overload"] fn update (self , unscaled_delta_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CacheInitialization_CacheInitOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitialization_CacheInitOp , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbeb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unscaled_delta_time) , :: core :: option :: Option :: None) } } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < CacheInitialization_CacheInitOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitialization_CacheInitOp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbebe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CacheInitialization_CacheInitOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitialization_CacheInitOp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db34c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl<__T:ICacheInitialization_CacheInitOp>ICacheInitialization_CacheInitOpMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-impl < __T : ICacheInitialization_CacheInitOp > ICacheInitialization_CacheInitOpMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization_CacheInitOp{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-impl CacheInitialization_CacheInitOp { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitialization_CacheInitOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_wait_for_completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitialization_CacheInitOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitialization_CacheInitOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitialization_CacheInitOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitialization_CacheInitOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization_CacheInitOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CacheInitialization_CacheInitOp), ::core::stringify!(new),));
+ <Self as ICacheInitialization_CacheInitOpMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-impl CacheInitialization_CacheInitOp {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CacheInitialization_CacheInitOp) , :: core :: stringify ! (new) ,)) ; < Self as ICacheInitialization_CacheInitOpMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]pub trait ICacheInitializationMethods:ICacheInitialization{#[doc="`Initialize(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn initialize(self,id:impl::core::convert::Into< ::unity2::Il2CppString> ,data_str:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db32e0usize)as*mut u8,bool;
+(CacheInitialization)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(id),(::unity2::Il2CppString)::core::convert::Into::into(data_str))}
+}
+#[doc="`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn initialize_async(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,id:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db32f0usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> ;
+(CacheInitialization)__receiver,(crate::unity_engine::resource_management::resourcemanager::ResourceManager)::core::convert::Into::into(rm),(::unity2::Il2CppString)::core::convert::Into::into(id),(::unity2::Il2CppString)::core::convert::Into::into(data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3520usize)as*mut u8,();
+(CacheInitialization)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl<__T:ICacheInitialization>ICacheInitializationMethods for __T{}
+
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CacheInitialization), ::core::stringify!(new),));
+ <Self as ICacheInitializationMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CacheInitialization;
-    pub use super::ICacheInitialization;
-    pub use super::ICacheInitializationMethods;
     pub use super::CacheInitialization_CacheInitOp;
     pub use super::ICacheInitialization_CacheInitOp;
     pub use super::ICacheInitialization_CacheInitOpMethods;
+    pub use super::CacheInitialization;
+    pub use super::ICacheInitialization;
+    pub use super::ICacheInitializationMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

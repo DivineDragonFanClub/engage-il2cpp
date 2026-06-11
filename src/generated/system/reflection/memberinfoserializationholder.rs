@@ -4,18 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/memberinfoserializationholder/MemberInfoSerializationHolder.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MemberInfoSerializationHolder")] # [parent (crate :: system :: object :: Object)] pub struct MemberInfoSerializationHolder {
-# [offset (16)] # [rename (name = "m_memberName")] pub m_member_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_reflectedType")] pub m_reflected_type : crate :: system :: runtimetype :: RuntimeType ,
-# [offset (32)] # [rename (name = "m_signature")] pub m_signature : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_signature2")] pub m_signature2 : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_memberType")] pub m_member_type : crate :: system :: reflection :: membertypes :: MemberTypes ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/memberinfoserializationholder/MemberInfoSerializationHolder.md"))]#[::unity2::class(namespace="System.Reflection",name="MemberInfoSerializationHolder")]#[parent(crate::system::object::Object)]pub struct MemberInfoSerializationHolder{#[offset(16)]#[rename(name="m_memberName")]pub m_member_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_reflectedType")]pub m_reflected_type:crate::system::runtimetype::RuntimeType, #[offset(32)]#[rename(name="m_signature")]pub m_signature: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_signature2")]pub m_signature2: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_memberType")]pub m_member_type:crate::system::reflection::membertypes::MemberTypes,}
 
 }
 

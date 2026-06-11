@@ -4,39 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroommanager/AkRoomManager.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoomManager")] # [parent (crate :: system :: object :: Object)] pub struct AkRoomManager {
-# [offset (16)] # [rename (name = "m_Portals")] pub m_portals : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akroomportal :: AkRoomPortal > ,
-# [offset (24)] # [rename (name = "m_PortalsToUpdate")] pub m_portals_to_update : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akroomportal :: AkRoomPortal > ,
-# [offset (32)] # [rename (name = "m_Reflectors")] pub m_reflectors : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: aksurfacereflector :: AkSurfaceReflector > ,
-# [offset (40)] # [rename (name = "m_ReflectorsToUpdate")] pub m_reflectors_to_update : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: aksurfacereflector :: AkSurfaceReflector > ,
-# [static_field] # [rename (name = "m_Instance")] pub m_instance : crate :: root :: akroommanager :: AkRoomManager ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akroommanager/AkRoomManager.md"))]#[::unity2::class(namespace="",name="AkRoomManager")]#[parent(crate::system::object::Object)]pub struct AkRoomManager{#[offset(16)]#[rename(name="m_Portals")]pub m_portals:crate::system::collections::generic::list_1::List_1<crate::root::akroomportal::AkRoomPortal> , #[offset(24)]#[rename(name="m_PortalsToUpdate")]pub m_portals_to_update:crate::system::collections::generic::list_1::List_1<crate::root::akroomportal::AkRoomPortal> , #[offset(32)]#[rename(name="m_Reflectors")]pub m_reflectors:crate::system::collections::generic::list_1::List_1<crate::root::aksurfacereflector::AkSurfaceReflector> , #[offset(40)]#[rename(name="m_ReflectorsToUpdate")]pub m_reflectors_to_update:crate::system::collections::generic::list_1::List_1<crate::root::aksurfacereflector::AkSurfaceReflector> , #[static_field]#[rename(name="m_Instance")]pub m_instance:crate::root::akroommanager::AkRoomManager,}
 
 }
 
 #[cfg(feature = "root-akroommanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akroommanager")]
-impl AkRoomManager { # [doc = "`Init()` overload"] pub fn init () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f34a00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Terminate()` overload"] pub fn terminate () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f34bb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RegisterPortal(crate::root::akroomportal::AkRoomPortal)` overload"] pub fn register_portal (portal : impl :: core :: convert :: Into < crate :: root :: akroomportal :: AkRoomPortal >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: akroomportal :: AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f34c20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (portal) , :: core :: option :: Option :: None) } } } # [doc = "`UnregisterPortal(crate::root::akroomportal::AkRoomPortal)` overload"] pub fn unregister_portal (portal : impl :: core :: convert :: Into < crate :: root :: akroomportal :: AkRoomPortal >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: akroomportal :: AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f34d30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (portal) , :: core :: option :: Option :: None) } } } # [doc = "`RegisterReflector(crate::root::aksurfacereflector::AkSurfaceReflector)` overload"] pub fn register_reflector (reflector : impl :: core :: convert :: Into < crate :: root :: aksurfacereflector :: AkSurfaceReflector >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: aksurfacereflector :: AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f34de0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (reflector) , :: core :: option :: Option :: None) } } } # [doc = "`UnregisterReflector(crate::root::aksurfacereflector::AkSurfaceReflector)` overload"] pub fn unregister_reflector (reflector : impl :: core :: convert :: Into < crate :: root :: aksurfacereflector :: AkSurfaceReflector >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: aksurfacereflector :: AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f34ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (reflector) , :: core :: option :: Option :: None) } } } # [doc = "`RegisterPortalUpdate(crate::root::akroomportal::AkRoomPortal)` overload"] pub fn register_portal_update (portal : impl :: core :: convert :: Into < crate :: root :: akroomportal :: AkRoomPortal >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: akroomportal :: AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f34fa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (portal) , :: core :: option :: Option :: None) } } } # [doc = "`RegisterRoomUpdate(crate::root::akroom::AkRoom)` overload"] pub fn register_room_update (room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32e50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] pub fn update () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35160usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akroommanager")]impl AkRoomManager{#[doc="`Init()` overload"]pub fn init()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f34a00usize)as*mut u8,();
+)}
+}
+#[doc="`Terminate()` overload"]pub fn terminate()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f34bb0usize)as*mut u8,();
+)}
+}
+#[doc="`RegisterPortal(crate::root::akroomportal::AkRoomPortal)` overload"]pub fn register_portal(portal:impl::core::convert::Into<crate::root::akroomportal::AkRoomPortal>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f34c20usize)as*mut u8,();
+(crate::root::akroomportal::AkRoomPortal)::core::convert::Into::into(portal))}
+}
+#[doc="`UnregisterPortal(crate::root::akroomportal::AkRoomPortal)` overload"]pub fn unregister_portal(portal:impl::core::convert::Into<crate::root::akroomportal::AkRoomPortal>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f34d30usize)as*mut u8,();
+(crate::root::akroomportal::AkRoomPortal)::core::convert::Into::into(portal))}
+}
+#[doc="`RegisterReflector(crate::root::aksurfacereflector::AkSurfaceReflector)` overload"]pub fn register_reflector(reflector:impl::core::convert::Into<crate::root::aksurfacereflector::AkSurfaceReflector>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f34de0usize)as*mut u8,();
+(crate::root::aksurfacereflector::AkSurfaceReflector)::core::convert::Into::into(reflector))}
+}
+#[doc="`UnregisterReflector(crate::root::aksurfacereflector::AkSurfaceReflector)` overload"]pub fn unregister_reflector(reflector:impl::core::convert::Into<crate::root::aksurfacereflector::AkSurfaceReflector>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f34ef0usize)as*mut u8,();
+(crate::root::aksurfacereflector::AkSurfaceReflector)::core::convert::Into::into(reflector))}
+}
+#[doc="`RegisterPortalUpdate(crate::root::akroomportal::AkRoomPortal)` overload"]pub fn register_portal_update(portal:impl::core::convert::Into<crate::root::akroomportal::AkRoomPortal>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f34fa0usize)as*mut u8,();
+(crate::root::akroomportal::AkRoomPortal)::core::convert::Into::into(portal))}
+}
+#[doc="`RegisterRoomUpdate(crate::root::akroom::AkRoom)` overload"]pub fn register_room_update(room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f32e50usize)as*mut u8,();
+(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`Update()` overload"]pub fn update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f35160usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-akroommanager")]
-pub trait IAkRoomManagerMethods : IAkRoomManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRoomManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f34a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akroommanager")]pub trait IAkRoomManagerMethods:IAkRoomManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRoomManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f34a80usize)as*mut u8,();
+(AkRoomManager)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akroommanager")]
-impl < __T : IAkRoomManager > IAkRoomManagerMethods for __T { }
+#[cfg(feature="root-akroommanager")]impl<__T:IAkRoomManager>IAkRoomManagerMethods for __T{}
 
-#[cfg(feature = "root-akroommanager")]
-impl AkRoomManager { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn terminate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn register_portal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unregister_portal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn register_reflector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn unregister_reflector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn register_portal_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn register_room_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-akroommanager")]impl AkRoomManager{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn terminate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn register_portal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unregister_portal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn register_reflector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn unregister_reflector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn register_portal_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn register_room_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "root-akroommanager")]
-impl AkRoomManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoomManager) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoomManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akroommanager")]impl AkRoomManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoomManager), ::core::stringify!(new),));
+ <Self as IAkRoomManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akroommanager")]

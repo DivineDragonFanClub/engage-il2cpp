@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrutils/XRUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "XRUtils")] # [parent (crate :: system :: object :: Object)] pub struct XRUtils {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/xrutils/XRUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="XRUtils")]#[parent(crate::system::object::Object)]pub struct XRUtils{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-xrutils-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-xrutils")]
-impl XRUtils { # [doc = "`DrawOcclusionMesh(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::camera::Camera, bool)` overload"] pub fn draw_occlusion_mesh (cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , stereo_enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: camera :: Camera , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e9740usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (camera) , :: core :: convert :: Into :: into (stereo_enabled) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-xrutils")]impl XRUtils{#[doc="`DrawOcclusionMesh(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::camera::Camera, bool)` overload"]pub fn draw_occlusion_mesh(cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,stereo_enabled:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e9740usize)as*mut u8,();
+(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(bool)::core::convert::Into::into(stereo_enabled))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-xrutils")]
-impl XRUtils { pub fn draw_occlusion_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-xrutils")]impl XRUtils{pub fn draw_occlusion_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-rendering-xrutils")]
 #[doc(hidden)]

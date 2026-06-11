@@ -4,40 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/debugmenurender/DebugMenuRender.md"))] # [:: unity2 :: class (namespace = "" , name = "DebugMenuRender")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DebugMenuRender {
-# [offset (24)] # [rename (name = "m_Menu")] pub m_menu : crate :: app :: debugmenu :: DebugMenu ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/debugmenurender/DebugMenuRender.md"))]#[::unity2::class(namespace="",name="DebugMenuRender")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DebugMenuRender{#[offset(24)]#[rename(name="m_Menu")]pub m_menu:crate::app::debugmenu::DebugMenu,}
 
 }
 
 #[cfg(feature = "root-debugmenurender-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-debugmenurender")]
-pub trait IDebugMenuRenderMethods : IDebugMenuRender { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMenu(crate::app::debugmenu::DebugMenu)` overload"] fn set_menu (self , menu : impl :: core :: convert :: Into < crate :: app :: debugmenu :: DebugMenu >) -> () { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , crate :: app :: debugmenu :: DebugMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: option :: Option :: None) } } } # [doc = "`GetAnchorRect(crate::unity_engine::rect::Rect, crate::app::gx::GX_Anchor)` overload"] fn get_anchor_rect (self , rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , anchor : impl :: core :: convert :: Into < crate :: app :: gx :: GX_Anchor >) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , crate :: unity_engine :: rect :: Rect , crate :: app :: gx :: GX_Anchor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c1a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } } # [doc = "`DrawText(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"] fn draw_text (self , rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: color :: Color , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`DrawText(f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"] fn draw_text_2 (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , w : impl :: core :: convert :: Into < f32 > , h : impl :: core :: convert :: Into < f32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , f32 , f32 , f32 , f32 , crate :: unity_engine :: color :: Color , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`SlideRectX(crate::unity_engine::rect::Rect, f32)` overload"] fn slide_rect_x (self , rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , size : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , crate :: unity_engine :: rect :: Rect , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c5d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`SlideRectY(crate::unity_engine::rect::Rect, f32)` overload"] fn slide_rect_y (self , rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , size : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , crate :: unity_engine :: rect :: Rect , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`OnGUI()` overload"] fn on_gui (self ,) -> () { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0c6d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugMenuRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMenuRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0d220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-debugmenurender")]pub trait IDebugMenuRenderMethods:IDebugMenuRender{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c170usize)as*mut u8,();
+(DebugMenuRender)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c180usize)as*mut u8,();
+(DebugMenuRender)__receiver)}
+}
+#[doc="`SetMenu(crate::app::debugmenu::DebugMenu)` overload"]fn set_menu(self,menu:impl::core::convert::Into<crate::app::debugmenu::DebugMenu>)->(){unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c190usize)as*mut u8,();
+(DebugMenuRender)__receiver,(crate::app::debugmenu::DebugMenu)::core::convert::Into::into(menu))}
+}
+#[doc="`GetAnchorRect(crate::unity_engine::rect::Rect, crate::app::gx::GX_Anchor)` overload"]fn get_anchor_rect(self,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c1a0usize)as*mut u8,crate::unity_engine::rect::Rect;
+(DebugMenuRender)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
+}
+#[doc="`DrawText(crate::unity_engine::rect::Rect, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]fn draw_text(self,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c430usize)as*mut u8,();
+(DebugMenuRender)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`DrawText(f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]fn draw_text_2(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,w:impl::core::convert::Into<f32> ,h:impl::core::convert::Into<f32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c550usize)as*mut u8,();
+(DebugMenuRender)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(w),(f32)::core::convert::Into::into(h),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`SlideRectX(crate::unity_engine::rect::Rect, f32)` overload"]fn slide_rect_x(self,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,size:impl::core::convert::Into<f32>)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c5d0usize)as*mut u8,crate::unity_engine::rect::Rect;
+(DebugMenuRender)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(f32)::core::convert::Into::into(size))}
+}
+#[doc="`SlideRectY(crate::unity_engine::rect::Rect, f32)` overload"]fn slide_rect_y(self,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,size:impl::core::convert::Into<f32>)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c650usize)as*mut u8,crate::unity_engine::rect::Rect;
+(DebugMenuRender)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(f32)::core::convert::Into::into(size))}
+}
+#[doc="`OnGUI()` overload"]fn on_gui(self,)->(){unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0c6d0usize)as*mut u8,();
+(DebugMenuRender)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugMenuRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0d220usize)as*mut u8,();
+(DebugMenuRender)__receiver)}
+}
+}
 
-#[cfg(feature = "root-debugmenurender")]
-impl < __T : IDebugMenuRender > IDebugMenuRenderMethods for __T { }
+#[cfg(feature="root-debugmenurender")]impl<__T:IDebugMenuRender>IDebugMenuRenderMethods for __T{}
 
-#[cfg(feature = "root-debugmenurender")]
-impl DebugMenuRender { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_anchor_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn draw_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn draw_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn slide_rect_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn slide_rect_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_gui_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMenuRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-debugmenurender")]impl DebugMenuRender{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_anchor_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn draw_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn draw_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn slide_rect_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn slide_rect_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_gui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "root-debugmenurender")]
-impl DebugMenuRender {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugMenuRender) , :: core :: stringify ! (new) ,)) ; < Self as IDebugMenuRenderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-debugmenurender")]impl DebugMenuRender{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugMenuRender), ::core::stringify!(new),));
+ <Self as IDebugMenuRenderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-debugmenurender")]

@@ -4,115 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/blendmode/BlendMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct BlendMode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/blendmode/BlendMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BlendMode{pub value:i32,}
+impl::unity2::ClassIdentity for BlendMode{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="BlendMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for BlendMode  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "BlendMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for BlendMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for BlendMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl BlendMode{pub fn zero()->Self{Self{value:0}
 }
-
-
-impl  BlendMode  {
-    pub fn zero() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn one() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn dst_color() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn src_color() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn one_minus_dst_color() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn src_alpha() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn one_minus_src_color() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn dst_alpha() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn one_minus_dst_alpha() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn src_alpha_saturate() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn one_minus_src_alpha() -> Self {
-        Self { value: 10 }
-
-    }
-
+pub fn one()->Self{Self{value:1}
+}
+pub fn dst_color()->Self{Self{value:2}
+}
+pub fn src_color()->Self{Self{value:3}
+}
+pub fn one_minus_dst_color()->Self{Self{value:4}
+}
+pub fn src_alpha()->Self{Self{value:5}
+}
+pub fn one_minus_src_color()->Self{Self{value:6}
+}
+pub fn dst_alpha()->Self{Self{value:7}
+}
+pub fn one_minus_dst_alpha()->Self{Self{value:8}
+}
+pub fn src_alpha_saturate()->Self{Self{value:9}
+}
+pub fn one_minus_src_alpha()->Self{Self{value:10}
+}
 }
 
 }

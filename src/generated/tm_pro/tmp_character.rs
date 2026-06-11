@@ -4,38 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: tm_pro :: tmp_textelement :: { ITMP_TextElement , TMP_TextElement }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::tm_pro::tmp_textelement::{ITMP_TextElement,TMP_TextElement}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_character/TMP_Character.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Character")] # [parent (crate :: tm_pro :: tmp_textelement :: TMP_TextElement)] pub struct TMP_Character {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_character/TMP_Character.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Character")]#[parent(crate::tm_pro::tmp_textelement::TMP_TextElement)]pub struct TMP_Character{}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_character-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_character")]
-pub trait ITMP_CharacterMethods : ITMP_Character { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_Character as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, crate::unity_engine::text_core::glyph::Glyph)` overload"] fn ctor_2 (self , unicode : impl :: core :: convert :: Into < u32 > , glyph : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: glyph :: Glyph >) -> () { unsafe { let __receiver = < TMP_Character as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Character , u32 , crate :: unity_engine :: text_core :: glyph :: Glyph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d912c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unicode) , :: core :: convert :: Into :: into (glyph) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::text_core::glyph::Glyph)` overload"] fn ctor_3 (self , unicode : impl :: core :: convert :: Into < u32 > , font_asset : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > , glyph : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: glyph :: Glyph >) -> () { unsafe { let __receiver = < TMP_Character as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Character , u32 , crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset , crate :: unity_engine :: text_core :: glyph :: Glyph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unicode) , :: core :: convert :: Into :: into (font_asset) , :: core :: convert :: Into :: into (glyph) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, u32)` overload"] fn ctor_4 (self , unicode : impl :: core :: convert :: Into < u32 > , glyph_index : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < TMP_Character as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Character , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d913c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unicode) , :: core :: convert :: Into :: into (glyph_index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_character")]pub trait ITMP_CharacterMethods:ITMP_Character{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Character as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d91280usize)as*mut u8,();
+(TMP_Character)__receiver)}
+}
+#[doc="`.ctor(u32, crate::unity_engine::text_core::glyph::Glyph)` overload"]fn ctor_2(self,unicode:impl::core::convert::Into<u32> ,glyph:impl::core::convert::Into<crate::unity_engine::text_core::glyph::Glyph>)->(){unsafe{let __receiver= <TMP_Character as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d912c0usize)as*mut u8,();
+(TMP_Character)__receiver,(u32)::core::convert::Into::into(unicode),(crate::unity_engine::text_core::glyph::Glyph)::core::convert::Into::into(glyph))}
+}
+#[doc="`.ctor(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::text_core::glyph::Glyph)` overload"]fn ctor_3(self,unicode:impl::core::convert::Into<u32> ,font_asset:impl::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset> ,glyph:impl::core::convert::Into<crate::unity_engine::text_core::glyph::Glyph>)->(){unsafe{let __receiver= <TMP_Character as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d91340usize)as*mut u8,();
+(TMP_Character)__receiver,(u32)::core::convert::Into::into(unicode),(crate::tm_pro::tmp_fontasset::TMP_FontAsset)::core::convert::Into::into(font_asset),(crate::unity_engine::text_core::glyph::Glyph)::core::convert::Into::into(glyph))}
+}
+#[doc="`.ctor(u32, u32)` overload"]fn ctor_4(self,unicode:impl::core::convert::Into<u32> ,glyph_index:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <TMP_Character as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d913c0usize)as*mut u8,();
+(TMP_Character)__receiver,(u32)::core::convert::Into::into(unicode),(u32)::core::convert::Into::into(glyph_index))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_character")]
-impl < __T : ITMP_Character > ITMP_CharacterMethods for __T { }
+#[cfg(feature="tm_pro-tmp_character")]impl<__T:ITMP_Character>ITMP_CharacterMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_character")]
-impl TMP_Character { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Character as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Character as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Character as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Character as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="tm_pro-tmp_character")]impl TMP_Character{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "tm_pro-tmp_character")]
-impl TMP_Character {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Character) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_CharacterMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(u32, crate::unity_engine::text_core::glyph::Glyph)` — overload selector"] pub fn new_2 (unicode : u32 , glyph : crate :: unity_engine :: text_core :: glyph :: Glyph) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Character) , :: core :: stringify ! (new_2) ,)) ; < Self as ITMP_CharacterMethods > :: ctor_2 (this , unicode , glyph) ; this }
-
-# [doc = "`.ctor(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::text_core::glyph::Glyph)` — overload selector"] pub fn new_3 (unicode : u32 , font_asset : crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset , glyph : crate :: unity_engine :: text_core :: glyph :: Glyph) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Character) , :: core :: stringify ! (new_3) ,)) ; < Self as ITMP_CharacterMethods > :: ctor_3 (this , unicode , font_asset , glyph) ; this }
-
-# [doc = "`.ctor(u32, u32)` — overload selector"] pub fn new_4 (unicode : u32 , glyph_index : u32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Character) , :: core :: stringify ! (new_4) ,)) ; < Self as ITMP_CharacterMethods > :: ctor_4 (this , unicode , glyph_index) ; this }
+#[cfg(feature="tm_pro-tmp_character")]impl TMP_Character{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Character), ::core::stringify!(new),));
+ <Self as ITMP_CharacterMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(u32, crate::unity_engine::text_core::glyph::Glyph)` — overload selector"]pub fn new_2(unicode:u32,glyph:crate::unity_engine::text_core::glyph::Glyph)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Character), ::core::stringify!(new_2),));
+ <Self as ITMP_CharacterMethods> ::ctor_2(this,unicode,glyph);
+this}
+#[doc="`.ctor(u32, crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::text_core::glyph::Glyph)` — overload selector"]pub fn new_3(unicode:u32,font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset,glyph:crate::unity_engine::text_core::glyph::Glyph)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Character), ::core::stringify!(new_3),));
+ <Self as ITMP_CharacterMethods> ::ctor_3(this,unicode,font_asset,glyph);
+this}
+#[doc="`.ctor(u32, u32)` — overload selector"]pub fn new_4(unicode:u32,glyph_index:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Character), ::core::stringify!(new_4),));
+ <Self as ITMP_CharacterMethods> ::ctor_4(this,unicode,glyph_index);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_character")]

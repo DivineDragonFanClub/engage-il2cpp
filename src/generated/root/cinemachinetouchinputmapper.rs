@@ -4,43 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinetouchinputmapper/CinemachineTouchInputMapper.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineTouchInputMapper")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CinemachineTouchInputMapper {
-# [offset (24)] # [rename (name = "TouchSensitivityX")] pub touch_sensitivity_x : f32 ,
-# [offset (28)] # [rename (name = "TouchSensitivityY")] pub touch_sensitivity_y : f32 ,
-# [offset (32)] # [rename (name = "TouchXInputMapTo")] pub touch_x_input_map_to : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "TouchYInputMapTo")] pub touch_y_input_map_to : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/cinemachinetouchinputmapper/CinemachineTouchInputMapper.md"))]#[::unity2::class(namespace="",name="CinemachineTouchInputMapper")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CinemachineTouchInputMapper{#[offset(24)]#[rename(name="TouchSensitivityX")]pub touch_sensitivity_x:f32, #[offset(28)]#[rename(name="TouchSensitivityY")]pub touch_sensitivity_y:f32, #[offset(32)]#[rename(name="TouchXInputMapTo")]pub touch_x_input_map_to: ::unity2::Il2CppString, #[offset(40)]#[rename(name="TouchYInputMapTo")]pub touch_y_input_map_to: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "root-cinemachinetouchinputmapper-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-cinemachinetouchinputmapper")]
-pub trait ICinemachineTouchInputMapperMethods : ICinemachineTouchInputMapper { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CinemachineTouchInputMapper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineTouchInputMapper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32fea00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetInputAxis(::unity2::Il2CppString)` overload"] fn get_input_axis (self , axis_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { let __receiver = < CinemachineTouchInputMapper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineTouchInputMapper , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32feaf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (axis_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineTouchInputMapper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineTouchInputMapper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32febc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-cinemachinetouchinputmapper")]pub trait ICinemachineTouchInputMapperMethods:ICinemachineTouchInputMapper{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CinemachineTouchInputMapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32fea00usize)as*mut u8,();
+(CinemachineTouchInputMapper)__receiver)}
+}
+#[doc="`GetInputAxis(::unity2::Il2CppString)` overload"]fn get_input_axis(self,axis_name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <CinemachineTouchInputMapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32feaf0usize)as*mut u8,f32;
+(CinemachineTouchInputMapper)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(axis_name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CinemachineTouchInputMapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32febc0usize)as*mut u8,();
+(CinemachineTouchInputMapper)__receiver)}
+}
+}
 
-#[cfg(feature = "root-cinemachinetouchinputmapper")]
-impl < __T : ICinemachineTouchInputMapper > ICinemachineTouchInputMapperMethods for __T { }
+#[cfg(feature="root-cinemachinetouchinputmapper")]impl<__T:ICinemachineTouchInputMapper>ICinemachineTouchInputMapperMethods for __T{}
 
-#[cfg(feature = "root-cinemachinetouchinputmapper")]
-impl CinemachineTouchInputMapper { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineTouchInputMapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_input_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineTouchInputMapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineTouchInputMapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-cinemachinetouchinputmapper")]impl CinemachineTouchInputMapper{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_input_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-cinemachinetouchinputmapper")]
-impl CinemachineTouchInputMapper {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineTouchInputMapper) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineTouchInputMapperMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-cinemachinetouchinputmapper")]impl CinemachineTouchInputMapper{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineTouchInputMapper), ::core::stringify!(new),));
+ <Self as ICinemachineTouchInputMapperMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-cinemachinetouchinputmapper")]

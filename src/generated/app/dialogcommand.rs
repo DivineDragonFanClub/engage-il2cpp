@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dialogcommand/DialogCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "DialogCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct DialogCommand {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dialogcommand/DialogCommand.md"))]#[::unity2::class(namespace="App",name="DialogCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct DialogCommand{}
 
 }
 
 #[cfg(feature = "app-dialogcommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dialogcommand")]
-pub trait IDialogCommandMethods : IDialogCommand { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DialogCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DialogCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cec670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Func(::unity2::Il2CppString)` overload"] fn func (self , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { let __receiver = < DialogCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DialogCommand , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cec6c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DialogCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DialogCommand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cec740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dialogcommand")]pub trait IDialogCommandMethods:IDialogCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DialogCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cec670usize)as*mut u8, ::unity2::Il2CppString;
+(DialogCommand)__receiver)}
+}
+#[doc="`Func(::unity2::Il2CppString)` overload"]fn func(self,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <DialogCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cec6c0usize)as*mut u8,f32;
+(DialogCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DialogCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cec740usize)as*mut u8,();
+(DialogCommand)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dialogcommand")]
-impl < __T : IDialogCommand > IDialogCommandMethods for __T { }
+#[cfg(feature="app-dialogcommand")]impl<__T:IDialogCommand>IDialogCommandMethods for __T{}
 
-#[cfg(feature = "app-dialogcommand")]
-impl DialogCommand { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DialogCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DialogCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DialogCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-dialogcommand")]impl DialogCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-dialogcommand")]
-impl DialogCommand {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DialogCommand) , :: core :: stringify ! (new) ,)) ; < Self as IDialogCommandMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dialogcommand")]impl DialogCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DialogCommand), ::core::stringify!(new),));
+ <Self as IDialogCommandMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dialogcommand")]

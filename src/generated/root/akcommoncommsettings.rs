@@ -4,42 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommoncommsettings/AkCommonCommSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonCommSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonCommSettings {
-# [offset (16)] # [rename (name = "m_PoolSize")] pub m_pool_size : u32 ,
-# [static_field] # [rename (name = "DefaultDiscoveryBroadcastPort")] pub default_discovery_broadcast_port : u16 ,
-# [offset (20)] # [rename (name = "m_DiscoveryBroadcastPort")] pub m_discovery_broadcast_port : u16 ,
-# [offset (22)] # [rename (name = "m_CommandPort")] pub m_command_port : u16 ,
-# [offset (24)] # [rename (name = "m_NotificationPort")] pub m_notification_port : u16 ,
-# [offset (26)] # [rename (name = "m_InitializeSystemComms")] pub m_initialize_system_comms : bool ,
-# [offset (32)] # [rename (name = "m_NetworkName")] pub m_network_name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_commSystem")] pub m_comm_system : crate :: root :: akcommunicationsettings :: AkCommunicationSettings_AkCommSystem ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommoncommsettings/AkCommonCommSettings.md"))]#[::unity2::class(namespace="",name="AkCommonCommSettings")]#[parent(crate::system::object::Object)]pub struct AkCommonCommSettings{#[offset(16)]#[rename(name="m_PoolSize")]pub m_pool_size:u32, #[static_field]#[rename(name="DefaultDiscoveryBroadcastPort")]pub default_discovery_broadcast_port:u16, #[offset(20)]#[rename(name="m_DiscoveryBroadcastPort")]pub m_discovery_broadcast_port:u16, #[offset(22)]#[rename(name="m_CommandPort")]pub m_command_port:u16, #[offset(24)]#[rename(name="m_NotificationPort")]pub m_notification_port:u16, #[offset(26)]#[rename(name="m_InitializeSystemComms")]pub m_initialize_system_comms:bool, #[offset(32)]#[rename(name="m_NetworkName")]pub m_network_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_commSystem")]pub m_comm_system:crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem,}
 
 }
 
 #[cfg(feature = "root-akcommoncommsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akcommoncommsettings")]
-impl AkCommonCommSettings { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f128c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcommoncommsettings")]impl AkCommonCommSettings{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f128c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-akcommoncommsettings")]
-pub trait IAkCommonCommSettingsMethods : IAkCommonCommSettings { # [doc = "`CopyTo(crate::root::akcommunicationsettings::AkCommunicationSettings)` overload"] fn copy_to (self , settings : impl :: core :: convert :: Into < crate :: root :: akcommunicationsettings :: AkCommunicationSettings >) -> () { unsafe { let __receiver = < AkCommonCommSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonCommSettings , crate :: root :: akcommunicationsettings :: AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f121f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`Validate()` overload"] fn validate (self ,) -> () { unsafe { let __receiver = < AkCommonCommSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonCommSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f12820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCommonCommSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonCommSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f12830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcommoncommsettings")]pub trait IAkCommonCommSettingsMethods:IAkCommonCommSettings{#[doc="`CopyTo(crate::root::akcommunicationsettings::AkCommunicationSettings)` overload"]fn copy_to(self,settings:impl::core::convert::Into<crate::root::akcommunicationsettings::AkCommunicationSettings>)->(){unsafe{let __receiver= <AkCommonCommSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f121f0usize)as*mut u8,();
+(AkCommonCommSettings)__receiver,(crate::root::akcommunicationsettings::AkCommunicationSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`Validate()` overload"]fn validate(self,)->(){unsafe{let __receiver= <AkCommonCommSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12820usize)as*mut u8,();
+(AkCommonCommSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonCommSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12830usize)as*mut u8,();
+(AkCommonCommSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akcommoncommsettings")]
-impl < __T : IAkCommonCommSettings > IAkCommonCommSettingsMethods for __T { }
+#[cfg(feature="root-akcommoncommsettings")]impl<__T:IAkCommonCommSettings>IAkCommonCommSettingsMethods for __T{}
 
-#[cfg(feature = "root-akcommoncommsettings")]
-impl AkCommonCommSettings { pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonCommSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonCommSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonCommSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonCommSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-akcommoncommsettings")]impl AkCommonCommSettings{pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "root-akcommoncommsettings")]
-impl AkCommonCommSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommonCommSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCommonCommSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akcommoncommsettings")]impl AkCommonCommSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCommonCommSettings), ::core::stringify!(new),));
+ <Self as IAkCommonCommSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akcommoncommsettings")]

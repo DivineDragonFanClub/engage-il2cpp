@@ -4,140 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapGodExp")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)] pub struct MapGodExp {
-# [offset (32)] # [rename (name = "m_AddFlag")] pub m_add_flag : crate :: app :: bitfield32 :: BitField32 ,
-# [offset (40)] # [rename (name = "m_CommitUnit")] pub m_commit_unit : crate :: app :: unit :: Unit ,
-# [offset (48)] # [rename (name = "m_CommitGodUnit")] pub m_commit_god_unit : crate :: app :: godunit :: GodUnit ,
-# [offset (56)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
-# [offset (60)] # [rename (name = "m_Dirty")] pub m_dirty : i32 ,
-# [static_field] # [rename (name = "KindDescs")] pub kind_descs : :: unity2 :: Array < crate :: app :: mapgodexp :: MapGodExp_KindDesc > ,
-# [static_field] # [rename (name = "EngageParamNameSuffix")] pub engage_param_name_suffix : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "RingDirtyKindDescs")] pub ring_dirty_kind_descs : :: unity2 :: Array < crate :: app :: mapgodexp :: MapGodExp_KindDesc > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapgodexp/MapGodExp.md"))]#[::unity2::class(namespace="App",name="MapGodExp")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapgodexp::MapGodExp>)]pub struct MapGodExp{#[offset(32)]#[rename(name="m_AddFlag")]pub m_add_flag:crate::app::bitfield32::BitField32, #[offset(40)]#[rename(name="m_CommitUnit")]pub m_commit_unit:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_CommitGodUnit")]pub m_commit_god_unit:crate::app::godunit::GodUnit, #[offset(56)]#[rename(name="m_Exp")]pub m_exp:i32, #[offset(60)]#[rename(name="m_Dirty")]pub m_dirty:i32, #[static_field]#[rename(name="KindDescs")]pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc> , #[static_field]#[rename(name="EngageParamNameSuffix")]pub engage_param_name_suffix: ::unity2::Il2CppString, #[static_field]#[rename(name="RingDirtyKindDescs")]pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapgodexp/MapGodExp_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapGodExp_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for MapGodExp_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapGodExp.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapGodExp_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapGodExp_Kinds{pub fn fixed()->Self{Self{value:0}
+}
+pub fn battle()->Self{Self{value:1}
+}
+pub fn rod()->Self{Self{value:2}
+}
+pub fn command_skill()->Self{Self{value:3}
+}
+pub fn engage_attack()->Self{Self{value:4}
+}
+pub fn kill()->Self{Self{value:5}
+}
+pub fn num()->Self{Self{value:6}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapGodExp_KindDesc {
-    pub param_name: :: unity2 :: Il2CppString,
-    pub is_multi: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapgodexp/MapGodExp_KindDesc.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapGodExp_KindDesc{pub param_name: ::unity2::Il2CppString,pub is_multi:bool,}
+impl::unity2::ClassIdentity for MapGodExp_KindDesc{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapGodExp.KindDesc";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapGodExp.KindDesc";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapGodExp_KindDesc {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapGodExp_Kinds  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapGodExp_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapGodExp.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapGodExp_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapGodExp_Kinds  {
-    pub fn fixed() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn battle() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn rod() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn command_skill() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn engage_attack() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn kill() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 6 }
-
-    }
-
+impl::unity2::IlType for MapGodExp_KindDesc{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -145,28 +59,95 @@ impl  MapGodExp_Kinds  {
 #[cfg(feature = "app-mapgodexp-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapgodexp")]
-impl MapGodExp { # [doc = "`GetMultiplier(crate::app::godunit::GodUnit)` overload"] pub fn get_multiplier (god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dca360usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_unit) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dca810usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapgodexp")]
-pub trait IMapGodExpMethods : IMapGodExp { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dc9b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddBattle(crate::app::battlecalculator::BattleCalculator)` overload"] fn add_battle (self , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator >) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , crate :: app :: battlecalculator :: BattleCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dc9ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (calculator) , :: core :: option :: Option :: None) } } } # [doc = "`AddCommandSkill()` overload"] fn add_command_skill (self ,) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dca1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddEngageAttack()` overload"] fn add_engage_attack (self ,) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dca2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryCommit(crate::app::procinst::ProcInst)` overload"] fn try_commit (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dca450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dc9c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::mapgodexp::MapGodExp_Kinds)` overload"] fn add (self , kind : impl :: core :: convert :: Into < crate :: app :: mapgodexp :: MapGodExp_Kinds >) -> () { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , crate :: app :: mapgodexp :: MapGodExp_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dc9ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetExp(crate::app::mapgodexp::MapGodExp_Kinds, bool)` overload"] fn get_exp (self , kind : impl :: core :: convert :: Into < crate :: app :: mapgodexp :: MapGodExp_Kinds > , is_engage : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , crate :: app :: mapgodexp :: MapGodExp_Kinds , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dca5d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (is_engage) , :: core :: option :: Option :: None) } } } # [doc = "`GetCurrentUnit()` overload"] fn get_current_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dca550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsValidCommon()` overload"] fn is_valid_common (self ,) -> bool { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dc9eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDirty(crate::app::mapgodexp::MapGodExp_Kinds, bool)` overload"] fn get_dirty (self , kind : impl :: core :: convert :: Into < crate :: app :: mapgodexp :: MapGodExp_Kinds > , is_engage : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < MapGodExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapGodExp , crate :: app :: mapgodexp :: MapGodExp_Kinds , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dca6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (is_engage) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapgodexp")]
-impl < __T : IMapGodExp > IMapGodExpMethods for __T { }
-
-#[cfg(feature = "app-mapgodexp")]
-impl MapGodExp { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_command_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_multiplier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn try_commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_current_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_valid_common_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
-
-#[cfg(feature = "app-mapgodexp")]
-impl MapGodExp {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapGodExp) , :: core :: stringify ! (new) ,)) ; < Self as IMapGodExpMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapgodexp")]impl MapGodExp{#[doc="`GetMultiplier(crate::app::godunit::GodUnit)` overload"]pub fn get_multiplier(god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dca360usize)as*mut u8,f32;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dca810usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-mapgodexp")]
-impl MapGodExp_KindDesc { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] pub fn ctor (& mut self , param_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapGodExp_KindDesc , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24c8410usize) as * mut u8) ; __inner (self as * mut MapGodExp_KindDesc , :: core :: convert :: Into :: into (param_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] pub fn ctor_2 (& mut self , param_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_multi : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapGodExp_KindDesc , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24c8440usize) as * mut u8) ; __inner (self as * mut MapGodExp_KindDesc , :: core :: convert :: Into :: into (param_name) , :: core :: convert :: Into :: into (is_multi) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapgodexp")]pub trait IMapGodExpMethods:IMapGodExp{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dc9b60usize)as*mut u8,();
+(MapGodExp)__receiver)}
+}
+#[doc="`AddBattle(crate::app::battlecalculator::BattleCalculator)` overload"]fn add_battle(self,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator>)->(){unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dc9ca0usize)as*mut u8,();
+(MapGodExp)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator))}
+}
+#[doc="`AddCommandSkill()` overload"]fn add_command_skill(self,)->(){unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dca1f0usize)as*mut u8,();
+(MapGodExp)__receiver)}
+}
+#[doc="`AddEngageAttack()` overload"]fn add_engage_attack(self,)->(){unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dca2b0usize)as*mut u8,();
+(MapGodExp)__receiver)}
+}
+#[doc="`TryCommit(crate::app::procinst::ProcInst)` overload"]fn try_commit(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dca450usize)as*mut u8,();
+(MapGodExp)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dc9c50usize)as*mut u8,();
+(MapGodExp)__receiver)}
+}
+#[doc="`Add(crate::app::mapgodexp::MapGodExp_Kinds)` overload"]fn add(self,kind:impl::core::convert::Into<crate::app::mapgodexp::MapGodExp_Kinds>)->(){unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dc9ff0usize)as*mut u8,();
+(MapGodExp)__receiver,(crate::app::mapgodexp::MapGodExp_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetExp(crate::app::mapgodexp::MapGodExp_Kinds, bool)` overload"]fn get_exp(self,kind:impl::core::convert::Into<crate::app::mapgodexp::MapGodExp_Kinds> ,is_engage:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dca5d0usize)as*mut u8,i32;
+(MapGodExp)__receiver,(crate::app::mapgodexp::MapGodExp_Kinds)::core::convert::Into::into(kind),(bool)::core::convert::Into::into(is_engage))}
+}
+#[doc="`GetCurrentUnit()` overload"]fn get_current_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dca550usize)as*mut u8,crate::app::unit::Unit;
+(MapGodExp)__receiver)}
+}
+#[doc="`IsValidCommon()` overload"]fn is_valid_common(self,)->bool{unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dc9eb0usize)as*mut u8,bool;
+(MapGodExp)__receiver)}
+}
+#[doc="`GetDirty(crate::app::mapgodexp::MapGodExp_Kinds, bool)` overload"]fn get_dirty(self,kind:impl::core::convert::Into<crate::app::mapgodexp::MapGodExp_Kinds> ,is_engage:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <MapGodExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dca6f0usize)as*mut u8,i32;
+(MapGodExp)__receiver,(crate::app::mapgodexp::MapGodExp_Kinds)::core::convert::Into::into(kind),(bool)::core::convert::Into::into(is_engage))}
+}
+}
 
-#[cfg(feature = "app-mapgodexp")]
-impl MapGodExp_KindDesc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp_KindDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapGodExp_KindDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-mapgodexp")]impl<__T:IMapGodExp>IMapGodExpMethods for __T{}
+
+#[cfg(feature="app-mapgodexp")]impl MapGodExp{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_command_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_engage_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_current_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_valid_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-mapgodexp")]impl MapGodExp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapGodExp), ::core::stringify!(new),));
+ <Self as IMapGodExpMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapgodexp")]impl MapGodExp_KindDesc{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,param_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c8410usize)as*mut u8,();
+(*mut MapGodExp_KindDesc)self as*mut MapGodExp_KindDesc,(::unity2::Il2CppString)::core::convert::Into::into(param_name))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]pub fn ctor_2(&mut self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_multi:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c8440usize)as*mut u8,();
+(*mut MapGodExp_KindDesc)self as*mut MapGodExp_KindDesc,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(bool)::core::convert::Into::into(is_multi))}
+}
+}
+
+#[cfg(feature="app-mapgodexp")]impl MapGodExp_KindDesc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "app-mapgodexp")]
 #[doc(hidden)]
@@ -174,8 +155,8 @@ pub mod prelude {
     pub use super::MapGodExp;
     pub use super::IMapGodExp;
     pub use super::IMapGodExpMethods;
-    pub use super::MapGodExp_KindDesc;
     pub use super::MapGodExp_Kinds;
+    pub use super::MapGodExp_KindDesc;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

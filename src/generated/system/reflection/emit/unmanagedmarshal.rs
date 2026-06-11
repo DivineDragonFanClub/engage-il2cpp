@@ -4,30 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/unmanagedmarshal/UnmanagedMarshal.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "UnmanagedMarshal")] # [parent (crate :: system :: object :: Object)] pub struct UnmanagedMarshal {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/emit/unmanagedmarshal/UnmanagedMarshal.md"))]#[::unity2::class(namespace="System.Reflection.Emit",name="UnmanagedMarshal")]#[parent(crate::system::object::Object)]pub struct UnmanagedMarshal{}
 
 }
 
 #[cfg(feature = "system-reflection-emit-unmanagedmarshal-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-emit-unmanagedmarshal")]
-pub trait IUnmanagedMarshalMethods : IUnmanagedMarshal { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnmanagedMarshal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMarshal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3352410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-emit-unmanagedmarshal")]pub trait IUnmanagedMarshalMethods:IUnmanagedMarshal{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnmanagedMarshal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3352410usize)as*mut u8,();
+(UnmanagedMarshal)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-emit-unmanagedmarshal")]
-impl < __T : IUnmanagedMarshal > IUnmanagedMarshalMethods for __T { }
+#[cfg(feature="system-reflection-emit-unmanagedmarshal")]impl<__T:IUnmanagedMarshal>IUnmanagedMarshalMethods for __T{}
 
-#[cfg(feature = "system-reflection-emit-unmanagedmarshal")]
-impl UnmanagedMarshal { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMarshal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-emit-unmanagedmarshal")]impl UnmanagedMarshal{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-emit-unmanagedmarshal")]
-impl UnmanagedMarshal {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnmanagedMarshal) , :: core :: stringify ! (new) ,)) ; < Self as IUnmanagedMarshalMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-emit-unmanagedmarshal")]impl UnmanagedMarshal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnmanagedMarshal), ::core::stringify!(new),));
+ <Self as IUnmanagedMarshalMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-emit-unmanagedmarshal")]

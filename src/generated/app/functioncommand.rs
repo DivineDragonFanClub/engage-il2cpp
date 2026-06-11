@@ -4,35 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/functioncommand/FunctionCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "FunctionCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct FunctionCommand {
-# [offset (24)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_Function")] pub m_function : crate :: app :: stringcalculator :: StringCalculator ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/functioncommand/FunctionCommand.md"))]#[::unity2::class(namespace="App",name="FunctionCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct FunctionCommand{#[offset(24)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Function")]pub m_function:crate::app::stringcalculator::StringCalculator,}
 
 }
 
 #[cfg(feature = "app-functioncommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-functioncommand")]
-pub trait IFunctionCommandMethods : IFunctionCommand { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FunctionCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FunctionCommand , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2276a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FunctionCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FunctionCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2276ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get(crate::system::object::Object)` overload"] fn get (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> f32 { unsafe { let __receiver = < FunctionCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FunctionCommand , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2276ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Get(crate::system::object::Object, crate::system::object::Object)` overload"] fn get_2 (self , obj1 : impl :: core :: convert :: Into < crate :: system :: object :: Object > , obj2 : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> f32 { unsafe { let __receiver = < FunctionCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FunctionCommand , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2276ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj1) , :: core :: convert :: Into :: into (obj2) , :: core :: option :: Option :: None) } } } # [doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object)` overload"] fn func (self , args : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> f32 { unsafe { let __receiver = < FunctionCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FunctionCommand , crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2276ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object, crate::system::object::Object)` overload"] fn func_2 (self , args : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > > , obj1 : impl :: core :: convert :: Into < crate :: system :: object :: Object > , obj2 : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> f32 { unsafe { let __receiver = < FunctionCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FunctionCommand , crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2276b00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: convert :: Into :: into (obj1) , :: core :: convert :: Into :: into (obj2) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-functioncommand")]pub trait IFunctionCommandMethods:IFunctionCommand{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FunctionCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2276a10usize)as*mut u8,();
+(FunctionCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(func))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FunctionCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2276ab0usize)as*mut u8, ::unity2::Il2CppString;
+(FunctionCommand)__receiver)}
+}
+#[doc="`Get(crate::system::object::Object)` overload"]fn get(self,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <FunctionCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2276ac0usize)as*mut u8,f32;
+(FunctionCommand)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Get(crate::system::object::Object, crate::system::object::Object)` overload"]fn get_2(self,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <FunctionCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2276ad0usize)as*mut u8,f32;
+(FunctionCommand)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+}
+#[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object)` overload"]fn func(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> > ,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <FunctionCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2276ae0usize)as*mut u8,f32;
+(FunctionCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args),(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object, crate::system::object::Object)` overload"]fn func_2(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> > ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <FunctionCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2276b00usize)as*mut u8,f32;
+(FunctionCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args),(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+}
+}
 
-#[cfg(feature = "app-functioncommand")]
-impl < __T : IFunctionCommand > IFunctionCommandMethods for __T { }
+#[cfg(feature="app-functioncommand")]impl<__T:IFunctionCommand>IFunctionCommandMethods for __T{}
 
-#[cfg(feature = "app-functioncommand")]
-impl FunctionCommand { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn func_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FunctionCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-functioncommand")]impl FunctionCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn func_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-functioncommand")]
-impl FunctionCommand {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , func : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FunctionCommand) , :: core :: stringify ! (new) ,)) ; < Self as IFunctionCommandMethods > :: ctor (this , name , func) ; this }
+#[cfg(feature="app-functioncommand")]impl FunctionCommand{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,func: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FunctionCommand), ::core::stringify!(new),));
+ <Self as IFunctionCommandMethods> ::ctor(this,name,func);
+this}
 }
 
 #[cfg(feature = "app-functioncommand")]

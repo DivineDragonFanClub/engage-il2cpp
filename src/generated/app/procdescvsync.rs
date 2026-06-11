@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdesccallbase :: { IProcDescCallBase , ProcDescCallBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdesccallbase::{IProcDescCallBase,ProcDescCallBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescvsync/ProcDescVsync.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescVsync")] # [parent (crate :: app :: procdesccallbase :: ProcDescCallBase)] pub struct ProcDescVsync {
-# [offset (20)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: gametime :: GameTime_VsycMode ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescvsync/ProcDescVsync.md"))]#[::unity2::class(namespace="App",name="ProcDescVsync")]#[parent(crate::app::procdesccallbase::ProcDescCallBase)]pub struct ProcDescVsync{#[offset(20)]#[rename(name="m_Mode")]pub m_mode:crate::app::gametime::GameTime_VsycMode,}
 
 }
 
 #[cfg(feature = "app-procdescvsync-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescvsync")]
-pub trait IProcDescVsyncMethods : IProcDescVsync { # [doc = "`.ctor(crate::app::gametime::GameTime_VsycMode)` overload"] fn ctor (self , mode : impl :: core :: convert :: Into < crate :: app :: gametime :: GameTime_VsycMode >) -> () { unsafe { let __receiver = < ProcDescVsync as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescVsync , crate :: app :: gametime :: GameTime_VsycMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescVsync as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescVsync , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281dbd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescvsync")]pub trait IProcDescVsyncMethods:IProcDescVsync{#[doc="`.ctor(crate::app::gametime::GameTime_VsycMode)` overload"]fn ctor(self,mode:impl::core::convert::Into<crate::app::gametime::GameTime_VsycMode>)->(){unsafe{let __receiver= <ProcDescVsync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281c360usize)as*mut u8,();
+(ProcDescVsync)__receiver,(crate::app::gametime::GameTime_VsycMode)::core::convert::Into::into(mode))}
+}
+#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescVsync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281dbd0usize)as*mut u8,();
+(ProcDescVsync)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescvsync")]
-impl < __T : IProcDescVsync > IProcDescVsyncMethods for __T { }
+#[cfg(feature="app-procdescvsync")]impl<__T:IProcDescVsync>IProcDescVsyncMethods for __T{}
 
-#[cfg(feature = "app-procdescvsync")]
-impl ProcDescVsync { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescVsync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescVsync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdescvsync")]impl ProcDescVsync{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdescvsync")]
-impl ProcDescVsync {
-# [doc = "`.ctor(crate::app::gametime::GameTime_VsycMode)` — overload selector"] pub fn new (mode : crate :: app :: gametime :: GameTime_VsycMode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescVsync) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescVsyncMethods > :: ctor (this , mode) ; this }
+#[cfg(feature="app-procdescvsync")]impl ProcDescVsync{#[doc="`.ctor(crate::app::gametime::GameTime_VsycMode)` — overload selector"]pub fn new(mode:crate::app::gametime::GameTime_VsycMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescVsync), ::core::stringify!(new),));
+ <Self as IProcDescVsyncMethods> ::ctor(this,mode);
+this}
 }
 
 #[cfg(feature = "app-procdescvsync")]

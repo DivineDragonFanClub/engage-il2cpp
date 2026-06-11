@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawardeedataold/RelayAwardeeDataOld.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayAwardeeDataOld")] # [parent (crate :: system :: object :: Object)] pub struct RelayAwardeeDataOld {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayawardeedataold/RelayAwardeeDataOld.md"))]#[::unity2::class(namespace="App",name="RelayAwardeeDataOld")]#[parent(crate::system::object::Object)]pub struct RelayAwardeeDataOld{}
 
 }
 
 #[cfg(feature = "app-relayawardeedataold-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayawardeedataold")]
-impl RelayAwardeeDataOld { # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayawardeedataold")]impl RelayAwardeeDataOld{#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d0b70usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
 
-#[cfg(feature = "app-relayawardeedataold")]
-impl RelayAwardeeDataOld { pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeDataOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-relayawardeedataold")]impl RelayAwardeeDataOld{pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "app-relayawardeedataold")]
 #[doc(hidden)]

@@ -4,39 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akplaylistarray :: { AkPlaylistArray , IAkPlaylistArray }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akplaylistarray::{AkPlaylistArray,IAkPlaylistArray}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akplaylist/AkPlaylist.md"))] # [:: unity2 :: class (namespace = "" , name = "AkPlaylist")] # [parent (crate :: root :: akplaylistarray :: AkPlaylistArray)] pub struct AkPlaylist {
-# [offset (32)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akplaylist/AkPlaylist.md"))]#[::unity2::class(namespace="",name="AkPlaylist")]#[parent(crate::root::akplaylistarray::AkPlaylistArray)]pub struct AkPlaylist{#[offset(32)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "root-akplaylist-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akplaylist")]
-impl AkPlaylist { # [doc = "`getCPtr(crate::root::akplaylist::AkPlaylist)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akplaylist :: AkPlaylist >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akplaylist :: AkPlaylist , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2b760usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akplaylist")]impl AkPlaylist{#[doc="`getCPtr(crate::root::akplaylist::AkPlaylist)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akplaylist::AkPlaylist>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b760usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akplaylist::AkPlaylist)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akplaylist")]
-pub trait IAkPlaylistMethods : IAkPlaylist { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2b680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2b7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2b880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2b9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Enqueue(u32, i32, ::unity2::IntPtr, u32, crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray)` overload"] fn enqueue (self , in_audio_node_id : impl :: core :: convert :: Into < u32 > , in_ms_delay : impl :: core :: convert :: Into < i32 > , in_p_custom_info : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , in_c_externals : impl :: core :: convert :: Into < u32 > , in_p_external_sources : impl :: core :: convert :: Into < crate :: root :: akexternalsourceinfoarray :: AkExternalSourceInfoArray >) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , u32 , i32 , :: unity2 :: IntPtr , u32 , crate :: root :: akexternalsourceinfoarray :: AkExternalSourceInfoArray , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2bd00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_audio_node_id) , :: core :: convert :: Into :: into (in_ms_delay) , :: core :: convert :: Into :: into (in_p_custom_info) , :: core :: convert :: Into :: into (in_c_externals) , :: core :: convert :: Into :: into (in_p_external_sources) , :: core :: option :: Option :: None) } } } # [doc = "`Enqueue(u32, i32, ::unity2::IntPtr, u32)` overload"] fn enqueue_2 (self , in_audio_node_id : impl :: core :: convert :: Into < u32 > , in_ms_delay : impl :: core :: convert :: Into < i32 > , in_p_custom_info : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , in_c_externals : impl :: core :: convert :: Into < u32 >) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , u32 , i32 , :: unity2 :: IntPtr , u32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2bdc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_audio_node_id) , :: core :: convert :: Into :: into (in_ms_delay) , :: core :: convert :: Into :: into (in_p_custom_info) , :: core :: convert :: Into :: into (in_c_externals) , :: core :: option :: Option :: None) } } } # [doc = "`Enqueue(u32, i32, ::unity2::IntPtr)` overload"] fn enqueue_3 (self , in_audio_node_id : impl :: core :: convert :: Into < u32 > , in_ms_delay : impl :: core :: convert :: Into < i32 > , in_p_custom_info : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , u32 , i32 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2be60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_audio_node_id) , :: core :: convert :: Into :: into (in_ms_delay) , :: core :: convert :: Into :: into (in_p_custom_info) , :: core :: option :: Option :: None) } } } # [doc = "`Enqueue(u32, i32)` overload"] fn enqueue_4 (self , in_audio_node_id : impl :: core :: convert :: Into < u32 > , in_ms_delay : impl :: core :: convert :: Into < i32 >) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , u32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2bef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_audio_node_id) , :: core :: convert :: Into :: into (in_ms_delay) , :: core :: option :: Option :: None) } } } # [doc = "`Enqueue(u32)` overload"] fn enqueue_5 (self , in_audio_node_id : impl :: core :: convert :: Into < u32 >) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , u32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2bf80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_audio_node_id) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkPlaylist as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylist , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2c000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akplaylist")]pub trait IAkPlaylistMethods:IAkPlaylist{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b680usize)as*mut u8,();
+(AkPlaylist)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b7c0usize)as*mut u8,();
+(AkPlaylist)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b880usize)as*mut u8,();
+(AkPlaylist)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b9e0usize)as*mut u8,();
+(AkPlaylist)__receiver)}
+}
+#[doc="`Enqueue(u32, i32, ::unity2::IntPtr, u32, crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray)` overload"]fn enqueue(self,in_audio_node_id:impl::core::convert::Into<u32> ,in_ms_delay:impl::core::convert::Into<i32> ,in_p_custom_info:impl::core::convert::Into< ::unity2::IntPtr> ,in_c_externals:impl::core::convert::Into<u32> ,in_p_external_sources:impl::core::convert::Into<crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2bd00usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkPlaylist)__receiver,(u32)::core::convert::Into::into(in_audio_node_id),(i32)::core::convert::Into::into(in_ms_delay),(::unity2::IntPtr)::core::convert::Into::into(in_p_custom_info),(u32)::core::convert::Into::into(in_c_externals),(crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray)::core::convert::Into::into(in_p_external_sources))}
+}
+#[doc="`Enqueue(u32, i32, ::unity2::IntPtr, u32)` overload"]fn enqueue_2(self,in_audio_node_id:impl::core::convert::Into<u32> ,in_ms_delay:impl::core::convert::Into<i32> ,in_p_custom_info:impl::core::convert::Into< ::unity2::IntPtr> ,in_c_externals:impl::core::convert::Into<u32>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2bdc0usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkPlaylist)__receiver,(u32)::core::convert::Into::into(in_audio_node_id),(i32)::core::convert::Into::into(in_ms_delay),(::unity2::IntPtr)::core::convert::Into::into(in_p_custom_info),(u32)::core::convert::Into::into(in_c_externals))}
+}
+#[doc="`Enqueue(u32, i32, ::unity2::IntPtr)` overload"]fn enqueue_3(self,in_audio_node_id:impl::core::convert::Into<u32> ,in_ms_delay:impl::core::convert::Into<i32> ,in_p_custom_info:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2be60usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkPlaylist)__receiver,(u32)::core::convert::Into::into(in_audio_node_id),(i32)::core::convert::Into::into(in_ms_delay),(::unity2::IntPtr)::core::convert::Into::into(in_p_custom_info))}
+}
+#[doc="`Enqueue(u32, i32)` overload"]fn enqueue_4(self,in_audio_node_id:impl::core::convert::Into<u32> ,in_ms_delay:impl::core::convert::Into<i32>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2bef0usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkPlaylist)__receiver,(u32)::core::convert::Into::into(in_audio_node_id),(i32)::core::convert::Into::into(in_ms_delay))}
+}
+#[doc="`Enqueue(u32)` overload"]fn enqueue_5(self,in_audio_node_id:impl::core::convert::Into<u32>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2bf80usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkPlaylist)__receiver,(u32)::core::convert::Into::into(in_audio_node_id))}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2c000usize)as*mut u8,();
+(AkPlaylist)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akplaylist")]
-impl < __T : IAkPlaylist > IAkPlaylistMethods for __T { }
+#[cfg(feature="root-akplaylist")]impl<__T:IAkPlaylist>IAkPlaylistMethods for __T{}
 
-#[cfg(feature = "root-akplaylist")]
-impl AkPlaylist { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn enqueue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn enqueue_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn enqueue_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn enqueue_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn enqueue_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylist as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="root-akplaylist")]impl AkPlaylist{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn enqueue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn enqueue_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn enqueue_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn enqueue_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn enqueue_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "root-akplaylist")]
-impl AkPlaylist {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkPlaylist) , :: core :: stringify ! (new) ,)) ; < Self as IAkPlaylistMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkPlaylist) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkPlaylistMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akplaylist")]impl AkPlaylist{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkPlaylist), ::core::stringify!(new),));
+ <Self as IAkPlaylistMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkPlaylist), ::core::stringify!(new_2),));
+ <Self as IAkPlaylistMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akplaylist")]

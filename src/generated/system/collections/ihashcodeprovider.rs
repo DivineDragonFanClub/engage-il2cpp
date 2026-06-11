@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ihashcodeprovider/IHashCodeProvider.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IHashCodeProvider")] pub struct IHashCodeProvider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/ihashcodeprovider/IHashCodeProvider.md"))]#[::unity2::class(namespace="System.Collections",name="IHashCodeProvider")]pub struct IHashCodeProvider{}
 
 }
 
 #[cfg(feature = "system-collections-ihashcodeprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-ihashcodeprovider")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IHashCodeProvider_unity2_raw { use super :: * ; pub unsafe fn get_hash_code (this : IHashCodeProvider , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetHashCode") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetHashCode" , < IHashCodeProvider as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IHashCodeProvider , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , obj , __mi) } }
+#[cfg(feature="system-collections-ihashcodeprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IHashCodeProvider_unity2_raw{use super:: * ;
+pub unsafe fn get_hash_code(this:IHashCodeProvider,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetHashCode").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetHashCode", <IHashCodeProvider as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IHashCodeProvider,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+}
 
-#[cfg(feature = "system-collections-ihashcodeprovider")]
-pub trait IIHashCodeProviderMethods : IIHashCodeProvider { # [doc = "`GetHashCode(crate::system::object::Object)` overload"] fn get_hash_code (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < IHashCodeProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IHashCodeProvider_unity2_raw :: get_hash_code (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="system-collections-ihashcodeprovider")]pub trait IIHashCodeProviderMethods:IIHashCodeProvider{#[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <IHashCodeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IHashCodeProvider_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "system-collections-ihashcodeprovider")]
-impl < __T : IIHashCodeProvider > IIHashCodeProviderMethods for __T { }
+#[cfg(feature="system-collections-ihashcodeprovider")]impl<__T:IIHashCodeProvider>IIHashCodeProviderMethods for __T{}
 
-#[cfg(feature = "system-collections-ihashcodeprovider")]
-impl IHashCodeProvider { pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IHashCodeProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-collections-ihashcodeprovider")]impl IHashCodeProvider{pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "system-collections-ihashcodeprovider")]
 #[doc(hidden)]

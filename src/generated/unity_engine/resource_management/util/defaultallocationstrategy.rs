@@ -4,29 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/defaultallocationstrategy/DefaultAllocationStrategy.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "DefaultAllocationStrategy")] # [parent (crate :: system :: object :: Object)] pub struct DefaultAllocationStrategy {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/defaultallocationstrategy/DefaultAllocationStrategy.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="DefaultAllocationStrategy")]#[parent(crate::system::object::Object)]pub struct DefaultAllocationStrategy{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-defaultallocationstrategy-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-util-defaultallocationstrategy")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DefaultAllocationStrategy_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: class () , "New" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: NAME , "New" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: class () , "Release" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-util-defaultallocationstrategy")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DefaultAllocationStrategy_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DefaultAllocationStrategy as::unity2::ClassIdentity> ::class(),"New",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DefaultAllocationStrategy as::unity2::ClassIdentity> ::NAME,"New",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_release{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DefaultAllocationStrategy as::unity2::ClassIdentity> ::class(),"Release",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DefaultAllocationStrategy as::unity2::ClassIdentity> ::NAME,"Release",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DefaultAllocationStrategy as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DefaultAllocationStrategy as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-defaultallocationstrategy")]
-pub trait IDefaultAllocationStrategyMethods : IDefaultAllocationStrategy { # [doc = "`New(::unity2::SystemType, i32)` overload"] fn new (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , type_hash : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { let __receiver = < DefaultAllocationStrategy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DefaultAllocationStrategy , :: unity2 :: SystemType , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__DefaultAllocationStrategy_unity2_raw :: __lookup_new :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (type_hash) , :: core :: option :: Option :: None) } } } # [doc = "`Release(i32, crate::system::object::Object)` overload"] fn release (self , type_hash : impl :: core :: convert :: Into < i32 > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < DefaultAllocationStrategy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DefaultAllocationStrategy , i32 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DefaultAllocationStrategy_unity2_raw :: __lookup_release :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (type_hash) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DefaultAllocationStrategy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DefaultAllocationStrategy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DefaultAllocationStrategy_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-util-defaultallocationstrategy")]pub trait IDefaultAllocationStrategyMethods:IDefaultAllocationStrategy{#[doc="`New(::unity2::SystemType, i32)` overload"]fn new(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,type_hash:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <DefaultAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DefaultAllocationStrategy_unity2_raw::__lookup_new::get_method_info().method_ptr,crate::system::object::Object;
+(DefaultAllocationStrategy)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(type_hash))}
+}
+#[doc="`Release(i32, crate::system::object::Object)` overload"]fn release(self,type_hash:impl::core::convert::Into<i32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <DefaultAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DefaultAllocationStrategy_unity2_raw::__lookup_release::get_method_info().method_ptr,();
+(DefaultAllocationStrategy)__receiver,(i32)::core::convert::Into::into(type_hash),(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DefaultAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DefaultAllocationStrategy_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(DefaultAllocationStrategy)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-defaultallocationstrategy")]
-impl < __T : IDefaultAllocationStrategy > IDefaultAllocationStrategyMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-util-defaultallocationstrategy")]impl<__T:IDefaultAllocationStrategy>IDefaultAllocationStrategyMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-util-defaultallocationstrategy")]
-impl DefaultAllocationStrategy { pub fn new_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DefaultAllocationStrategy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-resource_management-util-defaultallocationstrategy")]impl DefaultAllocationStrategy{pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-util-defaultallocationstrategy")]
 #[doc(hidden)]

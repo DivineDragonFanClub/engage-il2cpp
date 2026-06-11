@@ -4,42 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenucontent/GodUnitSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodUnitSelectMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct GodUnitSelectMenuContent {
-# [offset (232)] # [rename (name = "m_ConditionIcons")] pub m_condition_icons : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: sprite :: Sprite > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godunitselectmenucontent/GodUnitSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="GodUnitSelectMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct GodUnitSelectMenuContent{#[offset(232)]#[rename(name="m_ConditionIcons")]pub m_condition_icons:crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite> ,}
 
 }
 
 #[cfg(feature = "app-godunitselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godunitselectmenucontent")]
-pub trait IGodUnitSelectMenuContentMethods : IGodUnitSelectMenuContent { # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < GodUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetConditionsIcon(i32)` overload"] fn get_conditions_icon (self , dirty_level : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < GodUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dirty_level) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godunitselectmenucontent")]pub trait IGodUnitSelectMenuContentMethods:IGodUnitSelectMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <GodUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347560usize)as*mut u8,f32;
+(GodUnitSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`GetConditionsIcon(i32)` overload"]fn get_conditions_icon(self,dirty_level:impl::core::convert::Into<i32>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <GodUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347620usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(GodUnitSelectMenuContent)__receiver,(i32)::core::convert::Into::into(dirty_level))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347690usize)as*mut u8,();
+(GodUnitSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godunitselectmenucontent")]
-impl < __T : IGodUnitSelectMenuContent > IGodUnitSelectMenuContentMethods for __T { }
+#[cfg(feature="app-godunitselectmenucontent")]impl<__T:IGodUnitSelectMenuContent>IGodUnitSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-godunitselectmenucontent")]
-impl GodUnitSelectMenuContent { pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_conditions_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-godunitselectmenucontent")]impl GodUnitSelectMenuContent{pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_conditions_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-godunitselectmenucontent")]
-impl GodUnitSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodUnitSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IGodUnitSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godunitselectmenucontent")]impl GodUnitSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodUnitSelectMenuContent), ::core::stringify!(new),));
+ <Self as IGodUnitSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godunitselectmenucontent")]

@@ -4,99 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "AspectRatioFitter")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct AspectRatioFitter {
-# [offset (24)] # [rename (name = "m_AspectMode")] pub m_aspect_mode : crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode ,
-# [offset (28)] # [rename (name = "m_AspectRatio")] pub m_aspect_ratio : f32 ,
-# [offset (32)] # [rename (name = "m_Rect")] pub m_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (40)] # [rename (name = "m_DelayedSetDirty")] pub m_delayed_set_dirty : bool ,
-# [offset (41)] # [rename (name = "m_DoesParentExist")] pub m_does_parent_exist : bool ,
-# [offset (42)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="AspectRatioFitter")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct AspectRatioFitter{#[offset(24)]#[rename(name="m_AspectMode")]pub m_aspect_mode:crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode, #[offset(28)]#[rename(name="m_AspectRatio")]pub m_aspect_ratio:f32, #[offset(32)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_DelayedSetDirty")]pub m_delayed_set_dirty:bool, #[offset(41)]#[rename(name="m_DoesParentExist")]pub m_does_parent_exist:bool, #[offset(42)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter_AspectMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AspectRatioFitter_AspectMode{pub value:i32,}
+impl::unity2::ClassIdentity for AspectRatioFitter_AspectMode{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="AspectRatioFitter.AspectMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter_AspectMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AspectRatioFitter_AspectMode  {
-    pub value: i32,
+impl::unity2::IlType for AspectRatioFitter_AspectMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for AspectRatioFitter_AspectMode  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "AspectRatioFitter.AspectMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl AspectRatioFitter_AspectMode{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for AspectRatioFitter_AspectMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn width_controls_height()->Self{Self{value:1}
 }
-
-
-impl  AspectRatioFitter_AspectMode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn width_controls_height() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn height_controls_width() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn fit_in_parent() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn envelope_parent() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn height_controls_width()->Self{Self{value:2}
+}
+pub fn fit_in_parent()->Self{Self{value:3}
+}
+pub fn envelope_parent()->Self{Self{value:4}
+}
 }
 
 }
@@ -104,18 +52,122 @@ impl  AspectRatioFitter_AspectMode  {
 #[cfg(feature = "unity_engine-ui-aspectratiofitter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-aspectratiofitter")]
-pub trait IAspectRatioFitterMethods : IAspectRatioFitter { # [doc = "`get_aspectMode()` overload"] fn get_aspect_mode (self ,) -> crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31795b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_aspectMode(crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode)` overload"] fn set_aspect_mode (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode >) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , crate :: unity_engine :: ui :: aspectratiofitter :: AspectRatioFitter_AspectMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31795c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_aspectRatio()` overload"] fn get_aspect_ratio (self ,) -> f32 { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_aspectRatio(f32)` overload"] fn set_aspect_ratio (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31796f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31797b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31797c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31799e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTransformParentChanged()` overload"] fn on_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRectTransformDimensionsChange()` overload"] fn on_rect_transform_dimensions_change (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateRect()` overload"] fn update_rect (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeDeltaToProduceSize(f32, i32)` overload"] fn get_size_delta_to_produce_size (self , size : impl :: core :: convert :: Into < f32 > , axis : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179f80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (size) , :: core :: convert :: Into :: into (axis) , :: core :: option :: Option :: None) } } } # [doc = "`GetParentSize()` overload"] fn get_parent_size (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayoutHorizontal()` overload"] fn set_layout_horizontal (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayoutVertical()` overload"] fn set_layout_vertical (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDirty()` overload"] fn set_dirty (self ,) -> () { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsComponentValidOnObject()` overload"] fn is_component_valid_on_object (self ,) -> bool { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31798c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsAspectModeValid()` overload"] fn is_aspect_mode_valid (self ,) -> bool { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31799b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DoesParentExists()` overload"] fn does_parent_exists (self ,) -> bool { unsafe { let __receiver = < AspectRatioFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AspectRatioFitter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-aspectratiofitter")]pub trait IAspectRatioFitterMethods:IAspectRatioFitter{#[doc="`get_aspectMode()` overload"]fn get_aspect_mode(self,)->crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31795b0usize)as*mut u8,crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode;
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`set_aspectMode(crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode)` overload"]fn set_aspect_mode(self,value:impl::core::convert::Into<crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode>)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31795c0usize)as*mut u8,();
+(AspectRatioFitter)__receiver,(crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_aspectRatio()` overload"]fn get_aspect_ratio(self,)->f32{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179650usize)as*mut u8,f32;
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`set_aspectRatio(f32)` overload"]fn set_aspect_ratio(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179660usize)as*mut u8,();
+(AspectRatioFitter)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31796f0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31797b0usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31797c0usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179860usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31799e0usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179a70usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179b10usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179b30usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`UpdateRect()` overload"]fn update_rect(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179b40usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`GetSizeDeltaToProduceSize(f32, i32)` overload"]fn get_size_delta_to_produce_size(self,size:impl::core::convert::Into<f32> ,axis:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179f80usize)as*mut u8,f32;
+(AspectRatioFitter)__receiver,(f32)::core::convert::Into::into(size),(i32)::core::convert::Into::into(axis))}
+}
+#[doc="`GetParentSize()` overload"]fn get_parent_size(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179e70usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a030usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a040usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`SetDirty()` overload"]fn set_dirty(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179640usize)as*mut u8,();
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`IsComponentValidOnObject()` overload"]fn is_component_valid_on_object(self,)->bool{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31798c0usize)as*mut u8,bool;
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`IsAspectModeValid()` overload"]fn is_aspect_mode_valid(self,)->bool{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31799b0usize)as*mut u8,bool;
+(AspectRatioFitter)__receiver)}
+}
+#[doc="`DoesParentExists()` overload"]fn does_parent_exists(self,)->bool{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a050usize)as*mut u8,bool;
+(AspectRatioFitter)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-aspectratiofitter")]
-impl < __T : IAspectRatioFitter > IAspectRatioFitterMethods for __T { }
+#[cfg(feature="unity_engine-ui-aspectratiofitter")]impl<__T:IAspectRatioFitter>IAspectRatioFitterMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-aspectratiofitter")]
-impl AspectRatioFitter { pub fn get_aspect_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_aspect_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_aspect_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_aspect_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_rect_transform_dimensions_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_size_delta_to_produce_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_parent_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_layout_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_layout_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_component_valid_on_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_aspect_mode_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn does_parent_exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AspectRatioFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="unity_engine-ui-aspectratiofitter")]impl AspectRatioFitter{pub fn get_aspect_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_aspect_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_aspect_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_aspect_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_transform_parent_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_rect_transform_dimensions_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_size_delta_to_produce_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_parent_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_layout_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_layout_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_component_valid_on_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_aspect_mode_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn does_parent_exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "unity_engine-ui-aspectratiofitter")]
-impl AspectRatioFitter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AspectRatioFitter) , :: core :: stringify ! (new) ,)) ; < Self as IAspectRatioFitterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-aspectratiofitter")]impl AspectRatioFitter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AspectRatioFitter), ::core::stringify!(new),));
+ <Self as IAspectRatioFitterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter")]

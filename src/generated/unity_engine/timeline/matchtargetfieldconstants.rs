@@ -4,28 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/matchtargetfieldconstants/MatchTargetFieldConstants.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "MatchTargetFieldConstants")] # [parent (crate :: system :: object :: Object)] pub struct MatchTargetFieldConstants {
-# [static_field] # [rename (name = "All")] pub all : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
-# [static_field] # [rename (name = "None")] pub none : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
-# [static_field] # [rename (name = "Position")] pub position : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
-# [static_field] # [rename (name = "Rotation")] pub rotation : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/matchtargetfieldconstants/MatchTargetFieldConstants.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="MatchTargetFieldConstants")]#[parent(crate::system::object::Object)]pub struct MatchTargetFieldConstants{#[static_field]#[rename(name="All")]pub all:crate::unity_engine::timeline::matchtargetfields::MatchTargetFields, #[static_field]#[rename(name="None")]pub none:crate::unity_engine::timeline::matchtargetfields::MatchTargetFields, #[static_field]#[rename(name="Position")]pub position:crate::unity_engine::timeline::matchtargetfields::MatchTargetFields, #[static_field]#[rename(name="Rotation")]pub rotation:crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
-impl MatchTargetFieldConstants { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d8710usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-matchtargetfieldconstants")]impl MatchTargetFieldConstants{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d8710usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
-impl MatchTargetFieldConstants { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MatchTargetFieldConstants as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-matchtargetfieldconstants")]impl MatchTargetFieldConstants{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
 #[doc(hidden)]

@@ -4,87 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinforoot/MapInfoRoot_NextCanvasEnabled.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoRoot_NextCanvasEnabled  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinforoot/MapInfoRoot.md"))]#[::unity2::class(namespace="App",name="MapInfoRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapInfoRoot{#[offset(24)]#[rename(name="m_Canvas")]pub m_canvas:crate::unity_engine::canvas::Canvas, #[offset(32)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(40)]#[rename(name="m_MapInfoUnitLocatorRoot")]pub m_map_info_unit_locator_root:crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot, #[offset(48)]#[rename(name="m_MapInfoGaugeMainLocatorRoot")]pub m_map_info_gauge_main_locator_root:crate::app::mapinfogaugemainlocatorroot::MapInfoGaugeMainLocatorRoot, #[offset(56)]#[rename(name="m_OldAlpha")]pub m_old_alpha:f32, #[offset(60)]#[rename(name="m_IsDisplayOutside")]pub m_is_display_outside:bool, #[offset(61)]#[rename(name="m_IsInfoEnable")]pub m_is_info_enable:bool, #[offset(64)]#[rename(name="m_NextCanvasEnabled")]pub m_next_canvas_enabled:crate::app::mapinforoot::MapInfoRoot_NextCanvasEnabled,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinforoot/MapInfoRoot_NextCanvasEnabled.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoRoot_NextCanvasEnabled{pub value:i32,}
+impl::unity2::ClassIdentity for MapInfoRoot_NextCanvasEnabled{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapInfoRoot.NextCanvasEnabled";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MapInfoRoot_NextCanvasEnabled  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapInfoRoot.NextCanvasEnabled";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MapInfoRoot_NextCanvasEnabled{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MapInfoRoot_NextCanvasEnabled  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MapInfoRoot_NextCanvasEnabled{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  MapInfoRoot_NextCanvasEnabled  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn enable() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn disable() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn enable()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinforoot/MapInfoRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapInfoRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapInfoRoot {
-# [offset (24)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: canvas :: Canvas ,
-# [offset (32)] # [rename (name = "m_CanvasGroup")] pub m_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
-# [offset (40)] # [rename (name = "m_MapInfoUnitLocatorRoot")] pub m_map_info_unit_locator_root : crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot ,
-# [offset (48)] # [rename (name = "m_MapInfoGaugeMainLocatorRoot")] pub m_map_info_gauge_main_locator_root : crate :: app :: mapinfogaugemainlocatorroot :: MapInfoGaugeMainLocatorRoot ,
-# [offset (56)] # [rename (name = "m_OldAlpha")] pub m_old_alpha : f32 ,
-# [offset (60)] # [rename (name = "m_IsDisplayOutside")] pub m_is_display_outside : bool ,
-# [offset (61)] # [rename (name = "m_IsInfoEnable")] pub m_is_info_enable : bool ,
-# [offset (64)] # [rename (name = "m_NextCanvasEnabled")] pub m_next_canvas_enabled : crate :: app :: mapinforoot :: MapInfoRoot_NextCanvasEnabled ,
+pub fn disable()->Self{Self{value:2}
+}
 }
 
 }
@@ -92,27 +46,186 @@ impl  MapInfoRoot_NextCanvasEnabled  {
 #[cfg(feature = "app-mapinforoot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapinforoot")]
-pub trait IMapInfoRootMethods : IMapInfoRoot { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20858a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init(crate::app::unit::Unit)` overload"] fn init (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20858b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Tick(crate::app::unit::Unit)` overload"] fn tick (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePosition(crate::app::unit::Unit)` overload"] fn update_position (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCanvas(crate::app::unit::Unit)` overload"] fn update_canvas (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateParam(crate::app::unit::Unit)` overload"] fn update_param (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAlpha(crate::app::unit::Unit)` overload"] fn update_alpha (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSortOrder(crate::app::unit::Unit)` overload"] fn update_sort_order (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ForceUpdate()` overload"] fn force_update (self ,) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetActive(bool)` overload"] fn set_active (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20861a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`PlayEngageEffect(crate::app::unit::Unit, i32)` overload"] fn play_engage_effect (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20861d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`PlayEngageTurnRecoveryEffect()` overload"] fn play_engage_turn_recovery_effect (self ,) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20861f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayingEngageTurnRecoveryEffect()` overload"] fn is_playing_engage_turn_recovery_effect (self ,) -> bool { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEngageTurnRecoveryEffectRate()` overload"] fn get_engage_turn_recovery_effect_rate (self ,) -> f32 { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSuppressHpStock(bool)` overload"] fn set_suppress_hp_stock (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20862b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`PlayHpStockEffect(crate::app::unit::Unit)` overload"] fn play_hp_stock_effect (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20862d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`PlayHpStockCreateEffect(crate::app::unit::Unit)` overload"] fn play_hp_stock_create_effect (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20862f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetHpStockAlpha(i32, f32)` overload"] fn set_hp_stock_alpha (self , stock : impl :: core :: convert :: Into < i32 > , alpha : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stock) , :: core :: convert :: Into :: into (alpha) , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayingHpStockEffect()` overload"] fn is_playing_hp_stock_effect (self ,) -> bool { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHpStockEffectRate()` overload"] fn get_hp_stock_effect_rate (self ,) -> f32 { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitScreenPosLocalScale(crate::unity_engine::vector3::Vector3)` overload"] fn set_unit_screen_pos_local_scale (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20863d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`SetScreenHalfSize(crate::unity_engine::vector2::Vector2)` overload"] fn set_screen_half_size (self , screen_half : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20863f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (screen_half) , :: core :: option :: Option :: None) } } } # [doc = "`InitHpForecast()` overload"] fn init_hp_forecast (self ,) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHpForecast(i32, i32)` overload"] fn set_hp_forecast (self , before : impl :: core :: convert :: Into < i32 > , after : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (before) , :: core :: convert :: Into :: into (after) , :: core :: option :: Option :: None) } } } # [doc = "`InitBreak()` overload"] fn init_break (self ,) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetBreak(bool)` overload"] fn set_break (self , is_break : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_break) , :: core :: option :: Option :: None) } } } # [doc = "`IsCanvasVisibilityChanged()` overload"] fn is_canvas_visibility_changed (self ,) -> bool { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNextCanvasVisibilityEnable()` overload"] fn is_next_canvas_visibility_enable (self ,) -> bool { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20864a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNextCanvasVisibilityDisable()` overload"] fn is_next_canvas_visibility_disable (self ,) -> bool { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20864b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanvasVisibilityChange()` overload"] fn canvas_visibility_change (self ,) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20864c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInfoEnable(bool)` overload"] fn set_info_enable (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapinforoot")]pub trait IMapInfoRootMethods:IMapInfoRoot{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20858a0usize)as*mut u8,();
+(MapInfoRoot)__receiver)}
+}
+#[doc="`Init(crate::app::unit::Unit)` overload"]fn init(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20858b0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Tick(crate::app::unit::Unit)` overload"]fn tick(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085ae0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdatePosition(crate::app::unit::Unit)` overload"]fn update_position(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085de0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateCanvas(crate::app::unit::Unit)` overload"]fn update_canvas(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085bd0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateParam(crate::app::unit::Unit)` overload"]fn update_param(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085fb0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateAlpha(crate::app::unit::Unit)` overload"]fn update_alpha(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085e60usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateSortOrder(crate::app::unit::Unit)` overload"]fn update_sort_order(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086060usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ForceUpdate()` overload"]fn force_update(self,)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086180usize)as*mut u8,();
+(MapInfoRoot)__receiver)}
+}
+#[doc="`SetActive(bool)` overload"]fn set_active(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20861a0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`PlayEngageEffect(crate::app::unit::Unit, i32)` overload"]fn play_engage_effect(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20861d0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`PlayEngageTurnRecoveryEffect()` overload"]fn play_engage_turn_recovery_effect(self,)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20861f0usize)as*mut u8,();
+(MapInfoRoot)__receiver)}
+}
+#[doc="`IsPlayingEngageTurnRecoveryEffect()` overload"]fn is_playing_engage_turn_recovery_effect(self,)->bool{unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086210usize)as*mut u8,bool;
+(MapInfoRoot)__receiver)}
+}
+#[doc="`GetEngageTurnRecoveryEffectRate()` overload"]fn get_engage_turn_recovery_effect_rate(self,)->f32{unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086260usize)as*mut u8,f32;
+(MapInfoRoot)__receiver)}
+}
+#[doc="`SetSuppressHpStock(bool)` overload"]fn set_suppress_hp_stock(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20862b0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`PlayHpStockEffect(crate::app::unit::Unit)` overload"]fn play_hp_stock_effect(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20862d0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`PlayHpStockCreateEffect(crate::app::unit::Unit)` overload"]fn play_hp_stock_create_effect(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20862f0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetHpStockAlpha(i32, f32)` overload"]fn set_hp_stock_alpha(self,stock:impl::core::convert::Into<i32> ,alpha:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086310usize)as*mut u8,();
+(MapInfoRoot)__receiver,(i32)::core::convert::Into::into(stock),(f32)::core::convert::Into::into(alpha))}
+}
+#[doc="`IsPlayingHpStockEffect()` overload"]fn is_playing_hp_stock_effect(self,)->bool{unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086330usize)as*mut u8,bool;
+(MapInfoRoot)__receiver)}
+}
+#[doc="`GetHpStockEffectRate()` overload"]fn get_hp_stock_effect_rate(self,)->f32{unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086380usize)as*mut u8,f32;
+(MapInfoRoot)__receiver)}
+}
+#[doc="`SetUnitScreenPosLocalScale(crate::unity_engine::vector3::Vector3)` overload"]fn set_unit_screen_pos_local_scale(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20863d0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`SetScreenHalfSize(crate::unity_engine::vector2::Vector2)` overload"]fn set_screen_half_size(self,screen_half:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20863f0usize)as*mut u8,();
+(MapInfoRoot)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(screen_half))}
+}
+#[doc="`InitHpForecast()` overload"]fn init_hp_forecast(self,)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086410usize)as*mut u8,();
+(MapInfoRoot)__receiver)}
+}
+#[doc="`SetHpForecast(i32, i32)` overload"]fn set_hp_forecast(self,before:impl::core::convert::Into<i32> ,after:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086430usize)as*mut u8,();
+(MapInfoRoot)__receiver,(i32)::core::convert::Into::into(before),(i32)::core::convert::Into::into(after))}
+}
+#[doc="`InitBreak()` overload"]fn init_break(self,)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086450usize)as*mut u8,();
+(MapInfoRoot)__receiver)}
+}
+#[doc="`SetBreak(bool)` overload"]fn set_break(self,is_break:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086470usize)as*mut u8,();
+(MapInfoRoot)__receiver,(bool)::core::convert::Into::into(is_break))}
+}
+#[doc="`IsCanvasVisibilityChanged()` overload"]fn is_canvas_visibility_changed(self,)->bool{unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086490usize)as*mut u8,bool;
+(MapInfoRoot)__receiver)}
+}
+#[doc="`IsNextCanvasVisibilityEnable()` overload"]fn is_next_canvas_visibility_enable(self,)->bool{unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20864a0usize)as*mut u8,bool;
+(MapInfoRoot)__receiver)}
+}
+#[doc="`IsNextCanvasVisibilityDisable()` overload"]fn is_next_canvas_visibility_disable(self,)->bool{unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20864b0usize)as*mut u8,bool;
+(MapInfoRoot)__receiver)}
+}
+#[doc="`CanvasVisibilityChange()` overload"]fn canvas_visibility_change(self,)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20864c0usize)as*mut u8,();
+(MapInfoRoot)__receiver)}
+}
+#[doc="`SetInfoEnable(bool)` overload"]fn set_info_enable(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086100usize)as*mut u8,();
+(MapInfoRoot)__receiver,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInfoRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086500usize)as*mut u8,();
+(MapInfoRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapinforoot")]
-impl < __T : IMapInfoRoot > IMapInfoRootMethods for __T { }
+#[cfg(feature="app-mapinforoot")]impl<__T:IMapInfoRoot>IMapInfoRootMethods for __T{}
 
-#[cfg(feature = "app-mapinforoot")]
-impl MapInfoRoot { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_sort_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn force_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn play_engage_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn play_engage_turn_recovery_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_playing_engage_turn_recovery_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_engage_turn_recovery_effect_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_suppress_hp_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn play_hp_stock_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn play_hp_stock_create_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_hp_stock_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_playing_hp_stock_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_hp_stock_effect_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_unit_screen_pos_local_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_screen_half_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn init_hp_forecast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_hp_forecast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn init_break_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_break_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn is_canvas_visibility_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn is_next_canvas_visibility_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn is_next_canvas_visibility_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn canvas_visibility_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn set_info_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } }
+#[cfg(feature="app-mapinforoot")]impl MapInfoRoot{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_sort_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn force_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn play_engage_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn play_engage_turn_recovery_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_playing_engage_turn_recovery_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_engage_turn_recovery_effect_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_suppress_hp_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn play_hp_stock_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn play_hp_stock_create_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_hp_stock_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_playing_hp_stock_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_hp_stock_effect_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_unit_screen_pos_local_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_screen_half_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn init_hp_forecast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_hp_forecast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn init_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn is_canvas_visibility_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn is_next_canvas_visibility_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn is_next_canvas_visibility_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn canvas_visibility_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_info_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+}
 
-#[cfg(feature = "app-mapinforoot")]
-impl MapInfoRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapinforoot")]impl MapInfoRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoRoot), ::core::stringify!(new),));
+ <Self as IMapInfoRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapinforoot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapInfoRoot_NextCanvasEnabled;
     pub use super::MapInfoRoot;
     pub use super::IMapInfoRoot;
     pub use super::IMapInfoRootMethods;
+    pub use super::MapInfoRoot_NextCanvasEnabled;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -4,44 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmessagelistmenucontent/ProfileCardMessageListMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardMessageListMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct ProfileCardMessageListMenuContent {
-# [offset (232)] # [rename (name = "m_CaptionText")] pub m_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_PageIconImage")] pub m_page_icon_image : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (248)] # [rename (name = "isStarted")] pub is_started : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmessagelistmenucontent/ProfileCardMessageListMenuContent.md"))]#[::unity2::class(namespace="App",name="ProfileCardMessageListMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct ProfileCardMessageListMenuContent{#[offset(232)]#[rename(name="m_CaptionText")]pub m_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_PageIconImage")]pub m_page_icon_image: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(248)]#[rename(name="isStarted")]pub is_started:bool,}
 
 }
 
 #[cfg(feature = "app-profilecardmessagelistmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardmessagelistmenucontent")]
-pub trait IProfileCardMessageListMenuContentMethods : IProfileCardMessageListMenuContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ProfileCardMessageListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMessageListMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231afa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reuse()` overload"] fn reuse (self ,) -> () { unsafe { let __receiver = < ProfileCardMessageListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMessageListMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23106c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < ProfileCardMessageListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMessageListMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231afd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ProfileCardMessageListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMessageListMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231b070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < ProfileCardMessageListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMessageListMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231b160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < ProfileCardMessageListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMessageListMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231b1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateContent(::unity2::Il2CppString, i32, i32)` overload"] fn update_content (self , caption : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , selected_index : impl :: core :: convert :: Into < i32 > , active_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProfileCardMessageListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMessageListMenuContent , :: unity2 :: Il2CppString , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2310d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (caption) , :: core :: convert :: Into :: into (selected_index) , :: core :: convert :: Into :: into (active_count) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardMessageListMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMessageListMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231b240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardmessagelistmenucontent")]pub trait IProfileCardMessageListMenuContentMethods:IProfileCardMessageListMenuContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ProfileCardMessageListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231afa0usize)as*mut u8,();
+(ProfileCardMessageListMenuContent)__receiver)}
+}
+#[doc="`Reuse()` overload"]fn reuse(self,)->(){unsafe{let __receiver= <ProfileCardMessageListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23106c0usize)as*mut u8,();
+(ProfileCardMessageListMenuContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <ProfileCardMessageListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231afd0usize)as*mut u8,i32;
+(ProfileCardMessageListMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ProfileCardMessageListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231b070usize)as*mut u8,f32;
+(ProfileCardMessageListMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <ProfileCardMessageListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231b160usize)as*mut u8,f32;
+(ProfileCardMessageListMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <ProfileCardMessageListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231b1d0usize)as*mut u8,f32;
+(ProfileCardMessageListMenuContent)__receiver)}
+}
+#[doc="`UpdateContent(::unity2::Il2CppString, i32, i32)` overload"]fn update_content(self,caption:impl::core::convert::Into< ::unity2::Il2CppString> ,selected_index:impl::core::convert::Into<i32> ,active_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardMessageListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2310d10usize)as*mut u8,();
+(ProfileCardMessageListMenuContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(caption),(i32)::core::convert::Into::into(selected_index),(i32)::core::convert::Into::into(active_count))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardMessageListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231b240usize)as*mut u8,();
+(ProfileCardMessageListMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardmessagelistmenucontent")]
-impl < __T : IProfileCardMessageListMenuContent > IProfileCardMessageListMenuContentMethods for __T { }
+#[cfg(feature="app-profilecardmessagelistmenucontent")]impl<__T:IProfileCardMessageListMenuContent>IProfileCardMessageListMenuContentMethods for __T{}
 
-#[cfg(feature = "app-profilecardmessagelistmenucontent")]
-impl ProfileCardMessageListMenuContent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMessageListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reuse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMessageListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMessageListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMessageListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMessageListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMessageListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMessageListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMessageListMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-profilecardmessagelistmenucontent")]impl ProfileCardMessageListMenuContent{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reuse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-profilecardmessagelistmenucontent")]
-impl ProfileCardMessageListMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardMessageListMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardMessageListMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardmessagelistmenucontent")]impl ProfileCardMessageListMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardMessageListMenuContent), ::core::stringify!(new),));
+ <Self as IProfileCardMessageListMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardmessagelistmenucontent")]

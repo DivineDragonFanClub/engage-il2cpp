@@ -4,150 +4,187 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoViewerSetting.ForceList")] # [parent (crate :: system :: object :: Object)] pub struct UnitInfoViewerSetting_ForceList {
-# [static_field] # [rename (name = "Types")] pub types : :: unity2 :: Array < crate :: app :: force :: Force_Type > ,
-# [static_field] # [rename (name = "Names")] pub names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting.UnitData")]#[parent(crate::system::object::Object)]pub struct UnitInfoViewerSetting_UnitData{#[offset(16)]#[rename(name="person")]pub person: ::unity2::Il2CppString, #[offset(24)]#[rename(name="job")]pub job: ::unity2::Il2CppString, #[offset(32)]#[rename(name="weapon")]pub weapon: ::unity2::Il2CppString, #[offset(40)]#[rename(name="force")]pub force: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitInfoViewerSetting{#[offset(24)]#[rename(name="m_LeftUnit")]pub m_left_unit:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData, #[offset(32)]#[rename(name="m_RightUnit")]pub m_right_unit:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData, #[offset(40)]#[rename(name="m_IsCharaOnlyTransition")]pub m_is_chara_only_transition:bool, #[offset(44)]#[rename(name="m_Seq")]pub m_seq:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfoViewerSetting_Seq{pub value:i32,}
+impl::unity2::ClassIdentity for UnitInfoViewerSetting_Seq{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfoViewerSetting.Seq";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitInfoViewerSetting_Seq{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitInfoViewerSetting_Seq{pub fn wait_hiding_canvas()->Self{Self{value:0}
+}
+pub fn wait_reshowing_canvas()->Self{Self{value:1}
+}
+pub fn normal()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfoViewerSetting_Seq  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitInfoViewerSetting_Seq  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoViewerSetting.Seq";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitInfoViewerSetting_Seq  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitInfoViewerSetting_Seq  {
-    pub fn wait_hiding_canvas() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn wait_reshowing_canvas() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn normal() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoViewerSetting")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitInfoViewerSetting {
-# [offset (24)] # [rename (name = "m_LeftUnit")] pub m_left_unit : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData ,
-# [offset (32)] # [rename (name = "m_RightUnit")] pub m_right_unit : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData ,
-# [offset (40)] # [rename (name = "m_IsCharaOnlyTransition")] pub m_is_chara_only_transition : bool ,
-# [offset (44)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_Seq ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoViewerSetting.UnitData")] # [parent (crate :: system :: object :: Object)] pub struct UnitInfoViewerSetting_UnitData {
-# [offset (16)] # [rename (name = "person")] pub person : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "job")] pub job : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "weapon")] pub weapon : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "force")] pub force : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting.ForceList")]#[parent(crate::system::object::Object)]pub struct UnitInfoViewerSetting_ForceList{#[static_field]#[rename(name="Types")]pub types: ::unity2::Array<crate::app::force::Force_Type> , #[static_field]#[rename(name="Names")]pub names: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-unitinfoviewersetting-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_ForceList { # [doc = "`GetIndex(::unity2::Il2CppString)` overload"] pub fn get_index (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b51b30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetForceType(::unity2::Il2CppString)` overload"] pub fn get_force_type (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: force :: Force_Type { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b51bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetName(crate::app::force::Force_Type)` overload"] pub fn get_name (force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b51cd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b51db0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_ForceList { pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting_ForceList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-pub trait IUnitInfoViewerSettingMethods : IUnitInfoViewerSetting { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa29e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa29f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa2ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateUnit(crate::app::unitinfo::UnitInfo_Side)` overload"] fn create_unit (self , side : impl :: core :: convert :: Into < crate :: app :: unitinfo :: UnitInfo_Side >) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , crate :: app :: unitinfo :: UnitInfo_Side , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa2e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`GetPerson(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"] fn get_person (self , unit_data : impl :: core :: convert :: Into < crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData >) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa31a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetJob(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"] fn get_job (self , unit_data : impl :: core :: convert :: Into < crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData >) -> crate :: app :: jobdata :: JobData { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa3240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetWeapon(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"] fn get_weapon (self , unit_data : impl :: core :: convert :: Into < crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData >) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , crate :: app :: unitinfoviewersetting :: UnitInfoViewerSetting_UnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa32e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_data) , :: core :: option :: Option :: None) } } } # [doc = "`IsHidingCanvs()` overload"] fn is_hiding_canvs (self ,) -> bool { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa2be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowCanvas()` overload"] fn show_canvas (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa2d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CharaOnlyOn()` overload"] fn chara_only_on (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa3390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CharaOnlyOff()` overload"] fn chara_only_off (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa3440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCharaOnlyTransition()` overload"] fn is_chara_only_transition (self ,) -> bool { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa34b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HasUnit()` overload"] fn has_unit (self ,) -> bool { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa34c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa3580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl < __T : IUnitInfoViewerSetting > IUnitInfoViewerSettingMethods for __T { }
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_hiding_canvs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn show_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn chara_only_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn chara_only_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_chara_only_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn has_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfoViewerSetting) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfoViewerSettingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitinfoviewersetting")]pub trait IUnitInfoViewerSetting_UnitDataMethods:IUnitInfoViewerSetting_UnitData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b51fb0usize)as*mut u8,();
+(UnitInfoViewerSetting_UnitData)__receiver)}
+}
 }
 
-#[cfg(feature = "app-unitinfoviewersetting")]
-pub trait IUnitInfoViewerSetting_UnitDataMethods : IUnitInfoViewerSetting_UnitData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfoViewerSetting_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoViewerSetting_UnitData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b51fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinfoviewersetting")]impl<__T:IUnitInfoViewerSetting_UnitData>IUnitInfoViewerSetting_UnitDataMethods for __T{}
 
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl < __T : IUnitInfoViewerSetting_UnitData > IUnitInfoViewerSetting_UnitDataMethods for __T { }
+#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting_UnitData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_UnitData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoViewerSetting_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting_UnitData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfoViewerSetting_UnitData), ::core::stringify!(new),));
+ <Self as IUnitInfoViewerSetting_UnitDataMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_UnitData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfoViewerSetting_UnitData) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfoViewerSetting_UnitDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitinfoviewersetting")]pub trait IUnitInfoViewerSettingMethods:IUnitInfoViewerSetting{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa29e0usize)as*mut u8,();
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa29f0usize)as*mut u8,();
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa2ab0usize)as*mut u8,();
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`CreateUnit(crate::app::unitinfo::UnitInfo_Side)` overload"]fn create_unit(self,side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa2e80usize)as*mut u8,();
+(UnitInfoViewerSetting)__receiver,(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`GetPerson(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"]fn get_person(self,unit_data:impl::core::convert::Into<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData>)->crate::app::persondata::PersonData{unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa31a0usize)as*mut u8,crate::app::persondata::PersonData;
+(UnitInfoViewerSetting)__receiver,(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)::core::convert::Into::into(unit_data))}
+}
+#[doc="`GetJob(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"]fn get_job(self,unit_data:impl::core::convert::Into<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData>)->crate::app::jobdata::JobData{unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa3240usize)as*mut u8,crate::app::jobdata::JobData;
+(UnitInfoViewerSetting)__receiver,(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)::core::convert::Into::into(unit_data))}
+}
+#[doc="`GetWeapon(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)` overload"]fn get_weapon(self,unit_data:impl::core::convert::Into<crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData>)->crate::app::itemdata::ItemData{unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa32e0usize)as*mut u8,crate::app::itemdata::ItemData;
+(UnitInfoViewerSetting)__receiver,(crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData)::core::convert::Into::into(unit_data))}
+}
+#[doc="`IsHidingCanvs()` overload"]fn is_hiding_canvs(self,)->bool{unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa2be0usize)as*mut u8,bool;
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`ShowCanvas()` overload"]fn show_canvas(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa2d70usize)as*mut u8,();
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`CharaOnlyOn()` overload"]fn chara_only_on(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa3390usize)as*mut u8,();
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`CharaOnlyOff()` overload"]fn chara_only_off(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa3440usize)as*mut u8,();
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`IsCharaOnlyTransition()` overload"]fn is_chara_only_transition(self,)->bool{unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa34b0usize)as*mut u8,bool;
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`HasUnit()` overload"]fn has_unit(self,)->bool{unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa34c0usize)as*mut u8,bool;
+(UnitInfoViewerSetting)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa3580usize)as*mut u8,();
+(UnitInfoViewerSetting)__receiver)}
+}
+}
+
+#[cfg(feature="app-unitinfoviewersetting")]impl<__T:IUnitInfoViewerSetting>IUnitInfoViewerSettingMethods for __T{}
+
+#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_hiding_canvs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn show_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn chara_only_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn chara_only_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_chara_only_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn has_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
+
+#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfoViewerSetting), ::core::stringify!(new),));
+ <Self as IUnitInfoViewerSettingMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting_ForceList{#[doc="`GetIndex(::unity2::Il2CppString)` overload"]pub fn get_index(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51b30usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetForceType(::unity2::Il2CppString)` overload"]pub fn get_force_type(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::force::Force_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51bd0usize)as*mut u8,crate::app::force::Force_Type;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetName(crate::app::force::Force_Type)` overload"]pub fn get_name(force_type:impl::core::convert::Into<crate::app::force::Force_Type>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51cd0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51db0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting_ForceList{pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfoViewerSetting_ForceList;
-    pub use super::IUnitInfoViewerSetting_ForceList;
-    pub use super::UnitInfoViewerSetting_Seq;
-    pub use super::UnitInfoViewerSetting;
-    pub use super::IUnitInfoViewerSetting;
-    pub use super::IUnitInfoViewerSettingMethods;
     pub use super::UnitInfoViewerSetting_UnitData;
     pub use super::IUnitInfoViewerSetting_UnitData;
     pub use super::IUnitInfoViewerSetting_UnitDataMethods;
+    pub use super::UnitInfoViewerSetting;
+    pub use super::IUnitInfoViewerSetting;
+    pub use super::IUnitInfoViewerSettingMethods;
+    pub use super::UnitInfoViewerSetting_Seq;
+    pub use super::UnitInfoViewerSetting_ForceList;
+    pub use super::IUnitInfoViewerSetting_ForceList;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

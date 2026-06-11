@@ -4,46 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akeventplayable/AkEventPlayable.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEventPlayable")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct AkEventPlayable {
-# [offset (32)] # [rename (name = "blendInCurve")] pub blend_in_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
-# [offset (36)] # [rename (name = "blendOutCurve")] pub blend_out_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
-# [offset (40)] # [rename (name = "emitterObjectRef")] pub emitter_object_ref : crate :: unity_engine :: exposedreference_1 :: ExposedReference_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (56)] # [rename (name = "eventDurationMax")] pub event_duration_max : f32 ,
-# [offset (60)] # [rename (name = "eventDurationMin")] pub event_duration_min : f32 ,
-# [offset (64)] # [rename (name = "owningClip")] pub owning_clip : crate :: unity_engine :: timeline :: timelineclip :: TimelineClip ,
-# [offset (72)] # [rename (name = "retriggerEvent")] pub retrigger_event : bool ,
-# [offset (73)] # [rename (name = "UseWwiseEventDuration")] pub use_wwise_event_duration : bool ,
-# [offset (74)] # [rename (name = "StopEventAtClipEnd")] pub stop_event_at_clip_end : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akeventplayable/AkEventPlayable.md"))]#[::unity2::class(namespace="",name="AkEventPlayable")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct AkEventPlayable{#[offset(32)]#[rename(name="blendInCurve")]pub blend_in_curve:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(36)]#[rename(name="blendOutCurve")]pub blend_out_curve:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(40)]#[rename(name="emitterObjectRef")]pub emitter_object_ref:crate::unity_engine::exposedreference_1::ExposedReference_1<crate::unity_engine::gameobject::GameObject> , #[offset(56)]#[rename(name="eventDurationMax")]pub event_duration_max:f32, #[offset(60)]#[rename(name="eventDurationMin")]pub event_duration_min:f32, #[offset(64)]#[rename(name="owningClip")]pub owning_clip:crate::unity_engine::timeline::timelineclip::TimelineClip, #[offset(72)]#[rename(name="retriggerEvent")]pub retrigger_event:bool, #[offset(73)]#[rename(name="UseWwiseEventDuration")]pub use_wwise_event_duration:bool, #[offset(74)]#[rename(name="StopEventAtClipEnd")]pub stop_event_at_clip_end:bool,}
 
 }
 
 #[cfg(feature = "root-akeventplayable-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akeventplayable")]
-pub trait IAkEventPlayableMethods : IAkEventPlayable { # [doc = "`UnityEngine.Timeline.ITimelineClipAsset.get_clipCaps()` overload"] fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps (self ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { unsafe { let __receiver = < AkEventPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , owner : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < AkEventPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayable , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEventPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventPlayable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1b2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akeventplayable")]pub trait IAkEventPlayableMethods:IAkEventPlayable{#[doc="`UnityEngine.Timeline.ITimelineClipAsset.get_clipCaps()` overload"]fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <AkEventPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b030usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
+(AkEventPlayable)__receiver)}
+}
+#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AkEventPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b040usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(AkEventPlayable)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(owner))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEventPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1b2f0usize)as*mut u8,();
+(AkEventPlayable)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akeventplayable")]
-impl < __T : IAkEventPlayable > IAkEventPlayableMethods for __T { }
+#[cfg(feature="root-akeventplayable")]impl<__T:IAkEventPlayable>IAkEventPlayableMethods for __T{}
 
-#[cfg(feature = "root-akeventplayable")]
-impl AkEventPlayable { pub fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-akeventplayable")]impl AkEventPlayable{pub fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-akeventplayable")]
-impl AkEventPlayable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEventPlayable) , :: core :: stringify ! (new) ,)) ; < Self as IAkEventPlayableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akeventplayable")]impl AkEventPlayable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEventPlayable), ::core::stringify!(new),));
+ <Self as IAkEventPlayableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akeventplayable")]

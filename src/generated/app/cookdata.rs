@@ -4,119 +4,298 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cookdata/CookData_Difficulty.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CookData_Difficulty  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cookdata/CookData_Difficulty.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CookData_Difficulty{pub value:i32,}
+impl::unity2::ClassIdentity for CookData_Difficulty{const NAMESPACE: &'static str="App";
+const NAME: &'static str="CookData.Difficulty";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CookData_Difficulty{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CookData_Difficulty{pub fn very_good()->Self{Self{value:0}
+}
+pub fn good()->Self{Self{value:1}
+}
+pub fn have_cooked()->Self{Self{value:2}
+}
+pub fn challenging()->Self{Self{value:3}
+}
+pub fn normal()->Self{Self{value:4}
+}
+pub fn num()->Self{Self{value:5}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for CookData_Difficulty  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CookData.Difficulty";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for CookData_Difficulty  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CookData_Difficulty  {
-    pub fn very_good() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn good() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn have_cooked() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn challenging() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn normal() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cookdata/CookData.md"))] # [:: unity2 :: class (namespace = "App" , name = "CookData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: cookdata :: CookData >)] pub struct CookData {
-# [offset (136)] # [rename (name = "MaskColor100")] pub mask_color100 : crate :: unity_engine :: color :: Color ,
-# [offset (152)] # [rename (name = "MaskColor075")] pub mask_color075 : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cookdata/CookData.md"))]#[::unity2::class(namespace="App",name="CookData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::cookdata::CookData>)]pub struct CookData{#[offset(136)]#[rename(name="MaskColor100")]pub mask_color100:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="MaskColor075")]pub mask_color075:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-cookdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cookdata")]
-impl CookData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543ca0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetDifficultyName(crate::app::cookdata::CookData_Difficulty)` overload"] pub fn get_difficulty_name (difficulty : impl :: core :: convert :: Into < crate :: app :: cookdata :: CookData_Difficulty >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: cookdata :: CookData_Difficulty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2544060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (difficulty) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cookdata")]impl CookData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2543ca0usize)as*mut u8,();
+)}
+}
+#[doc="`GetDifficultyName(crate::app::cookdata::CookData_Difficulty)` overload"]pub fn get_difficulty_name(difficulty:impl::core::convert::Into<crate::app::cookdata::CookData_Difficulty>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2544060usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::cookdata::CookData_Difficulty)::core::convert::Into::into(difficulty))}
+}
+}
 
-#[cfg(feature = "app-cookdata")]
-pub trait ICookDataMethods : ICookData { # [doc = "`get_Pid()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pid(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Taste1()` overload"] fn get_taste1 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Taste1(::unity2::Il2CppString)` overload"] fn set_taste1 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Taste2()` overload"] fn get_taste2 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Taste2(::unity2::Il2CppString)` overload"] fn set_taste2 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Taste3()` overload"] fn get_taste3 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Taste3(::unity2::Il2CppString)` overload"] fn set_taste3 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_VeryGoodFood()` overload"] fn get_very_good_food (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_VeryGoodFood(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_very_good_food (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GoodFood()` overload"] fn get_good_food (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GoodFood(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_good_food (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HaveCookedFood()` overload"] fn get_have_cooked_food (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HaveCookedFood(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_have_cooked_food (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ChallengingFood()` overload"] fn get_challenging_food (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ChallengingFood(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_challenging_food (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LikeFood()` overload"] fn get_like_food (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LikeFood(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_like_food (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DislikeFood()` overload"] fn get_dislike_food (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DislikeFood(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_dislike_food (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BentoIid()` overload"] fn get_bento_iid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BentoIid(::unity2::Il2CppString)` overload"] fn set_bento_iid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MaskColor100R()` overload"] fn get_mask_color100_r (self ,) -> u8 { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MaskColor100R(u8)` overload"] fn set_mask_color100_r (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543ec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MaskColor100G()` overload"] fn get_mask_color100_g (self ,) -> u8 { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MaskColor100G(u8)` overload"] fn set_mask_color100_g (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543ee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MaskColor100B()` overload"] fn get_mask_color100_b (self ,) -> u8 { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MaskColor100B(u8)` overload"] fn set_mask_color100_b (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MaskColor075R()` overload"] fn get_mask_color075_r (self ,) -> u8 { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MaskColor075R(u8)` overload"] fn set_mask_color075_r (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MaskColor075G()` overload"] fn get_mask_color075_g (self ,) -> u8 { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MaskColor075G(u8)` overload"] fn set_mask_color075_g (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MaskColor075B()` overload"] fn get_mask_color075_b (self ,) -> u8 { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MaskColor075B(u8)` overload"] fn set_mask_color075_b (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SeEvent()` overload"] fn get_se_event (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SeEvent(::unity2::Il2CppString)` overload"] fn set_se_event (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25441f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDifficulty(::unity2::Il2CppString)` overload"] fn get_difficulty (self , fid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: cookdata :: CookData_Difficulty { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: cookdata :: CookData_Difficulty = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2544200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fid) , :: core :: option :: Option :: None) } } } # [doc = "`IsLike(crate::app::fooddata::FoodData)` overload"] fn is_like (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> bool { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25442f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: option :: Option :: None) } } } # [doc = "`IsLike(::unity2::Il2CppString)` overload"] fn is_like_2 (self , fid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2544370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fid) , :: core :: option :: Option :: None) } } } # [doc = "`IsDislike(crate::app::fooddata::FoodData)` overload"] fn is_dislike (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> bool { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25443f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: option :: Option :: None) } } } # [doc = "`GetLike(crate::app::fooddata::FoodData)` overload"] fn get_like (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> i32 { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2544470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: option :: Option :: None) } } } # [doc = "`GetLikeString(crate::app::fooddata::FoodData)` overload"] fn get_like_string (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2544560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CookData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CookData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2544730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cookdata")]pub trait ICookDataMethods:ICookData{#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543d50usize)as*mut u8, ::unity2::Il2CppString;
+(CookData)__receiver)}
+}
+#[doc="`set_Pid(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543d60usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Taste1()` overload"]fn get_taste1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543d70usize)as*mut u8, ::unity2::Il2CppString;
+(CookData)__receiver)}
+}
+#[doc="`set_Taste1(::unity2::Il2CppString)` overload"]fn set_taste1(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543d80usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Taste2()` overload"]fn get_taste2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543d90usize)as*mut u8, ::unity2::Il2CppString;
+(CookData)__receiver)}
+}
+#[doc="`set_Taste2(::unity2::Il2CppString)` overload"]fn set_taste2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543da0usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Taste3()` overload"]fn get_taste3(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543db0usize)as*mut u8, ::unity2::Il2CppString;
+(CookData)__receiver)}
+}
+#[doc="`set_Taste3(::unity2::Il2CppString)` overload"]fn set_taste3(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543dc0usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_VeryGoodFood()` overload"]fn get_very_good_food(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543dd0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CookData)__receiver)}
+}
+#[doc="`set_VeryGoodFood(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_very_good_food(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543de0usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_GoodFood()` overload"]fn get_good_food(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543df0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CookData)__receiver)}
+}
+#[doc="`set_GoodFood(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_good_food(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e00usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_HaveCookedFood()` overload"]fn get_have_cooked_food(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e10usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CookData)__receiver)}
+}
+#[doc="`set_HaveCookedFood(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_have_cooked_food(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e20usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_ChallengingFood()` overload"]fn get_challenging_food(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e30usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CookData)__receiver)}
+}
+#[doc="`set_ChallengingFood(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_challenging_food(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e40usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_LikeFood()` overload"]fn get_like_food(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e50usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CookData)__receiver)}
+}
+#[doc="`set_LikeFood(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_like_food(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e60usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_DislikeFood()` overload"]fn get_dislike_food(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e70usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CookData)__receiver)}
+}
+#[doc="`set_DislikeFood(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_dislike_food(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e80usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_BentoIid()` overload"]fn get_bento_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543e90usize)as*mut u8, ::unity2::Il2CppString;
+(CookData)__receiver)}
+}
+#[doc="`set_BentoIid(::unity2::Il2CppString)` overload"]fn set_bento_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543ea0usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor100R()` overload"]fn get_mask_color100_r(self,)->u8{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543eb0usize)as*mut u8,u8;
+(CookData)__receiver)}
+}
+#[doc="`set_MaskColor100R(u8)` overload"]fn set_mask_color100_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543ec0usize)as*mut u8,();
+(CookData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor100G()` overload"]fn get_mask_color100_g(self,)->u8{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543ed0usize)as*mut u8,u8;
+(CookData)__receiver)}
+}
+#[doc="`set_MaskColor100G(u8)` overload"]fn set_mask_color100_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543ee0usize)as*mut u8,();
+(CookData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor100B()` overload"]fn get_mask_color100_b(self,)->u8{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543ef0usize)as*mut u8,u8;
+(CookData)__receiver)}
+}
+#[doc="`set_MaskColor100B(u8)` overload"]fn set_mask_color100_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f00usize)as*mut u8,();
+(CookData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor075R()` overload"]fn get_mask_color075_r(self,)->u8{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f10usize)as*mut u8,u8;
+(CookData)__receiver)}
+}
+#[doc="`set_MaskColor075R(u8)` overload"]fn set_mask_color075_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f20usize)as*mut u8,();
+(CookData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor075G()` overload"]fn get_mask_color075_g(self,)->u8{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f30usize)as*mut u8,u8;
+(CookData)__receiver)}
+}
+#[doc="`set_MaskColor075G(u8)` overload"]fn set_mask_color075_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f40usize)as*mut u8,();
+(CookData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor075B()` overload"]fn get_mask_color075_b(self,)->u8{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f50usize)as*mut u8,u8;
+(CookData)__receiver)}
+}
+#[doc="`set_MaskColor075B(u8)` overload"]fn set_mask_color075_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f60usize)as*mut u8,();
+(CookData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_SeEvent()` overload"]fn get_se_event(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f70usize)as*mut u8, ::unity2::Il2CppString;
+(CookData)__receiver)}
+}
+#[doc="`set_SeEvent(::unity2::Il2CppString)` overload"]fn set_se_event(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f80usize)as*mut u8,();
+(CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f90usize)as*mut u8,();
+(CookData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25441f0usize)as*mut u8, ::unity2::Il2CppString;
+(CookData)__receiver)}
+}
+#[doc="`GetDifficulty(::unity2::Il2CppString)` overload"]fn get_difficulty(self,fid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::cookdata::CookData_Difficulty{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2544200usize)as*mut u8,crate::app::cookdata::CookData_Difficulty;
+(CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(fid))}
+}
+#[doc="`IsLike(crate::app::fooddata::FoodData)` overload"]fn is_like(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)->bool{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25442f0usize)as*mut u8,bool;
+(CookData)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
+}
+#[doc="`IsLike(::unity2::Il2CppString)` overload"]fn is_like_2(self,fid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2544370usize)as*mut u8,bool;
+(CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(fid))}
+}
+#[doc="`IsDislike(crate::app::fooddata::FoodData)` overload"]fn is_dislike(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)->bool{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25443f0usize)as*mut u8,bool;
+(CookData)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
+}
+#[doc="`GetLike(crate::app::fooddata::FoodData)` overload"]fn get_like(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)->i32{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2544470usize)as*mut u8,i32;
+(CookData)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
+}
+#[doc="`GetLikeString(crate::app::fooddata::FoodData)` overload"]fn get_like_string(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2544560usize)as*mut u8, ::unity2::Il2CppString;
+(CookData)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2544730usize)as*mut u8,();
+(CookData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-cookdata")]
-impl < __T : ICookData > ICookDataMethods for __T { }
+#[cfg(feature="app-cookdata")]impl<__T:ICookData>ICookDataMethods for __T{}
 
-#[cfg(feature = "app-cookdata")]
-impl CookData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_taste1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_taste1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_taste2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_taste2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_taste3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_taste3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_very_good_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_very_good_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_good_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_good_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_have_cooked_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_have_cooked_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_challenging_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_challenging_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_like_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_like_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_dislike_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_dislike_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_bento_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_bento_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_mask_color100_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_mask_color100_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_mask_color100_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_mask_color100_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_mask_color100_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_mask_color100_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_mask_color075_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn set_mask_color075_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_mask_color075_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn set_mask_color075_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_mask_color075_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn set_mask_color075_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_se_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn set_se_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_difficulty_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_difficulty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn is_like_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn is_like_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn is_dislike_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_like_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_like_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CookData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } }
+#[cfg(feature="app-cookdata")]impl CookData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_taste1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_taste1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_taste2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_taste2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_taste3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_taste3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_very_good_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_very_good_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_good_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_good_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_have_cooked_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_have_cooked_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_challenging_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_challenging_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_like_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_like_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_dislike_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_dislike_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_bento_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_bento_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_mask_color100_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_mask_color100_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_mask_color100_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_mask_color100_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_mask_color100_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_mask_color100_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_mask_color075_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_mask_color075_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_mask_color075_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn set_mask_color075_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_mask_color075_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn set_mask_color075_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_se_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn set_se_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_difficulty_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_difficulty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn is_like_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn is_like_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn is_dislike_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_like_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_like_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+}
 
-#[cfg(feature = "app-cookdata")]
-impl CookData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CookData) , :: core :: stringify ! (new) ,)) ; < Self as ICookDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cookdata")]impl CookData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CookData), ::core::stringify!(new),));
+ <Self as ICookDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-cookdata")]

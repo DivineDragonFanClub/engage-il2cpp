@@ -4,50 +4,126 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemessagecontent/GameMessageContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameMessageContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GameMessageContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_objText")] pub m_obj_text : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_objKeyWaitIcon")] pub m_obj_key_wait_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_objLoadingIcon")] pub m_obj_loading_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (56)] # [rename (name = "m_proc")] pub m_proc : crate :: app :: gamemessage :: GameMessage ,
-# [offset (64)] # [rename (name = "m_posX")] pub m_pos_x : f32 ,
-# [offset (68)] # [rename (name = "m_posY")] pub m_pos_y : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamemessagecontent/GameMessageContent.md"))]#[::unity2::class(namespace="App",name="GameMessageContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GameMessageContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_objText")]pub m_obj_text:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_objKeyWaitIcon")]pub m_obj_key_wait_icon:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_objLoadingIcon")]pub m_obj_loading_icon:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="m_proc")]pub m_proc:crate::app::gamemessage::GameMessage, #[offset(64)]#[rename(name="m_posX")]pub m_pos_x:f32, #[offset(68)]#[rename(name="m_posY")]pub m_pos_y:f32,}
 
 }
 
 #[cfg(feature = "app-gamemessagecontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gamemessagecontent")]
-impl GameMessageContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22802c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: gamemessagecontent :: GameMessageContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gamemessagecontent :: GameMessageContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227ecc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamemessagecontent")]impl GameMessageContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22802c0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::gamemessagecontent::GameMessageContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x227ecc0usize)as*mut u8,crate::app::gamemessagecontent::GameMessageContent;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2280370usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-gamemessagecontent")]
-pub trait IGameMessageContentMethods : IGameMessageContent { # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227e6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227e8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22800f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227e5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227e7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetProc(crate::app::gamemessage::GameMessage)` overload"] fn set_proc (self , proc : impl :: core :: convert :: Into < crate :: app :: gamemessage :: GameMessage >) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , crate :: app :: gamemessage :: GameMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (proc) , :: core :: option :: Option :: None) } } } # [doc = "`GetTextMeshProComponent()` overload"] fn get_text_mesh_pro_component (self ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227e1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Delete()` overload"] fn delete (self ,) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227e010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcPosX()` overload"] fn calc_pos_x (self ,) -> f32 { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcPosY()` overload"] fn calc_pos_y (self ,) -> f32 { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetShadowOff()` overload"] fn set_shadow_off (self ,) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227fc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPosition(f32, f32)` overload"] fn set_position (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227fdc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameMessageContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamemessagecontent")]pub trait IGameMessageContentMethods:IGameMessageContent{#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227e6b0usize)as*mut u8,bool;
+(GameMessageContent)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227e8b0usize)as*mut u8,bool;
+(GameMessageContent)__receiver)}
+}
+#[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22800f0usize)as*mut u8,bool;
+(GameMessageContent)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227e5c0usize)as*mut u8,();
+(GameMessageContent)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227e7d0usize)as*mut u8,();
+(GameMessageContent)__receiver)}
+}
+#[doc="`SetProc(crate::app::gamemessage::GameMessage)` overload"]fn set_proc(self,proc:impl::core::convert::Into<crate::app::gamemessage::GameMessage>)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280150usize)as*mut u8,();
+(GameMessageContent)__receiver,(crate::app::gamemessage::GameMessage)::core::convert::Into::into(proc))}
+}
+#[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280160usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+(GameMessageContent)__receiver)}
+}
+#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227e1b0usize)as*mut u8,();
+(GameMessageContent)__receiver)}
+}
+#[doc="`Delete()` overload"]fn delete(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227e010usize)as*mut u8,();
+(GameMessageContent)__receiver)}
+}
+#[doc="`CalcPosX()` overload"]fn calc_pos_x(self,)->f32{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280220usize)as*mut u8,f32;
+(GameMessageContent)__receiver)}
+}
+#[doc="`CalcPosY()` overload"]fn calc_pos_y(self,)->f32{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280230usize)as*mut u8,f32;
+(GameMessageContent)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280240usize)as*mut u8,();
+(GameMessageContent)__receiver)}
+}
+#[doc="`SetShadowOff()` overload"]fn set_shadow_off(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227fc80usize)as*mut u8,();
+(GameMessageContent)__receiver)}
+}
+#[doc="`SetPosition(f32, f32)` overload"]fn set_position(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227fdc0usize)as*mut u8,();
+(GameMessageContent)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280360usize)as*mut u8,();
+(GameMessageContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gamemessagecontent")]
-impl < __T : IGameMessageContent > IGameMessageContentMethods for __T { }
+#[cfg(feature="app-gamemessagecontent")]impl<__T:IGameMessageContent>IGameMessageContentMethods for __T{}
 
-#[cfg(feature = "app-gamemessagecontent")]
-impl GameMessageContent { pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_proc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_text_mesh_pro_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn calc_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn calc_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_shadow_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="app-gamemessagecontent")]impl GameMessageContent{pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_proc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_text_mesh_pro_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn calc_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn calc_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_shadow_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-gamemessagecontent")]
-impl GameMessageContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameMessageContent) , :: core :: stringify ! (new) ,)) ; < Self as IGameMessageContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gamemessagecontent")]impl GameMessageContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameMessageContent), ::core::stringify!(new),));
+ <Self as IGameMessageContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gamemessagecontent")]

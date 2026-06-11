@@ -4,477 +4,1019 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: mapbasicmenuitem :: { IMapBasicMenuItem , MapBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::mapbasicmenuitem::{IMapBasicMenuItem,MapBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_HubMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.HubMenuItem")] # [parent (crate :: app :: mapbasicmenuitem :: MapBasicMenuItem)] pub struct HubMenu_HubMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubSystemMenu_TutorialItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubSystemMenu.TutorialItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SubSystemMenu_TutorialItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_GmapItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.GmapItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_GmapItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SaveItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SaveItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SaveItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_NotebookItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubFriendMenu.NotebookItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SubFriendMenu_NotebookItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_NextChapterItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.NextChapterItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_NextChapterItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu_ConfigItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubSystemMenu.ConfigItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SubSystemMenu_ConfigItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SystemItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SystemItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SystemItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu_ResetItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubSystemMenu.ResetItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SubSystemMenu_ResetItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubSystemMenu_ConfigItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubSystemMenu.ConfigItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SubSystemMenu_ConfigItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_RelianceItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubFriendMenu.RelianceItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SubFriendMenu_RelianceItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_MaterialListItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.MaterialListItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_MaterialListItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_RingListItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubFriendMenu.RingListItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SubFriendMenu_RingListItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubFriendMenu.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubMenu_SubFriendMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_MapInfoItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.MapInfoItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_MapInfoItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubFriendMenu_RingListItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubFriendMenu.RingListItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SubFriendMenu_RingListItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SaveItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SaveItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SaveItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_InventoryItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.InventoryItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_InventoryItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_ProfileCardItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubFriendMenu.ProfileCardItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SubFriendMenu_ProfileCardItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_MapInfoItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.MapInfoItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_MapInfoItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu_TutorialItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubSystemMenu.TutorialItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SubSystemMenu_TutorialItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubSystemMenu_ResetItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubSystemMenu.ResetItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SubSystemMenu_ResetItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_NextItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.NextItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_NextItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_GmapItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.GmapItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_GmapItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_FriendItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.FriendItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_FriendItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubFriendMenu_NotebookItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubFriendMenu.NotebookItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SubFriendMenu_NotebookItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_GodItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.GodItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_GodItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_GodItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.GodItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_GodItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SystemItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SystemItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SystemItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubFriendMenu_ProfileCardItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubFriendMenu.ProfileCardItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SubFriendMenu_ProfileCardItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubSystemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubSystemMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct HubMenu_SubSystemMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_NextItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.NextItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_NextItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu_KizunaItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubFriendMenu.KizunaItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_SubFriendMenu_KizunaItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_FriendItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.FriendItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_FriendItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct HubMenu {
-# [static_field] # [rename (name = "currentMenuSelect")] pub current_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_HubMenuItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.HubMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct HubMenu_HubMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_MaterialListItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.MaterialListItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_MaterialListItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubSystemMenu.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubSystemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubMenu_SubSystemMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_SubFriendMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.SubFriendMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct HubMenu_SubFriendMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu.md"))]#[::unity2::class(namespace="App",name="HubMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubMenu{#[static_field]#[rename(name="currentMenuSelect")]pub current_menu_select:crate::app::basicmenuselect::BasicMenuSelect,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_NextChapterItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.NextChapterItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_NextChapterItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubFriendMenu_KizunaItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubFriendMenu.KizunaItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SubFriendMenu_KizunaItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenu/HubMenu_InventoryItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenu.InventoryItem")] # [parent (crate :: app :: hubmenu :: HubMenu_HubMenuItem)] pub struct HubMenu_InventoryItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenu/HubMenu_SubFriendMenu_RelianceItem.md"))]#[::unity2::class(namespace="App",name="HubMenu.SubFriendMenu.RelianceItem")]#[parent(crate::app::hubmenu::HubMenu_HubMenuItem)]pub struct HubMenu_SubFriendMenu_RelianceItem{}
 
 }
 
 #[cfg(feature = "app-hubmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_HubMenuItemMethods : IHubMenu_HubMenuItem { # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_HubMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpVisible(bool)` overload"] fn set_help_visible (self , active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMenu_HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_HubMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (active) , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_HubMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_HubMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_HubMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < HubMenu_HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_HubMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < HubMenu_HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_HubMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_HubMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_HubMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adecf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_HubMenuItem > IHubMenu_HubMenuItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_HubMenuItem { pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_help_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_HubMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_HubMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_HubMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_HubMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubSystemMenu_TutorialItemMethods:IHubMenu_SubSystemMenu_TutorialItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b651e0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65260usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b652e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b652f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65470usize)as*mut u8,();
+(HubMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_GmapItemMethods : IHubMenu_GmapItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_GmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GmapItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2aded00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_GmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GmapItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adede0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_GmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GmapItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adeec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_GmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GmapItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adeed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_GmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GmapItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubSystemMenu_TutorialItem>IHubMenu_SubSystemMenu_TutorialItemMethods for __T{}
 
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_GmapItem > IHubMenu_GmapItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_GmapItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GmapItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_GmapItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_GmapItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_GmapItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu_TutorialItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubFriendMenu_NotebookItemMethods : IHubMenu_SubFriendMenu_NotebookItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubFriendMenu_NotebookItem > IHubMenu_SubFriendMenu_NotebookItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_NotebookItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_NotebookItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubFriendMenu_NotebookItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubFriendMenu_NotebookItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu_TutorialItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubSystemMenu_TutorialItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SubSystemMenu_TutorialItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubSystemMenu_ConfigItemMethods : IHubMenu_SubSystemMenu_ConfigItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b65060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubSystemMenu_ConfigItem > IHubMenu_SubSystemMenu_ConfigItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu_ConfigItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu_ConfigItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubSystemMenu_ConfigItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubSystemMenu_ConfigItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SaveItemMethods:IHubMenu_SaveItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0810usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SaveItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0890usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SaveItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0910usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SaveItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0920usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SaveItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0b20usize)as*mut u8,();
+(HubMenu_SaveItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubSystemMenu_ResetItemMethods : IHubMenu_SubSystemMenu_ResetItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b65070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b650f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b65170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b65180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b651d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SaveItem>IHubMenu_SaveItemMethods for __T{}
 
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubSystemMenu_ResetItem > IHubMenu_SubSystemMenu_ResetItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu_ResetItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu_ResetItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubSystemMenu_ResetItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubSystemMenu_ResetItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SaveItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubFriendMenu_RelianceItemMethods : IHubMenu_SubFriendMenu_RelianceItem { # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubFriendMenu_RelianceItem > IHubMenu_SubFriendMenu_RelianceItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_RelianceItem { pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_RelianceItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubFriendMenu_RelianceItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubFriendMenu_RelianceItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SaveItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SaveItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SaveItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubFriendMenu_RingListItemMethods : IHubMenu_SubFriendMenu_RingListItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubFriendMenu_RingListItem > IHubMenu_SubFriendMenu_RingListItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_RingListItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_RingListItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubFriendMenu_RingListItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubFriendMenu_RingListItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_NextChapterItemMethods:IHubMenu_NextChapterItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_NextChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae01d0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_NextChapterItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_NextChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0250usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_NextChapterItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_NextChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae02d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_NextChapterItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_NextChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae02e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_NextChapterItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_NextChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae04e0usize)as*mut u8,();
+(HubMenu_NextChapterItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_MapInfoItemMethods : IHubMenu_MapInfoItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_MapInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MapInfoItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adfb90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_MapInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MapInfoItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adfc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_MapInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MapInfoItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adfc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_MapInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MapInfoItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adfca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_MapInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MapInfoItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adfea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_NextChapterItem>IHubMenu_NextChapterItemMethods for __T{}
 
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_MapInfoItem > IHubMenu_MapInfoItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_MapInfoItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MapInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MapInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MapInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MapInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MapInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_MapInfoItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_MapInfoItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_MapInfoItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_NextChapterItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SaveItemMethods : IHubMenu_SaveItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SaveItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SaveItem > IHubMenu_SaveItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SaveItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SaveItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SaveItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SaveItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_NextChapterItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_NextChapterItem), ::core::stringify!(new),));
+ <Self as IHubMenu_NextChapterItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubFriendMenu_ProfileCardItemMethods : IHubMenu_SubFriendMenu_ProfileCardItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_ProfileCardItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_ProfileCardItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b644a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_ProfileCardItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_ProfileCardItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_ProfileCardItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubFriendMenu_ProfileCardItem > IHubMenu_SubFriendMenu_ProfileCardItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_ProfileCardItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_ProfileCardItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_ProfileCardItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubFriendMenu_ProfileCardItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubFriendMenu_ProfileCardItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SystemItemMethods:IHubMenu_SystemItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0e10usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SystemItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0e60usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SystemItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0ee0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SystemItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0f60usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SystemItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0f70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SystemItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae1020usize)as*mut u8,();
+(HubMenu_SystemItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubSystemMenu_TutorialItemMethods : IHubMenu_SubSystemMenu_TutorialItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b651e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b65260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b652e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b652f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b65470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SystemItem>IHubMenu_SystemItemMethods for __T{}
 
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubSystemMenu_TutorialItem > IHubMenu_SubSystemMenu_TutorialItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu_TutorialItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu_TutorialItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubSystemMenu_TutorialItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubSystemMenu_TutorialItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SystemItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_NextItemMethods : IHubMenu_NextItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_NextItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae04f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_NextItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_NextItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae05f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_NextItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_NextItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_NextItem > IHubMenu_NextItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_NextItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_NextItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_NextItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_NextItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SystemItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SystemItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SystemItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_FriendItemMethods : IHubMenu_FriendItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ade780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ade7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ade850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ade8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ade8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_FriendItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_FriendItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adece0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_FriendItem > IHubMenu_FriendItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_FriendItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_FriendItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_FriendItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_FriendItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_FriendItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubSystemMenu_ConfigItemMethods:IHubMenu_SubSystemMenu_ConfigItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64dd0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64e50usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64ed0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64ee0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65060usize)as*mut u8,();
+(HubMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_GodItemMethods : IHubMenu_GodItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GodItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf0e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GodItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GodItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GodItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_GodItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_GodItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubSystemMenu_ConfigItem>IHubMenu_SubSystemMenu_ConfigItemMethods for __T{}
 
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_GodItem > IHubMenu_GodItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_GodItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GodItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GodItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GodItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GodItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_GodItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_GodItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_GodItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_GodItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu_ConfigItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SystemItemMethods : IHubMenu_SystemItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SystemItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SystemItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae1020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SystemItem > IHubMenu_SystemItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SystemItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SystemItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SystemItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SystemItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SystemItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu_ConfigItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubSystemMenu_ConfigItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SubSystemMenu_ConfigItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0bf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubSystemMenuMethods : IHubMenu_SubSystemMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent >) -> () { unsafe { let __receiver = < HubMenu_SubSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubSystemMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubSystemMenu > IHubMenu_SubSystemMenuMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubSystemMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubSystemMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubSystemMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_MaterialListItemMethods:IHubMenu_MaterialListItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adfeb0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_MaterialListItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adff30usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_MaterialListItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adffb0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_MaterialListItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adffc0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_MaterialListItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae01c0usize)as*mut u8,();
+(HubMenu_MaterialListItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubFriendMenu_KizunaItemMethods : IHubMenu_SubFriendMenu_KizunaItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b63df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b63e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b63ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b63f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b64170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_MaterialListItem>IHubMenu_MaterialListItemMethods for __T{}
 
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubFriendMenu_KizunaItem > IHubMenu_SubFriendMenu_KizunaItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_KizunaItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu_KizunaItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubFriendMenu_KizunaItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubFriendMenu_KizunaItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_MaterialListItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu { # [doc = "`Init()` overload"] pub fn init () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6e30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] pub fn destroy () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b7b50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b7e00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenuMethods : IHubMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < HubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < HubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnResume()` overload"] fn on_resume (self ,) -> () { unsafe { let __receiver = < HubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b7ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu > IHubMenuMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_resume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_MaterialListItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_MaterialListItem), ::core::stringify!(new),));
+ <Self as IHubMenu_MaterialListItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_MaterialListItemMethods : IHubMenu_MaterialListItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adfeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adff30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adffb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adffc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_MaterialListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_MaterialListItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae01c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_MaterialListItem > IHubMenu_MaterialListItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_MaterialListItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_MaterialListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_MaterialListItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_MaterialListItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_MaterialListItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2adea30usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
 }
 
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adea30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_SubFriendMenuMethods : IHubMenu_SubFriendMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent >) -> () { unsafe { let __receiver = < HubMenu_SubFriendMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_SubFriendMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_SubFriendMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_SubFriendMenu > IHubMenu_SubFriendMenuMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_SubFriendMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_SubFriendMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_SubFriendMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubFriendMenuMethods:IHubMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <HubMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0b30usize)as*mut u8,();
+(HubMenu_SubFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0b40usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_NextChapterItemMethods : IHubMenu_NextChapterItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_NextChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextChapterItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae01d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_NextChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextChapterItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae0250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_NextChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextChapterItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae02d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_NextChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextChapterItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae02e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_NextChapterItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_NextChapterItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae04e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubFriendMenu>IHubMenu_SubFriendMenuMethods for __T{}
 
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_NextChapterItem > IHubMenu_NextChapterItemMethods for __T { }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_NextChapterItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextChapterItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextChapterItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextChapterItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextChapterItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_NextChapterItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_NextChapterItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_NextChapterItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_NextChapterItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "app-hubmenu")]
-pub trait IHubMenu_InventoryItemMethods : IHubMenu_InventoryItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adf980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenu_InventoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenu_InventoryItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2adfb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubFriendMenu), ::core::stringify!(new),));
+ <Self as IHubMenu_SubFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
 
-#[cfg(feature = "app-hubmenu")]
-impl < __T : IHubMenu_InventoryItem > IHubMenu_InventoryItemMethods for __T { }
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubFriendMenu_RingListItemMethods:IHubMenu_SubFriendMenu_RingListItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64b10usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64b90usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64c10usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64c40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64dc0usize)as*mut u8,();
+(HubMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_InventoryItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenu_InventoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubFriendMenu_RingListItem>IHubMenu_SubFriendMenu_RingListItemMethods for __T{}
 
-#[cfg(feature = "app-hubmenu")]
-impl HubMenu_InventoryItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenu_InventoryItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenu_InventoryItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_RingListItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_RingListItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubFriendMenu_RingListItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SubFriendMenu_RingListItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_InventoryItemMethods:IHubMenu_InventoryItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf870usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_InventoryItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf8f0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_InventoryItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf970usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_InventoryItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf980usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_InventoryItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adfb80usize)as*mut u8,();
+(HubMenu_InventoryItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_InventoryItem>IHubMenu_InventoryItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_InventoryItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_InventoryItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_InventoryItem), ::core::stringify!(new),));
+ <Self as IHubMenu_InventoryItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_MapInfoItemMethods:IHubMenu_MapInfoItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_MapInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adfb90usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_MapInfoItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_MapInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adfc10usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_MapInfoItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_MapInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adfc90usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_MapInfoItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_MapInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adfca0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_MapInfoItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_MapInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adfea0usize)as*mut u8,();
+(HubMenu_MapInfoItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_MapInfoItem>IHubMenu_MapInfoItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_MapInfoItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_MapInfoItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_MapInfoItem), ::core::stringify!(new),));
+ <Self as IHubMenu_MapInfoItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubSystemMenu_ResetItemMethods:IHubMenu_SubSystemMenu_ResetItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65070usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b650f0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65170usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65180usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b651d0usize)as*mut u8,();
+(HubMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubSystemMenu_ResetItem>IHubMenu_SubSystemMenu_ResetItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu_ResetItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu_ResetItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubSystemMenu_ResetItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SubSystemMenu_ResetItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_GmapItemMethods:IHubMenu_GmapItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_GmapItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aded00usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_GmapItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_GmapItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adede0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_GmapItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_GmapItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adeec0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_GmapItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_GmapItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adeed0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_GmapItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_GmapItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf0d0usize)as*mut u8,();
+(HubMenu_GmapItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_GmapItem>IHubMenu_GmapItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_GmapItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_GmapItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_GmapItem), ::core::stringify!(new),));
+ <Self as IHubMenu_GmapItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubFriendMenu_NotebookItemMethods:IHubMenu_SubFriendMenu_NotebookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64180usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64200usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64280usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64290usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64410usize)as*mut u8,();
+(HubMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubFriendMenu_NotebookItem>IHubMenu_SubFriendMenu_NotebookItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_NotebookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_NotebookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubFriendMenu_NotebookItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SubFriendMenu_NotebookItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_GodItemMethods:IHubMenu_GodItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf0e0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_GodItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf160usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_GodItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf1e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_GodItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf1f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_GodItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf3f0usize)as*mut u8,();
+(HubMenu_GodItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_GodItem>IHubMenu_GodItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_GodItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_GodItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_GodItem), ::core::stringify!(new),));
+ <Self as IHubMenu_GodItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubFriendMenu_ProfileCardItemMethods:IHubMenu_SubFriendMenu_ProfileCardItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_ProfileCardItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64420usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_ProfileCardItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_ProfileCardItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b644a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_ProfileCardItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SubFriendMenu_ProfileCardItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64520usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SubFriendMenu_ProfileCardItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubFriendMenu_ProfileCardItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64530usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubFriendMenu_ProfileCardItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SubFriendMenu_ProfileCardItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64740usize)as*mut u8,();
+(HubMenu_SubFriendMenu_ProfileCardItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubFriendMenu_ProfileCardItem>IHubMenu_SubFriendMenu_ProfileCardItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_ProfileCardItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_ProfileCardItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubFriendMenu_ProfileCardItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SubFriendMenu_ProfileCardItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_NextItemMethods:IHubMenu_NextItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_NextItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae04f0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_NextItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_NextItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0570usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_NextItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_NextItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae05f0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_NextItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_NextItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0600usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_NextItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_NextItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0800usize)as*mut u8,();
+(HubMenu_NextItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_NextItem>IHubMenu_NextItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_NextItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_NextItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_NextItem), ::core::stringify!(new),));
+ <Self as IHubMenu_NextItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_FriendItemMethods:IHubMenu_FriendItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ade780usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_FriendItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ade7d0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_FriendItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ade850usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_FriendItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ade8d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_FriendItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ade8e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_FriendItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adece0usize)as*mut u8,();
+(HubMenu_FriendItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_FriendItem>IHubMenu_FriendItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_FriendItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_FriendItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_FriendItem), ::core::stringify!(new),));
+ <Self as IHubMenu_FriendItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_HubMenuItemMethods:IHubMenu_HubMenuItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf400usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_HubMenuItem)__receiver)}
+}
+#[doc="`SetHelpVisible(bool)` overload"]fn set_help_visible(self,active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMenu_HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf480usize)as*mut u8,();
+(HubMenu_HubMenuItem)__receiver,(bool)::core::convert::Into::into(active))}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf580usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_HubMenuItem)__receiver)}
+}
+#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf5c0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_HubMenuItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf600usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_HubMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <HubMenu_HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf650usize)as*mut u8,();
+(HubMenu_HubMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <HubMenu_HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adf760usize)as*mut u8,();
+(HubMenu_HubMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_HubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2adecf0usize)as*mut u8,();
+(HubMenu_HubMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_HubMenuItem>IHubMenu_HubMenuItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_HubMenuItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_help_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_HubMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_HubMenuItem), ::core::stringify!(new),));
+ <Self as IHubMenu_HubMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0bf0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubSystemMenuMethods:IHubMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <HubMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0b90usize)as*mut u8,();
+(HubMenu_SubSystemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae0ba0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubSystemMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubSystemMenu>IHubMenu_SubSystemMenuMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubSystemMenu), ::core::stringify!(new),));
+ <Self as IHubMenu_SubSystemMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu{#[doc="`Init()` overload"]pub fn init()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b6e30usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b6ef0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Destroy()` overload"]pub fn destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b7b50usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b7e00usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenuMethods:IHubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <HubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b6d20usize)as*mut u8,();
+(HubMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b6dd0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <HubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b6e20usize)as*mut u8,();
+(HubMenu)__receiver)}
+}
+#[doc="`OnResume()` overload"]fn on_resume(self,)->(){unsafe{let __receiver= <HubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b7ab0usize)as*mut u8,();
+(HubMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu>IHubMenuMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu), ::core::stringify!(new),));
+ <Self as IHubMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubFriendMenu_KizunaItemMethods:IHubMenu_SubFriendMenu_KizunaItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63df0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63e70usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63ef0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63f00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64170usize)as*mut u8,();
+(HubMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubFriendMenu_KizunaItem>IHubMenu_SubFriendMenu_KizunaItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_KizunaItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_KizunaItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubFriendMenu_KizunaItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SubFriendMenu_KizunaItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubmenu")]pub trait IHubMenu_SubFriendMenu_RelianceItemMethods:IHubMenu_SubFriendMenu_RelianceItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64770usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64780usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64800usize)as*mut u8, ::unity2::Il2CppString;
+(HubMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64880usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64890usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b64b00usize)as*mut u8,();
+(HubMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmenu")]impl<__T:IHubMenu_SubFriendMenu_RelianceItem>IHubMenu_SubFriendMenu_RelianceItemMethods for __T{}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_RelianceItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-hubmenu")]impl HubMenu_SubFriendMenu_RelianceItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenu_SubFriendMenu_RelianceItem), ::core::stringify!(new),));
+ <Self as IHubMenu_SubFriendMenu_RelianceItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubMenu_HubMenuItem;
-    pub use super::IHubMenu_HubMenuItem;
-    pub use super::IHubMenu_HubMenuItemMethods;
-    pub use super::HubMenu_GmapItem;
-    pub use super::IHubMenu_GmapItem;
-    pub use super::IHubMenu_GmapItemMethods;
-    pub use super::HubMenu_SubFriendMenu_NotebookItem;
-    pub use super::IHubMenu_SubFriendMenu_NotebookItem;
-    pub use super::IHubMenu_SubFriendMenu_NotebookItemMethods;
-    pub use super::HubMenu_SubSystemMenu_ConfigItem;
-    pub use super::IHubMenu_SubSystemMenu_ConfigItem;
-    pub use super::IHubMenu_SubSystemMenu_ConfigItemMethods;
-    pub use super::HubMenu_SubSystemMenu_ResetItem;
-    pub use super::IHubMenu_SubSystemMenu_ResetItem;
-    pub use super::IHubMenu_SubSystemMenu_ResetItemMethods;
-    pub use super::HubMenu_SubFriendMenu_RelianceItem;
-    pub use super::IHubMenu_SubFriendMenu_RelianceItem;
-    pub use super::IHubMenu_SubFriendMenu_RelianceItemMethods;
-    pub use super::HubMenu_SubFriendMenu_RingListItem;
-    pub use super::IHubMenu_SubFriendMenu_RingListItem;
-    pub use super::IHubMenu_SubFriendMenu_RingListItemMethods;
-    pub use super::HubMenu_MapInfoItem;
-    pub use super::IHubMenu_MapInfoItem;
-    pub use super::IHubMenu_MapInfoItemMethods;
-    pub use super::HubMenu_SaveItem;
-    pub use super::IHubMenu_SaveItem;
-    pub use super::IHubMenu_SaveItemMethods;
-    pub use super::HubMenu_SubFriendMenu_ProfileCardItem;
-    pub use super::IHubMenu_SubFriendMenu_ProfileCardItem;
-    pub use super::IHubMenu_SubFriendMenu_ProfileCardItemMethods;
     pub use super::HubMenu_SubSystemMenu_TutorialItem;
     pub use super::IHubMenu_SubSystemMenu_TutorialItem;
     pub use super::IHubMenu_SubSystemMenu_TutorialItemMethods;
-    pub use super::HubMenu_NextItem;
-    pub use super::IHubMenu_NextItem;
-    pub use super::IHubMenu_NextItemMethods;
-    pub use super::HubMenu_FriendItem;
-    pub use super::IHubMenu_FriendItem;
-    pub use super::IHubMenu_FriendItemMethods;
-    pub use super::HubMenu_GodItem;
-    pub use super::IHubMenu_GodItem;
-    pub use super::IHubMenu_GodItemMethods;
+    pub use super::HubMenu_SaveItem;
+    pub use super::IHubMenu_SaveItem;
+    pub use super::IHubMenu_SaveItemMethods;
+    pub use super::HubMenu_NextChapterItem;
+    pub use super::IHubMenu_NextChapterItem;
+    pub use super::IHubMenu_NextChapterItemMethods;
     pub use super::HubMenu_SystemItem;
     pub use super::IHubMenu_SystemItem;
     pub use super::IHubMenu_SystemItemMethods;
-    pub use super::HubMenu_SubSystemMenu;
-    pub use super::IHubMenu_SubSystemMenu;
-    pub use super::IHubMenu_SubSystemMenuMethods;
-    pub use super::HubMenu_SubFriendMenu_KizunaItem;
-    pub use super::IHubMenu_SubFriendMenu_KizunaItem;
-    pub use super::IHubMenu_SubFriendMenu_KizunaItemMethods;
-    pub use super::HubMenu;
-    pub use super::IHubMenu;
-    pub use super::IHubMenuMethods;
+    pub use super::HubMenu_SubSystemMenu_ConfigItem;
+    pub use super::IHubMenu_SubSystemMenu_ConfigItem;
+    pub use super::IHubMenu_SubSystemMenu_ConfigItemMethods;
     pub use super::HubMenu_MaterialListItem;
     pub use super::IHubMenu_MaterialListItem;
     pub use super::IHubMenu_MaterialListItemMethods;
     pub use super::HubMenu_SubFriendMenu;
     pub use super::IHubMenu_SubFriendMenu;
     pub use super::IHubMenu_SubFriendMenuMethods;
-    pub use super::HubMenu_NextChapterItem;
-    pub use super::IHubMenu_NextChapterItem;
-    pub use super::IHubMenu_NextChapterItemMethods;
+    pub use super::HubMenu_SubFriendMenu_RingListItem;
+    pub use super::IHubMenu_SubFriendMenu_RingListItem;
+    pub use super::IHubMenu_SubFriendMenu_RingListItemMethods;
     pub use super::HubMenu_InventoryItem;
     pub use super::IHubMenu_InventoryItem;
     pub use super::IHubMenu_InventoryItemMethods;
+    pub use super::HubMenu_MapInfoItem;
+    pub use super::IHubMenu_MapInfoItem;
+    pub use super::IHubMenu_MapInfoItemMethods;
+    pub use super::HubMenu_SubSystemMenu_ResetItem;
+    pub use super::IHubMenu_SubSystemMenu_ResetItem;
+    pub use super::IHubMenu_SubSystemMenu_ResetItemMethods;
+    pub use super::HubMenu_GmapItem;
+    pub use super::IHubMenu_GmapItem;
+    pub use super::IHubMenu_GmapItemMethods;
+    pub use super::HubMenu_SubFriendMenu_NotebookItem;
+    pub use super::IHubMenu_SubFriendMenu_NotebookItem;
+    pub use super::IHubMenu_SubFriendMenu_NotebookItemMethods;
+    pub use super::HubMenu_GodItem;
+    pub use super::IHubMenu_GodItem;
+    pub use super::IHubMenu_GodItemMethods;
+    pub use super::HubMenu_SubFriendMenu_ProfileCardItem;
+    pub use super::IHubMenu_SubFriendMenu_ProfileCardItem;
+    pub use super::IHubMenu_SubFriendMenu_ProfileCardItemMethods;
+    pub use super::HubMenu_NextItem;
+    pub use super::IHubMenu_NextItem;
+    pub use super::IHubMenu_NextItemMethods;
+    pub use super::HubMenu_FriendItem;
+    pub use super::IHubMenu_FriendItem;
+    pub use super::IHubMenu_FriendItemMethods;
+    pub use super::HubMenu_HubMenuItem;
+    pub use super::IHubMenu_HubMenuItem;
+    pub use super::IHubMenu_HubMenuItemMethods;
+    pub use super::HubMenu_SubSystemMenu;
+    pub use super::IHubMenu_SubSystemMenu;
+    pub use super::IHubMenu_SubSystemMenuMethods;
+    pub use super::HubMenu;
+    pub use super::IHubMenu;
+    pub use super::IHubMenuMethods;
+    pub use super::HubMenu_SubFriendMenu_KizunaItem;
+    pub use super::IHubMenu_SubFriendMenu_KizunaItem;
+    pub use super::IHubMenu_SubFriendMenu_KizunaItemMethods;
+    pub use super::HubMenu_SubFriendMenu_RelianceItem;
+    pub use super::IHubMenu_SubFriendMenu_RelianceItem;
+    pub use super::IHubMenu_SubFriendMenu_RelianceItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::mapbasicmenuitem::IMapBasicMenuItem;

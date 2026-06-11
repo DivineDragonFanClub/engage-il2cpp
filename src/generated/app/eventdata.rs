@@ -4,269 +4,226 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdata/EventData_Commands.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct EventData_Commands  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdata/EventData.md"))]#[::unity2::class(namespace="App",name="EventData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::eventdata::EventData>)]pub struct EventData{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdata/EventData_Commands.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventData_Commands{pub value:i32,}
+impl::unity2::ClassIdentity for EventData_Commands{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EventData.Commands";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for EventData_Commands  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EventData.Commands";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for EventData_Commands{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for EventData_Commands  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl EventData_Commands{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  EventData_Commands  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn label() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn jump() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn wait() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn variant() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn set_background() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn set_back_ground_auto() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn fade_in() -> Self {
-        Self { value: 30 }
-
-    }
-
-
-    pub fn fade_out() -> Self {
-        Self { value: 31 }
-
-    }
-
-
-    pub fn camera_set_chara_camera() -> Self {
-        Self { value: 40 }
-
-    }
-
-
-    pub fn camera_set_scene_camera() -> Self {
-        Self { value: 41 }
-
-    }
-
-
-    pub fn camera_set_shake() -> Self {
-        Self { value: 42 }
-
-    }
-
-
-    pub fn character_create() -> Self {
-        Self { value: 50 }
-
-    }
-
-
-    pub fn character_delete() -> Self {
-        Self { value: 51 }
-
-    }
-
-
-    pub fn character_adjust_pos() -> Self {
-        Self { value: 52 }
-
-    }
-
-
-    pub fn character_show_hide() -> Self {
-        Self { value: 53 }
-
-    }
-
-
-    pub fn character_play_motion() -> Self {
-        Self { value: 54 }
-
-    }
-
-
-    pub fn character_wait_motion() -> Self {
-        Self { value: 55 }
-
-    }
-
-
-    pub fn character_set_angle() -> Self {
-        Self { value: 56 }
-
-    }
-
-
-    pub fn character_reset_angle() -> Self {
-        Self { value: 57 }
-
-    }
-
-
-    pub fn message_load() -> Self {
-        Self { value: 60 }
-
-    }
-
-
-    pub fn talk_begin() -> Self {
-        Self { value: 61 }
-
-    }
-
-
-    pub fn talk_face_begin() -> Self {
-        Self { value: 62 }
-
-    }
-
-
-    pub fn picture_show() -> Self {
-        Self { value: 70 }
-
-    }
-
-
-    pub fn picture_hide() -> Self {
-        Self { value: 71 }
-
-    }
-
-
-    pub fn bgm() -> Self {
-        Self { value: 80 }
-
-    }
-
-
-    pub fn se() -> Self {
-        Self { value: 81 }
-
-    }
-
-
-    pub fn test_system_voice_load() -> Self {
-        Self { value: 100 }
-
-    }
-
-
-    pub fn test_system_voice_unload() -> Self {
-        Self { value: 101 }
-
-    }
-
-
-    pub fn test_system_voice_play() -> Self {
-        Self { value: 102 }
-
-    }
-
+pub fn label()->Self{Self{value:10}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdata/EventData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: eventdata :: EventData >)] pub struct EventData {}
+pub fn jump()->Self{Self{value:11}
+}
+pub fn wait()->Self{Self{value:12}
+}
+pub fn variant()->Self{Self{value:13}
+}
+pub fn set_background()->Self{Self{value:21}
+}
+pub fn set_back_ground_auto()->Self{Self{value:22}
+}
+pub fn fade_in()->Self{Self{value:30}
+}
+pub fn fade_out()->Self{Self{value:31}
+}
+pub fn camera_set_chara_camera()->Self{Self{value:40}
+}
+pub fn camera_set_scene_camera()->Self{Self{value:41}
+}
+pub fn camera_set_shake()->Self{Self{value:42}
+}
+pub fn character_create()->Self{Self{value:50}
+}
+pub fn character_delete()->Self{Self{value:51}
+}
+pub fn character_adjust_pos()->Self{Self{value:52}
+}
+pub fn character_show_hide()->Self{Self{value:53}
+}
+pub fn character_play_motion()->Self{Self{value:54}
+}
+pub fn character_wait_motion()->Self{Self{value:55}
+}
+pub fn character_set_angle()->Self{Self{value:56}
+}
+pub fn character_reset_angle()->Self{Self{value:57}
+}
+pub fn message_load()->Self{Self{value:60}
+}
+pub fn talk_begin()->Self{Self{value:61}
+}
+pub fn talk_face_begin()->Self{Self{value:62}
+}
+pub fn picture_show()->Self{Self{value:70}
+}
+pub fn picture_hide()->Self{Self{value:71}
+}
+pub fn bgm()->Self{Self{value:80}
+}
+pub fn se()->Self{Self{value:81}
+}
+pub fn test_system_voice_load()->Self{Self{value:100}
+}
+pub fn test_system_voice_unload()->Self{Self{value:101}
+}
+pub fn test_system_voice_play()->Self{Self{value:102}
+}
+}
 
 }
 
 #[cfg(feature = "app-eventdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-eventdata")]
-impl EventData { # [doc = "`Load(::unity2::Il2CppString)` overload"] pub fn load (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d38e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eventdata")]impl EventData{#[doc="`Load(::unity2::Il2CppString)` overload"]pub fn load(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24d38e0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+}
 
-#[cfg(feature = "app-eventdata")]
-pub trait IEventDataMethods : IEventData { # [doc = "`get_Command()` overload"] fn get_command (self ,) -> crate :: app :: eventdata :: EventData_Commands { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> crate :: app :: eventdata :: EventData_Commands = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d37c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Command(crate::app::eventdata::EventData_Commands)` overload"] fn set_command (self , value : impl :: core :: convert :: Into < crate :: app :: eventdata :: EventData_Commands >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , crate :: app :: eventdata :: EventData_Commands , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d37d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg1()` overload"] fn get_arg1 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d37e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg1(::unity2::Il2CppString)` overload"] fn set_arg1 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d37f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg2()` overload"] fn get_arg2 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg2(::unity2::Il2CppString)` overload"] fn set_arg2 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg3()` overload"] fn get_arg3 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg3(::unity2::Il2CppString)` overload"] fn set_arg3 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg4()` overload"] fn get_arg4 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg4(::unity2::Il2CppString)` overload"] fn set_arg4 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg5()` overload"] fn get_arg5 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg5(::unity2::Il2CppString)` overload"] fn set_arg5 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg6()` overload"] fn get_arg6 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg6(::unity2::Il2CppString)` overload"] fn set_arg6 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg7()` overload"] fn get_arg7 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d38a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg7(::unity2::Il2CppString)` overload"] fn set_arg7 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d38b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Condition()` overload"] fn get_condition (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d38c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Condition(::unity2::Il2CppString)` overload"] fn set_condition (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d38d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d39b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eventdata")]pub trait IEventDataMethods:IEventData{#[doc="`get_Command()` overload"]fn get_command(self,)->crate::app::eventdata::EventData_Commands{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d37c0usize)as*mut u8,crate::app::eventdata::EventData_Commands;
+(EventData)__receiver)}
+}
+#[doc="`set_Command(crate::app::eventdata::EventData_Commands)` overload"]fn set_command(self,value:impl::core::convert::Into<crate::app::eventdata::EventData_Commands>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d37d0usize)as*mut u8,();
+(EventData)__receiver,(crate::app::eventdata::EventData_Commands)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg1()` overload"]fn get_arg1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d37e0usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`set_Arg1(::unity2::Il2CppString)` overload"]fn set_arg1(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d37f0usize)as*mut u8,();
+(EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg2()` overload"]fn get_arg2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3800usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`set_Arg2(::unity2::Il2CppString)` overload"]fn set_arg2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3810usize)as*mut u8,();
+(EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg3()` overload"]fn get_arg3(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3820usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`set_Arg3(::unity2::Il2CppString)` overload"]fn set_arg3(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3830usize)as*mut u8,();
+(EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg4()` overload"]fn get_arg4(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3840usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`set_Arg4(::unity2::Il2CppString)` overload"]fn set_arg4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3850usize)as*mut u8,();
+(EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg5()` overload"]fn get_arg5(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3860usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`set_Arg5(::unity2::Il2CppString)` overload"]fn set_arg5(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3870usize)as*mut u8,();
+(EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg6()` overload"]fn get_arg6(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3880usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`set_Arg6(::unity2::Il2CppString)` overload"]fn set_arg6(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3890usize)as*mut u8,();
+(EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg7()` overload"]fn get_arg7(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d38a0usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`set_Arg7(::unity2::Il2CppString)` overload"]fn set_arg7(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d38b0usize)as*mut u8,();
+(EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Condition()` overload"]fn get_condition(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d38c0usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`set_Condition(::unity2::Il2CppString)` overload"]fn set_condition(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d38d0usize)as*mut u8,();
+(EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d39b0usize)as*mut u8, ::unity2::Il2CppString;
+(EventData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3a70usize)as*mut u8,();
+(EventData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-eventdata")]
-impl < __T : IEventData > IEventDataMethods for __T { }
+#[cfg(feature="app-eventdata")]impl<__T:IEventData>IEventDataMethods for __T{}
 
-#[cfg(feature = "app-eventdata")]
-impl EventData { pub fn get_command_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_command_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_arg1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_arg1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_arg2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_arg2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_arg3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_arg3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_arg4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_arg4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_arg5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_arg5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_arg6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_arg6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_arg7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_arg7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="app-eventdata")]impl EventData{pub fn get_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_arg1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_arg1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_arg2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_arg2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_arg3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_arg3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_arg4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_arg4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_arg5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_arg5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_arg6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_arg6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_arg7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_arg7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "app-eventdata")]
-impl EventData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventData) , :: core :: stringify ! (new) ,)) ; < Self as IEventDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-eventdata")]impl EventData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventData), ::core::stringify!(new),));
+ <Self as IEventDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-eventdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventData_Commands;
     pub use super::EventData;
     pub use super::IEventData;
     pub use super::IEventDataMethods;
+    pub use super::EventData_Commands;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

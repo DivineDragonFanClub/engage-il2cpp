@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: tutoriallisttopbasicmenuitem :: { ITutorialListTopBasicMenuItem , TutorialListTopBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::tutoriallisttopbasicmenuitem::{ITutorialListTopBasicMenuItem,TutorialListTopBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/battlemenuitem/BattleMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "BattleMenuItem")] # [parent (crate :: root :: tutoriallisttopbasicmenuitem :: TutorialListTopBasicMenuItem)] pub struct BattleMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/battlemenuitem/BattleMenuItem.md"))]#[::unity2::class(namespace="",name="BattleMenuItem")]#[parent(crate::root::tutoriallisttopbasicmenuitem::TutorialListTopBasicMenuItem)]pub struct BattleMenuItem{}
 
 }
 
 #[cfg(feature = "root-battlemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-battlemenuitem")]
-pub trait IBattleMenuItemMethods : IBattleMenuItem { # [doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"] fn ctor (self , is_get_all_tutorial : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < BattleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleMenuItem , bool , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_get_all_tutorial) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < BattleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-battlemenuitem")]pub trait IBattleMenuItemMethods:IBattleMenuItem{#[doc="`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"]fn ctor(self,is_get_all_tutorial:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <BattleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d880usize)as*mut u8,();
+(BattleMenuItem)__receiver,(bool)::core::convert::Into::into(is_get_all_tutorial),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BattleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d950usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(BattleMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-battlemenuitem")]
-impl < __T : IBattleMenuItem > IBattleMenuItemMethods for __T { }
+#[cfg(feature="root-battlemenuitem")]impl<__T:IBattleMenuItem>IBattleMenuItemMethods for __T{}
 
-#[cfg(feature = "root-battlemenuitem")]
-impl BattleMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-battlemenuitem")]impl BattleMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-battlemenuitem")]
-impl BattleMenuItem {
-# [doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"] pub fn new (is_get_all_tutorial : bool , decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IBattleMenuItemMethods > :: ctor (this , is_get_all_tutorial , decide_event_handler) ; this }
+#[cfg(feature="root-battlemenuitem")]impl BattleMenuItem{#[doc="`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"]pub fn new(is_get_all_tutorial:bool,decide_event_handler:crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleMenuItem), ::core::stringify!(new),));
+ <Self as IBattleMenuItemMethods> ::ctor(this,is_get_all_tutorial,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "root-battlemenuitem")]

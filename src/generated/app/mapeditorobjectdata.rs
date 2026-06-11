@@ -4,39 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditorobjectdata/MapEditorObjectData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEditorObjectData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mapeditorobjectdata :: MapEditorObjectData >)] pub struct MapEditorObjectData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditorobjectdata/MapEditorObjectData.md"))]#[::unity2::class(namespace="App",name="MapEditorObjectData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::mapeditorobjectdata::MapEditorObjectData>)]pub struct MapEditorObjectData{}
 
 }
 
 #[cfg(feature = "app-mapeditorobjectdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapeditorobjectdata")]
-impl MapEditorObjectData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db87c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapeditorobjectdata")]impl MapEditorObjectData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1db87c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mapeditorobjectdata")]
-pub trait IMapEditorObjectDataMethods : IMapEditorObjectData { # [doc = "`get_ObjectName()` overload"] fn get_object_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db8870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ObjectName(::unity2::Il2CppString)` overload"] fn set_object_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db8880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SoundEvent()` overload"] fn get_sound_event (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db8890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SoundEvent(::unity2::Il2CppString)` overload"] fn set_sound_event (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db88a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Category()` overload"] fn get_category (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db88b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Category(::unity2::Il2CppString)` overload"] fn set_category (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db88c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ObjectKey()` overload"] fn get_object_key (self ,) -> i32 { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db88d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ObjectKey(i32)` overload"] fn set_object_key (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db88e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db88f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCompleted()` overload"] fn on_completed (self ,) -> () { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db8900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapEditorObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEditorObjectData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1db8980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapeditorobjectdata")]pub trait IMapEditorObjectDataMethods:IMapEditorObjectData{#[doc="`get_ObjectName()` overload"]fn get_object_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db8870usize)as*mut u8, ::unity2::Il2CppString;
+(MapEditorObjectData)__receiver)}
+}
+#[doc="`set_ObjectName(::unity2::Il2CppString)` overload"]fn set_object_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db8880usize)as*mut u8,();
+(MapEditorObjectData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SoundEvent()` overload"]fn get_sound_event(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db8890usize)as*mut u8, ::unity2::Il2CppString;
+(MapEditorObjectData)__receiver)}
+}
+#[doc="`set_SoundEvent(::unity2::Il2CppString)` overload"]fn set_sound_event(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db88a0usize)as*mut u8,();
+(MapEditorObjectData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Category()` overload"]fn get_category(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db88b0usize)as*mut u8, ::unity2::Il2CppString;
+(MapEditorObjectData)__receiver)}
+}
+#[doc="`set_Category(::unity2::Il2CppString)` overload"]fn set_category(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db88c0usize)as*mut u8,();
+(MapEditorObjectData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ObjectKey()` overload"]fn get_object_key(self,)->i32{unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db88d0usize)as*mut u8,i32;
+(MapEditorObjectData)__receiver)}
+}
+#[doc="`set_ObjectKey(i32)` overload"]fn set_object_key(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db88e0usize)as*mut u8,();
+(MapEditorObjectData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db88f0usize)as*mut u8, ::unity2::Il2CppString;
+(MapEditorObjectData)__receiver)}
+}
+#[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db8900usize)as*mut u8,();
+(MapEditorObjectData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEditorObjectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1db8980usize)as*mut u8,();
+(MapEditorObjectData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapeditorobjectdata")]
-impl < __T : IMapEditorObjectData > IMapEditorObjectDataMethods for __T { }
+#[cfg(feature="app-mapeditorobjectdata")]impl<__T:IMapEditorObjectData>IMapEditorObjectDataMethods for __T{}
 
-#[cfg(feature = "app-mapeditorobjectdata")]
-impl MapEditorObjectData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_object_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_object_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_sound_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_sound_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_object_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_object_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEditorObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-mapeditorobjectdata")]impl MapEditorObjectData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_object_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_object_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_object_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_object_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-mapeditorobjectdata")]
-impl MapEditorObjectData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapEditorObjectData) , :: core :: stringify ! (new) ,)) ; < Self as IMapEditorObjectDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapeditorobjectdata")]impl MapEditorObjectData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEditorObjectData), ::core::stringify!(new),));
+ <Self as IMapEditorObjectDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapeditorobjectdata")]

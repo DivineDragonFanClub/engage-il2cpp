@@ -4,33 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: resource_management :: exceptions :: operationexception :: { IOperationException , OperationException }
- ;
- use crate :: unity_engine :: resource_management :: exceptions :: providerexception :: { IProviderException , ProviderException }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::resource_management::exceptions::operationexception::{IOperationException,OperationException}
+;
+use crate::unity_engine::resource_management::exceptions::providerexception::{IProviderException,ProviderException}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/exceptions/remoteproviderexception/RemoteProviderException.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Exceptions" , name = "RemoteProviderException")] # [parent (crate :: unity_engine :: resource_management :: exceptions :: providerexception :: ProviderException)] pub struct RemoteProviderException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/exceptions/remoteproviderexception/RemoteProviderException.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Exceptions",name="RemoteProviderException")]#[parent(crate::unity_engine::resource_management::exceptions::providerexception::ProviderException)]pub struct RemoteProviderException{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-remoteproviderexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-remoteproviderexception")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RemoteProviderException_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_web_request_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RemoteProviderException as :: unity2 :: ClassIdentity > :: class () , "get_WebRequestResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RemoteProviderException as :: unity2 :: ClassIdentity > :: NAME , "get_WebRequestResult" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RemoteProviderException as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RemoteProviderException as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-exceptions-remoteproviderexception")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RemoteProviderException_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_web_request_result{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<RemoteProviderException as::unity2::ClassIdentity> ::class(),"get_WebRequestResult",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RemoteProviderException as::unity2::ClassIdentity> ::NAME,"get_WebRequestResult",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<RemoteProviderException as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RemoteProviderException as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-remoteproviderexception")]
-pub trait IRemoteProviderExceptionMethods : IRemoteProviderException { # [doc = "`get_WebRequestResult()` overload"] fn get_web_request_result (self ,) -> crate :: unity_engine :: resource_management :: util :: unitywebrequestresult :: UnityWebRequestResult { unsafe { let __receiver = < RemoteProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RemoteProviderException , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: util :: unitywebrequestresult :: UnityWebRequestResult = :: core :: mem :: transmute (__RemoteProviderException_unity2_raw :: __lookup_get_web_request_result :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RemoteProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RemoteProviderException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__RemoteProviderException_unity2_raw :: __lookup_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-exceptions-remoteproviderexception")]pub trait IRemoteProviderExceptionMethods:IRemoteProviderException{#[doc="`get_WebRequestResult()` overload"]fn get_web_request_result(self,)->crate::unity_engine::resource_management::util::unitywebrequestresult::UnityWebRequestResult{unsafe{let __receiver= <RemoteProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RemoteProviderException_unity2_raw::__lookup_get_web_request_result::get_method_info().method_ptr,crate::unity_engine::resource_management::util::unitywebrequestresult::UnityWebRequestResult;
+(RemoteProviderException)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RemoteProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RemoteProviderException_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(RemoteProviderException)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-remoteproviderexception")]
-impl < __T : IRemoteProviderException > IRemoteProviderExceptionMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-exceptions-remoteproviderexception")]impl<__T:IRemoteProviderException>IRemoteProviderExceptionMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-remoteproviderexception")]
-impl RemoteProviderException { pub fn get_web_request_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RemoteProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RemoteProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-resource_management-exceptions-remoteproviderexception")]impl RemoteProviderException{pub fn get_web_request_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-remoteproviderexception")]
 #[doc(hidden)]

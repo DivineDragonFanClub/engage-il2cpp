@@ -4,45 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringresult10window/RefineRingResult10Window.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingResult10Window")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineRingResult10Window {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (32)] # [rename (name = "m_RingInfoContent")] pub m_ring_info_content : :: unity2 :: Array < crate :: app :: refineringresult10ringinfocontent :: RefineRingResult10RingInfoContent > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringresult10window/RefineRingResult10Window.md"))]#[::unity2::class(namespace="App",name="RefineRingResult10Window")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineRingResult10Window{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_RingInfoContent")]pub m_ring_info_content: ::unity2::Array<crate::app::refineringresult10ringinfocontent::RefineRingResult10RingInfoContent> ,}
 
 }
 
 #[cfg(feature = "app-refineringresult10window-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineringresult10window")]
-impl RefineRingResult10Window { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29552a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955360usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: refineringresult10window :: RefineRingResult10Window { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: refineringresult10window :: RefineRingResult10Window = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29554a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955a30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringresult10window")]impl RefineRingResult10Window{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29552a0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2955360usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2955400usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::refineringresult10window::RefineRingResult10Window{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29554a0usize)as*mut u8,crate::app::refineringresult10window::RefineRingResult10Window;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2955a30usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-refineringresult10window")]
-pub trait IRefineRingResult10WindowMethods : IRefineRingResult10Window { # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RefineRingResult10Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10Window , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingResult10Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10Window , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29556a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < RefineRingResult10Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10Window , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29556b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < RefineRingResult10Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10Window , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < RefineRingResult10Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10Window , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::system::collections::generic::list_1::List_1<crate::app::ringdata::RingData>, crate::system::collections::generic::list_1::List_1<bool>)` overload"] fn set_data (self , ring_data_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: ringdata :: RingData > > , is_new_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < bool > >) -> () { unsafe { let __receiver = < RefineRingResult10Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10Window , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: ringdata :: RingData > , crate :: system :: collections :: generic :: list_1 :: List_1 < bool > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring_data_list) , :: core :: convert :: Into :: into (is_new_list) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringresult10window")]pub trait IRefineRingResult10WindowMethods:IRefineRingResult10Window{#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineRingResult10Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2955620usize)as*mut u8,();
+(RefineRingResult10Window)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingResult10Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29556a0usize)as*mut u8,();
+(RefineRingResult10Window)__receiver)}
+}
+#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <RefineRingResult10Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29556b0usize)as*mut u8,bool;
+(RefineRingResult10Window)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RefineRingResult10Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2955780usize)as*mut u8,();
+(RefineRingResult10Window)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <RefineRingResult10Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2955840usize)as*mut u8,bool;
+(RefineRingResult10Window)__receiver)}
+}
+#[doc="`SetData(crate::system::collections::generic::list_1::List_1<crate::app::ringdata::RingData>, crate::system::collections::generic::list_1::List_1<bool>)` overload"]fn set_data(self,ring_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::ringdata::RingData> > ,is_new_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<bool> >)->(){unsafe{let __receiver= <RefineRingResult10Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2955910usize)as*mut u8,();
+(RefineRingResult10Window)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::ringdata::RingData>)::core::convert::Into::into(ring_data_list),(crate::system::collections::generic::list_1::List_1<bool>)::core::convert::Into::into(is_new_list))}
+}
+}
 
-#[cfg(feature = "app-refineringresult10window")]
-impl < __T : IRefineRingResult10Window > IRefineRingResult10WindowMethods for __T { }
+#[cfg(feature="app-refineringresult10window")]impl<__T:IRefineRingResult10Window>IRefineRingResult10WindowMethods for __T{}
 
-#[cfg(feature = "app-refineringresult10window")]
-impl RefineRingResult10Window { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-refineringresult10window")]impl RefineRingResult10Window{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-refineringresult10window")]
-impl RefineRingResult10Window {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingResult10Window) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingResult10WindowMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringresult10window")]impl RefineRingResult10Window{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingResult10Window), ::core::stringify!(new),));
+ <Self as IRefineRingResult10WindowMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineringresult10window")]

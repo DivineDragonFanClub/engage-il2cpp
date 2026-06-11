@@ -4,35 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/flare/Flare.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Flare")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct Flare {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/flare/Flare.md"))]#[::unity2::class(namespace="UnityEngine",name="Flare")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct Flare{}
 
 }
 
 #[cfg(feature = "unity_engine-flare-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-flare")]
-impl Flare { # [doc = "`Internal_Create(crate::unity_engine::flare::Flare)` overload"] pub fn internal_create (self_ : impl :: core :: convert :: Into < crate :: unity_engine :: flare :: Flare >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: flare :: Flare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d8d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (self_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-flare")]impl Flare{#[doc="`Internal_Create(crate::unity_engine::flare::Flare)` overload"]pub fn internal_create(self_:impl::core::convert::Into<crate::unity_engine::flare::Flare>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d8d0usize)as*mut u8,();
+(crate::unity_engine::flare::Flare)::core::convert::Into::into(self_))}
+}
+}
 
-#[cfg(feature = "unity_engine-flare")]
-pub trait IFlareMethods : IFlare { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Flare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-flare")]pub trait IFlareMethods:IFlare{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Flare as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d830usize)as*mut u8,();
+(Flare)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-flare")]
-impl < __T : IFlare > IFlareMethods for __T { }
+#[cfg(feature="unity_engine-flare")]impl<__T:IFlare>IFlareMethods for __T{}
 
-#[cfg(feature = "unity_engine-flare")]
-impl Flare { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn internal_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-flare")]impl Flare{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn internal_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-flare")]
-impl Flare {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Flare) , :: core :: stringify ! (new) ,)) ; < Self as IFlareMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-flare")]impl Flare{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Flare), ::core::stringify!(new),));
+ <Self as IFlareMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-flare")]

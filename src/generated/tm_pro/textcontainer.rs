@@ -4,57 +4,215 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/textcontainer/TextContainer.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TextContainer")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct TextContainer {
-# [offset (24)] # [rename (name = "m_hasChanged")] pub m_has_changed : bool ,
-# [offset (28)] # [rename (name = "m_pivot")] pub m_pivot : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (36)] # [rename (name = "m_anchorPosition")] pub m_anchor_position : crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors ,
-# [offset (40)] # [rename (name = "m_rect")] pub m_rect : crate :: unity_engine :: rect :: Rect ,
-# [offset (56)] # [rename (name = "m_isDefaultWidth")] pub m_is_default_width : bool ,
-# [offset (57)] # [rename (name = "m_isDefaultHeight")] pub m_is_default_height : bool ,
-# [offset (58)] # [rename (name = "m_isAutoFitting")] pub m_is_auto_fitting : bool ,
-# [offset (64)] # [rename (name = "m_corners")] pub m_corners : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (72)] # [rename (name = "m_worldCorners")] pub m_world_corners : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (80)] # [rename (name = "m_margins")] pub m_margins : crate :: unity_engine :: vector4 :: Vector4 ,
-# [offset (96)] # [rename (name = "m_rectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [static_field] # [rename (name = "k_defaultSize")] pub k_default_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (104)] # [rename (name = "m_textMeshPro")] pub m_text_mesh_pro : crate :: tm_pro :: textmeshpro :: TextMeshPro ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/textcontainer/TextContainer.md"))]#[::unity2::class(namespace="TMPro",name="TextContainer")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct TextContainer{#[offset(24)]#[rename(name="m_hasChanged")]pub m_has_changed:bool, #[offset(28)]#[rename(name="m_pivot")]pub m_pivot:crate::unity_engine::vector2::Vector2, #[offset(36)]#[rename(name="m_anchorPosition")]pub m_anchor_position:crate::tm_pro::textcontaineranchors::TextContainerAnchors, #[offset(40)]#[rename(name="m_rect")]pub m_rect:crate::unity_engine::rect::Rect, #[offset(56)]#[rename(name="m_isDefaultWidth")]pub m_is_default_width:bool, #[offset(57)]#[rename(name="m_isDefaultHeight")]pub m_is_default_height:bool, #[offset(58)]#[rename(name="m_isAutoFitting")]pub m_is_auto_fitting:bool, #[offset(64)]#[rename(name="m_corners")]pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(72)]#[rename(name="m_worldCorners")]pub m_world_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(80)]#[rename(name="m_margins")]pub m_margins:crate::unity_engine::vector4::Vector4, #[offset(96)]#[rename(name="m_rectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[static_field]#[rename(name="k_defaultSize")]pub k_default_size:crate::unity_engine::vector2::Vector2, #[offset(104)]#[rename(name="m_textMeshPro")]pub m_text_mesh_pro:crate::tm_pro::textmeshpro::TextMeshPro,}
 
 }
 
 #[cfg(feature = "tm_pro-textcontainer-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-textcontainer")]
-impl TextContainer { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6aec0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-textcontainer")]impl TextContainer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e6aec0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "tm_pro-textcontainer")]
-pub trait ITextContainerMethods : ITextContainer { # [doc = "`get_hasChanged()` overload"] fn get_has_changed (self ,) -> bool { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e69dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_hasChanged(bool)` overload"] fn set_has_changed (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e69dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pivot()` overload"] fn get_pivot (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e69de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pivot(crate::unity_engine::vector2::Vector2)` overload"] fn set_pivot (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e69df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_anchorPosition()` overload"] fn get_anchor_position (self ,) -> crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_anchorPosition(crate::tm_pro::textcontaineranchors::TextContainerAnchors)` overload"] fn set_anchor_position (self , value : impl :: core :: convert :: Into < crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a2b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_rect()` overload"] fn get_rect (self ,) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_rect(crate::unity_engine::rect::Rect)` overload"] fn set_rect (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_size()` overload"] fn get_size (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_size(crate::unity_engine::vector2::Vector2)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_width()` overload"] fn get_width (self ,) -> f32 { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_width(f32)` overload"] fn set_width (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_height()` overload"] fn get_height (self ,) -> f32 { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_height(f32)` overload"] fn set_height (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a6c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_isDefaultWidth()` overload"] fn get_is_default_width (self ,) -> bool { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_isDefaultHeight()` overload"] fn get_is_default_height (self ,) -> bool { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_isAutoFitting()` overload"] fn get_is_auto_fitting (self ,) -> bool { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isAutoFitting(bool)` overload"] fn set_is_auto_fitting (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a7a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_corners()` overload"] fn get_corners (self ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_worldCorners()` overload"] fn get_world_corners (self ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_margins()` overload"] fn get_margins (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_margins(crate::unity_engine::vector4::Vector4)` overload"] fn set_margins (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a7e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_textMeshPro()` overload"] fn get_text_mesh_pro (self ,) -> crate :: tm_pro :: textmeshpro :: TextMeshPro { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshpro :: TextMeshPro = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6aaa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6aab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnContainerChanged()` overload"] fn on_container_changed (self ,) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRectTransformDimensionsChange()` overload"] fn on_rect_transform_dimensions_change (self ,) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6acb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRect(crate::unity_engine::vector2::Vector2)` overload"] fn set_rect_2 (self , size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCorners()` overload"] fn update_corners (self ,) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6aac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPivot(crate::tm_pro::textcontaineranchors::TextContainerAnchors)` overload"] fn get_pivot_2 (self , anchor : impl :: core :: convert :: Into < crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6a330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } } # [doc = "`GetAnchorPosition(crate::unity_engine::vector2::Vector2)` overload"] fn get_anchor_position_2 (self , pivot : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textcontaineranchors :: TextContainerAnchors = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e69ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pivot) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e6ae20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-textcontainer")]pub trait ITextContainerMethods:ITextContainer{#[doc="`get_hasChanged()` overload"]fn get_has_changed(self,)->bool{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e69dc0usize)as*mut u8,bool;
+(TextContainer)__receiver)}
+}
+#[doc="`set_hasChanged(bool)` overload"]fn set_has_changed(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e69dd0usize)as*mut u8,();
+(TextContainer)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_pivot()` overload"]fn get_pivot(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e69de0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(TextContainer)__receiver)}
+}
+#[doc="`set_pivot(crate::unity_engine::vector2::Vector2)` overload"]fn set_pivot(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e69df0usize)as*mut u8,();
+(TextContainer)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_anchorPosition()` overload"]fn get_anchor_position(self,)->crate::tm_pro::textcontaineranchors::TextContainerAnchors{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a2a0usize)as*mut u8,crate::tm_pro::textcontaineranchors::TextContainerAnchors;
+(TextContainer)__receiver)}
+}
+#[doc="`set_anchorPosition(crate::tm_pro::textcontaineranchors::TextContainerAnchors)` overload"]fn set_anchor_position(self,value:impl::core::convert::Into<crate::tm_pro::textcontaineranchors::TextContainerAnchors>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a2b0usize)as*mut u8,();
+(TextContainer)__receiver,(crate::tm_pro::textcontaineranchors::TextContainerAnchors)::core::convert::Into::into(value))}
+}
+#[doc="`get_rect()` overload"]fn get_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a380usize)as*mut u8,crate::unity_engine::rect::Rect;
+(TextContainer)__receiver)}
+}
+#[doc="`set_rect(crate::unity_engine::rect::Rect)` overload"]fn set_rect(self,value:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a390usize)as*mut u8,();
+(TextContainer)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(value))}
+}
+#[doc="`get_size()` overload"]fn get_size(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a420usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(TextContainer)__receiver)}
+}
+#[doc="`set_size(crate::unity_engine::vector2::Vector2)` overload"]fn set_size(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a470usize)as*mut u8,();
+(TextContainer)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_width()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a5f0usize)as*mut u8,f32;
+(TextContainer)__receiver)}
+}
+#[doc="`set_width(f32)` overload"]fn set_width(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a600usize)as*mut u8,();
+(TextContainer)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_height()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a6b0usize)as*mut u8,f32;
+(TextContainer)__receiver)}
+}
+#[doc="`set_height(f32)` overload"]fn set_height(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a6c0usize)as*mut u8,();
+(TextContainer)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_isDefaultWidth()` overload"]fn get_is_default_width(self,)->bool{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a770usize)as*mut u8,bool;
+(TextContainer)__receiver)}
+}
+#[doc="`get_isDefaultHeight()` overload"]fn get_is_default_height(self,)->bool{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a780usize)as*mut u8,bool;
+(TextContainer)__receiver)}
+}
+#[doc="`get_isAutoFitting()` overload"]fn get_is_auto_fitting(self,)->bool{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a790usize)as*mut u8,bool;
+(TextContainer)__receiver)}
+}
+#[doc="`set_isAutoFitting(bool)` overload"]fn set_is_auto_fitting(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a7a0usize)as*mut u8,();
+(TextContainer)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_corners()` overload"]fn get_corners(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a7b0usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
+(TextContainer)__receiver)}
+}
+#[doc="`get_worldCorners()` overload"]fn get_world_corners(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a7c0usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
+(TextContainer)__receiver)}
+}
+#[doc="`get_margins()` overload"]fn get_margins(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a7d0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(TextContainer)__receiver)}
+}
+#[doc="`set_margins(crate::unity_engine::vector4::Vector4)` overload"]fn set_margins(self,value:impl::core::convert::Into<crate::unity_engine::vector4::Vector4>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a7e0usize)as*mut u8,();
+(TextContainer)__receiver,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(value))}
+}
+#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a850usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(TextContainer)__receiver)}
+}
+#[doc="`get_textMeshPro()` overload"]fn get_text_mesh_pro(self,)->crate::tm_pro::textmeshpro::TextMeshPro{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a910usize)as*mut u8,crate::tm_pro::textmeshpro::TextMeshPro;
+(TextContainer)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a9d0usize)as*mut u8,();
+(TextContainer)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6aaa0usize)as*mut u8,();
+(TextContainer)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6aab0usize)as*mut u8,();
+(TextContainer)__receiver)}
+}
+#[doc="`OnContainerChanged()` overload"]fn on_container_changed(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a150usize)as*mut u8,();
+(TextContainer)__receiver)}
+}
+#[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6acb0usize)as*mut u8,();
+(TextContainer)__receiver)}
+}
+#[doc="`SetRect(crate::unity_engine::vector2::Vector2)` overload"]fn set_rect_2(self,size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a560usize)as*mut u8,();
+(TextContainer)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(size))}
+}
+#[doc="`UpdateCorners()` overload"]fn update_corners(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6aac0usize)as*mut u8,();
+(TextContainer)__receiver)}
+}
+#[doc="`GetPivot(crate::tm_pro::textcontaineranchors::TextContainerAnchors)` overload"]fn get_pivot_2(self,anchor:impl::core::convert::Into<crate::tm_pro::textcontaineranchors::TextContainerAnchors>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a330usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(TextContainer)__receiver,(crate::tm_pro::textcontaineranchors::TextContainerAnchors)::core::convert::Into::into(anchor))}
+}
+#[doc="`GetAnchorPosition(crate::unity_engine::vector2::Vector2)` overload"]fn get_anchor_position_2(self,pivot:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::tm_pro::textcontaineranchors::TextContainerAnchors{unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e69ff0usize)as*mut u8,crate::tm_pro::textcontaineranchors::TextContainerAnchors;
+(TextContainer)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pivot))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6ae20usize)as*mut u8,();
+(TextContainer)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-textcontainer")]
-impl < __T : ITextContainer > ITextContainerMethods for __T { }
+#[cfg(feature="tm_pro-textcontainer")]impl<__T:ITextContainer>ITextContainerMethods for __T{}
 
-#[cfg(feature = "tm_pro-textcontainer")]
-impl TextContainer { pub fn get_has_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_has_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_pivot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_pivot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_anchor_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_anchor_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_is_default_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_is_default_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_is_auto_fitting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_is_auto_fitting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_corners_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_world_corners_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_margins_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_margins_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_text_mesh_pro_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn on_container_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn on_rect_transform_dimensions_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_rect_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn update_corners_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_pivot_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_anchor_position_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } }
+#[cfg(feature="tm_pro-textcontainer")]impl TextContainer{pub fn get_has_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_has_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_pivot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_pivot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_anchor_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_anchor_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_is_default_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_is_default_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_is_auto_fitting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_is_auto_fitting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_corners_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_world_corners_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_margins_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_margins_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_text_mesh_pro_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn on_container_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn on_rect_transform_dimensions_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_rect_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn update_corners_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_pivot_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_anchor_position_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
 
-#[cfg(feature = "tm_pro-textcontainer")]
-impl TextContainer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextContainer) , :: core :: stringify ! (new) ,)) ; < Self as ITextContainerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-textcontainer")]impl TextContainer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextContainer), ::core::stringify!(new),));
+ <Self as ITextContainerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-textcontainer")]

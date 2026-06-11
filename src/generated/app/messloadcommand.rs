@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/messloadcommand/MessLoadCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "MessLoadCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct MessLoadCommand {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/messloadcommand/MessLoadCommand.md"))]#[::unity2::class(namespace="App",name="MessLoadCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct MessLoadCommand{}
 
 }
 
 #[cfg(feature = "app-messloadcommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-messloadcommand")]
-pub trait IMessLoadCommandMethods : IMessLoadCommand { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MessLoadCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MessLoadCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25db500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Func(::unity2::Il2CppString)` overload"] fn func (self , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { let __receiver = < MessLoadCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MessLoadCommand , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25db550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MessLoadCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MessLoadCommand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25db620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-messloadcommand")]pub trait IMessLoadCommandMethods:IMessLoadCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MessLoadCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25db500usize)as*mut u8, ::unity2::Il2CppString;
+(MessLoadCommand)__receiver)}
+}
+#[doc="`Func(::unity2::Il2CppString)` overload"]fn func(self,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <MessLoadCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25db550usize)as*mut u8,f32;
+(MessLoadCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MessLoadCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25db620usize)as*mut u8,();
+(MessLoadCommand)__receiver)}
+}
+}
 
-#[cfg(feature = "app-messloadcommand")]
-impl < __T : IMessLoadCommand > IMessLoadCommandMethods for __T { }
+#[cfg(feature="app-messloadcommand")]impl<__T:IMessLoadCommand>IMessLoadCommandMethods for __T{}
 
-#[cfg(feature = "app-messloadcommand")]
-impl MessLoadCommand { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MessLoadCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MessLoadCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MessLoadCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-messloadcommand")]impl MessLoadCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-messloadcommand")]
-impl MessLoadCommand {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MessLoadCommand) , :: core :: stringify ! (new) ,)) ; < Self as IMessLoadCommandMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-messloadcommand")]impl MessLoadCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MessLoadCommand), ::core::stringify!(new),));
+ <Self as IMessLoadCommandMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-messloadcommand")]

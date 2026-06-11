@@ -4,43 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talkfacecameraadjustor/TalkFaceCameraAdjustor.md"))] # [:: unity2 :: class (namespace = "App" , name = "TalkFaceCameraAdjustor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TalkFaceCameraAdjustor {
-# [offset (24)] # [rename (name = "m_CameraTransform")] pub m_camera_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (32)] # [rename (name = "m_CameraHeightOffset")] pub m_camera_height_offset : f32 ,
-# [offset (36)] # [rename (name = "m_DefaultCameraOffset")] pub m_default_camera_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (48)] # [rename (name = "m_Tmp")] pub m_tmp : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talkfacecameraadjustor/TalkFaceCameraAdjustor.md"))]#[::unity2::class(namespace="App",name="TalkFaceCameraAdjustor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TalkFaceCameraAdjustor{#[offset(24)]#[rename(name="m_CameraTransform")]pub m_camera_transform:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="m_CameraHeightOffset")]pub m_camera_height_offset:f32, #[offset(36)]#[rename(name="m_DefaultCameraOffset")]pub m_default_camera_offset:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="m_Tmp")]pub m_tmp:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "app-talkfacecameraadjustor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talkfacecameraadjustor")]
-pub trait ITalkFaceCameraAdjustorMethods : ITalkFaceCameraAdjustor { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TalkFaceCameraAdjustor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkFaceCameraAdjustor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bebf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TalkFaceCameraAdjustor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkFaceCameraAdjustor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bec30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkFaceCameraAdjustor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkFaceCameraAdjustor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bee20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talkfacecameraadjustor")]pub trait ITalkFaceCameraAdjustorMethods:ITalkFaceCameraAdjustor{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TalkFaceCameraAdjustor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bebf0usize)as*mut u8,();
+(TalkFaceCameraAdjustor)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkFaceCameraAdjustor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bec30usize)as*mut u8,();
+(TalkFaceCameraAdjustor)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkFaceCameraAdjustor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bee20usize)as*mut u8,();
+(TalkFaceCameraAdjustor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talkfacecameraadjustor")]
-impl < __T : ITalkFaceCameraAdjustor > ITalkFaceCameraAdjustorMethods for __T { }
+#[cfg(feature="app-talkfacecameraadjustor")]impl<__T:ITalkFaceCameraAdjustor>ITalkFaceCameraAdjustorMethods for __T{}
 
-#[cfg(feature = "app-talkfacecameraadjustor")]
-impl TalkFaceCameraAdjustor { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkFaceCameraAdjustor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkFaceCameraAdjustor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkFaceCameraAdjustor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-talkfacecameraadjustor")]impl TalkFaceCameraAdjustor{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-talkfacecameraadjustor")]
-impl TalkFaceCameraAdjustor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkFaceCameraAdjustor) , :: core :: stringify ! (new) ,)) ; < Self as ITalkFaceCameraAdjustorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talkfacecameraadjustor")]impl TalkFaceCameraAdjustor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkFaceCameraAdjustor), ::core::stringify!(new),));
+ <Self as ITalkFaceCameraAdjustorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talkfacecameraadjustor")]

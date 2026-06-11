@@ -4,40 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godlevelupsequence/GodLevelUpSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodLevelUpSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GodLevelUpSequence {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
-# [offset (128)] # [rename (name = "m_GodData")] pub m_god_data : crate :: app :: goddata :: GodData ,
-# [offset (136)] # [rename (name = "m_PrevAptitude")] pub m_prev_aptitude : crate :: app :: weaponmask :: WeaponMask ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godlevelupsequence/GodLevelUpSequence.md"))]#[::unity2::class(namespace="App",name="GodLevelUpSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GodLevelUpSequence{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(128)]#[rename(name="m_GodData")]pub m_god_data:crate::app::goddata::GodData, #[offset(136)]#[rename(name="m_PrevAptitude")]pub m_prev_aptitude:crate::app::weaponmask::WeaponMask,}
 
 }
 
 #[cfg(feature = "app-godlevelupsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godlevelupsequence")]
-impl GodLevelUpSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::goddata::GodData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2330930usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godlevelupsequence")]impl GodLevelUpSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::goddata::GodData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2330930usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+}
 
-#[cfg(feature = "app-godlevelupsequence")]
-pub trait IGodLevelUpSequenceMethods : IGodLevelUpSequence { # [doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::goddata::GodData)` overload"] fn ctor (self , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < GodLevelUpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelUpSequence , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23340d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } # [doc = "`LeveUp()` overload"] fn leve_up (self ,) -> () { unsafe { let __receiver = < GodLevelUpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelUpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23341a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < GodLevelUpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelUpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < GodLevelUpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelUpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23343a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godlevelupsequence")]pub trait IGodLevelUpSequenceMethods:IGodLevelUpSequence{#[doc="`.ctor(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::goddata::GodData)` overload"]fn ctor(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <GodLevelUpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23340d0usize)as*mut u8,();
+(GodLevelUpSequence)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`LeveUp()` overload"]fn leve_up(self,)->(){unsafe{let __receiver= <GodLevelUpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23341a0usize)as*mut u8,();
+(GodLevelUpSequence)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GodLevelUpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2334390usize)as*mut u8,();
+(GodLevelUpSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GodLevelUpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23343a0usize)as*mut u8,();
+(GodLevelUpSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godlevelupsequence")]
-impl < __T : IGodLevelUpSequence > IGodLevelUpSequenceMethods for __T { }
+#[cfg(feature="app-godlevelupsequence")]impl<__T:IGodLevelUpSequence>IGodLevelUpSequenceMethods for __T{}
 
-#[cfg(feature = "app-godlevelupsequence")]
-impl GodLevelUpSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelUpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn leve_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelUpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelUpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelUpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelUpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-godlevelupsequence")]impl GodLevelUpSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn leve_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-godlevelupsequence")]
-impl GodLevelUpSequence {
-# [doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::goddata::GodData)` — overload selector"] pub fn new (god_unit : crate :: app :: godunit :: GodUnit , unit : crate :: app :: unit :: Unit , god_data : crate :: app :: goddata :: GodData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodLevelUpSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGodLevelUpSequenceMethods > :: ctor (this , god_unit , unit , god_data) ; this }
+#[cfg(feature="app-godlevelupsequence")]impl GodLevelUpSequence{#[doc="`.ctor(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::goddata::GodData)` — overload selector"]pub fn new(god_unit:crate::app::godunit::GodUnit,unit:crate::app::unit::Unit,god_data:crate::app::goddata::GodData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodLevelUpSequence), ::core::stringify!(new),));
+ <Self as IGodLevelUpSequenceMethods> ::ctor(this,god_unit,unit,god_data);
+this}
 }
 
 #[cfg(feature = "app-godlevelupsequence")]

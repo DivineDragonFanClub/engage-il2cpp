@@ -4,61 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textgenerationsettings/TextGenerationSettings.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TextGenerationSettings {
-    pub font: crate :: unity_engine :: font :: Font,
-    pub color: crate :: unity_engine :: color :: Color,
-    pub font_size: i32,
-    pub line_spacing: f32,
-    pub rich_text: bool,
-    pub scale_factor: f32,
-    pub font_style: crate :: unity_engine :: fontstyle :: FontStyle,
-    pub text_anchor: crate :: unity_engine :: textanchor :: TextAnchor,
-    pub align_by_geometry: bool,
-    pub resize_text_for_best_fit: bool,
-    pub resize_text_min_size: i32,
-    pub resize_text_max_size: i32,
-    pub update_bounds: bool,
-    pub vertical_overflow: crate :: unity_engine :: verticalwrapmode :: VerticalWrapMode,
-    pub horizontal_overflow: crate :: unity_engine :: horizontalwrapmode :: HorizontalWrapMode,
-    pub generation_extents: crate :: unity_engine :: vector2 :: Vector2,
-    pub pivot: crate :: unity_engine :: vector2 :: Vector2,
-    pub generate_out_of_bounds: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textgenerationsettings/TextGenerationSettings.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TextGenerationSettings{pub font:crate::unity_engine::font::Font,pub color:crate::unity_engine::color::Color,pub font_size:i32,pub line_spacing:f32,pub rich_text:bool,pub scale_factor:f32,pub font_style:crate::unity_engine::fontstyle::FontStyle,pub text_anchor:crate::unity_engine::textanchor::TextAnchor,pub align_by_geometry:bool,pub resize_text_for_best_fit:bool,pub resize_text_min_size:i32,pub resize_text_max_size:i32,pub update_bounds:bool,pub vertical_overflow:crate::unity_engine::verticalwrapmode::VerticalWrapMode,pub horizontal_overflow:crate::unity_engine::horizontalwrapmode::HorizontalWrapMode,pub generation_extents:crate::unity_engine::vector2::Vector2,pub pivot:crate::unity_engine::vector2::Vector2,pub generate_out_of_bounds:bool,}
+impl::unity2::ClassIdentity for TextGenerationSettings{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="TextGenerationSettings";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TextGenerationSettings {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "TextGenerationSettings";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TextGenerationSettings {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TextGenerationSettings{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -66,11 +26,21 @@ impl ::unity2::IlType for TextGenerationSettings {
 #[cfg(feature = "unity_engine-textgenerationsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-textgenerationsettings")]
-impl TextGenerationSettings { # [doc = "`CompareColors(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] pub fn compare_colors (& mut self , left : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , right : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TextGenerationSettings , crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f500usize) as * mut u8) ; __inner (self as * mut TextGenerationSettings , :: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`CompareVector2(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] pub fn compare_vector2 (& mut self , left : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , right : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TextGenerationSettings , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f5a0usize) as * mut u8) ; __inner (self as * mut TextGenerationSettings , :: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::textgenerationsettings::TextGenerationSettings)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TextGenerationSettings , crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f5f0usize) as * mut u8) ; __inner (self as * mut TextGenerationSettings , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-textgenerationsettings")]impl TextGenerationSettings{#[doc="`CompareColors(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]pub fn compare_colors(&mut self,left:impl::core::convert::Into<crate::unity_engine::color::Color> ,right:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f500usize)as*mut u8,bool;
+(*mut TextGenerationSettings)self as*mut TextGenerationSettings,(crate::unity_engine::color::Color)::core::convert::Into::into(left),(crate::unity_engine::color::Color)::core::convert::Into::into(right))}
+}
+#[doc="`CompareVector2(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]pub fn compare_vector2(&mut self,left:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,right:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f5a0usize)as*mut u8,bool;
+(*mut TextGenerationSettings)self as*mut TextGenerationSettings,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(left),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(right))}
+}
+#[doc="`Equals(crate::unity_engine::textgenerationsettings::TextGenerationSettings)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f5f0usize)as*mut u8,bool;
+(*mut TextGenerationSettings)self as*mut TextGenerationSettings,(crate::unity_engine::textgenerationsettings::TextGenerationSettings)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-textgenerationsettings")]
-impl TextGenerationSettings { pub fn compare_colors_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextGenerationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn compare_vector2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextGenerationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextGenerationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-textgenerationsettings")]impl TextGenerationSettings{pub fn compare_colors_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn compare_vector2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-textgenerationsettings")]
 #[doc(hidden)]

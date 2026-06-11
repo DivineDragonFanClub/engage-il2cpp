@@ -4,43 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubskyselector/HubSkySelector.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubSkySelector")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubSkySelector {
-# [offset (24)] # [rename (name = "m_materialMorning")] pub m_material_morning : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "m_materialDay")] pub m_material_day : crate :: unity_engine :: material :: Material ,
-# [offset (40)] # [rename (name = "m_materialEvening")] pub m_material_evening : crate :: unity_engine :: material :: Material ,
-# [offset (48)] # [rename (name = "m_materialNight")] pub m_material_night : crate :: unity_engine :: material :: Material ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubskyselector/HubSkySelector.md"))]#[::unity2::class(namespace="App",name="HubSkySelector")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubSkySelector{#[offset(24)]#[rename(name="m_materialMorning")]pub m_material_morning:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="m_materialDay")]pub m_material_day:crate::unity_engine::material::Material, #[offset(40)]#[rename(name="m_materialEvening")]pub m_material_evening:crate::unity_engine::material::Material, #[offset(48)]#[rename(name="m_materialNight")]pub m_material_night:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "app-hubskyselector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubskyselector")]
-pub trait IHubSkySelectorMethods : IHubSkySelector { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubSkySelector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubSkySelector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a59c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubSkySelector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubSkySelector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a59d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Apply(crate::app::hubutil::HubUtil_TimezoneType)` overload"] fn apply (self , timezone_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_TimezoneType >) -> () { unsafe { let __receiver = < HubSkySelector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubSkySelector , crate :: app :: hubutil :: HubUtil_TimezoneType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a59e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (timezone_type) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTimezoneType()` overload"] fn update_timezone_type (self ,) -> () { unsafe { let __receiver = < HubSkySelector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubSkySelector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a59d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubSkySelector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubSkySelector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5a1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubskyselector")]pub trait IHubSkySelectorMethods:IHubSkySelector{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubSkySelector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a59c90usize)as*mut u8,();
+(HubSkySelector)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <HubSkySelector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a59d70usize)as*mut u8,();
+(HubSkySelector)__receiver)}
+}
+#[doc="`Apply(crate::app::hubutil::HubUtil_TimezoneType)` overload"]fn apply(self,timezone_type:impl::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>)->(){unsafe{let __receiver= <HubSkySelector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a59e40usize)as*mut u8,();
+(HubSkySelector)__receiver,(crate::app::hubutil::HubUtil_TimezoneType)::core::convert::Into::into(timezone_type))}
+}
+#[doc="`UpdateTimezoneType()` overload"]fn update_timezone_type(self,)->(){unsafe{let __receiver= <HubSkySelector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a59d00usize)as*mut u8,();
+(HubSkySelector)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSkySelector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5a1a0usize)as*mut u8,();
+(HubSkySelector)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubskyselector")]
-impl < __T : IHubSkySelector > IHubSkySelectorMethods for __T { }
+#[cfg(feature="app-hubskyselector")]impl<__T:IHubSkySelector>IHubSkySelectorMethods for __T{}
 
-#[cfg(feature = "app-hubskyselector")]
-impl HubSkySelector { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubSkySelector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubSkySelector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn apply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubSkySelector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_timezone_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubSkySelector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubSkySelector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-hubskyselector")]impl HubSkySelector{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_timezone_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-hubskyselector")]
-impl HubSkySelector {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubSkySelector) , :: core :: stringify ! (new) ,)) ; < Self as IHubSkySelectorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubskyselector")]impl HubSkySelector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSkySelector), ::core::stringify!(new),));
+ <Self as IHubSkySelectorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubskyselector")]

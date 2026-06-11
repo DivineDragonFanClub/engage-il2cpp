@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: module :: { IModule , Module }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::module::{IModule,Module}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimemodule/RuntimeModule.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "RuntimeModule")] # [parent (crate :: system :: reflection :: module :: Module)] pub struct RuntimeModule {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/runtimemodule/RuntimeModule.md"))]#[::unity2::class(namespace="System.Reflection",name="RuntimeModule")]#[parent(crate::system::reflection::module::Module)]pub struct RuntimeModule{}
 
 }
 
 #[cfg(feature = "system-reflection-runtimemodule-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-runtimemodule")]
-pub trait IRuntimeModuleMethods : IRuntimeModule { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd6150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-runtimemodule")]pub trait IRuntimeModuleMethods:IRuntimeModule{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6150usize)as*mut u8,();
+(RuntimeModule)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-runtimemodule")]
-impl < __T : IRuntimeModule > IRuntimeModuleMethods for __T { }
+#[cfg(feature="system-reflection-runtimemodule")]impl<__T:IRuntimeModule>IRuntimeModuleMethods for __T{}
 
-#[cfg(feature = "system-reflection-runtimemodule")]
-impl RuntimeModule { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-runtimemodule")]impl RuntimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-runtimemodule")]
-impl RuntimeModule {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeModule) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeModuleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-runtimemodule")]impl RuntimeModule{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeModule), ::core::stringify!(new),));
+ <Self as IRuntimeModuleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-runtimemodule")]

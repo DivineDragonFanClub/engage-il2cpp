@@ -4,26 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/colorutils/ColorUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ColorUtils")] # [parent (crate :: system :: object :: Object)] pub struct ColorUtils {
-# [static_field] # [rename (name = "s_LightMeterCalibrationConstant")] pub s_light_meter_calibration_constant : f32 ,
-# [static_field] # [rename (name = "s_LensAttenuation")] pub s_lens_attenuation : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/colorutils/ColorUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ColorUtils")]#[parent(crate::system::object::Object)]pub struct ColorUtils{#[static_field]#[rename(name="s_LightMeterCalibrationConstant")]pub s_light_meter_calibration_constant:f32, #[static_field]#[rename(name="s_LensAttenuation")]pub s_lens_attenuation:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-colorutils-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-colorutils")]
-impl ColorUtils { # [doc = "`get_lensImperfectionExposureScale()` overload"] pub fn get_lens_imperfection_exposure_scale () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352f850usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`StandardIlluminantY(f32)` overload"] pub fn standard_illuminant_y (x : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352f8d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`CIExyToLMS(f32, f32)` overload"] pub fn ci_exy_to_lms (x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352f910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`ColorBalanceToLMSCoeffs(f32, f32)` overload"] pub fn color_balance_to_lms_coeffs (temperature : impl :: core :: convert :: Into < f32 > , tint : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352f9d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (temperature) , :: core :: convert :: Into :: into (tint) , :: core :: option :: Option :: None) } } } # [doc = "`Luminance(*mutcrate::unity_engine::color::Color)` overload"] pub fn luminance () -> (f32 , crate :: unity_engine :: color :: Color) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530140usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`ComputeEV100(f32, f32, f32)` overload"] pub fn compute_ev100 (aperture : impl :: core :: convert :: Into < f32 > , shutter_speed : impl :: core :: convert :: Into < f32 > , iso : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530230usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aperture) , :: core :: convert :: Into :: into (shutter_speed) , :: core :: convert :: Into :: into (iso) , :: core :: option :: Option :: None) } } } # [doc = "`ConvertEV100ToExposure(f32)` overload"] pub fn convert_ev100_to_exposure (ev100 : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ev100) , :: core :: option :: Option :: None) } } } # [doc = "`ConvertExposureToEV100(f32)` overload"] pub fn convert_exposure_to_ev100 (exposure : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (exposure) , :: core :: option :: Option :: None) } } } # [doc = "`ComputeEV100FromAvgLuminance(f32)` overload"] pub fn compute_ev100_from_avg_luminance (avg_luminance : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (avg_luminance) , :: core :: option :: Option :: None) } } } # [doc = "`ComputeISO(f32, f32, f32)` overload"] pub fn compute_iso (aperture : impl :: core :: convert :: Into < f32 > , shutter_speed : impl :: core :: convert :: Into < f32 > , target_ev100 : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35304d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aperture) , :: core :: convert :: Into :: into (shutter_speed) , :: core :: convert :: Into :: into (target_ev100) , :: core :: option :: Option :: None) } } } # [doc = "`ToHex(crate::unity_engine::color::Color)` overload"] pub fn to_hex (c : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> u32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530510usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ToRGBA(u32)` overload"] pub fn to_rgba (hex : impl :: core :: convert :: Into < u32 >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530580usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (hex) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-colorutils")]impl ColorUtils{#[doc="`get_lensImperfectionExposureScale()` overload"]pub fn get_lens_imperfection_exposure_scale()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352f850usize)as*mut u8,f32;
+)}
+}
+#[doc="`StandardIlluminantY(f32)` overload"]pub fn standard_illuminant_y(x:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352f8d0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(x))}
+}
+#[doc="`CIExyToLMS(f32, f32)` overload"]pub fn ci_exy_to_lms(x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352f910usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`ColorBalanceToLMSCoeffs(f32, f32)` overload"]pub fn color_balance_to_lms_coeffs(temperature:impl::core::convert::Into<f32> ,tint:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352f9d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(f32)::core::convert::Into::into(temperature),(f32)::core::convert::Into::into(tint))}
+}
+#[doc="`Luminance(*mutcrate::unity_engine::color::Color)` overload"]pub fn luminance()->(f32,crate::unity_engine::color::Color){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::color::Color> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3530140usize)as*mut u8,f32;
+(*mut crate::unity_engine::color::Color)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`ComputeEV100(f32, f32, f32)` overload"]pub fn compute_ev100(aperture:impl::core::convert::Into<f32> ,shutter_speed:impl::core::convert::Into<f32> ,iso:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530230usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(aperture),(f32)::core::convert::Into::into(shutter_speed),(f32)::core::convert::Into::into(iso))}
+}
+#[doc="`ConvertEV100ToExposure(f32)` overload"]pub fn convert_ev100_to_exposure(ev100:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530260usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(ev100))}
+}
+#[doc="`ConvertExposureToEV100(f32)` overload"]pub fn convert_exposure_to_ev100(exposure:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530350usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(exposure))}
+}
+#[doc="`ComputeEV100FromAvgLuminance(f32)` overload"]pub fn compute_ev100_from_avg_luminance(avg_luminance:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530440usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(avg_luminance))}
+}
+#[doc="`ComputeISO(f32, f32, f32)` overload"]pub fn compute_iso(aperture:impl::core::convert::Into<f32> ,shutter_speed:impl::core::convert::Into<f32> ,target_ev100:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35304d0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(aperture),(f32)::core::convert::Into::into(shutter_speed),(f32)::core::convert::Into::into(target_ev100))}
+}
+#[doc="`ToHex(crate::unity_engine::color::Color)` overload"]pub fn to_hex(c:impl::core::convert::Into<crate::unity_engine::color::Color>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530510usize)as*mut u8,u32;
+(crate::unity_engine::color::Color)::core::convert::Into::into(c))}
+}
+#[doc="`ToRGBA(u32)` overload"]pub fn to_rgba(hex:impl::core::convert::Into<u32>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530580usize)as*mut u8,crate::unity_engine::color::Color;
+(u32)::core::convert::Into::into(hex))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530600usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-colorutils")]
-impl ColorUtils { pub fn get_lens_imperfection_exposure_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn standard_illuminant_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ci_exy_to_lms_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn color_balance_to_lms_coeffs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn luminance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn compute_ev100_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn convert_ev100_to_exposure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn convert_exposure_to_ev100_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn compute_ev100_from_avg_luminance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn compute_iso_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn to_hex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn to_rgba_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="unity_engine-rendering-colorutils")]impl ColorUtils{pub fn get_lens_imperfection_exposure_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn standard_illuminant_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ci_exy_to_lms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn color_balance_to_lms_coeffs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn luminance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn compute_ev100_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn convert_ev100_to_exposure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn convert_exposure_to_ev100_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn compute_ev100_from_avg_luminance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn compute_iso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn to_hex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn to_rgba_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
 #[cfg(feature = "unity_engine-rendering-colorutils")]
 #[doc(hidden)]

@@ -4,41 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/reflectionmanager/ReflectionManager.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "ReflectionManager")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ReflectionManager {
-# [offset (24)] # [rename (name = "WaterMeshRoot")] pub water_mesh_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_renderedList")] pub m_rendered_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/water/reflectionmanager/ReflectionManager.md"))]#[::unity2::class(namespace="App.Water",name="ReflectionManager")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ReflectionManager{#[offset(24)]#[rename(name="WaterMeshRoot")]pub water_mesh_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_renderedList")]pub m_rendered_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-water-reflectionmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-water-reflectionmanager")]
-pub trait IReflectionManagerMethods : IReflectionManager { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b6cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b6da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RemoveNonReferenceCamera()` overload"] fn remove_non_reference_camera (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b6e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearRenderedList()` overload"] fn clear_rendered_list (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b75c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RenderReflection(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera, i16)` overload"] fn render_reflection (self , tr : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , number : impl :: core :: convert :: Into < i16 >) -> bool { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: camera :: Camera , i16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b76f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tr) , :: core :: convert :: Into :: into (cam) , :: core :: convert :: Into :: into (number) , :: core :: option :: Option :: None) } } } # [doc = "`AddReflectionCamera(crate::unity_engine::gameobject::GameObject)` overload"] fn add_reflection_camera (self , obj_camera : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: app :: water :: reflectioncamera :: ReflectionCamera { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: app :: water :: reflectioncamera :: ReflectionCamera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj_camera) , :: core :: option :: Option :: None) } } } # [doc = "`GetReflectionTexture(i16)` overload"] fn get_reflection_texture (self , number : impl :: core :: convert :: Into < i16 >) -> crate :: unity_engine :: rendertexture :: RenderTexture { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , i16 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexture :: RenderTexture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (number) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraName(i16)` overload"] fn get_camera_name (self , number : impl :: core :: convert :: Into < i16 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , i16 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (number) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReflectionManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-water-reflectionmanager")]pub trait IReflectionManagerMethods:IReflectionManager{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b6cc0usize)as*mut u8,();
+(ReflectionManager)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b6da0usize)as*mut u8,();
+(ReflectionManager)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b7620usize)as*mut u8,();
+(ReflectionManager)__receiver)}
+}
+#[doc="`RemoveNonReferenceCamera()` overload"]fn remove_non_reference_camera(self,)->(){unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b6e00usize)as*mut u8,();
+(ReflectionManager)__receiver)}
+}
+#[doc="`ClearRenderedList()` overload"]fn clear_rendered_list(self,)->(){unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b75c0usize)as*mut u8,();
+(ReflectionManager)__receiver)}
+}
+#[doc="`RenderReflection(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera, i16)` overload"]fn render_reflection(self,tr:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,cam:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,number:impl::core::convert::Into<i16>)->bool{unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b76f0usize)as*mut u8,bool;
+(ReflectionManager)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(tr),(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam),(i16)::core::convert::Into::into(number))}
+}
+#[doc="`AddReflectionCamera(crate::unity_engine::gameobject::GameObject)` overload"]fn add_reflection_camera(self,obj_camera:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::app::water::reflectioncamera::ReflectionCamera{unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b7ac0usize)as*mut u8,crate::app::water::reflectioncamera::ReflectionCamera;
+(ReflectionManager)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj_camera))}
+}
+#[doc="`GetReflectionTexture(i16)` overload"]fn get_reflection_texture(self,number:impl::core::convert::Into<i16>)->crate::unity_engine::rendertexture::RenderTexture{unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b7b20usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
+(ReflectionManager)__receiver,(i16)::core::convert::Into::into(number))}
+}
+#[doc="`GetCameraName(i16)` overload"]fn get_camera_name(self,number:impl::core::convert::Into<i16>)-> ::unity2::Il2CppString{unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b7680usize)as*mut u8, ::unity2::Il2CppString;
+(ReflectionManager)__receiver,(i16)::core::convert::Into::into(number))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b7bd0usize)as*mut u8,();
+(ReflectionManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-water-reflectionmanager")]
-impl < __T : IReflectionManager > IReflectionManagerMethods for __T { }
+#[cfg(feature="app-water-reflectionmanager")]impl<__T:IReflectionManager>IReflectionManagerMethods for __T{}
 
-#[cfg(feature = "app-water-reflectionmanager")]
-impl ReflectionManager { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn remove_non_reference_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_rendered_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn render_reflection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_reflection_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_reflection_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_camera_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-water-reflectionmanager")]impl ReflectionManager{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn remove_non_reference_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_rendered_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn render_reflection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_reflection_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_reflection_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_camera_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-water-reflectionmanager")]
-impl ReflectionManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReflectionManager) , :: core :: stringify ! (new) ,)) ; < Self as IReflectionManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-water-reflectionmanager")]impl ReflectionManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReflectionManager), ::core::stringify!(new),));
+ <Self as IReflectionManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-water-reflectionmanager")]

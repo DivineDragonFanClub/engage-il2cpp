@@ -4,23 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustenumextension/SortieEntrustEnumExtension.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieEntrustEnumExtension")] # [parent (crate :: system :: object :: Object)] pub struct SortieEntrustEnumExtension {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustenumextension/SortieEntrustEnumExtension.md"))]#[::unity2::class(namespace="App",name="SortieEntrustEnumExtension")]#[parent(crate::system::object::Object)]pub struct SortieEntrustEnumExtension{}
 
 }
 
 #[cfg(feature = "app-sortieentrustenumextension-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortieentrustenumextension")]
-impl SortieEntrustEnumExtension { # [doc = "`IsBasic(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_basic (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe5fe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnhancePerson(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_enhance_person (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe5ff0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`IsRodLow(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_rod_low (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`IsRodHigh(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_rod_high (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`IsRange(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_range (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`IsSpecial(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_special (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`IsSub(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_sub (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`IsVulnerary(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_vulnerary (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnd(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"] pub fn is_end (progress : impl :: core :: convert :: Into < crate :: app :: sortieentrustprogress :: SortieEntrustProgress >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: sortieentrustprogress :: SortieEntrustProgress , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortieentrustenumextension")]impl SortieEntrustEnumExtension{#[doc="`IsBasic(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_basic(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5fe0usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+#[doc="`IsEnhancePerson(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_enhance_person(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5ff0usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+#[doc="`IsRodLow(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_rod_low(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6000usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+#[doc="`IsRodHigh(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_rod_high(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6010usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+#[doc="`IsRange(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_range(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6020usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+#[doc="`IsSpecial(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_special(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6030usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+#[doc="`IsSub(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_sub(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6040usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+#[doc="`IsVulnerary(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_vulnerary(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6050usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+#[doc="`IsEnd(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]pub fn is_end(progress:impl::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6060usize)as*mut u8,bool;
+(crate::app::sortieentrustprogress::SortieEntrustProgress)::core::convert::Into::into(progress))}
+}
+}
 
-#[cfg(feature = "app-sortieentrustenumextension")]
-impl SortieEntrustEnumExtension { pub fn is_basic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_enhance_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_rod_low_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_rod_high_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_special_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_vulnerary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustEnumExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-sortieentrustenumextension")]impl SortieEntrustEnumExtension{pub fn is_basic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_enhance_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_rod_low_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_rod_high_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_special_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_vulnerary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "app-sortieentrustenumextension")]
 #[doc(hidden)]

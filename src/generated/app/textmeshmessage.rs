@@ -4,104 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshmessage/TextMeshMessage.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextMeshMessage")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TextMeshMessage {
-# [offset (24)] # [rename (name = "m_Target")] pub m_target : crate :: app :: textmeshmessage :: TextMeshMessage_Targets ,
-# [offset (32)] # [rename (name = "m_Label")] pub m_label : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_File")] pub m_file : :: unity2 :: Il2CppString ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textmeshmessage/TextMeshMessage_Targets.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TextMeshMessage_Targets{pub value:i32,}
+impl::unity2::ClassIdentity for TextMeshMessage_Targets{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TextMeshMessage.Targets";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TextMeshMessage_Targets{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TextMeshMessage_Targets{pub fn self_()->Self{Self{value:0}
+}
+pub fn children()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshmessage/TextMeshMessage_Targets.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TextMeshMessage_Targets  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TextMeshMessage_Targets  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TextMeshMessage.Targets";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TextMeshMessage_Targets  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TextMeshMessage_Targets  {
-    pub fn self_() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn children() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textmeshmessage/TextMeshMessage.md"))]#[::unity2::class(namespace="App",name="TextMeshMessage")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TextMeshMessage{#[offset(24)]#[rename(name="m_Target")]pub m_target:crate::app::textmeshmessage::TextMeshMessage_Targets, #[offset(32)]#[rename(name="m_Label")]pub m_label: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_File")]pub m_file: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-textmeshmessage-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-textmeshmessage")]
-pub trait ITextMeshMessageMethods : ITextMeshMessage { # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < TextMeshMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < TextMeshMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ea1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < TextMeshMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ea2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateLangage()` overload"] fn update_langage (self ,) -> () { unsafe { let __receiver = < TextMeshMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ea370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextMeshMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ea380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-textmeshmessage")]pub trait ITextMeshMessageMethods:ITextMeshMessage{#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <TextMeshMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9fc0usize)as*mut u8,();
+(TextMeshMessage)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <TextMeshMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea1f0usize)as*mut u8,();
+(TextMeshMessage)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <TextMeshMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea2b0usize)as*mut u8,();
+(TextMeshMessage)__receiver)}
+}
+#[doc="`UpdateLangage()` overload"]fn update_langage(self,)->(){unsafe{let __receiver= <TextMeshMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea370usize)as*mut u8,();
+(TextMeshMessage)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextMeshMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea380usize)as*mut u8,();
+(TextMeshMessage)__receiver)}
+}
+}
 
-#[cfg(feature = "app-textmeshmessage")]
-impl < __T : ITextMeshMessage > ITextMeshMessageMethods for __T { }
+#[cfg(feature="app-textmeshmessage")]impl<__T:ITextMeshMessage>ITextMeshMessageMethods for __T{}
 
-#[cfg(feature = "app-textmeshmessage")]
-impl TextMeshMessage { pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_langage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-textmeshmessage")]impl TextMeshMessage{pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_langage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-textmeshmessage")]
-impl TextMeshMessage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextMeshMessage) , :: core :: stringify ! (new) ,)) ; < Self as ITextMeshMessageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-textmeshmessage")]impl TextMeshMessage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextMeshMessage), ::core::stringify!(new),));
+ <Self as ITextMeshMessageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-textmeshmessage")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TextMeshMessage_Targets;
     pub use super::TextMeshMessage;
     pub use super::ITextMeshMessage;
     pub use super::ITextMeshMessageMethods;
-    pub use super::TextMeshMessage_Targets;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

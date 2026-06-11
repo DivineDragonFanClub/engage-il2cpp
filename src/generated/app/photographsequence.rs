@@ -4,127 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographsequence/PhotographSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PhotographSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographsequence/PhotographSequence.md"))]#[::unity2::class(namespace="App",name="PhotographSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct PhotographSequence{#[offset(112)]#[rename(name="m_ReservedLabel")]pub m_reserved_label:crate::app::photographsequence::PhotographSequence_Label, #[offset(120)]#[rename(name="m_AllMenuContent")]pub m_all_menu_content:crate::app::photographallmenucontent::PhotographAllMenuContent, #[offset(128)]#[rename(name="m_SpotObj")]pub m_spot_obj:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(144)]#[rename(name="m_CameraController")]pub m_camera_controller:crate::app::photographcameracontroller::PhotographCameraController, #[offset(152)]#[rename(name="m_AnimalLocatorNameList")]pub m_animal_locator_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographsequence/PhotographSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotographSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for PhotographSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PhotographSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for PhotographSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhotographSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for PhotographSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for PhotographSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl PhotographSequence_Label{pub fn entry()->Self{Self{value:0}
 }
-
-
-impl  PhotographSequence_Label  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn select_dispos() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn edit_dispos() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn select_character() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn select_body_acc() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn select_face_acc() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn select_pause() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn select_scarf_color() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn select_weapon() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn photograph_mode() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 10 }
-
-    }
-
+pub fn select_dispos()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographsequence/PhotographSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct PhotographSequence {
-# [offset (112)] # [rename (name = "m_ReservedLabel")] pub m_reserved_label : crate :: app :: photographsequence :: PhotographSequence_Label ,
-# [offset (120)] # [rename (name = "m_AllMenuContent")] pub m_all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent ,
-# [offset (128)] # [rename (name = "m_SpotObj")] pub m_spot_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
-# [offset (144)] # [rename (name = "m_CameraController")] pub m_camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController ,
-# [offset (152)] # [rename (name = "m_AnimalLocatorNameList")] pub m_animal_locator_name_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+pub fn edit_dispos()->Self{Self{value:2}
+}
+pub fn select_character()->Self{Self{value:3}
+}
+pub fn select_body_acc()->Self{Self{value:4}
+}
+pub fn select_face_acc()->Self{Self{value:5}
+}
+pub fn select_pause()->Self{Self{value:6}
+}
+pub fn select_scarf_color()->Self{Self{value:7}
+}
+pub fn select_weapon()->Self{Self{value:8}
+}
+pub fn photograph_mode()->Self{Self{value:9}
+}
+pub fn exit()->Self{Self{value:10}
+}
 }
 
 }
@@ -132,30 +56,162 @@ impl  PhotographSequence_Label  {
 #[cfg(feature = "app-photographsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographsequence")]
-impl PhotographSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269d220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographsequence")]impl PhotographSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x269d220usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-photographsequence")]
-pub trait IPhotographSequenceMethods : IPhotographSequence { # [doc = "`OpenKeyHelp(::unity2::Il2CppString)` overload"] fn open_key_help (self , key_help_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269eee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key_help_id) , :: core :: option :: Option :: None) } } } # [doc = "`CloseKeyHelp()` overload"] fn close_key_help (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269ef20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269ef40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectDisposMenu()` overload"] fn open_select_dispos_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseSelectDisposMenu()` overload"] fn close_select_dispos_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenEditDisposMenu()` overload"] fn open_edit_dispos_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseEditDisposMenu()` overload"] fn close_edit_dispos_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectCharacterMenu()` overload"] fn open_select_character_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseSelectCharacterMenu()` overload"] fn close_select_character_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectBodyAccMenu()` overload"] fn open_select_body_acc_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseSelectBodyAccMenu()` overload"] fn close_select_body_acc_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectFaceAccMenu()` overload"] fn open_select_face_acc_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseSelectFaceAccMenu()` overload"] fn close_select_face_acc_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectPauseMenu()` overload"] fn open_select_pause_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseSelectPauseMenu()` overload"] fn close_select_pause_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectScarfColorMenu()` overload"] fn open_select_scarf_color_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseSelectScarfColorMenu()` overload"] fn close_select_scarf_color_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenSelectWeaponMenu()` overload"] fn open_select_weapon_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseSelectWeaponMenu()` overload"] fn close_select_weapon_menu (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269f9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartPhotographModeSequence()` overload"] fn start_photograph_mode_sequence (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269fa30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndPhotographModeSequence()` overload"] fn end_photograph_mode_sequence (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269fad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269fc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a0070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResource()` overload"] fn is_loading_resource (self ,) -> bool { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a0120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResource()` overload"] fn unload_resource (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a01d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269eb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographsequence")]pub trait IPhotographSequenceMethods:IPhotographSequence{#[doc="`OpenKeyHelp(::unity2::Il2CppString)` overload"]fn open_key_help(self,key_help_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269eee0usize)as*mut u8,();
+(PhotographSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key_help_id))}
+}
+#[doc="`CloseKeyHelp()` overload"]fn close_key_help(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269ef20usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269ef40usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`OpenSelectDisposMenu()` overload"]fn open_select_dispos_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f380usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`CloseSelectDisposMenu()` overload"]fn close_select_dispos_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f470usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`OpenEditDisposMenu()` overload"]fn open_edit_dispos_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f500usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`CloseEditDisposMenu()` overload"]fn close_edit_dispos_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f5e0usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`OpenSelectCharacterMenu()` overload"]fn open_select_character_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f670usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`CloseSelectCharacterMenu()` overload"]fn close_select_character_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f6a0usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`OpenSelectBodyAccMenu()` overload"]fn open_select_body_acc_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f710usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`CloseSelectBodyAccMenu()` overload"]fn close_select_body_acc_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f740usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`OpenSelectFaceAccMenu()` overload"]fn open_select_face_acc_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f7b0usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`CloseSelectFaceAccMenu()` overload"]fn close_select_face_acc_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f7e0usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`OpenSelectPauseMenu()` overload"]fn open_select_pause_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f850usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`CloseSelectPauseMenu()` overload"]fn close_select_pause_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f880usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`OpenSelectScarfColorMenu()` overload"]fn open_select_scarf_color_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f8f0usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`CloseSelectScarfColorMenu()` overload"]fn close_select_scarf_color_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f920usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`OpenSelectWeaponMenu()` overload"]fn open_select_weapon_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f990usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`CloseSelectWeaponMenu()` overload"]fn close_select_weapon_menu(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269f9c0usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`StartPhotographModeSequence()` overload"]fn start_photograph_mode_sequence(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269fa30usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`EndPhotographModeSequence()` overload"]fn end_photograph_mode_sequence(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269fad0usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269fc20usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a0070usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`IsLoadingResource()` overload"]fn is_loading_resource(self,)->bool{unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a0120usize)as*mut u8,bool;
+(PhotographSequence)__receiver)}
+}
+#[doc="`UnloadResource()` overload"]fn unload_resource(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a01d0usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269eb30usize)as*mut u8,();
+(PhotographSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographsequence")]
-impl < __T : IPhotographSequence > IPhotographSequenceMethods for __T { }
+#[cfg(feature="app-photographsequence")]impl<__T:IPhotographSequence>IPhotographSequenceMethods for __T{}
 
-#[cfg(feature = "app-photographsequence")]
-impl PhotographSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn open_key_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn close_key_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn open_select_dispos_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn close_select_dispos_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_edit_dispos_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn close_edit_dispos_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn open_select_character_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn close_select_character_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn open_select_body_acc_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn close_select_body_acc_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn open_select_face_acc_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn close_select_face_acc_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn open_select_pause_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn close_select_pause_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn open_select_scarf_color_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn close_select_scarf_color_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn open_select_weapon_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn close_select_weapon_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn start_photograph_mode_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn end_photograph_mode_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } }
+#[cfg(feature="app-photographsequence")]impl PhotographSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn open_key_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn close_key_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn open_select_dispos_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn close_select_dispos_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_edit_dispos_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_edit_dispos_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn open_select_character_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn close_select_character_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn open_select_body_acc_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn close_select_body_acc_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn open_select_face_acc_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn close_select_face_acc_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn open_select_pause_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn close_select_pause_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn open_select_scarf_color_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn close_select_scarf_color_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn open_select_weapon_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn close_select_weapon_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn start_photograph_mode_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn end_photograph_mode_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn is_loading_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
 
-#[cfg(feature = "app-photographsequence")]
-impl PhotographSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSequence) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographsequence")]impl PhotographSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSequence), ::core::stringify!(new),));
+ <Self as IPhotographSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photographsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PhotographSequence_Label;
     pub use super::PhotographSequence;
     pub use super::IPhotographSequence;
     pub use super::IPhotographSequenceMethods;
+    pub use super::PhotographSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

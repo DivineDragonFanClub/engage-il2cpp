@@ -4,35 +4,90 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/downloadhandler/DownloadHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "DownloadHandler")] # [parent (crate :: system :: object :: Object)] pub struct DownloadHandler {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/downloadhandler/DownloadHandler.md"))]#[::unity2::class(namespace="UnityEngine.Networking",name="DownloadHandler")]#[parent(crate::system::object::Object)]pub struct DownloadHandler{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-networking-downloadhandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-networking-downloadhandler")]
-impl DownloadHandler { # [doc = "`InternalGetByteArray(crate::unity_engine::networking::downloadhandler::DownloadHandler)` overload"] pub fn internal_get_byte_array (dh : impl :: core :: convert :: Into < crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dh) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-downloadhandler")]impl DownloadHandler{#[doc="`InternalGetByteArray(crate::unity_engine::networking::downloadhandler::DownloadHandler)` overload"]pub fn internal_get_byte_array(dh:impl::core::convert::Into<crate::unity_engine::networking::downloadhandler::DownloadHandler>)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f18940usize)as*mut u8, ::unity2::Array<u8> ;
+(crate::unity_engine::networking::downloadhandler::DownloadHandler)::core::convert::Into::into(dh))}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-downloadhandler")]
-pub trait IDownloadHandlerMethods : IDownloadHandler { # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_error()` overload"] fn get_error (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f184d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetErrorMsg()` overload"] fn get_error_msg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_data()` overload"] fn get_data (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_text()` overload"] fn get_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetContentType()` overload"] fn get_content_type (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f188d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReceiveContentLengthHeader(u64)` overload"] fn receive_content_length_header (self , content_length : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (content_length) , :: core :: option :: Option :: None) } } } # [doc = "`ReceiveContentLength(i32)` overload"] fn receive_content_length (self , content_length : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DownloadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DownloadHandler , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f18930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (content_length) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-downloadhandler")]pub trait IDownloadHandlerMethods:IDownloadHandler{#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18320usize)as*mut u8,();
+(DownloadHandler)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18370usize)as*mut u8,();
+(DownloadHandler)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18380usize)as*mut u8,();
+(DownloadHandler)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18450usize)as*mut u8,();
+(DownloadHandler)__receiver)}
+}
+#[doc="`get_error()` overload"]fn get_error(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f184d0usize)as*mut u8, ::unity2::Il2CppString;
+(DownloadHandler)__receiver)}
+}
+#[doc="`GetErrorMsg()` overload"]fn get_error_msg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18520usize)as*mut u8, ::unity2::Il2CppString;
+(DownloadHandler)__receiver)}
+}
+#[doc="`get_data()` overload"]fn get_data(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18570usize)as*mut u8, ::unity2::Array<u8> ;
+(DownloadHandler)__receiver)}
+}
+#[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18580usize)as*mut u8, ::unity2::Il2CppString;
+(DownloadHandler)__receiver)}
+}
+#[doc="`GetContentType()` overload"]fn get_content_type(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f188d0usize)as*mut u8, ::unity2::Il2CppString;
+(DownloadHandler)__receiver)}
+}
+#[doc="`ReceiveContentLengthHeader(u64)` overload"]fn receive_content_length_header(self,content_length:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18920usize)as*mut u8,();
+(DownloadHandler)__receiver,(u64)::core::convert::Into::into(content_length))}
+}
+#[doc="`ReceiveContentLength(i32)` overload"]fn receive_content_length(self,content_length:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18930usize)as*mut u8,();
+(DownloadHandler)__receiver,(i32)::core::convert::Into::into(content_length))}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-downloadhandler")]
-impl < __T : IDownloadHandler > IDownloadHandlerMethods for __T { }
+#[cfg(feature="unity_engine-networking-downloadhandler")]impl<__T:IDownloadHandler>IDownloadHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-networking-downloadhandler")]
-impl DownloadHandler { pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_error_msg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_content_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn receive_content_length_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn receive_content_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn internal_get_byte_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DownloadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="unity_engine-networking-downloadhandler")]impl DownloadHandler{pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_error_msg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_content_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn receive_content_length_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn receive_content_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn internal_get_byte_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "unity_engine-networking-downloadhandler")]
-impl DownloadHandler {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DownloadHandler) , :: core :: stringify ! (new) ,)) ; < Self as IDownloadHandlerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-networking-downloadhandler")]impl DownloadHandler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DownloadHandler), ::core::stringify!(new),));
+ <Self as IDownloadHandlerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-networking-downloadhandler")]

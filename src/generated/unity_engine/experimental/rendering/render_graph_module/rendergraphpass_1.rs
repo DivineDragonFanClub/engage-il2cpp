@@ -4,39 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: { IRenderGraphPass , RenderGraphPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::{IRenderGraphPass,RenderGraphPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphpass_1/RenderGraphPass_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphPass`1")] # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass)] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphPass_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "data")] pub data : T0 ,
-# [rename (name = "renderFunc")] pub render_func : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: renderfunc_1 :: RenderFunc_1 < T0 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphpass_1/RenderGraphPass_1.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraphPass`1")]#[parent(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)]#[parent(crate::system::object::Object)]pub struct RenderGraphPass_1<T0: ::unity2::ClassIdentity>{#[rename(name="data")]pub data:T0, #[rename(name="renderFunc")]pub render_func:crate::unity_engine::experimental::rendering::render_graph_module::renderfunc_1::RenderFunc_1<T0> ,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > RenderGraphPass_1 < T0 > {
-# [doc = "`Execute(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"] # [method (name = "Execute" , args = 1)] pub fn execute (self , render_graph_context : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphcontext :: RenderGraphContext) -> () ;
-
-# [doc = "`Initialize(i32, T0, ::unity2::Il2CppString, crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"] # [method (name = "Initialize" , args = 4)] pub fn initialize (self , pass_index : i32 , pass_data : T0 , pass_name : :: unity2 :: Il2CppString , sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler) -> () ;
-
-# [doc = "`Release(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool)` overload"] # [method (name = "Release" , args = 1)] pub fn release (self , pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphobjectpool :: RenderGraphObjectPool) -> () ;
-
-# [doc = "`HasRenderFunc()` overload"] # [method (name = "HasRenderFunc" , args = 0)] pub fn has_render_func (self ,) -> bool ;
-
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphpass_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>RenderGraphPass_1<T0>{#[doc="`Execute(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"]#[method(name="Execute",args=1)]pub fn execute(self,render_graph_context:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)->();
+ #[doc="`Initialize(i32, T0, ::unity2::Il2CppString, crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"]#[method(name="Initialize",args=4)]pub fn initialize(self,pass_index:i32,pass_data:T0,pass_name: ::unity2::Il2CppString,sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler)->();
+ #[doc="`Release(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool)` overload"]#[method(name="Release",args=1)]pub fn release(self,pool:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool)->();
+ #[doc="`HasRenderFunc()` overload"]#[method(name="HasRenderFunc",args=0)]pub fn has_render_func(self,)->bool;
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
 }
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass_1")]
-impl < T0 : :: unity2 :: ClassIdentity > RenderGraphPass_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraphPass_1) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraphPass_1Methods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphpass_1")]impl<T0: ::unity2::ClassIdentity>RenderGraphPass_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RenderGraphPass_1), ::core::stringify!(new),));
+ <Self as IRenderGraphPass_1Methods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass_1")]

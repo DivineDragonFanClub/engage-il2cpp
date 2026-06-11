@@ -4,30 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/colortaginfo/ColorTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "ColorTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct ColorTagInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/colortaginfo/ColorTagInfo.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="ColorTagInfo")]#[parent(crate::system::object::Object)]pub struct ColorTagInfo{}
 
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-colortaginfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-colortaginfo")]
-pub trait IColorTagInfoMethods : IColorTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < ColorTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea9dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < ColorTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea9dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: nintendo :: message_studio :: lib :: lmscolor :: LMSColor { unsafe { let __receiver = < ColorTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorTagInfo , :: unity2 :: OptionalMethod ,) -> crate :: nintendo :: message_studio :: lib :: lmscolor :: LMSColor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea9de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Color(crate::nintendo::message_studio::lib::lmscolor::LMSColor)` overload"] fn set_color (self , value : impl :: core :: convert :: Into < crate :: nintendo :: message_studio :: lib :: lmscolor :: LMSColor >) -> () { unsafe { let __receiver = < ColorTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorTagInfo , crate :: nintendo :: message_studio :: lib :: lmscolor :: LMSColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea9df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Index()` overload"] fn get_index (self ,) -> u16 { unsafe { let __receiver = < ColorTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea9e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Index(u16)` overload"] fn set_index (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ColorTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorTagInfo , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea9e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < ColorTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorTagInfo , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea9e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nintendo-message_studio-lib-colortaginfo")]pub trait IColorTagInfoMethods:IColorTagInfo{#[doc="`get_Tag()` overload"]fn get_tag(self,)->u16{unsafe{let __receiver= <ColorTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea9dc0usize)as*mut u8,u16;
+(ColorTagInfo)__receiver)}
+}
+#[doc="`get_TagGroup()` overload"]fn get_tag_group(self,)->u16{unsafe{let __receiver= <ColorTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea9dd0usize)as*mut u8,u16;
+(ColorTagInfo)__receiver)}
+}
+#[doc="`get_Color()` overload"]fn get_color(self,)->crate::nintendo::message_studio::lib::lmscolor::LMSColor{unsafe{let __receiver= <ColorTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea9de0usize)as*mut u8,crate::nintendo::message_studio::lib::lmscolor::LMSColor;
+(ColorTagInfo)__receiver)}
+}
+#[doc="`set_Color(crate::nintendo::message_studio::lib::lmscolor::LMSColor)` overload"]fn set_color(self,value:impl::core::convert::Into<crate::nintendo::message_studio::lib::lmscolor::LMSColor>)->(){unsafe{let __receiver= <ColorTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea9df0usize)as*mut u8,();
+(ColorTagInfo)__receiver,(crate::nintendo::message_studio::lib::lmscolor::LMSColor)::core::convert::Into::into(value))}
+}
+#[doc="`get_Index()` overload"]fn get_index(self,)->u16{unsafe{let __receiver= <ColorTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea9e00usize)as*mut u8,u16;
+(ColorTagInfo)__receiver)}
+}
+#[doc="`set_Index(u16)` overload"]fn set_index(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ColorTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea9e10usize)as*mut u8,();
+(ColorTagInfo)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,param:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <ColorTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea9e20usize)as*mut u8,();
+(ColorTagInfo)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(param))}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-colortaginfo")]
-impl < __T : IColorTagInfo > IColorTagInfoMethods for __T { }
+#[cfg(feature="nintendo-message_studio-lib-colortaginfo")]impl<__T:IColorTagInfo>IColorTagInfoMethods for __T{}
 
-#[cfg(feature = "nintendo-message_studio-lib-colortaginfo")]
-impl ColorTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="nintendo-message_studio-lib-colortaginfo")]impl ColorTagInfo{pub fn get_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-colortaginfo")]
-impl ColorTagInfo {
-# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (param : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ColorTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as IColorTagInfoMethods > :: ctor (this , param) ; this }
+#[cfg(feature="nintendo-message_studio-lib-colortaginfo")]impl ColorTagInfo{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(param: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ColorTagInfo), ::core::stringify!(new),));
+ <Self as IColorTagInfoMethods> ::ctor(this,param);
+this}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-colortaginfo")]

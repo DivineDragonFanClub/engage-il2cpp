@@ -4,69 +4,152 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application_LogCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Application.LogCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Application_LogCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/application/Application_LogCallback.md"))]#[::unity2::class(namespace="UnityEngine",name="Application.LogCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Application_LogCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Application")] # [parent (crate :: system :: object :: Object)] pub struct Application {
-# [static_field] # [rename (name = "lowMemory")] pub low_memory : crate :: unity_engine :: application :: Application_LowMemoryCallback ,
-# [static_field] # [rename (name = "s_LogCallbackHandler")] pub s_log_callback_handler : crate :: unity_engine :: application :: Application_LogCallback ,
-# [static_field] # [rename (name = "s_LogCallbackHandlerThreaded")] pub s_log_callback_handler_threaded : crate :: unity_engine :: application :: Application_LogCallback ,
-# [static_field] # [rename (name = "focusChanged")] pub focus_changed : crate :: system :: action_1 :: Action_1 < bool > ,
-# [static_field] # [rename (name = "deepLinkActivated")] pub deep_link_activated : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "wantsToQuit")] pub wants_to_quit : crate :: system :: func_1 :: Func_1 < bool > ,
-# [static_field] # [rename (name = "quitting")] pub quitting : crate :: system :: action :: Action ,
-# [static_field] # [rename (name = "unloading")] pub unloading : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/application/Application_LowMemoryCallback.md"))]#[::unity2::class(namespace="UnityEngine",name="Application.LowMemoryCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Application_LowMemoryCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application_LowMemoryCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Application.LowMemoryCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Application_LowMemoryCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/application/Application.md"))]#[::unity2::class(namespace="UnityEngine",name="Application")]#[parent(crate::system::object::Object)]pub struct Application{#[static_field]#[rename(name="lowMemory")]pub low_memory:crate::unity_engine::application::Application_LowMemoryCallback, #[static_field]#[rename(name="s_LogCallbackHandler")]pub s_log_callback_handler:crate::unity_engine::application::Application_LogCallback, #[static_field]#[rename(name="s_LogCallbackHandlerThreaded")]pub s_log_callback_handler_threaded:crate::unity_engine::application::Application_LogCallback, #[static_field]#[rename(name="focusChanged")]pub focus_changed:crate::system::action_1::Action_1<bool> , #[static_field]#[rename(name="deepLinkActivated")]pub deep_link_activated:crate::system::action_1::Action_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="wantsToQuit")]pub wants_to_quit:crate::system::func_1::Func_1<bool> , #[static_field]#[rename(name="quitting")]pub quitting:crate::system::action::Action, #[static_field]#[rename(name="unloading")]pub unloading:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "unity_engine-application-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-application")]
-pub trait IApplication_LogCallbackMethods : IApplication_LogCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Application_LogCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Application_LogCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379acc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"] fn invoke (self , condition : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , stack_trace : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: logtype :: LogType >) -> () { unsafe { let __receiver = < Application_LogCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Application_LogCallback , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: unity_engine :: logtype :: LogType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379ace0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (condition) , :: core :: convert :: Into :: into (stack_trace) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-application")]
-impl < __T : IApplication_LogCallback > IApplication_LogCallbackMethods for __T { }
-
-#[cfg(feature = "unity_engine-application")]
-impl Application_LogCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application_LogCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application_LogCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "unity_engine-application")]
-impl Application_LogCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Application_LogCallback) , :: core :: stringify ! (new) ,)) ; < Self as IApplication_LogCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-application")]pub trait IApplication_LogCallbackMethods:IApplication_LogCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Application_LogCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379acc0usize)as*mut u8,();
+(Application_LogCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]fn invoke(self,condition:impl::core::convert::Into< ::unity2::Il2CppString> ,stack_trace:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::unity_engine::logtype::LogType>)->(){unsafe{let __receiver= <Application_LogCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379ace0usize)as*mut u8,();
+(Application_LogCallback)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(condition),(::unity2::Il2CppString)::core::convert::Into::into(stack_trace),(crate::unity_engine::logtype::LogType)::core::convert::Into::into(r#type))}
+}
 }
 
-#[cfg(feature = "unity_engine-application")]
-impl Application { # [doc = "`get_isPlaying()` overload"] pub fn get_is_playing () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_dataPath()` overload"] pub fn get_data_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c357a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_streamingAssetsPath()` overload"] pub fn get_streaming_assets_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c357e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_persistentDataPath()` overload"] pub fn get_persistent_data_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_temporaryCachePath()` overload"] pub fn get_temporary_cache_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35860usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_productName()` overload"] pub fn get_product_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c358a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OpenURL(::unity2::Il2CppString)` overload"] pub fn open_url (url : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c358e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (url) , :: core :: option :: Option :: None) } } } # [doc = "`set_backgroundLoadingPriority(crate::unity_engine::threadpriority::ThreadPriority)` overload"] pub fn set_background_loading_priority (value : impl :: core :: convert :: Into < crate :: unity_engine :: threadpriority :: ThreadPriority >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: threadpriority :: ThreadPriority , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35930usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_platform()` overload"] pub fn get_platform () -> crate :: unity_engine :: runtimeplatform :: RuntimePlatform { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: runtimeplatform :: RuntimePlatform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35980usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_isMobilePlatform()` overload"] pub fn get_is_mobile_platform () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c359c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CallLowMemory()` overload"] pub fn call_low_memory () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35a60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CallLogCallback(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType, bool)` overload"] pub fn call_log_callback (log_string : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , stack_trace : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: logtype :: LogType > , invoked_on_main_thread : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: unity_engine :: logtype :: LogType , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35ac0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (log_string) , :: core :: convert :: Into :: into (stack_trace) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (invoked_on_main_thread) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_ApplicationWantsToQuit()` overload"] pub fn internal_application_wants_to_quit () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Internal_ApplicationQuit()` overload"] pub fn internal_application_quit () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35ed0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Internal_ApplicationUnload()` overload"] pub fn internal_application_unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35f30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`InvokeOnBeforeRender()` overload"] pub fn invoke_on_before_render () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c35f90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`InvokeFocusChanged(bool)` overload"] pub fn invoke_focus_changed (focus : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36190usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (focus) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeDeepLinkActivated(::unity2::Il2CppString)` overload"] pub fn invoke_deep_link_activated (url : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (url) , :: core :: option :: Option :: None) } } } # [doc = "`get_isEditor()` overload"] pub fn get_is_editor () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c362b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-application")]impl<__T:IApplication_LogCallback>IApplication_LogCallbackMethods for __T{}
 
-#[cfg(feature = "unity_engine-application")]
-impl Application { pub fn get_is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_data_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_streaming_assets_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_persistent_data_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_temporary_cache_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_product_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_url_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_background_loading_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_platform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_is_mobile_platform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn call_low_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn call_log_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn internal_application_wants_to_quit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn internal_application_quit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn internal_application_unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn invoke_on_before_render_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn invoke_focus_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn invoke_deep_link_activated_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_is_editor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="unity_engine-application")]impl Application_LogCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-application")]
-pub trait IApplication_LowMemoryCallbackMethods : IApplication_LowMemoryCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Application_LowMemoryCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Application_LowMemoryCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379b140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < Application_LowMemoryCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Application_LowMemoryCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379b160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-application")]impl Application_LogCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Application_LogCallback), ::core::stringify!(new),));
+ <Self as IApplication_LogCallbackMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "unity_engine-application")]
-impl < __T : IApplication_LowMemoryCallback > IApplication_LowMemoryCallbackMethods for __T { }
+#[cfg(feature="unity_engine-application")]pub trait IApplication_LowMemoryCallbackMethods:IApplication_LowMemoryCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Application_LowMemoryCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379b140usize)as*mut u8,();
+(Application_LowMemoryCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Application_LowMemoryCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379b160usize)as*mut u8,();
+(Application_LowMemoryCallback)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-application")]
-impl Application_LowMemoryCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application_LowMemoryCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Application_LowMemoryCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-application")]impl<__T:IApplication_LowMemoryCallback>IApplication_LowMemoryCallbackMethods for __T{}
 
-#[cfg(feature = "unity_engine-application")]
-impl Application_LowMemoryCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Application_LowMemoryCallback) , :: core :: stringify ! (new) ,)) ; < Self as IApplication_LowMemoryCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-application")]impl Application_LowMemoryCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-application")]impl Application_LowMemoryCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Application_LowMemoryCallback), ::core::stringify!(new),));
+ <Self as IApplication_LowMemoryCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="unity_engine-application")]impl Application{#[doc="`get_isPlaying()` overload"]pub fn get_is_playing()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35760usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_dataPath()` overload"]pub fn get_data_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c357a0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_streamingAssetsPath()` overload"]pub fn get_streaming_assets_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c357e0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_persistentDataPath()` overload"]pub fn get_persistent_data_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35820usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_temporaryCachePath()` overload"]pub fn get_temporary_cache_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35860usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_productName()` overload"]pub fn get_product_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c358a0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`OpenURL(::unity2::Il2CppString)` overload"]pub fn open_url(url:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c358e0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(url))}
+}
+#[doc="`set_backgroundLoadingPriority(crate::unity_engine::threadpriority::ThreadPriority)` overload"]pub fn set_background_loading_priority(value:impl::core::convert::Into<crate::unity_engine::threadpriority::ThreadPriority>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35930usize)as*mut u8,();
+(crate::unity_engine::threadpriority::ThreadPriority)::core::convert::Into::into(value))}
+}
+#[doc="`get_platform()` overload"]pub fn get_platform()->crate::unity_engine::runtimeplatform::RuntimePlatform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35980usize)as*mut u8,crate::unity_engine::runtimeplatform::RuntimePlatform;
+)}
+}
+#[doc="`get_isMobilePlatform()` overload"]pub fn get_is_mobile_platform()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c359c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`CallLowMemory()` overload"]pub fn call_low_memory()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35a60usize)as*mut u8,();
+)}
+}
+#[doc="`CallLogCallback(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType, bool)` overload"]pub fn call_log_callback(log_string:impl::core::convert::Into< ::unity2::Il2CppString> ,stack_trace:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,invoked_on_main_thread:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35ac0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(log_string),(::unity2::Il2CppString)::core::convert::Into::into(stack_trace),(crate::unity_engine::logtype::LogType)::core::convert::Into::into(r#type),(bool)::core::convert::Into::into(invoked_on_main_thread))}
+}
+#[doc="`Internal_ApplicationWantsToQuit()` overload"]pub fn internal_application_wants_to_quit()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35b80usize)as*mut u8,bool;
+)}
+}
+#[doc="`Internal_ApplicationQuit()` overload"]pub fn internal_application_quit()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35ed0usize)as*mut u8,();
+)}
+}
+#[doc="`Internal_ApplicationUnload()` overload"]pub fn internal_application_unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35f30usize)as*mut u8,();
+)}
+}
+#[doc="`InvokeOnBeforeRender()` overload"]pub fn invoke_on_before_render()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35f90usize)as*mut u8,();
+)}
+}
+#[doc="`InvokeFocusChanged(bool)` overload"]pub fn invoke_focus_changed(focus:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36190usize)as*mut u8,();
+(bool)::core::convert::Into::into(focus))}
+}
+#[doc="`InvokeDeepLinkActivated(::unity2::Il2CppString)` overload"]pub fn invoke_deep_link_activated(url:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36220usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(url))}
+}
+#[doc="`get_isEditor()` overload"]pub fn get_is_editor()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c362b0usize)as*mut u8,bool;
+)}
+}
+}
+
+#[cfg(feature="unity_engine-application")]impl Application{pub fn get_is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_data_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_streaming_assets_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_persistent_data_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_temporary_cache_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_product_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_url_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_background_loading_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_platform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_is_mobile_platform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn call_low_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn call_log_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn internal_application_wants_to_quit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn internal_application_quit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn internal_application_unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn invoke_on_before_render_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn invoke_focus_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn invoke_deep_link_activated_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_is_editor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
 #[cfg(feature = "unity_engine-application")]
@@ -75,11 +158,11 @@ pub mod prelude {
     pub use super::Application_LogCallback;
     pub use super::IApplication_LogCallback;
     pub use super::IApplication_LogCallbackMethods;
-    pub use super::Application;
-    pub use super::IApplication;
     pub use super::Application_LowMemoryCallback;
     pub use super::IApplication_LowMemoryCallback;
     pub use super::IApplication_LowMemoryCallbackMethods;
+    pub use super::Application;
+    pub use super::IApplication;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

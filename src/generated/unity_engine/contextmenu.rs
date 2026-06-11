@@ -4,36 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/contextmenu/ContextMenu.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ContextMenu")] pub struct ContextMenu {
-# [offset (16)] # [rename (name = "menuItem")] pub menu_item : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "validate")] pub validate : bool ,
-# [offset (28)] # [rename (name = "priority")] pub priority : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/contextmenu/ContextMenu.md"))]#[::unity2::class(namespace="UnityEngine",name="ContextMenu")]pub struct ContextMenu{#[offset(16)]#[rename(name="menuItem")]pub menu_item: ::unity2::Il2CppString, #[offset(24)]#[rename(name="validate")]pub validate:bool, #[offset(28)]#[rename(name="priority")]pub priority:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-contextmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-contextmenu")]
-pub trait IContextMenuMethods : IContextMenu { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , item_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ContextMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContextMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c47280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] fn ctor_2 (self , item_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_validate_function : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ContextMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContextMenu , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c472d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_name) , :: core :: convert :: Into :: into (is_validate_function) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, bool, i32)` overload"] fn ctor_3 (self , item_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_validate_function : impl :: core :: convert :: Into < bool > , priority : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ContextMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContextMenu , :: unity2 :: Il2CppString , bool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c47330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_name) , :: core :: convert :: Into :: into (is_validate_function) , :: core :: convert :: Into :: into (priority) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-contextmenu")]pub trait IContextMenuMethods:IContextMenu{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,item_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ContextMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47280usize)as*mut u8,();
+(ContextMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(item_name))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor_2(self,item_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_validate_function:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ContextMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c472d0usize)as*mut u8,();
+(ContextMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(item_name),(bool)::core::convert::Into::into(is_validate_function))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, bool, i32)` overload"]fn ctor_3(self,item_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_validate_function:impl::core::convert::Into<bool> ,priority:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ContextMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47330usize)as*mut u8,();
+(ContextMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(item_name),(bool)::core::convert::Into::into(is_validate_function),(i32)::core::convert::Into::into(priority))}
+}
+}
 
-#[cfg(feature = "unity_engine-contextmenu")]
-impl < __T : IContextMenu > IContextMenuMethods for __T { }
+#[cfg(feature="unity_engine-contextmenu")]impl<__T:IContextMenu>IContextMenuMethods for __T{}
 
-#[cfg(feature = "unity_engine-contextmenu")]
-impl ContextMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContextMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContextMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContextMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-contextmenu")]impl ContextMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-contextmenu")]
-impl ContextMenu {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (item_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContextMenu) , :: core :: stringify ! (new) ,)) ; < Self as IContextMenuMethods > :: ctor (this , item_name) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"] pub fn new_2 (item_name : :: unity2 :: Il2CppString , is_validate_function : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContextMenu) , :: core :: stringify ! (new_2) ,)) ; < Self as IContextMenuMethods > :: ctor_2 (this , item_name , is_validate_function) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, bool, i32)` — overload selector"] pub fn new_3 (item_name : :: unity2 :: Il2CppString , is_validate_function : bool , priority : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContextMenu) , :: core :: stringify ! (new_3) ,)) ; < Self as IContextMenuMethods > :: ctor_3 (this , item_name , is_validate_function , priority) ; this }
+#[cfg(feature="unity_engine-contextmenu")]impl ContextMenu{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(item_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContextMenu), ::core::stringify!(new),));
+ <Self as IContextMenuMethods> ::ctor(this,item_name);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new_2(item_name: ::unity2::Il2CppString,is_validate_function:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContextMenu), ::core::stringify!(new_2),));
+ <Self as IContextMenuMethods> ::ctor_2(this,item_name,is_validate_function);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, bool, i32)` — overload selector"]pub fn new_3(item_name: ::unity2::Il2CppString,is_validate_function:bool,priority:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContextMenu), ::core::stringify!(new_3),));
+ <Self as IContextMenuMethods> ::ctor_3(this,item_name,is_validate_function,priority);
+this}
 }
 
 #[cfg(feature = "unity_engine-contextmenu")]

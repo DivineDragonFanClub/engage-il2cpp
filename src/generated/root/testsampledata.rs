@@ -4,142 +4,118 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: structscriptabledata_1 :: { IStructScriptableData_1 , StructScriptableData_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::structscriptabledata_1::{IStructScriptableData_1,StructScriptableData_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleData")] # [parent (crate :: root :: structscriptabledata_1 :: StructScriptableData_1 < crate :: root :: testsampledata :: TestSampleData >)] pub struct TestSampleData {
-# [offset (16)] # [rename (name = "Pid")] pub pid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "Level")] pub level : i32 ,
-# [offset (36)] # [rename (name = "Hp")] pub hp : i32 ,
-# [offset (40)] # [rename (name = "Flag")] pub flag : crate :: root :: testsampledata :: TestSampleData_Flags ,
-# [offset (48)] # [rename (name = "Items")] pub items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: testsampledata :: TestSampleData_Item > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsampledata/TestSampleData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TestSampleData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for TestSampleData_Flags{const NAMESPACE: &'static str="";
+const NAME: &'static str="TestSampleData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TestSampleData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TestSampleData_Flags{pub fn flag_a()->Self{Self{value:1}
+}
+pub fn flag_b()->Self{Self{value:2}
+}
+pub fn flag_c()->Self{Self{value:4}
+}
+pub fn flag_d()->Self{Self{value:8}
+}
+pub fn flag_ac()->Self{Self{value:5}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/testsampledata/TestSampleData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TestSampleData_Flags  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsampledata/TestSampleData.md"))]#[::unity2::class(namespace="",name="TestSampleData")]#[parent(crate::root::structscriptabledata_1::StructScriptableData_1<crate::root::testsampledata::TestSampleData>)]pub struct TestSampleData{#[offset(16)]#[rename(name="Pid")]pub pid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Name")]pub name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="Level")]pub level:i32, #[offset(36)]#[rename(name="Hp")]pub hp:i32, #[offset(40)]#[rename(name="Flag")]pub flag:crate::root::testsampledata::TestSampleData_Flags, #[offset(48)]#[rename(name="Items")]pub items:crate::system::collections::generic::list_1::List_1<crate::root::testsampledata::TestSampleData_Item> ,}
 
 
-impl  ::unity2::ClassIdentity for TestSampleData_Flags  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "TestSampleData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TestSampleData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TestSampleData_Flags  {
-    pub fn flag_a() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn flag_b() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn flag_c() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn flag_d() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn flag_ac() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData_Item.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleData.Item")] # [parent (crate :: system :: object :: Object)] pub struct TestSampleData_Item {
-# [offset (16)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "Value")] pub value : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsampledata/TestSampleData_Item.md"))]#[::unity2::class(namespace="",name="TestSampleData.Item")]#[parent(crate::system::object::Object)]pub struct TestSampleData_Item{#[offset(16)]#[rename(name="Name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Value")]pub value:i32,}
 
 }
 
 #[cfg(feature = "root-testsampledata-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-testsampledata")]
-impl TestSampleData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e80f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-testsampledata")]
-pub trait ITestSampleDataMethods : ITestSampleData { # [doc = "`GetKey()` overload"] fn get_key (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRelease()` overload"] fn on_release (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-testsampledata")]
-impl < __T : ITestSampleData > ITestSampleDataMethods for __T { }
-
-#[cfg(feature = "root-testsampledata")]
-impl TestSampleData { pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "root-testsampledata")]
-impl TestSampleData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TestSampleData) , :: core :: stringify ! (new) ,)) ; < Self as ITestSampleDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-testsampledata")]impl TestSampleData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e80f0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "root-testsampledata")]
-pub trait ITestSampleData_ItemMethods : ITestSampleData_Item { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestSampleData_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22044b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-testsampledata")]pub trait ITestSampleDataMethods:ITestSampleData{#[doc="`GetKey()` overload"]fn get_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TestSampleData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8030usize)as*mut u8, ::unity2::Il2CppString;
+(TestSampleData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <TestSampleData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8040usize)as*mut u8,();
+(TestSampleData)__receiver)}
+}
+#[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <TestSampleData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8050usize)as*mut u8,();
+(TestSampleData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TestSampleData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8060usize)as*mut u8, ::unity2::Il2CppString;
+(TestSampleData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TestSampleData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8200usize)as*mut u8,();
+(TestSampleData)__receiver)}
+}
+}
 
-#[cfg(feature = "root-testsampledata")]
-impl < __T : ITestSampleData_Item > ITestSampleData_ItemMethods for __T { }
+#[cfg(feature="root-testsampledata")]impl<__T:ITestSampleData>ITestSampleDataMethods for __T{}
 
-#[cfg(feature = "root-testsampledata")]
-impl TestSampleData_Item { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData_Item as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-testsampledata")]impl TestSampleData{pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "root-testsampledata")]
-impl TestSampleData_Item {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TestSampleData_Item) , :: core :: stringify ! (new) ,)) ; < Self as ITestSampleData_ItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-testsampledata")]impl TestSampleData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TestSampleData), ::core::stringify!(new),));
+ <Self as ITestSampleDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-testsampledata")]pub trait ITestSampleData_ItemMethods:ITestSampleData_Item{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TestSampleData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22044b0usize)as*mut u8,();
+(TestSampleData_Item)__receiver)}
+}
+}
+
+#[cfg(feature="root-testsampledata")]impl<__T:ITestSampleData_Item>ITestSampleData_ItemMethods for __T{}
+
+#[cfg(feature="root-testsampledata")]impl TestSampleData_Item{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root-testsampledata")]impl TestSampleData_Item{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TestSampleData_Item), ::core::stringify!(new),));
+ <Self as ITestSampleData_ItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-testsampledata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TestSampleData_Flags;
     pub use super::TestSampleData;
     pub use super::ITestSampleData;
     pub use super::ITestSampleDataMethods;
-    pub use super::TestSampleData_Flags;
     pub use super::TestSampleData_Item;
     pub use super::ITestSampleData_Item;
     pub use super::ITestSampleData_ItemMethods;

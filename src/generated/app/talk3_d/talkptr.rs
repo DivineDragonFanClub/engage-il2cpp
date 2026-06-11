@@ -4,35 +4,144 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkptr/TalkPtr.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkPtr")] # [parent (crate :: system :: object :: Object)] pub struct TalkPtr {
-# [static_field] # [rename (name = "CharSize")] pub char_size : i32 ,
-# [static_field] # [rename (name = "GroupSize")] pub group_size : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkptr/TalkPtr.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkPtr")]#[parent(crate::system::object::Object)]pub struct TalkPtr{#[static_field]#[rename(name="CharSize")]pub char_size:i32, #[static_field]#[rename(name="GroupSize")]pub group_size:i32,}
 
 }
 
 #[cfg(feature = "app-talk3_d-talkptr-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talkptr")]
-pub trait ITalkPtrMethods : ITalkPtr { # [doc = "`get_OriginalPtr()` overload"] fn get_original_ptr (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OriginalPtr(::unity2::IntPtr)` overload"] fn set_original_ptr (self , value : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NowPtr()` overload"] fn get_now_ptr (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NowPtr(::unity2::IntPtr)` overload"] fn set_now_ptr (self , value : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`ResetPosition()` overload"] fn reset_position (self ,) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Forward(i32)` overload"] fn forward (self , size : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`ReadTagGroup()` overload"] fn read_tag_group (self ,) -> crate :: app :: mess :: Mess_TagGroup { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> crate :: app :: mess :: Mess_TagGroup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadInt32()` overload"] fn read_int32 (self ,) -> i32 { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadInt16()` overload"] fn read_int16 (self ,) -> i32 { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c50e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadByte()` overload"] fn read_byte (self ,) -> i32 { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c51a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadChar()` overload"] fn read_char (self ,) -> u16 { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadStringParam()` overload"] fn read_string_param (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadPID()` overload"] fn read_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteShiftIn()` overload"] fn write_shift_in (self ,) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteShiftOut()` overload"] fn write_shift_out (self ,) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteTagGroup(crate::app::mess::Mess_TagGroup)` overload"] fn write_tag_group (self , group : impl :: core :: convert :: Into < crate :: app :: mess :: Mess_TagGroup >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , crate :: app :: mess :: Mess_TagGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (group) , :: core :: option :: Option :: None) } } } # [doc = "`WriteInt16(i16)` overload"] fn write_int16 (self , value : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`WriteInt16(i32)` overload"] fn write_int16_2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`WriteString(::unity2::Il2CppString)` overload"] fn write_string (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b9510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`IsNull()` overload"] fn is_null (self ,) -> bool { unsafe { let __receiver = < TalkPtr as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPtr , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c5500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkptr")]pub trait ITalkPtrMethods:ITalkPtr{#[doc="`get_OriginalPtr()` overload"]fn get_original_ptr(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4e10usize)as*mut u8, ::unity2::IntPtr;
+(TalkPtr)__receiver)}
+}
+#[doc="`set_OriginalPtr(::unity2::IntPtr)` overload"]fn set_original_ptr(self,value:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4e20usize)as*mut u8,();
+(TalkPtr)__receiver,(::unity2::IntPtr)::core::convert::Into::into(value))}
+}
+#[doc="`get_NowPtr()` overload"]fn get_now_ptr(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4e30usize)as*mut u8, ::unity2::IntPtr;
+(TalkPtr)__receiver)}
+}
+#[doc="`set_NowPtr(::unity2::IntPtr)` overload"]fn set_now_ptr(self,value:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4e40usize)as*mut u8,();
+(TalkPtr)__receiver,(::unity2::IntPtr)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::IntPtr)` overload"]fn ctor(self,ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9250usize)as*mut u8,();
+(TalkPtr)__receiver,(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4e50usize)as*mut u8,();
+(TalkPtr)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`ResetPosition()` overload"]fn reset_position(self,)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4ea0usize)as*mut u8,();
+(TalkPtr)__receiver)}
+}
+#[doc="`Forward(i32)` overload"]fn forward(self,size:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4f00usize)as*mut u8,();
+(TalkPtr)__receiver,(i32)::core::convert::Into::into(size))}
+}
+#[doc="`ReadTagGroup()` overload"]fn read_tag_group(self,)->crate::app::mess::Mess_TagGroup{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4f60usize)as*mut u8,crate::app::mess::Mess_TagGroup;
+(TalkPtr)__receiver)}
+}
+#[doc="`ReadInt32()` overload"]fn read_int32(self,)->i32{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5020usize)as*mut u8,i32;
+(TalkPtr)__receiver)}
+}
+#[doc="`ReadInt16()` overload"]fn read_int16(self,)->i32{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c50e0usize)as*mut u8,i32;
+(TalkPtr)__receiver)}
+}
+#[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c51a0usize)as*mut u8,i32;
+(TalkPtr)__receiver)}
+}
+#[doc="`ReadChar()` overload"]fn read_char(self,)->u16{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5260usize)as*mut u8,u16;
+(TalkPtr)__receiver)}
+}
+#[doc="`ReadStringParam()` overload"]fn read_string_param(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5370usize)as*mut u8, ::unity2::Il2CppString;
+(TalkPtr)__receiver)}
+}
+#[doc="`ReadPID()` overload"]fn read_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5440usize)as*mut u8, ::unity2::Il2CppString;
+(TalkPtr)__receiver)}
+}
+#[doc="`WriteShiftIn()` overload"]fn write_shift_in(self,)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9380usize)as*mut u8,();
+(TalkPtr)__receiver)}
+}
+#[doc="`WriteShiftOut()` overload"]fn write_shift_out(self,)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5450usize)as*mut u8,();
+(TalkPtr)__receiver)}
+}
+#[doc="`WriteTagGroup(crate::app::mess::Mess_TagGroup)` overload"]fn write_tag_group(self,group:impl::core::convert::Into<crate::app::mess::Mess_TagGroup>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9430usize)as*mut u8,();
+(TalkPtr)__receiver,(crate::app::mess::Mess_TagGroup)::core::convert::Into::into(group))}
+}
+#[doc="`WriteInt16(i16)` overload"]fn write_int16(self,value:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9440usize)as*mut u8,();
+(TalkPtr)__receiver,(i16)::core::convert::Into::into(value))}
+}
+#[doc="`WriteInt16(i32)` overload"]fn write_int16_2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9500usize)as*mut u8,();
+(TalkPtr)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`WriteString(::unity2::Il2CppString)` overload"]fn write_string(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b9510usize)as*mut u8,();
+(TalkPtr)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`IsNull()` overload"]fn is_null(self,)->bool{unsafe{let __receiver= <TalkPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c5500usize)as*mut u8,bool;
+(TalkPtr)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkptr")]
-impl < __T : ITalkPtr > ITalkPtrMethods for __T { }
+#[cfg(feature="app-talk3_d-talkptr")]impl<__T:ITalkPtr>ITalkPtrMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talkptr")]
-impl TalkPtr { pub fn get_original_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_original_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_now_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_now_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reset_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn forward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn read_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn read_int32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn read_int16_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn read_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn read_char_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn read_string_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn read_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn write_shift_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn write_shift_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn write_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn write_int16_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn write_int16_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn write_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn is_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPtr as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-talk3_d-talkptr")]impl TalkPtr{pub fn get_original_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_original_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_now_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_now_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn forward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn read_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn read_int32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn read_int16_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn read_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn read_char_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn read_string_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn read_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn write_shift_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn write_shift_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn write_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn write_int16_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn write_int16_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn write_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn is_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-talk3_d-talkptr")]
-impl TalkPtr {
-# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new (ptr : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkPtr) , :: core :: stringify ! (new) ,)) ; < Self as ITalkPtrMethods > :: ctor (this , ptr) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (mid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkPtr) , :: core :: stringify ! (new_2) ,)) ; < Self as ITalkPtrMethods > :: ctor_2 (this , mid) ; this }
+#[cfg(feature="app-talk3_d-talkptr")]impl TalkPtr{#[doc="`.ctor(::unity2::IntPtr)` — overload selector"]pub fn new(ptr: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkPtr), ::core::stringify!(new),));
+ <Self as ITalkPtrMethods> ::ctor(this,ptr);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(mid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkPtr), ::core::stringify!(new_2),));
+ <Self as ITalkPtrMethods> ::ctor_2(this,mid);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talkptr")]

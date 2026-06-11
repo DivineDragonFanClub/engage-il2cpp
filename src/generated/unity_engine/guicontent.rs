@@ -4,47 +4,103 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guicontent/GUIContent.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUIContent")] # [parent (crate :: system :: object :: Object)] pub struct GUIContent {
-# [offset (16)] # [rename (name = "m_Text")] pub m_text : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: texture :: Texture ,
-# [offset (32)] # [rename (name = "m_Tooltip")] pub m_tooltip : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_Text")] pub s_text : crate :: unity_engine :: guicontent :: GUIContent ,
-# [static_field] # [rename (name = "s_Image")] pub s_image : crate :: unity_engine :: guicontent :: GUIContent ,
-# [static_field] # [rename (name = "s_TextImage")] pub s_text_image : crate :: unity_engine :: guicontent :: GUIContent ,
-# [static_field] # [rename (name = "none")] pub none : crate :: unity_engine :: guicontent :: GUIContent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guicontent/GUIContent.md"))]#[::unity2::class(namespace="UnityEngine",name="GUIContent")]#[parent(crate::system::object::Object)]pub struct GUIContent{#[offset(16)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::texture::Texture, #[offset(32)]#[rename(name="m_Tooltip")]pub m_tooltip: ::unity2::Il2CppString, #[static_field]#[rename(name="s_Text")]pub s_text:crate::unity_engine::guicontent::GUIContent, #[static_field]#[rename(name="s_Image")]pub s_image:crate::unity_engine::guicontent::GUIContent, #[static_field]#[rename(name="s_TextImage")]pub s_text_image:crate::unity_engine::guicontent::GUIContent, #[static_field]#[rename(name="none")]pub none:crate::unity_engine::guicontent::GUIContent,}
 
 }
 
 #[cfg(feature = "unity_engine-guicontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-guicontent")]
-impl GUIContent { # [doc = "`Temp(::unity2::Il2CppString)` overload"] pub fn temp (t : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: guicontent :: GUIContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: guicontent :: GUIContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c3a780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`ClearStaticCache()` overload"] pub fn clear_static_cache () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43520usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43630usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-guicontent")]impl GUIContent{#[doc="`Temp(::unity2::Il2CppString)` overload"]pub fn temp(t:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::guicontent::GUIContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c3a780usize)as*mut u8,crate::unity_engine::guicontent::GUIContent;
+(::unity2::Il2CppString)::core::convert::Into::into(t))}
+}
+#[doc="`ClearStaticCache()` overload"]pub fn clear_static_cache()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c43520usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c43630usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-guicontent")]
-pub trait IGUIContentMethods : IGUIContent { # [doc = "`get_text()` overload"] fn get_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_text(::unity2::Il2CppString)` overload"] fn set_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_image(crate::unity_engine::texture::Texture)` overload"] fn set_image (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture >) -> () { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , crate :: unity_engine :: texture :: Texture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_tooltip()` overload"] fn get_tooltip (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c3d510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_tooltip(::unity2::Il2CppString)` overload"] fn set_tooltip (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::texture::Texture, ::unity2::Il2CppString)` overload"] fn ctor_3 (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , image : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture > , tooltip : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , :: unity2 :: Il2CppString , crate :: unity_engine :: texture :: Texture , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (image) , :: core :: convert :: Into :: into (tooltip) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::guicontent::GUIContent)` overload"] fn ctor_4 (self , src : impl :: core :: convert :: Into < crate :: unity_engine :: guicontent :: GUIContent >) -> () { unsafe { let __receiver = < GUIContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUIContent , crate :: unity_engine :: guicontent :: GUIContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c43460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-guicontent")]pub trait IGUIContentMethods:IGUIContent{#[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43250usize)as*mut u8, ::unity2::Il2CppString;
+(GUIContent)__receiver)}
+}
+#[doc="`set_text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43260usize)as*mut u8,();
+(GUIContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_image(crate::unity_engine::texture::Texture)` overload"]fn set_image(self,value:impl::core::convert::Into<crate::unity_engine::texture::Texture>)->(){unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43270usize)as*mut u8,();
+(GUIContent)__receiver,(crate::unity_engine::texture::Texture)::core::convert::Into::into(value))}
+}
+#[doc="`get_tooltip()` overload"]fn get_tooltip(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c3d510usize)as*mut u8, ::unity2::Il2CppString;
+(GUIContent)__receiver)}
+}
+#[doc="`set_tooltip(::unity2::Il2CppString)` overload"]fn set_tooltip(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43280usize)as*mut u8,();
+(GUIContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43290usize)as*mut u8,();
+(GUIContent)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43320usize)as*mut u8,();
+(GUIContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::texture::Texture, ::unity2::Il2CppString)` overload"]fn ctor_3(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,image:impl::core::convert::Into<crate::unity_engine::texture::Texture> ,tooltip:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43390usize)as*mut u8,();
+(GUIContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::unity_engine::texture::Texture)::core::convert::Into::into(image),(::unity2::Il2CppString)::core::convert::Into::into(tooltip))}
+}
+#[doc="`.ctor(crate::unity_engine::guicontent::GUIContent)` overload"]fn ctor_4(self,src:impl::core::convert::Into<crate::unity_engine::guicontent::GUIContent>)->(){unsafe{let __receiver= <GUIContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c43460usize)as*mut u8,();
+(GUIContent)__receiver,(crate::unity_engine::guicontent::GUIContent)::core::convert::Into::into(src))}
+}
+}
 
-#[cfg(feature = "unity_engine-guicontent")]
-impl < __T : IGUIContent > IGUIContentMethods for __T { }
+#[cfg(feature="unity_engine-guicontent")]impl<__T:IGUIContent>IGUIContentMethods for __T{}
 
-#[cfg(feature = "unity_engine-guicontent")]
-impl GUIContent { pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_tooltip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_tooltip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn temp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn clear_static_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="unity_engine-guicontent")]impl GUIContent{pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_tooltip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_tooltip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn temp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_static_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "unity_engine-guicontent")]
-impl GUIContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUIContent) , :: core :: stringify ! (new) ,)) ; < Self as IGUIContentMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUIContent) , :: core :: stringify ! (new_2) ,)) ; < Self as IGUIContentMethods > :: ctor_2 (this , text) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::texture::Texture, ::unity2::Il2CppString)` — overload selector"] pub fn new_3 (text : :: unity2 :: Il2CppString , image : crate :: unity_engine :: texture :: Texture , tooltip : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUIContent) , :: core :: stringify ! (new_3) ,)) ; < Self as IGUIContentMethods > :: ctor_3 (this , text , image , tooltip) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::guicontent::GUIContent)` — overload selector"] pub fn new_4 (src : crate :: unity_engine :: guicontent :: GUIContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUIContent) , :: core :: stringify ! (new_4) ,)) ; < Self as IGUIContentMethods > :: ctor_4 (this , src) ; this }
+#[cfg(feature="unity_engine-guicontent")]impl GUIContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUIContent), ::core::stringify!(new),));
+ <Self as IGUIContentMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUIContent), ::core::stringify!(new_2),));
+ <Self as IGUIContentMethods> ::ctor_2(this,text);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::texture::Texture, ::unity2::Il2CppString)` — overload selector"]pub fn new_3(text: ::unity2::Il2CppString,image:crate::unity_engine::texture::Texture,tooltip: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUIContent), ::core::stringify!(new_3),));
+ <Self as IGUIContentMethods> ::ctor_3(this,text,image,tooltip);
+this}
+#[doc="`.ctor(crate::unity_engine::guicontent::GUIContent)` — overload selector"]pub fn new_4(src:crate::unity_engine::guicontent::GUIContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUIContent), ::core::stringify!(new_4),));
+ <Self as IGUIContentMethods> ::ctor_4(this,src);
+this}
 }
 
 #[cfg(feature = "unity_engine-guicontent")]

@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/preserveattribute/PreserveAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Scripting" , name = "PreserveAttribute")] pub struct PreserveAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scripting/preserveattribute/PreserveAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Scripting",name="PreserveAttribute")]pub struct PreserveAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-scripting-preserveattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scripting-preserveattribute")]
-pub trait IPreserveAttributeMethods : IPreserveAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PreserveAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PreserveAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scripting-preserveattribute")]pub trait IPreserveAttributeMethods:IPreserveAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PreserveAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f8a90usize)as*mut u8,();
+(PreserveAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-scripting-preserveattribute")]
-impl < __T : IPreserveAttribute > IPreserveAttributeMethods for __T { }
+#[cfg(feature="unity_engine-scripting-preserveattribute")]impl<__T:IPreserveAttribute>IPreserveAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-scripting-preserveattribute")]
-impl PreserveAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PreserveAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-scripting-preserveattribute")]impl PreserveAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-scripting-preserveattribute")]
-impl PreserveAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PreserveAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IPreserveAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-scripting-preserveattribute")]impl PreserveAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PreserveAttribute), ::core::stringify!(new),));
+ <Self as IPreserveAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-scripting-preserveattribute")]

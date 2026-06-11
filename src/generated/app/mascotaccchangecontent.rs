@@ -4,56 +4,116 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccchangecontent/MascotAccChangeContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotAccChangeContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct MascotAccChangeContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "UIName")] pub ui_name : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_category1")] pub m_category1 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_category2")] pub m_category2 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (248)] # [rename (name = "m_content1")] pub m_content1 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (256)] # [rename (name = "m_content2")] pub m_content2 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (264)] # [rename (name = "m_exchangeCursor")] pub m_exchange_cursor : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (272)] # [rename (name = "m_ChoiceAcc")] pub m_choice_acc : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (280)] # [rename (name = "m_AccName")] pub m_acc_name : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (288)] # [rename (name = "m_AccIcon")] pub m_acc_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (296)] # [rename (name = "m_AccParts")] pub m_acc_parts : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (304)] # [rename (name = "m_AccHelp")] pub m_acc_help : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotaccchangecontent/MascotAccChangeContent.md"))]#[::unity2::class(namespace="App",name="MascotAccChangeContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MascotAccChangeContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="UIName")]pub ui_name: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_category1")]pub m_category1:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_category2")]pub m_category2:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_content1")]pub m_content1:crate::unity_engine::gameobject::GameObject, #[offset(256)]#[rename(name="m_content2")]pub m_content2:crate::unity_engine::gameobject::GameObject, #[offset(264)]#[rename(name="m_exchangeCursor")]pub m_exchange_cursor:crate::unity_engine::gameobject::GameObject, #[offset(272)]#[rename(name="m_ChoiceAcc")]pub m_choice_acc:crate::unity_engine::gameobject::GameObject, #[offset(280)]#[rename(name="m_AccName")]pub m_acc_name:crate::unity_engine::gameobject::GameObject, #[offset(288)]#[rename(name="m_AccIcon")]pub m_acc_icon:crate::unity_engine::gameobject::GameObject, #[offset(296)]#[rename(name="m_AccParts")]pub m_acc_parts:crate::unity_engine::gameobject::GameObject, #[offset(304)]#[rename(name="m_AccHelp")]pub m_acc_help:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-mascotaccchangecontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotaccchangecontent")]
-impl MascotAccChangeContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202ec60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202ed00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202ed80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: mascotaccchangecontent :: MascotAccChangeContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mascotaccchangecontent :: MascotAccChangeContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202ee00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] pub fn destroy () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202eed0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotaccchangecontent")]impl MascotAccChangeContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202ec60usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202ed00usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202ed80usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::mascotaccchangecontent::MascotAccChangeContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202ee00usize)as*mut u8,crate::app::mascotaccchangecontent::MascotAccChangeContent;
+)}
+}
+#[doc="`Destroy()` overload"]pub fn destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202eed0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mascotaccchangecontent")]
-pub trait IMascotAccChangeContentMethods : IMascotAccChangeContent { # [doc = "`SetActiveParts(crate::app::mascotaccdata::MascotAccData_PartsType)` overload"] fn set_active_parts (self , r#type : impl :: core :: convert :: Into < crate :: app :: mascotaccdata :: MascotAccData_PartsType >) -> () { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , crate :: app :: mascotaccdata :: MascotAccData_PartsType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202ef60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpText(crate::app::mascotaccdata::MascotAccData, crate::app::accessorydata::AccessoryData)` overload"] fn set_help_text (self , mascot_data : impl :: core :: convert :: Into < crate :: app :: mascotaccdata :: MascotAccData > , acc_data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , crate :: app :: mascotaccdata :: MascotAccData , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f1d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mascot_data) , :: core :: convert :: Into :: into (acc_data) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateEquipText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, ::unity2::Il2CppString)` overload"] fn update_equip_text (self , text : impl :: core :: convert :: Into < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > , aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (aid) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateEquipAcc()` overload"] fn update_equip_acc (self ,) -> () { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202f980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotAccChangeContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotAccChangeContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202fdb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotaccchangecontent")]pub trait IMascotAccChangeContentMethods:IMascotAccChangeContent{#[doc="`SetActiveParts(crate::app::mascotaccdata::MascotAccData_PartsType)` overload"]fn set_active_parts(self,r#type:impl::core::convert::Into<crate::app::mascotaccdata::MascotAccData_PartsType>)->(){unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202ef60usize)as*mut u8,();
+(MascotAccChangeContent)__receiver,(crate::app::mascotaccdata::MascotAccData_PartsType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetHelpText(crate::app::mascotaccdata::MascotAccData, crate::app::accessorydata::AccessoryData)` overload"]fn set_help_text(self,mascot_data:impl::core::convert::Into<crate::app::mascotaccdata::MascotAccData> ,acc_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f1d0usize)as*mut u8,();
+(MascotAccChangeContent)__receiver,(crate::app::mascotaccdata::MascotAccData)::core::convert::Into::into(mascot_data),(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(acc_data))}
+}
+#[doc="`UpdateEquipText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, ::unity2::Il2CppString)` overload"]fn update_equip_text(self,text:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,aid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f420usize)as*mut u8,();
+(MascotAccChangeContent)__receiver,(crate::tm_pro::textmeshprougui::TextMeshProUGUI)::core::convert::Into::into(text),(::unity2::Il2CppString)::core::convert::Into::into(aid))}
+}
+#[doc="`UpdateEquipAcc()` overload"]fn update_equip_acc(self,)->(){unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f660usize)as*mut u8,();
+(MascotAccChangeContent)__receiver)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f760usize)as*mut u8,();
+(MascotAccChangeContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f7a0usize)as*mut u8,i32;
+(MascotAccChangeContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f7b0usize)as*mut u8,f32;
+(MascotAccChangeContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f820usize)as*mut u8,f32;
+(MascotAccChangeContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f890usize)as*mut u8,f32;
+(MascotAccChangeContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202f980usize)as*mut u8,();
+(MascotAccChangeContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotAccChangeContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202fdb0usize)as*mut u8,();
+(MascotAccChangeContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotaccchangecontent")]
-impl < __T : IMascotAccChangeContent > IMascotAccChangeContentMethods for __T { }
+#[cfg(feature="app-mascotaccchangecontent")]impl<__T:IMascotAccChangeContent>IMascotAccChangeContentMethods for __T{}
 
-#[cfg(feature = "app-mascotaccchangecontent")]
-impl MascotAccChangeContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_active_parts_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_equip_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_equip_acc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotAccChangeContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-mascotaccchangecontent")]impl MascotAccChangeContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_active_parts_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_equip_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_equip_acc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-mascotaccchangecontent")]
-impl MascotAccChangeContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotAccChangeContent) , :: core :: stringify ! (new) ,)) ; < Self as IMascotAccChangeContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mascotaccchangecontent")]impl MascotAccChangeContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotAccChangeContent), ::core::stringify!(new),));
+ <Self as IMascotAccChangeContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mascotaccchangecontent")]

@@ -4,37 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akvertex/AkVertex.md"))] # [:: unity2 :: class (namespace = "" , name = "AkVertex")] # [parent (crate :: system :: object :: Object)] pub struct AkVertex {
-# [offset (16)] # [rename (name = "Vector")] pub vector : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akvertex/AkVertex.md"))]#[::unity2::class(namespace="",name="AkVertex")]#[parent(crate::system::object::Object)]pub struct AkVertex{#[offset(16)]#[rename(name="Vector")]pub vector:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "root-akvertex-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akvertex")]
-impl AkVertex { # [doc = "`op_Implicit(crate::root::akvertex::AkVertex)` overload"] pub fn op_implicit (vector : impl :: core :: convert :: Into < crate :: root :: akvertex :: AkVertex >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: root :: akvertex :: AkVertex , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c3e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vector) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c4b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akvertex")]impl AkVertex{#[doc="`op_Implicit(crate::root::akvertex::AkVertex)` overload"]pub fn op_implicit(vector:impl::core::convert::Into<crate::root::akvertex::AkVertex>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c3e0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::root::akvertex::AkVertex)::core::convert::Into::into(vector))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c4b0usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-akvertex")]
-pub trait IAkVertexMethods : IAkVertex { # [doc = "`Zero()` overload"] fn zero (self ,) -> () { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_X(f32)` overload"] fn set_x (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_X()` overload"] fn get_x (self ,) -> f32 { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Y(f32)` overload"] fn set_y (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c3a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Y()` overload"] fn get_y (self ,) -> f32 { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Z(f32)` overload"] fn set_z (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> f32 { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32, f32)` overload"] fn ctor_2 (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , z : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone(crate::root::akvertex::AkVertex)` overload"] fn clone (self , other : impl :: core :: convert :: Into < crate :: root :: akvertex :: AkVertex >) -> () { unsafe { let __receiver = < AkVertex as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVertex , crate :: root :: akvertex :: AkVertex , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akvertex")]pub trait IAkVertexMethods:IAkVertex{#[doc="`Zero()` overload"]fn zero(self,)->(){unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c370usize)as*mut u8,();
+(AkVertex)__receiver)}
+}
+#[doc="`set_X(f32)` overload"]fn set_x(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c380usize)as*mut u8,();
+(AkVertex)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->f32{unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c390usize)as*mut u8,f32;
+(AkVertex)__receiver)}
+}
+#[doc="`set_Y(f32)` overload"]fn set_y(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c3a0usize)as*mut u8,();
+(AkVertex)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Y()` overload"]fn get_y(self,)->f32{unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c3b0usize)as*mut u8,f32;
+(AkVertex)__receiver)}
+}
+#[doc="`set_Z(f32)` overload"]fn set_z(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c3c0usize)as*mut u8,();
+(AkVertex)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->f32{unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c3d0usize)as*mut u8,f32;
+(AkVertex)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c3f0usize)as*mut u8,();
+(AkVertex)__receiver)}
+}
+#[doc="`.ctor(f32, f32, f32)` overload"]fn ctor_2(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,z:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c430usize)as*mut u8,();
+(AkVertex)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(z))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c4a0usize)as*mut u8,();
+(AkVertex)__receiver)}
+}
+#[doc="`Clone(crate::root::akvertex::AkVertex)` overload"]fn clone(self,other:impl::core::convert::Into<crate::root::akvertex::AkVertex>)->(){unsafe{let __receiver= <AkVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c4c0usize)as*mut u8,();
+(AkVertex)__receiver,(crate::root::akvertex::AkVertex)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "root-akvertex")]
-impl < __T : IAkVertex > IAkVertexMethods for __T { }
+#[cfg(feature="root-akvertex")]impl<__T:IAkVertex>IAkVertexMethods for __T{}
 
-#[cfg(feature = "root-akvertex")]
-impl AkVertex { pub fn zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="root-akvertex")]impl AkVertex{pub fn zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "root-akvertex")]
-impl AkVertex {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkVertex) , :: core :: stringify ! (new) ,)) ; < Self as IAkVertexMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(f32, f32, f32)` — overload selector"] pub fn new_2 (x : f32 , y : f32 , z : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkVertex) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkVertexMethods > :: ctor_2 (this , x , y , z) ; this }
+#[cfg(feature="root-akvertex")]impl AkVertex{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkVertex), ::core::stringify!(new),));
+ <Self as IAkVertexMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(f32, f32, f32)` — overload selector"]pub fn new_2(x:f32,y:f32,z:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkVertex), ::core::stringify!(new_2),));
+ <Self as IAkVertexMethods> ::ctor_2(this,x,y,z);
+this}
 }
 
 #[cfg(feature = "root-akvertex")]

@@ -4,73 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rasterstate/RasterState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RasterState {
-    pub m_culling_mode: crate :: unity_engine :: rendering :: cullmode :: CullMode,
-    pub m_offset_units: i32,
-    pub m_offset_factor: f32,
-    pub m_depth_clip: u8,
-    pub m_conservative: u8,
-    pub m_padding1: u8,
-    pub m_padding2: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/rasterstate/RasterState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RasterState{pub m_culling_mode:crate::unity_engine::rendering::cullmode::CullMode,pub m_offset_units:i32,pub m_offset_factor:f32,pub m_depth_clip:u8,pub m_conservative:u8,pub m_padding1:u8,pub m_padding2:u8,}
+impl::unity2::ClassIdentity for RasterState{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="RasterState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RasterState {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "RasterState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for RasterState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for RasterState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl RasterState{#[inline]pub fn default_value()->crate::unity_engine::rendering::rasterstate::RasterState{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"defaultValue");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_default_value(value:crate::unity_engine::rendering::rasterstate::RasterState){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"defaultValue");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl RasterState {
-    #[inline]
-    pub fn default_value() -> crate :: unity_engine :: rendering :: rasterstate :: RasterState {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "defaultValue");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_default_value(value: crate :: unity_engine :: rendering :: rasterstate :: RasterState) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "defaultValue");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -78,14 +34,31 @@ impl RasterState {
 #[cfg(feature = "unity_engine-rendering-rasterstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-rasterstate")]
-impl RasterState { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a110usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-rasterstate")]impl RasterState{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a110usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-rasterstate")]
-impl RasterState { # [doc = "`.ctor(crate::unity_engine::rendering::cullmode::CullMode, i32, f32, bool)` overload"] pub fn ctor (& mut self , culling_mode : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: cullmode :: CullMode > , offset_units : impl :: core :: convert :: Into < i32 > , offset_factor : impl :: core :: convert :: Into < f32 > , depth_clip : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut RasterState , crate :: unity_engine :: rendering :: cullmode :: CullMode , i32 , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79e90usize) as * mut u8) ; __inner (self as * mut RasterState , :: core :: convert :: Into :: into (culling_mode) , :: core :: convert :: Into :: into (offset_units) , :: core :: convert :: Into :: into (offset_factor) , :: core :: convert :: Into :: into (depth_clip) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::rasterstate::RasterState)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rasterstate :: RasterState >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RasterState , crate :: unity_engine :: rendering :: rasterstate :: RasterState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79f40usize) as * mut u8) ; __inner (self as * mut RasterState , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RasterState , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79fc0usize) as * mut u8) ; __inner (self as * mut RasterState , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RasterState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a0a0usize) as * mut u8) ; __inner (self as * mut RasterState , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-rasterstate")]impl RasterState{#[doc="`.ctor(crate::unity_engine::rendering::cullmode::CullMode, i32, f32, bool)` overload"]pub fn ctor(&mut self,culling_mode:impl::core::convert::Into<crate::unity_engine::rendering::cullmode::CullMode> ,offset_units:impl::core::convert::Into<i32> ,offset_factor:impl::core::convert::Into<f32> ,depth_clip:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79e90usize)as*mut u8,();
+(*mut RasterState)self as*mut RasterState,(crate::unity_engine::rendering::cullmode::CullMode)::core::convert::Into::into(culling_mode),(i32)::core::convert::Into::into(offset_units),(f32)::core::convert::Into::into(offset_factor),(bool)::core::convert::Into::into(depth_clip))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::rasterstate::RasterState)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::rasterstate::RasterState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79f40usize)as*mut u8,bool;
+(*mut RasterState)self as*mut RasterState,(crate::unity_engine::rendering::rasterstate::RasterState)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79fc0usize)as*mut u8,bool;
+(*mut RasterState)self as*mut RasterState,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a0a0usize)as*mut u8,i32;
+(*mut RasterState)self as*mut RasterState)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-rasterstate")]
-impl RasterState { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RasterState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RasterState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RasterState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RasterState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RasterState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-rasterstate")]impl RasterState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-rendering-rasterstate")]
 #[doc(hidden)]

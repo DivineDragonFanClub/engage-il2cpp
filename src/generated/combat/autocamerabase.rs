@@ -4,61 +4,90 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/autocamerabase/AutoCameraBase.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AutoCameraBase")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct AutoCameraBase {
-# [static_field] # [rename (name = "MinLongitude")] pub min_longitude : f32 ,
-# [static_field] # [rename (name = "MaxLongitude")] pub max_longitude : f32 ,
-# [static_field] # [rename (name = "MinLatitude")] pub min_latitude : f32 ,
-# [static_field] # [rename (name = "MaxLatitude")] pub max_latitude : f32 ,
-# [static_field] # [rename (name = "HalfLatitude")] pub half_latitude : f32 ,
-# [offset (168)] # [rename (name = "m_Longitude")] pub m_longitude : f32 ,
-# [offset (172)] # [rename (name = "m_Latitude")] pub m_latitude : f32 ,
-# [offset (176)] # [rename (name = "m_MinDistance")] pub m_min_distance : f32 ,
-# [offset (180)] # [rename (name = "m_FocusSide")] pub m_focus_side : f32 ,
-# [offset (184)] # [rename (name = "m_LastViewDir")] pub m_last_view_dir : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (196)] # [rename (name = "m_FOV")] pub m_fov : f32 ,
-# [offset (200)] # [rename (name = "m_CameraLookUp")] pub m_camera_look_up : crate :: unity_engine :: vector3 :: Vector3 ,
-# [static_field] # [rename (name = "HalfDegree")] pub half_degree : f32 ,
-# [offset (212)] # [rename (name = "HalfDegreeDot")] pub half_degree_dot : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/autocamerabase/AutoCameraBase.md"))]#[::unity2::class(namespace="Combat",name="AutoCameraBase")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct AutoCameraBase{#[static_field]#[rename(name="MinLongitude")]pub min_longitude:f32, #[static_field]#[rename(name="MaxLongitude")]pub max_longitude:f32, #[static_field]#[rename(name="MinLatitude")]pub min_latitude:f32, #[static_field]#[rename(name="MaxLatitude")]pub max_latitude:f32, #[static_field]#[rename(name="HalfLatitude")]pub half_latitude:f32, #[offset(168)]#[rename(name="m_Longitude")]pub m_longitude:f32, #[offset(172)]#[rename(name="m_Latitude")]pub m_latitude:f32, #[offset(176)]#[rename(name="m_MinDistance")]pub m_min_distance:f32, #[offset(180)]#[rename(name="m_FocusSide")]pub m_focus_side:f32, #[offset(184)]#[rename(name="m_LastViewDir")]pub m_last_view_dir:crate::unity_engine::vector3::Vector3, #[offset(196)]#[rename(name="m_FOV")]pub m_fov:f32, #[offset(200)]#[rename(name="m_CameraLookUp")]pub m_camera_look_up:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="HalfDegree")]pub half_degree:f32, #[offset(212)]#[rename(name="HalfDegreeDot")]pub half_degree_dot:f32,}
 
 }
 
 #[cfg(feature = "combat-autocamerabase-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-autocamerabase")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AutoCameraBase_unity2_raw { use super :: * ; pub unsafe fn tick (this : AutoCameraBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Tick") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Tick" , < AutoCameraBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (AutoCameraBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="combat-autocamerabase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AutoCameraBase_unity2_raw{use super:: * ;
+pub unsafe fn tick(this:AutoCameraBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Tick").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Tick", <AutoCameraBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(AutoCameraBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "combat-autocamerabase")]
-impl AutoCameraBase { # [doc = "`CalcFitDistance(f32, f32)` overload"] pub fn calc_fit_distance (xdist : impl :: core :: convert :: Into < f32 > , fov_y_deg : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2120570usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xdist) , :: core :: convert :: Into :: into (fov_y_deg) , :: core :: option :: Option :: None) } } } # [doc = "`Reprojection(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn reprojection (cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2120730usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cam) , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`Reprojection(*mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn reprojection_2 (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: matrix4x4 :: Matrix4x4) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21205d0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="combat-autocamerabase")]impl AutoCameraBase{#[doc="`CalcFitDistance(f32, f32)` overload"]pub fn calc_fit_distance(xdist:impl::core::convert::Into<f32> ,fov_y_deg:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2120570usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(xdist),(f32)::core::convert::Into::into(fov_y_deg))}
+}
+#[doc="`Reprojection(crate::unity_engine::camera::Camera, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn reprojection(cam:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2120730usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`Reprojection(*mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn reprojection_2(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::matrix4x4::Matrix4x4){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::matrix4x4::Matrix4x4> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21205d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut crate::unity_engine::matrix4x4::Matrix4x4)__out_0.as_mut_ptr(),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "combat-autocamerabase")]
-pub trait IAutoCameraBaseMethods : IAutoCameraBase { # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AutoCameraBase_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AutoCameraBase , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211fbc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } } # [doc = "`IsSimilarAngle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn is_similar_angle (self , a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> bool { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AutoCameraBase , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211f4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AutoCameraBase , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21207f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AutoCameraBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AutoCameraBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211fb90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-autocamerabase")]pub trait IAutoCameraBaseMethods:IAutoCameraBase{#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AutoCameraBase_unity2_raw::tick(__receiver, ::core::option::Option::None)}
+}
+#[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211fbc0usize)as*mut u8,();
+(AutoCameraBase)__receiver,(bool)::core::convert::Into::into(is_routine))}
+}
+#[doc="`IsSimilarAngle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn is_similar_angle(self,a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211f4f0usize)as*mut u8,bool;
+(AutoCameraBase)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b))}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21207f0usize)as*mut u8, ::unity2::Array<i32> ;
+(AutoCameraBase)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211fb90usize)as*mut u8,();
+(AutoCameraBase)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-autocamerabase")]
-impl < __T : IAutoCameraBase > IAutoCameraBaseMethods for __T { }
+#[cfg(feature="combat-autocamerabase")]impl<__T:IAutoCameraBase>IAutoCameraBaseMethods for __T{}
 
-#[cfg(feature = "combat-autocamerabase")]
-impl AutoCameraBase { pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AutoCameraBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AutoCameraBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_similar_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AutoCameraBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_fit_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AutoCameraBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn reprojection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AutoCameraBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reprojection_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AutoCameraBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AutoCameraBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AutoCameraBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="combat-autocamerabase")]impl AutoCameraBase{pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn check_usable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_similar_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_fit_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn reprojection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reprojection_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "combat-autocamerabase")]
-impl AutoCameraBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AutoCameraBase) , :: core :: stringify ! (new) ,)) ; < Self as IAutoCameraBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-autocamerabase")]impl AutoCameraBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AutoCameraBase), ::core::stringify!(new),));
+ <Self as IAutoCameraBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-autocamerabase")]

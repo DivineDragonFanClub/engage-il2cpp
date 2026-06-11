@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/subsystemdescriptorbindings/SubsystemDescriptorBindings.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SubsystemDescriptorBindings")] # [parent (crate :: system :: object :: Object)] pub struct SubsystemDescriptorBindings {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/subsystemdescriptorbindings/SubsystemDescriptorBindings.md"))]#[::unity2::class(namespace="UnityEngine",name="SubsystemDescriptorBindings")]#[parent(crate::system::object::Object)]pub struct SubsystemDescriptorBindings{}
 
 }
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
-impl SubsystemDescriptorBindings { # [doc = "`GetId(::unity2::IntPtr)` overload"] pub fn get_id (descriptor_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (descriptor_ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-subsystemdescriptorbindings")]impl SubsystemDescriptorBindings{#[doc="`GetId(::unity2::IntPtr)` overload"]pub fn get_id(descriptor_ptr:impl::core::convert::Into< ::unity2::IntPtr>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a880usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::IntPtr)::core::convert::Into::into(descriptor_ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
-impl SubsystemDescriptorBindings { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubsystemDescriptorBindings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-subsystemdescriptorbindings")]impl SubsystemDescriptorBindings{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
 #[doc(hidden)]

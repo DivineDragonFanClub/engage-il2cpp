@@ -4,39 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terrain/Terrain.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Terrain")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct Terrain {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/terrain/Terrain.md"))]#[::unity2::class(namespace="UnityEngine",name="Terrain")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct Terrain{}
 
 }
 
 #[cfg(feature = "unity_engine-terrain-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-terrain")]
-impl Terrain { # [doc = "`get_activeTerrains()` overload"] pub fn get_active_terrains () -> :: unity2 :: Array < crate :: unity_engine :: terrain :: Terrain > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: terrain :: Terrain > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f282d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-terrain")]impl Terrain{#[doc="`get_activeTerrains()` overload"]pub fn get_active_terrains()-> ::unity2::Array<crate::unity_engine::terrain::Terrain>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f282d0usize)as*mut u8, ::unity2::Array<crate::unity_engine::terrain::Terrain> ;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-terrain")]
-pub trait ITerrainMethods : ITerrain { # [doc = "`get_terrainData()` overload"] fn get_terrain_data (self ,) -> crate :: unity_engine :: terraindata :: TerrainData { unsafe { let __receiver = < Terrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Terrain , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: terraindata :: TerrainData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_lightmapIndex()` overload"] fn get_lightmap_index (self ,) -> i32 { unsafe { let __receiver = < Terrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Terrain , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f280c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_lightmapScaleOffset()` overload"] fn get_lightmap_scale_offset (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < Terrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Terrain , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_allowAutoConnect()` overload"] fn get_allow_auto_connect (self ,) -> bool { unsafe { let __receiver = < Terrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Terrain , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f281c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_groupingID()` overload"] fn get_grouping_id (self ,) -> i32 { unsafe { let __receiver = < Terrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Terrain , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetNeighbors(crate::unity_engine::terrain::Terrain, crate::unity_engine::terrain::Terrain, crate::unity_engine::terrain::Terrain, crate::unity_engine::terrain::Terrain)` overload"] fn set_neighbors (self , left : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain > , top : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain > , right : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain > , bottom : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> () { unsafe { let __receiver = < Terrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Terrain , crate :: unity_engine :: terrain :: Terrain , crate :: unity_engine :: terrain :: Terrain , crate :: unity_engine :: terrain :: Terrain , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (top) , :: core :: convert :: Into :: into (right) , :: core :: convert :: Into :: into (bottom) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Terrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Terrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_lightmapScaleOffset_Injected(*mutcrate::unity_engine::vector4::Vector4)` overload"] fn get_lightmap_scale_offset_injected (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < Terrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector4 :: Vector4 > :: uninit () ; { let __inner : extern "C" fn (Terrain , * mut crate :: unity_engine :: vector4 :: Vector4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f28170usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-terrain")]pub trait ITerrainMethods:ITerrain{#[doc="`get_terrainData()` overload"]fn get_terrain_data(self,)->crate::unity_engine::terraindata::TerrainData{unsafe{let __receiver= <Terrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28070usize)as*mut u8,crate::unity_engine::terraindata::TerrainData;
+(Terrain)__receiver)}
+}
+#[doc="`get_lightmapIndex()` overload"]fn get_lightmap_index(self,)->i32{unsafe{let __receiver= <Terrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f280c0usize)as*mut u8,i32;
+(Terrain)__receiver)}
+}
+#[doc="`get_lightmapScaleOffset()` overload"]fn get_lightmap_scale_offset(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <Terrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28110usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(Terrain)__receiver)}
+}
+#[doc="`get_allowAutoConnect()` overload"]fn get_allow_auto_connect(self,)->bool{unsafe{let __receiver= <Terrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f281c0usize)as*mut u8,bool;
+(Terrain)__receiver)}
+}
+#[doc="`get_groupingID()` overload"]fn get_grouping_id(self,)->i32{unsafe{let __receiver= <Terrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28210usize)as*mut u8,i32;
+(Terrain)__receiver)}
+}
+#[doc="`SetNeighbors(crate::unity_engine::terrain::Terrain, crate::unity_engine::terrain::Terrain, crate::unity_engine::terrain::Terrain, crate::unity_engine::terrain::Terrain)` overload"]fn set_neighbors(self,left:impl::core::convert::Into<crate::unity_engine::terrain::Terrain> ,top:impl::core::convert::Into<crate::unity_engine::terrain::Terrain> ,right:impl::core::convert::Into<crate::unity_engine::terrain::Terrain> ,bottom:impl::core::convert::Into<crate::unity_engine::terrain::Terrain>)->(){unsafe{let __receiver= <Terrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28260usize)as*mut u8,();
+(Terrain)__receiver,(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(left),(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(top),(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(right),(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(bottom))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Terrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28310usize)as*mut u8,();
+(Terrain)__receiver)}
+}
+#[doc="`get_lightmapScaleOffset_Injected(*mutcrate::unity_engine::vector4::Vector4)` overload"]fn get_lightmap_scale_offset_injected(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <Terrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector4::Vector4> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28170usize)as*mut u8,();
+(Terrain)__receiver,(*mut crate::unity_engine::vector4::Vector4)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-terrain")]
-impl < __T : ITerrain > ITerrainMethods for __T { }
+#[cfg(feature="unity_engine-terrain")]impl<__T:ITerrain>ITerrainMethods for __T{}
 
-#[cfg(feature = "unity_engine-terrain")]
-impl Terrain { pub fn get_terrain_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_lightmap_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_lightmap_scale_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_allow_auto_connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_grouping_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_neighbors_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_active_terrains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_lightmap_scale_offset_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Terrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-terrain")]impl Terrain{pub fn get_terrain_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_lightmap_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_lightmap_scale_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_allow_auto_connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_grouping_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_neighbors_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_active_terrains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_lightmap_scale_offset_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "unity_engine-terrain")]
-impl Terrain {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Terrain) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-terrain")]impl Terrain{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Terrain), ::core::stringify!(new),));
+ <Self as ITerrainMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-terrain")]

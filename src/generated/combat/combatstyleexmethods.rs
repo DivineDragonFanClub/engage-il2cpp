@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatstyleexmethods/CombatStyleExMethods.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatStyleExMethods")] # [parent (crate :: system :: object :: Object)] pub struct CombatStyleExMethods {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatstyleexmethods/CombatStyleExMethods.md"))]#[::unity2::class(namespace="Combat",name="CombatStyleExMethods")]#[parent(crate::system::object::Object)]pub struct CombatStyleExMethods{}
 
 }
 
 #[cfg(feature = "combat-combatstyleexmethods-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatstyleexmethods")]
-impl CombatStyleExMethods { # [doc = "`Any(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"] pub fn any (lhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle > , rhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: combatstyle :: CombatStyle , crate :: combat :: combatstyle :: CombatStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29228a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`NoneOf(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"] pub fn none_of (lhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle > , rhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: combatstyle :: CombatStyle , crate :: combat :: combatstyle :: CombatStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2927c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`All(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"] pub fn all (lhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle > , rhs : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: combatstyle :: CombatStyle , crate :: combat :: combatstyle :: CombatStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2927c60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatstyleexmethods")]impl CombatStyleExMethods{#[doc="`Any(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"]pub fn any(lhs:impl::core::convert::Into<crate::combat::combatstyle::CombatStyle> ,rhs:impl::core::convert::Into<crate::combat::combatstyle::CombatStyle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29228a0usize)as*mut u8,bool;
+(crate::combat::combatstyle::CombatStyle)::core::convert::Into::into(lhs),(crate::combat::combatstyle::CombatStyle)::core::convert::Into::into(rhs))}
+}
+#[doc="`NoneOf(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"]pub fn none_of(lhs:impl::core::convert::Into<crate::combat::combatstyle::CombatStyle> ,rhs:impl::core::convert::Into<crate::combat::combatstyle::CombatStyle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2927c50usize)as*mut u8,bool;
+(crate::combat::combatstyle::CombatStyle)::core::convert::Into::into(lhs),(crate::combat::combatstyle::CombatStyle)::core::convert::Into::into(rhs))}
+}
+#[doc="`All(crate::combat::combatstyle::CombatStyle, crate::combat::combatstyle::CombatStyle)` overload"]pub fn all(lhs:impl::core::convert::Into<crate::combat::combatstyle::CombatStyle> ,rhs:impl::core::convert::Into<crate::combat::combatstyle::CombatStyle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2927c60usize)as*mut u8,bool;
+(crate::combat::combatstyle::CombatStyle)::core::convert::Into::into(lhs),(crate::combat::combatstyle::CombatStyle)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "combat-combatstyleexmethods")]
-impl CombatStyleExMethods { pub fn any_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatStyleExMethods as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn none_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatStyleExMethods as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatStyleExMethods as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-combatstyleexmethods")]impl CombatStyleExMethods{pub fn any_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn none_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "combat-combatstyleexmethods")]
 #[doc(hidden)]

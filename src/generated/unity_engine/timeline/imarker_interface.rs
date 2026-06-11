@@ -4,27 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/imarker_interface/IMarker_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "IMarker")] pub struct IMarker_Interface {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/imarker_interface/IMarker_Interface.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="IMarker")]pub struct IMarker_Interface{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-imarker_interface")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMarker_Interface_unity2_raw { use super :: * ; pub unsafe fn get_time (this : IMarker_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f64 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_time") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_time" , < IMarker_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMarker_Interface , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn set_time (this : IMarker_Interface , value : f64 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("set_time") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "set_time" , < IMarker_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMarker_Interface , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , value , __mi) } pub unsafe fn get_parent (this : IMarker_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_parent") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_parent" , < IMarker_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMarker_Interface , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn initialize (this : IMarker_Interface , parent : crate :: unity_engine :: timeline :: trackasset :: TrackAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Initialize") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Initialize" , < IMarker_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMarker_Interface , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , parent , __mi) } }
+#[cfg(feature="unity_engine-timeline-imarker_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMarker_Interface_unity2_raw{use super:: * ;
+pub unsafe fn get_time(this:IMarker_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_time").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_time", <IMarker_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMarker_Interface, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_time(this:IMarker_Interface,value:f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_time").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_time", <IMarker_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMarker_Interface,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_parent(this:IMarker_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_parent").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_parent", <IMarker_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMarker_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn initialize(this:IMarker_Interface,parent:crate::unity_engine::timeline::trackasset::TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Initialize").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Initialize", <IMarker_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMarker_Interface,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,parent,__mi)}
+}
 
-#[cfg(feature = "unity_engine-timeline-imarker_interface")]
-pub trait IIMarker_InterfaceMethods : IIMarker_Interface { # [doc = "`get_time()` overload"] fn get_time (self ,) -> f64 { unsafe { let __receiver = < IMarker_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMarker_Interface_unity2_raw :: get_time (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_time(f64)` overload"] fn set_time (self , value : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < IMarker_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMarker_Interface_unity2_raw :: set_time (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_parent()` overload"] fn get_parent (self ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset { unsafe { let __receiver = < IMarker_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMarker_Interface_unity2_raw :: get_parent (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Initialize(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] fn initialize (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> () { unsafe { let __receiver = < IMarker_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMarker_Interface_unity2_raw :: initialize (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-timeline-imarker_interface")]pub trait IIMarker_InterfaceMethods:IIMarker_Interface{#[doc="`get_time()` overload"]fn get_time(self,)->f64{unsafe{let __receiver= <IMarker_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMarker_Interface_unity2_raw::get_time(__receiver, ::core::option::Option::None)}
+}
+#[doc="`set_time(f64)` overload"]fn set_time(self,value:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <IMarker_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMarker_Interface_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_parent()` overload"]fn get_parent(self,)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <IMarker_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMarker_Interface_unity2_raw::get_parent(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Initialize(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn initialize(self,parent:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{let __receiver= <IMarker_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMarker_Interface_unity2_raw::initialize(__receiver, ::core::convert::Into::into(parent), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-imarker_interface")]
-impl < __T : IIMarker_Interface > IIMarker_InterfaceMethods for __T { }
+#[cfg(feature="unity_engine-timeline-imarker_interface")]impl<__T:IIMarker_Interface>IIMarker_InterfaceMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-imarker_interface")]
-impl IMarker_Interface { pub fn get_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMarker_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMarker_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_parent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMarker_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMarker_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-timeline-imarker_interface")]impl IMarker_Interface{pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_parent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface")]
 #[doc(hidden)]

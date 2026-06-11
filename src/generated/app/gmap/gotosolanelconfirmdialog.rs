@@ -4,94 +4,124 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo.md"))] # [:: unity2 :: class (namespace = "App.Gmap" , name = "GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
-# [offset (112)] # [rename (name = "m_Callback")] pub m_callback : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog.md"))]#[::unity2::class(namespace="App.Gmap",name="GoToSolanelConfirmDialog")]#[parent(crate::system::object::Object)]pub struct GoToSolanelConfirmDialog{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App.Gmap" , name = "GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes {
-# [offset (112)] # [rename (name = "m_DecideCallback")] pub m_decide_callback : crate :: system :: action :: Action ,
-# [offset (120)] # [rename (name = "m_CancelCallback")] pub m_cancel_callback : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App.Gmap",name="GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action, #[offset(120)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::action::Action,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App.Gmap" , name = "GoToSolanelConfirmDialog")] # [parent (crate :: system :: object :: Object)] pub struct GoToSolanelConfirmDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App.Gmap",name="GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-gmap-gotosolanelconfirmdialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-pub trait IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods : IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo { # [doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"] fn ctor (self , callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo , crate :: system :: action :: Action , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd60d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (callback) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl < __T : IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo > IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods for __T { }
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
-# [doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"] pub fn new (callback : crate :: system :: action :: Action , text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo) , :: core :: stringify ! (new) ,)) ; < Self as IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods > :: ctor (this , callback , text) ; this }
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl GoToSolanelConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,yes_callback:impl::core::convert::Into<crate::system::action::Action> ,no_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4c9c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(yes_callback),(crate::system::action::Action)::core::convert::Into::into(no_callback))}
+}
 }
 
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-pub trait IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods : IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes { # [doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, ::unity2::Il2CppString)` overload"] fn ctor (self , decide_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , cancel_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes , crate :: system :: action :: Action , crate :: system :: action :: Action , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_callback) , :: core :: convert :: Into :: into (cancel_callback) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd61f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cd6220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl < __T : IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes > IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods for __T { }
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes {
-# [doc = "`.ctor(crate::system::action::Action, crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"] pub fn new (decide_callback : crate :: system :: action :: Action , cancel_callback : crate :: system :: action :: Action , text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods > :: ctor (this , decide_callback , cancel_callback , text) ; this }
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]pub trait IGoToSolanelConfirmDialogMethods:IGoToSolanelConfirmDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GoToSolanelConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b4cb30usize)as*mut u8,();
+(GoToSolanelConfirmDialog)__receiver)}
+}
 }
 
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , yes_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action > , no_callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4c9c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (yes_callback) , :: core :: convert :: Into :: into (no_callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl<__T:IGoToSolanelConfirmDialog>IGoToSolanelConfirmDialogMethods for __T{}
 
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-pub trait IGoToSolanelConfirmDialogMethods : IGoToSolanelConfirmDialog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GoToSolanelConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GoToSolanelConfirmDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4cb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl GoToSolanelConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl < __T : IGoToSolanelConfirmDialog > IGoToSolanelConfirmDialogMethods for __T { }
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl GoToSolanelConfirmDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GoToSolanelConfirmDialog), ::core::stringify!(new),));
+ <Self as IGoToSolanelConfirmDialogMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GoToSolanelConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]pub trait IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods:IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action, crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,decide_callback:impl::core::convert::Into<crate::system::action::Action> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6190usize)as*mut u8,();
+(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(decide_callback),(crate::system::action::Action)::core::convert::Into::into(cancel_callback),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd61f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6220usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GoToSolanelConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IGoToSolanelConfirmDialogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl<__T:IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes>IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action, crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(decide_callback:crate::system::action::Action,cancel_callback:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods> ::ctor(this,decide_callback,cancel_callback,text);
+this}
+}
+
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]pub trait IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods:IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,callback:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd60d0usize)as*mut u8,();
+(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo)__receiver,(crate::system::action::Action)::core::convert::Into::into(callback),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6110usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6150usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl<__T:IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo>IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods for __T{}
+
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmap-gotosolanelconfirmdialog")]impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(callback:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods> ::ctor(this,callback,text);
+this}
 }
 
 #[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo;
-    pub use super::IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo;
-    pub use super::IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods;
-    pub use super::GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes;
-    pub use super::IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes;
-    pub use super::IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods;
     pub use super::GoToSolanelConfirmDialog;
     pub use super::IGoToSolanelConfirmDialog;
     pub use super::IGoToSolanelConfirmDialogMethods;
+    pub use super::GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes;
+    pub use super::IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes;
+    pub use super::IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods;
+    pub use super::GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo;
+    pub use super::IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo;
+    pub use super::IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

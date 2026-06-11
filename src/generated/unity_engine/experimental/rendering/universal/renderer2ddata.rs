@@ -4,92 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: { IScriptableRendererData , ScriptableRendererData }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::{IScriptableRendererData,ScriptableRendererData}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "Renderer2DData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct Renderer2DData {
-# [offset (48)] # [rename (name = "m_TransparencySortMode")] pub m_transparency_sort_mode : crate :: unity_engine :: transparencysortmode :: TransparencySortMode ,
-# [offset (52)] # [rename (name = "m_TransparencySortAxis")] pub m_transparency_sort_axis : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (64)] # [rename (name = "m_HDREmulationScale")] pub m_hdr_emulation_scale : f32 ,
-# [offset (72)] # [rename (name = "m_LightBlendStyles")] pub m_light_blend_styles : :: unity2 :: Array < crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle > ,
-# [offset (80)] # [rename (name = "m_UseDepthStencilBuffer")] pub m_use_depth_stencil_buffer : bool ,
-# [offset (88)] # [rename (name = "m_ShapeLightShader")] pub m_shape_light_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (96)] # [rename (name = "m_ShapeLightVolumeShader")] pub m_shape_light_volume_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (104)] # [rename (name = "m_PointLightShader")] pub m_point_light_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (112)] # [rename (name = "m_PointLightVolumeShader")] pub m_point_light_volume_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (120)] # [rename (name = "m_BlitShader")] pub m_blit_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (128)] # [rename (name = "m_ShadowGroupShader")] pub m_shadow_group_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (136)] # [rename (name = "m_RemoveSelfShadowShader")] pub m_remove_self_shadow_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (144)] # [rename (name = "m_PostProcessData")] pub m_post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [offset (176)] # [rename (name = "normalsRenderTarget")] pub normals_render_target : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [offset (224)] # [rename (name = "shadowsRenderTarget")] pub shadows_render_target : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="Renderer2DData")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]pub struct Renderer2DData{#[offset(48)]#[rename(name="m_TransparencySortMode")]pub m_transparency_sort_mode:crate::unity_engine::transparencysortmode::TransparencySortMode, #[offset(52)]#[rename(name="m_TransparencySortAxis")]pub m_transparency_sort_axis:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="m_HDREmulationScale")]pub m_hdr_emulation_scale:f32, #[offset(72)]#[rename(name="m_LightBlendStyles")]pub m_light_blend_styles: ::unity2::Array<crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle> , #[offset(80)]#[rename(name="m_UseDepthStencilBuffer")]pub m_use_depth_stencil_buffer:bool, #[offset(88)]#[rename(name="m_ShapeLightShader")]pub m_shape_light_shader:crate::unity_engine::shader::Shader, #[offset(96)]#[rename(name="m_ShapeLightVolumeShader")]pub m_shape_light_volume_shader:crate::unity_engine::shader::Shader, #[offset(104)]#[rename(name="m_PointLightShader")]pub m_point_light_shader:crate::unity_engine::shader::Shader, #[offset(112)]#[rename(name="m_PointLightVolumeShader")]pub m_point_light_volume_shader:crate::unity_engine::shader::Shader, #[offset(120)]#[rename(name="m_BlitShader")]pub m_blit_shader:crate::unity_engine::shader::Shader, #[offset(128)]#[rename(name="m_ShadowGroupShader")]pub m_shadow_group_shader:crate::unity_engine::shader::Shader, #[offset(136)]#[rename(name="m_RemoveSelfShadowShader")]pub m_remove_self_shadow_shader:crate::unity_engine::shader::Shader, #[offset(144)]#[rename(name="m_PostProcessData")]pub m_post_process_data:crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, #[offset(176)]#[rename(name="normalsRenderTarget")]pub normals_render_target:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(224)]#[rename(name="shadowsRenderTarget")]pub shadows_render_target:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData_Renderer2DDefaultMaterialType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Renderer2DData_Renderer2DDefaultMaterialType{pub value:i32,}
+impl::unity2::ClassIdentity for Renderer2DData_Renderer2DDefaultMaterialType{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
+const NAME: &'static str="Renderer2DData.Renderer2DDefaultMaterialType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData_Renderer2DDefaultMaterialType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Renderer2DData_Renderer2DDefaultMaterialType  {
-    pub value: i32,
+impl::unity2::IlType for Renderer2DData_Renderer2DDefaultMaterialType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for Renderer2DData_Renderer2DDefaultMaterialType  {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-    const NAME: &'static str = "Renderer2DData.Renderer2DDefaultMaterialType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl Renderer2DData_Renderer2DDefaultMaterialType{pub fn lit()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for Renderer2DData_Renderer2DDefaultMaterialType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn unlit()->Self{Self{value:1}
 }
-
-
-impl  Renderer2DData_Renderer2DDefaultMaterialType  {
-    pub fn lit() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn unlit() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn custom() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn custom()->Self{Self{value:2}
+}
 }
 
 }
@@ -97,18 +44,132 @@ impl  Renderer2DData_Renderer2DDefaultMaterialType  {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]
-pub trait IRenderer2DDataMethods : IRenderer2DData { # [doc = "`get_hdrEmulationScale()` overload"] fn get_hdr_emulation_scale (self ,) -> f32 { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_lightBlendStyles()` overload"] fn get_light_blend_styles (self ,) -> :: unity2 :: Array < crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle > { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_useDepthStencilBuffer()` overload"] fn get_use_depth_stencil_buffer (self ,) -> bool { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shapeLightShader()` overload"] fn get_shape_light_shader (self ,) -> crate :: unity_engine :: shader :: Shader { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shapeLightVolumeShader()` overload"] fn get_shape_light_volume_shader (self ,) -> crate :: unity_engine :: shader :: Shader { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pointLightShader()` overload"] fn get_point_light_shader (self ,) -> crate :: unity_engine :: shader :: Shader { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pointLightVolumeShader()` overload"] fn get_point_light_volume_shader (self ,) -> crate :: unity_engine :: shader :: Shader { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_blitShader()` overload"] fn get_blit_shader (self ,) -> crate :: unity_engine :: shader :: Shader { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shadowGroupShader()` overload"] fn get_shadow_group_shader (self ,) -> crate :: unity_engine :: shader :: Shader { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31ab9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_removeSelfShadowShader()` overload"] fn get_remove_self_shadow_shader (self ,) -> crate :: unity_engine :: shader :: Shader { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aba00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_postProcessData()` overload"] fn get_post_process_data (self ,) -> crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aba10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_transparencySortMode()` overload"] fn get_transparency_sort_mode (self ,) -> crate :: unity_engine :: transparencysortmode :: TransparencySortMode { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transparencysortmode :: TransparencySortMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aba20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_transparencySortAxis()` overload"] fn get_transparency_sort_axis (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aba30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] fn create (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31aba40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_lightMaterials()` overload"] fn get_light_materials (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shadowMaterials()` overload"] fn get_shadow_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_shadowMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"] fn set_shadow_materials (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: material :: Material > >) -> () { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: Array < crate :: unity_engine :: material :: Material > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abc90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_removeSelfShadowMaterials()` overload"] fn get_remove_self_shadow_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_removeSelfShadowMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"] fn set_remove_self_shadow_materials (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: material :: Material > >) -> () { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: Array < crate :: unity_engine :: material :: Material > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abcb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_lightCullResult()` overload"] fn get_light_cull_result (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: ilight2dcullresult_interface :: ILight2DCullResult_Interface { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: ilight2dcullresult_interface :: ILight2DCullResult_Interface = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abcc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_lightCullResult(crate::unity_engine::experimental::rendering::universal::ilight2dcullresult_interface::ILight2DCullResult_Interface)` overload"] fn set_light_cull_result (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: ilight2dcullresult_interface :: ILight2DCullResult_Interface >) -> () { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , crate :: unity_engine :: experimental :: rendering :: universal :: ilight2dcullresult_interface :: ILight2DCullResult_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abcd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Renderer2DData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Renderer2DData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31abce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]pub trait IRenderer2DDataMethods:IRenderer2DData{#[doc="`get_hdrEmulationScale()` overload"]fn get_hdr_emulation_scale(self,)->f32{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab970usize)as*mut u8,f32;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_lightBlendStyles()` overload"]fn get_light_blend_styles(self,)-> ::unity2::Array<crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle>{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab980usize)as*mut u8, ::unity2::Array<crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle> ;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_useDepthStencilBuffer()` overload"]fn get_use_depth_stencil_buffer(self,)->bool{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab990usize)as*mut u8,bool;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_shapeLightShader()` overload"]fn get_shape_light_shader(self,)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab9a0usize)as*mut u8,crate::unity_engine::shader::Shader;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_shapeLightVolumeShader()` overload"]fn get_shape_light_volume_shader(self,)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab9b0usize)as*mut u8,crate::unity_engine::shader::Shader;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_pointLightShader()` overload"]fn get_point_light_shader(self,)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab9c0usize)as*mut u8,crate::unity_engine::shader::Shader;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_pointLightVolumeShader()` overload"]fn get_point_light_volume_shader(self,)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab9d0usize)as*mut u8,crate::unity_engine::shader::Shader;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_blitShader()` overload"]fn get_blit_shader(self,)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab9e0usize)as*mut u8,crate::unity_engine::shader::Shader;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_shadowGroupShader()` overload"]fn get_shadow_group_shader(self,)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab9f0usize)as*mut u8,crate::unity_engine::shader::Shader;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_removeSelfShadowShader()` overload"]fn get_remove_self_shadow_shader(self,)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31aba00usize)as*mut u8,crate::unity_engine::shader::Shader;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_postProcessData()` overload"]fn get_post_process_data(self,)->crate::unity_engine::rendering::universal::postprocessdata::PostProcessData{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31aba10usize)as*mut u8,crate::unity_engine::rendering::universal::postprocessdata::PostProcessData;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_transparencySortMode()` overload"]fn get_transparency_sort_mode(self,)->crate::unity_engine::transparencysortmode::TransparencySortMode{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31aba20usize)as*mut u8,crate::unity_engine::transparencysortmode::TransparencySortMode;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_transparencySortAxis()` overload"]fn get_transparency_sort_axis(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31aba30usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Renderer2DData)__receiver)}
+}
+#[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31aba40usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+(Renderer2DData)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abab0usize)as*mut u8,();
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_lightMaterials()` overload"]fn get_light_materials(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::unity_engine::material::Material>{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abc70usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::unity_engine::material::Material> ;
+(Renderer2DData)__receiver)}
+}
+#[doc="`get_shadowMaterials()` overload"]fn get_shadow_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abc80usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(Renderer2DData)__receiver)}
+}
+#[doc="`set_shadowMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn set_shadow_materials(self,value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)->(){unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abc90usize)as*mut u8,();
+(Renderer2DData)__receiver,(::unity2::Array<crate::unity_engine::material::Material>)::core::convert::Into::into(value))}
+}
+#[doc="`get_removeSelfShadowMaterials()` overload"]fn get_remove_self_shadow_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abca0usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(Renderer2DData)__receiver)}
+}
+#[doc="`set_removeSelfShadowMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn set_remove_self_shadow_materials(self,value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)->(){unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abcb0usize)as*mut u8,();
+(Renderer2DData)__receiver,(::unity2::Array<crate::unity_engine::material::Material>)::core::convert::Into::into(value))}
+}
+#[doc="`get_lightCullResult()` overload"]fn get_light_cull_result(self,)->crate::unity_engine::experimental::rendering::universal::ilight2dcullresult_interface::ILight2DCullResult_Interface{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abcc0usize)as*mut u8,crate::unity_engine::experimental::rendering::universal::ilight2dcullresult_interface::ILight2DCullResult_Interface;
+(Renderer2DData)__receiver)}
+}
+#[doc="`set_lightCullResult(crate::unity_engine::experimental::rendering::universal::ilight2dcullresult_interface::ILight2DCullResult_Interface)` overload"]fn set_light_cull_result(self,value:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::ilight2dcullresult_interface::ILight2DCullResult_Interface>)->(){unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abcd0usize)as*mut u8,();
+(Renderer2DData)__receiver,(crate::unity_engine::experimental::rendering::universal::ilight2dcullresult_interface::ILight2DCullResult_Interface)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31abce0usize)as*mut u8,();
+(Renderer2DData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]
-impl < __T : IRenderer2DData > IRenderer2DDataMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]impl<__T:IRenderer2DData>IRenderer2DDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]
-impl Renderer2DData { pub fn get_hdr_emulation_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_light_blend_styles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_use_depth_stencil_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_shape_light_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_shape_light_volume_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_point_light_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_point_light_volume_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_blit_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_shadow_group_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_remove_self_shadow_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_post_process_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_transparency_sort_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_transparency_sort_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_light_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_shadow_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_shadow_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_remove_self_shadow_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_remove_self_shadow_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_light_cull_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_light_cull_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Renderer2DData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]impl Renderer2DData{pub fn get_hdr_emulation_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_light_blend_styles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_use_depth_stencil_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_shape_light_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_shape_light_volume_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_point_light_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_point_light_volume_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_blit_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_shadow_group_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_remove_self_shadow_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_post_process_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_transparency_sort_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_transparency_sort_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_light_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_shadow_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_shadow_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_remove_self_shadow_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_remove_self_shadow_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_light_cull_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_light_cull_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]
-impl Renderer2DData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Renderer2DData) , :: core :: stringify ! (new) ,)) ; < Self as IRenderer2DDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]impl Renderer2DData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Renderer2DData), ::core::stringify!(new),));
+ <Self as IRenderer2DDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]

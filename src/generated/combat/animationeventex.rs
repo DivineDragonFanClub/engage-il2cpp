@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animationeventex/AnimationEventEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimationEventEx")] # [parent (crate :: system :: object :: Object)] pub struct AnimationEventEx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animationeventex/AnimationEventEx.md"))]#[::unity2::class(namespace="Combat",name="AnimationEventEx")]#[parent(crate::system::object::Object)]pub struct AnimationEventEx{}
 
 }
 
 #[cfg(feature = "combat-animationeventex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-animationeventex")]
-impl AnimationEventEx { # [doc = "`IsEqualTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"] pub fn is_equal_to (a : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent > , b : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animationevent :: AnimationEvent , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9c7d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`IsNotEqualTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"] pub fn is_not_equal_to (a : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent > , b : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animationevent :: AnimationEvent , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9c980usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"] pub fn copy_to (src : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent > , dst : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animationevent :: AnimationEvent , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9c9a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (dst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-animationeventex")]impl AnimationEventEx{#[doc="`IsEqualTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]pub fn is_equal_to(a:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent> ,b:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9c7d0usize)as*mut u8,bool;
+(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(a),(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(b))}
+}
+#[doc="`IsNotEqualTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]pub fn is_not_equal_to(a:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent> ,b:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9c980usize)as*mut u8,bool;
+(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(a),(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(b))}
+}
+#[doc="`CopyTo(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::animationevent::AnimationEvent)` overload"]pub fn copy_to(src:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent> ,dst:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9c9a0usize)as*mut u8,();
+(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(src),(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(dst))}
+}
+}
 
-#[cfg(feature = "combat-animationeventex")]
-impl AnimationEventEx { pub fn is_equal_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEventEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_not_equal_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEventEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationEventEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-animationeventex")]impl AnimationEventEx{pub fn is_equal_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_not_equal_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "combat-animationeventex")]
 #[doc(hidden)]

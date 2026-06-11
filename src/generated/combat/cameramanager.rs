@@ -4,47 +4,134 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameramanager/CameraManager.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraManager")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: combat :: cameramanager :: CameraManager >)] pub struct CameraManager {
-# [offset (32)] # [rename (name = "Switch")] pub switch : crate :: combat :: cameraswitch :: CameraSwitch ,
-# [offset (40)] # [rename (name = "PosData")] pub pos_data : crate :: combat :: camerapositiondata :: CameraPositionData ,
-# [offset (48)] # [rename (name = "Selector")] pub selector : crate :: combat :: camerasituationconverter :: CameraSituationConverter ,
-# [offset (56)] # [rename (name = "m_LastUnusedTime")] pub m_last_unused_time : f32 ,
-# [offset (60)] # [rename (name = "m_IsTemporaryCamera")] pub m_is_temporary_camera : bool ,
-# [offset (64)] # [rename (name = "m_LastChangeTime")] pub m_last_change_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameramanager/CameraManager.md"))]#[::unity2::class(namespace="Combat",name="CameraManager")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::combat::cameramanager::CameraManager>)]pub struct CameraManager{#[offset(32)]#[rename(name="Switch")]pub switch:crate::combat::cameraswitch::CameraSwitch, #[offset(40)]#[rename(name="PosData")]pub pos_data:crate::combat::camerapositiondata::CameraPositionData, #[offset(48)]#[rename(name="Selector")]pub selector:crate::combat::camerasituationconverter::CameraSituationConverter, #[offset(56)]#[rename(name="m_LastUnusedTime")]pub m_last_unused_time:f32, #[offset(60)]#[rename(name="m_IsTemporaryCamera")]pub m_is_temporary_camera:bool, #[offset(64)]#[rename(name="m_LastChangeTime")]pub m_last_change_time:f32,}
 
 }
 
 #[cfg(feature = "combat-cameramanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameramanager")]
-pub trait ICameraManagerMethods : ICameraManager { # [doc = "`get_TransitionProgress()` overload"] fn get_transition_progress (self ,) -> f32 { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b3a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TransitionProgress(f32)` overload"] fn set_transition_progress (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b70c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPositionCrossed()` overload"] fn get_is_position_crossed (self ,) -> bool { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b71e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsTargeting(i32)` overload"] fn is_targeting (self , side : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b71f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b72b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b7350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BeginCamera(crate::combat::combatrecord::CombatRecord, bool)` overload"] fn begin_camera (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord > , transition : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , crate :: combat :: combatrecord :: CombatRecord , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b7d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (record) , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } } # [doc = "`BeginCamera(::unity2::Array<crate::combat::character::Character>, bool)` overload"] fn begin_camera_2 (self , chara : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: character :: Character > > , transition : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: Array < crate :: combat :: character :: Character > , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b8a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara) , :: core :: convert :: Into :: into (transition) , :: core :: option :: Option :: None) } } } # [doc = "`EndCamera(bool, crate::app::viewmode::ViewMode_Mode)` overload"] fn end_camera (self , transition : impl :: core :: convert :: Into < bool > , camera_mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , bool , crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b8d40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (transition) , :: core :: convert :: Into :: into (camera_mode) , :: core :: option :: Option :: None) } } } # [doc = "`ReverseCamera()` overload"] fn reverse_camera (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b90e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReverseMainCamera()` overload"] fn reverse_main_camera (self ,) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSituation(crate::combat::camerasituation::CameraSituation, bool)` overload"] fn update_situation (self , change_style : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , change_force : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , crate :: combat :: camerasituation :: CameraSituation , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b7ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (change_style) , :: core :: convert :: Into :: into (change_force) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSituation(crate::unity_engine::animationevent::AnimationEvent, i32)` overload"] fn update_situation_2 (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent > , call_side : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , crate :: unity_engine :: animationevent :: AnimationEvent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: convert :: Into :: into (call_side) , :: core :: option :: Option :: None) } } } # [doc = "`SwitchCamera(crate::combat::cameraposition::CameraPosition)` overload"] fn switch_camera (self , pos : impl :: core :: convert :: Into < crate :: combat :: cameraposition :: CameraPosition >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , crate :: combat :: cameraposition :: CameraPosition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b92b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`StartShake(f32, crate::unity_engine::vector3::Vector3, bool)` overload"] fn start_shake (self , magnitude : impl :: core :: convert :: Into < f32 > , source_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , is_critical : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , f32 , crate :: unity_engine :: vector3 :: Vector3 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b92c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (magnitude) , :: core :: convert :: Into :: into (source_pos) , :: core :: convert :: Into :: into (is_critical) , :: core :: option :: Option :: None) } } } # [doc = "`ArmorShake(f32, crate::unity_engine::vector3::Vector3)` overload"] fn armor_shake (self , magnitude : impl :: core :: convert :: Into < f32 > , source_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , f32 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (magnitude) , :: core :: convert :: Into :: into (source_pos) , :: core :: option :: Option :: None) } } } # [doc = "`Stabilize()` overload"] fn stabilize (self ,) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b95b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BeginTransition(crate::combat::cameraposition::CameraPosition)` overload"] fn begin_transition (self , camera_pos : impl :: core :: convert :: Into < crate :: combat :: cameraposition :: CameraPosition >) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , crate :: combat :: cameraposition :: CameraPosition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b8990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera_pos) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b96c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameramanager")]pub trait ICameraManagerMethods:ICameraManager{#[doc="`get_TransitionProgress()` overload"]fn get_transition_progress(self,)->f32{unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b3a00usize)as*mut u8,f32;
+(CameraManager)__receiver)}
+}
+#[doc="`set_TransitionProgress(f32)` overload"]fn set_transition_progress(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b70c0usize)as*mut u8,();
+(CameraManager)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsPositionCrossed()` overload"]fn get_is_position_crossed(self,)->bool{unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b71e0usize)as*mut u8,bool;
+(CameraManager)__receiver)}
+}
+#[doc="`IsTargeting(i32)` overload"]fn is_targeting(self,side:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b71f0usize)as*mut u8,bool;
+(CameraManager)__receiver,(i32)::core::convert::Into::into(side))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b72b0usize)as*mut u8,();
+(CameraManager)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b7350usize)as*mut u8,();
+(CameraManager)__receiver)}
+}
+#[doc="`BeginCamera(crate::combat::combatrecord::CombatRecord, bool)` overload"]fn begin_camera(self,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord> ,transition:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b7d60usize)as*mut u8,();
+(CameraManager)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record),(bool)::core::convert::Into::into(transition))}
+}
+#[doc="`BeginCamera(::unity2::Array<crate::combat::character::Character>, bool)` overload"]fn begin_camera_2(self,chara:impl::core::convert::Into< ::unity2::Array<crate::combat::character::Character> > ,transition:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b8a60usize)as*mut u8,();
+(CameraManager)__receiver,(::unity2::Array<crate::combat::character::Character>)::core::convert::Into::into(chara),(bool)::core::convert::Into::into(transition))}
+}
+#[doc="`EndCamera(bool, crate::app::viewmode::ViewMode_Mode)` overload"]fn end_camera(self,transition:impl::core::convert::Into<bool> ,camera_mode:impl::core::convert::Into<crate::app::viewmode::ViewMode_Mode>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b8d40usize)as*mut u8,();
+(CameraManager)__receiver,(bool)::core::convert::Into::into(transition),(crate::app::viewmode::ViewMode_Mode)::core::convert::Into::into(camera_mode))}
+}
+#[doc="`ReverseCamera()` overload"]fn reverse_camera(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b90e0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(CameraManager)__receiver)}
+}
+#[doc="`ReverseMainCamera()` overload"]fn reverse_main_camera(self,)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9020usize)as*mut u8,();
+(CameraManager)__receiver)}
+}
+#[doc="`UpdateSituation(crate::combat::camerasituation::CameraSituation, bool)` overload"]fn update_situation(self,change_style:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,change_force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b7ae0usize)as*mut u8,();
+(CameraManager)__receiver,(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(change_style),(bool)::core::convert::Into::into(change_force))}
+}
+#[doc="`UpdateSituation(crate::unity_engine::animationevent::AnimationEvent, i32)` overload"]fn update_situation_2(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent> ,call_side:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9170usize)as*mut u8,();
+(CameraManager)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev),(i32)::core::convert::Into::into(call_side))}
+}
+#[doc="`SwitchCamera(crate::combat::cameraposition::CameraPosition)` overload"]fn switch_camera(self,pos:impl::core::convert::Into<crate::combat::cameraposition::CameraPosition>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b92b0usize)as*mut u8,();
+(CameraManager)__receiver,(crate::combat::cameraposition::CameraPosition)::core::convert::Into::into(pos))}
+}
+#[doc="`StartShake(f32, crate::unity_engine::vector3::Vector3, bool)` overload"]fn start_shake(self,magnitude:impl::core::convert::Into<f32> ,source_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,is_critical:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b92c0usize)as*mut u8,();
+(CameraManager)__receiver,(f32)::core::convert::Into::into(magnitude),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(source_pos),(bool)::core::convert::Into::into(is_critical))}
+}
+#[doc="`ArmorShake(f32, crate::unity_engine::vector3::Vector3)` overload"]fn armor_shake(self,magnitude:impl::core::convert::Into<f32> ,source_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b9440usize)as*mut u8,();
+(CameraManager)__receiver,(f32)::core::convert::Into::into(magnitude),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(source_pos))}
+}
+#[doc="`Stabilize()` overload"]fn stabilize(self,)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b95b0usize)as*mut u8,();
+(CameraManager)__receiver)}
+}
+#[doc="`BeginTransition(crate::combat::cameraposition::CameraPosition)` overload"]fn begin_transition(self,camera_pos:impl::core::convert::Into<crate::combat::cameraposition::CameraPosition>)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b8990usize)as*mut u8,();
+(CameraManager)__receiver,(crate::combat::cameraposition::CameraPosition)::core::convert::Into::into(camera_pos))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b96c0usize)as*mut u8,();
+(CameraManager)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameramanager")]
-impl < __T : ICameraManager > ICameraManagerMethods for __T { }
+#[cfg(feature="combat-cameramanager")]impl<__T:ICameraManager>ICameraManagerMethods for __T{}
 
-#[cfg(feature = "combat-cameramanager")]
-impl CameraManager { pub fn get_transition_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_transition_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_position_crossed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_targeting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn begin_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn begin_camera_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn end_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn reverse_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn reverse_main_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn update_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_situation_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn switch_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn start_shake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn armor_shake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn stabilize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn begin_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="combat-cameramanager")]impl CameraManager{pub fn get_transition_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_transition_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_position_crossed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_targeting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn begin_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn begin_camera_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn end_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn reverse_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn reverse_main_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_situation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_situation_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn switch_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn start_shake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn armor_shake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn stabilize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn begin_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "combat-cameramanager")]
-impl CameraManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraManager) , :: core :: stringify ! (new) ,)) ; < Self as ICameraManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameramanager")]impl CameraManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraManager), ::core::stringify!(new),));
+ <Self as ICameraManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameramanager")]

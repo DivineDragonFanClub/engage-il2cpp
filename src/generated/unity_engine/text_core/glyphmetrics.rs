@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/glyphmetrics/GlyphMetrics.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GlyphMetrics {
-    pub m_width: f32,
-    pub m_height: f32,
-    pub m_horizontal_bearing_x: f32,
-    pub m_horizontal_bearing_y: f32,
-    pub m_horizontal_advance: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/text_core/glyphmetrics/GlyphMetrics.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GlyphMetrics{pub m_width:f32,pub m_height:f32,pub m_horizontal_bearing_x:f32,pub m_horizontal_bearing_y:f32,pub m_horizontal_advance:f32,}
+impl::unity2::ClassIdentity for GlyphMetrics{const NAMESPACE: &'static str="UnityEngine.TextCore";
+const NAME: &'static str="GlyphMetrics";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for GlyphMetrics {
-    const NAMESPACE: &'static str = "UnityEngine.TextCore";
-
-    const NAME: &'static str = "GlyphMetrics";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for GlyphMetrics {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for GlyphMetrics{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,11 +26,45 @@ impl ::unity2::IlType for GlyphMetrics {
 #[cfg(feature = "unity_engine-text_core-glyphmetrics-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-text_core-glyphmetrics")]
-impl GlyphMetrics { # [doc = "`get_width()` overload"] pub fn get_width (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e330usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: option :: Option :: None) } } } # [doc = "`get_height()` overload"] pub fn get_height (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e340usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: option :: Option :: None) } } } # [doc = "`get_horizontalBearingX()` overload"] pub fn get_horizontal_bearing_x (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e350usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: option :: Option :: None) } } } # [doc = "`get_horizontalBearingY()` overload"] pub fn get_horizontal_bearing_y (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e360usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: option :: Option :: None) } } } # [doc = "`get_horizontalAdvance()` overload"] pub fn get_horizontal_advance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e370usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32, f32, f32, f32)` overload"] pub fn ctor (& mut self , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 > , bearing_x : impl :: core :: convert :: Into < f32 > , bearing_y : impl :: core :: convert :: Into < f32 > , advance : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , f32 , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e380usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (bearing_x) , :: core :: convert :: Into :: into (bearing_y) , :: core :: convert :: Into :: into (advance) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e3a0usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e420usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::text_core::glyphmetrics::GlyphMetrics)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics >) -> bool { unsafe { { let __inner : extern "C" fn (* mut GlyphMetrics , crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e4b0usize) as * mut u8) ; __inner (self as * mut GlyphMetrics , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-text_core-glyphmetrics")]impl GlyphMetrics{#[doc="`get_width()` overload"]pub fn get_width(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e330usize)as*mut u8,f32;
+(*mut GlyphMetrics)self as*mut GlyphMetrics)}
+}
+#[doc="`get_height()` overload"]pub fn get_height(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e340usize)as*mut u8,f32;
+(*mut GlyphMetrics)self as*mut GlyphMetrics)}
+}
+#[doc="`get_horizontalBearingX()` overload"]pub fn get_horizontal_bearing_x(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e350usize)as*mut u8,f32;
+(*mut GlyphMetrics)self as*mut GlyphMetrics)}
+}
+#[doc="`get_horizontalBearingY()` overload"]pub fn get_horizontal_bearing_y(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e360usize)as*mut u8,f32;
+(*mut GlyphMetrics)self as*mut GlyphMetrics)}
+}
+#[doc="`get_horizontalAdvance()` overload"]pub fn get_horizontal_advance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e370usize)as*mut u8,f32;
+(*mut GlyphMetrics)self as*mut GlyphMetrics)}
+}
+#[doc="`.ctor(f32, f32, f32, f32, f32)` overload"]pub fn ctor(&mut self,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32> ,bearing_x:impl::core::convert::Into<f32> ,bearing_y:impl::core::convert::Into<f32> ,advance:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e380usize)as*mut u8,();
+(*mut GlyphMetrics)self as*mut GlyphMetrics,(f32)::core::convert::Into::into(width),(f32)::core::convert::Into::into(height),(f32)::core::convert::Into::into(bearing_x),(f32)::core::convert::Into::into(bearing_y),(f32)::core::convert::Into::into(advance))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e3a0usize)as*mut u8,i32;
+(*mut GlyphMetrics)self as*mut GlyphMetrics)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e420usize)as*mut u8,bool;
+(*mut GlyphMetrics)self as*mut GlyphMetrics,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::text_core::glyphmetrics::GlyphMetrics)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::text_core::glyphmetrics::GlyphMetrics>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e4b0usize)as*mut u8,bool;
+(*mut GlyphMetrics)self as*mut GlyphMetrics,(crate::unity_engine::text_core::glyphmetrics::GlyphMetrics)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-text_core-glyphmetrics")]
-impl GlyphMetrics { pub fn get_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_horizontal_bearing_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_horizontal_bearing_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_horizontal_advance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphMetrics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-text_core-glyphmetrics")]impl GlyphMetrics{pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_horizontal_bearing_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_horizontal_bearing_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_horizontal_advance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-text_core-glyphmetrics")]
 #[doc(hidden)]

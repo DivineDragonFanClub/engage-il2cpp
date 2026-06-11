@@ -4,34 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: memberinfoitem_1 :: { IMemberInfoItem_1 , MemberInfoItem_1 }
- ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::memberinfoitem_1::{IMemberInfoItem_1,MemberInfoItem_1}
+;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fieldinfoitem/FieldInfoItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "FieldInfoItem")] # [parent (crate :: app :: memberinfoitem_1 :: MemberInfoItem_1 < crate :: system :: reflection :: fieldinfo :: FieldInfo >)] pub struct FieldInfoItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fieldinfoitem/FieldInfoItem.md"))]#[::unity2::class(namespace="App",name="FieldInfoItem")]#[parent(crate::app::memberinfoitem_1::MemberInfoItem_1<crate::system::reflection::fieldinfo::FieldInfo>)]pub struct FieldInfoItem{}
 
 }
 
 #[cfg(feature = "app-fieldinfoitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fieldinfoitem")]
-pub trait IFieldInfoItemMethods : IFieldInfoItem { # [doc = "`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` overload"] fn ctor (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , info : impl :: core :: convert :: Into < crate :: system :: reflection :: fieldinfo :: FieldInfo >) -> () { unsafe { let __receiver = < FieldInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfoItem , crate :: system :: object :: Object , crate :: system :: reflection :: fieldinfo :: FieldInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e78d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueType()` overload"] fn get_value_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < FieldInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfoItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e7940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetValue()` overload"] fn get_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < FieldInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfoItem , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e7960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetValue(crate::system::object::Object)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < FieldInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldInfoItem , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e79b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fieldinfoitem")]pub trait IFieldInfoItemMethods:IFieldInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` overload"]fn ctor(self,obj:impl::core::convert::Into<crate::system::object::Object> ,info:impl::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>)->(){unsafe{let __receiver= <FieldInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e78d0usize)as*mut u8,();
+(FieldInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::reflection::fieldinfo::FieldInfo)::core::convert::Into::into(info))}
+}
+#[doc="`GetValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <FieldInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e7940usize)as*mut u8, ::unity2::SystemType;
+(FieldInfoItem)__receiver)}
+}
+#[doc="`GetValue()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <FieldInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e7960usize)as*mut u8,crate::system::object::Object;
+(FieldInfoItem)__receiver)}
+}
+#[doc="`SetValue(crate::system::object::Object)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <FieldInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e79b0usize)as*mut u8,();
+(FieldInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-fieldinfoitem")]
-impl < __T : IFieldInfoItem > IFieldInfoItemMethods for __T { }
+#[cfg(feature="app-fieldinfoitem")]impl<__T:IFieldInfoItem>IFieldInfoItemMethods for __T{}
 
-#[cfg(feature = "app-fieldinfoitem")]
-impl FieldInfoItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-fieldinfoitem")]impl FieldInfoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-fieldinfoitem")]
-impl FieldInfoItem {
-# [doc = "`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` — overload selector"] pub fn new (obj : crate :: system :: object :: Object , info : crate :: system :: reflection :: fieldinfo :: FieldInfo) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FieldInfoItem) , :: core :: stringify ! (new) ,)) ; < Self as IFieldInfoItemMethods > :: ctor (this , obj , info) ; this }
+#[cfg(feature="app-fieldinfoitem")]impl FieldInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` — overload selector"]pub fn new(obj:crate::system::object::Object,info:crate::system::reflection::fieldinfo::FieldInfo)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FieldInfoItem), ::core::stringify!(new),));
+ <Self as IFieldInfoItemMethods> ::ctor(this,obj,info);
+this}
 }
 
 #[cfg(feature = "app-fieldinfoitem")]

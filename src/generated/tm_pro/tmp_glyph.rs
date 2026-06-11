@@ -4,35 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: tm_pro :: tmp_textelement_legacy :: { ITMP_TextElement_Legacy , TMP_TextElement_Legacy }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::tm_pro::tmp_textelement_legacy::{ITMP_TextElement_Legacy,TMP_TextElement_Legacy}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_glyph/TMP_Glyph.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Glyph")] # [parent (crate :: tm_pro :: tmp_textelement_legacy :: TMP_TextElement_Legacy)] pub struct TMP_Glyph {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_glyph/TMP_Glyph.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Glyph")]#[parent(crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy)]pub struct TMP_Glyph{}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_glyph-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_glyph")]
-impl TMP_Glyph { # [doc = "`Clone(crate::tm_pro::tmp_glyph::TMP_Glyph)` overload"] pub fn clone (source : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_glyph :: TMP_Glyph >) -> crate :: tm_pro :: tmp_glyph :: TMP_Glyph { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_glyph :: TMP_Glyph , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_glyph :: TMP_Glyph = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_glyph")]impl TMP_Glyph{#[doc="`Clone(crate::tm_pro::tmp_glyph::TMP_Glyph)` overload"]pub fn clone(source:impl::core::convert::Into<crate::tm_pro::tmp_glyph::TMP_Glyph>)->crate::tm_pro::tmp_glyph::TMP_Glyph{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2b20usize)as*mut u8,crate::tm_pro::tmp_glyph::TMP_Glyph;
+(crate::tm_pro::tmp_glyph::TMP_Glyph)::core::convert::Into::into(source))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_glyph")]
-pub trait ITMP_GlyphMethods : ITMP_Glyph { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_Glyph as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Glyph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_glyph")]pub trait ITMP_GlyphMethods:ITMP_Glyph{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Glyph as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a2bd0usize)as*mut u8,();
+(TMP_Glyph)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_glyph")]
-impl < __T : ITMP_Glyph > ITMP_GlyphMethods for __T { }
+#[cfg(feature="tm_pro-tmp_glyph")]impl<__T:ITMP_Glyph>ITMP_GlyphMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_glyph")]
-impl TMP_Glyph { pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Glyph as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Glyph as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="tm_pro-tmp_glyph")]impl TMP_Glyph{pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "tm_pro-tmp_glyph")]
-impl TMP_Glyph {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Glyph) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_GlyphMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_glyph")]impl TMP_Glyph{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Glyph), ::core::stringify!(new),));
+ <Self as ITMP_GlyphMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_glyph")]

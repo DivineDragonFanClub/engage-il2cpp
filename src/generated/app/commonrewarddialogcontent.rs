@@ -4,45 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: gamemessagecontent :: { GameMessageContent , IGameMessageContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::gamemessagecontent::{GameMessageContent,IGameMessageContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewarddialogcontent/CommonRewardDialogContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRewardDialogContent")] # [parent (crate :: app :: gamemessagecontent :: GameMessageContent)] pub struct CommonRewardDialogContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewarddialogcontent/CommonRewardDialogContent.md"))]#[::unity2::class(namespace="App",name="CommonRewardDialogContent")]#[parent(crate::app::gamemessagecontent::GameMessageContent)]pub struct CommonRewardDialogContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-commonrewarddialogcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonrewarddialogcontent")]
-impl CommonRewardDialogContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25305e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2530680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2530700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateRelay(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>, crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"] pub fn create_relay (main_item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > > , sub_item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > >) -> crate :: app :: commonrewarddialogcontent :: CommonRewardDialogContent { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relaycompletionawarddata :: RelayCompletionAwardData_CalcResult_Item > , :: unity2 :: OptionalMethod ,) -> crate :: app :: commonrewarddialogcontent :: CommonRewardDialogContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2530780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (main_item_param_list) , :: core :: convert :: Into :: into (sub_item_param_list) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSubOnly(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>, i32)` overload"] pub fn create_sub_only (title_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , sub_item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > > , money : impl :: core :: convert :: Into < i32 >) -> crate :: app :: commonrewarddialogcontent :: CommonRewardDialogContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: commonrewarddialogcontent :: CommonRewardDialogContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2530010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (title_text) , :: core :: convert :: Into :: into (sub_item_param_list) , :: core :: convert :: Into :: into (money) , :: core :: option :: Option :: None) } } } # [doc = "`SetItem(crate::unity_engine::gameobject::GameObject, crate::app::itemdata::ItemData, i32)` overload"] pub fn set_item (root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: app :: itemdata :: ItemData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2530c40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewarddialogcontent")]impl CommonRewardDialogContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25305e0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2530680usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2530700usize)as*mut u8,();
+)}
+}
+#[doc="`CreateRelay(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>, crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]pub fn create_relay(main_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> > ,sub_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> >)->crate::app::commonrewarddialogcontent::CommonRewardDialogContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2530780usize)as*mut u8,crate::app::commonrewarddialogcontent::CommonRewardDialogContent;
+(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(main_item_param_list),(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(sub_item_param_list))}
+}
+#[doc="`CreateSubOnly(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>, i32)` overload"]pub fn create_sub_only(title_text:impl::core::convert::Into< ::unity2::Il2CppString> ,sub_item_param_list:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32> > ,money:impl::core::convert::Into<i32>)->crate::app::commonrewarddialogcontent::CommonRewardDialogContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2530010usize)as*mut u8,crate::app::commonrewarddialogcontent::CommonRewardDialogContent;
+(::unity2::Il2CppString)::core::convert::Into::into(title_text),(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>)::core::convert::Into::into(sub_item_param_list),(i32)::core::convert::Into::into(money))}
+}
+#[doc="`SetItem(crate::unity_engine::gameobject::GameObject, crate::app::itemdata::ItemData, i32)` overload"]pub fn set_item(root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item:impl::core::convert::Into<crate::app::itemdata::ItemData> ,count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2530c40usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root),(crate::app::itemdata::ItemData)::core::convert::Into::into(item),(i32)::core::convert::Into::into(count))}
+}
+}
 
-#[cfg(feature = "app-commonrewarddialogcontent")]
-pub trait ICommonRewardDialogContentMethods : ICommonRewardDialogContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CommonRewardDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2531130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewarddialogcontent")]pub trait ICommonRewardDialogContentMethods:ICommonRewardDialogContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRewardDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2531130usize)as*mut u8,();
+(CommonRewardDialogContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-commonrewarddialogcontent")]
-impl < __T : ICommonRewardDialogContent > ICommonRewardDialogContentMethods for __T { }
+#[cfg(feature="app-commonrewarddialogcontent")]impl<__T:ICommonRewardDialogContent>ICommonRewardDialogContentMethods for __T{}
 
-#[cfg(feature = "app-commonrewarddialogcontent")]
-impl CommonRewardDialogContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_relay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_sub_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-commonrewarddialogcontent")]impl CommonRewardDialogContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_relay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_sub_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-commonrewarddialogcontent")]
-impl CommonRewardDialogContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRewardDialogContent) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRewardDialogContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-commonrewarddialogcontent")]impl CommonRewardDialogContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRewardDialogContent), ::core::stringify!(new),));
+ <Self as ICommonRewardDialogContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-commonrewarddialogcontent")]

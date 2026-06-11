@@ -4,36 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: textreader :: { ITextReader , TextReader }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::textreader::{ITextReader,TextReader}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stringreader/StringReader.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "StringReader")] # [parent (crate :: system :: io :: textreader :: TextReader)] pub struct StringReader {
-# [offset (24)] # [rename (name = "_s")] pub s : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "_pos")] pub pos : i32 ,
-# [offset (36)] # [rename (name = "_length")] pub length : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stringreader/StringReader.md"))]#[::unity2::class(namespace="System.IO",name="StringReader")]#[parent(crate::system::io::textreader::TextReader)]pub struct StringReader{#[offset(24)]#[rename(name="_s")]pub s: ::unity2::Il2CppString, #[offset(32)]#[rename(name="_pos")]pub pos:i32, #[offset(36)]#[rename(name="_length")]pub length:i32,}
 
 }
 
 #[cfg(feature = "system-io-stringreader-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-stringreader")]
-pub trait IStringReaderMethods : IStringReader { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringReader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358bb40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358bc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringReader , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358bc30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`Peek()` overload"] fn peek (self ,) -> i32 { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358bc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read()` overload"] fn read (self ,) -> i32 { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358bce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"] fn read_2 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringReader , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358bd50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`ReadToEnd()` overload"] fn read_to_end (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358bf20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadLine()` overload"] fn read_line (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StringReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358bf80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-stringreader")]pub trait IStringReaderMethods:IStringReader{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,s:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StringReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358bb40usize)as*mut u8,();
+(StringReader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <StringReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358bc20usize)as*mut u8,();
+(StringReader)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StringReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358bc30usize)as*mut u8,();
+(StringReader)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <StringReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358bc70usize)as*mut u8,i32;
+(StringReader)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <StringReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358bce0usize)as*mut u8,i32;
+(StringReader)__receiver)}
+}
+#[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <StringReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358bd50usize)as*mut u8,i32;
+(StringReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StringReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358bf20usize)as*mut u8, ::unity2::Il2CppString;
+(StringReader)__receiver)}
+}
+#[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StringReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358bf80usize)as*mut u8, ::unity2::Il2CppString;
+(StringReader)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-stringreader")]
-impl < __T : IStringReader > IStringReaderMethods for __T { }
+#[cfg(feature="system-io-stringreader")]impl<__T:IStringReader>IStringReaderMethods for __T{}
 
-#[cfg(feature = "system-io-stringreader")]
-impl StringReader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn read_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn read_to_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn read_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="system-io-stringreader")]impl StringReader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn read_to_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn read_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "system-io-stringreader")]
-impl StringReader {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (s : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StringReader) , :: core :: stringify ! (new) ,)) ; < Self as IStringReaderMethods > :: ctor (this , s) ; this }
+#[cfg(feature="system-io-stringreader")]impl StringReader{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(s: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StringReader), ::core::stringify!(new),));
+ <Self as IStringReaderMethods> ::ctor(this,s);
+this}
 }
 
 #[cfg(feature = "system-io-stringreader")]

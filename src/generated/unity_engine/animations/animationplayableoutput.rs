@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animationplayableoutput/AnimationPlayableOutput.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AnimationPlayableOutput {
-    pub m_handle: crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animations/animationplayableoutput/AnimationPlayableOutput.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AnimationPlayableOutput{pub m_handle:crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,}
+impl::unity2::ClassIdentity for AnimationPlayableOutput{const NAMESPACE: &'static str="UnityEngine.Animations";
+const NAME: &'static str="AnimationPlayableOutput";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AnimationPlayableOutput {
-    const NAMESPACE: &'static str = "UnityEngine.Animations";
-
-    const NAME: &'static str = "AnimationPlayableOutput";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AnimationPlayableOutput {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for AnimationPlayableOutput{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,45 @@ impl ::unity2::IlType for AnimationPlayableOutput {
 #[cfg(feature = "unity_engine-animations-animationplayableoutput-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animations-animationplayableoutput")]
-impl AnimationPlayableOutput { # [doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString, crate::unity_engine::animator::Animator)` overload"] pub fn create (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , target : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: Il2CppString , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf3b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`get_Null()` overload"] pub fn get_null () -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf670usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` overload"] pub fn op_implicit (output : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput >) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf4d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (output) , :: core :: option :: Option :: None) } } } # [doc = "`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"] pub fn op_explicit (output : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutput :: PlayableOutput >) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playableoutput :: PlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (output) , :: core :: option :: Option :: None) } } } # [doc = "`InternalSetTarget(*mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, crate::unity_engine::animator::Animator)` overload"] pub fn internal_set_target (target : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf870usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-animations-animationplayableoutput")]impl AnimationPlayableOutput{#[doc="`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString, crate::unity_engine::animator::Animator)` overload"]pub fn create(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,target:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf3b0usize)as*mut u8,crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::animator::Animator)::core::convert::Into::into(target))}
+}
+#[doc="`get_Null()` overload"]pub fn get_null()->crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf670usize)as*mut u8,crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput;
+)}
+}
+#[doc="`op_Implicit(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` overload"]pub fn op_implicit(output:impl::core::convert::Into<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput>)->crate::unity_engine::playables::playableoutput::PlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf4d0usize)as*mut u8,crate::unity_engine::playables::playableoutput::PlayableOutput;
+(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)::core::convert::Into::into(output))}
+}
+#[doc="`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"]pub fn op_explicit(output:impl::core::convert::Into<crate::unity_engine::playables::playableoutput::PlayableOutput>)->crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf820usize)as*mut u8,crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput;
+(crate::unity_engine::playables::playableoutput::PlayableOutput)::core::convert::Into::into(output))}
+}
+#[doc="`InternalSetTarget(*mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, crate::unity_engine::animator::Animator)` overload"]pub fn internal_set_target(target:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf870usize)as*mut u8,();
+(*mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)__out_0.as_mut_ptr(),(crate::unity_engine::animator::Animator)::core::convert::Into::into(target));
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animationplayableoutput")]
-impl AnimationPlayableOutput { # [doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut AnimationPlayableOutput , crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf700usize) as * mut u8) ; __inner (self as * mut AnimationPlayableOutput , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { { let __inner : extern "C" fn (* mut AnimationPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf810usize) as * mut u8) ; __inner (self as * mut AnimationPlayableOutput , :: core :: option :: Option :: None) } } } # [doc = "`SetTarget(crate::unity_engine::animator::Animator)` overload"] pub fn set_target (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> () { unsafe { { let __inner : extern "C" fn (* mut AnimationPlayableOutput , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf7c0usize) as * mut u8) ; __inner (self as * mut AnimationPlayableOutput , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animations-animationplayableoutput")]impl AnimationPlayableOutput{#[doc="`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf700usize)as*mut u8,();
+(*mut AnimationPlayableOutput)self as*mut AnimationPlayableOutput,(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf810usize)as*mut u8,crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle;
+(*mut AnimationPlayableOutput)self as*mut AnimationPlayableOutput)}
+}
+#[doc="`SetTarget(crate::unity_engine::animator::Animator)` overload"]pub fn set_target(&mut self,value:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf7c0usize)as*mut u8,();
+(*mut AnimationPlayableOutput)self as*mut AnimationPlayableOutput,(crate::unity_engine::animator::Animator)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animationplayableoutput")]
-impl AnimationPlayableOutput { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn op_explicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn internal_set_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-animations-animationplayableoutput")]impl AnimationPlayableOutput{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn op_explicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn internal_set_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-animations-animationplayableoutput")]
 #[doc(hidden)]

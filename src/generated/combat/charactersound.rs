@@ -4,48 +4,178 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactersound/CharacterSound.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterSound")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterSound {
-# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [offset (32)] # [rename (name = "m_LoadObj")] pub m_load_obj : crate :: app :: gamesound :: GameSound_ResultLoad ,
-# [offset (40)] # [rename (name = "m_VoiceID")] pub m_voice_id : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_bLoaded")] pub m_b_loaded : bool ,
-# [offset (49)] # [rename (name = "m_bWinVoicePlayed")] pub m_b_win_voice_played : bool ,
-# [offset (61)] # [rename (name = "m_IsVoiceLoad")] pub m_is_voice_load : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/charactersound/CharacterSound.md"))]#[::unity2::class(namespace="Combat",name="CharacterSound")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterSound{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(32)]#[rename(name="m_LoadObj")]pub m_load_obj:crate::app::gamesound::GameSound_ResultLoad, #[offset(40)]#[rename(name="m_VoiceID")]pub m_voice_id: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_bLoaded")]pub m_b_loaded:bool, #[offset(49)]#[rename(name="m_bWinVoicePlayed")]pub m_b_win_voice_played:bool, #[offset(61)]#[rename(name="m_IsVoiceLoad")]pub m_is_voice_load:bool,}
 
 }
 
 #[cfg(feature = "combat-charactersound-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-charactersound")]
-impl CharacterSound { # [doc = "`SelectWinVoice(crate::combat::character::Character)` overload"] pub fn select_win_voice (chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f15c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-charactersound")]impl CharacterSound{#[doc="`SelectWinVoice(crate::combat::character::Character)` overload"]pub fn select_win_voice(chr:impl::core::convert::Into<crate::combat::character::Character>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25f15c0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::combat::character::Character)::core::convert::Into::into(chr))}
+}
+}
 
-#[cfg(feature = "combat-charactersound")]
-pub trait ICharacterSoundMethods : ICharacterSound { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25efef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_VoiceCancelTimes()` overload"] fn get_voice_cancel_times (self ,) -> i32 { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25effb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_VoiceCancelTimes(i32)` overload"] fn set_voice_cancel_times (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25effc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WalkingSpeed()` overload"] fn get_walking_speed (self ,) -> f32 { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25effd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WalkingSpeed(f32)` overload"] fn set_walking_speed (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25effe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsMute()` overload"] fn get_is_mute (self ,) -> bool { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25efff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsMute(bool)` overload"] fn set_is_mute (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyStart()` overload"] fn my_start (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f00b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsVoiceReady()` overload"] fn get_is_voice_ready (self ,) -> bool { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadVoice()` overload"] fn load_voice (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadVoice()` overload"] fn unload_voice (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f06c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Play(::unity2::Il2CppString)` overload"] fn play (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`PlayWithDetail(::unity2::Il2CppString)` overload"] fn play_with_detail (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`PlayVoice(::unity2::Il2CppString)` overload"] fn play_voice (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`PlayVoice_ArenaName(::unity2::Il2CppString)` overload"] fn play_voice_arena_name (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateMobVoiceID()` overload"] fn calculate_mob_voice_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f0840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Footstep()` overload"] fn footstep (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f1040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Swing()` overload"] fn swing (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f1150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Flap()` overload"] fn flap (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f1250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WeaponOpen()` overload"] fn weapon_open (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f12f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WeaponClose()` overload"] fn weapon_close (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f13b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Shoot()` overload"] fn shoot (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f1470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayWinVoice()` overload"] fn play_win_voice (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f1570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDie()` overload"] fn on_die (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f1940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25f1c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-charactersound")]pub trait ICharacterSoundMethods:ICharacterSound{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25efef0usize)as*mut u8,crate::combat::character::Character;
+(CharacterSound)__receiver)}
+}
+#[doc="`get_VoiceCancelTimes()` overload"]fn get_voice_cancel_times(self,)->i32{unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25effb0usize)as*mut u8,i32;
+(CharacterSound)__receiver)}
+}
+#[doc="`set_VoiceCancelTimes(i32)` overload"]fn set_voice_cancel_times(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25effc0usize)as*mut u8,();
+(CharacterSound)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_WalkingSpeed()` overload"]fn get_walking_speed(self,)->f32{unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25effd0usize)as*mut u8,f32;
+(CharacterSound)__receiver)}
+}
+#[doc="`set_WalkingSpeed(f32)` overload"]fn set_walking_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25effe0usize)as*mut u8,();
+(CharacterSound)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsMute()` overload"]fn get_is_mute(self,)->bool{unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25efff0usize)as*mut u8,bool;
+(CharacterSound)__receiver)}
+}
+#[doc="`set_IsMute(bool)` overload"]fn set_is_mute(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0000usize)as*mut u8,();
+(CharacterSound)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0010usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`MyStart()` overload"]fn my_start(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f00b0usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0620usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`get_IsVoiceReady()` overload"]fn get_is_voice_ready(self,)->bool{unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0760usize)as*mut u8,bool;
+(CharacterSound)__receiver)}
+}
+#[doc="`LoadVoice()` overload"]fn load_voice(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0550usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`UnloadVoice()` overload"]fn unload_voice(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f06c0usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`Play(::unity2::Il2CppString)` overload"]fn play(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5fa0usize)as*mut u8,();
+(CharacterSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`PlayWithDetail(::unity2::Il2CppString)` overload"]fn play_with_detail(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0a30usize)as*mut u8,();
+(CharacterSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`PlayVoice(::unity2::Il2CppString)` overload"]fn play_voice(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0be0usize)as*mut u8,();
+(CharacterSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`PlayVoice_ArenaName(::unity2::Il2CppString)` overload"]fn play_voice_arena_name(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0e10usize)as*mut u8,();
+(CharacterSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`CalculateMobVoiceID()` overload"]fn calculate_mob_voice_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f0840usize)as*mut u8, ::unity2::Il2CppString;
+(CharacterSound)__receiver)}
+}
+#[doc="`Footstep()` overload"]fn footstep(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f1040usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`Swing()` overload"]fn swing(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f1150usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`Flap()` overload"]fn flap(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f1250usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`WeaponOpen()` overload"]fn weapon_open(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f12f0usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`WeaponClose()` overload"]fn weapon_close(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f13b0usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`Shoot()` overload"]fn shoot(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f1470usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`PlayWinVoice()` overload"]fn play_win_voice(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f1570usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`OnDie()` overload"]fn on_die(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f1940usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25f1c00usize)as*mut u8,();
+(CharacterSound)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-charactersound")]
-impl < __T : ICharacterSound > ICharacterSoundMethods for __T { }
+#[cfg(feature="combat-charactersound")]impl<__T:ICharacterSound>ICharacterSoundMethods for __T{}
 
-#[cfg(feature = "combat-charactersound")]
-impl CharacterSound { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_voice_cancel_times_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_voice_cancel_times_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_walking_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_walking_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_mute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_is_mute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_voice_ready_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn load_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn unload_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn play_with_detail_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn play_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn play_voice_arena_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn calculate_mob_voice_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn footstep_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn swing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn flap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn weapon_open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn weapon_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn play_win_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn on_die_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn select_win_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } }
+#[cfg(feature="combat-charactersound")]impl CharacterSound{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_voice_cancel_times_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_voice_cancel_times_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_walking_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_walking_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_mute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_is_mute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_voice_ready_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn load_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn unload_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn play_with_detail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn play_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn play_voice_arena_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn calculate_mob_voice_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn footstep_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn swing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn flap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn weapon_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn weapon_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn shoot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn play_win_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn on_die_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn select_win_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+}
 
-#[cfg(feature = "combat-charactersound")]
-impl CharacterSound {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterSound) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterSoundMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-charactersound")]impl CharacterSound{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterSound), ::core::stringify!(new),));
+ <Self as ICharacterSoundMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-charactersound")]

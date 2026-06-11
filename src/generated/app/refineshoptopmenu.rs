@@ -4,203 +4,234 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopEngraveMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopTopMenu.RefineShopTopEngraveMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefineShopTopMenu_RefineShopTopEngraveMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoptopmenu/RefineShopTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefineShopTopMenu_Result2{pub value:i32,}
+impl::unity2::ClassIdentity for RefineShopTopMenu_Result2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RefineShopTopMenu.Result2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RefineShopTopMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RefineShopTopMenu_Result2{pub fn refine()->Self{Self{value:0}
+}
+pub fn engrave()->Self{Self{value:1}
+}
+pub fn exchange()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopRefineMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopTopMenu.RefineShopTopRefineMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefineShopTopMenu_RefineShopTopRefineMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoptopmenu/RefineShopTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineShopTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineShopTopMenu_DecideEventHandler{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoptopmenu/RefineShopTopMenu_Result2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RefineShopTopMenu_Result2  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopExchangeMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopTopMenu.RefineShopTopExchangeMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefineShopTopMenu_RefineShopTopExchangeMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,}
 
 
-impl  ::unity2::ClassIdentity for RefineShopTopMenu_Result2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefineShopTopMenu.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopRefineMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopTopMenu.RefineShopTopRefineMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefineShopTopMenu_RefineShopTopRefineMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,}
 
 
-impl  ::unity2::IlType for RefineShopTopMenu_Result2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoptopmenu/RefineShopTopMenu.md"))]#[::unity2::class(namespace="App",name="RefineShopTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefineShopTopMenu{}
 
 
-impl  RefineShopTopMenu_Result2  {
-    pub fn refine() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn engrave() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn exchange() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefineShopTopMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopTopMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefineShopTopMenu_DecideEventHandler {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopExchangeMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopTopMenu.RefineShopTopExchangeMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefineShopTopMenu_RefineShopTopExchangeMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopEngraveMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopTopMenu.RefineShopTopEngraveMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefineShopTopMenu_RefineShopTopEngraveMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-refineshoptopmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods : IRefineShopTopMenu_RefineShopTopEngraveMenuItem { # [doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"] fn ctor (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopEngraveMenuItem , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopEngraveMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopEngraveMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl < __T : IRefineShopTopMenu_RefineShopTopEngraveMenuItem > IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods for __T { }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopEngraveMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopEngraveMenuItem {
-# [doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"] pub fn new (decide_event_handler : crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopTopMenu_RefineShopTopEngraveMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods > :: ctor (this , decide_event_handler) ; this }
+#[cfg(feature="app-refineshoptopmenu")]pub trait IRefineShopTopMenu_DecideEventHandlerMethods:IRefineShopTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afdd50usize)as*mut u8,();
+(RefineShopTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2>)->(){unsafe{let __receiver= <RefineShopTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afdd70usize)as*mut u8,();
+(RefineShopTopMenu_DecideEventHandler)__receiver,(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)::core::convert::Into::into(result))}
+}
 }
 
-#[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods : IRefineShopTopMenu_RefineShopTopRefineMenuItem { # [doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"] fn ctor (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopRefineMenuItem , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopRefineMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopRefineMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshoptopmenu")]impl<__T:IRefineShopTopMenu_DecideEventHandler>IRefineShopTopMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-refineshoptopmenu")]
-impl < __T : IRefineShopTopMenu_RefineShopTopRefineMenuItem > IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods for __T { }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopRefineMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
-# [doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"] pub fn new (decide_event_handler : crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopTopMenu_RefineShopTopRefineMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods > :: ctor (this , decide_event_handler) ; this }
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::refineshoptopmenu::RefineShopTopMenu_Result2, crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , initial_selected : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b5a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (initial_selected) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenuMethods : IRefineShopTopMenu { # [doc = "`get_m_DecideEventHandler()` overload"] fn get_m_decide_event_handler (self ,) -> crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler { unsafe { let __receiver = < RefineShopTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b59f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_DecideEventHandler(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"] fn set_m_decide_event_handler (self , value : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineShopTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b5a00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::refineshoptopmenu::RefineShopTopMenu_Result2, crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: shoptopmenucontent :: ShopTopMenuContent > , initial_selected : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineShopTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: shoptopmenucontent :: ShopTopMenuContent , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b5c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (initial_selected) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineShopTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b5cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineShopTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b5d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl < __T : IRefineShopTopMenu > IRefineShopTopMenuMethods for __T { }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu { pub fn get_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::refineshoptopmenu::RefineShopTopMenu_Result2, crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: shoptopmenucontent :: ShopTopMenuContent , initial_selected : crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 , decide_event_handler : crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopTopMenu) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopTopMenuMethods > :: ctor (this , menu_item_list , menu_content , initial_selected , decide_event_handler) ; this }
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopTopMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRefineShopTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenu_DecideEventHandlerMethods : IRefineShopTopMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefineShopTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afdd50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 >) -> () { unsafe { let __receiver = < RefineShopTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_DecideEventHandler , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afdd70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl < __T : IRefineShopTopMenu_DecideEventHandler > IRefineShopTopMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopTopMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopTopMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refineshoptopmenu")]pub trait IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods:IRefineShopTopMenu_RefineShopTopExchangeMenuItem{#[doc="`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe160usize)as*mut u8,();
+(RefineShopTopMenu_RefineShopTopExchangeMenuItem)__receiver,(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe1a0usize)as*mut u8, ::unity2::Il2CppString;
+(RefineShopTopMenu_RefineShopTopExchangeMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe220usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineShopTopMenu_RefineShopTopExchangeMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods : IRefineShopTopMenu_RefineShopTopExchangeMenuItem { # [doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"] fn ctor (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopExchangeMenuItem , crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopExchangeMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopTopMenu_RefineShopTopExchangeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afe220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshoptopmenu")]impl<__T:IRefineShopTopMenu_RefineShopTopExchangeMenuItem>IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refineshoptopmenu")]
-impl < __T : IRefineShopTopMenu_RefineShopTopExchangeMenuItem > IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods for __T { }
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu_RefineShopTopExchangeMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopExchangeMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu_RefineShopTopExchangeMenuItem{#[doc="`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopTopMenu_RefineShopTopExchangeMenuItem), ::core::stringify!(new),));
+ <Self as IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
+}
 
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopExchangeMenuItem {
-# [doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"] pub fn new (decide_event_handler : crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopTopMenu_RefineShopTopExchangeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods > :: ctor (this , decide_event_handler) ; this }
+#[cfg(feature="app-refineshoptopmenu")]pub trait IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods:IRefineShopTopMenu_RefineShopTopRefineMenuItem{#[doc="`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopRefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe250usize)as*mut u8,();
+(RefineShopTopMenu_RefineShopTopRefineMenuItem)__receiver,(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopRefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe290usize)as*mut u8, ::unity2::Il2CppString;
+(RefineShopTopMenu_RefineShopTopRefineMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopRefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe310usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineShopTopMenu_RefineShopTopRefineMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]impl<__T:IRefineShopTopMenu_RefineShopTopRefineMenuItem>IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods for __T{}
+
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu_RefineShopTopRefineMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu_RefineShopTopRefineMenuItem{#[doc="`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopTopMenu_RefineShopTopRefineMenuItem), ::core::stringify!(new),));
+ <Self as IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::refineshoptopmenu::RefineShopTopMenu_Result2, crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b5a10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]pub trait IRefineShopTopMenuMethods:IRefineShopTopMenu{#[doc="`get_m_DecideEventHandler()` overload"]fn get_m_decide_event_handler(self,)->crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler{unsafe{let __receiver= <RefineShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b59f0usize)as*mut u8,crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler;
+(RefineShopTopMenu)__receiver)}
+}
+#[doc="`set_m_DecideEventHandler(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]fn set_m_decide_event_handler(self,value:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b5a00usize)as*mut u8,();
+(RefineShopTopMenu)__receiver,(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::refineshoptopmenu::RefineShopTopMenu_Result2, crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::shoptopmenucontent::ShopTopMenuContent> ,initial_selected:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b5c50usize)as*mut u8,();
+(RefineShopTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::shoptopmenucontent::ShopTopMenuContent)::core::convert::Into::into(menu_content),(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b5cf0usize)as*mut u8, ::unity2::Il2CppString;
+(RefineShopTopMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b5d40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineShopTopMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]impl<__T:IRefineShopTopMenu>IRefineShopTopMenuMethods for __T{}
+
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu{pub fn get_m_decide_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_decide_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::refineshoptopmenu::RefineShopTopMenu_Result2, crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::shoptopmenucontent::ShopTopMenuContent,initial_selected:crate::app::refineshoptopmenu::RefineShopTopMenu_Result2,decide_event_handler:crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopTopMenu), ::core::stringify!(new),));
+ <Self as IRefineShopTopMenuMethods> ::ctor(this,menu_item_list,menu_content,initial_selected,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]pub trait IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods:IRefineShopTopMenu_RefineShopTopEngraveMenuItem{#[doc="`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopEngraveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe070usize)as*mut u8,();
+(RefineShopTopMenu_RefineShopTopEngraveMenuItem)__receiver,(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopEngraveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe0b0usize)as*mut u8, ::unity2::Il2CppString;
+(RefineShopTopMenu_RefineShopTopEngraveMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopTopMenu_RefineShopTopEngraveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe130usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineShopTopMenu_RefineShopTopEngraveMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]impl<__T:IRefineShopTopMenu_RefineShopTopEngraveMenuItem>IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods for __T{}
+
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu_RefineShopTopEngraveMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-refineshoptopmenu")]impl RefineShopTopMenu_RefineShopTopEngraveMenuItem{#[doc="`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopTopMenu_RefineShopTopEngraveMenuItem), ::core::stringify!(new),));
+ <Self as IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineShopTopMenu_RefineShopTopEngraveMenuItem;
-    pub use super::IRefineShopTopMenu_RefineShopTopEngraveMenuItem;
-    pub use super::IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods;
-    pub use super::RefineShopTopMenu_RefineShopTopRefineMenuItem;
-    pub use super::IRefineShopTopMenu_RefineShopTopRefineMenuItem;
-    pub use super::IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods;
     pub use super::RefineShopTopMenu_Result2;
-    pub use super::RefineShopTopMenu;
-    pub use super::IRefineShopTopMenu;
-    pub use super::IRefineShopTopMenuMethods;
     pub use super::RefineShopTopMenu_DecideEventHandler;
     pub use super::IRefineShopTopMenu_DecideEventHandler;
     pub use super::IRefineShopTopMenu_DecideEventHandlerMethods;
     pub use super::RefineShopTopMenu_RefineShopTopExchangeMenuItem;
     pub use super::IRefineShopTopMenu_RefineShopTopExchangeMenuItem;
     pub use super::IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods;
+    pub use super::RefineShopTopMenu_RefineShopTopRefineMenuItem;
+    pub use super::IRefineShopTopMenu_RefineShopTopRefineMenuItem;
+    pub use super::IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods;
+    pub use super::RefineShopTopMenu;
+    pub use super::IRefineShopTopMenu;
+    pub use super::IRefineShopTopMenuMethods;
+    pub use super::RefineShopTopMenu_RefineShopTopEngraveMenuItem;
+    pub use super::IRefineShopTopMenu_RefineShopTopEngraveMenuItem;
+    pub use super::IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

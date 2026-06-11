@@ -4,18 +4,18 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: core_lib :: io :: fileuserdatabase :: { FileUserDataBase , IFileUserDataBase }
- ;
- use crate :: moon_sharp :: interpreter :: core_lib :: io :: streamfileuserdatabase :: { IStreamFileUserDataBase , StreamFileUserDataBase }
- ;
- use crate :: moon_sharp :: interpreter :: refidobject :: { IRefIdObject , RefIdObject }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::{FileUserDataBase,IFileUserDataBase}
+;
+use crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::{IStreamFileUserDataBase,StreamFileUserDataBase}
+;
+use crate::moon_sharp::interpreter::refidobject::{IRefIdObject,RefIdObject}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/io/fileuserdata/FileUserData.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.CoreLib.IO" , name = "FileUserData")] # [parent (crate :: moon_sharp :: interpreter :: core_lib :: io :: streamfileuserdatabase :: StreamFileUserDataBase)] pub struct FileUserData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/core_lib/io/fileuserdata/FileUserData.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.CoreLib.IO",name="FileUserData")]#[parent(crate::moon_sharp::interpreter::core_lib::io::streamfileuserdatabase::StreamFileUserDataBase)]pub struct FileUserData{}
 
 }
 

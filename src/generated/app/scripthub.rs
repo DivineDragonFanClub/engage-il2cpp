@@ -4,35 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scripthub/ScriptHub.md"))] # [:: unity2 :: class (namespace = "App" , name = "ScriptHub")] # [parent (crate :: app :: scriptutil :: ScriptUtil)] pub struct ScriptHub {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scripthub/ScriptHub.md"))]#[::unity2::class(namespace="App",name="ScriptHub")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct ScriptHub{}
 
 }
 
 #[cfg(feature = "app-scripthub-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-scripthub")]
-impl ScriptHub { # [doc = "`HubNextChapter(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_next_chapter (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecb500usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubNextGmap(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_next_gmap (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecb580usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubNextMap(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_next_map (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecb590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubDisableLocator(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_disable_locator (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecb630usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubIsCompleteChapter(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_is_complete_chapter (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecb6d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubIsCondition(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_is_condition (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecb8f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubIsFacilityComplete(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_is_facility_complete (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecb9e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubChangeTalk(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_change_talk (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecbb10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubIsEnabledLocator(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_is_enabled_locator (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecbc10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`CompleteEncountMap(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn complete_encount_map (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecbd30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`HubIsEncountMap(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn hub_is_encount_map (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecbdb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`Regist(crate::app::eventscript::EventScript)` overload"] pub fn regist (script : impl :: core :: convert :: Into < crate :: app :: eventscript :: EventScript >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: eventscript :: EventScript , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecbeb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (script) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-scripthub")]impl ScriptHub{#[doc="`HubNextChapter(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_next_chapter(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecb500usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubNextGmap(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_next_gmap(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecb580usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubNextMap(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_next_map(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecb590usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubDisableLocator(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_disable_locator(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecb630usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubIsCompleteChapter(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_is_complete_chapter(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecb6d0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubIsCondition(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_is_condition(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecb8f0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubIsFacilityComplete(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_is_facility_complete(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecb9e0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubChangeTalk(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_change_talk(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecbb10usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubIsEnabledLocator(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_is_enabled_locator(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecbc10usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`CompleteEncountMap(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn complete_encount_map(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecbd30usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`HubIsEncountMap(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn hub_is_encount_map(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecbdb0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`Regist(crate::app::eventscript::EventScript)` overload"]pub fn regist(script:impl::core::convert::Into<crate::app::eventscript::EventScript>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ecbeb0usize)as*mut u8,();
+(crate::app::eventscript::EventScript)::core::convert::Into::into(script))}
+}
+}
 
-#[cfg(feature = "app-scripthub")]
-pub trait IScriptHubMethods : IScriptHub { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScriptHub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptHub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ecc210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-scripthub")]pub trait IScriptHubMethods:IScriptHub{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptHub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ecc210usize)as*mut u8,();
+(ScriptHub)__receiver)}
+}
+}
 
-#[cfg(feature = "app-scripthub")]
-impl < __T : IScriptHub > IScriptHubMethods for __T { }
+#[cfg(feature="app-scripthub")]impl<__T:IScriptHub>IScriptHubMethods for __T{}
 
-#[cfg(feature = "app-scripthub")]
-impl ScriptHub { pub fn hub_next_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn hub_next_gmap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn hub_next_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn hub_disable_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn hub_is_complete_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn hub_is_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn hub_is_facility_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn hub_change_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn hub_is_enabled_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn complete_encount_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn hub_is_encount_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn regist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptHub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-scripthub")]impl ScriptHub{pub fn hub_next_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn hub_next_gmap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hub_next_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hub_disable_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn hub_is_complete_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn hub_is_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn hub_is_facility_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn hub_change_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn hub_is_enabled_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn complete_encount_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn hub_is_encount_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn regist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-scripthub")]
-impl ScriptHub {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptHub) , :: core :: stringify ! (new) ,)) ; < Self as IScriptHubMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-scripthub")]impl ScriptHub{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptHub), ::core::stringify!(new),));
+ <Self as IScriptHubMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-scripthub")]

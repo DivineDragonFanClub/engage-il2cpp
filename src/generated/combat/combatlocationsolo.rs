@@ -4,39 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecombatlocation :: { BaseCombatLocation , IBaseCombatLocation }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecombatlocation::{BaseCombatLocation,IBaseCombatLocation}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatlocationsolo/CombatLocationSolo.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatLocationSolo")] # [parent (crate :: combat :: basecombatlocation :: BaseCombatLocation)] pub struct CombatLocationSolo {
-# [offset (140)] # [rename (name = "m_TargetSide")] pub m_target_side : i32 ,
-# [offset (144)] # [rename (name = "m_IsBigDragon")] pub m_is_big_dragon : bool ,
-# [offset (145)] # [rename (name = "m_IsLastBoss")] pub m_is_last_boss : bool ,
-# [offset (146)] # [rename (name = "m_IsEnemy")] pub m_is_enemy : bool ,
-# [offset (147)] # [rename (name = "m_IsReCalc")] pub m_is_re_calc : bool ,
-# [offset (156)] # [rename (name = "m_IsDLCLastBoss")] pub m_is_dlc_last_boss : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatlocationsolo/CombatLocationSolo.md"))]#[::unity2::class(namespace="Combat",name="CombatLocationSolo")]#[parent(crate::combat::basecombatlocation::BaseCombatLocation)]pub struct CombatLocationSolo{#[offset(140)]#[rename(name="m_TargetSide")]pub m_target_side:i32, #[offset(144)]#[rename(name="m_IsBigDragon")]pub m_is_big_dragon:bool, #[offset(145)]#[rename(name="m_IsLastBoss")]pub m_is_last_boss:bool, #[offset(146)]#[rename(name="m_IsEnemy")]pub m_is_enemy:bool, #[offset(147)]#[rename(name="m_IsReCalc")]pub m_is_re_calc:bool, #[offset(156)]#[rename(name="m_IsDLCLastBoss")]pub m_is_dlc_last_boss:bool,}
 
 }
 
 #[cfg(feature = "combat-combatlocationsolo-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatlocationsolo")]
-pub trait ICombatLocationSoloMethods : ICombatLocationSolo { # [doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"] fn ctor (self , rec : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < CombatLocationSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationSolo , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29200c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rec) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"] fn setup (self , gs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > >) -> () { unsafe { let __receiver = < CombatLocationSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationSolo , :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2920140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gs) , :: core :: option :: Option :: None) } } } # [doc = "`get_RoughPosCount()` overload"] fn get_rough_pos_count (self ,) -> i32 { unsafe { let __receiver = < CombatLocationSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationSolo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29202d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRoughPos(i32)` overload"] fn set_rough_pos (self , try_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationSolo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29202e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (try_count) , :: core :: option :: Option :: None) } } } # [doc = "`get_PatternCount()` overload"] fn get_pattern_count (self ,) -> i32 { unsafe { let __receiver = < CombatLocationSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationSolo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2920cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetBattlePatern(i32)` overload"] fn set_battle_patern (self , pattern : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationSolo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2920cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pattern) , :: core :: option :: Option :: None) } } } # [doc = "`CalcLocation()` overload"] fn calc_location (self ,) -> () { unsafe { let __receiver = < CombatLocationSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationSolo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29210d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LocateEmblem(i32, crate::combat::character::Character, crate::combat::character::Character, crate::combat::locationparams::LocationParams_LocateStyle)` overload"] fn locate_emblem (self , master_side : impl :: core :: convert :: Into < i32 > , master : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , emblem : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , locate_style : impl :: core :: convert :: Into < crate :: combat :: locationparams :: LocationParams_LocateStyle >) -> () { unsafe { let __receiver = < CombatLocationSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationSolo , i32 , crate :: combat :: character :: Character , crate :: combat :: character :: Character , crate :: combat :: locationparams :: LocationParams_LocateStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2921990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (master_side) , :: core :: convert :: Into :: into (master) , :: core :: convert :: Into :: into (emblem) , :: core :: convert :: Into :: into (locate_style) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatlocationsolo")]pub trait ICombatLocationSoloMethods:ICombatLocationSolo{#[doc="`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]fn ctor(self,rec:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->(){unsafe{let __receiver= <CombatLocationSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29200c0usize)as*mut u8,();
+(CombatLocationSolo)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(rec))}
+}
+#[doc="`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]fn setup(self,gs:impl::core::convert::Into< ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> >)->(){unsafe{let __receiver= <CombatLocationSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2920140usize)as*mut u8,();
+(CombatLocationSolo)__receiver,(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)::core::convert::Into::into(gs))}
+}
+#[doc="`get_RoughPosCount()` overload"]fn get_rough_pos_count(self,)->i32{unsafe{let __receiver= <CombatLocationSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29202d0usize)as*mut u8,i32;
+(CombatLocationSolo)__receiver)}
+}
+#[doc="`SetRoughPos(i32)` overload"]fn set_rough_pos(self,try_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29202e0usize)as*mut u8,();
+(CombatLocationSolo)__receiver,(i32)::core::convert::Into::into(try_count))}
+}
+#[doc="`get_PatternCount()` overload"]fn get_pattern_count(self,)->i32{unsafe{let __receiver= <CombatLocationSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2920cb0usize)as*mut u8,i32;
+(CombatLocationSolo)__receiver)}
+}
+#[doc="`SetBattlePatern(i32)` overload"]fn set_battle_patern(self,pattern:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2920cc0usize)as*mut u8,();
+(CombatLocationSolo)__receiver,(i32)::core::convert::Into::into(pattern))}
+}
+#[doc="`CalcLocation()` overload"]fn calc_location(self,)->(){unsafe{let __receiver= <CombatLocationSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29210d0usize)as*mut u8,();
+(CombatLocationSolo)__receiver)}
+}
+#[doc="`LocateEmblem(i32, crate::combat::character::Character, crate::combat::character::Character, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]fn locate_emblem(self,master_side:impl::core::convert::Into<i32> ,master:impl::core::convert::Into<crate::combat::character::Character> ,emblem:impl::core::convert::Into<crate::combat::character::Character> ,locate_style:impl::core::convert::Into<crate::combat::locationparams::LocationParams_LocateStyle>)->(){unsafe{let __receiver= <CombatLocationSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2921990usize)as*mut u8,();
+(CombatLocationSolo)__receiver,(i32)::core::convert::Into::into(master_side),(crate::combat::character::Character)::core::convert::Into::into(master),(crate::combat::character::Character)::core::convert::Into::into(emblem),(crate::combat::locationparams::LocationParams_LocateStyle)::core::convert::Into::into(locate_style))}
+}
+}
 
-#[cfg(feature = "combat-combatlocationsolo")]
-impl < __T : ICombatLocationSolo > ICombatLocationSoloMethods for __T { }
+#[cfg(feature="combat-combatlocationsolo")]impl<__T:ICombatLocationSolo>ICombatLocationSoloMethods for __T{}
 
-#[cfg(feature = "combat-combatlocationsolo")]
-impl CombatLocationSolo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_rough_pos_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_rough_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_pattern_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_battle_patern_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn locate_emblem_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="combat-combatlocationsolo")]impl CombatLocationSolo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_rough_pos_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rough_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_pattern_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_battle_patern_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn locate_emblem_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "combat-combatlocationsolo")]
-impl CombatLocationSolo {
-# [doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"] pub fn new (rec : crate :: combat :: combatrecord :: CombatRecord) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatLocationSolo) , :: core :: stringify ! (new) ,)) ; < Self as ICombatLocationSoloMethods > :: ctor (this , rec) ; this }
+#[cfg(feature="combat-combatlocationsolo")]impl CombatLocationSolo{#[doc="`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"]pub fn new(rec:crate::combat::combatrecord::CombatRecord)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatLocationSolo), ::core::stringify!(new),));
+ <Self as ICombatLocationSoloMethods> ::ctor(this,rec);
+this}
 }
 
 #[cfg(feature = "combat-combatlocationsolo")]

@@ -4,391 +4,148 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData.md"))] # [:: unity2 :: class (namespace = "App" , name = "PersonData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: persondata :: PersonData >)] pub struct PersonData {
-# [static_field] # [rename (name = "s_Veyre")] pub s_veyre : crate :: app :: persondata :: PersonData ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/persondata/PersonData_Ranks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PersonData_Ranks{pub value:i32,}
+impl::unity2::ClassIdentity for PersonData_Ranks{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PersonData.Ranks";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PersonData_Ranks{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PersonData_Ranks{pub fn none()->Self{Self{value:0}
+}
+pub fn rank1()->Self{Self{value:1}
+}
+pub fn rank2()->Self{Self{value:2}
+}
+pub fn rank3()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Ranks.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PersonData_Ranks  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/persondata/PersonData_Timing.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PersonData_Timing{pub value:i32,}
+impl::unity2::ClassIdentity for PersonData_Timing{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PersonData.Timing";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PersonData_Timing{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PersonData_Timing{pub fn none()->Self{Self{value:0}
+}
+pub fn begin()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
+pub fn chapter()->Self{Self{value:3}
+}
+pub fn eternal()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for PersonData_Ranks  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/persondata/PersonData.md"))]#[::unity2::class(namespace="App",name="PersonData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::persondata::PersonData>)]pub struct PersonData{#[static_field]#[rename(name="s_Veyre")]pub s_veyre:crate::app::persondata::PersonData,}
 
-    const NAME: &'static str = "PersonData.Ranks";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/persondata/PersonData_Colors.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PersonData_Colors{pub value:i32,}
+impl::unity2::ClassIdentity for PersonData_Colors{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PersonData.Colors";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PersonData_Colors{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PersonData_Colors{pub fn none()->Self{Self{value:0}
+}
+pub fn red()->Self{Self{value:1}
+}
+pub fn green()->Self{Self{value:2}
+}
+pub fn blue()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::IlType for PersonData_Ranks  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/persondata/PersonData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PersonData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for PersonData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PersonData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PersonData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PersonData_Flags{pub fn candidate_for_friend()->Self{Self{value:1}
+}
+pub fn belong_name()->Self{Self{value:2}
+}
+pub fn talent()->Self{Self{value:4}
+}
+pub fn ignore_job_skill_remove()->Self{Self{value:8}
+}
+pub fn dark_warp()->Self{Self{value:16}
+}
+pub fn dress_reverse()->Self{Self{value:32}
+}
+pub fn simple_ui()->Self{Self{value:64}
+}
+pub fn derived_hero()->Self{Self{value:128}
+}
+pub fn summon_warp()->Self{Self{value:256}
+}
 }
 
 
-impl  PersonData_Ranks  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/persondata/PersonData_FlagField.md"))]#[::unity2::class(namespace="App",name="PersonData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::persondata::PersonData_Flags>)]pub struct PersonData_FlagField{}
 
 
-    pub fn rank1() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn rank2() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn rank3() -> Self {
-        Self { value: 3 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/persondata/PersonData_Country.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PersonData_Country{pub value:i32,}
+impl::unity2::ClassIdentity for PersonData_Country{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PersonData.Country";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PersonData_Flags  {
-    pub value: i32,
+impl::unity2::IlType for PersonData_Country{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for PersonData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl PersonData_Country{pub fn free()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for PersonData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn lithos()->Self{Self{value:1}
 }
-
-
-impl  PersonData_Flags  {
-    pub fn candidate_for_friend() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn belong_name() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn talent() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn ignore_job_skill_remove() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn dark_warp() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn dress_reverse() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn simple_ui() -> Self {
-        Self { value: 64 }
-
-    }
-
-
-    pub fn derived_hero() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn summon_warp() -> Self {
-        Self { value: 256 }
-
-    }
-
+pub fn filene()->Self{Self{value:2}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Colors.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PersonData_Colors  {
-    pub value: i32,
+pub fn brodia()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::ClassIdentity for PersonData_Colors  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Colors";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn ircion()->Self{Self{value:4}
 }
-
-
-impl  ::unity2::IlType for PersonData_Colors  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn solum()->Self{Self{value:5}
 }
-
-
-impl  PersonData_Colors  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn red() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn green() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn blue() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn gradlon()->Self{Self{value:6}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "PersonData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: persondata :: PersonData_Flags >)] pub struct PersonData_FlagField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Country.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PersonData_Country  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for PersonData_Country  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Country";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for PersonData_Country  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PersonData_Country  {
-    pub fn free() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn lithos() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn filene() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn brodia() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn ircion() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn solum() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn gradlon() -> Self {
-        Self { value: 6 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Timing.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PersonData_Timing  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for PersonData_Timing  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Timing";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for PersonData_Timing  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PersonData_Timing  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn begin() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn chapter() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn eternal() -> Self {
-        Self { value: 4 }
-
-    }
-
 }
 
 }
@@ -396,53 +153,782 @@ impl  PersonData_Timing  {
 #[cfg(feature = "app-persondata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-persondata")]
-impl PersonData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2, crate::app::persondata::PersonData)` overload"] pub fn serialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> crate :: app :: persondata :: PersonData { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a3b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`TrySerialize(crate::app::stream_2::Stream_2, crate::app::persondata::PersonData)` overload"] pub fn try_serialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`TryDeserialize(crate::app::stream_2::Stream_2)` overload"] pub fn try_deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> crate :: app :: persondata :: PersonData { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a4b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`IsVeyre(crate::app::persondata::PersonData)` overload"] pub fn is_veyre (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-persondata")]
-pub trait IPersonDataMethods : IPersonData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f259f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Pid()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pid(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Jid()` overload"] fn get_jid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Jid(::unity2::Il2CppString)` overload"] fn set_jid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25c70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Fid()` overload"] fn get_fid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Fid(::unity2::Il2CppString)` overload"] fn set_fid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25c90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Aid()` overload"] fn get_aid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Aid(::unity2::Il2CppString)` overload"] fn set_aid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25cb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Help()` overload"] fn get_help (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Help(::unity2::Il2CppString)` overload"] fn set_help (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Die()` overload"] fn get_die (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Die(::unity2::Il2CppString)` overload"] fn set_die (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Belong()` overload"] fn get_belong (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Belong(::unity2::Il2CppString)` overload"] fn set_belong (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitIconID()` overload"] fn get_unit_icon_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_UnitIconID(::unity2::Il2CppString)` overload"] fn set_unit_icon_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Age()` overload"] fn get_age (self ,) -> i16 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> i16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Age(i16)` overload"] fn set_age (self , value : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BirthMonth()` overload"] fn get_birth_month (self ,) -> u8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BirthMonth(u8)` overload"] fn set_birth_month (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BirthDay()` overload"] fn get_birth_day (self ,) -> u8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BirthDay(u8)` overload"] fn set_birth_day (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Gender()` overload"] fn get_gender (self ,) -> crate :: app :: gender :: Gender { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: gender :: Gender = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Gender(crate::app::gender::Gender)` overload"] fn set_gender (self , value : impl :: core :: convert :: Into < crate :: app :: gender :: Gender >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: gender :: Gender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> u8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(u8)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_InternalLevel()` overload"] fn get_internal_level (self ,) -> i8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InternalLevel(i8)` overload"] fn set_internal_level (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AutoGrowOffsetN()` overload"] fn get_auto_grow_offset_n (self ,) -> i8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AutoGrowOffsetN(i8)` overload"] fn set_auto_grow_offset_n (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AutoGrowOffsetH()` overload"] fn get_auto_grow_offset_h (self ,) -> i8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AutoGrowOffsetH(i8)` overload"] fn set_auto_grow_offset_h (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AutoGrowOffsetL()` overload"] fn get_auto_grow_offset_l (self ,) -> i8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AutoGrowOffsetL(i8)` overload"] fn set_auto_grow_offset_l (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AssetForce()` overload"] fn get_asset_force (self ,) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AssetForce(crate::app::force::Force_Type)` overload"] fn set_asset_force (self , value : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SupportCategory()` overload"] fn get_support_category (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SupportCategory(::unity2::Il2CppString)` overload"] fn set_support_category (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SkillPoint()` overload"] fn get_skill_point (self ,) -> i32 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SkillPoint(i32)` overload"] fn set_skill_point (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BmapSize()` overload"] fn get_bmap_size (self ,) -> u8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BmapSize(u8)` overload"] fn set_bmap_size (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Items()` overload"] fn get_items (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Items(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_items (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DropItem()` overload"] fn get_drop_item (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DropItem(::unity2::Il2CppString)` overload"] fn set_drop_item (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DropRatio()` overload"] fn get_drop_ratio (self ,) -> f32 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DropRatio(f32)` overload"] fn set_drop_ratio (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: persondata :: PersonData_FlagField { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::persondata::PersonData_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_FlagField >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: persondata :: PersonData_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Aptitude()` overload"] fn get_aptitude (self ,) -> crate :: app :: weaponmask :: WeaponMask { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Aptitude(crate::app::weaponmask::WeaponMask)` overload"] fn set_aptitude (self , value : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SubAptitude()` overload"] fn get_sub_aptitude (self ,) -> crate :: app :: weaponmask :: WeaponMask { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SubAptitude(crate::app::weaponmask::WeaponMask)` overload"] fn set_sub_aptitude (self , value : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OffsetN()` overload"] fn get_offset_n (self ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OffsetN(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn set_offset_n (self , value : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OffsetH()` overload"] fn get_offset_h (self ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OffsetH(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn set_offset_h (self , value : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25fd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OffsetL()` overload"] fn get_offset_l (self ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OffsetL(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn set_offset_l (self , value : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Limit()` overload"] fn get_limit (self ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Limit(crate::app::capabilitysbyte::CapabilitySbyte)` overload"] fn set_limit (self , value : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Grow()` overload"] fn get_grow (self ,) -> crate :: app :: capability :: Capability { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capability :: Capability = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Grow(crate::app::capability::Capability)` overload"] fn set_grow (self , value : impl :: core :: convert :: Into < crate :: app :: capability :: Capability >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: capability :: Capability , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CommonSids()` overload"] fn get_common_sids (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CommonSids(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_common_sids (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NormalSids()` overload"] fn get_normal_sids (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NormalSids(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_normal_sids (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HardSids()` overload"] fn get_hard_sids (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HardSids(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_hard_sids (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LunaticSids()` overload"] fn get_lunatic_sids (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f260a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LunaticSids(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_lunatic_sids (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f260b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngageSid()` overload"] fn get_engage_sid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f260c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageSid(::unity2::Il2CppString)` overload"] fn set_engage_sid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f260d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TalkPauseDelayMin()` overload"] fn get_talk_pause_delay_min (self ,) -> f32 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f260e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TalkPauseDelayMin(f32)` overload"] fn set_talk_pause_delay_min (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f260f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TalkPauseDelayMax()` overload"] fn get_talk_pause_delay_max (self ,) -> f32 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TalkPauseDelayMax(f32)` overload"] fn set_talk_pause_delay_max (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TalkPauseSpeed()` overload"] fn get_talk_pause_speed (self ,) -> f32 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TalkPauseSpeed(f32)` overload"] fn set_talk_pause_speed (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CombatBgm()` overload"] fn get_combat_bgm (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CombatBgm(::unity2::Il2CppString)` overload"] fn set_combat_bgm (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AsciiName()` overload"] fn get_ascii_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AsciiName(::unity2::Il2CppString)` overload"] fn set_ascii_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LinkGod()` overload"] fn get_link_god (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LinkGod(crate::app::goddata::GodData)` overload"] fn set_link_god (self , value : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Attrs()` overload"] fn get_attrs (self ,) -> crate :: app :: skilldata :: SkillData_Attrs { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Attrs = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f261a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Attrs(crate::app::skilldata::SkillData_Attrs)` overload"] fn set_attrs (self , value : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData_Attrs >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: skilldata :: SkillData_Attrs , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f261b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExistDieCid()` overload"] fn get_exist_die_cid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f261c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExistDieCid(::unity2::Il2CppString)` overload"] fn set_exist_die_cid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f261d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExistDieTiming()` overload"] fn get_exist_die_timing (self ,) -> crate :: app :: persondata :: PersonData_Timing { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_Timing = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f261e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExistDieTiming(crate::app::persondata::PersonData_Timing)` overload"] fn set_exist_die_timing (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Timing >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: persondata :: PersonData_Timing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f261f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Hometown()` overload"] fn get_hometown (self ,) -> crate :: app :: persondata :: PersonData_Country { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_Country = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Hometown(crate::app::persondata::PersonData_Country)` overload"] fn set_hometown (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Country >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: persondata :: PersonData_Country , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NetRankingIndex()` overload"] fn get_net_ranking_index (self ,) -> u8 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NetRankingIndex(u8)` overload"] fn set_net_ranking_index (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NotLvUpTalkPids()` overload"] fn get_not_lv_up_talk_pids (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NotLvUpTalkPids(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_not_lv_up_talk_pids (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SummonColor()` overload"] fn get_summon_color (self ,) -> crate :: app :: persondata :: PersonData_Colors { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_Colors = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SummonColor(crate::app::persondata::PersonData_Colors)` overload"] fn set_summon_color (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Colors >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: persondata :: PersonData_Colors , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SummonRank()` overload"] fn get_summon_rank (self ,) -> crate :: app :: persondata :: PersonData_Ranks { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_Ranks = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SummonRank(crate::app::persondata::PersonData_Ranks)` overload"] fn set_summon_rank (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Ranks >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: persondata :: PersonData_Ranks , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SummonGod()` overload"] fn get_summon_god (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f262a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SummonGod(::unity2::Il2CppString)` overload"] fn set_summon_god (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f262b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SummonRate()` overload"] fn get_summon_rate (self ,) -> i32 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f262c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SummonRate(i32)` overload"] fn set_summon_rate (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f262d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetAutoGrowOffset()` overload"] fn get_auto_grow_offset (self ,) -> i32 { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f262e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCapabilityOffset()` overload"] fn get_capability_offset (self ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f264d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDressGender()` overload"] fn get_dress_gender (self ,) -> crate :: app :: gender :: Gender { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: gender :: Gender = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f266a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCompleted()` overload"] fn on_completed (self ,) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f26740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCompletedEnd()` overload"] fn on_completed_end (self ,) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f29b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRelease()` overload"] fn on_release (self ,) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f29bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPrefixlessPid()` overload"] fn get_prefixless_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f29c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetJob()` overload"] fn get_job (self ,) -> crate :: app :: jobdata :: JobData { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f29e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MaskSkill()` overload"] fn get_mask_skill (self ,) -> crate :: app :: skillarray :: SkillArray { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skillarray :: SkillArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f29ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsHero()` overload"] fn is_hero (self ,) -> bool { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDerivedHero()` overload"] fn is_derived_hero (self ,) -> bool { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDownload()` overload"] fn is_download (self ,) -> bool { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsUnknown()` overload"] fn is_unknown (self ,) -> bool { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f29d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLevelUpTalkCombi(crate::app::persondata::PersonData)` overload"] fn is_level_up_talk_combi (self , another_person_data : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> bool { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (another_person_data) , :: core :: option :: Option :: None) } } } # [doc = "`IsLevelUpTalkCombiInternal(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"] fn is_level_up_talk_combi_internal (self , not_lv_up_talk_pid_array : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , target_pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (not_lv_up_talk_pid_array) , :: core :: convert :: Into :: into (target_pid) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CommonSkills()` overload"] fn get_common_skills (self ,) -> crate :: app :: skillarray :: SkillArray { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skillarray :: SkillArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CommonSkills(crate::app::skillarray::SkillArray)` overload"] fn set_common_skills (self , value : impl :: core :: convert :: Into < crate :: app :: skillarray :: SkillArray >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: skillarray :: SkillArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NormalSkills()` overload"] fn get_normal_skills (self ,) -> crate :: app :: skillarray :: SkillArray { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skillarray :: SkillArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NormalSkills(crate::app::skillarray::SkillArray)` overload"] fn set_normal_skills (self , value : impl :: core :: convert :: Into < crate :: app :: skillarray :: SkillArray >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: skillarray :: SkillArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HardSkills()` overload"] fn get_hard_skills (self ,) -> crate :: app :: skillarray :: SkillArray { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skillarray :: SkillArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HardSkills(crate::app::skillarray::SkillArray)` overload"] fn set_hard_skills (self , value : impl :: core :: convert :: Into < crate :: app :: skillarray :: SkillArray >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: skillarray :: SkillArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LunaticSkills()` overload"] fn get_lunatic_skills (self ,) -> crate :: app :: skillarray :: SkillArray { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skillarray :: SkillArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LunaticSkills(crate::app::skillarray::SkillArray)` overload"] fn set_lunatic_skills (self , value : impl :: core :: convert :: Into < crate :: app :: skillarray :: SkillArray >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: skillarray :: SkillArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EngageSkill()` overload"] fn get_engage_skill (self ,) -> crate :: app :: skilldata :: SkillData { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageSkill(crate::app::skilldata::SkillData)` overload"] fn set_engage_skill (self , value : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FaceData()` overload"] fn get_face_data (self ,) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FaceData(crate::app::persondata::PersonData)` overload"] fn set_face_data (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { let __receiver = < PersonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a7a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-persondata")]
-impl < __T : IPersonData > IPersonDataMethods for __T { }
-
-#[cfg(feature = "app-persondata")]
-impl PersonData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_fid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_fid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_die_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_die_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_belong_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_belong_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_unit_icon_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_unit_icon_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_age_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_age_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_birth_month_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_birth_month_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_birth_day_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_birth_day_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_internal_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_internal_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_auto_grow_offset_n_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn set_auto_grow_offset_n_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_auto_grow_offset_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn set_auto_grow_offset_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_auto_grow_offset_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn set_auto_grow_offset_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_asset_force_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn set_asset_force_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_support_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn set_support_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_skill_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn set_skill_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_bmap_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn set_bmap_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_items_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn set_items_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_drop_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn set_drop_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn get_drop_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn set_drop_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn get_aptitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn set_aptitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn get_sub_aptitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn set_sub_aptitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn get_offset_n_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn set_offset_n_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn get_offset_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn set_offset_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn get_offset_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn set_offset_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn get_limit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn set_limit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn get_grow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn set_grow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn get_common_sids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn set_common_sids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn get_normal_sids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn set_normal_sids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn get_hard_sids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn set_hard_sids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn get_lunatic_sids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn set_lunatic_sids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn get_engage_sid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn set_engage_sid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn get_talk_pause_delay_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn set_talk_pause_delay_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn get_talk_pause_delay_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn set_talk_pause_delay_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } pub fn get_talk_pause_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [82] } pub fn set_talk_pause_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [83] } pub fn get_combat_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [84] } pub fn set_combat_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [85] } pub fn get_ascii_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [86] } pub fn set_ascii_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [87] } pub fn get_link_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [88] } pub fn set_link_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [89] } pub fn get_attrs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [90] } pub fn set_attrs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [91] } pub fn get_exist_die_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [92] } pub fn set_exist_die_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [93] } pub fn get_exist_die_timing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [94] } pub fn set_exist_die_timing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [95] } pub fn get_hometown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [96] } pub fn set_hometown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [97] } pub fn get_net_ranking_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [98] } pub fn set_net_ranking_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [99] } pub fn get_not_lv_up_talk_pids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [100] } pub fn set_not_lv_up_talk_pids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [101] } pub fn get_summon_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [102] } pub fn set_summon_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [103] } pub fn get_summon_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [104] } pub fn set_summon_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [105] } pub fn get_summon_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [106] } pub fn set_summon_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [107] } pub fn get_summon_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [108] } pub fn set_summon_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [109] } pub fn get_auto_grow_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [110] } pub fn get_capability_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [111] } pub fn get_dress_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [112] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [113] } pub fn on_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [114] } pub fn on_completed_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [115] } pub fn on_release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [116] } pub fn get_prefixless_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [117] } pub fn get_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [119] } pub fn get_mask_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [120] } pub fn is_hero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [121] } pub fn is_derived_hero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [122] } pub fn is_download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [123] } pub fn is_unknown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [124] } pub fn is_level_up_talk_combi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [125] } pub fn is_level_up_talk_combi_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [126] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [127] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [128] } pub fn try_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [129] } pub fn try_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [130] } pub fn is_veyre_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [131] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [132] } pub fn get_common_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [133] } pub fn set_common_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [134] } pub fn get_normal_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [135] } pub fn set_normal_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [136] } pub fn get_hard_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [137] } pub fn set_hard_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [138] } pub fn get_lunatic_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [139] } pub fn set_lunatic_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [140] } pub fn get_engage_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [141] } pub fn set_engage_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [142] } pub fn get_face_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [143] } pub fn set_face_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [144] } }
-
-#[cfg(feature = "app-persondata")]
-impl PersonData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PersonData) , :: core :: stringify ! (new) ,)) ; < Self as IPersonDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-persondata")]impl PersonData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f25940usize)as*mut u8,();
+)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2, crate::app::persondata::PersonData)` overload"]pub fn serialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,person:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a350usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->crate::app::persondata::PersonData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a3b0usize)as*mut u8,crate::app::persondata::PersonData;
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`TrySerialize(crate::app::stream_2::Stream_2, crate::app::persondata::PersonData)` overload"]pub fn try_serialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,person:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a410usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`TryDeserialize(crate::app::stream_2::Stream_2)` overload"]pub fn try_deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->crate::app::persondata::PersonData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a4b0usize)as*mut u8,crate::app::persondata::PersonData;
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`IsVeyre(crate::app::persondata::PersonData)` overload"]pub fn is_veyre(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a590usize)as*mut u8,bool;
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
 }
 
-#[cfg(feature = "app-persondata")]
-pub trait IPersonData_FlagFieldMethods : IPersonData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PersonData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22610f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::persondata::PersonData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Flags >) -> () { unsafe { let __receiver = < PersonData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData_FlagField , crate :: app :: persondata :: PersonData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2261150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::persondata::PersonData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Flags >) -> i32 { unsafe { let __receiver = < PersonData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonData_FlagField , crate :: app :: persondata :: PersonData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22611b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-persondata")]pub trait IPersonDataMethods:IPersonData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f259f0usize)as*mut u8,();
+(PersonData)__receiver)}
+}
+#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25c20usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_Pid(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25c30usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25c40usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25c50usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Jid()` overload"]fn get_jid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25c60usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_Jid(::unity2::Il2CppString)` overload"]fn set_jid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25c70usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Fid()` overload"]fn get_fid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25c80usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_Fid(::unity2::Il2CppString)` overload"]fn set_fid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25c90usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Aid()` overload"]fn get_aid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25ca0usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_Aid(::unity2::Il2CppString)` overload"]fn set_aid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25cb0usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Help()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25cc0usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_Help(::unity2::Il2CppString)` overload"]fn set_help(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25cd0usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Die()` overload"]fn get_die(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25ce0usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_Die(::unity2::Il2CppString)` overload"]fn set_die(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25cf0usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Belong()` overload"]fn get_belong(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d00usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_Belong(::unity2::Il2CppString)` overload"]fn set_belong(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d10usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_UnitIconID()` overload"]fn get_unit_icon_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d20usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_UnitIconID(::unity2::Il2CppString)` overload"]fn set_unit_icon_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d30usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Age()` overload"]fn get_age(self,)->i16{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d40usize)as*mut u8,i16;
+(PersonData)__receiver)}
+}
+#[doc="`set_Age(i16)` overload"]fn set_age(self,value:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d50usize)as*mut u8,();
+(PersonData)__receiver,(i16)::core::convert::Into::into(value))}
+}
+#[doc="`get_BirthMonth()` overload"]fn get_birth_month(self,)->u8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d60usize)as*mut u8,u8;
+(PersonData)__receiver)}
+}
+#[doc="`set_BirthMonth(u8)` overload"]fn set_birth_month(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d70usize)as*mut u8,();
+(PersonData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_BirthDay()` overload"]fn get_birth_day(self,)->u8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d80usize)as*mut u8,u8;
+(PersonData)__receiver)}
+}
+#[doc="`set_BirthDay(u8)` overload"]fn set_birth_day(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25d90usize)as*mut u8,();
+(PersonData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Gender()` overload"]fn get_gender(self,)->crate::app::gender::Gender{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25da0usize)as*mut u8,crate::app::gender::Gender;
+(PersonData)__receiver)}
+}
+#[doc="`set_Gender(crate::app::gender::Gender)` overload"]fn set_gender(self,value:impl::core::convert::Into<crate::app::gender::Gender>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25db0usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::gender::Gender)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->u8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25dc0usize)as*mut u8,u8;
+(PersonData)__receiver)}
+}
+#[doc="`set_Level(u8)` overload"]fn set_level(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25dd0usize)as*mut u8,();
+(PersonData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_InternalLevel()` overload"]fn get_internal_level(self,)->i8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25de0usize)as*mut u8,i8;
+(PersonData)__receiver)}
+}
+#[doc="`set_InternalLevel(i8)` overload"]fn set_internal_level(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25df0usize)as*mut u8,();
+(PersonData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_AutoGrowOffsetN()` overload"]fn get_auto_grow_offset_n(self,)->i8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e00usize)as*mut u8,i8;
+(PersonData)__receiver)}
+}
+#[doc="`set_AutoGrowOffsetN(i8)` overload"]fn set_auto_grow_offset_n(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e10usize)as*mut u8,();
+(PersonData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_AutoGrowOffsetH()` overload"]fn get_auto_grow_offset_h(self,)->i8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e20usize)as*mut u8,i8;
+(PersonData)__receiver)}
+}
+#[doc="`set_AutoGrowOffsetH(i8)` overload"]fn set_auto_grow_offset_h(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e30usize)as*mut u8,();
+(PersonData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_AutoGrowOffsetL()` overload"]fn get_auto_grow_offset_l(self,)->i8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e40usize)as*mut u8,i8;
+(PersonData)__receiver)}
+}
+#[doc="`set_AutoGrowOffsetL(i8)` overload"]fn set_auto_grow_offset_l(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e50usize)as*mut u8,();
+(PersonData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_AssetForce()` overload"]fn get_asset_force(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e60usize)as*mut u8,crate::app::force::Force_Type;
+(PersonData)__receiver)}
+}
+#[doc="`set_AssetForce(crate::app::force::Force_Type)` overload"]fn set_asset_force(self,value:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e70usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_SupportCategory()` overload"]fn get_support_category(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e80usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_SupportCategory(::unity2::Il2CppString)` overload"]fn set_support_category(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25e90usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SkillPoint()` overload"]fn get_skill_point(self,)->i32{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25ea0usize)as*mut u8,i32;
+(PersonData)__receiver)}
+}
+#[doc="`set_SkillPoint(i32)` overload"]fn set_skill_point(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25eb0usize)as*mut u8,();
+(PersonData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BmapSize()` overload"]fn get_bmap_size(self,)->u8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25ec0usize)as*mut u8,u8;
+(PersonData)__receiver)}
+}
+#[doc="`set_BmapSize(u8)` overload"]fn set_bmap_size(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25ed0usize)as*mut u8,();
+(PersonData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Items()` overload"]fn get_items(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25ee0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PersonData)__receiver)}
+}
+#[doc="`set_Items(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_items(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25ef0usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_DropItem()` overload"]fn get_drop_item(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f00usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_DropItem(::unity2::Il2CppString)` overload"]fn set_drop_item(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f10usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_DropRatio()` overload"]fn get_drop_ratio(self,)->f32{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f20usize)as*mut u8,f32;
+(PersonData)__receiver)}
+}
+#[doc="`set_DropRatio(f32)` overload"]fn set_drop_ratio(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f30usize)as*mut u8,();
+(PersonData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::persondata::PersonData_FlagField{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f40usize)as*mut u8,crate::app::persondata::PersonData_FlagField;
+(PersonData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::persondata::PersonData_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::persondata::PersonData_FlagField>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f50usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::persondata::PersonData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`get_Aptitude()` overload"]fn get_aptitude(self,)->crate::app::weaponmask::WeaponMask{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f60usize)as*mut u8,crate::app::weaponmask::WeaponMask;
+(PersonData)__receiver)}
+}
+#[doc="`set_Aptitude(crate::app::weaponmask::WeaponMask)` overload"]fn set_aptitude(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f70usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_SubAptitude()` overload"]fn get_sub_aptitude(self,)->crate::app::weaponmask::WeaponMask{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f80usize)as*mut u8,crate::app::weaponmask::WeaponMask;
+(PersonData)__receiver)}
+}
+#[doc="`set_SubAptitude(crate::app::weaponmask::WeaponMask)` overload"]fn set_sub_aptitude(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25f90usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_OffsetN()` overload"]fn get_offset_n(self,)->crate::app::capabilitysbyte::CapabilitySbyte{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25fa0usize)as*mut u8,crate::app::capabilitysbyte::CapabilitySbyte;
+(PersonData)__receiver)}
+}
+#[doc="`set_OffsetN(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]fn set_offset_n(self,value:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25fb0usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(value))}
+}
+#[doc="`get_OffsetH()` overload"]fn get_offset_h(self,)->crate::app::capabilitysbyte::CapabilitySbyte{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25fc0usize)as*mut u8,crate::app::capabilitysbyte::CapabilitySbyte;
+(PersonData)__receiver)}
+}
+#[doc="`set_OffsetH(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]fn set_offset_h(self,value:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25fd0usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(value))}
+}
+#[doc="`get_OffsetL()` overload"]fn get_offset_l(self,)->crate::app::capabilitysbyte::CapabilitySbyte{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25fe0usize)as*mut u8,crate::app::capabilitysbyte::CapabilitySbyte;
+(PersonData)__receiver)}
+}
+#[doc="`set_OffsetL(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]fn set_offset_l(self,value:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25ff0usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(value))}
+}
+#[doc="`get_Limit()` overload"]fn get_limit(self,)->crate::app::capabilitysbyte::CapabilitySbyte{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26000usize)as*mut u8,crate::app::capabilitysbyte::CapabilitySbyte;
+(PersonData)__receiver)}
+}
+#[doc="`set_Limit(crate::app::capabilitysbyte::CapabilitySbyte)` overload"]fn set_limit(self,value:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26010usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(value))}
+}
+#[doc="`get_Grow()` overload"]fn get_grow(self,)->crate::app::capability::Capability{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26020usize)as*mut u8,crate::app::capability::Capability;
+(PersonData)__receiver)}
+}
+#[doc="`set_Grow(crate::app::capability::Capability)` overload"]fn set_grow(self,value:impl::core::convert::Into<crate::app::capability::Capability>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26030usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::capability::Capability)::core::convert::Into::into(value))}
+}
+#[doc="`get_CommonSids()` overload"]fn get_common_sids(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26040usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PersonData)__receiver)}
+}
+#[doc="`set_CommonSids(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_common_sids(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26050usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_NormalSids()` overload"]fn get_normal_sids(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26060usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PersonData)__receiver)}
+}
+#[doc="`set_NormalSids(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_normal_sids(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26070usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_HardSids()` overload"]fn get_hard_sids(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26080usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PersonData)__receiver)}
+}
+#[doc="`set_HardSids(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_hard_sids(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26090usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_LunaticSids()` overload"]fn get_lunatic_sids(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f260a0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PersonData)__receiver)}
+}
+#[doc="`set_LunaticSids(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_lunatic_sids(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f260b0usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngageSid()` overload"]fn get_engage_sid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f260c0usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_EngageSid(::unity2::Il2CppString)` overload"]fn set_engage_sid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f260d0usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_TalkPauseDelayMin()` overload"]fn get_talk_pause_delay_min(self,)->f32{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f260e0usize)as*mut u8,f32;
+(PersonData)__receiver)}
+}
+#[doc="`set_TalkPauseDelayMin(f32)` overload"]fn set_talk_pause_delay_min(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f260f0usize)as*mut u8,();
+(PersonData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TalkPauseDelayMax()` overload"]fn get_talk_pause_delay_max(self,)->f32{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26100usize)as*mut u8,f32;
+(PersonData)__receiver)}
+}
+#[doc="`set_TalkPauseDelayMax(f32)` overload"]fn set_talk_pause_delay_max(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26110usize)as*mut u8,();
+(PersonData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TalkPauseSpeed()` overload"]fn get_talk_pause_speed(self,)->f32{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26120usize)as*mut u8,f32;
+(PersonData)__receiver)}
+}
+#[doc="`set_TalkPauseSpeed(f32)` overload"]fn set_talk_pause_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26130usize)as*mut u8,();
+(PersonData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_CombatBgm()` overload"]fn get_combat_bgm(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26140usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_CombatBgm(::unity2::Il2CppString)` overload"]fn set_combat_bgm(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26150usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AsciiName()` overload"]fn get_ascii_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26160usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_AsciiName(::unity2::Il2CppString)` overload"]fn set_ascii_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26170usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LinkGod()` overload"]fn get_link_god(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26180usize)as*mut u8,crate::app::goddata::GodData;
+(PersonData)__receiver)}
+}
+#[doc="`set_LinkGod(crate::app::goddata::GodData)` overload"]fn set_link_god(self,value:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26190usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(value))}
+}
+#[doc="`get_Attrs()` overload"]fn get_attrs(self,)->crate::app::skilldata::SkillData_Attrs{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f261a0usize)as*mut u8,crate::app::skilldata::SkillData_Attrs;
+(PersonData)__receiver)}
+}
+#[doc="`set_Attrs(crate::app::skilldata::SkillData_Attrs)` overload"]fn set_attrs(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData_Attrs>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f261b0usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::skilldata::SkillData_Attrs)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExistDieCid()` overload"]fn get_exist_die_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f261c0usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_ExistDieCid(::unity2::Il2CppString)` overload"]fn set_exist_die_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f261d0usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExistDieTiming()` overload"]fn get_exist_die_timing(self,)->crate::app::persondata::PersonData_Timing{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f261e0usize)as*mut u8,crate::app::persondata::PersonData_Timing;
+(PersonData)__receiver)}
+}
+#[doc="`set_ExistDieTiming(crate::app::persondata::PersonData_Timing)` overload"]fn set_exist_die_timing(self,value:impl::core::convert::Into<crate::app::persondata::PersonData_Timing>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f261f0usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::persondata::PersonData_Timing)::core::convert::Into::into(value))}
+}
+#[doc="`get_Hometown()` overload"]fn get_hometown(self,)->crate::app::persondata::PersonData_Country{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26200usize)as*mut u8,crate::app::persondata::PersonData_Country;
+(PersonData)__receiver)}
+}
+#[doc="`set_Hometown(crate::app::persondata::PersonData_Country)` overload"]fn set_hometown(self,value:impl::core::convert::Into<crate::app::persondata::PersonData_Country>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26210usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::persondata::PersonData_Country)::core::convert::Into::into(value))}
+}
+#[doc="`get_NetRankingIndex()` overload"]fn get_net_ranking_index(self,)->u8{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26220usize)as*mut u8,u8;
+(PersonData)__receiver)}
+}
+#[doc="`set_NetRankingIndex(u8)` overload"]fn set_net_ranking_index(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26230usize)as*mut u8,();
+(PersonData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_NotLvUpTalkPids()` overload"]fn get_not_lv_up_talk_pids(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26240usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PersonData)__receiver)}
+}
+#[doc="`set_NotLvUpTalkPids(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_not_lv_up_talk_pids(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26250usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_SummonColor()` overload"]fn get_summon_color(self,)->crate::app::persondata::PersonData_Colors{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26260usize)as*mut u8,crate::app::persondata::PersonData_Colors;
+(PersonData)__receiver)}
+}
+#[doc="`set_SummonColor(crate::app::persondata::PersonData_Colors)` overload"]fn set_summon_color(self,value:impl::core::convert::Into<crate::app::persondata::PersonData_Colors>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26270usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::persondata::PersonData_Colors)::core::convert::Into::into(value))}
+}
+#[doc="`get_SummonRank()` overload"]fn get_summon_rank(self,)->crate::app::persondata::PersonData_Ranks{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26280usize)as*mut u8,crate::app::persondata::PersonData_Ranks;
+(PersonData)__receiver)}
+}
+#[doc="`set_SummonRank(crate::app::persondata::PersonData_Ranks)` overload"]fn set_summon_rank(self,value:impl::core::convert::Into<crate::app::persondata::PersonData_Ranks>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26290usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::persondata::PersonData_Ranks)::core::convert::Into::into(value))}
+}
+#[doc="`get_SummonGod()` overload"]fn get_summon_god(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f262a0usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`set_SummonGod(::unity2::Il2CppString)` overload"]fn set_summon_god(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f262b0usize)as*mut u8,();
+(PersonData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SummonRate()` overload"]fn get_summon_rate(self,)->i32{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f262c0usize)as*mut u8,i32;
+(PersonData)__receiver)}
+}
+#[doc="`set_SummonRate(i32)` overload"]fn set_summon_rate(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f262d0usize)as*mut u8,();
+(PersonData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetAutoGrowOffset()` overload"]fn get_auto_grow_offset(self,)->i32{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f262e0usize)as*mut u8,i32;
+(PersonData)__receiver)}
+}
+#[doc="`GetCapabilityOffset()` overload"]fn get_capability_offset(self,)->crate::app::capabilitysbyte::CapabilitySbyte{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f264d0usize)as*mut u8,crate::app::capabilitysbyte::CapabilitySbyte;
+(PersonData)__receiver)}
+}
+#[doc="`GetDressGender()` overload"]fn get_dress_gender(self,)->crate::app::gender::Gender{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f266a0usize)as*mut u8,crate::app::gender::Gender;
+(PersonData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26730usize)as*mut u8,();
+(PersonData)__receiver)}
+}
+#[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f26740usize)as*mut u8,();
+(PersonData)__receiver)}
+}
+#[doc="`OnCompletedEnd()` overload"]fn on_completed_end(self,)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f29b30usize)as*mut u8,();
+(PersonData)__receiver)}
+}
+#[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f29bf0usize)as*mut u8,();
+(PersonData)__receiver)}
+}
+#[doc="`GetPrefixlessPid()` overload"]fn get_prefixless_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f29c10usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`GetJob()` overload"]fn get_job(self,)->crate::app::jobdata::JobData{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f29e30usize)as*mut u8,crate::app::jobdata::JobData;
+(PersonData)__receiver)}
+}
+#[doc="`get_MaskSkill()` overload"]fn get_mask_skill(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f29ed0usize)as*mut u8,crate::app::skillarray::SkillArray;
+(PersonData)__receiver)}
+}
+#[doc="`IsHero()` overload"]fn is_hero(self,)->bool{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a0b0usize)as*mut u8,bool;
+(PersonData)__receiver)}
+}
+#[doc="`IsDerivedHero()` overload"]fn is_derived_hero(self,)->bool{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a1b0usize)as*mut u8,bool;
+(PersonData)__receiver)}
+}
+#[doc="`IsDownload()` overload"]fn is_download(self,)->bool{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a210usize)as*mut u8,bool;
+(PersonData)__receiver)}
+}
+#[doc="`IsUnknown()` overload"]fn is_unknown(self,)->bool{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f29d80usize)as*mut u8,bool;
+(PersonData)__receiver)}
+}
+#[doc="`IsLevelUpTalkCombi(crate::app::persondata::PersonData)` overload"]fn is_level_up_talk_combi(self,another_person_data:impl::core::convert::Into<crate::app::persondata::PersonData>)->bool{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a220usize)as*mut u8,bool;
+(PersonData)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(another_person_data))}
+}
+#[doc="`IsLevelUpTalkCombiInternal(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]fn is_level_up_talk_combi_internal(self,not_lv_up_talk_pid_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,target_pid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a280usize)as*mut u8,bool;
+(PersonData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(not_lv_up_talk_pid_array),(::unity2::Il2CppString)::core::convert::Into::into(target_pid))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a5f0usize)as*mut u8, ::unity2::Il2CppString;
+(PersonData)__receiver)}
+}
+#[doc="`get_CommonSkills()` overload"]fn get_common_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a6f0usize)as*mut u8,crate::app::skillarray::SkillArray;
+(PersonData)__receiver)}
+}
+#[doc="`set_CommonSkills(crate::app::skillarray::SkillArray)` overload"]fn set_common_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a700usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
+}
+#[doc="`get_NormalSkills()` overload"]fn get_normal_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a710usize)as*mut u8,crate::app::skillarray::SkillArray;
+(PersonData)__receiver)}
+}
+#[doc="`set_NormalSkills(crate::app::skillarray::SkillArray)` overload"]fn set_normal_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a720usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
+}
+#[doc="`get_HardSkills()` overload"]fn get_hard_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a730usize)as*mut u8,crate::app::skillarray::SkillArray;
+(PersonData)__receiver)}
+}
+#[doc="`set_HardSkills(crate::app::skillarray::SkillArray)` overload"]fn set_hard_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a740usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
+}
+#[doc="`get_LunaticSkills()` overload"]fn get_lunatic_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a750usize)as*mut u8,crate::app::skillarray::SkillArray;
+(PersonData)__receiver)}
+}
+#[doc="`set_LunaticSkills(crate::app::skillarray::SkillArray)` overload"]fn set_lunatic_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a760usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngageSkill()` overload"]fn get_engage_skill(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a770usize)as*mut u8,crate::app::skilldata::SkillData;
+(PersonData)__receiver)}
+}
+#[doc="`set_EngageSkill(crate::app::skilldata::SkillData)` overload"]fn set_engage_skill(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a780usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(value))}
+}
+#[doc="`get_FaceData()` overload"]fn get_face_data(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a790usize)as*mut u8,crate::app::persondata::PersonData;
+(PersonData)__receiver)}
+}
+#[doc="`set_FaceData(crate::app::persondata::PersonData)` overload"]fn set_face_data(self,value:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{let __receiver= <PersonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a7a0usize)as*mut u8,();
+(PersonData)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-persondata")]
-impl < __T : IPersonData_FlagField > IPersonData_FlagFieldMethods for __T { }
+#[cfg(feature="app-persondata")]impl<__T:IPersonData>IPersonDataMethods for __T{}
 
-#[cfg(feature = "app-persondata")]
-impl PersonData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-persondata")]impl PersonData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_fid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_fid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_die_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_die_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_belong_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_belong_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_unit_icon_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_unit_icon_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_age_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_age_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_birth_month_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_birth_month_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_birth_day_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_birth_day_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_internal_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_internal_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_auto_grow_offset_n_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_auto_grow_offset_n_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_auto_grow_offset_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_auto_grow_offset_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_auto_grow_offset_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn set_auto_grow_offset_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_asset_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn set_asset_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_support_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn set_support_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_skill_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn set_skill_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_bmap_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn set_bmap_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn set_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_drop_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn set_drop_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn get_drop_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn set_drop_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn get_aptitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn set_aptitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn get_sub_aptitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn set_sub_aptitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn get_offset_n_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn set_offset_n_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn get_offset_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn set_offset_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn get_offset_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn set_offset_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn get_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn set_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn get_grow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn set_grow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn get_common_sids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn set_common_sids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn get_normal_sids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn set_normal_sids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn get_hard_sids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn set_hard_sids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn get_lunatic_sids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn set_lunatic_sids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn get_engage_sid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn set_engage_sid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn get_talk_pause_delay_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn set_talk_pause_delay_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn get_talk_pause_delay_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn set_talk_pause_delay_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn get_talk_pause_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn set_talk_pause_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn get_combat_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+pub fn set_combat_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
+pub fn get_ascii_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
+pub fn set_ascii_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
+pub fn get_link_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+pub fn set_link_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
+pub fn get_attrs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+pub fn set_attrs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
+pub fn get_exist_die_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[92]}
+pub fn set_exist_die_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
+pub fn get_exist_die_timing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[94]}
+pub fn set_exist_die_timing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
+pub fn get_hometown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
+pub fn set_hometown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
+pub fn get_net_ranking_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
+pub fn set_net_ranking_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
+pub fn get_not_lv_up_talk_pids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[100]}
+pub fn set_not_lv_up_talk_pids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[101]}
+pub fn get_summon_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[102]}
+pub fn set_summon_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[103]}
+pub fn get_summon_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[104]}
+pub fn set_summon_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[105]}
+pub fn get_summon_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[106]}
+pub fn set_summon_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[107]}
+pub fn get_summon_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[108]}
+pub fn set_summon_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[109]}
+pub fn get_auto_grow_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[110]}
+pub fn get_capability_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[111]}
+pub fn get_dress_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[112]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[113]}
+pub fn on_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[114]}
+pub fn on_completed_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[115]}
+pub fn on_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[116]}
+pub fn get_prefixless_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[117]}
+pub fn get_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[119]}
+pub fn get_mask_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[120]}
+pub fn is_hero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[121]}
+pub fn is_derived_hero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[122]}
+pub fn is_download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[123]}
+pub fn is_unknown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[124]}
+pub fn is_level_up_talk_combi_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[125]}
+pub fn is_level_up_talk_combi_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[126]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[127]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[128]}
+pub fn try_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[129]}
+pub fn try_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[130]}
+pub fn is_veyre_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[131]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[132]}
+pub fn get_common_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[133]}
+pub fn set_common_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[134]}
+pub fn get_normal_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[135]}
+pub fn set_normal_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[136]}
+pub fn get_hard_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[137]}
+pub fn set_hard_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[138]}
+pub fn get_lunatic_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[139]}
+pub fn set_lunatic_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[140]}
+pub fn get_engage_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[141]}
+pub fn set_engage_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[142]}
+pub fn get_face_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[143]}
+pub fn set_face_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[144]}
+}
 
-#[cfg(feature = "app-persondata")]
-impl PersonData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PersonData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IPersonData_FlagFieldMethods > :: ctor (this , f) ; this }
+#[cfg(feature="app-persondata")]impl PersonData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PersonData), ::core::stringify!(new),));
+ <Self as IPersonDataMethods> ::ctor(this,);
+this}
+}
 
-# [doc = "`.ctor(crate::app::persondata::PersonData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: persondata :: PersonData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PersonData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IPersonData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+#[cfg(feature="app-persondata")]pub trait IPersonData_FlagFieldMethods:IPersonData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PersonData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22610f0usize)as*mut u8,();
+(PersonData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::persondata::PersonData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::persondata::PersonData_Flags>)->(){unsafe{let __receiver= <PersonData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2261150usize)as*mut u8,();
+(PersonData_FlagField)__receiver,(crate::app::persondata::PersonData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::persondata::PersonData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::persondata::PersonData_Flags>)->i32{unsafe{let __receiver= <PersonData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22611b0usize)as*mut u8,i32;
+(PersonData_FlagField)__receiver,(crate::app::persondata::PersonData_Flags)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-persondata")]impl<__T:IPersonData_FlagField>IPersonData_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-persondata")]impl PersonData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-persondata")]impl PersonData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PersonData_FlagField), ::core::stringify!(new),));
+ <Self as IPersonData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::persondata::PersonData_Flags)` — overload selector"]pub fn new_2(f:crate::app::persondata::PersonData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PersonData_FlagField), ::core::stringify!(new_2),));
+ <Self as IPersonData_FlagFieldMethods> ::ctor_2(this,f);
+this}
 }
 
 #[cfg(feature = "app-persondata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PersonData_Ranks;
+    pub use super::PersonData_Timing;
     pub use super::PersonData;
     pub use super::IPersonData;
     pub use super::IPersonDataMethods;
-    pub use super::PersonData_Ranks;
-    pub use super::PersonData_Flags;
     pub use super::PersonData_Colors;
+    pub use super::PersonData_Flags;
     pub use super::PersonData_FlagField;
     pub use super::IPersonData_FlagField;
     pub use super::IPersonData_FlagFieldMethods;
     pub use super::PersonData_Country;
-    pub use super::PersonData_Timing;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

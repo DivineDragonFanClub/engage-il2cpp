@@ -4,27 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/iplayereditorconnectionnative/IPlayerEditorConnectionNative.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "IPlayerEditorConnectionNative")] pub struct IPlayerEditorConnectionNative {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/iplayereditorconnectionnative/IPlayerEditorConnectionNative.md"))]#[::unity2::class(namespace="UnityEngine",name="IPlayerEditorConnectionNative")]pub struct IPlayerEditorConnectionNative{}
 
 }
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IPlayerEditorConnectionNative_unity2_raw { use super :: * ; pub unsafe fn initialize (this : IPlayerEditorConnectionNative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Initialize") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Initialize" , < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IPlayerEditorConnectionNative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn disconnect_all (this : IPlayerEditorConnectionNative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("DisconnectAll") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "DisconnectAll" , < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IPlayerEditorConnectionNative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn poll (this : IPlayerEditorConnectionNative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Poll") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Poll" , < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IPlayerEditorConnectionNative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn is_connected (this : IPlayerEditorConnectionNative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsConnected") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsConnected" , < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IPlayerEditorConnectionNative , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-iplayereditorconnectionnative")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlayerEditorConnectionNative_unity2_raw{use super:: * ;
+pub unsafe fn initialize(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Initialize").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Initialize", <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn disconnect_all(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("DisconnectAll").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","DisconnectAll", <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn poll(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Poll").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Poll", <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_connected(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsConnected").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsConnected", <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
-pub trait IIPlayerEditorConnectionNativeMethods : IIPlayerEditorConnectionNative { # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < IPlayerEditorConnectionNative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPlayerEditorConnectionNative_unity2_raw :: initialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DisconnectAll()` overload"] fn disconnect_all (self ,) -> () { unsafe { let __receiver = < IPlayerEditorConnectionNative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPlayerEditorConnectionNative_unity2_raw :: disconnect_all (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Poll()` overload"] fn poll (self ,) -> () { unsafe { let __receiver = < IPlayerEditorConnectionNative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPlayerEditorConnectionNative_unity2_raw :: poll (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsConnected()` overload"] fn is_connected (self ,) -> bool { unsafe { let __receiver = < IPlayerEditorConnectionNative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPlayerEditorConnectionNative_unity2_raw :: is_connected (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-iplayereditorconnectionnative")]pub trait IIPlayerEditorConnectionNativeMethods:IIPlayerEditorConnectionNative{#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <IPlayerEditorConnectionNative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IPlayerEditorConnectionNative_unity2_raw::initialize(__receiver, ::core::option::Option::None)}
+}
+#[doc="`DisconnectAll()` overload"]fn disconnect_all(self,)->(){unsafe{let __receiver= <IPlayerEditorConnectionNative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IPlayerEditorConnectionNative_unity2_raw::disconnect_all(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Poll()` overload"]fn poll(self,)->(){unsafe{let __receiver= <IPlayerEditorConnectionNative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IPlayerEditorConnectionNative_unity2_raw::poll(__receiver, ::core::option::Option::None)}
+}
+#[doc="`IsConnected()` overload"]fn is_connected(self,)->bool{unsafe{let __receiver= <IPlayerEditorConnectionNative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IPlayerEditorConnectionNative_unity2_raw::is_connected(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
-impl < __T : IIPlayerEditorConnectionNative > IIPlayerEditorConnectionNativeMethods for __T { }
+#[cfg(feature="unity_engine-iplayereditorconnectionnative")]impl<__T:IIPlayerEditorConnectionNative>IIPlayerEditorConnectionNativeMethods for __T{}
 
-#[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
-impl IPlayerEditorConnectionNative { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn disconnect_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn poll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IPlayerEditorConnectionNative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-iplayereditorconnectionnative")]impl IPlayerEditorConnectionNative{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn disconnect_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn poll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_connected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
 #[doc(hidden)]

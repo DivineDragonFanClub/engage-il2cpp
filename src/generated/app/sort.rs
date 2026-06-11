@@ -4,52 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: sortconstant :: { ISortConstant , SortConstant }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::sortconstant::{ISortConstant,SortConstant}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort_ElementComparer.md"))] # [:: unity2 :: class (namespace = "App" , name = "Sort.ElementComparer")] # [parent (crate :: system :: object :: Object)] pub struct Sort_ElementComparer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sort/Sort_ElementComparer.md"))]#[::unity2::class(namespace="App",name="Sort.ElementComparer")]#[parent(crate::system::object::Object)]pub struct Sort_ElementComparer{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort.md"))] # [:: unity2 :: class (namespace = "App" , name = "Sort")] # [parent (crate :: app :: sortconstant :: SortConstant)] pub struct Sort {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sort/Sort.md"))]#[::unity2::class(namespace="App",name="Sort")]#[parent(crate::app::sortconstant::SortConstant)]pub struct Sort{}
 
 }
 
 #[cfg(feature = "app-sort-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sort")]
-pub trait ISort_ElementComparerMethods : ISort_ElementComparer { # [doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"] fn compare (self , a : impl :: core :: convert :: Into < crate :: system :: object :: Object > , b : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < Sort_ElementComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Sort_ElementComparer , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d727b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Sort_ElementComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Sort_ElementComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d728c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sort")]
-impl < __T : ISort_ElementComparer > ISort_ElementComparerMethods for __T { }
-
-#[cfg(feature = "app-sort")]
-impl Sort_ElementComparer { pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort_ElementComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort_ElementComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-sort")]
-impl Sort_ElementComparer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Sort_ElementComparer) , :: core :: stringify ! (new) ,)) ; < Self as ISort_ElementComparerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sort")]pub trait ISort_ElementComparerMethods:ISort_ElementComparer{#[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <Sort_ElementComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d727b0usize)as*mut u8,i32;
+(Sort_ElementComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(a),(crate::system::object::Object)::core::convert::Into::into(b))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Sort_ElementComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d728c0usize)as*mut u8,();
+(Sort_ElementComparer)__receiver)}
+}
 }
 
-#[cfg(feature = "app-sort")]
-impl Sort { # [doc = "`InsertionSort(crate::system::collections::ilist::IList)` overload"] pub fn insertion_sort (list : impl :: core :: convert :: Into < crate :: system :: collections :: ilist :: IList >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: ilist :: IList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe3710usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } # [doc = "`InsertionSort(crate::system::collections::ilist::IList, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"] pub fn insertion_sort_2 (list : impl :: core :: convert :: Into < crate :: system :: collections :: ilist :: IList > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: ilist :: IList , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe3780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } # [doc = "`InsertionSortPartly(crate::system::collections::ilist::IList, i32, i32, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"] pub fn insertion_sort_partly (list : impl :: core :: convert :: Into < crate :: system :: collections :: ilist :: IList > , first : impl :: core :: convert :: Into < i32 > , last : impl :: core :: convert :: Into < i32 > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: ilist :: IList , i32 , i32 , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe3bc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (first) , :: core :: convert :: Into :: into (last) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } # [doc = "`MergeSort(crate::system::collections::ilist::IList)` overload"] pub fn merge_sort (list : impl :: core :: convert :: Into < crate :: system :: collections :: ilist :: IList >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: ilist :: IList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe3fb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } # [doc = "`MergeSort(crate::system::collections::ilist::IList, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"] pub fn merge_sort_2 (list : impl :: core :: convert :: Into < crate :: system :: collections :: ilist :: IList > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: ilist :: IList , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe41f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } # [doc = "`MergeSortPartly(crate::system::collections::ilist::IList, i32, i32, ::unity2::Array<crate::system::object::Object>, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"] pub fn merge_sort_partly (list : impl :: core :: convert :: Into < crate :: system :: collections :: ilist :: IList > , begin : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , work : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: ilist :: IList , i32 , i32 , :: unity2 :: Array < crate :: system :: object :: Object > , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4130usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (begin) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (work) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } # [doc = "`MergeSortMerge(crate::system::collections::ilist::IList, i32, i32, i32, ::unity2::Array<crate::system::object::Object>, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"] pub fn merge_sort_merge (list : impl :: core :: convert :: Into < crate :: system :: collections :: ilist :: IList > , begin : impl :: core :: convert :: Into < i32 > , middle : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , work : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: ilist :: IList , i32 , i32 , i32 , :: unity2 :: Array < crate :: system :: object :: Object > , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (begin) , :: core :: convert :: Into :: into (middle) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (work) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sort")]impl<__T:ISort_ElementComparer>ISort_ElementComparerMethods for __T{}
 
-#[cfg(feature = "app-sort")]
-pub trait ISortMethods : ISort { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Sort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Sort , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe48e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sort")]impl Sort_ElementComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-sort")]
-impl < __T : ISort > ISortMethods for __T { }
+#[cfg(feature="app-sort")]impl Sort_ElementComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Sort_ElementComparer), ::core::stringify!(new),));
+ <Self as ISort_ElementComparerMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-sort")]
-impl Sort { pub fn insertion_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn insertion_sort_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn insertion_sort_partly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn merge_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn merge_sort_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn merge_sort_partly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn merge_sort_merge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-sort")]impl Sort{#[doc="`InsertionSort(crate::system::collections::ilist::IList)` overload"]pub fn insertion_sort(list:impl::core::convert::Into<crate::system::collections::ilist::IList>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe3710usize)as*mut u8,();
+(crate::system::collections::ilist::IList)::core::convert::Into::into(list))}
+}
+#[doc="`InsertionSort(crate::system::collections::ilist::IList, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]pub fn insertion_sort_2(list:impl::core::convert::Into<crate::system::collections::ilist::IList> ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe3780usize)as*mut u8,();
+(crate::system::collections::ilist::IList)::core::convert::Into::into(list),(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer))}
+}
+#[doc="`InsertionSortPartly(crate::system::collections::ilist::IList, i32, i32, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]pub fn insertion_sort_partly(list:impl::core::convert::Into<crate::system::collections::ilist::IList> ,first:impl::core::convert::Into<i32> ,last:impl::core::convert::Into<i32> ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe3bc0usize)as*mut u8,();
+(crate::system::collections::ilist::IList)::core::convert::Into::into(list),(i32)::core::convert::Into::into(first),(i32)::core::convert::Into::into(last),(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer))}
+}
+#[doc="`MergeSort(crate::system::collections::ilist::IList)` overload"]pub fn merge_sort(list:impl::core::convert::Into<crate::system::collections::ilist::IList>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe3fb0usize)as*mut u8,();
+(crate::system::collections::ilist::IList)::core::convert::Into::into(list))}
+}
+#[doc="`MergeSort(crate::system::collections::ilist::IList, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]pub fn merge_sort_2(list:impl::core::convert::Into<crate::system::collections::ilist::IList> ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe41f0usize)as*mut u8,();
+(crate::system::collections::ilist::IList)::core::convert::Into::into(list),(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer))}
+}
+#[doc="`MergeSortPartly(crate::system::collections::ilist::IList, i32, i32, ::unity2::Array<crate::system::object::Object>, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]pub fn merge_sort_partly(list:impl::core::convert::Into<crate::system::collections::ilist::IList> ,begin:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32> ,work:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> > ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4130usize)as*mut u8,();
+(crate::system::collections::ilist::IList)::core::convert::Into::into(list),(i32)::core::convert::Into::into(begin),(i32)::core::convert::Into::into(end),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(work),(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer))}
+}
+#[doc="`MergeSortMerge(crate::system::collections::ilist::IList, i32, i32, i32, ::unity2::Array<crate::system::object::Object>, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]pub fn merge_sort_merge(list:impl::core::convert::Into<crate::system::collections::ilist::IList> ,begin:impl::core::convert::Into<i32> ,middle:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32> ,work:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> > ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4340usize)as*mut u8,();
+(crate::system::collections::ilist::IList)::core::convert::Into::into(list),(i32)::core::convert::Into::into(begin),(i32)::core::convert::Into::into(middle),(i32)::core::convert::Into::into(end),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(work),(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer))}
+}
+}
 
-#[cfg(feature = "app-sort")]
-impl Sort {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Sort) , :: core :: stringify ! (new) ,)) ; < Self as ISortMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sort")]pub trait ISortMethods:ISort{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Sort as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe48e0usize)as*mut u8,();
+(Sort)__receiver)}
+}
+}
+
+#[cfg(feature="app-sort")]impl<__T:ISort>ISortMethods for __T{}
+
+#[cfg(feature="app-sort")]impl Sort{pub fn insertion_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn insertion_sort_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn insertion_sort_partly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn merge_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn merge_sort_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn merge_sort_partly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn merge_sort_merge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-sort")]impl Sort{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Sort), ::core::stringify!(new),));
+ <Self as ISortMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sort")]

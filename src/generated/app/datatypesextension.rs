@@ -4,29 +4,97 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/datatypesextension/DataTypesExtension.md"))] # [:: unity2 :: class (namespace = "App" , name = "DataTypesExtension")] # [parent (crate :: system :: object :: Object)] pub struct DataTypesExtension {
-# [static_field] # [rename (name = "DifficultyMidTable")] pub difficulty_mid_table : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "GameModeMidTable")] pub game_mode_mid_table : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "GrowModeMidTable")] pub grow_mode_mid_table : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "DifficultyLabelTable")] pub difficulty_label_table : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "GameModeLabelTable")] pub game_mode_label_table : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/datatypesextension/DataTypesExtension.md"))]#[::unity2::class(namespace="App",name="DataTypesExtension")]#[parent(crate::system::object::Object)]pub struct DataTypesExtension{#[static_field]#[rename(name="DifficultyMidTable")]pub difficulty_mid_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="GameModeMidTable")]pub game_mode_mid_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="GrowModeMidTable")]pub grow_mode_mid_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="DifficultyLabelTable")]pub difficulty_label_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="GameModeLabelTable")]pub game_mode_label_table: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-datatypesextension-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-datatypesextension")]
-impl DataTypesExtension { # [doc = "`GetName(crate::app::difficulty::Difficulty)` overload"] pub fn get_name (difficulty : impl :: core :: convert :: Into < crate :: app :: difficulty :: Difficulty >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: difficulty :: Difficulty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe240usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (difficulty) , :: core :: option :: Option :: None) } } } # [doc = "`GetName(crate::app::gamemode::GameMode)` overload"] pub fn get_name_2 (game_mode : impl :: core :: convert :: Into < crate :: app :: gamemode :: GameMode >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: gamemode :: GameMode , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (game_mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetName(crate::app::growmode::GrowMode)` overload"] pub fn get_name_3 (grow_mode : impl :: core :: convert :: Into < crate :: app :: growmode :: GrowMode >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: growmode :: GrowMode , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe3e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (grow_mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetName(crate::app::gender::Gender)` overload"] pub fn get_name_4 (gender : impl :: core :: convert :: Into < crate :: app :: gender :: Gender >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: gender :: Gender , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe4b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gender) , :: core :: option :: Option :: None) } } } # [doc = "`GetLabel(crate::app::difficulty::Difficulty)` overload"] pub fn get_label (difficulty : impl :: core :: convert :: Into < crate :: app :: difficulty :: Difficulty >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: difficulty :: Difficulty , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (difficulty) , :: core :: option :: Option :: None) } } } # [doc = "`GetLabel(crate::app::gamemode::GameMode)` overload"] pub fn get_label_2 (game_mode : impl :: core :: convert :: Into < crate :: app :: gamemode :: GameMode >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: gamemode :: GameMode , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe5c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (game_mode) , :: core :: option :: Option :: None) } } } # [doc = "`IsNullOrEmpty(crate::app::unit::Unit)` overload"] pub fn is_null_or_empty (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe650usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsNullOrEmpty(::unity2::Il2CppString)` overload"] pub fn is_null_or_empty_2 (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } pub fn try_get_component < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< DataTypesExtension as :: unity2 :: ClassIdentity > :: class () , "TryGetComponent" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DataTypesExtension as :: unity2 :: ClassIdentity > :: NAME , "TryGetComponent" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (go) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn try_get_component_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (component : impl :: core :: convert :: Into < crate :: unity_engine :: component :: Component >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< DataTypesExtension as :: unity2 :: ClassIdentity > :: class () , "TryGetComponent" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DataTypesExtension as :: unity2 :: ClassIdentity > :: NAME , "TryGetComponent" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: unity_engine :: component :: Component , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (component) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fe680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-datatypesextension")]impl DataTypesExtension{#[doc="`GetName(crate::app::difficulty::Difficulty)` overload"]pub fn get_name(difficulty:impl::core::convert::Into<crate::app::difficulty::Difficulty>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe240usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::difficulty::Difficulty)::core::convert::Into::into(difficulty))}
+}
+#[doc="`GetName(crate::app::gamemode::GameMode)` overload"]pub fn get_name_2(game_mode:impl::core::convert::Into<crate::app::gamemode::GameMode>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe310usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::gamemode::GameMode)::core::convert::Into::into(game_mode))}
+}
+#[doc="`GetName(crate::app::growmode::GrowMode)` overload"]pub fn get_name_3(grow_mode:impl::core::convert::Into<crate::app::growmode::GrowMode>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe3e0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::growmode::GrowMode)::core::convert::Into::into(grow_mode))}
+}
+#[doc="`GetName(crate::app::gender::Gender)` overload"]pub fn get_name_4(gender:impl::core::convert::Into<crate::app::gender::Gender>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe4b0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::gender::Gender)::core::convert::Into::into(gender))}
+}
+#[doc="`GetLabel(crate::app::difficulty::Difficulty)` overload"]pub fn get_label(difficulty:impl::core::convert::Into<crate::app::difficulty::Difficulty>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe530usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::difficulty::Difficulty)::core::convert::Into::into(difficulty))}
+}
+#[doc="`GetLabel(crate::app::gamemode::GameMode)` overload"]pub fn get_label_2(game_mode:impl::core::convert::Into<crate::app::gamemode::GameMode>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe5c0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::gamemode::GameMode)::core::convert::Into::into(game_mode))}
+}
+#[doc="`IsNullOrEmpty(crate::app::unit::Unit)` overload"]pub fn is_null_or_empty(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe650usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsNullOrEmpty(::unity2::Il2CppString)` overload"]pub fn is_null_or_empty_2(str:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe670usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+pub fn try_get_component<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<DataTypesExtension as::unity2::ClassIdentity> ::class(),"TryGetComponent",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DataTypesExtension as::unity2::ClassIdentity> ::NAME,"TryGetComponent",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(go), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn try_get_component_2<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(component:impl::core::convert::Into<crate::unity_engine::component::Component>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<DataTypesExtension as::unity2::ClassIdentity> ::class(),"TryGetComponent",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DataTypesExtension as::unity2::ClassIdentity> ::NAME,"TryGetComponent",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::unity_engine::component::Component, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(component), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fe680usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-datatypesextension")]
-impl DataTypesExtension { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_label_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_null_or_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_null_or_empty_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DataTypesExtension as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-datatypesextension")]impl DataTypesExtension{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_label_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_null_or_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_null_or_empty_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "app-datatypesextension")]
 #[doc(hidden)]

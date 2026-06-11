@@ -4,69 +4,98 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akutilities/AkUtilities.md"))] # [:: unity2 :: class (namespace = "" , name = "AkUtilities")] # [parent (crate :: system :: object :: Object)] pub struct AkUtilities {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akutilities/AkUtilities_ShortIDGenerator.md"))]#[::unity2::class(namespace="",name="AkUtilities.ShortIDGenerator")]#[parent(crate::system::object::Object)]pub struct AkUtilities_ShortIDGenerator{#[static_field]#[rename(name="s_prime32")]pub s_prime32:u32, #[static_field]#[rename(name="s_offsetBasis32")]pub s_offset_basis32:u32, #[static_field]#[rename(name="s_hashSize")]pub s_hash_size:u8, #[static_field]#[rename(name="s_mask")]pub s_mask:u32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akutilities/AkUtilities_ShortIDGenerator.md"))] # [:: unity2 :: class (namespace = "" , name = "AkUtilities.ShortIDGenerator")] # [parent (crate :: system :: object :: Object)] pub struct AkUtilities_ShortIDGenerator {
-# [static_field] # [rename (name = "s_prime32")] pub s_prime32 : u32 ,
-# [static_field] # [rename (name = "s_offsetBasis32")] pub s_offset_basis32 : u32 ,
-# [static_field] # [rename (name = "s_hashSize")] pub s_hash_size : u8 ,
-# [static_field] # [rename (name = "s_mask")] pub s_mask : u32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akutilities/AkUtilities.md"))]#[::unity2::class(namespace="",name="AkUtilities")]#[parent(crate::system::object::Object)]pub struct AkUtilities{}
 
 }
 
 #[cfg(feature = "root-akutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akutilities")]
-impl AkUtilities { # [doc = "`FixSlashes(*mut::unity2::Il2CppString, u16, u16, bool)` overload"] pub fn fix_slashes (separator_char : impl :: core :: convert :: Into < u16 > , bad_char : impl :: core :: convert :: Into < u16 > , add_trailing_slash : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; { let __inner : extern "C" fn (* mut :: unity2 :: Il2CppString , u16 , u16 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c0d0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (separator_char) , :: core :: convert :: Into :: into (bad_char) , :: core :: convert :: Into :: into (add_trailing_slash) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`FixSlashes(*mut::unity2::Il2CppString)` overload"] pub fn fix_slashes_2 () -> :: unity2 :: Il2CppString { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; { let __inner : extern "C" fn (* mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c210usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
-
-#[cfg(feature = "root-akutilities")]
-pub trait IAkUtilitiesMethods : IAkUtilities { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkUtilities as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkUtilities , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akutilities")]
-impl < __T : IAkUtilities > IAkUtilitiesMethods for __T { }
-
-#[cfg(feature = "root-akutilities")]
-impl AkUtilities { pub fn fix_slashes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn fix_slashes_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "root-akutilities")]
-impl AkUtilities {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkUtilities) , :: core :: stringify ! (new) ,)) ; < Self as IAkUtilitiesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akutilities")]impl AkUtilities_ShortIDGenerator{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2710usize)as*mut u8,();
+)}
+}
+#[doc="`get_HashSize()` overload"]pub fn get_hash_size()->u8{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2830usize)as*mut u8,u8;
+)}
+}
+#[doc="`set_HashSize(u8)` overload"]pub fn set_hash_size(value:impl::core::convert::Into<u8>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba27a0usize)as*mut u8,();
+(u8)::core::convert::Into::into(value))}
+}
+#[doc="`Compute(::unity2::Il2CppString)` overload"]pub fn compute(in_name:impl::core::convert::Into< ::unity2::Il2CppString>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba28a0usize)as*mut u8,u32;
+(::unity2::Il2CppString)::core::convert::Into::into(in_name))}
+}
 }
 
-#[cfg(feature = "root-akutilities")]
-impl AkUtilities_ShortIDGenerator { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2710usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_HashSize()` overload"] pub fn get_hash_size () -> u8 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2830usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_HashSize(u8)` overload"] pub fn set_hash_size (value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { { let __inner : extern "C" fn (u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba27a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Compute(::unity2::Il2CppString)` overload"] pub fn compute (in_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba28a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akutilities")]pub trait IAkUtilities_ShortIDGeneratorMethods:IAkUtilities_ShortIDGenerator{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkUtilities_ShortIDGenerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba29f0usize)as*mut u8,();
+(AkUtilities_ShortIDGenerator)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akutilities")]
-pub trait IAkUtilities_ShortIDGeneratorMethods : IAkUtilities_ShortIDGenerator { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkUtilities_ShortIDGenerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkUtilities_ShortIDGenerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba29f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akutilities")]impl<__T:IAkUtilities_ShortIDGenerator>IAkUtilities_ShortIDGeneratorMethods for __T{}
 
-#[cfg(feature = "root-akutilities")]
-impl < __T : IAkUtilities_ShortIDGenerator > IAkUtilities_ShortIDGeneratorMethods for __T { }
+#[cfg(feature="root-akutilities")]impl AkUtilities_ShortIDGenerator{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hash_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_hash_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn compute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-akutilities")]
-impl AkUtilities_ShortIDGenerator { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hash_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_hash_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn compute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkUtilities_ShortIDGenerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-akutilities")]impl AkUtilities_ShortIDGenerator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkUtilities_ShortIDGenerator), ::core::stringify!(new),));
+ <Self as IAkUtilities_ShortIDGeneratorMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "root-akutilities")]
-impl AkUtilities_ShortIDGenerator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkUtilities_ShortIDGenerator) , :: core :: stringify ! (new) ,)) ; < Self as IAkUtilities_ShortIDGeneratorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akutilities")]impl AkUtilities{#[doc="`FixSlashes(*mut::unity2::Il2CppString, u16, u16, bool)` overload"]pub fn fix_slashes(separator_char:impl::core::convert::Into<u16> ,bad_char:impl::core::convert::Into<u16> ,add_trailing_slash:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c0d0usize)as*mut u8,();
+(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(u16)::core::convert::Into::into(separator_char),(u16)::core::convert::Into::into(bad_char),(bool)::core::convert::Into::into(add_trailing_slash));
+__out_0.assume_init()}
+}
+#[doc="`FixSlashes(*mut::unity2::Il2CppString)` overload"]pub fn fix_slashes_2()-> ::unity2::Il2CppString{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c210usize)as*mut u8,();
+(*mut::unity2::Il2CppString)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="root-akutilities")]pub trait IAkUtilitiesMethods:IAkUtilities{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkUtilities as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c2a0usize)as*mut u8,();
+(AkUtilities)__receiver)}
+}
+}
+
+#[cfg(feature="root-akutilities")]impl<__T:IAkUtilities>IAkUtilitiesMethods for __T{}
+
+#[cfg(feature="root-akutilities")]impl AkUtilities{pub fn fix_slashes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn fix_slashes_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root-akutilities")]impl AkUtilities{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkUtilities), ::core::stringify!(new),));
+ <Self as IAkUtilitiesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkUtilities;
-    pub use super::IAkUtilities;
-    pub use super::IAkUtilitiesMethods;
     pub use super::AkUtilities_ShortIDGenerator;
     pub use super::IAkUtilities_ShortIDGenerator;
     pub use super::IAkUtilities_ShortIDGeneratorMethods;
+    pub use super::AkUtilities;
+    pub use super::IAkUtilities;
+    pub use super::IAkUtilitiesMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -4,34 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploybitimage/MapDeployBitImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDeployBitImage")] # [parent (crate :: app :: mapimagecorebit :: MapImageCoreBit)] pub struct MapDeployBitImage {
-# [offset (28)] # [rename (name = "m_Changed")] pub m_changed : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeploybitimage/MapDeployBitImage.md"))]#[::unity2::class(namespace="App",name="MapDeployBitImage")]#[parent(crate::app::mapimagecorebit::MapImageCoreBit)]pub struct MapDeployBitImage{#[offset(28)]#[rename(name="m_Changed")]pub m_changed:bool,}
 
 }
 
 #[cfg(feature = "app-mapdeploybitimage-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapdeploybitimage")]
-pub trait IMapDeployBitImageMethods : IMapDeployBitImage { # [doc = "`get_Display()` overload"] fn get_display (self ,) -> crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > { unsafe { let __receiver = < MapDeployBitImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployBitImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Display(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>)` overload"] fn set_display (self , value : impl :: core :: convert :: Into < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > >) -> () { unsafe { let __receiver = < MapDeployBitImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployBitImage , crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`TrySet(i32, i32)` overload"] fn try_set (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapDeployBitImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployBitImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`TryClear()` overload"] fn try_clear (self ,) -> () { unsafe { let __receiver = < MapDeployBitImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployBitImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c37e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get(crate::app::unit::Unit)` overload"] fn get (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapDeployBitImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployBitImage , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDeployBitImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployBitImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapdeploybitimage")]pub trait IMapDeployBitImageMethods:IMapDeployBitImage{#[doc="`get_Display()` overload"]fn get_display(self,)->crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>{unsafe{let __receiver= <MapDeployBitImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3770usize)as*mut u8,crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> ;
+(MapDeployBitImage)__receiver)}
+}
+#[doc="`set_Display(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>)` overload"]fn set_display(self,value:impl::core::convert::Into<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> >)->(){unsafe{let __receiver= <MapDeployBitImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3780usize)as*mut u8,();
+(MapDeployBitImage)__receiver,(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>)::core::convert::Into::into(value))}
+}
+#[doc="`TrySet(i32, i32)` overload"]fn try_set(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapDeployBitImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3790usize)as*mut u8,();
+(MapDeployBitImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`TryClear()` overload"]fn try_clear(self,)->(){unsafe{let __receiver= <MapDeployBitImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c37e0usize)as*mut u8,();
+(MapDeployBitImage)__receiver)}
+}
+#[doc="`Get(crate::app::unit::Unit)` overload"]fn get(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapDeployBitImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3820usize)as*mut u8,bool;
+(MapDeployBitImage)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeployBitImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3690usize)as*mut u8,();
+(MapDeployBitImage)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapdeploybitimage")]
-impl < __T : IMapDeployBitImage > IMapDeployBitImageMethods for __T { }
+#[cfg(feature="app-mapdeploybitimage")]impl<__T:IMapDeployBitImage>IMapDeployBitImageMethods for __T{}
 
-#[cfg(feature = "app-mapdeploybitimage")]
-impl MapDeployBitImage { pub fn get_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployBitImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployBitImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployBitImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployBitImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployBitImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployBitImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-mapdeploybitimage")]impl MapDeployBitImage{pub fn get_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-mapdeploybitimage")]
-impl MapDeployBitImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDeployBitImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapDeployBitImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapdeploybitimage")]impl MapDeployBitImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDeployBitImage), ::core::stringify!(new),));
+ <Self as IMapDeployBitImageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapdeploybitimage")]

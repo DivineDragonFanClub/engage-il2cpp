@@ -4,90 +4,253 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: stream :: { IStream , Stream }
- ;
- use crate :: system :: io :: unmanagedmemorystream :: { IUnmanagedMemoryStream , UnmanagedMemoryStream }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::stream::{IStream,Stream}
+;
+use crate::system::io::unmanagedmemorystream::{IUnmanagedMemoryStream,UnmanagedMemoryStream}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Assembly")] # [parent (crate :: system :: object :: Object)] pub struct Assembly {
-# [offset (16)] # [rename (name = "_mono_assembly")] pub mono_assembly : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "resolve_event_holder")] pub resolve_event_holder : crate :: system :: reflection :: assembly :: Assembly_ResolveEventHolder ,
-# [offset (32)] # [rename (name = "_evidence")] pub evidence : :: unity2 :: IlInstance ,
-# [offset (40)] # [rename (name = "_minimum")] pub minimum : :: unity2 :: IlInstance ,
-# [offset (48)] # [rename (name = "_optional")] pub optional : :: unity2 :: IlInstance ,
-# [offset (56)] # [rename (name = "_refuse")] pub refuse : :: unity2 :: IlInstance ,
-# [offset (64)] # [rename (name = "_granted")] pub granted : :: unity2 :: IlInstance ,
-# [offset (72)] # [rename (name = "_denied")] pub denied : :: unity2 :: IlInstance ,
-# [offset (80)] # [rename (name = "fromByteArray")] pub from_byte_array : bool ,
-# [offset (88)] # [rename (name = "assemblyName")] pub assembly_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assembly/Assembly_ResolveEventHolder.md"))]#[::unity2::class(namespace="System.Reflection",name="Assembly.ResolveEventHolder")]#[parent(crate::system::object::Object)]pub struct Assembly_ResolveEventHolder{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_ResolveEventHolder.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Assembly.ResolveEventHolder")] # [parent (crate :: system :: object :: Object)] pub struct Assembly_ResolveEventHolder {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assembly/Assembly.md"))]#[::unity2::class(namespace="System.Reflection",name="Assembly")]#[parent(crate::system::object::Object)]pub struct Assembly{#[offset(16)]#[rename(name="_mono_assembly")]pub mono_assembly: ::unity2::IntPtr, #[offset(24)]#[rename(name="resolve_event_holder")]pub resolve_event_holder:crate::system::reflection::assembly::Assembly_ResolveEventHolder, #[offset(32)]#[rename(name="_evidence")]pub evidence: ::unity2::IlInstance, #[offset(40)]#[rename(name="_minimum")]pub minimum: ::unity2::IlInstance, #[offset(48)]#[rename(name="_optional")]pub optional: ::unity2::IlInstance, #[offset(56)]#[rename(name="_refuse")]pub refuse: ::unity2::IlInstance, #[offset(64)]#[rename(name="_granted")]pub granted: ::unity2::IlInstance, #[offset(72)]#[rename(name="_denied")]pub denied: ::unity2::IlInstance, #[offset(80)]#[rename(name="fromByteArray")]pub from_byte_array:bool, #[offset(88)]#[rename(name="assemblyName")]pub assembly_name: ::unity2::Il2CppString,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_UnmanagedMemoryStreamForModule.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Assembly.UnmanagedMemoryStreamForModule")] # [parent (crate :: system :: io :: unmanagedmemorystream :: UnmanagedMemoryStream)] pub struct Assembly_UnmanagedMemoryStreamForModule {
-# [offset (104)] # [rename (name = "module")] pub module : crate :: system :: reflection :: module :: Module ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assembly/Assembly_UnmanagedMemoryStreamForModule.md"))]#[::unity2::class(namespace="System.Reflection",name="Assembly.UnmanagedMemoryStreamForModule")]#[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]pub struct Assembly_UnmanagedMemoryStreamForModule{#[offset(104)]#[rename(name="module")]pub module:crate::system::reflection::module::Module,}
 
 }
 
 #[cfg(feature = "system-reflection-assembly-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assembly")]
-impl Assembly { # [doc = "`GetAotId()` overload"] pub fn get_aot_id () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3400eb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetAssembly(::unity2::SystemType)` overload"] pub fn get_assembly (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: reflection :: assembly :: Assembly { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assembly :: Assembly = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString)` overload"] pub fn load (assembly_string : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: reflection :: assembly :: Assembly { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assembly :: Assembly = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33f4680usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (assembly_string) , :: core :: option :: Option :: None) } } } # [doc = "`GetExecutingAssembly()` overload"] pub fn get_executing_assembly () -> crate :: system :: reflection :: assembly :: Assembly { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assembly :: Assembly = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401710usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCallingAssembly()` overload"] pub fn get_calling_assembly () -> crate :: system :: reflection :: assembly :: Assembly { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assembly :: Assembly = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::system::reflection::assembly::Assembly, crate::system::reflection::assembly::Assembly)` overload"] pub fn op_equality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: assembly :: Assembly > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: assembly :: Assembly >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: assembly :: Assembly , crate :: system :: reflection :: assembly :: Assembly , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33f7d20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::system::reflection::assembly::Assembly, crate::system::reflection::assembly::Assembly)` overload"] pub fn op_inequality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: assembly :: Assembly > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: assembly :: Assembly >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: assembly :: Assembly , crate :: system :: reflection :: assembly :: Assembly , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33f8870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-reflection-assembly")]
-pub trait IAssemblyMethods : IAssembly { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3400e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_code_base(bool)` overload"] fn get_code_base (self , escaped : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3400e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (escaped) , :: core :: option :: Option :: None) } } } # [doc = "`get_fullname()` overload"] fn get_fullname (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3400e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_location()` overload"] fn get_location (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3400ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CodeBase()` overload"] fn get_code_base_2 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3400ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FullName()` overload"] fn get_full_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3400ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3400fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetManifestResourceInternal(::unity2::Il2CppString, *muti32, *mutcrate::system::reflection::module::Module)` overload"] fn get_manifest_resource_internal (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (:: unity2 :: IntPtr , i32 , crate :: system :: reflection :: module :: Module) { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: system :: reflection :: module :: Module > :: uninit () ; let __ret = { { let __inner : extern "C" fn (Assembly , :: unity2 :: Il2CppString , * mut i32 , * mut crate :: system :: reflection :: module :: Module , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34010c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetManifestResourceStream(::unity2::Il2CppString)` overload"] fn get_manifest_resource_stream (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: io :: stream :: Stream { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: stream :: Stream = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34010d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetTypes(bool)` overload"] fn get_types (self , exported_only : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < :: unity2 :: SystemType > { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: SystemType > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (exported_only) , :: core :: option :: Option :: None) } } } # [doc = "`GetTypes()` overload"] fn get_types_2 (self ,) -> :: unity2 :: Array < :: unity2 :: SystemType > { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: SystemType > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetType(::unity2::Il2CppString, bool)` overload"] fn get_type (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , throw_on_error : impl :: core :: convert :: Into < bool >) -> :: unity2 :: SystemType { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (throw_on_error) , :: core :: option :: Option :: None) } } } # [doc = "`GetType(::unity2::Il2CppString)` overload"] fn get_type_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: SystemType { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`InternalGetType(crate::system::reflection::module::Module, ::unity2::Il2CppString, bool, bool)` overload"] fn internal_get_type (self , module : impl :: core :: convert :: Into < crate :: system :: reflection :: module :: Module > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , throw_on_error : impl :: core :: convert :: Into < bool > , ignore_case : impl :: core :: convert :: Into < bool >) -> :: unity2 :: SystemType { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , crate :: system :: reflection :: module :: Module , :: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (module) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (throw_on_error) , :: core :: convert :: Into :: into (ignore_case) , :: core :: option :: Option :: None) } } } # [doc = "`GetName(bool)` overload"] fn get_name (self , copied_name : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: assemblyname :: AssemblyName { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assemblyname :: AssemblyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (copied_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name_2 (self ,) -> crate :: system :: reflection :: assemblyname :: AssemblyName { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assemblyname :: AssemblyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34014d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34014f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetModulesInternal()` overload"] fn get_modules_internal (self ,) -> :: unity2 :: Array < crate :: system :: reflection :: module :: Module > { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: module :: Module > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34016f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetManifestResourceNames()` overload"] fn get_manifest_resource_names (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetManifestResourceInfoInternal(::unity2::Il2CppString, crate::system::reflection::manifestresourceinfo::ManifestResourceInfo)` overload"] fn get_manifest_resource_info_internal (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , info : impl :: core :: convert :: Into < crate :: system :: reflection :: manifestresourceinfo :: ManifestResourceInfo >) -> bool { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: Il2CppString , crate :: system :: reflection :: manifestresourceinfo :: ManifestResourceInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`GetManifestResourceInfo(::unity2::Il2CppString)` overload"] fn get_manifest_resource_info (self , resource_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: reflection :: manifestresourceinfo :: ManifestResourceInfo { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: manifestresourceinfo :: ManifestResourceInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (resource_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , o : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34018a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFullyTrusted()` overload"] fn get_is_fully_trusted (self ,) -> bool { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34019f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetType(::unity2::Il2CppString, bool, bool)` overload"] fn get_type_3 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , throw_on_error : impl :: core :: convert :: Into < bool > , ignore_case : impl :: core :: convert :: Into < bool >) -> :: unity2 :: SystemType { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401a00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (throw_on_error) , :: core :: convert :: Into :: into (ignore_case) , :: core :: option :: Option :: None) } } } # [doc = "`GetModule(::unity2::Il2CppString)` overload"] fn get_module (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: reflection :: module :: Module { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: module :: Module = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetModules(bool)` overload"] fn get_modules (self , get_resource_modules : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: reflection :: module :: Module > { unsafe { let __receiver = < Assembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: module :: Module > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (get_resource_modules) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-reflection-assembly")]
-impl < __T : IAssembly > IAssemblyMethods for __T { }
-
-#[cfg(feature = "system-reflection-assembly")]
-impl Assembly { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_code_base_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_fullname_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_aot_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_code_base_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_full_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_manifest_resource_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_manifest_resource_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_types_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_types_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_type_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn internal_get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_name_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_modules_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_manifest_resource_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_executing_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_calling_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_manifest_resource_info_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_manifest_resource_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_is_fully_trusted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_type_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_modules_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } }
-
-#[cfg(feature = "system-reflection-assembly")]
-impl Assembly {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Assembly) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-assembly")]pub trait IAssembly_ResolveEventHolderMethods:IAssembly_ResolveEventHolder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Assembly_ResolveEventHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdc40usize)as*mut u8,();
+(Assembly_ResolveEventHolder)__receiver)}
+}
 }
 
-#[cfg(feature = "system-reflection-assembly")]
-pub trait IAssembly_ResolveEventHolderMethods : IAssembly_ResolveEventHolder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Assembly_ResolveEventHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly_ResolveEventHolder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34cdc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assembly")]impl<__T:IAssembly_ResolveEventHolder>IAssembly_ResolveEventHolderMethods for __T{}
 
-#[cfg(feature = "system-reflection-assembly")]
-impl < __T : IAssembly_ResolveEventHolder > IAssembly_ResolveEventHolderMethods for __T { }
-
-#[cfg(feature = "system-reflection-assembly")]
-impl Assembly_ResolveEventHolder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly_ResolveEventHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "system-reflection-assembly")]
-impl Assembly_ResolveEventHolder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Assembly_ResolveEventHolder) , :: core :: stringify ! (new) ,)) ; < Self as IAssembly_ResolveEventHolderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-assembly")]impl Assembly_ResolveEventHolder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "system-reflection-assembly")]
-pub trait IAssembly_UnmanagedMemoryStreamForModuleMethods : IAssembly_UnmanagedMemoryStreamForModule { # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Assembly_UnmanagedMemoryStreamForModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Assembly_UnmanagedMemoryStreamForModule , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34cdc90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assembly")]impl Assembly_ResolveEventHolder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Assembly_ResolveEventHolder), ::core::stringify!(new),));
+ <Self as IAssembly_ResolveEventHolderMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "system-reflection-assembly")]
-impl < __T : IAssembly_UnmanagedMemoryStreamForModule > IAssembly_UnmanagedMemoryStreamForModuleMethods for __T { }
+#[cfg(feature="system-reflection-assembly")]impl Assembly{#[doc="`GetAotId()` overload"]pub fn get_aot_id()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3400eb0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`GetAssembly(::unity2::SystemType)` overload"]pub fn get_assembly(r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::reflection::assembly::Assembly{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3401540usize)as*mut u8,crate::system::reflection::assembly::Assembly;
+(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+#[doc="`Load(::unity2::Il2CppString)` overload"]pub fn load(assembly_string:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::reflection::assembly::Assembly{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33f4680usize)as*mut u8,crate::system::reflection::assembly::Assembly;
+(::unity2::Il2CppString)::core::convert::Into::into(assembly_string))}
+}
+#[doc="`GetExecutingAssembly()` overload"]pub fn get_executing_assembly()->crate::system::reflection::assembly::Assembly{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3401710usize)as*mut u8,crate::system::reflection::assembly::Assembly;
+)}
+}
+#[doc="`GetCallingAssembly()` overload"]pub fn get_calling_assembly()->crate::system::reflection::assembly::Assembly{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3401760usize)as*mut u8,crate::system::reflection::assembly::Assembly;
+)}
+}
+#[doc="`op_Equality(crate::system::reflection::assembly::Assembly, crate::system::reflection::assembly::Assembly)` overload"]pub fn op_equality(left:impl::core::convert::Into<crate::system::reflection::assembly::Assembly> ,right:impl::core::convert::Into<crate::system::reflection::assembly::Assembly>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33f7d20usize)as*mut u8,bool;
+(crate::system::reflection::assembly::Assembly)::core::convert::Into::into(left),(crate::system::reflection::assembly::Assembly)::core::convert::Into::into(right))}
+}
+#[doc="`op_Inequality(crate::system::reflection::assembly::Assembly, crate::system::reflection::assembly::Assembly)` overload"]pub fn op_inequality(left:impl::core::convert::Into<crate::system::reflection::assembly::Assembly> ,right:impl::core::convert::Into<crate::system::reflection::assembly::Assembly>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33f8870usize)as*mut u8,bool;
+(crate::system::reflection::assembly::Assembly)::core::convert::Into::into(left),(crate::system::reflection::assembly::Assembly)::core::convert::Into::into(right))}
+}
+}
 
-#[cfg(feature = "system-reflection-assembly")]
-impl Assembly_UnmanagedMemoryStreamForModule { pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Assembly_UnmanagedMemoryStreamForModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-reflection-assembly")]pub trait IAssemblyMethods:IAssembly{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3400e00usize)as*mut u8,();
+(Assembly)__receiver)}
+}
+#[doc="`get_code_base(bool)` overload"]fn get_code_base(self,escaped:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3400e80usize)as*mut u8, ::unity2::Il2CppString;
+(Assembly)__receiver,(bool)::core::convert::Into::into(escaped))}
+}
+#[doc="`get_fullname()` overload"]fn get_fullname(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3400e90usize)as*mut u8, ::unity2::Il2CppString;
+(Assembly)__receiver)}
+}
+#[doc="`get_location()` overload"]fn get_location(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3400ea0usize)as*mut u8, ::unity2::Il2CppString;
+(Assembly)__receiver)}
+}
+#[doc="`get_CodeBase()` overload"]fn get_code_base_2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3400ed0usize)as*mut u8, ::unity2::Il2CppString;
+(Assembly)__receiver)}
+}
+#[doc="`get_FullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3400ee0usize)as*mut u8, ::unity2::Il2CppString;
+(Assembly)__receiver)}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3400fa0usize)as*mut u8,bool;
+(Assembly)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401030usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(Assembly)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetManifestResourceInternal(::unity2::Il2CppString, *muti32, *mutcrate::system::reflection::module::Module)` overload"]fn get_manifest_resource_internal(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(::unity2::IntPtr,i32,crate::system::reflection::module::Module){unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::system::reflection::module::Module> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x34010c0usize)as*mut u8, ::unity2::IntPtr;
+(Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(*mut i32)__out_0.as_mut_ptr(),(*mut crate::system::reflection::module::Module)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetManifestResourceStream(::unity2::Il2CppString)` overload"]fn get_manifest_resource_stream(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::io::stream::Stream{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34010d0usize)as*mut u8,crate::system::io::stream::Stream;
+(Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetTypes(bool)` overload"]fn get_types(self,exported_only:impl::core::convert::Into<bool>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401410usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
+(Assembly)__receiver,(bool)::core::convert::Into::into(exported_only))}
+}
+#[doc="`GetTypes()` overload"]fn get_types_2(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401420usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
+(Assembly)__receiver)}
+}
+#[doc="`GetType(::unity2::Il2CppString, bool)` overload"]fn get_type(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,throw_on_error:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401440usize)as*mut u8, ::unity2::SystemType;
+(Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(throw_on_error))}
+}
+#[doc="`GetType(::unity2::Il2CppString)` overload"]fn get_type_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::SystemType{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401460usize)as*mut u8, ::unity2::SystemType;
+(Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`InternalGetType(crate::system::reflection::module::Module, ::unity2::Il2CppString, bool, bool)` overload"]fn internal_get_type(self,module:impl::core::convert::Into<crate::system::reflection::module::Module> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,throw_on_error:impl::core::convert::Into<bool> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401480usize)as*mut u8, ::unity2::SystemType;
+(Assembly)__receiver,(crate::system::reflection::module::Module)::core::convert::Into::into(module),(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(throw_on_error),(bool)::core::convert::Into::into(ignore_case))}
+}
+#[doc="`GetName(bool)` overload"]fn get_name(self,copied_name:impl::core::convert::Into<bool>)->crate::system::reflection::assemblyname::AssemblyName{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401490usize)as*mut u8,crate::system::reflection::assemblyname::AssemblyName;
+(Assembly)__receiver,(bool)::core::convert::Into::into(copied_name))}
+}
+#[doc="`GetName()` overload"]fn get_name_2(self,)->crate::system::reflection::assemblyname::AssemblyName{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34014d0usize)as*mut u8,crate::system::reflection::assemblyname::AssemblyName;
+(Assembly)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34014f0usize)as*mut u8, ::unity2::Il2CppString;
+(Assembly)__receiver)}
+}
+#[doc="`GetModulesInternal()` overload"]fn get_modules_internal(self,)-> ::unity2::Array<crate::system::reflection::module::Module>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34016f0usize)as*mut u8, ::unity2::Array<crate::system::reflection::module::Module> ;
+(Assembly)__receiver)}
+}
+#[doc="`GetManifestResourceNames()` overload"]fn get_manifest_resource_names(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401700usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(Assembly)__receiver)}
+}
+#[doc="`GetManifestResourceInfoInternal(::unity2::Il2CppString, crate::system::reflection::manifestresourceinfo::ManifestResourceInfo)` overload"]fn get_manifest_resource_info_internal(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,info:impl::core::convert::Into<crate::system::reflection::manifestresourceinfo::ManifestResourceInfo>)->bool{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401770usize)as*mut u8,bool;
+(Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::manifestresourceinfo::ManifestResourceInfo)::core::convert::Into::into(info))}
+}
+#[doc="`GetManifestResourceInfo(::unity2::Il2CppString)` overload"]fn get_manifest_resource_info(self,resource_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::reflection::manifestresourceinfo::ManifestResourceInfo{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401780usize)as*mut u8,crate::system::reflection::manifestresourceinfo::ManifestResourceInfo;
+(Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(resource_name))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401890usize)as*mut u8,i32;
+(Assembly)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34018a0usize)as*mut u8,bool;
+(Assembly)__receiver,(crate::system::object::Object)::core::convert::Into::into(o))}
+}
+#[doc="`get_IsFullyTrusted()` overload"]fn get_is_fully_trusted(self,)->bool{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34019f0usize)as*mut u8,bool;
+(Assembly)__receiver)}
+}
+#[doc="`GetType(::unity2::Il2CppString, bool, bool)` overload"]fn get_type_3(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,throw_on_error:impl::core::convert::Into<bool> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401a00usize)as*mut u8, ::unity2::SystemType;
+(Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(throw_on_error),(bool)::core::convert::Into::into(ignore_case))}
+}
+#[doc="`GetModule(::unity2::Il2CppString)` overload"]fn get_module(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::reflection::module::Module{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401a30usize)as*mut u8,crate::system::reflection::module::Module;
+(Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetModules(bool)` overload"]fn get_modules(self,get_resource_modules:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::reflection::module::Module>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401a60usize)as*mut u8, ::unity2::Array<crate::system::reflection::module::Module> ;
+(Assembly)__receiver,(bool)::core::convert::Into::into(get_resource_modules))}
+}
+}
+
+#[cfg(feature="system-reflection-assembly")]impl<__T:IAssembly>IAssemblyMethods for __T{}
+
+#[cfg(feature="system-reflection-assembly")]impl Assembly{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_code_base_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_fullname_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_aot_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_code_base_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_full_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_manifest_resource_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_manifest_resource_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_types_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_types_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_type_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn internal_get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_name_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_modules_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_manifest_resource_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_executing_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_calling_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_manifest_resource_info_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_manifest_resource_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_is_fully_trusted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_type_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_modules_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+}
+
+#[cfg(feature="system-reflection-assembly")]impl Assembly{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Assembly), ::core::stringify!(new),));
+ <Self as IAssemblyMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="system-reflection-assembly")]pub trait IAssembly_UnmanagedMemoryStreamForModuleMethods:IAssembly_UnmanagedMemoryStreamForModule{#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Assembly_UnmanagedMemoryStreamForModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdc90usize)as*mut u8,();
+(Assembly_UnmanagedMemoryStreamForModule)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+}
+
+#[cfg(feature="system-reflection-assembly")]impl<__T:IAssembly_UnmanagedMemoryStreamForModule>IAssembly_UnmanagedMemoryStreamForModuleMethods for __T{}
+
+#[cfg(feature="system-reflection-assembly")]impl Assembly_UnmanagedMemoryStreamForModule{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "system-reflection-assembly")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Assembly;
-    pub use super::IAssembly;
-    pub use super::IAssemblyMethods;
     pub use super::Assembly_ResolveEventHolder;
     pub use super::IAssembly_ResolveEventHolder;
     pub use super::IAssembly_ResolveEventHolderMethods;
+    pub use super::Assembly;
+    pub use super::IAssembly;
+    pub use super::IAssemblyMethods;
     pub use super::Assembly_UnmanagedMemoryStreamForModule;
     pub use super::IAssembly_UnmanagedMemoryStreamForModule;
     pub use super::IAssembly_UnmanagedMemoryStreamForModuleMethods;

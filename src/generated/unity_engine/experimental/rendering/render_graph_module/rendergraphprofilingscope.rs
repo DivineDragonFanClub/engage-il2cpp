@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphprofilingscope/RenderGraphProfilingScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderGraphProfilingScope {
-    pub m_disposed: bool,
-    pub m_sampler: crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler,
-    pub m_render_graph: crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphprofilingscope/RenderGraphProfilingScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderGraphProfilingScope{pub m_disposed:bool,pub m_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,pub m_render_graph:crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,}
+impl::unity2::ClassIdentity for RenderGraphProfilingScope{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
+const NAME: &'static str="RenderGraphProfilingScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RenderGraphProfilingScope {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "RenderGraphProfilingScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RenderGraphProfilingScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RenderGraphProfilingScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,21 @@ impl ::unity2::IlType for RenderGraphProfilingScope {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphprofilingscope-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphprofilingscope")]
-impl RenderGraphProfilingScope { # [doc = "`.ctor(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph, crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"] pub fn ctor (& mut self , render_graph : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph > , sampler : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderGraphProfilingScope , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph , crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dc350usize) as * mut u8) ; __inner (self as * mut RenderGraphProfilingScope , :: core :: convert :: Into :: into (render_graph) , :: core :: convert :: Into :: into (sampler) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderGraphProfilingScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dc3b0usize) as * mut u8) ; __inner (self as * mut RenderGraphProfilingScope , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] pub fn dispose_2 (& mut self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderGraphProfilingScope , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dc400usize) as * mut u8) ; __inner (self as * mut RenderGraphProfilingScope , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphprofilingscope")]impl RenderGraphProfilingScope{#[doc="`.ctor(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph, crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"]pub fn ctor(&mut self,render_graph:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph> ,sampler:impl::core::convert::Into<crate::unity_engine::rendering::profilingsampler::ProfilingSampler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33dc350usize)as*mut u8,();
+(*mut RenderGraphProfilingScope)self as*mut RenderGraphProfilingScope,(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)::core::convert::Into::into(render_graph),(crate::unity_engine::rendering::profilingsampler::ProfilingSampler)::core::convert::Into::into(sampler))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33dc3b0usize)as*mut u8,();
+(*mut RenderGraphProfilingScope)self as*mut RenderGraphProfilingScope)}
+}
+#[doc="`Dispose(bool)` overload"]pub fn dispose_2(&mut self,disposing:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33dc400usize)as*mut u8,();
+(*mut RenderGraphProfilingScope)self as*mut RenderGraphProfilingScope,(bool)::core::convert::Into::into(disposing))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphprofilingscope")]
-impl RenderGraphProfilingScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphProfilingScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphProfilingScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphProfilingScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphprofilingscope")]impl RenderGraphProfilingScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphprofilingscope")]
 #[doc(hidden)]

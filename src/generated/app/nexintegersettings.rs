@@ -4,15 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexintegersettings/NexIntegerSettings.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexIntegerSettings")] # [parent (crate :: system :: object :: Object)] pub struct NexIntegerSettings {
-# [static_field] # [rename (name = "DefaultIndex")] pub default_index : u32 ,
-# [static_field] # [rename (name = "DailyTicketCountKey")] pub daily_ticket_count_key : u16 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexintegersettings/NexIntegerSettings.md"))]#[::unity2::class(namespace="App",name="NexIntegerSettings")]#[parent(crate::system::object::Object)]pub struct NexIntegerSettings{#[static_field]#[rename(name="DefaultIndex")]pub default_index:u32, #[static_field]#[rename(name="DailyTicketCountKey")]pub daily_ticket_count_key:u16,}
 
 }
 

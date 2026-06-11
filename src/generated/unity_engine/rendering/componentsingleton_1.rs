@@ -4,27 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/componentsingleton_1/ComponentSingleton_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ComponentSingleton`1")] # [parent (crate :: system :: object :: Object)] pub struct ComponentSingleton_1 < T0 : :: unity2 :: ClassIdentity > {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : T0 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/componentsingleton_1/ComponentSingleton_1.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ComponentSingleton`1")]#[parent(crate::system::object::Object)]pub struct ComponentSingleton_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="s_Instance")]pub s_instance:T0,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-componentsingleton_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-componentsingleton_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ComponentSingleton_1 < T0 > {
-# [doc = "`get_instance()` overload"] # [method (name = "get_instance" , args = 0)] pub fn get_instance () -> T0 ;
-
-# [doc = "`Release()` overload"] # [method (name = "Release" , args = 0)] pub fn release () -> () ;
-
-# [doc = "`.cctor()` overload"] # [method (name = ".cctor" , args = 0)] pub fn cctor () -> () ;
+#[cfg(feature="unity_engine-rendering-componentsingleton_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>ComponentSingleton_1<T0>{#[doc="`get_instance()` overload"]#[method(name="get_instance",args=0)]pub fn get_instance()->T0;
+ #[doc="`Release()` overload"]#[method(name="Release",args=0)]pub fn release()->();
+ #[doc="`.cctor()` overload"]#[method(name=".cctor",args=0)]pub fn cctor()->();
 }
 
 #[cfg(feature = "unity_engine-rendering-componentsingleton_1")]

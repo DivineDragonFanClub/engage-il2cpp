@@ -4,26 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uielementsruntimeutilitynative/UIElementsRuntimeUtilityNative.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UIElements" , name = "UIElementsRuntimeUtilityNative")] # [parent (crate :: system :: object :: Object)] pub struct UIElementsRuntimeUtilityNative {
-# [static_field] # [rename (name = "RepaintOverlayPanelsCallback")] pub repaint_overlay_panels_callback : crate :: system :: action :: Action ,
-# [static_field] # [rename (name = "UpdateRuntimePanelsCallback")] pub update_runtime_panels_callback : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui_elements/uielementsruntimeutilitynative/UIElementsRuntimeUtilityNative.md"))]#[::unity2::class(namespace="UnityEngine.UIElements",name="UIElementsRuntimeUtilityNative")]#[parent(crate::system::object::Object)]pub struct UIElementsRuntimeUtilityNative{#[static_field]#[rename(name="RepaintOverlayPanelsCallback")]pub repaint_overlay_panels_callback:crate::system::action::Action, #[static_field]#[rename(name="UpdateRuntimePanelsCallback")]pub update_runtime_panels_callback:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative")]
-impl UIElementsRuntimeUtilityNative { # [doc = "`RepaintOverlayPanels()` overload"] pub fn repaint_overlay_panels () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40230usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdateRuntimePanels()` overload"] pub fn update_runtime_panels () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40290usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui_elements-uielementsruntimeutilitynative")]impl UIElementsRuntimeUtilityNative{#[doc="`RepaintOverlayPanels()` overload"]pub fn repaint_overlay_panels()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40230usize)as*mut u8,();
+)}
+}
+#[doc="`UpdateRuntimePanels()` overload"]pub fn update_runtime_panels()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40290usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative")]
-impl UIElementsRuntimeUtilityNative { pub fn repaint_overlay_panels_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIElementsRuntimeUtilityNative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_runtime_panels_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIElementsRuntimeUtilityNative as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-ui_elements-uielementsruntimeutilitynative")]impl UIElementsRuntimeUtilityNative{pub fn repaint_overlay_panels_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_runtime_panels_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative")]
 #[doc(hidden)]

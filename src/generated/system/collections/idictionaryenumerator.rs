@@ -4,27 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/idictionaryenumerator/IDictionaryEnumerator.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IDictionaryEnumerator")] pub struct IDictionaryEnumerator {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/idictionaryenumerator/IDictionaryEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="IDictionaryEnumerator")]pub struct IDictionaryEnumerator{}
 
 }
 
 #[cfg(feature = "system-collections-idictionaryenumerator-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-idictionaryenumerator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IDictionaryEnumerator_unity2_raw { use super :: * ; pub unsafe fn get_key (this : IDictionaryEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Key") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Key" , < IDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IDictionaryEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_value (this : IDictionaryEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Value") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Value" , < IDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IDictionaryEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_entry (this : IDictionaryEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Entry") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Entry" , < IDictionaryEnumerator as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IDictionaryEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="system-collections-idictionaryenumerator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDictionaryEnumerator_unity2_raw{use super:: * ;
+pub unsafe fn get_key(this:IDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Key").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Key", <IDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value(this:IDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Value").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Value", <IDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_entry(this:IDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Entry").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Entry", <IDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "system-collections-idictionaryenumerator")]
-pub trait IIDictionaryEnumeratorMethods : IIDictionaryEnumerator { # [doc = "`get_Key()` overload"] fn get_key (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < IDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IDictionaryEnumerator_unity2_raw :: get_key (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < IDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IDictionaryEnumerator_unity2_raw :: get_value (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Entry()` overload"] fn get_entry (self ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry { unsafe { let __receiver = < IDictionaryEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IDictionaryEnumerator_unity2_raw :: get_entry (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="system-collections-idictionaryenumerator")]pub trait IIDictionaryEnumeratorMethods:IIDictionaryEnumerator{#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IDictionaryEnumerator_unity2_raw::get_key(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IDictionaryEnumerator_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IDictionaryEnumerator_unity2_raw::get_entry(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "system-collections-idictionaryenumerator")]
-impl < __T : IIDictionaryEnumerator > IIDictionaryEnumeratorMethods for __T { }
+#[cfg(feature="system-collections-idictionaryenumerator")]impl<__T:IIDictionaryEnumerator>IIDictionaryEnumeratorMethods for __T{}
 
-#[cfg(feature = "system-collections-idictionaryenumerator")]
-impl IDictionaryEnumerator { pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IDictionaryEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IDictionaryEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IDictionaryEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-collections-idictionaryenumerator")]impl IDictionaryEnumerator{pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "system-collections-idictionaryenumerator")]
 #[doc(hidden)]

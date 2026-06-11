@@ -4,34 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: characterassett_1 :: { CharacterAssetT_1 , ICharacterAssetT_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::characterassett_1::{CharacterAssetT_1,ICharacterAssetT_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterasset/CharacterAsset.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterAsset")] # [parent (crate :: combat :: characterassett_1 :: CharacterAssetT_1 < crate :: unity_engine :: object_2 :: Object_2 >)] pub struct CharacterAsset {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterasset/CharacterAsset.md"))]#[::unity2::class(namespace="Combat",name="CharacterAsset")]#[parent(crate::combat::characterassett_1::CharacterAssetT_1<crate::unity_engine::object_2::Object_2>)]pub struct CharacterAsset{}
 
 }
 
 #[cfg(feature = "combat-characterasset-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterasset")]
-pub trait ICharacterAssetMethods : ICharacterAsset { # [doc = "`.ctor(crate::combat::assettype::AssetType)` overload"] fn ctor (self , asset_type : impl :: core :: convert :: Into < crate :: combat :: assettype :: AssetType >) -> () { unsafe { let __receiver = < CharacterAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAsset , crate :: combat :: assettype :: AssetType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d37d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset_type) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::characterasset::CharacterAsset)` overload"] fn ctor_2 (self , rhs : impl :: core :: convert :: Into < crate :: combat :: characterasset :: CharacterAsset >) -> () { unsafe { let __receiver = < CharacterAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAsset , crate :: combat :: characterasset :: CharacterAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeNML(u16)` overload"] fn change_nml (self , mode : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < CharacterAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterAsset , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d3890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterasset")]pub trait ICharacterAssetMethods:ICharacterAsset{#[doc="`.ctor(crate::combat::assettype::AssetType)` overload"]fn ctor(self,asset_type:impl::core::convert::Into<crate::combat::assettype::AssetType>)->(){unsafe{let __receiver= <CharacterAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d37d0usize)as*mut u8,();
+(CharacterAsset)__receiver,(crate::combat::assettype::AssetType)::core::convert::Into::into(asset_type))}
+}
+#[doc="`.ctor(crate::combat::characterasset::CharacterAsset)` overload"]fn ctor_2(self,rhs:impl::core::convert::Into<crate::combat::characterasset::CharacterAsset>)->(){unsafe{let __receiver= <CharacterAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3830usize)as*mut u8,();
+(CharacterAsset)__receiver,(crate::combat::characterasset::CharacterAsset)::core::convert::Into::into(rhs))}
+}
+#[doc="`ChangeNML(u16)` overload"]fn change_nml(self,mode:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <CharacterAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3890usize)as*mut u8,();
+(CharacterAsset)__receiver,(u16)::core::convert::Into::into(mode))}
+}
+}
 
-#[cfg(feature = "combat-characterasset")]
-impl < __T : ICharacterAsset > ICharacterAssetMethods for __T { }
+#[cfg(feature="combat-characterasset")]impl<__T:ICharacterAsset>ICharacterAssetMethods for __T{}
 
-#[cfg(feature = "combat-characterasset")]
-impl CharacterAsset { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn change_nml_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-characterasset")]impl CharacterAsset{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn change_nml_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-characterasset")]
-impl CharacterAsset {
-# [doc = "`.ctor(crate::combat::assettype::AssetType)` — overload selector"] pub fn new (asset_type : crate :: combat :: assettype :: AssetType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterAsset) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterAssetMethods > :: ctor (this , asset_type) ; this }
-
-# [doc = "`.ctor(crate::combat::characterasset::CharacterAsset)` — overload selector"] pub fn new_2 (rhs : crate :: combat :: characterasset :: CharacterAsset) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterAsset) , :: core :: stringify ! (new_2) ,)) ; < Self as ICharacterAssetMethods > :: ctor_2 (this , rhs) ; this }
+#[cfg(feature="combat-characterasset")]impl CharacterAsset{#[doc="`.ctor(crate::combat::assettype::AssetType)` — overload selector"]pub fn new(asset_type:crate::combat::assettype::AssetType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterAsset), ::core::stringify!(new),));
+ <Self as ICharacterAssetMethods> ::ctor(this,asset_type);
+this}
+#[doc="`.ctor(crate::combat::characterasset::CharacterAsset)` — overload selector"]pub fn new_2(rhs:crate::combat::characterasset::CharacterAsset)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterAsset), ::core::stringify!(new_2),));
+ <Self as ICharacterAssetMethods> ::ctor_2(this,rhs);
+this}
 }
 
 #[cfg(feature = "combat-characterasset")]

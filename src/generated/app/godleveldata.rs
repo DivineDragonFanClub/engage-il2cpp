@@ -4,39 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godleveldata/GodLevelData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodLevelData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: godleveldata :: GodLevelData >)] pub struct GodLevelData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godleveldata/GodLevelData.md"))]#[::unity2::class(namespace="App",name="GodLevelData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::godleveldata::GodLevelData>)]pub struct GodLevelData{}
 
 }
 
 #[cfg(feature = "app-godleveldata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godleveldata")]
-impl GodLevelData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333c70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMaxLevel()` overload"] pub fn get_max_level () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333da0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMaxLevelData()` overload"] pub fn get_max_level_data () -> crate :: app :: godleveldata :: GodLevelData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: godleveldata :: GodLevelData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333e20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godleveldata")]impl GodLevelData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2333c70usize)as*mut u8,();
+)}
+}
+#[doc="`GetMaxLevel()` overload"]pub fn get_max_level()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2333da0usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetMaxLevelData()` overload"]pub fn get_max_level_data()->crate::app::godleveldata::GodLevelData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2333e20usize)as*mut u8,crate::app::godleveldata::GodLevelData;
+)}
+}
+}
 
-#[cfg(feature = "app-godleveldata")]
-pub trait IGodLevelDataMethods : IGodLevelData { # [doc = "`get_Level()` overload"] fn get_level (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(::unity2::Il2CppString)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Exp()` overload"] fn get_exp (self ,) -> i32 { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Exp(i32)` overload"] fn set_exp (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RelianceLevel()` overload"] fn get_reliance_level (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RelianceLevel(::unity2::Il2CppString)` overload"] fn set_reliance_level (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Cost()` overload"] fn get_cost (self ,) -> i32 { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Cost(i32)` overload"] fn set_cost (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodLevelData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodLevelData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2334050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godleveldata")]pub trait IGodLevelDataMethods:IGodLevelData{#[doc="`get_Level()` overload"]fn get_level(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333d20usize)as*mut u8, ::unity2::Il2CppString;
+(GodLevelData)__receiver)}
+}
+#[doc="`set_Level(::unity2::Il2CppString)` overload"]fn set_level(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333d30usize)as*mut u8,();
+(GodLevelData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Exp()` overload"]fn get_exp(self,)->i32{unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333d40usize)as*mut u8,i32;
+(GodLevelData)__receiver)}
+}
+#[doc="`set_Exp(i32)` overload"]fn set_exp(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333d50usize)as*mut u8,();
+(GodLevelData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_RelianceLevel()` overload"]fn get_reliance_level(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333d60usize)as*mut u8, ::unity2::Il2CppString;
+(GodLevelData)__receiver)}
+}
+#[doc="`set_RelianceLevel(::unity2::Il2CppString)` overload"]fn set_reliance_level(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333d70usize)as*mut u8,();
+(GodLevelData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cost()` overload"]fn get_cost(self,)->i32{unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333d80usize)as*mut u8,i32;
+(GodLevelData)__receiver)}
+}
+#[doc="`set_Cost(i32)` overload"]fn set_cost(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333d90usize)as*mut u8,();
+(GodLevelData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2334040usize)as*mut u8, ::unity2::Il2CppString;
+(GodLevelData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodLevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2334050usize)as*mut u8,();
+(GodLevelData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godleveldata")]
-impl < __T : IGodLevelData > IGodLevelDataMethods for __T { }
+#[cfg(feature="app-godleveldata")]impl<__T:IGodLevelData>IGodLevelDataMethods for __T{}
 
-#[cfg(feature = "app-godleveldata")]
-impl GodLevelData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_reliance_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_reliance_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_max_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_max_level_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodLevelData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-godleveldata")]impl GodLevelData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_reliance_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_reliance_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_max_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_max_level_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-godleveldata")]
-impl GodLevelData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodLevelData) , :: core :: stringify ! (new) ,)) ; < Self as IGodLevelDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godleveldata")]impl GodLevelData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodLevelData), ::core::stringify!(new),));
+ <Self as IGodLevelDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godleveldata")]

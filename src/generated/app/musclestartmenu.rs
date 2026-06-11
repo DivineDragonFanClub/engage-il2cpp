@@ -4,104 +4,151 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleStartMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MuscleStartMenu {
-# [offset (200)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: musclestartmenu :: MuscleStartMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclestartmenu/MuscleStartMenu_MuscleStartMenuItem.md"))]#[::unity2::class(namespace="App",name="MuscleStartMenu.MuscleStartMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MuscleStartMenu_MuscleStartMenuItem{#[offset(104)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(112)]#[rename(name="m_CommentText")]pub m_comment_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_RuleText")]pub m_rule_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_EffectText")]pub m_effect_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(136)]#[rename(name="m_ID")]pub m_id: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_ItemName")]pub m_item_name: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_Title")]pub m_title: ::unity2::Il2CppString, #[offset(160)]#[rename(name="m_Comment")]pub m_comment: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_Rule")]pub m_rule: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_Effect")]pub m_effect: ::unity2::Il2CppString,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleStartMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MuscleStartMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclestartmenu/MuscleStartMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MuscleStartMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MuscleStartMenu_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu_MuscleStartMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleStartMenu.MuscleStartMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MuscleStartMenu_MuscleStartMenuItem {
-# [offset (104)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (112)] # [rename (name = "m_CommentText")] pub m_comment_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (120)] # [rename (name = "m_RuleText")] pub m_rule_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (128)] # [rename (name = "m_EffectText")] pub m_effect_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (136)] # [rename (name = "m_ID")] pub m_id : :: unity2 :: Il2CppString ,
-# [offset (144)] # [rename (name = "m_ItemName")] pub m_item_name : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_Title")] pub m_title : :: unity2 :: Il2CppString ,
-# [offset (160)] # [rename (name = "m_Comment")] pub m_comment : :: unity2 :: Il2CppString ,
-# [offset (168)] # [rename (name = "m_Rule")] pub m_rule : :: unity2 :: Il2CppString ,
-# [offset (176)] # [rename (name = "m_Effect")] pub m_effect : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclestartmenu/MuscleStartMenu.md"))]#[::unity2::class(namespace="App",name="MuscleStartMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MuscleStartMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-musclestartmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , initial_select : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: musclestartmenu :: MuscleStartMenu_DecideEventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , crate :: app :: musclestartmenu :: MuscleStartMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (initial_select) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-musclestartmenu")]
-pub trait IMuscleStartMenuMethods : IMuscleStartMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: musclestartmenu :: MuscleStartMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < MuscleStartMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , crate :: app :: musclestartmenu :: MuscleStartMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd5ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MuscleStartMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd63e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < MuscleStartMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MuscleStartMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MuscleStartMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MuscleStartMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd64a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-musclestartmenu")]
-impl < __T : IMuscleStartMenu > IMuscleStartMenuMethods for __T { }
-
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , decide_event_handler : crate :: app :: musclestartmenu :: MuscleStartMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleStartMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleStartMenuMethods > :: ctor (this , menu_item_list , menu_content , decide_event_handler) ; this }
+#[cfg(feature="app-musclestartmenu")]pub trait IMuscleStartMenu_MuscleStartMenuItemMethods:IMuscleStartMenu_MuscleStartMenuItem{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn ctor(self,set_menu:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MuscleStartMenu_MuscleStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2092b60usize)as*mut u8,();
+(MuscleStartMenu_MuscleStartMenuItem)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(set_menu),(::unity2::Il2CppString)::core::convert::Into::into(id))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MuscleStartMenu_MuscleStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2093090usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MuscleStartMenu_MuscleStartMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MuscleStartMenu_MuscleStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20930a0usize)as*mut u8, ::unity2::Il2CppString;
+(MuscleStartMenu_MuscleStartMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MuscleStartMenu_MuscleStartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20930b0usize)as*mut u8,();
+(MuscleStartMenu_MuscleStartMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-musclestartmenu")]
-pub trait IMuscleStartMenu_DecideEventHandlerMethods : IMuscleStartMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < MuscleStartMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2092840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::muscle_exercise::r#type::Type)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: muscle_exercise :: r#type :: Type >) -> () { unsafe { let __receiver = < MuscleStartMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu_DecideEventHandler , crate :: app :: muscle_exercise :: r#type :: Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2092860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclestartmenu")]impl<__T:IMuscleStartMenu_MuscleStartMenuItem>IMuscleStartMenu_MuscleStartMenuItemMethods for __T{}
 
-#[cfg(feature = "app-musclestartmenu")]
-impl < __T : IMuscleStartMenu_DecideEventHandler > IMuscleStartMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleStartMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleStartMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-musclestartmenu")]impl MuscleStartMenu_MuscleStartMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-musclestartmenu")]
-pub trait IMuscleStartMenu_MuscleStartMenuItemMethods : IMuscleStartMenu_MuscleStartMenuItem { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"] fn ctor (self , set_menu : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MuscleStartMenu_MuscleStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu_MuscleStartMenuItem , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2092b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_menu) , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MuscleStartMenu_MuscleStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu_MuscleStartMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2093090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MuscleStartMenu_MuscleStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu_MuscleStartMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20930a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MuscleStartMenu_MuscleStartMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartMenu_MuscleStartMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20930b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclestartmenu")]impl MuscleStartMenu_MuscleStartMenuItem{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` — overload selector"]pub fn new(set_menu:crate::unity_engine::gameobject::GameObject,id: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleStartMenu_MuscleStartMenuItem), ::core::stringify!(new),));
+ <Self as IMuscleStartMenu_MuscleStartMenuItemMethods> ::ctor(this,set_menu,id);
+this}
+}
 
-#[cfg(feature = "app-musclestartmenu")]
-impl < __T : IMuscleStartMenu_MuscleStartMenuItem > IMuscleStartMenu_MuscleStartMenuItemMethods for __T { }
+#[cfg(feature="app-musclestartmenu")]pub trait IMuscleStartMenu_DecideEventHandlerMethods:IMuscleStartMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MuscleStartMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2092840usize)as*mut u8,();
+(MuscleStartMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::muscle_exercise::r#type::Type)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::muscle_exercise::r#type::Type>)->(){unsafe{let __receiver= <MuscleStartMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2092860usize)as*mut u8,();
+(MuscleStartMenu_DecideEventHandler)__receiver,(crate::app::muscle_exercise::r#type::Type)::core::convert::Into::into(result))}
+}
+}
 
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu_MuscleStartMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu_MuscleStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu_MuscleStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu_MuscleStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartMenu_MuscleStartMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-musclestartmenu")]impl<__T:IMuscleStartMenu_DecideEventHandler>IMuscleStartMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu_MuscleStartMenuItem {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` — overload selector"] pub fn new (set_menu : crate :: unity_engine :: gameobject :: GameObject , id : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleStartMenu_MuscleStartMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleStartMenu_MuscleStartMenuItemMethods > :: ctor (this , set_menu , id) ; this }
+#[cfg(feature="app-musclestartmenu")]impl MuscleStartMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-musclestartmenu")]impl MuscleStartMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleStartMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IMuscleStartMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-musclestartmenu")]impl MuscleStartMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_select:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6030usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(initial_select),(crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+}
+
+#[cfg(feature="app-musclestartmenu")]pub trait IMuscleStartMenuMethods:IMuscleStartMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,decide_event_handler:impl::core::convert::Into<crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MuscleStartMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd5ff0usize)as*mut u8,();
+(MuscleStartMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MuscleStartMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd63e0usize)as*mut u8, ::unity2::Il2CppString;
+(MuscleStartMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MuscleStartMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6430usize)as*mut u8,();
+(MuscleStartMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MuscleStartMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6440usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MuscleStartMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MuscleStartMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6470usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MuscleStartMenu)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MuscleStartMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd64a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MuscleStartMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-musclestartmenu")]impl<__T:IMuscleStartMenu>IMuscleStartMenuMethods for __T{}
+
+#[cfg(feature="app-musclestartmenu")]impl MuscleStartMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-musclestartmenu")]impl MuscleStartMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,decide_event_handler:crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleStartMenu), ::core::stringify!(new),));
+ <Self as IMuscleStartMenuMethods> ::ctor(this,menu_item_list,menu_content,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-musclestartmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MuscleStartMenu;
-    pub use super::IMuscleStartMenu;
-    pub use super::IMuscleStartMenuMethods;
-    pub use super::MuscleStartMenu_DecideEventHandler;
-    pub use super::IMuscleStartMenu_DecideEventHandler;
-    pub use super::IMuscleStartMenu_DecideEventHandlerMethods;
     pub use super::MuscleStartMenu_MuscleStartMenuItem;
     pub use super::IMuscleStartMenu_MuscleStartMenuItem;
     pub use super::IMuscleStartMenu_MuscleStartMenuItemMethods;
+    pub use super::MuscleStartMenu_DecideEventHandler;
+    pub use super::IMuscleStartMenu_DecideEventHandler;
+    pub use super::IMuscleStartMenu_DecideEventHandlerMethods;
+    pub use super::MuscleStartMenu;
+    pub use super::IMuscleStartMenu;
+    pub use super::IMuscleStartMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

@@ -4,38 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/childsuicide/ChildSuicide.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChildSuicide")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ChildSuicide {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/childsuicide/ChildSuicide.md"))]#[::unity2::class(namespace="App",name="ChildSuicide")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ChildSuicide{}
 
 }
 
 #[cfg(feature = "app-childsuicide-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-childsuicide")]
-pub trait IChildSuicideMethods : IChildSuicide { # [doc = "`OnTransformChildrenChanged()` overload"] fn on_transform_children_changed (self ,) -> () { unsafe { let __receiver = < ChildSuicide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChildSuicide , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetActiveChildCount()` overload"] fn get_active_child_count (self ,) -> i32 { unsafe { let __receiver = < ChildSuicide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChildSuicide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea1030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ChildSuicide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChildSuicide , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea10d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-childsuicide")]pub trait IChildSuicideMethods:IChildSuicide{#[doc="`OnTransformChildrenChanged()` overload"]fn on_transform_children_changed(self,)->(){unsafe{let __receiver= <ChildSuicide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0fa0usize)as*mut u8,();
+(ChildSuicide)__receiver)}
+}
+#[doc="`GetActiveChildCount()` overload"]fn get_active_child_count(self,)->i32{unsafe{let __receiver= <ChildSuicide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea1030usize)as*mut u8,i32;
+(ChildSuicide)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChildSuicide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea10d0usize)as*mut u8,();
+(ChildSuicide)__receiver)}
+}
+}
 
-#[cfg(feature = "app-childsuicide")]
-impl < __T : IChildSuicide > IChildSuicideMethods for __T { }
+#[cfg(feature="app-childsuicide")]impl<__T:IChildSuicide>IChildSuicideMethods for __T{}
 
-#[cfg(feature = "app-childsuicide")]
-impl ChildSuicide { pub fn on_transform_children_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChildSuicide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_active_child_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChildSuicide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChildSuicide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-childsuicide")]impl ChildSuicide{pub fn on_transform_children_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_active_child_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-childsuicide")]
-impl ChildSuicide {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChildSuicide) , :: core :: stringify ! (new) ,)) ; < Self as IChildSuicideMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-childsuicide")]impl ChildSuicide{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChildSuicide), ::core::stringify!(new),));
+ <Self as IChildSuicideMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-childsuicide")]

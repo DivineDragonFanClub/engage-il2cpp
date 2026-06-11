@@ -4,37 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: binarywriter :: { BinaryWriter , IBinaryWriter }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::binarywriter::{BinaryWriter,IBinaryWriter}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/io/bindumpbinarywriter/BinDumpBinaryWriter.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.IO" , name = "BinDumpBinaryWriter")] # [parent (crate :: system :: io :: binarywriter :: BinaryWriter)] pub struct BinDumpBinaryWriter {
-# [offset (72)] # [rename (name = "m_StringMap")] pub m_string_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/io/bindumpbinarywriter/BinDumpBinaryWriter.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.IO",name="BinDumpBinaryWriter")]#[parent(crate::system::io::binarywriter::BinaryWriter)]pub struct BinDumpBinaryWriter{#[offset(72)]#[rename(name="m_StringMap")]pub m_string_map:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> ,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-io-bindumpbinarywriter-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-io-bindumpbinarywriter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BinDumpBinaryWriter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: class () , "Write" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: NAME , "Write" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: class () , "Write" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: NAME , "Write" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: class () , "Write" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: NAME , "Write" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-io-bindumpbinarywriter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BinDumpBinaryWriter_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::io::stream::Stream as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<BinDumpBinaryWriter as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <BinDumpBinaryWriter as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_write{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<u32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<BinDumpBinaryWriter as::unity2::ClassIdentity> ::class(),"Write",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <BinDumpBinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_write_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<BinDumpBinaryWriter as::unity2::ClassIdentity> ::class(),"Write",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <BinDumpBinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_write_3{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<BinDumpBinaryWriter as::unity2::ClassIdentity> ::class(),"Write",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <BinDumpBinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-io-bindumpbinarywriter")]
-pub trait IBinDumpBinaryWriterMethods : IBinDumpBinaryWriter { # [doc = "`.ctor(crate::system::io::stream::Stream)` overload"] fn ctor (self , s : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { let __receiver = < BinDumpBinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinDumpBinaryWriter , crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__BinDumpBinaryWriter_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`Write(u32)` overload"] fn write (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < BinDumpBinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinDumpBinaryWriter , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__BinDumpBinaryWriter_unity2_raw :: __lookup_write :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(i32)` overload"] fn write_2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BinDumpBinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinDumpBinaryWriter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__BinDumpBinaryWriter_unity2_raw :: __lookup_write_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Il2CppString)` overload"] fn write_3 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BinDumpBinaryWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinDumpBinaryWriter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__BinDumpBinaryWriter_unity2_raw :: __lookup_write_3 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-io-bindumpbinarywriter")]pub trait IBinDumpBinaryWriterMethods:IBinDumpBinaryWriter{#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor(self,s:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <BinDumpBinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__BinDumpBinaryWriter_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(BinDumpBinaryWriter)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(s))}
+}
+#[doc="`Write(u32)` overload"]fn write(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <BinDumpBinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__BinDumpBinaryWriter_unity2_raw::__lookup_write::get_method_info().method_ptr,();
+(BinDumpBinaryWriter)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`Write(i32)` overload"]fn write_2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinDumpBinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__BinDumpBinaryWriter_unity2_raw::__lookup_write_2::get_method_info().method_ptr,();
+(BinDumpBinaryWriter)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_3(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BinDumpBinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__BinDumpBinaryWriter_unity2_raw::__lookup_write_3::get_method_info().method_ptr,();
+(BinDumpBinaryWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-io-bindumpbinarywriter")]
-impl < __T : IBinDumpBinaryWriter > IBinDumpBinaryWriterMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-io-bindumpbinarywriter")]impl<__T:IBinDumpBinaryWriter>IBinDumpBinaryWriterMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-io-bindumpbinarywriter")]
-impl BinDumpBinaryWriter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn write_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn write_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinDumpBinaryWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="moon_sharp-interpreter-io-bindumpbinarywriter")]impl BinDumpBinaryWriter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn write_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-io-bindumpbinarywriter")]
-impl BinDumpBinaryWriter {
-# [doc = "`.ctor(crate::system::io::stream::Stream)` — overload selector"] pub fn new (s : crate :: system :: io :: stream :: Stream) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BinDumpBinaryWriter) , :: core :: stringify ! (new) ,)) ; < Self as IBinDumpBinaryWriterMethods > :: ctor (this , s) ; this }
+#[cfg(feature="moon_sharp-interpreter-io-bindumpbinarywriter")]impl BinDumpBinaryWriter{#[doc="`.ctor(crate::system::io::stream::Stream)` — overload selector"]pub fn new(s:crate::system::io::stream::Stream)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BinDumpBinaryWriter), ::core::stringify!(new),));
+ <Self as IBinDumpBinaryWriterMethods> ::ctor(this,s);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-io-bindumpbinarywriter")]

@@ -4,133 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/winloserule/WinLoseRule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WinLoseRule  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/winloserule/WinLoseRule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WinLoseRule{pub value:i32,}
+impl::unity2::ClassIdentity for WinLoseRule{const NAMESPACE: &'static str="App";
+const NAME: &'static str="WinLoseRule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for WinLoseRule  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "WinLoseRule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for WinLoseRule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for WinLoseRule  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl WinLoseRule{pub fn unknown()->Self{Self{value:0}
 }
-
-
-impl  WinLoseRule  {
-    pub fn unknown() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn destroy_boss() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn escape() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn breakdown() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn enemy_num_lequal() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn limit_turn() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn dead_hero() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn dead_important() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn dead_all() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn event() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn surrender() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn custom() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn dead_last_boss() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 13 }
-
-    }
-
+pub fn destroy_boss()->Self{Self{value:1}
+}
+pub fn escape()->Self{Self{value:2}
+}
+pub fn breakdown()->Self{Self{value:3}
+}
+pub fn enemy_num_lequal()->Self{Self{value:4}
+}
+pub fn limit_turn()->Self{Self{value:5}
+}
+pub fn dead_hero()->Self{Self{value:6}
+}
+pub fn dead_important()->Self{Self{value:7}
+}
+pub fn dead_all()->Self{Self{value:8}
+}
+pub fn event()->Self{Self{value:9}
+}
+pub fn surrender()->Self{Self{value:10}
+}
+pub fn custom()->Self{Self{value:11}
+}
+pub fn dead_last_boss()->Self{Self{value:12}
+}
+pub fn num()->Self{Self{value:13}
+}
 }
 
 }

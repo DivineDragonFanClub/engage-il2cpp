@@ -4,27 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/loaders/iscriptloader/IScriptLoader.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Loaders" , name = "IScriptLoader")] pub struct IScriptLoader {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/loaders/iscriptloader/IScriptLoader.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Loaders",name="IScriptLoader")]pub struct IScriptLoader{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IScriptLoader_unity2_raw { use super :: * ; pub unsafe fn load_file (this : IScriptLoader , file : :: unity2 :: Il2CppString , global_context : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("LoadFile") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "LoadFile" , < IScriptLoader as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , file , global_context , __mi) } pub unsafe fn resolve_file_name (this : IScriptLoader , filename : :: unity2 :: Il2CppString , global_context : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ResolveFileName") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ResolveFileName" , < IScriptLoader as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , filename , global_context , __mi) } pub unsafe fn resolve_module_name (this : IScriptLoader , modname : :: unity2 :: Il2CppString , global_context : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ResolveModuleName") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ResolveModuleName" , < IScriptLoader as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , modname , global_context , __mi) } }
+#[cfg(feature="moon_sharp-interpreter-loaders-iscriptloader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IScriptLoader_unity2_raw{use super:: * ;
+pub unsafe fn load_file(this:IScriptLoader,file: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("LoadFile").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","LoadFile", <IScriptLoader as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,file,global_context,__mi)}
+pub unsafe fn resolve_file_name(this:IScriptLoader,filename: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ResolveFileName").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ResolveFileName", <IScriptLoader as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,filename,global_context,__mi)}
+pub unsafe fn resolve_module_name(this:IScriptLoader,modname: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ResolveModuleName").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ResolveModuleName", <IScriptLoader as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,modname,global_context,__mi)}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
-pub trait IIScriptLoaderMethods : IIScriptLoader { # [doc = "`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn load_file (self , file : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> crate :: system :: object :: Object { unsafe { let __receiver = < IScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IScriptLoader_unity2_raw :: load_file (__receiver , :: core :: convert :: Into :: into (file) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } # [doc = "`ResolveFileName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn resolve_file_name (self , filename : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IScriptLoader_unity2_raw :: resolve_file_name (__receiver , :: core :: convert :: Into :: into (filename) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } # [doc = "`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn resolve_module_name (self , modname : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IScriptLoader_unity2_raw :: resolve_module_name (__receiver , :: core :: convert :: Into :: into (modname) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="moon_sharp-interpreter-loaders-iscriptloader")]pub trait IIScriptLoaderMethods:IIScriptLoader{#[doc="`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn load_file(self,file:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->crate::system::object::Object{unsafe{let __receiver= <IScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IScriptLoader_unity2_raw::load_file(__receiver, ::core::convert::Into::into(file), ::core::convert::Into::into(global_context), ::core::option::Option::None)}
+}
+#[doc="`ResolveFileName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn resolve_file_name(self,filename:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)-> ::unity2::Il2CppString{unsafe{let __receiver= <IScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IScriptLoader_unity2_raw::resolve_file_name(__receiver, ::core::convert::Into::into(filename), ::core::convert::Into::into(global_context), ::core::option::Option::None)}
+}
+#[doc="`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn resolve_module_name(self,modname:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)-> ::unity2::Il2CppString{unsafe{let __receiver= <IScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IScriptLoader_unity2_raw::resolve_module_name(__receiver, ::core::convert::Into::into(modname), ::core::convert::Into::into(global_context), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
-impl < __T : IIScriptLoader > IIScriptLoaderMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-loaders-iscriptloader")]impl<__T:IIScriptLoader>IIScriptLoaderMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
-impl IScriptLoader { pub fn load_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IScriptLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn resolve_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IScriptLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn resolve_module_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IScriptLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="moon_sharp-interpreter-loaders-iscriptloader")]impl IScriptLoader{pub fn load_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn resolve_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn resolve_module_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
 #[doc(hidden)]

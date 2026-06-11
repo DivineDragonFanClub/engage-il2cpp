@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scene_management/scene/Scene.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Scene {
-    pub m_handle: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scene_management/scene/Scene.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Scene{pub m_handle:i32,}
+impl::unity2::ClassIdentity for Scene{const NAMESPACE: &'static str="UnityEngine.SceneManagement";
+const NAME: &'static str="Scene";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Scene {
-    const NAMESPACE: &'static str = "UnityEngine.SceneManagement";
-
-    const NAME: &'static str = "Scene";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Scene {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Scene{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,79 @@ impl ::unity2::IlType for Scene {
 #[cfg(feature = "unity_engine-scene_management-scene-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scene_management-scene")]
-impl Scene { # [doc = "`IsValidInternal(i32)` overload"] pub fn is_valid_internal (scene_handle : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89c60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene_handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetPathInternal(i32)` overload"] pub fn get_path_internal (scene_handle : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89cb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene_handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetNameInternal(i32)` overload"] pub fn get_name_internal (scene_handle : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89d00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene_handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetIsLoadedInternal(i32)` overload"] pub fn get_is_loaded_internal (scene_handle : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89d50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene_handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetRootCountInternal(i32)` overload"] pub fn get_root_count_internal (scene_handle : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89da0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene_handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetRootGameObjectsInternal(i32, crate::system::object::Object)` overload"] pub fn get_root_game_objects_internal (scene_handle : impl :: core :: convert :: Into < i32 > , result_root_list : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (i32 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89df0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene_handle) , :: core :: convert :: Into :: into (result_root_list) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::unity_engine::scene_management::scene::Scene, crate::unity_engine::scene_management::scene::Scene)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: scene :: Scene > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: scene :: Scene >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: scene_management :: scene :: Scene , crate :: unity_engine :: scene_management :: scene :: Scene , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8a320usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scene_management-scene")]impl Scene{#[doc="`IsValidInternal(i32)` overload"]pub fn is_valid_internal(scene_handle:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89c60usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(scene_handle))}
+}
+#[doc="`GetPathInternal(i32)` overload"]pub fn get_path_internal(scene_handle:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89cb0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(scene_handle))}
+}
+#[doc="`GetNameInternal(i32)` overload"]pub fn get_name_internal(scene_handle:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89d00usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(scene_handle))}
+}
+#[doc="`GetIsLoadedInternal(i32)` overload"]pub fn get_is_loaded_internal(scene_handle:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89d50usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(scene_handle))}
+}
+#[doc="`GetRootCountInternal(i32)` overload"]pub fn get_root_count_internal(scene_handle:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89da0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(scene_handle))}
+}
+#[doc="`GetRootGameObjectsInternal(i32, crate::system::object::Object)` overload"]pub fn get_root_game_objects_internal(scene_handle:impl::core::convert::Into<i32> ,result_root_list:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89df0usize)as*mut u8,();
+(i32)::core::convert::Into::into(scene_handle),(crate::system::object::Object)::core::convert::Into::into(result_root_list))}
+}
+#[doc="`op_Equality(crate::unity_engine::scene_management::scene::Scene, crate::unity_engine::scene_management::scene::Scene)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::scene_management::scene::Scene> ,rhs:impl::core::convert::Into<crate::unity_engine::scene_management::scene::Scene>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8a320usize)as*mut u8,bool;
+(crate::unity_engine::scene_management::scene::Scene)::core::convert::Into::into(lhs),(crate::unity_engine::scene_management::scene::Scene)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "unity_engine-scene_management-scene")]
-impl Scene { # [doc = "`get_handle()` overload"] pub fn get_handle (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Scene , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89e40usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] pub fn is_valid (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut Scene , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89e50usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: option :: Option :: None) } } } # [doc = "`get_path()` overload"] pub fn get_path (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Scene , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89ea0usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: option :: Option :: None) } } } # [doc = "`get_name()` overload"] pub fn get_name (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Scene , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89ef0usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: option :: Option :: None) } } } # [doc = "`get_isLoaded()` overload"] pub fn get_is_loaded (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut Scene , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89f40usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: option :: Option :: None) } } } # [doc = "`get_rootCount()` overload"] pub fn get_root_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Scene , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89f90usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: option :: Option :: None) } } } # [doc = "`GetRootGameObjects()` overload"] pub fn get_root_game_objects (& mut self ,) -> :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > { unsafe { { let __inner : extern "C" fn (* mut Scene , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89fe0usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: option :: Option :: None) } } } # [doc = "`GetRootGameObjects(crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>)` overload"] pub fn get_root_game_objects_2 (& mut self , root_game_objects : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > >) -> () { unsafe { { let __inner : extern "C" fn (* mut Scene , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8a0c0usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: convert :: Into :: into (root_game_objects) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Scene , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8a330usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Scene , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8a340usize) as * mut u8) ; __inner (self as * mut Scene , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scene_management-scene")]impl Scene{#[doc="`get_handle()` overload"]pub fn get_handle(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89e40usize)as*mut u8,i32;
+(*mut Scene)self as*mut Scene)}
+}
+#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89e50usize)as*mut u8,bool;
+(*mut Scene)self as*mut Scene)}
+}
+#[doc="`get_path()` overload"]pub fn get_path(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89ea0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Scene)self as*mut Scene)}
+}
+#[doc="`get_name()` overload"]pub fn get_name(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89ef0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Scene)self as*mut Scene)}
+}
+#[doc="`get_isLoaded()` overload"]pub fn get_is_loaded(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89f40usize)as*mut u8,bool;
+(*mut Scene)self as*mut Scene)}
+}
+#[doc="`get_rootCount()` overload"]pub fn get_root_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89f90usize)as*mut u8,i32;
+(*mut Scene)self as*mut Scene)}
+}
+#[doc="`GetRootGameObjects()` overload"]pub fn get_root_game_objects(&mut self,)-> ::unity2::Array<crate::unity_engine::gameobject::GameObject>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89fe0usize)as*mut u8, ::unity2::Array<crate::unity_engine::gameobject::GameObject> ;
+(*mut Scene)self as*mut Scene)}
+}
+#[doc="`GetRootGameObjects(crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>)` overload"]pub fn get_root_game_objects_2(&mut self,root_game_objects:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8a0c0usize)as*mut u8,();
+(*mut Scene)self as*mut Scene,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>)::core::convert::Into::into(root_game_objects))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8a330usize)as*mut u8,i32;
+(*mut Scene)self as*mut Scene)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8a340usize)as*mut u8,bool;
+(*mut Scene)self as*mut Scene,(crate::system::object::Object)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-scene_management-scene")]
-impl Scene { pub fn is_valid_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_path_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_is_loaded_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_root_count_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_root_game_objects_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_root_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_root_game_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_root_game_objects_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Scene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="unity_engine-scene_management-scene")]impl Scene{pub fn is_valid_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_path_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_loaded_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_root_count_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_root_game_objects_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_root_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_root_game_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_root_game_objects_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
 #[cfg(feature = "unity_engine-scene_management-scene")]
 #[doc(hidden)]

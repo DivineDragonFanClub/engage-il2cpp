@@ -4,30 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/lwrp/lightweightrenderpipeline/LightweightRenderPipeline.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.LWRP" , name = "LightweightRenderPipeline")] # [parent (crate :: system :: object :: Object)] pub struct LightweightRenderPipeline {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/lwrp/lightweightrenderpipeline/LightweightRenderPipeline.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.LWRP",name="LightweightRenderPipeline")]#[parent(crate::system::object::Object)]pub struct LightweightRenderPipeline{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
-pub trait ILightweightRenderPipelineMethods : ILightweightRenderPipeline { # [doc = "`.ctor(crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset)` overload"] fn ctor (self , asset : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset >) -> () { unsafe { let __receiver = < LightweightRenderPipeline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LightweightRenderPipeline , crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef5fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-lwrp-lightweightrenderpipeline")]pub trait ILightweightRenderPipelineMethods:ILightweightRenderPipeline{#[doc="`.ctor(crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset)` overload"]fn ctor(self,asset:impl::core::convert::Into<crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset>)->(){unsafe{let __receiver= <LightweightRenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef5fc0usize)as*mut u8,();
+(LightweightRenderPipeline)__receiver,(crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset)::core::convert::Into::into(asset))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
-impl < __T : ILightweightRenderPipeline > ILightweightRenderPipelineMethods for __T { }
+#[cfg(feature="unity_engine-rendering-lwrp-lightweightrenderpipeline")]impl<__T:ILightweightRenderPipeline>ILightweightRenderPipelineMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
-impl LightweightRenderPipeline { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightweightRenderPipeline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-lwrp-lightweightrenderpipeline")]impl LightweightRenderPipeline{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
-impl LightweightRenderPipeline {
-# [doc = "`.ctor(crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset)` — overload selector"] pub fn new (asset : crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LightweightRenderPipeline) , :: core :: stringify ! (new) ,)) ; < Self as ILightweightRenderPipelineMethods > :: ctor (this , asset) ; this }
+#[cfg(feature="unity_engine-rendering-lwrp-lightweightrenderpipeline")]impl LightweightRenderPipeline{#[doc="`.ctor(crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset)` — overload selector"]pub fn new(asset:crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LightweightRenderPipeline), ::core::stringify!(new),));
+ <Self as ILightweightRenderPipelineMethods> ::ctor(this,asset);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]

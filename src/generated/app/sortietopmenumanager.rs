@@ -4,34 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenumanager/SortieTopMenuManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTopMenuManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortietopmenumanager :: SortieTopMenuManager >)] pub struct SortieTopMenuManager {
-# [offset (32)] # [rename (name = "m_MenuSelect")] pub m_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenumanager/SortieTopMenuManager.md"))]#[::unity2::class(namespace="App",name="SortieTopMenuManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortietopmenumanager::SortieTopMenuManager>)]pub struct SortieTopMenuManager{#[offset(32)]#[rename(name="m_MenuSelect")]pub m_menu_select:crate::app::basicmenuselect::BasicMenuSelect,}
 
 }
 
 #[cfg(feature = "app-sortietopmenumanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortietopmenumanager")]
-pub trait ISortieTopMenuManagerMethods : ISortieTopMenuManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieTopMenuManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ee2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MenuSelect()` overload"] fn get_menu_select (self ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect { unsafe { let __receiver = < SortieTopMenuManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ee390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortietopmenumanager")]pub trait ISortieTopMenuManagerMethods:ISortieTopMenuManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenuManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ee2d0usize)as*mut u8,();
+(SortieTopMenuManager)__receiver)}
+}
+#[doc="`get_MenuSelect()` overload"]fn get_menu_select(self,)->crate::app::basicmenuselect::BasicMenuSelect{unsafe{let __receiver= <SortieTopMenuManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ee390usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
+(SortieTopMenuManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortietopmenumanager")]
-impl < __T : ISortieTopMenuManager > ISortieTopMenuManagerMethods for __T { }
+#[cfg(feature="app-sortietopmenumanager")]impl<__T:ISortieTopMenuManager>ISortieTopMenuManagerMethods for __T{}
 
-#[cfg(feature = "app-sortietopmenumanager")]
-impl SortieTopMenuManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_menu_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-sortietopmenumanager")]impl SortieTopMenuManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_menu_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-sortietopmenumanager")]
-impl SortieTopMenuManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTopMenuManager) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTopMenuManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortietopmenumanager")]impl SortieTopMenuManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenuManager), ::core::stringify!(new),));
+ <Self as ISortieTopMenuManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortietopmenumanager")]

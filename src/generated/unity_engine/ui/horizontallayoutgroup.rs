@@ -4,44 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: horizontalorverticallayoutgroup :: { HorizontalOrVerticalLayoutGroup , IHorizontalOrVerticalLayoutGroup }
- ;
- use crate :: unity_engine :: ui :: layoutgroup :: { ILayoutGroup , LayoutGroup }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::horizontalorverticallayoutgroup::{HorizontalOrVerticalLayoutGroup,IHorizontalOrVerticalLayoutGroup}
+;
+use crate::unity_engine::ui::layoutgroup::{ILayoutGroup,LayoutGroup}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/horizontallayoutgroup/HorizontalLayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "HorizontalLayoutGroup")] # [parent (crate :: unity_engine :: ui :: horizontalorverticallayoutgroup :: HorizontalOrVerticalLayoutGroup)] pub struct HorizontalLayoutGroup {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/horizontallayoutgroup/HorizontalLayoutGroup.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="HorizontalLayoutGroup")]#[parent(crate::unity_engine::ui::horizontalorverticallayoutgroup::HorizontalOrVerticalLayoutGroup)]pub struct HorizontalLayoutGroup{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
-pub trait IHorizontalLayoutGroupMethods : IHorizontalLayoutGroup { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputHorizontal()` overload"] fn calculate_layout_input_horizontal (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputVertical()` overload"] fn calculate_layout_input_vertical (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayoutHorizontal()` overload"] fn set_layout_horizontal (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayoutVertical()` overload"] fn set_layout_vertical (self ,) -> () { unsafe { let __receiver = < HorizontalLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HorizontalLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31935e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-horizontallayoutgroup")]pub trait IHorizontalLayoutGroupMethods:IHorizontalLayoutGroup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192b40usize)as*mut u8,();
+(HorizontalLayoutGroup)__receiver)}
+}
+#[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192b60usize)as*mut u8,();
+(HorizontalLayoutGroup)__receiver)}
+}
+#[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192f70usize)as*mut u8,();
+(HorizontalLayoutGroup)__receiver)}
+}
+#[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192f80usize)as*mut u8,();
+(HorizontalLayoutGroup)__receiver)}
+}
+#[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31935e0usize)as*mut u8,();
+(HorizontalLayoutGroup)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
-impl < __T : IHorizontalLayoutGroup > IHorizontalLayoutGroupMethods for __T { }
+#[cfg(feature="unity_engine-ui-horizontallayoutgroup")]impl<__T:IHorizontalLayoutGroup>IHorizontalLayoutGroupMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
-impl HorizontalLayoutGroup { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calculate_layout_input_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calculate_layout_input_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_layout_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_layout_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HorizontalLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-ui-horizontallayoutgroup")]impl HorizontalLayoutGroup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calculate_layout_input_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_layout_input_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_layout_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_layout_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
-impl HorizontalLayoutGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HorizontalLayoutGroup) , :: core :: stringify ! (new) ,)) ; < Self as IHorizontalLayoutGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-horizontallayoutgroup")]impl HorizontalLayoutGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HorizontalLayoutGroup), ::core::stringify!(new),));
+ <Self as IHorizontalLayoutGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]

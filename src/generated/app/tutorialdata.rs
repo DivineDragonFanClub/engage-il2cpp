@@ -4,267 +4,101 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialdata/TutorialData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TutorialData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: tutorialdata :: TutorialData >)] pub struct TutorialData {
-# [static_field] # [rename (name = "FirstIndex")] pub first_index : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialdata/TutorialData_Types.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialData_Types{pub value:i32,}
+impl::unity2::ClassIdentity for TutorialData_Types{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TutorialData.Types";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TutorialData_Types{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TutorialData_Types{pub fn battle()->Self{Self{value:0}
+}
+pub fn god()->Self{Self{value:1}
+}
+pub fn hub()->Self{Self{value:2}
+}
+pub fn kizuna_gmap()->Self{Self{value:3}
+}
+pub fn challenge()->Self{Self{value:4}
+}
+pub fn pick_up()->Self{Self{value:5}
+}
+pub fn none()->Self{Self{value:6}
+}
+pub fn num()->Self{Self{value:7}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Notices.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TutorialData_Notices  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialdata/TutorialData_SSTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialData_SSTypes{pub value:i32,}
+impl::unity2::ClassIdentity for TutorialData_SSTypes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TutorialData.SSTypes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TutorialData_SSTypes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TutorialData_SSTypes{pub fn common()->Self{Self{value:0}
+}
+pub fn by_language()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TutorialData_Notices  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialdata/TutorialData.md"))]#[::unity2::class(namespace="App",name="TutorialData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::tutorialdata::TutorialData>)]pub struct TutorialData{#[static_field]#[rename(name="FirstIndex")]pub first_index:i32,}
 
-    const NAME: &'static str = "TutorialData.Notices";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialdata/TutorialData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for TutorialData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TutorialData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TutorialData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TutorialData_Flags{pub fn lock()->Self{Self{value:0}
+}
+pub fn unlock()->Self{Self{value:1}
+}
+pub fn read()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::IlType for TutorialData_Notices  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialdata/TutorialData_Notices.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialData_Notices{pub value:i32,}
+impl::unity2::ClassIdentity for TutorialData_Notices{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TutorialData.Notices";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  TutorialData_Notices  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn silent() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn forced() -> Self {
-        Self { value: 2 }
-
-    }
-
+impl::unity2::IlType for TutorialData_Notices{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TutorialData_Flags  {
-    pub value: i32,
+impl TutorialData_Notices{pub fn normal()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::ClassIdentity for TutorialData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TutorialData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn silent()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for TutorialData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn forced()->Self{Self{value:2}
 }
-
-
-impl  TutorialData_Flags  {
-    pub fn lock() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn unlock() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn read() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_SSTypes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TutorialData_SSTypes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TutorialData_SSTypes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TutorialData.SSTypes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TutorialData_SSTypes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TutorialData_SSTypes  {
-    pub fn common() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn by_language() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Types.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TutorialData_Types  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TutorialData_Types  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TutorialData.Types";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TutorialData_Types  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TutorialData_Types  {
-    pub fn battle() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn kizuna_gmap() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn challenge() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn pick_up() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn none() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 7 }
-
-    }
-
 }
 
 }
@@ -272,33 +106,164 @@ impl  TutorialData_Types  {
 #[cfg(feature = "app-tutorialdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-tutorialdata")]
-impl TutorialData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ad250usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetFromTutid(::unity2::Il2CppString)` overload"] pub fn try_get_from_tutid (tutid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: tutorialdata :: TutorialData > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: tutorialdata :: TutorialData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ad300usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tutid) , :: core :: option :: Option :: None) } } } # [doc = "`LockPickUpTutorial()` overload"] pub fn lock_pick_up_tutorial () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ad380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetListFlag(crate::app::tutorialdata::TutorialData_Flags)` overload"] pub fn set_list_flag (flag : impl :: core :: convert :: Into < crate :: app :: tutorialdata :: TutorialData_Flags >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: tutorialdata :: TutorialData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adb70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (flag) , :: core :: option :: Option :: None) } } } # [doc = "`GetListFromType(crate::app::tutorialdata::TutorialData_Types, bool)` overload"] pub fn get_list_from_type (r#type : impl :: core :: convert :: Into < crate :: app :: tutorialdata :: TutorialData_Types > , is_get_all_tutorial : impl :: core :: convert :: Into < bool >) -> crate :: app :: structarraylist_1 :: StructArrayList_1 < crate :: app :: tutorialdata :: TutorialData > { unsafe { { let __inner : extern "C" fn (crate :: app :: tutorialdata :: TutorialData_Types , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: structarraylist_1 :: StructArrayList_1 < crate :: app :: tutorialdata :: TutorialData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ad550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (is_get_all_tutorial) , :: core :: option :: Option :: None) } } } # [doc = "`GetGlobalFlagsName(::unity2::Il2CppString)` overload"] pub fn get_global_flags_name (tutid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adf50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tutid) , :: core :: option :: Option :: None) } } } # [doc = "`SetGlobalFlags(::unity2::Il2CppString, crate::app::tutorialdata::TutorialData_Flags)` overload"] pub fn set_global_flags (tutid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , flag : impl :: core :: convert :: Into < crate :: app :: tutorialdata :: TutorialData_Flags >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: tutorialdata :: TutorialData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ad920usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tutid) , :: core :: convert :: Into :: into (flag) , :: core :: option :: Option :: None) } } } # [doc = "`GetGlobalFlags(::unity2::Il2CppString)` overload"] pub fn get_global_flags (tutid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: tutorialdata :: TutorialData_Flags { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: tutorialdata :: TutorialData_Flags = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adfb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tutid) , :: core :: option :: Option :: None) } } } # [doc = "`IsGlobalFlags(::unity2::Il2CppString, crate::app::tutorialdata::TutorialData_Flags)` overload"] pub fn is_global_flags (tutid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , flag : impl :: core :: convert :: Into < crate :: app :: tutorialdata :: TutorialData_Flags >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: tutorialdata :: TutorialData_Flags , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adc70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tutid) , :: core :: convert :: Into :: into (flag) , :: core :: option :: Option :: None) } } } # [doc = "`IsLock(::unity2::Il2CppString)` overload"] pub fn is_lock (tutid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ae140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tutid) , :: core :: option :: Option :: None) } } } # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ae150usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CompletedChapter(crate::app::chapterdata::ChapterData)` overload"] pub fn completed_chapter (chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ae300usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-tutorialdata")]impl TutorialData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ad250usize)as*mut u8,();
+)}
+}
+#[doc="`TryGetFromTutid(::unity2::Il2CppString)` overload"]pub fn try_get_from_tutid(tutid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ad300usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData> ;
+(::unity2::Il2CppString)::core::convert::Into::into(tutid))}
+}
+#[doc="`LockPickUpTutorial()` overload"]pub fn lock_pick_up_tutorial()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ad380usize)as*mut u8,();
+)}
+}
+#[doc="`SetListFlag(crate::app::tutorialdata::TutorialData_Flags)` overload"]pub fn set_list_flag(flag:impl::core::convert::Into<crate::app::tutorialdata::TutorialData_Flags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22adb70usize)as*mut u8,();
+(crate::app::tutorialdata::TutorialData_Flags)::core::convert::Into::into(flag))}
+}
+#[doc="`GetListFromType(crate::app::tutorialdata::TutorialData_Types, bool)` overload"]pub fn get_list_from_type(r#type:impl::core::convert::Into<crate::app::tutorialdata::TutorialData_Types> ,is_get_all_tutorial:impl::core::convert::Into<bool>)->crate::app::structarraylist_1::StructArrayList_1<crate::app::tutorialdata::TutorialData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ad550usize)as*mut u8,crate::app::structarraylist_1::StructArrayList_1<crate::app::tutorialdata::TutorialData> ;
+(crate::app::tutorialdata::TutorialData_Types)::core::convert::Into::into(r#type),(bool)::core::convert::Into::into(is_get_all_tutorial))}
+}
+#[doc="`GetGlobalFlagsName(::unity2::Il2CppString)` overload"]pub fn get_global_flags_name(tutid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22adf50usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(tutid))}
+}
+#[doc="`SetGlobalFlags(::unity2::Il2CppString, crate::app::tutorialdata::TutorialData_Flags)` overload"]pub fn set_global_flags(tutid:impl::core::convert::Into< ::unity2::Il2CppString> ,flag:impl::core::convert::Into<crate::app::tutorialdata::TutorialData_Flags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ad920usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(tutid),(crate::app::tutorialdata::TutorialData_Flags)::core::convert::Into::into(flag))}
+}
+#[doc="`GetGlobalFlags(::unity2::Il2CppString)` overload"]pub fn get_global_flags(tutid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::tutorialdata::TutorialData_Flags{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22adfb0usize)as*mut u8,crate::app::tutorialdata::TutorialData_Flags;
+(::unity2::Il2CppString)::core::convert::Into::into(tutid))}
+}
+#[doc="`IsGlobalFlags(::unity2::Il2CppString, crate::app::tutorialdata::TutorialData_Flags)` overload"]pub fn is_global_flags(tutid:impl::core::convert::Into< ::unity2::Il2CppString> ,flag:impl::core::convert::Into<crate::app::tutorialdata::TutorialData_Flags>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22adc70usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(tutid),(crate::app::tutorialdata::TutorialData_Flags)::core::convert::Into::into(flag))}
+}
+#[doc="`IsLock(::unity2::Il2CppString)` overload"]pub fn is_lock(tutid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ae140usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(tutid))}
+}
+#[doc="`RegistGlobalFlags()` overload"]pub fn regist_global_flags()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ae150usize)as*mut u8,();
+)}
+}
+#[doc="`CompletedChapter(crate::app::chapterdata::ChapterData)` overload"]pub fn completed_chapter(chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ae300usize)as*mut u8,();
+(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+}
 
-#[cfg(feature = "app-tutorialdata")]
-pub trait ITutorialDataMethods : ITutorialData { # [doc = "`get_MID()` overload"] fn get_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ade50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MID(::unity2::Il2CppString)` overload"] fn set_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ade60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Title()` overload"] fn get_title (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ade70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Title(::unity2::Il2CppString)` overload"] fn set_title (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ade80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SpriteAtlas()` overload"] fn get_sprite_atlas (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ade90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SpriteAtlas(::unity2::Il2CppString)` overload"] fn set_sprite_atlas (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Type()` overload"] fn get_type (self ,) -> crate :: app :: tutorialdata :: TutorialData_Types { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> crate :: app :: tutorialdata :: TutorialData_Types = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Type(crate::app::tutorialdata::TutorialData_Types)` overload"] fn set_type (self , value : impl :: core :: convert :: Into < crate :: app :: tutorialdata :: TutorialData_Types >) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , crate :: app :: tutorialdata :: TutorialData_Types , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Notice()` overload"] fn get_notice (self ,) -> crate :: app :: tutorialdata :: TutorialData_Notices { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> crate :: app :: tutorialdata :: TutorialData_Notices = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22aded0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Notice(crate::app::tutorialdata::TutorialData_Notices)` overload"] fn set_notice (self , value : impl :: core :: convert :: Into < crate :: app :: tutorialdata :: TutorialData_Notices >) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , crate :: app :: tutorialdata :: TutorialData_Notices , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Cid()` overload"] fn get_cid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Cid(::unity2::Il2CppString)` overload"] fn set_cid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adf00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_No()` overload"] fn get_no (self ,) -> i32 { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adf10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_No(i32)` overload"] fn set_no (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adf20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SSType()` overload"] fn get_ss_type (self ,) -> crate :: app :: tutorialdata :: TutorialData_SSTypes { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> crate :: app :: tutorialdata :: TutorialData_SSTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SSType(crate::app::tutorialdata::TutorialData_SSTypes)` overload"] fn set_ss_type (self , value : impl :: core :: convert :: Into < crate :: app :: tutorialdata :: TutorialData_SSTypes >) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , crate :: app :: tutorialdata :: TutorialData_SSTypes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22adf40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TutorialData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ae460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-tutorialdata")]pub trait ITutorialDataMethods:ITutorialData{#[doc="`get_MID()` overload"]fn get_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ade50usize)as*mut u8, ::unity2::Il2CppString;
+(TutorialData)__receiver)}
+}
+#[doc="`set_MID(::unity2::Il2CppString)` overload"]fn set_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ade60usize)as*mut u8,();
+(TutorialData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Title()` overload"]fn get_title(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ade70usize)as*mut u8, ::unity2::Il2CppString;
+(TutorialData)__receiver)}
+}
+#[doc="`set_Title(::unity2::Il2CppString)` overload"]fn set_title(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ade80usize)as*mut u8,();
+(TutorialData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SpriteAtlas()` overload"]fn get_sprite_atlas(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ade90usize)as*mut u8, ::unity2::Il2CppString;
+(TutorialData)__receiver)}
+}
+#[doc="`set_SpriteAtlas(::unity2::Il2CppString)` overload"]fn set_sprite_atlas(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adea0usize)as*mut u8,();
+(TutorialData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::tutorialdata::TutorialData_Types{unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adeb0usize)as*mut u8,crate::app::tutorialdata::TutorialData_Types;
+(TutorialData)__receiver)}
+}
+#[doc="`set_Type(crate::app::tutorialdata::TutorialData_Types)` overload"]fn set_type(self,value:impl::core::convert::Into<crate::app::tutorialdata::TutorialData_Types>)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adec0usize)as*mut u8,();
+(TutorialData)__receiver,(crate::app::tutorialdata::TutorialData_Types)::core::convert::Into::into(value))}
+}
+#[doc="`get_Notice()` overload"]fn get_notice(self,)->crate::app::tutorialdata::TutorialData_Notices{unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22aded0usize)as*mut u8,crate::app::tutorialdata::TutorialData_Notices;
+(TutorialData)__receiver)}
+}
+#[doc="`set_Notice(crate::app::tutorialdata::TutorialData_Notices)` overload"]fn set_notice(self,value:impl::core::convert::Into<crate::app::tutorialdata::TutorialData_Notices>)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adee0usize)as*mut u8,();
+(TutorialData)__receiver,(crate::app::tutorialdata::TutorialData_Notices)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adef0usize)as*mut u8, ::unity2::Il2CppString;
+(TutorialData)__receiver)}
+}
+#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adf00usize)as*mut u8,();
+(TutorialData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_No()` overload"]fn get_no(self,)->i32{unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adf10usize)as*mut u8,i32;
+(TutorialData)__receiver)}
+}
+#[doc="`set_No(i32)` overload"]fn set_no(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adf20usize)as*mut u8,();
+(TutorialData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SSType()` overload"]fn get_ss_type(self,)->crate::app::tutorialdata::TutorialData_SSTypes{unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adf30usize)as*mut u8,crate::app::tutorialdata::TutorialData_SSTypes;
+(TutorialData)__receiver)}
+}
+#[doc="`set_SSType(crate::app::tutorialdata::TutorialData_SSTypes)` overload"]fn set_ss_type(self,value:impl::core::convert::Into<crate::app::tutorialdata::TutorialData_SSTypes>)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22adf40usize)as*mut u8,();
+(TutorialData)__receiver,(crate::app::tutorialdata::TutorialData_SSTypes)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TutorialData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ae460usize)as*mut u8,();
+(TutorialData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-tutorialdata")]
-impl < __T : ITutorialData > ITutorialDataMethods for __T { }
+#[cfg(feature="app-tutorialdata")]impl<__T:ITutorialData>ITutorialDataMethods for __T{}
 
-#[cfg(feature = "app-tutorialdata")]
-impl TutorialData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn try_get_from_tutid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn lock_pick_up_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_list_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_list_from_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_sprite_atlas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_sprite_atlas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_ss_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_ss_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_global_flags_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn is_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn is_lock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn completed_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } }
+#[cfg(feature="app-tutorialdata")]impl TutorialData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_get_from_tutid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn lock_pick_up_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_list_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_list_from_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_sprite_atlas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_sprite_atlas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_notice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_notice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_ss_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_ss_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_global_flags_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn is_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn is_lock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn regist_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn completed_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
 
-#[cfg(feature = "app-tutorialdata")]
-impl TutorialData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TutorialData) , :: core :: stringify ! (new) ,)) ; < Self as ITutorialDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-tutorialdata")]impl TutorialData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TutorialData), ::core::stringify!(new),));
+ <Self as ITutorialDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-tutorialdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TutorialData_Types;
+    pub use super::TutorialData_SSTypes;
     pub use super::TutorialData;
     pub use super::ITutorialData;
     pub use super::ITutorialDataMethods;
-    pub use super::TutorialData_Notices;
     pub use super::TutorialData_Flags;
-    pub use super::TutorialData_SSTypes;
-    pub use super::TutorialData_Types;
+    pub use super::TutorialData_Notices;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

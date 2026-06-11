@@ -4,40 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbaseplatformsettings :: { AkBasePlatformSettings , IAkBasePlatformSettings }
- ;
- use crate :: root :: akcommonplatformsettings :: { AkCommonPlatformSettings , IAkCommonPlatformSettings }
- ;
- use crate :: root :: akwwiseinitializationsettings :: { AkWwiseInitializationSettings_CommonPlatformSettings , AkWwiseInitializationSettings_PlatformSettings , IAkWwiseInitializationSettings_CommonPlatformSettings , IAkWwiseInitializationSettings_PlatformSettings }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbaseplatformsettings::{AkBasePlatformSettings,IAkBasePlatformSettings}
+;
+use crate::root::akcommonplatformsettings::{AkCommonPlatformSettings,IAkCommonPlatformSettings}
+;
+use crate::root::akwwiseinitializationsettings::{AkWwiseInitializationSettings_CommonPlatformSettings,AkWwiseInitializationSettings_PlatformSettings,IAkWwiseInitializationSettings_CommonPlatformSettings,IAkWwiseInitializationSettings_PlatformSettings}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmacsettings/AkMacSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMacSettings")] # [parent (crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings_CommonPlatformSettings)] pub struct AkMacSettings {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmacsettings/AkMacSettings.md"))]#[::unity2::class(namespace="",name="AkMacSettings")]#[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_CommonPlatformSettings)]pub struct AkMacSettings{}
 
 }
 
 #[cfg(feature = "root-akmacsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akmacsettings")]
-pub trait IAkMacSettingsMethods : IAkMacSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkMacSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMacSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmacsettings")]pub trait IAkMacSettingsMethods:IAkMacSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkMacSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26640usize)as*mut u8,();
+(AkMacSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akmacsettings")]
-impl < __T : IAkMacSettings > IAkMacSettingsMethods for __T { }
+#[cfg(feature="root-akmacsettings")]impl<__T:IAkMacSettings>IAkMacSettingsMethods for __T{}
 
-#[cfg(feature = "root-akmacsettings")]
-impl AkMacSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMacSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akmacsettings")]impl AkMacSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akmacsettings")]
-impl AkMacSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMacSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkMacSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akmacsettings")]impl AkMacSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMacSettings), ::core::stringify!(new),));
+ <Self as IAkMacSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akmacsettings")]

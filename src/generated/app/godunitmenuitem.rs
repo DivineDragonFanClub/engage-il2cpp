@@ -4,38 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitmenuitem/GodUnitMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodUnitMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct GodUnitMenuItem {
-# [offset (112)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: godunitselectmenu :: GodUnitSelectMenu_SelectEventHandler ,
-# [offset (120)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler ,
-# [offset (128)] # [rename (name = "m_IsSelected")] pub m_is_selected : bool ,
-# [offset (129)] # [rename (name = "m_IsShowRingDirtyIcon")] pub m_is_show_ring_dirty_icon : bool ,
-# [offset (132)] # [rename (name = "m_GodType")] pub m_god_type : crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godunitmenuitem/GodUnitMenuItem.md"))]#[::unity2::class(namespace="App",name="GodUnitMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodUnitMenuItem{#[offset(112)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, #[offset(128)]#[rename(name="m_IsSelected")]pub m_is_selected:bool, #[offset(129)]#[rename(name="m_IsShowRingDirtyIcon")]pub m_is_show_ring_dirty_icon:bool, #[offset(132)]#[rename(name="m_GodType")]pub m_god_type:crate::app::ringcleaningsequence::RingCleaningSequence_GodType,}
 
 }
 
 #[cfg(feature = "app-godunitmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godunitmenuitem")]
-pub trait IGodUnitMenuItemMethods : IGodUnitMenuItem { # [doc = "`get_God()` overload"] fn get_god (self ,) -> crate :: app :: godunit :: GodUnit { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23471d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_God(crate::app::godunit::GodUnit)` overload"] fn set_god (self , value : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23471e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, bool, bool, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn ctor (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler > , is_selected : impl :: core :: convert :: Into < bool > , is_show_ring_dirty_icon : impl :: core :: convert :: Into < bool > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , crate :: app :: godunit :: GodUnit , crate :: app :: godunitselectmenu :: GodUnitSelectMenu_SelectEventHandler , crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler , bool , bool , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (is_selected) , :: core :: convert :: Into :: into (is_show_ring_dirty_icon) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23471f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGodName()` overload"] fn get_god_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23472d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetOptionalGodData()` overload"] fn get_optional_god_data (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23473f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Type()` overload"] fn get_type (self ,) -> crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsShowRingIcon()` overload"] fn get_is_show_ring_icon (self ,) -> bool { unsafe { let __receiver = < GodUnitMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godunitmenuitem")]pub trait IGodUnitMenuItemMethods:IGodUnitMenuItem{#[doc="`get_God()` overload"]fn get_god(self,)->crate::app::godunit::GodUnit{unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23471d0usize)as*mut u8,crate::app::godunit::GodUnit;
+(GodUnitMenuItem)__receiver)}
+}
+#[doc="`set_God(crate::app::godunit::GodUnit)` overload"]fn set_god(self,value:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23471e0usize)as*mut u8,();
+(GodUnitMenuItem)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::godunit::GodUnit, crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, bool, bool, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn ctor(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,select_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,is_selected:impl::core::convert::Into<bool> ,is_show_ring_dirty_icon:impl::core::convert::Into<bool> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347110usize)as*mut u8,();
+(GodUnitMenuItem)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(bool)::core::convert::Into::into(is_selected),(bool)::core::convert::Into::into(is_show_ring_dirty_icon),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23471f0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GodUnitMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347210usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GodUnitMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347250usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GodUnitMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347280usize)as*mut u8,();
+(GodUnitMenuItem)__receiver)}
+}
+#[doc="`GetGodName()` overload"]fn get_god_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23472d0usize)as*mut u8, ::unity2::Il2CppString;
+(GodUnitMenuItem)__receiver)}
+}
+#[doc="`GetOptionalGodData()` overload"]fn get_optional_god_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23473f0usize)as*mut u8,crate::app::goddata::GodData;
+(GodUnitMenuItem)__receiver)}
+}
+#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::ringcleaningsequence::RingCleaningSequence_GodType{unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347530usize)as*mut u8,crate::app::ringcleaningsequence::RingCleaningSequence_GodType;
+(GodUnitMenuItem)__receiver)}
+}
+#[doc="`get_IsShowRingIcon()` overload"]fn get_is_show_ring_icon(self,)->bool{unsafe{let __receiver= <GodUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347540usize)as*mut u8,bool;
+(GodUnitMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godunitmenuitem")]
-impl < __T : IGodUnitMenuItem > IGodUnitMenuItemMethods for __T { }
+#[cfg(feature="app-godunitmenuitem")]impl<__T:IGodUnitMenuItem>IGodUnitMenuItemMethods for __T{}
 
-#[cfg(feature = "app-godunitmenuitem")]
-impl GodUnitMenuItem { pub fn get_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_god_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_optional_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_show_ring_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-godunitmenuitem")]impl GodUnitMenuItem{pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_god_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_optional_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_show_ring_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-godunitmenuitem")]
-impl GodUnitMenuItem {
-# [doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, bool, bool, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` — overload selector"] pub fn new (god : crate :: app :: godunit :: GodUnit , select_event_handler : crate :: app :: godunitselectmenu :: GodUnitSelectMenu_SelectEventHandler , decide_event_handler : crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler , is_selected : bool , is_show_ring_dirty_icon : bool , r#type : crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodUnitMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IGodUnitMenuItemMethods > :: ctor (this , god , select_event_handler , decide_event_handler , is_selected , is_show_ring_dirty_icon , r#type) ; this }
+#[cfg(feature="app-godunitmenuitem")]impl GodUnitMenuItem{#[doc="`.ctor(crate::app::godunit::GodUnit, crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, bool, bool, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` — overload selector"]pub fn new(god:crate::app::godunit::GodUnit,select_event_handler:crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,decide_event_handler:crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,is_selected:bool,is_show_ring_dirty_icon:bool,r#type:crate::app::ringcleaningsequence::RingCleaningSequence_GodType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodUnitMenuItem), ::core::stringify!(new),));
+ <Self as IGodUnitMenuItemMethods> ::ctor(this,god,select_event_handler,decide_event_handler,is_selected,is_show_ring_dirty_icon,r#type);
+this}
 }
 
 #[cfg(feature = "app-godunitmenuitem")]

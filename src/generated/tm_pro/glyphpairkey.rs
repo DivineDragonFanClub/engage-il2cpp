@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/glyphpairkey/GlyphPairKey.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GlyphPairKey {
-    pub first_glyph_index: u32,
-    pub second_glyph_index: u32,
-    pub key: u32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/glyphpairkey/GlyphPairKey.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GlyphPairKey{pub first_glyph_index:u32,pub second_glyph_index:u32,pub key:u32,}
+impl::unity2::ClassIdentity for GlyphPairKey{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="GlyphPairKey";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for GlyphPairKey {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "GlyphPairKey";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for GlyphPairKey {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for GlyphPairKey{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,17 @@ impl ::unity2::IlType for GlyphPairKey {
 #[cfg(feature = "tm_pro-glyphpairkey-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-glyphpairkey")]
-impl GlyphPairKey { # [doc = "`.ctor(u32, u32)` overload"] pub fn ctor (& mut self , first_glyph_index : impl :: core :: convert :: Into < u32 > , second_glyph_index : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut GlyphPairKey , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c020usize) as * mut u8) ; __inner (self as * mut GlyphPairKey , :: core :: convert :: Into :: into (first_glyph_index) , :: core :: convert :: Into :: into (second_glyph_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord)` overload"] pub fn ctor_2 (& mut self , record : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord >) -> () { unsafe { { let __inner : extern "C" fn (* mut GlyphPairKey , crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c030usize) as * mut u8) ; __inner (self as * mut GlyphPairKey , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-glyphpairkey")]impl GlyphPairKey{#[doc="`.ctor(u32, u32)` overload"]pub fn ctor(&mut self,first_glyph_index:impl::core::convert::Into<u32> ,second_glyph_index:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c020usize)as*mut u8,();
+(*mut GlyphPairKey)self as*mut GlyphPairKey,(u32)::core::convert::Into::into(first_glyph_index),(u32)::core::convert::Into::into(second_glyph_index))}
+}
+#[doc="`.ctor(crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord)` overload"]pub fn ctor_2(&mut self,record:impl::core::convert::Into<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c030usize)as*mut u8,();
+(*mut GlyphPairKey)self as*mut GlyphPairKey,(crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord)::core::convert::Into::into(record))}
+}
+}
 
-#[cfg(feature = "tm_pro-glyphpairkey")]
-impl GlyphPairKey { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphPairKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphPairKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="tm_pro-glyphpairkey")]impl GlyphPairKey{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "tm_pro-glyphpairkey")]
 #[doc(hidden)]

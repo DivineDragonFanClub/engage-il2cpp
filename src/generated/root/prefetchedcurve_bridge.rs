@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: prefetchedcurve :: { IPrefetchedCurve , PrefetchedCurve }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::prefetchedcurve::{IPrefetchedCurve,PrefetchedCurve}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/prefetchedcurve_bridge/PrefetchedCurve_Bridge.md"))] # [:: unity2 :: class (namespace = "" , name = "PrefetchedCurve_Bridge")] # [parent (crate :: combat :: prefetchedcurve :: PrefetchedCurve)] pub struct PrefetchedCurve_Bridge {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/prefetchedcurve_bridge/PrefetchedCurve_Bridge.md"))]#[::unity2::class(namespace="",name="PrefetchedCurve_Bridge")]#[parent(crate::combat::prefetchedcurve::PrefetchedCurve)]pub struct PrefetchedCurve_Bridge{}
 
 }
 
 #[cfg(feature = "root-prefetchedcurve_bridge-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-prefetchedcurve_bridge")]
-pub trait IPrefetchedCurve_BridgeMethods : IPrefetchedCurve_Bridge { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PrefetchedCurve_Bridge as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PrefetchedCurve_Bridge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2816510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-prefetchedcurve_bridge")]pub trait IPrefetchedCurve_BridgeMethods:IPrefetchedCurve_Bridge{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PrefetchedCurve_Bridge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2816510usize)as*mut u8,();
+(PrefetchedCurve_Bridge)__receiver)}
+}
+}
 
-#[cfg(feature = "root-prefetchedcurve_bridge")]
-impl < __T : IPrefetchedCurve_Bridge > IPrefetchedCurve_BridgeMethods for __T { }
+#[cfg(feature="root-prefetchedcurve_bridge")]impl<__T:IPrefetchedCurve_Bridge>IPrefetchedCurve_BridgeMethods for __T{}
 
-#[cfg(feature = "root-prefetchedcurve_bridge")]
-impl PrefetchedCurve_Bridge { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PrefetchedCurve_Bridge as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-prefetchedcurve_bridge")]impl PrefetchedCurve_Bridge{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-prefetchedcurve_bridge")]
-impl PrefetchedCurve_Bridge {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PrefetchedCurve_Bridge) , :: core :: stringify ! (new) ,)) ; < Self as IPrefetchedCurve_BridgeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-prefetchedcurve_bridge")]impl PrefetchedCurve_Bridge{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PrefetchedCurve_Bridge), ::core::stringify!(new),));
+ <Self as IPrefetchedCurve_BridgeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-prefetchedcurve_bridge")]

@@ -4,14 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexdataid/NexDataId.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexDataId")] # [parent (crate :: system :: object :: Object)] pub struct NexDataId {
-# [static_field] # [rename (name = "Ranking")] pub ranking : u64 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexdataid/NexDataId.md"))]#[::unity2::class(namespace="App",name="NexDataId")]#[parent(crate::system::object::Object)]pub struct NexDataId{#[static_field]#[rename(name="Ranking")]pub ranking:u64,}
 
 }
 

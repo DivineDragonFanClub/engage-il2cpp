@@ -4,32 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmydata/ProfileCardMyData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardMyData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: profilecardmydata :: ProfileCardMyData >)] pub struct ProfileCardMyData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmydata/ProfileCardMyData.md"))]#[::unity2::class(namespace="App",name="ProfileCardMyData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::profilecardmydata::ProfileCardMyData>)]pub struct ProfileCardMyData{}
 
 }
 
 #[cfg(feature = "app-profilecardmydata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardmydata")]
-pub trait IProfileCardMyDataMethods : IProfileCardMyData { # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ccb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ccc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Card()` overload"] fn get_card (self ,) -> crate :: app :: profilecard :: ProfileCard { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecard :: ProfileCard = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ccf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCard()` overload"] fn update_card (self ,) -> () { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231cfb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ConvertByLanguage()` overload"] fn convert_by_language (self ,) -> bool { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231d930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardMyData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardMyData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231dbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardmydata")]pub trait IProfileCardMyDataMethods:IProfileCardMyData{#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cc90usize)as*mut u8,i32;
+(ProfileCardMyData)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cca0usize)as*mut u8,();
+(ProfileCardMyData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ccb0usize)as*mut u8,();
+(ProfileCardMyData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ccc0usize)as*mut u8,();
+(ProfileCardMyData)__receiver)}
+}
+#[doc="`get_Card()` overload"]fn get_card(self,)->crate::app::profilecard::ProfileCard{unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cfa0usize)as*mut u8,crate::app::profilecard::ProfileCard;
+(ProfileCardMyData)__receiver)}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ccf0usize)as*mut u8,();
+(ProfileCardMyData)__receiver)}
+}
+#[doc="`UpdateCard()` overload"]fn update_card(self,)->(){unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231cfb0usize)as*mut u8,();
+(ProfileCardMyData)__receiver)}
+}
+#[doc="`ConvertByLanguage()` overload"]fn convert_by_language(self,)->bool{unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231d930usize)as*mut u8,bool;
+(ProfileCardMyData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardMyData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231dbb0usize)as*mut u8,();
+(ProfileCardMyData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardmydata")]
-impl < __T : IProfileCardMyData > IProfileCardMyDataMethods for __T { }
+#[cfg(feature="app-profilecardmydata")]impl<__T:IProfileCardMyData>IProfileCardMyDataMethods for __T{}
 
-#[cfg(feature = "app-profilecardmydata")]
-impl ProfileCardMyData { pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_card_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_card_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn convert_by_language_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardMyData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-profilecardmydata")]impl ProfileCardMyData{pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_card_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_card_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn convert_by_language_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-profilecardmydata")]
-impl ProfileCardMyData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardMyData) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardMyDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardmydata")]impl ProfileCardMyData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardMyData), ::core::stringify!(new),));
+ <Self as IProfileCardMyDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardmydata")]

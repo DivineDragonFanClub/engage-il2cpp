@@ -4,38 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudiointerruptioncallbackinfo/AkAudioInterruptionCallbackInfo.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAudioInterruptionCallbackInfo")] # [parent (crate :: system :: object :: Object)] pub struct AkAudioInterruptionCallbackInfo {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudiointerruptioncallbackinfo/AkAudioInterruptionCallbackInfo.md"))]#[::unity2::class(namespace="",name="AkAudioInterruptionCallbackInfo")]#[parent(crate::system::object::Object)]pub struct AkAudioInterruptionCallbackInfo{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akaudiointerruptioncallbackinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akaudiointerruptioncallbackinfo")]
-impl AkAudioInterruptionCallbackInfo { # [doc = "`getCPtr(crate::root::akaudiointerruptioncallbackinfo::AkAudioInterruptionCallbackInfo)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akaudiointerruptioncallbackinfo :: AkAudioInterruptionCallbackInfo >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akaudiointerruptioncallbackinfo :: AkAudioInterruptionCallbackInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcf2d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akaudiointerruptioncallbackinfo")]impl AkAudioInterruptionCallbackInfo{#[doc="`getCPtr(crate::root::akaudiointerruptioncallbackinfo::AkAudioInterruptionCallbackInfo)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akaudiointerruptioncallbackinfo::AkAudioInterruptionCallbackInfo>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf2d0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akaudiointerruptioncallbackinfo::AkAudioInterruptionCallbackInfo)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akaudiointerruptioncallbackinfo")]
-pub trait IAkAudioInterruptionCallbackInfoMethods : IAkAudioInterruptionCallbackInfo { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkAudioInterruptionCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInterruptionCallbackInfo , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcf290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAudioInterruptionCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInterruptionCallbackInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcf330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkAudioInterruptionCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInterruptionCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcf360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkAudioInterruptionCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInterruptionCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcf3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_bEnterInterruption()` overload"] fn get_b_enter_interruption (self ,) -> bool { unsafe { let __receiver = < AkAudioInterruptionCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInterruptionCallbackInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcf560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkAudioInterruptionCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioInterruptionCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcf5d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akaudiointerruptioncallbackinfo")]pub trait IAkAudioInterruptionCallbackInfoMethods:IAkAudioInterruptionCallbackInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkAudioInterruptionCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf290usize)as*mut u8,();
+(AkAudioInterruptionCallbackInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAudioInterruptionCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf330usize)as*mut u8,();
+(AkAudioInterruptionCallbackInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkAudioInterruptionCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf360usize)as*mut u8,();
+(AkAudioInterruptionCallbackInfo)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkAudioInterruptionCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf3d0usize)as*mut u8,();
+(AkAudioInterruptionCallbackInfo)__receiver)}
+}
+#[doc="`get_bEnterInterruption()` overload"]fn get_b_enter_interruption(self,)->bool{unsafe{let __receiver= <AkAudioInterruptionCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf560usize)as*mut u8,bool;
+(AkAudioInterruptionCallbackInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkAudioInterruptionCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf5d0usize)as*mut u8,();
+(AkAudioInterruptionCallbackInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akaudiointerruptioncallbackinfo")]
-impl < __T : IAkAudioInterruptionCallbackInfo > IAkAudioInterruptionCallbackInfoMethods for __T { }
+#[cfg(feature="root-akaudiointerruptioncallbackinfo")]impl<__T:IAkAudioInterruptionCallbackInfo>IAkAudioInterruptionCallbackInfoMethods for __T{}
 
-#[cfg(feature = "root-akaudiointerruptioncallbackinfo")]
-impl AkAudioInterruptionCallbackInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInterruptionCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInterruptionCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInterruptionCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInterruptionCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInterruptionCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_b_enter_interruption_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInterruptionCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioInterruptionCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-akaudiointerruptioncallbackinfo")]impl AkAudioInterruptionCallbackInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_b_enter_interruption_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-akaudiointerruptioncallbackinfo")]
-impl AkAudioInterruptionCallbackInfo {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAudioInterruptionCallbackInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAkAudioInterruptionCallbackInfoMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAudioInterruptionCallbackInfo) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkAudioInterruptionCallbackInfoMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akaudiointerruptioncallbackinfo")]impl AkAudioInterruptionCallbackInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioInterruptionCallbackInfo), ::core::stringify!(new),));
+ <Self as IAkAudioInterruptionCallbackInfoMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioInterruptionCallbackInfo), ::core::stringify!(new_2),));
+ <Self as IAkAudioInterruptionCallbackInfoMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akaudiointerruptioncallbackinfo")]

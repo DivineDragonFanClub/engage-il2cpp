@@ -4,33 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmultiposevent/AkMultiPosEvent.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMultiPosEvent")] # [parent (crate :: system :: object :: Object)] pub struct AkMultiPosEvent {
-# [offset (16)] # [rename (name = "eventIsPlaying")] pub event_is_playing : bool ,
-# [offset (24)] # [rename (name = "list")] pub list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akambient :: AkAmbient > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmultiposevent/AkMultiPosEvent.md"))]#[::unity2::class(namespace="",name="AkMultiPosEvent")]#[parent(crate::system::object::Object)]pub struct AkMultiPosEvent{#[offset(16)]#[rename(name="eventIsPlaying")]pub event_is_playing:bool, #[offset(24)]#[rename(name="list")]pub list:crate::system::collections::generic::list_1::List_1<crate::root::akambient::AkAmbient> ,}
 
 }
 
 #[cfg(feature = "root-akmultiposevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akmultiposevent")]
-pub trait IAkMultiPosEventMethods : IAkMultiPosEvent { # [doc = "`FinishedPlaying(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::system::object::Object)` overload"] fn finished_playing (self , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object > , in_type : impl :: core :: convert :: Into < crate :: root :: akcallbacktype :: AkCallbackType > , in_info : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < AkMultiPosEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMultiPosEvent , crate :: system :: object :: Object , crate :: root :: akcallbacktype :: AkCallbackType , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f27af0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_cookie) , :: core :: convert :: Into :: into (in_type) , :: core :: convert :: Into :: into (in_info) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkMultiPosEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMultiPosEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f27b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmultiposevent")]pub trait IAkMultiPosEventMethods:IAkMultiPosEvent{#[doc="`FinishedPlaying(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::system::object::Object)` overload"]fn finished_playing(self,in_cookie:impl::core::convert::Into<crate::system::object::Object> ,in_type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,in_info:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AkMultiPosEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f27af0usize)as*mut u8,();
+(AkMultiPosEvent)__receiver,(crate::system::object::Object)::core::convert::Into::into(in_cookie),(crate::root::akcallbacktype::AkCallbackType)::core::convert::Into::into(in_type),(crate::system::object::Object)::core::convert::Into::into(in_info))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkMultiPosEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f27b00usize)as*mut u8,();
+(AkMultiPosEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akmultiposevent")]
-impl < __T : IAkMultiPosEvent > IAkMultiPosEventMethods for __T { }
+#[cfg(feature="root-akmultiposevent")]impl<__T:IAkMultiPosEvent>IAkMultiPosEventMethods for __T{}
 
-#[cfg(feature = "root-akmultiposevent")]
-impl AkMultiPosEvent { pub fn finished_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMultiPosEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMultiPosEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-akmultiposevent")]impl AkMultiPosEvent{pub fn finished_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-akmultiposevent")]
-impl AkMultiPosEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMultiPosEvent) , :: core :: stringify ! (new) ,)) ; < Self as IAkMultiPosEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akmultiposevent")]impl AkMultiPosEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMultiPosEvent), ::core::stringify!(new),));
+ <Self as IAkMultiPosEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akmultiposevent")]

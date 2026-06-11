@@ -4,37 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationminimapmenu/MapNavigationMiniMapMenu.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationMiniMapMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MapNavigationMiniMapMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapnavigationminimapmenu/MapNavigationMiniMapMenu.md"))]#[::unity2::class(namespace="",name="MapNavigationMiniMapMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MapNavigationMiniMapMenu{}
 
 }
 
 #[cfg(feature = "root-mapnavigationminimapmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapnavigationminimapmenu")]
-impl MapNavigationMiniMapMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: root :: mapnavigationminimapmenu :: MapNavigationMiniMapMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: root :: mapnavigationminimapmenu :: MapNavigationMiniMapMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (game_object) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationminimapmenu")]impl MapNavigationMiniMapMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::root::mapnavigationminimapmenu::MapNavigationMiniMapMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df7060usize)as*mut u8,crate::root::mapnavigationminimapmenu::MapNavigationMiniMapMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+}
 
-#[cfg(feature = "root-mapnavigationminimapmenu")]
-pub trait IMapNavigationMiniMapMenuMethods : IMapNavigationMiniMapMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: root :: mapnavigationminimapmenucontent :: MapNavigationMiniMapMenuContent >) -> () { unsafe { let __receiver = < MapNavigationMiniMapMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: root :: mapnavigationminimapmenucontent :: MapNavigationMiniMapMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapNavigationMiniMapMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapNavigationMiniMapMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationminimapmenu")]pub trait IMapNavigationMiniMapMenuMethods:IMapNavigationMiniMapMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent>)->(){unsafe{let __receiver= <MapNavigationMiniMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6e50usize)as*mut u8,();
+(MapNavigationMiniMapMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapNavigationMiniMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6e60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapNavigationMiniMapMenu)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapNavigationMiniMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6e70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapNavigationMiniMapMenu)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapNavigationMiniMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6f90usize)as*mut u8,();
+(MapNavigationMiniMapMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapnavigationminimapmenu")]
-impl < __T : IMapNavigationMiniMapMenu > IMapNavigationMiniMapMenuMethods for __T { }
+#[cfg(feature="root-mapnavigationminimapmenu")]impl<__T:IMapNavigationMiniMapMenu>IMapNavigationMiniMapMenuMethods for __T{}
 
-#[cfg(feature = "root-mapnavigationminimapmenu")]
-impl MapNavigationMiniMapMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-mapnavigationminimapmenu")]impl MapNavigationMiniMapMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-mapnavigationminimapmenu")]
-impl MapNavigationMiniMapMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: root :: mapnavigationminimapmenucontent :: MapNavigationMiniMapMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapNavigationMiniMapMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapNavigationMiniMapMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="root-mapnavigationminimapmenu")]impl MapNavigationMiniMapMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapNavigationMiniMapMenu), ::core::stringify!(new),));
+ <Self as IMapNavigationMiniMapMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "root-mapnavigationminimapmenu")]

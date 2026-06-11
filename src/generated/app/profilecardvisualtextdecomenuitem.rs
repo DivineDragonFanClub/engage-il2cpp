@@ -4,34 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: profilecardvisualbasemenuitem :: { IProfileCardVisualBaseMenuItem , ProfileCardVisualBaseMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::profilecardvisualbasemenuitem::{IProfileCardVisualBaseMenuItem,ProfileCardVisualBaseMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualtextdecomenuitem/ProfileCardVisualTextDecoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualTextDecoMenuItem")] # [parent (crate :: app :: profilecardvisualbasemenuitem :: ProfileCardVisualBaseMenuItem)] pub struct ProfileCardVisualTextDecoMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualtextdecomenuitem/ProfileCardVisualTextDecoMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualTextDecoMenuItem")]#[parent(crate::app::profilecardvisualbasemenuitem::ProfileCardVisualBaseMenuItem)]pub struct ProfileCardVisualTextDecoMenuItem{}
 
 }
 
 #[cfg(feature = "app-profilecardvisualtextdecomenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardvisualtextdecomenuitem")]
-pub trait IProfileCardVisualTextDecoMenuItemMethods : IProfileCardVisualTextDecoMenuItem { # [doc = "`get_m_TextDecoData()` overload"] fn get_m_text_deco_data (self ,) -> crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData { unsafe { let __receiver = < ProfileCardVisualTextDecoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextDecoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c07530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_TextDecoData(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"] fn set_m_text_deco_data (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData >) -> () { unsafe { let __receiver = < ProfileCardVisualTextDecoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextDecoMenuItem , crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c07540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::profilecardtextdecodata::ProfileCardTextDecoData, bool)` overload"] fn ctor (self , text_deco_data : impl :: core :: convert :: Into < crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData > , initial_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardVisualTextDecoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextDecoMenuItem , crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c05d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text_deco_data) , :: core :: convert :: Into :: into (initial_select) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualTextDecoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextDecoMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c07550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNewArrival()` overload"] fn is_new_arrival (self ,) -> bool { unsafe { let __receiver = < ProfileCardVisualTextDecoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextDecoMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c07810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAlreadyRead()` overload"] fn set_already_read (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualTextDecoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextDecoMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c078b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvisualtextdecomenuitem")]pub trait IProfileCardVisualTextDecoMenuItemMethods:IProfileCardVisualTextDecoMenuItem{#[doc="`get_m_TextDecoData()` overload"]fn get_m_text_deco_data(self,)->crate::app::profilecardtextdecodata::ProfileCardTextDecoData{unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c07530usize)as*mut u8,crate::app::profilecardtextdecodata::ProfileCardTextDecoData;
+(ProfileCardVisualTextDecoMenuItem)__receiver)}
+}
+#[doc="`set_m_TextDecoData(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]fn set_m_text_deco_data(self,value:impl::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>)->(){unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c07540usize)as*mut u8,();
+(ProfileCardVisualTextDecoMenuItem)__receiver,(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::profilecardtextdecodata::ProfileCardTextDecoData, bool)` overload"]fn ctor(self,text_deco_data:impl::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData> ,initial_select:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c05d20usize)as*mut u8,();
+(ProfileCardVisualTextDecoMenuItem)__receiver,(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)::core::convert::Into::into(text_deco_data),(bool)::core::convert::Into::into(initial_select))}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c07550usize)as*mut u8,();
+(ProfileCardVisualTextDecoMenuItem)__receiver)}
+}
+#[doc="`IsNewArrival()` overload"]fn is_new_arrival(self,)->bool{unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c07810usize)as*mut u8,bool;
+(ProfileCardVisualTextDecoMenuItem)__receiver)}
+}
+#[doc="`SetAlreadyRead()` overload"]fn set_already_read(self,)->(){unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c078b0usize)as*mut u8,();
+(ProfileCardVisualTextDecoMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardvisualtextdecomenuitem")]
-impl < __T : IProfileCardVisualTextDecoMenuItem > IProfileCardVisualTextDecoMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardvisualtextdecomenuitem")]impl<__T:IProfileCardVisualTextDecoMenuItem>IProfileCardVisualTextDecoMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardvisualtextdecomenuitem")]
-impl ProfileCardVisualTextDecoMenuItem { pub fn get_m_text_deco_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextDecoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_text_deco_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextDecoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextDecoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextDecoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_new_arrival_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextDecoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_already_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextDecoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardvisualtextdecomenuitem")]impl ProfileCardVisualTextDecoMenuItem{pub fn get_m_text_deco_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_text_deco_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_new_arrival_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_already_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardvisualtextdecomenuitem")]
-impl ProfileCardVisualTextDecoMenuItem {
-# [doc = "`.ctor(crate::app::profilecardtextdecodata::ProfileCardTextDecoData, bool)` — overload selector"] pub fn new (text_deco_data : crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData , initial_select : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualTextDecoMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualTextDecoMenuItemMethods > :: ctor (this , text_deco_data , initial_select) ; this }
+#[cfg(feature="app-profilecardvisualtextdecomenuitem")]impl ProfileCardVisualTextDecoMenuItem{#[doc="`.ctor(crate::app::profilecardtextdecodata::ProfileCardTextDecoData, bool)` — overload selector"]pub fn new(text_deco_data:crate::app::profilecardtextdecodata::ProfileCardTextDecoData,initial_select:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualTextDecoMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardVisualTextDecoMenuItemMethods> ::ctor(this,text_deco_data,initial_select);
+this}
 }
 
 #[cfg(feature = "app-profilecardvisualtextdecomenuitem")]

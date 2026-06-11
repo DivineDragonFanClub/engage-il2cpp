@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/nativeasstructattribute/NativeAsStructAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "NativeAsStructAttribute")] pub struct NativeAsStructAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/nativeasstructattribute/NativeAsStructAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="NativeAsStructAttribute")]pub struct NativeAsStructAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-nativeasstructattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-nativeasstructattribute")]
-pub trait INativeAsStructAttributeMethods : INativeAsStructAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NativeAsStructAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeAsStructAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f37c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-nativeasstructattribute")]pub trait INativeAsStructAttributeMethods:INativeAsStructAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NativeAsStructAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37c40usize)as*mut u8,();
+(NativeAsStructAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativeasstructattribute")]
-impl < __T : INativeAsStructAttribute > INativeAsStructAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-nativeasstructattribute")]impl<__T:INativeAsStructAttribute>INativeAsStructAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-nativeasstructattribute")]
-impl NativeAsStructAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeAsStructAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-bindings-nativeasstructattribute")]impl NativeAsStructAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativeasstructattribute")]
-impl NativeAsStructAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeAsStructAttribute) , :: core :: stringify ! (new) ,)) ; < Self as INativeAsStructAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-bindings-nativeasstructattribute")]impl NativeAsStructAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeAsStructAttribute), ::core::stringify!(new),));
+ <Self as INativeAsStructAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-nativeasstructattribute")]

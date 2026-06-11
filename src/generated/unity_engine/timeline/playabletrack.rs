@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: trackasset :: { ITrackAsset , TrackAsset }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/playabletrack/PlayableTrack.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "PlayableTrack")] # [parent (crate :: unity_engine :: timeline :: trackasset :: TrackAsset)] pub struct PlayableTrack {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/playabletrack/PlayableTrack.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="PlayableTrack")]#[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]pub struct PlayableTrack{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-playabletrack-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-playabletrack")]
-pub trait IPlayableTrackMethods : IPlayableTrack { # [doc = "`OnCreateClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"] fn on_create_clip (self , clip : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip >) -> () { unsafe { let __receiver = < PlayableTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayableTrack , crate :: unity_engine :: timeline :: timelineclip :: TimelineClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d93a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clip) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayableTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayableTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d9450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-playabletrack")]pub trait IPlayableTrackMethods:IPlayableTrack{#[doc="`OnCreateClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]fn on_create_clip(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->(){unsafe{let __receiver= <PlayableTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d93a0usize)as*mut u8,();
+(PlayableTrack)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayableTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9450usize)as*mut u8,();
+(PlayableTrack)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-playabletrack")]
-impl < __T : IPlayableTrack > IPlayableTrackMethods for __T { }
+#[cfg(feature="unity_engine-timeline-playabletrack")]impl<__T:IPlayableTrack>IPlayableTrackMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-playabletrack")]
-impl PlayableTrack { pub fn on_create_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-timeline-playabletrack")]impl PlayableTrack{pub fn on_create_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-timeline-playabletrack")]
-impl PlayableTrack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayableTrack) , :: core :: stringify ! (new) ,)) ; < Self as IPlayableTrackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-playabletrack")]impl PlayableTrack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayableTrack), ::core::stringify!(new),));
+ <Self as IPlayableTrackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-playabletrack")]

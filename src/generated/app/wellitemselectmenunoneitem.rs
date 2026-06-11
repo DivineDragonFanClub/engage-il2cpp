@@ -4,36 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicitemmenuitem :: { BasicItemMenuItem , IBasicItemMenuItem }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: wellitemselectmenuitem :: { IWellItemSelectMenuItem , WellItemSelectMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicitemmenuitem::{BasicItemMenuItem,IBasicItemMenuItem}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::wellitemselectmenuitem::{IWellItemSelectMenuItem,WellItemSelectMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenunoneitem/WellItemSelectMenuNoneItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellItemSelectMenuNoneItem")] # [parent (crate :: app :: wellitemselectmenuitem :: WellItemSelectMenuItem)] pub struct WellItemSelectMenuNoneItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellitemselectmenunoneitem/WellItemSelectMenuNoneItem.md"))]#[::unity2::class(namespace="App",name="WellItemSelectMenuNoneItem")]#[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]pub struct WellItemSelectMenuNoneItem{}
 
 }
 
 #[cfg(feature = "app-wellitemselectmenunoneitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-wellitemselectmenunoneitem")]
-pub trait IWellItemSelectMenuNoneItemMethods : IWellItemSelectMenuNoneItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29394d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBlankText()` overload"] fn get_blank_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29395a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVisibleItemIconOnBlank()` overload"] fn is_visible_item_icon_on_blank (self ,) -> bool { unsafe { let __receiver = < WellItemSelectMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuNoneItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2939620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-wellitemselectmenunoneitem")]pub trait IWellItemSelectMenuNoneItemMethods:IWellItemSelectMenuNoneItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WellItemSelectMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29394d0usize)as*mut u8,();
+(WellItemSelectMenuNoneItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <WellItemSelectMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2939520usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(WellItemSelectMenuNoneItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellItemSelectMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2939530usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WellItemSelectMenuNoneItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <WellItemSelectMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2939540usize)as*mut u8,crate::app::unititem::UnitItem;
+(WellItemSelectMenuNoneItem)__receiver)}
+}
+#[doc="`GetBlankText()` overload"]fn get_blank_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WellItemSelectMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29395a0usize)as*mut u8, ::unity2::Il2CppString;
+(WellItemSelectMenuNoneItem)__receiver)}
+}
+#[doc="`IsVisibleItemIconOnBlank()` overload"]fn is_visible_item_icon_on_blank(self,)->bool{unsafe{let __receiver= <WellItemSelectMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2939620usize)as*mut u8,bool;
+(WellItemSelectMenuNoneItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-wellitemselectmenunoneitem")]
-impl < __T : IWellItemSelectMenuNoneItem > IWellItemSelectMenuNoneItemMethods for __T { }
+#[cfg(feature="app-wellitemselectmenunoneitem")]impl<__T:IWellItemSelectMenuNoneItem>IWellItemSelectMenuNoneItemMethods for __T{}
 
-#[cfg(feature = "app-wellitemselectmenunoneitem")]
-impl WellItemSelectMenuNoneItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_blank_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_visible_item_icon_on_blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-wellitemselectmenunoneitem")]impl WellItemSelectMenuNoneItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_blank_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_visible_item_icon_on_blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-wellitemselectmenunoneitem")]
-impl WellItemSelectMenuNoneItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellItemSelectMenuNoneItem) , :: core :: stringify ! (new) ,)) ; < Self as IWellItemSelectMenuNoneItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-wellitemselectmenunoneitem")]impl WellItemSelectMenuNoneItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellItemSelectMenuNoneItem), ::core::stringify!(new),));
+ <Self as IWellItemSelectMenuNoneItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-wellitemselectmenunoneitem")]

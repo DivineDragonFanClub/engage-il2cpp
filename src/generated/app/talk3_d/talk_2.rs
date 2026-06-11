@@ -4,116 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talk_2/Talk_TalkType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Talk_TalkType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talk_2/Talk_2.md"))]#[::unity2::class(namespace="App.Talk3D",name="Talk")]#[parent(crate::system::object::Object)]pub struct Talk_2{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talk_2/Talk_TalkType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Talk_TalkType{pub value:i32,}
+impl::unity2::ClassIdentity for Talk_TalkType{const NAMESPACE: &'static str="App.Talk3D";
+const NAME: &'static str="Talk.TalkType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for Talk_TalkType  {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "Talk.TalkType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for Talk_TalkType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for Talk_TalkType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl Talk_TalkType{pub fn none()->Self{Self{value: -1}
 }
-
-
-impl  Talk_TalkType  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn face() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn puppet() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn system() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn direct() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn face()->Self{Self{value:0}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talk_2/Talk_2.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "Talk")] # [parent (crate :: system :: object :: Object)] pub struct Talk_2 {}
+pub fn puppet()->Self{Self{value:1}
+}
+pub fn system()->Self{Self{value:2}
+}
+pub fn direct()->Self{Self{value:3}
+}
+pub fn max()->Self{Self{value:4}
+}
+}
 
 }
 
 #[cfg(feature = "app-talk3_d-talk_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talk_2")]
-pub trait ITalk_2Methods : ITalk_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Talk_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Talk_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talk_2")]pub trait ITalk_2Methods:ITalk_2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Talk_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b8ef0usize)as*mut u8,();
+(Talk_2)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talk_2")]
-impl < __T : ITalk_2 > ITalk_2Methods for __T { }
+#[cfg(feature="app-talk3_d-talk_2")]impl<__T:ITalk_2>ITalk_2Methods for __T{}
 
-#[cfg(feature = "app-talk3_d-talk_2")]
-impl Talk_2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-talk3_d-talk_2")]impl Talk_2{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-talk3_d-talk_2")]
-impl Talk_2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Talk_2) , :: core :: stringify ! (new) ,)) ; < Self as ITalk_2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talk_2")]impl Talk_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Talk_2), ::core::stringify!(new),));
+ <Self as ITalk_2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talk_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Talk_TalkType;
     pub use super::Talk_2;
     pub use super::ITalk_2;
     pub use super::ITalk_2Methods;
+    pub use super::Talk_TalkType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

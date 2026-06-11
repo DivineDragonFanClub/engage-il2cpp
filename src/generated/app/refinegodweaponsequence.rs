@@ -4,151 +4,140 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponsequence/RefineGodWeaponSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RefineGodWeaponSequence_Label2  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponsequence/RefineGodWeaponSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefineGodWeaponSequence_Label2{pub value:i32,}
+impl::unity2::ClassIdentity for RefineGodWeaponSequence_Label2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RefineGodWeaponSequence.Label2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RefineGodWeaponSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RefineGodWeaponSequence_Label2{pub fn entry()->Self{Self{value:0}
+}
+pub fn top()->Self{Self{value:1}
+}
+pub fn prepare_to_refine()->Self{Self{value:2}
+}
+pub fn weapon_select_to_refine()->Self{Self{value:3}
+}
+pub fn refine()->Self{Self{value:4}
+}
+pub fn finish_to_refine()->Self{Self{value:5}
+}
+pub fn prepare_to_reset()->Self{Self{value:6}
+}
+pub fn weapon_select_to_reset()->Self{Self{value:7}
+}
+pub fn reset()->Self{Self{value:8}
+}
+pub fn finish_to_reset()->Self{Self{value:9}
+}
+pub fn end()->Self{Self{value:10}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for RefineGodWeaponSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefineGodWeaponSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RefineGodWeaponSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RefineGodWeaponSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn prepare_to_refine() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn weapon_select_to_refine() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn refine() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn finish_to_refine() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn prepare_to_reset() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn weapon_select_to_reset() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn reset() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn finish_to_reset() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 10 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefineGodWeaponSequence {
-# [offset (112)] # [rename (name = "m_ShopMenuResult")] pub m_shop_menu_result : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_MenuResult")] pub m_menu_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (120)] # [rename (name = "m_WeaponModelRenderer")] pub m_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
-# [offset (128)] # [rename (name = "m_RefineGodWeaponRoot")] pub m_refine_god_weapon_root : crate :: app :: refinegodweaponroot :: RefineGodWeaponRoot ,
-# [offset (136)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
-# [offset (144)] # [rename (name = "m_GodWeapon")] pub m_god_weapon : crate :: app :: itemdata :: ItemData ,
-# [offset (152)] # [rename (name = "m_RefineKind")] pub m_refine_kind : crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind ,
-# [offset (156)] # [rename (name = "m_WeaponSelectMenuScrollIndex")] pub m_weapon_select_menu_scroll_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RefineGodWeaponSequence{#[offset(112)]#[rename(name="m_ShopMenuResult")]pub m_shop_menu_result:crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2, #[offset(116)]#[rename(name="m_MenuResult")]pub m_menu_result:crate::app::basicmenu::BasicMenu_Result, #[offset(120)]#[rename(name="m_WeaponModelRenderer")]pub m_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, #[offset(128)]#[rename(name="m_RefineGodWeaponRoot")]pub m_refine_god_weapon_root:crate::app::refinegodweaponroot::RefineGodWeaponRoot, #[offset(136)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(144)]#[rename(name="m_GodWeapon")]pub m_god_weapon:crate::app::itemdata::ItemData, #[offset(152)]#[rename(name="m_RefineKind")]pub m_refine_kind:crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, #[offset(156)]#[rename(name="m_WeaponSelectMenuScrollIndex")]pub m_weapon_select_menu_scroll_index:i32,}
 
 }
 
 #[cfg(feature = "app-refinegodweaponsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refinegodweaponsequence")]
-impl RefineGodWeaponSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2389810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refinegodweaponsequence")]impl RefineGodWeaponSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2389810usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-refinegodweaponsequence")]
-pub trait IRefineGodWeaponSequenceMethods : IRefineGodWeaponSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2389890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23898a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238a8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238aa00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ab20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineGodWeaponTopMenu()` overload"] fn create_refine_god_weapon_top_menu (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238abd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineGodWeaponRoot()` overload"] fn create_refine_god_weapon_root (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ae40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyRefineGodWeaponRoot()` overload"] fn destroy_refine_god_weapon_root (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238aec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineGodWeaponSelectMenu()` overload"] fn create_refine_god_weapon_select_menu (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238af70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineGodWeaponParamMenu()` overload"] fn create_refine_god_weapon_param_menu (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238b240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineGodWeaponSelectMenuForReset()` overload"] fn create_refine_god_weapon_select_menu_for_reset (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238b460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRefineGodWeaponParamMenuForReset()` overload"] fn create_refine_god_weapon_param_menu_for_reset (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238b730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238b950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refinegodweaponsequence")]pub trait IRefineGodWeaponSequenceMethods:IRefineGodWeaponSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2389890usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23898a0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238a8f0usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238aa00usize)as*mut u8,bool;
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ab20usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`CreateRefineGodWeaponTopMenu()` overload"]fn create_refine_god_weapon_top_menu(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238abd0usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`CreateRefineGodWeaponRoot()` overload"]fn create_refine_god_weapon_root(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ae40usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`DestroyRefineGodWeaponRoot()` overload"]fn destroy_refine_god_weapon_root(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238aec0usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`CreateRefineGodWeaponSelectMenu()` overload"]fn create_refine_god_weapon_select_menu(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238af70usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`CreateRefineGodWeaponParamMenu()` overload"]fn create_refine_god_weapon_param_menu(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238b240usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`CreateRefineGodWeaponSelectMenuForReset()` overload"]fn create_refine_god_weapon_select_menu_for_reset(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238b460usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`CreateRefineGodWeaponParamMenuForReset()` overload"]fn create_refine_god_weapon_param_menu_for_reset(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238b730usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <RefineGodWeaponSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238b950usize)as*mut u8,();
+(RefineGodWeaponSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refinegodweaponsequence")]
-impl < __T : IRefineGodWeaponSequence > IRefineGodWeaponSequenceMethods for __T { }
+#[cfg(feature="app-refinegodweaponsequence")]impl<__T:IRefineGodWeaponSequence>IRefineGodWeaponSequenceMethods for __T{}
 
-#[cfg(feature = "app-refinegodweaponsequence")]
-impl RefineGodWeaponSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_refine_god_weapon_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_refine_god_weapon_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn destroy_refine_god_weapon_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_refine_god_weapon_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_refine_god_weapon_param_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_refine_god_weapon_select_menu_for_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_refine_god_weapon_param_menu_for_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-refinegodweaponsequence")]impl RefineGodWeaponSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_refine_god_weapon_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_refine_god_weapon_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn destroy_refine_god_weapon_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_refine_god_weapon_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_refine_god_weapon_param_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_refine_god_weapon_select_menu_for_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_refine_god_weapon_param_menu_for_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-refinegodweaponsequence")]
-impl RefineGodWeaponSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refinegodweaponsequence")]impl RefineGodWeaponSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponSequence), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refinegodweaponsequence")]

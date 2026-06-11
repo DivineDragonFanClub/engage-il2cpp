@@ -4,34 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akrtpcplayablebehaviour/AkRTPCPlayableBehaviour.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRTPCPlayableBehaviour")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct AkRTPCPlayableBehaviour {
-# [offset (16)] # [rename (name = "RTPCValue")] pub rtpc_value : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akrtpcplayablebehaviour/AkRTPCPlayableBehaviour.md"))]#[::unity2::class(namespace="",name="AkRTPCPlayableBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct AkRTPCPlayableBehaviour{#[offset(16)]#[rename(name="RTPCValue")]pub rtpc_value:f32,}
 
 }
 
 #[cfg(feature = "root-akrtpcplayablebehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akrtpcplayablebehaviour")]
-pub trait IAkRTPCPlayableBehaviourMethods : IAkRTPCPlayableBehaviour { # [doc = "`set_setRTPCGlobally(bool)` overload"] fn set_set_rtpc_globally (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkRTPCPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayableBehaviour , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2fa50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_setRTPCGlobally()` overload"] fn get_set_rtpc_globally (self ,) -> bool { unsafe { let __receiver = < AkRTPCPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2fa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_overrideTrackObject(bool)` overload"] fn set_override_track_object (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkRTPCPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayableBehaviour , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2fa70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_overrideTrackObject()` overload"] fn get_override_track_object (self ,) -> bool { unsafe { let __receiver = < AkRTPCPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2fa80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_rtpcObject(crate::unity_engine::gameobject::GameObject)` overload"] fn set_rtpc_object (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkRTPCPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayableBehaviour , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2fa90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_rtpcObject()` overload"] fn get_rtpc_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < AkRTPCPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2faa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < AkRTPCPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayableBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2fad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRTPCPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRTPCPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2fa40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akrtpcplayablebehaviour")]pub trait IAkRTPCPlayableBehaviourMethods:IAkRTPCPlayableBehaviour{#[doc="`set_setRTPCGlobally(bool)` overload"]fn set_set_rtpc_globally(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkRTPCPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2fa50usize)as*mut u8,();
+(AkRTPCPlayableBehaviour)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_setRTPCGlobally()` overload"]fn get_set_rtpc_globally(self,)->bool{unsafe{let __receiver= <AkRTPCPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2fa60usize)as*mut u8,bool;
+(AkRTPCPlayableBehaviour)__receiver)}
+}
+#[doc="`set_overrideTrackObject(bool)` overload"]fn set_override_track_object(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkRTPCPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2fa70usize)as*mut u8,();
+(AkRTPCPlayableBehaviour)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_overrideTrackObject()` overload"]fn get_override_track_object(self,)->bool{unsafe{let __receiver= <AkRTPCPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2fa80usize)as*mut u8,bool;
+(AkRTPCPlayableBehaviour)__receiver)}
+}
+#[doc="`set_rtpcObject(crate::unity_engine::gameobject::GameObject)` overload"]fn set_rtpc_object(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkRTPCPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2fa90usize)as*mut u8,();
+(AkRTPCPlayableBehaviour)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_rtpcObject()` overload"]fn get_rtpc_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AkRTPCPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2faa0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(AkRTPCPlayableBehaviour)__receiver)}
+}
+#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AkRTPCPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2fad0usize)as*mut u8,();
+(AkRTPCPlayableBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRTPCPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2fa40usize)as*mut u8,();
+(AkRTPCPlayableBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akrtpcplayablebehaviour")]
-impl < __T : IAkRTPCPlayableBehaviour > IAkRTPCPlayableBehaviourMethods for __T { }
+#[cfg(feature="root-akrtpcplayablebehaviour")]impl<__T:IAkRTPCPlayableBehaviour>IAkRTPCPlayableBehaviourMethods for __T{}
 
-#[cfg(feature = "root-akrtpcplayablebehaviour")]
-impl AkRTPCPlayableBehaviour { pub fn set_set_rtpc_globally_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_set_rtpc_globally_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_override_track_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_override_track_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_rtpc_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_rtpc_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRTPCPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-akrtpcplayablebehaviour")]impl AkRTPCPlayableBehaviour{pub fn set_set_rtpc_globally_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_set_rtpc_globally_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_override_track_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_override_track_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_rtpc_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_rtpc_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "root-akrtpcplayablebehaviour")]
-impl AkRTPCPlayableBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRTPCPlayableBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IAkRTPCPlayableBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akrtpcplayablebehaviour")]impl AkRTPCPlayableBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRTPCPlayableBehaviour), ::core::stringify!(new),));
+ <Self as IAkRTPCPlayableBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akrtpcplayablebehaviour")]

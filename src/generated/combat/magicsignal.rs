@@ -4,43 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsignal/MagicSignal.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "MagicSignal")] # [parent (crate :: system :: object :: Object)] pub struct MagicSignal {
-# [offset (16)] # [rename (name = "level")] pub level : crate :: combat :: magiclevels :: MagicLevels ,
-# [offset (20)] # [rename (name = "frame")] pub frame : f32 ,
-# [offset (24)] # [rename (name = "command")] pub command : crate :: combat :: magiccommand :: MagicCommand ,
-# [offset (32)] # [rename (name = "prefab")] pub prefab : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "parentName")] pub parent_name : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "connect")] pub connect : crate :: combat :: particleconnect :: ParticleConnect ,
-# [offset (52)] # [rename (name = "intParameter")] pub int_parameter : i32 ,
-# [offset (56)] # [rename (name = "floatParameter")] pub float_parameter : f32 ,
-# [offset (64)] # [rename (name = "stringParameter")] pub string_parameter : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/magicsignal/MagicSignal.md"))]#[::unity2::class(namespace="Combat",name="MagicSignal")]#[parent(crate::system::object::Object)]pub struct MagicSignal{#[offset(16)]#[rename(name="level")]pub level:crate::combat::magiclevels::MagicLevels, #[offset(20)]#[rename(name="frame")]pub frame:f32, #[offset(24)]#[rename(name="command")]pub command:crate::combat::magiccommand::MagicCommand, #[offset(32)]#[rename(name="prefab")]pub prefab:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="parentName")]pub parent_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="connect")]pub connect:crate::combat::particleconnect::ParticleConnect, #[offset(52)]#[rename(name="intParameter")]pub int_parameter:i32, #[offset(56)]#[rename(name="floatParameter")]pub float_parameter:f32, #[offset(64)]#[rename(name="stringParameter")]pub string_parameter: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "combat-magicsignal-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-magicsignal")]
-impl MagicSignal { # [doc = "`op_Implicit(crate::combat::magicsignal::MagicSignal)` overload"] pub fn op_implicit (a : impl :: core :: convert :: Into < crate :: combat :: magicsignal :: MagicSignal >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: magicsignal :: MagicSignal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf3120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-magicsignal")]impl MagicSignal{#[doc="`op_Implicit(crate::combat::magicsignal::MagicSignal)` overload"]pub fn op_implicit(a:impl::core::convert::Into<crate::combat::magicsignal::MagicSignal>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bf3120usize)as*mut u8,bool;
+(crate::combat::magicsignal::MagicSignal)::core::convert::Into::into(a))}
+}
+}
 
-#[cfg(feature = "combat-magicsignal")]
-pub trait IMagicSignalMethods : IMagicSignal { # [doc = "`get_Time()` overload"] fn get_time (self ,) -> f32 { unsafe { let __receiver = < MagicSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignal , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf3130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsFiredBetween(f32, f32)` overload"] fn is_fired_between (self , prev_time : impl :: core :: convert :: Into < f32 > , curr_time : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < MagicSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignal , f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf3150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (prev_time) , :: core :: convert :: Into :: into (curr_time) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MagicSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf3180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-magicsignal")]pub trait IMagicSignalMethods:IMagicSignal{#[doc="`get_Time()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <MagicSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf3130usize)as*mut u8,f32;
+(MagicSignal)__receiver)}
+}
+#[doc="`IsFiredBetween(f32, f32)` overload"]fn is_fired_between(self,prev_time:impl::core::convert::Into<f32> ,curr_time:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <MagicSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf3150usize)as*mut u8,bool;
+(MagicSignal)__receiver,(f32)::core::convert::Into::into(prev_time),(f32)::core::convert::Into::into(curr_time))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MagicSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf3180usize)as*mut u8,();
+(MagicSignal)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-magicsignal")]
-impl < __T : IMagicSignal > IMagicSignalMethods for __T { }
+#[cfg(feature="combat-magicsignal")]impl<__T:IMagicSignal>IMagicSignalMethods for __T{}
 
-#[cfg(feature = "combat-magicsignal")]
-impl MagicSignal { pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_fired_between_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-magicsignal")]impl MagicSignal{pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_fired_between_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-magicsignal")]
-impl MagicSignal {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MagicSignal) , :: core :: stringify ! (new) ,)) ; < Self as IMagicSignalMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-magicsignal")]impl MagicSignal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MagicSignal), ::core::stringify!(new),));
+ <Self as IMagicSignalMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-magicsignal")]

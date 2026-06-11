@@ -4,34 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapranking/MapRanking.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapRanking")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapranking :: MapRanking >)] pub struct MapRanking {
-# [offset (32)] # [rename (name = "pairs")] pub pairs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexranking :: NexRanking_Data > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapranking/MapRanking.md"))]#[::unity2::class(namespace="App",name="MapRanking")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapranking::MapRanking>)]pub struct MapRanking{#[offset(32)]#[rename(name="pairs")]pub pairs:crate::system::collections::generic::list_1::List_1<crate::app::nexranking::NexRanking_Data> ,}
 
 }
 
 #[cfg(feature = "app-mapranking-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapranking")]
-pub trait IMapRankingMethods : IMapRanking { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235cf00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235cfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegisterUnit()` overload"] fn register_unit (self ,) -> () { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Upload(crate::app::procinst::ProcInst)` overload"] fn upload (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`GetChapter()` overload"] fn get_chapter (self ,) -> crate :: app :: chapterdata :: ChapterData { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterdata :: ChapterData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`DbgDump()` overload"] fn dbg_dump (self ,) -> () { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearNetSucceeded()` overload"] fn clear_net_succeeded (self ,) -> () { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsNetSucceeded()` overload"] fn get_is_net_succeeded (self ,) -> bool { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapRanking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRanking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235d920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapranking")]pub trait IMapRankingMethods:IMapRanking{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235cf00usize)as*mut u8,();
+(MapRanking)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235cfd0usize)as*mut u8,();
+(MapRanking)__receiver)}
+}
+#[doc="`RegisterUnit()` overload"]fn register_unit(self,)->(){unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d050usize)as*mut u8,();
+(MapRanking)__receiver)}
+}
+#[doc="`Upload(crate::app::procinst::ProcInst)` overload"]fn upload(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d260usize)as*mut u8,bool;
+(MapRanking)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`GetChapter()` overload"]fn get_chapter(self,)->crate::app::chapterdata::ChapterData{unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d140usize)as*mut u8,crate::app::chapterdata::ChapterData;
+(MapRanking)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d440usize)as*mut u8,i32;
+(MapRanking)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d450usize)as*mut u8,();
+(MapRanking)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d550usize)as*mut u8,();
+(MapRanking)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`DbgDump()` overload"]fn dbg_dump(self,)->(){unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d6a0usize)as*mut u8,();
+(MapRanking)__receiver)}
+}
+#[doc="`ClearNetSucceeded()` overload"]fn clear_net_succeeded(self,)->(){unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d3c0usize)as*mut u8,();
+(MapRanking)__receiver)}
+}
+#[doc="`get_IsNetSucceeded()` overload"]fn get_is_net_succeeded(self,)->bool{unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d8a0usize)as*mut u8,bool;
+(MapRanking)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235d920usize)as*mut u8,();
+(MapRanking)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapranking")]
-impl < __T : IMapRanking > IMapRankingMethods for __T { }
+#[cfg(feature="app-mapranking")]impl<__T:IMapRanking>IMapRankingMethods for __T{}
 
-#[cfg(feature = "app-mapranking")]
-impl MapRanking { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn register_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn dbg_dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn clear_net_succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_net_succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRanking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-mapranking")]impl MapRanking{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn register_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn dbg_dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clear_net_succeeded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_net_succeeded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-mapranking")]
-impl MapRanking {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapRanking) , :: core :: stringify ! (new) ,)) ; < Self as IMapRankingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapranking")]impl MapRanking{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapRanking), ::core::stringify!(new),));
+ <Self as IMapRankingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapranking")]

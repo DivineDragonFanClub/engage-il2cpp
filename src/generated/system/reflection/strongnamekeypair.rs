@@ -4,31 +4,28 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/strongnamekeypair/StrongNameKeyPair.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "StrongNameKeyPair")] # [parent (crate :: system :: object :: Object)] pub struct StrongNameKeyPair {
-# [offset (16)] # [rename (name = "_publicKey")] pub public_key : :: unity2 :: Array < u8 > ,
-# [offset (24)] # [rename (name = "_keyPairContainer")] pub key_pair_container : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "_keyPairExported")] pub key_pair_exported : bool ,
-# [offset (40)] # [rename (name = "_keyPairArray")] pub key_pair_array : :: unity2 :: Array < u8 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/strongnamekeypair/StrongNameKeyPair.md"))]#[::unity2::class(namespace="System.Reflection",name="StrongNameKeyPair")]#[parent(crate::system::object::Object)]pub struct StrongNameKeyPair{#[offset(16)]#[rename(name="_publicKey")]pub public_key: ::unity2::Array<u8> , #[offset(24)]#[rename(name="_keyPairContainer")]pub key_pair_container: ::unity2::Il2CppString, #[offset(32)]#[rename(name="_keyPairExported")]pub key_pair_exported:bool, #[offset(40)]#[rename(name="_keyPairArray")]pub key_pair_array: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "system-reflection-strongnamekeypair-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-strongnamekeypair")]
-pub trait IStrongNameKeyPairMethods : IStrongNameKeyPair { # [doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"] fn system_runtime_serialization_i_deserialization_callback_on_deserialization (self , sender : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < StrongNameKeyPair as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StrongNameKeyPair , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x358c4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sender) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-strongnamekeypair")]pub trait IStrongNameKeyPairMethods:IStrongNameKeyPair{#[doc="`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]fn system_runtime_serialization_i_deserialization_callback_on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <StrongNameKeyPair as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x358c4f0usize)as*mut u8,();
+(StrongNameKeyPair)__receiver,(crate::system::object::Object)::core::convert::Into::into(sender))}
+}
+}
 
-#[cfg(feature = "system-reflection-strongnamekeypair")]
-impl < __T : IStrongNameKeyPair > IStrongNameKeyPairMethods for __T { }
+#[cfg(feature="system-reflection-strongnamekeypair")]impl<__T:IStrongNameKeyPair>IStrongNameKeyPairMethods for __T{}
 
-#[cfg(feature = "system-reflection-strongnamekeypair")]
-impl StrongNameKeyPair { pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StrongNameKeyPair as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-reflection-strongnamekeypair")]impl StrongNameKeyPair{pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "system-reflection-strongnamekeypair")]
 #[doc(hidden)]

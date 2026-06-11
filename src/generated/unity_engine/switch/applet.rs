@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/applet/Applet.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Applet")] # [parent (crate :: system :: object :: Object)] pub struct Applet {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/applet/Applet.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Applet")]#[parent(crate::system::object::Object)]pub struct Applet{}
 
 }
 
 #[cfg(feature = "unity_engine-switch-applet-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-switch-applet")]
-impl Applet { # [doc = "`Begin()` overload"] pub fn begin () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] pub fn end () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40860usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-switch-applet")]impl Applet{#[doc="`Begin()` overload"]pub fn begin()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40820usize)as*mut u8,();
+)}
+}
+#[doc="`End()` overload"]pub fn end()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40860usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-switch-applet")]
-impl Applet { pub fn begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Applet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Applet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-switch-applet")]impl Applet{pub fn begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-switch-applet")]
 #[doc(hidden)]

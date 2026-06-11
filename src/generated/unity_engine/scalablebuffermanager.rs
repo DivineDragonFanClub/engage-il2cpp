@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scalablebuffermanager/ScalableBufferManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ScalableBufferManager")] # [parent (crate :: system :: object :: Object)] pub struct ScalableBufferManager {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scalablebuffermanager/ScalableBufferManager.md"))]#[::unity2::class(namespace="UnityEngine",name="ScalableBufferManager")]#[parent(crate::system::object::Object)]pub struct ScalableBufferManager{}
 
 }
 
 #[cfg(feature = "unity_engine-scalablebuffermanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scalablebuffermanager")]
-impl ScalableBufferManager { # [doc = "`get_widthScaleFactor()` overload"] pub fn get_width_scale_factor () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89b90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_heightScaleFactor()` overload"] pub fn get_height_scale_factor () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89bd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ResizeBuffers(f32, f32)` overload"] pub fn resize_buffers (width_scale : impl :: core :: convert :: Into < f32 > , height_scale : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89c10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (width_scale) , :: core :: convert :: Into :: into (height_scale) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scalablebuffermanager")]impl ScalableBufferManager{#[doc="`get_widthScaleFactor()` overload"]pub fn get_width_scale_factor()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89b90usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_heightScaleFactor()` overload"]pub fn get_height_scale_factor()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89bd0usize)as*mut u8,f32;
+)}
+}
+#[doc="`ResizeBuffers(f32, f32)` overload"]pub fn resize_buffers(width_scale:impl::core::convert::Into<f32> ,height_scale:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89c10usize)as*mut u8,();
+(f32)::core::convert::Into::into(width_scale),(f32)::core::convert::Into::into(height_scale))}
+}
+}
 
-#[cfg(feature = "unity_engine-scalablebuffermanager")]
-impl ScalableBufferManager { pub fn get_width_scale_factor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScalableBufferManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_height_scale_factor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScalableBufferManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn resize_buffers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScalableBufferManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-scalablebuffermanager")]impl ScalableBufferManager{pub fn get_width_scale_factor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_height_scale_factor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn resize_buffers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-scalablebuffermanager")]
 #[doc(hidden)]

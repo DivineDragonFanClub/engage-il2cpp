@@ -4,45 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemscrollmenuitemcontent/SystemScrollMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "SystemScrollMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct SystemScrollMenuItemContent {
-# [offset (72)] # [rename (name = "m_Partner")] pub m_partner : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_Title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (88)] # [rename (name = "m_Help")] pub m_help : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (96)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/systemscrollmenuitemcontent/SystemScrollMenuItemContent.md"))]#[::unity2::class(namespace="App",name="SystemScrollMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct SystemScrollMenuItemContent{#[offset(72)]#[rename(name="m_Partner")]pub m_partner:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(88)]#[rename(name="m_Help")]pub m_help:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-systemscrollmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-systemscrollmenuitemcontent")]
-pub trait ISystemScrollMenuItemContentMethods : ISystemScrollMenuItemContent { # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b6d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b72e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpText(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"] fn set_help_text (self , help : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , c : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: Il2CppString , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (help) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpActive(bool, crate::unity_engine::color::Color)` overload"] fn set_help_active (self , b_active : impl :: core :: convert :: Into < bool > , c : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , bool , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b74b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (b_active) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`SetIcon(crate::app::gmapspot::GmapSpot)` overload"] fn set_icon (self , spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b6e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (spot) , :: core :: option :: Option :: None) } } } # [doc = "`GetEncountIcon(crate::app::encountunitdata::EncountUnitData_RareType)` overload"] fn get_encount_icon (self , rare_type : impl :: core :: convert :: Into < crate :: app :: encountunitdata :: EncountUnitData_RareType >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , crate :: app :: encountunitdata :: EncountUnitData_RareType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b75e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rare_type) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SystemScrollMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SystemScrollMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-systemscrollmenuitemcontent")]pub trait ISystemScrollMenuItemContentMethods:ISystemScrollMenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b6d30usize)as*mut u8,();
+(SystemScrollMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7050usize)as*mut u8,();
+(SystemScrollMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7160usize)as*mut u8,();
+(SystemScrollMenuItemContent)__receiver)}
+}
+#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b72e0usize)as*mut u8,();
+(SystemScrollMenuItemContent)__receiver)}
+}
+#[doc="`SetHelpText(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]fn set_help_text(self,help:impl::core::convert::Into< ::unity2::Il2CppString> ,c:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7380usize)as*mut u8,();
+(SystemScrollMenuItemContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(help),(crate::unity_engine::color::Color)::core::convert::Into::into(c))}
+}
+#[doc="`SetHelpActive(bool, crate::unity_engine::color::Color)` overload"]fn set_help_active(self,b_active:impl::core::convert::Into<bool> ,c:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b74b0usize)as*mut u8,();
+(SystemScrollMenuItemContent)__receiver,(bool)::core::convert::Into::into(b_active),(crate::unity_engine::color::Color)::core::convert::Into::into(c))}
+}
+#[doc="`SetIcon(crate::app::gmapspot::GmapSpot)` overload"]fn set_icon(self,spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot>)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b6e10usize)as*mut u8,();
+(SystemScrollMenuItemContent)__receiver,(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(spot))}
+}
+#[doc="`GetEncountIcon(crate::app::encountunitdata::EncountUnitData_RareType)` overload"]fn get_encount_icon(self,rare_type:impl::core::convert::Into<crate::app::encountunitdata::EncountUnitData_RareType>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b75e0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(SystemScrollMenuItemContent)__receiver,(crate::app::encountunitdata::EncountUnitData_RareType)::core::convert::Into::into(rare_type))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7680usize)as*mut u8,();
+(SystemScrollMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-systemscrollmenuitemcontent")]
-impl < __T : ISystemScrollMenuItemContent > ISystemScrollMenuItemContentMethods for __T { }
+#[cfg(feature="app-systemscrollmenuitemcontent")]impl<__T:ISystemScrollMenuItemContent>ISystemScrollMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-systemscrollmenuitemcontent")]
-impl SystemScrollMenuItemContent { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_help_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_encount_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SystemScrollMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-systemscrollmenuitemcontent")]impl SystemScrollMenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_help_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_encount_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-systemscrollmenuitemcontent")]
-impl SystemScrollMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SystemScrollMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as ISystemScrollMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-systemscrollmenuitemcontent")]impl SystemScrollMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SystemScrollMenuItemContent), ::core::stringify!(new),));
+ <Self as ISystemScrollMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-systemscrollmenuitemcontent")]

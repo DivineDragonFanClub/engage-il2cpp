@@ -4,104 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmascotcontroller/HubMascotController_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubMascotController_Mode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotcontroller/HubMascotController.md"))]#[::unity2::class(namespace="App",name="HubMascotController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubMascotController{#[offset(40)]#[rename(name="FollowSpeed1")]pub follow_speed1:f32, #[offset(44)]#[rename(name="FollowSpeed2")]pub follow_speed2:f32, #[offset(48)]#[rename(name="SpeedRate")]pub speed_rate:f32, #[offset(64)]#[rename(name="overlapColliders")]pub overlap_colliders: ::unity2::Array<crate::unity_engine::collider::Collider> , #[offset(72)]#[rename(name="results")]pub results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> , #[offset(80)]#[rename(name="m_animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(88)]#[rename(name="m_speed")]pub m_speed:f32, #[offset(92)]#[rename(name="m_angle")]pub m_angle:f32, #[offset(96)]#[rename(name="m_lastAngle")]pub m_last_angle:f32, #[offset(100)]#[rename(name="m_reactionCounter")]pub m_reaction_counter:f32, #[offset(104)]#[rename(name="m_moveDelay")]pub m_move_delay:f32, #[offset(108)]#[rename(name="m_distanceTime")]pub m_distance_time:f32, #[offset(112)]#[rename(name="m_keepAway")]pub m_keep_away:bool, #[offset(113)]#[rename(name="m_reactionFirst")]pub m_reaction_first:bool, #[offset(116)]#[rename(name="m_findLast")]pub m_find_last:crate::unity_engine::vector3::Vector3, #[offset(128)]#[rename(name="m_agent")]pub m_agent:crate::unity_engine::ai::navmeshagent::NavMeshAgent, #[offset(136)]#[rename(name="m_path")]pub m_path:crate::unity_engine::ai::navmeshpath::NavMeshPath, #[offset(144)]#[rename(name="ObjectCollisionLayerMask")]pub object_collision_layer_mask:i32, #[offset(148)]#[rename(name="GroundCollisionLayerMask")]pub ground_collision_layer_mask:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotcontroller/HubMascotController_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubMascotController_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for HubMascotController_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubMascotController.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for HubMascotController_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubMascotController.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for HubMascotController_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for HubMascotController_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl HubMascotController_Mode{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  HubMascotController_Mode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn pedestal() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn follow() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn lost() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn pedestal()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotcontroller/HubMascotController.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMascotController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMascotController {
-# [offset (40)] # [rename (name = "FollowSpeed1")] pub follow_speed1 : f32 ,
-# [offset (44)] # [rename (name = "FollowSpeed2")] pub follow_speed2 : f32 ,
-# [offset (48)] # [rename (name = "SpeedRate")] pub speed_rate : f32 ,
-# [offset (64)] # [rename (name = "overlapColliders")] pub overlap_colliders : :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > ,
-# [offset (72)] # [rename (name = "results")] pub results : :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > ,
-# [offset (80)] # [rename (name = "m_animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (88)] # [rename (name = "m_speed")] pub m_speed : f32 ,
-# [offset (92)] # [rename (name = "m_angle")] pub m_angle : f32 ,
-# [offset (96)] # [rename (name = "m_lastAngle")] pub m_last_angle : f32 ,
-# [offset (100)] # [rename (name = "m_reactionCounter")] pub m_reaction_counter : f32 ,
-# [offset (104)] # [rename (name = "m_moveDelay")] pub m_move_delay : f32 ,
-# [offset (108)] # [rename (name = "m_distanceTime")] pub m_distance_time : f32 ,
-# [offset (112)] # [rename (name = "m_keepAway")] pub m_keep_away : bool ,
-# [offset (113)] # [rename (name = "m_reactionFirst")] pub m_reaction_first : bool ,
-# [offset (116)] # [rename (name = "m_findLast")] pub m_find_last : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (128)] # [rename (name = "m_agent")] pub m_agent : crate :: unity_engine :: ai :: navmeshagent :: NavMeshAgent ,
-# [offset (136)] # [rename (name = "m_path")] pub m_path : crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath ,
-# [offset (144)] # [rename (name = "ObjectCollisionLayerMask")] pub object_collision_layer_mask : i32 ,
-# [offset (148)] # [rename (name = "GroundCollisionLayerMask")] pub ground_collision_layer_mask : i32 ,
+pub fn follow()->Self{Self{value:2}
+}
+pub fn lost()->Self{Self{value:3}
+}
 }
 
 }
@@ -109,27 +48,111 @@ impl  HubMascotController_Mode  {
 #[cfg(feature = "app-hubmascotcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmascotcontroller")]
-pub trait IHubMascotControllerMethods : IHubMascotController { # [doc = "`get_CurrentMode()` overload"] fn get_current_mode (self ,) -> crate :: app :: hubmascotcontroller :: HubMascotController_Mode { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CurrentMode(crate::app::hubmascotcontroller::HubMascotController_Mode)` overload"] fn set_current_mode (self , value : impl :: core :: convert :: Into < crate :: app :: hubmascotcontroller :: HubMascotController_Mode >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , crate :: app :: hubmascotcontroller :: HubMascotController_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Agent()` overload"] fn get_agent (self ,) -> crate :: unity_engine :: ai :: navmeshagent :: NavMeshAgent { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ai :: navmeshagent :: NavMeshAgent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Follow()` overload"] fn get_follow (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Follow(crate::unity_engine::transform::Transform)` overload"] fn set_follow (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsStop()` overload"] fn get_is_stop (self ,) -> bool { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsStop(bool)` overload"] fn set_is_stop (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DefaultLookAtTarget()` overload"] fn get_default_look_at_target (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DefaultLookAtTarget(crate::unity_engine::gameobject::GameObject)` overload"] fn set_default_look_at_target (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetBool(::unity2::Il2CppString, bool)` overload"] fn set_bool (self , param_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (param_name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Play(::unity2::Il2CppString, bool)` overload"] fn play (self , anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , forced : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (anim_name) , :: core :: convert :: Into :: into (forced) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAgent()` overload"] fn update_agent (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTrace()` overload"] fn update_trace (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMascotController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b4b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmascotcontroller")]pub trait IHubMascotControllerMethods:IHubMascotController{#[doc="`get_CurrentMode()` overload"]fn get_current_mode(self,)->crate::app::hubmascotcontroller::HubMascotController_Mode{unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3900usize)as*mut u8,crate::app::hubmascotcontroller::HubMascotController_Mode;
+(HubMascotController)__receiver)}
+}
+#[doc="`set_CurrentMode(crate::app::hubmascotcontroller::HubMascotController_Mode)` overload"]fn set_current_mode(self,value:impl::core::convert::Into<crate::app::hubmascotcontroller::HubMascotController_Mode>)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3910usize)as*mut u8,();
+(HubMascotController)__receiver,(crate::app::hubmascotcontroller::HubMascotController_Mode)::core::convert::Into::into(value))}
+}
+#[doc="`get_Agent()` overload"]fn get_agent(self,)->crate::unity_engine::ai::navmeshagent::NavMeshAgent{unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3920usize)as*mut u8,crate::unity_engine::ai::navmeshagent::NavMeshAgent;
+(HubMascotController)__receiver)}
+}
+#[doc="`get_Follow()` overload"]fn get_follow(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3930usize)as*mut u8,crate::unity_engine::transform::Transform;
+(HubMascotController)__receiver)}
+}
+#[doc="`set_Follow(crate::unity_engine::transform::Transform)` overload"]fn set_follow(self,value:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3940usize)as*mut u8,();
+(HubMascotController)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsStop()` overload"]fn get_is_stop(self,)->bool{unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3950usize)as*mut u8,bool;
+(HubMascotController)__receiver)}
+}
+#[doc="`set_IsStop(bool)` overload"]fn set_is_stop(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3960usize)as*mut u8,();
+(HubMascotController)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_DefaultLookAtTarget()` overload"]fn get_default_look_at_target(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3970usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(HubMascotController)__receiver)}
+}
+#[doc="`set_DefaultLookAtTarget(crate::unity_engine::gameobject::GameObject)` overload"]fn set_default_look_at_target(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3980usize)as*mut u8,();
+(HubMascotController)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3990usize)as*mut u8,();
+(HubMascotController)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3a80usize)as*mut u8,();
+(HubMascotController)__receiver)}
+}
+#[doc="`SetBool(::unity2::Il2CppString, bool)` overload"]fn set_bool(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3c30usize)as*mut u8,();
+(HubMascotController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Play(::unity2::Il2CppString, bool)` overload"]fn play(self,anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,forced:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3c40usize)as*mut u8,();
+(HubMascotController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anim_name),(bool)::core::convert::Into::into(forced))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3d40usize)as*mut u8,();
+(HubMascotController)__receiver)}
+}
+#[doc="`UpdateAgent()` overload"]fn update_agent(self,)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3d90usize)as*mut u8,();
+(HubMascotController)__receiver)}
+}
+#[doc="`UpdateTrace()` overload"]fn update_trace(self,)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3dd0usize)as*mut u8,();
+(HubMascotController)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMascotController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b4b10usize)as*mut u8,();
+(HubMascotController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmascotcontroller")]
-impl < __T : IHubMascotController > IHubMascotControllerMethods for __T { }
+#[cfg(feature="app-hubmascotcontroller")]impl<__T:IHubMascotController>IHubMascotControllerMethods for __T{}
 
-#[cfg(feature = "app-hubmascotcontroller")]
-impl HubMascotController { pub fn get_current_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_current_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_agent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_follow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_follow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_is_stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_default_look_at_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_default_look_at_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn update_agent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn update_trace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-hubmascotcontroller")]impl HubMascotController{pub fn get_current_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_current_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_agent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_follow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_follow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_is_stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_default_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_default_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_bool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn update_agent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn update_trace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-hubmascotcontroller")]
-impl HubMascotController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMascotController) , :: core :: stringify ! (new) ,)) ; < Self as IHubMascotControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmascotcontroller")]impl HubMascotController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMascotController), ::core::stringify!(new),));
+ <Self as IHubMascotControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmascotcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubMascotController_Mode;
     pub use super::HubMascotController;
     pub use super::IHubMascotController;
     pub use super::IHubMascotControllerMethods;
+    pub use super::HubMascotController_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

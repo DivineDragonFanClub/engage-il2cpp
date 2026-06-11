@@ -4,101 +4,211 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "NameObjectCollectionBase.NameObjectEntry")] # [parent (crate :: system :: object :: Object)] pub struct NameObjectCollectionBase_NameObjectEntry {
-# [offset (16)] # [rename (name = "Key")] pub key : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "Value")] pub value : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectKeysEnumerator.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase.NameObjectKeysEnumerator")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase_NameObjectKeysEnumerator{#[offset(16)]#[rename(name="_pos")]pub pos:i32, #[offset(24)]#[rename(name="_coll")]pub coll:crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase, #[offset(32)]#[rename(name="_version")]pub version:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "NameObjectCollectionBase")] # [parent (crate :: system :: object :: Object)] pub struct NameObjectCollectionBase {
-# [offset (16)] # [rename (name = "_readOnly")] pub read_only : bool ,
-# [offset (24)] # [rename (name = "_entriesArray")] pub entries_array : crate :: system :: collections :: arraylist :: ArrayList ,
-# [offset (32)] # [rename (name = "_keyComparer")] pub key_comparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer ,
-# [offset (40)] # [rename (name = "_entriesTable")] pub entries_table : crate :: system :: collections :: hashtable :: Hashtable ,
-# [offset (48)] # [rename (name = "_nullKeyEntry")] pub null_key_entry : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase_NameObjectEntry ,
-# [offset (64)] # [rename (name = "_version")] pub version : i32 ,
-# [offset (72)] # [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
-# [static_field] # [rename (name = "defaultComparer")] pub default_comparer : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase{#[offset(16)]#[rename(name="_readOnly")]pub read_only:bool, #[offset(24)]#[rename(name="_entriesArray")]pub entries_array:crate::system::collections::arraylist::ArrayList, #[offset(32)]#[rename(name="_keyComparer")]pub key_comparer:crate::system::collections::iequalitycomparer::IEqualityComparer, #[offset(40)]#[rename(name="_entriesTable")]pub entries_table:crate::system::collections::hashtable::Hashtable, #[offset(48)]#[rename(name="_nullKeyEntry")]pub null_key_entry:crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase_NameObjectEntry, #[offset(64)]#[rename(name="_version")]pub version:i32, #[offset(72)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="defaultComparer")]pub default_comparer: ::unity2::IlInstance,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectKeysEnumerator.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "NameObjectCollectionBase.NameObjectKeysEnumerator")] # [parent (crate :: system :: object :: Object)] pub struct NameObjectCollectionBase_NameObjectKeysEnumerator {
-# [offset (16)] # [rename (name = "_pos")] pub pos : i32 ,
-# [offset (24)] # [rename (name = "_coll")] pub coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase ,
-# [offset (32)] # [rename (name = "_version")] pub version : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase.NameObjectEntry")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase_NameObjectEntry{#[offset(16)]#[rename(name="Key")]pub key: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Value")]pub value: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-pub trait INameObjectCollectionBase_NameObjectEntryMethods : INameObjectCollectionBase_NameObjectEntry { # [doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < NameObjectCollectionBase_NameObjectEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase_NameObjectEntry , :: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a85bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl < __T : INameObjectCollectionBase_NameObjectEntry > INameObjectCollectionBase_NameObjectEntryMethods for __T { }
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase_NameObjectEntry { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase_NameObjectEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase_NameObjectEntry {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , value : crate :: system :: object :: Object) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NameObjectCollectionBase_NameObjectEntry) , :: core :: stringify ! (new) ,)) ; < Self as INameObjectCollectionBase_NameObjectEntryMethods > :: ctor (this , name , value) ; this }
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBase_NameObjectKeysEnumeratorMethods:INameObjectCollectionBase_NameObjectKeysEnumerator{#[doc="`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` overload"]fn ctor(self,coll:impl::core::convert::Into<crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase>)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85c00usize)as*mut u8,();
+(NameObjectCollectionBase_NameObjectKeysEnumerator)__receiver,(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)::core::convert::Into::into(coll))}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85c50usize)as*mut u8,bool;
+(NameObjectCollectionBase_NameObjectKeysEnumerator)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85d20usize)as*mut u8,();
+(NameObjectCollectionBase_NameObjectKeysEnumerator)__receiver)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85db0usize)as*mut u8,crate::system::object::Object;
+(NameObjectCollectionBase_NameObjectKeysEnumerator)__receiver)}
+}
 }
 
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486d30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl<__T:INameObjectCollectionBase_NameObjectKeysEnumerator>INameObjectCollectionBase_NameObjectKeysEnumeratorMethods for __T{}
 
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-pub trait INameObjectCollectionBaseMethods : INameObjectCollectionBase { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3484e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"] fn ctor_2 (self , equality_comparer : impl :: core :: convert :: Into < crate :: system :: collections :: iequalitycomparer :: IEqualityComparer >) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , crate :: system :: collections :: iequalitycomparer :: IEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3484f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (equality_comparer) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"] fn ctor_3 (self , capacity : impl :: core :: convert :: Into < i32 > , equality_comparer : impl :: core :: convert :: Into < crate :: system :: collections :: iequalitycomparer :: IEqualityComparer >) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , i32 , crate :: system :: collections :: iequalitycomparer :: IEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34850b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: convert :: Into :: into (equality_comparer) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialization(crate::system::object::Object)` overload"] fn on_deserialization (self , sender : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34858a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sender) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3484fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset(i32)` overload"] fn reset_2 (self , capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3485160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: option :: Option :: None) } } } # [doc = "`FindEntry(::unity2::Il2CppString)` overload"] fn find_entry (self , key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase_NameObjectEntry { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase_NameObjectEntry = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsReadOnly()` overload"] fn get_is_read_only (self ,) -> bool { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BaseAdd(::unity2::Il2CppString, crate::system::object::Object)` overload"] fn base_add (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`BaseRemove(::unity2::Il2CppString)` overload"] fn base_remove (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`BaseGet(::unity2::Il2CppString)` overload"] fn base_get (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: object :: Object { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34865e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`BaseSet(::unity2::Il2CppString, crate::system::object::Object)` overload"] fn base_set (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34866c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`BaseGet(i32)` overload"] fn base_get_2 (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`BaseGetKey(i32)` overload"] fn base_get_key (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34868c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"] fn system_collections_i_collection_copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.get_SyncRoot()` overload"] fn system_collections_i_collection_get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"] fn system_collections_i_collection_get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < NameObjectCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3486d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl < __T : INameObjectCollectionBase > INameObjectCollectionBaseMethods for __T { }
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_deserialization_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn reset_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn find_entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn base_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn base_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn base_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn base_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn base_get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn base_get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn system_collections_i_collection_copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn system_collections_i_collection_get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn system_collections_i_collection_get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NameObjectCollectionBase) , :: core :: stringify ! (new) ,)) ; < Self as INameObjectCollectionBaseMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"] pub fn new_2 (equality_comparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NameObjectCollectionBase) , :: core :: stringify ! (new_2) ,)) ; < Self as INameObjectCollectionBaseMethods > :: ctor_2 (this , equality_comparer) ; this }
-
-# [doc = "`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"] pub fn new_3 (capacity : i32 , equality_comparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NameObjectCollectionBase) , :: core :: stringify ! (new_3) ,)) ; < Self as INameObjectCollectionBaseMethods > :: ctor_3 (this , capacity , equality_comparer) ; this }
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectKeysEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-pub trait INameObjectCollectionBase_NameObjectKeysEnumeratorMethods : INameObjectCollectionBase_NameObjectKeysEnumerator { # [doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` overload"] fn ctor (self , coll : impl :: core :: convert :: Into < crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase >) -> () { unsafe { let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase_NameObjectKeysEnumerator , crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a85c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (coll) , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> bool { unsafe { let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase_NameObjectKeysEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a85c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase_NameObjectKeysEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a85d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NameObjectCollectionBase_NameObjectKeysEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a85db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectKeysEnumerator{#[doc="`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` — overload selector"]pub fn new(coll:crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NameObjectCollectionBase_NameObjectKeysEnumerator), ::core::stringify!(new),));
+ <Self as INameObjectCollectionBase_NameObjectKeysEnumeratorMethods> ::ctor(this,coll);
+this}
+}
 
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl < __T : INameObjectCollectionBase_NameObjectKeysEnumerator > INameObjectCollectionBase_NameObjectKeysEnumeratorMethods for __T { }
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3486d30usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase_NameObjectKeysEnumerator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBaseMethods:INameObjectCollectionBase{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3484e50usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn ctor_2(self,equality_comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3484f30usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver,(crate::system::collections::iequalitycomparer::IEqualityComparer)::core::convert::Into::into(equality_comparer))}
+}
+#[doc="`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn ctor_3(self,capacity:impl::core::convert::Into<i32> ,equality_comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34850b0usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver,(i32)::core::convert::Into::into(capacity),(crate::system::collections::iequalitycomparer::IEqualityComparer)::core::convert::Into::into(equality_comparer))}
+}
+#[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34858a0usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver,(crate::system::object::Object)::core::convert::Into::into(sender))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3484fd0usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver)}
+}
+#[doc="`Reset(i32)` overload"]fn reset_2(self,capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3485160usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver,(i32)::core::convert::Into::into(capacity))}
+}
+#[doc="`FindEntry(::unity2::Il2CppString)` overload"]fn find_entry(self,key:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase_NameObjectEntry{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486190usize)as*mut u8,crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase_NameObjectEntry;
+(NameObjectCollectionBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key))}
+}
+#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486250usize)as*mut u8,bool;
+(NameObjectCollectionBase)__receiver)}
+}
+#[doc="`BaseAdd(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn base_add(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486030usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`BaseRemove(::unity2::Il2CppString)` overload"]fn base_remove(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486260usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`BaseGet(::unity2::Il2CppString)` overload"]fn base_get(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::object::Object{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34865e0usize)as*mut u8,crate::system::object::Object;
+(NameObjectCollectionBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`BaseSet(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn base_set(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34866c0usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`BaseGet(i32)` overload"]fn base_get_2(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486820usize)as*mut u8,crate::system::object::Object;
+(NameObjectCollectionBase)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`BaseGetKey(i32)` overload"]fn base_get_key(self,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486540usize)as*mut u8, ::unity2::Il2CppString;
+(NameObjectCollectionBase)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34868c0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(NameObjectCollectionBase)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486930usize)as*mut u8,i32;
+(NameObjectCollectionBase)__receiver)}
+}
+#[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486950usize)as*mut u8,();
+(NameObjectCollectionBase)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486c90usize)as*mut u8,crate::system::object::Object;
+(NameObjectCollectionBase)__receiver)}
+}
+#[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3486d20usize)as*mut u8,bool;
+(NameObjectCollectionBase)__receiver)}
+}
+}
 
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase_NameObjectKeysEnumerator {
-# [doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` — overload selector"] pub fn new (coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NameObjectCollectionBase_NameObjectKeysEnumerator) , :: core :: stringify ! (new) ,)) ; < Self as INameObjectCollectionBase_NameObjectKeysEnumeratorMethods > :: ctor (this , coll) ; this }
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl<__T:INameObjectCollectionBase>INameObjectCollectionBaseMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn reset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn find_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn base_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn base_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn base_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn base_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn base_get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn base_get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn system_collections_i_collection_copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn system_collections_i_collection_get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn system_collections_i_collection_get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NameObjectCollectionBase), ::core::stringify!(new),));
+ <Self as INameObjectCollectionBaseMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"]pub fn new_2(equality_comparer:crate::system::collections::iequalitycomparer::IEqualityComparer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NameObjectCollectionBase), ::core::stringify!(new_2),));
+ <Self as INameObjectCollectionBaseMethods> ::ctor_2(this,equality_comparer);
+this}
+#[doc="`.ctor(i32, crate::system::collections::iequalitycomparer::IEqualityComparer)` — overload selector"]pub fn new_3(capacity:i32,equality_comparer:crate::system::collections::iequalitycomparer::IEqualityComparer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NameObjectCollectionBase), ::core::stringify!(new_3),));
+ <Self as INameObjectCollectionBaseMethods> ::ctor_3(this,capacity,equality_comparer);
+this}
+}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBase_NameObjectEntryMethods:INameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85bb0usize)as*mut u8,();
+(NameObjectCollectionBase_NameObjectEntry)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl<__T:INameObjectCollectionBase_NameObjectEntry>INameObjectCollectionBase_NameObjectEntryMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,value:crate::system::object::Object)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NameObjectCollectionBase_NameObjectEntry), ::core::stringify!(new),));
+ <Self as INameObjectCollectionBase_NameObjectEntryMethods> ::ctor(this,name,value);
+this}
 }
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NameObjectCollectionBase_NameObjectEntry;
-    pub use super::INameObjectCollectionBase_NameObjectEntry;
-    pub use super::INameObjectCollectionBase_NameObjectEntryMethods;
-    pub use super::NameObjectCollectionBase;
-    pub use super::INameObjectCollectionBase;
-    pub use super::INameObjectCollectionBaseMethods;
     pub use super::NameObjectCollectionBase_NameObjectKeysEnumerator;
     pub use super::INameObjectCollectionBase_NameObjectKeysEnumerator;
     pub use super::INameObjectCollectionBase_NameObjectKeysEnumeratorMethods;
+    pub use super::NameObjectCollectionBase;
+    pub use super::INameObjectCollectionBase;
+    pub use super::INameObjectCollectionBaseMethods;
+    pub use super::NameObjectCollectionBase_NameObjectEntry;
+    pub use super::INameObjectCollectionBase_NameObjectEntry;
+    pub use super::INameObjectCollectionBase_NameObjectEntryMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

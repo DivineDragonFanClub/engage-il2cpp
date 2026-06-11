@@ -4,167 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_SelectionState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Selectable_SelectionState  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/selectable/Selectable_Transition.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Selectable_Transition{pub value:i32,}
+impl::unity2::ClassIdentity for Selectable_Transition{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Selectable.Transition";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Selectable_Transition{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Selectable_Transition{pub fn none()->Self{Self{value:0}
+}
+pub fn color_tint()->Self{Self{value:1}
+}
+pub fn sprite_swap()->Self{Self{value:2}
+}
+pub fn animation()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Selectable_SelectionState  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/selectable/Selectable.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Selectable")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct Selectable{#[static_field]#[rename(name="s_Selectables")]pub s_selectables: ::unity2::Array<crate::unity_engine::ui::selectable::Selectable> , #[static_field]#[rename(name="s_SelectableCount")]pub s_selectable_count:i32, #[offset(24)]#[rename(name="m_EnableCalled")]pub m_enable_called:bool, #[offset(32)]#[rename(name="m_Navigation")]pub m_navigation:crate::unity_engine::ui::navigation::Navigation, #[offset(72)]#[rename(name="m_Transition")]pub m_transition:crate::unity_engine::ui::selectable::Selectable_Transition, #[offset(76)]#[rename(name="m_Colors")]pub m_colors:crate::unity_engine::ui::colorblock::ColorBlock, #[offset(168)]#[rename(name="m_SpriteState")]pub m_sprite_state:crate::unity_engine::ui::spritestate::SpriteState, #[offset(200)]#[rename(name="m_AnimationTriggers")]pub m_animation_triggers:crate::unity_engine::ui::animationtriggers::AnimationTriggers, #[offset(208)]#[rename(name="m_Interactable")]pub m_interactable:bool, #[offset(216)]#[rename(name="m_TargetGraphic")]pub m_target_graphic:crate::unity_engine::ui::graphic::Graphic, #[offset(224)]#[rename(name="m_GroupsAllowInteraction")]pub m_groups_allow_interaction:bool, #[offset(228)]#[rename(name="m_CurrentIndex")]pub m_current_index:i32, #[offset(240)]#[rename(name="m_CanvasGroupCache")]pub m_canvas_group_cache:crate::system::collections::generic::list_1::List_1<crate::unity_engine::canvasgroup::CanvasGroup> ,}
 
-    const NAME: &'static str = "Selectable.SelectionState";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/selectable/Selectable_SelectionState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Selectable_SelectionState{pub value:i32,}
+impl::unity2::ClassIdentity for Selectable_SelectionState{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Selectable.SelectionState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for Selectable_SelectionState  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Selectable_SelectionState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  Selectable_SelectionState  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn highlighted() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn pressed() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn selected() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn disabled() -> Self {
-        Self { value: 4 }
-
-    }
-
+impl Selectable_SelectionState{pub fn normal()->Self{Self{value:0}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/selectable/Selectable.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Selectable")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct Selectable {
-# [static_field] # [rename (name = "s_Selectables")] pub s_selectables : :: unity2 :: Array < crate :: unity_engine :: ui :: selectable :: Selectable > ,
-# [static_field] # [rename (name = "s_SelectableCount")] pub s_selectable_count : i32 ,
-# [offset (24)] # [rename (name = "m_EnableCalled")] pub m_enable_called : bool ,
-# [offset (32)] # [rename (name = "m_Navigation")] pub m_navigation : crate :: unity_engine :: ui :: navigation :: Navigation ,
-# [offset (72)] # [rename (name = "m_Transition")] pub m_transition : crate :: unity_engine :: ui :: selectable :: Selectable_Transition ,
-# [offset (76)] # [rename (name = "m_Colors")] pub m_colors : crate :: unity_engine :: ui :: colorblock :: ColorBlock ,
-# [offset (168)] # [rename (name = "m_SpriteState")] pub m_sprite_state : crate :: unity_engine :: ui :: spritestate :: SpriteState ,
-# [offset (200)] # [rename (name = "m_AnimationTriggers")] pub m_animation_triggers : crate :: unity_engine :: ui :: animationtriggers :: AnimationTriggers ,
-# [offset (208)] # [rename (name = "m_Interactable")] pub m_interactable : bool ,
-# [offset (216)] # [rename (name = "m_TargetGraphic")] pub m_target_graphic : crate :: unity_engine :: ui :: graphic :: Graphic ,
-# [offset (224)] # [rename (name = "m_GroupsAllowInteraction")] pub m_groups_allow_interaction : bool ,
-# [offset (228)] # [rename (name = "m_CurrentIndex")] pub m_current_index : i32 ,
-# [offset (240)] # [rename (name = "m_CanvasGroupCache")] pub m_canvas_group_cache : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: canvasgroup :: CanvasGroup > ,
+pub fn highlighted()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_Transition.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Selectable_Transition  {
-    pub value: i32,
+pub fn pressed()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for Selectable_Transition  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Selectable.Transition";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn selected()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::IlType for Selectable_Transition  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn disabled()->Self{Self{value:4}
 }
-
-
-impl  Selectable_Transition  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn color_tint() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn sprite_swap() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn animation() -> Self {
-        Self { value: 3 }
-
-    }
-
 }
 
 }
@@ -172,31 +72,328 @@ impl  Selectable_Transition  {
 #[cfg(feature = "unity_engine-ui-selectable-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-selectable")]
-impl Selectable { # [doc = "`get_allSelectablesArray()` overload"] pub fn get_all_selectables_array () -> :: unity2 :: Array < crate :: unity_engine :: ui :: selectable :: Selectable > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: ui :: selectable :: Selectable > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372baf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_allSelectableCount()` overload"] pub fn get_all_selectable_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bba0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_allSelectables()` overload"] pub fn get_all_selectables () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: selectable :: Selectable > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: selectable :: Selectable > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bc10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AllSelectablesNoAlloc(::unity2::Array<crate::unity_engine::ui::selectable::Selectable>)` overload"] pub fn all_selectables_no_alloc (selectables : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: ui :: selectable :: Selectable > >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: ui :: selectable :: Selectable > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bcc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (selectables) , :: core :: option :: Option :: None) } } } # [doc = "`GetPointOnRectEdge(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2)` overload"] pub fn get_point_on_rect_edge (rect : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform > , dir : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: recttransform :: RectTransform , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372d8e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-selectable")]impl Selectable{#[doc="`get_allSelectablesArray()` overload"]pub fn get_all_selectables_array()-> ::unity2::Array<crate::unity_engine::ui::selectable::Selectable>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x372baf0usize)as*mut u8, ::unity2::Array<crate::unity_engine::ui::selectable::Selectable> ;
+)}
+}
+#[doc="`get_allSelectableCount()` overload"]pub fn get_all_selectable_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x372bba0usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_allSelectables()` overload"]pub fn get_all_selectables()->crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::selectable::Selectable>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x372bc10usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::selectable::Selectable> ;
+)}
+}
+#[doc="`AllSelectablesNoAlloc(::unity2::Array<crate::unity_engine::ui::selectable::Selectable>)` overload"]pub fn all_selectables_no_alloc(selectables:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::ui::selectable::Selectable> >)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x372bcc0usize)as*mut u8,i32;
+(::unity2::Array<crate::unity_engine::ui::selectable::Selectable>)::core::convert::Into::into(selectables))}
+}
+#[doc="`GetPointOnRectEdge(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector2::Vector2)` overload"]pub fn get_point_on_rect_edge(rect:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform> ,dir:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x372d8e0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(rect),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(dir))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x372e080usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-selectable")]
-pub trait ISelectableMethods : ISelectable { # [doc = "`get_navigation()` overload"] fn get_navigation (self ,) -> crate :: unity_engine :: ui :: navigation :: Navigation { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: navigation :: Navigation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bdb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_navigation(crate::unity_engine::ui::navigation::Navigation)` overload"] fn set_navigation (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: navigation :: Navigation >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: ui :: navigation :: Navigation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bdd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_transition()` overload"] fn get_transition (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable_Transition { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable_Transition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_transition(crate::unity_engine::ui::selectable::Selectable_Transition)` overload"] fn set_transition (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable_Transition >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: ui :: selectable :: Selectable_Transition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bf40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_colors()` overload"] fn get_colors (self ,) -> crate :: unity_engine :: ui :: colorblock :: ColorBlock { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: colorblock :: ColorBlock = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_colors(crate::unity_engine::ui::colorblock::ColorBlock)` overload"] fn set_colors (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: colorblock :: ColorBlock >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: ui :: colorblock :: ColorBlock , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_spriteState()` overload"] fn get_sprite_state (self ,) -> crate :: unity_engine :: ui :: spritestate :: SpriteState { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: spritestate :: SpriteState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_spriteState(crate::unity_engine::ui::spritestate::SpriteState)` overload"] fn set_sprite_state (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: spritestate :: SpriteState >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: ui :: spritestate :: SpriteState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c1b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_animationTriggers()` overload"] fn get_animation_triggers (self ,) -> crate :: unity_engine :: ui :: animationtriggers :: AnimationTriggers { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: animationtriggers :: AnimationTriggers = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_animationTriggers(crate::unity_engine::ui::animationtriggers::AnimationTriggers)` overload"] fn set_animation_triggers (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: animationtriggers :: AnimationTriggers >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: ui :: animationtriggers :: AnimationTriggers , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c2a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_targetGraphic()` overload"] fn get_target_graphic (self ,) -> crate :: unity_engine :: ui :: graphic :: Graphic { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: graphic :: Graphic = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_targetGraphic(crate::unity_engine::ui::graphic::Graphic)` overload"] fn set_target_graphic (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: graphic :: Graphic >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: ui :: graphic :: Graphic , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_interactable()` overload"] fn get_interactable (self ,) -> bool { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_interactable(bool)` overload"] fn set_interactable (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_isPointerInside()` overload"] fn get_is_pointer_inside (self ,) -> bool { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isPointerInside(bool)` overload"] fn set_is_pointer_inside (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_isPointerDown()` overload"] fn get_is_pointer_down (self ,) -> bool { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isPointerDown(bool)` overload"] fn set_is_pointer_down (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_hasSelection()` overload"] fn get_has_selection (self ,) -> bool { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_hasSelection(bool)` overload"] fn set_has_selection (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c6a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_image()` overload"] fn get_image (self ,) -> crate :: unity_engine :: ui :: image :: Image { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: image :: Image = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_image(crate::unity_engine::ui::image::Image)` overload"] fn set_image (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: ui :: image :: Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_animator()` overload"] fn get_animator (self ,) -> crate :: unity_engine :: animator :: Animator { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animator :: Animator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCanvasGroupChanged()` overload"] fn on_canvas_group_changed (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372c870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsInteractable()` overload"] fn is_interactable (self ,) -> bool { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ca90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDidApplyAnimationProperties()` overload"] fn on_did_apply_animation_properties (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372cab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3729d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTransformParentChanged()` overload"] fn on_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372cba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSetProperty()` overload"] fn on_set_property (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372bec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372a030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_currentSelectionState()` overload"] fn get_current_selection_state (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable_SelectionState { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable_SelectionState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372cb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InstantClearState()` overload"] fn instant_clear_state (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372cbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DoStateTransition(crate::unity_engine::ui::selectable::Selectable_SelectionState, bool)` overload"] fn do_state_transition (self , state : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable_SelectionState > , instant : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: ui :: selectable :: Selectable_SelectionState , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372d230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (instant) , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectable(crate::unity_engine::vector3::Vector3)` overload"] fn find_selectable (self , dir : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372d4b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`Navigate(crate::unity_engine::event_systems::axiseventdata::AxisEventData, crate::unity_engine::ui::selectable::Selectable)` overload"] fn navigate (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData > , sel : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372da40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: convert :: Into :: into (sel) , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnLeft()` overload"] fn find_selectable_on_left (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnRight()` overload"] fn find_selectable_on_right (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnUp()` overload"] fn find_selectable_on_up (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnDown()` overload"] fn find_selectable_on_down (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"] fn on_move (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372b400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`StartColorTween(crate::unity_engine::color::Color, bool)` overload"] fn start_color_tween (self , target_color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , instant : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: color :: Color , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372cd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target_color) , :: core :: convert :: Into :: into (instant) , :: core :: option :: Option :: None) } } } # [doc = "`DoSpriteSwap(crate::unity_engine::sprite::Sprite)` overload"] fn do_sprite_swap (self , new_sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ce20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (new_sprite) , :: core :: option :: Option :: None) } } } # [doc = "`TriggerAnimation(::unity2::Il2CppString)` overload"] fn trigger_animation (self , triggername : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372cf90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (triggername) , :: core :: option :: Option :: None) } } } # [doc = "`IsHighlighted()` overload"] fn is_highlighted (self ,) -> bool { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372db00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPressed()` overload"] fn is_pressed (self ,) -> bool { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372db70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EvaluateAndTransitionToSelectionState()` overload"] fn evaluate_and_transition_to_selection_state (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372dbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_down (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ab60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_up (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372afb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_enter (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372dc80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_exit (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372dd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_select (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372dde0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_deselect (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372de90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`Select()` overload"] fn select (self ,) -> () { unsafe { let __receiver = < Selectable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372df40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-selectable")]pub trait ISelectableMethods:ISelectable{#[doc="`get_navigation()` overload"]fn get_navigation(self,)->crate::unity_engine::ui::navigation::Navigation{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372bdb0usize)as*mut u8,crate::unity_engine::ui::navigation::Navigation;
+(Selectable)__receiver)}
+}
+#[doc="`set_navigation(crate::unity_engine::ui::navigation::Navigation)` overload"]fn set_navigation(self,value:impl::core::convert::Into<crate::unity_engine::ui::navigation::Navigation>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372bdd0usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::ui::navigation::Navigation)::core::convert::Into::into(value))}
+}
+#[doc="`get_transition()` overload"]fn get_transition(self,)->crate::unity_engine::ui::selectable::Selectable_Transition{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372bf30usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable_Transition;
+(Selectable)__receiver)}
+}
+#[doc="`set_transition(crate::unity_engine::ui::selectable::Selectable_Transition)` overload"]fn set_transition(self,value:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable_Transition>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372bf40usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::ui::selectable::Selectable_Transition)::core::convert::Into::into(value))}
+}
+#[doc="`get_colors()` overload"]fn get_colors(self,)->crate::unity_engine::ui::colorblock::ColorBlock{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c010usize)as*mut u8,crate::unity_engine::ui::colorblock::ColorBlock;
+(Selectable)__receiver)}
+}
+#[doc="`set_colors(crate::unity_engine::ui::colorblock::ColorBlock)` overload"]fn set_colors(self,value:impl::core::convert::Into<crate::unity_engine::ui::colorblock::ColorBlock>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c060usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::ui::colorblock::ColorBlock)::core::convert::Into::into(value))}
+}
+#[doc="`get_spriteState()` overload"]fn get_sprite_state(self,)->crate::unity_engine::ui::spritestate::SpriteState{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c190usize)as*mut u8,crate::unity_engine::ui::spritestate::SpriteState;
+(Selectable)__receiver)}
+}
+#[doc="`set_spriteState(crate::unity_engine::ui::spritestate::SpriteState)` overload"]fn set_sprite_state(self,value:impl::core::convert::Into<crate::unity_engine::ui::spritestate::SpriteState>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c1b0usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::ui::spritestate::SpriteState)::core::convert::Into::into(value))}
+}
+#[doc="`get_animationTriggers()` overload"]fn get_animation_triggers(self,)->crate::unity_engine::ui::animationtriggers::AnimationTriggers{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c290usize)as*mut u8,crate::unity_engine::ui::animationtriggers::AnimationTriggers;
+(Selectable)__receiver)}
+}
+#[doc="`set_animationTriggers(crate::unity_engine::ui::animationtriggers::AnimationTriggers)` overload"]fn set_animation_triggers(self,value:impl::core::convert::Into<crate::unity_engine::ui::animationtriggers::AnimationTriggers>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c2a0usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::ui::animationtriggers::AnimationTriggers)::core::convert::Into::into(value))}
+}
+#[doc="`get_targetGraphic()` overload"]fn get_target_graphic(self,)->crate::unity_engine::ui::graphic::Graphic{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c370usize)as*mut u8,crate::unity_engine::ui::graphic::Graphic;
+(Selectable)__receiver)}
+}
+#[doc="`set_targetGraphic(crate::unity_engine::ui::graphic::Graphic)` overload"]fn set_target_graphic(self,value:impl::core::convert::Into<crate::unity_engine::ui::graphic::Graphic>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c380usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::ui::graphic::Graphic)::core::convert::Into::into(value))}
+}
+#[doc="`get_interactable()` overload"]fn get_interactable(self,)->bool{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c450usize)as*mut u8,bool;
+(Selectable)__receiver)}
+}
+#[doc="`set_interactable(bool)` overload"]fn set_interactable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c460usize)as*mut u8,();
+(Selectable)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_isPointerInside()` overload"]fn get_is_pointer_inside(self,)->bool{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c650usize)as*mut u8,bool;
+(Selectable)__receiver)}
+}
+#[doc="`set_isPointerInside(bool)` overload"]fn set_is_pointer_inside(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c660usize)as*mut u8,();
+(Selectable)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_isPointerDown()` overload"]fn get_is_pointer_down(self,)->bool{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c670usize)as*mut u8,bool;
+(Selectable)__receiver)}
+}
+#[doc="`set_isPointerDown(bool)` overload"]fn set_is_pointer_down(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c680usize)as*mut u8,();
+(Selectable)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_hasSelection()` overload"]fn get_has_selection(self,)->bool{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c690usize)as*mut u8,bool;
+(Selectable)__receiver)}
+}
+#[doc="`set_hasSelection(bool)` overload"]fn set_has_selection(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c6a0usize)as*mut u8,();
+(Selectable)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729770usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`get_image()` overload"]fn get_image(self,)->crate::unity_engine::ui::image::Image{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c6b0usize)as*mut u8,crate::unity_engine::ui::image::Image;
+(Selectable)__receiver)}
+}
+#[doc="`set_image(crate::unity_engine::ui::image::Image)` overload"]fn set_image(self,value:impl::core::convert::Into<crate::unity_engine::ui::image::Image>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c740usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::ui::image::Image)::core::convert::Into::into(value))}
+}
+#[doc="`get_animator()` overload"]fn get_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c750usize)as*mut u8,crate::unity_engine::animator::Animator;
+(Selectable)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c7b0usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`OnCanvasGroupChanged()` overload"]fn on_canvas_group_changed(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372c870usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`IsInteractable()` overload"]fn is_interactable(self,)->bool{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ca90usize)as*mut u8,bool;
+(Selectable)__receiver)}
+}
+#[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372cab0usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3729d10usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372cba0usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`OnSetProperty()` overload"]fn on_set_property(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372bec0usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372a030usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`get_currentSelectionState()` overload"]fn get_current_selection_state(self,)->crate::unity_engine::ui::selectable::Selectable_SelectionState{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372cb20usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable_SelectionState;
+(Selectable)__receiver)}
+}
+#[doc="`InstantClearState()` overload"]fn instant_clear_state(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372cbe0usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`DoStateTransition(crate::unity_engine::ui::selectable::Selectable_SelectionState, bool)` overload"]fn do_state_transition(self,state:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable_SelectionState> ,instant:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372d230usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::ui::selectable::Selectable_SelectionState)::core::convert::Into::into(state),(bool)::core::convert::Into::into(instant))}
+}
+#[doc="`FindSelectable(crate::unity_engine::vector3::Vector3)` overload"]fn find_selectable(self,dir:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372d4b0usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Selectable)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(dir))}
+}
+#[doc="`Navigate(crate::unity_engine::event_systems::axiseventdata::AxisEventData, crate::unity_engine::ui::selectable::Selectable)` overload"]fn navigate(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData> ,sel:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372da40usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::event_systems::axiseventdata::AxisEventData)::core::convert::Into::into(event_data),(crate::unity_engine::ui::selectable::Selectable)::core::convert::Into::into(sel))}
+}
+#[doc="`FindSelectableOnLeft()` overload"]fn find_selectable_on_left(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b590usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Selectable)__receiver)}
+}
+#[doc="`FindSelectableOnRight()` overload"]fn find_selectable_on_right(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b670usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Selectable)__receiver)}
+}
+#[doc="`FindSelectableOnUp()` overload"]fn find_selectable_on_up(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b750usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Selectable)__receiver)}
+}
+#[doc="`FindSelectableOnDown()` overload"]fn find_selectable_on_down(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b830usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Selectable)__receiver)}
+}
+#[doc="`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]fn on_move(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372b400usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::event_systems::axiseventdata::AxisEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`StartColorTween(crate::unity_engine::color::Color, bool)` overload"]fn start_color_tween(self,target_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,instant:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372cd30usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(target_color),(bool)::core::convert::Into::into(instant))}
+}
+#[doc="`DoSpriteSwap(crate::unity_engine::sprite::Sprite)` overload"]fn do_sprite_swap(self,new_sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ce20usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(new_sprite))}
+}
+#[doc="`TriggerAnimation(::unity2::Il2CppString)` overload"]fn trigger_animation(self,triggername:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372cf90usize)as*mut u8,();
+(Selectable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(triggername))}
+}
+#[doc="`IsHighlighted()` overload"]fn is_highlighted(self,)->bool{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372db00usize)as*mut u8,bool;
+(Selectable)__receiver)}
+}
+#[doc="`IsPressed()` overload"]fn is_pressed(self,)->bool{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372db70usize)as*mut u8,bool;
+(Selectable)__receiver)}
+}
+#[doc="`EvaluateAndTransitionToSelectionState()` overload"]fn evaluate_and_transition_to_selection_state(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372dbd0usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+#[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ab60usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_up(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372afb0usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_enter(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372dc80usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_exit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372dd30usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_select(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372dde0usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_deselect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372de90usize)as*mut u8,();
+(Selectable)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`Select()` overload"]fn select(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372df40usize)as*mut u8,();
+(Selectable)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-selectable")]
-impl < __T : ISelectable > ISelectableMethods for __T { }
+#[cfg(feature="unity_engine-ui-selectable")]impl<__T:ISelectable>ISelectableMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-selectable")]
-impl Selectable { pub fn get_all_selectables_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_all_selectable_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_all_selectables_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn all_selectables_no_alloc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_navigation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_navigation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_colors_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_colors_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_sprite_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_sprite_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_animation_triggers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_animation_triggers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_target_graphic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_target_graphic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_interactable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_interactable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_is_pointer_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_is_pointer_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_is_pointer_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_is_pointer_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_has_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_has_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_animator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn on_canvas_group_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn is_interactable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn on_did_apply_animation_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn on_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn on_set_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_current_selection_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn instant_clear_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn do_state_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn find_selectable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_point_on_rect_edge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn navigate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn find_selectable_on_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn find_selectable_on_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn find_selectable_on_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn find_selectable_on_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn on_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn start_color_tween_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn do_sprite_swap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn trigger_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn is_highlighted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn is_pressed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn evaluate_and_transition_to_selection_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn on_pointer_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn on_pointer_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn on_pointer_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn on_pointer_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Selectable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } }
+#[cfg(feature="unity_engine-ui-selectable")]impl Selectable{pub fn get_all_selectables_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_all_selectable_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_all_selectables_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn all_selectables_no_alloc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_navigation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_navigation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_colors_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_colors_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_sprite_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_sprite_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_animation_triggers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_animation_triggers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_target_graphic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_target_graphic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_interactable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_interactable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_is_pointer_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_is_pointer_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_is_pointer_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_is_pointer_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_has_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_has_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn on_canvas_group_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn is_interactable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn on_did_apply_animation_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn on_transform_parent_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn on_set_property_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_current_selection_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn instant_clear_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn do_state_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn find_selectable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_point_on_rect_edge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn navigate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn find_selectable_on_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn find_selectable_on_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn find_selectable_on_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn find_selectable_on_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn on_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn start_color_tween_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn do_sprite_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn trigger_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn is_highlighted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn is_pressed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn evaluate_and_transition_to_selection_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn on_pointer_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn on_pointer_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn on_pointer_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn on_pointer_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+}
 
-#[cfg(feature = "unity_engine-ui-selectable")]
-impl Selectable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Selectable) , :: core :: stringify ! (new) ,)) ; < Self as ISelectableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-selectable")]impl Selectable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Selectable), ::core::stringify!(new),));
+ <Self as ISelectableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-selectable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Selectable_SelectionState;
+    pub use super::Selectable_Transition;
     pub use super::Selectable;
     pub use super::ISelectable;
     pub use super::ISelectableMethods;
-    pub use super::Selectable_Transition;
+    pub use super::Selectable_SelectionState;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -4,39 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistorydata/MapHistoryData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapHistoryData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: maphistorydata :: MapHistoryData >)] pub struct MapHistoryData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistorydata/MapHistoryData.md"))]#[::unity2::class(namespace="App",name="MapHistoryData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::maphistorydata::MapHistoryData>)]pub struct MapHistoryData{}
 
 }
 
 #[cfg(feature = "app-maphistorydata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-maphistorydata")]
-impl MapHistoryData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1dc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-maphistorydata")]impl MapHistoryData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1de1dc0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-maphistorydata")]
-pub trait IMapHistoryDataMethods : IMapHistoryData { # [doc = "`get_Mhid()` overload"] fn get_mhid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mhid(::unity2::Il2CppString)` overload"] fn set_mhid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Action()` overload"] fn get_action (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Action(::unity2::Il2CppString)` overload"] fn set_action (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Priority()` overload"] fn get_priority (self ,) -> u8 { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Priority(u8)` overload"] fn set_priority (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1ec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetActionText()` overload"] fn get_action_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapHistoryData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapHistoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-maphistorydata")]pub trait IMapHistoryDataMethods:IMapHistoryData{#[doc="`get_Mhid()` overload"]fn get_mhid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1e70usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistoryData)__receiver)}
+}
+#[doc="`set_Mhid(::unity2::Il2CppString)` overload"]fn set_mhid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1e80usize)as*mut u8,();
+(MapHistoryData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Action()` overload"]fn get_action(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1e90usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistoryData)__receiver)}
+}
+#[doc="`set_Action(::unity2::Il2CppString)` overload"]fn set_action(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1ea0usize)as*mut u8,();
+(MapHistoryData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Priority()` overload"]fn get_priority(self,)->u8{unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1eb0usize)as*mut u8,u8;
+(MapHistoryData)__receiver)}
+}
+#[doc="`set_Priority(u8)` overload"]fn set_priority(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1ec0usize)as*mut u8,();
+(MapHistoryData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`GetActionText()` overload"]fn get_action_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1ed0usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistoryData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1f40usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistoryData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1f50usize)as*mut u8,();
+(MapHistoryData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-maphistorydata")]
-impl < __T : IMapHistoryData > IMapHistoryDataMethods for __T { }
+#[cfg(feature="app-maphistorydata")]impl<__T:IMapHistoryData>IMapHistoryDataMethods for __T{}
 
-#[cfg(feature = "app-maphistorydata")]
-impl MapHistoryData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_mhid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_mhid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_action_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapHistoryData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-maphistorydata")]impl MapHistoryData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_mhid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_mhid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_action_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-maphistorydata")]
-impl MapHistoryData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapHistoryData) , :: core :: stringify ! (new) ,)) ; < Self as IMapHistoryDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-maphistorydata")]impl MapHistoryData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistoryData), ::core::stringify!(new),));
+ <Self as IMapHistoryDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-maphistorydata")]

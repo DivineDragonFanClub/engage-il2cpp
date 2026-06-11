@@ -4,46 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectroot/ArenaExpUnitSelectRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaExpUnitSelectRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ArenaExpUnitSelectRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_MenuContent")] pub m_menu_content : crate :: app :: arenaexpunitselectmenucontent :: ArenaExpUnitSelectMenuContent ,
-# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: arenaunitselectstatus :: ArenaUnitSelectStatus ,
-# [offset (40)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenaexpunitselectroot/ArenaExpUnitSelectRoot.md"))]#[::unity2::class(namespace="App",name="ArenaExpUnitSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ArenaExpUnitSelectRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::arenaexpunitselectmenucontent::ArenaExpUnitSelectMenuContent, #[offset(32)]#[rename(name="m_Status")]pub m_status:crate::app::arenaunitselectstatus::ArenaUnitSelectStatus, #[offset(40)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-arenaexpunitselectroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-arenaexpunitselectroot")]
-impl ArenaExpUnitSelectRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca4a00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca4a80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca4b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_DecideEventHandler >) -> crate :: app :: arenaexpunitselectroot :: ArenaExpUnitSelectRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: arenaexpunitselectroot :: ArenaExpUnitSelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca4b80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (default_unit) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenaexpunitselectroot")]impl ArenaExpUnitSelectRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4a00usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4a80usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4b00usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler>)->crate::app::arenaexpunitselectroot::ArenaExpUnitSelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4b80usize)as*mut u8,crate::app::arenaexpunitselectroot::ArenaExpUnitSelectRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+}
 
-#[cfg(feature = "app-arenaexpunitselectroot")]
-pub trait IArenaExpUnitSelectRootMethods : IArenaExpUnitSelectRoot { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < ArenaExpUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaExpUnitSelectRoot , crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca4d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (default_unit) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItem(crate::app::unit::Unit)` overload"] fn on_select_menu_item (self , base_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ArenaExpUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaExpUnitSelectRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca4ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (base_unit) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecideMenuItem(crate::app::unit::Unit)` overload"] fn on_decide_menu_item (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ArenaExpUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaExpUnitSelectRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca4ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`OnHelp(crate::app::procinst::ProcInst)` overload"] fn on_help (self , parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ArenaExpUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaExpUnitSelectRoot , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca5090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ArenaExpUnitSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaExpUnitSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca5120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenaexpunitselectroot")]pub trait IArenaExpUnitSelectRootMethods:IArenaExpUnitSelectRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ArenaExpUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4d00usize)as*mut u8,();
+(ArenaExpUnitSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`OnSelectMenuItem(crate::app::unit::Unit)` overload"]fn on_select_menu_item(self,base_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ArenaExpUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4ed0usize)as*mut u8,();
+(ArenaExpUnitSelectRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(base_unit))}
+}
+#[doc="`OnDecideMenuItem(crate::app::unit::Unit)` overload"]fn on_decide_menu_item(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ArenaExpUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4ff0usize)as*mut u8,();
+(ArenaExpUnitSelectRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`OnHelp(crate::app::procinst::ProcInst)` overload"]fn on_help(self,parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ArenaExpUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca5090usize)as*mut u8,();
+(ArenaExpUnitSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaExpUnitSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca5120usize)as*mut u8,();
+(ArenaExpUnitSelectRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-arenaexpunitselectroot")]
-impl < __T : IArenaExpUnitSelectRoot > IArenaExpUnitSelectRootMethods for __T { }
+#[cfg(feature="app-arenaexpunitselectroot")]impl<__T:IArenaExpUnitSelectRoot>IArenaExpUnitSelectRootMethods for __T{}
 
-#[cfg(feature = "app-arenaexpunitselectroot")]
-impl ArenaExpUnitSelectRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_select_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_decide_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaExpUnitSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-arenaexpunitselectroot")]impl ArenaExpUnitSelectRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_decide_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-arenaexpunitselectroot")]
-impl ArenaExpUnitSelectRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaExpUnitSelectRoot) , :: core :: stringify ! (new) ,)) ; < Self as IArenaExpUnitSelectRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-arenaexpunitselectroot")]impl ArenaExpUnitSelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaExpUnitSelectRoot), ::core::stringify!(new),));
+ <Self as IArenaExpUnitSelectRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-arenaexpunitselectroot")]

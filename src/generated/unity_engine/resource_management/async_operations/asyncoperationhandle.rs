@@ -4,69 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/asyncoperationhandle/AsyncOperationHandle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AsyncOperationHandle {
-    pub m_internal_op: crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation,
-    pub m_version: i32,
-    pub m_location_name: :: unity2 :: Il2CppString,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/async_operations/asyncoperationhandle/AsyncOperationHandle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AsyncOperationHandle{pub m_internal_op:crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation,pub m_version:i32,pub m_location_name: ::unity2::Il2CppString,}
+impl::unity2::ClassIdentity for AsyncOperationHandle{const NAMESPACE: &'static str="UnityEngine.ResourceManagement.AsyncOperations";
+const NAME: &'static str="AsyncOperationHandle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AsyncOperationHandle {
-    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.AsyncOperations";
-
-    const NAME: &'static str = "AsyncOperationHandle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for AsyncOperationHandle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for AsyncOperationHandle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl AsyncOperationHandle{#[inline]pub fn m_is_waiting_for_completion()->bool{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_IsWaitingForCompletion");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_m_is_waiting_for_completion(value:bool){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_IsWaitingForCompletion");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl AsyncOperationHandle {
-    #[inline]
-    pub fn m_is_waiting_for_completion() -> bool {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_IsWaitingForCompletion");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_m_is_waiting_for_completion(value: bool) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_IsWaitingForCompletion");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -74,17 +34,482 @@ impl AsyncOperationHandle {
 #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AsyncOperationHandle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_waiting_for_completion { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_IsWaitingForCompletion" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_IsWaitingForCompletion" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_waiting_for_completion { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "set_IsWaitingForCompletion" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "set_IsWaitingForCompletion" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_location_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_LocationName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_LocationName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_location_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "set_LocationName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "set_LocationName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_4 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_acquire { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "Acquire" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "Acquire" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "add_Completed" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "add_Completed" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "remove_Completed" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "remove_Completed" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_DebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_DebugName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_destroyed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "add_Destroyed" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "add_Destroyed" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remove_destroyed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "remove_Destroyed" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "remove_Destroyed" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dependencies { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "GetDependencies" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "GetDependencies" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_internal_op { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_InternalOp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_InternalOp" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_done { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_IsDone" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_IsDone" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "IsValid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "IsValid" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_percent_complete { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_PercentComplete" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_PercentComplete" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_download_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "GetDownloadStatus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "GetDownloadStatus" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_internal_get_download_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "InternalGetDownloadStatus" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "InternalGetDownloadStatus" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reference_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_ReferenceCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_ReferenceCount" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "Release" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_Result" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_Result" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "get_Status" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "get_Status" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerator_get_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerator.get_Current" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.get_Current" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerator_move_next { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerator.MoveNext" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.MoveNext" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_system_collections_i_enumerator_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "System.Collections.IEnumerator.Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.Reset" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_for_completion { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "WaitForCompletion" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "WaitForCompletion" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-async_operations-asyncoperationhandle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AsyncOperationHandle_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_is_waiting_for_completion{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_IsWaitingForCompletion",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_IsWaitingForCompletion",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_is_waiting_for_completion{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"set_IsWaitingForCompletion",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"set_IsWaitingForCompletion",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_location_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_LocationName",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_LocationName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_location_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"set_LocationName",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"set_LocationName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_3{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_4{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_acquire{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"Acquire",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"Acquire",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_add_completed{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"add_Completed",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"add_Completed",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_remove_completed{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"remove_Completed",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"remove_Completed",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_debug_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_DebugName",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_DebugName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_add_destroyed{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"add_Destroyed",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"add_Destroyed",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_remove_destroyed{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"remove_Destroyed",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"remove_Destroyed",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_dependencies{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"GetDependencies",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"GetDependencies",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_hash_code{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"GetHashCode",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"GetHashCode",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_internal_op{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_InternalOp",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_InternalOp",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_is_done{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_IsDone",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_IsDone",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_valid{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"IsValid",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"IsValid",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_percent_complete{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_PercentComplete",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_PercentComplete",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_download_status{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"GetDownloadStatus",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"GetDownloadStatus",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_internal_get_download_status{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"InternalGetDownloadStatus",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"InternalGetDownloadStatus",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_reference_count{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_ReferenceCount",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_ReferenceCount",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_release{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"Release",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"Release",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_result{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_Result",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_Result",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_status{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"get_Status",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"get_Status",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_system_collections_i_enumerator_get_current{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"System.Collections.IEnumerator.get_Current",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerator.get_Current",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_system_collections_i_enumerator_move_next{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"System.Collections.IEnumerator.MoveNext",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerator.MoveNext",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_system_collections_i_enumerator_reset{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"System.Collections.IEnumerator.Reset",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerator.Reset",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_wait_for_completion{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"WaitForCompletion",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"WaitForCompletion",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_cctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),".cctor",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,".cctor",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle")]
-impl AsyncOperationHandle { # [doc = "`get_IsWaitingForCompletion()` overload"] pub fn get_is_waiting_for_completion () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__AsyncOperationHandle_unity2_raw :: __lookup_get_is_waiting_for_completion :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsWaitingForCompletion(bool)` overload"] pub fn set_is_waiting_for_completion (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__AsyncOperationHandle_unity2_raw :: __lookup_set_is_waiting_for_completion :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__AsyncOperationHandle_unity2_raw :: __lookup_cctor :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-async_operations-asyncoperationhandle")]impl AsyncOperationHandle{#[doc="`get_IsWaitingForCompletion()` overload"]pub fn get_is_waiting_for_completion()->bool{unsafe{::unity2::il2cpp_call!(__AsyncOperationHandle_unity2_raw::__lookup_get_is_waiting_for_completion::get_method_info().method_ptr,bool;
+)}
+}
+#[doc="`set_IsWaitingForCompletion(bool)` overload"]pub fn set_is_waiting_for_completion(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!(__AsyncOperationHandle_unity2_raw::__lookup_set_is_waiting_for_completion::get_method_info().method_ptr,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!(__AsyncOperationHandle_unity2_raw::__lookup_cctor::get_method_info().method_ptr,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle")]
-impl AsyncOperationHandle { # [doc = "`get_LocationName()` overload"] pub fn get_location_name (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_location_name :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`set_LocationName(::unity2::Il2CppString)` overload"] pub fn set_location_name (& mut self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_set_location_name :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)` overload"] pub fn ctor (& mut self , op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, i32)` overload"] pub fn ctor_2 (& mut self , op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_ctor_2 :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (op) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, ::unity2::Il2CppString)` overload"] pub fn ctor_3 (& mut self , op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > , location_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_ctor_3 :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (op) , :: core :: convert :: Into :: into (location_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, i32, ::unity2::Il2CppString)` overload"] pub fn ctor_4 (& mut self , op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > , version : impl :: core :: convert :: Into < i32 > , location_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_ctor_4 :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (op) , :: core :: convert :: Into :: into (version) , :: core :: convert :: Into :: into (location_name) , :: core :: option :: Option :: None) } } } # [doc = "`Acquire()` overload"] pub fn acquire (& mut self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_acquire :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`add_Completed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] pub fn add_completed (& mut self , value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_add_completed :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_Completed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] pub fn remove_completed (& mut self , value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_remove_completed :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } pub fn convert < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (& mut self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () , "Convert" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: NAME , "Convert" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (self as * mut AsyncOperationHandle , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`Equals(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >) -> bool { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_equals :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`get_DebugName()` overload"] pub fn get_debug_name (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_debug_name :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`add_Destroyed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] pub fn add_destroyed (& mut self , value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_add_destroyed :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_Destroyed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] pub fn remove_destroyed (& mut self , value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_remove_destroyed :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] pub fn get_dependencies (& mut self , deps : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_dependencies :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (deps) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_hash_code :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_InternalOp()` overload"] pub fn get_internal_op (& mut self ,) -> crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_internal_op :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDone()` overload"] pub fn get_is_done (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_is_done :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] pub fn is_valid (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_is_valid :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_PercentComplete()` overload"] pub fn get_percent_complete (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_percent_complete :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`GetDownloadStatus()` overload"] pub fn get_download_status (& mut self ,) -> crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_download_status :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`InternalGetDownloadStatus(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)` overload"] pub fn internal_get_download_status (& mut self , visited : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: system :: object :: Object > >) -> crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_internal_get_download_status :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: convert :: Into :: into (visited) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReferenceCount()` overload"] pub fn get_reference_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_reference_count :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] pub fn release (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_release :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_Result()` overload"] pub fn get_result (& mut self ,) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_result :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_Status()` overload"] pub fn get_status (& mut self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationstatus :: AsyncOperationStatus { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationstatus :: AsyncOperationStatus = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_get_status :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] pub fn system_collections_i_enumerator_get_current (& mut self ,) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_system_collections_i_enumerator_get_current :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerator.MoveNext()` overload"] pub fn system_collections_i_enumerator_move_next (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_system_collections_i_enumerator_move_next :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerator.Reset()` overload"] pub fn system_collections_i_enumerator_reset (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_system_collections_i_enumerator_reset :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } # [doc = "`WaitForCompletion()` overload"] pub fn wait_for_completion (& mut self ,) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (* mut AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__AsyncOperationHandle_unity2_raw :: __lookup_wait_for_completion :: get_method_info () . method_ptr)) ; __inner (self as * mut AsyncOperationHandle , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-async_operations-asyncoperationhandle")]impl AsyncOperationHandle{#[doc="`get_LocationName()` overload"]pub fn get_location_name(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_location_name::get_method_info().method_ptr), ::unity2::Il2CppString;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`set_LocationName(::unity2::Il2CppString)` overload"]pub fn set_location_name(&mut self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_set_location_name::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)` overload"]pub fn ctor(&mut self,op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_ctor::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)::core::convert::Into::into(op))}
+}
+#[doc="`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, i32)` overload"]pub fn ctor_2(&mut self,op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation> ,version:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_ctor_2::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)::core::convert::Into::into(op),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, ::unity2::Il2CppString)` overload"]pub fn ctor_3(&mut self,op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation> ,location_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_ctor_3::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)::core::convert::Into::into(op),(::unity2::Il2CppString)::core::convert::Into::into(location_name))}
+}
+#[doc="`.ctor(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation, i32, ::unity2::Il2CppString)` overload"]pub fn ctor_4(&mut self,op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation> ,version:impl::core::convert::Into<i32> ,location_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_ctor_4::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation)::core::convert::Into::into(op),(i32)::core::convert::Into::into(version),(::unity2::Il2CppString)::core::convert::Into::into(location_name))}
+}
+#[doc="`Acquire()` overload"]pub fn acquire(&mut self,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_acquire::get_method_info().method_ptr),crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`add_Completed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]pub fn add_completed(&mut self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_add_completed::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)::core::convert::Into::into(value))}
+}
+#[doc="`remove_Completed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]pub fn remove_completed(&mut self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_remove_completed::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)::core::convert::Into::into(value))}
+}
+pub fn convert<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(&mut self,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<AsyncOperationHandle as::unity2::ClassIdentity> ::class(),"Convert",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AsyncOperationHandle as::unity2::ClassIdentity> ::NAME,"Convert",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(*mut AsyncOperationHandle, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0> = ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(self as*mut AsyncOperationHandle, ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`Equals(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)->bool{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_equals::get_method_info().method_ptr),bool;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)::core::convert::Into::into(other))}
+}
+#[doc="`get_DebugName()` overload"]pub fn get_debug_name(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_debug_name::get_method_info().method_ptr), ::unity2::Il2CppString;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`add_Destroyed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]pub fn add_destroyed(&mut self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_add_destroyed::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)::core::convert::Into::into(value))}
+}
+#[doc="`remove_Destroyed(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]pub fn remove_destroyed(&mut self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_remove_destroyed::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)::core::convert::Into::into(value))}
+}
+#[doc="`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]pub fn get_dependencies(&mut self,deps:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_dependencies::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)::core::convert::Into::into(deps))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_hash_code::get_method_info().method_ptr),i32;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`get_InternalOp()` overload"]pub fn get_internal_op(&mut self,)->crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_internal_op::get_method_info().method_ptr),crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`get_IsDone()` overload"]pub fn get_is_done(&mut self,)->bool{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_is_done::get_method_info().method_ptr),bool;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_is_valid::get_method_info().method_ptr),bool;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`get_PercentComplete()` overload"]pub fn get_percent_complete(&mut self,)->f32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_percent_complete::get_method_info().method_ptr),f32;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`GetDownloadStatus()` overload"]pub fn get_download_status(&mut self,)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_download_status::get_method_info().method_ptr),crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`InternalGetDownloadStatus(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)` overload"]pub fn internal_get_download_status(&mut self,visited:impl::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> >)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_internal_get_download_status::get_method_info().method_ptr),crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle,(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)::core::convert::Into::into(visited))}
+}
+#[doc="`get_ReferenceCount()` overload"]pub fn get_reference_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_reference_count::get_method_info().method_ptr),i32;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`Release()` overload"]pub fn release(&mut self,)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_release::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`get_Result()` overload"]pub fn get_result(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_result::get_method_info().method_ptr),crate::system::object::Object;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`get_Status()` overload"]pub fn get_status(&mut self,)->crate::unity_engine::resource_management::async_operations::asyncoperationstatus::AsyncOperationStatus{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_get_status::get_method_info().method_ptr),crate::unity_engine::resource_management::async_operations::asyncoperationstatus::AsyncOperationStatus;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr),crate::system::object::Object;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`System.Collections.IEnumerator.MoveNext()` overload"]pub fn system_collections_i_enumerator_move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_system_collections_i_enumerator_move_next::get_method_info().method_ptr),bool;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`System.Collections.IEnumerator.Reset()` overload"]pub fn system_collections_i_enumerator_reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_system_collections_i_enumerator_reset::get_method_info().method_ptr),();
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+#[doc="`WaitForCompletion()` overload"]pub fn wait_for_completion(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__AsyncOperationHandle_unity2_raw::__lookup_wait_for_completion::get_method_info().method_ptr),crate::system::object::Object;
+(*mut AsyncOperationHandle)self as*mut AsyncOperationHandle)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle")]
-impl AsyncOperationHandle { pub fn get_is_waiting_for_completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_waiting_for_completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_location_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_location_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn acquire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn remove_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn add_destroyed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn remove_destroyed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_dependencies_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_internal_op_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_is_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_percent_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_download_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn internal_get_download_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_reference_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn system_collections_i_enumerator_get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn system_collections_i_enumerator_move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn system_collections_i_enumerator_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn wait_for_completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperationHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } }
+#[cfg(feature="unity_engine-resource_management-async_operations-asyncoperationhandle")]impl AsyncOperationHandle{pub fn get_is_waiting_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_waiting_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_location_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_location_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn acquire_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn remove_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn add_destroyed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn remove_destroyed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_internal_op_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_is_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_percent_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_download_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn internal_get_download_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_reference_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn system_collections_i_enumerator_move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn system_collections_i_enumerator_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle")]
 #[doc(hidden)]

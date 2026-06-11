@@ -4,38 +4,93 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: timeline :: runtimeclipbase :: { IRuntimeClipBase , RuntimeClipBase }
- ;
- use crate :: unity_engine :: timeline :: runtimeelement :: { IRuntimeElement , RuntimeElement }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::timeline::runtimeclipbase::{IRuntimeClipBase,RuntimeClipBase}
+;
+use crate::unity_engine::timeline::runtimeelement::{IRuntimeElement,RuntimeElement}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/runtimeclip/RuntimeClip.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "RuntimeClip")] # [parent (crate :: unity_engine :: timeline :: runtimeclipbase :: RuntimeClipBase)] pub struct RuntimeClip {
-# [offset (24)] # [rename (name = "m_Clip")] pub m_clip : crate :: unity_engine :: timeline :: timelineclip :: TimelineClip ,
-# [offset (32)] # [rename (name = "m_Playable")] pub m_playable : crate :: unity_engine :: playables :: playable :: Playable ,
-# [offset (48)] # [rename (name = "m_ParentMixer")] pub m_parent_mixer : crate :: unity_engine :: playables :: playable :: Playable ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/runtimeclip/RuntimeClip.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="RuntimeClip")]#[parent(crate::unity_engine::timeline::runtimeclipbase::RuntimeClipBase)]pub struct RuntimeClip{#[offset(24)]#[rename(name="m_Clip")]pub m_clip:crate::unity_engine::timeline::timelineclip::TimelineClip, #[offset(32)]#[rename(name="m_Playable")]pub m_playable:crate::unity_engine::playables::playable::Playable, #[offset(48)]#[rename(name="m_ParentMixer")]pub m_parent_mixer:crate::unity_engine::playables::playable::Playable,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclip-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-runtimeclip")]
-pub trait IRuntimeClipMethods : IRuntimeClip { # [doc = "`get_start()` overload"] fn get_start (self ,) -> f64 { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d94c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_duration()` overload"] fn get_duration (self ,) -> f64 { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d9500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playable::Playable)` overload"] fn ctor (self , clip : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip > , clip_playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , parent_mixer : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , crate :: unity_engine :: timeline :: timelineclip :: TimelineClip , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d2800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clip) , :: core :: convert :: Into :: into (clip_playable) , :: core :: convert :: Into :: into (parent_mixer) , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playable::Playable)` overload"] fn create (self , clip : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip > , clip_playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , parent_mixer : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , crate :: unity_engine :: timeline :: timelineclip :: TimelineClip , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d9610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clip) , :: core :: convert :: Into :: into (clip_playable) , :: core :: convert :: Into :: into (parent_mixer) , :: core :: option :: Option :: None) } } } # [doc = "`get_clip()` overload"] fn get_clip (self ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d96b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_mixer()` overload"] fn get_mixer (self ,) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d96c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_playable()` overload"] fn get_playable (self ,) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d96d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_enable(bool)` overload"] fn set_enable (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d96e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetTime(f64)` overload"] fn set_time (self , time : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d98a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`SetDuration(f64)` overload"] fn set_duration (self , duration : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d9910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (duration) , :: core :: option :: Option :: None) } } } # [doc = "`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"] fn evaluate_at (self , local_time : impl :: core :: convert :: Into < f64 > , frame_data : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , f64 , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d9980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (local_time) , :: core :: convert :: Into :: into (frame_data) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < RuntimeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d9fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-runtimeclip")]pub trait IRuntimeClipMethods:IRuntimeClip{#[doc="`get_start()` overload"]fn get_start(self,)->f64{unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d94c0usize)as*mut u8,f64;
+(RuntimeClip)__receiver)}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9500usize)as*mut u8,f64;
+(RuntimeClip)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playable::Playable)` overload"]fn ctor(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip> ,clip_playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,parent_mixer:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d2800usize)as*mut u8,();
+(RuntimeClip)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(clip_playable),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(parent_mixer))}
+}
+#[doc="`Create(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playable::Playable)` overload"]fn create(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip> ,clip_playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,parent_mixer:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9610usize)as*mut u8,();
+(RuntimeClip)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(clip_playable),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(parent_mixer))}
+}
+#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::timeline::timelineclip::TimelineClip{unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d96b0usize)as*mut u8,crate::unity_engine::timeline::timelineclip::TimelineClip;
+(RuntimeClip)__receiver)}
+}
+#[doc="`get_mixer()` overload"]fn get_mixer(self,)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d96c0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(RuntimeClip)__receiver)}
+}
+#[doc="`get_playable()` overload"]fn get_playable(self,)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d96d0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(RuntimeClip)__receiver)}
+}
+#[doc="`set_enable(bool)` overload"]fn set_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d96e0usize)as*mut u8,();
+(RuntimeClip)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`SetTime(f64)` overload"]fn set_time(self,time:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d98a0usize)as*mut u8,();
+(RuntimeClip)__receiver,(f64)::core::convert::Into::into(time))}
+}
+#[doc="`SetDuration(f64)` overload"]fn set_duration(self,duration:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9910usize)as*mut u8,();
+(RuntimeClip)__receiver,(f64)::core::convert::Into::into(duration))}
+}
+#[doc="`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"]fn evaluate_at(self,local_time:impl::core::convert::Into<f64> ,frame_data:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9980usize)as*mut u8,();
+(RuntimeClip)__receiver,(f64)::core::convert::Into::into(local_time),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(frame_data))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9fa0usize)as*mut u8,();
+(RuntimeClip)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-runtimeclip")]
-impl < __T : IRuntimeClip > IRuntimeClipMethods for __T { }
+#[cfg(feature="unity_engine-timeline-runtimeclip")]impl<__T:IRuntimeClip>IRuntimeClipMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-runtimeclip")]
-impl RuntimeClip { pub fn get_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_mixer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn evaluate_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="unity_engine-timeline-runtimeclip")]impl RuntimeClip{pub fn get_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_mixer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn evaluate_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "unity_engine-timeline-runtimeclip")]
-impl RuntimeClip {
-# [doc = "`.ctor(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playable::Playable)` — overload selector"] pub fn new (clip : crate :: unity_engine :: timeline :: timelineclip :: TimelineClip , clip_playable : crate :: unity_engine :: playables :: playable :: Playable , parent_mixer : crate :: unity_engine :: playables :: playable :: Playable) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeClip) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeClipMethods > :: ctor (this , clip , clip_playable , parent_mixer) ; this }
+#[cfg(feature="unity_engine-timeline-runtimeclip")]impl RuntimeClip{#[doc="`.ctor(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playable::Playable)` — overload selector"]pub fn new(clip:crate::unity_engine::timeline::timelineclip::TimelineClip,clip_playable:crate::unity_engine::playables::playable::Playable,parent_mixer:crate::unity_engine::playables::playable::Playable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeClip), ::core::stringify!(new),));
+ <Self as IRuntimeClipMethods> ::ctor(this,clip,clip_playable,parent_mixer);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclip")]

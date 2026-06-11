@@ -4,104 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapactor/MapActor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapActor")] # [parent (crate :: system :: object :: Object)] pub struct MapActor {
-# [static_field] # [rename (name = "MoveTime")] pub move_time : f32 ,
-# [static_field] # [rename (name = "StickMargin")] pub stick_margin : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapactor/MapActor_MoveResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapActor_MoveResult{pub value:i32,}
+impl::unity2::ClassIdentity for MapActor_MoveResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapActor.MoveResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapActor_MoveResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapActor_MoveResult{pub fn none()->Self{Self{value:0}
+}
+pub fn r#move()->Self{Self{value:1}
+}
+pub fn hit()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapactor/MapActor_MoveResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapActor_MoveResult  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapActor_MoveResult  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapActor.MoveResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapActor_MoveResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapActor_MoveResult  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn r#move() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn hit() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapactor/MapActor.md"))]#[::unity2::class(namespace="App",name="MapActor")]#[parent(crate::system::object::Object)]pub struct MapActor{#[static_field]#[rename(name="MoveTime")]pub move_time:f32, #[static_field]#[rename(name="StickMargin")]pub stick_margin:f32,}
 
 }
 
 #[cfg(feature = "app-mapactor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapactor")]
-impl MapActor { # [doc = "`IsInvasion(i32, i32, i32, i32)` overload"] pub fn is_invasion (ox : impl :: core :: convert :: Into < i32 > , oz : impl :: core :: convert :: Into < i32 > , nx : impl :: core :: convert :: Into < i32 > , nz : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef8930usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ox) , :: core :: convert :: Into :: into (oz) , :: core :: convert :: Into :: into (nx) , :: core :: convert :: Into :: into (nz) , :: core :: option :: Option :: None) } } } # [doc = "`IsDiagonallyDir(i32, i32, i32, i32)` overload"] pub fn is_diagonally_dir (ox : impl :: core :: convert :: Into < i32 > , oz : impl :: core :: convert :: Into < i32 > , nx : impl :: core :: convert :: Into < i32 > , nz : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef8af0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ox) , :: core :: convert :: Into :: into (oz) , :: core :: convert :: Into :: into (nx) , :: core :: convert :: Into :: into (nz) , :: core :: option :: Option :: None) } } } # [doc = "`IsConnect(i32, i32, crate::app::dir_2::Dir_Type)` overload"] pub fn is_connect (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , i32 , crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef9120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`Extrusion(crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn extrusion (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , radius : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efa000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (radius) , :: core :: option :: Option :: None) } } } # [doc = "`TickMove(crate::app::unit::Unit)` overload"] pub fn tick_move (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: mapactor :: MapActor_MoveResult { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapactor :: MapActor_MoveResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efa620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapactor")]impl MapActor{#[doc="`IsInvasion(i32, i32, i32, i32)` overload"]pub fn is_invasion(ox:impl::core::convert::Into<i32> ,oz:impl::core::convert::Into<i32> ,nx:impl::core::convert::Into<i32> ,nz:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef8930usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(ox),(i32)::core::convert::Into::into(oz),(i32)::core::convert::Into::into(nx),(i32)::core::convert::Into::into(nz))}
+}
+#[doc="`IsDiagonallyDir(i32, i32, i32, i32)` overload"]pub fn is_diagonally_dir(ox:impl::core::convert::Into<i32> ,oz:impl::core::convert::Into<i32> ,nx:impl::core::convert::Into<i32> ,nz:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef8af0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(ox),(i32)::core::convert::Into::into(oz),(i32)::core::convert::Into::into(nx),(i32)::core::convert::Into::into(nz))}
+}
+#[doc="`IsConnect(i32, i32, crate::app::dir_2::Dir_Type)` overload"]pub fn is_connect(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef9120usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+#[doc="`Extrusion(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn extrusion(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,radius:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1efa000usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(radius))}
+}
+#[doc="`TickMove(crate::app::unit::Unit)` overload"]pub fn tick_move(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::mapactor::MapActor_MoveResult{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1efa620usize)as*mut u8,crate::app::mapactor::MapActor_MoveResult;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
 
-#[cfg(feature = "app-mapactor")]
-pub trait IMapActorMethods : IMapActor { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1efb2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapactor")]pub trait IMapActorMethods:IMapActor{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1efb2a0usize)as*mut u8,();
+(MapActor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapactor")]
-impl < __T : IMapActor > IMapActorMethods for __T { }
+#[cfg(feature="app-mapactor")]impl<__T:IMapActor>IMapActorMethods for __T{}
 
-#[cfg(feature = "app-mapactor")]
-impl MapActor { pub fn is_invasion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_diagonally_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn extrusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn tick_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-mapactor")]impl MapActor{pub fn is_invasion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_diagonally_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn extrusion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn tick_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-mapactor")]
-impl MapActor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapActor) , :: core :: stringify ! (new) ,)) ; < Self as IMapActorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapactor")]impl MapActor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapActor), ::core::stringify!(new),));
+ <Self as IMapActorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapactor")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapActor_MoveResult;
     pub use super::MapActor;
     pub use super::IMapActor;
     pub use super::IMapActorMethods;
-    pub use super::MapActor_MoveResult;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

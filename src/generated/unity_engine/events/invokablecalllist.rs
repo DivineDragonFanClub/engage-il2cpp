@@ -4,35 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/invokablecalllist/InvokableCallList.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Events" , name = "InvokableCallList")] # [parent (crate :: system :: object :: Object)] pub struct InvokableCallList {
-# [offset (16)] # [rename (name = "m_PersistentCalls")] pub m_persistent_calls : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall > ,
-# [offset (24)] # [rename (name = "m_RuntimeCalls")] pub m_runtime_calls : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall > ,
-# [offset (32)] # [rename (name = "m_ExecutingCalls")] pub m_executing_calls : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall > ,
-# [offset (40)] # [rename (name = "m_NeedsUpdate")] pub m_needs_update : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/events/invokablecalllist/InvokableCallList.md"))]#[::unity2::class(namespace="UnityEngine.Events",name="InvokableCallList")]#[parent(crate::system::object::Object)]pub struct InvokableCallList{#[offset(16)]#[rename(name="m_PersistentCalls")]pub m_persistent_calls:crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall> , #[offset(24)]#[rename(name="m_RuntimeCalls")]pub m_runtime_calls:crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall> , #[offset(32)]#[rename(name="m_ExecutingCalls")]pub m_executing_calls:crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall> , #[offset(40)]#[rename(name="m_NeedsUpdate")]pub m_needs_update:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-events-invokablecalllist-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-events-invokablecalllist")]
-pub trait IInvokableCallListMethods : IInvokableCallList { # [doc = "`AddPersistentInvokableCall(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)` overload"] fn add_persistent_invokable_call (self , call : impl :: core :: convert :: Into < crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall >) -> () { unsafe { let __receiver = < InvokableCallList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvokableCallList , crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c51b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (call) , :: core :: option :: Option :: None) } } } # [doc = "`AddListener(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)` overload"] fn add_listener (self , call : impl :: core :: convert :: Into < crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall >) -> () { unsafe { let __receiver = < InvokableCallList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvokableCallList , crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c51b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (call) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveListener(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"] fn remove_listener (self , target_obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < crate :: system :: reflection :: methodinfo :: MethodInfo >) -> () { unsafe { let __receiver = < InvokableCallList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvokableCallList , crate :: system :: object :: Object , crate :: system :: reflection :: methodinfo :: MethodInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c51bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target_obj) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`ClearPersistent()` overload"] fn clear_persistent (self ,) -> () { unsafe { let __receiver = < InvokableCallList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvokableCallList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c51dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PrepareInvoke()` overload"] fn prepare_invoke (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall > { unsafe { let __receiver = < InvokableCallList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvokableCallList , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: events :: baseinvokablecall :: BaseInvokableCall > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c51e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InvokableCallList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvokableCallList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c51eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-events-invokablecalllist")]pub trait IInvokableCallListMethods:IInvokableCallList{#[doc="`AddPersistentInvokableCall(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)` overload"]fn add_persistent_invokable_call(self,call:impl::core::convert::Into<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall>)->(){unsafe{let __receiver= <InvokableCallList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51b10usize)as*mut u8,();
+(InvokableCallList)__receiver,(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)::core::convert::Into::into(call))}
+}
+#[doc="`AddListener(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)` overload"]fn add_listener(self,call:impl::core::convert::Into<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall>)->(){unsafe{let __receiver= <InvokableCallList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51b80usize)as*mut u8,();
+(InvokableCallList)__receiver,(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)::core::convert::Into::into(call))}
+}
+#[doc="`RemoveListener(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]fn remove_listener(self,target_obj:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->(){unsafe{let __receiver= <InvokableCallList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51bf0usize)as*mut u8,();
+(InvokableCallList)__receiver,(crate::system::object::Object)::core::convert::Into::into(target_obj),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(method))}
+}
+#[doc="`ClearPersistent()` overload"]fn clear_persistent(self,)->(){unsafe{let __receiver= <InvokableCallList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51dc0usize)as*mut u8,();
+(InvokableCallList)__receiver)}
+}
+#[doc="`PrepareInvoke()` overload"]fn prepare_invoke(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall>{unsafe{let __receiver= <InvokableCallList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51e20usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall> ;
+(InvokableCallList)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvokableCallList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51eb0usize)as*mut u8,();
+(InvokableCallList)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-events-invokablecalllist")]
-impl < __T : IInvokableCallList > IInvokableCallListMethods for __T { }
+#[cfg(feature="unity_engine-events-invokablecalllist")]impl<__T:IInvokableCallList>IInvokableCallListMethods for __T{}
 
-#[cfg(feature = "unity_engine-events-invokablecalllist")]
-impl InvokableCallList { pub fn add_persistent_invokable_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvokableCallList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_listener_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvokableCallList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn remove_listener_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvokableCallList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvokableCallList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn prepare_invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvokableCallList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvokableCallList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-events-invokablecalllist")]impl InvokableCallList{pub fn add_persistent_invokable_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_listener_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_listener_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_persistent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn prepare_invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-events-invokablecalllist")]
-impl InvokableCallList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvokableCallList) , :: core :: stringify ! (new) ,)) ; < Self as IInvokableCallListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-events-invokablecalllist")]impl InvokableCallList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvokableCallList), ::core::stringify!(new),));
+ <Self as IInvokableCallListMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-events-invokablecalllist")]

@@ -4,12 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/io/namespacedoc_10/NamespaceDoc_10.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.CoreLib.IO" , name = "NamespaceDoc")] # [parent (crate :: system :: object :: Object)] pub struct NamespaceDoc_10 {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/core_lib/io/namespacedoc_10/NamespaceDoc_10.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.CoreLib.IO",name="NamespaceDoc")]#[parent(crate::system::object::Object)]pub struct NamespaceDoc_10{}
 
 }
 

@@ -4,75 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akdragdroptriggerhandler :: { AkDragDropTriggerHandler , IAkDragDropTriggerHandler }
- ;
- use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akdragdroptriggerhandler::{AkDragDropTriggerHandler,IAkDragDropTriggerHandler}
+;
+use crate::root::aktriggerhandler::{AkTriggerHandler,IAkTriggerHandler}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akevent/AkEvent_CallbackData.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEvent.CallbackData")] # [parent (crate :: system :: object :: Object)] pub struct AkEvent_CallbackData {
-# [offset (24)] # [rename (name = "FunctionName")] pub function_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "GameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akevent/AkEvent_CallbackData.md"))]#[::unity2::class(namespace="",name="AkEvent.CallbackData")]#[parent(crate::system::object::Object)]pub struct AkEvent_CallbackData{#[offset(24)]#[rename(name="FunctionName")]pub function_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="GameObject")]pub game_object:crate::unity_engine::gameobject::GameObject,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akevent/AkEvent.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEvent")] # [parent (crate :: root :: akdragdroptriggerhandler :: AkDragDropTriggerHandler)] pub struct AkEvent {
-# [offset (44)] # [rename (name = "actionOnEventType")] pub action_on_event_type : crate :: root :: akactiononeventtype :: AkActionOnEventType ,
-# [offset (48)] # [rename (name = "curveInterpolation")] pub curve_interpolation : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
-# [offset (52)] # [rename (name = "enableActionOnEvent")] pub enable_action_on_event : bool ,
-# [offset (64)] # [rename (name = "useCallbacks")] pub use_callbacks : bool ,
-# [offset (72)] # [rename (name = "Callbacks")] pub callbacks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akevent :: AkEvent_CallbackData > ,
-# [offset (80)] # [rename (name = "playingId")] pub playing_id : u32 ,
-# [offset (88)] # [rename (name = "soundEmitterObject")] pub sound_emitter_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "transitionDuration")] pub transition_duration : f32 ,
-# [offset (104)] # [rename (name = "EventCallbackMsg")] pub event_callback_msg : crate :: root :: akeventcallbackmsg :: AkEventCallbackMsg ,
-# [offset (112)] # [rename (name = "eventIdInternal")] pub event_id_internal : i32 ,
-# [offset (120)] # [rename (name = "valueGuidInternal")] pub value_guid_internal : :: unity2 :: Array < u8 > ,
-# [offset (128)] # [rename (name = "m_callbackDataInternal")] pub m_callback_data_internal : crate :: root :: akeventcallbackdata :: AkEventCallbackData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akevent/AkEvent.md"))]#[::unity2::class(namespace="",name="AkEvent")]#[parent(crate::root::akdragdroptriggerhandler::AkDragDropTriggerHandler)]pub struct AkEvent{#[offset(44)]#[rename(name="actionOnEventType")]pub action_on_event_type:crate::root::akactiononeventtype::AkActionOnEventType, #[offset(48)]#[rename(name="curveInterpolation")]pub curve_interpolation:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(52)]#[rename(name="enableActionOnEvent")]pub enable_action_on_event:bool, #[offset(64)]#[rename(name="useCallbacks")]pub use_callbacks:bool, #[offset(72)]#[rename(name="Callbacks")]pub callbacks:crate::system::collections::generic::list_1::List_1<crate::root::akevent::AkEvent_CallbackData> , #[offset(80)]#[rename(name="playingId")]pub playing_id:u32, #[offset(88)]#[rename(name="soundEmitterObject")]pub sound_emitter_object:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="transitionDuration")]pub transition_duration:f32, #[offset(104)]#[rename(name="EventCallbackMsg")]pub event_callback_msg:crate::root::akeventcallbackmsg::AkEventCallbackMsg, #[offset(112)]#[rename(name="eventIdInternal")]pub event_id_internal:i32, #[offset(120)]#[rename(name="valueGuidInternal")]pub value_guid_internal: ::unity2::Array<u8> , #[offset(128)]#[rename(name="m_callbackDataInternal")]pub m_callback_data_internal:crate::root::akeventcallbackdata::AkEventCallbackData,}
 
 }
 
 #[cfg(feature = "root-akevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akevent")]
-pub trait IAkEvent_CallbackDataMethods : IAkEvent_CallbackData { # [doc = "`CallFunction(crate::root::akeventcallbackmsg::AkEventCallbackMsg)` overload"] fn call_function (self , event_callback_msg : impl :: core :: convert :: Into < crate :: root :: akeventcallbackmsg :: AkEventCallbackMsg >) -> () { unsafe { let __receiver = < AkEvent_CallbackData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent_CallbackData , crate :: root :: akeventcallbackmsg :: AkEventCallbackMsg , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9e720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_callback_msg) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEvent_CallbackData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent_CallbackData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9e7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akevent")]
-impl < __T : IAkEvent_CallbackData > IAkEvent_CallbackDataMethods for __T { }
-
-#[cfg(feature = "root-akevent")]
-impl AkEvent_CallbackData { pub fn call_function_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent_CallbackData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent_CallbackData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akevent")]
-impl AkEvent_CallbackData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEvent_CallbackData) , :: core :: stringify ! (new) ,)) ; < Self as IAkEvent_CallbackDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akevent")]pub trait IAkEvent_CallbackDataMethods:IAkEvent_CallbackData{#[doc="`CallFunction(crate::root::akeventcallbackmsg::AkEventCallbackMsg)` overload"]fn call_function(self,event_callback_msg:impl::core::convert::Into<crate::root::akeventcallbackmsg::AkEventCallbackMsg>)->(){unsafe{let __receiver= <AkEvent_CallbackData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e720usize)as*mut u8,();
+(AkEvent_CallbackData)__receiver,(crate::root::akeventcallbackmsg::AkEventCallbackMsg)::core::convert::Into::into(event_callback_msg))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEvent_CallbackData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e7e0usize)as*mut u8,();
+(AkEvent_CallbackData)__receiver)}
+}
 }
 
-#[cfg(feature = "root-akevent")]
-pub trait IAkEventMethods : IAkEvent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1a670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Callback(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"] fn callback (self , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object > , in_type : impl :: core :: convert :: Into < crate :: root :: akcallbacktype :: AkCallbackType > , in_info : impl :: core :: convert :: Into < crate :: root :: akcallbackinfo :: AkCallbackInfo >) -> () { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , crate :: system :: object :: Object , crate :: root :: akcallbacktype :: AkCallbackType , crate :: root :: akcallbackinfo :: AkCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1a720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_cookie) , :: core :: convert :: Into :: into (in_type) , :: core :: convert :: Into :: into (in_info) , :: core :: option :: Option :: None) } } } # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1a7f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } } # [doc = "`Stop(i32)` overload"] fn stop (self , transition_duration : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1aa90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (transition_duration) , :: core :: option :: Option :: None) } } } # [doc = "`Stop(i32, crate::root::akcurveinterpolation::AkCurveInterpolation)` overload"] fn stop_2 (self , transition_duration : impl :: core :: convert :: Into < i32 > , curve_interpolation : impl :: core :: convert :: Into < crate :: root :: akcurveinterpolation :: AkCurveInterpolation >) -> () { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , i32 , crate :: root :: akcurveinterpolation :: AkCurveInterpolation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1aab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (transition_duration) , :: core :: convert :: Into :: into (curve_interpolation) , :: core :: option :: Option :: None) } } } # [doc = "`get_eventID()` overload"] fn get_event_id (self ,) -> i32 { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1aad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_valueGuid()` overload"] fn get_value_guid (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1aaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_m_callbackData()` overload"] fn get_m_callback_data (self ,) -> crate :: root :: akeventcallbackdata :: AkEventCallbackData { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akeventcallbackdata :: AkEventCallbackData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1abb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1abc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akevent")]impl<__T:IAkEvent_CallbackData>IAkEvent_CallbackDataMethods for __T{}
 
-#[cfg(feature = "root-akevent")]
-impl < __T : IAkEvent > IAkEventMethods for __T { }
+#[cfg(feature="root-akevent")]impl AkEvent_CallbackData{pub fn call_function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-akevent")]
-impl AkEvent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn stop_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_event_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_value_guid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_m_callback_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-akevent")]impl AkEvent_CallbackData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEvent_CallbackData), ::core::stringify!(new),));
+ <Self as IAkEvent_CallbackDataMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "root-akevent")]
-impl AkEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEvent) , :: core :: stringify ! (new) ,)) ; < Self as IAkEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akevent")]pub trait IAkEventMethods:IAkEvent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1a670usize)as*mut u8,();
+(AkEvent)__receiver)}
+}
+#[doc="`Callback(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]fn callback(self,in_cookie:impl::core::convert::Into<crate::system::object::Object> ,in_type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,in_info:impl::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1a720usize)as*mut u8,();
+(AkEvent)__receiver,(crate::system::object::Object)::core::convert::Into::into(in_cookie),(crate::root::akcallbacktype::AkCallbackType)::core::convert::Into::into(in_type),(crate::root::akcallbackinfo::AkCallbackInfo)::core::convert::Into::into(in_info))}
+}
+#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1a7f0usize)as*mut u8,();
+(AkEvent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+}
+#[doc="`Stop(i32)` overload"]fn stop(self,transition_duration:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1aa90usize)as*mut u8,();
+(AkEvent)__receiver,(i32)::core::convert::Into::into(transition_duration))}
+}
+#[doc="`Stop(i32, crate::root::akcurveinterpolation::AkCurveInterpolation)` overload"]fn stop_2(self,transition_duration:impl::core::convert::Into<i32> ,curve_interpolation:impl::core::convert::Into<crate::root::akcurveinterpolation::AkCurveInterpolation>)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1aab0usize)as*mut u8,();
+(AkEvent)__receiver,(i32)::core::convert::Into::into(transition_duration),(crate::root::akcurveinterpolation::AkCurveInterpolation)::core::convert::Into::into(curve_interpolation))}
+}
+#[doc="`get_eventID()` overload"]fn get_event_id(self,)->i32{unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1aad0usize)as*mut u8,i32;
+(AkEvent)__receiver)}
+}
+#[doc="`get_valueGuid()` overload"]fn get_value_guid(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1aaf0usize)as*mut u8, ::unity2::Array<u8> ;
+(AkEvent)__receiver)}
+}
+#[doc="`get_m_callbackData()` overload"]fn get_m_callback_data(self,)->crate::root::akeventcallbackdata::AkEventCallbackData{unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1abb0usize)as*mut u8,crate::root::akeventcallbackdata::AkEventCallbackData;
+(AkEvent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1abc0usize)as*mut u8,();
+(AkEvent)__receiver)}
+}
+}
+
+#[cfg(feature="root-akevent")]impl<__T:IAkEvent>IAkEventMethods for __T{}
+
+#[cfg(feature="root-akevent")]impl AkEvent{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn handle_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn stop_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_event_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_value_guid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_m_callback_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="root-akevent")]impl AkEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEvent), ::core::stringify!(new),));
+ <Self as IAkEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akevent")]

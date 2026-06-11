@@ -4,39 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templatearraydata/TemplateArrayData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TemplateArrayData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: templatearraydata :: TemplateArrayData >)] pub struct TemplateArrayData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/templatearraydata/TemplateArrayData.md"))]#[::unity2::class(namespace="App",name="TemplateArrayData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::templatearraydata::TemplateArrayData>)]pub struct TemplateArrayData{}
 
 }
 
 #[cfg(feature = "app-templatearraydata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-templatearraydata")]
-impl TemplateArrayData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e20e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-templatearraydata")]impl TemplateArrayData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e20e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-templatearraydata")]
-pub trait ITemplateArrayDataMethods : ITemplateArrayData { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e21a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value1()` overload"] fn get_value1 (self ,) -> i32 { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e21b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value1(i32)` overload"] fn set_value1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e21c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value2()` overload"] fn get_value2 (self ,) -> f32 { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e21d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value2(f32)` overload"] fn set_value2 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e21e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value3()` overload"] fn get_value3 (self ,) -> i32 { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e21f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value3(i32)` overload"] fn set_value3 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TemplateArrayData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TemplateArrayData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-templatearraydata")]pub trait ITemplateArrayDataMethods:ITemplateArrayData{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2190usize)as*mut u8, ::unity2::Il2CppString;
+(TemplateArrayData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e21a0usize)as*mut u8,();
+(TemplateArrayData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value1()` overload"]fn get_value1(self,)->i32{unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e21b0usize)as*mut u8,i32;
+(TemplateArrayData)__receiver)}
+}
+#[doc="`set_Value1(i32)` overload"]fn set_value1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e21c0usize)as*mut u8,();
+(TemplateArrayData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value2()` overload"]fn get_value2(self,)->f32{unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e21d0usize)as*mut u8,f32;
+(TemplateArrayData)__receiver)}
+}
+#[doc="`set_Value2(f32)` overload"]fn set_value2(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e21e0usize)as*mut u8,();
+(TemplateArrayData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value3()` overload"]fn get_value3(self,)->i32{unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e21f0usize)as*mut u8,i32;
+(TemplateArrayData)__receiver)}
+}
+#[doc="`set_Value3(i32)` overload"]fn set_value3(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2200usize)as*mut u8,();
+(TemplateArrayData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2210usize)as*mut u8, ::unity2::Il2CppString;
+(TemplateArrayData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TemplateArrayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2220usize)as*mut u8,();
+(TemplateArrayData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-templatearraydata")]
-impl < __T : ITemplateArrayData > ITemplateArrayDataMethods for __T { }
+#[cfg(feature="app-templatearraydata")]impl<__T:ITemplateArrayData>ITemplateArrayDataMethods for __T{}
 
-#[cfg(feature = "app-templatearraydata")]
-impl TemplateArrayData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_value1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_value1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_value2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_value2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_value3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_value3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TemplateArrayData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-templatearraydata")]impl TemplateArrayData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_value1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_value1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_value2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_value2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_value3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_value3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-templatearraydata")]
-impl TemplateArrayData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TemplateArrayData) , :: core :: stringify ! (new) ,)) ; < Self as ITemplateArrayDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-templatearraydata")]impl TemplateArrayData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TemplateArrayData), ::core::stringify!(new),));
+ <Self as ITemplateArrayDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-templatearraydata")]

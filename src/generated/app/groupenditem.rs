@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/groupenditem/GroupEndItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GroupEndItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct GroupEndItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/groupenditem/GroupEndItem.md"))]#[::unity2::class(namespace="App",name="GroupEndItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct GroupEndItem{}
 
 }
 
 #[cfg(feature = "app-groupenditem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-groupenditem")]
-pub trait IGroupEndItemMethods : IGroupEndItem { # [doc = "`GetKind()` overload"] fn get_kind (self ,) -> crate :: app :: menuitem :: MenuItem_Kind { unsafe { let __receiver = < GroupEndItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupEndItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29781f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVisible()` overload"] fn is_visible (self ,) -> bool { unsafe { let __receiver = < GroupEndItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupEndItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GroupEndItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupEndItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-groupenditem")]pub trait IGroupEndItemMethods:IGroupEndItem{#[doc="`GetKind()` overload"]fn get_kind(self,)->crate::app::menuitem::MenuItem_Kind{unsafe{let __receiver= <GroupEndItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29781f0usize)as*mut u8,crate::app::menuitem::MenuItem_Kind;
+(GroupEndItem)__receiver)}
+}
+#[doc="`IsVisible()` overload"]fn is_visible(self,)->bool{unsafe{let __receiver= <GroupEndItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978200usize)as*mut u8,bool;
+(GroupEndItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GroupEndItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978210usize)as*mut u8,();
+(GroupEndItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-groupenditem")]
-impl < __T : IGroupEndItem > IGroupEndItemMethods for __T { }
+#[cfg(feature="app-groupenditem")]impl<__T:IGroupEndItem>IGroupEndItemMethods for __T{}
 
-#[cfg(feature = "app-groupenditem")]
-impl GroupEndItem { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupEndItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupEndItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupEndItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-groupenditem")]impl GroupEndItem{pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-groupenditem")]
-impl GroupEndItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GroupEndItem) , :: core :: stringify ! (new) ,)) ; < Self as IGroupEndItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-groupenditem")]impl GroupEndItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GroupEndItem), ::core::stringify!(new),));
+ <Self as IGroupEndItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-groupenditem")]

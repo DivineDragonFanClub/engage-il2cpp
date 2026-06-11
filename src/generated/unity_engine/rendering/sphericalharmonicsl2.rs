@@ -4,70 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/sphericalharmonicsl2/SphericalHarmonicsL2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SphericalHarmonicsL2 {
-    pub shr0: f32,
-    pub shr1: f32,
-    pub shr2: f32,
-    pub shr3: f32,
-    pub shr4: f32,
-    pub shr5: f32,
-    pub shr6: f32,
-    pub shr7: f32,
-    pub shr8: f32,
-    pub shg0: f32,
-    pub shg1: f32,
-    pub shg2: f32,
-    pub shg3: f32,
-    pub shg4: f32,
-    pub shg5: f32,
-    pub shg6: f32,
-    pub shg7: f32,
-    pub shg8: f32,
-    pub shb0: f32,
-    pub shb1: f32,
-    pub shb2: f32,
-    pub shb3: f32,
-    pub shb4: f32,
-    pub shb5: f32,
-    pub shb6: f32,
-    pub shb7: f32,
-    pub shb8: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/sphericalharmonicsl2/SphericalHarmonicsL2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SphericalHarmonicsL2{pub shr0:f32,pub shr1:f32,pub shr2:f32,pub shr3:f32,pub shr4:f32,pub shr5:f32,pub shr6:f32,pub shr7:f32,pub shr8:f32,pub shg0:f32,pub shg1:f32,pub shg2:f32,pub shg3:f32,pub shg4:f32,pub shg5:f32,pub shg6:f32,pub shg7:f32,pub shg8:f32,pub shb0:f32,pub shb1:f32,pub shb2:f32,pub shb3:f32,pub shb4:f32,pub shb5:f32,pub shb6:f32,pub shb7:f32,pub shb8:f32,}
+impl::unity2::ClassIdentity for SphericalHarmonicsL2{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="SphericalHarmonicsL2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for SphericalHarmonicsL2 {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "SphericalHarmonicsL2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SphericalHarmonicsL2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SphericalHarmonicsL2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -75,14 +26,31 @@ impl ::unity2::IlType for SphericalHarmonicsL2 {
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
-impl SphericalHarmonicsL2 { # [doc = "`op_Equality(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2, crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f95330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-sphericalharmonicsl2")]impl SphericalHarmonicsL2{#[doc="`op_Equality(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2, crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2> ,rhs:impl::core::convert::Into<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f95330usize)as*mut u8,bool;
+(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)::core::convert::Into::into(lhs),(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
-impl SphericalHarmonicsL2 { # [doc = "`get_Item(i32, i32)` overload"] pub fn get_item (& mut self , rgb : impl :: core :: convert :: Into < i32 > , coefficient : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (* mut SphericalHarmonicsL2 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94ca0usize) as * mut u8) ; __inner (self as * mut SphericalHarmonicsL2 , :: core :: convert :: Into :: into (rgb) , :: core :: convert :: Into :: into (coefficient) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SphericalHarmonicsL2 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94ec0usize) as * mut u8) ; __inner (self as * mut SphericalHarmonicsL2 , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut SphericalHarmonicsL2 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f950a0usize) as * mut u8) ; __inner (self as * mut SphericalHarmonicsL2 , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut SphericalHarmonicsL2 , crate :: unity_engine :: rendering :: sphericalharmonicsl2 :: SphericalHarmonicsL2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f95170usize) as * mut u8) ; __inner (self as * mut SphericalHarmonicsL2 , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-sphericalharmonicsl2")]impl SphericalHarmonicsL2{#[doc="`get_Item(i32, i32)` overload"]pub fn get_item(&mut self,rgb:impl::core::convert::Into<i32> ,coefficient:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94ca0usize)as*mut u8,f32;
+(*mut SphericalHarmonicsL2)self as*mut SphericalHarmonicsL2,(i32)::core::convert::Into::into(rgb),(i32)::core::convert::Into::into(coefficient))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94ec0usize)as*mut u8,i32;
+(*mut SphericalHarmonicsL2)self as*mut SphericalHarmonicsL2)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f950a0usize)as*mut u8,bool;
+(*mut SphericalHarmonicsL2)self as*mut SphericalHarmonicsL2,(crate::system::object::Object)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f95170usize)as*mut u8,bool;
+(*mut SphericalHarmonicsL2)self as*mut SphericalHarmonicsL2,(crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
-impl SphericalHarmonicsL2 { pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphericalHarmonicsL2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-sphericalharmonicsl2")]impl SphericalHarmonicsL2{pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
 #[doc(hidden)]

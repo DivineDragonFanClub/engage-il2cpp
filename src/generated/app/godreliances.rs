@@ -4,33 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godreliances/GodRelianceS.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodRelianceS")] # [parent (crate :: system :: object :: Object)] pub struct GodRelianceS {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_PartnerPid")] pub m_partner_pid : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godreliances/GodRelianceS.md"))]#[::unity2::class(namespace="App",name="GodRelianceS")]#[parent(crate::system::object::Object)]pub struct GodRelianceS{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_PartnerPid")]pub m_partner_pid: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-godreliances-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godreliances")]
-pub trait IGodRelianceSMethods : IGodRelianceS { # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < GodRelianceS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceS , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GodRelianceS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceS , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335cb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GodRelianceS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceS , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`get_PartnerPid()` overload"] fn get_partner_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodRelianceS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceS , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PartnerPid(::unity2::Il2CppString)` overload"] fn set_partner_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GodRelianceS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceS , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2335ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodRelianceS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceS , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2336000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godreliances")]pub trait IGodRelianceSMethods:IGodRelianceS{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <GodRelianceS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2335ca0usize)as*mut u8,();
+(GodRelianceS)__receiver)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodRelianceS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2335cb0usize)as*mut u8,();
+(GodRelianceS)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodRelianceS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2335cf0usize)as*mut u8,();
+(GodRelianceS)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`get_PartnerPid()` overload"]fn get_partner_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRelianceS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2335fe0usize)as*mut u8, ::unity2::Il2CppString;
+(GodRelianceS)__receiver)}
+}
+#[doc="`set_PartnerPid(::unity2::Il2CppString)` overload"]fn set_partner_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GodRelianceS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2335ff0usize)as*mut u8,();
+(GodRelianceS)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodRelianceS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2336000usize)as*mut u8,();
+(GodRelianceS)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godreliances")]
-impl < __T : IGodRelianceS > IGodRelianceSMethods for __T { }
+#[cfg(feature="app-godreliances")]impl<__T:IGodRelianceS>IGodRelianceSMethods for __T{}
 
-#[cfg(feature = "app-godreliances")]
-impl GodRelianceS { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_partner_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_partner_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-godreliances")]impl GodRelianceS{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_partner_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_partner_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-godreliances")]
-impl GodRelianceS {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodRelianceS) , :: core :: stringify ! (new) ,)) ; < Self as IGodRelianceSMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godreliances")]impl GodRelianceS{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRelianceS), ::core::stringify!(new),));
+ <Self as IGodRelianceSMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godreliances")]

@@ -4,34 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: filesysteminfo :: { FileSystemInfo , IFileSystemInfo }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::filesysteminfo::{FileSystemInfo,IFileSystemInfo}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/fileinfo/FileInfo.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "FileInfo")] # [parent (crate :: system :: io :: filesysteminfo :: FileSystemInfo)] pub struct FileInfo {
-# [offset (96)] # [rename (name = "_name")] pub name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/fileinfo/FileInfo.md"))]#[::unity2::class(namespace="System.IO",name="FileInfo")]#[parent(crate::system::io::filesysteminfo::FileSystemInfo)]pub struct FileInfo{#[offset(96)]#[rename(name="_name")]pub name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-io-fileinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-fileinfo")]
-pub trait IFileInfoMethods : IFileInfo { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380c780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`Init(::unity2::Il2CppString, bool)` overload"] fn init (self , file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , check_host : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileInfo , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380c8c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (file_name) , :: core :: convert :: Into :: into (check_host) , :: core :: option :: Option :: None) } } } # [doc = "`GetDisplayPath(::unity2::Il2CppString)` overload"] fn get_display_path (self , original_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380c980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (original_path) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380cba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DirectoryName()` overload"] fn get_directory_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380cbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Directory()` overload"] fn get_directory (self ,) -> crate :: system :: io :: directoryinfo :: DirectoryInfo { unsafe { let __receiver = < FileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: directoryinfo :: DirectoryInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380cc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Exists()` overload"] fn get_exists (self ,) -> bool { unsafe { let __receiver = < FileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380cd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x380cf60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-fileinfo")]pub trait IFileInfoMethods:IFileInfo{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380c780usize)as*mut u8,();
+(FileInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`Init(::unity2::Il2CppString, bool)` overload"]fn init(self,file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,check_host:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380c8c0usize)as*mut u8,();
+(FileInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file_name),(bool)::core::convert::Into::into(check_host))}
+}
+#[doc="`GetDisplayPath(::unity2::Il2CppString)` overload"]fn get_display_path(self,original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380c980usize)as*mut u8, ::unity2::Il2CppString;
+(FileInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380cba0usize)as*mut u8, ::unity2::Il2CppString;
+(FileInfo)__receiver)}
+}
+#[doc="`get_DirectoryName()` overload"]fn get_directory_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380cbb0usize)as*mut u8, ::unity2::Il2CppString;
+(FileInfo)__receiver)}
+}
+#[doc="`get_Directory()` overload"]fn get_directory(self,)->crate::system::io::directoryinfo::DirectoryInfo{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380cc20usize)as*mut u8,crate::system::io::directoryinfo::DirectoryInfo;
+(FileInfo)__receiver)}
+}
+#[doc="`get_Exists()` overload"]fn get_exists(self,)->bool{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380cd00usize)as*mut u8,bool;
+(FileInfo)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x380cf60usize)as*mut u8, ::unity2::Il2CppString;
+(FileInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-fileinfo")]
-impl < __T : IFileInfo > IFileInfoMethods for __T { }
+#[cfg(feature="system-io-fileinfo")]impl<__T:IFileInfo>IFileInfoMethods for __T{}
 
-#[cfg(feature = "system-io-fileinfo")]
-impl FileInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_display_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_directory_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_directory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="system-io-fileinfo")]impl FileInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_display_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_directory_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "system-io-fileinfo")]
-impl FileInfo {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (file_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileInfo) , :: core :: stringify ! (new) ,)) ; < Self as IFileInfoMethods > :: ctor (this , file_name) ; this }
+#[cfg(feature="system-io-fileinfo")]impl FileInfo{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(file_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileInfo), ::core::stringify!(new),));
+ <Self as IFileInfoMethods> ::ctor(this,file_name);
+this}
 }
 
 #[cfg(feature = "system-io-fileinfo")]

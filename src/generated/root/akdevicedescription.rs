@@ -4,38 +4,119 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akdevicedescription/AkDeviceDescription.md"))] # [:: unity2 :: class (namespace = "" , name = "AkDeviceDescription")] # [parent (crate :: system :: object :: Object)] pub struct AkDeviceDescription {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akdevicedescription/AkDeviceDescription.md"))]#[::unity2::class(namespace="",name="AkDeviceDescription")]#[parent(crate::system::object::Object)]pub struct AkDeviceDescription{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akdevicedescription-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akdevicedescription")]
-impl AkDeviceDescription { # [doc = "`getCPtr(crate::root::akdevicedescription::AkDeviceDescription)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akdevicedescription :: AkDeviceDescription >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akdevicedescription :: AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16210usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16910usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akdevicedescription")]impl AkDeviceDescription{#[doc="`getCPtr(crate::root::akdevicedescription::AkDeviceDescription)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akdevicedescription::AkDeviceDescription>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f16210usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akdevicedescription::AkDeviceDescription)::core::convert::Into::into(obj))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f16910usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-akdevicedescription")]
-pub trait IAkDeviceDescriptionMethods : IAkDeviceDescription { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f161d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f162a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_idDevice(u32)` overload"] fn set_id_device (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f164a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_idDevice()` overload"] fn get_id_device (self ,) -> u32 { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_deviceName(::unity2::Il2CppString)` overload"] fn set_device_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_deviceName()` overload"] fn get_device_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_deviceStateMask(crate::root::akaudiodevicestate::AkAudioDeviceState)` overload"] fn set_device_state_mask (self , value : impl :: core :: convert :: Into < crate :: root :: akaudiodevicestate :: AkAudioDeviceState >) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , crate :: root :: akaudiodevicestate :: AkAudioDeviceState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f166c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_deviceStateMask()` overload"] fn get_device_state_mask (self ,) -> crate :: root :: akaudiodevicestate :: AkAudioDeviceState { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> crate :: root :: akaudiodevicestate :: AkAudioDeviceState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isDefaultDevice(bool)` overload"] fn set_is_default_device (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f167b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_isDefaultDevice()` overload"] fn get_is_default_device (self ,) -> bool { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f168a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone(crate::root::akdevicedescription::AkDeviceDescription)` overload"] fn clone (self , other : impl :: core :: convert :: Into < crate :: root :: akdevicedescription :: AkDeviceDescription >) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , crate :: root :: akdevicedescription :: AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkDeviceDescription as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkDeviceDescription , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akdevicedescription")]pub trait IAkDeviceDescriptionMethods:IAkDeviceDescription{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f161d0usize)as*mut u8,();
+(AkDeviceDescription)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16270usize)as*mut u8,();
+(AkDeviceDescription)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f162a0usize)as*mut u8,();
+(AkDeviceDescription)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16310usize)as*mut u8,();
+(AkDeviceDescription)__receiver)}
+}
+#[doc="`set_idDevice(u32)` overload"]fn set_id_device(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f164a0usize)as*mut u8,();
+(AkDeviceDescription)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_idDevice()` overload"]fn get_id_device(self,)->u32{unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16520usize)as*mut u8,u32;
+(AkDeviceDescription)__receiver)}
+}
+#[doc="`set_deviceName(::unity2::Il2CppString)` overload"]fn set_device_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16590usize)as*mut u8,();
+(AkDeviceDescription)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_deviceName()` overload"]fn get_device_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16610usize)as*mut u8, ::unity2::Il2CppString;
+(AkDeviceDescription)__receiver)}
+}
+#[doc="`set_deviceStateMask(crate::root::akaudiodevicestate::AkAudioDeviceState)` overload"]fn set_device_state_mask(self,value:impl::core::convert::Into<crate::root::akaudiodevicestate::AkAudioDeviceState>)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f166c0usize)as*mut u8,();
+(AkDeviceDescription)__receiver,(crate::root::akaudiodevicestate::AkAudioDeviceState)::core::convert::Into::into(value))}
+}
+#[doc="`get_deviceStateMask()` overload"]fn get_device_state_mask(self,)->crate::root::akaudiodevicestate::AkAudioDeviceState{unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16740usize)as*mut u8,crate::root::akaudiodevicestate::AkAudioDeviceState;
+(AkDeviceDescription)__receiver)}
+}
+#[doc="`set_isDefaultDevice(bool)` overload"]fn set_is_default_device(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f167b0usize)as*mut u8,();
+(AkDeviceDescription)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_isDefaultDevice()` overload"]fn get_is_default_device(self,)->bool{unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16830usize)as*mut u8,bool;
+(AkDeviceDescription)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f168a0usize)as*mut u8,();
+(AkDeviceDescription)__receiver)}
+}
+#[doc="`Clone(crate::root::akdevicedescription::AkDeviceDescription)` overload"]fn clone(self,other:impl::core::convert::Into<crate::root::akdevicedescription::AkDeviceDescription>)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16980usize)as*mut u8,();
+(AkDeviceDescription)__receiver,(crate::root::akdevicedescription::AkDeviceDescription)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkDeviceDescription as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16a40usize)as*mut u8,();
+(AkDeviceDescription)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akdevicedescription")]
-impl < __T : IAkDeviceDescription > IAkDeviceDescriptionMethods for __T { }
+#[cfg(feature="root-akdevicedescription")]impl<__T:IAkDeviceDescription>IAkDeviceDescriptionMethods for __T{}
 
-#[cfg(feature = "root-akdevicedescription")]
-impl AkDeviceDescription { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_id_device_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_id_device_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_device_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_device_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_device_state_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_device_state_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_is_default_device_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_is_default_device_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkDeviceDescription as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="root-akdevicedescription")]impl AkDeviceDescription{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_id_device_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_id_device_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_device_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_device_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_device_state_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_device_state_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_is_default_device_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_is_default_device_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "root-akdevicedescription")]
-impl AkDeviceDescription {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkDeviceDescription) , :: core :: stringify ! (new) ,)) ; < Self as IAkDeviceDescriptionMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkDeviceDescription) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkDeviceDescriptionMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akdevicedescription")]impl AkDeviceDescription{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkDeviceDescription), ::core::stringify!(new),));
+ <Self as IAkDeviceDescriptionMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkDeviceDescription), ::core::stringify!(new_2),));
+ <Self as IAkDeviceDescriptionMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akdevicedescription")]

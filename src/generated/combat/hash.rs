@@ -4,70 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hash/Hash.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Hash")] # [parent (crate :: system :: object :: Object)] pub struct Hash {
-# [static_field] # [rename (name = "Attack1")] pub attack1 : i32 ,
-# [static_field] # [rename (name = "Attack2")] pub attack2 : i32 ,
-# [static_field] # [rename (name = "Attack3")] pub attack3 : i32 ,
-# [static_field] # [rename (name = "Attack4")] pub attack4 : i32 ,
-# [static_field] # [rename (name = "Attack5")] pub attack5 : i32 ,
-# [static_field] # [rename (name = "AttackC")] pub attack_c : i32 ,
-# [static_field] # [rename (name = "AttackT")] pub attack_t : i32 ,
-# [static_field] # [rename (name = "DamageHigh")] pub damage_high : i32 ,
-# [static_field] # [rename (name = "DamageMidB")] pub damage_mid_b : i32 ,
-# [static_field] # [rename (name = "DamageMidDU")] pub damage_mid_du : i32 ,
-# [static_field] # [rename (name = "DamageMidUD")] pub damage_mid_ud : i32 ,
-# [static_field] # [rename (name = "DieB")] pub die_b : i32 ,
-# [static_field] # [rename (name = "DieL")] pub die_l : i32 ,
-# [static_field] # [rename (name = "DieR")] pub die_r : i32 ,
-# [static_field] # [rename (name = "Dive")] pub dive : i32 ,
-# [static_field] # [rename (name = "Engage1")] pub engage1 : i32 ,
-# [static_field] # [rename (name = "Engage2")] pub engage2 : i32 ,
-# [static_field] # [rename (name = "Engage3")] pub engage3 : i32 ,
-# [static_field] # [rename (name = "EvasionB")] pub evasion_b : i32 ,
-# [static_field] # [rename (name = "EvasionL")] pub evasion_l : i32 ,
-# [static_field] # [rename (name = "EvasionR")] pub evasion_r : i32 ,
-# [static_field] # [rename (name = "Guard")] pub guard : i32 ,
-# [static_field] # [rename (name = "HoveringLoop")] pub hovering_loop : i32 ,
-# [static_field] # [rename (name = "Idle")] pub idle : i32 ,
-# [static_field] # [rename (name = "ParryL")] pub parry_l : i32 ,
-# [static_field] # [rename (name = "ParryR")] pub parry_r : i32 ,
-# [static_field] # [rename (name = "Ready")] pub ready : i32 ,
-# [static_field] # [rename (name = "RelaxLoop")] pub relax_loop : i32 ,
-# [static_field] # [rename (name = "Repelled")] pub repelled : i32 ,
-# [static_field] # [rename (name = "RunLoop")] pub run_loop : i32 ,
-# [static_field] # [rename (name = "RunStart")] pub run_start : i32 ,
-# [static_field] # [rename (name = "Special1")] pub special1 : i32 ,
-# [static_field] # [rename (name = "Start")] pub start : i32 ,
-# [static_field] # [rename (name = "Win")] pub win : i32 ,
-# [static_field] # [rename (name = "WinLoop")] pub win_loop : i32 ,
-# [static_field] # [rename (name = "AttackAll")] pub attack_all : i32 ,
-# [static_field] # [rename (name = "DamageMidAll")] pub damage_mid_all : i32 ,
-# [static_field] # [rename (name = "DieAll")] pub die_all : i32 ,
-# [static_field] # [rename (name = "EvasionAll")] pub evasion_all : i32 ,
-# [static_field] # [rename (name = "ParryAll")] pub parry_all : i32 ,
-# [static_field] # [rename (name = "PlaybackRate")] pub playback_rate : i32 ,
-# [static_field] # [rename (name = "IsRunning")] pub is_running : i32 ,
-# [static_field] # [rename (name = "Dying")] pub dying : i32 ,
-# [static_field] # [rename (name = "FacialNormal")] pub facial_normal : i32 ,
-# [static_field] # [rename (name = "FacialPain")] pub facial_pain : i32 ,
-# [static_field] # [rename (name = "FacialDie")] pub facial_die : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/hash/Hash.md"))]#[::unity2::class(namespace="Combat",name="Hash")]#[parent(crate::system::object::Object)]pub struct Hash{#[static_field]#[rename(name="Attack1")]pub attack1:i32, #[static_field]#[rename(name="Attack2")]pub attack2:i32, #[static_field]#[rename(name="Attack3")]pub attack3:i32, #[static_field]#[rename(name="Attack4")]pub attack4:i32, #[static_field]#[rename(name="Attack5")]pub attack5:i32, #[static_field]#[rename(name="AttackC")]pub attack_c:i32, #[static_field]#[rename(name="AttackT")]pub attack_t:i32, #[static_field]#[rename(name="DamageHigh")]pub damage_high:i32, #[static_field]#[rename(name="DamageMidB")]pub damage_mid_b:i32, #[static_field]#[rename(name="DamageMidDU")]pub damage_mid_du:i32, #[static_field]#[rename(name="DamageMidUD")]pub damage_mid_ud:i32, #[static_field]#[rename(name="DieB")]pub die_b:i32, #[static_field]#[rename(name="DieL")]pub die_l:i32, #[static_field]#[rename(name="DieR")]pub die_r:i32, #[static_field]#[rename(name="Dive")]pub dive:i32, #[static_field]#[rename(name="Engage1")]pub engage1:i32, #[static_field]#[rename(name="Engage2")]pub engage2:i32, #[static_field]#[rename(name="Engage3")]pub engage3:i32, #[static_field]#[rename(name="EvasionB")]pub evasion_b:i32, #[static_field]#[rename(name="EvasionL")]pub evasion_l:i32, #[static_field]#[rename(name="EvasionR")]pub evasion_r:i32, #[static_field]#[rename(name="Guard")]pub guard:i32, #[static_field]#[rename(name="HoveringLoop")]pub hovering_loop:i32, #[static_field]#[rename(name="Idle")]pub idle:i32, #[static_field]#[rename(name="ParryL")]pub parry_l:i32, #[static_field]#[rename(name="ParryR")]pub parry_r:i32, #[static_field]#[rename(name="Ready")]pub ready:i32, #[static_field]#[rename(name="RelaxLoop")]pub relax_loop:i32, #[static_field]#[rename(name="Repelled")]pub repelled:i32, #[static_field]#[rename(name="RunLoop")]pub run_loop:i32, #[static_field]#[rename(name="RunStart")]pub run_start:i32, #[static_field]#[rename(name="Special1")]pub special1:i32, #[static_field]#[rename(name="Start")]pub start:i32, #[static_field]#[rename(name="Win")]pub win:i32, #[static_field]#[rename(name="WinLoop")]pub win_loop:i32, #[static_field]#[rename(name="AttackAll")]pub attack_all:i32, #[static_field]#[rename(name="DamageMidAll")]pub damage_mid_all:i32, #[static_field]#[rename(name="DieAll")]pub die_all:i32, #[static_field]#[rename(name="EvasionAll")]pub evasion_all:i32, #[static_field]#[rename(name="ParryAll")]pub parry_all:i32, #[static_field]#[rename(name="PlaybackRate")]pub playback_rate:i32, #[static_field]#[rename(name="IsRunning")]pub is_running:i32, #[static_field]#[rename(name="Dying")]pub dying:i32, #[static_field]#[rename(name="FacialNormal")]pub facial_normal:i32, #[static_field]#[rename(name="FacialPain")]pub facial_pain:i32, #[static_field]#[rename(name="FacialDie")]pub facial_die:i32,}
 
 }
 
 #[cfg(feature = "combat-hash-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-hash")]
-impl Hash { # [doc = "`ToHash(::unity2::Il2CppString)` overload"] pub fn to_hash (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297b610usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`ToName(i32)` overload"] pub fn to_name (hash : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297b670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (hash) , :: core :: option :: Option :: None) } } } # [doc = "`get_HashArray()` overload"] pub fn get_hash_array () -> :: unity2 :: Array < i32 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297bd60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297bde0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-hash")]impl Hash{#[doc="`ToHash(::unity2::Il2CppString)` overload"]pub fn to_hash(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x297b610usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`ToName(i32)` overload"]pub fn to_name(hash:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x297b670usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(hash))}
+}
+#[doc="`get_HashArray()` overload"]pub fn get_hash_array()-> ::unity2::Array<i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x297bd60usize)as*mut u8, ::unity2::Array<i32> ;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x297bde0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-hash")]
-impl Hash { pub fn to_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Hash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-hash")]impl Hash{pub fn to_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "combat-hash")]
 #[doc(hidden)]

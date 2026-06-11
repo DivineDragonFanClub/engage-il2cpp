@@ -4,34 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/manifestresourceinfo/ManifestResourceInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "ManifestResourceInfo")] # [parent (crate :: system :: object :: Object)] pub struct ManifestResourceInfo {
-# [offset (16)] # [rename (name = "_containingAssembly")] pub containing_assembly : crate :: system :: reflection :: assembly :: Assembly ,
-# [offset (24)] # [rename (name = "_containingFileName")] pub containing_file_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "_resourceLocation")] pub resource_location : crate :: system :: reflection :: resourcelocation :: ResourceLocation ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/manifestresourceinfo/ManifestResourceInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="ManifestResourceInfo")]#[parent(crate::system::object::Object)]pub struct ManifestResourceInfo{#[offset(16)]#[rename(name="_containingAssembly")]pub containing_assembly:crate::system::reflection::assembly::Assembly, #[offset(24)]#[rename(name="_containingFileName")]pub containing_file_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="_resourceLocation")]pub resource_location:crate::system::reflection::resourcelocation::ResourceLocation,}
 
 }
 
 #[cfg(feature = "system-reflection-manifestresourceinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-manifestresourceinfo")]
-pub trait IManifestResourceInfoMethods : IManifestResourceInfo { # [doc = "`.ctor(crate::system::reflection::assembly::Assembly, ::unity2::Il2CppString, crate::system::reflection::resourcelocation::ResourceLocation)` overload"] fn ctor (self , containing_assembly : impl :: core :: convert :: Into < crate :: system :: reflection :: assembly :: Assembly > , containing_file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , resource_location : impl :: core :: convert :: Into < crate :: system :: reflection :: resourcelocation :: ResourceLocation >) -> () { unsafe { let __receiver = < ManifestResourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ManifestResourceInfo , crate :: system :: reflection :: assembly :: Assembly , :: unity2 :: Il2CppString , crate :: system :: reflection :: resourcelocation :: ResourceLocation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336b270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (containing_assembly) , :: core :: convert :: Into :: into (containing_file_name) , :: core :: convert :: Into :: into (resource_location) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReferencedAssembly()` overload"] fn get_referenced_assembly (self ,) -> crate :: system :: reflection :: assembly :: Assembly { unsafe { let __receiver = < ManifestResourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ManifestResourceInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assembly :: Assembly = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336b2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FileName()` overload"] fn get_file_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ManifestResourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ManifestResourceInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336b2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ResourceLocation()` overload"] fn get_resource_location (self ,) -> crate :: system :: reflection :: resourcelocation :: ResourceLocation { unsafe { let __receiver = < ManifestResourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ManifestResourceInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: resourcelocation :: ResourceLocation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336b2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-manifestresourceinfo")]pub trait IManifestResourceInfoMethods:IManifestResourceInfo{#[doc="`.ctor(crate::system::reflection::assembly::Assembly, ::unity2::Il2CppString, crate::system::reflection::resourcelocation::ResourceLocation)` overload"]fn ctor(self,containing_assembly:impl::core::convert::Into<crate::system::reflection::assembly::Assembly> ,containing_file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,resource_location:impl::core::convert::Into<crate::system::reflection::resourcelocation::ResourceLocation>)->(){unsafe{let __receiver= <ManifestResourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336b270usize)as*mut u8,();
+(ManifestResourceInfo)__receiver,(crate::system::reflection::assembly::Assembly)::core::convert::Into::into(containing_assembly),(::unity2::Il2CppString)::core::convert::Into::into(containing_file_name),(crate::system::reflection::resourcelocation::ResourceLocation)::core::convert::Into::into(resource_location))}
+}
+#[doc="`get_ReferencedAssembly()` overload"]fn get_referenced_assembly(self,)->crate::system::reflection::assembly::Assembly{unsafe{let __receiver= <ManifestResourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336b2d0usize)as*mut u8,crate::system::reflection::assembly::Assembly;
+(ManifestResourceInfo)__receiver)}
+}
+#[doc="`get_FileName()` overload"]fn get_file_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ManifestResourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336b2e0usize)as*mut u8, ::unity2::Il2CppString;
+(ManifestResourceInfo)__receiver)}
+}
+#[doc="`get_ResourceLocation()` overload"]fn get_resource_location(self,)->crate::system::reflection::resourcelocation::ResourceLocation{unsafe{let __receiver= <ManifestResourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336b2f0usize)as*mut u8,crate::system::reflection::resourcelocation::ResourceLocation;
+(ManifestResourceInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-manifestresourceinfo")]
-impl < __T : IManifestResourceInfo > IManifestResourceInfoMethods for __T { }
+#[cfg(feature="system-reflection-manifestresourceinfo")]impl<__T:IManifestResourceInfo>IManifestResourceInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-manifestresourceinfo")]
-impl ManifestResourceInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ManifestResourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_referenced_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ManifestResourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ManifestResourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_resource_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ManifestResourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-reflection-manifestresourceinfo")]impl ManifestResourceInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_referenced_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_resource_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "system-reflection-manifestresourceinfo")]
-impl ManifestResourceInfo {
-# [doc = "`.ctor(crate::system::reflection::assembly::Assembly, ::unity2::Il2CppString, crate::system::reflection::resourcelocation::ResourceLocation)` — overload selector"] pub fn new (containing_assembly : crate :: system :: reflection :: assembly :: Assembly , containing_file_name : :: unity2 :: Il2CppString , resource_location : crate :: system :: reflection :: resourcelocation :: ResourceLocation) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ManifestResourceInfo) , :: core :: stringify ! (new) ,)) ; < Self as IManifestResourceInfoMethods > :: ctor (this , containing_assembly , containing_file_name , resource_location) ; this }
+#[cfg(feature="system-reflection-manifestresourceinfo")]impl ManifestResourceInfo{#[doc="`.ctor(crate::system::reflection::assembly::Assembly, ::unity2::Il2CppString, crate::system::reflection::resourcelocation::ResourceLocation)` — overload selector"]pub fn new(containing_assembly:crate::system::reflection::assembly::Assembly,containing_file_name: ::unity2::Il2CppString,resource_location:crate::system::reflection::resourcelocation::ResourceLocation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ManifestResourceInfo), ::core::stringify!(new),));
+ <Self as IManifestResourceInfoMethods> ::ctor(this,containing_assembly,containing_file_name,resource_location);
+this}
 }
 
 #[cfg(feature = "system-reflection-manifestresourceinfo")]

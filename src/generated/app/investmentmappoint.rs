@@ -4,43 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmappoint/InvestmentMapPoint.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentMapPoint")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct InvestmentMapPoint {
-# [offset (24)] # [rename (name = "m_mapCid")] pub m_map_cid : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_balloonRoot")] pub m_balloon_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_battleIcon")] pub m_battle_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_animalIcon")] pub m_animal_icon : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmappoint/InvestmentMapPoint.md"))]#[::unity2::class(namespace="App",name="InvestmentMapPoint")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InvestmentMapPoint{#[offset(24)]#[rename(name="m_mapCid")]pub m_map_cid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_balloonRoot")]pub m_balloon_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_battleIcon")]pub m_battle_icon:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_animalIcon")]pub m_animal_icon:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-investmentmappoint-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-investmentmappoint")]
-pub trait IInvestmentMapPointMethods : IInvestmentMapPoint { # [doc = "`GetRareAnimal(crate::app::hubnationdata::HubNationData)` overload"] fn get_rare_animal (self , nation : impl :: core :: convert :: Into < crate :: app :: hubnationdata :: HubNationData >) -> crate :: app :: animaldata :: AnimalData { unsafe { let __receiver = < InvestmentMapPoint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMapPoint , crate :: app :: hubnationdata :: HubNationData , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaldata :: AnimalData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a0600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (nation) , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < InvestmentMapPoint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMapPoint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a0700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InvestmentMapPoint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentMapPoint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a0ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-investmentmappoint")]pub trait IInvestmentMapPointMethods:IInvestmentMapPoint{#[doc="`GetRareAnimal(crate::app::hubnationdata::HubNationData)` overload"]fn get_rare_animal(self,nation:impl::core::convert::Into<crate::app::hubnationdata::HubNationData>)->crate::app::animaldata::AnimalData{unsafe{let __receiver= <InvestmentMapPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a0600usize)as*mut u8,crate::app::animaldata::AnimalData;
+(InvestmentMapPoint)__receiver,(crate::app::hubnationdata::HubNationData)::core::convert::Into::into(nation))}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <InvestmentMapPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a0700usize)as*mut u8,();
+(InvestmentMapPoint)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMapPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a0ae0usize)as*mut u8,();
+(InvestmentMapPoint)__receiver)}
+}
+}
 
-#[cfg(feature = "app-investmentmappoint")]
-impl < __T : IInvestmentMapPoint > IInvestmentMapPointMethods for __T { }
+#[cfg(feature="app-investmentmappoint")]impl<__T:IInvestmentMapPoint>IInvestmentMapPointMethods for __T{}
 
-#[cfg(feature = "app-investmentmappoint")]
-impl InvestmentMapPoint { pub fn get_rare_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMapPoint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMapPoint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentMapPoint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-investmentmappoint")]impl InvestmentMapPoint{pub fn get_rare_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-investmentmappoint")]
-impl InvestmentMapPoint {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentMapPoint) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentMapPointMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-investmentmappoint")]impl InvestmentMapPoint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMapPoint), ::core::stringify!(new),));
+ <Self as IInvestmentMapPointMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-investmentmappoint")]

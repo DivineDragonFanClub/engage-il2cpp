@@ -4,78 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicitemmenuitem :: { BasicItemMenuItem , IBasicItemMenuItem }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicitemmenuitem::{BasicItemMenuItem,IBasicItemMenuItem}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventoryPoolItemMenuItem")] # [parent (crate :: app :: basicitemmenuitem :: BasicItemMenuItem)] pub struct InventoryPoolItemMenuItem {
-# [offset (100)] # [rename (name = "m_OwnerItemIndex")] pub m_owner_item_index : i32 ,
-# [offset (104)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (112)] # [rename (name = "m_SortIndex")] pub m_sort_index : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem.md"))]#[::unity2::class(namespace="App",name="InventoryPoolItemMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct InventoryPoolItemMenuItem{#[offset(100)]#[rename(name="m_OwnerItemIndex")]pub m_owner_item_index:i32, #[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_SortIndex")]pub m_sort_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem_PoolItemKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InventoryPoolItemMenuItem_PoolItemKind{pub value:i32,}
+impl::unity2::ClassIdentity for InventoryPoolItemMenuItem_PoolItemKind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="InventoryPoolItemMenuItem.PoolItemKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem_PoolItemKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct InventoryPoolItemMenuItem_PoolItemKind  {
-    pub value: i32,
+impl::unity2::IlType for InventoryPoolItemMenuItem_PoolItemKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for InventoryPoolItemMenuItem_PoolItemKind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "InventoryPoolItemMenuItem.PoolItemKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl InventoryPoolItemMenuItem_PoolItemKind{pub fn normal()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for InventoryPoolItemMenuItem_PoolItemKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn none()->Self{Self{value:1}
 }
-
-
-impl  InventoryPoolItemMenuItem_PoolItemKind  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn none() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn blank() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn blank()->Self{Self{value:2}
+}
 }
 
 }
@@ -83,18 +42,102 @@ impl  InventoryPoolItemMenuItem_PoolItemKind  {
 #[cfg(feature = "app-inventorypoolitemmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-inventorypoolitemmenuitem")]
-pub trait IInventoryPoolItemMenuItemMethods : IInventoryPoolItemMenuItem { # [doc = "`.ctor(crate::app::unit::Unit, i32, i32)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , owner_item_index : impl :: core :: convert :: Into < i32 > , sort_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2795df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (owner_item_index) , :: core :: convert :: Into :: into (sort_index) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2799cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEffective()` overload"] fn is_effective (self ,) -> bool { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2799ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2799e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279ac60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279ae50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279bd10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279bec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279bee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRecieverUnit()` overload"] fn get_reciever_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279bef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSortIndex()` overload"] fn get_sort_index (self ,) -> i32 { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279bfc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemKind()` overload"] fn get_menu_item_kind (self ,) -> crate :: app :: inventorypoolitemmenuitem :: InventoryPoolItemMenuItem_PoolItemKind { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: inventorypoolitemmenuitem :: InventoryPoolItemMenuItem_PoolItemKind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddSelection()` overload"] fn add_selection (self ,) -> () { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279bfe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HoldSelection()` overload"] fn hold_selection (self ,) -> () { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2798100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GoToTrade()` overload"] fn go_to_trade (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279a030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GoToSubMenu()` overload"] fn go_to_sub_menu (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279aae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DirectTrade()` overload"] fn direct_trade (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < InventoryPoolItemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InventoryPoolItemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x279a270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-inventorypoolitemmenuitem")]pub trait IInventoryPoolItemMenuItemMethods:IInventoryPoolItemMenuItem{#[doc="`.ctor(crate::app::unit::Unit, i32, i32)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,owner_item_index:impl::core::convert::Into<i32> ,sort_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2795df0usize)as*mut u8,();
+(InventoryPoolItemMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(owner_item_index),(i32)::core::convert::Into::into(sort_index))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2799cd0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`IsEffective()` overload"]fn is_effective(self,)->bool{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2799ce0usize)as*mut u8,bool;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2799e00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279ac60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279ae50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279bd10usize)as*mut u8,();
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279bec0usize)as*mut u8,crate::app::unititem::UnitItem;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279bee0usize)as*mut u8,crate::app::unit::Unit;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`GetRecieverUnit()` overload"]fn get_reciever_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279bef0usize)as*mut u8,crate::app::unit::Unit;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`GetSortIndex()` overload"]fn get_sort_index(self,)->i32{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279bfc0usize)as*mut u8,i32;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`GetMenuItemKind()` overload"]fn get_menu_item_kind(self,)->crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279bfd0usize)as*mut u8,crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`AddSelection()` overload"]fn add_selection(self,)->(){unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279bfe0usize)as*mut u8,();
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`HoldSelection()` overload"]fn hold_selection(self,)->(){unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2798100usize)as*mut u8,();
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`GoToTrade()` overload"]fn go_to_trade(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279a030usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`GoToSubMenu()` overload"]fn go_to_sub_menu(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279aae0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+#[doc="`DirectTrade()` overload"]fn direct_trade(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventoryPoolItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x279a270usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(InventoryPoolItemMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-inventorypoolitemmenuitem")]
-impl < __T : IInventoryPoolItemMenuItem > IInventoryPoolItemMenuItemMethods for __T { }
+#[cfg(feature="app-inventorypoolitemmenuitem")]impl<__T:IInventoryPoolItemMenuItem>IInventoryPoolItemMenuItemMethods for __T{}
 
-#[cfg(feature = "app-inventorypoolitemmenuitem")]
-impl InventoryPoolItemMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_effective_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_reciever_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_sort_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_menu_item_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn add_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn hold_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn go_to_trade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn go_to_sub_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn direct_trade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InventoryPoolItemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-inventorypoolitemmenuitem")]impl InventoryPoolItemMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_effective_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_reciever_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_sort_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_menu_item_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn add_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn hold_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn go_to_trade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn go_to_sub_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn direct_trade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-inventorypoolitemmenuitem")]
-impl InventoryPoolItemMenuItem {
-# [doc = "`.ctor(crate::app::unit::Unit, i32, i32)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , owner_item_index : i32 , sort_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InventoryPoolItemMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IInventoryPoolItemMenuItemMethods > :: ctor (this , unit , owner_item_index , sort_index) ; this }
+#[cfg(feature="app-inventorypoolitemmenuitem")]impl InventoryPoolItemMenuItem{#[doc="`.ctor(crate::app::unit::Unit, i32, i32)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,owner_item_index:i32,sort_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InventoryPoolItemMenuItem), ::core::stringify!(new),));
+ <Self as IInventoryPoolItemMenuItemMethods> ::ctor(this,unit,owner_item_index,sort_index);
+this}
 }
 
 #[cfg(feature = "app-inventorypoolitemmenuitem")]

@@ -4,28 +4,30 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/lowerresblittexture/LowerResBlitTexture.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "LowerResBlitTexture")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct LowerResBlitTexture {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/lowerresblittexture/LowerResBlitTexture.md"))]#[::unity2::class(namespace="UnityEngine",name="LowerResBlitTexture")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct LowerResBlitTexture{}
 
 }
 
 #[cfg(feature = "unity_engine-lowerresblittexture-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-lowerresblittexture")]
-pub trait ILowerResBlitTextureMethods : ILowerResBlitTexture { # [doc = "`LowerResBlitTextureDontStripMe()` overload"] fn lower_res_blit_texture_dont_strip_me (self ,) -> () { unsafe { let __receiver = < LowerResBlitTexture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LowerResBlitTexture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32d8a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-lowerresblittexture")]pub trait ILowerResBlitTextureMethods:ILowerResBlitTexture{#[doc="`LowerResBlitTextureDontStripMe()` overload"]fn lower_res_blit_texture_dont_strip_me(self,)->(){unsafe{let __receiver= <LowerResBlitTexture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32d8a30usize)as*mut u8,();
+(LowerResBlitTexture)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-lowerresblittexture")]
-impl < __T : ILowerResBlitTexture > ILowerResBlitTextureMethods for __T { }
+#[cfg(feature="unity_engine-lowerresblittexture")]impl<__T:ILowerResBlitTexture>ILowerResBlitTextureMethods for __T{}
 
-#[cfg(feature = "unity_engine-lowerresblittexture")]
-impl LowerResBlitTexture { pub fn lower_res_blit_texture_dont_strip_me_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LowerResBlitTexture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-lowerresblittexture")]impl LowerResBlitTexture{pub fn lower_res_blit_texture_dont_strip_me_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-lowerresblittexture")]
 #[doc(hidden)]

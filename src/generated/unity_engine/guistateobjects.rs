@@ -4,25 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guistateobjects/GUIStateObjects.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUIStateObjects")] # [parent (crate :: system :: object :: Object)] pub struct GUIStateObjects {
-# [static_field] # [rename (name = "s_StateCache")] pub s_state_cache : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: system :: object :: Object > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guistateobjects/GUIStateObjects.md"))]#[::unity2::class(namespace="UnityEngine",name="GUIStateObjects")]#[parent(crate::system::object::Object)]pub struct GUIStateObjects{#[static_field]#[rename(name="s_StateCache")]pub s_state_cache:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::system::object::Object> ,}
 
 }
 
 #[cfg(feature = "unity_engine-guistateobjects-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-guistateobjects")]
-impl GUIStateObjects { # [doc = "`GetStateObject(::unity2::SystemType, i32)` overload"] pub fn get_state_object (t : impl :: core :: convert :: Into < :: unity2 :: SystemType > , control_id : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c4f010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (control_id) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c4f130usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-guistateobjects")]impl GUIStateObjects{#[doc="`GetStateObject(::unity2::SystemType, i32)` overload"]pub fn get_state_object(t:impl::core::convert::Into< ::unity2::SystemType> ,control_id:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c4f010usize)as*mut u8,crate::system::object::Object;
+(::unity2::SystemType)::core::convert::Into::into(t),(i32)::core::convert::Into::into(control_id))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c4f130usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-guistateobjects")]
-impl GUIStateObjects { pub fn get_state_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIStateObjects as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUIStateObjects as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-guistateobjects")]impl GUIStateObjects{pub fn get_state_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-guistateobjects")]
 #[doc(hidden)]

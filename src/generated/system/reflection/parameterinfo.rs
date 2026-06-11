@@ -4,36 +4,104 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/parameterinfo/ParameterInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "ParameterInfo")] # [parent (crate :: system :: object :: Object)] pub struct ParameterInfo {
-# [offset (16)] # [rename (name = "ClassImpl")] pub class_impl : :: unity2 :: SystemType ,
-# [offset (24)] # [rename (name = "DefaultValueImpl")] pub default_value_impl : :: unity2 :: IlInstance ,
-# [offset (32)] # [rename (name = "MemberImpl")] pub member_impl : crate :: system :: reflection :: memberinfo :: MemberInfo ,
-# [offset (40)] # [rename (name = "NameImpl")] pub name_impl : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "PositionImpl")] pub position_impl : i32 ,
-# [offset (52)] # [rename (name = "AttrsImpl")] pub attrs_impl : crate :: system :: reflection :: parameterattributes :: ParameterAttributes ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/parameterinfo/ParameterInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="ParameterInfo")]#[parent(crate::system::object::Object)]pub struct ParameterInfo{#[offset(16)]#[rename(name="ClassImpl")]pub class_impl: ::unity2::SystemType, #[offset(24)]#[rename(name="DefaultValueImpl")]pub default_value_impl: ::unity2::IlInstance, #[offset(32)]#[rename(name="MemberImpl")]pub member_impl:crate::system::reflection::memberinfo::MemberInfo, #[offset(40)]#[rename(name="NameImpl")]pub name_impl: ::unity2::Il2CppString, #[offset(48)]#[rename(name="PositionImpl")]pub position_impl:i32, #[offset(52)]#[rename(name="AttrsImpl")]pub attrs_impl:crate::system::reflection::parameterattributes::ParameterAttributes,}
 
 }
 
 #[cfg(feature = "system-reflection-parameterinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-parameterinfo")]
-impl ParameterInfo { # [doc = "`New(crate::system::reflection::parameterinfo::ParameterInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"] pub fn new (pinfo : impl :: core :: convert :: Into < crate :: system :: reflection :: parameterinfo :: ParameterInfo > , member : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo >) -> crate :: system :: reflection :: parameterinfo :: ParameterInfo { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: parameterinfo :: ParameterInfo , crate :: system :: reflection :: memberinfo :: MemberInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: parameterinfo :: ParameterInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760f20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pinfo) , :: core :: convert :: Into :: into (member) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-parameterinfo")]impl ParameterInfo{#[doc="`New(crate::system::reflection::parameterinfo::ParameterInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"]pub fn new(pinfo:impl::core::convert::Into<crate::system::reflection::parameterinfo::ParameterInfo> ,member:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>)->crate::system::reflection::parameterinfo::ParameterInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3760f20usize)as*mut u8,crate::system::reflection::parameterinfo::ParameterInfo;
+(crate::system::reflection::parameterinfo::ParameterInfo)::core::convert::Into::into(pinfo),(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(member))}
+}
+}
 
-#[cfg(feature = "system-reflection-parameterinfo")]
-pub trait IParameterInfoMethods : IParameterInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37606a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ParameterType()` overload"] fn get_parameter_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Attributes()` overload"] fn get_attributes (self ,) -> crate :: system :: reflection :: parameterattributes :: ParameterAttributes { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: parameterattributes :: ParameterAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsIn()` overload"] fn get_is_in (self ,) -> bool { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsOptional()` overload"] fn get_is_optional (self ,) -> bool { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsOut()` overload"] fn get_is_out (self ,) -> bool { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsRetval()` overload"] fn get_is_retval (self ,) -> bool { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Position()` overload"] fn get_position (self ,) -> i32 { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPseudoCustomAttributes()` overload"] fn get_pseudo_custom_attributes (self ,) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDefaultValueImpl()` overload"] fn get_default_value_impl (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DefaultValue()` overload"] fn get_default_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < ParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParameterInfo , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3760f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-parameterinfo")]pub trait IParameterInfoMethods:IParameterInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760690usize)as*mut u8,();
+(ParameterInfo)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37606a0usize)as*mut u8, ::unity2::Il2CppString;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_ParameterType()` overload"]fn get_parameter_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760b00usize)as*mut u8, ::unity2::SystemType;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::parameterattributes::ParameterAttributes{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760b10usize)as*mut u8,crate::system::reflection::parameterattributes::ParameterAttributes;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_IsIn()` overload"]fn get_is_in(self,)->bool{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760b20usize)as*mut u8,bool;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_IsOptional()` overload"]fn get_is_optional(self,)->bool{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760b40usize)as*mut u8,bool;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_IsOut()` overload"]fn get_is_out(self,)->bool{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760b60usize)as*mut u8,bool;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_IsRetval()` overload"]fn get_is_retval(self,)->bool{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760860usize)as*mut u8,bool;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760b80usize)as*mut u8, ::unity2::Il2CppString;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_Position()` overload"]fn get_position(self,)->i32{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760b90usize)as*mut u8,i32;
+(ParameterInfo)__receiver)}
+}
+#[doc="`GetPseudoCustomAttributes()` overload"]fn get_pseudo_custom_attributes(self,)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760ba0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(ParameterInfo)__receiver)}
+}
+#[doc="`GetDefaultValueImpl()` overload"]fn get_default_value_impl(self,)->crate::system::object::Object{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760e30usize)as*mut u8,crate::system::object::Object;
+(ParameterInfo)__receiver)}
+}
+#[doc="`get_DefaultValue()` overload"]fn get_default_value(self,)->crate::system::object::Object{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760e40usize)as*mut u8,crate::system::object::Object;
+(ParameterInfo)__receiver)}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760e80usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(ParameterInfo)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <ParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3760f10usize)as*mut u8,bool;
+(ParameterInfo)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+}
 
-#[cfg(feature = "system-reflection-parameterinfo")]
-impl < __T : IParameterInfo > IParameterInfoMethods for __T { }
+#[cfg(feature="system-reflection-parameterinfo")]impl<__T:IParameterInfo>IParameterInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-parameterinfo")]
-impl ParameterInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_parameter_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_optional_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_is_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_retval_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_pseudo_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_default_value_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_default_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn new_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="system-reflection-parameterinfo")]impl ParameterInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_parameter_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_optional_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_is_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_retval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_pseudo_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_default_value_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_default_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
 #[cfg(feature = "system-reflection-parameterinfo")]
 #[doc(hidden)]

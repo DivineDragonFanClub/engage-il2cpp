@@ -4,30 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/struct_object/basepiece/BasePiece.md"))] # [:: unity2 :: class (namespace = "App.StructObject" , name = "BasePiece")] # [parent (crate :: system :: object :: Object)] pub struct BasePiece {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/struct_object/basepiece/BasePiece.md"))]#[::unity2::class(namespace="App.StructObject",name="BasePiece")]#[parent(crate::system::object::Object)]pub struct BasePiece{}
 
 }
 
 #[cfg(feature = "app-struct_object-basepiece-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-struct_object-basepiece")]
-pub trait IBasePieceMethods : IBasePiece { # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < BasePiece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasePiece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < BasePiece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasePiece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BasePiece as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasePiece , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-struct_object-basepiece")]pub trait IBasePieceMethods:IBasePiece{#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <BasePiece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e80usize)as*mut u8,();
+(BasePiece)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <BasePiece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e90usize)as*mut u8,();
+(BasePiece)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasePiece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e70usize)as*mut u8,();
+(BasePiece)__receiver)}
+}
+}
 
-#[cfg(feature = "app-struct_object-basepiece")]
-impl < __T : IBasePiece > IBasePieceMethods for __T { }
+#[cfg(feature="app-struct_object-basepiece")]impl<__T:IBasePiece>IBasePieceMethods for __T{}
 
-#[cfg(feature = "app-struct_object-basepiece")]
-impl BasePiece { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasePiece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasePiece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasePiece as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-struct_object-basepiece")]impl BasePiece{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-struct_object-basepiece")]
-impl BasePiece {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasePiece) , :: core :: stringify ! (new) ,)) ; < Self as IBasePieceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-struct_object-basepiece")]impl BasePiece{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasePiece), ::core::stringify!(new),));
+ <Self as IBasePieceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-struct_object-basepiece")]

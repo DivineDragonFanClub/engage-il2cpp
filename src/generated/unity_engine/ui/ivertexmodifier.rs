@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ivertexmodifier/IVertexModifier.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IVertexModifier")] pub struct IVertexModifier {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/ivertexmodifier/IVertexModifier.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="IVertexModifier")]pub struct IVertexModifier{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-ivertexmodifier-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-ivertexmodifier")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IVertexModifier_unity2_raw { use super :: * ; pub unsafe fn modify_vertices (this : IVertexModifier , verts : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: uivertex :: UIVertex > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ModifyVertices") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ModifyVertices" , < IVertexModifier as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IVertexModifier , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: uivertex :: UIVertex > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , verts , __mi) } }
+#[cfg(feature="unity_engine-ui-ivertexmodifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IVertexModifier_unity2_raw{use super:: * ;
+pub unsafe fn modify_vertices(this:IVertexModifier,verts:crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ModifyVertices").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ModifyVertices", <IVertexModifier as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IVertexModifier,crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,verts,__mi)}
+}
 
-#[cfg(feature = "unity_engine-ui-ivertexmodifier")]
-pub trait IIVertexModifierMethods : IIVertexModifier { # [doc = "`ModifyVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"] fn modify_vertices (self , verts : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: uivertex :: UIVertex > >) -> () { unsafe { let __receiver = < IVertexModifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IVertexModifier_unity2_raw :: modify_vertices (__receiver , :: core :: convert :: Into :: into (verts) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-ui-ivertexmodifier")]pub trait IIVertexModifierMethods:IIVertexModifier{#[doc="`ModifyVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]fn modify_vertices(self,verts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> >)->(){unsafe{let __receiver= <IVertexModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IVertexModifier_unity2_raw::modify_vertices(__receiver, ::core::convert::Into::into(verts), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-ivertexmodifier")]
-impl < __T : IIVertexModifier > IIVertexModifierMethods for __T { }
+#[cfg(feature="unity_engine-ui-ivertexmodifier")]impl<__T:IIVertexModifier>IIVertexModifierMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-ivertexmodifier")]
-impl IVertexModifier { pub fn modify_vertices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IVertexModifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-ui-ivertexmodifier")]impl IVertexModifier{pub fn modify_vertices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-ui-ivertexmodifier")]
 #[doc(hidden)]

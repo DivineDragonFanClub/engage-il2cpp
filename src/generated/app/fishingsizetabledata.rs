@@ -4,39 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingsizetabledata/FishingSizeTableData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingSizeTableData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingsizetabledata :: FishingSizeTableData >)] pub struct FishingSizeTableData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsizetabledata/FishingSizeTableData.md"))]#[::unity2::class(namespace="App",name="FishingSizeTableData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::fishingsizetabledata::FishingSizeTableData>)]pub struct FishingSizeTableData{}
 
 }
 
 #[cfg(feature = "app-fishingsizetabledata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingsizetabledata")]
-impl FishingSizeTableData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b470usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingsizetabledata")]impl FishingSizeTableData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260b470usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-fishingsizetabledata")]
-pub trait IFishingSizeTableDataMethods : IFishingSizeTableData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SizeName()` overload"] fn get_size_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SizeName(::unity2::Il2CppString)` overload"] fn set_size_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SizeMinimum()` overload"] fn get_size_minimum (self ,) -> f32 { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SizeMinimum(f32)` overload"] fn set_size_minimum (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SizeMaximum()` overload"] fn get_size_maximum (self ,) -> f32 { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SizeMaximum(f32)` overload"] fn set_size_maximum (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b3a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusMinimum()` overload"] fn get_bonus_minimum (self ,) -> f32 { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusMinimum(f32)` overload"] fn set_bonus_minimum (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusMaximum()` overload"] fn get_bonus_maximum (self ,) -> f32 { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusMaximum(f32)` overload"] fn set_bonus_maximum (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b3e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < FishingSizeTableData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingSizeTableData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260b520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingsizetabledata")]pub trait IFishingSizeTableDataMethods:IFishingSizeTableData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b330usize)as*mut u8, ::unity2::Il2CppString;
+(FishingSizeTableData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b340usize)as*mut u8,();
+(FishingSizeTableData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SizeName()` overload"]fn get_size_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b350usize)as*mut u8, ::unity2::Il2CppString;
+(FishingSizeTableData)__receiver)}
+}
+#[doc="`set_SizeName(::unity2::Il2CppString)` overload"]fn set_size_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b360usize)as*mut u8,();
+(FishingSizeTableData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SizeMinimum()` overload"]fn get_size_minimum(self,)->f32{unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b370usize)as*mut u8,f32;
+(FishingSizeTableData)__receiver)}
+}
+#[doc="`set_SizeMinimum(f32)` overload"]fn set_size_minimum(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b380usize)as*mut u8,();
+(FishingSizeTableData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SizeMaximum()` overload"]fn get_size_maximum(self,)->f32{unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b390usize)as*mut u8,f32;
+(FishingSizeTableData)__receiver)}
+}
+#[doc="`set_SizeMaximum(f32)` overload"]fn set_size_maximum(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b3a0usize)as*mut u8,();
+(FishingSizeTableData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusMinimum()` overload"]fn get_bonus_minimum(self,)->f32{unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b3b0usize)as*mut u8,f32;
+(FishingSizeTableData)__receiver)}
+}
+#[doc="`set_BonusMinimum(f32)` overload"]fn set_bonus_minimum(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b3c0usize)as*mut u8,();
+(FishingSizeTableData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusMaximum()` overload"]fn get_bonus_maximum(self,)->f32{unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b3d0usize)as*mut u8,f32;
+(FishingSizeTableData)__receiver)}
+}
+#[doc="`set_BonusMaximum(f32)` overload"]fn set_bonus_maximum(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b3e0usize)as*mut u8,();
+(FishingSizeTableData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b3f0usize)as*mut u8,();
+(FishingSizeTableData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <FishingSizeTableData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260b520usize)as*mut u8,();
+(FishingSizeTableData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingsizetabledata")]
-impl < __T : IFishingSizeTableData > IFishingSizeTableDataMethods for __T { }
+#[cfg(feature="app-fishingsizetabledata")]impl<__T:IFishingSizeTableData>IFishingSizeTableDataMethods for __T{}
 
-#[cfg(feature = "app-fishingsizetabledata")]
-impl FishingSizeTableData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_size_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_size_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_size_minimum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_size_minimum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_size_maximum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_size_maximum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_bonus_minimum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_bonus_minimum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_bonus_maximum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_bonus_maximum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingSizeTableData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-fishingsizetabledata")]impl FishingSizeTableData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_size_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_size_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_size_minimum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_size_minimum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_size_maximum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_size_maximum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_bonus_minimum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_bonus_minimum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_bonus_maximum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_bonus_maximum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-fishingsizetabledata")]
-impl FishingSizeTableData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingSizeTableData) , :: core :: stringify ! (new) ,)) ; < Self as IFishingSizeTableDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingsizetabledata")]impl FishingSizeTableData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingSizeTableData), ::core::stringify!(new),));
+ <Self as IFishingSizeTableDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingsizetabledata")]

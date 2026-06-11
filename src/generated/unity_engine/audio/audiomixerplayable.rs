@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/audio/audiomixerplayable/AudioMixerPlayable.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AudioMixerPlayable {
-    pub m_handle: crate :: unity_engine :: playables :: playablehandle :: PlayableHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audio/audiomixerplayable/AudioMixerPlayable.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AudioMixerPlayable{pub m_handle:crate::unity_engine::playables::playablehandle::PlayableHandle,}
+impl::unity2::ClassIdentity for AudioMixerPlayable{const NAMESPACE: &'static str="UnityEngine.Audio";
+const NAME: &'static str="AudioMixerPlayable";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AudioMixerPlayable {
-    const NAMESPACE: &'static str = "UnityEngine.Audio";
-
-    const NAME: &'static str = "AudioMixerPlayable";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AudioMixerPlayable {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for AudioMixerPlayable{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,11 +26,17 @@ impl ::unity2::IlType for AudioMixerPlayable {
 #[cfg(feature = "unity_engine-audio-audiomixerplayable-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-audio-audiomixerplayable")]
-impl AudioMixerPlayable { # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { { let __inner : extern "C" fn (* mut AudioMixerPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3eb40usize) as * mut u8) ; __inner (self as * mut AudioMixerPlayable , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: audio :: audiomixerplayable :: AudioMixerPlayable >) -> bool { unsafe { { let __inner : extern "C" fn (* mut AudioMixerPlayable , crate :: unity_engine :: audio :: audiomixerplayable :: AudioMixerPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3eb50usize) as * mut u8) ; __inner (self as * mut AudioMixerPlayable , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-audio-audiomixerplayable")]impl AudioMixerPlayable{#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playablehandle::PlayableHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3eb40usize)as*mut u8,crate::unity_engine::playables::playablehandle::PlayableHandle;
+(*mut AudioMixerPlayable)self as*mut AudioMixerPlayable)}
+}
+#[doc="`Equals(crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3eb50usize)as*mut u8,bool;
+(*mut AudioMixerPlayable)self as*mut AudioMixerPlayable,(crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-audio-audiomixerplayable")]
-impl AudioMixerPlayable { pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-audio-audiomixerplayable")]impl AudioMixerPlayable{pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-audio-audiomixerplayable")]
 #[doc(hidden)]

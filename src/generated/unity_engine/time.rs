@@ -4,23 +4,93 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/time/Time.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Time")] # [parent (crate :: system :: object :: Object)] pub struct Time {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/time/Time.md"))]#[::unity2::class(namespace="UnityEngine",name="Time")]#[parent(crate::system::object::Object)]pub struct Time{}
 
 }
 
 #[cfg(feature = "unity_engine-time-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-time")]
-impl Time { # [doc = "`get_time()` overload"] pub fn get_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_timeAsDouble()` overload"] pub fn get_time_as_double () -> f64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e7a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_timeSinceLevelLoad()` overload"] pub fn get_time_since_level_load () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e7e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_deltaTime()` overload"] pub fn get_delta_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_fixedTime()` overload"] pub fn get_fixed_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e860usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_unscaledTime()` overload"] pub fn get_unscaled_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e8a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_unscaledDeltaTime()` overload"] pub fn get_unscaled_delta_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e8e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_fixedDeltaTime()` overload"] pub fn get_fixed_delta_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e920usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_fixedDeltaTime(f32)` overload"] pub fn set_fixed_delta_time (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_maximumDeltaTime()` overload"] pub fn get_maximum_delta_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e9b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_maximumDeltaTime(f32)` overload"] pub fn set_maximum_delta_time (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e9f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_smoothDeltaTime()` overload"] pub fn get_smooth_delta_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378ea40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_maximumParticleDeltaTime(f32)` overload"] pub fn set_maximum_particle_delta_time (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378ea80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_timeScale()` overload"] pub fn get_time_scale () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378ead0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_timeScale(f32)` overload"] pub fn set_time_scale (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378eb10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_frameCount()` overload"] pub fn get_frame_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378eb60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_realtimeSinceStartup()` overload"] pub fn get_realtime_since_startup () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378eba0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_realtimeSinceStartupAsDouble()` overload"] pub fn get_realtime_since_startup_as_double () -> f64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378ebe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-time")]impl Time{#[doc="`get_time()` overload"]pub fn get_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e760usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_timeAsDouble()` overload"]pub fn get_time_as_double()->f64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e7a0usize)as*mut u8,f64;
+)}
+}
+#[doc="`get_timeSinceLevelLoad()` overload"]pub fn get_time_since_level_load()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e7e0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_deltaTime()` overload"]pub fn get_delta_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e820usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_fixedTime()` overload"]pub fn get_fixed_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e860usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_unscaledTime()` overload"]pub fn get_unscaled_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e8a0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_unscaledDeltaTime()` overload"]pub fn get_unscaled_delta_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e8e0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_fixedDeltaTime()` overload"]pub fn get_fixed_delta_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e920usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_fixedDeltaTime(f32)` overload"]pub fn set_fixed_delta_time(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e960usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_maximumDeltaTime()` overload"]pub fn get_maximum_delta_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e9b0usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_maximumDeltaTime(f32)` overload"]pub fn set_maximum_delta_time(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e9f0usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_smoothDeltaTime()` overload"]pub fn get_smooth_delta_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378ea40usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_maximumParticleDeltaTime(f32)` overload"]pub fn set_maximum_particle_delta_time(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378ea80usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_timeScale()` overload"]pub fn get_time_scale()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378ead0usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_timeScale(f32)` overload"]pub fn set_time_scale(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378eb10usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_frameCount()` overload"]pub fn get_frame_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378eb60usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_realtimeSinceStartup()` overload"]pub fn get_realtime_since_startup()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378eba0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_realtimeSinceStartupAsDouble()` overload"]pub fn get_realtime_since_startup_as_double()->f64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378ebe0usize)as*mut u8,f64;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-time")]
-impl Time { pub fn get_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_time_as_double_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_time_since_level_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_fixed_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_unscaled_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_unscaled_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_fixed_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_fixed_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_maximum_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_maximum_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_smooth_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_maximum_particle_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_frame_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_realtime_since_startup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_realtime_since_startup_as_double_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Time as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="unity_engine-time")]impl Time{pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_time_as_double_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_time_since_level_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_fixed_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_unscaled_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_unscaled_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_fixed_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_fixed_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_maximum_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_maximum_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_smooth_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_maximum_particle_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_frame_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_realtime_since_startup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_realtime_since_startup_as_double_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
 #[cfg(feature = "unity_engine-time")]
 #[doc(hidden)]

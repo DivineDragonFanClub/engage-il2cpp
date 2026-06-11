@@ -4,27 +4,123 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ibitarray/IBitArray.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "IBitArray")] pub struct IBitArray {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ibitarray/IBitArray.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="IBitArray")]pub struct IBitArray{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ibitarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ibitarray")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IBitArray_unity2_raw { use super :: * ; pub unsafe fn get_capacity (this : IBitArray , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_capacity") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_capacity" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_all_false (this : IBitArray , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_allFalse") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_allFalse" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_all_true (this : IBitArray , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_allTrue") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_allTrue" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_item (this : IBitArray , index : u32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Item") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Item" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , index , __mi) } pub unsafe fn set_item (this : IBitArray , index : u32 , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("set_Item") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "set_Item" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , u32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , index , value , __mi) } pub unsafe fn get_humanized_data (this : IBitArray , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_humanizedData") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_humanizedData" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn bit_and (this : IBitArray , other : crate :: unity_engine :: rendering :: ibitarray :: IBitArray , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("BitAnd") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "BitAnd" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , crate :: unity_engine :: rendering :: ibitarray :: IBitArray , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , other , __mi) } pub unsafe fn bit_or (this : IBitArray , other : crate :: unity_engine :: rendering :: ibitarray :: IBitArray , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("BitOr") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "BitOr" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , crate :: unity_engine :: rendering :: ibitarray :: IBitArray , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , other , __mi) } pub unsafe fn bit_not (this : IBitArray , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("BitNot") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "BitNot" , < IBitArray as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IBitArray , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-rendering-ibitarray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IBitArray_unity2_raw{use super:: * ;
+pub unsafe fn get_capacity(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_capacity").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_capacity", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_all_false(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_allFalse").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_allFalse", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_all_true(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_allTrue").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_allTrue", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_item(this:IBitArray,index:u32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Item", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray,u32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn set_item(this:IBitArray,index:u32,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_Item", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray,u32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn get_humanized_data(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_humanizedData").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_humanizedData", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn bit_and(this:IBitArray,other:crate::unity_engine::rendering::ibitarray::IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("BitAnd").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","BitAnd", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray,crate::unity_engine::rendering::ibitarray::IBitArray, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,other,__mi)}
+pub unsafe fn bit_or(this:IBitArray,other:crate::unity_engine::rendering::ibitarray::IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("BitOr").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","BitOr", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray,crate::unity_engine::rendering::ibitarray::IBitArray, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,other,__mi)}
+pub unsafe fn bit_not(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("BitNot").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","BitNot", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-rendering-ibitarray")]
-pub trait IIBitArrayMethods : IIBitArray { # [doc = "`get_capacity()` overload"] fn get_capacity (self ,) -> u32 { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: get_capacity (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_allFalse()` overload"] fn get_all_false (self ,) -> bool { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: get_all_false (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_allTrue()` overload"] fn get_all_true (self ,) -> bool { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: get_all_true (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Item(u32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: get_item (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`set_Item(u32, bool)` overload"] fn set_item (self , index : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: set_item (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_humanizedData()` overload"] fn get_humanized_data (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: get_humanized_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BitAnd(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"] fn bit_and (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ibitarray :: IBitArray >) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: bit_and (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`BitOr(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"] fn bit_or (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ibitarray :: IBitArray >) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: bit_or (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`BitNot()` overload"] fn bit_not (self ,) -> crate :: unity_engine :: rendering :: ibitarray :: IBitArray { unsafe { let __receiver = < IBitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IBitArray_unity2_raw :: bit_not (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-rendering-ibitarray")]pub trait IIBitArrayMethods:IIBitArray{#[doc="`get_capacity()` overload"]fn get_capacity(self,)->u32{unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::get_capacity(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_allFalse()` overload"]fn get_all_false(self,)->bool{unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::get_all_false(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_allTrue()` overload"]fn get_all_true(self,)->bool{unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::get_all_true(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Item(u32)` overload"]fn get_item(self,index:impl::core::convert::Into<u32>)->bool{unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+}
+#[doc="`set_Item(u32, bool)` overload"]fn set_item(self,index:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::set_item(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_humanizedData()` overload"]fn get_humanized_data(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::get_humanized_data(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BitAnd(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"]fn bit_and(self,other:impl::core::convert::Into<crate::unity_engine::rendering::ibitarray::IBitArray>)->crate::unity_engine::rendering::ibitarray::IBitArray{unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::bit_and(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)}
+}
+#[doc="`BitOr(crate::unity_engine::rendering::ibitarray::IBitArray)` overload"]fn bit_or(self,other:impl::core::convert::Into<crate::unity_engine::rendering::ibitarray::IBitArray>)->crate::unity_engine::rendering::ibitarray::IBitArray{unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::bit_or(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)}
+}
+#[doc="`BitNot()` overload"]fn bit_not(self,)->crate::unity_engine::rendering::ibitarray::IBitArray{unsafe{let __receiver= <IBitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IBitArray_unity2_raw::bit_not(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ibitarray")]
-impl < __T : IIBitArray > IIBitArrayMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ibitarray")]impl<__T:IIBitArray>IIBitArrayMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ibitarray")]
-impl IBitArray { pub fn get_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_all_false_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_all_true_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_humanized_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn bit_and_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn bit_or_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn bit_not_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IBitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-rendering-ibitarray")]impl IBitArray{pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_all_false_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_all_true_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_humanized_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn bit_and_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn bit_or_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn bit_not_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-rendering-ibitarray")]
 #[doc(hidden)]

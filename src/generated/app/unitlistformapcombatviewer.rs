@@ -4,23 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitlistformapcombatviewer/UnitListForMapCombatViewer.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitListForMapCombatViewer")] # [parent (crate :: system :: object :: Object)] pub struct UnitListForMapCombatViewer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitlistformapcombatviewer/UnitListForMapCombatViewer.md"))]#[::unity2::class(namespace="App",name="UnitListForMapCombatViewer")]#[parent(crate::system::object::Object)]pub struct UnitListForMapCombatViewer{}
 
 }
 
 #[cfg(feature = "app-unitlistformapcombatviewer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitlistformapcombatviewer")]
-impl UnitListForMapCombatViewer { # [doc = "`get_UnitNameWithoutNone()` overload"] pub fn get_unit_name_without_none () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9e50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_UnitNameWithoutNone(::unity2::Array<::unity2::Il2CppString>)` overload"] pub fn set_unit_name_without_none (value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9ea0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitName()` overload"] pub fn get_unit_name () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9f00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_UnitName(::unity2::Array<::unity2::Il2CppString>)` overload"] pub fn set_unit_name (value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EmblemName()` overload"] pub fn get_emblem_name () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9fb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_EmblemName(::unity2::Array<::unity2::Il2CppString>)` overload"] pub fn set_emblem_name (value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fba000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fba060usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Pid2DispName(::unity2::Il2CppString)` overload"] pub fn pid2_disp_name (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fba690usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`DispNameToPid(::unity2::Il2CppString)` overload"] pub fn disp_name_to_pid (disp_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fbaa00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (disp_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitlistformapcombatviewer")]impl UnitListForMapCombatViewer{#[doc="`get_UnitNameWithoutNone()` overload"]pub fn get_unit_name_without_none()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9e50usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`set_UnitNameWithoutNone(::unity2::Array<::unity2::Il2CppString>)` overload"]pub fn set_unit_name_without_none(value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9ea0usize)as*mut u8,();
+(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_UnitName()` overload"]pub fn get_unit_name()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9f00usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`set_UnitName(::unity2::Array<::unity2::Il2CppString>)` overload"]pub fn set_unit_name(value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9f50usize)as*mut u8,();
+(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_EmblemName()` overload"]pub fn get_emblem_name()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9fb0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`set_EmblemName(::unity2::Array<::unity2::Il2CppString>)` overload"]pub fn set_emblem_name(value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fba000usize)as*mut u8,();
+(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fba060usize)as*mut u8,();
+)}
+}
+#[doc="`Pid2DispName(::unity2::Il2CppString)` overload"]pub fn pid2_disp_name(pid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fba690usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`DispNameToPid(::unity2::Il2CppString)` overload"]pub fn disp_name_to_pid(disp_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fbaa00usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(disp_name))}
+}
+}
 
-#[cfg(feature = "app-unitlistformapcombatviewer")]
-impl UnitListForMapCombatViewer { pub fn get_unit_name_without_none_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_unit_name_without_none_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_unit_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_unit_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_emblem_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_emblem_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn pid2_disp_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn disp_name_to_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitListForMapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-unitlistformapcombatviewer")]impl UnitListForMapCombatViewer{pub fn get_unit_name_without_none_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_name_without_none_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_emblem_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_emblem_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn pid2_disp_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn disp_name_to_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "app-unitlistformapcombatviewer")]
 #[doc(hidden)]

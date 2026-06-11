@@ -4,51 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprojector/MapProjector.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapProjector")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapProjector {
-# [offset (24)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "m_Texture")] pub m_texture : crate :: unity_engine :: texture2d :: Texture2D ,
-# [offset (40)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [offset (56)] # [rename (name = "m_Scale")] pub m_scale : f32 ,
-# [offset (60)] # [rename (name = "m_DirectionX")] pub m_direction_x : f32 ,
-# [offset (64)] # [rename (name = "m_DirectionY")] pub m_direction_y : f32 ,
-# [offset (68)] # [rename (name = "m_Speed")] pub m_speed : f32 ,
-# [offset (72)] # [rename (name = "m_OffsetX")] pub m_offset_x : f32 ,
-# [offset (76)] # [rename (name = "m_OffsetY")] pub m_offset_y : f32 ,
-# [offset (80)] # [rename (name = "m_Instance")] pub m_instance : crate :: unity_engine :: material :: Material ,
-# [offset (88)] # [rename (name = "m_ScrollX")] pub m_scroll_x : f32 ,
-# [offset (92)] # [rename (name = "m_ScrollY")] pub m_scroll_y : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapprojector/MapProjector.md"))]#[::unity2::class(namespace="App",name="MapProjector")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapProjector{#[offset(24)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="m_Texture")]pub m_texture:crate::unity_engine::texture2d::Texture2D, #[offset(40)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(56)]#[rename(name="m_Scale")]pub m_scale:f32, #[offset(60)]#[rename(name="m_DirectionX")]pub m_direction_x:f32, #[offset(64)]#[rename(name="m_DirectionY")]pub m_direction_y:f32, #[offset(68)]#[rename(name="m_Speed")]pub m_speed:f32, #[offset(72)]#[rename(name="m_OffsetX")]pub m_offset_x:f32, #[offset(76)]#[rename(name="m_OffsetY")]pub m_offset_y:f32, #[offset(80)]#[rename(name="m_Instance")]pub m_instance:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_ScrollX")]pub m_scroll_x:f32, #[offset(92)]#[rename(name="m_ScrollY")]pub m_scroll_y:f32,}
 
 }
 
 #[cfg(feature = "app-mapprojector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapprojector")]
-pub trait IMapProjectorMethods : IMapProjector { # [doc = "`TryCreateInstance()` overload"] fn try_create_instance (self ,) -> () { unsafe { let __receiver = < MapProjector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapProjector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235c930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapProjector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapProjector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235cc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapProjector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapProjector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235cc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateScroll()` overload"] fn update_scroll (self ,) -> () { unsafe { let __receiver = < MapProjector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapProjector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235cc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMaterial()` overload"] fn update_material (self ,) -> () { unsafe { let __receiver = < MapProjector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapProjector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235cb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapProjector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapProjector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235cd60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapprojector")]pub trait IMapProjectorMethods:IMapProjector{#[doc="`TryCreateInstance()` overload"]fn try_create_instance(self,)->(){unsafe{let __receiver= <MapProjector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235c930usize)as*mut u8,();
+(MapProjector)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapProjector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235cc40usize)as*mut u8,();
+(MapProjector)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapProjector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235cc50usize)as*mut u8,();
+(MapProjector)__receiver)}
+}
+#[doc="`UpdateScroll()` overload"]fn update_scroll(self,)->(){unsafe{let __receiver= <MapProjector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235cc80usize)as*mut u8,();
+(MapProjector)__receiver)}
+}
+#[doc="`UpdateMaterial()` overload"]fn update_material(self,)->(){unsafe{let __receiver= <MapProjector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235cb20usize)as*mut u8,();
+(MapProjector)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapProjector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235cd60usize)as*mut u8,();
+(MapProjector)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapprojector")]
-impl < __T : IMapProjector > IMapProjectorMethods for __T { }
+#[cfg(feature="app-mapprojector")]impl<__T:IMapProjector>IMapProjectorMethods for __T{}
 
-#[cfg(feature = "app-mapprojector")]
-impl MapProjector { pub fn try_create_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapProjector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapProjector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapProjector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapProjector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapProjector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapProjector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-mapprojector")]impl MapProjector{pub fn try_create_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-mapprojector")]
-impl MapProjector {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapProjector) , :: core :: stringify ! (new) ,)) ; < Self as IMapProjectorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapprojector")]impl MapProjector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapProjector), ::core::stringify!(new),));
+ <Self as IMapProjectorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapprojector")]

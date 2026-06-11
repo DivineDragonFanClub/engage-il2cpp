@@ -4,43 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fieldloader/FieldLoader.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FieldLoader")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FieldLoader {
-# [offset (32)] # [rename (name = "m_MapHandle")] pub m_map_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fieldloader/FieldLoader.md"))]#[::unity2::class(namespace="Combat",name="FieldLoader")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FieldLoader{#[offset(32)]#[rename(name="m_MapHandle")]pub m_map_handle:crate::app::resourcehandle_2::ResourceHandle_2,}
 
 }
 
 #[cfg(feature = "combat-fieldloader-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fieldloader")]
-impl FieldLoader { # [doc = "`GetSceneNames()` overload"] pub fn get_scene_names () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e7a20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FieldNameToPath(::unity2::Il2CppString)` overload"] pub fn field_name_to_path (field_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e7d90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (field_name) , :: core :: option :: Option :: None) } } } # [doc = "`LoadMapImpl()` overload"] pub fn load_map_impl () -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8010usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fieldloader")]impl FieldLoader{#[doc="`GetSceneNames()` overload"]pub fn get_scene_names()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e7a20usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`FieldNameToPath(::unity2::Il2CppString)` overload"]pub fn field_name_to_path(field_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e7d90usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(field_name))}
+}
+#[doc="`LoadMapImpl()` overload"]pub fn load_map_impl()->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e8010usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+)}
+}
+}
 
-#[cfg(feature = "combat-fieldloader")]
-pub trait IFieldLoaderMethods : IFieldLoader { # [doc = "`get_IsLoading()` overload"] fn get_is_loading (self ,) -> bool { unsafe { let __receiver = < FieldLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldLoader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e7a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsLoading(bool)` overload"] fn set_is_loading (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FieldLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldLoader , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e7a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`LoadScene(::unity2::Il2CppString, crate::system::action::Action)` overload"] fn load_scene (self , map_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < FieldLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldLoader , :: unity2 :: Il2CppString , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e7df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (map_name) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadScene()` overload"] fn unload_scene (self ,) -> () { unsafe { let __receiver = < FieldLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldLoader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FieldLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldLoader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fieldloader")]pub trait IFieldLoaderMethods:IFieldLoader{#[doc="`get_IsLoading()` overload"]fn get_is_loading(self,)->bool{unsafe{let __receiver= <FieldLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e7a00usize)as*mut u8,bool;
+(FieldLoader)__receiver)}
+}
+#[doc="`set_IsLoading(bool)` overload"]fn set_is_loading(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FieldLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e7a10usize)as*mut u8,();
+(FieldLoader)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`LoadScene(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn load_scene(self,map_name:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <FieldLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e7df0usize)as*mut u8,();
+(FieldLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(map_name),(crate::system::action::Action)::core::convert::Into::into(callback))}
+}
+#[doc="`UnloadScene()` overload"]fn unload_scene(self,)->(){unsafe{let __receiver= <FieldLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8000usize)as*mut u8,();
+(FieldLoader)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FieldLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8070usize)as*mut u8,();
+(FieldLoader)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fieldloader")]
-impl < __T : IFieldLoader > IFieldLoaderMethods for __T { }
+#[cfg(feature="combat-fieldloader")]impl<__T:IFieldLoader>IFieldLoaderMethods for __T{}
 
-#[cfg(feature = "combat-fieldloader")]
-impl FieldLoader { pub fn get_is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_scene_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unload_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn field_name_to_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn load_map_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="combat-fieldloader")]impl FieldLoader{pub fn get_is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_scene_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn field_name_to_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn load_map_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "combat-fieldloader")]
-impl FieldLoader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FieldLoader) , :: core :: stringify ! (new) ,)) ; < Self as IFieldLoaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fieldloader")]impl FieldLoader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FieldLoader), ::core::stringify!(new),));
+ <Self as IFieldLoaderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fieldloader")]

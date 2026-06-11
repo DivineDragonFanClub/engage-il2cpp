@@ -4,130 +4,256 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "AnimationPlayableAsset")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct AnimationPlayableAsset {
-# [offset (24)] # [rename (name = "m_Clip")] pub m_clip : crate :: unity_engine :: animationclip :: AnimationClip ,
-# [offset (32)] # [rename (name = "m_Position")] pub m_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (44)] # [rename (name = "m_EulerAngles")] pub m_euler_angles : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (56)] # [rename (name = "m_UseTrackMatchFields")] pub m_use_track_match_fields : bool ,
-# [offset (60)] # [rename (name = "m_MatchTargetFields")] pub m_match_target_fields : crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields ,
-# [offset (64)] # [rename (name = "m_RemoveStartOffset")] pub m_remove_start_offset : bool ,
-# [offset (65)] # [rename (name = "m_ApplyFootIK")] pub m_apply_foot_ik : bool ,
-# [offset (68)] # [rename (name = "m_Loop")] pub m_loop : crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode ,
-# [static_field] # [rename (name = "k_LatestVersion")] pub k_latest_version : i32 ,
-# [offset (76)] # [rename (name = "m_Version")] pub m_version : i32 ,
-# [offset (80)] # [rename (name = "m_Rotation")] pub m_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimationPlayableAsset_LoopMode{pub value:i32,}
+impl::unity2::ClassIdentity for AnimationPlayableAsset_LoopMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
+const NAME: &'static str="AnimationPlayableAsset.LoopMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AnimationPlayableAsset_LoopMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AnimationPlayableAsset_LoopMode{pub fn use_source_asset()->Self{Self{value:0}
+}
+pub fn on()->Self{Self{value:1}
+}
+pub fn off()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AnimationPlayableAsset_LoopMode  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="AnimationPlayableAsset.AnimationPlayableAssetUpgrade")]#[parent(crate::system::object::Object)]pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade{}
 
 
-impl  ::unity2::ClassIdentity for AnimationPlayableAsset_LoopMode  {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-    const NAME: &'static str = "AnimationPlayableAsset.LoopMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AnimationPlayableAsset_LoopMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AnimationPlayableAsset_LoopMode  {
-    pub fn use_source_asset() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn on() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn off() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade")] # [parent (crate :: system :: object :: Object)] pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="AnimationPlayableAsset")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct AnimationPlayableAsset{#[offset(24)]#[rename(name="m_Clip")]pub m_clip:crate::unity_engine::animationclip::AnimationClip, #[offset(32)]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="m_EulerAngles")]pub m_euler_angles:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_UseTrackMatchFields")]pub m_use_track_match_fields:bool, #[offset(60)]#[rename(name="m_MatchTargetFields")]pub m_match_target_fields:crate::unity_engine::timeline::matchtargetfields::MatchTargetFields, #[offset(64)]#[rename(name="m_RemoveStartOffset")]pub m_remove_start_offset:bool, #[offset(65)]#[rename(name="m_ApplyFootIK")]pub m_apply_foot_ik:bool, #[offset(68)]#[rename(name="m_Loop")]pub m_loop:crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode, #[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(76)]#[rename(name="m_Version")]pub m_version:i32, #[offset(80)]#[rename(name="m_Rotation")]pub m_rotation:crate::unity_engine::quaternion::Quaternion,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-animationplayableasset-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-impl AnimationPlayableAsset { # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, bool, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode, bool, crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)` overload"] pub fn create_playable_2 (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , clip : impl :: core :: convert :: Into < crate :: unity_engine :: animationclip :: AnimationClip > , position_offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , euler_offset : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , remove_start_offset : impl :: core :: convert :: Into < bool > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode > , apply_foot_ik : impl :: core :: convert :: Into < bool > , r#loop : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: animationclip :: AnimationClip , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , bool , crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode , bool , crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d04d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (clip) , :: core :: convert :: Into :: into (position_offset) , :: core :: convert :: Into :: into (euler_offset) , :: core :: convert :: Into :: into (remove_start_offset) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (apply_foot_ik) , :: core :: convert :: Into :: into (r#loop) , :: core :: option :: Option :: None) } } } # [doc = "`ShouldApplyOffset(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode, crate::unity_engine::animationclip::AnimationClip)` overload"] pub fn should_apply_offset (mode : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode > , clip : impl :: core :: convert :: Into < crate :: unity_engine :: animationclip :: AnimationClip >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode , crate :: unity_engine :: animationclip :: AnimationClip , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0920usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (clip) , :: core :: option :: Option :: None) } } } # [doc = "`ShouldApplyScaleRemove(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"] pub fn should_apply_scale_remove (mode : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0900usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`HasRootTransforms(crate::unity_engine::animationclip::AnimationClip)` overload"] pub fn has_root_transforms (clip : impl :: core :: convert :: Into < crate :: unity_engine :: animationclip :: AnimationClip >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animationclip :: AnimationClip , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cff00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (clip) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0e60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-pub trait IAnimationPlayableAssetMethods : IAnimationPlayableAsset { # [doc = "`get_position()` overload"] fn get_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"] fn set_position (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfd00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_rotation()` overload"] fn get_rotation (self ,) -> crate :: unity_engine :: quaternion :: Quaternion { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: quaternion :: Quaternion = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfd10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_rotation(crate::unity_engine::quaternion::Quaternion)` overload"] fn set_rotation (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: quaternion :: Quaternion >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfd20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_eulerAngles()` overload"] fn get_euler_angles (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfd70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_eulerAngles(crate::unity_engine::vector3::Vector3)` overload"] fn set_euler_angles (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfd80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_useTrackMatchFields()` overload"] fn get_use_track_match_fields (self ,) -> bool { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfd90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_useTrackMatchFields(bool)` overload"] fn set_use_track_match_fields (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfda0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_matchTargetFields()` overload"] fn get_match_target_fields (self ,) -> crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfdb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_matchTargetFields(crate::unity_engine::timeline::matchtargetfields::MatchTargetFields)` overload"] fn set_match_target_fields (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: timeline :: matchtargetfields :: MatchTargetFields , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfdc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_removeStartOffset()` overload"] fn get_remove_start_offset (self ,) -> bool { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfdd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_removeStartOffset(bool)` overload"] fn set_remove_start_offset (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfde0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_applyFootIK()` overload"] fn get_apply_foot_ik (self ,) -> bool { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfdf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_applyFootIK(bool)` overload"] fn set_apply_foot_ik (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfe00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_loop()` overload"] fn get_loop (self ,) -> crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfe10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_loop(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)` overload"] fn set_loop (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfe20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_hasRootTransforms()` overload"] fn get_has_root_transforms (self ,) -> bool { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfe30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_appliedOffsetMode()` overload"] fn get_applied_offset_mode (self ,) -> crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_appliedOffsetMode(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"] fn set_applied_offset_mode (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: timeline :: appliedoffsetmode :: AppliedOffsetMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_clip()` overload"] fn get_clip (self ,) -> crate :: unity_engine :: animationclip :: AnimationClip { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_clip(crate::unity_engine::animationclip::AnimationClip)` overload"] fn set_clip (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: animationclip :: AnimationClip >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: animationclip :: AnimationClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_duration()` overload"] fn get_duration (self ,) -> f64 { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d00f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_outputs()` overload"] fn get_outputs (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d03e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`get_clipCaps()` overload"] fn get_clip_caps (self ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d09b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetOffsets()` overload"] fn reset_offsets (self ,) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"] fn gather_properties (self , director : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playabledirector :: PlayableDirector > , driver : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , crate :: unity_engine :: playables :: playabledirector :: PlayableDirector , crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (director) , :: core :: convert :: Into :: into (driver) , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"] fn unity_engine_i_serialization_callback_receiver_on_before_serialize (self ,) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"] fn unity_engine_i_serialization_callback_receiver_on_after_deserialize (self ,) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpgradeFromVersion(i32)` overload"] fn on_upgrade_from_version (self , old_version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (old_version) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimationPlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-impl < __T : IAnimationPlayableAsset > IAnimationPlayableAssetMethods for __T { }
-
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-impl AnimationPlayableAsset { pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_euler_angles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_euler_angles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_use_track_match_fields_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_use_track_match_fields_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_match_target_fields_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_match_target_fields_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_remove_start_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_remove_start_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_apply_foot_ik_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_apply_foot_ik_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_has_root_transforms_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_applied_offset_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_applied_offset_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_outputs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn create_playable_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn should_apply_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn should_apply_scale_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_clip_caps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn reset_offsets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn gather_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn has_root_transforms_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn on_upgrade_from_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } }
-
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-impl AnimationPlayableAsset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimationPlayableAsset) , :: core :: stringify ! (new) ,)) ; < Self as IAnimationPlayableAssetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade{#[doc="`ConvertRotationToEuler(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)` overload"]pub fn convert_rotation_to_euler(asset:impl::core::convert::Into<crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d0d50usize)as*mut u8,();
+(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)::core::convert::Into::into(asset))}
+}
 }
 
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade { # [doc = "`ConvertRotationToEuler(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)` overload"] pub fn convert_rotation_to_euler (asset : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d0d50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade{pub fn convert_rotation_to_euler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade { pub fn convert_rotation_to_euler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableAsset_AnimationPlayableAssetUpgrade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, bool, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode, bool, crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)` overload"]pub fn create_playable_2(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip> ,position_offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,euler_offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,remove_start_offset:impl::core::convert::Into<bool> ,mode:impl::core::convert::Into<crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode> ,apply_foot_ik:impl::core::convert::Into<bool> ,r#loop:impl::core::convert::Into<crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode>)->crate::unity_engine::playables::playable::Playable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d04d0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(clip),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position_offset),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(euler_offset),(bool)::core::convert::Into::into(remove_start_offset),(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(apply_foot_ik),(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)::core::convert::Into::into(r#loop))}
+}
+#[doc="`ShouldApplyOffset(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode, crate::unity_engine::animationclip::AnimationClip)` overload"]pub fn should_apply_offset(mode:impl::core::convert::Into<crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode> ,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d0920usize)as*mut u8,bool;
+(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)::core::convert::Into::into(mode),(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(clip))}
+}
+#[doc="`ShouldApplyScaleRemove(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]pub fn should_apply_scale_remove(mode:impl::core::convert::Into<crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d0900usize)as*mut u8,bool;
+(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)::core::convert::Into::into(mode))}
+}
+#[doc="`HasRootTransforms(crate::unity_engine::animationclip::AnimationClip)` overload"]pub fn has_root_transforms(clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35cff00usize)as*mut u8,bool;
+(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(clip))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d0e60usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]pub trait IAnimationPlayableAssetMethods:IAnimationPlayableAsset{#[doc="`get_position()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfcf0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_position(crate::unity_engine::vector3::Vector3)` overload"]fn set_position(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfd00usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_rotation()` overload"]fn get_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfd10usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_rotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn set_rotation(self,value:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfd20usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(value))}
+}
+#[doc="`get_eulerAngles()` overload"]fn get_euler_angles(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfd70usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_eulerAngles(crate::unity_engine::vector3::Vector3)` overload"]fn set_euler_angles(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfd80usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_useTrackMatchFields()` overload"]fn get_use_track_match_fields(self,)->bool{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfd90usize)as*mut u8,bool;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_useTrackMatchFields(bool)` overload"]fn set_use_track_match_fields(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfda0usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_matchTargetFields()` overload"]fn get_match_target_fields(self,)->crate::unity_engine::timeline::matchtargetfields::MatchTargetFields{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfdb0usize)as*mut u8,crate::unity_engine::timeline::matchtargetfields::MatchTargetFields;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_matchTargetFields(crate::unity_engine::timeline::matchtargetfields::MatchTargetFields)` overload"]fn set_match_target_fields(self,value:impl::core::convert::Into<crate::unity_engine::timeline::matchtargetfields::MatchTargetFields>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfdc0usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::timeline::matchtargetfields::MatchTargetFields)::core::convert::Into::into(value))}
+}
+#[doc="`get_removeStartOffset()` overload"]fn get_remove_start_offset(self,)->bool{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfdd0usize)as*mut u8,bool;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_removeStartOffset(bool)` overload"]fn set_remove_start_offset(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfde0usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_applyFootIK()` overload"]fn get_apply_foot_ik(self,)->bool{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfdf0usize)as*mut u8,bool;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_applyFootIK(bool)` overload"]fn set_apply_foot_ik(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfe00usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_loop()` overload"]fn get_loop(self,)->crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfe10usize)as*mut u8,crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_loop(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)` overload"]fn set_loop(self,value:impl::core::convert::Into<crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfe20usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_hasRootTransforms()` overload"]fn get_has_root_transforms(self,)->bool{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfe30usize)as*mut u8,bool;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`get_appliedOffsetMode()` overload"]fn get_applied_offset_mode(self,)->crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfff0usize)as*mut u8,crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_appliedOffsetMode(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]fn set_applied_offset_mode(self,value:impl::core::convert::Into<crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0000usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0010usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`set_clip(crate::unity_engine::animationclip::AnimationClip)` overload"]fn set_clip(self,value:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0020usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(value))}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d00f0usize)as*mut u8,f64;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`get_outputs()` overload"]fn get_outputs(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0310usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> ;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d03e0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`get_clipCaps()` overload"]fn get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d09b0usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`ResetOffsets()` overload"]fn reset_offsets(self,)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0ad0usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]fn gather_properties(self,director:impl::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector> ,driver:impl::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0b20usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(crate::unity_engine::playables::playabledirector::PlayableDirector)::core::convert::Into::into(director),(crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)::core::convert::Into::into(driver))}
+}
+#[doc="`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self,)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0bd0usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self,)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0c50usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver)}
+}
+#[doc="`OnUpgradeFromVersion(i32)` overload"]fn on_upgrade_from_version(self,old_version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0d10usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver,(i32)::core::convert::Into::into(old_version))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0d90usize)as*mut u8,();
+(AnimationPlayableAsset)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl<__T:IAnimationPlayableAsset>IAnimationPlayableAssetMethods for __T{}
+
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset{pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_euler_angles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_euler_angles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_use_track_match_fields_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_use_track_match_fields_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_match_target_fields_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_match_target_fields_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_remove_start_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_remove_start_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_apply_foot_ik_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_apply_foot_ik_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_has_root_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_applied_offset_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_applied_offset_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_outputs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn create_playable_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn should_apply_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn should_apply_scale_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_clip_caps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn reset_offsets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn gather_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn has_root_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn on_upgrade_from_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+}
+
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimationPlayableAsset), ::core::stringify!(new),));
+ <Self as IAnimationPlayableAssetMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature = "unity_engine-timeline-animationplayableasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimationPlayableAsset;
-    pub use super::IAnimationPlayableAsset;
-    pub use super::IAnimationPlayableAssetMethods;
     pub use super::AnimationPlayableAsset_LoopMode;
     pub use super::AnimationPlayableAsset_AnimationPlayableAssetUpgrade;
     pub use super::IAnimationPlayableAsset_AnimationPlayableAssetUpgrade;
+    pub use super::AnimationPlayableAsset;
+    pub use super::IAnimationPlayableAsset;
+    pub use super::IAnimationPlayableAssetMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

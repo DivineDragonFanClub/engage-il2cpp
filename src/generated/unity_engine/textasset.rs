@@ -4,103 +4,122 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextAsset.EncodingUtility")] # [parent (crate :: system :: object :: Object)] pub struct TextAsset_EncodingUtility {
-# [static_field] # [rename (name = "targetEncoding")] pub target_encoding : :: unity2 :: IlInstance ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="TextAsset.EncodingUtility")]#[parent(crate::system::object::Object)]pub struct TextAsset_EncodingUtility{#[static_field]#[rename(name="targetEncoding")]pub target_encoding: ::unity2::IlInstance,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textasset/TextAsset.md"))]#[::unity2::class(namespace="UnityEngine",name="TextAsset")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct TextAsset{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textasset/TextAsset_CreateOptions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TextAsset_CreateOptions{pub value:i32,}
+impl::unity2::ClassIdentity for TextAsset_CreateOptions{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="TextAsset.CreateOptions";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textasset/TextAsset_CreateOptions.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TextAsset_CreateOptions  {
-    pub value: i32,
+impl::unity2::IlType for TextAsset_CreateOptions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for TextAsset_CreateOptions  {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "TextAsset.CreateOptions";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl TextAsset_CreateOptions{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for TextAsset_CreateOptions  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn create_native_object()->Self{Self{value:1}
 }
-
-
-impl  TextAsset_CreateOptions  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn create_native_object() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextAsset")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct TextAsset {}
 
 }
 
 #[cfg(feature = "unity_engine-textasset-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-textasset")]
-impl TextAsset_EncodingUtility { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379e800usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-textasset")]impl TextAsset_EncodingUtility{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379e800usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-textasset")]
-impl TextAsset_EncodingUtility { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset_EncodingUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-textasset")]impl TextAsset_EncodingUtility{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-textasset")]
-impl TextAsset { # [doc = "`Internal_CreateInstance(crate::unity_engine::textasset::TextAsset, ::unity2::Il2CppString)` overload"] pub fn internal_create_instance (self_ : impl :: core :: convert :: Into < crate :: unity_engine :: textasset :: TextAsset > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: textasset :: TextAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3788cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (self_) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`DecodeString(::unity2::Array<u8>)` overload"] pub fn decode_string (bytes : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3788d90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (bytes) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-textasset")]impl TextAsset{#[doc="`Internal_CreateInstance(crate::unity_engine::textasset::TextAsset, ::unity2::Il2CppString)` overload"]pub fn internal_create_instance(self_:impl::core::convert::Into<crate::unity_engine::textasset::TextAsset> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3788cf0usize)as*mut u8,();
+(crate::unity_engine::textasset::TextAsset)::core::convert::Into::into(self_),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`DecodeString(::unity2::Array<u8>)` overload"]pub fn decode_string(bytes:impl::core::convert::Into< ::unity2::Array<u8> >)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3788d90usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Array<u8>)::core::convert::Into::into(bytes))}
+}
+}
 
-#[cfg(feature = "unity_engine-textasset")]
-pub trait ITextAssetMethods : ITextAsset { # [doc = "`get_bytes()` overload"] fn get_bytes (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAsset , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3788c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPreviewBytes(i32)` overload"] fn get_preview_bytes (self , max_byte_count : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAsset , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3788ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (max_byte_count) , :: core :: option :: Option :: None) } } } # [doc = "`get_text()` overload"] fn get_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAsset , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3788d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAsset , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3789070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37890c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3789230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::textasset::TextAsset_CreateOptions, ::unity2::Il2CppString)` overload"] fn ctor_3 (self , options : impl :: core :: convert :: Into < crate :: unity_engine :: textasset :: TextAsset_CreateOptions > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAsset , crate :: unity_engine :: textasset :: TextAsset_CreateOptions , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3789160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (options) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`GetPreview(i32)` overload"] fn get_preview (self , max_chars : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TextAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAsset , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37892d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (max_chars) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-textasset")]pub trait ITextAssetMethods:ITextAsset{#[doc="`get_bytes()` overload"]fn get_bytes(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3788c50usize)as*mut u8, ::unity2::Array<u8> ;
+(TextAsset)__receiver)}
+}
+#[doc="`GetPreviewBytes(i32)` overload"]fn get_preview_bytes(self,max_byte_count:impl::core::convert::Into<i32>)-> ::unity2::Array<u8>{unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3788ca0usize)as*mut u8, ::unity2::Array<u8> ;
+(TextAsset)__receiver,(i32)::core::convert::Into::into(max_byte_count))}
+}
+#[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3788d40usize)as*mut u8, ::unity2::Il2CppString;
+(TextAsset)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3789070usize)as*mut u8, ::unity2::Il2CppString;
+(TextAsset)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37890c0usize)as*mut u8,();
+(TextAsset)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3789230usize)as*mut u8,();
+(TextAsset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.ctor(crate::unity_engine::textasset::TextAsset_CreateOptions, ::unity2::Il2CppString)` overload"]fn ctor_3(self,options:impl::core::convert::Into<crate::unity_engine::textasset::TextAsset_CreateOptions> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3789160usize)as*mut u8,();
+(TextAsset)__receiver,(crate::unity_engine::textasset::TextAsset_CreateOptions)::core::convert::Into::into(options),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`GetPreview(i32)` overload"]fn get_preview(self,max_chars:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37892d0usize)as*mut u8, ::unity2::Il2CppString;
+(TextAsset)__receiver,(i32)::core::convert::Into::into(max_chars))}
+}
+}
 
-#[cfg(feature = "unity_engine-textasset")]
-impl < __T : ITextAsset > ITextAssetMethods for __T { }
+#[cfg(feature="unity_engine-textasset")]impl<__T:ITextAsset>ITextAssetMethods for __T{}
 
-#[cfg(feature = "unity_engine-textasset")]
-impl TextAsset { pub fn get_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_preview_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn internal_create_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_preview_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn decode_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-textasset")]impl TextAsset{pub fn get_bytes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_preview_bytes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn internal_create_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_preview_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn decode_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "unity_engine-textasset")]
-impl TextAsset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextAsset) , :: core :: stringify ! (new) ,)) ; < Self as ITextAssetMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextAsset) , :: core :: stringify ! (new_2) ,)) ; < Self as ITextAssetMethods > :: ctor_2 (this , text) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::textasset::TextAsset_CreateOptions, ::unity2::Il2CppString)` — overload selector"] pub fn new_3 (options : crate :: unity_engine :: textasset :: TextAsset_CreateOptions , text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextAsset) , :: core :: stringify ! (new_3) ,)) ; < Self as ITextAssetMethods > :: ctor_3 (this , options , text) ; this }
+#[cfg(feature="unity_engine-textasset")]impl TextAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextAsset), ::core::stringify!(new),));
+ <Self as ITextAssetMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextAsset), ::core::stringify!(new_2),));
+ <Self as ITextAssetMethods> ::ctor_2(this,text);
+this}
+#[doc="`.ctor(crate::unity_engine::textasset::TextAsset_CreateOptions, ::unity2::Il2CppString)` — overload selector"]pub fn new_3(options:crate::unity_engine::textasset::TextAsset_CreateOptions,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextAsset), ::core::stringify!(new_3),));
+ <Self as ITextAssetMethods> ::ctor_3(this,options,text);
+this}
 }
 
 #[cfg(feature = "unity_engine-textasset")]
@@ -108,10 +127,10 @@ impl TextAsset {
 pub mod prelude {
     pub use super::TextAsset_EncodingUtility;
     pub use super::ITextAsset_EncodingUtility;
-    pub use super::TextAsset_CreateOptions;
     pub use super::TextAsset;
     pub use super::ITextAsset;
     pub use super::ITextAssetMethods;
+    pub use super::TextAsset_CreateOptions;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

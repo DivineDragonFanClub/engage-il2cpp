@@ -4,57 +4,129 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencephoenix/MapSequencePhoenix_ProcAppear.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequencePhoenix.ProcAppear")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequencePhoenix_ProcAppear {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencephoenix/MapSequencePhoenix_ProcAppear.md"))]#[::unity2::class(namespace="App",name="MapSequencePhoenix.ProcAppear")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequencePhoenix_ProcAppear{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencephoenix/MapSequencePhoenix.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequencePhoenix")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequencePhoenix {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencephoenix/MapSequencePhoenix.md"))]#[::unity2::class(namespace="App",name="MapSequencePhoenix")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequencePhoenix{}
 
 }
 
 #[cfg(feature = "app-mapsequencephoenix-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencephoenix")]
-impl MapSequencePhoenix_ProcAppear { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3b070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencephoenix")]
-pub trait IMapSequencePhoenix_ProcAppearMethods : IMapSequencePhoenix_ProcAppear { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequencePhoenix_ProcAppear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix_ProcAppear , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3b3d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapSequencePhoenix_ProcAppear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix_ProcAppear , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3b420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadAsync()` overload"] fn load_async (self ,) -> () { unsafe { let __receiver = < MapSequencePhoenix_ProcAppear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix_ProcAppear , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3b430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < MapSequencePhoenix_ProcAppear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix_ProcAppear , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3b530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadDone()` overload"] fn load_done (self ,) -> () { unsafe { let __receiver = < MapSequencePhoenix_ProcAppear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix_ProcAppear , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3b540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WarpIn()` overload"] fn warp_in (self ,) -> () { unsafe { let __receiver = < MapSequencePhoenix_ProcAppear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix_ProcAppear , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3b550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencephoenix")]
-impl < __T : IMapSequencePhoenix_ProcAppear > IMapSequencePhoenix_ProcAppearMethods for __T { }
-
-#[cfg(feature = "app-mapsequencephoenix")]
-impl MapSequencePhoenix_ProcAppear { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix_ProcAppear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix_ProcAppear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix_ProcAppear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix_ProcAppear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix_ProcAppear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix_ProcAppear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn warp_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix_ProcAppear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-mapsequencephoenix")]
-impl MapSequencePhoenix_ProcAppear {
-# [doc = "`.ctor(crate::app::unit::Unit)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequencePhoenix_ProcAppear) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequencePhoenix_ProcAppearMethods > :: ctor (this , unit) ; this }
+#[cfg(feature="app-mapsequencephoenix")]impl MapSequencePhoenix_ProcAppear{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b070usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
 }
 
-#[cfg(feature = "app-mapsequencephoenix")]
-impl MapSequencePhoenix { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2ea30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`IsPhoenixUnit(crate::app::unit::Unit)` overload"] pub fn is_phoenix_unit (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f4c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetPhoenixFirst()` overload"] pub fn get_phoenix_first () -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2ef30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetPhoenixPosition(*muti32, *muti32, crate::app::unit::Unit)` overload"] pub fn get_phoenix_position (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> (i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (* mut i32 , * mut i32 , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f0f0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="app-mapsequencephoenix")]pub trait IMapSequencePhoenix_ProcAppearMethods:IMapSequencePhoenix_ProcAppear{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapSequencePhoenix_ProcAppear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b3d0usize)as*mut u8,();
+(MapSequencePhoenix_ProcAppear)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequencePhoenix_ProcAppear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b420usize)as*mut u8,();
+(MapSequencePhoenix_ProcAppear)__receiver)}
+}
+#[doc="`LoadAsync()` overload"]fn load_async(self,)->(){unsafe{let __receiver= <MapSequencePhoenix_ProcAppear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b430usize)as*mut u8,();
+(MapSequencePhoenix_ProcAppear)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <MapSequencePhoenix_ProcAppear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b530usize)as*mut u8,bool;
+(MapSequencePhoenix_ProcAppear)__receiver)}
+}
+#[doc="`LoadDone()` overload"]fn load_done(self,)->(){unsafe{let __receiver= <MapSequencePhoenix_ProcAppear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b540usize)as*mut u8,();
+(MapSequencePhoenix_ProcAppear)__receiver)}
+}
+#[doc="`WarpIn()` overload"]fn warp_in(self,)->(){unsafe{let __receiver= <MapSequencePhoenix_ProcAppear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b550usize)as*mut u8,();
+(MapSequencePhoenix_ProcAppear)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencephoenix")]
-pub trait IMapSequencePhoenixMethods : IMapSequencePhoenix { # [doc = "`MoveCamera()` overload"] fn move_camera (self ,) -> () { unsafe { let __receiver = < MapSequencePhoenix as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2efe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < MapSequencePhoenix as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsExecuting()` overload"] fn is_executing (self ,) -> bool { unsafe { let __receiver = < MapSequencePhoenix as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Postexecute()` overload"] fn postexecute (self ,) -> () { unsafe { let __receiver = < MapSequencePhoenix as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequencePhoenix as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequencePhoenix , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2efd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencephoenix")]impl<__T:IMapSequencePhoenix_ProcAppear>IMapSequencePhoenix_ProcAppearMethods for __T{}
 
-#[cfg(feature = "app-mapsequencephoenix")]
-impl < __T : IMapSequencePhoenix > IMapSequencePhoenixMethods for __T { }
+#[cfg(feature="app-mapsequencephoenix")]impl MapSequencePhoenix_ProcAppear{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn warp_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-mapsequencephoenix")]
-impl MapSequencePhoenix { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn move_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_executing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn postexecute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_phoenix_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_phoenix_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_phoenix_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequencePhoenix as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-mapsequencephoenix")]impl MapSequencePhoenix_ProcAppear{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequencePhoenix_ProcAppear), ::core::stringify!(new),));
+ <Self as IMapSequencePhoenix_ProcAppearMethods> ::ctor(this,unit);
+this}
+}
 
-#[cfg(feature = "app-mapsequencephoenix")]
-impl MapSequencePhoenix {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequencePhoenix) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequencePhoenixMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencephoenix")]impl MapSequencePhoenix{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2ea30usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`IsPhoenixUnit(crate::app::unit::Unit)` overload"]pub fn is_phoenix_unit(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f4c0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetPhoenixFirst()` overload"]pub fn get_phoenix_first()->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f2ef30usize)as*mut u8,crate::app::unit::Unit;
+)}
+}
+#[doc="`GetPhoenixPosition(*muti32, *muti32, crate::app::unit::Unit)` overload"]pub fn get_phoenix_position(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f0f0usize)as*mut u8,();
+(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr(),(crate::app::unit::Unit)::core::convert::Into::into(unit));
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+}
+
+#[cfg(feature="app-mapsequencephoenix")]pub trait IMapSequencePhoenixMethods:IMapSequencePhoenix{#[doc="`MoveCamera()` overload"]fn move_camera(self,)->(){unsafe{let __receiver= <MapSequencePhoenix as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2efe0usize)as*mut u8,();
+(MapSequencePhoenix)__receiver)}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <MapSequencePhoenix as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f2e0usize)as*mut u8,();
+(MapSequencePhoenix)__receiver)}
+}
+#[doc="`IsExecuting()` overload"]fn is_executing(self,)->bool{unsafe{let __receiver= <MapSequencePhoenix as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f530usize)as*mut u8,bool;
+(MapSequencePhoenix)__receiver)}
+}
+#[doc="`Postexecute()` overload"]fn postexecute(self,)->(){unsafe{let __receiver= <MapSequencePhoenix as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f5b0usize)as*mut u8,();
+(MapSequencePhoenix)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequencePhoenix as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2efd0usize)as*mut u8,();
+(MapSequencePhoenix)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencephoenix")]impl<__T:IMapSequencePhoenix>IMapSequencePhoenixMethods for __T{}
+
+#[cfg(feature="app-mapsequencephoenix")]impl MapSequencePhoenix{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn move_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_executing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn postexecute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_phoenix_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_phoenix_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_phoenix_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-mapsequencephoenix")]impl MapSequencePhoenix{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequencePhoenix), ::core::stringify!(new),));
+ <Self as IMapSequencePhoenixMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencephoenix")]

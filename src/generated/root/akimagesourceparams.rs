@@ -4,40 +4,135 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akimagesourceparams/AkImageSourceParams.md"))] # [:: unity2 :: class (namespace = "" , name = "AkImageSourceParams")] # [parent (crate :: system :: object :: Object)] pub struct AkImageSourceParams {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akimagesourceparams/AkImageSourceParams.md"))]#[::unity2::class(namespace="",name="AkImageSourceParams")]#[parent(crate::system::object::Object)]pub struct AkImageSourceParams{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akimagesourceparams-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akimagesourceparams")]
-impl AkImageSourceParams { # [doc = "`getCPtr(crate::root::akimagesourceparams::AkImageSourceParams)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akimagesourceparams :: AkImageSourceParams >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akimagesourceparams :: AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1f750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akimagesourceparams")]impl AkImageSourceParams{#[doc="`getCPtr(crate::root::akimagesourceparams::AkImageSourceParams)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akimagesourceparams::AkImageSourceParams>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f750usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akimagesourceparams::AkImageSourceParams)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akimagesourceparams")]
-pub trait IAkImageSourceParamsMethods : IAkImageSourceParams { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1f710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1f7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1f7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1f850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1f9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, f32, f32)` overload"] fn ctor_3 (self , in_source_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , in_f_distance_scaling_factor : impl :: core :: convert :: Into < f32 > , in_f_level : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , crate :: unity_engine :: vector3 :: Vector3 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1fa70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_source_position) , :: core :: convert :: Into :: into (in_f_distance_scaling_factor) , :: core :: convert :: Into :: into (in_f_level) , :: core :: option :: Option :: None) } } } # [doc = "`set_sourcePosition(crate::unity_engine::vector3::Vector3)` overload"] fn set_source_position (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1fb40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_sourcePosition()` overload"] fn get_source_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1fbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fDistanceScalingFactor(f32)` overload"] fn set_f_distance_scaling_factor (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1fc50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fDistanceScalingFactor()` overload"] fn get_f_distance_scaling_factor (self ,) -> f32 { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1fcd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fLevel(f32)` overload"] fn set_f_level (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1fd40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fLevel()` overload"] fn get_f_level (self ,) -> f32 { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1fdc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fDiffraction(f32)` overload"] fn set_f_diffraction (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1fe30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fDiffraction()` overload"] fn get_f_diffraction (self ,) -> f32 { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1feb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uDiffractionEmitterSide(u8)` overload"] fn set_u_diffraction_emitter_side (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1ff20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uDiffractionEmitterSide()` overload"] fn get_u_diffraction_emitter_side (self ,) -> u8 { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1ffa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uDiffractionListenerSide(u8)` overload"] fn set_u_diffraction_listener_side (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f20010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uDiffractionListenerSide()` overload"] fn get_u_diffraction_listener_side (self ,) -> u8 { unsafe { let __receiver = < AkImageSourceParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f20090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akimagesourceparams")]pub trait IAkImageSourceParamsMethods:IAkImageSourceParams{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f710usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f7b0usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f7e0usize)as*mut u8,();
+(AkImageSourceParams)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f850usize)as*mut u8,();
+(AkImageSourceParams)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f9e0usize)as*mut u8,();
+(AkImageSourceParams)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::vector3::Vector3, f32, f32)` overload"]fn ctor_3(self,in_source_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_f_distance_scaling_factor:impl::core::convert::Into<f32> ,in_f_level:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1fa70usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_source_position),(f32)::core::convert::Into::into(in_f_distance_scaling_factor),(f32)::core::convert::Into::into(in_f_level))}
+}
+#[doc="`set_sourcePosition(crate::unity_engine::vector3::Vector3)` overload"]fn set_source_position(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1fb40usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_sourcePosition()` overload"]fn get_source_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1fbe0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AkImageSourceParams)__receiver)}
+}
+#[doc="`set_fDistanceScalingFactor(f32)` overload"]fn set_f_distance_scaling_factor(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1fc50usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fDistanceScalingFactor()` overload"]fn get_f_distance_scaling_factor(self,)->f32{unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1fcd0usize)as*mut u8,f32;
+(AkImageSourceParams)__receiver)}
+}
+#[doc="`set_fLevel(f32)` overload"]fn set_f_level(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1fd40usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fLevel()` overload"]fn get_f_level(self,)->f32{unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1fdc0usize)as*mut u8,f32;
+(AkImageSourceParams)__receiver)}
+}
+#[doc="`set_fDiffraction(f32)` overload"]fn set_f_diffraction(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1fe30usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fDiffraction()` overload"]fn get_f_diffraction(self,)->f32{unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1feb0usize)as*mut u8,f32;
+(AkImageSourceParams)__receiver)}
+}
+#[doc="`set_uDiffractionEmitterSide(u8)` overload"]fn set_u_diffraction_emitter_side(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ff20usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_uDiffractionEmitterSide()` overload"]fn get_u_diffraction_emitter_side(self,)->u8{unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ffa0usize)as*mut u8,u8;
+(AkImageSourceParams)__receiver)}
+}
+#[doc="`set_uDiffractionListenerSide(u8)` overload"]fn set_u_diffraction_listener_side(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f20010usize)as*mut u8,();
+(AkImageSourceParams)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_uDiffractionListenerSide()` overload"]fn get_u_diffraction_listener_side(self,)->u8{unsafe{let __receiver= <AkImageSourceParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f20090usize)as*mut u8,u8;
+(AkImageSourceParams)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akimagesourceparams")]
-impl < __T : IAkImageSourceParams > IAkImageSourceParamsMethods for __T { }
+#[cfg(feature="root-akimagesourceparams")]impl<__T:IAkImageSourceParams>IAkImageSourceParamsMethods for __T{}
 
-#[cfg(feature = "root-akimagesourceparams")]
-impl AkImageSourceParams { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_source_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_source_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_f_distance_scaling_factor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_f_distance_scaling_factor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_f_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_f_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_f_diffraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_f_diffraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_u_diffraction_emitter_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_u_diffraction_emitter_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_u_diffraction_listener_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_u_diffraction_listener_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="root-akimagesourceparams")]impl AkImageSourceParams{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_source_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_source_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_f_distance_scaling_factor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_f_distance_scaling_factor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_f_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_f_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_f_diffraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_f_diffraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_u_diffraction_emitter_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_u_diffraction_emitter_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_u_diffraction_listener_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_u_diffraction_listener_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "root-akimagesourceparams")]
-impl AkImageSourceParams {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkImageSourceParams) , :: core :: stringify ! (new) ,)) ; < Self as IAkImageSourceParamsMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkImageSourceParams) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkImageSourceParamsMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::vector3::Vector3, f32, f32)` — overload selector"] pub fn new_3 (in_source_position : crate :: unity_engine :: vector3 :: Vector3 , in_f_distance_scaling_factor : f32 , in_f_level : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkImageSourceParams) , :: core :: stringify ! (new_3) ,)) ; < Self as IAkImageSourceParamsMethods > :: ctor_3 (this , in_source_position , in_f_distance_scaling_factor , in_f_level) ; this }
+#[cfg(feature="root-akimagesourceparams")]impl AkImageSourceParams{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkImageSourceParams), ::core::stringify!(new),));
+ <Self as IAkImageSourceParamsMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkImageSourceParams), ::core::stringify!(new_2),));
+ <Self as IAkImageSourceParamsMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(crate::unity_engine::vector3::Vector3, f32, f32)` — overload selector"]pub fn new_3(in_source_position:crate::unity_engine::vector3::Vector3,in_f_distance_scaling_factor:f32,in_f_level:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkImageSourceParams), ::core::stringify!(new_3),));
+ <Self as IAkImageSourceParamsMethods> ::ctor_3(this,in_source_position,in_f_distance_scaling_factor,in_f_level);
+this}
 }
 
 #[cfg(feature = "root-akimagesourceparams")]

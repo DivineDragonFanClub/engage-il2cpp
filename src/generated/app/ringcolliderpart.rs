@@ -4,40 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcolliderpart/RingColliderPart.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingColliderPart")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingColliderPart {
-# [offset (24)] # [rename (name = "m_Index")] pub m_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcolliderpart/RingColliderPart.md"))]#[::unity2::class(namespace="App",name="RingColliderPart")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingColliderPart{#[offset(24)]#[rename(name="m_Index")]pub m_index:i32,}
 
 }
 
 #[cfg(feature = "app-ringcolliderpart-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcolliderpart")]
-pub trait IRingColliderPartMethods : IRingColliderPart { # [doc = "`get_HitResult()` overload"] fn get_hit_result (self ,) -> crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult { unsafe { let __receiver = < RingColliderPart as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingColliderPart , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2424030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HitResult(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"] fn set_hit_result (self , value : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult >) -> () { unsafe { let __receiver = < RingColliderPart as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingColliderPart , crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2424040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Index()` overload"] fn get_index (self ,) -> i32 { unsafe { let __receiver = < RingColliderPart as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingColliderPart , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2424050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingColliderPart as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingColliderPart , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2424060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcolliderpart")]pub trait IRingColliderPartMethods:IRingColliderPart{#[doc="`get_HitResult()` overload"]fn get_hit_result(self,)->crate::app::ringcleaningsequence::RingCleaningSequence_HitResult{unsafe{let __receiver= <RingColliderPart as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2424030usize)as*mut u8,crate::app::ringcleaningsequence::RingCleaningSequence_HitResult;
+(RingColliderPart)__receiver)}
+}
+#[doc="`set_HitResult(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"]fn set_hit_result(self,value:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_HitResult>)->(){unsafe{let __receiver= <RingColliderPart as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2424040usize)as*mut u8,();
+(RingColliderPart)__receiver,(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)::core::convert::Into::into(value))}
+}
+#[doc="`get_Index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <RingColliderPart as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2424050usize)as*mut u8,i32;
+(RingColliderPart)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingColliderPart as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2424060usize)as*mut u8,();
+(RingColliderPart)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcolliderpart")]
-impl < __T : IRingColliderPart > IRingColliderPartMethods for __T { }
+#[cfg(feature="app-ringcolliderpart")]impl<__T:IRingColliderPart>IRingColliderPartMethods for __T{}
 
-#[cfg(feature = "app-ringcolliderpart")]
-impl RingColliderPart { pub fn get_hit_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingColliderPart as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_hit_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingColliderPart as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingColliderPart as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingColliderPart as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-ringcolliderpart")]impl RingColliderPart{pub fn get_hit_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_hit_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-ringcolliderpart")]
-impl RingColliderPart {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingColliderPart) , :: core :: stringify ! (new) ,)) ; < Self as IRingColliderPartMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcolliderpart")]impl RingColliderPart{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingColliderPart), ::core::stringify!(new),));
+ <Self as IRingColliderPartMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringcolliderpart")]

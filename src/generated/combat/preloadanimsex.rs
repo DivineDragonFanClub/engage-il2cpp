@@ -4,23 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/preloadanimsex/PreloadAnimsEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PreloadAnimsEx")] # [parent (crate :: system :: object :: Object)] pub struct PreloadAnimsEx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/preloadanimsex/PreloadAnimsEx.md"))]#[::unity2::class(namespace="Combat",name="PreloadAnimsEx")]#[parent(crate::system::object::Object)]pub struct PreloadAnimsEx{}
 
 }
 
 #[cfg(feature = "combat-preloadanimsex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-preloadanimsex")]
-impl PreloadAnimsEx { # [doc = "`not(crate::combat::preloadanims::PreloadAnims, crate::combat::preloadanims::PreloadAnims)` overload"] pub fn not (lhs : impl :: core :: convert :: Into < crate :: combat :: preloadanims :: PreloadAnims > , rhs : impl :: core :: convert :: Into < crate :: combat :: preloadanims :: PreloadAnims >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: preloadanims :: PreloadAnims , crate :: combat :: preloadanims :: PreloadAnims , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2818f70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`has(crate::combat::preloadanims::PreloadAnims, crate::combat::preloadanims::PreloadAnims)` overload"] pub fn has (lhs : impl :: core :: convert :: Into < crate :: combat :: preloadanims :: PreloadAnims > , rhs : impl :: core :: convert :: Into < crate :: combat :: preloadanims :: PreloadAnims >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: preloadanims :: PreloadAnims , crate :: combat :: preloadanims :: PreloadAnims , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2818f80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`IsFullLoadable(crate::combat::preloadanims::PreloadAnims)` overload"] pub fn is_full_loadable (f : impl :: core :: convert :: Into < crate :: combat :: preloadanims :: PreloadAnims >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: preloadanims :: PreloadAnims , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2818f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`HashToBit(i32)` overload"] pub fn hash_to_bit (hash : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: preloadanims :: PreloadAnims { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: preloadanims :: PreloadAnims = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2818fa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (hash) , :: core :: option :: Option :: None) } } } # [doc = "`GetAllPreloadNames()` overload"] pub fn get_all_preload_names () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28193b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-preloadanimsex")]impl PreloadAnimsEx{#[doc="`not(crate::combat::preloadanims::PreloadAnims, crate::combat::preloadanims::PreloadAnims)` overload"]pub fn not(lhs:impl::core::convert::Into<crate::combat::preloadanims::PreloadAnims> ,rhs:impl::core::convert::Into<crate::combat::preloadanims::PreloadAnims>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2818f70usize)as*mut u8,bool;
+(crate::combat::preloadanims::PreloadAnims)::core::convert::Into::into(lhs),(crate::combat::preloadanims::PreloadAnims)::core::convert::Into::into(rhs))}
+}
+#[doc="`has(crate::combat::preloadanims::PreloadAnims, crate::combat::preloadanims::PreloadAnims)` overload"]pub fn has(lhs:impl::core::convert::Into<crate::combat::preloadanims::PreloadAnims> ,rhs:impl::core::convert::Into<crate::combat::preloadanims::PreloadAnims>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2818f80usize)as*mut u8,bool;
+(crate::combat::preloadanims::PreloadAnims)::core::convert::Into::into(lhs),(crate::combat::preloadanims::PreloadAnims)::core::convert::Into::into(rhs))}
+}
+#[doc="`IsFullLoadable(crate::combat::preloadanims::PreloadAnims)` overload"]pub fn is_full_loadable(f:impl::core::convert::Into<crate::combat::preloadanims::PreloadAnims>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2818f90usize)as*mut u8,bool;
+(crate::combat::preloadanims::PreloadAnims)::core::convert::Into::into(f))}
+}
+#[doc="`HashToBit(i32)` overload"]pub fn hash_to_bit(hash:impl::core::convert::Into<i32>)->crate::combat::preloadanims::PreloadAnims{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2818fa0usize)as*mut u8,crate::combat::preloadanims::PreloadAnims;
+(i32)::core::convert::Into::into(hash))}
+}
+#[doc="`GetAllPreloadNames()` overload"]pub fn get_all_preload_names()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28193b0usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+}
 
-#[cfg(feature = "combat-preloadanimsex")]
-impl PreloadAnimsEx { pub fn not_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PreloadAnimsEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn has_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PreloadAnimsEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_full_loadable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PreloadAnimsEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn hash_to_bit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PreloadAnimsEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_all_preload_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PreloadAnimsEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-preloadanimsex")]impl PreloadAnimsEx{pub fn not_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn has_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_full_loadable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hash_to_bit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_all_preload_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "combat-preloadanimsex")]
 #[doc(hidden)]

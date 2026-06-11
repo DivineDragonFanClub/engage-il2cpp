@@ -4,40 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/giftdialogitemyes/GiftDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "GiftDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct GiftDialogItemYes {
-# [offset (112)] # [rename (name = "m_Item")] pub m_item : crate :: app :: itemdata :: ItemData ,
-# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_Value")] pub m_value : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/giftdialogitemyes/GiftDialogItemYes.md"))]#[::unity2::class(namespace="App",name="GiftDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct GiftDialogItemYes{#[offset(112)]#[rename(name="m_Item")]pub m_item:crate::app::itemdata::ItemData, #[offset(120)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_Value")]pub m_value:i32,}
 
 }
 
 #[cfg(feature = "app-giftdialogitemyes-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-giftdialogitemyes")]
-pub trait IGiftDialogItemYesMethods : IGiftDialogItemYes { # [doc = "`.ctor(crate::app::itemdata::ItemData, crate::app::unit::Unit, i32)` overload"] fn ctor (self , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GiftDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftDialogItemYes , crate :: app :: itemdata :: ItemData , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25243e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GiftDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2524540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-giftdialogitemyes")]pub trait IGiftDialogItemYesMethods:IGiftDialogItemYes{#[doc="`.ctor(crate::app::itemdata::ItemData, crate::app::unit::Unit, i32)` overload"]fn ctor(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GiftDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25243e0usize)as*mut u8,();
+(GiftDialogItemYes)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GiftDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2524540usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GiftDialogItemYes)__receiver)}
+}
+}
 
-#[cfg(feature = "app-giftdialogitemyes")]
-impl < __T : IGiftDialogItemYes > IGiftDialogItemYesMethods for __T { }
+#[cfg(feature="app-giftdialogitemyes")]impl<__T:IGiftDialogItemYes>IGiftDialogItemYesMethods for __T{}
 
-#[cfg(feature = "app-giftdialogitemyes")]
-impl GiftDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-giftdialogitemyes")]impl GiftDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-giftdialogitemyes")]
-impl GiftDialogItemYes {
-# [doc = "`.ctor(crate::app::itemdata::ItemData, crate::app::unit::Unit, i32)` — overload selector"] pub fn new (item : crate :: app :: itemdata :: ItemData , unit : crate :: app :: unit :: Unit , value : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GiftDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IGiftDialogItemYesMethods > :: ctor (this , item , unit , value) ; this }
+#[cfg(feature="app-giftdialogitemyes")]impl GiftDialogItemYes{#[doc="`.ctor(crate::app::itemdata::ItemData, crate::app::unit::Unit, i32)` — overload selector"]pub fn new(item:crate::app::itemdata::ItemData,unit:crate::app::unit::Unit,value:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GiftDialogItemYes), ::core::stringify!(new),));
+ <Self as IGiftDialogItemYesMethods> ::ctor(this,item,unit,value);
+this}
 }
 
 #[cfg(feature = "app-giftdialogitemyes")]

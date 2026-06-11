@@ -4,38 +4,124 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/ringcleaningvoice/RingCleaningVoice.md"))] # [:: unity2 :: class (namespace = "App.RingCleaning" , name = "RingCleaningVoice")] # [parent (crate :: system :: object :: Object)] pub struct RingCleaningVoice {
-# [static_field] # [rename (name = "SeEventNames")] pub se_event_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "SeIndex")] pub se_index : i32 ,
-# [static_field] # [rename (name = "SeStrongEventNames")] pub se_strong_event_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "SeStrongIndex")] pub se_strong_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/ringcleaningvoice/RingCleaningVoice.md"))]#[::unity2::class(namespace="App.RingCleaning",name="RingCleaningVoice")]#[parent(crate::system::object::Object)]pub struct RingCleaningVoice{#[static_field]#[rename(name="SeEventNames")]pub se_event_names: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="SeIndex")]pub se_index:i32, #[static_field]#[rename(name="SeStrongEventNames")]pub se_strong_event_names: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="SeStrongIndex")]pub se_strong_index:i32,}
 
 }
 
 #[cfg(feature = "app-ring_cleaning-ringcleaningvoice-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ring_cleaning-ringcleaningvoice")]
-impl RingCleaningVoice { # [doc = "`get_IsPlayableFinishVoice()` overload"] pub fn get_is_playable_finish_voice () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422450usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsPlayableFinishVoice(bool)` overload"] pub fn set_is_playable_finish_voice (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24224c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GodUnit()` overload"] pub fn get_god_unit () -> crate :: app :: godunit :: GodUnit { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422540usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_GodUnit(crate::app::godunit::GodUnit)` overload"] pub fn set_god_unit (value : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24225b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GodSoundID()` overload"] pub fn get_god_sound_id () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422630usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_GodSoundID(::unity2::Il2CppString)` overload"] pub fn set_god_sound_id (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24226a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GodChara()` overload"] pub fn get_god_chara () -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422720usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_GodChara(crate::combat::character::Character)` overload"] pub fn set_god_chara (value : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::app::godunit::GodUnit)` overload"] pub fn setup (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241cfe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24207e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsFinish()` overload"] pub fn is_finish () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24228c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayVoice(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)` overload"] pub fn play_voice (situation : impl :: core :: convert :: Into < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation >) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData { unsafe { { let __inner : extern "C" fn (crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422990usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (situation) , :: core :: option :: Option :: None) } } } # [doc = "`PlayStartVoice()` overload"] pub fn play_start_voice () -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241e220usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayCleaningCriticalPointVoice()` overload"] pub fn play_cleaning_critical_point_voice () -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241fa50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayStrongCleaningNotCriticalPointVoice()` overload"] pub fn play_strong_cleaning_not_critical_point_voice () -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241fda0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayStrongCleaningCriticalPointVoice()` overload"] pub fn play_strong_cleaning_critical_point_voice () -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241fce0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayFinishCleaningVoice()` overload"] pub fn play_finish_cleaning_voice () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420040usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_NowSeEvent()` overload"] pub fn get_now_se_event () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423020usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayCleaningSE()` overload"] pub fn play_cleaning_se () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241f1e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayStartStrongSE()` overload"] pub fn play_start_strong_se () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24230b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayStrongCleaningSE()` overload"] pub fn play_strong_cleaning_se () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241f6c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ring_cleaning-ringcleaningvoice")]impl RingCleaningVoice{#[doc="`get_IsPlayableFinishVoice()` overload"]pub fn get_is_playable_finish_voice()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422450usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsPlayableFinishVoice(bool)` overload"]pub fn set_is_playable_finish_voice(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24224c0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_GodUnit()` overload"]pub fn get_god_unit()->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422540usize)as*mut u8,crate::app::godunit::GodUnit;
+)}
+}
+#[doc="`set_GodUnit(crate::app::godunit::GodUnit)` overload"]pub fn set_god_unit(value:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24225b0usize)as*mut u8,();
+(crate::app::godunit::GodUnit)::core::convert::Into::into(value))}
+}
+#[doc="`get_GodSoundID()` overload"]pub fn get_god_sound_id()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422630usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`set_GodSoundID(::unity2::Il2CppString)` overload"]pub fn set_god_sound_id(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24226a0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_GodChara()` overload"]pub fn get_god_chara()->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422720usize)as*mut u8,crate::combat::character::Character;
+)}
+}
+#[doc="`set_GodChara(crate::combat::character::Character)` overload"]pub fn set_god_chara(value:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422790usize)as*mut u8,();
+(crate::combat::character::Character)::core::convert::Into::into(value))}
+}
+#[doc="`Setup(crate::app::godunit::GodUnit)` overload"]pub fn setup(god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241cfe0usize)as*mut u8,();
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24207e0usize)as*mut u8,();
+)}
+}
+#[doc="`IsFinish()` overload"]pub fn is_finish()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24228c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`PlayVoice(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)` overload"]pub fn play_voice(situation:impl::core::convert::Into<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation>)->crate::app::ringcleaningvoicedata::RingCleaningVoiceData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422990usize)as*mut u8,crate::app::ringcleaningvoicedata::RingCleaningVoiceData;
+(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)::core::convert::Into::into(situation))}
+}
+#[doc="`PlayStartVoice()` overload"]pub fn play_start_voice()->crate::app::ringcleaningvoicedata::RingCleaningVoiceData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241e220usize)as*mut u8,crate::app::ringcleaningvoicedata::RingCleaningVoiceData;
+)}
+}
+#[doc="`PlayCleaningCriticalPointVoice()` overload"]pub fn play_cleaning_critical_point_voice()->crate::app::ringcleaningvoicedata::RingCleaningVoiceData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241fa50usize)as*mut u8,crate::app::ringcleaningvoicedata::RingCleaningVoiceData;
+)}
+}
+#[doc="`PlayStrongCleaningNotCriticalPointVoice()` overload"]pub fn play_strong_cleaning_not_critical_point_voice()->crate::app::ringcleaningvoicedata::RingCleaningVoiceData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241fda0usize)as*mut u8,crate::app::ringcleaningvoicedata::RingCleaningVoiceData;
+)}
+}
+#[doc="`PlayStrongCleaningCriticalPointVoice()` overload"]pub fn play_strong_cleaning_critical_point_voice()->crate::app::ringcleaningvoicedata::RingCleaningVoiceData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241fce0usize)as*mut u8,crate::app::ringcleaningvoicedata::RingCleaningVoiceData;
+)}
+}
+#[doc="`PlayFinishCleaningVoice()` overload"]pub fn play_finish_cleaning_voice()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2420040usize)as*mut u8,();
+)}
+}
+#[doc="`get_NowSeEvent()` overload"]pub fn get_now_se_event()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2423020usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`PlayCleaningSE()` overload"]pub fn play_cleaning_se()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241f1e0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayStartStrongSE()` overload"]pub fn play_start_strong_se()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24230b0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayStrongCleaningSE()` overload"]pub fn play_strong_cleaning_se()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241f6c0usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2423140usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-ring_cleaning-ringcleaningvoice")]
-pub trait IRingCleaningVoiceMethods : IRingCleaningVoice { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoice , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ring_cleaning-ringcleaningvoice")]pub trait IRingCleaningVoiceMethods:IRingCleaningVoice{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCleaningVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423130usize)as*mut u8,();
+(RingCleaningVoice)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ring_cleaning-ringcleaningvoice")]
-impl < __T : IRingCleaningVoice > IRingCleaningVoiceMethods for __T { }
+#[cfg(feature="app-ring_cleaning-ringcleaningvoice")]impl<__T:IRingCleaningVoice>IRingCleaningVoiceMethods for __T{}
 
-#[cfg(feature = "app-ring_cleaning-ringcleaningvoice")]
-impl RingCleaningVoice { pub fn get_is_playable_finish_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_playable_finish_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_god_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_god_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_god_sound_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_god_sound_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_god_chara_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_god_chara_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn play_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn play_start_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn play_cleaning_critical_point_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn play_strong_cleaning_not_critical_point_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn play_strong_cleaning_critical_point_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn play_finish_cleaning_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_now_se_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn play_cleaning_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn play_start_strong_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn play_strong_cleaning_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="app-ring_cleaning-ringcleaningvoice")]impl RingCleaningVoice{pub fn get_is_playable_finish_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_playable_finish_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_god_sound_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_god_sound_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_god_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_god_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_finish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn play_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn play_start_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn play_cleaning_critical_point_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn play_strong_cleaning_not_critical_point_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn play_strong_cleaning_critical_point_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn play_finish_cleaning_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_now_se_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn play_cleaning_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn play_start_strong_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn play_strong_cleaning_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-#[cfg(feature = "app-ring_cleaning-ringcleaningvoice")]
-impl RingCleaningVoice {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningVoice) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningVoiceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ring_cleaning-ringcleaningvoice")]impl RingCleaningVoice{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningVoice), ::core::stringify!(new),));
+ <Self as IRingCleaningVoiceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ring_cleaning-ringcleaningvoice")]

@@ -4,42 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akobstructionocclusion :: { AkObstructionOcclusion , IAkObstructionOcclusion }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akobstructionocclusion::{AkObstructionOcclusion,IAkObstructionOcclusion}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akemitterobstructionocclusion/AkEmitterObstructionOcclusion.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEmitterObstructionOcclusion")] # [parent (crate :: root :: akobstructionocclusion :: AkObstructionOcclusion)] pub struct AkEmitterObstructionOcclusion {
-# [offset (72)] # [rename (name = "m_gameObj")] pub m_game_obj : crate :: root :: akgameobj :: AkGameObj ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akemitterobstructionocclusion/AkEmitterObstructionOcclusion.md"))]#[::unity2::class(namespace="",name="AkEmitterObstructionOcclusion")]#[parent(crate::root::akobstructionocclusion::AkObstructionOcclusion)]pub struct AkEmitterObstructionOcclusion{#[offset(72)]#[rename(name="m_gameObj")]pub m_game_obj:crate::root::akgameobj::AkGameObj,}
 
 }
 
 #[cfg(feature = "root-akemitterobstructionocclusion-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akemitterobstructionocclusion")]
-pub trait IAkEmitterObstructionOcclusionMethods : IAkEmitterObstructionOcclusion { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkEmitterObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEmitterObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f19800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCurrentListenerList()` overload"] fn update_current_listener_list (self ,) -> () { unsafe { let __receiver = < AkEmitterObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEmitterObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f198d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetObstructionOcclusion(crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue>)` overload"] fn set_obstruction_occlusion (self , obs_occ_pair : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > >) -> () { unsafe { let __receiver = < AkEmitterObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEmitterObstructionOcclusion , crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f19b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obs_occ_pair) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEmitterObstructionOcclusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEmitterObstructionOcclusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f19dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akemitterobstructionocclusion")]pub trait IAkEmitterObstructionOcclusionMethods:IAkEmitterObstructionOcclusion{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AkEmitterObstructionOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f19800usize)as*mut u8,();
+(AkEmitterObstructionOcclusion)__receiver)}
+}
+#[doc="`UpdateCurrentListenerList()` overload"]fn update_current_listener_list(self,)->(){unsafe{let __receiver= <AkEmitterObstructionOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f198d0usize)as*mut u8,();
+(AkEmitterObstructionOcclusion)__receiver)}
+}
+#[doc="`SetObstructionOcclusion(crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue>)` overload"]fn set_obstruction_occlusion(self,obs_occ_pair:impl::core::convert::Into<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue> >)->(){unsafe{let __receiver= <AkEmitterObstructionOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f19b90usize)as*mut u8,();
+(AkEmitterObstructionOcclusion)__receiver,(crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue>)::core::convert::Into::into(obs_occ_pair))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEmitterObstructionOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f19dd0usize)as*mut u8,();
+(AkEmitterObstructionOcclusion)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akemitterobstructionocclusion")]
-impl < __T : IAkEmitterObstructionOcclusion > IAkEmitterObstructionOcclusionMethods for __T { }
+#[cfg(feature="root-akemitterobstructionocclusion")]impl<__T:IAkEmitterObstructionOcclusion>IAkEmitterObstructionOcclusionMethods for __T{}
 
-#[cfg(feature = "root-akemitterobstructionocclusion")]
-impl AkEmitterObstructionOcclusion { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEmitterObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_current_listener_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEmitterObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_obstruction_occlusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEmitterObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEmitterObstructionOcclusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-akemitterobstructionocclusion")]impl AkEmitterObstructionOcclusion{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_current_listener_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_obstruction_occlusion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "root-akemitterobstructionocclusion")]
-impl AkEmitterObstructionOcclusion {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEmitterObstructionOcclusion) , :: core :: stringify ! (new) ,)) ; < Self as IAkEmitterObstructionOcclusionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akemitterobstructionocclusion")]impl AkEmitterObstructionOcclusion{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEmitterObstructionOcclusion), ::core::stringify!(new),));
+ <Self as IAkEmitterObstructionOcclusionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akemitterobstructionocclusion")]

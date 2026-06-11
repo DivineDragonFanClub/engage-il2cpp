@@ -4,115 +4,133 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayappearancesequence/RelayAppearanceSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayAppearanceSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayappearancesequence/RelayAppearanceSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayAppearanceSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RelayAppearanceSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayAppearanceSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RelayAppearanceSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RelayAppearanceSequence_Label{pub fn leaving()->Self{Self{value:0}
+}
+pub fn leaving_loop()->Self{Self{value:1}
+}
+pub fn appearance()->Self{Self{value:2}
+}
+pub fn appearance_loop()->Self{Self{value:3}
+}
+pub fn end()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for RelayAppearanceSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAppearanceSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RelayAppearanceSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RelayAppearanceSequence_Label  {
-    pub fn leaving() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn leaving_loop() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn appearance() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn appearance_loop() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayappearancesequence/RelayAppearanceSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayAppearanceSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayappearancesequence :: RelayAppearanceSequence >)] pub struct RelayAppearanceSequence {
-# [offset (116)] # [rename (name = "m_Index")] pub m_index : i32 ,
-# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_ReplayAppearanceIndexes")] pub m_replay_appearance_indexes : :: unity2 :: Array < i32 > ,
-# [offset (136)] # [rename (name = "m_ReplayLeavingIndexes")] pub m_replay_leaving_indexes : :: unity2 :: Array < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayappearancesequence/RelayAppearanceSequence.md"))]#[::unity2::class(namespace="App",name="RelayAppearanceSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayappearancesequence::RelayAppearanceSequence>)]pub struct RelayAppearanceSequence{#[offset(116)]#[rename(name="m_Index")]pub m_index:i32, #[offset(120)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_ReplayAppearanceIndexes")]pub m_replay_appearance_indexes: ::unity2::Array<i32> , #[offset(136)]#[rename(name="m_ReplayLeavingIndexes")]pub m_replay_leaving_indexes: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "app-relayappearancesequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayappearancesequence")]
-impl RelayAppearanceSequence { # [doc = "`CreateBindTakeOver(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_take_over (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindReplay(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_replay (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ce070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCommon(crate::app::relayappearancesequence::RelayAppearanceSequence, crate::app::procinst::ProcInst)` overload"] pub fn create_bind_common (p : impl :: core :: convert :: Into < crate :: app :: relayappearancesequence :: RelayAppearanceSequence > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: relayappearancesequence :: RelayAppearanceSequence , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd9c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p) , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayappearancesequence")]impl RelayAppearanceSequence{#[doc="`CreateBindTakeOver(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_take_over(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cd790usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindReplay(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_replay(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ce070usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindCommon(crate::app::relayappearancesequence::RelayAppearanceSequence, crate::app::procinst::ProcInst)` overload"]pub fn create_bind_common(p:impl::core::convert::Into<crate::app::relayappearancesequence::RelayAppearanceSequence> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cd9c0usize)as*mut u8,();
+(crate::app::relayappearancesequence::RelayAppearanceSequence)::core::convert::Into::into(p),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-relayappearancesequence")]
-pub trait IRelayAppearanceSequenceMethods : IRelayAppearanceSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cce50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<i32>, ::unity2::Array<i32>)` overload"] fn ctor_2 (self , appearance_indexes : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > > , leaving_indexes : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: Array < i32 > , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (appearance_indexes) , :: core :: convert :: Into :: into (leaving_indexes) , :: core :: option :: Option :: None) } } } # [doc = "`LeavingBegin()` overload"] fn leaving_begin (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Leaving()` overload"] fn leaving (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LeavingNext()` overload"] fn leaving_next (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AppearanceBegin()` overload"] fn appearance_begin (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Appearance()` overload"] fn appearance (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AppearanceNext()` overload"] fn appearance_next (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FocusUnit()` overload"] fn focus_unit (self ,) -> () { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLeavingUnit(i32)` overload"] fn get_leaving_unit (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetAppearanceUnit(i32)` overload"] fn get_appearance_unit (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < RelayAppearanceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAppearanceSequence , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cd4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayappearancesequence")]pub trait IRelayAppearanceSequenceMethods:IRelayAppearanceSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cce50usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver)}
+}
+#[doc="`.ctor(::unity2::Array<i32>, ::unity2::Array<i32>)` overload"]fn ctor_2(self,appearance_indexes:impl::core::convert::Into< ::unity2::Array<i32> > ,leaving_indexes:impl::core::convert::Into< ::unity2::Array<i32> >)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccef0usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(appearance_indexes),(::unity2::Array<i32>)::core::convert::Into::into(leaving_indexes))}
+}
+#[doc="`LeavingBegin()` overload"]fn leaving_begin(self,)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccfa0usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver)}
+}
+#[doc="`Leaving()` overload"]fn leaving(self,)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cd1d0usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver)}
+}
+#[doc="`LeavingNext()` overload"]fn leaving_next(self,)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cd310usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver)}
+}
+#[doc="`AppearanceBegin()` overload"]fn appearance_begin(self,)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cd3f0usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver)}
+}
+#[doc="`Appearance()` overload"]fn appearance(self,)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cd560usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver)}
+}
+#[doc="`AppearanceNext()` overload"]fn appearance_next(self,)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cd670usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver)}
+}
+#[doc="`FocusUnit()` overload"]fn focus_unit(self,)->(){unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cd710usize)as*mut u8,();
+(RelayAppearanceSequence)__receiver)}
+}
+#[doc="`GetLeavingUnit(i32)` overload"]fn get_leaving_unit(self,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cd080usize)as*mut u8,crate::app::unit::Unit;
+(RelayAppearanceSequence)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetAppearanceUnit(i32)` overload"]fn get_appearance_unit(self,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <RelayAppearanceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cd4a0usize)as*mut u8,crate::app::unit::Unit;
+(RelayAppearanceSequence)__receiver,(i32)::core::convert::Into::into(index))}
+}
+}
 
-#[cfg(feature = "app-relayappearancesequence")]
-impl < __T : IRelayAppearanceSequence > IRelayAppearanceSequenceMethods for __T { }
+#[cfg(feature="app-relayappearancesequence")]impl<__T:IRelayAppearanceSequence>IRelayAppearanceSequenceMethods for __T{}
 
-#[cfg(feature = "app-relayappearancesequence")]
-impl RelayAppearanceSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn leaving_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn leaving_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn leaving_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn appearance_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn appearance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn appearance_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn focus_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_leaving_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_appearance_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_bind_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_bind_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_bind_common_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAppearanceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-relayappearancesequence")]impl RelayAppearanceSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn leaving_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn leaving_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn leaving_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn appearance_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn appearance_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn focus_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_leaving_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_appearance_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_bind_take_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_bind_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_bind_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-relayappearancesequence")]
-impl RelayAppearanceSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayAppearanceSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRelayAppearanceSequenceMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Array<i32>, ::unity2::Array<i32>)` — overload selector"] pub fn new_2 (appearance_indexes : :: unity2 :: Array < i32 > , leaving_indexes : :: unity2 :: Array < i32 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayAppearanceSequence) , :: core :: stringify ! (new_2) ,)) ; < Self as IRelayAppearanceSequenceMethods > :: ctor_2 (this , appearance_indexes , leaving_indexes) ; this }
+#[cfg(feature="app-relayappearancesequence")]impl RelayAppearanceSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayAppearanceSequence), ::core::stringify!(new),));
+ <Self as IRelayAppearanceSequenceMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Array<i32>, ::unity2::Array<i32>)` — overload selector"]pub fn new_2(appearance_indexes: ::unity2::Array<i32> ,leaving_indexes: ::unity2::Array<i32>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayAppearanceSequence), ::core::stringify!(new_2),));
+ <Self as IRelayAppearanceSequenceMethods> ::ctor_2(this,appearance_indexes,leaving_indexes);
+this}
 }
 
 #[cfg(feature = "app-relayappearancesequence")]

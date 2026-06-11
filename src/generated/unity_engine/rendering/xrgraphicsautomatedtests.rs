@@ -4,25 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrgraphicsautomatedtests/XRGraphicsAutomatedTests.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "XRGraphicsAutomatedTests")] # [parent (crate :: system :: object :: Object)] pub struct XRGraphicsAutomatedTests {
-# [static_field] # [rename (name = "running")] pub running : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/xrgraphicsautomatedtests/XRGraphicsAutomatedTests.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="XRGraphicsAutomatedTests")]#[parent(crate::system::object::Object)]pub struct XRGraphicsAutomatedTests{#[static_field]#[rename(name="running")]pub running:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-xrgraphicsautomatedtests-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-xrgraphicsautomatedtests")]
-impl XRGraphicsAutomatedTests { # [doc = "`get_activatedFromCommandLine()` overload"] pub fn get_activated_from_command_line () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e9540usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_enabled()` overload"] pub fn get_enabled () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e9670usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e96e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-xrgraphicsautomatedtests")]impl XRGraphicsAutomatedTests{#[doc="`get_activatedFromCommandLine()` overload"]pub fn get_activated_from_command_line()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e9540usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_enabled()` overload"]pub fn get_enabled()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e9670usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e96e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-xrgraphicsautomatedtests")]
-impl XRGraphicsAutomatedTests { pub fn get_activated_from_command_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRGraphicsAutomatedTests as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRGraphicsAutomatedTests as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRGraphicsAutomatedTests as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-xrgraphicsautomatedtests")]impl XRGraphicsAutomatedTests{pub fn get_activated_from_command_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-rendering-xrgraphicsautomatedtests")]
 #[doc(hidden)]

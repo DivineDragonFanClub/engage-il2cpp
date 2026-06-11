@@ -4,36 +4,167 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/repl/replinterpreter/ReplInterpreter.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.REPL" , name = "ReplInterpreter")] # [parent (crate :: system :: object :: Object)] pub struct ReplInterpreter {
-# [offset (16)] # [rename (name = "m_Script")] pub m_script : crate :: moon_sharp :: interpreter :: script :: Script ,
-# [offset (24)] # [rename (name = "m_CurrentCommand")] pub m_current_command : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/repl/replinterpreter/ReplInterpreter.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.REPL",name="ReplInterpreter")]#[parent(crate::system::object::Object)]pub struct ReplInterpreter{#[offset(16)]#[rename(name="m_Script")]pub m_script:crate::moon_sharp::interpreter::script::Script, #[offset(24)]#[rename(name="m_CurrentCommand")]pub m_current_command: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ReplInterpreter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_handle_dynamic_exprs { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , "get_HandleDynamicExprs" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , "get_HandleDynamicExprs" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_handle_dynamic_exprs { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , "set_HandleDynamicExprs" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , "set_HandleDynamicExprs" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_handle_classic_exprs_syntax { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , "get_HandleClassicExprsSyntax" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , "get_HandleClassicExprsSyntax" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_handle_classic_exprs_syntax { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , "set_HandleClassicExprsSyntax" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , "set_HandleClassicExprsSyntax" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_has_pending_command { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , "get_HasPendingCommand" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , "get_HasPendingCommand" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_current_pending_command { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , "get_CurrentPendingCommand" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , "get_CurrentPendingCommand" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_classic_prompt { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , "get_ClassicPrompt" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , "get_ClassicPrompt" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_evaluate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ReplInterpreter as :: unity2 :: ClassIdentity > :: class () , "Evaluate" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReplInterpreter as :: unity2 :: ClassIdentity > :: NAME , "Evaluate" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-repl-replinterpreter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ReplInterpreter_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_handle_dynamic_exprs{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),"get_HandleDynamicExprs",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_HandleDynamicExprs",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_handle_dynamic_exprs{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),"set_HandleDynamicExprs",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"set_HandleDynamicExprs",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_handle_classic_exprs_syntax{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),"get_HandleClassicExprsSyntax",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_HandleClassicExprsSyntax",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_handle_classic_exprs_syntax{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),"set_HandleClassicExprsSyntax",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"set_HandleClassicExprsSyntax",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_has_pending_command{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),"get_HasPendingCommand",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_HasPendingCommand",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_current_pending_command{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),"get_CurrentPendingCommand",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_CurrentPendingCommand",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_classic_prompt{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),"get_ClassicPrompt",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_ClassicPrompt",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_evaluate{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ReplInterpreter as::unity2::ClassIdentity> ::class(),"Evaluate",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"Evaluate",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter")]
-pub trait IReplInterpreterMethods : IReplInterpreter { # [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script)` overload"] fn ctor (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script >) -> () { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , crate :: moon_sharp :: interpreter :: script :: Script , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (script) , :: core :: option :: Option :: None) } } } # [doc = "`get_HandleDynamicExprs()` overload"] fn get_handle_dynamic_exprs (self ,) -> bool { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_get_handle_dynamic_exprs :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HandleDynamicExprs(bool)` overload"] fn set_handle_dynamic_exprs (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_set_handle_dynamic_exprs :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HandleClassicExprsSyntax()` overload"] fn get_handle_classic_exprs_syntax (self ,) -> bool { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_get_handle_classic_exprs_syntax :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HandleClassicExprsSyntax(bool)` overload"] fn set_handle_classic_exprs_syntax (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_set_handle_classic_exprs_syntax :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HasPendingCommand()` overload"] fn get_has_pending_command (self ,) -> bool { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_get_has_pending_command :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentPendingCommand()` overload"] fn get_current_pending_command (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_get_current_pending_command :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ClassicPrompt()` overload"] fn get_classic_prompt (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_get_classic_prompt :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Evaluate(::unity2::Il2CppString)` overload"] fn evaluate (self , input : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < ReplInterpreter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReplInterpreter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__ReplInterpreter_unity2_raw :: __lookup_evaluate :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (input) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-repl-replinterpreter")]pub trait IReplInterpreterMethods:IReplInterpreter{#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script)` overload"]fn ctor(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script>)->(){unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(ReplInterpreter)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script))}
+}
+#[doc="`get_HandleDynamicExprs()` overload"]fn get_handle_dynamic_exprs(self,)->bool{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_get_handle_dynamic_exprs::get_method_info().method_ptr,bool;
+(ReplInterpreter)__receiver)}
+}
+#[doc="`set_HandleDynamicExprs(bool)` overload"]fn set_handle_dynamic_exprs(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_set_handle_dynamic_exprs::get_method_info().method_ptr,();
+(ReplInterpreter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_HandleClassicExprsSyntax()` overload"]fn get_handle_classic_exprs_syntax(self,)->bool{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_get_handle_classic_exprs_syntax::get_method_info().method_ptr,bool;
+(ReplInterpreter)__receiver)}
+}
+#[doc="`set_HandleClassicExprsSyntax(bool)` overload"]fn set_handle_classic_exprs_syntax(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_set_handle_classic_exprs_syntax::get_method_info().method_ptr,();
+(ReplInterpreter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_HasPendingCommand()` overload"]fn get_has_pending_command(self,)->bool{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_get_has_pending_command::get_method_info().method_ptr,bool;
+(ReplInterpreter)__receiver)}
+}
+#[doc="`get_CurrentPendingCommand()` overload"]fn get_current_pending_command(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_get_current_pending_command::get_method_info().method_ptr, ::unity2::Il2CppString;
+(ReplInterpreter)__receiver)}
+}
+#[doc="`get_ClassicPrompt()` overload"]fn get_classic_prompt(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_get_classic_prompt::get_method_info().method_ptr, ::unity2::Il2CppString;
+(ReplInterpreter)__receiver)}
+}
+#[doc="`Evaluate(::unity2::Il2CppString)` overload"]fn evaluate(self,input:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ReplInterpreter_unity2_raw::__lookup_evaluate::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(ReplInterpreter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(input))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter")]
-impl < __T : IReplInterpreter > IReplInterpreterMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-repl-replinterpreter")]impl<__T:IReplInterpreter>IReplInterpreterMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter")]
-impl ReplInterpreter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_handle_dynamic_exprs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_handle_dynamic_exprs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_handle_classic_exprs_syntax_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_handle_classic_exprs_syntax_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_has_pending_command_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_current_pending_command_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_classic_prompt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn evaluate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReplInterpreter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="moon_sharp-interpreter-repl-replinterpreter")]impl ReplInterpreter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_handle_dynamic_exprs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_handle_dynamic_exprs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_handle_classic_exprs_syntax_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_handle_classic_exprs_syntax_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_has_pending_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_current_pending_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_classic_prompt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn evaluate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter")]
-impl ReplInterpreter {
-# [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script)` — overload selector"] pub fn new (script : crate :: moon_sharp :: interpreter :: script :: Script) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReplInterpreter) , :: core :: stringify ! (new) ,)) ; < Self as IReplInterpreterMethods > :: ctor (this , script) ; this }
+#[cfg(feature="moon_sharp-interpreter-repl-replinterpreter")]impl ReplInterpreter{#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script)` — overload selector"]pub fn new(script:crate::moon_sharp::interpreter::script::Script)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReplInterpreter), ::core::stringify!(new),));
+ <Self as IReplInterpreterMethods> ::ctor(this,script);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter")]

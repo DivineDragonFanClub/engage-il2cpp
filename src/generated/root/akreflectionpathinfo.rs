@@ -4,38 +4,139 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akreflectionpathinfo/AkReflectionPathInfo.md"))] # [:: unity2 :: class (namespace = "" , name = "AkReflectionPathInfo")] # [parent (crate :: system :: object :: Object)] pub struct AkReflectionPathInfo {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akreflectionpathinfo/AkReflectionPathInfo.md"))]#[::unity2::class(namespace="",name="AkReflectionPathInfo")]#[parent(crate::system::object::Object)]pub struct AkReflectionPathInfo{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akreflectionpathinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akreflectionpathinfo")]
-impl AkReflectionPathInfo { # [doc = "`getCPtr(crate::root::akreflectionpathinfo::AkReflectionPathInfo)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f309d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31130usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akreflectionpathinfo")]impl AkReflectionPathInfo{#[doc="`getCPtr(crate::root::akreflectionpathinfo::AkReflectionPathInfo)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akreflectionpathinfo::AkReflectionPathInfo>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f309d0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akreflectionpathinfo::AkReflectionPathInfo)::core::convert::Into::into(obj))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f31130usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-akreflectionpathinfo")]
-pub trait IAkReflectionPathInfoMethods : IAkReflectionPathInfo { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_imageSource(crate::unity_engine::vector3::Vector3)` overload"] fn set_image_source (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30c60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_imageSource()` overload"] fn get_image_source (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_numPathPoints(u32)` overload"] fn set_num_path_points (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_numPathPoints()` overload"] fn get_num_path_points (self ,) -> u32 { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_numReflections(u32)` overload"] fn set_num_reflections (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_numReflections()` overload"] fn get_num_reflections (self ,) -> u32 { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_level(f32)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_level()` overload"] fn get_level (self ,) -> f32 { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f30fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isOccluded(bool)` overload"] fn set_is_occluded (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_isOccluded()` overload"] fn get_is_occluded (self ,) -> bool { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f310c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPathPoint(u32)` overload"] fn get_path_point (self , idx : impl :: core :: convert :: Into < u32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , u32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f311a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (idx) , :: core :: option :: Option :: None) } } } # [doc = "`GetAcousticSurface(u32)` overload"] fn get_acoustic_surface (self , idx : impl :: core :: convert :: Into < u32 >) -> crate :: root :: akacousticsurface :: AkAcousticSurface { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , u32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akacousticsurface :: AkAcousticSurface = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (idx) , :: core :: option :: Option :: None) } } } # [doc = "`GetDiffraction(u32)` overload"] fn get_diffraction (self , idx : impl :: core :: convert :: Into < u32 >) -> f32 { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , u32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f312e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (idx) , :: core :: option :: Option :: None) } } } # [doc = "`Clone(crate::root::akreflectionpathinfo::AkReflectionPathInfo)` overload"] fn clone (self , other : impl :: core :: convert :: Into < crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo >) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkReflectionPathInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akreflectionpathinfo")]pub trait IAkReflectionPathInfoMethods:IAkReflectionPathInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30990usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30a30usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30a60usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30ad0usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver)}
+}
+#[doc="`set_imageSource(crate::unity_engine::vector3::Vector3)` overload"]fn set_image_source(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30c60usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_imageSource()` overload"]fn get_image_source(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30d00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AkReflectionPathInfo)__receiver)}
+}
+#[doc="`set_numPathPoints(u32)` overload"]fn set_num_path_points(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30d70usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_numPathPoints()` overload"]fn get_num_path_points(self,)->u32{unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30df0usize)as*mut u8,u32;
+(AkReflectionPathInfo)__receiver)}
+}
+#[doc="`set_numReflections(u32)` overload"]fn set_num_reflections(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30e60usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_numReflections()` overload"]fn get_num_reflections(self,)->u32{unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30ee0usize)as*mut u8,u32;
+(AkReflectionPathInfo)__receiver)}
+}
+#[doc="`set_level(f32)` overload"]fn set_level(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30f50usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_level()` overload"]fn get_level(self,)->f32{unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30fd0usize)as*mut u8,f32;
+(AkReflectionPathInfo)__receiver)}
+}
+#[doc="`set_isOccluded(bool)` overload"]fn set_is_occluded(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31040usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_isOccluded()` overload"]fn get_is_occluded(self,)->bool{unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f310c0usize)as*mut u8,bool;
+(AkReflectionPathInfo)__receiver)}
+}
+#[doc="`GetPathPoint(u32)` overload"]fn get_path_point(self,idx:impl::core::convert::Into<u32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f311a0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AkReflectionPathInfo)__receiver,(u32)::core::convert::Into::into(idx))}
+}
+#[doc="`GetAcousticSurface(u32)` overload"]fn get_acoustic_surface(self,idx:impl::core::convert::Into<u32>)->crate::root::akacousticsurface::AkAcousticSurface{unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31220usize)as*mut u8,crate::root::akacousticsurface::AkAcousticSurface;
+(AkReflectionPathInfo)__receiver,(u32)::core::convert::Into::into(idx))}
+}
+#[doc="`GetDiffraction(u32)` overload"]fn get_diffraction(self,idx:impl::core::convert::Into<u32>)->f32{unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f312e0usize)as*mut u8,f32;
+(AkReflectionPathInfo)__receiver,(u32)::core::convert::Into::into(idx))}
+}
+#[doc="`Clone(crate::root::akreflectionpathinfo::AkReflectionPathInfo)` overload"]fn clone(self,other:impl::core::convert::Into<crate::root::akreflectionpathinfo::AkReflectionPathInfo>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31360usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver,(crate::root::akreflectionpathinfo::AkReflectionPathInfo)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31420usize)as*mut u8,();
+(AkReflectionPathInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akreflectionpathinfo")]
-impl < __T : IAkReflectionPathInfo > IAkReflectionPathInfoMethods for __T { }
+#[cfg(feature="root-akreflectionpathinfo")]impl<__T:IAkReflectionPathInfo>IAkReflectionPathInfoMethods for __T{}
 
-#[cfg(feature = "root-akreflectionpathinfo")]
-impl AkReflectionPathInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_image_source_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_image_source_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_num_path_points_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_num_path_points_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_num_reflections_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_num_reflections_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_is_occluded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_is_occluded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_path_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_acoustic_surface_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_diffraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="root-akreflectionpathinfo")]impl AkReflectionPathInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_image_source_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_image_source_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_num_path_points_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_num_path_points_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_num_reflections_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_num_reflections_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_is_occluded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_is_occluded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_path_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_acoustic_surface_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_diffraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "root-akreflectionpathinfo")]
-impl AkReflectionPathInfo {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkReflectionPathInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAkReflectionPathInfoMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkReflectionPathInfo) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkReflectionPathInfoMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akreflectionpathinfo")]impl AkReflectionPathInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkReflectionPathInfo), ::core::stringify!(new),));
+ <Self as IAkReflectionPathInfoMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkReflectionPathInfo), ::core::stringify!(new_2),));
+ <Self as IAkReflectionPathInfoMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akreflectionpathinfo")]

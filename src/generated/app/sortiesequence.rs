@@ -4,204 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Modes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSequence_Modes  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequence/SortieSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for SortieSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SortieSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SortieSequence_Label{pub fn notice()->Self{Self{value:0}
+}
+pub fn top_menu()->Self{Self{value:1}
+}
+pub fn selection_unit()->Self{Self{value:2}
+}
+pub fn position_change()->Self{Self{value:3}
+}
+pub fn inventory()->Self{Self{value:4}
+}
+pub fn god()->Self{Self{value:5}
+}
+pub fn tutorial()->Self{Self{value:6}
+}
+pub fn reliance()->Self{Self{value:7}
+}
+pub fn weapon_shop()->Self{Self{value:8}
+}
+pub fn item_shop()->Self{Self{value:9}
+}
+pub fn friend_list()->Self{Self{value:10}
+}
+pub fn ring_list()->Self{Self{value:11}
+}
+pub fn config()->Self{Self{value:12}
+}
+pub fn save()->Self{Self{value:13}
+}
+pub fn end()->Self{Self{value:14}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SortieSequence_Modes  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequence/SortieSequence.md"))]#[::unity2::class(namespace="App",name="SortieSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequence::SortieSequence>)]pub struct SortieSequence{#[static_field]#[rename(name="s_IsDecidedToBattle")]pub s_is_decided_to_battle:bool, #[offset(116)]#[rename(name="m_Mode")]pub m_mode:crate::app::sortiesequence::SortieSequence_Modes,}
 
-    const NAME: &'static str = "SortieSequence.Modes";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequence/SortieSequence_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequence_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for SortieSequence_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieSequence.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for SortieSequence_Modes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SortieSequence_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  SortieSequence_Modes  {
-    pub fn map() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn edit() -> Self {
-        Self { value: 2 }
-
-    }
-
+impl SortieSequence_Modes{pub fn map()->Self{Self{value:0}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSequence_Label  {
-    pub value: i32,
+pub fn hub()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for SortieSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn edit()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::IlType for SortieSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieSequence_Label  {
-    pub fn notice() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top_menu() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn selection_unit() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn position_change() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn inventory() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn tutorial() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn reliance() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn weapon_shop() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn item_shop() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn friend_list() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn ring_list() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn config() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn save() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 14 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequence/SortieSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)] pub struct SortieSequence {
-# [static_field] # [rename (name = "s_IsDecidedToBattle")] pub s_is_decided_to_battle : bool ,
-# [offset (116)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: sortiesequence :: SortieSequence_Modes ,
 }
 
 }
@@ -209,31 +84,123 @@ impl  SortieSequence_Label  {
 #[cfg(feature = "app-sortiesequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortiesequence")]
-impl SortieSequence { # [doc = "`CreateBindMap(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_map (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindHub(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_hub (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe9fa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEdit(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_edit (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe9fb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::sortiesequence::SortieSequence_Modes)` overload"] pub fn create_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mode : impl :: core :: convert :: Into < crate :: app :: sortiesequence :: SortieSequence_Modes >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: sortiesequence :: SortieSequence_Modes , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8e50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`DecideToBattle()` overload"] pub fn decide_to_battle () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsDecidedToBattle()` overload"] pub fn is_decided_to_battle () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea130usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequence")]impl SortieSequence{#[doc="`CreateBindMap(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_map(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8e40usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindHub(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_hub(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe9fa0usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindEdit(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_edit(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe9fb0usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::sortiesequence::SortieSequence_Modes)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mode:impl::core::convert::Into<crate::app::sortiesequence::SortieSequence_Modes>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8e50usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::sortiesequence::SortieSequence_Modes)::core::convert::Into::into(mode))}
+}
+#[doc="`DecideToBattle()` overload"]pub fn decide_to_battle()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fea080usize)as*mut u8,();
+)}
+}
+#[doc="`IsDecidedToBattle()` overload"]pub fn is_decided_to_battle()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fea130usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-sortiesequence")]
-pub trait ISortieSequenceMethods : ISortieSequence { # [doc = "`get_Mode()` overload"] fn get_mode (self ,) -> crate :: app :: sortiesequence :: SortieSequence_Modes { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortiesequence :: SortieSequence_Modes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::sortiesequence::SortieSequence_Modes)` overload"] fn ctor (self , mode : impl :: core :: convert :: Into < crate :: app :: sortiesequence :: SortieSequence_Modes >) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , crate :: app :: sortiesequence :: SortieSequence_Modes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe9fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupUnits()` overload"] fn setup_units (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostSetupUnits()` overload"] fn post_setup_units (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryShowTutorial()` overload"] fn try_show_tutorial (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Notice()` overload"] fn notice (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fea8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetManagers()` overload"] fn reset_managers (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1feacd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowHelp()` overload"] fn show_help (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1feae30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideHelp()` overload"] fn hide_help (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1feaed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayBgm()` overload"] fn play_bgm (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1feaf50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopBgm()` overload"] fn stop_bgm (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1feb020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopFieldBgmForRelayTakeOver()` overload"] fn stop_field_bgm_for_relay_take_over (self ,) -> () { unsafe { let __receiver = < SortieSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1feb0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequence")]pub trait ISortieSequenceMethods:ISortieSequence{#[doc="`get_Mode()` overload"]fn get_mode(self,)->crate::app::sortiesequence::SortieSequence_Modes{unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fea180usize)as*mut u8,crate::app::sortiesequence::SortieSequence_Modes;
+(SortieSequence)__receiver)}
+}
+#[doc="`.ctor(crate::app::sortiesequence::SortieSequence_Modes)` overload"]fn ctor(self,mode:impl::core::convert::Into<crate::app::sortiesequence::SortieSequence_Modes>)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe9fc0usize)as*mut u8,();
+(SortieSequence)__receiver,(crate::app::sortiesequence::SortieSequence_Modes)::core::convert::Into::into(mode))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fea190usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fea4c0usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`SetupUnits()` overload"]fn setup_units(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fea530usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`PostSetupUnits()` overload"]fn post_setup_units(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fea730usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`TryShowTutorial()` overload"]fn try_show_tutorial(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fea7c0usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`Notice()` overload"]fn notice(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fea8a0usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`ResetManagers()` overload"]fn reset_managers(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1feacd0usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`ShowHelp()` overload"]fn show_help(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1feae30usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`HideHelp()` overload"]fn hide_help(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1feaed0usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`PlayBgm()` overload"]fn play_bgm(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1feaf50usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`StopBgm()` overload"]fn stop_bgm(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1feb020usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+#[doc="`StopFieldBgmForRelayTakeOver()` overload"]fn stop_field_bgm_for_relay_take_over(self,)->(){unsafe{let __receiver= <SortieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1feb0f0usize)as*mut u8,();
+(SortieSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortiesequence")]
-impl < __T : ISortieSequence > ISortieSequenceMethods for __T { }
+#[cfg(feature="app-sortiesequence")]impl<__T:ISortieSequence>ISortieSequenceMethods for __T{}
 
-#[cfg(feature = "app-sortiesequence")]
-impl SortieSequence { pub fn create_bind_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_hub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn decide_to_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_decided_to_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn setup_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn post_setup_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn try_show_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn reset_managers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn show_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn hide_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn play_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn stop_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn stop_field_bgm_for_relay_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="app-sortiesequence")]impl SortieSequence{pub fn create_bind_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_hub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_edit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn decide_to_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_decided_to_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn setup_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn post_setup_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn try_show_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn notice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn reset_managers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn show_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn hide_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn play_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn stop_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn stop_field_bgm_for_relay_take_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "app-sortiesequence")]
-impl SortieSequence {
-# [doc = "`.ctor(crate::app::sortiesequence::SortieSequence_Modes)` — overload selector"] pub fn new (mode : crate :: app :: sortiesequence :: SortieSequence_Modes) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSequence) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSequenceMethods > :: ctor (this , mode) ; this }
+#[cfg(feature="app-sortiesequence")]impl SortieSequence{#[doc="`.ctor(crate::app::sortiesequence::SortieSequence_Modes)` — overload selector"]pub fn new(mode:crate::app::sortiesequence::SortieSequence_Modes)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieSequence), ::core::stringify!(new),));
+ <Self as ISortieSequenceMethods> ::ctor(this,mode);
+this}
 }
 
 #[cfg(feature = "app-sortiesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequence_Modes;
     pub use super::SortieSequence_Label;
     pub use super::SortieSequence;
     pub use super::ISortieSequence;
     pub use super::ISortieSequenceMethods;
+    pub use super::SortieSequence_Modes;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

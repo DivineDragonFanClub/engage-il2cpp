@@ -4,33 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortie/Sortie.md"))] # [:: unity2 :: class (namespace = "App" , name = "Sortie")] # [parent (crate :: system :: object :: Object)] pub struct Sortie {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortie/Sortie.md"))]#[::unity2::class(namespace="App",name="Sortie")]#[parent(crate::system::object::Object)]pub struct Sortie{}
 
 }
 
 #[cfg(feature = "app-sortie-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortie")]
-impl Sortie { # [doc = "`Setup()` overload"] pub fn setup () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4910usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] pub fn cleanup () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortie")]impl Sortie{#[doc="`Setup()` overload"]pub fn setup()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4910usize)as*mut u8,();
+)}
+}
+#[doc="`Cleanup()` overload"]pub fn cleanup()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4b80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-sortie")]
-pub trait ISortieMethods : ISortie { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Sortie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Sortie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortie")]pub trait ISortieMethods:ISortie{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Sortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4e10usize)as*mut u8,();
+(Sortie)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortie")]
-impl < __T : ISortie > ISortieMethods for __T { }
+#[cfg(feature="app-sortie")]impl<__T:ISortie>ISortieMethods for __T{}
 
-#[cfg(feature = "app-sortie")]
-impl Sortie { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sortie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-sortie")]impl Sortie{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-sortie")]
-impl Sortie {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Sortie) , :: core :: stringify ! (new) ,)) ; < Self as ISortieMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortie")]impl Sortie{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Sortie), ::core::stringify!(new),));
+ <Self as ISortieMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortie")]

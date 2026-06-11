@@ -4,43 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/planarreflectionv2/PlanarReflectionV2.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "PlanarReflectionV2")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PlanarReflectionV2 {
-# [offset (24)] # [rename (name = "m_ReflectionManager")] pub m_reflection_manager : crate :: app :: water :: reflectionmanager :: ReflectionManager ,
-# [offset (32)] # [rename (name = "m_SharedMaterial")] pub m_shared_material : crate :: unity_engine :: material :: Material ,
-# [offset (40)] # [rename (name = "reflectionCameraNumber")] pub reflection_camera_number : i16 ,
-# [static_field] # [rename (name = "reflectionSampler")] pub reflection_sampler : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/water/planarreflectionv2/PlanarReflectionV2.md"))]#[::unity2::class(namespace="App.Water",name="PlanarReflectionV2")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct PlanarReflectionV2{#[offset(24)]#[rename(name="m_ReflectionManager")]pub m_reflection_manager:crate::app::water::reflectionmanager::ReflectionManager, #[offset(32)]#[rename(name="m_SharedMaterial")]pub m_shared_material:crate::unity_engine::material::Material, #[offset(40)]#[rename(name="reflectionCameraNumber")]pub reflection_camera_number:i16, #[static_field]#[rename(name="reflectionSampler")]pub reflection_sampler: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-water-planarreflectionv2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-water-planarreflectionv2")]
-pub trait IPlanarReflectionV2Methods : IPlanarReflectionV2 { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlanarReflectionV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280ba00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaterTileBeingRendered(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera)` overload"] fn water_tile_being_rendered (self , tr : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , current_cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlanarReflectionV2 , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280bd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tr) , :: core :: convert :: Into :: into (current_cam) , :: core :: option :: Option :: None) } } } # [doc = "`GetReflectionTexture()` overload"] fn get_reflection_texture (self ,) -> crate :: unity_engine :: rendertexture :: RenderTexture { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlanarReflectionV2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexture :: RenderTexture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280bf50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RenderReflection(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera)` overload"] fn render_reflection (self , tr : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , current_cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlanarReflectionV2 , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280bea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tr) , :: core :: convert :: Into :: into (current_cam) , :: core :: option :: Option :: None) } } } # [doc = "`GetReflectionManager()` overload"] fn get_reflection_manager (self ,) -> crate :: app :: water :: reflectionmanager :: ReflectionManager { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlanarReflectionV2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: water :: reflectionmanager :: ReflectionManager = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280bb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlanarReflectionV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlanarReflectionV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280bf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-water-planarreflectionv2")]pub trait IPlanarReflectionV2Methods:IPlanarReflectionV2{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <PlanarReflectionV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280ba00usize)as*mut u8,();
+(PlanarReflectionV2)__receiver)}
+}
+#[doc="`WaterTileBeingRendered(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera)` overload"]fn water_tile_being_rendered(self,tr:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,current_cam:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <PlanarReflectionV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280bd30usize)as*mut u8,();
+(PlanarReflectionV2)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(tr),(crate::unity_engine::camera::Camera)::core::convert::Into::into(current_cam))}
+}
+#[doc="`GetReflectionTexture()` overload"]fn get_reflection_texture(self,)->crate::unity_engine::rendertexture::RenderTexture{unsafe{let __receiver= <PlanarReflectionV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280bf50usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
+(PlanarReflectionV2)__receiver)}
+}
+#[doc="`RenderReflection(crate::unity_engine::transform::Transform, crate::unity_engine::camera::Camera)` overload"]fn render_reflection(self,tr:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,current_cam:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <PlanarReflectionV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280bea0usize)as*mut u8,bool;
+(PlanarReflectionV2)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(tr),(crate::unity_engine::camera::Camera)::core::convert::Into::into(current_cam))}
+}
+#[doc="`GetReflectionManager()` overload"]fn get_reflection_manager(self,)->crate::app::water::reflectionmanager::ReflectionManager{unsafe{let __receiver= <PlanarReflectionV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280bb20usize)as*mut u8,crate::app::water::reflectionmanager::ReflectionManager;
+(PlanarReflectionV2)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlanarReflectionV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280bf70usize)as*mut u8,();
+(PlanarReflectionV2)__receiver)}
+}
+}
 
-#[cfg(feature = "app-water-planarreflectionv2")]
-impl < __T : IPlanarReflectionV2 > IPlanarReflectionV2Methods for __T { }
+#[cfg(feature="app-water-planarreflectionv2")]impl<__T:IPlanarReflectionV2>IPlanarReflectionV2Methods for __T{}
 
-#[cfg(feature = "app-water-planarreflectionv2")]
-impl PlanarReflectionV2 { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn water_tile_being_rendered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_reflection_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn render_reflection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_reflection_manager_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlanarReflectionV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-water-planarreflectionv2")]impl PlanarReflectionV2{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn water_tile_being_rendered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_reflection_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn render_reflection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_reflection_manager_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-water-planarreflectionv2")]
-impl PlanarReflectionV2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlanarReflectionV2) , :: core :: stringify ! (new) ,)) ; < Self as IPlanarReflectionV2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-water-planarreflectionv2")]impl PlanarReflectionV2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlanarReflectionV2), ::core::stringify!(new),));
+ <Self as IPlanarReflectionV2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-water-planarreflectionv2")]

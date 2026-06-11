@@ -4,139 +4,55 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingResultSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: fortunetellingresultsequence :: FortuneTellingResultSequence >)] pub struct FortuneTellingResultSequence {
-# [static_field] # [rename (name = "ResPaths")] pub res_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (120)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (128)] # [rename (name = "m_CardAnim")] pub m_card_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (136)] # [rename (name = "m_ObjCharaImage")] pub m_obj_chara_image : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (144)] # [rename (name = "m_ObjUnitName")] pub m_obj_unit_name : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_ObjResultMessage")] pub m_obj_result_message : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (160)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (168)] # [rename (name = "m_Window")] pub m_window : crate :: app :: fortunetellingresultmenu :: FortuneTellingResultMenu ,
-# [static_field] # [rename (name = "m_unit")] pub m_unit : crate :: app :: unit :: Unit ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FortuneTellingResultSequence_Label2{pub value:i32,}
+impl::unity2::ClassIdentity for FortuneTellingResultSequence_Label2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FortuneTellingResultSequence.Label2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for FortuneTellingResultSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl FortuneTellingResultSequence_Label2{pub fn entry()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_ResId.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FortuneTellingResultSequence_ResId  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingresultsequence/FortuneTellingResultSequence.md"))]#[::unity2::class(namespace="App",name="FortuneTellingResultSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::fortunetellingresultsequence::FortuneTellingResultSequence>)]pub struct FortuneTellingResultSequence{#[static_field]#[rename(name="ResPaths")]pub res_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(120)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_CardAnim")]pub m_card_anim:crate::unity_engine::animator::Animator, #[offset(136)]#[rename(name="m_ObjCharaImage")]pub m_obj_chara_image:crate::unity_engine::gameobject::GameObject, #[offset(144)]#[rename(name="m_ObjUnitName")]pub m_obj_unit_name:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_ObjResultMessage")]pub m_obj_result_message:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_Window")]pub m_window:crate::app::fortunetellingresultmenu::FortuneTellingResultMenu, #[static_field]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_ResId.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FortuneTellingResultSequence_ResId{pub value:i32,}
+impl::unity2::ClassIdentity for FortuneTellingResultSequence_ResId{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FortuneTellingResultSequence.ResId";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for FortuneTellingResultSequence_ResId  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FortuneTellingResultSequence.ResId";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for FortuneTellingResultSequence_ResId{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for FortuneTellingResultSequence_ResId  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl FortuneTellingResultSequence_ResId{pub fn root()->Self{Self{value:0}
 }
-
-
-impl  FortuneTellingResultSequence_ResId  {
-    pub fn root() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn eff_primary() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn eff_reverse() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn eff_primary()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FortuneTellingResultSequence_Label2  {
-    pub value: i32,
+pub fn eff_reverse()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for FortuneTellingResultSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FortuneTellingResultSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn count()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::IlType for FortuneTellingResultSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  FortuneTellingResultSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
 
 }
@@ -144,31 +60,91 @@ impl  FortuneTellingResultSequence_Label2  {
 #[cfg(feature = "app-fortunetellingresultsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fortunetellingresultsequence")]
-impl FortuneTellingResultSequence { # [doc = "`ResPath(crate::app::fortunetellingresultsequence::FortuneTellingResultSequence_ResId)` overload"] pub fn res_path (id : impl :: core :: convert :: Into < crate :: app :: fortunetellingresultsequence :: FortuneTellingResultSequence_ResId >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: fortunetellingresultsequence :: FortuneTellingResultSequence_ResId , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2617c30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::combat::character::Character)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , character : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2617f00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (character) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26196d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingresultsequence")]impl FortuneTellingResultSequence{#[doc="`ResPath(crate::app::fortunetellingresultsequence::FortuneTellingResultSequence_ResId)` overload"]pub fn res_path(id:impl::core::convert::Into<crate::app::fortunetellingresultsequence::FortuneTellingResultSequence_ResId>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2617c30usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::fortunetellingresultsequence::FortuneTellingResultSequence_ResId)::core::convert::Into::into(id))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::combat::character::Character)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2617f00usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::combat::character::Character)::core::convert::Into::into(character))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26196d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-fortunetellingresultsequence")]
-pub trait IFortuneTellingResultSequenceMethods : IFortuneTellingResultSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2618060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26180e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadRes()` overload"] fn load_res (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2618800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingRes()` overload"] fn is_loading_res (self ,) -> bool { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2618910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2618a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsAnimEnd()` overload"] fn is_anim_end (self ,) -> bool { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2618f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResultTalk()` overload"] fn result_talk (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2618fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MenuClose()` overload"] fn menu_close (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2619220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsMenuClose()` overload"] fn is_menu_close (self ,) -> bool { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26193e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MenuCloseEnd()` overload"] fn menu_close_end (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2619490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingresultsequence")]pub trait IFortuneTellingResultSequenceMethods:IFortuneTellingResultSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2618060usize)as*mut u8,();
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26180e0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`LoadRes()` overload"]fn load_res(self,)->(){unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2618800usize)as*mut u8,();
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`IsLoadingRes()` overload"]fn is_loading_res(self,)->bool{unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2618910usize)as*mut u8,bool;
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2618a10usize)as*mut u8,();
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`IsAnimEnd()` overload"]fn is_anim_end(self,)->bool{unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2618f00usize)as*mut u8,bool;
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`ResultTalk()` overload"]fn result_talk(self,)->(){unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2618fe0usize)as*mut u8,();
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`MenuClose()` overload"]fn menu_close(self,)->(){unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2619220usize)as*mut u8,();
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`IsMenuClose()` overload"]fn is_menu_close(self,)->bool{unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26193e0usize)as*mut u8,bool;
+(FortuneTellingResultSequence)__receiver)}
+}
+#[doc="`MenuCloseEnd()` overload"]fn menu_close_end(self,)->(){unsafe{let __receiver= <FortuneTellingResultSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2619490usize)as*mut u8,();
+(FortuneTellingResultSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fortunetellingresultsequence")]
-impl < __T : IFortuneTellingResultSequence > IFortuneTellingResultSequenceMethods for __T { }
+#[cfg(feature="app-fortunetellingresultsequence")]impl<__T:IFortuneTellingResultSequence>IFortuneTellingResultSequenceMethods for __T{}
 
-#[cfg(feature = "app-fortunetellingresultsequence")]
-impl FortuneTellingResultSequence { pub fn res_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_loading_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_anim_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn result_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn menu_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_menu_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn menu_close_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-fortunetellingresultsequence")]impl FortuneTellingResultSequence{pub fn res_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_loading_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_anim_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn result_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn menu_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_menu_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn menu_close_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-fortunetellingresultsequence")]
-impl FortuneTellingResultSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FortuneTellingResultSequence) , :: core :: stringify ! (new) ,)) ; < Self as IFortuneTellingResultSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fortunetellingresultsequence")]impl FortuneTellingResultSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FortuneTellingResultSequence), ::core::stringify!(new),));
+ <Self as IFortuneTellingResultSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fortunetellingresultsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::FortuneTellingResultSequence_Label2;
     pub use super::FortuneTellingResultSequence;
     pub use super::IFortuneTellingResultSequence;
     pub use super::IFortuneTellingResultSequenceMethods;
     pub use super::FortuneTellingResultSequence_ResId;
-    pub use super::FortuneTellingResultSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

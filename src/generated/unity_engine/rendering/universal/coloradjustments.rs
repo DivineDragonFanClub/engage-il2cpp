@@ -4,42 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: volumecomponent :: { IVolumeComponent , VolumeComponent }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::volumecomponent::{IVolumeComponent,VolumeComponent}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/coloradjustments/ColorAdjustments.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ColorAdjustments")] # [parent (crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent)] pub struct ColorAdjustments {
-# [offset (56)] # [rename (name = "postExposure")] pub post_exposure : crate :: unity_engine :: rendering :: floatparameter :: FloatParameter ,
-# [offset (64)] # [rename (name = "contrast")] pub contrast : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (72)] # [rename (name = "colorFilter")] pub color_filter : crate :: unity_engine :: rendering :: colorparameter :: ColorParameter ,
-# [offset (80)] # [rename (name = "hueShift")] pub hue_shift : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (88)] # [rename (name = "saturation")] pub saturation : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/coloradjustments/ColorAdjustments.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ColorAdjustments")]#[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]pub struct ColorAdjustments{#[offset(56)]#[rename(name="postExposure")]pub post_exposure:crate::unity_engine::rendering::floatparameter::FloatParameter, #[offset(64)]#[rename(name="contrast")]pub contrast:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(72)]#[rename(name="colorFilter")]pub color_filter:crate::unity_engine::rendering::colorparameter::ColorParameter, #[offset(80)]#[rename(name="hueShift")]pub hue_shift:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(88)]#[rename(name="saturation")]pub saturation:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-coloradjustments-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-coloradjustments")]
-pub trait IColorAdjustmentsMethods : IColorAdjustments { # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < ColorAdjustments as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorAdjustments , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3e830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsTileCompatible()` overload"] fn is_tile_compatible (self ,) -> bool { unsafe { let __receiver = < ColorAdjustments as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorAdjustments , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3e910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ColorAdjustments as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorAdjustments , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3e920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-coloradjustments")]pub trait IColorAdjustmentsMethods:IColorAdjustments{#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <ColorAdjustments as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3e830usize)as*mut u8,bool;
+(ColorAdjustments)__receiver)}
+}
+#[doc="`IsTileCompatible()` overload"]fn is_tile_compatible(self,)->bool{unsafe{let __receiver= <ColorAdjustments as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3e910usize)as*mut u8,bool;
+(ColorAdjustments)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ColorAdjustments as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3e920usize)as*mut u8,();
+(ColorAdjustments)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-coloradjustments")]
-impl < __T : IColorAdjustments > IColorAdjustmentsMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-coloradjustments")]impl<__T:IColorAdjustments>IColorAdjustmentsMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-coloradjustments")]
-impl ColorAdjustments { pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorAdjustments as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_tile_compatible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorAdjustments as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorAdjustments as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-universal-coloradjustments")]impl ColorAdjustments{pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_tile_compatible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-coloradjustments")]
-impl ColorAdjustments {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ColorAdjustments) , :: core :: stringify ! (new) ,)) ; < Self as IColorAdjustmentsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-coloradjustments")]impl ColorAdjustments{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ColorAdjustments), ::core::stringify!(new),));
+ <Self as IColorAdjustmentsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-coloradjustments")]

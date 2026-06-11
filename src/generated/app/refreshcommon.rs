@@ -4,37 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshcommon/RefreshCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshCommon")] # [parent (crate :: system :: object :: Object)] pub struct RefreshCommon {
-# [static_field] # [rename (name = "UnitCount")] pub unit_count : i32 ,
-# [static_field] # [rename (name = "FacilityAidArray")] pub facility_aid_array : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "FacilityCount")] pub facility_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshcommon/RefreshCommon.md"))]#[::unity2::class(namespace="App",name="RefreshCommon")]#[parent(crate::system::object::Object)]pub struct RefreshCommon{#[static_field]#[rename(name="UnitCount")]pub unit_count:i32, #[static_field]#[rename(name="FacilityAidArray")]pub facility_aid_array: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="FacilityCount")]pub facility_count:i32,}
 
 }
 
 #[cfg(feature = "app-refreshcommon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshcommon")]
-impl RefreshCommon { # [doc = "`GetFacilityIndex(::unity2::Il2CppString)` overload"] pub fn get_facility_index (facility_aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (facility_aid) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitRandom(crate::app::unit::Unit)` overload"] pub fn get_unit_random (excepted_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7d90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (excepted_unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitEntrusted(crate::app::unit::Unit)` overload"] pub fn get_unit_entrusted (another_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7e50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (another_unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitEntrusted(::unity2::Array<crate::app::unit::Unit>)` overload"] pub fn get_unit_entrusted_2 (unit_array : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: unit :: Unit > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b8200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_array) , :: core :: option :: Option :: None) } } } # [doc = "`CalcUnitEntrusted(crate::app::unit::Unit)` overload"] pub fn calc_unit_entrusted (another_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b7f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (another_unit) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b85f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshcommon")]impl RefreshCommon{#[doc="`GetFacilityIndex(::unity2::Il2CppString)` overload"]pub fn get_facility_index(facility_aid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b7c50usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(facility_aid))}
+}
+#[doc="`GetUnitRandom(crate::app::unit::Unit)` overload"]pub fn get_unit_random(excepted_unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b7d90usize)as*mut u8,crate::app::unit::Unit;
+(crate::app::unit::Unit)::core::convert::Into::into(excepted_unit))}
+}
+#[doc="`GetUnitEntrusted(crate::app::unit::Unit)` overload"]pub fn get_unit_entrusted(another_unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b7e50usize)as*mut u8,crate::app::unit::Unit;
+(crate::app::unit::Unit)::core::convert::Into::into(another_unit))}
+}
+#[doc="`GetUnitEntrusted(::unity2::Array<crate::app::unit::Unit>)` overload"]pub fn get_unit_entrusted_2(unit_array:impl::core::convert::Into< ::unity2::Array<crate::app::unit::Unit> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b8200usize)as*mut u8,();
+(::unity2::Array<crate::app::unit::Unit>)::core::convert::Into::into(unit_array))}
+}
+#[doc="`CalcUnitEntrusted(crate::app::unit::Unit)` overload"]pub fn calc_unit_entrusted(another_unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b7f90usize)as*mut u8,crate::app::unit::Unit;
+(crate::app::unit::Unit)::core::convert::Into::into(another_unit))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b85f0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-refreshcommon")]
-pub trait IRefreshCommonMethods : IRefreshCommon { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefreshCommon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshCommon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b85e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshcommon")]pub trait IRefreshCommonMethods:IRefreshCommon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefreshCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b85e0usize)as*mut u8,();
+(RefreshCommon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refreshcommon")]
-impl < __T : IRefreshCommon > IRefreshCommonMethods for __T { }
+#[cfg(feature="app-refreshcommon")]impl<__T:IRefreshCommon>IRefreshCommonMethods for __T{}
 
-#[cfg(feature = "app-refreshcommon")]
-impl RefreshCommon { pub fn get_facility_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_unit_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_unit_entrusted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_unit_entrusted_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_unit_entrusted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-refreshcommon")]impl RefreshCommon{pub fn get_facility_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unit_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_unit_entrusted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_unit_entrusted_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_unit_entrusted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-refreshcommon")]
-impl RefreshCommon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshCommon) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshCommonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refreshcommon")]impl RefreshCommon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshCommon), ::core::stringify!(new),));
+ <Self as IRefreshCommonMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refreshcommon")]

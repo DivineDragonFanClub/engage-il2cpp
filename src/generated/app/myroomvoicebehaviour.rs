@@ -4,32 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomvoicebehaviour/MyRoomVoiceBehaviour.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomVoiceBehaviour")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct MyRoomVoiceBehaviour {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomvoicebehaviour/MyRoomVoiceBehaviour.md"))]#[::unity2::class(namespace="App",name="MyRoomVoiceBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct MyRoomVoiceBehaviour{}
 
 }
 
 #[cfg(feature = "app-myroomvoicebehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomvoicebehaviour")]
-pub trait IMyRoomVoiceBehaviourMethods : IMyRoomVoiceBehaviour { # [doc = "`get_VoiceSituation()` overload"] fn get_voice_situation (self ,) -> crate :: app :: gamesound :: GameSound_WakeupVoiceSituation { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: app :: gamesound :: GameSound_WakeupVoiceSituation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_VoiceSituation(crate::app::gamesound::GameSound_WakeupVoiceSituation)` overload"] fn set_voice_situation (self , value : impl :: core :: convert :: Into < crate :: app :: gamesound :: GameSound_WakeupVoiceSituation >) -> () { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , crate :: app :: gamesound :: GameSound_WakeupVoiceSituation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> crate :: app :: reliancedata :: RelianceData_Level { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: app :: reliancedata :: RelianceData_Level = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Pattern()` overload"] fn get_pattern (self ,) -> crate :: app :: gamesound :: GameSound_WakeupVoicePattern { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: app :: gamesound :: GameSound_WakeupVoicePattern = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Character()` overload"] fn get_character (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_VoiceID()` overload"] fn get_voice_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_EventName()` overload"] fn get_event_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a28c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EventName(::unity2::Il2CppString)` overload"] fn set_event_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a28d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_play (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a28e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn on_behaviour_pause (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomVoiceBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomVoiceBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomvoicebehaviour")]pub trait IMyRoomVoiceBehaviourMethods:IMyRoomVoiceBehaviour{#[doc="`get_VoiceSituation()` overload"]fn get_voice_situation(self,)->crate::app::gamesound::GameSound_WakeupVoiceSituation{unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2660usize)as*mut u8,crate::app::gamesound::GameSound_WakeupVoiceSituation;
+(MyRoomVoiceBehaviour)__receiver)}
+}
+#[doc="`set_VoiceSituation(crate::app::gamesound::GameSound_WakeupVoiceSituation)` overload"]fn set_voice_situation(self,value:impl::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoiceSituation>)->(){unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2670usize)as*mut u8,();
+(MyRoomVoiceBehaviour)__receiver,(crate::app::gamesound::GameSound_WakeupVoiceSituation)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->crate::app::reliancedata::RelianceData_Level{unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2680usize)as*mut u8,crate::app::reliancedata::RelianceData_Level;
+(MyRoomVoiceBehaviour)__receiver)}
+}
+#[doc="`get_Pattern()` overload"]fn get_pattern(self,)->crate::app::gamesound::GameSound_WakeupVoicePattern{unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2700usize)as*mut u8,crate::app::gamesound::GameSound_WakeupVoicePattern;
+(MyRoomVoiceBehaviour)__receiver)}
+}
+#[doc="`get_Character()` overload"]fn get_character(self,)->crate::combat::character::Character{unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2780usize)as*mut u8,crate::combat::character::Character;
+(MyRoomVoiceBehaviour)__receiver)}
+}
+#[doc="`get_VoiceID()` overload"]fn get_voice_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2800usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomVoiceBehaviour)__receiver)}
+}
+#[doc="`get_EventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a28c0usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomVoiceBehaviour)__receiver)}
+}
+#[doc="`set_EventName(::unity2::Il2CppString)` overload"]fn set_event_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a28d0usize)as*mut u8,();
+(MyRoomVoiceBehaviour)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a28e0usize)as*mut u8,();
+(MyRoomVoiceBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_pause(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2d30usize)as*mut u8,();
+(MyRoomVoiceBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2fc0usize)as*mut u8,();
+(MyRoomVoiceBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomvoicebehaviour")]
-impl < __T : IMyRoomVoiceBehaviour > IMyRoomVoiceBehaviourMethods for __T { }
+#[cfg(feature="app-myroomvoicebehaviour")]impl<__T:IMyRoomVoiceBehaviour>IMyRoomVoiceBehaviourMethods for __T{}
 
-#[cfg(feature = "app-myroomvoicebehaviour")]
-impl MyRoomVoiceBehaviour { pub fn get_voice_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_voice_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_pattern_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_voice_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_behaviour_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_behaviour_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomVoiceBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-myroomvoicebehaviour")]impl MyRoomVoiceBehaviour{pub fn get_voice_situation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_voice_situation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_pattern_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_voice_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_behaviour_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_behaviour_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-myroomvoicebehaviour")]
-impl MyRoomVoiceBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomVoiceBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomVoiceBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomvoicebehaviour")]impl MyRoomVoiceBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomVoiceBehaviour), ::core::stringify!(new),));
+ <Self as IMyRoomVoiceBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomvoicebehaviour")]

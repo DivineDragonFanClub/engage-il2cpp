@@ -4,45 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/radialblurcomponent/RadialBlurComponent.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "RadialBlurComponent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RadialBlurComponent {
-# [offset (24)] # [rename (name = "_radialBlur")] pub radial_blur : crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur ,
-# [offset (32)] # [rename (name = "RadialBlurCurve")] pub radial_blur_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (40)] # [rename (name = "m_ElapsedTime")] pub m_elapsed_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/radialblurcomponent/RadialBlurComponent.md"))]#[::unity2::class(namespace="Combat",name="RadialBlurComponent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RadialBlurComponent{#[offset(24)]#[rename(name="_radialBlur")]pub radial_blur:crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur, #[offset(32)]#[rename(name="RadialBlurCurve")]pub radial_blur_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(40)]#[rename(name="m_ElapsedTime")]pub m_elapsed_time:f32,}
 
 }
 
 #[cfg(feature = "combat-radialblurcomponent-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-radialblurcomponent")]
-impl RadialBlurComponent { # [doc = "`FindVolumeFromScene()` overload"] pub fn find_volume_from_scene () -> crate :: unity_engine :: rendering :: volume :: Volume { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volume :: Volume = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23725f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-radialblurcomponent")]impl RadialBlurComponent{#[doc="`FindVolumeFromScene()` overload"]pub fn find_volume_from_scene()->crate::unity_engine::rendering::volume::Volume{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23725f0usize)as*mut u8,crate::unity_engine::rendering::volume::Volume;
+)}
+}
+}
 
-#[cfg(feature = "combat-radialblurcomponent")]
-pub trait IRadialBlurComponentMethods : IRadialBlurComponent { # [doc = "`get_RadialBlur()` overload"] fn get_radial_blur (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur { unsafe { let __receiver = < RadialBlurComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RadialBlurComponent , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2372510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < RadialBlurComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RadialBlurComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23726f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RadialBlurComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RadialBlurComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2372700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < RadialBlurComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RadialBlurComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23727f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RadialBlurComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RadialBlurComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2372950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-radialblurcomponent")]pub trait IRadialBlurComponentMethods:IRadialBlurComponent{#[doc="`get_RadialBlur()` overload"]fn get_radial_blur(self,)->crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur{unsafe{let __receiver= <RadialBlurComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2372510usize)as*mut u8,crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur;
+(RadialBlurComponent)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <RadialBlurComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23726f0usize)as*mut u8,();
+(RadialBlurComponent)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RadialBlurComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2372700usize)as*mut u8,();
+(RadialBlurComponent)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <RadialBlurComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23727f0usize)as*mut u8,();
+(RadialBlurComponent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RadialBlurComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2372950usize)as*mut u8,();
+(RadialBlurComponent)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-radialblurcomponent")]
-impl < __T : IRadialBlurComponent > IRadialBlurComponentMethods for __T { }
+#[cfg(feature="combat-radialblurcomponent")]impl<__T:IRadialBlurComponent>IRadialBlurComponentMethods for __T{}
 
-#[cfg(feature = "combat-radialblurcomponent")]
-impl RadialBlurComponent { pub fn get_radial_blur_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RadialBlurComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn find_volume_from_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RadialBlurComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RadialBlurComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RadialBlurComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RadialBlurComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RadialBlurComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-radialblurcomponent")]impl RadialBlurComponent{pub fn get_radial_blur_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn find_volume_from_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-radialblurcomponent")]
-impl RadialBlurComponent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RadialBlurComponent) , :: core :: stringify ! (new) ,)) ; < Self as IRadialBlurComponentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-radialblurcomponent")]impl RadialBlurComponent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RadialBlurComponent), ::core::stringify!(new),));
+ <Self as IRadialBlurComponentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-radialblurcomponent")]

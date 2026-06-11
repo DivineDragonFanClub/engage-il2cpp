@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/dictionaryhashhelpers/DictionaryHashHelpers.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "DictionaryHashHelpers")] # [parent (crate :: system :: object :: Object)] pub struct DictionaryHashHelpers {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/dictionaryhashhelpers/DictionaryHashHelpers.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="DictionaryHashHelpers")]#[parent(crate::system::object::Object)]pub struct DictionaryHashHelpers{}
 
 }
 
 #[cfg(feature = "system-collections-generic-dictionaryhashhelpers-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-dictionaryhashhelpers")]
-impl DictionaryHashHelpers { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x363c720usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-dictionaryhashhelpers")]impl DictionaryHashHelpers{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x363c720usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-collections-generic-dictionaryhashhelpers")]
-impl DictionaryHashHelpers { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DictionaryHashHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-collections-generic-dictionaryhashhelpers")]impl DictionaryHashHelpers{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "system-collections-generic-dictionaryhashhelpers")]
 #[doc(hidden)]

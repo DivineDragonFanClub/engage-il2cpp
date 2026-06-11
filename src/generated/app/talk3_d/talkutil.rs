@@ -4,33 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkutil/TalkUtil.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkUtil")] # [parent (crate :: system :: object :: Object)] pub struct TalkUtil {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkutil/TalkUtil.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUtil")]#[parent(crate::system::object::Object)]pub struct TalkUtil{}
 
 }
 
 #[cfg(feature = "app-talk3_d-talkutil-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talkutil")]
-impl TalkUtil { # [doc = "`GetChildren(crate::unity_engine::gameobject::GameObject)` overload"] pub fn get_children (root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21dda60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`PIDToGID(::unity2::Il2CppString)` overload"] pub fn pid_to_gid (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21da360usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`GetTalkerNameByPID(::unity2::Il2CppString)` overload"] pub fn get_talker_name_by_pid (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8c00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkutil")]impl TalkUtil{#[doc="`GetChildren(crate::unity_engine::gameobject::GameObject)` overload"]pub fn get_children(root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)-> ::unity2::Array<crate::unity_engine::gameobject::GameObject>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21dda60usize)as*mut u8, ::unity2::Array<crate::unity_engine::gameobject::GameObject> ;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`PIDToGID(::unity2::Il2CppString)` overload"]pub fn pid_to_gid(pid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21da360usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`GetTalkerNameByPID(::unity2::Il2CppString)` overload"]pub fn get_talker_name_by_pid(pid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d8c00usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkutil")]
-pub trait ITalkUtilMethods : ITalkUtil { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkUtil as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkUtil , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ddbc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkutil")]pub trait ITalkUtilMethods:ITalkUtil{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkUtil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ddbc0usize)as*mut u8,();
+(TalkUtil)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkutil")]
-impl < __T : ITalkUtil > ITalkUtilMethods for __T { }
+#[cfg(feature="app-talk3_d-talkutil")]impl<__T:ITalkUtil>ITalkUtilMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talkutil")]
-impl TalkUtil { pub fn get_children_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn pid_to_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_talker_name_by_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-talk3_d-talkutil")]impl TalkUtil{pub fn get_children_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn pid_to_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_talker_name_by_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-talk3_d-talkutil")]
-impl TalkUtil {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkUtil) , :: core :: stringify ! (new) ,)) ; < Self as ITalkUtilMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talkutil")]impl TalkUtil{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkUtil), ::core::stringify!(new),));
+ <Self as ITalkUtilMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talkutil")]

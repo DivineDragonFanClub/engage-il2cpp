@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/difficultycommand/DifficultyCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "DifficultyCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct DifficultyCommand {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/difficultycommand/DifficultyCommand.md"))]#[::unity2::class(namespace="App",name="DifficultyCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct DifficultyCommand{}
 
 }
 
 #[cfg(feature = "app-difficultycommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-difficultycommand")]
-pub trait IDifficultyCommandMethods : IDifficultyCommand { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DifficultyCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DifficultyCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cedfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get()` overload"] fn get (self ,) -> f32 { unsafe { let __receiver = < DifficultyCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DifficultyCommand , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cedff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DifficultyCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DifficultyCommand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee0e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-difficultycommand")]pub trait IDifficultyCommandMethods:IDifficultyCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DifficultyCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cedfa0usize)as*mut u8, ::unity2::Il2CppString;
+(DifficultyCommand)__receiver)}
+}
+#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <DifficultyCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cedff0usize)as*mut u8,f32;
+(DifficultyCommand)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DifficultyCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cee0e0usize)as*mut u8,();
+(DifficultyCommand)__receiver)}
+}
+}
 
-#[cfg(feature = "app-difficultycommand")]
-impl < __T : IDifficultyCommand > IDifficultyCommandMethods for __T { }
+#[cfg(feature="app-difficultycommand")]impl<__T:IDifficultyCommand>IDifficultyCommandMethods for __T{}
 
-#[cfg(feature = "app-difficultycommand")]
-impl DifficultyCommand { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DifficultyCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DifficultyCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DifficultyCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-difficultycommand")]impl DifficultyCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-difficultycommand")]
-impl DifficultyCommand {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DifficultyCommand) , :: core :: stringify ! (new) ,)) ; < Self as IDifficultyCommandMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-difficultycommand")]impl DifficultyCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DifficultyCommand), ::core::stringify!(new),));
+ <Self as IDifficultyCommandMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-difficultycommand")]

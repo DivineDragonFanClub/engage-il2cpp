@@ -4,35 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/platformmappingservice/PlatformMappingService.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "PlatformMappingService")] # [parent (crate :: system :: object :: Object)] pub struct PlatformMappingService {
-# [static_field] # [rename (name = "s_RuntimeTargetMapping")] pub s_runtime_target_mapping : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: runtimeplatform :: RuntimePlatform , crate :: unity_engine :: addressable_assets :: addressablesplatform :: AddressablesPlatform > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/platformmappingservice/PlatformMappingService.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="PlatformMappingService")]#[parent(crate::system::object::Object)]pub struct PlatformMappingService{#[static_field]#[rename(name="s_RuntimeTargetMapping")]pub s_runtime_target_mapping:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::runtimeplatform::RuntimePlatform,crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform> ,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-platformmappingservice-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
-impl PlatformMappingService { # [doc = "`GetAddressablesPlatformInternal(crate::unity_engine::runtimeplatform::RuntimePlatform)` overload"] pub fn get_addressables_platform_internal (platform : impl :: core :: convert :: Into < crate :: unity_engine :: runtimeplatform :: RuntimePlatform >) -> crate :: unity_engine :: addressable_assets :: addressablesplatform :: AddressablesPlatform { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: runtimeplatform :: RuntimePlatform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: addressable_assets :: addressablesplatform :: AddressablesPlatform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb8b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (platform) , :: core :: option :: Option :: None) } } } # [doc = "`GetAddressablesPlatformPathInternal(crate::unity_engine::runtimeplatform::RuntimePlatform)` overload"] pub fn get_addressables_platform_path_internal (platform : impl :: core :: convert :: Into < crate :: unity_engine :: runtimeplatform :: RuntimePlatform >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: runtimeplatform :: RuntimePlatform , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb9a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (platform) , :: core :: option :: Option :: None) } } } # [doc = "`GetPlatform()` overload"] pub fn get_platform () -> crate :: unity_engine :: addressable_assets :: addressablesplatform :: AddressablesPlatform { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: addressable_assets :: addressablesplatform :: AddressablesPlatform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbb30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetPlatformPathSubFolder()` overload"] pub fn get_platform_path_sub_folder () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2daaea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbbc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-platformmappingservice")]impl PlatformMappingService{#[doc="`GetAddressablesPlatformInternal(crate::unity_engine::runtimeplatform::RuntimePlatform)` overload"]pub fn get_addressables_platform_internal(platform:impl::core::convert::Into<crate::unity_engine::runtimeplatform::RuntimePlatform>)->crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb8b0usize)as*mut u8,crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform;
+(crate::unity_engine::runtimeplatform::RuntimePlatform)::core::convert::Into::into(platform))}
+}
+#[doc="`GetAddressablesPlatformPathInternal(crate::unity_engine::runtimeplatform::RuntimePlatform)` overload"]pub fn get_addressables_platform_path_internal(platform:impl::core::convert::Into<crate::unity_engine::runtimeplatform::RuntimePlatform>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb9a0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::unity_engine::runtimeplatform::RuntimePlatform)::core::convert::Into::into(platform))}
+}
+#[doc="`GetPlatform()` overload"]pub fn get_platform()->crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbb30usize)as*mut u8,crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform;
+)}
+}
+#[doc="`GetPlatformPathSubFolder()` overload"]pub fn get_platform_path_sub_folder()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2daaea0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbbc0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
-pub trait IPlatformMappingServiceMethods : IPlatformMappingService { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlatformMappingService as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlatformMappingService , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-platformmappingservice")]pub trait IPlatformMappingServiceMethods:IPlatformMappingService{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlatformMappingService as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbbb0usize)as*mut u8,();
+(PlatformMappingService)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
-impl < __T : IPlatformMappingService > IPlatformMappingServiceMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-platformmappingservice")]impl<__T:IPlatformMappingService>IPlatformMappingServiceMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
-impl PlatformMappingService { pub fn get_addressables_platform_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlatformMappingService as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_addressables_platform_path_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlatformMappingService as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_platform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlatformMappingService as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_platform_path_sub_folder_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlatformMappingService as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlatformMappingService as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlatformMappingService as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-addressable_assets-platformmappingservice")]impl PlatformMappingService{pub fn get_addressables_platform_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_addressables_platform_path_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_platform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_platform_path_sub_folder_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
-impl PlatformMappingService {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlatformMappingService) , :: core :: stringify ! (new) ,)) ; < Self as IPlatformMappingServiceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-addressable_assets-platformmappingservice")]impl PlatformMappingService{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlatformMappingService), ::core::stringify!(new),));
+ <Self as IPlatformMappingServiceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]

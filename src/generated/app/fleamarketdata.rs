@@ -4,41 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: shopdatabase_1 :: { IShopDataBase_1 , ShopDataBase_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::shopdatabase_1::{IShopDataBase_1,ShopDataBase_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fleamarketdata/FleaMarketData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FleaMarketData")] # [parent (crate :: app :: shopdatabase_1 :: ShopDataBase_1 < crate :: app :: fleamarketdata :: FleaMarketData >)] pub struct FleaMarketData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fleamarketdata/FleaMarketData.md"))]#[::unity2::class(namespace="App",name="FleaMarketData")]#[parent(crate::app::shopdatabase_1::ShopDataBase_1<crate::app::fleamarketdata::FleaMarketData>)]pub struct FleaMarketData{}
 
 }
 
 #[cfg(feature = "app-fleamarketdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fleamarketdata")]
-impl FleaMarketData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260e4b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetStockAddedKeyImpl(::unity2::Il2CppString)` overload"] pub fn get_stock_added_key_impl (condition : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260e560usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (condition) , :: core :: option :: Option :: None) } } } # [doc = "`GetStockKeyImpl(::unity2::Il2CppString)` overload"] pub fn get_stock_key_impl (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260e5c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`Regist()` overload"] pub fn regist () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260e680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetupContentList()` overload"] pub fn setup_content_list () -> :: unity2 :: Array < crate :: app :: shopcontent :: ShopContent > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: shopcontent :: ShopContent > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260e7c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsExistAdditionalStock()` overload"] pub fn is_exist_additional_stock () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260e900usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Purchase(::unity2::Il2CppString, i32)` overload"] pub fn purchase (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ea40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetStockNum(::unity2::Il2CppString)` overload"] pub fn get_stock_num (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260eba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`IsInfinity(::unity2::Il2CppString)` overload"] pub fn is_infinity (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ec90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fleamarketdata")]impl FleaMarketData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260e4b0usize)as*mut u8,();
+)}
+}
+#[doc="`GetStockAddedKeyImpl(::unity2::Il2CppString)` overload"]pub fn get_stock_added_key_impl(condition:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260e560usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(condition))}
+}
+#[doc="`GetStockKeyImpl(::unity2::Il2CppString)` overload"]pub fn get_stock_key_impl(iid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260e5c0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`Regist()` overload"]pub fn regist()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260e680usize)as*mut u8,();
+)}
+}
+#[doc="`SetupContentList()` overload"]pub fn setup_content_list()-> ::unity2::Array<crate::app::shopcontent::ShopContent>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260e7c0usize)as*mut u8, ::unity2::Array<crate::app::shopcontent::ShopContent> ;
+)}
+}
+#[doc="`IsExistAdditionalStock()` overload"]pub fn is_exist_additional_stock()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260e900usize)as*mut u8,bool;
+)}
+}
+#[doc="`Purchase(::unity2::Il2CppString, i32)` overload"]pub fn purchase(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260ea40usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetStockNum(::unity2::Il2CppString)` overload"]pub fn get_stock_num(iid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260eba0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`IsInfinity(::unity2::Il2CppString)` overload"]pub fn is_infinity(iid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260ec90usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+}
 
-#[cfg(feature = "app-fleamarketdata")]
-pub trait IFleaMarketDataMethods : IFleaMarketData { # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < FleaMarketData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FleaMarketData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260e670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FleaMarketData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FleaMarketData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ed80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fleamarketdata")]pub trait IFleaMarketDataMethods:IFleaMarketData{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <FleaMarketData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260e670usize)as*mut u8,();
+(FleaMarketData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FleaMarketData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260ed80usize)as*mut u8,();
+(FleaMarketData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fleamarketdata")]
-impl < __T : IFleaMarketData > IFleaMarketDataMethods for __T { }
+#[cfg(feature="app-fleamarketdata")]impl<__T:IFleaMarketData>IFleaMarketDataMethods for __T{}
 
-#[cfg(feature = "app-fleamarketdata")]
-impl FleaMarketData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_stock_added_key_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_stock_key_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn regist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn setup_content_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_exist_additional_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn purchase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_stock_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_infinity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FleaMarketData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-fleamarketdata")]impl FleaMarketData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_stock_added_key_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_stock_key_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn regist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn setup_content_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_exist_additional_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn purchase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_stock_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_infinity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-fleamarketdata")]
-impl FleaMarketData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FleaMarketData) , :: core :: stringify ! (new) ,)) ; < Self as IFleaMarketDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fleamarketdata")]impl FleaMarketData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FleaMarketData), ::core::stringify!(new),));
+ <Self as IFleaMarketDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fleamarketdata")]

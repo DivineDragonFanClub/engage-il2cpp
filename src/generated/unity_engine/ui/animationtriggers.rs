@@ -4,41 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/animationtriggers/AnimationTriggers.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "AnimationTriggers")] # [parent (crate :: system :: object :: Object)] pub struct AnimationTriggers {
-# [static_field] # [rename (name = "kDefaultNormalAnimName")] pub k_default_normal_anim_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kDefaultHighlightedAnimName")] pub k_default_highlighted_anim_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kDefaultPressedAnimName")] pub k_default_pressed_anim_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kDefaultSelectedAnimName")] pub k_default_selected_anim_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kDefaultDisabledAnimName")] pub k_default_disabled_anim_name : :: unity2 :: Il2CppString ,
-# [offset (16)] # [rename (name = "m_NormalTrigger")] pub m_normal_trigger : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_HighlightedTrigger")] pub m_highlighted_trigger : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_PressedTrigger")] pub m_pressed_trigger : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_SelectedTrigger")] pub m_selected_trigger : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_DisabledTrigger")] pub m_disabled_trigger : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/animationtriggers/AnimationTriggers.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="AnimationTriggers")]#[parent(crate::system::object::Object)]pub struct AnimationTriggers{#[static_field]#[rename(name="kDefaultNormalAnimName")]pub k_default_normal_anim_name: ::unity2::Il2CppString, #[static_field]#[rename(name="kDefaultHighlightedAnimName")]pub k_default_highlighted_anim_name: ::unity2::Il2CppString, #[static_field]#[rename(name="kDefaultPressedAnimName")]pub k_default_pressed_anim_name: ::unity2::Il2CppString, #[static_field]#[rename(name="kDefaultSelectedAnimName")]pub k_default_selected_anim_name: ::unity2::Il2CppString, #[static_field]#[rename(name="kDefaultDisabledAnimName")]pub k_default_disabled_anim_name: ::unity2::Il2CppString, #[offset(16)]#[rename(name="m_NormalTrigger")]pub m_normal_trigger: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_HighlightedTrigger")]pub m_highlighted_trigger: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PressedTrigger")]pub m_pressed_trigger: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_SelectedTrigger")]pub m_selected_trigger: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_DisabledTrigger")]pub m_disabled_trigger: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-animationtriggers-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-animationtriggers")]
-pub trait IAnimationTriggersMethods : IAnimationTriggers { # [doc = "`get_normalTrigger()` overload"] fn get_normal_trigger (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_normalTrigger(::unity2::Il2CppString)` overload"] fn set_normal_trigger (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_highlightedTrigger()` overload"] fn get_highlighted_trigger (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_highlightedTrigger(::unity2::Il2CppString)` overload"] fn set_highlighted_trigger (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pressedTrigger()` overload"] fn get_pressed_trigger (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pressedTrigger(::unity2::Il2CppString)` overload"] fn set_pressed_trigger (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_selectedTrigger()` overload"] fn get_selected_trigger (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_selectedTrigger(::unity2::Il2CppString)` overload"] fn set_selected_trigger (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_disabledTrigger()` overload"] fn get_disabled_trigger (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_disabledTrigger(::unity2::Il2CppString)` overload"] fn set_disabled_trigger (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3179490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimationTriggers as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationTriggers , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31794a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-animationtriggers")]pub trait IAnimationTriggersMethods:IAnimationTriggers{#[doc="`get_normalTrigger()` overload"]fn get_normal_trigger(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179400usize)as*mut u8, ::unity2::Il2CppString;
+(AnimationTriggers)__receiver)}
+}
+#[doc="`set_normalTrigger(::unity2::Il2CppString)` overload"]fn set_normal_trigger(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179410usize)as*mut u8,();
+(AnimationTriggers)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_highlightedTrigger()` overload"]fn get_highlighted_trigger(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179420usize)as*mut u8, ::unity2::Il2CppString;
+(AnimationTriggers)__receiver)}
+}
+#[doc="`set_highlightedTrigger(::unity2::Il2CppString)` overload"]fn set_highlighted_trigger(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179430usize)as*mut u8,();
+(AnimationTriggers)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_pressedTrigger()` overload"]fn get_pressed_trigger(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179440usize)as*mut u8, ::unity2::Il2CppString;
+(AnimationTriggers)__receiver)}
+}
+#[doc="`set_pressedTrigger(::unity2::Il2CppString)` overload"]fn set_pressed_trigger(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179450usize)as*mut u8,();
+(AnimationTriggers)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_selectedTrigger()` overload"]fn get_selected_trigger(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179460usize)as*mut u8, ::unity2::Il2CppString;
+(AnimationTriggers)__receiver)}
+}
+#[doc="`set_selectedTrigger(::unity2::Il2CppString)` overload"]fn set_selected_trigger(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179470usize)as*mut u8,();
+(AnimationTriggers)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_disabledTrigger()` overload"]fn get_disabled_trigger(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179480usize)as*mut u8, ::unity2::Il2CppString;
+(AnimationTriggers)__receiver)}
+}
+#[doc="`set_disabledTrigger(::unity2::Il2CppString)` overload"]fn set_disabled_trigger(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3179490usize)as*mut u8,();
+(AnimationTriggers)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimationTriggers as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31794a0usize)as*mut u8,();
+(AnimationTriggers)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-animationtriggers")]
-impl < __T : IAnimationTriggers > IAnimationTriggersMethods for __T { }
+#[cfg(feature="unity_engine-ui-animationtriggers")]impl<__T:IAnimationTriggers>IAnimationTriggersMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-animationtriggers")]
-impl AnimationTriggers { pub fn get_normal_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_normal_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_highlighted_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_highlighted_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_pressed_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_pressed_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_selected_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_selected_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_disabled_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_disabled_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationTriggers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-ui-animationtriggers")]impl AnimationTriggers{pub fn get_normal_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_normal_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_highlighted_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_highlighted_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_pressed_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_pressed_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_selected_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_selected_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_disabled_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_disabled_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "unity_engine-ui-animationtriggers")]
-impl AnimationTriggers {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimationTriggers) , :: core :: stringify ! (new) ,)) ; < Self as IAnimationTriggersMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-animationtriggers")]impl AnimationTriggers{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimationTriggers), ::core::stringify!(new),));
+ <Self as IAnimationTriggersMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-animationtriggers")]

@@ -4,91 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapimagecore_1 :: { IMapImageCore_1 , MapImageCore_1 }
- ;
- use crate :: app :: mapimagecorebyte :: { IMapImageCoreByte , MapImageCoreByte }
- ;
- use crate :: app :: mapimageindex :: { IMapImageIndex , MapImageIndex }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapimagecore_1::{IMapImageCore_1,MapImageCore_1}
+;
+use crate::app::mapimagecorebyte::{IMapImageCoreByte,MapImageCoreByte}
+;
+use crate::app::mapimageindex::{IMapImageIndex,MapImageIndex}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_UnitScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapImageUnit_UnitScope {
-    pub m_unit: crate :: app :: unit :: Unit,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageunit/MapImageUnit.md"))]#[::unity2::class(namespace="App",name="MapImageUnit")]#[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]pub struct MapImageUnit{#[offset(24)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mappos::MapPos> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapImageUnit_PositionScope{pub m_unit:crate::app::unit::Unit,pub m_x:i32,pub m_z:i32,}
+impl::unity2::ClassIdentity for MapImageUnit_PositionScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapImageUnit.PositionScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapImageUnit_PositionScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for MapImageUnit_UnitScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapImageUnit.UnitScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageunit/MapImageUnit_UnitScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapImageUnit_UnitScope{pub m_unit:crate::app::unit::Unit,}
+impl::unity2::ClassIdentity for MapImageUnit_UnitScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapImageUnit.UnitScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for MapImageUnit_UnitScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapImageUnit_PositionScope {
-    pub m_unit: crate :: app :: unit :: Unit,
-    pub m_x: i32,
-    pub m_z: i32,
-}
-
-
-impl ::unity2::ClassIdentity for MapImageUnit_PositionScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapImageUnit.PositionScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapImageUnit_PositionScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimageunit/MapImageUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageUnit")] # [parent (crate :: app :: mapimagecorebyte :: MapImageCoreByte)] pub struct MapImageUnit {
-# [offset (24)] # [rename (name = "m_Cells")] pub m_cells : :: unity2 :: Array < crate :: app :: mappos :: MapPos > ,
+impl::unity2::IlType for MapImageUnit_UnitScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -96,40 +46,141 @@ impl ::unity2::IlType for MapImageUnit_PositionScope {
 #[cfg(feature = "app-mapimageunit-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapimageunit")]
-impl MapImageUnit_UnitScope { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] pub fn ctor (& mut self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapImageUnit_UnitScope , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ce10usize) as * mut u8) ; __inner (self as * mut MapImageUnit_UnitScope , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MapImageUnit_UnitScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ced0usize) as * mut u8) ; __inner (self as * mut MapImageUnit_UnitScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimageunit")]pub trait IMapImageUnitMethods:IMapImageUnit{#[doc="`GetUnit(i32, i32)` overload"]fn get_unit(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2064fb0usize)as*mut u8,crate::app::unit::Unit;
+(MapImageUnit)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetUnitWithMind(i32, i32)` overload"]fn get_unit_with_mind(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2065040usize)as*mut u8,crate::app::unit::Unit;
+(MapImageUnit)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20651d0usize)as*mut u8,();
+(MapImageUnit)__receiver)}
+}
+#[doc="`Update(crate::app::unit::Unit)` overload"]fn update_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068640usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`TryAdd(crate::app::unit::Unit)` overload"]fn try_add(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068a80usize)as*mut u8,bool;
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`TryDelete(crate::app::unit::Unit)` overload"]fn try_delete(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068ba0usize)as*mut u8,bool;
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateSupportSkill()` overload"]fn update_support_skill(self,)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20655b0usize)as*mut u8,();
+(MapImageUnit)__receiver)}
+}
+#[doc="`UpdateSupportSkill(crate::app::unit::Unit, i32, i32)` overload"]fn update_support_skill_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068cd0usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`AddImpl(crate::app::unit::Unit, i32, i32)` overload"]fn add_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,base_x:impl::core::convert::Into<i32> ,base_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20653f0usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(base_x),(i32)::core::convert::Into::into(base_z))}
+}
+#[doc="`DeleteImpl(crate::app::unit::Unit, i32, i32)` overload"]fn delete_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,base_x:impl::core::convert::Into<i32> ,base_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20688d0usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(base_x),(i32)::core::convert::Into::into(base_z))}
+}
+#[doc="`Add(crate::app::unit::Unit)` overload"]fn add(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068d50usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Add(crate::app::unit::Unit, i32, i32)` overload"]fn add_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068d70usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`AddNoUpdatingSupportSkill(crate::app::unit::Unit, i32, i32)` overload"]fn add_no_updating_support_skill(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068d90usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Delete(crate::app::unit::Unit)` overload"]fn delete(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068da0usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Delete(crate::app::unit::Unit, i32, i32)` overload"]fn delete_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068dc0usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`DeleteNoUpdatingSupportSkill(crate::app::unit::Unit, i32, i32)` overload"]fn delete_no_updating_support_skill(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068de0usize)as*mut u8,();
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`TryMove(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]fn try_move(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,old_x:impl::core::convert::Into<i32> ,old_z:impl::core::convert::Into<i32> ,new_x:impl::core::convert::Into<i32> ,new_z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068df0usize)as*mut u8,bool;
+(MapImageUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(old_x),(i32)::core::convert::Into::into(old_z),(i32)::core::convert::Into::into(new_x),(i32)::core::convert::Into::into(new_z))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2068fa0usize)as*mut u8,();
+(MapImageUnit)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapimageunit")]
-impl MapImageUnit_UnitScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit_UnitScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit_UnitScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-mapimageunit")]impl<__T:IMapImageUnit>IMapImageUnitMethods for __T{}
 
-#[cfg(feature = "app-mapimageunit")]
-impl MapImageUnit_PositionScope { # [doc = "`.ctor(crate::app::unit::Unit, i32, i32)` overload"] pub fn ctor (& mut self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapImageUnit_PositionScope , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217cd60usize) as * mut u8) ; __inner (self as * mut MapImageUnit_PositionScope , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MapImageUnit_PositionScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217cdd0usize) as * mut u8) ; __inner (self as * mut MapImageUnit_PositionScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unit_with_mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_support_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_support_skill_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn delete_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn add_no_updating_support_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn delete_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn delete_no_updating_support_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn try_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-mapimageunit")]
-impl MapImageUnit_PositionScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageUnit), ::core::stringify!(new),));
+ <Self as IMapImageUnitMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapimageunit")]
-pub trait IMapImageUnitMethods : IMapImageUnit { # [doc = "`GetUnit(i32, i32)` overload"] fn get_unit (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2064fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitWithMind(i32, i32)` overload"] fn get_unit_with_mind (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2065040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20651d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update(crate::app::unit::Unit)` overload"] fn update_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`TryAdd(crate::app::unit::Unit)` overload"] fn try_add (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`TryDelete(crate::app::unit::Unit)` overload"] fn try_delete (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSupportSkill()` overload"] fn update_support_skill (self ,) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20655b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSupportSkill(crate::app::unit::Unit, i32, i32)` overload"] fn update_support_skill_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`AddImpl(crate::app::unit::Unit, i32, i32)` overload"] fn add_impl (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , base_x : impl :: core :: convert :: Into < i32 > , base_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20653f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (base_x) , :: core :: convert :: Into :: into (base_z) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteImpl(crate::app::unit::Unit, i32, i32)` overload"] fn delete_impl (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , base_x : impl :: core :: convert :: Into < i32 > , base_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20688d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (base_x) , :: core :: convert :: Into :: into (base_z) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::unit::Unit)` overload"] fn add (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::unit::Unit, i32, i32)` overload"] fn add_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`AddNoUpdatingSupportSkill(crate::app::unit::Unit, i32, i32)` overload"] fn add_no_updating_support_skill (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(crate::app::unit::Unit)` overload"] fn delete (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(crate::app::unit::Unit, i32, i32)` overload"] fn delete_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteNoUpdatingSupportSkill(crate::app::unit::Unit, i32, i32)` overload"] fn delete_no_updating_support_skill (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`TryMove(crate::app::unit::Unit, i32, i32, i32, i32)` overload"] fn try_move (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , old_x : impl :: core :: convert :: Into < i32 > , old_z : impl :: core :: convert :: Into < i32 > , new_x : impl :: core :: convert :: Into < i32 > , new_z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , crate :: app :: unit :: Unit , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (old_x) , :: core :: convert :: Into :: into (old_z) , :: core :: convert :: Into :: into (new_x) , :: core :: convert :: Into :: into (new_z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2068fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit_PositionScope{#[doc="`.ctor(crate::app::unit::Unit, i32, i32)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217cd60usize)as*mut u8,();
+(*mut MapImageUnit_PositionScope)self as*mut MapImageUnit_PositionScope,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217cdd0usize)as*mut u8,();
+(*mut MapImageUnit_PositionScope)self as*mut MapImageUnit_PositionScope)}
+}
+}
 
-#[cfg(feature = "app-mapimageunit")]
-impl < __T : IMapImageUnit > IMapImageUnitMethods for __T { }
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit_PositionScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-mapimageunit")]
-impl MapImageUnit { pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_unit_with_mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn try_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn try_delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_support_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_support_skill_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn delete_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn add_no_updating_support_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn delete_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn delete_no_updating_support_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn try_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit_UnitScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217ce10usize)as*mut u8,();
+(*mut MapImageUnit_UnitScope)self as*mut MapImageUnit_UnitScope,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217ced0usize)as*mut u8,();
+(*mut MapImageUnit_UnitScope)self as*mut MapImageUnit_UnitScope)}
+}
+}
 
-#[cfg(feature = "app-mapimageunit")]
-impl MapImageUnit {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageUnit) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageUnitMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit_UnitScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
 #[cfg(feature = "app-mapimageunit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapImageUnit_UnitScope;
-    pub use super::MapImageUnit_PositionScope;
     pub use super::MapImageUnit;
     pub use super::IMapImageUnit;
     pub use super::IMapImageUnitMethods;
+    pub use super::MapImageUnit_PositionScope;
+    pub use super::MapImageUnit_UnitScope;
     pub use crate::app::mapimagecore_1::IMapImageCore_1;
     pub use crate::app::mapimagecorebyte::IMapImageCoreByte;
     pub use crate::app::mapimageindex::IMapImageIndex;

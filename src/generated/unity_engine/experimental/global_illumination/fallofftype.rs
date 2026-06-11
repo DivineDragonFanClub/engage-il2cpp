@@ -4,79 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/fallofftype/FalloffType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FalloffType  {
-    pub value: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/global_illumination/fallofftype/FalloffType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FalloffType{pub value:u8,}
+impl::unity2::ClassIdentity for FalloffType{const NAMESPACE: &'static str="UnityEngine.Experimental.GlobalIllumination";
+const NAME: &'static str="FalloffType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for FalloffType  {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
-
-    const NAME: &'static str = "FalloffType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for FalloffType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for FalloffType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl FalloffType{pub fn inverse_squared()->Self{Self{value:0}
 }
-
-
-impl  FalloffType  {
-    pub fn inverse_squared() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn inverse_squared_no_range_attenuation() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn linear() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn legacy() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn undefined() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn inverse_squared_no_range_attenuation()->Self{Self{value:1}
+}
+pub fn linear()->Self{Self{value:2}
+}
+pub fn legacy()->Self{Self{value:3}
+}
+pub fn undefined()->Self{Self{value:4}
+}
 }
 
 }

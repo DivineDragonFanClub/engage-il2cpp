@@ -4,32 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiereliancemanager/SortieRelianceManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieRelianceManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortiereliancemanager :: SortieRelianceManager >)] pub struct SortieRelianceManager {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiereliancemanager/SortieRelianceManager.md"))]#[::unity2::class(namespace="App",name="SortieRelianceManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortiereliancemanager::SortieRelianceManager>)]pub struct SortieRelianceManager{}
 
 }
 
 #[cfg(feature = "app-sortiereliancemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortiereliancemanager")]
-pub trait ISortieRelianceManagerMethods : ISortieRelianceManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieRelianceManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieRelianceManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < SortieRelianceManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieRelianceManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PartnerUnit()` overload"] fn get_partner_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < SortieRelianceManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieRelianceManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe84a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PartnerUnit(crate::app::unit::Unit)` overload"] fn set_partner_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieRelianceManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieRelianceManager , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe84b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiereliancemanager")]pub trait ISortieRelianceManagerMethods:ISortieRelianceManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieRelianceManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8400usize)as*mut u8,();
+(SortieRelianceManager)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SortieRelianceManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8490usize)as*mut u8,();
+(SortieRelianceManager)__receiver)}
+}
+#[doc="`get_PartnerUnit()` overload"]fn get_partner_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SortieRelianceManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe84a0usize)as*mut u8,crate::app::unit::Unit;
+(SortieRelianceManager)__receiver)}
+}
+#[doc="`set_PartnerUnit(crate::app::unit::Unit)` overload"]fn set_partner_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SortieRelianceManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe84b0usize)as*mut u8,();
+(SortieRelianceManager)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-sortiereliancemanager")]
-impl < __T : ISortieRelianceManager > ISortieRelianceManagerMethods for __T { }
+#[cfg(feature="app-sortiereliancemanager")]impl<__T:ISortieRelianceManager>ISortieRelianceManagerMethods for __T{}
 
-#[cfg(feature = "app-sortiereliancemanager")]
-impl SortieRelianceManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieRelianceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieRelianceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_partner_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieRelianceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_partner_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieRelianceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-sortiereliancemanager")]impl SortieRelianceManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_partner_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_partner_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-sortiereliancemanager")]
-impl SortieRelianceManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieRelianceManager) , :: core :: stringify ! (new) ,)) ; < Self as ISortieRelianceManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortiereliancemanager")]impl SortieRelianceManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieRelianceManager), ::core::stringify!(new),));
+ <Self as ISortieRelianceManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortiereliancemanager")]

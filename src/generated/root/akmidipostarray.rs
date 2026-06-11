@@ -4,34 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidipostarray/AkMIDIPostArray.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIPostArray")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIPostArray {
-# [offset (16)] # [rename (name = "m_Count")] pub m_count : i32 ,
-# [offset (20)] # [rename (name = "SIZE_OF")] pub size_of : i32 ,
-# [offset (24)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidipostarray/AkMIDIPostArray.md"))]#[::unity2::class(namespace="",name="AkMIDIPostArray")]#[parent(crate::system::object::Object)]pub struct AkMIDIPostArray{#[offset(16)]#[rename(name="m_Count")]pub m_count:i32, #[offset(20)]#[rename(name="SIZE_OF")]pub size_of:i32, #[offset(24)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "root-akmidipostarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akmidipostarray")]
-pub trait IAkMIDIPostArrayMethods : IAkMIDIPostArray { # [doc = "`.ctor(i32)` overload"] fn ctor (self , size : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: root :: akmidipost :: AkMIDIPost { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , i32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidipost :: AkMIDIPost = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f260a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(i32, crate::root::akmidipost::AkMIDIPost)` overload"] fn set_item (self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < crate :: root :: akmidipost :: AkMIDIPost >) -> () { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , i32 , crate :: root :: akmidipost :: AkMIDIPost , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostOnEvent(u32, crate::unity_engine::gameobject::GameObject)` overload"] fn post_on_event (self , in_event_id : impl :: core :: convert :: Into < u32 > , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , u32 , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_event_id) , :: core :: convert :: Into :: into (game_object) , :: core :: option :: Option :: None) } } } # [doc = "`PostOnEvent(u32, crate::unity_engine::gameobject::GameObject, i32)` overload"] fn post_on_event_2 (self , in_event_id : impl :: core :: convert :: Into < u32 > , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , u32 , crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f264f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_event_id) , :: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`GetBuffer()` overload"] fn get_buffer (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Count()` overload"] fn count (self ,) -> i32 { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f26630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetObjectPtr(i32)` overload"] fn get_object_ptr (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AkMIDIPostArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPostArray , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f261e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidipostarray")]pub trait IAkMIDIPostArrayMethods:IAkMIDIPostArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,size:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25fc0usize)as*mut u8,();
+(AkMIDIPostArray)__receiver,(i32)::core::convert::Into::into(size))}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::root::akmidipost::AkMIDIPost{unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f260a0usize)as*mut u8,crate::root::akmidipost::AkMIDIPost;
+(AkMIDIPostArray)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`set_Item(i32, crate::root::akmidipost::AkMIDIPost)` overload"]fn set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::root::akmidipost::AkMIDIPost>)->(){unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26220usize)as*mut u8,();
+(AkMIDIPostArray)__receiver,(i32)::core::convert::Into::into(index),(crate::root::akmidipost::AkMIDIPost)::core::convert::Into::into(value))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26340usize)as*mut u8,();
+(AkMIDIPostArray)__receiver)}
+}
+#[doc="`PostOnEvent(u32, crate::unity_engine::gameobject::GameObject)` overload"]fn post_on_event(self,in_event_id:impl::core::convert::Into<u32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26410usize)as*mut u8,();
+(AkMIDIPostArray)__receiver,(u32)::core::convert::Into::into(in_event_id),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+#[doc="`PostOnEvent(u32, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn post_on_event_2(self,in_event_id:impl::core::convert::Into<u32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f264f0usize)as*mut u8,();
+(AkMIDIPostArray)__receiver,(u32)::core::convert::Into::into(in_event_id),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`GetBuffer()` overload"]fn get_buffer(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26620usize)as*mut u8, ::unity2::IntPtr;
+(AkMIDIPostArray)__receiver)}
+}
+#[doc="`Count()` overload"]fn count(self,)->i32{unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26630usize)as*mut u8,i32;
+(AkMIDIPostArray)__receiver)}
+}
+#[doc="`GetObjectPtr(i32)` overload"]fn get_object_ptr(self,index:impl::core::convert::Into<i32>)-> ::unity2::IntPtr{unsafe{let __receiver= <AkMIDIPostArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f261e0usize)as*mut u8, ::unity2::IntPtr;
+(AkMIDIPostArray)__receiver,(i32)::core::convert::Into::into(index))}
+}
+}
 
-#[cfg(feature = "root-akmidipostarray")]
-impl < __T : IAkMIDIPostArray > IAkMIDIPostArrayMethods for __T { }
+#[cfg(feature="root-akmidipostarray")]impl<__T:IAkMIDIPostArray>IAkMIDIPostArrayMethods for __T{}
 
-#[cfg(feature = "root-akmidipostarray")]
-impl AkMIDIPostArray { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn post_on_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn post_on_event_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_object_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPostArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="root-akmidipostarray")]impl AkMIDIPostArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn post_on_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn post_on_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_object_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "root-akmidipostarray")]
-impl AkMIDIPostArray {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (size : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIPostArray) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIPostArrayMethods > :: ctor (this , size) ; this }
+#[cfg(feature="root-akmidipostarray")]impl AkMIDIPostArray{#[doc="`.ctor(i32)` — overload selector"]pub fn new(size:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIPostArray), ::core::stringify!(new),));
+ <Self as IAkMIDIPostArrayMethods> ::ctor(this,size);
+this}
 }
 
 #[cfg(feature = "root-akmidipostarray")]

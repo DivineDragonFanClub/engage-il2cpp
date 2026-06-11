@@ -4,41 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterhud/CharacterHUD.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterHUD")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterHUD {
-# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [offset (32)] # [rename (name = "CombatGaugeController")] pub combat_gauge_controller : crate :: root :: combatgaugecontroller :: CombatGaugeController ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterhud/CharacterHUD.md"))]#[::unity2::class(namespace="Combat",name="CharacterHUD")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterHUD{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(32)]#[rename(name="CombatGaugeController")]pub combat_gauge_controller:crate::root::combatgaugecontroller::CombatGaugeController,}
 
 }
 
 #[cfg(feature = "combat-characterhud-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterhud")]
-pub trait ICharacterHUDMethods : ICharacterHUD { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterHUD , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e38d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`In()` overload"] fn r#in (self ,) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterHUD , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterHUD , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryUpdateValues(i32, i32, i32)` overload"] fn try_update_values (self , hp : impl :: core :: convert :: Into < i32 > , maxhp : impl :: core :: convert :: Into < i32 > , engage_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterHUD , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hp) , :: core :: convert :: Into :: into (maxhp) , :: core :: convert :: Into :: into (engage_count) , :: core :: option :: Option :: None) } } } # [doc = "`PushShowSkill(crate::app::skilldata::SkillData)` overload"] fn push_show_skill (self , skill_data : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterHUD , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3e70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill_data) , :: core :: option :: Option :: None) } } } # [doc = "`Out(f32)` overload"] fn out (self , ntime : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterHUD , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ntime) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterHUD as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterHUD , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterhud")]pub trait ICharacterHUDMethods:ICharacterHUD{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterHUD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e38d0usize)as*mut u8,crate::combat::character::Character;
+(CharacterHUD)__receiver)}
+}
+#[doc="`In()` overload"]fn r#in(self,)->(){unsafe{let __receiver= <CharacterHUD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3990usize)as*mut u8,();
+(CharacterHUD)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <CharacterHUD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3d90usize)as*mut u8,();
+(CharacterHUD)__receiver)}
+}
+#[doc="`TryUpdateValues(i32, i32, i32)` overload"]fn try_update_values(self,hp:impl::core::convert::Into<i32> ,maxhp:impl::core::convert::Into<i32> ,engage_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterHUD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3740usize)as*mut u8,();
+(CharacterHUD)__receiver,(i32)::core::convert::Into::into(hp),(i32)::core::convert::Into::into(maxhp),(i32)::core::convert::Into::into(engage_count))}
+}
+#[doc="`PushShowSkill(crate::app::skilldata::SkillData)` overload"]fn push_show_skill(self,skill_data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <CharacterHUD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3e70usize)as*mut u8,();
+(CharacterHUD)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill_data))}
+}
+#[doc="`Out(f32)` overload"]fn out(self,ntime:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CharacterHUD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3e90usize)as*mut u8,();
+(CharacterHUD)__receiver,(f32)::core::convert::Into::into(ntime))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterHUD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3eb0usize)as*mut u8,();
+(CharacterHUD)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterhud")]
-impl < __T : ICharacterHUD > ICharacterHUDMethods for __T { }
+#[cfg(feature="combat-characterhud")]impl<__T:ICharacterHUD>ICharacterHUDMethods for __T{}
 
-#[cfg(feature = "combat-characterhud")]
-impl CharacterHUD { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterHUD as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterHUD as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterHUD as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_update_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterHUD as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn push_show_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterHUD as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterHUD as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterHUD as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="combat-characterhud")]impl CharacterHUD{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_update_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn push_show_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "combat-characterhud")]
-impl CharacterHUD {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterHUD) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterHUDMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterhud")]impl CharacterHUD{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterHUD), ::core::stringify!(new),));
+ <Self as ICharacterHUDMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterhud")]

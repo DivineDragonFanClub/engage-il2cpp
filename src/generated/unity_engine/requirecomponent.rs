@@ -4,34 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/requirecomponent/RequireComponent.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "RequireComponent")] pub struct RequireComponent {
-# [offset (16)] # [rename (name = "m_Type0")] pub m_type0 : :: unity2 :: SystemType ,
-# [offset (24)] # [rename (name = "m_Type1")] pub m_type1 : :: unity2 :: SystemType ,
-# [offset (32)] # [rename (name = "m_Type2")] pub m_type2 : :: unity2 :: SystemType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/requirecomponent/RequireComponent.md"))]#[::unity2::class(namespace="UnityEngine",name="RequireComponent")]pub struct RequireComponent{#[offset(16)]#[rename(name="m_Type0")]pub m_type0: ::unity2::SystemType, #[offset(24)]#[rename(name="m_Type1")]pub m_type1: ::unity2::SystemType, #[offset(32)]#[rename(name="m_Type2")]pub m_type2: ::unity2::SystemType,}
 
 }
 
 #[cfg(feature = "unity_engine-requirecomponent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-requirecomponent")]
-pub trait IRequireComponentMethods : IRequireComponent { # [doc = "`.ctor(::unity2::SystemType)` overload"] fn ctor (self , required_component : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < RequireComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RequireComponent , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f88d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (required_component) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::SystemType, ::unity2::SystemType)` overload"] fn ctor_2 (self , required_component : impl :: core :: convert :: Into < :: unity2 :: SystemType > , required_component2 : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < RequireComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RequireComponent , :: unity2 :: SystemType , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f88d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (required_component) , :: core :: convert :: Into :: into (required_component2) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-requirecomponent")]pub trait IRequireComponentMethods:IRequireComponent{#[doc="`.ctor(::unity2::SystemType)` overload"]fn ctor(self,required_component:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <RequireComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f88d20usize)as*mut u8,();
+(RequireComponent)__receiver,(::unity2::SystemType)::core::convert::Into::into(required_component))}
+}
+#[doc="`.ctor(::unity2::SystemType, ::unity2::SystemType)` overload"]fn ctor_2(self,required_component:impl::core::convert::Into< ::unity2::SystemType> ,required_component2:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <RequireComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f88d60usize)as*mut u8,();
+(RequireComponent)__receiver,(::unity2::SystemType)::core::convert::Into::into(required_component),(::unity2::SystemType)::core::convert::Into::into(required_component2))}
+}
+}
 
-#[cfg(feature = "unity_engine-requirecomponent")]
-impl < __T : IRequireComponent > IRequireComponentMethods for __T { }
+#[cfg(feature="unity_engine-requirecomponent")]impl<__T:IRequireComponent>IRequireComponentMethods for __T{}
 
-#[cfg(feature = "unity_engine-requirecomponent")]
-impl RequireComponent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RequireComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RequireComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-requirecomponent")]impl RequireComponent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-requirecomponent")]
-impl RequireComponent {
-# [doc = "`.ctor(::unity2::SystemType)` — overload selector"] pub fn new (required_component : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RequireComponent) , :: core :: stringify ! (new) ,)) ; < Self as IRequireComponentMethods > :: ctor (this , required_component) ; this }
-
-# [doc = "`.ctor(::unity2::SystemType, ::unity2::SystemType)` — overload selector"] pub fn new_2 (required_component : :: unity2 :: SystemType , required_component2 : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RequireComponent) , :: core :: stringify ! (new_2) ,)) ; < Self as IRequireComponentMethods > :: ctor_2 (this , required_component , required_component2) ; this }
+#[cfg(feature="unity_engine-requirecomponent")]impl RequireComponent{#[doc="`.ctor(::unity2::SystemType)` — overload selector"]pub fn new(required_component: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RequireComponent), ::core::stringify!(new),));
+ <Self as IRequireComponentMethods> ::ctor(this,required_component);
+this}
+#[doc="`.ctor(::unity2::SystemType, ::unity2::SystemType)` — overload selector"]pub fn new_2(required_component: ::unity2::SystemType,required_component2: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RequireComponent), ::core::stringify!(new_2),));
+ <Self as IRequireComponentMethods> ::ctor_2(this,required_component,required_component2);
+this}
 }
 
 #[cfg(feature = "unity_engine-requirecomponent")]

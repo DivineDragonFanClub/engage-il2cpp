@@ -4,56 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: app :: stringitem :: { IStringItem , StringItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::app::stringitem::{IStringItem,StringItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugshopmenu/DebugShopMenu_ShopCallItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugShopMenu.ShopCallItem")] # [parent (crate :: app :: stringitem :: StringItem)] pub struct DebugShopMenu_ShopCallItem {
-# [offset (48)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugshopmenu/DebugShopMenu_ShopCallItem.md"))]#[::unity2::class(namespace="App",name="DebugShopMenu.ShopCallItem")]#[parent(crate::app::stringitem::StringItem)]pub struct DebugShopMenu_ShopCallItem{#[offset(48)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugshopmenu/DebugShopMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugShopMenu")] # [parent (crate :: system :: object :: Object)] pub struct DebugShopMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugshopmenu/DebugShopMenu.md"))]#[::unity2::class(namespace="App",name="DebugShopMenu")]#[parent(crate::system::object::Object)]pub struct DebugShopMenu{}
 
 }
 
 #[cfg(feature = "app-debugshopmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugshopmenu")]
-pub trait IDebugShopMenu_ShopCallItemMethods : IDebugShopMenu_ShopCallItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < DebugShopMenu_ShopCallItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugShopMenu_ShopCallItem , :: unity2 :: Il2CppString , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bb9e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < DebugShopMenu_ShopCallItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugShopMenu_ShopCallItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bb9e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-debugshopmenu")]
-impl < __T : IDebugShopMenu_ShopCallItem > IDebugShopMenu_ShopCallItemMethods for __T { }
-
-#[cfg(feature = "app-debugshopmenu")]
-impl DebugShopMenu_ShopCallItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugShopMenu_ShopCallItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugShopMenu_ShopCallItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-debugshopmenu")]
-impl DebugShopMenu_ShopCallItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , unit : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugShopMenu_ShopCallItem) , :: core :: stringify ! (new) ,)) ; < Self as IDebugShopMenu_ShopCallItemMethods > :: ctor (this , name , unit) ; this }
+#[cfg(feature="app-debugshopmenu")]pub trait IDebugShopMenu_ShopCallItemMethods:IDebugShopMenu_ShopCallItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugShopMenu_ShopCallItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9e50usize)as*mut u8,();
+(DebugShopMenu_ShopCallItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugShopMenu_ShopCallItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9e90usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(DebugShopMenu_ShopCallItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-debugshopmenu")]
-impl DebugShopMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a10150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugshopmenu")]impl<__T:IDebugShopMenu_ShopCallItem>IDebugShopMenu_ShopCallItemMethods for __T{}
 
-#[cfg(feature = "app-debugshopmenu")]
-pub trait IDebugShopMenuMethods : IDebugShopMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugShopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugShopMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a103a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugshopmenu")]impl DebugShopMenu_ShopCallItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-debugshopmenu")]
-impl < __T : IDebugShopMenu > IDebugShopMenuMethods for __T { }
+#[cfg(feature="app-debugshopmenu")]impl DebugShopMenu_ShopCallItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugShopMenu_ShopCallItem), ::core::stringify!(new),));
+ <Self as IDebugShopMenu_ShopCallItemMethods> ::ctor(this,name,unit);
+this}
+}
 
-#[cfg(feature = "app-debugshopmenu")]
-impl DebugShopMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugShopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugShopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-debugshopmenu")]impl DebugShopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a10150usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
 
-#[cfg(feature = "app-debugshopmenu")]
-impl DebugShopMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugShopMenu) , :: core :: stringify ! (new) ,)) ; < Self as IDebugShopMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debugshopmenu")]pub trait IDebugShopMenuMethods:IDebugShopMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a103a0usize)as*mut u8,();
+(DebugShopMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugshopmenu")]impl<__T:IDebugShopMenu>IDebugShopMenuMethods for __T{}
+
+#[cfg(feature="app-debugshopmenu")]impl DebugShopMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-debugshopmenu")]impl DebugShopMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugShopMenu), ::core::stringify!(new),));
+ <Self as IDebugShopMenuMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debugshopmenu")]

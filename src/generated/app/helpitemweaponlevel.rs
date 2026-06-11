@@ -4,43 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: helpitembase :: { HelpItemBase , IHelpItemBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::helpitembase::{HelpItemBase,IHelpItemBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemweaponlevel/HelpItemWeaponLevel.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemWeaponLevel")] # [parent (crate :: app :: helpitembase :: HelpItemBase)] pub struct HelpItemWeaponLevel {
-# [offset (80)] # [rename (name = "m_Index")] pub m_index : i32 ,
-# [offset (88)] # [rename (name = "m_TempUnit")] pub m_temp_unit : crate :: app :: unit :: Unit ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitemweaponlevel/HelpItemWeaponLevel.md"))]#[::unity2::class(namespace="App",name="HelpItemWeaponLevel")]#[parent(crate::app::helpitembase::HelpItemBase)]pub struct HelpItemWeaponLevel{#[offset(80)]#[rename(name="m_Index")]pub m_index:i32, #[offset(88)]#[rename(name="m_TempUnit")]pub m_temp_unit:crate::app::unit::Unit,}
 
 }
 
 #[cfg(feature = "app-helpitemweaponlevel-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitemweaponlevel")]
-pub trait IHelpItemWeaponLevelMethods : IHelpItemWeaponLevel { # [doc = "`get_HelpItemType()` overload"] fn get_help_item_type (self ,) -> crate :: app :: helpmanager :: HelpManager_HelpItemType { unsafe { let __receiver = < HelpItemWeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemWeaponLevel , :: unity2 :: OptionalMethod ,) -> crate :: app :: helpmanager :: HelpManager_HelpItemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297ee30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HelpItemWeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemWeaponLevel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297ee40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetWeaponKind(crate::app::unit::Unit, i32)` overload"] fn get_weapon_kind (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < HelpItemWeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemWeaponLevel , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297eeb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemWeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemWeaponLevel , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297f1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemWeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemWeaponLevel , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297f2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemWeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemWeaponLevel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297f470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitemweaponlevel")]pub trait IHelpItemWeaponLevelMethods:IHelpItemWeaponLevel{#[doc="`get_HelpItemType()` overload"]fn get_help_item_type(self,)->crate::app::helpmanager::HelpManager_HelpItemType{unsafe{let __receiver= <HelpItemWeaponLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297ee30usize)as*mut u8,crate::app::helpmanager::HelpManager_HelpItemType;
+(HelpItemWeaponLevel)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HelpItemWeaponLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297ee40usize)as*mut u8,();
+(HelpItemWeaponLevel)__receiver)}
+}
+#[doc="`GetWeaponKind(crate::app::unit::Unit, i32)` overload"]fn get_weapon_kind(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,index:impl::core::convert::Into<i32>)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <HelpItemWeaponLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297eeb0usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(HelpItemWeaponLevel)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemWeaponLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297f1d0usize)as*mut u8,bool;
+(HelpItemWeaponLevel)__receiver)}
+}
+#[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemWeaponLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297f2d0usize)as*mut u8,();
+(HelpItemWeaponLevel)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemWeaponLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297f470usize)as*mut u8,();
+(HelpItemWeaponLevel)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitemweaponlevel")]
-impl < __T : IHelpItemWeaponLevel > IHelpItemWeaponLevelMethods for __T { }
+#[cfg(feature="app-helpitemweaponlevel")]impl<__T:IHelpItemWeaponLevel>IHelpItemWeaponLevelMethods for __T{}
 
-#[cfg(feature = "app-helpitemweaponlevel")]
-impl HelpItemWeaponLevel { pub fn get_help_item_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemWeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemWeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_weapon_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemWeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemWeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemWeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemWeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-helpitemweaponlevel")]impl HelpItemWeaponLevel{pub fn get_help_item_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_weapon_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-helpitemweaponlevel")]
-impl HelpItemWeaponLevel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemWeaponLevel) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemWeaponLevelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitemweaponlevel")]impl HelpItemWeaponLevel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemWeaponLevel), ::core::stringify!(new),));
+ <Self as IHelpItemWeaponLevelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitemweaponlevel")]

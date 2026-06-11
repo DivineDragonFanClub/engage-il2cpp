@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/markerlist/MarkerList.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MarkerList {
-    pub m_objects: crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject >,
-    pub m_cache: crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface >,
-    pub m_cache_dirty: bool,
-    pub m_has_notifications: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/markerlist/MarkerList.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MarkerList{pub m_objects:crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>,pub m_cache:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>,pub m_cache_dirty:bool,pub m_has_notifications:bool,}
+impl::unity2::ClassIdentity for MarkerList{const NAMESPACE: &'static str="UnityEngine.Timeline";
+const NAME: &'static str="MarkerList";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for MarkerList {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-    const NAME: &'static str = "MarkerList";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MarkerList {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MarkerList{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,65 @@ impl ::unity2::IlType for MarkerList {
 #[cfg(feature = "unity_engine-timeline-markerlist-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-markerlist")]
-impl MarkerList { # [doc = "`get_markers()` overload"] pub fn get_markers (& mut self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface > { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7370usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] pub fn ctor (& mut self , capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MarkerList , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7600usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: convert :: Into :: into (capacity) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::unity_engine::scriptableobject::ScriptableObject)` overload"] pub fn add (& mut self , item : impl :: core :: convert :: Into < crate :: unity_engine :: scriptableobject :: ScriptableObject >) -> () { unsafe { { let __inner : extern "C" fn (* mut MarkerList , crate :: unity_engine :: scriptableobject :: ScriptableObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7700usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::unity_engine::timeline::imarker_interface::IMarker_Interface)` overload"] pub fn remove (& mut self , item : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface >) -> bool { unsafe { { let __inner : extern "C" fn (* mut MarkerList , crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d77b0usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::unity_engine::scriptableobject::ScriptableObject, crate::unity_engine::timeline::timelineasset::TimelineAsset, crate::unity_engine::playables::playableasset::PlayableAsset)` overload"] pub fn remove_2 (& mut self , item : impl :: core :: convert :: Into < crate :: unity_engine :: scriptableobject :: ScriptableObject > , timeline_asset : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset > , thing_to_dirty : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableasset :: PlayableAsset >) -> bool { unsafe { { let __inner : extern "C" fn (* mut MarkerList , crate :: unity_engine :: scriptableobject :: ScriptableObject , crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset , crate :: unity_engine :: playables :: playableasset :: PlayableAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7b40usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (timeline_asset) , :: core :: convert :: Into :: into (thing_to_dirty) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7d10usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] pub fn get_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7da0usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] pub fn get_item (& mut self , idx : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface { unsafe { { let __inner : extern "C" fn (* mut MarkerList , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7df0usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: convert :: Into :: into (idx) , :: core :: option :: Option :: None) } } } # [doc = "`GetRawMarkerList()` overload"] pub fn get_raw_marker_list (& mut self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7e70usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: option :: Option :: None) } } } # [doc = "`CreateMarker(::unity2::SystemType, f64, crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] pub fn create_marker (& mut self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , time : impl :: core :: convert :: Into < f64 > , owner : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: SystemType , f64 , crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7e80usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } } # [doc = "`HasNotifications()` overload"] pub fn has_notifications (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d83d0usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"] pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d8400usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"] pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d8410usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: option :: Option :: None) } } } # [doc = "`BuildCache()` overload"] pub fn build_cache (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MarkerList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d73a0usize) as * mut u8) ; __inner (self as * mut MarkerList , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-markerlist")]impl MarkerList{#[doc="`get_markers()` overload"]pub fn get_markers(&mut self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7370usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface> ;
+(*mut MarkerList)self as*mut MarkerList)}
+}
+#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,capacity:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7600usize)as*mut u8,();
+(*mut MarkerList)self as*mut MarkerList,(i32)::core::convert::Into::into(capacity))}
+}
+#[doc="`Add(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]pub fn add(&mut self,item:impl::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7700usize)as*mut u8,();
+(*mut MarkerList)self as*mut MarkerList,(crate::unity_engine::scriptableobject::ScriptableObject)::core::convert::Into::into(item))}
+}
+#[doc="`Remove(crate::unity_engine::timeline::imarker_interface::IMarker_Interface)` overload"]pub fn remove(&mut self,item:impl::core::convert::Into<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d77b0usize)as*mut u8,bool;
+(*mut MarkerList)self as*mut MarkerList,(crate::unity_engine::timeline::imarker_interface::IMarker_Interface)::core::convert::Into::into(item))}
+}
+#[doc="`Remove(crate::unity_engine::scriptableobject::ScriptableObject, crate::unity_engine::timeline::timelineasset::TimelineAsset, crate::unity_engine::playables::playableasset::PlayableAsset)` overload"]pub fn remove_2(&mut self,item:impl::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject> ,timeline_asset:impl::core::convert::Into<crate::unity_engine::timeline::timelineasset::TimelineAsset> ,thing_to_dirty:impl::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7b40usize)as*mut u8,bool;
+(*mut MarkerList)self as*mut MarkerList,(crate::unity_engine::scriptableobject::ScriptableObject)::core::convert::Into::into(item),(crate::unity_engine::timeline::timelineasset::TimelineAsset)::core::convert::Into::into(timeline_asset),(crate::unity_engine::playables::playableasset::PlayableAsset)::core::convert::Into::into(thing_to_dirty))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7d10usize)as*mut u8,();
+(*mut MarkerList)self as*mut MarkerList)}
+}
+#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7da0usize)as*mut u8,i32;
+(*mut MarkerList)self as*mut MarkerList)}
+}
+#[doc="`get_Item(i32)` overload"]pub fn get_item(&mut self,idx:impl::core::convert::Into<i32>)->crate::unity_engine::timeline::imarker_interface::IMarker_Interface{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7df0usize)as*mut u8,crate::unity_engine::timeline::imarker_interface::IMarker_Interface;
+(*mut MarkerList)self as*mut MarkerList,(i32)::core::convert::Into::into(idx))}
+}
+#[doc="`GetRawMarkerList()` overload"]pub fn get_raw_marker_list(&mut self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7e70usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> ;
+(*mut MarkerList)self as*mut MarkerList)}
+}
+#[doc="`CreateMarker(::unity2::SystemType, f64, crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]pub fn create_marker(&mut self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,time:impl::core::convert::Into<f64> ,owner:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->crate::unity_engine::timeline::imarker_interface::IMarker_Interface{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7e80usize)as*mut u8,crate::unity_engine::timeline::imarker_interface::IMarker_Interface;
+(*mut MarkerList)self as*mut MarkerList,(::unity2::SystemType)::core::convert::Into::into(r#type),(f64)::core::convert::Into::into(time),(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(owner))}
+}
+#[doc="`HasNotifications()` overload"]pub fn has_notifications(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d83d0usize)as*mut u8,bool;
+(*mut MarkerList)self as*mut MarkerList)}
+}
+#[doc="`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d8400usize)as*mut u8,();
+(*mut MarkerList)self as*mut MarkerList)}
+}
+#[doc="`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d8410usize)as*mut u8,();
+(*mut MarkerList)self as*mut MarkerList)}
+}
+#[doc="`BuildCache()` overload"]pub fn build_cache(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d73a0usize)as*mut u8,();
+(*mut MarkerList)self as*mut MarkerList)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-markerlist")]
-impl MarkerList { pub fn get_markers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn remove_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_raw_marker_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_marker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn has_notifications_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn build_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="unity_engine-timeline-markerlist")]impl MarkerList{pub fn get_markers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn remove_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_raw_marker_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_marker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn has_notifications_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn build_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
 #[cfg(feature = "unity_engine-timeline-markerlist")]
 #[doc(hidden)]

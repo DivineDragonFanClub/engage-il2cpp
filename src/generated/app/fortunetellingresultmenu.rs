@@ -4,54 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingresultmenu/FortuneTellingResultMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingResultMenu")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FortuneTellingResultMenu {
-# [static_field] # [rename (name = "ForceMask")] pub force_mask : u32 ,
-# [static_field] # [rename (name = "MessageKind")] pub message_kind : i32 ,
-# [offset (24)] # [rename (name = "m_unitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_cardRoot")] pub m_card_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_result0Title")] pub m_result0_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_result0Text")] pub m_result0_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_result1Title")] pub m_result1_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "m_result1Text")] pub m_result1_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "m_unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (80)] # [rename (name = "m_cardKind")] pub m_card_kind : i32 ,
-# [offset (84)] # [rename (name = "m_bCardPositive")] pub m_b_card_positive : bool ,
-# [offset (88)] # [rename (name = "m_cardAnimator")] pub m_card_animator : crate :: unity_engine :: animator :: Animator ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingresultmenu/FortuneTellingResultMenu.md"))]#[::unity2::class(namespace="App",name="FortuneTellingResultMenu")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FortuneTellingResultMenu{#[static_field]#[rename(name="ForceMask")]pub force_mask:u32, #[static_field]#[rename(name="MessageKind")]pub message_kind:i32, #[offset(24)]#[rename(name="m_unitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_cardRoot")]pub m_card_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_result0Title")]pub m_result0_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_result0Text")]pub m_result0_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_result1Title")]pub m_result1_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_result1Text")]pub m_result1_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit, #[offset(80)]#[rename(name="m_cardKind")]pub m_card_kind:i32, #[offset(84)]#[rename(name="m_bCardPositive")]pub m_b_card_positive:bool, #[offset(88)]#[rename(name="m_cardAnimator")]pub m_card_animator:crate::unity_engine::animator::Animator,}
 
 }
 
 #[cfg(feature = "app-fortunetellingresultmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fortunetellingresultmenu")]
-impl FortuneTellingResultMenu { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2617ea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingresultmenu")]impl FortuneTellingResultMenu{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2617ea0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-fortunetellingresultmenu")]
-pub trait IFortuneTellingResultMenuMethods : IFortuneTellingResultMenu { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26172b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init(crate::app::unit::Unit)` overload"] fn init (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < FortuneTellingResultMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultMenu , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26172c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2617a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResultMessage()` overload"] fn get_result_message (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FortuneTellingResultMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2617cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FortuneTellingResultMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingResultMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2617e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingresultmenu")]pub trait IFortuneTellingResultMenuMethods:IFortuneTellingResultMenu{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <FortuneTellingResultMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26172b0usize)as*mut u8,();
+(FortuneTellingResultMenu)__receiver)}
+}
+#[doc="`Init(crate::app::unit::Unit)` overload"]fn init(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <FortuneTellingResultMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26172c0usize)as*mut u8,();
+(FortuneTellingResultMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <FortuneTellingResultMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2617a10usize)as*mut u8,();
+(FortuneTellingResultMenu)__receiver)}
+}
+#[doc="`GetResultMessage()` overload"]fn get_result_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FortuneTellingResultMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2617cc0usize)as*mut u8, ::unity2::Il2CppString;
+(FortuneTellingResultMenu)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FortuneTellingResultMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2617e20usize)as*mut u8,();
+(FortuneTellingResultMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fortunetellingresultmenu")]
-impl < __T : IFortuneTellingResultMenu > IFortuneTellingResultMenuMethods for __T { }
+#[cfg(feature="app-fortunetellingresultmenu")]impl<__T:IFortuneTellingResultMenu>IFortuneTellingResultMenuMethods for __T{}
 
-#[cfg(feature = "app-fortunetellingresultmenu")]
-impl FortuneTellingResultMenu { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_result_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingResultMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-fortunetellingresultmenu")]impl FortuneTellingResultMenu{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_result_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-fortunetellingresultmenu")]
-impl FortuneTellingResultMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FortuneTellingResultMenu) , :: core :: stringify ! (new) ,)) ; < Self as IFortuneTellingResultMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fortunetellingresultmenu")]impl FortuneTellingResultMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FortuneTellingResultMenu), ::core::stringify!(new),));
+ <Self as IFortuneTellingResultMenuMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fortunetellingresultmenu")]

@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cameraparameter/CameraParameter.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CameraParameter {
-    pub position: crate :: unity_engine :: vector3 :: Vector3,
-    pub euler_angles: crate :: unity_engine :: vector3 :: Vector3,
-    pub field_of_view: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cameraparameter/CameraParameter.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CameraParameter{pub position:crate::unity_engine::vector3::Vector3,pub euler_angles:crate::unity_engine::vector3::Vector3,pub field_of_view:f32,}
+impl::unity2::ClassIdentity for CameraParameter{const NAMESPACE: &'static str="App";
+const NAME: &'static str="CameraParameter";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for CameraParameter {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CameraParameter";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for CameraParameter {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for CameraParameter{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,33 @@ impl ::unity2::IlType for CameraParameter {
 #[cfg(feature = "app-cameraparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cameraparameter")]
-impl CameraParameter { # [doc = "`CopyFrom(crate::unity_engine::camera::Camera)` overload"] pub fn copy_from (& mut self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { { let __inner : extern "C" fn (* mut CameraParameter , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9740usize) as * mut u8) ; __inner (self as * mut CameraParameter , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(crate::unity_engine::camera::Camera)` overload"] pub fn copy_to (& mut self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { { let __inner : extern "C" fn (* mut CameraParameter , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9810usize) as * mut u8) ; __inner (self as * mut CameraParameter , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::app::cameraparameter::CameraParameter)` overload"] pub fn copy_from_2 (& mut self , param : impl :: core :: convert :: Into < crate :: app :: cameraparameter :: CameraParameter >) -> () { unsafe { { let __inner : extern "C" fn (* mut CameraParameter , crate :: app :: cameraparameter :: CameraParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b98e0usize) as * mut u8) ; __inner (self as * mut CameraParameter , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } } # [doc = "`GetForward()` overload"] pub fn get_forward (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut CameraParameter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9910usize) as * mut u8) ; __inner (self as * mut CameraParameter , :: core :: option :: Option :: None) } } } # [doc = "`GetSide()` overload"] pub fn get_side (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut CameraParameter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9940usize) as * mut u8) ; __inner (self as * mut CameraParameter , :: core :: option :: Option :: None) } } } # [doc = "`GetUp()` overload"] pub fn get_up (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut CameraParameter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b9970usize) as * mut u8) ; __inner (self as * mut CameraParameter , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cameraparameter")]impl CameraParameter{#[doc="`CopyFrom(crate::unity_engine::camera::Camera)` overload"]pub fn copy_from(&mut self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25b9740usize)as*mut u8,();
+(*mut CameraParameter)self as*mut CameraParameter,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`CopyTo(crate::unity_engine::camera::Camera)` overload"]pub fn copy_to(&mut self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25b9810usize)as*mut u8,();
+(*mut CameraParameter)self as*mut CameraParameter,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`CopyFrom(crate::app::cameraparameter::CameraParameter)` overload"]pub fn copy_from_2(&mut self,param:impl::core::convert::Into<crate::app::cameraparameter::CameraParameter>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25b98e0usize)as*mut u8,();
+(*mut CameraParameter)self as*mut CameraParameter,(crate::app::cameraparameter::CameraParameter)::core::convert::Into::into(param))}
+}
+#[doc="`GetForward()` overload"]pub fn get_forward(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25b9910usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut CameraParameter)self as*mut CameraParameter)}
+}
+#[doc="`GetSide()` overload"]pub fn get_side(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25b9940usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut CameraParameter)self as*mut CameraParameter)}
+}
+#[doc="`GetUp()` overload"]pub fn get_up(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25b9970usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut CameraParameter)self as*mut CameraParameter)}
+}
+}
 
-#[cfg(feature = "app-cameraparameter")]
-impl CameraParameter { pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn copy_from_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_forward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-cameraparameter")]impl CameraParameter{pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn copy_from_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_forward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "app-cameraparameter")]
 #[doc(hidden)]

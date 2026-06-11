@@ -4,34 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: configbasicmenuitem :: { ConfigBasicMenuItem , IConfigBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::configbasicmenuitem::{ConfigBasicMenuItem,IConfigBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfounitpagemenuitem/MapInfoUnitPageMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "MapInfoUnitPageMenuItem")] # [parent (crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem)] pub struct MapInfoUnitPageMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapinfounitpagemenuitem/MapInfoUnitPageMenuItem.md"))]#[::unity2::class(namespace="",name="MapInfoUnitPageMenuItem")]#[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]pub struct MapInfoUnitPageMenuItem{}
 
 }
 
 #[cfg(feature = "root-mapinfounitpagemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapinfounitpagemenuitem")]
-pub trait IMapInfoUnitPageMenuItemMethods : IMapInfoUnitPageMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoUnitPageMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitPageMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapInfoUnitPageMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitPageMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de5050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitContent()` overload"] fn init_content (self ,) -> () { unsafe { let __receiver = < MapInfoUnitPageMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitPageMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de5190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCommandText()` overload"] fn set_command_text (self ,) -> () { unsafe { let __receiver = < MapInfoUnitPageMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitPageMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpText()` overload"] fn set_help_text (self ,) -> () { unsafe { let __receiver = < MapInfoUnitPageMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitPageMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapinfounitpagemenuitem")]pub trait IMapInfoUnitPageMenuItemMethods:IMapInfoUnitPageMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInfoUnitPageMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4ad0usize)as*mut u8,();
+(MapInfoUnitPageMenuItem)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapInfoUnitPageMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5050usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapInfoUnitPageMenuItem)__receiver)}
+}
+#[doc="`InitContent()` overload"]fn init_content(self,)->(){unsafe{let __receiver= <MapInfoUnitPageMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5190usize)as*mut u8,();
+(MapInfoUnitPageMenuItem)__receiver)}
+}
+#[doc="`SetCommandText()` overload"]fn set_command_text(self,)->(){unsafe{let __receiver= <MapInfoUnitPageMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4b90usize)as*mut u8,();
+(MapInfoUnitPageMenuItem)__receiver)}
+}
+#[doc="`SetHelpText()` overload"]fn set_help_text(self,)->(){unsafe{let __receiver= <MapInfoUnitPageMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4df0usize)as*mut u8,();
+(MapInfoUnitPageMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapinfounitpagemenuitem")]
-impl < __T : IMapInfoUnitPageMenuItem > IMapInfoUnitPageMenuItemMethods for __T { }
+#[cfg(feature="root-mapinfounitpagemenuitem")]impl<__T:IMapInfoUnitPageMenuItem>IMapInfoUnitPageMenuItemMethods for __T{}
 
-#[cfg(feature = "root-mapinfounitpagemenuitem")]
-impl MapInfoUnitPageMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitPageMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitPageMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitPageMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_command_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitPageMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitPageMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-mapinfounitpagemenuitem")]impl MapInfoUnitPageMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_command_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-mapinfounitpagemenuitem")]
-impl MapInfoUnitPageMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoUnitPageMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoUnitPageMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapinfounitpagemenuitem")]impl MapInfoUnitPageMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoUnitPageMenuItem), ::core::stringify!(new),));
+ <Self as IMapInfoUnitPageMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapinfounitpagemenuitem")]

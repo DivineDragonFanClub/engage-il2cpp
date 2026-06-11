@@ -4,73 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintroinfosetter/JobIntroInfoSetter_WeaponSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroInfoSetter.WeaponSetter")] # [parent (crate :: system :: object :: Object)] pub struct JobIntroInfoSetter_WeaponSetter {
-# [offset (16)] # [rename (name = "Weapon")] pub weapon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "Weapon0")] pub weapon0 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "SlashWeapon1")] pub slash_weapon1 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "Weapon1")] pub weapon1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "SlashWeapon2")] pub slash_weapon2 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "Weapon2")] pub weapon2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "WeaponText")] pub weapon_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobintroinfosetter/JobIntroInfoSetter_WeaponSetter.md"))]#[::unity2::class(namespace="App",name="JobIntroInfoSetter.WeaponSetter")]#[parent(crate::system::object::Object)]pub struct JobIntroInfoSetter_WeaponSetter{#[offset(16)]#[rename(name="Weapon")]pub weapon:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="Weapon0")]pub weapon0:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="SlashWeapon1")]pub slash_weapon1:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="Weapon1")]pub weapon1:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="SlashWeapon2")]pub slash_weapon2:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="Weapon2")]pub weapon2:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="WeaponText")]pub weapon_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintroinfosetter/JobIntroInfoSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroInfoSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct JobIntroInfoSetter {
-# [offset (24)] # [rename (name = "Icon")] pub icon : crate :: app :: uniticon :: UnitIcon ,
-# [offset (32)] # [rename (name = "JobName")] pub job_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "Style")] pub style : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "Category")] pub category : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "Weapons")] pub weapons : :: unity2 :: Array < crate :: app :: jobintroinfosetter :: JobIntroInfoSetter_WeaponSetter > ,
-# [offset (64)] # [rename (name = "Message")] pub message : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "StyleInfo")] pub style_info : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "CategoryInfo")] pub category_info : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (88)] # [rename (name = "WeaponInfo")] pub weapon_info : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobintroinfosetter/JobIntroInfoSetter.md"))]#[::unity2::class(namespace="App",name="JobIntroInfoSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct JobIntroInfoSetter{#[offset(24)]#[rename(name="Icon")]pub icon:crate::app::uniticon::UnitIcon, #[offset(32)]#[rename(name="JobName")]pub job_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="Style")]pub style:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="Category")]pub category:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="Weapons")]pub weapons: ::unity2::Array<crate::app::jobintroinfosetter::JobIntroInfoSetter_WeaponSetter> , #[offset(64)]#[rename(name="Message")]pub message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="StyleInfo")]pub style_info:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="CategoryInfo")]pub category_info:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(88)]#[rename(name="WeaponInfo")]pub weapon_info:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-jobintroinfosetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-jobintroinfosetter")]
-pub trait IJobIntroInfoSetter_WeaponSetterMethods : IJobIntroInfoSetter_WeaponSetter { # [doc = "`Set(::unity2::Array<crate::app::itemdata::ItemData_Kinds>, crate::app::weaponlevel::WeaponLevel_Kind, crate::app::jobdata::JobData, i32)` overload"] fn set (self , kinds : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > > , level : impl :: core :: convert :: Into < crate :: app :: weaponlevel :: WeaponLevel_Kind > , job_data : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < JobIntroInfoSetter_WeaponSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroInfoSetter_WeaponSetter , :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > , crate :: app :: weaponlevel :: WeaponLevel_Kind , crate :: app :: jobdata :: JobData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd1f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kinds) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (job_data) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < JobIntroInfoSetter_WeaponSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroInfoSetter_WeaponSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd2410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < JobIntroInfoSetter_WeaponSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroInfoSetter_WeaponSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd2420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-jobintroinfosetter")]
-impl < __T : IJobIntroInfoSetter_WeaponSetter > IJobIntroInfoSetter_WeaponSetterMethods for __T { }
-
-#[cfg(feature = "app-jobintroinfosetter")]
-impl JobIntroInfoSetter_WeaponSetter { pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroInfoSetter_WeaponSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroInfoSetter_WeaponSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroInfoSetter_WeaponSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-jobintroinfosetter")]
-impl JobIntroInfoSetter_WeaponSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (JobIntroInfoSetter_WeaponSetter) , :: core :: stringify ! (new) ,)) ; < Self as IJobIntroInfoSetter_WeaponSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-jobintroinfosetter")]pub trait IJobIntroInfoSetter_WeaponSetterMethods:IJobIntroInfoSetter_WeaponSetter{#[doc="`Set(::unity2::Array<crate::app::itemdata::ItemData_Kinds>, crate::app::weaponlevel::WeaponLevel_Kind, crate::app::jobdata::JobData, i32)` overload"]fn set(self,kinds:impl::core::convert::Into< ::unity2::Array<crate::app::itemdata::ItemData_Kinds> > ,level:impl::core::convert::Into<crate::app::weaponlevel::WeaponLevel_Kind> ,job_data:impl::core::convert::Into<crate::app::jobdata::JobData> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <JobIntroInfoSetter_WeaponSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1f00usize)as*mut u8,();
+(JobIntroInfoSetter_WeaponSetter)__receiver,(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)::core::convert::Into::into(kinds),(crate::app::weaponlevel::WeaponLevel_Kind)::core::convert::Into::into(level),(crate::app::jobdata::JobData)::core::convert::Into::into(job_data),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <JobIntroInfoSetter_WeaponSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd2410usize)as*mut u8,();
+(JobIntroInfoSetter_WeaponSetter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <JobIntroInfoSetter_WeaponSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd2420usize)as*mut u8,();
+(JobIntroInfoSetter_WeaponSetter)__receiver)}
+}
 }
 
-#[cfg(feature = "app-jobintroinfosetter")]
-pub trait IJobIntroInfoSetterMethods : IJobIntroInfoSetter { # [doc = "`SetData(crate::app::unit::Unit)` overload"] fn set_data (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < JobIntroInfoSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroInfoSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < JobIntroInfoSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroInfoSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20581a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-jobintroinfosetter")]impl<__T:IJobIntroInfoSetter_WeaponSetter>IJobIntroInfoSetter_WeaponSetterMethods for __T{}
 
-#[cfg(feature = "app-jobintroinfosetter")]
-impl < __T : IJobIntroInfoSetter > IJobIntroInfoSetterMethods for __T { }
+#[cfg(feature="app-jobintroinfosetter")]impl JobIntroInfoSetter_WeaponSetter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-jobintroinfosetter")]
-impl JobIntroInfoSetter { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroInfoSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroInfoSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-jobintroinfosetter")]impl JobIntroInfoSetter_WeaponSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(JobIntroInfoSetter_WeaponSetter), ::core::stringify!(new),));
+ <Self as IJobIntroInfoSetter_WeaponSetterMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-jobintroinfosetter")]
-impl JobIntroInfoSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (JobIntroInfoSetter) , :: core :: stringify ! (new) ,)) ; < Self as IJobIntroInfoSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-jobintroinfosetter")]pub trait IJobIntroInfoSetterMethods:IJobIntroInfoSetter{#[doc="`SetData(crate::app::unit::Unit)` overload"]fn set_data(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <JobIntroInfoSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057890usize)as*mut u8,();
+(JobIntroInfoSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <JobIntroInfoSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20581a0usize)as*mut u8,();
+(JobIntroInfoSetter)__receiver)}
+}
+}
+
+#[cfg(feature="app-jobintroinfosetter")]impl<__T:IJobIntroInfoSetter>IJobIntroInfoSetterMethods for __T{}
+
+#[cfg(feature="app-jobintroinfosetter")]impl JobIntroInfoSetter{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-jobintroinfosetter")]impl JobIntroInfoSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(JobIntroInfoSetter), ::core::stringify!(new),));
+ <Self as IJobIntroInfoSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-jobintroinfosetter")]

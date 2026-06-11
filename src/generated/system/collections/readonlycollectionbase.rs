@@ -4,32 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/readonlycollectionbase/ReadOnlyCollectionBase.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "ReadOnlyCollectionBase")] # [parent (crate :: system :: object :: Object)] pub struct ReadOnlyCollectionBase {
-# [offset (16)] # [rename (name = "list")] pub list : crate :: system :: collections :: arraylist :: ArrayList ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/readonlycollectionbase/ReadOnlyCollectionBase.md"))]#[::unity2::class(namespace="System.Collections",name="ReadOnlyCollectionBase")]#[parent(crate::system::object::Object)]pub struct ReadOnlyCollectionBase{#[offset(16)]#[rename(name="list")]pub list:crate::system::collections::arraylist::ArrayList,}
 
 }
 
 #[cfg(feature = "system-collections-readonlycollectionbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-readonlycollectionbase")]
-pub trait IReadOnlyCollectionBaseMethods : IReadOnlyCollectionBase { # [doc = "`get_InnerList()` overload"] fn get_inner_list (self ,) -> crate :: system :: collections :: arraylist :: ArrayList { unsafe { let __receiver = < ReadOnlyCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReadOnlyCollectionBase , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: arraylist :: ArrayList = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ae48d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < ReadOnlyCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReadOnlyCollectionBase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ae4960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"] fn system_collections_i_collection_get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < ReadOnlyCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReadOnlyCollectionBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ae49e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.get_SyncRoot()` overload"] fn system_collections_i_collection_get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ReadOnlyCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReadOnlyCollectionBase , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ae4a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"] fn system_collections_i_collection_copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ReadOnlyCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReadOnlyCollectionBase , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ae4ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ReadOnlyCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReadOnlyCollectionBase , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ae4b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReadOnlyCollectionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReadOnlyCollectionBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ae4c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-readonlycollectionbase")]pub trait IReadOnlyCollectionBaseMethods:IReadOnlyCollectionBase{#[doc="`get_InnerList()` overload"]fn get_inner_list(self,)->crate::system::collections::arraylist::ArrayList{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae48d0usize)as*mut u8,crate::system::collections::arraylist::ArrayList;
+(ReadOnlyCollectionBase)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4960usize)as*mut u8,i32;
+(ReadOnlyCollectionBase)__receiver)}
+}
+#[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae49e0usize)as*mut u8,bool;
+(ReadOnlyCollectionBase)__receiver)}
+}
+#[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4a60usize)as*mut u8,crate::system::object::Object;
+(ReadOnlyCollectionBase)__receiver)}
+}
+#[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4ae0usize)as*mut u8,();
+(ReadOnlyCollectionBase)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4b80usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ReadOnlyCollectionBase)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4c00usize)as*mut u8,();
+(ReadOnlyCollectionBase)__receiver)}
+}
+}
 
-#[cfg(feature = "system-collections-readonlycollectionbase")]
-impl < __T : IReadOnlyCollectionBase > IReadOnlyCollectionBaseMethods for __T { }
+#[cfg(feature="system-collections-readonlycollectionbase")]impl<__T:IReadOnlyCollectionBase>IReadOnlyCollectionBaseMethods for __T{}
 
-#[cfg(feature = "system-collections-readonlycollectionbase")]
-impl ReadOnlyCollectionBase { pub fn get_inner_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReadOnlyCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReadOnlyCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn system_collections_i_collection_get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReadOnlyCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn system_collections_i_collection_get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReadOnlyCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn system_collections_i_collection_copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReadOnlyCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReadOnlyCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReadOnlyCollectionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="system-collections-readonlycollectionbase")]impl ReadOnlyCollectionBase{pub fn get_inner_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn system_collections_i_collection_get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn system_collections_i_collection_get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn system_collections_i_collection_copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "system-collections-readonlycollectionbase")]
-impl ReadOnlyCollectionBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReadOnlyCollectionBase) , :: core :: stringify ! (new) ,)) ; < Self as IReadOnlyCollectionBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-readonlycollectionbase")]impl ReadOnlyCollectionBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReadOnlyCollectionBase), ::core::stringify!(new),));
+ <Self as IReadOnlyCollectionBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-readonlycollectionbase")]

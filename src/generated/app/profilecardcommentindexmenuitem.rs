@@ -4,34 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenuitem/ProfileCardCommentIndexMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardCommentIndexMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ProfileCardCommentIndexMenuItem {
-# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentindexmenuitem/ProfileCardCommentIndexMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentIndexMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardCommentIndexMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardcommentindexmenuitem")]
-pub trait IProfileCardCommentIndexMenuItemMethods : IProfileCardCommentIndexMenuItem { # [doc = "`get_m_Mid()` overload"] fn get_m_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230edb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Mid(::unity2::Il2CppString)` overload"] fn set_m_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230edc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)` overload"] fn ctor (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: Il2CppString , crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230e7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`SetMessage(::unity2::Il2CppString)` overload"] fn set_message (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230eb30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardCommentIndexMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardCommentIndexMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230edd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardcommentindexmenuitem")]pub trait IProfileCardCommentIndexMenuItemMethods:IProfileCardCommentIndexMenuItem{#[doc="`get_m_Mid()` overload"]fn get_m_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardCommentIndexMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230edb0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardCommentIndexMenuItem)__receiver)}
+}
+#[doc="`set_m_Mid(::unity2::Il2CppString)` overload"]fn set_m_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230edc0usize)as*mut u8,();
+(ProfileCardCommentIndexMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)` overload"]fn ctor(self,mid:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230e7b0usize)as*mut u8,();
+(ProfileCardCommentIndexMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid),(crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`SetMessage(::unity2::Il2CppString)` overload"]fn set_message(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230eb30usize)as*mut u8,();
+(ProfileCardCommentIndexMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardCommentIndexMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230edd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardCommentIndexMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardcommentindexmenuitem")]
-impl < __T : IProfileCardCommentIndexMenuItem > IProfileCardCommentIndexMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardcommentindexmenuitem")]impl<__T:IProfileCardCommentIndexMenuItem>IProfileCardCommentIndexMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardcommentindexmenuitem")]
-impl ProfileCardCommentIndexMenuItem { pub fn get_m_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardCommentIndexMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-profilecardcommentindexmenuitem")]impl ProfileCardCommentIndexMenuItem{pub fn get_m_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-profilecardcommentindexmenuitem")]
-impl ProfileCardCommentIndexMenuItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)` — overload selector"] pub fn new (mid : :: unity2 :: Il2CppString , decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardCommentIndexMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardCommentIndexMenuItemMethods > :: ctor (this , mid , decide_event_handler) ; this }
+#[cfg(feature="app-profilecardcommentindexmenuitem")]impl ProfileCardCommentIndexMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)` — overload selector"]pub fn new(mid: ::unity2::Il2CppString,decide_event_handler:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardCommentIndexMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardCommentIndexMenuItemMethods> ::ctor(this,mid,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-profilecardcommentindexmenuitem")]

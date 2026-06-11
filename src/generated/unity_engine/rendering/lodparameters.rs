@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/lodparameters/LODParameters.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LODParameters {
-    pub m_is_orthographic: i32,
-    pub m_camera_position: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_field_of_view: f32,
-    pub m_ortho_size: f32,
-    pub m_camera_pixel_height: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/lodparameters/LODParameters.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LODParameters{pub m_is_orthographic:i32,pub m_camera_position:crate::unity_engine::vector3::Vector3,pub m_field_of_view:f32,pub m_ortho_size:f32,pub m_camera_pixel_height:i32,}
+impl::unity2::ClassIdentity for LODParameters{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="LODParameters";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for LODParameters {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "LODParameters";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LODParameters {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LODParameters{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,11 +26,21 @@ impl ::unity2::IlType for LODParameters {
 #[cfg(feature = "unity_engine-rendering-lodparameters-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-lodparameters")]
-impl LODParameters { # [doc = "`Equals(crate::unity_engine::rendering::lodparameters::LODParameters)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: lodparameters :: LODParameters >) -> bool { unsafe { { let __inner : extern "C" fn (* mut LODParameters , crate :: unity_engine :: rendering :: lodparameters :: LODParameters , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52fd0usize) as * mut u8) ; __inner (self as * mut LODParameters , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut LODParameters , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c53060usize) as * mut u8) ; __inner (self as * mut LODParameters , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut LODParameters , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c53150usize) as * mut u8) ; __inner (self as * mut LODParameters , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-lodparameters")]impl LODParameters{#[doc="`Equals(crate::unity_engine::rendering::lodparameters::LODParameters)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::lodparameters::LODParameters>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52fd0usize)as*mut u8,bool;
+(*mut LODParameters)self as*mut LODParameters,(crate::unity_engine::rendering::lodparameters::LODParameters)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c53060usize)as*mut u8,bool;
+(*mut LODParameters)self as*mut LODParameters,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c53150usize)as*mut u8,i32;
+(*mut LODParameters)self as*mut LODParameters)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-lodparameters")]
-impl LODParameters { pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-lodparameters")]impl LODParameters{pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-rendering-lodparameters")]
 #[doc(hidden)]

@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/typename/TypeName.md"))] # [:: unity2 :: class (namespace = "App" , name = "TypeName")] # [parent (crate :: system :: object :: Object)] pub struct TypeName {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/typename/TypeName.md"))]#[::unity2::class(namespace="App",name="TypeName")]#[parent(crate::system::object::Object)]pub struct TypeName{}
 
 }
 
 #[cfg(feature = "app-typename-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-typename")]
-impl TypeName { # [doc = "`get_GameMode()` overload"] pub fn get_game_mode () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1a03060usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Difficulty()` overload"] pub fn get_difficulty () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1a03150usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_GrowMode()` overload"] pub fn get_grow_mode () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1a03240usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Gender()` overload"] pub fn get_gender () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1a03330usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-typename")]impl TypeName{#[doc="`get_GameMode()` overload"]pub fn get_game_mode()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1a03060usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_Difficulty()` overload"]pub fn get_difficulty()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1a03150usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_GrowMode()` overload"]pub fn get_grow_mode()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1a03240usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_Gender()` overload"]pub fn get_gender()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1a03330usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+}
 
-#[cfg(feature = "app-typename")]
-impl TypeName { pub fn get_game_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_difficulty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_grow_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-typename")]impl TypeName{pub fn get_game_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_difficulty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_grow_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "app-typename")]
 #[doc(hidden)]

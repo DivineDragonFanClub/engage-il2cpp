@@ -4,44 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: volumecomponent :: { IVolumeComponent , VolumeComponent }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::volumecomponent::{IVolumeComponent,VolumeComponent}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/tonemapping/Tonemapping.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "Tonemapping")] # [parent (crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent)] pub struct Tonemapping {
-# [offset (56)] # [rename (name = "mode")] pub mode : crate :: unity_engine :: rendering :: universal :: tonemappingmodeparameter :: TonemappingModeParameter ,
-# [offset (64)] # [rename (name = "toeStrength")] pub toe_strength : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (72)] # [rename (name = "toeLength")] pub toe_length : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (80)] # [rename (name = "shoulderStrength")] pub shoulder_strength : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (88)] # [rename (name = "shoulderLength")] pub shoulder_length : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
-# [offset (96)] # [rename (name = "shoulderAngle")] pub shoulder_angle : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (104)] # [rename (name = "gamma")] pub gamma : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/tonemapping/Tonemapping.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="Tonemapping")]#[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]pub struct Tonemapping{#[offset(56)]#[rename(name="mode")]pub mode:crate::unity_engine::rendering::universal::tonemappingmodeparameter::TonemappingModeParameter, #[offset(64)]#[rename(name="toeStrength")]pub toe_strength:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(72)]#[rename(name="toeLength")]pub toe_length:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(80)]#[rename(name="shoulderStrength")]pub shoulder_strength:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(88)]#[rename(name="shoulderLength")]pub shoulder_length:crate::unity_engine::rendering::minfloatparameter::MinFloatParameter, #[offset(96)]#[rename(name="shoulderAngle")]pub shoulder_angle:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(104)]#[rename(name="gamma")]pub gamma:crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-tonemapping-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-tonemapping")]
-pub trait ITonemappingMethods : ITonemapping { # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < Tonemapping as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Tonemapping , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca3d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsTileCompatible()` overload"] fn is_tile_compatible (self ,) -> bool { unsafe { let __receiver = < Tonemapping as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Tonemapping , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca3d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Tonemapping as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Tonemapping , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca3d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-tonemapping")]pub trait ITonemappingMethods:ITonemapping{#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <Tonemapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca3d50usize)as*mut u8,bool;
+(Tonemapping)__receiver)}
+}
+#[doc="`IsTileCompatible()` overload"]fn is_tile_compatible(self,)->bool{unsafe{let __receiver= <Tonemapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca3d80usize)as*mut u8,bool;
+(Tonemapping)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Tonemapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca3d90usize)as*mut u8,();
+(Tonemapping)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-tonemapping")]
-impl < __T : ITonemapping > ITonemappingMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-tonemapping")]impl<__T:ITonemapping>ITonemappingMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-tonemapping")]
-impl Tonemapping { pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Tonemapping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_tile_compatible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Tonemapping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Tonemapping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-universal-tonemapping")]impl Tonemapping{pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_tile_compatible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-tonemapping")]
-impl Tonemapping {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Tonemapping) , :: core :: stringify ! (new) ,)) ; < Self as ITonemappingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-tonemapping")]impl Tonemapping{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Tonemapping), ::core::stringify!(new),));
+ <Self as ITonemappingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-tonemapping")]

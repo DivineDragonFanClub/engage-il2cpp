@@ -4,36 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: statemachinebehaviour :: { IStateMachineBehaviour , StateMachineBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMachineBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gamemessageopen/GameMessageOpen.md"))] # [:: unity2 :: class (namespace = "" , name = "GameMessageOpen")] # [parent (crate :: unity_engine :: statemachinebehaviour :: StateMachineBehaviour)] pub struct GameMessageOpen {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/gamemessageopen/GameMessageOpen.md"))]#[::unity2::class(namespace="",name="GameMessageOpen")]#[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]pub struct GameMessageOpen{}
 
 }
 
 #[cfg(feature = "root-gamemessageopen-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-gamemessageopen")]
-pub trait IGameMessageOpenMethods : IGameMessageOpen { # [doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_enter (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameMessageOpen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageOpen , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22803e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_exit (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameMessageOpen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageOpen , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22804a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameMessageOpen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageOpen , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-gamemessageopen")]pub trait IGameMessageOpenMethods:IGameMessageOpen{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameMessageOpen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22803e0usize)as*mut u8,();
+(GameMessageOpen)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameMessageOpen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22804a0usize)as*mut u8,();
+(GameMessageOpen)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameMessageOpen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280560usize)as*mut u8,();
+(GameMessageOpen)__receiver)}
+}
+}
 
-#[cfg(feature = "root-gamemessageopen")]
-impl < __T : IGameMessageOpen > IGameMessageOpenMethods for __T { }
+#[cfg(feature="root-gamemessageopen")]impl<__T:IGameMessageOpen>IGameMessageOpenMethods for __T{}
 
-#[cfg(feature = "root-gamemessageopen")]
-impl GameMessageOpen { pub fn on_state_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageOpen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_state_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageOpen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageOpen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-gamemessageopen")]impl GameMessageOpen{pub fn on_state_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_state_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-gamemessageopen")]
-impl GameMessageOpen {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameMessageOpen) , :: core :: stringify ! (new) ,)) ; < Self as IGameMessageOpenMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-gamemessageopen")]impl GameMessageOpen{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameMessageOpen), ::core::stringify!(new),));
+ <Self as IGameMessageOpenMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-gamemessageopen")]

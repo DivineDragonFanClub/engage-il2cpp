@@ -4,39 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentbonusitem/HubInvestmentBonusItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubInvestmentBonusItem")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentbonusitem :: HubInvestmentBonusItem >)] pub struct HubInvestmentBonusItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubinvestmentbonusitem/HubInvestmentBonusItem.md"))]#[::unity2::class(namespace="App",name="HubInvestmentBonusItem")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::hubinvestmentbonusitem::HubInvestmentBonusItem>)]pub struct HubInvestmentBonusItem{}
 
 }
 
 #[cfg(feature = "app-hubinvestmentbonusitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubinvestmentbonusitem")]
-impl HubInvestmentBonusItem { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaa50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentbonusitem")]impl HubInvestmentBonusItem{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28aaa50usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusitem")]
-pub trait IHubInvestmentBonusItemMethods : IHubInvestmentBonusItem { # [doc = "`get_ItemId()` overload"] fn get_item_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aab00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ItemId(::unity2::Il2CppString)` overload"] fn set_item_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aab10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Num()` overload"] fn get_num (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusItem , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aab20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Num(u8)` overload"] fn set_num (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusItem , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aab30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubInvestmentBonusItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aab40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentbonusitem")]pub trait IHubInvestmentBonusItemMethods:IHubInvestmentBonusItem{#[doc="`get_ItemId()` overload"]fn get_item_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentBonusItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aab00usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentBonusItem)__receiver)}
+}
+#[doc="`set_ItemId(::unity2::Il2CppString)` overload"]fn set_item_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentBonusItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aab10usize)as*mut u8,();
+(HubInvestmentBonusItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Num()` overload"]fn get_num(self,)->u8{unsafe{let __receiver= <HubInvestmentBonusItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aab20usize)as*mut u8,u8;
+(HubInvestmentBonusItem)__receiver)}
+}
+#[doc="`set_Num(u8)` overload"]fn set_num(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentBonusItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aab30usize)as*mut u8,();
+(HubInvestmentBonusItem)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubInvestmentBonusItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aab40usize)as*mut u8,();
+(HubInvestmentBonusItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusitem")]
-impl < __T : IHubInvestmentBonusItem > IHubInvestmentBonusItemMethods for __T { }
+#[cfg(feature="app-hubinvestmentbonusitem")]impl<__T:IHubInvestmentBonusItem>IHubInvestmentBonusItemMethods for __T{}
 
-#[cfg(feature = "app-hubinvestmentbonusitem")]
-impl HubInvestmentBonusItem { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_item_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-hubinvestmentbonusitem")]impl HubInvestmentBonusItem{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_item_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusitem")]
-impl HubInvestmentBonusItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubInvestmentBonusItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubInvestmentBonusItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubinvestmentbonusitem")]impl HubInvestmentBonusItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubInvestmentBonusItem), ::core::stringify!(new),));
+ <Self as IHubInvestmentBonusItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubinvestmentbonusitem")]

@@ -4,87 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gyromnager/GyroMnager.md"))] # [:: unity2 :: class (namespace = "App" , name = "GyroMnager")] # [parent (crate :: system :: object :: Object)] pub struct GyroMnager {
-# [offset (16)] # [rename (name = "m_IsSampling")] pub m_is_sampling : bool ,
-# [offset (24)] # [rename (name = "m_HandleList")] pub m_handle_list : :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle > ,
-# [offset (32)] # [rename (name = "m_HandleCoount")] pub m_handle_coount : i32 ,
-# [offset (40)] # [rename (name = "m_StateList")] pub m_state_list : :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gyromnager/GyroMnager.md"))]#[::unity2::class(namespace="App",name="GyroMnager")]#[parent(crate::system::object::Object)]pub struct GyroMnager{#[offset(16)]#[rename(name="m_IsSampling")]pub m_is_sampling:bool, #[offset(24)]#[rename(name="m_HandleList")]pub m_handle_list: ::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle> , #[offset(32)]#[rename(name="m_HandleCoount")]pub m_handle_coount:i32, #[offset(40)]#[rename(name="m_StateList")]pub m_state_list: ::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gyromnager/GyroMnager_DeviceType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GyroMnager_DeviceType{pub value:i32,}
+impl::unity2::ClassIdentity for GyroMnager_DeviceType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GyroMnager.DeviceType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager_DeviceType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GyroMnager_DeviceType  {
-    pub value: i32,
+impl::unity2::IlType for GyroMnager_DeviceType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for GyroMnager_DeviceType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GyroMnager.DeviceType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl GyroMnager_DeviceType{pub fn joy_left()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for GyroMnager_DeviceType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn joy_right()->Self{Self{value:1}
 }
-
-
-impl  GyroMnager_DeviceType  {
-    pub fn joy_left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn joy_right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn handheld() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn full_key() -> Self {
-        Self { value: 0 }
-
-    }
-
+pub fn max()->Self{Self{value:2}
+}
+pub fn handheld()->Self{Self{value:0}
+}
+pub fn full_key()->Self{Self{value:0}
+}
 }
 
 }
@@ -92,18 +42,57 @@ impl  GyroMnager_DeviceType  {
 #[cfg(feature = "app-gyromnager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gyromnager")]
-pub trait IGyroMnagerMethods : IGyroMnager { # [doc = "`get_PadStyle()` overload"] fn get_pad_style (self ,) -> crate :: nn :: hid :: npadstyle :: NpadStyle { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: npadstyle :: NpadStyle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PadStyle(crate::nn::hid::npadstyle::NpadStyle)` overload"] fn set_pad_style (self , value : impl :: core :: convert :: Into < crate :: nn :: hid :: npadstyle :: NpadStyle >) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GyroMnager , crate :: nn :: hid :: npadstyle :: NpadStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupPad(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"] fn setup_pad (self , npad_id : impl :: core :: convert :: Into < crate :: nn :: hid :: npadid :: NpadId > , npad_style : impl :: core :: convert :: Into < crate :: nn :: hid :: npadstyle :: NpadStyle >) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GyroMnager , crate :: nn :: hid :: npadid :: NpadId , crate :: nn :: hid :: npadstyle :: NpadStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (npad_id) , :: core :: convert :: Into :: into (npad_style) , :: core :: option :: Option :: None) } } } # [doc = "`StartSampling()` overload"] fn start_sampling (self ,) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29788a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopSampling()` overload"] fn stop_sampling (self ,) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GyroMnager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetState(crate::app::gyromnager::GyroMnager_DeviceType)` overload"] fn get_state (self , r#type : impl :: core :: convert :: Into < crate :: app :: gyromnager :: GyroMnager_DeviceType >) -> crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState { unsafe { let __receiver = < GyroMnager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GyroMnager , crate :: app :: gyromnager :: GyroMnager_DeviceType , :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29789c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gyromnager")]pub trait IGyroMnagerMethods:IGyroMnager{#[doc="`get_PadStyle()` overload"]fn get_pad_style(self,)->crate::nn::hid::npadstyle::NpadStyle{unsafe{let __receiver= <GyroMnager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978610usize)as*mut u8,crate::nn::hid::npadstyle::NpadStyle;
+(GyroMnager)__receiver)}
+}
+#[doc="`set_PadStyle(crate::nn::hid::npadstyle::NpadStyle)` overload"]fn set_pad_style(self,value:impl::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>)->(){unsafe{let __receiver= <GyroMnager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978620usize)as*mut u8,();
+(GyroMnager)__receiver,(crate::nn::hid::npadstyle::NpadStyle)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GyroMnager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978630usize)as*mut u8,();
+(GyroMnager)__receiver)}
+}
+#[doc="`SetupPad(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]fn setup_pad(self,npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId> ,npad_style:impl::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>)->(){unsafe{let __receiver= <GyroMnager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978730usize)as*mut u8,();
+(GyroMnager)__receiver,(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id),(crate::nn::hid::npadstyle::NpadStyle)::core::convert::Into::into(npad_style))}
+}
+#[doc="`StartSampling()` overload"]fn start_sampling(self,)->(){unsafe{let __receiver= <GyroMnager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29788a0usize)as*mut u8,();
+(GyroMnager)__receiver)}
+}
+#[doc="`StopSampling()` overload"]fn stop_sampling(self,)->(){unsafe{let __receiver= <GyroMnager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978830usize)as*mut u8,();
+(GyroMnager)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <GyroMnager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978910usize)as*mut u8,();
+(GyroMnager)__receiver)}
+}
+#[doc="`GetState(crate::app::gyromnager::GyroMnager_DeviceType)` overload"]fn get_state(self,r#type:impl::core::convert::Into<crate::app::gyromnager::GyroMnager_DeviceType>)->crate::nn::hid::sixaxissensorstate::SixAxisSensorState{unsafe{let __receiver= <GyroMnager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29789c0usize)as*mut u8,crate::nn::hid::sixaxissensorstate::SixAxisSensorState;
+(GyroMnager)__receiver,(crate::app::gyromnager::GyroMnager_DeviceType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "app-gyromnager")]
-impl < __T : IGyroMnager > IGyroMnagerMethods for __T { }
+#[cfg(feature="app-gyromnager")]impl<__T:IGyroMnager>IGyroMnagerMethods for __T{}
 
-#[cfg(feature = "app-gyromnager")]
-impl GyroMnager { pub fn get_pad_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GyroMnager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_pad_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GyroMnager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GyroMnager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_pad_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GyroMnager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_sampling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GyroMnager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn stop_sampling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GyroMnager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GyroMnager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GyroMnager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-gyromnager")]impl GyroMnager{pub fn get_pad_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pad_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_pad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_sampling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn stop_sampling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-gyromnager")]
-impl GyroMnager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GyroMnager) , :: core :: stringify ! (new) ,)) ; < Self as IGyroMnagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gyromnager")]impl GyroMnager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GyroMnager), ::core::stringify!(new),));
+ <Self as IGyroMnagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gyromnager")]

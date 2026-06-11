@@ -4,32 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/dressutility/DressUtility.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "DressUtility")] # [parent (crate :: system :: object :: Object)] pub struct DressUtility {
-# [offset (16)] # [rename (name = "bodyCache")] pub body_cache : crate :: combat :: hierarchycache :: HierarchyCache ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/dressutility/DressUtility.md"))]#[::unity2::class(namespace="Combat",name="DressUtility")]#[parent(crate::system::object::Object)]pub struct DressUtility{#[offset(16)]#[rename(name="bodyCache")]pub body_cache:crate::combat::hierarchycache::HierarchyCache,}
 
 }
 
 #[cfg(feature = "combat-dressutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-dressutility")]
-pub trait IDressUtilityMethods : IDressUtility { # [doc = "`get_Cache()` overload"] fn get_cache (self ,) -> crate :: combat :: hierarchycache :: HierarchyCache { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DressUtility , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hierarchycache :: HierarchyCache = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(::unity2::Il2CppString)` overload"] fn get_item (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DressUtility , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"] fn ctor (self , body_root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DressUtility , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_root) , :: core :: option :: Option :: None) } } } # [doc = "`TransplantDressOnlyBones(crate::unity_engine::transform::Transform)` overload"] fn transplant_dress_only_bones (self , dress : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DressUtility , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dress) , :: core :: option :: Option :: None) } } } # [doc = "`TransplantSkinnedMesh(crate::unity_engine::gameobject::GameObject, ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>, ::unity2::Il2CppString)` overload"] fn transplant_skinned_mesh (self , dress_go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , dress_meshes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > > , parent_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DressUtility , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dress_go) , :: core :: convert :: Into :: into (dress_meshes) , :: core :: convert :: Into :: into (parent_name) , :: core :: option :: Option :: None) } } } # [doc = "`TransplantMesh(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"] fn transplant_mesh (self , acc_go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , parent_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DressUtility , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (acc_go) , :: core :: convert :: Into :: into (parent_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-dressutility")]pub trait IDressUtilityMethods:IDressUtility{#[doc="`get_Cache()` overload"]fn get_cache(self,)->crate::combat::hierarchycache::HierarchyCache{unsafe{let __receiver= <DressUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2ac0usize)as*mut u8,crate::combat::hierarchycache::HierarchyCache;
+(DressUtility)__receiver)}
+}
+#[doc="`get_Item(::unity2::Il2CppString)` overload"]fn get_item(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <DressUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2ad0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(DressUtility)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor(self,body_root:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <DressUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2ae0usize)as*mut u8,();
+(DressUtility)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(body_root))}
+}
+#[doc="`TransplantDressOnlyBones(crate::unity_engine::transform::Transform)` overload"]fn transplant_dress_only_bones(self,dress:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <DressUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2b60usize)as*mut u8,();
+(DressUtility)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(dress))}
+}
+#[doc="`TransplantSkinnedMesh(crate::unity_engine::gameobject::GameObject, ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>, ::unity2::Il2CppString)` overload"]fn transplant_skinned_mesh(self,dress_go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,dress_meshes:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer> > ,parent_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DressUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2e20usize)as*mut u8,();
+(DressUtility)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(dress_go),(::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>)::core::convert::Into::into(dress_meshes),(::unity2::Il2CppString)::core::convert::Into::into(parent_name))}
+}
+#[doc="`TransplantMesh(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn transplant_mesh(self,acc_go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,parent_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DressUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d3100usize)as*mut u8,();
+(DressUtility)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(acc_go),(::unity2::Il2CppString)::core::convert::Into::into(parent_name))}
+}
+}
 
-#[cfg(feature = "combat-dressutility")]
-impl < __T : IDressUtility > IDressUtilityMethods for __T { }
+#[cfg(feature="combat-dressutility")]impl<__T:IDressUtility>IDressUtilityMethods for __T{}
 
-#[cfg(feature = "combat-dressutility")]
-impl DressUtility { pub fn get_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DressUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DressUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DressUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn transplant_dress_only_bones_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DressUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn transplant_skinned_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DressUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn transplant_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DressUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-dressutility")]impl DressUtility{pub fn get_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn transplant_dress_only_bones_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn transplant_skinned_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn transplant_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-dressutility")]
-impl DressUtility {
-# [doc = "`.ctor(crate::unity_engine::transform::Transform)` — overload selector"] pub fn new (body_root : crate :: unity_engine :: transform :: Transform) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DressUtility) , :: core :: stringify ! (new) ,)) ; < Self as IDressUtilityMethods > :: ctor (this , body_root) ; this }
+#[cfg(feature="combat-dressutility")]impl DressUtility{#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(body_root:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DressUtility), ::core::stringify!(new),));
+ <Self as IDressUtilityMethods> ::ctor(this,body_root);
+this}
 }
 
 #[cfg(feature = "combat-dressutility")]

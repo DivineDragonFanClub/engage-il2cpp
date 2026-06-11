@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/notkeyableattribute_2/NotKeyableAttribute_2.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "NotKeyableAttribute")] pub struct NotKeyableAttribute_2 {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/notkeyableattribute_2/NotKeyableAttribute_2.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="NotKeyableAttribute")]pub struct NotKeyableAttribute_2{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-notkeyableattribute_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-notkeyableattribute_2")]
-pub trait INotKeyableAttribute_2Methods : INotKeyableAttribute_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NotKeyableAttribute_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NotKeyableAttribute_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d8790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-notkeyableattribute_2")]pub trait INotKeyableAttribute_2Methods:INotKeyableAttribute_2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NotKeyableAttribute_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d8790usize)as*mut u8,();
+(NotKeyableAttribute_2)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-notkeyableattribute_2")]
-impl < __T : INotKeyableAttribute_2 > INotKeyableAttribute_2Methods for __T { }
+#[cfg(feature="unity_engine-timeline-notkeyableattribute_2")]impl<__T:INotKeyableAttribute_2>INotKeyableAttribute_2Methods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-notkeyableattribute_2")]
-impl NotKeyableAttribute_2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NotKeyableAttribute_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-notkeyableattribute_2")]impl NotKeyableAttribute_2{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-timeline-notkeyableattribute_2")]
-impl NotKeyableAttribute_2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NotKeyableAttribute_2) , :: core :: stringify ! (new) ,)) ; < Self as INotKeyableAttribute_2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-notkeyableattribute_2")]impl NotKeyableAttribute_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NotKeyableAttribute_2), ::core::stringify!(new),));
+ <Self as INotKeyableAttribute_2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-notkeyableattribute_2")]

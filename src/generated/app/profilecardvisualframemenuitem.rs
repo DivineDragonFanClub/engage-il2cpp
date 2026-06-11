@@ -4,34 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: profilecardvisualbasemenuitem :: { IProfileCardVisualBaseMenuItem , ProfileCardVisualBaseMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::profilecardvisualbasemenuitem::{IProfileCardVisualBaseMenuItem,ProfileCardVisualBaseMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualframemenuitem/ProfileCardVisualFrameMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualFrameMenuItem")] # [parent (crate :: app :: profilecardvisualbasemenuitem :: ProfileCardVisualBaseMenuItem)] pub struct ProfileCardVisualFrameMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualframemenuitem/ProfileCardVisualFrameMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualFrameMenuItem")]#[parent(crate::app::profilecardvisualbasemenuitem::ProfileCardVisualBaseMenuItem)]pub struct ProfileCardVisualFrameMenuItem{}
 
 }
 
 #[cfg(feature = "app-profilecardvisualframemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardvisualframemenuitem")]
-pub trait IProfileCardVisualFrameMenuItemMethods : IProfileCardVisualFrameMenuItem { # [doc = "`get_m_FrameData()` overload"] fn get_m_frame_data (self ,) -> crate :: app :: profilecardframedata :: ProfileCardFrameData { unsafe { let __receiver = < ProfileCardVisualFrameMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualFrameMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardframedata :: ProfileCardFrameData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_FrameData(crate::app::profilecardframedata::ProfileCardFrameData)` overload"] fn set_m_frame_data (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardframedata :: ProfileCardFrameData >) -> () { unsafe { let __receiver = < ProfileCardVisualFrameMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualFrameMenuItem , crate :: app :: profilecardframedata :: ProfileCardFrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::profilecardframedata::ProfileCardFrameData, bool)` overload"] fn ctor (self , frame_data : impl :: core :: convert :: Into < crate :: app :: profilecardframedata :: ProfileCardFrameData > , initial_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardVisualFrameMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualFrameMenuItem , crate :: app :: profilecardframedata :: ProfileCardFrameData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (frame_data) , :: core :: convert :: Into :: into (initial_select) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualFrameMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualFrameMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c047f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNewArrival()` overload"] fn is_new_arrival (self ,) -> bool { unsafe { let __receiver = < ProfileCardVisualFrameMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualFrameMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAlreadyRead()` overload"] fn set_already_read (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualFrameMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualFrameMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvisualframemenuitem")]pub trait IProfileCardVisualFrameMenuItemMethods:IProfileCardVisualFrameMenuItem{#[doc="`get_m_FrameData()` overload"]fn get_m_frame_data(self,)->crate::app::profilecardframedata::ProfileCardFrameData{unsafe{let __receiver= <ProfileCardVisualFrameMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04ad0usize)as*mut u8,crate::app::profilecardframedata::ProfileCardFrameData;
+(ProfileCardVisualFrameMenuItem)__receiver)}
+}
+#[doc="`set_m_FrameData(crate::app::profilecardframedata::ProfileCardFrameData)` overload"]fn set_m_frame_data(self,value:impl::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>)->(){unsafe{let __receiver= <ProfileCardVisualFrameMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04ae0usize)as*mut u8,();
+(ProfileCardVisualFrameMenuItem)__receiver,(crate::app::profilecardframedata::ProfileCardFrameData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::profilecardframedata::ProfileCardFrameData, bool)` overload"]fn ctor(self,frame_data:impl::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData> ,initial_select:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardVisualFrameMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04500usize)as*mut u8,();
+(ProfileCardVisualFrameMenuItem)__receiver,(crate::app::profilecardframedata::ProfileCardFrameData)::core::convert::Into::into(frame_data),(bool)::core::convert::Into::into(initial_select))}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualFrameMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c047f0usize)as*mut u8,();
+(ProfileCardVisualFrameMenuItem)__receiver)}
+}
+#[doc="`IsNewArrival()` overload"]fn is_new_arrival(self,)->bool{unsafe{let __receiver= <ProfileCardVisualFrameMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04af0usize)as*mut u8,bool;
+(ProfileCardVisualFrameMenuItem)__receiver)}
+}
+#[doc="`SetAlreadyRead()` overload"]fn set_already_read(self,)->(){unsafe{let __receiver= <ProfileCardVisualFrameMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04b90usize)as*mut u8,();
+(ProfileCardVisualFrameMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardvisualframemenuitem")]
-impl < __T : IProfileCardVisualFrameMenuItem > IProfileCardVisualFrameMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardvisualframemenuitem")]impl<__T:IProfileCardVisualFrameMenuItem>IProfileCardVisualFrameMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardvisualframemenuitem")]
-impl ProfileCardVisualFrameMenuItem { pub fn get_m_frame_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualFrameMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_frame_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualFrameMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualFrameMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualFrameMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_new_arrival_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualFrameMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_already_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualFrameMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardvisualframemenuitem")]impl ProfileCardVisualFrameMenuItem{pub fn get_m_frame_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_frame_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_new_arrival_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_already_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardvisualframemenuitem")]
-impl ProfileCardVisualFrameMenuItem {
-# [doc = "`.ctor(crate::app::profilecardframedata::ProfileCardFrameData, bool)` — overload selector"] pub fn new (frame_data : crate :: app :: profilecardframedata :: ProfileCardFrameData , initial_select : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualFrameMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualFrameMenuItemMethods > :: ctor (this , frame_data , initial_select) ; this }
+#[cfg(feature="app-profilecardvisualframemenuitem")]impl ProfileCardVisualFrameMenuItem{#[doc="`.ctor(crate::app::profilecardframedata::ProfileCardFrameData, bool)` — overload selector"]pub fn new(frame_data:crate::app::profilecardframedata::ProfileCardFrameData,initial_select:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualFrameMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardVisualFrameMenuItemMethods> ::ctor(this,frame_data,initial_select);
+this}
 }
 
 #[cfg(feature = "app-profilecardvisualframemenuitem")]

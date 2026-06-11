@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/iallocationstrategy/IAllocationStrategy.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "IAllocationStrategy")] pub struct IAllocationStrategy {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/iallocationstrategy/IAllocationStrategy.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="IAllocationStrategy")]pub struct IAllocationStrategy{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IAllocationStrategy_unity2_raw { use super :: * ; pub unsafe fn new (this : IAllocationStrategy , r#type : :: unity2 :: SystemType , type_hash : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("New") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "New" , < IAllocationStrategy as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IAllocationStrategy , :: unity2 :: SystemType , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , r#type , type_hash , __mi) } pub unsafe fn release (this : IAllocationStrategy , type_hash : i32 , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Release") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Release" , < IAllocationStrategy as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IAllocationStrategy , i32 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , type_hash , obj , __mi) } }
+#[cfg(feature="unity_engine-resource_management-util-iallocationstrategy")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IAllocationStrategy_unity2_raw{use super:: * ;
+pub unsafe fn new(this:IAllocationStrategy,r#type: ::unity2::SystemType,type_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("New").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","New", <IAllocationStrategy as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IAllocationStrategy, ::unity2::SystemType,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,type_hash,__mi)}
+pub unsafe fn release(this:IAllocationStrategy,type_hash:i32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Release").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Release", <IAllocationStrategy as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IAllocationStrategy,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,type_hash,obj,__mi)}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
-pub trait IIAllocationStrategyMethods : IIAllocationStrategy { # [doc = "`New(::unity2::SystemType, i32)` overload"] fn new (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , type_hash : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { let __receiver = < IAllocationStrategy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IAllocationStrategy_unity2_raw :: new (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (type_hash) , :: core :: option :: Option :: None) } } # [doc = "`Release(i32, crate::system::object::Object)` overload"] fn release (self , type_hash : impl :: core :: convert :: Into < i32 > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < IAllocationStrategy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IAllocationStrategy_unity2_raw :: release (__receiver , :: core :: convert :: Into :: into (type_hash) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-resource_management-util-iallocationstrategy")]pub trait IIAllocationStrategyMethods:IIAllocationStrategy{#[doc="`New(::unity2::SystemType, i32)` overload"]fn new(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,type_hash:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <IAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IAllocationStrategy_unity2_raw::new(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(type_hash), ::core::option::Option::None)}
+}
+#[doc="`Release(i32, crate::system::object::Object)` overload"]fn release(self,type_hash:impl::core::convert::Into<i32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <IAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IAllocationStrategy_unity2_raw::release(__receiver, ::core::convert::Into::into(type_hash), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
-impl < __T : IIAllocationStrategy > IIAllocationStrategyMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-util-iallocationstrategy")]impl<__T:IIAllocationStrategy>IIAllocationStrategyMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
-impl IAllocationStrategy { pub fn new_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IAllocationStrategy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IAllocationStrategy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-resource_management-util-iallocationstrategy")]impl IAllocationStrategy{pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
 #[doc(hidden)]

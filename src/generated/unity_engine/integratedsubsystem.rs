@@ -4,33 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/integratedsubsystem/IntegratedSubsystem.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "IntegratedSubsystem")] # [parent (crate :: system :: object :: Object)] pub struct IntegratedSubsystem {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_SubsystemDescriptor")] pub m_subsystem_descriptor : crate :: unity_engine :: isubsystemdescriptor_interface :: ISubsystemDescriptor_Interface ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/integratedsubsystem/IntegratedSubsystem.md"))]#[::unity2::class(namespace="UnityEngine",name="IntegratedSubsystem")]#[parent(crate::system::object::Object)]pub struct IntegratedSubsystem{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_SubsystemDescriptor")]pub m_subsystem_descriptor:crate::unity_engine::isubsystemdescriptor_interface::ISubsystemDescriptor_Interface,}
 
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystem-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-integratedsubsystem")]
-pub trait IIntegratedSubsystemMethods : IIntegratedSubsystem { # [doc = "`SetHandle(crate::unity_engine::integratedsubsystem::IntegratedSubsystem)` overload"] fn set_handle (self , subsystem : impl :: core :: convert :: Into < crate :: unity_engine :: integratedsubsystem :: IntegratedSubsystem >) -> () { unsafe { let __receiver = < IntegratedSubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IntegratedSubsystem , crate :: unity_engine :: integratedsubsystem :: IntegratedSubsystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (subsystem) , :: core :: option :: Option :: None) } } } # [doc = "`get_running()` overload"] fn get_running (self ,) -> bool { unsafe { let __receiver = < IntegratedSubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IntegratedSubsystem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_valid()` overload"] fn get_valid (self ,) -> bool { unsafe { let __receiver = < IntegratedSubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IntegratedSubsystem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRunning()` overload"] fn is_running (self ,) -> bool { unsafe { let __receiver = < IntegratedSubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IntegratedSubsystem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < IntegratedSubsystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IntegratedSubsystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-integratedsubsystem")]pub trait IIntegratedSubsystemMethods:IIntegratedSubsystem{#[doc="`SetHandle(crate::unity_engine::integratedsubsystem::IntegratedSubsystem)` overload"]fn set_handle(self,subsystem:impl::core::convert::Into<crate::unity_engine::integratedsubsystem::IntegratedSubsystem>)->(){unsafe{let __receiver= <IntegratedSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a690usize)as*mut u8,();
+(IntegratedSubsystem)__receiver,(crate::unity_engine::integratedsubsystem::IntegratedSubsystem)::core::convert::Into::into(subsystem))}
+}
+#[doc="`get_running()` overload"]fn get_running(self,)->bool{unsafe{let __receiver= <IntegratedSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a6e0usize)as*mut u8,bool;
+(IntegratedSubsystem)__receiver)}
+}
+#[doc="`get_valid()` overload"]fn get_valid(self,)->bool{unsafe{let __receiver= <IntegratedSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a780usize)as*mut u8,bool;
+(IntegratedSubsystem)__receiver)}
+}
+#[doc="`IsRunning()` overload"]fn is_running(self,)->bool{unsafe{let __receiver= <IntegratedSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a7d0usize)as*mut u8,bool;
+(IntegratedSubsystem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IntegratedSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a820usize)as*mut u8,();
+(IntegratedSubsystem)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-integratedsubsystem")]
-impl < __T : IIntegratedSubsystem > IIntegratedSubsystemMethods for __T { }
+#[cfg(feature="unity_engine-integratedsubsystem")]impl<__T:IIntegratedSubsystem>IIntegratedSubsystemMethods for __T{}
 
-#[cfg(feature = "unity_engine-integratedsubsystem")]
-impl IntegratedSubsystem { pub fn set_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntegratedSubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_running_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntegratedSubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntegratedSubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_running_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntegratedSubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntegratedSubsystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-integratedsubsystem")]impl IntegratedSubsystem{pub fn set_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-integratedsubsystem")]
-impl IntegratedSubsystem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IntegratedSubsystem) , :: core :: stringify ! (new) ,)) ; < Self as IIntegratedSubsystemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-integratedsubsystem")]impl IntegratedSubsystem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IntegratedSubsystem), ::core::stringify!(new),));
+ <Self as IIntegratedSubsystemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystem")]

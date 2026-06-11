@@ -4,37 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: deco_rod :: { Deco_Rod , IDeco_Rod }
- ;
- use crate :: combat :: decorator :: { Decorator , IDecorator }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::deco_rod::{Deco_Rod,IDeco_Rod}
+;
+use crate::combat::decorator::{Decorator,IDecorator}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rodheal/Deco_RodHeal.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Deco_RodHeal")] # [parent (crate :: combat :: deco_rod :: Deco_Rod)] pub struct Deco_RodHeal {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/deco_rodheal/Deco_RodHeal.md"))]#[::unity2::class(namespace="Combat",name="Deco_RodHeal")]#[parent(crate::combat::deco_rod::Deco_Rod)]pub struct Deco_RodHeal{}
 
 }
 
 #[cfg(feature = "combat-deco_rodheal-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-deco_rodheal")]
-impl Deco_RodHeal { # [doc = "`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"] pub fn is_available (that : impl :: core :: convert :: Into < crate :: combat :: decoratorargs :: DecoratorArgs >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: decoratorargs :: DecoratorArgs , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce8620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (that) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-deco_rodheal")]impl Deco_RodHeal{#[doc="`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"]pub fn is_available(that:impl::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8620usize)as*mut u8,bool;
+(crate::combat::decoratorargs::DecoratorArgs)::core::convert::Into::into(that))}
+}
+}
 
-#[cfg(feature = "combat-deco_rodheal")]
-pub trait IDeco_RodHealMethods : IDeco_RodHeal { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Deco_RodHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_RodHeal , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce85d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_enemy_damage (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < Deco_RodHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_RodHeal , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce8790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`UseWideuse13()` overload"] fn use_wideuse13 (self ,) -> bool { unsafe { let __receiver = < Deco_RodHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_RodHeal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce8910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Deco_RodHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_RodHeal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce8af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-deco_rodheal")]pub trait IDeco_RodHealMethods:IDeco_RodHeal{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Deco_RodHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce85d0usize)as*mut u8, ::unity2::Il2CppString;
+(Deco_RodHeal)__receiver)}
+}
+#[doc="`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_enemy_damage(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Deco_RodHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8790usize)as*mut u8,();
+(Deco_RodHeal)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`UseWideuse13()` overload"]fn use_wideuse13(self,)->bool{unsafe{let __receiver= <Deco_RodHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8910usize)as*mut u8,bool;
+(Deco_RodHeal)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Deco_RodHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8af0usize)as*mut u8,();
+(Deco_RodHeal)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-deco_rodheal")]
-impl < __T : IDeco_RodHeal > IDeco_RodHealMethods for __T { }
+#[cfg(feature="combat-deco_rodheal")]impl<__T:IDeco_RodHeal>IDeco_RodHealMethods for __T{}
 
-#[cfg(feature = "combat-deco_rodheal")]
-impl Deco_RodHeal { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enemy_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn use_wideuse13_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-deco_rodheal")]impl Deco_RodHeal{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enemy_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn use_wideuse13_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-deco_rodheal")]
-impl Deco_RodHeal {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Deco_RodHeal) , :: core :: stringify ! (new) ,)) ; < Self as IDeco_RodHealMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-deco_rodheal")]impl Deco_RodHeal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Deco_RodHeal), ::core::stringify!(new),));
+ <Self as IDeco_RodHealMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-deco_rodheal")]

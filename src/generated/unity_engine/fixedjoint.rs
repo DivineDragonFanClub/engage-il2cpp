@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: joint :: { IJoint , Joint }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::joint::{IJoint,Joint}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/fixedjoint/FixedJoint.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "FixedJoint")] # [parent (crate :: unity_engine :: joint :: Joint)] pub struct FixedJoint {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/fixedjoint/FixedJoint.md"))]#[::unity2::class(namespace="UnityEngine",name="FixedJoint")]#[parent(crate::unity_engine::joint::Joint)]pub struct FixedJoint{}
 
 }
 
 #[cfg(feature = "unity_engine-fixedjoint-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-fixedjoint")]
-pub trait IFixedJointMethods : IFixedJoint { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FixedJoint as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FixedJoint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef7640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-fixedjoint")]pub trait IFixedJointMethods:IFixedJoint{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FixedJoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef7640usize)as*mut u8,();
+(FixedJoint)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-fixedjoint")]
-impl < __T : IFixedJoint > IFixedJointMethods for __T { }
+#[cfg(feature="unity_engine-fixedjoint")]impl<__T:IFixedJoint>IFixedJointMethods for __T{}
 
-#[cfg(feature = "unity_engine-fixedjoint")]
-impl FixedJoint { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixedJoint as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-fixedjoint")]impl FixedJoint{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-fixedjoint")]
-impl FixedJoint {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FixedJoint) , :: core :: stringify ! (new) ,)) ; < Self as IFixedJointMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-fixedjoint")]impl FixedJoint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FixedJoint), ::core::stringify!(new),));
+ <Self as IFixedJointMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-fixedjoint")]

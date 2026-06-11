@@ -4,130 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/neterror/NetError.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetError")] # [parent (crate :: system :: object :: Object)] pub struct NetError {
-# [static_field] # [rename (name = "s_Kind")] pub s_kind : crate :: app :: neterror :: NetError_Kind ,
-# [static_field] # [rename (name = "s_App")] pub s_app : crate :: app :: neterror :: NetError_App ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/neterror/NetError_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NetError_Kind{pub value:i32,}
+impl::unity2::ClassIdentity for NetError_Kind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NetError.Kind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NetError_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NetError_Kind{pub fn system()->Self{Self{value:0}
+}
+pub fn app()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/neterror/NetError_App.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NetError_App  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/neterror/NetError_App.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NetError_App{pub value:i32,}
+impl::unity2::ClassIdentity for NetError_App{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NetError.App";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NetError_App{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NetError_App{pub fn general()->Self{Self{value:0}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for NetError_App  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NetError.App";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for NetError_App  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  NetError_App  {
-    pub fn general() -> Self {
-        Self { value: 0 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/neterror/NetError_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NetError_Kind  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for NetError_Kind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NetError.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for NetError_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  NetError_Kind  {
-    pub fn system() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn app() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/neterror/NetError.md"))]#[::unity2::class(namespace="App",name="NetError")]#[parent(crate::system::object::Object)]pub struct NetError{#[static_field]#[rename(name="s_Kind")]pub s_kind:crate::app::neterror::NetError_Kind, #[static_field]#[rename(name="s_App")]pub s_app:crate::app::neterror::NetError_App,}
 
 }
 
 #[cfg(feature = "app-neterror-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-neterror")]
-impl NetError { # [doc = "`Show(crate::app::procinst::ProcInst)` overload"] pub fn show (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f12d80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Show(crate::app::procinst::ProcInst, crate::app::neterror::NetError_App)` overload"] pub fn show_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , app : impl :: core :: convert :: Into < crate :: app :: neterror :: NetError_App >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: neterror :: NetError_App , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f12f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (app) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f13080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetError(crate::app::neterror::NetError_App)` overload"] pub fn set_error (error : impl :: core :: convert :: Into < crate :: app :: neterror :: NetError_App >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: neterror :: NetError_App , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f13200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (error) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f13280usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-neterror")]impl NetError{#[doc="`Show(crate::app::procinst::ProcInst)` overload"]pub fn show(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f12d80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Show(crate::app::procinst::ProcInst, crate::app::neterror::NetError_App)` overload"]pub fn show_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,app:impl::core::convert::Into<crate::app::neterror::NetError_App>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f12f40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::neterror::NetError_App)::core::convert::Into::into(app))}
+}
+#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13080usize)as*mut u8,();
+)}
+}
+#[doc="`SetError(crate::app::neterror::NetError_App)` overload"]pub fn set_error(error:impl::core::convert::Into<crate::app::neterror::NetError_App>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13200usize)as*mut u8,();
+(crate::app::neterror::NetError_App)::core::convert::Into::into(error))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13280usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-neterror")]
-impl NetError { pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn show_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetError as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-neterror")]impl NetError{pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "app-neterror")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NetError_Kind;
+    pub use super::NetError_App;
     pub use super::NetError;
     pub use super::INetError;
-    pub use super::NetError_App;
-    pub use super::NetError_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

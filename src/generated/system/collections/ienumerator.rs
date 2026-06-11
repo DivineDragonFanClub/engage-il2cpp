@@ -4,27 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ienumerator/IEnumerator.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IEnumerator")] pub struct IEnumerator {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/ienumerator/IEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="IEnumerator")]pub struct IEnumerator{}
 
 }
 
 #[cfg(feature = "system-collections-ienumerator-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-ienumerator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IEnumerator_unity2_raw { use super :: * ; pub unsafe fn move_next (this : IEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("MoveNext") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "MoveNext" , < IEnumerator as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_current (this : IEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Current") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Current" , < IEnumerator as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn reset (this : IEnumerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Reset") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Reset" , < IEnumerator as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="system-collections-ienumerator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IEnumerator_unity2_raw{use super:: * ;
+pub unsafe fn move_next(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MoveNext").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","MoveNext", <IEnumerator as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_current(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Current").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Current", <IEnumerator as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reset(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Reset").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Reset", <IEnumerator as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "system-collections-ienumerator")]
-pub trait IIEnumeratorMethods : IIEnumerator { # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> bool { unsafe { let __receiver = < IEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IEnumerator_unity2_raw :: move_next (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < IEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IEnumerator_unity2_raw :: get_current (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < IEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IEnumerator_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="system-collections-ienumerator")]pub trait IIEnumeratorMethods:IIEnumerator{#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <IEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <IEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <IEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "system-collections-ienumerator")]
-impl < __T : IIEnumerator > IIEnumeratorMethods for __T { }
+#[cfg(feature="system-collections-ienumerator")]impl<__T:IIEnumerator>IIEnumeratorMethods for __T{}
 
-#[cfg(feature = "system-collections-ienumerator")]
-impl IEnumerator { pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-collections-ienumerator")]impl IEnumerator{pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "system-collections-ienumerator")]
 #[doc(hidden)]

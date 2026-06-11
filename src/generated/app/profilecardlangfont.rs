@@ -4,41 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardlangfont/ProfileCardLangFont.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardLangFont")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ProfileCardLangFont {
-# [offset (24)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "m_SharedMaterial")] pub m_shared_material : crate :: unity_engine :: material :: Material ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardlangfont/ProfileCardLangFont.md"))]#[::unity2::class(namespace="App",name="ProfileCardLangFont")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ProfileCardLangFont{#[offset(24)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="m_SharedMaterial")]pub m_shared_material:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "app-profilecardlangfont-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardlangfont")]
-pub trait IProfileCardLangFontMethods : IProfileCardLangFont { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < ProfileCardLangFont as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardLangFont , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231aae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < ProfileCardLangFont as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardLangFont , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ad40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateMaterial(*mutcrate::unity_engine::material::Material)` overload"] fn try_create_material (self ,) -> (bool , crate :: unity_engine :: material :: Material) { unsafe { let __receiver = < ProfileCardLangFont as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: material :: Material > :: uninit () ; let __ret = { { let __inner : extern "C" fn (ProfileCardLangFont , * mut crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ac10usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`TryDestroyMaterial()` overload"] fn try_destroy_material (self ,) -> () { unsafe { let __receiver = < ProfileCardLangFont as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardLangFont , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ad50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardLangFont as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardLangFont , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231ae90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardlangfont")]pub trait IProfileCardLangFontMethods:IProfileCardLangFont{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ProfileCardLangFont as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231aae0usize)as*mut u8,();
+(ProfileCardLangFont)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <ProfileCardLangFont as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ad40usize)as*mut u8,();
+(ProfileCardLangFont)__receiver)}
+}
+#[doc="`TryCreateMaterial(*mutcrate::unity_engine::material::Material)` overload"]fn try_create_material(self,)->(bool,crate::unity_engine::material::Material){unsafe{let __receiver= <ProfileCardLangFont as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::material::Material> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x231ac10usize)as*mut u8,bool;
+(ProfileCardLangFont)__receiver,(*mut crate::unity_engine::material::Material)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`TryDestroyMaterial()` overload"]fn try_destroy_material(self,)->(){unsafe{let __receiver= <ProfileCardLangFont as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ad50usize)as*mut u8,();
+(ProfileCardLangFont)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardLangFont as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231ae90usize)as*mut u8,();
+(ProfileCardLangFont)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardlangfont")]
-impl < __T : IProfileCardLangFont > IProfileCardLangFontMethods for __T { }
+#[cfg(feature="app-profilecardlangfont")]impl<__T:IProfileCardLangFont>IProfileCardLangFontMethods for __T{}
 
-#[cfg(feature = "app-profilecardlangfont")]
-impl ProfileCardLangFont { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardLangFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardLangFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_create_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardLangFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_destroy_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardLangFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardLangFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-profilecardlangfont")]impl ProfileCardLangFont{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_create_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_destroy_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-profilecardlangfont")]
-impl ProfileCardLangFont {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardLangFont) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardLangFontMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardlangfont")]impl ProfileCardLangFont{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardLangFont), ::core::stringify!(new),));
+ <Self as IProfileCardLangFontMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardlangfont")]

@@ -4,39 +4,100 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: eventinfo :: { EventInfo , IEventInfo }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
- use crate :: system :: reflection :: runtimeeventinfo :: { IRuntimeEventInfo , RuntimeEventInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::eventinfo::{EventInfo,IEventInfo}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
+use crate::system::reflection::runtimeeventinfo::{IRuntimeEventInfo,RuntimeEventInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoevent/MonoEvent.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MonoEvent")] # [parent (crate :: system :: reflection :: runtimeeventinfo :: RuntimeEventInfo)] pub struct MonoEvent {
-# [offset (24)] # [rename (name = "klass")] pub klass : :: unity2 :: IntPtr ,
-# [offset (32)] # [rename (name = "handle")] pub handle : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoevent/MonoEvent.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoEvent")]#[parent(crate::system::reflection::runtimeeventinfo::RuntimeEventInfo)]pub struct MonoEvent{#[offset(24)]#[rename(name="klass")]pub klass: ::unity2::IntPtr, #[offset(32)]#[rename(name="handle")]pub handle: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "system-reflection-monoevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-monoevent")]
-pub trait IMonoEventMethods : IMonoEvent { # [doc = "`get_Attributes()` overload"] fn get_attributes (self ,) -> crate :: system :: reflection :: eventattributes :: EventAttributes { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: eventattributes :: EventAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337ec10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAddMethod(bool)` overload"] fn get_add_method (self , non_public : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337ecb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } } # [doc = "`GetRaiseMethod(bool)` overload"] fn get_raise_method (self , non_public : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337ed40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } } # [doc = "`GetRemoveMethod(bool)` overload"] fn get_remove_method (self , non_public : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337edd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } } # [doc = "`get_DeclaringType()` overload"] fn get_declaring_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337ee60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReflectedType()` overload"] fn get_reflected_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337eea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337eee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337ef20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337efb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(bool)` overload"] fn get_custom_attributes (self , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337f030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes_2 (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337f0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributesData()` overload"] fn get_custom_attributes_data (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337f120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MonoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337f130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-monoevent")]pub trait IMonoEventMethods:IMonoEvent{#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::eventattributes::EventAttributes{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337ec10usize)as*mut u8,crate::system::reflection::eventattributes::EventAttributes;
+(MonoEvent)__receiver)}
+}
+#[doc="`GetAddMethod(bool)` overload"]fn get_add_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337ecb0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MonoEvent)__receiver,(bool)::core::convert::Into::into(non_public))}
+}
+#[doc="`GetRaiseMethod(bool)` overload"]fn get_raise_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337ed40usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MonoEvent)__receiver,(bool)::core::convert::Into::into(non_public))}
+}
+#[doc="`GetRemoveMethod(bool)` overload"]fn get_remove_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337edd0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MonoEvent)__receiver,(bool)::core::convert::Into::into(non_public))}
+}
+#[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337ee60usize)as*mut u8, ::unity2::SystemType;
+(MonoEvent)__receiver)}
+}
+#[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337eea0usize)as*mut u8, ::unity2::SystemType;
+(MonoEvent)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337eee0usize)as*mut u8, ::unity2::Il2CppString;
+(MonoEvent)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337ef20usize)as*mut u8, ::unity2::Il2CppString;
+(MonoEvent)__receiver)}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337efb0usize)as*mut u8,bool;
+(MonoEvent)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337f030usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(MonoEvent)__receiver,(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337f0a0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(MonoEvent)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributesData()` overload"]fn get_custom_attributes_data(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337f120usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> ;
+(MonoEvent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337f130usize)as*mut u8,();
+(MonoEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-monoevent")]
-impl < __T : IMonoEvent > IMonoEventMethods for __T { }
+#[cfg(feature="system-reflection-monoevent")]impl<__T:IMonoEvent>IMonoEventMethods for __T{}
 
-#[cfg(feature = "system-reflection-monoevent")]
-impl MonoEvent { pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_add_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_raise_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_remove_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_declaring_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_reflected_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_custom_attributes_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_custom_attributes_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="system-reflection-monoevent")]impl MonoEvent{pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_add_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_raise_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_remove_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_declaring_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_reflected_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_custom_attributes_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_custom_attributes_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "system-reflection-monoevent")]
-impl MonoEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MonoEvent) , :: core :: stringify ! (new) ,)) ; < Self as IMonoEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-monoevent")]impl MonoEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoEvent), ::core::stringify!(new),));
+ <Self as IMonoEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-monoevent")]

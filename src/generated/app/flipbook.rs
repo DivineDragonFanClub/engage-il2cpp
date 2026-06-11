@@ -4,121 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Flipbook_Mode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/flipbook/Flipbook_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Flipbook_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for Flipbook_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Flipbook.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Flipbook_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Flipbook_Mode{pub fn r#loop()->Self{Self{value:0}
+}
+pub fn stop()->Self{Self{value:1}
+}
+pub fn stop_and_hide()->Self{Self{value:2}
+}
+pub fn delete_object()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Flipbook_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Flipbook.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Flipbook_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Flipbook_Mode  {
-    pub fn r#loop() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn stop() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn stop_and_hide() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn delete_object() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md"))] # [:: unity2 :: class (namespace = "App" , name = "Flipbook")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Flipbook {
-# [offset (24)] # [rename (name = "m_patterns")] pub m_patterns : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (32)] # [rename (name = "m_span")] pub m_span : f32 ,
-# [offset (36)] # [rename (name = "m_animateStrength")] pub m_animate_strength : bool ,
-# [offset (40)] # [rename (name = "m_strength")] pub m_strength : f32 ,
-# [offset (44)] # [rename (name = "m_strengthCycle")] pub m_strength_cycle : f32 ,
-# [offset (48)] # [rename (name = "m_mode")] pub m_mode : crate :: app :: flipbook :: Flipbook_Mode ,
-# [offset (52)] # [rename (name = "m_autoPlay")] pub m_auto_play : bool ,
-# [offset (53)] # [rename (name = "m_playing")] pub m_playing : bool ,
-# [offset (56)] # [rename (name = "m_spanIndex")] pub m_span_index : i32 ,
-# [offset (60)] # [rename (name = "m_strengthCycleIndex")] pub m_strength_cycle_index : i32 ,
-# [offset (64)] # [rename (name = "m_patternIndex")] pub m_pattern_index : i32 ,
-# [offset (68)] # [rename (name = "m_patternCount")] pub m_pattern_count : i32 ,
-# [offset (72)] # [rename (name = "m_material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (80)] # [rename (name = "m_targetTexture")] pub m_target_texture : :: unity2 :: Il2CppString ,
-# [offset (88)] # [rename (name = "m_targetTextureId")] pub m_target_texture_id : i32 ,
-# [offset (96)] # [rename (name = "m_targetStrength")] pub m_target_strength : :: unity2 :: Il2CppString ,
-# [offset (104)] # [rename (name = "m_targetStrengthId")] pub m_target_strength_id : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/flipbook/Flipbook.md"))]#[::unity2::class(namespace="App",name="Flipbook")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct Flipbook{#[offset(24)]#[rename(name="m_patterns")]pub m_patterns:crate::unity_engine::vector2::Vector2, #[offset(32)]#[rename(name="m_span")]pub m_span:f32, #[offset(36)]#[rename(name="m_animateStrength")]pub m_animate_strength:bool, #[offset(40)]#[rename(name="m_strength")]pub m_strength:f32, #[offset(44)]#[rename(name="m_strengthCycle")]pub m_strength_cycle:f32, #[offset(48)]#[rename(name="m_mode")]pub m_mode:crate::app::flipbook::Flipbook_Mode, #[offset(52)]#[rename(name="m_autoPlay")]pub m_auto_play:bool, #[offset(53)]#[rename(name="m_playing")]pub m_playing:bool, #[offset(56)]#[rename(name="m_spanIndex")]pub m_span_index:i32, #[offset(60)]#[rename(name="m_strengthCycleIndex")]pub m_strength_cycle_index:i32, #[offset(64)]#[rename(name="m_patternIndex")]pub m_pattern_index:i32, #[offset(68)]#[rename(name="m_patternCount")]pub m_pattern_count:i32, #[offset(72)]#[rename(name="m_material")]pub m_material:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_targetTexture")]pub m_target_texture: ::unity2::Il2CppString, #[offset(88)]#[rename(name="m_targetTextureId")]pub m_target_texture_id:i32, #[offset(96)]#[rename(name="m_targetStrength")]pub m_target_strength: ::unity2::Il2CppString, #[offset(104)]#[rename(name="m_targetStrengthId")]pub m_target_strength_id:i32,}
 
 }
 
 #[cfg(feature = "app-flipbook-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-flipbook")]
-pub trait IFlipbookMethods : IFlipbook { # [doc = "`get_PatternIndex()` overload"] fn get_pattern_index (self ,) -> i32 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ee00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Frac(f32)` overload"] fn frac (self , val : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ee10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`GetUvOffset()` overload"] fn get_uv_offset (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ee40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUvScale()` overload"] fn get_uv_scale (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ee90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUvOffset()` overload"] fn set_uv_offset (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260eeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUvScale()` overload"] fn set_uv_scale (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ef10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetStrength()` overload"] fn get_strength (self ,) -> f32 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260ef40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetStrength()` overload"] fn set_strength (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Play()` overload"] fn play (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPatternRate()` overload"] fn get_pattern_rate (self ,) -> f32 { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Playing()` overload"] fn get_playing (self ,) -> bool { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Flipbook as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Flipbook , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260f870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-flipbook")]pub trait IFlipbookMethods:IFlipbook{#[doc="`get_PatternIndex()` overload"]fn get_pattern_index(self,)->i32{unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260ee00usize)as*mut u8,i32;
+(Flipbook)__receiver)}
+}
+#[doc="`Frac(f32)` overload"]fn frac(self,val:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260ee10usize)as*mut u8,f32;
+(Flipbook)__receiver,(f32)::core::convert::Into::into(val))}
+}
+#[doc="`GetUvOffset()` overload"]fn get_uv_offset(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260ee40usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(Flipbook)__receiver)}
+}
+#[doc="`GetUvScale()` overload"]fn get_uv_scale(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260ee90usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(Flipbook)__receiver)}
+}
+#[doc="`SetUvOffset()` overload"]fn set_uv_offset(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260eeb0usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+#[doc="`SetUvScale()` overload"]fn set_uv_scale(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260ef10usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+#[doc="`GetStrength()` overload"]fn get_strength(self,)->f32{unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260ef40usize)as*mut u8,f32;
+(Flipbook)__receiver)}
+}
+#[doc="`SetStrength()` overload"]fn set_strength(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f010usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+#[doc="`Play()` overload"]fn play(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f110usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f4e0usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f520usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f5a0usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f5b0usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+#[doc="`GetPatternRate()` overload"]fn get_pattern_rate(self,)->f32{unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f830usize)as*mut u8,f32;
+(Flipbook)__receiver)}
+}
+#[doc="`get_Playing()` overload"]fn get_playing(self,)->bool{unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f860usize)as*mut u8,bool;
+(Flipbook)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Flipbook as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260f870usize)as*mut u8,();
+(Flipbook)__receiver)}
+}
+}
 
-#[cfg(feature = "app-flipbook")]
-impl < __T : IFlipbook > IFlipbookMethods for __T { }
+#[cfg(feature="app-flipbook")]impl<__T:IFlipbook>IFlipbookMethods for __T{}
 
-#[cfg(feature = "app-flipbook")]
-impl Flipbook { pub fn get_pattern_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn frac_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_uv_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_uv_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_uv_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_uv_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_strength_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_strength_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_pattern_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Flipbook as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-flipbook")]impl Flipbook{pub fn get_pattern_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn frac_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_uv_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_uv_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_uv_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_uv_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_strength_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_strength_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_pattern_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-flipbook")]
-impl Flipbook {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Flipbook) , :: core :: stringify ! (new) ,)) ; < Self as IFlipbookMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-flipbook")]impl Flipbook{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Flipbook), ::core::stringify!(new),));
+ <Self as IFlipbookMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-flipbook")]

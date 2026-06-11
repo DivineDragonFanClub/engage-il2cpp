@@ -4,36 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
- ;
- use crate :: combat :: situation_converter :: converterwithut :: { ConverterWithUt , IConverterWithUt }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
+;
+use crate::combat::situation_converter::converterwithut::{ConverterWithUt,IConverterWithUt}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertcrosscut/ConvertCrossCut.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertCrossCut")] # [parent (crate :: combat :: situation_converter :: converterwithut :: ConverterWithUt)] pub struct ConvertCrossCut {
-# [offset (44)] # [rename (name = "m_IsEnded")] pub m_is_ended : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertcrosscut/ConvertCrossCut.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertCrossCut")]#[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]pub struct ConvertCrossCut{#[offset(44)]#[rename(name="m_IsEnded")]pub m_is_ended:bool,}
 
 }
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-situation_converter-convertcrosscut")]
-pub trait IConvertCrossCutMethods : IConvertCrossCut { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertCrossCut , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2540950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"] fn convert (self , situation : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertCrossCut , crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2540960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`OnBegin()` overload"] fn on_begin (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2540ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnApproach()` overload"] fn on_approach (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2540e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnAttack()` overload"] fn on_attack (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2540ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDamage()` overload"] fn on_damage (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2540f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnd()` overload"] fn on_end (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25411d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-situation_converter-convertcrosscut")]pub trait IConvertCrossCutMethods:IConvertCrossCut{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertCrossCut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2540950usize)as*mut u8,();
+(ConvertCrossCut)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
+}
+#[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertCrossCut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2540960usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertCrossCut)__receiver,(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(situation),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`OnBegin()` overload"]fn on_begin(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertCrossCut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2540ca0usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertCrossCut)__receiver)}
+}
+#[doc="`OnApproach()` overload"]fn on_approach(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertCrossCut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2540e30usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertCrossCut)__receiver)}
+}
+#[doc="`OnAttack()` overload"]fn on_attack(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertCrossCut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2540ee0usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertCrossCut)__receiver)}
+}
+#[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertCrossCut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2540f90usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertCrossCut)__receiver)}
+}
+#[doc="`OnEnd()` overload"]fn on_end(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertCrossCut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25411d0usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertCrossCut)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-situation_converter-convertcrosscut")]
-impl < __T : IConvertCrossCut > IConvertCrossCutMethods for __T { }
+#[cfg(feature="combat-situation_converter-convertcrosscut")]impl<__T:IConvertCrossCut>IConvertCrossCutMethods for __T{}
 
-#[cfg(feature = "combat-situation_converter-convertcrosscut")]
-impl ConvertCrossCut { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_approach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="combat-situation_converter-convertcrosscut")]impl ConvertCrossCut{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_approach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "combat-situation_converter-convertcrosscut")]
-impl ConvertCrossCut {
-# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertCrossCut) , :: core :: stringify ! (new) ,)) ; < Self as IConvertCrossCutMethods > :: ctor (this , data) ; this }
+#[cfg(feature="combat-situation_converter-convertcrosscut")]impl ConvertCrossCut{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConvertCrossCut), ::core::stringify!(new),));
+ <Self as IConvertCrossCutMethods> ::ctor(this,data);
+this}
 }
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut")]

@@ -4,32 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/stringdictionary/StringDictionary.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "StringDictionary")] # [parent (crate :: system :: object :: Object)] pub struct StringDictionary {
-# [offset (16)] # [rename (name = "contents")] pub contents : crate :: system :: collections :: hashtable :: Hashtable ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/stringdictionary/StringDictionary.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="StringDictionary")]#[parent(crate::system::object::Object)]pub struct StringDictionary{#[offset(16)]#[rename(name="contents")]pub contents:crate::system::collections::hashtable::Hashtable,}
 
 }
 
 #[cfg(feature = "system-collections-specialized-stringdictionary-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-specialized-stringdictionary")]
-pub trait IStringDictionaryMethods : IStringDictionary { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StringDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringDictionary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a27940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn add (self , key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StringDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringDictionary , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a279c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < StringDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringDictionary , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a27ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-specialized-stringdictionary")]pub trait IStringDictionaryMethods:IStringDictionary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a27940usize)as*mut u8,();
+(StringDictionary)__receiver)}
+}
+#[doc="`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add(self,key:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a279c0usize)as*mut u8,();
+(StringDictionary)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key),(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <StringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a27ab0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(StringDictionary)__receiver)}
+}
+}
 
-#[cfg(feature = "system-collections-specialized-stringdictionary")]
-impl < __T : IStringDictionary > IStringDictionaryMethods for __T { }
+#[cfg(feature="system-collections-specialized-stringdictionary")]impl<__T:IStringDictionary>IStringDictionaryMethods for __T{}
 
-#[cfg(feature = "system-collections-specialized-stringdictionary")]
-impl StringDictionary { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-collections-specialized-stringdictionary")]impl StringDictionary{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "system-collections-specialized-stringdictionary")]
-impl StringDictionary {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StringDictionary) , :: core :: stringify ! (new) ,)) ; < Self as IStringDictionaryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-specialized-stringdictionary")]impl StringDictionary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StringDictionary), ::core::stringify!(new),));
+ <Self as IStringDictionaryMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-specialized-stringdictionary")]

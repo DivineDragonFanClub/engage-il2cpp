@@ -4,70 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayReplayToTakeOverSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence.md"))]#[::unity2::class(namespace="App",name="RelayReplayToTakeOverSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayreplaytotakeoversequence::RelayReplayToTakeOverSequence>)]pub struct RelayReplayToTakeOverSequence{#[offset(120)]#[rename(name="m_SetupFieldFunc")]pub m_setup_field_func:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayReplayToTakeOverSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RelayReplayToTakeOverSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayReplayToTakeOverSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for RelayReplayToTakeOverSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayReplayToTakeOverSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for RelayReplayToTakeOverSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for RelayReplayToTakeOverSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl RelayReplayToTakeOverSequence_Label{pub fn skip_load()->Self{Self{value:0}
 }
-
-
-impl  RelayReplayToTakeOverSequence_Label  {
-    pub fn skip_load() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn end()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayReplayToTakeOverSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayreplaytotakeoversequence :: RelayReplayToTakeOverSequence >)] pub struct RelayReplayToTakeOverSequence {
-# [offset (120)] # [rename (name = "m_SetupFieldFunc")] pub m_setup_field_func : crate :: system :: action :: Action ,
 }
 
 }
@@ -75,30 +40,67 @@ impl  RelayReplayToTakeOverSequence_Label  {
 #[cfg(feature = "app-relayreplaytotakeoversequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayreplaytotakeoversequence")]
-impl RelayReplayToTakeOverSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , setup_field_func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20067b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (setup_field_func) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayreplaytotakeoversequence")]impl RelayReplayToTakeOverSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setup_field_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20067b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(setup_field_func))}
+}
+}
 
-#[cfg(feature = "app-relayreplaytotakeoversequence")]
-pub trait IRelayReplayToTakeOverSequenceMethods : IRelayReplayToTakeOverSequence { # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , setup_field_func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < RelayReplayToTakeOverSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayToTakeOverSequence , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2005260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setup_field_func) , :: core :: option :: Option :: None) } } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < RelayReplayToTakeOverSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayToTakeOverSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2005300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadLatest()` overload"] fn load_latest (self ,) -> () { unsafe { let __receiver = < RelayReplayToTakeOverSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayToTakeOverSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20053c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadActor()` overload"] fn load_actor (self ,) -> () { unsafe { let __receiver = < RelayReplayToTakeOverSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayToTakeOverSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2005de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < RelayReplayToTakeOverSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayToTakeOverSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2005f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupOtherPlayerData()` overload"] fn setup_other_player_data (self ,) -> () { unsafe { let __receiver = < RelayReplayToTakeOverSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayToTakeOverSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20064d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupMyPlayerData()` overload"] fn setup_my_player_data (self ,) -> () { unsafe { let __receiver = < RelayReplayToTakeOverSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayToTakeOverSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2006720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayreplaytotakeoversequence")]pub trait IRelayReplayToTakeOverSequenceMethods:IRelayReplayToTakeOverSequence{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,setup_field_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <RelayReplayToTakeOverSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2005260usize)as*mut u8,();
+(RelayReplayToTakeOverSequence)__receiver,(crate::system::action::Action)::core::convert::Into::into(setup_field_func))}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <RelayReplayToTakeOverSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2005300usize)as*mut u8,();
+(RelayReplayToTakeOverSequence)__receiver)}
+}
+#[doc="`LoadLatest()` overload"]fn load_latest(self,)->(){unsafe{let __receiver= <RelayReplayToTakeOverSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20053c0usize)as*mut u8,();
+(RelayReplayToTakeOverSequence)__receiver)}
+}
+#[doc="`LoadActor()` overload"]fn load_actor(self,)->(){unsafe{let __receiver= <RelayReplayToTakeOverSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2005de0usize)as*mut u8,();
+(RelayReplayToTakeOverSequence)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <RelayReplayToTakeOverSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2005f10usize)as*mut u8,();
+(RelayReplayToTakeOverSequence)__receiver)}
+}
+#[doc="`SetupOtherPlayerData()` overload"]fn setup_other_player_data(self,)->(){unsafe{let __receiver= <RelayReplayToTakeOverSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20064d0usize)as*mut u8,();
+(RelayReplayToTakeOverSequence)__receiver)}
+}
+#[doc="`SetupMyPlayerData()` overload"]fn setup_my_player_data(self,)->(){unsafe{let __receiver= <RelayReplayToTakeOverSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2006720usize)as*mut u8,();
+(RelayReplayToTakeOverSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayreplaytotakeoversequence")]
-impl < __T : IRelayReplayToTakeOverSequence > IRelayReplayToTakeOverSequenceMethods for __T { }
+#[cfg(feature="app-relayreplaytotakeoversequence")]impl<__T:IRelayReplayToTakeOverSequence>IRelayReplayToTakeOverSequenceMethods for __T{}
 
-#[cfg(feature = "app-relayreplaytotakeoversequence")]
-impl RelayReplayToTakeOverSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayToTakeOverSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayToTakeOverSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_latest_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayToTakeOverSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayToTakeOverSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayToTakeOverSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn setup_other_player_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayToTakeOverSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn setup_my_player_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayToTakeOverSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayToTakeOverSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-relayreplaytotakeoversequence")]impl RelayReplayToTakeOverSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_latest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn setup_other_player_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn setup_my_player_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-relayreplaytotakeoversequence")]
-impl RelayReplayToTakeOverSequence {
-# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (setup_field_func : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayReplayToTakeOverSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRelayReplayToTakeOverSequenceMethods > :: ctor (this , setup_field_func) ; this }
+#[cfg(feature="app-relayreplaytotakeoversequence")]impl RelayReplayToTakeOverSequence{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(setup_field_func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplayToTakeOverSequence), ::core::stringify!(new),));
+ <Self as IRelayReplayToTakeOverSequenceMethods> ::ctor(this,setup_field_func);
+this}
 }
 
 #[cfg(feature = "app-relayreplaytotakeoversequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayReplayToTakeOverSequence_Label;
     pub use super::RelayReplayToTakeOverSequence;
     pub use super::IRelayReplayToTakeOverSequence;
     pub use super::IRelayReplayToTakeOverSequenceMethods;
+    pub use super::RelayReplayToTakeOverSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

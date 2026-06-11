@@ -4,34 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: memberinfoitem_1 :: { IMemberInfoItem_1 , MemberInfoItem_1 }
- ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::memberinfoitem_1::{IMemberInfoItem_1,MemberInfoItem_1}
+;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/propertyinfoitem/PropertyInfoItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PropertyInfoItem")] # [parent (crate :: app :: memberinfoitem_1 :: MemberInfoItem_1 < crate :: system :: reflection :: propertyinfo :: PropertyInfo >)] pub struct PropertyInfoItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/propertyinfoitem/PropertyInfoItem.md"))]#[::unity2::class(namespace="App",name="PropertyInfoItem")]#[parent(crate::app::memberinfoitem_1::MemberInfoItem_1<crate::system::reflection::propertyinfo::PropertyInfo>)]pub struct PropertyInfoItem{}
 
 }
 
 #[cfg(feature = "app-propertyinfoitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-propertyinfoitem")]
-pub trait IPropertyInfoItemMethods : IPropertyInfoItem { # [doc = "`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` overload"] fn ctor (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , info : impl :: core :: convert :: Into < crate :: system :: reflection :: propertyinfo :: PropertyInfo >) -> () { unsafe { let __receiver = < PropertyInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PropertyInfoItem , crate :: system :: object :: Object , crate :: system :: reflection :: propertyinfo :: PropertyInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c08150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`GetValueType()` overload"] fn get_value_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < PropertyInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PropertyInfoItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c081c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetValue()` overload"] fn get_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < PropertyInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PropertyInfoItem , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c081e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetValue(crate::system::object::Object)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < PropertyInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PropertyInfoItem , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c08230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-propertyinfoitem")]pub trait IPropertyInfoItemMethods:IPropertyInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` overload"]fn ctor(self,obj:impl::core::convert::Into<crate::system::object::Object> ,info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>)->(){unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08150usize)as*mut u8,();
+(PropertyInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info))}
+}
+#[doc="`GetValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c081c0usize)as*mut u8, ::unity2::SystemType;
+(PropertyInfoItem)__receiver)}
+}
+#[doc="`GetValue()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c081e0usize)as*mut u8,crate::system::object::Object;
+(PropertyInfoItem)__receiver)}
+}
+#[doc="`SetValue(crate::system::object::Object)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08230usize)as*mut u8,();
+(PropertyInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-propertyinfoitem")]
-impl < __T : IPropertyInfoItem > IPropertyInfoItemMethods for __T { }
+#[cfg(feature="app-propertyinfoitem")]impl<__T:IPropertyInfoItem>IPropertyInfoItemMethods for __T{}
 
-#[cfg(feature = "app-propertyinfoitem")]
-impl PropertyInfoItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyInfoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-propertyinfoitem")]impl PropertyInfoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-propertyinfoitem")]
-impl PropertyInfoItem {
-# [doc = "`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"] pub fn new (obj : crate :: system :: object :: Object , info : crate :: system :: reflection :: propertyinfo :: PropertyInfo) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PropertyInfoItem) , :: core :: stringify ! (new) ,)) ; < Self as IPropertyInfoItemMethods > :: ctor (this , obj , info) ; this }
+#[cfg(feature="app-propertyinfoitem")]impl PropertyInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"]pub fn new(obj:crate::system::object::Object,info:crate::system::reflection::propertyinfo::PropertyInfo)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PropertyInfoItem), ::core::stringify!(new),));
+ <Self as IPropertyInfoItemMethods> ::ctor(this,obj,info);
+this}
 }
 
 #[cfg(feature = "app-propertyinfoitem")]

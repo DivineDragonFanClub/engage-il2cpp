@@ -4,47 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterweapon/CharacterWeapon.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterWeapon")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterWeapon {
-# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [static_field] # [rename (name = "Right")] pub right : i32 ,
-# [static_field] # [rename (name = "Left")] pub left : i32 ,
-# [static_field] # [rename (name = "NumHands")] pub num_hands : i32 ,
-# [offset (32)] # [rename (name = "m_Hands")] pub m_hands : :: unity2 :: Array < crate :: combat :: trailhand :: TrailHand > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterweapon/CharacterWeapon.md"))]#[::unity2::class(namespace="Combat",name="CharacterWeapon")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterWeapon{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[static_field]#[rename(name="Right")]pub right:i32, #[static_field]#[rename(name="Left")]pub left:i32, #[static_field]#[rename(name="NumHands")]pub num_hands:i32, #[offset(32)]#[rename(name="m_Hands")]pub m_hands: ::unity2::Array<crate::combat::trailhand::TrailHand> ,}
 
 }
 
 #[cfg(feature = "combat-characterweapon-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterweapon")]
-impl CharacterWeapon { # [doc = "`Play(crate::combat::character::Character, ::unity2::Il2CppString, f32)` overload"] pub fn play (cp : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , duration : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9f790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cp) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (duration) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterweapon")]impl CharacterWeapon{#[doc="`Play(crate::combat::character::Character, ::unity2::Il2CppString, f32)` overload"]pub fn play(cp:impl::core::convert::Into<crate::combat::character::Character> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,duration:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e9f790usize)as*mut u8,();
+(crate::combat::character::Character)::core::convert::Into::into(cp),(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(duration))}
+}
+}
 
-#[cfg(feature = "combat-characterweapon")]
-pub trait ICharacterWeaponMethods : ICharacterWeapon { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterWeapon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterWeapon , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ebb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CharacterWeapon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterWeapon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ec70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyStart()` overload"] fn my_start (self ,) -> () { unsafe { let __receiver = < CharacterWeapon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterWeapon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ed50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyLateUpdate()` overload"] fn my_late_update (self ,) -> () { unsafe { let __receiver = < CharacterWeapon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterWeapon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9f6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < CharacterWeapon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterWeapon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9fa40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < CharacterWeapon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterWeapon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9fb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterWeapon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterWeapon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9fb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterweapon")]pub trait ICharacterWeaponMethods:ICharacterWeapon{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ebb0usize)as*mut u8,crate::combat::character::Character;
+(CharacterWeapon)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CharacterWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ec70usize)as*mut u8,();
+(CharacterWeapon)__receiver)}
+}
+#[doc="`MyStart()` overload"]fn my_start(self,)->(){unsafe{let __receiver= <CharacterWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ed50usize)as*mut u8,();
+(CharacterWeapon)__receiver)}
+}
+#[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9f6c0usize)as*mut u8,();
+(CharacterWeapon)__receiver)}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <CharacterWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9fa40usize)as*mut u8,();
+(CharacterWeapon)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <CharacterWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9fb20usize)as*mut u8,();
+(CharacterWeapon)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9fb30usize)as*mut u8,();
+(CharacterWeapon)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterweapon")]
-impl < __T : ICharacterWeapon > ICharacterWeaponMethods for __T { }
+#[cfg(feature="combat-characterweapon")]impl<__T:ICharacterWeapon>ICharacterWeaponMethods for __T{}
 
-#[cfg(feature = "combat-characterweapon")]
-impl CharacterWeapon { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterWeapon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterWeapon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterWeapon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn my_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterWeapon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterWeapon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterWeapon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterWeapon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterWeapon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="combat-characterweapon")]impl CharacterWeapon{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn my_late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "combat-characterweapon")]
-impl CharacterWeapon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterWeapon) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterWeaponMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterweapon")]impl CharacterWeapon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterWeapon), ::core::stringify!(new),));
+ <Self as ICharacterWeaponMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterweapon")]

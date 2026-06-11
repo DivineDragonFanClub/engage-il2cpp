@@ -4,163 +4,131 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomMixedResolutionPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomMixedResolutionPass {
-# [static_field] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [offset (120)] # [rename (name = "m_HalfColorHandle")] pub m_half_color_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [offset (168)] # [rename (name = "m_HalfDepthHandle")] pub m_half_depth_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [offset (216)] # [rename (name = "m_EffectSoftParticleDepthHandle")] pub m_effect_soft_particle_depth_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [offset (264)] # [rename (name = "m_EdgeHandle")] pub m_edge_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [offset (312)] # [rename (name = "m_CopyDepthMaterial")] pub m_copy_depth_material : crate :: unity_engine :: material :: Material ,
-# [offset (320)] # [rename (name = "m_CompositeMaterial")] pub m_composite_material : crate :: unity_engine :: material :: Material ,
-# [offset (328)] # [rename (name = "m_FullScreenTriangle")] pub m_full_screen_triangle : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (336)] # [rename (name = "m_FilteringSettings")] pub m_filtering_settings : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings ,
-# [offset (360)] # [rename (name = "m_EffectTagId")] pub m_effect_tag_id : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
-# [offset (364)] # [rename (name = "m_MixedRenderState")] pub m_mixed_render_state : crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_DownsampleType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CustomMixedResolutionPass_DownsampleType{pub value:i32,}
+impl::unity2::ClassIdentity for CustomMixedResolutionPass_DownsampleType{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Custom.Internal";
+const NAME: &'static str="CustomMixedResolutionPass.DownsampleType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CustomMixedResolutionPass_DownsampleType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CustomMixedResolutionPass_DownsampleType{pub fn average()->Self{Self{value:0}
+}
+pub fn min_max()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_CompositeType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CustomMixedResolutionPass_CompositeType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_CompositeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CustomMixedResolutionPass_CompositeType{pub value:i32,}
+impl::unity2::ClassIdentity for CustomMixedResolutionPass_CompositeType{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Custom.Internal";
+const NAME: &'static str="CustomMixedResolutionPass.CompositeType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CustomMixedResolutionPass_CompositeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CustomMixedResolutionPass_CompositeType{pub fn bilinear()->Self{Self{value:0}
+}
+pub fn bilateral4x()->Self{Self{value:1}
+}
+pub fn bilateral2x()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for CustomMixedResolutionPass_CompositeType  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom.Internal";
-
-    const NAME: &'static str = "CustomMixedResolutionPass.CompositeType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for CustomMixedResolutionPass_CompositeType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CustomMixedResolutionPass_CompositeType  {
-    pub fn bilinear() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn bilateral4x() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn bilateral2x() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_DownsampleType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CustomMixedResolutionPass_DownsampleType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for CustomMixedResolutionPass_DownsampleType  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom.Internal";
-
-    const NAME: &'static str = "CustomMixedResolutionPass.DownsampleType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for CustomMixedResolutionPass_DownsampleType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CustomMixedResolutionPass_DownsampleType  {
-    pub fn average() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn min_max() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom.Internal",name="CustomMixedResolutionPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct CustomMixedResolutionPass{#[static_field]#[rename(name="m_ProfilerTag")]pub m_profiler_tag: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_ProfilingSampler")]pub m_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[offset(120)]#[rename(name="m_HalfColorHandle")]pub m_half_color_handle:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(168)]#[rename(name="m_HalfDepthHandle")]pub m_half_depth_handle:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(216)]#[rename(name="m_EffectSoftParticleDepthHandle")]pub m_effect_soft_particle_depth_handle:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(264)]#[rename(name="m_EdgeHandle")]pub m_edge_handle:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(312)]#[rename(name="m_CopyDepthMaterial")]pub m_copy_depth_material:crate::unity_engine::material::Material, #[offset(320)]#[rename(name="m_CompositeMaterial")]pub m_composite_material:crate::unity_engine::material::Material, #[offset(328)]#[rename(name="m_FullScreenTriangle")]pub m_full_screen_triangle:crate::unity_engine::mesh::Mesh, #[offset(336)]#[rename(name="m_FilteringSettings")]pub m_filtering_settings:crate::unity_engine::rendering::filteringsettings::FilteringSettings, #[offset(360)]#[rename(name="m_EffectTagId")]pub m_effect_tag_id:crate::unity_engine::rendering::shadertagid::ShaderTagId, #[offset(364)]#[rename(name="m_MixedRenderState")]pub m_mixed_render_state:crate::unity_engine::rendering::renderstateblock::RenderStateBlock,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]
-pub trait ICustomMixedResolutionPassMethods : ICustomMixedResolutionPass { # [doc = "`get_downsampleType()` overload"] fn get_downsample_type (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_DownsampleType { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_DownsampleType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_downsampleType(crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_DownsampleType)` overload"] fn set_downsample_type (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_DownsampleType >) -> () { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_DownsampleType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c3e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_compositeType()` overload"] fn get_composite_type (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_CompositeType { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_CompositeType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_compositeType(crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_CompositeType)` overload"] fn set_composite_type (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_CompositeType >) -> () { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_CompositeType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_mixHalfAndFull()` overload"] fn get_mix_half_and_full (self ,) -> bool { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_mixHalfAndFull(bool)` overload"] fn set_mix_half_and_full (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_srcDepth()` overload"] fn get_src_depth (self ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_srcDepth(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"] fn set_src_depth (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier >) -> () { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask, crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , layer_mask : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask > , copy_depth_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , composite_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomMixedResolutionPass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: layermask :: LayerMask , crate :: unity_engine :: material :: Material , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a48a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (layer_mask) , :: core :: convert :: Into :: into (copy_depth_material) , :: core :: convert :: Into :: into (composite_material) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < CustomMixedResolutionPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (CustomMixedResolutionPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4c470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]pub trait ICustomMixedResolutionPassMethods:ICustomMixedResolutionPass{#[doc="`get_downsampleType()` overload"]fn get_downsample_type(self,)->crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_DownsampleType{unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c3d0usize)as*mut u8,crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_DownsampleType;
+(CustomMixedResolutionPass)__receiver)}
+}
+#[doc="`set_downsampleType(crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_DownsampleType)` overload"]fn set_downsample_type(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_DownsampleType>)->(){unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c3e0usize)as*mut u8,();
+(CustomMixedResolutionPass)__receiver,(crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_DownsampleType)::core::convert::Into::into(value))}
+}
+#[doc="`get_compositeType()` overload"]fn get_composite_type(self,)->crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_CompositeType{unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c3f0usize)as*mut u8,crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_CompositeType;
+(CustomMixedResolutionPass)__receiver)}
+}
+#[doc="`set_compositeType(crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_CompositeType)` overload"]fn set_composite_type(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_CompositeType>)->(){unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c400usize)as*mut u8,();
+(CustomMixedResolutionPass)__receiver,(crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass_CompositeType)::core::convert::Into::into(value))}
+}
+#[doc="`get_mixHalfAndFull()` overload"]fn get_mix_half_and_full(self,)->bool{unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c410usize)as*mut u8,bool;
+(CustomMixedResolutionPass)__receiver)}
+}
+#[doc="`set_mixHalfAndFull(bool)` overload"]fn set_mix_half_and_full(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c420usize)as*mut u8,();
+(CustomMixedResolutionPass)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_srcDepth()` overload"]fn get_src_depth(self,)->crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier{unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c430usize)as*mut u8,crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+(CustomMixedResolutionPass)__receiver)}
+}
+#[doc="`set_srcDepth(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]fn set_src_depth(self,value:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)->(){unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c450usize)as*mut u8,();
+(CustomMixedResolutionPass)__receiver,(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask, crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent> ,layer_mask:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask> ,copy_depth_material:impl::core::convert::Into<crate::unity_engine::material::Material> ,composite_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a48a10usize)as*mut u8,();
+(CustomMixedResolutionPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(layer_mask),(crate::unity_engine::material::Material)::core::convert::Into::into(copy_depth_material),(crate::unity_engine::material::Material)::core::convert::Into::into(composite_material))}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <CustomMixedResolutionPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4c470usize)as*mut u8,();
+(CustomMixedResolutionPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]
-impl < __T : ICustomMixedResolutionPass > ICustomMixedResolutionPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]impl<__T:ICustomMixedResolutionPass>ICustomMixedResolutionPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]
-impl CustomMixedResolutionPass { pub fn get_downsample_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_downsample_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_composite_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_composite_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_mix_half_and_full_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_mix_half_and_full_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_src_depth_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_src_depth_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomMixedResolutionPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]impl CustomMixedResolutionPass{pub fn get_downsample_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_downsample_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_composite_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_composite_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_mix_half_and_full_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_mix_half_and_full_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_src_depth_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_src_depth_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]
-impl CustomMixedResolutionPass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask, crate::unity_engine::material::Material, crate::unity_engine::material::Material)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , layer_mask : crate :: unity_engine :: layermask :: LayerMask , copy_depth_material : crate :: unity_engine :: material :: Material , composite_material : crate :: unity_engine :: material :: Material) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomMixedResolutionPass) , :: core :: stringify ! (new) ,)) ; < Self as ICustomMixedResolutionPassMethods > :: ctor (this , evt , layer_mask , copy_depth_material , composite_material) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]impl CustomMixedResolutionPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask, crate::unity_engine::material::Material, crate::unity_engine::material::Material)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,layer_mask:crate::unity_engine::layermask::LayerMask,copy_depth_material:crate::unity_engine::material::Material,composite_material:crate::unity_engine::material::Material)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomMixedResolutionPass), ::core::stringify!(new),));
+ <Self as ICustomMixedResolutionPassMethods> ::ctor(this,evt,layer_mask,copy_depth_material,composite_material);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CustomMixedResolutionPass_DownsampleType;
+    pub use super::CustomMixedResolutionPass_CompositeType;
     pub use super::CustomMixedResolutionPass;
     pub use super::ICustomMixedResolutionPass;
     pub use super::ICustomMixedResolutionPassMethods;
-    pub use super::CustomMixedResolutionPass_CompositeType;
-    pub use super::CustomMixedResolutionPass_DownsampleType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

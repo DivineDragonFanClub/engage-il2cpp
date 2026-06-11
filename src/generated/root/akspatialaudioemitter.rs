@@ -4,46 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akspatialaudioemitter/AkSpatialAudioEmitter.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSpatialAudioEmitter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkSpatialAudioEmitter {
-# [offset (32)] # [rename (name = "reflectionMaxPathLength")] pub reflection_max_path_length : f32 ,
-# [offset (36)] # [rename (name = "reflectionsAuxBusGain")] pub reflections_aux_bus_gain : f32 ,
-# [offset (40)] # [rename (name = "reflectionsOrder")] pub reflections_order : u32 ,
-# [offset (44)] # [rename (name = "roomReverbAuxBusGain")] pub room_reverb_aux_bus_gain : f32 ,
-# [offset (48)] # [rename (name = "diffractionMaxEdges")] pub diffraction_max_edges : u32 ,
-# [offset (52)] # [rename (name = "diffractionMaxPaths")] pub diffraction_max_paths : u32 ,
-# [offset (56)] # [rename (name = "diffractionMaxPathLength")] pub diffraction_max_path_length : u32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akspatialaudioemitter/AkSpatialAudioEmitter.md"))]#[::unity2::class(namespace="",name="AkSpatialAudioEmitter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkSpatialAudioEmitter{#[offset(32)]#[rename(name="reflectionMaxPathLength")]pub reflection_max_path_length:f32, #[offset(36)]#[rename(name="reflectionsAuxBusGain")]pub reflections_aux_bus_gain:f32, #[offset(40)]#[rename(name="reflectionsOrder")]pub reflections_order:u32, #[offset(44)]#[rename(name="roomReverbAuxBusGain")]pub room_reverb_aux_bus_gain:f32, #[offset(48)]#[rename(name="diffractionMaxEdges")]pub diffraction_max_edges:u32, #[offset(52)]#[rename(name="diffractionMaxPaths")]pub diffraction_max_paths:u32, #[offset(56)]#[rename(name="diffractionMaxPathLength")]pub diffraction_max_path_length:u32,}
 
 }
 
 #[cfg(feature = "root-akspatialaudioemitter-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akspatialaudioemitter")]
-pub trait IAkSpatialAudioEmitterMethods : IAkSpatialAudioEmitter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkSpatialAudioEmitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSpatialAudioEmitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akspatialaudioemitter")]pub trait IAkSpatialAudioEmitterMethods:IAkSpatialAudioEmitter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkSpatialAudioEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21db0usize)as*mut u8,();
+(AkSpatialAudioEmitter)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akspatialaudioemitter")]
-impl < __T : IAkSpatialAudioEmitter > IAkSpatialAudioEmitterMethods for __T { }
+#[cfg(feature="root-akspatialaudioemitter")]impl<__T:IAkSpatialAudioEmitter>IAkSpatialAudioEmitterMethods for __T{}
 
-#[cfg(feature = "root-akspatialaudioemitter")]
-impl AkSpatialAudioEmitter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSpatialAudioEmitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akspatialaudioemitter")]impl AkSpatialAudioEmitter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akspatialaudioemitter")]
-impl AkSpatialAudioEmitter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSpatialAudioEmitter) , :: core :: stringify ! (new) ,)) ; < Self as IAkSpatialAudioEmitterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akspatialaudioemitter")]impl AkSpatialAudioEmitter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSpatialAudioEmitter), ::core::stringify!(new),));
+ <Self as IAkSpatialAudioEmitterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akspatialaudioemitter")]

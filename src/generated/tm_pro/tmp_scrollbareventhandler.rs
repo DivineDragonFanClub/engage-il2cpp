@@ -4,40 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_scrollbareventhandler/TMP_ScrollbarEventHandler.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_ScrollbarEventHandler")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TMP_ScrollbarEventHandler {
-# [offset (24)] # [rename (name = "isSelected")] pub is_selected : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_scrollbareventhandler/TMP_ScrollbarEventHandler.md"))]#[::unity2::class(namespace="TMPro",name="TMP_ScrollbarEventHandler")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TMP_ScrollbarEventHandler{#[offset(24)]#[rename(name="isSelected")]pub is_selected:bool,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_scrollbareventhandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_scrollbareventhandler")]
-pub trait ITMP_ScrollbarEventHandlerMethods : ITMP_ScrollbarEventHandler { # [doc = "`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_click (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < TMP_ScrollbarEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_ScrollbarEventHandler , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_select (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < TMP_ScrollbarEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_ScrollbarEventHandler , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a6c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_deselect (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < TMP_ScrollbarEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_ScrollbarEventHandler , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_ScrollbarEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_ScrollbarEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_scrollbareventhandler")]pub trait ITMP_ScrollbarEventHandlerMethods:ITMP_ScrollbarEventHandler{#[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_ScrollbarEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282a640usize)as*mut u8,();
+(TMP_ScrollbarEventHandler)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_select(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_ScrollbarEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282a6c0usize)as*mut u8,();
+(TMP_ScrollbarEventHandler)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_deselect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_ScrollbarEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282a750usize)as*mut u8,();
+(TMP_ScrollbarEventHandler)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_ScrollbarEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282a7e0usize)as*mut u8,();
+(TMP_ScrollbarEventHandler)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_scrollbareventhandler")]
-impl < __T : ITMP_ScrollbarEventHandler > ITMP_ScrollbarEventHandlerMethods for __T { }
+#[cfg(feature="tm_pro-tmp_scrollbareventhandler")]impl<__T:ITMP_ScrollbarEventHandler>ITMP_ScrollbarEventHandlerMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_scrollbareventhandler")]
-impl TMP_ScrollbarEventHandler { pub fn on_pointer_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ScrollbarEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ScrollbarEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ScrollbarEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ScrollbarEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="tm_pro-tmp_scrollbareventhandler")]impl TMP_ScrollbarEventHandler{pub fn on_pointer_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "tm_pro-tmp_scrollbareventhandler")]
-impl TMP_ScrollbarEventHandler {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_ScrollbarEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_ScrollbarEventHandlerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_scrollbareventhandler")]impl TMP_ScrollbarEventHandler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_ScrollbarEventHandler), ::core::stringify!(new),));
+ <Self as ITMP_ScrollbarEventHandlerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_scrollbareventhandler")]

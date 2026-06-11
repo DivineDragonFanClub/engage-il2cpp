@@ -4,123 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/musclestartsequence/MuscleStartSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MuscleStartSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclestartsequence/MuscleStartSequence.md"))]#[::unity2::class(namespace="App",name="MuscleStartSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MuscleStartSequence{#[offset(112)]#[rename(name="m_SelectedType")]pub m_selected_type:i32, #[offset(116)]#[rename(name="m_SelectedLevel")]pub m_selected_level:i32, #[offset(120)]#[rename(name="m_AssistDeside")]pub m_assist_deside:i32, #[offset(124)]#[rename(name="m_IsCreateGameSequence")]pub m_is_create_game_sequence:bool, #[offset(125)]#[rename(name="m_IsCotinueExercise")]pub m_is_cotinue_exercise:bool, #[offset(128)]#[rename(name="m_TalkerChara")]pub m_talker_chara:crate::combat::character::Character, #[offset(136)]#[rename(name="m_AnnouceDifficult")]pub m_annouce_difficult:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(144)]#[rename(name="m_IsAnnounceVoiceOnce")]pub m_is_announce_voice_once:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclestartsequence/MuscleStartSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MuscleStartSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MuscleStartSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MuscleStartSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MuscleStartSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MuscleStartSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MuscleStartSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MuscleStartSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MuscleStartSequence_Label{pub fn initialize()->Self{Self{value:0}
 }
-
-
-impl  MuscleStartSequence_Label  {
-    pub fn initialize() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn select_type() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn check_new_difficult() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn annouce_new_difficult() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn select_difficult() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn select_assist() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn create_game_sequence() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn continue_check() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn play_repeat() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 9 }
-
-    }
-
+pub fn select_type()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartsequence/MuscleStartSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleStartSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MuscleStartSequence {
-# [offset (112)] # [rename (name = "m_SelectedType")] pub m_selected_type : i32 ,
-# [offset (116)] # [rename (name = "m_SelectedLevel")] pub m_selected_level : i32 ,
-# [offset (120)] # [rename (name = "m_AssistDeside")] pub m_assist_deside : i32 ,
-# [offset (124)] # [rename (name = "m_IsCreateGameSequence")] pub m_is_create_game_sequence : bool ,
-# [offset (125)] # [rename (name = "m_IsCotinueExercise")] pub m_is_cotinue_exercise : bool ,
-# [offset (128)] # [rename (name = "m_TalkerChara")] pub m_talker_chara : crate :: combat :: character :: Character ,
-# [offset (136)] # [rename (name = "m_AnnouceDifficult")] pub m_annouce_difficult : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (144)] # [rename (name = "m_IsAnnounceVoiceOnce")] pub m_is_announce_voice_once : bool ,
+pub fn check_new_difficult()->Self{Self{value:2}
+}
+pub fn annouce_new_difficult()->Self{Self{value:3}
+}
+pub fn select_difficult()->Self{Self{value:4}
+}
+pub fn select_assist()->Self{Self{value:5}
+}
+pub fn create_game_sequence()->Self{Self{value:6}
+}
+pub fn continue_check()->Self{Self{value:7}
+}
+pub fn play_repeat()->Self{Self{value:8}
+}
+pub fn exit()->Self{Self{value:9}
+}
 }
 
 }
@@ -128,30 +54,142 @@ impl  MuscleStartSequence_Label  {
 #[cfg(feature = "app-musclestartsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-musclestartsequence")]
-impl MuscleStartSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd8250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclestartsequence")]impl MuscleStartSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dd8250usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-musclestartsequence")]
-pub trait IMuscleStartSequenceMethods : IMuscleStartSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd68c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd69f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenTitleBar()` overload"] fn open_title_bar (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseTitleBar()` overload"] fn close_title_bar (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenExerciseTypeMenu()` overload"] fn open_exercise_type_menu (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tutorial()` overload"] fn tutorial (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd6fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckNewDifficult()` overload"] fn check_new_difficult (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd70e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AnnounceNewDifficult()` overload"] fn announce_new_difficult (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckAnnounceDifficult()` overload"] fn check_announce_difficult (self ,) -> bool { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenDifficultMenu()` overload"] fn open_difficult_menu (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateAssistDialog()` overload"] fn create_assist_dialog (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateGameSequence()` overload"] fn create_game_sequence (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateContinueDialog()` overload"] fn create_continue_dialog (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckContinue()` overload"] fn check_continue (self ,) -> bool { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResources()` overload"] fn unload_resources (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`VoiceSelectType()` overload"] fn voice_select_type (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`VoiceNewDifficult()` overload"] fn voice_new_difficult (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd7ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`VoiceSelectDifficult()` overload"] fn voice_select_difficult (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd8060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`VoiceFinishExercise()` overload"] fn voice_finish_exercise (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dd8140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclestartsequence")]pub trait IMuscleStartSequenceMethods:IMuscleStartSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd68c0usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6950usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd69f0usize)as*mut u8,bool;
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6a70usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`OpenTitleBar()` overload"]fn open_title_bar(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6bf0usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`CloseTitleBar()` overload"]fn close_title_bar(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6de0usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`OpenExerciseTypeMenu()` overload"]fn open_exercise_type_menu(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6f40usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`Tutorial()` overload"]fn tutorial(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd6fd0usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`CheckNewDifficult()` overload"]fn check_new_difficult(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd70e0usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`AnnounceNewDifficult()` overload"]fn announce_new_difficult(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7850usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`CheckAnnounceDifficult()` overload"]fn check_announce_difficult(self,)->bool{unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7ba0usize)as*mut u8,bool;
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`OpenDifficultMenu()` overload"]fn open_difficult_menu(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7bf0usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`CreateAssistDialog()` overload"]fn create_assist_dialog(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7c90usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`CreateGameSequence()` overload"]fn create_game_sequence(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7d60usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`CreateContinueDialog()` overload"]fn create_continue_dialog(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7e50usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`CheckContinue()` overload"]fn check_continue(self,)->bool{unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7ee0usize)as*mut u8,bool;
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7ef0usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`UnloadResources()` overload"]fn unload_resources(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7f00usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`VoiceSelectType()` overload"]fn voice_select_type(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7f80usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`VoiceNewDifficult()` overload"]fn voice_new_difficult(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd7ac0usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`VoiceSelectDifficult()` overload"]fn voice_select_difficult(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd8060usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+#[doc="`VoiceFinishExercise()` overload"]fn voice_finish_exercise(self,)->(){unsafe{let __receiver= <MuscleStartSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dd8140usize)as*mut u8,();
+(MuscleStartSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-musclestartsequence")]
-impl < __T : IMuscleStartSequence > IMuscleStartSequenceMethods for __T { }
+#[cfg(feature="app-musclestartsequence")]impl<__T:IMuscleStartSequence>IMuscleStartSequenceMethods for __T{}
 
-#[cfg(feature = "app-musclestartsequence")]
-impl MuscleStartSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn open_title_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn close_title_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_exercise_type_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn check_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn announce_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn check_announce_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn open_difficult_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_assist_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_game_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn create_continue_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn check_continue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn voice_select_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn voice_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn voice_select_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn voice_finish_exercise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="app-musclestartsequence")]impl MuscleStartSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn open_title_bar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn close_title_bar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_exercise_type_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn check_new_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn announce_new_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn check_announce_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn open_difficult_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_assist_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_game_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn create_continue_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn check_continue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn voice_select_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn voice_new_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn voice_select_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn voice_finish_exercise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-#[cfg(feature = "app-musclestartsequence")]
-impl MuscleStartSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleStartSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleStartSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-musclestartsequence")]impl MuscleStartSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleStartSequence), ::core::stringify!(new),));
+ <Self as IMuscleStartSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-musclestartsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MuscleStartSequence_Label;
     pub use super::MuscleStartSequence;
     pub use super::IMuscleStartSequence;
     pub use super::IMuscleStartSequenceMethods;
+    pub use super::MuscleStartSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

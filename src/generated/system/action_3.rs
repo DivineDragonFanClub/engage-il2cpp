@@ -4,32 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/action_3/Action_3.md"))] # [:: unity2 :: class (namespace = "System" , name = "Action`3")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct Action_3 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/action_3/Action_3.md"))]#[::unity2::class(namespace="System",name="Action`3")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct Action_3<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity,T2: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "system-action_3-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-action_3")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity > Action_3 < T0 , T1 , T2 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(T0, T1, T2)` overload"] # [method (name = "Invoke" , args = 3)] pub fn invoke (self , arg1 : T0 , arg2 : T1 , arg3 : T2) -> () ;
+#[cfg(feature="system-action_3")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity,T2: ::unity2::ClassIdentity>Action_3<T0,T1,T2>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0, T1, T2)` overload"]#[method(name="Invoke",args=3)]pub fn invoke(self,arg1:T0,arg2:T1,arg3:T2)->();
 }
 
-#[cfg(feature = "system-action_3")]
-impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity > Action_3 < T0 , T1 , T2 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Action_3) , :: core :: stringify ! (new) ,)) ; < Self as IAction_3Methods < T0 , T1 , T2 > > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-action_3")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity,T2: ::unity2::ClassIdentity>Action_3<T0,T1,T2>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Action_3), ::core::stringify!(new),));
+ <Self as IAction_3Methods<T0,T1,T2> > ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "system-action_3")]

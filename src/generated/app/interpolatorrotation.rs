@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: interpolator_1 :: { IInterpolator_1 , Interpolator_1 }
- ;
- use crate :: app :: interpolatorfloat :: { IInterpolatorFloat , InterpolatorFloat }
- ;
- use crate :: app :: interpolatortime :: { IInterpolatorTime , InterpolatorTime }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::interpolator_1::{IInterpolator_1,Interpolator_1}
+;
+use crate::app::interpolatorfloat::{IInterpolatorFloat,InterpolatorFloat}
+;
+use crate::app::interpolatortime::{IInterpolatorTime,InterpolatorTime}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorrotation/InterpolatorRotation.md"))] # [:: unity2 :: class (namespace = "App" , name = "InterpolatorRotation")] # [parent (crate :: app :: interpolatorfloat :: InterpolatorFloat)] pub struct InterpolatorRotation {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorrotation/InterpolatorRotation.md"))]#[::unity2::class(namespace="App",name="InterpolatorRotation")]#[parent(crate::app::interpolatorfloat::InterpolatorFloat)]pub struct InterpolatorRotation{}
 
 }
 
 #[cfg(feature = "app-interpolatorrotation-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-interpolatorrotation")]
-pub trait IInterpolatorRotationMethods : IInterpolatorRotation { # [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: curve :: Curve_Type > , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InterpolatorRotation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotation , crate :: app :: curve :: Curve_Type , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`Set(f32, f32)` overload"] fn set (self , value : impl :: core :: convert :: Into < f32 > , time : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < InterpolatorRotation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotation , f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-interpolatorrotation")]pub trait IInterpolatorRotationMethods:IInterpolatorRotation{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorRotation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794ce0usize)as*mut u8,();
+(InterpolatorRotation)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`Set(f32, f32)` overload"]fn set(self,value:impl::core::convert::Into<f32> ,time:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <InterpolatorRotation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794d50usize)as*mut u8,bool;
+(InterpolatorRotation)__receiver,(f32)::core::convert::Into::into(value),(f32)::core::convert::Into::into(time))}
+}
+}
 
-#[cfg(feature = "app-interpolatorrotation")]
-impl < __T : IInterpolatorRotation > IInterpolatorRotationMethods for __T { }
+#[cfg(feature="app-interpolatorrotation")]impl<__T:IInterpolatorRotation>IInterpolatorRotationMethods for __T{}
 
-#[cfg(feature = "app-interpolatorrotation")]
-impl InterpolatorRotation { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-interpolatorrotation")]impl InterpolatorRotation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-interpolatorrotation")]
-impl InterpolatorRotation {
-# [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"] pub fn new (r#type : crate :: app :: curve :: Curve_Type , num : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpolatorRotation) , :: core :: stringify ! (new) ,)) ; < Self as IInterpolatorRotationMethods > :: ctor (this , r#type , num) ; this }
+#[cfg(feature="app-interpolatorrotation")]impl InterpolatorRotation{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]pub fn new(r#type:crate::app::curve::Curve_Type,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InterpolatorRotation), ::core::stringify!(new),));
+ <Self as IInterpolatorRotationMethods> ::ctor(this,r#type,num);
+this}
 }
 
 #[cfg(feature = "app-interpolatorrotation")]

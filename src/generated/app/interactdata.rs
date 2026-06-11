@@ -4,107 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interactdata/InteractData.md"))] # [:: unity2 :: class (namespace = "App" , name = "InteractData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: interactdata :: InteractData >)] pub struct InteractData {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/interactdata/InteractData_Interacts.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct InteractData_Interacts  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interactdata/InteractData_Interacts.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InteractData_Interacts{pub value:i32,}
+impl::unity2::ClassIdentity for InteractData_Interacts{const NAMESPACE: &'static str="App";
+const NAME: &'static str="InteractData.Interacts";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for InteractData_Interacts{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl InteractData_Interacts{pub fn none()->Self{Self{value:0}
+}
+pub fn good()->Self{Self{value:1}
+}
+pub fn bad()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for InteractData_Interacts  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "InteractData.Interacts";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for InteractData_Interacts  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  InteractData_Interacts  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn good() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn bad() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interactdata/InteractData.md"))]#[::unity2::class(namespace="App",name="InteractData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::interactdata::InteractData>)]pub struct InteractData{}
 
 }
 
 #[cfg(feature = "app-interactdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-interactdata")]
-impl InteractData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917dd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetInteract(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem)` overload"] pub fn get_interact (current : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , reverse : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> crate :: app :: interactdata :: InteractData_Interacts { unsafe { { let __inner : extern "C" fn (crate :: app :: unititem :: UnitItem , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: interactdata :: InteractData_Interacts = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917ed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-interactdata")]impl InteractData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2917dd0usize)as*mut u8,();
+)}
+}
+#[doc="`GetInteract(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem)` overload"]pub fn get_interact(current:impl::core::convert::Into<crate::app::unititem::UnitItem> ,reverse:impl::core::convert::Into<crate::app::unititem::UnitItem>)->crate::app::interactdata::InteractData_Interacts{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2917ed0usize)as*mut u8,crate::app::interactdata::InteractData_Interacts;
+(crate::app::unititem::UnitItem)::core::convert::Into::into(current),(crate::app::unititem::UnitItem)::core::convert::Into::into(reverse))}
+}
+}
 
-#[cfg(feature = "app-interactdata")]
-pub trait IInteractDataMethods : IInteractData { # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InteractData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Kind()` overload"] fn get_kind (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InteractData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Kind(::unity2::Il2CppString)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InteractData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: bitfield32 :: BitField32 { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InteractData , :: unity2 :: OptionalMethod ,) -> crate :: app :: bitfield32 :: BitField32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::bitfield32::BitField32)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: bitfield32 :: BitField32 >) -> () { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InteractData , crate :: app :: bitfield32 :: BitField32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2917ec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InteractData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InteractData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29180e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-interactdata")]pub trait IInteractDataMethods:IInteractData{#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InteractData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917e80usize)as*mut u8, ::unity2::Il2CppString;
+(InteractData)__receiver)}
+}
+#[doc="`get_Kind()` overload"]fn get_kind(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InteractData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917e90usize)as*mut u8, ::unity2::Il2CppString;
+(InteractData)__receiver)}
+}
+#[doc="`set_Kind(::unity2::Il2CppString)` overload"]fn set_kind(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InteractData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917ea0usize)as*mut u8,();
+(InteractData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::bitfield32::BitField32{unsafe{let __receiver= <InteractData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917eb0usize)as*mut u8,crate::app::bitfield32::BitField32;
+(InteractData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::bitfield32::BitField32)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::bitfield32::BitField32>)->(){unsafe{let __receiver= <InteractData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2917ec0usize)as*mut u8,();
+(InteractData)__receiver,(crate::app::bitfield32::BitField32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29180e0usize)as*mut u8,();
+(InteractData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-interactdata")]
-impl < __T : IInteractData > IInteractDataMethods for __T { }
+#[cfg(feature="app-interactdata")]impl<__T:IInteractData>IInteractDataMethods for __T{}
 
-#[cfg(feature = "app-interactdata")]
-impl InteractData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InteractData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InteractData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InteractData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InteractData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InteractData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InteractData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_interact_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InteractData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InteractData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-interactdata")]impl InteractData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_interact_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-interactdata")]
-impl InteractData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InteractData) , :: core :: stringify ! (new) ,)) ; < Self as IInteractDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-interactdata")]impl InteractData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InteractData), ::core::stringify!(new),));
+ <Self as IInteractDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-interactdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::InteractData_Interacts;
     pub use super::InteractData;
     pub use super::IInteractData;
     pub use super::IInteractDataMethods;
-    pub use super::InteractData_Interacts;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

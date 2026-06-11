@@ -4,72 +4,180 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenucontent/FoodstuffMenuContent.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "FoodstuffMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct FoodstuffMenuContent {
-# [offset (232)] # [rename (name = "m_NormalFoodstuffNum")] pub m_normal_foodstuff_num : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_RareFoodstuffNum")] pub m_rare_foodstuff_num : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_NormalMax")] pub m_normal_max : i32 ,
-# [offset (252)] # [rename (name = "m_RareMax")] pub m_rare_max : i32 ,
-# [offset (256)] # [rename (name = "m_MainCursor")] pub m_main_cursor : crate :: app :: cooking_menu :: foodstuffmenucontent :: FoodstuffMenuContent_CursorController ,
-# [offset (264)] # [rename (name = "m_SubCursor")] pub m_sub_cursor : crate :: app :: cooking_menu :: foodstuffmenucontent :: FoodstuffMenuContent_CursorController ,
-# [offset (272)] # [rename (name = "m_FoodstuffTitleText")] pub m_foodstuff_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (280)] # [rename (name = "m_FoodstuffCountText")] pub m_foodstuff_count_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (288)] # [rename (name = "m_RareTitleText")] pub m_rare_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (296)] # [rename (name = "m_RareCountText")] pub m_rare_count_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/foodstuffmenucontent/FoodstuffMenuContent.md"))]#[::unity2::class(namespace="App.CookingMenu",name="FoodstuffMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct FoodstuffMenuContent{#[offset(232)]#[rename(name="m_NormalFoodstuffNum")]pub m_normal_foodstuff_num:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_RareFoodstuffNum")]pub m_rare_foodstuff_num:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_NormalMax")]pub m_normal_max:i32, #[offset(252)]#[rename(name="m_RareMax")]pub m_rare_max:i32, #[offset(256)]#[rename(name="m_MainCursor")]pub m_main_cursor:crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent_CursorController, #[offset(264)]#[rename(name="m_SubCursor")]pub m_sub_cursor:crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent_CursorController, #[offset(272)]#[rename(name="m_FoodstuffTitleText")]pub m_foodstuff_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_FoodstuffCountText")]pub m_foodstuff_count_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_RareTitleText")]pub m_rare_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_RareCountText")]pub m_rare_count_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenucontent/FoodstuffMenuContent_CursorController.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "FoodstuffMenuContent.CursorController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FoodstuffMenuContent_CursorController {
-# [offset (24)] # [rename (name = "m_Images")] pub m_images : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (32)] # [rename (name = "EnableColor")] pub enable_color : crate :: unity_engine :: color :: Color ,
-# [offset (48)] # [rename (name = "DisableColor")] pub disable_color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/foodstuffmenucontent/FoodstuffMenuContent_CursorController.md"))]#[::unity2::class(namespace="App.CookingMenu",name="FoodstuffMenuContent.CursorController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FoodstuffMenuContent_CursorController{#[offset(24)]#[rename(name="m_Images")]pub m_images:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image> , #[offset(32)]#[rename(name="EnableColor")]pub enable_color:crate::unity_engine::color::Color, #[offset(48)]#[rename(name="DisableColor")]pub disable_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-pub trait IFoodstuffMenuContentMethods : IFoodstuffMenuContent { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26126d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMessages()` overload"] fn set_messages (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2612700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitObjReference()` overload"] fn init_obj_reference (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2612860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2612e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMenuItemContent()` overload"] fn build_menu_item_content (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2612e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetFoodstuffNum()` overload"] fn set_foodstuff_num (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26133e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`SetCursorEnable(bool, bool, crate::app::basicmenuitem::BasicMenuItem_Attribute)` overload"] fn set_cursor_enable (self , is_foodstuff : impl :: core :: convert :: Into < bool > , is_decide : impl :: core :: convert :: Into < bool > , attribute : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem_Attribute >) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , bool , bool , crate :: app :: basicmenuitem :: BasicMenuItem_Attribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2612350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_foodstuff) , :: core :: convert :: Into :: into (is_decide) , :: core :: convert :: Into :: into (attribute) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeCursorColor(bool)` overload"] fn change_cursor_color (self , is_enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26134a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_enable) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateNum()` overload"] fn update_num (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2612200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetNormalNum(i32)` overload"] fn set_normal_num (self , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`SetRareNum(i32)` overload"] fn set_rare_num (self , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`GetSelectedNormalCount()` overload"] fn get_selected_normal_count (self ,) -> i32 { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26134c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSelectedRareCount()` overload"] fn get_selected_rare_count (self ,) -> i32 { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PutCursorInFront(i32)` overload"] fn put_cursor_in_front (self , cursor_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cursor_index) , :: core :: option :: Option :: None) } } } # [doc = "`PutCursorInBack(i32)` overload"] fn put_cursor_in_back (self , cursor_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cursor_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2613b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-impl < __T : IFoodstuffMenuContent > IFoodstuffMenuContentMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-impl FoodstuffMenuContent { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_messages_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_obj_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_foodstuff_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_cursor_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn change_cursor_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_normal_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_rare_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_selected_normal_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_selected_rare_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn put_cursor_in_front_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn put_cursor_in_back_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-impl FoodstuffMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FoodstuffMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IFoodstuffMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cooking_menu-foodstuffmenucontent")]pub trait IFoodstuffMenuContentMethods:IFoodstuffMenuContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26126d0usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`SetMessages()` overload"]fn set_messages(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2612700usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`InitObjReference()` overload"]fn init_obj_reference(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2612860usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2612e20usize)as*mut u8,i32;
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2612e30usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613060usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`SetFoodstuffNum()` overload"]fn set_foodstuff_num(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613270usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26133e0usize)as*mut u8,f32;
+(FoodstuffMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`SetCursorEnable(bool, bool, crate::app::basicmenuitem::BasicMenuItem_Attribute)` overload"]fn set_cursor_enable(self,is_foodstuff:impl::core::convert::Into<bool> ,is_decide:impl::core::convert::Into<bool> ,attribute:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem_Attribute>)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2612350usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver,(bool)::core::convert::Into::into(is_foodstuff),(bool)::core::convert::Into::into(is_decide),(crate::app::basicmenuitem::BasicMenuItem_Attribute)::core::convert::Into::into(attribute))}
+}
+#[doc="`ChangeCursorColor(bool)` overload"]fn change_cursor_color(self,is_enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26134a0usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver,(bool)::core::convert::Into::into(is_enable))}
+}
+#[doc="`UpdateNum()` overload"]fn update_num(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2612200usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`SetNormalNum(i32)` overload"]fn set_normal_num(self,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613620usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver,(i32)::core::convert::Into::into(num))}
+}
+#[doc="`SetRareNum(i32)` overload"]fn set_rare_num(self,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613840usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver,(i32)::core::convert::Into::into(num))}
+}
+#[doc="`GetSelectedNormalCount()` overload"]fn get_selected_normal_count(self,)->i32{unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26134c0usize)as*mut u8,i32;
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`GetSelectedRareCount()` overload"]fn get_selected_rare_count(self,)->i32{unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613720usize)as*mut u8,i32;
+(FoodstuffMenuContent)__receiver)}
+}
+#[doc="`PutCursorInFront(i32)` overload"]fn put_cursor_in_front(self,cursor_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613940usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver,(i32)::core::convert::Into::into(cursor_index))}
+}
+#[doc="`PutCursorInBack(i32)` overload"]fn put_cursor_in_back(self,cursor_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613a50usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver,(i32)::core::convert::Into::into(cursor_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2613b60usize)as*mut u8,();
+(FoodstuffMenuContent)__receiver)}
+}
 }
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-pub trait IFoodstuffMenuContent_CursorControllerMethods : IFoodstuffMenuContent_CursorController { # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent_CursorController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e63b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetVisibleWithoutCursorImages(bool)` overload"] fn set_visible_without_cursor_images (self , is_visible : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent_CursorController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e63c60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_visible) , :: core :: option :: Option :: None) } } } # [doc = "`SetVisibleCursorImage(bool)` overload"] fn set_visible_cursor_image (self , is_visible : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent_CursorController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e63d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_visible) , :: core :: option :: Option :: None) } } } # [doc = "`SetSiblingIndex(i32)` overload"] fn set_sibling_index (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent_CursorController , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e63e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SetBackCursorImageEnabled(bool)` overload"] fn set_back_cursor_image_enabled (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent_CursorController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e63df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetColor(bool)` overload"] fn set_color (self , is_enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent_CursorController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e63ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_enable) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffMenuContent_CursorController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e63ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cooking_menu-foodstuffmenucontent")]impl<__T:IFoodstuffMenuContent>IFoodstuffMenuContentMethods for __T{}
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-impl < __T : IFoodstuffMenuContent_CursorController > IFoodstuffMenuContent_CursorControllerMethods for __T { }
+#[cfg(feature="app-cooking_menu-foodstuffmenucontent")]impl FoodstuffMenuContent{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_messages_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_obj_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_foodstuff_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_cursor_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn change_cursor_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_normal_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_rare_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_selected_normal_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_selected_rare_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn put_cursor_in_front_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn put_cursor_in_back_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-impl FoodstuffMenuContent_CursorController { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent_CursorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_visible_without_cursor_images_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent_CursorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_visible_cursor_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent_CursorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_sibling_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent_CursorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_back_cursor_image_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent_CursorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent_CursorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffMenuContent_CursorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-cooking_menu-foodstuffmenucontent")]impl FoodstuffMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffMenuContent), ::core::stringify!(new),));
+ <Self as IFoodstuffMenuContentMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-impl FoodstuffMenuContent_CursorController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FoodstuffMenuContent_CursorController) , :: core :: stringify ! (new) ,)) ; < Self as IFoodstuffMenuContent_CursorControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cooking_menu-foodstuffmenucontent")]pub trait IFoodstuffMenuContent_CursorControllerMethods:IFoodstuffMenuContent_CursorController{#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent_CursorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e63b80usize)as*mut u8,();
+(FoodstuffMenuContent_CursorController)__receiver)}
+}
+#[doc="`SetVisibleWithoutCursorImages(bool)` overload"]fn set_visible_without_cursor_images(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FoodstuffMenuContent_CursorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e63c60usize)as*mut u8,();
+(FoodstuffMenuContent_CursorController)__receiver,(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`SetVisibleCursorImage(bool)` overload"]fn set_visible_cursor_image(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FoodstuffMenuContent_CursorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e63d80usize)as*mut u8,();
+(FoodstuffMenuContent_CursorController)__receiver,(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`SetSiblingIndex(i32)` overload"]fn set_sibling_index(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffMenuContent_CursorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e63e60usize)as*mut u8,();
+(FoodstuffMenuContent_CursorController)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SetBackCursorImageEnabled(bool)` overload"]fn set_back_cursor_image_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FoodstuffMenuContent_CursorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e63df0usize)as*mut u8,();
+(FoodstuffMenuContent_CursorController)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`SetColor(bool)` overload"]fn set_color(self,is_enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FoodstuffMenuContent_CursorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e63ea0usize)as*mut u8,();
+(FoodstuffMenuContent_CursorController)__receiver,(bool)::core::convert::Into::into(is_enable))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FoodstuffMenuContent_CursorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e63ff0usize)as*mut u8,();
+(FoodstuffMenuContent_CursorController)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-foodstuffmenucontent")]impl<__T:IFoodstuffMenuContent_CursorController>IFoodstuffMenuContent_CursorControllerMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-foodstuffmenucontent")]impl FoodstuffMenuContent_CursorController{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_visible_without_cursor_images_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_visible_cursor_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_sibling_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_back_cursor_image_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-cooking_menu-foodstuffmenucontent")]impl FoodstuffMenuContent_CursorController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffMenuContent_CursorController), ::core::stringify!(new),));
+ <Self as IFoodstuffMenuContent_CursorControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]

@@ -4,38 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: filecommon :: { FileCommon , IFileCommon }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::filecommon::{FileCommon,IFileCommon}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filemanager/FileManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileManager")] # [parent (crate :: app :: filecommon :: FileCommon)] pub struct FileManager {
-# [static_field] # [rename (name = "s_Thread")] pub s_thread : :: unity2 :: IlInstance ,
-# [static_field] # [rename (name = "s_CrcTable")] pub s_crc_table : :: unity2 :: Array < u32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/filemanager/FileManager.md"))]#[::unity2::class(namespace="App",name="FileManager")]#[parent(crate::app::filecommon::FileCommon)]pub struct FileManager{#[static_field]#[rename(name="s_Thread")]pub s_thread: ::unity2::IlInstance, #[static_field]#[rename(name="s_CrcTable")]pub s_crc_table: ::unity2::Array<u32> ,}
 
 }
 
 #[cfg(feature = "app-filemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-filemanager")]
-impl FileManager { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e9390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`BuildCRC32Table()` overload"] pub fn build_crc32_table () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e94a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CalcCrc32(::unity2::Array<u8>)` overload"] pub fn calc_crc32 (buf : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (buf) , :: core :: option :: Option :: None) } } } # [doc = "`Dump()` overload"] pub fn dump () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e9100usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] pub fn update () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e9620usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DirectLoad(::unity2::Il2CppString)` overload"] pub fn direct_load (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: filedata :: FileData { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: filedata :: FileData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e9960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`ThreadFunc()` overload"] pub fn thread_func () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e9a40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e9df0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-filemanager")]impl FileManager{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e9390usize)as*mut u8,();
+)}
+}
+#[doc="`BuildCRC32Table()` overload"]pub fn build_crc32_table()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e94a0usize)as*mut u8,();
+)}
+}
+#[doc="`CalcCrc32(::unity2::Array<u8>)` overload"]pub fn calc_crc32(buf:impl::core::convert::Into< ::unity2::Array<u8> >)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e8f50usize)as*mut u8,u32;
+(::unity2::Array<u8>)::core::convert::Into::into(buf))}
+}
+#[doc="`Dump()` overload"]pub fn dump()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e9100usize)as*mut u8,();
+)}
+}
+#[doc="`Update()` overload"]pub fn update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e9620usize)as*mut u8,();
+)}
+}
+#[doc="`DirectLoad(::unity2::Il2CppString)` overload"]pub fn direct_load(path:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::filedata::FileData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e9960usize)as*mut u8,crate::app::filedata::FileData;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`ThreadFunc()` overload"]pub fn thread_func()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e9a40usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26e9df0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-filemanager")]
-pub trait IFileManagerMethods : IFileManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FileManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e9d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-filemanager")]pub trait IFileManagerMethods:IFileManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FileManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e9d80usize)as*mut u8,();
+(FileManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-filemanager")]
-impl < __T : IFileManager > IFileManagerMethods for __T { }
+#[cfg(feature="app-filemanager")]impl<__T:IFileManager>IFileManagerMethods for __T{}
 
-#[cfg(feature = "app-filemanager")]
-impl FileManager { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_crc32_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_crc32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn direct_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn thread_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-filemanager")]impl FileManager{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_crc32_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_crc32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn direct_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn thread_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-filemanager")]
-impl FileManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileManager) , :: core :: stringify ! (new) ,)) ; < Self as IFileManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-filemanager")]impl FileManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileManager), ::core::stringify!(new),));
+ <Self as IFileManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-filemanager")]

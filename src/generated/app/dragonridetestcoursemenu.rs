@@ -4,36 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetestcoursemenu/DragonRideTestCourseMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTestCourseMenu")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct DragonRideTestCourseMenu {
-# [offset (32)] # [rename (name = "m_CameraComp")] pub m_camera_comp : crate :: app :: dragonridecamera :: DragonRideCamera ,
-# [offset (40)] # [rename (name = "m_PatternList")] pub m_pattern_list : crate :: app :: structarraylist_1 :: StructArrayList_1 < crate :: app :: dragonridetargetpatterndata :: DragonRideTargetPatternData > ,
-# [offset (48)] # [rename (name = "m_PatternCount")] pub m_pattern_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetestcoursemenu/DragonRideTestCourseMenu.md"))]#[::unity2::class(namespace="App",name="DragonRideTestCourseMenu")]#[parent(crate::app::menuitem::MenuItem)]pub struct DragonRideTestCourseMenu{#[offset(32)]#[rename(name="m_CameraComp")]pub m_camera_comp:crate::app::dragonridecamera::DragonRideCamera, #[offset(40)]#[rename(name="m_PatternList")]pub m_pattern_list:crate::app::structarraylist_1::StructArrayList_1<crate::app::dragonridetargetpatterndata::DragonRideTargetPatternData> , #[offset(48)]#[rename(name="m_PatternCount")]pub m_pattern_count:i32,}
 
 }
 
 #[cfg(feature = "app-dragonridetestcoursemenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonridetestcoursemenu")]
-pub trait IDragonRideTestCourseMenuMethods : IDragonRideTestCourseMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideTestCourseMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTestCourseMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRideTestCourseMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTestCourseMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < DragonRideTestCourseMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTestCourseMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d27f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnLeftRight(i32, bool)` overload"] fn on_left_right (self , step : impl :: core :: convert :: Into < i32 > , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DragonRideTestCourseMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTestCourseMenu , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (step) , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridetestcoursemenu")]pub trait IDragonRideTestCourseMenuMethods:IDragonRideTestCourseMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideTestCourseMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2600usize)as*mut u8,();
+(DragonRideTestCourseMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRideTestCourseMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2750usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRideTestCourseMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DragonRideTestCourseMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d27f0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(DragonRideTestCourseMenu)__receiver)}
+}
+#[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DragonRideTestCourseMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2890usize)as*mut u8,();
+(DragonRideTestCourseMenu)__receiver,(i32)::core::convert::Into::into(step),(bool)::core::convert::Into::into(is_trigger))}
+}
+}
 
-#[cfg(feature = "app-dragonridetestcoursemenu")]
-impl < __T : IDragonRideTestCourseMenu > IDragonRideTestCourseMenuMethods for __T { }
+#[cfg(feature="app-dragonridetestcoursemenu")]impl<__T:IDragonRideTestCourseMenu>IDragonRideTestCourseMenuMethods for __T{}
 
-#[cfg(feature = "app-dragonridetestcoursemenu")]
-impl DragonRideTestCourseMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_left_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTestCourseMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-dragonridetestcoursemenu")]impl DragonRideTestCourseMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_left_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-dragonridetestcoursemenu")]
-impl DragonRideTestCourseMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideTestCourseMenu) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideTestCourseMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridetestcoursemenu")]impl DragonRideTestCourseMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideTestCourseMenu), ::core::stringify!(new),));
+ <Self as IDragonRideTestCourseMenuMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonridetestcoursemenu")]

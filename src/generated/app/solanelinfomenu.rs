@@ -4,123 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "SolanelInfoMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct SolanelInfoMenu_DecideEventHandler {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/solanelinfomenu/SolanelInfoMenu_InfoResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SolanelInfoMenu_InfoResult  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenu/SolanelInfoMenu_InfoResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SolanelInfoMenu_InfoResult{pub value:i32,}
+impl::unity2::ClassIdentity for SolanelInfoMenu_InfoResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SolanelInfoMenu.InfoResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SolanelInfoMenu_InfoResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SolanelInfoMenu_InfoResult{pub fn jump()->Self{Self{value:0}
+}
+pub fn cancel()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SolanelInfoMenu_InfoResult  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SolanelInfoMenu.InfoResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenu/SolanelInfoMenu.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SolanelInfoMenu{}
 
 
-impl  ::unity2::IlType for SolanelInfoMenu_InfoResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SolanelInfoMenu_InfoResult  {
-    pub fn jump() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn cancel() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "SolanelInfoMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct SolanelInfoMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenu/SolanelInfoMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SolanelInfoMenu_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-solanelinfomenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-solanelinfomenu")]
-pub trait ISolanelInfoMenu_DecideEventHandlerMethods : ISolanelInfoMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < SolanelInfoMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d70120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: solanelinfomenu :: SolanelInfoMenu_InfoResult >) -> () { unsafe { let __receiver = < SolanelInfoMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu_DecideEventHandler , crate :: app :: solanelinfomenu :: SolanelInfoMenu_InfoResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d70140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-solanelinfomenu")]
-impl < __T : ISolanelInfoMenu_DecideEventHandler > ISolanelInfoMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-solanelinfomenu")]
-impl SolanelInfoMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-solanelinfomenu")]
-impl SolanelInfoMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SolanelInfoMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as ISolanelInfoMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-solanelinfomenu")]impl SolanelInfoMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,event_handler:impl::core::convert::Into<crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fdebc0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
 }
 
-#[cfg(feature = "app-solanelinfomenu")]
-impl SolanelInfoMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , event_handler : impl :: core :: convert :: Into < crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdebc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-solanelinfomenu")]pub trait ISolanelInfoMenuMethods:ISolanelInfoMenu{#[doc="`get_m_DecideEventHandler()` overload"]fn get_m_decide_event_handler(self,)->crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler{unsafe{let __receiver= <SolanelInfoMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdeba0usize)as*mut u8,crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler;
+(SolanelInfoMenu)__receiver)}
+}
+#[doc="`set_m_DecideEventHandler(crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)` overload"]fn set_m_decide_event_handler(self,value:impl::core::convert::Into<crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler>)->(){unsafe{let __receiver= <SolanelInfoMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdebb0usize)as*mut u8,();
+(SolanelInfoMenu)__receiver,(crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::solanelinfomenucontent::SolanelInfoMenuContent, crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::solanelinfomenucontent::SolanelInfoMenuContent> ,event_handler:impl::core::convert::Into<crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler>)->(){unsafe{let __receiver= <SolanelInfoMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdf110usize)as*mut u8,();
+(SolanelInfoMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::solanelinfomenucontent::SolanelInfoMenuContent)::core::convert::Into::into(menu_content),(crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SolanelInfoMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdf150usize)as*mut u8, ::unity2::Il2CppString;
+(SolanelInfoMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SolanelInfoMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdf1a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SolanelInfoMenu)__receiver)}
+}
+#[doc="`SetAreaDetail(crate::app::hubareadata::HubAreaData)` overload"]fn set_area_detail(self,data:impl::core::convert::Into<crate::app::hubareadata::HubAreaData>)->(){unsafe{let __receiver= <SolanelInfoMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdf1d0usize)as*mut u8,();
+(SolanelInfoMenu)__receiver,(crate::app::hubareadata::HubAreaData)::core::convert::Into::into(data))}
+}
+#[doc="`RunFastTravel(crate::app::hubareadata::HubAreaData)` overload"]fn run_fast_travel(self,hub_area_data:impl::core::convert::Into<crate::app::hubareadata::HubAreaData>)->(){unsafe{let __receiver= <SolanelInfoMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdf880usize)as*mut u8,();
+(SolanelInfoMenu)__receiver,(crate::app::hubareadata::HubAreaData)::core::convert::Into::into(hub_area_data))}
+}
+#[doc="`GetSpriteAtlasManager()` overload"]fn get_sprite_atlas_manager(self,)->crate::app::spriteatlasmanager_2::SpriteAtlasManager_2{unsafe{let __receiver= <SolanelInfoMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdf920usize)as*mut u8,crate::app::spriteatlasmanager_2::SpriteAtlasManager_2;
+(SolanelInfoMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-solanelinfomenu")]
-pub trait ISolanelInfoMenuMethods : ISolanelInfoMenu { # [doc = "`get_m_DecideEventHandler()` overload"] fn get_m_decide_event_handler (self ,) -> crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler { unsafe { let __receiver = < SolanelInfoMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdeba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_DecideEventHandler(crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)` overload"] fn set_m_decide_event_handler (self , value : impl :: core :: convert :: Into < crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < SolanelInfoMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu , crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdebb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::solanelinfomenucontent::SolanelInfoMenuContent, crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: solanelinfomenucontent :: SolanelInfoMenuContent > , event_handler : impl :: core :: convert :: Into < crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < SolanelInfoMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: solanelinfomenucontent :: SolanelInfoMenuContent , crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdf110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SolanelInfoMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdf150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SolanelInfoMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdf1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAreaDetail(crate::app::hubareadata::HubAreaData)` overload"] fn set_area_detail (self , data : impl :: core :: convert :: Into < crate :: app :: hubareadata :: HubAreaData >) -> () { unsafe { let __receiver = < SolanelInfoMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu , crate :: app :: hubareadata :: HubAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdf1d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`RunFastTravel(crate::app::hubareadata::HubAreaData)` overload"] fn run_fast_travel (self , hub_area_data : impl :: core :: convert :: Into < crate :: app :: hubareadata :: HubAreaData >) -> () { unsafe { let __receiver = < SolanelInfoMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu , crate :: app :: hubareadata :: HubAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdf880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hub_area_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetSpriteAtlasManager()` overload"] fn get_sprite_atlas_manager (self ,) -> crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 { unsafe { let __receiver = < SolanelInfoMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SolanelInfoMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdf920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-solanelinfomenu")]impl<__T:ISolanelInfoMenu>ISolanelInfoMenuMethods for __T{}
 
-#[cfg(feature = "app-solanelinfomenu")]
-impl < __T : ISolanelInfoMenu > ISolanelInfoMenuMethods for __T { }
+#[cfg(feature="app-solanelinfomenu")]impl SolanelInfoMenu{pub fn get_m_decide_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_decide_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_area_detail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn run_fast_travel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_sprite_atlas_manager_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-solanelinfomenu")]
-impl SolanelInfoMenu { pub fn get_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_area_detail_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn run_fast_travel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_sprite_atlas_manager_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SolanelInfoMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-solanelinfomenu")]impl SolanelInfoMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::solanelinfomenucontent::SolanelInfoMenuContent, crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::solanelinfomenucontent::SolanelInfoMenuContent,event_handler:crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SolanelInfoMenu), ::core::stringify!(new),));
+ <Self as ISolanelInfoMenuMethods> ::ctor(this,menu_item_list,menu_content,event_handler);
+this}
+}
 
-#[cfg(feature = "app-solanelinfomenu")]
-impl SolanelInfoMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::solanelinfomenucontent::SolanelInfoMenuContent, crate::app::solanelinfomenu::SolanelInfoMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: solanelinfomenucontent :: SolanelInfoMenuContent , event_handler : crate :: app :: solanelinfomenu :: SolanelInfoMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SolanelInfoMenu) , :: core :: stringify ! (new) ,)) ; < Self as ISolanelInfoMenuMethods > :: ctor (this , menu_item_list , menu_content , event_handler) ; this }
+#[cfg(feature="app-solanelinfomenu")]pub trait ISolanelInfoMenu_DecideEventHandlerMethods:ISolanelInfoMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SolanelInfoMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d70120usize)as*mut u8,();
+(SolanelInfoMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult>)->(){unsafe{let __receiver= <SolanelInfoMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d70140usize)as*mut u8,();
+(SolanelInfoMenu_DecideEventHandler)__receiver,(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-solanelinfomenu")]impl<__T:ISolanelInfoMenu_DecideEventHandler>ISolanelInfoMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-solanelinfomenu")]impl SolanelInfoMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-solanelinfomenu")]impl SolanelInfoMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SolanelInfoMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as ISolanelInfoMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-solanelinfomenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SolanelInfoMenu_DecideEventHandler;
-    pub use super::ISolanelInfoMenu_DecideEventHandler;
-    pub use super::ISolanelInfoMenu_DecideEventHandlerMethods;
     pub use super::SolanelInfoMenu_InfoResult;
     pub use super::SolanelInfoMenu;
     pub use super::ISolanelInfoMenu;
     pub use super::ISolanelInfoMenuMethods;
+    pub use super::SolanelInfoMenu_DecideEventHandler;
+    pub use super::ISolanelInfoMenu_DecideEventHandler;
+    pub use super::ISolanelInfoMenu_DecideEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

@@ -4,27 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/addressablesruntimeproperties/AddressablesRuntimeProperties.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Initialization" , name = "AddressablesRuntimeProperties")] # [parent (crate :: system :: object :: Object)] pub struct AddressablesRuntimeProperties {
-# [static_field] # [rename (name = "s_TokenStack")] pub s_token_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "s_TokenStartStack")] pub s_token_start_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < i32 > ,
-# [static_field] # [rename (name = "s_CachedValues")] pub s_cached_values : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/initialization/addressablesruntimeproperties/AddressablesRuntimeProperties.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Initialization",name="AddressablesRuntimeProperties")]#[parent(crate::system::object::Object)]pub struct AddressablesRuntimeProperties{#[static_field]#[rename(name="s_TokenStack")]pub s_token_stack:crate::system::collections::generic::stack_1::Stack_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_TokenStartStack")]pub s_token_start_stack:crate::system::collections::generic::stack_1::Stack_1<i32> , #[static_field]#[rename(name="s_CachedValues")]pub s_cached_values:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]
-impl AddressablesRuntimeProperties { # [doc = "`GetAssemblies()` overload"] pub fn get_assemblies () -> :: unity2 :: Array < crate :: system :: reflection :: assembly :: Assembly > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: assembly :: Assembly > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db1480usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCachedValueCount()` overload"] pub fn get_cached_value_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db14a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetPropertyValue(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn set_property_value (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db1520usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`ClearCachedPropertyValues()` overload"] pub fn clear_cached_property_values () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db15c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EvaluateProperty(::unity2::Il2CppString)` overload"] pub fn evaluate_property (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db1640usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`EvaluateString(::unity2::Il2CppString)` overload"] pub fn evaluate_string (input : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2daaf20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (input) , :: core :: option :: Option :: None) } } } # [doc = "`EvaluateString(::unity2::Il2CppString, u16, u16, crate::system::func_2::Func_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"] pub fn evaluate_string_2 (input_string : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , start_delimiter : impl :: core :: convert :: Into < u16 > , end_delimiter : impl :: core :: convert :: Into < u16 > , var_func : impl :: core :: convert :: Into < crate :: system :: func_2 :: Func_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , u16 , u16 , crate :: system :: func_2 :: Func_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db1a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (input_string) , :: core :: convert :: Into :: into (start_delimiter) , :: core :: convert :: Into :: into (end_delimiter) , :: core :: convert :: Into :: into (var_func) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db2020usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]impl AddressablesRuntimeProperties{#[doc="`GetAssemblies()` overload"]pub fn get_assemblies()-> ::unity2::Array<crate::system::reflection::assembly::Assembly>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db1480usize)as*mut u8, ::unity2::Array<crate::system::reflection::assembly::Assembly> ;
+)}
+}
+#[doc="`GetCachedValueCount()` overload"]pub fn get_cached_value_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db14a0usize)as*mut u8,i32;
+)}
+}
+#[doc="`SetPropertyValue(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn set_property_value(name:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db1520usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(val))}
+}
+#[doc="`ClearCachedPropertyValues()` overload"]pub fn clear_cached_property_values()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db15c0usize)as*mut u8,();
+)}
+}
+#[doc="`EvaluateProperty(::unity2::Il2CppString)` overload"]pub fn evaluate_property(name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db1640usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`EvaluateString(::unity2::Il2CppString)` overload"]pub fn evaluate_string(input:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2daaf20usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(input))}
+}
+#[doc="`EvaluateString(::unity2::Il2CppString, u16, u16, crate::system::func_2::Func_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"]pub fn evaluate_string_2(input_string:impl::core::convert::Into< ::unity2::Il2CppString> ,start_delimiter:impl::core::convert::Into<u16> ,end_delimiter:impl::core::convert::Into<u16> ,var_func:impl::core::convert::Into<crate::system::func_2::Func_2< ::unity2::Il2CppString, ::unity2::Il2CppString> >)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db1a90usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(input_string),(u16)::core::convert::Into::into(start_delimiter),(u16)::core::convert::Into::into(end_delimiter),(crate::system::func_2::Func_2< ::unity2::Il2CppString, ::unity2::Il2CppString>)::core::convert::Into::into(var_func))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db2020usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]
-impl AddressablesRuntimeProperties { pub fn get_assemblies_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddressablesRuntimeProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_cached_value_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddressablesRuntimeProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_property_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddressablesRuntimeProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_cached_property_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddressablesRuntimeProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn evaluate_property_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddressablesRuntimeProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn evaluate_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddressablesRuntimeProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn evaluate_string_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddressablesRuntimeProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddressablesRuntimeProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]impl AddressablesRuntimeProperties{pub fn get_assemblies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_cached_value_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_property_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_cached_property_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn evaluate_property_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn evaluate_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn evaluate_string_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]
 #[doc(hidden)]

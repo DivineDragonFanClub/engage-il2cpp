@@ -4,69 +4,136 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/dynamicmodule/DynamicModule.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.CoreLib" , name = "DynamicModule")] # [parent (crate :: system :: object :: Object)] pub struct DynamicModule {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/core_lib/dynamicmodule/DynamicModule_DynamicExprWrapper.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.CoreLib",name="DynamicModule.DynamicExprWrapper")]#[parent(crate::system::object::Object)]pub struct DynamicModule_DynamicExprWrapper{#[offset(16)]#[rename(name="Expr")]pub expr:crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/dynamicmodule/DynamicModule_DynamicExprWrapper.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.CoreLib" , name = "DynamicModule.DynamicExprWrapper")] # [parent (crate :: system :: object :: Object)] pub struct DynamicModule_DynamicExprWrapper {
-# [offset (16)] # [rename (name = "Expr")] pub expr : crate :: moon_sharp :: interpreter :: dynamicexpression :: DynamicExpression ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/core_lib/dynamicmodule/DynamicModule.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.CoreLib",name="DynamicModule")]#[parent(crate::system::object::Object)]pub struct DynamicModule{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DynamicModule_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_moon_sharp_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicModule as :: unity2 :: ClassIdentity > :: class () , "MoonSharpInit" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicModule as :: unity2 :: ClassIdentity > :: NAME , "MoonSharpInit" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_eval { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicModule as :: unity2 :: ClassIdentity > :: class () , "eval" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicModule as :: unity2 :: ClassIdentity > :: NAME , "eval" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_prepare { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicModule as :: unity2 :: ClassIdentity > :: class () , "prepare" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicModule as :: unity2 :: ClassIdentity > :: NAME , "prepare" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicModule as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicModule as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-impl DynamicModule { # [doc = "`MoonSharpInit(crate::moon_sharp::interpreter::table::Table, crate::moon_sharp::interpreter::table::Table)` overload"] pub fn moon_sharp_init (global_table : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table > , string_table : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> () { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: table :: Table , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynamicModule_unity2_raw :: __lookup_moon_sharp_init :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (global_table) , :: core :: convert :: Into :: into (string_table) , :: core :: option :: Option :: None) } } } # [doc = "`eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] pub fn eval (execution_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynamicModule_unity2_raw :: __lookup_eval :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (execution_context) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`prepare(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"] pub fn prepare (execution_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext > , args : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynamicModule_unity2_raw :: __lookup_prepare :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (execution_context) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-pub trait IDynamicModuleMethods : IDynamicModule { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DynamicModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynamicModule_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-impl < __T : IDynamicModule > IDynamicModuleMethods for __T { }
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-impl DynamicModule { pub fn moon_sharp_init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn eval_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-impl DynamicModule {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicModule) , :: core :: stringify ! (new) ,)) ; < Self as IDynamicModuleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DynamicModule_DynamicExprWrapper_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynamicModule_DynamicExprWrapper as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynamicModule_DynamicExprWrapper as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
 }
 
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DynamicModule_DynamicExprWrapper_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicModule_DynamicExprWrapper as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicModule_DynamicExprWrapper as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]pub trait IDynamicModule_DynamicExprWrapperMethods:IDynamicModule_DynamicExprWrapper{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DynamicModule_DynamicExprWrapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynamicModule_DynamicExprWrapper_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(DynamicModule_DynamicExprWrapper)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-pub trait IDynamicModule_DynamicExprWrapperMethods : IDynamicModule_DynamicExprWrapper { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DynamicModule_DynamicExprWrapper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicModule_DynamicExprWrapper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynamicModule_DynamicExprWrapper_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]impl<__T:IDynamicModule_DynamicExprWrapper>IDynamicModule_DynamicExprWrapperMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-impl < __T : IDynamicModule_DynamicExprWrapper > IDynamicModule_DynamicExprWrapperMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]impl DynamicModule_DynamicExprWrapper{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-impl DynamicModule_DynamicExprWrapper { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicModule_DynamicExprWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]impl DynamicModule_DynamicExprWrapper{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DynamicModule_DynamicExprWrapper), ::core::stringify!(new),));
+ <Self as IDynamicModule_DynamicExprWrapperMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
-impl DynamicModule_DynamicExprWrapper {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynamicModule_DynamicExprWrapper) , :: core :: stringify ! (new) ,)) ; < Self as IDynamicModule_DynamicExprWrapperMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DynamicModule_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_moon_sharp_init{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynamicModule as::unity2::ClassIdentity> ::class(),"MoonSharpInit",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynamicModule as::unity2::ClassIdentity> ::NAME,"MoonSharpInit",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_eval{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynamicModule as::unity2::ClassIdentity> ::class(),"eval",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynamicModule as::unity2::ClassIdentity> ::NAME,"eval",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_prepare{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynamicModule as::unity2::ClassIdentity> ::class(),"prepare",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynamicModule as::unity2::ClassIdentity> ::NAME,"prepare",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynamicModule as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynamicModule as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]impl DynamicModule{#[doc="`MoonSharpInit(crate::moon_sharp::interpreter::table::Table, crate::moon_sharp::interpreter::table::Table)` overload"]pub fn moon_sharp_init(global_table:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table> ,string_table:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{::unity2::il2cpp_call!(__DynamicModule_unity2_raw::__lookup_moon_sharp_init::get_method_info().method_ptr,();
+(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(global_table),(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(string_table))}
+}
+#[doc="`eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]pub fn eval(execution_context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynamicModule_unity2_raw::__lookup_eval::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(execution_context),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
+}
+#[doc="`prepare(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]pub fn prepare(execution_context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynamicModule_unity2_raw::__lookup_prepare::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(execution_context),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]pub trait IDynamicModuleMethods:IDynamicModule{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DynamicModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynamicModule_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(DynamicModule)__receiver)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]impl<__T:IDynamicModule>IDynamicModuleMethods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]impl DynamicModule{pub fn moon_sharp_init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-core_lib-dynamicmodule")]impl DynamicModule{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DynamicModule), ::core::stringify!(new),));
+ <Self as IDynamicModuleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DynamicModule;
-    pub use super::IDynamicModule;
-    pub use super::IDynamicModuleMethods;
     pub use super::DynamicModule_DynamicExprWrapper;
     pub use super::IDynamicModule_DynamicExprWrapper;
     pub use super::IDynamicModule_DynamicExprWrapperMethods;
+    pub use super::DynamicModule;
+    pub use super::IDynamicModule;
+    pub use super::IDynamicModuleMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

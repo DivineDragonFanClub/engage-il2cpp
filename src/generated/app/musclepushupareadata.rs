@@ -4,39 +4,115 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclepushupareadata/MusclePushUpAreaData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MusclePushUpAreaData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: musclepushupareadata :: MusclePushUpAreaData >)] pub struct MusclePushUpAreaData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclepushupareadata/MusclePushUpAreaData.md"))]#[::unity2::class(namespace="App",name="MusclePushUpAreaData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::musclepushupareadata::MusclePushUpAreaData>)]pub struct MusclePushUpAreaData{}
 
 }
 
 #[cfg(feature = "app-musclepushupareadata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-musclepushupareadata")]
-impl MusclePushUpAreaData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a1b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetParam(i32)` overload"] pub fn get_param (level : impl :: core :: convert :: Into < i32 >) -> crate :: app :: musclepushupareadata :: MusclePushUpAreaData { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: musclepushupareadata :: MusclePushUpAreaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a270usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclepushupareadata")]impl MusclePushUpAreaData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x278a1b0usize)as*mut u8,();
+)}
+}
+#[doc="`GetParam(i32)` overload"]pub fn get_param(level:impl::core::convert::Into<i32>)->crate::app::musclepushupareadata::MusclePushUpAreaData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x278a270usize)as*mut u8,crate::app::musclepushupareadata::MusclePushUpAreaData;
+(i32)::core::convert::Into::into(level))}
+}
+}
 
-#[cfg(feature = "app-musclepushupareadata")]
-pub trait IMusclePushUpAreaDataMethods : IMusclePushUpAreaData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> i32 { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(i32)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AreaP_Center()` overload"] fn get_area_p_center (self ,) -> f32 { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AreaP_Center(f32)` overload"] fn set_area_p_center (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AreaP_Radius()` overload"] fn get_area_p_radius (self ,) -> f32 { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AreaP_Radius(f32)` overload"] fn set_area_p_radius (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AreaG_Center()` overload"] fn get_area_g_center (self ,) -> f32 { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AreaG_Center(f32)` overload"] fn set_area_g_center (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AreaG_Radius()` overload"] fn get_area_g_radius (self ,) -> f32 { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AreaG_Radius(f32)` overload"] fn set_area_g_radius (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MusclePushUpAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclepushupareadata")]pub trait IMusclePushUpAreaDataMethods:IMusclePushUpAreaData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a070usize)as*mut u8, ::unity2::Il2CppString;
+(MusclePushUpAreaData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a080usize)as*mut u8,();
+(MusclePushUpAreaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->i32{unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a090usize)as*mut u8,i32;
+(MusclePushUpAreaData)__receiver)}
+}
+#[doc="`set_Level(i32)` overload"]fn set_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a0a0usize)as*mut u8,();
+(MusclePushUpAreaData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AreaP_Center()` overload"]fn get_area_p_center(self,)->f32{unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a0b0usize)as*mut u8,f32;
+(MusclePushUpAreaData)__receiver)}
+}
+#[doc="`set_AreaP_Center(f32)` overload"]fn set_area_p_center(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a0c0usize)as*mut u8,();
+(MusclePushUpAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AreaP_Radius()` overload"]fn get_area_p_radius(self,)->f32{unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a0d0usize)as*mut u8,f32;
+(MusclePushUpAreaData)__receiver)}
+}
+#[doc="`set_AreaP_Radius(f32)` overload"]fn set_area_p_radius(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a0e0usize)as*mut u8,();
+(MusclePushUpAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AreaG_Center()` overload"]fn get_area_g_center(self,)->f32{unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a0f0usize)as*mut u8,f32;
+(MusclePushUpAreaData)__receiver)}
+}
+#[doc="`set_AreaG_Center(f32)` overload"]fn set_area_g_center(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a100usize)as*mut u8,();
+(MusclePushUpAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AreaG_Radius()` overload"]fn get_area_g_radius(self,)->f32{unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a110usize)as*mut u8,f32;
+(MusclePushUpAreaData)__receiver)}
+}
+#[doc="`set_AreaG_Radius(f32)` overload"]fn set_area_g_radius(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a120usize)as*mut u8,();
+(MusclePushUpAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a130usize)as*mut u8,();
+(MusclePushUpAreaData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MusclePushUpAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a260usize)as*mut u8,();
+(MusclePushUpAreaData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-musclepushupareadata")]
-impl < __T : IMusclePushUpAreaData > IMusclePushUpAreaDataMethods for __T { }
+#[cfg(feature="app-musclepushupareadata")]impl<__T:IMusclePushUpAreaData>IMusclePushUpAreaDataMethods for __T{}
 
-#[cfg(feature = "app-musclepushupareadata")]
-impl MusclePushUpAreaData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_area_p_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_area_p_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_area_p_radius_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_area_p_radius_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_area_g_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_area_g_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_area_g_radius_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_area_g_radius_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-musclepushupareadata")]impl MusclePushUpAreaData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_area_p_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_area_p_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_area_p_radius_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_area_p_radius_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_area_g_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_area_g_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_area_g_radius_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_area_g_radius_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-musclepushupareadata")]
-impl MusclePushUpAreaData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MusclePushUpAreaData) , :: core :: stringify ! (new) ,)) ; < Self as IMusclePushUpAreaDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-musclepushupareadata")]impl MusclePushUpAreaData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MusclePushUpAreaData), ::core::stringify!(new),));
+ <Self as IMusclePushUpAreaDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-musclepushupareadata")]

@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendererlisthandle/RendererListHandle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RendererListHandle {
-    pub m_is_valid: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendererlisthandle/RendererListHandle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RendererListHandle{pub m_is_valid:bool,}
+impl::unity2::ClassIdentity for RendererListHandle{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
+const NAME: &'static str="RendererListHandle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RendererListHandle {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "RendererListHandle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RendererListHandle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RendererListHandle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,31 @@ impl ::unity2::IlType for RendererListHandle {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
-impl RendererListHandle { # [doc = "`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle)` overload"] pub fn op_implicit (handle : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendererlisthandle :: RendererListHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dc870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]impl RendererListHandle{#[doc="`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle)` overload"]pub fn op_implicit(handle:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33dc870usize)as*mut u8,i32;
+(crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle)::core::convert::Into::into(handle))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
-impl RendererListHandle { # [doc = "`get_handle()` overload"] pub fn get_handle (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RendererListHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0890usize) as * mut u8) ; __inner (self as * mut RendererListHandle , :: core :: option :: Option :: None) } } } # [doc = "`set_handle(i32)` overload"] pub fn set_handle (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RendererListHandle , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e08a0usize) as * mut u8) ; __inner (self as * mut RendererListHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RendererListHandle , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dde90usize) as * mut u8) ; __inner (self as * mut RendererListHandle , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] pub fn is_valid (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut RendererListHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0a10usize) as * mut u8) ; __inner (self as * mut RendererListHandle , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]impl RendererListHandle{#[doc="`get_handle()` overload"]pub fn get_handle(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e0890usize)as*mut u8,i32;
+(*mut RendererListHandle)self as*mut RendererListHandle)}
+}
+#[doc="`set_handle(i32)` overload"]pub fn set_handle(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e08a0usize)as*mut u8,();
+(*mut RendererListHandle)self as*mut RendererListHandle,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33dde90usize)as*mut u8,();
+(*mut RendererListHandle)self as*mut RendererListHandle,(i32)::core::convert::Into::into(handle))}
+}
+#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e0a10usize)as*mut u8,bool;
+(*mut RendererListHandle)self as*mut RendererListHandle)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
-impl RendererListHandle { pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererListHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererListHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererListHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererListHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererListHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]impl RendererListHandle{pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
 #[doc(hidden)]

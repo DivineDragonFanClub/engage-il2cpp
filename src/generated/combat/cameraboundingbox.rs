@@ -4,37 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameraboundingbox/CameraBoundingBox.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraBoundingBox")] # [parent (crate :: system :: object :: Object)] pub struct CameraBoundingBox {
-# [offset (16)] # [rename (name = "m_CameraDirection")] pub m_camera_direction : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (28)] # [rename (name = "m_MatrixWorldToCamera")] pub m_matrix_world_to_camera : crate :: unity_engine :: matrix4x4 :: Matrix4x4 ,
-# [offset (92)] # [rename (name = "m_MatrixCameraToWorld")] pub m_matrix_camera_to_world : crate :: unity_engine :: matrix4x4 :: Matrix4x4 ,
-# [offset (156)] # [rename (name = "m_Box")] pub m_box : crate :: unity_engine :: bounds :: Bounds ,
-# [offset (192)] # [rename (name = "m_ScreenSpaceReprojectionRatio")] pub m_screen_space_reprojection_ratio : f32 ,
-# [offset (196)] # [rename (name = "m_IsFinalized")] pub m_is_finalized : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameraboundingbox/CameraBoundingBox.md"))]#[::unity2::class(namespace="Combat",name="CameraBoundingBox")]#[parent(crate::system::object::Object)]pub struct CameraBoundingBox{#[offset(16)]#[rename(name="m_CameraDirection")]pub m_camera_direction:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="m_MatrixWorldToCamera")]pub m_matrix_world_to_camera:crate::unity_engine::matrix4x4::Matrix4x4, #[offset(92)]#[rename(name="m_MatrixCameraToWorld")]pub m_matrix_camera_to_world:crate::unity_engine::matrix4x4::Matrix4x4, #[offset(156)]#[rename(name="m_Box")]pub m_box:crate::unity_engine::bounds::Bounds, #[offset(192)]#[rename(name="m_ScreenSpaceReprojectionRatio")]pub m_screen_space_reprojection_ratio:f32, #[offset(196)]#[rename(name="m_IsFinalized")]pub m_is_finalized:bool,}
 
 }
 
 #[cfg(feature = "combat-cameraboundingbox-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameraboundingbox")]
-pub trait ICameraBoundingBoxMethods : ICameraBoundingBox { # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] fn ctor (self , follow_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , look_at_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , screen_space_reprojection_ratio : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraBoundingBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraBoundingBox , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (follow_pos) , :: core :: convert :: Into :: into (look_at_pos) , :: core :: convert :: Into :: into (screen_space_reprojection_ratio) , :: core :: option :: Option :: None) } } } # [doc = "`Append(crate::unity_engine::vector3::Vector3, f32)` overload"] fn append (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , size : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraBoundingBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraBoundingBox , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29942a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBox()` overload"] fn create_box (self ,) -> () { unsafe { let __receiver = < CameraBoundingBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraBoundingBox , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBoxCenter()` overload"] fn get_box_center (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraBoundingBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraBoundingBox , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNearestDistance(f32)` overload"] fn get_nearest_distance (self , fov : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < CameraBoundingBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraBoundingBox , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29946a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fov) , :: core :: option :: Option :: None) } } } # [doc = "`PosInCamera(crate::unity_engine::vector3::Vector3)` overload"] fn pos_in_camera (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraBoundingBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraBoundingBox , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameraboundingbox")]pub trait ICameraBoundingBoxMethods:ICameraBoundingBox{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]fn ctor(self,follow_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,look_at_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,screen_space_reprojection_ratio:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraBoundingBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994020usize)as*mut u8,();
+(CameraBoundingBox)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(follow_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(look_at_pos),(f32)::core::convert::Into::into(screen_space_reprojection_ratio))}
+}
+#[doc="`Append(crate::unity_engine::vector3::Vector3, f32)` overload"]fn append(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,size:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraBoundingBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29942a0usize)as*mut u8,();
+(CameraBoundingBox)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(size))}
+}
+#[doc="`CreateBox()` overload"]fn create_box(self,)->(){unsafe{let __receiver= <CameraBoundingBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994390usize)as*mut u8,();
+(CameraBoundingBox)__receiver)}
+}
+#[doc="`GetBoxCenter()` overload"]fn get_box_center(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraBoundingBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994640usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraBoundingBox)__receiver)}
+}
+#[doc="`GetNearestDistance(f32)` overload"]fn get_nearest_distance(self,fov:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <CameraBoundingBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29946a0usize)as*mut u8,f32;
+(CameraBoundingBox)__receiver,(f32)::core::convert::Into::into(fov))}
+}
+#[doc="`PosInCamera(crate::unity_engine::vector3::Vector3)` overload"]fn pos_in_camera(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraBoundingBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994830usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraBoundingBox)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+}
 
-#[cfg(feature = "combat-cameraboundingbox")]
-impl < __T : ICameraBoundingBox > ICameraBoundingBoxMethods for __T { }
+#[cfg(feature="combat-cameraboundingbox")]impl<__T:ICameraBoundingBox>ICameraBoundingBoxMethods for __T{}
 
-#[cfg(feature = "combat-cameraboundingbox")]
-impl CameraBoundingBox { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraBoundingBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn append_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraBoundingBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_box_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraBoundingBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_box_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraBoundingBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_nearest_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraBoundingBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn pos_in_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraBoundingBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-cameraboundingbox")]impl CameraBoundingBox{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn append_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_box_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_box_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_nearest_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn pos_in_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-cameraboundingbox")]
-impl CameraBoundingBox {
-# [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` — overload selector"] pub fn new (follow_pos : crate :: unity_engine :: vector3 :: Vector3 , look_at_pos : crate :: unity_engine :: vector3 :: Vector3 , screen_space_reprojection_ratio : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraBoundingBox) , :: core :: stringify ! (new) ,)) ; < Self as ICameraBoundingBoxMethods > :: ctor (this , follow_pos , look_at_pos , screen_space_reprojection_ratio) ; this }
+#[cfg(feature="combat-cameraboundingbox")]impl CameraBoundingBox{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` — overload selector"]pub fn new(follow_pos:crate::unity_engine::vector3::Vector3,look_at_pos:crate::unity_engine::vector3::Vector3,screen_space_reprojection_ratio:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraBoundingBox), ::core::stringify!(new),));
+ <Self as ICameraBoundingBoxMethods> ::ctor(this,follow_pos,look_at_pos,screen_space_reprojection_ratio);
+this}
 }
 
 #[cfg(feature = "combat-cameraboundingbox")]

@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proceventwait/ProcEventWait.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcEventWait")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProcEventWait {
-# [offset (112)] # [rename (name = "m_Tick")] pub m_tick : f32 ,
-# [offset (116)] # [rename (name = "m_Time")] pub m_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proceventwait/ProcEventWait.md"))]#[::unity2::class(namespace="App",name="ProcEventWait")]#[parent(crate::app::procinst::ProcInst)]pub struct ProcEventWait{#[offset(112)]#[rename(name="m_Tick")]pub m_tick:f32, #[offset(116)]#[rename(name="m_Time")]pub m_time:f32,}
 
 }
 
 #[cfg(feature = "app-proceventwait-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-proceventwait")]
-impl ProcEventWait { # [doc = "`CreateBind(crate::app::procinst::ProcInst, f32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281dfd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-proceventwait")]impl ProcEventWait{#[doc="`CreateBind(crate::app::procinst::ProcInst, f32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281dfd0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(f32)::core::convert::Into::into(time))}
+}
+}
 
-#[cfg(feature = "app-proceventwait")]
-pub trait IProcEventWaitMethods : IProcEventWait { # [doc = "`.ctor(f32)` overload"] fn ctor (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ProcEventWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcEventWait , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281dd20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < ProcEventWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcEventWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281dd60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-proceventwait")]pub trait IProcEventWaitMethods:IProcEventWait{#[doc="`.ctor(f32)` overload"]fn ctor(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ProcEventWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281dd20usize)as*mut u8,();
+(ProcEventWait)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <ProcEventWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281dd60usize)as*mut u8,();
+(ProcEventWait)__receiver)}
+}
+}
 
-#[cfg(feature = "app-proceventwait")]
-impl < __T : IProcEventWait > IProcEventWaitMethods for __T { }
+#[cfg(feature="app-proceventwait")]impl<__T:IProcEventWait>IProcEventWaitMethods for __T{}
 
-#[cfg(feature = "app-proceventwait")]
-impl ProcEventWait { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcEventWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcEventWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcEventWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-proceventwait")]impl ProcEventWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-proceventwait")]
-impl ProcEventWait {
-# [doc = "`.ctor(f32)` — overload selector"] pub fn new (time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcEventWait) , :: core :: stringify ! (new) ,)) ; < Self as IProcEventWaitMethods > :: ctor (this , time) ; this }
+#[cfg(feature="app-proceventwait")]impl ProcEventWait{#[doc="`.ctor(f32)` — overload selector"]pub fn new(time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcEventWait), ::core::stringify!(new),));
+ <Self as IProcEventWaitMethods> ::ctor(this,time);
+this}
 }
 
 #[cfg(feature = "app-proceventwait")]

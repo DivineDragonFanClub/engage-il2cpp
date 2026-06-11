@@ -4,41 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiondamage/ActionDamage.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionDamage")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionDamage {
-# [offset (40)] # [rename (name = "m_Attacker")] pub m_attacker : crate :: combat :: character :: Character ,
-# [offset (48)] # [rename (name = "m_Damager")] pub m_damager : crate :: combat :: character :: Character ,
-# [offset (56)] # [rename (name = "m_HitEv")] pub m_hit_ev : crate :: unity_engine :: animationevent :: AnimationEvent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiondamage/ActionDamage.md"))]#[::unity2::class(namespace="Combat",name="ActionDamage")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionDamage{#[offset(40)]#[rename(name="m_Attacker")]pub m_attacker:crate::combat::character::Character, #[offset(48)]#[rename(name="m_Damager")]pub m_damager:crate::combat::character::Character, #[offset(56)]#[rename(name="m_HitEv")]pub m_hit_ev:crate::unity_engine::animationevent::AnimationEvent,}
 
 }
 
 #[cfg(feature = "combat-actiondamage-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiondamage")]
-impl ActionDamage { # [doc = "`ResolveAll(crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` overload"] pub fn resolve_all (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4130usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiondamage")]impl ActionDamage{#[doc="`ResolveAll(crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` overload"]pub fn resolve_all(phase:impl::core::convert::Into<crate::combat::phase::Phase> ,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4130usize)as*mut u8,i32;
+(crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+}
 
-#[cfg(feature = "combat-actiondamage")]
-pub trait IActionDamageMethods : IActionDamage { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionDamage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDamage , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc40d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_AbortByInterrupt()` overload"] fn get_abort_by_interrupt (self ,) -> bool { unsafe { let __receiver = < ActionDamage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDamage , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, crate::combat::character::Character, crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` overload"] fn ctor (self , attacker : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , damager : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < ActionDamage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDamage , crate :: combat :: character :: Character , crate :: combat :: character :: Character , crate :: combat :: phase :: Phase , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc1940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attacker) , :: core :: convert :: Into :: into (damager) , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`RunLyingWhenDie()` overload"] fn run_lying_when_die (self ,) -> () { unsafe { let __receiver = < ActionDamage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDamage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc2ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionDamage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDamage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiondamage")]pub trait IActionDamageMethods:IActionDamage{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc40d0usize)as*mut u8, ::unity2::Il2CppString;
+(ActionDamage)__receiver)}
+}
+#[doc="`get_AbortByInterrupt()` overload"]fn get_abort_by_interrupt(self,)->bool{unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4120usize)as*mut u8,bool;
+(ActionDamage)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, crate::combat::character::Character, crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` overload"]fn ctor(self,attacker:impl::core::convert::Into<crate::combat::character::Character> ,damager:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc1940usize)as*mut u8,();
+(ActionDamage)__receiver,(crate::combat::character::Character)::core::convert::Into::into(attacker),(crate::combat::character::Character)::core::convert::Into::into(damager),(crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`RunLyingWhenDie()` overload"]fn run_lying_when_die(self,)->(){unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc2ef0usize)as*mut u8,();
+(ActionDamage)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4360usize)as*mut u8,();
+(ActionDamage)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actiondamage")]
-impl < __T : IActionDamage > IActionDamageMethods for __T { }
+#[cfg(feature="combat-actiondamage")]impl<__T:IActionDamage>IActionDamageMethods for __T{}
 
-#[cfg(feature = "combat-actiondamage")]
-impl ActionDamage { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDamage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_abort_by_interrupt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDamage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDamage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn run_lying_when_die_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDamage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn resolve_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDamage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDamage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-actiondamage")]impl ActionDamage{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_abort_by_interrupt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn run_lying_when_die_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn resolve_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-actiondamage")]
-impl ActionDamage {
-# [doc = "`.ctor(crate::combat::character::Character, crate::combat::character::Character, crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` — overload selector"] pub fn new (attacker : crate :: combat :: character :: Character , damager : crate :: combat :: character :: Character , phase : crate :: combat :: phase :: Phase , ev : crate :: unity_engine :: animationevent :: AnimationEvent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionDamage) , :: core :: stringify ! (new) ,)) ; < Self as IActionDamageMethods > :: ctor (this , attacker , damager , phase , ev) ; this }
+#[cfg(feature="combat-actiondamage")]impl ActionDamage{#[doc="`.ctor(crate::combat::character::Character, crate::combat::character::Character, crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` — overload selector"]pub fn new(attacker:crate::combat::character::Character,damager:crate::combat::character::Character,phase:crate::combat::phase::Phase,ev:crate::unity_engine::animationevent::AnimationEvent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionDamage), ::core::stringify!(new),));
+ <Self as IActionDamageMethods> ::ctor(this,attacker,damager,phase,ev);
+this}
 }
 
 #[cfg(feature = "combat-actiondamage")]

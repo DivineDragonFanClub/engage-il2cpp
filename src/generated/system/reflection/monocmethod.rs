@@ -4,45 +4,133 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: constructorinfo :: { ConstructorInfo , IConstructorInfo }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
- use crate :: system :: reflection :: methodbase :: { IMethodBase , MethodBase }
- ;
- use crate :: system :: reflection :: runtimeconstructorinfo :: { IRuntimeConstructorInfo , RuntimeConstructorInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::constructorinfo::{ConstructorInfo,IConstructorInfo}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
+use crate::system::reflection::methodbase::{IMethodBase,MethodBase}
+;
+use crate::system::reflection::runtimeconstructorinfo::{IRuntimeConstructorInfo,RuntimeConstructorInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monocmethod/MonoCMethod.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MonoCMethod")] # [parent (crate :: system :: reflection :: runtimeconstructorinfo :: RuntimeConstructorInfo)] pub struct MonoCMethod {
-# [offset (16)] # [rename (name = "mhandle")] pub mhandle : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "reftype")] pub reftype : :: unity2 :: SystemType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monocmethod/MonoCMethod.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoCMethod")]#[parent(crate::system::reflection::runtimeconstructorinfo::RuntimeConstructorInfo)]pub struct MonoCMethod{#[offset(16)]#[rename(name="mhandle")]pub mhandle: ::unity2::IntPtr, #[offset(24)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="reftype")]pub reftype: ::unity2::SystemType,}
 
 }
 
 #[cfg(feature = "system-reflection-monocmethod-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-monocmethod")]
-impl MonoCMethod { # [doc = "`get_core_clr_security_level()` overload"] pub fn get_core_clr_security_level () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337d300usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-monocmethod")]impl MonoCMethod{#[doc="`get_core_clr_security_level()` overload"]pub fn get_core_clr_security_level()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337d300usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "system-reflection-monocmethod")]
-pub trait IMonoCMethodMethods : IMonoCMethod { # [doc = "`GetMethodImplementationFlags()` overload"] fn get_method_implementation_flags (self ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetParameters()` overload"] fn get_parameters (self ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetParametersInternal()` overload"] fn get_parameters_internal (self ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: parameterinfo :: ParameterInfo > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetParametersCount()` overload"] fn get_parameters_count (self ,) -> i32 { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InternalInvoke(crate::system::object::Object, ::unity2::Array<crate::system::object::Object>)` overload"] fn internal_invoke (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , parameters : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: system :: object :: Object { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , crate :: system :: object :: Object , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bd80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (parameters) , :: core :: option :: Option :: None) } } } # [doc = "`get_Attributes()` overload"] fn get_attributes (self ,) -> crate :: system :: reflection :: methodattributes :: MethodAttributes { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodattributes :: MethodAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CallingConvention()` overload"] fn get_calling_convention (self ,) -> crate :: system :: reflection :: callingconventions :: CallingConventions { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: callingconventions :: CallingConventions = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bf10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ContainsGenericParameters()` overload"] fn get_contains_generic_parameters (self ,) -> bool { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReflectedType()` overload"] fn get_reflected_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DeclaringType()` overload"] fn get_declaring_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337bfb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337c010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337c040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(bool)` overload"] fn get_custom_attributes (self , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337c3a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes_2 (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337c5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337d100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributesData()` overload"] fn get_custom_attributes_data (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337d2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSecurityCritical()` overload"] fn get_is_security_critical (self ,) -> bool { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337d310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MonoCMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoCMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337d320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-monocmethod")]pub trait IMonoCMethodMethods:IMonoCMethod{#[doc="`GetMethodImplementationFlags()` overload"]fn get_method_implementation_flags(self,)->crate::system::reflection::methodimplattributes::MethodImplAttributes{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337b710usize)as*mut u8,crate::system::reflection::methodimplattributes::MethodImplAttributes;
+(MonoCMethod)__receiver)}
+}
+#[doc="`GetParameters()` overload"]fn get_parameters(self,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337b770usize)as*mut u8, ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> ;
+(MonoCMethod)__receiver)}
+}
+#[doc="`GetParametersInternal()` overload"]fn get_parameters_internal(self,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337b790usize)as*mut u8, ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> ;
+(MonoCMethod)__receiver)}
+}
+#[doc="`GetParametersCount()` overload"]fn get_parameters_count(self,)->i32{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337b7a0usize)as*mut u8,i32;
+(MonoCMethod)__receiver)}
+}
+#[doc="`InternalInvoke(crate::system::object::Object, ::unity2::Array<crate::system::object::Object>)` overload"]fn internal_invoke(self,obj:impl::core::convert::Into<crate::system::object::Object> ,parameters:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337bd80usize)as*mut u8,crate::system::object::Object;
+(MonoCMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(parameters))}
+}
+#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::methodattributes::MethodAttributes{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337bef0usize)as*mut u8,crate::system::reflection::methodattributes::MethodAttributes;
+(MonoCMethod)__receiver)}
+}
+#[doc="`get_CallingConvention()` overload"]fn get_calling_convention(self,)->crate::system::reflection::callingconventions::CallingConventions{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337bf10usize)as*mut u8,crate::system::reflection::callingconventions::CallingConventions;
+(MonoCMethod)__receiver)}
+}
+#[doc="`get_ContainsGenericParameters()` overload"]fn get_contains_generic_parameters(self,)->bool{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337bf70usize)as*mut u8,bool;
+(MonoCMethod)__receiver)}
+}
+#[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337bfa0usize)as*mut u8, ::unity2::SystemType;
+(MonoCMethod)__receiver)}
+}
+#[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337bfb0usize)as*mut u8, ::unity2::SystemType;
+(MonoCMethod)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337c010usize)as*mut u8, ::unity2::Il2CppString;
+(MonoCMethod)__receiver)}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337c040usize)as*mut u8,bool;
+(MonoCMethod)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337c3a0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(MonoCMethod)__receiver,(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337c5b0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(MonoCMethod)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337d100usize)as*mut u8, ::unity2::Il2CppString;
+(MonoCMethod)__receiver)}
+}
+#[doc="`GetCustomAttributesData()` overload"]fn get_custom_attributes_data(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337d2f0usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> ;
+(MonoCMethod)__receiver)}
+}
+#[doc="`get_IsSecurityCritical()` overload"]fn get_is_security_critical(self,)->bool{unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337d310usize)as*mut u8,bool;
+(MonoCMethod)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MonoCMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337d320usize)as*mut u8,();
+(MonoCMethod)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-monocmethod")]
-impl < __T : IMonoCMethod > IMonoCMethodMethods for __T { }
+#[cfg(feature="system-reflection-monocmethod")]impl<__T:IMonoCMethod>IMonoCMethodMethods for __T{}
 
-#[cfg(feature = "system-reflection-monocmethod")]
-impl MonoCMethod { pub fn get_method_implementation_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_parameters_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_parameters_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn internal_invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_calling_convention_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_contains_generic_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_reflected_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_declaring_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_custom_attributes_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_custom_attributes_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_core_clr_security_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_is_security_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoCMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="system-reflection-monocmethod")]impl MonoCMethod{pub fn get_method_implementation_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_parameters_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_parameters_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn internal_invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_calling_convention_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_contains_generic_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_reflected_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_declaring_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_custom_attributes_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_custom_attributes_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_core_clr_security_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_is_security_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "system-reflection-monocmethod")]
-impl MonoCMethod {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MonoCMethod) , :: core :: stringify ! (new) ,)) ; < Self as IMonoCMethodMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-monocmethod")]impl MonoCMethod{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoCMethod), ::core::stringify!(new),));
+ <Self as IMonoCMethodMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-monocmethod")]

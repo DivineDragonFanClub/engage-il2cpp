@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/glyphpairadjustmentrecord/GlyphPairAdjustmentRecord.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GlyphPairAdjustmentRecord {
-    pub m_first_adjustment_record: crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord,
-    pub m_second_adjustment_record: crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord,
-    pub m_feature_lookup_flags: crate :: unity_engine :: text_core :: low_level :: fontfeaturelookupflags :: FontFeatureLookupFlags,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/text_core/low_level/glyphpairadjustmentrecord/GlyphPairAdjustmentRecord.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GlyphPairAdjustmentRecord{pub m_first_adjustment_record:crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord,pub m_second_adjustment_record:crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord,pub m_feature_lookup_flags:crate::unity_engine::text_core::low_level::fontfeaturelookupflags::FontFeatureLookupFlags,}
+impl::unity2::ClassIdentity for GlyphPairAdjustmentRecord{const NAMESPACE: &'static str="UnityEngine.TextCore.LowLevel";
+const NAME: &'static str="GlyphPairAdjustmentRecord";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for GlyphPairAdjustmentRecord {
-    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
-
-    const NAME: &'static str = "GlyphPairAdjustmentRecord";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for GlyphPairAdjustmentRecord {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for GlyphPairAdjustmentRecord{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,17 @@ impl ::unity2::IlType for GlyphPairAdjustmentRecord {
 #[cfg(feature = "unity_engine-text_core-low_level-glyphpairadjustmentrecord-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-text_core-low_level-glyphpairadjustmentrecord")]
-impl GlyphPairAdjustmentRecord { # [doc = "`get_firstAdjustmentRecord()` overload"] pub fn get_first_adjustment_record (& mut self ,) -> crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord { unsafe { { let __inner : extern "C" fn (* mut GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e560usize) as * mut u8) ; __inner (self as * mut GlyphPairAdjustmentRecord , :: core :: option :: Option :: None) } } } # [doc = "`get_secondAdjustmentRecord()` overload"] pub fn get_second_adjustment_record (& mut self ,) -> crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord { unsafe { { let __inner : extern "C" fn (* mut GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2e580usize) as * mut u8) ; __inner (self as * mut GlyphPairAdjustmentRecord , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-text_core-low_level-glyphpairadjustmentrecord")]impl GlyphPairAdjustmentRecord{#[doc="`get_firstAdjustmentRecord()` overload"]pub fn get_first_adjustment_record(&mut self,)->crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e560usize)as*mut u8,crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord;
+(*mut GlyphPairAdjustmentRecord)self as*mut GlyphPairAdjustmentRecord)}
+}
+#[doc="`get_secondAdjustmentRecord()` overload"]pub fn get_second_adjustment_record(&mut self,)->crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2e580usize)as*mut u8,crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord;
+(*mut GlyphPairAdjustmentRecord)self as*mut GlyphPairAdjustmentRecord)}
+}
+}
 
-#[cfg(feature = "unity_engine-text_core-low_level-glyphpairadjustmentrecord")]
-impl GlyphPairAdjustmentRecord { pub fn get_first_adjustment_record_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphPairAdjustmentRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_second_adjustment_record_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlyphPairAdjustmentRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-text_core-low_level-glyphpairadjustmentrecord")]impl GlyphPairAdjustmentRecord{pub fn get_first_adjustment_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_second_adjustment_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphpairadjustmentrecord")]
 #[doc(hidden)]

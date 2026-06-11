@@ -4,58 +4,158 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: { IResourceProviderBase , ResourceProviderBase }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::{IResourceProviderBase,ResourceProviderBase}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/legacyresourcesprovider/LegacyResourcesProvider_InternalOp.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceProviders" , name = "LegacyResourcesProvider.InternalOp")] # [parent (crate :: system :: object :: Object)] pub struct LegacyResourcesProvider_InternalOp {
-# [offset (16)] # [rename (name = "m_RequestOperation")] pub m_request_operation : crate :: unity_engine :: asyncoperation :: AsyncOperation ,
-# [offset (24)] # [rename (name = "m_ProvideHandle")] pub m_provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/legacyresourcesprovider/LegacyResourcesProvider_InternalOp.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="LegacyResourcesProvider.InternalOp")]#[parent(crate::system::object::Object)]pub struct LegacyResourcesProvider_InternalOp{#[offset(16)]#[rename(name="m_RequestOperation")]pub m_request_operation:crate::unity_engine::asyncoperation::AsyncOperation, #[offset(24)]#[rename(name="m_ProvideHandle")]pub m_provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/legacyresourcesprovider/LegacyResourcesProvider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceProviders" , name = "LegacyResourcesProvider")] # [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)] pub struct LegacyResourcesProvider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/legacyresourcesprovider/LegacyResourcesProvider.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="LegacyResourcesProvider")]#[parent(crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase)]pub struct LegacyResourcesProvider{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LegacyResourcesProvider_InternalOp_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () , "Start" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_async_operation_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: asyncoperation :: AsyncOperation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () , "AsyncOperationCompleted" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: NAME , "AsyncOperationCompleted" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_percent_complete { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () , "PercentComplete" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: NAME , "PercentComplete" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-pub trait ILegacyResourcesProvider_InternalOpMethods : ILegacyResourcesProvider_InternalOp { # [doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"] fn start (self , provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >) -> () { unsafe { let __receiver = < LegacyResourcesProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LegacyResourcesProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LegacyResourcesProvider_InternalOp_unity2_raw :: __lookup_start :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (provide_handle) , :: core :: option :: Option :: None) } } } # [doc = "`AsyncOperationCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"] fn async_operation_completed (self , op : impl :: core :: convert :: Into < crate :: unity_engine :: asyncoperation :: AsyncOperation >) -> () { unsafe { let __receiver = < LegacyResourcesProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LegacyResourcesProvider_InternalOp , crate :: unity_engine :: asyncoperation :: AsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LegacyResourcesProvider_InternalOp_unity2_raw :: __lookup_async_operation_completed :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`PercentComplete()` overload"] fn percent_complete (self ,) -> f32 { unsafe { let __receiver = < LegacyResourcesProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LegacyResourcesProvider_InternalOp , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__LegacyResourcesProvider_InternalOp_unity2_raw :: __lookup_percent_complete :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LegacyResourcesProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LegacyResourcesProvider_InternalOp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LegacyResourcesProvider_InternalOp_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-impl < __T : ILegacyResourcesProvider_InternalOp > ILegacyResourcesProvider_InternalOpMethods for __T { }
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-impl LegacyResourcesProvider_InternalOp { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn async_operation_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn percent_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LegacyResourcesProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-impl LegacyResourcesProvider_InternalOp {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LegacyResourcesProvider_InternalOp) , :: core :: stringify ! (new) ,)) ; < Self as ILegacyResourcesProvider_InternalOpMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LegacyResourcesProvider_InternalOp_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_start{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LegacyResourcesProvider_InternalOp as::unity2::ClassIdentity> ::class(),"Start",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LegacyResourcesProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"Start",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_async_operation_completed{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::asyncoperation::AsyncOperation as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LegacyResourcesProvider_InternalOp as::unity2::ClassIdentity> ::class(),"AsyncOperationCompleted",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LegacyResourcesProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"AsyncOperationCompleted",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_percent_complete{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LegacyResourcesProvider_InternalOp as::unity2::ClassIdentity> ::class(),"PercentComplete",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LegacyResourcesProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"PercentComplete",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LegacyResourcesProvider_InternalOp as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LegacyResourcesProvider_InternalOp as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
 }
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LegacyResourcesProvider_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_provide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: class () , "Provide" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: NAME , "Provide" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: class () , "Release" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]pub trait ILegacyResourcesProvider_InternalOpMethods:ILegacyResourcesProvider_InternalOp{#[doc="`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn start(self,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <LegacyResourcesProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LegacyResourcesProvider_InternalOp_unity2_raw::__lookup_start::get_method_info().method_ptr,();
+(LegacyResourcesProvider_InternalOp)__receiver,(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)::core::convert::Into::into(provide_handle))}
+}
+#[doc="`AsyncOperationCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]fn async_operation_completed(self,op:impl::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>)->(){unsafe{let __receiver= <LegacyResourcesProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LegacyResourcesProvider_InternalOp_unity2_raw::__lookup_async_operation_completed::get_method_info().method_ptr,();
+(LegacyResourcesProvider_InternalOp)__receiver,(crate::unity_engine::asyncoperation::AsyncOperation)::core::convert::Into::into(op))}
+}
+#[doc="`PercentComplete()` overload"]fn percent_complete(self,)->f32{unsafe{let __receiver= <LegacyResourcesProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LegacyResourcesProvider_InternalOp_unity2_raw::__lookup_percent_complete::get_method_info().method_ptr,f32;
+(LegacyResourcesProvider_InternalOp)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LegacyResourcesProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LegacyResourcesProvider_InternalOp_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(LegacyResourcesProvider_InternalOp)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-pub trait ILegacyResourcesProviderMethods : ILegacyResourcesProvider { # [doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"] fn provide (self , pi : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >) -> () { unsafe { let __receiver = < LegacyResourcesProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LegacyResourcesProvider , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LegacyResourcesProvider_unity2_raw :: __lookup_provide :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (pi) , :: core :: option :: Option :: None) } } } # [doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"] fn release (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , asset : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < LegacyResourcesProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LegacyResourcesProvider , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LegacyResourcesProvider_unity2_raw :: __lookup_release :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (location) , :: core :: convert :: Into :: into (asset) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LegacyResourcesProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LegacyResourcesProvider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LegacyResourcesProvider_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]impl<__T:ILegacyResourcesProvider_InternalOp>ILegacyResourcesProvider_InternalOpMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-impl < __T : ILegacyResourcesProvider > ILegacyResourcesProviderMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]impl LegacyResourcesProvider_InternalOp{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn async_operation_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn percent_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-impl LegacyResourcesProvider { pub fn provide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LegacyResourcesProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]impl LegacyResourcesProvider_InternalOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LegacyResourcesProvider_InternalOp), ::core::stringify!(new),));
+ <Self as ILegacyResourcesProvider_InternalOpMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-impl LegacyResourcesProvider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LegacyResourcesProvider) , :: core :: stringify ! (new) ,)) ; < Self as ILegacyResourcesProviderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LegacyResourcesProvider_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_provide{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LegacyResourcesProvider as::unity2::ClassIdentity> ::class(),"Provide",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LegacyResourcesProvider as::unity2::ClassIdentity> ::NAME,"Provide",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_release{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LegacyResourcesProvider as::unity2::ClassIdentity> ::class(),"Release",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LegacyResourcesProvider as::unity2::ClassIdentity> ::NAME,"Release",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LegacyResourcesProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LegacyResourcesProvider as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]pub trait ILegacyResourcesProviderMethods:ILegacyResourcesProvider{#[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,pi:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <LegacyResourcesProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LegacyResourcesProvider_unity2_raw::__lookup_provide::get_method_info().method_ptr,();
+(LegacyResourcesProvider)__receiver,(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)::core::convert::Into::into(pi))}
+}
+#[doc="`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]fn release(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,asset:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <LegacyResourcesProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LegacyResourcesProvider_unity2_raw::__lookup_release::get_method_info().method_ptr,();
+(LegacyResourcesProvider)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(crate::system::object::Object)::core::convert::Into::into(asset))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LegacyResourcesProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LegacyResourcesProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(LegacyResourcesProvider)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]impl<__T:ILegacyResourcesProvider>ILegacyResourcesProviderMethods for __T{}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]impl LegacyResourcesProvider{pub fn provide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-legacyresourcesprovider")]impl LegacyResourcesProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LegacyResourcesProvider), ::core::stringify!(new),));
+ <Self as ILegacyResourcesProviderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]

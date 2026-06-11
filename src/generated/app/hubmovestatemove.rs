@@ -4,41 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: hubmovestate :: { HubMoveState , IHubMoveState }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::hubmovestate::{HubMoveState,IHubMoveState}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmovestatemove/HubMoveStateMove.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMoveStateMove")] # [parent (crate :: app :: hubmovestate :: HubMoveState)] pub struct HubMoveStateMove {
-# [offset (16)] # [rename (name = "m_unit")] pub m_unit : crate :: app :: hubunitcontroller :: HubUnitController ,
-# [offset (24)] # [rename (name = "m_target")] pub m_target : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "m_bodyAnim")] pub m_body_anim : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_faceAnim")] pub m_face_anim : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "m_isTurn")] pub m_is_turn : bool ,
-# [offset (57)] # [rename (name = "m_resume")] pub m_resume : bool ,
-# [offset (60)] # [rename (name = "m_speed")] pub m_speed : f32 ,
-# [offset (64)] # [rename (name = "m_blend")] pub m_blend : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmovestatemove/HubMoveStateMove.md"))]#[::unity2::class(namespace="App",name="HubMoveStateMove")]#[parent(crate::app::hubmovestate::HubMoveState)]pub struct HubMoveStateMove{#[offset(16)]#[rename(name="m_unit")]pub m_unit:crate::app::hubunitcontroller::HubUnitController, #[offset(24)]#[rename(name="m_target")]pub m_target:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="m_bodyAnim")]pub m_body_anim: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_faceAnim")]pub m_face_anim: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_isTurn")]pub m_is_turn:bool, #[offset(57)]#[rename(name="m_resume")]pub m_resume:bool, #[offset(60)]#[rename(name="m_speed")]pub m_speed:f32, #[offset(64)]#[rename(name="m_blend")]pub m_blend:f32,}
 
 }
 
 #[cfg(feature = "app-hubmovestatemove-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmovestatemove")]
-pub trait IHubMoveStateMoveMethods : IHubMoveStateMove { # [doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: hubunitcontroller :: HubUnitController > , target : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , body_anim : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , face_anim : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_turn : impl :: core :: convert :: Into < bool > , speed : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubMoveStateMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveStateMove , crate :: app :: hubunitcontroller :: HubUnitController , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf5e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (body_anim) , :: core :: convert :: Into :: into (face_anim) , :: core :: convert :: Into :: into (is_turn) , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnd()` overload"] fn is_end (self ,) -> bool { unsafe { let __receiver = < HubMoveStateMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveStateMove , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bfae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start(bool)` overload"] fn start (self , resume : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMoveStateMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveStateMove , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bfbf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (resume) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubMoveStateMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveStateMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bfcb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmovestatemove")]pub trait IHubMoveStateMoveMethods:IHubMoveStateMove{#[doc="`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::hubunitcontroller::HubUnitController> ,target:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,body_anim:impl::core::convert::Into< ::unity2::Il2CppString> ,face_anim:impl::core::convert::Into< ::unity2::Il2CppString> ,is_turn:impl::core::convert::Into<bool> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubMoveStateMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf5e0usize)as*mut u8,();
+(HubMoveStateMove)__receiver,(crate::app::hubunitcontroller::HubUnitController)::core::convert::Into::into(unit),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target),(::unity2::Il2CppString)::core::convert::Into::into(body_anim),(::unity2::Il2CppString)::core::convert::Into::into(face_anim),(bool)::core::convert::Into::into(is_turn),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`IsEnd()` overload"]fn is_end(self,)->bool{unsafe{let __receiver= <HubMoveStateMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bfae0usize)as*mut u8,bool;
+(HubMoveStateMove)__receiver)}
+}
+#[doc="`Start(bool)` overload"]fn start(self,resume:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMoveStateMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bfbf0usize)as*mut u8,();
+(HubMoveStateMove)__receiver,(bool)::core::convert::Into::into(resume))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubMoveStateMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bfcb0usize)as*mut u8,();
+(HubMoveStateMove)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmovestatemove")]
-impl < __T : IHubMoveStateMove > IHubMoveStateMoveMethods for __T { }
+#[cfg(feature="app-hubmovestatemove")]impl<__T:IHubMoveStateMove>IHubMoveStateMoveMethods for __T{}
 
-#[cfg(feature = "app-hubmovestatemove")]
-impl HubMoveStateMove { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveStateMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveStateMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveStateMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveStateMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-hubmovestatemove")]impl HubMoveStateMove{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-hubmovestatemove")]
-impl HubMoveStateMove {
-# [doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` — overload selector"] pub fn new (unit : crate :: app :: hubunitcontroller :: HubUnitController , target : crate :: unity_engine :: vector3 :: Vector3 , body_anim : :: unity2 :: Il2CppString , face_anim : :: unity2 :: Il2CppString , is_turn : bool , speed : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMoveStateMove) , :: core :: stringify ! (new) ,)) ; < Self as IHubMoveStateMoveMethods > :: ctor (this , unit , target , body_anim , face_anim , is_turn , speed) ; this }
+#[cfg(feature="app-hubmovestatemove")]impl HubMoveStateMove{#[doc="`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` — overload selector"]pub fn new(unit:crate::app::hubunitcontroller::HubUnitController,target:crate::unity_engine::vector3::Vector3,body_anim: ::unity2::Il2CppString,face_anim: ::unity2::Il2CppString,is_turn:bool,speed:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMoveStateMove), ::core::stringify!(new),));
+ <Self as IHubMoveStateMoveMethods> ::ctor(this,unit,target,body_anim,face_anim,is_turn,speed);
+this}
 }
 
 #[cfg(feature = "app-hubmovestatemove")]

@@ -4,27 +4,134 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ilist/IList.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "IList")] pub struct IList {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/ilist/IList.md"))]#[::unity2::class(namespace="System.Collections",name="IList")]pub struct IList{}
 
 }
 
 #[cfg(feature = "system-collections-ilist-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-ilist")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IList_unity2_raw { use super :: * ; pub unsafe fn get_item (this : IList , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Item") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Item" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , index , __mi) } pub unsafe fn set_item (this : IList , index : i32 , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("set_Item") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "set_Item" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , i32 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , index , value , __mi) } pub unsafe fn add (this : IList , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Add") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Add" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , value , __mi) } pub unsafe fn contains (this : IList , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Contains") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Contains" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , value , __mi) } pub unsafe fn clear (this : IList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Clear") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Clear" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_is_read_only (this : IList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_IsReadOnly") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_IsReadOnly" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn index_of (this : IList , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IndexOf") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IndexOf" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , value , __mi) } pub unsafe fn insert (this : IList , index : i32 , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Insert") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Insert" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , i32 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , index , value , __mi) } pub unsafe fn remove (this : IList , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Remove") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Remove" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , value , __mi) } pub unsafe fn remove_at (this : IList , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("RemoveAt") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "RemoveAt" , < IList as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IList , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , index , __mi) } }
+#[cfg(feature="system-collections-ilist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IList_unity2_raw{use super:: * ;
+pub unsafe fn get_item(this:IList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Item", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn set_item(this:IList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_Item", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn add(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Add").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Add", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn contains(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Contains").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Contains", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn clear(this:IList,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Clear").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Clear", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_read_only(this:IList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_IsReadOnly").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_IsReadOnly", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn index_of(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IndexOf").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IndexOf", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn insert(this:IList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Insert").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Insert", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn remove(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Remove").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Remove", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn remove_at(this:IList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("RemoveAt").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","RemoveAt", <IList as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+}
 
-#[cfg(feature = "system-collections-ilist")]
-pub trait IIListMethods : IIList { # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: get_item (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`set_Item(i32, crate::system::object::Object)` overload"] fn set_item (self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: set_item (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::system::object::Object)` overload"] fn add (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Contains(crate::system::object::Object)` overload"] fn contains (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: contains (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsReadOnly()` overload"] fn get_is_read_only (self ,) -> bool { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: get_is_read_only (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IndexOf(crate::system::object::Object)` overload"] fn index_of (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: index_of (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Insert(i32, crate::system::object::Object)` overload"] fn insert (self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: insert (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Remove(crate::system::object::Object)` overload"] fn remove (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: remove (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`RemoveAt(i32)` overload"] fn remove_at (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < IList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IList_unity2_raw :: remove_at (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="system-collections-ilist")]pub trait IIListMethods:IIList{#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+}
+#[doc="`set_Item(i32, crate::system::object::Object)` overload"]fn set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::set_item(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`Add(crate::system::object::Object)` overload"]fn add(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::add(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,value:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::contains(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::clear(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
+}
+#[doc="`IndexOf(crate::system::object::Object)` overload"]fn index_of(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::index_of(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`Insert(i32, crate::system::object::Object)` overload"]fn insert(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::insert(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::remove(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "system-collections-ilist")]
-impl < __T : IIList > IIListMethods for __T { }
+#[cfg(feature="system-collections-ilist")]impl<__T:IIList>IIListMethods for __T{}
 
-#[cfg(feature = "system-collections-ilist")]
-impl IList { pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn insert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn remove_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="system-collections-ilist")]impl IList{pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn insert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
 #[cfg(feature = "system-collections-ilist")]
 #[doc(hidden)]

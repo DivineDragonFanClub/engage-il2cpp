@@ -4,50 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: characterlying :: { CharacterLying , ICharacterLying }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::characterlying::{CharacterLying,ICharacterLying}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghuman/CharacterLyingHuman.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterLyingHuman")] # [parent (crate :: combat :: characterlying :: CharacterLying)] pub struct CharacterLyingHuman {
-# [offset (36)] # [rename (name = "m_StartPos")] pub m_start_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (48)] # [rename (name = "m_EndPos")] pub m_end_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (60)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (64)] # [rename (name = "m_EndTime")] pub m_end_time : f32 ,
-# [offset (68)] # [rename (name = "m_BodyRotation")] pub m_body_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (84)] # [rename (name = "m_LastNrm")] pub m_last_nrm : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (96)] # [rename (name = "m_LastY")] pub m_last_y : f32 ,
-# [offset (100)] # [rename (name = "m_Skipped")] pub m_skipped : bool ,
-# [offset (104)] # [rename (name = "m_SkipFrames")] pub m_skip_frames : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterlyinghuman/CharacterLyingHuman.md"))]#[::unity2::class(namespace="Combat",name="CharacterLyingHuman")]#[parent(crate::combat::characterlying::CharacterLying)]pub struct CharacterLyingHuman{#[offset(36)]#[rename(name="m_StartPos")]pub m_start_pos:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="m_EndPos")]pub m_end_pos:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="m_Time")]pub m_time:f32, #[offset(64)]#[rename(name="m_EndTime")]pub m_end_time:f32, #[offset(68)]#[rename(name="m_BodyRotation")]pub m_body_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(84)]#[rename(name="m_LastNrm")]pub m_last_nrm:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="m_LastY")]pub m_last_y:f32, #[offset(100)]#[rename(name="m_Skipped")]pub m_skipped:bool, #[offset(104)]#[rename(name="m_SkipFrames")]pub m_skip_frames:i32,}
 
 }
 
 #[cfg(feature = "combat-characterlyinghuman-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterlyinghuman")]
-pub trait ICharacterLyingHumanMethods : ICharacterLyingHuman { # [doc = "`get_IsInAir()` overload"] fn get_is_in_air (self ,) -> bool { unsafe { let __receiver = < CharacterLyingHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Progress()` overload"] fn get_progress (self ,) -> f32 { unsafe { let __receiver = < CharacterLyingHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingHuman , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyStart(i32)` overload"] fn my_start (self , die_hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterLyingHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingHuman , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (die_hash) , :: core :: option :: Option :: None) } } } # [doc = "`MakeMyDeadPose()` overload"] fn make_my_dead_pose (self ,) -> () { unsafe { let __receiver = < CharacterLyingHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyLateUpdate()` overload"] fn my_late_update (self ,) -> () { unsafe { let __receiver = < CharacterLyingHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterLyingHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLyingHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e5050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterlyinghuman")]pub trait ICharacterLyingHumanMethods:ICharacterLyingHuman{#[doc="`get_IsInAir()` overload"]fn get_is_in_air(self,)->bool{unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4be0usize)as*mut u8,bool;
+(CharacterLyingHuman)__receiver)}
+}
+#[doc="`get_Progress()` overload"]fn get_progress(self,)->f32{unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4bf0usize)as*mut u8,f32;
+(CharacterLyingHuman)__receiver)}
+}
+#[doc="`MyStart(i32)` overload"]fn my_start(self,die_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4c00usize)as*mut u8,();
+(CharacterLyingHuman)__receiver,(i32)::core::convert::Into::into(die_hash))}
+}
+#[doc="`MakeMyDeadPose()` overload"]fn make_my_dead_pose(self,)->(){unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4cb0usize)as*mut u8,();
+(CharacterLyingHuman)__receiver)}
+}
+#[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4d90usize)as*mut u8,();
+(CharacterLyingHuman)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5050usize)as*mut u8,();
+(CharacterLyingHuman)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterlyinghuman")]
-impl < __T : ICharacterLyingHuman > ICharacterLyingHumanMethods for __T { }
+#[cfg(feature="combat-characterlyinghuman")]impl<__T:ICharacterLyingHuman>ICharacterLyingHumanMethods for __T{}
 
-#[cfg(feature = "combat-characterlyinghuman")]
-impl CharacterLyingHuman { pub fn get_is_in_air_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn make_my_dead_pose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn my_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLyingHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-characterlyinghuman")]impl CharacterLyingHuman{pub fn get_is_in_air_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn make_my_dead_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn my_late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-characterlyinghuman")]
-impl CharacterLyingHuman {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterLyingHuman) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterLyingHumanMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterlyinghuman")]impl CharacterLyingHuman{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterLyingHuman), ::core::stringify!(new),));
+ <Self as ICharacterLyingHumanMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterlyinghuman")]

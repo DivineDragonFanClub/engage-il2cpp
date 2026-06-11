@@ -4,59 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenuitemcontent/AccessoryShopBuyMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopBuyMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct AccessoryShopBuyMenuItemContent {
-# [offset (72)] # [rename (name = "m_KindIconObject")] pub m_kind_icon_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_KindIconImage")] pub m_kind_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_NameObject")] pub m_name_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (104)] # [rename (name = "m_IronObject")] pub m_iron_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (112)] # [rename (name = "m_IronIconImage")] pub m_iron_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (120)] # [rename (name = "m_IronValueText")] pub m_iron_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (128)] # [rename (name = "m_SteelObject")] pub m_steel_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_SteelIconImage")] pub m_steel_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (144)] # [rename (name = "m_SteelValueText")] pub m_steel_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (152)] # [rename (name = "m_SilverObject")] pub m_silver_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (160)] # [rename (name = "m_SilverIconImage")] pub m_silver_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (168)] # [rename (name = "m_SilverValueText")] pub m_silver_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (176)] # [rename (name = "m_PriceObject")] pub m_price_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (184)] # [rename (name = "m_PriceIconImage")] pub m_price_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (192)] # [rename (name = "m_PriceValueText")] pub m_price_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (200)] # [rename (name = "m_PriceGText")] pub m_price_g_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (208)] # [rename (name = "m_NewIconObject")] pub m_new_icon_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuymenuitemcontent/AccessoryShopBuyMenuItemContent.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct AccessoryShopBuyMenuItemContent{#[offset(72)]#[rename(name="m_KindIconObject")]pub m_kind_icon_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_KindIconImage")]pub m_kind_icon_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_NameObject")]pub m_name_object:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(104)]#[rename(name="m_IronObject")]pub m_iron_object:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_IronIconImage")]pub m_iron_icon_image:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_IronValueText")]pub m_iron_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_SteelObject")]pub m_steel_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_SteelIconImage")]pub m_steel_icon_image:crate::unity_engine::ui::image::Image, #[offset(144)]#[rename(name="m_SteelValueText")]pub m_steel_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(152)]#[rename(name="m_SilverObject")]pub m_silver_object:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_SilverIconImage")]pub m_silver_icon_image:crate::unity_engine::ui::image::Image, #[offset(168)]#[rename(name="m_SilverValueText")]pub m_silver_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(176)]#[rename(name="m_PriceObject")]pub m_price_object:crate::unity_engine::gameobject::GameObject, #[offset(184)]#[rename(name="m_PriceIconImage")]pub m_price_icon_image:crate::unity_engine::ui::image::Image, #[offset(192)]#[rename(name="m_PriceValueText")]pub m_price_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(200)]#[rename(name="m_PriceGText")]pub m_price_g_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_NewIconObject")]pub m_new_icon_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-accessoryshopbuymenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryshopbuymenuitemcontent")]
-pub trait IAccessoryShopBuyMenuItemContentMethods : IAccessoryShopBuyMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bb740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bb750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bb850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bc400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SynchronizeNewIconAnimationTime()` overload"] fn synchronize_new_icon_animation_time (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bc070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopbuymenuitemcontent")]pub trait IAccessoryShopBuyMenuItemContentMethods:IAccessoryShopBuyMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bb740usize)as*mut u8,();
+(AccessoryShopBuyMenuItemContent)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bb750usize)as*mut u8,();
+(AccessoryShopBuyMenuItemContent)__receiver)}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bb850usize)as*mut u8,();
+(AccessoryShopBuyMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bc400usize)as*mut u8,();
+(AccessoryShopBuyMenuItemContent)__receiver)}
+}
+#[doc="`SynchronizeNewIconAnimationTime()` overload"]fn synchronize_new_icon_animation_time(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bc070usize)as*mut u8,();
+(AccessoryShopBuyMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessoryshopbuymenuitemcontent")]
-impl < __T : IAccessoryShopBuyMenuItemContent > IAccessoryShopBuyMenuItemContentMethods for __T { }
+#[cfg(feature="app-accessoryshopbuymenuitemcontent")]impl<__T:IAccessoryShopBuyMenuItemContent>IAccessoryShopBuyMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-accessoryshopbuymenuitemcontent")]
-impl AccessoryShopBuyMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn synchronize_new_icon_animation_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-accessoryshopbuymenuitemcontent")]impl AccessoryShopBuyMenuItemContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn synchronize_new_icon_animation_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-accessoryshopbuymenuitemcontent")]
-impl AccessoryShopBuyMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopBuyMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopBuyMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryshopbuymenuitemcontent")]impl AccessoryShopBuyMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyMenuItemContent), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-accessoryshopbuymenuitemcontent")]

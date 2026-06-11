@@ -4,27 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputdevices/InputDevices.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "InputDevices")] # [parent (crate :: system :: object :: Object)] pub struct InputDevices {
-# [static_field] # [rename (name = "deviceConnected")] pub device_connected : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: inputdevice :: InputDevice > ,
-# [static_field] # [rename (name = "deviceDisconnected")] pub device_disconnected : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: inputdevice :: InputDevice > ,
-# [static_field] # [rename (name = "deviceConfigChanged")] pub device_config_changed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: inputdevice :: InputDevice > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/inputdevices/InputDevices.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="InputDevices")]#[parent(crate::system::object::Object)]pub struct InputDevices{#[static_field]#[rename(name="deviceConnected")]pub device_connected:crate::system::action_1::Action_1<crate::unity_engine::xr::inputdevice::InputDevice> , #[static_field]#[rename(name="deviceDisconnected")]pub device_disconnected:crate::system::action_1::Action_1<crate::unity_engine::xr::inputdevice::InputDevice> , #[static_field]#[rename(name="deviceConfigChanged")]pub device_config_changed:crate::system::action_1::Action_1<crate::unity_engine::xr::inputdevice::InputDevice> ,}
 
 }
 
 #[cfg(feature = "unity_engine-xr-inputdevices-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-inputdevices")]
-impl InputDevices { # [doc = "`InvokeConnectionEvent(u64, crate::unity_engine::xr::connectionchangetype::ConnectionChangeType)` overload"] pub fn invoke_connection_event (device_id : impl :: core :: convert :: Into < u64 > , change : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: connectionchangetype :: ConnectionChangeType >) -> () { unsafe { { let __inner : extern "C" fn (u64 , crate :: unity_engine :: xr :: connectionchangetype :: ConnectionChangeType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (device_id) , :: core :: convert :: Into :: into (change) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-inputdevices")]impl InputDevices{#[doc="`InvokeConnectionEvent(u64, crate::unity_engine::xr::connectionchangetype::ConnectionChangeType)` overload"]pub fn invoke_connection_event(device_id:impl::core::convert::Into<u64> ,change:impl::core::convert::Into<crate::unity_engine::xr::connectionchangetype::ConnectionChangeType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e780usize)as*mut u8,();
+(u64)::core::convert::Into::into(device_id),(crate::unity_engine::xr::connectionchangetype::ConnectionChangeType)::core::convert::Into::into(change))}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-inputdevices")]
-impl InputDevices { pub fn invoke_connection_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputDevices as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-xr-inputdevices")]impl InputDevices{pub fn invoke_connection_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-xr-inputdevices")]
 #[doc(hidden)]

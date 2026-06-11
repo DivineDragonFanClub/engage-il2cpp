@@ -4,64 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotadjuster/GmapSpotAdjuster_TargetModel.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GmapSpotAdjuster_TargetModel {
-    pub メモ: :: unity2 :: Il2CppString,
-    pub 対象とする地面: :: unity2 :: Il2CppString,
-    pub 吸着する: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspotadjuster/GmapSpotAdjuster.md"))]#[::unity2::class(namespace="App",name="GmapSpotAdjuster")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapSpotAdjuster{#[offset(24)]#[rename(name="移動時に地面に吸着させる")]pub 移動時に地面に吸着させる:bool, #[offset(32)]#[rename(name="吸着対象")]pub 吸着対象:crate::system::collections::generic::list_1::List_1<crate::app::gmapspotadjuster::GmapSpotAdjuster_TargetModel> , #[offset(40)]#[rename(name="m_TargetColliders")]pub m_target_colliders:crate::system::collections::generic::list_1::List_1<crate::unity_engine::collider::Collider> , #[offset(48)]#[rename(name="m_OldCheck")]pub m_old_check:bool, #[offset(56)]#[rename(name="m_Transform")]pub m_transform:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="m_LastPosition")]pub m_last_position:crate::unity_engine::vector3::Vector3,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspotadjuster/GmapSpotAdjuster_TargetModel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GmapSpotAdjuster_TargetModel{pub メモ: ::unity2::Il2CppString,pub 対象とする地面: ::unity2::Il2CppString,pub 吸着する:bool,}
+impl::unity2::ClassIdentity for GmapSpotAdjuster_TargetModel{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSpotAdjuster.TargetModel";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for GmapSpotAdjuster_TargetModel {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpotAdjuster.TargetModel";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for GmapSpotAdjuster_TargetModel {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspotadjuster/GmapSpotAdjuster.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapSpotAdjuster")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GmapSpotAdjuster {
-# [offset (24)] # [rename (name = "移動時に地面に吸着させる")] pub 移動時に地面に吸着させる : bool ,
-# [offset (32)] # [rename (name = "吸着対象")] pub 吸着対象 : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gmapspotadjuster :: GmapSpotAdjuster_TargetModel > ,
-# [offset (40)] # [rename (name = "m_TargetColliders")] pub m_target_colliders : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: collider :: Collider > ,
-# [offset (48)] # [rename (name = "m_OldCheck")] pub m_old_check : bool ,
-# [offset (56)] # [rename (name = "m_Transform")] pub m_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (64)] # [rename (name = "m_LastPosition")] pub m_last_position : crate :: unity_engine :: vector3 :: Vector3 ,
+impl::unity2::IlType for GmapSpotAdjuster_TargetModel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -69,30 +37,65 @@ impl ::unity2::IlType for GmapSpotAdjuster_TargetModel {
 #[cfg(feature = "app-gmapspotadjuster-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapspotadjuster")]
-impl GmapSpotAdjuster { # [doc = "`RaycastToTargets(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, ::unity2::Array<crate::unity_engine::collider::Collider>)` overload"] pub fn raycast_to_targets (origin : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , direction : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , targets : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > >) -> (bool , crate :: unity_engine :: raycasthit :: RaycastHit) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: raycasthit :: RaycastHit > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: raycasthit :: RaycastHit , :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b48030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (origin) , :: core :: convert :: Into :: into (direction) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (targets) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="app-gmapspotadjuster")]impl GmapSpotAdjuster{#[doc="`RaycastToTargets(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, ::unity2::Array<crate::unity_engine::collider::Collider>)` overload"]pub fn raycast_to_targets(origin:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,direction:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,targets:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::collider::Collider> >)->(bool,crate::unity_engine::raycasthit::RaycastHit){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::raycasthit::RaycastHit> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2b48030usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(origin),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(direction),(*mut crate::unity_engine::raycasthit::RaycastHit)__out_0.as_mut_ptr(),(::unity2::Array<crate::unity_engine::collider::Collider>)::core::convert::Into::into(targets))}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "app-gmapspotadjuster")]
-pub trait IGmapSpotAdjusterMethods : IGmapSpotAdjuster { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < GmapSpotAdjuster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotAdjuster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < GmapSpotAdjuster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotAdjuster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < GmapSpotAdjuster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotAdjuster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupColliders()` overload"] fn setup_colliders (self ,) -> () { unsafe { let __receiver = < GmapSpotAdjuster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotAdjuster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AdjustGround(crate::unity_engine::vector3::Vector3)` overload"] fn adjust_ground (self , diff : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < GmapSpotAdjuster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotAdjuster , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b47f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (diff) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapSpotAdjuster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapSpotAdjuster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b481f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapspotadjuster")]pub trait IGmapSpotAdjusterMethods:IGmapSpotAdjuster{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <GmapSpotAdjuster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b47b40usize)as*mut u8,();
+(GmapSpotAdjuster)__receiver)}
+}
+#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <GmapSpotAdjuster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b47e40usize)as*mut u8,();
+(GmapSpotAdjuster)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <GmapSpotAdjuster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b47e80usize)as*mut u8,();
+(GmapSpotAdjuster)__receiver)}
+}
+#[doc="`SetupColliders()` overload"]fn setup_colliders(self,)->(){unsafe{let __receiver= <GmapSpotAdjuster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b47b80usize)as*mut u8,();
+(GmapSpotAdjuster)__receiver)}
+}
+#[doc="`AdjustGround(crate::unity_engine::vector3::Vector3)` overload"]fn adjust_ground(self,diff:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <GmapSpotAdjuster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b47f00usize)as*mut u8,();
+(GmapSpotAdjuster)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(diff))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSpotAdjuster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b481f0usize)as*mut u8,();
+(GmapSpotAdjuster)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmapspotadjuster")]
-impl < __T : IGmapSpotAdjuster > IGmapSpotAdjusterMethods for __T { }
+#[cfg(feature="app-gmapspotadjuster")]impl<__T:IGmapSpotAdjuster>IGmapSpotAdjusterMethods for __T{}
 
-#[cfg(feature = "app-gmapspotadjuster")]
-impl GmapSpotAdjuster { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotAdjuster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotAdjuster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotAdjuster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_colliders_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotAdjuster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn adjust_ground_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotAdjuster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn raycast_to_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotAdjuster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapSpotAdjuster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-gmapspotadjuster")]impl GmapSpotAdjuster{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_colliders_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn adjust_ground_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn raycast_to_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-gmapspotadjuster")]
-impl GmapSpotAdjuster {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapSpotAdjuster) , :: core :: stringify ! (new) ,)) ; < Self as IGmapSpotAdjusterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmapspotadjuster")]impl GmapSpotAdjuster{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapSpotAdjuster), ::core::stringify!(new),));
+ <Self as IGmapSpotAdjusterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gmapspotadjuster")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapSpotAdjuster_TargetModel;
     pub use super::GmapSpotAdjuster;
     pub use super::IGmapSpotAdjuster;
     pub use super::IGmapSpotAdjusterMethods;
+    pub use super::GmapSpotAdjuster_TargetModel;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

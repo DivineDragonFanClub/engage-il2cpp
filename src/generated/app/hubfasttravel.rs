@@ -4,80 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubfasttravel/HubFastTravel.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubFastTravel")] # [parent (crate :: system :: object :: Object)] pub struct HubFastTravel {
-# [offset (16)] # [rename (name = "m_location")] pub m_location : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubfasttravel :: HubFastTravel_Location > ,
-# [offset (24)] # [rename (name = "m_currentAccessManager")] pub m_current_access_manager : crate :: app :: hubaccessmanager :: HubAccessManager ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubfasttravel/HubFastTravel_Location.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HubFastTravel_Location{pub area: ::unity2::Il2CppString,pub pid: ::unity2::Il2CppString,pub access:crate::app::hubaccessdata::HubAccessData,}
+impl::unity2::ClassIdentity for HubFastTravel_Location{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubFastTravel.Location";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubFastTravel_Location{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubfasttravel/HubFastTravel_Location.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HubFastTravel_Location {
-    pub area: :: unity2 :: Il2CppString,
-    pub pid: :: unity2 :: Il2CppString,
-    pub access: crate :: app :: hubaccessdata :: HubAccessData,
-}
-
-
-impl ::unity2::ClassIdentity for HubFastTravel_Location {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubFastTravel.Location";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for HubFastTravel_Location {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubfasttravel/HubFastTravel.md"))]#[::unity2::class(namespace="App",name="HubFastTravel")]#[parent(crate::system::object::Object)]pub struct HubFastTravel{#[offset(16)]#[rename(name="m_location")]pub m_location:crate::system::collections::generic::list_1::List_1<crate::app::hubfasttravel::HubFastTravel_Location> , #[offset(24)]#[rename(name="m_currentAccessManager")]pub m_current_access_manager:crate::app::hubaccessmanager::HubAccessManager,}
 
 }
 
 #[cfg(feature = "app-hubfasttravel-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubfasttravel")]
-pub trait IHubFastTravelMethods : IHubFastTravel { # [doc = "`get_Length()` overload"] fn get_length (self ,) -> i32 { unsafe { let __receiver = < HubFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFastTravel , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: hubfasttravel :: HubFastTravel_Location { unsafe { let __receiver = < HubFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFastTravel , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubfasttravel :: HubFastTravel_Location = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize(crate::app::hubaccessmanager::HubAccessManager)` overload"] fn initialize (self , access_manager : impl :: core :: convert :: Into < crate :: app :: hubaccessmanager :: HubAccessManager >) -> () { unsafe { let __receiver = < HubFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFastTravel , crate :: app :: hubaccessmanager :: HubAccessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (access_manager) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFastTravel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a86f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubfasttravel")]pub trait IHubFastTravelMethods:IHubFastTravel{#[doc="`get_Length()` overload"]fn get_length(self,)->i32{unsafe{let __receiver= <HubFastTravel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a8430usize)as*mut u8,i32;
+(HubFastTravel)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::app::hubfasttravel::HubFastTravel_Location{unsafe{let __receiver= <HubFastTravel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a8490usize)as*mut u8,crate::app::hubfasttravel::HubFastTravel_Location;
+(HubFastTravel)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Initialize(crate::app::hubaccessmanager::HubAccessManager)` overload"]fn initialize(self,access_manager:impl::core::convert::Into<crate::app::hubaccessmanager::HubAccessManager>)->(){unsafe{let __receiver= <HubFastTravel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a8510usize)as*mut u8,();
+(HubFastTravel)__receiver,(crate::app::hubaccessmanager::HubAccessManager)::core::convert::Into::into(access_manager))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubFastTravel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a86f0usize)as*mut u8,();
+(HubFastTravel)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubfasttravel")]
-impl < __T : IHubFastTravel > IHubFastTravelMethods for __T { }
+#[cfg(feature="app-hubfasttravel")]impl<__T:IHubFastTravel>IHubFastTravelMethods for __T{}
 
-#[cfg(feature = "app-hubfasttravel")]
-impl HubFastTravel { pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFastTravel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFastTravel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFastTravel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFastTravel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-hubfasttravel")]impl HubFastTravel{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-hubfasttravel")]
-impl HubFastTravel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubFastTravel) , :: core :: stringify ! (new) ,)) ; < Self as IHubFastTravelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubfasttravel")]impl HubFastTravel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubFastTravel), ::core::stringify!(new),));
+ <Self as IHubFastTravelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubfasttravel")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubFastTravel_Location;
     pub use super::HubFastTravel;
     pub use super::IHubFastTravel;
     pub use super::IHubFastTravelMethods;
-    pub use super::HubFastTravel_Location;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

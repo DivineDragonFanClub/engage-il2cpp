@@ -4,79 +4,144 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectconfirmdialog/RingSelectConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingSelectConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct RingSelectConfirmDialog {
-# [static_field] # [rename (name = "m_unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [static_field] # [rename (name = "m_nextGod")] pub m_next_god : crate :: app :: godunit :: GodUnit ,
-# [static_field] # [rename (name = "m_nextRing")] pub m_next_ring : crate :: app :: unitring :: UnitRing ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectconfirmdialog/RingSelectConfirmDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="RingSelectConfirmDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RingSelectConfirmDialog_ConfirmYesDialogItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectconfirmdialog/RingSelectConfirmDialog_ConfirmYesDialogItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingSelectConfirmDialog.ConfirmYesDialogItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct RingSelectConfirmDialog_ConfirmYesDialogItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectconfirmdialog/RingSelectConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RingSelectConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RingSelectConfirmDialog{#[static_field]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit, #[static_field]#[rename(name="m_nextGod")]pub m_next_god:crate::app::godunit::GodUnit, #[static_field]#[rename(name="m_nextRing")]pub m_next_ring:crate::app::unitring::UnitRing,}
 
 }
 
 #[cfg(feature = "app-ringselectconfirmdialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringselectconfirmdialog")]
-impl RingSelectConfirmDialog { # [doc = "`CreateBindGod(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] pub fn create_bind_god (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , next_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2431c10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (next_god) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindRing(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"] pub fn create_bind_ring (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , next_ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24323d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (next_ring) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , next_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , next_ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2431ca0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (next_god) , :: core :: convert :: Into :: into (next_ring) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSetTitle(crate::app::godunit::GodUnit)` overload"] pub fn create_set_title (next_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24325d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (next_god) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSetTitle(crate::app::unitring::UnitRing)` overload"] pub fn create_set_title_2 (next_ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2432b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (next_ring) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSetTitle(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"] pub fn create_set_title_3 (next_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , old_equip_unit_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_armlet : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2432e70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (next_name) , :: core :: convert :: Into :: into (old_equip_unit_name) , :: core :: convert :: Into :: into (is_armlet) , :: core :: option :: Option :: None) } } } # [doc = "`CreateChangeTitle(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] pub fn create_change_title (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , next_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2432790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (next_god) , :: core :: option :: Option :: None) } } } # [doc = "`CreateChangeTitle(crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"] pub fn create_change_title_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , next_ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2432bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (next_ring) , :: core :: option :: Option :: None) } } } # [doc = "`CreateChangeTitle(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool)` overload"] pub fn create_change_title_3 (remove_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , next_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , old_equip_unit_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_remove_armlet : impl :: core :: convert :: Into < bool > , is_next_armlet : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2432fc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (remove_name) , :: core :: convert :: Into :: into (next_name) , :: core :: convert :: Into :: into (old_equip_unit_name) , :: core :: convert :: Into :: into (is_remove_armlet) , :: core :: convert :: Into :: into (is_next_armlet) , :: core :: option :: Option :: None) } } } # [doc = "`CreateRemoveTitle(crate::app::godunit::GodUnit)` overload"] pub fn create_remove_title (remove_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2432460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (remove_god) , :: core :: option :: Option :: None) } } } # [doc = "`CreateRemoveTitle(crate::app::unitring::UnitRing)` overload"] pub fn create_remove_title_2 (remove_ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2432aa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (remove_ring) , :: core :: option :: Option :: None) } } } # [doc = "`CreateRemoveTitle(::unity2::Il2CppString, bool)` overload"] pub fn create_remove_title_3 (remove_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_armlet : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2433170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (remove_name) , :: core :: convert :: Into :: into (is_armlet) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2433250usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringselectconfirmdialog")]
-pub trait IRingSelectConfirmDialogMethods : IRingSelectConfirmDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { let __receiver = < RingSelectConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSelectConfirmDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2432df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringselectconfirmdialog")]
-impl < __T : IRingSelectConfirmDialog > IRingSelectConfirmDialogMethods for __T { }
-
-#[cfg(feature = "app-ringselectconfirmdialog")]
-impl RingSelectConfirmDialog { pub fn create_bind_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_set_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_set_title_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_set_title_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_change_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_change_title_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_change_title_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_remove_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_remove_title_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_remove_title_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
-
-#[cfg(feature = "app-ringselectconfirmdialog")]
-impl RingSelectConfirmDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingSelectConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IRingSelectConfirmDialogMethods > :: ctor (this , menu_item_list) ; this }
+#[cfg(feature="app-ringselectconfirmdialog")]pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods:IRingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5fa00usize)as*mut u8,();
+(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5fa10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver)}
+}
+#[doc="`RemoveOld(crate::app::unit::Unit)` overload"]fn remove_old(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60a10usize)as*mut u8,();
+(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
 }
 
-#[cfg(feature = "app-ringselectconfirmdialog")]
-pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods : IRingSelectConfirmDialog_ConfirmYesDialogItem { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSelectConfirmDialog_ConfirmYesDialogItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d5fa00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSelectConfirmDialog_ConfirmYesDialogItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d5fa10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RemoveOld(crate::app::unit::Unit)` overload"] fn remove_old (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingSelectConfirmDialog_ConfirmYesDialogItem , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d60a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringselectconfirmdialog")]impl<__T:IRingSelectConfirmDialog_ConfirmYesDialogItem>IRingSelectConfirmDialog_ConfirmYesDialogItemMethods for __T{}
 
-#[cfg(feature = "app-ringselectconfirmdialog")]
-impl < __T : IRingSelectConfirmDialog_ConfirmYesDialogItem > IRingSelectConfirmDialog_ConfirmYesDialogItemMethods for __T { }
+#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_old_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-ringselectconfirmdialog")]
-impl RingSelectConfirmDialog_ConfirmYesDialogItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn remove_old_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingSelectConfirmDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
+ <Self as IRingSelectConfirmDialog_ConfirmYesDialogItemMethods> ::ctor(this,text);
+this}
+}
 
-#[cfg(feature = "app-ringselectconfirmdialog")]
-impl RingSelectConfirmDialog_ConfirmYesDialogItem {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingSelectConfirmDialog_ConfirmYesDialogItem) , :: core :: stringify ! (new) ,)) ; < Self as IRingSelectConfirmDialog_ConfirmYesDialogItemMethods > :: ctor (this , text) ; this }
+#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog{#[doc="`CreateBindGod(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]pub fn create_bind_god(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,next_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2431c10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(next_god))}
+}
+#[doc="`CreateBindRing(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"]pub fn create_bind_ring(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,next_ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24323d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unitring::UnitRing)::core::convert::Into::into(next_ring))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,next_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,next_ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2431ca0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(next_god),(crate::app::unitring::UnitRing)::core::convert::Into::into(next_ring))}
+}
+#[doc="`CreateSetTitle(crate::app::godunit::GodUnit)` overload"]pub fn create_set_title(next_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24325d0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(next_god))}
+}
+#[doc="`CreateSetTitle(crate::app::unitring::UnitRing)` overload"]pub fn create_set_title_2(next_ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2432b20usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::unitring::UnitRing)::core::convert::Into::into(next_ring))}
+}
+#[doc="`CreateSetTitle(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]pub fn create_set_title_3(next_name:impl::core::convert::Into< ::unity2::Il2CppString> ,old_equip_unit_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_armlet:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2432e70usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(next_name),(::unity2::Il2CppString)::core::convert::Into::into(old_equip_unit_name),(bool)::core::convert::Into::into(is_armlet))}
+}
+#[doc="`CreateChangeTitle(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]pub fn create_change_title(unit:impl::core::convert::Into<crate::app::unit::Unit> ,next_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2432790usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(next_god))}
+}
+#[doc="`CreateChangeTitle(crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"]pub fn create_change_title_2(unit:impl::core::convert::Into<crate::app::unit::Unit> ,next_ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2432bd0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unitring::UnitRing)::core::convert::Into::into(next_ring))}
+}
+#[doc="`CreateChangeTitle(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool)` overload"]pub fn create_change_title_3(remove_name:impl::core::convert::Into< ::unity2::Il2CppString> ,next_name:impl::core::convert::Into< ::unity2::Il2CppString> ,old_equip_unit_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_remove_armlet:impl::core::convert::Into<bool> ,is_next_armlet:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2432fc0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(remove_name),(::unity2::Il2CppString)::core::convert::Into::into(next_name),(::unity2::Il2CppString)::core::convert::Into::into(old_equip_unit_name),(bool)::core::convert::Into::into(is_remove_armlet),(bool)::core::convert::Into::into(is_next_armlet))}
+}
+#[doc="`CreateRemoveTitle(crate::app::godunit::GodUnit)` overload"]pub fn create_remove_title(remove_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2432460usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(remove_god))}
+}
+#[doc="`CreateRemoveTitle(crate::app::unitring::UnitRing)` overload"]pub fn create_remove_title_2(remove_ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2432aa0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::unitring::UnitRing)::core::convert::Into::into(remove_ring))}
+}
+#[doc="`CreateRemoveTitle(::unity2::Il2CppString, bool)` overload"]pub fn create_remove_title_3(remove_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_armlet:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2433170usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(remove_name),(bool)::core::convert::Into::into(is_armlet))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2433250usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-ringselectconfirmdialog")]pub trait IRingSelectConfirmDialogMethods:IRingSelectConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <RingSelectConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2432df0usize)as*mut u8,();
+(RingSelectConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-ringselectconfirmdialog")]impl<__T:IRingSelectConfirmDialog>IRingSelectConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog{pub fn create_bind_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_set_title_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_set_title_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_change_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_change_title_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_change_title_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_remove_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_remove_title_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_remove_title_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
+
+#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingSelectConfirmDialog), ::core::stringify!(new),));
+ <Self as IRingSelectConfirmDialogMethods> ::ctor(this,menu_item_list);
+this}
 }
 
 #[cfg(feature = "app-ringselectconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingSelectConfirmDialog;
-    pub use super::IRingSelectConfirmDialog;
-    pub use super::IRingSelectConfirmDialogMethods;
     pub use super::RingSelectConfirmDialog_ConfirmYesDialogItem;
     pub use super::IRingSelectConfirmDialog_ConfirmYesDialogItem;
     pub use super::IRingSelectConfirmDialog_ConfirmYesDialogItemMethods;
+    pub use super::RingSelectConfirmDialog;
+    pub use super::IRingSelectConfirmDialog;
+    pub use super::IRingSelectConfirmDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

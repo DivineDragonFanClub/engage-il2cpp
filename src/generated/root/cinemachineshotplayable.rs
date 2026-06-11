@@ -4,32 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachineshotplayable/CinemachineShotPlayable.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineShotPlayable")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct CinemachineShotPlayable {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/cinemachineshotplayable/CinemachineShotPlayable.md"))]#[::unity2::class(namespace="",name="CinemachineShotPlayable")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct CinemachineShotPlayable{}
 
 }
 
 #[cfg(feature = "root-cinemachineshotplayable-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-cinemachineshotplayable")]
-pub trait ICinemachineShotPlayableMethods : ICinemachineShotPlayable { # [doc = "`get_IsValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < CinemachineShotPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineShotPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3887c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineShotPlayable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineShotPlayable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x388da10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-cinemachineshotplayable")]pub trait ICinemachineShotPlayableMethods:ICinemachineShotPlayable{#[doc="`get_IsValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <CinemachineShotPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3887c00usize)as*mut u8,bool;
+(CinemachineShotPlayable)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CinemachineShotPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x388da10usize)as*mut u8,();
+(CinemachineShotPlayable)__receiver)}
+}
+}
 
-#[cfg(feature = "root-cinemachineshotplayable")]
-impl < __T : ICinemachineShotPlayable > ICinemachineShotPlayableMethods for __T { }
+#[cfg(feature="root-cinemachineshotplayable")]impl<__T:ICinemachineShotPlayable>ICinemachineShotPlayableMethods for __T{}
 
-#[cfg(feature = "root-cinemachineshotplayable")]
-impl CinemachineShotPlayable { pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineShotPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineShotPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-cinemachineshotplayable")]impl CinemachineShotPlayable{pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-cinemachineshotplayable")]
-impl CinemachineShotPlayable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineShotPlayable) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineShotPlayableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-cinemachineshotplayable")]impl CinemachineShotPlayable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineShotPlayable), ::core::stringify!(new),));
+ <Self as ICinemachineShotPlayableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-cinemachineshotplayable")]

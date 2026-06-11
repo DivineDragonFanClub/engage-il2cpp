@@ -4,52 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/proportionparameters/ProportionParameters.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ProportionParameters")] # [parent (crate :: system :: object :: Object)] pub struct ProportionParameters {
-# [offset (16)] # [rename (name = "ScaleAll")] pub scale_all : f32 ,
-# [offset (20)] # [rename (name = "ScaleHead")] pub scale_head : f32 ,
-# [offset (24)] # [rename (name = "ScaleNeck")] pub scale_neck : f32 ,
-# [offset (28)] # [rename (name = "ScaleTorso")] pub scale_torso : f32 ,
-# [offset (32)] # [rename (name = "ScaleShoulders")] pub scale_shoulders : f32 ,
-# [offset (36)] # [rename (name = "ScaleArms")] pub scale_arms : f32 ,
-# [offset (40)] # [rename (name = "ScaleHands")] pub scale_hands : f32 ,
-# [offset (44)] # [rename (name = "ScaleLegs")] pub scale_legs : f32 ,
-# [offset (48)] # [rename (name = "ScaleFeet")] pub scale_feet : f32 ,
-# [offset (52)] # [rename (name = "VolumeArms")] pub volume_arms : f32 ,
-# [offset (56)] # [rename (name = "VolumeLegs")] pub volume_legs : f32 ,
-# [offset (60)] # [rename (name = "VolumeBust")] pub volume_bust : f32 ,
-# [offset (64)] # [rename (name = "VolumeAbdomen")] pub volume_abdomen : f32 ,
-# [offset (68)] # [rename (name = "VolumeTorso")] pub volume_torso : f32 ,
-# [offset (72)] # [rename (name = "HipJointHeight")] pub hip_joint_height : f32 ,
-# [offset (76)] # [rename (name = "AnkleHeight")] pub ankle_height : f32 ,
-# [offset (80)] # [rename (name = "targetNodes")] pub target_nodes : :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > ,
-# [offset (88)] # [rename (name = "proportionScales")] pub proportion_scales : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (96)] # [rename (name = "writeCount")] pub write_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/proportionparameters/ProportionParameters.md"))]#[::unity2::class(namespace="Combat",name="ProportionParameters")]#[parent(crate::system::object::Object)]pub struct ProportionParameters{#[offset(16)]#[rename(name="ScaleAll")]pub scale_all:f32, #[offset(20)]#[rename(name="ScaleHead")]pub scale_head:f32, #[offset(24)]#[rename(name="ScaleNeck")]pub scale_neck:f32, #[offset(28)]#[rename(name="ScaleTorso")]pub scale_torso:f32, #[offset(32)]#[rename(name="ScaleShoulders")]pub scale_shoulders:f32, #[offset(36)]#[rename(name="ScaleArms")]pub scale_arms:f32, #[offset(40)]#[rename(name="ScaleHands")]pub scale_hands:f32, #[offset(44)]#[rename(name="ScaleLegs")]pub scale_legs:f32, #[offset(48)]#[rename(name="ScaleFeet")]pub scale_feet:f32, #[offset(52)]#[rename(name="VolumeArms")]pub volume_arms:f32, #[offset(56)]#[rename(name="VolumeLegs")]pub volume_legs:f32, #[offset(60)]#[rename(name="VolumeBust")]pub volume_bust:f32, #[offset(64)]#[rename(name="VolumeAbdomen")]pub volume_abdomen:f32, #[offset(68)]#[rename(name="VolumeTorso")]pub volume_torso:f32, #[offset(72)]#[rename(name="HipJointHeight")]pub hip_joint_height:f32, #[offset(76)]#[rename(name="AnkleHeight")]pub ankle_height:f32, #[offset(80)]#[rename(name="targetNodes")]pub target_nodes: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(88)]#[rename(name="proportionScales")]pub proportion_scales: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(96)]#[rename(name="writeCount")]pub write_count:i32,}
 
 }
 
 #[cfg(feature = "combat-proportionparameters-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-proportionparameters")]
-pub trait IProportionParametersMethods : IProportionParameters { # [doc = "`ImportLegScaleParamsFromModel(crate::unity_engine::transform::Transform)` overload"] fn import_leg_scale_params_from_model (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c08280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c083a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::proportionparameters::ProportionParameters)` overload"] fn ctor_2 (self , rhs : impl :: core :: convert :: Into < crate :: combat :: proportionparameters :: ProportionParameters >) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , crate :: combat :: proportionparameters :: ProportionParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c083d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`ResetToOne()` overload"] fn reset_to_one (self ,) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c08490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetClipboardFormedString()` overload"] fn get_clipboard_formed_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c084b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Random()` overload"] fn random (self ,) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c087a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c088f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::combat::proportionparameters::ProportionParameters)` overload"] fn copy_from (self , rhs : impl :: core :: convert :: Into < crate :: combat :: proportionparameters :: ProportionParameters >) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , crate :: combat :: proportionparameters :: ProportionParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c08a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`ImportFromAssetResult(crate::app::assettable::AssetTable_Result)` overload"] fn import_from_asset_result (self , r : impl :: core :: convert :: Into < crate :: app :: assettable :: AssetTable_Result >) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , crate :: app :: assettable :: AssetTable_Result , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c08aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r) , :: core :: option :: Option :: None) } } } # [doc = "`DumpToString()` overload"] fn dump_to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c08b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DumpToShortString()` overload"] fn dump_to_short_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c08f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Calculate(crate::combat::characterjoint::CharacterJoint)` overload"] fn calculate (self , j : impl :: core :: convert :: Into < crate :: combat :: characterjoint :: CharacterJoint >) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , crate :: combat :: characterjoint :: CharacterJoint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c091e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (j) , :: core :: option :: Option :: None) } } } # [doc = "`Flush()` overload"] fn flush (self ,) -> () { unsafe { let __receiver = < ProportionParameters as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProportionParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c09d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-proportionparameters")]pub trait IProportionParametersMethods:IProportionParameters{#[doc="`ImportLegScaleParamsFromModel(crate::unity_engine::transform::Transform)` overload"]fn import_leg_scale_params_from_model(self,root:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08280usize)as*mut u8,();
+(ProportionParameters)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(root))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c083a0usize)as*mut u8,();
+(ProportionParameters)__receiver)}
+}
+#[doc="`.ctor(crate::combat::proportionparameters::ProportionParameters)` overload"]fn ctor_2(self,rhs:impl::core::convert::Into<crate::combat::proportionparameters::ProportionParameters>)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c083d0usize)as*mut u8,();
+(ProportionParameters)__receiver,(crate::combat::proportionparameters::ProportionParameters)::core::convert::Into::into(rhs))}
+}
+#[doc="`ResetToOne()` overload"]fn reset_to_one(self,)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08490usize)as*mut u8,();
+(ProportionParameters)__receiver)}
+}
+#[doc="`GetClipboardFormedString()` overload"]fn get_clipboard_formed_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c084b0usize)as*mut u8, ::unity2::Il2CppString;
+(ProportionParameters)__receiver)}
+}
+#[doc="`Random()` overload"]fn random(self,)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c087a0usize)as*mut u8,();
+(ProportionParameters)__receiver)}
+}
+#[doc="`get_IsValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c088f0usize)as*mut u8,bool;
+(ProportionParameters)__receiver)}
+}
+#[doc="`CopyFrom(crate::combat::proportionparameters::ProportionParameters)` overload"]fn copy_from(self,rhs:impl::core::convert::Into<crate::combat::proportionparameters::ProportionParameters>)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08a10usize)as*mut u8,();
+(ProportionParameters)__receiver,(crate::combat::proportionparameters::ProportionParameters)::core::convert::Into::into(rhs))}
+}
+#[doc="`ImportFromAssetResult(crate::app::assettable::AssetTable_Result)` overload"]fn import_from_asset_result(self,r:impl::core::convert::Into<crate::app::assettable::AssetTable_Result>)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08aa0usize)as*mut u8,();
+(ProportionParameters)__receiver,(crate::app::assettable::AssetTable_Result)::core::convert::Into::into(r))}
+}
+#[doc="`DumpToString()` overload"]fn dump_to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08b40usize)as*mut u8, ::unity2::Il2CppString;
+(ProportionParameters)__receiver)}
+}
+#[doc="`DumpToShortString()` overload"]fn dump_to_short_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08f90usize)as*mut u8, ::unity2::Il2CppString;
+(ProportionParameters)__receiver)}
+}
+#[doc="`Calculate(crate::combat::characterjoint::CharacterJoint)` overload"]fn calculate(self,j:impl::core::convert::Into<crate::combat::characterjoint::CharacterJoint>)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c091e0usize)as*mut u8,();
+(ProportionParameters)__receiver,(crate::combat::characterjoint::CharacterJoint)::core::convert::Into::into(j))}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <ProportionParameters as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c09d10usize)as*mut u8,();
+(ProportionParameters)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-proportionparameters")]
-impl < __T : IProportionParameters > IProportionParametersMethods for __T { }
+#[cfg(feature="combat-proportionparameters")]impl<__T:IProportionParameters>IProportionParametersMethods for __T{}
 
-#[cfg(feature = "combat-proportionparameters")]
-impl ProportionParameters { pub fn import_leg_scale_params_from_model_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn reset_to_one_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_clipboard_formed_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn import_from_asset_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn dump_to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn dump_to_short_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProportionParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="combat-proportionparameters")]impl ProportionParameters{pub fn import_leg_scale_params_from_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_to_one_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_clipboard_formed_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn import_from_asset_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn dump_to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn dump_to_short_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "combat-proportionparameters")]
-impl ProportionParameters {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProportionParameters) , :: core :: stringify ! (new) ,)) ; < Self as IProportionParametersMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::combat::proportionparameters::ProportionParameters)` — overload selector"] pub fn new_2 (rhs : crate :: combat :: proportionparameters :: ProportionParameters) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProportionParameters) , :: core :: stringify ! (new_2) ,)) ; < Self as IProportionParametersMethods > :: ctor_2 (this , rhs) ; this }
+#[cfg(feature="combat-proportionparameters")]impl ProportionParameters{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProportionParameters), ::core::stringify!(new),));
+ <Self as IProportionParametersMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::combat::proportionparameters::ProportionParameters)` — overload selector"]pub fn new_2(rhs:crate::combat::proportionparameters::ProportionParameters)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProportionParameters), ::core::stringify!(new_2),));
+ <Self as IProportionParametersMethods> ::ctor_2(this,rhs);
+this}
 }
 
 #[cfg(feature = "combat-proportionparameters")]

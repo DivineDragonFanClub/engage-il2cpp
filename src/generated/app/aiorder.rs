@@ -4,121 +4,455 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder_Func.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIOrder.Func")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AIOrder_Func {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiorder/AIOrder_UnitPriority.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIOrder_UnitPriority {
-    pub number: i32,
-    pub priority: u32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiorder/AIOrder_UnitPriority.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIOrder_UnitPriority{pub number:i32,pub priority:u32,}
+impl::unity2::ClassIdentity for AIOrder_UnitPriority{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIOrder.UnitPriority";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIOrder_UnitPriority{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for AIOrder_UnitPriority {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIOrder.UnitPriority";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiorder/AIOrder_Func.md"))]#[::unity2::class(namespace="App",name="AIOrder.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIOrder_Func{}
 
 
-impl ::unity2::IlType for AIOrder_UnitPriority {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIOrder")] # [parent (crate :: system :: object :: Object)] pub struct AIOrder {
-# [static_field] # [rename (name = "aFunc")] pub a_func : crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: app :: aiorder :: AIOrder_Func > ,
-# [static_field] # [rename (name = "aFuncEntrust")] pub a_func_entrust : crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: app :: aiorder :: AIOrder_Func > ,
-# [static_field] # [rename (name = "aFuncUncontroll")] pub a_func_uncontroll : crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: app :: aiorder :: AIOrder_Func > ,
-# [static_field] # [rename (name = "UnitMax")] pub unit_max : i32 ,
-# [offset (16)] # [rename (name = "m_aUnitPriority")] pub m_a_unit_priority : :: unity2 :: Array < crate :: app :: aiorder :: AIOrder_UnitPriority > ,
-# [offset (24)] # [rename (name = "m_Num")] pub m_num : i32 ,
-# [offset (28)] # [rename (name = "m_Seq")] pub m_seq : i32 ,
-# [offset (32)] # [rename (name = "m_Current")] pub m_current : i32 ,
-# [offset (36)] # [rename (name = "m_EngageOrGodChange")] pub m_engage_or_god_change : i32 ,
-# [offset (40)] # [rename (name = "m_Remove")] pub m_remove : i32 ,
-# [offset (44)] # [rename (name = "m_Remagic")] pub m_remagic : i32 ,
-# [offset (48)] # [rename (name = "m_Rerewarp")] pub m_rerewarp : i32 ,
-# [offset (52)] # [rename (name = "m_MoveOver")] pub m_move_over : i32 ,
-# [offset (56)] # [rename (name = "m_IsAllowIdle")] pub m_is_allow_idle : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiorder/AIOrder.md"))]#[::unity2::class(namespace="App",name="AIOrder")]#[parent(crate::system::object::Object)]pub struct AIOrder{#[static_field]#[rename(name="aFunc")]pub a_func:crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func> , #[static_field]#[rename(name="aFuncEntrust")]pub a_func_entrust:crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func> , #[static_field]#[rename(name="aFuncUncontroll")]pub a_func_uncontroll:crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func> , #[static_field]#[rename(name="UnitMax")]pub unit_max:i32, #[offset(16)]#[rename(name="m_aUnitPriority")]pub m_a_unit_priority: ::unity2::Array<crate::app::aiorder::AIOrder_UnitPriority> , #[offset(24)]#[rename(name="m_Num")]pub m_num:i32, #[offset(28)]#[rename(name="m_Seq")]pub m_seq:i32, #[offset(32)]#[rename(name="m_Current")]pub m_current:i32, #[offset(36)]#[rename(name="m_EngageOrGodChange")]pub m_engage_or_god_change:i32, #[offset(40)]#[rename(name="m_Remove")]pub m_remove:i32, #[offset(44)]#[rename(name="m_Remagic")]pub m_remagic:i32, #[offset(48)]#[rename(name="m_Rerewarp")]pub m_rerewarp:i32, #[offset(52)]#[rename(name="m_MoveOver")]pub m_move_over:i32, #[offset(56)]#[rename(name="m_IsAllowIdle")]pub m_is_allow_idle:bool,}
 
 }
 
 #[cfg(feature = "app-aiorder-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-aiorder")]
-pub trait IAIOrder_FuncMethods : IAIOrder_Func { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AIOrder_Func as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder_Func , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29455f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::aiorder::AIOrder)` overload"] fn invoke (self , order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { let __receiver = < AIOrder_Func as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder_Func , crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2945610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-aiorder")]
-impl < __T : IAIOrder_Func > IAIOrder_FuncMethods for __T { }
-
-#[cfg(feature = "app-aiorder")]
-impl AIOrder_Func { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder_Func as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder_Func as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-aiorder")]
-impl AIOrder_Func {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AIOrder_Func) , :: core :: stringify ! (new) ,)) ; < Self as IAIOrder_FuncMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-aiorder")]impl AIOrder_UnitPriority{#[doc="`op_LessThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]pub fn op_less_than_or_equal(a:impl::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority> ,b:impl::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29459b0usize)as*mut u8,bool;
+(crate::app::aiorder::AIOrder_UnitPriority)::core::convert::Into::into(a),(crate::app::aiorder::AIOrder_UnitPriority)::core::convert::Into::into(b))}
+}
+#[doc="`op_GreaterThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]pub fn op_greater_than_or_equal(a:impl::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority> ,b:impl::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29459d0usize)as*mut u8,bool;
+(crate::app::aiorder::AIOrder_UnitPriority)::core::convert::Into::into(a),(crate::app::aiorder::AIOrder_UnitPriority)::core::convert::Into::into(b))}
+}
 }
 
-#[cfg(feature = "app-aiorder")]
-impl AIOrder_UnitPriority { # [doc = "`op_LessThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"] pub fn op_less_than_or_equal (a : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder_UnitPriority > , b : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder_UnitPriority >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder_UnitPriority , crate :: app :: aiorder :: AIOrder_UnitPriority , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29459b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_GreaterThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"] pub fn op_greater_than_or_equal (a : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder_UnitPriority > , b : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder_UnitPriority >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder_UnitPriority , crate :: app :: aiorder :: AIOrder_UnitPriority , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29459d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aiorder")]impl AIOrder_UnitPriority{pub fn op_less_than_or_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_greater_than_or_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-aiorder")]
-impl AIOrder_UnitPriority { pub fn op_less_than_or_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder_UnitPriority as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn op_greater_than_or_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder_UnitPriority as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-aiorder")]pub trait IAIOrder_FuncMethods:IAIOrder_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIOrder_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29455f0usize)as*mut u8,();
+(AIOrder_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::aiorder::AIOrder)` overload"]fn invoke(self,order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{let __receiver= <AIOrder_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2945610usize)as*mut u8,();
+(AIOrder_Func)__receiver,(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+}
 
-#[cfg(feature = "app-aiorder")]
-impl AIOrder { # [doc = "`StaticUpdateTarget(crate::app::aiorder::AIOrder)` overload"] pub fn static_update_target (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19340b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticAllowIdle(crate::app::aiorder::AIOrder)` overload"] pub fn static_allow_idle (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticPriority(crate::app::aiorder::AIOrder)` overload"] pub fn static_priority (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticCause(crate::app::aiorder::AIOrder)` overload"] pub fn static_cause (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19342b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticMind(crate::app::aiorder::AIOrder)` overload"] pub fn static_mind (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19343f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticAttackCrossfire(crate::app::aiorder::AIOrder)` overload"] pub fn static_attack_crossfire (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticAttackLongRange(crate::app::aiorder::AIOrder)` overload"] pub fn static_attack_long_range (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticAttackHigh(crate::app::aiorder::AIOrder)` overload"] pub fn static_attack_high (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934690usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticAttackMiddle(crate::app::aiorder::AIOrder)` overload"] pub fn static_attack_middle (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934740usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticAttackLow(crate::app::aiorder::AIOrder)` overload"] pub fn static_attack_low (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19347f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticMove(crate::app::aiorder::AIOrder)` overload"] pub fn static_move (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19348a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticTurnEnd(crate::app::aiorder::AIOrder)` overload"] pub fn static_turn_end (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934950usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticEntrustUpdateIdle(crate::app::aiorder::AIOrder)` overload"] pub fn static_entrust_update_idle (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934a50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticEntrustHeal(crate::app::aiorder::AIOrder)` overload"] pub fn static_entrust_heal (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934b90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticEntrustUpdateCannon(crate::app::aiorder::AIOrder)` overload"] pub fn static_entrust_update_cannon (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934c40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticEntrustAttack(crate::app::aiorder::AIOrder)` overload"] pub fn static_entrust_attack (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934d40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticEntrustHeroRushMove(crate::app::aiorder::AIOrder)` overload"] pub fn static_entrust_hero_rush_move (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934df0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticEntrustMove(crate::app::aiorder::AIOrder)` overload"] pub fn static_entrust_move (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934f70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticEntrustFixed(crate::app::aiorder::AIOrder)` overload"] pub fn static_entrust_fixed (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticUncontrollUpdateIdle(crate::app::aiorder::AIOrder)` overload"] pub fn static_uncontroll_update_idle (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19350d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticUncontrollHeal(crate::app::aiorder::AIOrder)` overload"] pub fn static_uncontroll_heal (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935210usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticUncontrollAttack(crate::app::aiorder::AIOrder)` overload"] pub fn static_uncontroll_attack (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19352c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticUncontrollMove(crate::app::aiorder::AIOrder)` overload"] pub fn static_uncontroll_move (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`StaticUncontrollFixed(crate::app::aiorder::AIOrder)` overload"] pub fn static_uncontroll_fixed (order : impl :: core :: convert :: Into < crate :: app :: aiorder :: AIOrder >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: aiorder :: AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1936c70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aiorder")]impl<__T:IAIOrder_Func>IAIOrder_FuncMethods for __T{}
 
-#[cfg(feature = "app-aiorder")]
-pub trait IAIOrderMethods : IAIOrder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1922dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetEngageOrGodChange(i32)` overload"] fn set_engage_or_god_change (self , unit_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_index) , :: core :: option :: Option :: None) } } } # [doc = "`IsEngageOrGodChange()` overload"] fn is_engage_or_god_change (self ,) -> bool { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19242d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRemove(i32)` overload"] fn set_remove (self , unit_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_index) , :: core :: option :: Option :: None) } } } # [doc = "`IsRemove()` overload"] fn is_remove (self ,) -> bool { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRemagic(i32)` overload"] fn set_remagic (self , unit_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_index) , :: core :: option :: Option :: None) } } } # [doc = "`IsRemagic()` overload"] fn is_remagic (self ,) -> bool { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRerewarp(i32)` overload"] fn set_rerewarp (self , unit_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_index) , :: core :: option :: Option :: None) } } } # [doc = "`IsRerewarp()` overload"] fn is_rerewarp (self ,) -> bool { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMoveOver(i32)` overload"] fn set_move_over (self , unit_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_index) , :: core :: option :: Option :: None) } } } # [doc = "`IsMoveOver()` overload"] fn is_move_over (self ,) -> bool { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1925e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsAllowIdle()` overload"] fn is_allow_idle (self ,) -> bool { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19340a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Processing()` overload"] fn processing (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1923830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Next()` overload"] fn next (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1924cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDistanceFromEnemy(crate::app::unit::Unit)` overload"] fn get_distance_from_enemy (self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> i32 { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } # [doc = "`HasLongRangeWeapon(crate::app::unit::Unit)` overload"] fn has_long_range_weapon (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19358c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnchantPriority(crate::app::unit::Unit, bool)` overload"] fn get_enchant_priority (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , is_entrust : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , crate :: app :: unit :: Unit , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935ee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (is_entrust) , :: core :: option :: Option :: None) } } } # [doc = "`AllowIdle()` overload"] fn allow_idle (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SortDescend()` overload"] fn sort_descend (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19361c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SortAscend()` overload"] fn sort_ascend (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1936320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnumerateAll()` overload"] fn enumerate_all (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1936480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnumeratePriority()` overload"] fn enumerate_priority (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1936540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnumerateAttackLongRange()` overload"] fn enumerate_attack_long_range (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1936600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnumerateAttack()` overload"] fn enumerate_attack (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19366c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnumerateMove()` overload"] fn enumerate_move (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1936780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnumerateEntrust()` overload"] fn enumerate_entrust (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1936840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnumerateUncontroll()` overload"] fn enumerate_uncontroll (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1936900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAskHeal()` overload"] fn update_ask_heal (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19369c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTarget()` overload"] fn update_target (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19340c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Priority()` overload"] fn priority (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cause()` overload"] fn cause (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Mind()` overload"] fn mind (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AttackCrossfire()` overload"] fn attack_crossfire (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AttackLongRange()` overload"] fn attack_long_range (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19345f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AttackHigh()` overload"] fn attack_high (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19346a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AttackMiddle()` overload"] fn attack_middle (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AttackLow()` overload"] fn attack_low (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Move()` overload"] fn r#move (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19348b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TurnEnd()` overload"] fn turn_end (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19349d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EntrustUpdateIdle()` overload"] fn entrust_update_idle (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EntrustHeal()` overload"] fn entrust_heal (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EntrustUpdateCannon()` overload"] fn entrust_update_cannon (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EntrustAttack()` overload"] fn entrust_attack (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EntrustMove()` overload"] fn entrust_move (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EntrustHeroRushMove()` overload"] fn entrust_hero_rush_move (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1934e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EntrustFixed()` overload"] fn entrust_fixed (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UncontrollUpdateIdle()` overload"] fn uncontroll_update_idle (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19350e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UncontrollHeal()` overload"] fn uncontroll_heal (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UncontrollAttack()` overload"] fn uncontroll_attack (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1935360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UncontrollMove()` overload"] fn uncontroll_move (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19354a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UncontrollFixed()` overload"] fn uncontroll_fixed (self ,) -> () { unsafe { let __receiver = < AIOrder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIOrder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19355e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aiorder")]impl AIOrder_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-aiorder")]
-impl < __T : IAIOrder > IAIOrderMethods for __T { }
+#[cfg(feature="app-aiorder")]impl AIOrder_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIOrder_Func), ::core::stringify!(new),));
+ <Self as IAIOrder_FuncMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-aiorder")]
-impl AIOrder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_engage_or_god_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_engage_or_god_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_rerewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_move_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_move_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_allow_idle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn processing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn static_update_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn static_allow_idle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn static_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn static_cause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn static_mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn static_attack_crossfire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn static_attack_long_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn static_attack_high_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn static_attack_middle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn static_attack_low_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn static_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn static_turn_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn static_entrust_update_idle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn static_entrust_heal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn static_entrust_update_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn static_entrust_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn static_entrust_hero_rush_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn static_entrust_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn static_entrust_fixed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn static_uncontroll_update_idle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn static_uncontroll_heal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn static_uncontroll_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn static_uncontroll_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn static_uncontroll_fixed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_distance_from_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn has_long_range_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn get_enchant_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn allow_idle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn sort_descend_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn sort_ascend_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn enumerate_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn enumerate_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn enumerate_attack_long_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn enumerate_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn enumerate_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn enumerate_entrust_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn enumerate_uncontroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn update_ask_heal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn update_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn cause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn attack_crossfire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn attack_long_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn attack_high_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn attack_middle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn attack_low_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn turn_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn entrust_update_idle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn entrust_heal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn entrust_update_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn entrust_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn entrust_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn entrust_hero_rush_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn entrust_fixed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn uncontroll_update_idle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn uncontroll_heal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn uncontroll_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn uncontroll_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn uncontroll_fixed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIOrder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } }
+#[cfg(feature="app-aiorder")]impl AIOrder{#[doc="`StaticUpdateTarget(crate::app::aiorder::AIOrder)` overload"]pub fn static_update_target(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19340b0usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticAllowIdle(crate::app::aiorder::AIOrder)` overload"]pub fn static_allow_idle(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934150usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticPriority(crate::app::aiorder::AIOrder)` overload"]pub fn static_priority(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934170usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticCause(crate::app::aiorder::AIOrder)` overload"]pub fn static_cause(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19342b0usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticMind(crate::app::aiorder::AIOrder)` overload"]pub fn static_mind(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19343f0usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticAttackCrossfire(crate::app::aiorder::AIOrder)` overload"]pub fn static_attack_crossfire(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934530usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticAttackLongRange(crate::app::aiorder::AIOrder)` overload"]pub fn static_attack_long_range(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934550usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticAttackHigh(crate::app::aiorder::AIOrder)` overload"]pub fn static_attack_high(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934690usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticAttackMiddle(crate::app::aiorder::AIOrder)` overload"]pub fn static_attack_middle(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934740usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticAttackLow(crate::app::aiorder::AIOrder)` overload"]pub fn static_attack_low(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19347f0usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticMove(crate::app::aiorder::AIOrder)` overload"]pub fn static_move(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19348a0usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticTurnEnd(crate::app::aiorder::AIOrder)` overload"]pub fn static_turn_end(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934950usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticEntrustUpdateIdle(crate::app::aiorder::AIOrder)` overload"]pub fn static_entrust_update_idle(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934a50usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticEntrustHeal(crate::app::aiorder::AIOrder)` overload"]pub fn static_entrust_heal(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934b90usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticEntrustUpdateCannon(crate::app::aiorder::AIOrder)` overload"]pub fn static_entrust_update_cannon(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934c40usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticEntrustAttack(crate::app::aiorder::AIOrder)` overload"]pub fn static_entrust_attack(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934d40usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticEntrustHeroRushMove(crate::app::aiorder::AIOrder)` overload"]pub fn static_entrust_hero_rush_move(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934df0usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticEntrustMove(crate::app::aiorder::AIOrder)` overload"]pub fn static_entrust_move(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1934f70usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticEntrustFixed(crate::app::aiorder::AIOrder)` overload"]pub fn static_entrust_fixed(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1935020usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticUncontrollUpdateIdle(crate::app::aiorder::AIOrder)` overload"]pub fn static_uncontroll_update_idle(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19350d0usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticUncontrollHeal(crate::app::aiorder::AIOrder)` overload"]pub fn static_uncontroll_heal(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1935210usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticUncontrollAttack(crate::app::aiorder::AIOrder)` overload"]pub fn static_uncontroll_attack(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19352c0usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticUncontrollMove(crate::app::aiorder::AIOrder)` overload"]pub fn static_uncontroll_move(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1935400usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`StaticUncontrollFixed(crate::app::aiorder::AIOrder)` overload"]pub fn static_uncontroll_fixed(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1935540usize)as*mut u8,();
+(crate::app::aiorder::AIOrder)::core::convert::Into::into(order))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1936c70usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-aiorder")]
-impl AIOrder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AIOrder) , :: core :: stringify ! (new) ,)) ; < Self as IAIOrderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aiorder")]pub trait IAIOrderMethods:IAIOrder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1922dd0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`SetEngageOrGodChange(i32)` overload"]fn set_engage_or_god_change(self,unit_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934050usize)as*mut u8,();
+(AIOrder)__receiver,(i32)::core::convert::Into::into(unit_index))}
+}
+#[doc="`IsEngageOrGodChange()` overload"]fn is_engage_or_god_change(self,)->bool{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19242d0usize)as*mut u8,bool;
+(AIOrder)__receiver)}
+}
+#[doc="`SetRemove(i32)` overload"]fn set_remove(self,unit_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934060usize)as*mut u8,();
+(AIOrder)__receiver,(i32)::core::convert::Into::into(unit_index))}
+}
+#[doc="`IsRemove()` overload"]fn is_remove(self,)->bool{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924310usize)as*mut u8,bool;
+(AIOrder)__receiver)}
+}
+#[doc="`SetRemagic(i32)` overload"]fn set_remagic(self,unit_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934070usize)as*mut u8,();
+(AIOrder)__receiver,(i32)::core::convert::Into::into(unit_index))}
+}
+#[doc="`IsRemagic()` overload"]fn is_remagic(self,)->bool{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924350usize)as*mut u8,bool;
+(AIOrder)__receiver)}
+}
+#[doc="`SetRerewarp(i32)` overload"]fn set_rerewarp(self,unit_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934080usize)as*mut u8,();
+(AIOrder)__receiver,(i32)::core::convert::Into::into(unit_index))}
+}
+#[doc="`IsRerewarp()` overload"]fn is_rerewarp(self,)->bool{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924390usize)as*mut u8,bool;
+(AIOrder)__receiver)}
+}
+#[doc="`SetMoveOver(i32)` overload"]fn set_move_over(self,unit_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934090usize)as*mut u8,();
+(AIOrder)__receiver,(i32)::core::convert::Into::into(unit_index))}
+}
+#[doc="`IsMoveOver()` overload"]fn is_move_over(self,)->bool{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1925e10usize)as*mut u8,bool;
+(AIOrder)__receiver)}
+}
+#[doc="`IsAllowIdle()` overload"]fn is_allow_idle(self,)->bool{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19340a0usize)as*mut u8,bool;
+(AIOrder)__receiver)}
+}
+#[doc="`Processing()` overload"]fn processing(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1923830usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924c30usize)as*mut u8,crate::app::unit::Unit;
+(AIOrder)__receiver)}
+}
+#[doc="`Next()` overload"]fn next(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1924cc0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`GetDistanceFromEnemy(crate::app::unit::Unit)` overload"]fn get_distance_from_enemy(self,actor:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1935680usize)as*mut u8,i32;
+(AIOrder)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor))}
+}
+#[doc="`HasLongRangeWeapon(crate::app::unit::Unit)` overload"]fn has_long_range_weapon(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19358c0usize)as*mut u8,bool;
+(AIOrder)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetEnchantPriority(crate::app::unit::Unit, bool)` overload"]fn get_enchant_priority(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,is_entrust:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1935ee0usize)as*mut u8,i32;
+(AIOrder)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(is_entrust))}
+}
+#[doc="`AllowIdle()` overload"]fn allow_idle(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934160usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`SortDescend()` overload"]fn sort_descend(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19361c0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`SortAscend()` overload"]fn sort_ascend(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1936320usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EnumerateAll()` overload"]fn enumerate_all(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1936480usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EnumeratePriority()` overload"]fn enumerate_priority(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1936540usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EnumerateAttackLongRange()` overload"]fn enumerate_attack_long_range(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1936600usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EnumerateAttack()` overload"]fn enumerate_attack(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19366c0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EnumerateMove()` overload"]fn enumerate_move(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1936780usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EnumerateEntrust()` overload"]fn enumerate_entrust(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1936840usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EnumerateUncontroll()` overload"]fn enumerate_uncontroll(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1936900usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`UpdateAskHeal()` overload"]fn update_ask_heal(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19369c0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`UpdateTarget()` overload"]fn update_target(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19340c0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`Priority()` overload"]fn priority(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934210usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`Cause()` overload"]fn cause(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934350usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`Mind()` overload"]fn mind(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934490usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`AttackCrossfire()` overload"]fn attack_crossfire(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934540usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`AttackLongRange()` overload"]fn attack_long_range(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19345f0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`AttackHigh()` overload"]fn attack_high(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19346a0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`AttackMiddle()` overload"]fn attack_middle(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934750usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`AttackLow()` overload"]fn attack_low(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934800usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`Move()` overload"]fn r#move(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19348b0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`TurnEnd()` overload"]fn turn_end(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19349d0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EntrustUpdateIdle()` overload"]fn entrust_update_idle(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934a60usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EntrustHeal()` overload"]fn entrust_heal(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934ba0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EntrustUpdateCannon()` overload"]fn entrust_update_cannon(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934cc0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EntrustAttack()` overload"]fn entrust_attack(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934d50usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EntrustMove()` overload"]fn entrust_move(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934f80usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EntrustHeroRushMove()` overload"]fn entrust_hero_rush_move(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1934e00usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`EntrustFixed()` overload"]fn entrust_fixed(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1935030usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`UncontrollUpdateIdle()` overload"]fn uncontroll_update_idle(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19350e0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`UncontrollHeal()` overload"]fn uncontroll_heal(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1935220usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`UncontrollAttack()` overload"]fn uncontroll_attack(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1935360usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`UncontrollMove()` overload"]fn uncontroll_move(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19354a0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+#[doc="`UncontrollFixed()` overload"]fn uncontroll_fixed(self,)->(){unsafe{let __receiver= <AIOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19355e0usize)as*mut u8,();
+(AIOrder)__receiver)}
+}
+}
+
+#[cfg(feature="app-aiorder")]impl<__T:IAIOrder>IAIOrderMethods for __T{}
+
+#[cfg(feature="app-aiorder")]impl AIOrder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_engage_or_god_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_engage_or_god_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_remagic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_remagic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_rerewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_rerewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_move_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_move_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_allow_idle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn processing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn static_update_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn static_allow_idle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn static_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn static_cause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn static_mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn static_attack_crossfire_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn static_attack_long_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn static_attack_high_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn static_attack_middle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn static_attack_low_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn static_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn static_turn_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn static_entrust_update_idle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn static_entrust_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn static_entrust_update_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn static_entrust_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn static_entrust_hero_rush_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn static_entrust_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn static_entrust_fixed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn static_uncontroll_update_idle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn static_uncontroll_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn static_uncontroll_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn static_uncontroll_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn static_uncontroll_fixed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_distance_from_enemy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn has_long_range_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_enchant_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn allow_idle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn sort_descend_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn sort_ascend_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn enumerate_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn enumerate_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn enumerate_attack_long_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn enumerate_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn enumerate_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn enumerate_entrust_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn enumerate_uncontroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn update_ask_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn update_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn cause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn attack_crossfire_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn attack_long_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn attack_high_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn attack_middle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn attack_low_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn turn_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn entrust_update_idle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn entrust_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn entrust_update_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn entrust_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn entrust_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn entrust_hero_rush_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn entrust_fixed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn uncontroll_update_idle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn uncontroll_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn uncontroll_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn uncontroll_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn uncontroll_fixed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+}
+
+#[cfg(feature="app-aiorder")]impl AIOrder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIOrder), ::core::stringify!(new),));
+ <Self as IAIOrderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-aiorder")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AIOrder_UnitPriority;
     pub use super::AIOrder_Func;
     pub use super::IAIOrder_Func;
     pub use super::IAIOrder_FuncMethods;
-    pub use super::AIOrder_UnitPriority;
     pub use super::AIOrder;
     pub use super::IAIOrder;
     pub use super::IAIOrderMethods;

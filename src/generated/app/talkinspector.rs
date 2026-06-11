@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: eachinspector :: { EachInspector , IEachInspector }
- ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::eachinspector::{EachInspector,IEachInspector}
+;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talkinspector/TalkInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "TalkInspector")] # [parent (crate :: app :: eachinspector :: EachInspector)] pub struct TalkInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talkinspector/TalkInspector.md"))]#[::unity2::class(namespace="App",name="TalkInspector")]#[parent(crate::app::eachinspector::EachInspector)]pub struct TalkInspector{}
 
 }
 
 #[cfg(feature = "app-talkinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talkinspector")]
-pub trait ITalkInspectorMethods : ITalkInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < TalkInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bee30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`IsTerminated(i32, i32, i32, i32)` overload"] fn is_terminated (self , arg1 : impl :: core :: convert :: Into < i32 > , arg2 : impl :: core :: convert :: Into < i32 > , arg3 : impl :: core :: convert :: Into < i32 > , arg4 : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < TalkInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkInspector , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bee40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (arg1) , :: core :: convert :: Into :: into (arg2) , :: core :: convert :: Into :: into (arg3) , :: core :: convert :: Into :: into (arg4) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talkinspector")]pub trait ITalkInspectorMethods:ITalkInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <TalkInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bee30usize)as*mut u8,();
+(TalkInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`IsTerminated(i32, i32, i32, i32)` overload"]fn is_terminated(self,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <TalkInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20bee40usize)as*mut u8,bool;
+(TalkInspector)__receiver,(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
+}
+}
 
-#[cfg(feature = "app-talkinspector")]
-impl < __T : ITalkInspector > ITalkInspectorMethods for __T { }
+#[cfg(feature="app-talkinspector")]impl<__T:ITalkInspector>ITalkInspectorMethods for __T{}
 
-#[cfg(feature = "app-talkinspector")]
-impl TalkInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_terminated_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-talkinspector")]impl TalkInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_terminated_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-talkinspector")]
-impl TalkInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkInspector) , :: core :: stringify ! (new) ,)) ; < Self as ITalkInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-talkinspector")]impl TalkInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkInspector), ::core::stringify!(new),));
+ <Self as ITalkInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-talkinspector")]

@@ -4,40 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenucontent/TutorialListTopMenuContent.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListTopMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct TutorialListTopMenuContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallisttopmenucontent/TutorialListTopMenuContent.md"))]#[::unity2::class(namespace="",name="TutorialListTopMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct TutorialListTopMenuContent{}
 
 }
 
 #[cfg(feature = "root-tutoriallisttopmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-tutoriallisttopmenucontent")]
-pub trait ITutorialListTopMenuContentMethods : ITutorialListTopMenuContent { # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < TutorialListTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TutorialListTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-tutoriallisttopmenucontent")]pub trait ITutorialListTopMenuContentMethods:ITutorialListTopMenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <TutorialListTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3cd0usize)as*mut u8,i32;
+(TutorialListTopMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TutorialListTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3cf0usize)as*mut u8,();
+(TutorialListTopMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "root-tutoriallisttopmenucontent")]
-impl < __T : ITutorialListTopMenuContent > ITutorialListTopMenuContentMethods for __T { }
+#[cfg(feature="root-tutoriallisttopmenucontent")]impl<__T:ITutorialListTopMenuContent>ITutorialListTopMenuContentMethods for __T{}
 
-#[cfg(feature = "root-tutoriallisttopmenucontent")]
-impl TutorialListTopMenuContent { pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-tutoriallisttopmenucontent")]impl TutorialListTopMenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-tutoriallisttopmenucontent")]
-impl TutorialListTopMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TutorialListTopMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as ITutorialListTopMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-tutoriallisttopmenucontent")]impl TutorialListTopMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TutorialListTopMenuContent), ::core::stringify!(new),));
+ <Self as ITutorialListTopMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-tutoriallisttopmenucontent")]

@@ -4,115 +4,138 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentNationDataSequence.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InvestmentNationDataSequence_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentnationdatasequence/InvestmentNationDataSequence_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="InvestmentNationDataSequence.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InvestmentNationDataSequence_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentNationDataSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence >)] pub struct InvestmentNationDataSequence {
-# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_window")] pub m_window : crate :: app :: investmentnationdatamenu :: InvestmentNationDataMenu ,
-# [static_field] # [rename (name = "m_nationIndex")] pub m_nation_index : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentnationdatasequence/InvestmentNationDataSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InvestmentNationDataSequence_Label2{pub value:i32,}
+impl::unity2::ClassIdentity for InvestmentNationDataSequence_Label2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="InvestmentNationDataSequence.Label2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for InvestmentNationDataSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl InvestmentNationDataSequence_Label2{pub fn entry()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct InvestmentNationDataSequence_Label2  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for InvestmentNationDataSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "InvestmentNationDataSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for InvestmentNationDataSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  InvestmentNationDataSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))]#[::unity2::class(namespace="App",name="InvestmentNationDataSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::investmentnationdatasequence::InvestmentNationDataSequence>)]pub struct InvestmentNationDataSequence{#[static_field]#[rename(name="ResNameC")]pub res_name_c: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_window")]pub m_window:crate::app::investmentnationdatamenu::InvestmentNationDataMenu, #[static_field]#[rename(name="m_nationIndex")]pub m_nation_index:i32,}
 
 }
 
 #[cfg(feature = "app-investmentnationdatasequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-investmentnationdatasequence")]
-pub trait IInvestmentNationDataSequence_DecideEventHandlerMethods : IInvestmentNationDataSequence_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcc6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(i32)` overload"] fn invoke (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence_DecideEventHandler , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fceb40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl < __T : IInvestmentNationDataSequence_DecideEventHandler > IInvestmentNationDataSequence_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl InvestmentNationDataSequence_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl InvestmentNationDataSequence_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentNationDataSequence_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentNationDataSequence_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-investmentnationdatasequence")]pub trait IInvestmentNationDataSequence_DecideEventHandlerMethods:IInvestmentNationDataSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InvestmentNationDataSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc6b0usize)as*mut u8,();
+(InvestmentNationDataSequence_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentNationDataSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fceb40usize)as*mut u8,();
+(InvestmentNationDataSequence_DecideEventHandler)__receiver,(i32)::core::convert::Into::into(index))}
+}
 }
 
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl InvestmentNationDataSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , nation_index : impl :: core :: convert :: Into < i32 > , event_handler : impl :: core :: convert :: Into < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a4ae0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (nation_index) , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a5610usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-investmentnationdatasequence")]impl<__T:IInvestmentNationDataSequence_DecideEventHandler>IInvestmentNationDataSequence_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-investmentnationdatasequence")]
-pub trait IInvestmentNationDataSequenceMethods : IInvestmentNationDataSequence { # [doc = "`get_m_DecideEventHandler()` overload"] fn get_m_decide_event_handler (self ,) -> crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a4ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_DecideEventHandler(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"] fn set_m_decide_event_handler (self , value : impl :: core :: convert :: Into < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler >) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a4ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"] fn ctor (self , event_handler : impl :: core :: convert :: Into < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler >) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a4c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a4ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadRes()` overload"] fn load_res (self ,) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a51f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a5290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseEvent()` overload"] fn close_event (self ,) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a5430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a5450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < InvestmentNationDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvestmentNationDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27a5540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-investmentnationdatasequence")]impl InvestmentNationDataSequence_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl < __T : IInvestmentNationDataSequence > IInvestmentNationDataSequenceMethods for __T { }
+#[cfg(feature="app-investmentnationdatasequence")]impl InvestmentNationDataSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentNationDataSequence_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IInvestmentNationDataSequence_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl InvestmentNationDataSequence { pub fn get_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_decide_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn close_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvestmentNationDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-investmentnationdatasequence")]impl InvestmentNationDataSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,nation_index:impl::core::convert::Into<i32> ,event_handler:impl::core::convert::Into<crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27a4ae0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(nation_index),(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27a5610usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-investmentnationdatasequence")]
-impl InvestmentNationDataSequence {
-# [doc = "`.ctor(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` — overload selector"] pub fn new (event_handler : crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvestmentNationDataSequence) , :: core :: stringify ! (new) ,)) ; < Self as IInvestmentNationDataSequenceMethods > :: ctor (this , event_handler) ; this }
+#[cfg(feature="app-investmentnationdatasequence")]pub trait IInvestmentNationDataSequenceMethods:IInvestmentNationDataSequence{#[doc="`get_m_DecideEventHandler()` overload"]fn get_m_decide_event_handler(self,)->crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler{unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a4ac0usize)as*mut u8,crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler;
+(InvestmentNationDataSequence)__receiver)}
+}
+#[doc="`set_m_DecideEventHandler(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"]fn set_m_decide_event_handler(self,value:impl::core::convert::Into<crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler>)->(){unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a4ad0usize)as*mut u8,();
+(InvestmentNationDataSequence)__receiver,(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler>)->(){unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a4c00usize)as*mut u8,();
+(InvestmentNationDataSequence)__receiver,(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a4ca0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(InvestmentNationDataSequence)__receiver)}
+}
+#[doc="`LoadRes()` overload"]fn load_res(self,)->(){unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a51f0usize)as*mut u8,();
+(InvestmentNationDataSequence)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a5290usize)as*mut u8,();
+(InvestmentNationDataSequence)__receiver)}
+}
+#[doc="`CloseEvent()` overload"]fn close_event(self,)->(){unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a5430usize)as*mut u8,();
+(InvestmentNationDataSequence)__receiver)}
+}
+#[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a5450usize)as*mut u8,bool;
+(InvestmentNationDataSequence)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <InvestmentNationDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27a5540usize)as*mut u8,();
+(InvestmentNationDataSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-investmentnationdatasequence")]impl<__T:IInvestmentNationDataSequence>IInvestmentNationDataSequenceMethods for __T{}
+
+#[cfg(feature="app-investmentnationdatasequence")]impl InvestmentNationDataSequence{pub fn get_m_decide_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_decide_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-investmentnationdatasequence")]impl InvestmentNationDataSequence{#[doc="`.ctor(crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::investmentnationdatasequence::InvestmentNationDataSequence_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentNationDataSequence), ::core::stringify!(new),));
+ <Self as IInvestmentNationDataSequenceMethods> ::ctor(this,event_handler);
+this}
 }
 
 #[cfg(feature = "app-investmentnationdatasequence")]
@@ -121,10 +144,10 @@ pub mod prelude {
     pub use super::InvestmentNationDataSequence_DecideEventHandler;
     pub use super::IInvestmentNationDataSequence_DecideEventHandler;
     pub use super::IInvestmentNationDataSequence_DecideEventHandlerMethods;
+    pub use super::InvestmentNationDataSequence_Label2;
     pub use super::InvestmentNationDataSequence;
     pub use super::IInvestmentNationDataSequence;
     pub use super::IInvestmentNationDataSequenceMethods;
-    pub use super::InvestmentNationDataSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::delegate::IDelegate;

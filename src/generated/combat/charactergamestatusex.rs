@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactergamestatusex/CharacterGameStatusEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterGameStatusEx")] # [parent (crate :: system :: object :: Object)] pub struct CharacterGameStatusEx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/charactergamestatusex/CharacterGameStatusEx.md"))]#[::unity2::class(namespace="Combat",name="CharacterGameStatusEx")]#[parent(crate::system::object::Object)]pub struct CharacterGameStatusEx{}
 
 }
 
 #[cfg(feature = "combat-charactergamestatusex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-charactergamestatusex")]
-impl CharacterGameStatusEx { # [doc = "`IsValid(crate::combat::charactergamestatus::CharacterGameStatus)` overload"] pub fn is_valid (gs : impl :: core :: convert :: Into < crate :: combat :: charactergamestatus :: CharacterGameStatus >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: charactergamestatus :: CharacterGameStatus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27def50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-charactergamestatusex")]impl CharacterGameStatusEx{#[doc="`IsValid(crate::combat::charactergamestatus::CharacterGameStatus)` overload"]pub fn is_valid(gs:impl::core::convert::Into<crate::combat::charactergamestatus::CharacterGameStatus>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27def50usize)as*mut u8,bool;
+(crate::combat::charactergamestatus::CharacterGameStatus)::core::convert::Into::into(gs))}
+}
+}
 
-#[cfg(feature = "combat-charactergamestatusex")]
-impl CharacterGameStatusEx { pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterGameStatusEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-charactergamestatusex")]impl CharacterGameStatusEx{pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-charactergamestatusex")]
 #[doc(hidden)]

@@ -4,42 +4,102 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterikaim/CharacterIKAim.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterIKAim")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterIKAim {
-# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [offset (48)] # [rename (name = "AnimAimDir")] pub anim_aim_dir : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (60)] # [rename (name = "CurrentAimDir")] pub current_aim_dir : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterikaim/CharacterIKAim.md"))]#[::unity2::class(namespace="Combat",name="CharacterIKAim")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterIKAim{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(48)]#[rename(name="AnimAimDir")]pub anim_aim_dir:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="CurrentAimDir")]pub current_aim_dir:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "combat-characterikaim-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterikaim")]
-pub trait ICharacterIKAimMethods : ICharacterIKAim { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Parabola()` overload"] fn get_parabola (self ,) -> crate :: combat :: parabola :: Parabola { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> crate :: combat :: parabola :: Parabola = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Parabola(crate::combat::parabola::Parabola)` overload"] fn set_parabola (self , value : impl :: core :: convert :: Into < crate :: combat :: parabola :: Parabola >) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , crate :: combat :: parabola :: Parabola , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e3fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyStart()` overload"] fn my_start (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e41f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyLateUpdate()` overload"] fn my_late_update (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AimOn()` overload"] fn aim_on (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AimOff()` overload"] fn aim_off (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Skip()` overload"] fn skip (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Aim(f32, f32)` overload"] fn aim (self , end_weight : impl :: core :: convert :: Into < f32 > , end_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e4780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (end_weight) , :: core :: convert :: Into :: into (end_time) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterIKAim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKAim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e49c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterikaim")]pub trait ICharacterIKAimMethods:ICharacterIKAim{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3ec0usize)as*mut u8,crate::combat::character::Character;
+(CharacterIKAim)__receiver)}
+}
+#[doc="`get_Parabola()` overload"]fn get_parabola(self,)->crate::combat::parabola::Parabola{unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3f80usize)as*mut u8,crate::combat::parabola::Parabola;
+(CharacterIKAim)__receiver)}
+}
+#[doc="`set_Parabola(crate::combat::parabola::Parabola)` overload"]fn set_parabola(self,value:impl::core::convert::Into<crate::combat::parabola::Parabola>)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3f90usize)as*mut u8,();
+(CharacterIKAim)__receiver,(crate::combat::parabola::Parabola)::core::convert::Into::into(value))}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e3fa0usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4050usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4100usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+#[doc="`MyStart()` overload"]fn my_start(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e41f0usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+#[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4550usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+#[doc="`AimOn()` overload"]fn aim_on(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4670usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+#[doc="`AimOff()` overload"]fn aim_off(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4960usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+#[doc="`Skip()` overload"]fn skip(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4980usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+#[doc="`Aim(f32, f32)` overload"]fn aim(self,end_weight:impl::core::convert::Into<f32> ,end_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e4780usize)as*mut u8,();
+(CharacterIKAim)__receiver,(f32)::core::convert::Into::into(end_weight),(f32)::core::convert::Into::into(end_time))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterIKAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e49c0usize)as*mut u8,();
+(CharacterIKAim)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterikaim")]
-impl < __T : ICharacterIKAim > ICharacterIKAimMethods for __T { }
+#[cfg(feature="combat-characterikaim")]impl<__T:ICharacterIKAim>ICharacterIKAimMethods for __T{}
 
-#[cfg(feature = "combat-characterikaim")]
-impl CharacterIKAim { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_parabola_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_parabola_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn my_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn aim_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn aim_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn aim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKAim as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="combat-characterikaim")]impl CharacterIKAim{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_parabola_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_parabola_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn my_late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn aim_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn aim_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn aim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "combat-characterikaim")]
-impl CharacterIKAim {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterIKAim) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterIKAimMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterikaim")]impl CharacterIKAim{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterIKAim), ::core::stringify!(new),));
+ <Self as ICharacterIKAimMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterikaim")]

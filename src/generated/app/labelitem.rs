@@ -4,42 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: app :: stringitem :: { IStringItem , StringItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::app::stringitem::{IStringItem,StringItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/labelitem/LabelItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "LabelItem")] # [parent (crate :: app :: stringitem :: StringItem)] pub struct LabelItem {
-# [static_field] # [rename (name = "COLOR_BACK")] pub color_back : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "COLOR_FONT")] pub color_font : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/labelitem/LabelItem.md"))]#[::unity2::class(namespace="App",name="LabelItem")]#[parent(crate::app::stringitem::StringItem)]pub struct LabelItem{#[static_field]#[rename(name="COLOR_BACK")]pub color_back:crate::unity_engine::color::Color, #[static_field]#[rename(name="COLOR_FONT")]pub color_font:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-labelitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-labelitem")]
-impl LabelItem { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb1c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-labelitem")]impl LabelItem{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb1c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-labelitem")]
-pub trait ILabelItemMethods : ILabelItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LabelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , english : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < LabelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelItem , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (english) , :: core :: option :: Option :: None) } } } # [doc = "`IsSelectable()` overload"] fn is_selectable (self ,) -> bool { unsafe { let __receiver = < LabelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBackColor()` overload"] fn get_back_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < LabelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelItem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb0a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFontColor()` overload"] fn get_font_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < LabelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelItem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMarginWidth()` overload"] fn get_margin_width (self ,) -> f32 { unsafe { let __receiver = < LabelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelItem , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMarginHeight()` overload"] fn get_margin_height (self ,) -> f32 { unsafe { let __receiver = < LabelItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelItem , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-labelitem")]pub trait ILabelItemMethods:ILabelItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb070usize)as*mut u8,();
+(LabelItem)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,english:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb080usize)as*mut u8,();
+(LabelItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(english))}
+}
+#[doc="`IsSelectable()` overload"]fn is_selectable(self,)->bool{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb090usize)as*mut u8,bool;
+(LabelItem)__receiver)}
+}
+#[doc="`GetBackColor()` overload"]fn get_back_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb0a0usize)as*mut u8,crate::unity_engine::color::Color;
+(LabelItem)__receiver)}
+}
+#[doc="`GetFontColor()` overload"]fn get_font_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb110usize)as*mut u8,crate::unity_engine::color::Color;
+(LabelItem)__receiver)}
+}
+#[doc="`GetMarginWidth()` overload"]fn get_margin_width(self,)->f32{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb180usize)as*mut u8,f32;
+(LabelItem)__receiver)}
+}
+#[doc="`GetMarginHeight()` overload"]fn get_margin_height(self,)->f32{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb1a0usize)as*mut u8,f32;
+(LabelItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-labelitem")]
-impl < __T : ILabelItem > ILabelItemMethods for __T { }
+#[cfg(feature="app-labelitem")]impl<__T:ILabelItem>ILabelItemMethods for __T{}
 
-#[cfg(feature = "app-labelitem")]
-impl LabelItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_selectable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_back_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_font_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_margin_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_margin_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-labelitem")]impl LabelItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_selectable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_back_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_font_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_margin_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_margin_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-labelitem")]
-impl LabelItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LabelItem) , :: core :: stringify ! (new) ,)) ; < Self as ILabelItemMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString , english : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LabelItem) , :: core :: stringify ! (new_2) ,)) ; < Self as ILabelItemMethods > :: ctor_2 (this , name , english) ; this }
+#[cfg(feature="app-labelitem")]impl LabelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LabelItem), ::core::stringify!(new),));
+ <Self as ILabelItemMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString,english: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LabelItem), ::core::stringify!(new_2),));
+ <Self as ILabelItemMethods> ::ctor_2(this,name,english);
+this}
 }
 
 #[cfg(feature = "app-labelitem")]

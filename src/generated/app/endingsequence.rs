@@ -4,103 +4,133 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/endingsequence/EndingSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct EndingSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endingsequence/EndingSequence.md"))]#[::unity2::class(namespace="App",name="EndingSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct EndingSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endingsequence/EndingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EndingSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for EndingSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EndingSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for EndingSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EndingSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for EndingSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for EndingSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl EndingSequence_Label{pub fn battle_record()->Self{Self{value:0}
 }
-
-
-impl  EndingSequence_Label  {
-    pub fn battle_record() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn later_talk() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end_roll() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn later_talk()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endingsequence/EndingSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "EndingSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct EndingSequence {}
+pub fn end_roll()->Self{Self{value:2}
+}
+}
 
 }
 
 #[cfg(feature = "app-endingsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-endingsequence")]
-impl EndingSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e8b00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-endingsequence")]impl EndingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22e8b00usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-endingsequence")]
-pub trait IEndingSequenceMethods : IEndingSequence { # [doc = "`get_BGMHeader1()` overload"] fn get_bgm_header1 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e8a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_BGMHeader2()` overload"] fn get_bgm_header2 (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e8ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayMovie()` overload"] fn play_movie (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnPersistent()` overload"] fn on_persistent (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e91f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TearDown()` overload"] fn tear_down (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartBattleRecord()` overload"] fn start_battle_record (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e92f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartLaterTalk()` overload"] fn start_later_talk (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartEndRoll()` overload"] fn start_end_roll (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e93b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveMenu()` overload"] fn save_menu (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableControllerSupport()` overload"] fn enable_controller_support (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableControllerSupport()` overload"] fn disable_controller_support (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EndingSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndingSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-endingsequence")]pub trait IEndingSequenceMethods:IEndingSequence{#[doc="`get_BGMHeader1()` overload"]fn get_bgm_header1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e8a60usize)as*mut u8, ::unity2::Il2CppString;
+(EndingSequence)__receiver)}
+}
+#[doc="`get_BGMHeader2()` overload"]fn get_bgm_header2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e8ab0usize)as*mut u8, ::unity2::Il2CppString;
+(EndingSequence)__receiver)}
+}
+#[doc="`PlayMovie()` overload"]fn play_movie(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9160usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e91f0usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9200usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(EndingSequence)__receiver)}
+}
+#[doc="`TearDown()` overload"]fn tear_down(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9280usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`StartBattleRecord()` overload"]fn start_battle_record(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e92f0usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`StartLaterTalk()` overload"]fn start_later_talk(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9350usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`StartEndRoll()` overload"]fn start_end_roll(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e93b0usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`SaveMenu()` overload"]fn save_menu(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9410usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`EnableControllerSupport()` overload"]fn enable_controller_support(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9510usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`DisableControllerSupport()` overload"]fn disable_controller_support(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9570usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9150usize)as*mut u8,();
+(EndingSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-endingsequence")]
-impl < __T : IEndingSequence > IEndingSequenceMethods for __T { }
+#[cfg(feature="app-endingsequence")]impl<__T:IEndingSequence>IEndingSequenceMethods for __T{}
 
-#[cfg(feature = "app-endingsequence")]
-impl EndingSequence { pub fn get_bgm_header1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_bgm_header2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn play_movie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn tear_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn start_battle_record_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_later_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn start_end_roll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn save_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn enable_controller_support_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn disable_controller_support_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndingSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-endingsequence")]impl EndingSequence{pub fn get_bgm_header1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_bgm_header2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn play_movie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_persistent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn tear_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn start_battle_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_later_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn start_end_roll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn save_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn enable_controller_support_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn disable_controller_support_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-endingsequence")]
-impl EndingSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EndingSequence) , :: core :: stringify ! (new) ,)) ; < Self as IEndingSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-endingsequence")]impl EndingSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EndingSequence), ::core::stringify!(new),));
+ <Self as IEndingSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-endingsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EndingSequence_Label;
     pub use super::EndingSequence;
     pub use super::IEndingSequence;
     pub use super::IEndingSequenceMethods;
+    pub use super::EndingSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

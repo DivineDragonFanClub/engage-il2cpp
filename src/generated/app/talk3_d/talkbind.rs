@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkbind/TalkBind.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkBind")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TalkBind {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkbind/TalkBind.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkBind")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkBind{}
 
 }
 
 #[cfg(feature = "app-talk3_d-talkbind-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talkbind")]
-pub trait ITalkBindMethods : ITalkBind { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkBind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkBind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkbind")]pub trait ITalkBindMethods:ITalkBind{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkBind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b8f00usize)as*mut u8,();
+(TalkBind)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkbind")]
-impl < __T : ITalkBind > ITalkBindMethods for __T { }
+#[cfg(feature="app-talk3_d-talkbind")]impl<__T:ITalkBind>ITalkBindMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talkbind")]
-impl TalkBind { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkBind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-talk3_d-talkbind")]impl TalkBind{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-talk3_d-talkbind")]
-impl TalkBind {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkBind) , :: core :: stringify ! (new) ,)) ; < Self as ITalkBindMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talkbind")]impl TalkBind{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkBind), ::core::stringify!(new),));
+ <Self as ITalkBindMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talkbind")]

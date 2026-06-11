@@ -4,49 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godselectroot/GodSelectRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodSelectRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GodSelectRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_RingInfo")] pub m_ring_info : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_GodListRoot")] pub m_god_list_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_RingInfoController")] pub m_ring_info_controller : crate :: app :: ringinfocontroller :: RingInfoController ,
-# [offset (48)] # [rename (name = "m_RefineRingInfoWindow")] pub m_refine_ring_info_window : crate :: app :: refineringinfowindow :: RefineRingInfoWindow ,
-# [offset (56)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler ,
-# [static_field] # [rename (name = "s_RootInstance")] pub s_root_instance : crate :: app :: godselectroot :: GodSelectRoot ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godselectroot/GodSelectRoot.md"))]#[::unity2::class(namespace="App",name="GodSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GodSelectRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_RingInfo")]pub m_ring_info:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_GodListRoot")]pub m_god_list_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_RingInfoController")]pub m_ring_info_controller:crate::app::ringinfocontroller::RingInfoController, #[offset(48)]#[rename(name="m_RefineRingInfoWindow")]pub m_refine_ring_info_window:crate::app::refineringinfowindow::RefineRingInfoWindow, #[offset(56)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, #[static_field]#[rename(name="s_RootInstance")]pub s_root_instance:crate::app::godselectroot::GodSelectRoot,}
 
 }
 
 #[cfg(feature = "app-godselectroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godselectroot")]
-impl GodSelectRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2339bc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2339d20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233a720usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler > , selected_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> crate :: app :: godselectroot :: GodSelectRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: godselectroot :: GodSelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233d470usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (selected_god) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindForRefineRing(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"] pub fn create_bind_for_refine_ring (decide_event_handler : impl :: core :: convert :: Into < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler > , selected_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> crate :: app :: godselectroot :: GodSelectRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: godselectroot :: GodSelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233dcb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (selected_god) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::godselectroot::GodSelectRoot)` overload"] pub fn destroy (root : impl :: core :: convert :: Into < crate :: app :: godselectroot :: GodSelectRoot >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: godselectroot :: GodSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233e020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233e4a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godselectroot")]impl GodSelectRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2339bc0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2339d20usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233a720usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->crate::app::godselectroot::GodSelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233d470usize)as*mut u8,crate::app::godselectroot::GodSelectRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god))}
+}
+#[doc="`CreateBindForRefineRing(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]pub fn create_bind_for_refine_ring(decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->crate::app::godselectroot::GodSelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233dcb0usize)as*mut u8,crate::app::godselectroot::GodSelectRoot;
+(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god))}
+}
+#[doc="`Destroy(crate::app::godselectroot::GodSelectRoot)` overload"]pub fn destroy(root:impl::core::convert::Into<crate::app::godselectroot::GodSelectRoot>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233e020usize)as*mut u8,();
+(crate::app::godselectroot::GodSelectRoot)::core::convert::Into::into(root))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233e4a0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-godselectroot")]
-pub trait IGodSelectRootMethods : IGodSelectRoot { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler > , selected_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , crate :: app :: procinst :: ProcInst , crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233d620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (selected_god) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForRefineRing(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"] fn create_for_refine_ring (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler > , selected_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233de40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (selected_god) , :: core :: option :: Option :: None) } } } # [doc = "`GetSelectEventHandlerForRefineRing()` overload"] fn get_select_event_handler_for_refine_ring (self ,) -> crate :: app :: godunitselectmenu :: GodUnitSelectMenu_SelectEventHandler { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunitselectmenu :: GodUnitSelectMenu_SelectEventHandler = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233dfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseStatus()` overload"] fn close_status (self ,) -> () { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233e1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItem(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn on_select_menu_item (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233e280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItemForRefineRing(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn on_select_menu_item_for_refine_ring (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233e400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`ShowModel(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn show_model (self , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233e370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetupRingImage()` overload"] fn setup_ring_image (self ,) -> () { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233dbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233e490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godselectroot")]pub trait IGodSelectRootMethods:IGodSelectRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233d620usize)as*mut u8,();
+(GodSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god))}
+}
+#[doc="`CreateForRefineRing(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]fn create_for_refine_ring(self,decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233de40usize)as*mut u8,();
+(GodSelectRoot)__receiver,(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god))}
+}
+#[doc="`GetSelectEventHandlerForRefineRing()` overload"]fn get_select_event_handler_for_refine_ring(self,)->crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler{unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233dfa0usize)as*mut u8,crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler;
+(GodSelectRoot)__receiver)}
+}
+#[doc="`CloseStatus()` overload"]fn close_status(self,)->(){unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233e1b0usize)as*mut u8,();
+(GodSelectRoot)__receiver)}
+}
+#[doc="`OnSelectMenuItem(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn on_select_menu_item(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233e280usize)as*mut u8,();
+(GodSelectRoot)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`OnSelectMenuItemForRefineRing(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn on_select_menu_item_for_refine_ring(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233e400usize)as*mut u8,();
+(GodSelectRoot)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`ShowModel(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn show_model(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233e370usize)as*mut u8,();
+(GodSelectRoot)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetupRingImage()` overload"]fn setup_ring_image(self,)->(){unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233dbd0usize)as*mut u8,();
+(GodSelectRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233e490usize)as*mut u8,();
+(GodSelectRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godselectroot")]
-impl < __T : IGodSelectRoot > IGodSelectRootMethods for __T { }
+#[cfg(feature="app-godselectroot")]impl<__T:IGodSelectRoot>IGodSelectRootMethods for __T{}
 
-#[cfg(feature = "app-godselectroot")]
-impl GodSelectRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_for_refine_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_for_refine_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_select_event_handler_for_refine_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn close_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_select_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_select_menu_item_for_refine_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn show_model_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn setup_ring_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-godselectroot")]impl GodSelectRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_for_refine_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_for_refine_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_select_event_handler_for_refine_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn close_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_select_menu_item_for_refine_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn show_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn setup_ring_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-godselectroot")]
-impl GodSelectRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodSelectRoot) , :: core :: stringify ! (new) ,)) ; < Self as IGodSelectRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godselectroot")]impl GodSelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodSelectRoot), ::core::stringify!(new),));
+ <Self as IGodSelectRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godselectroot")]

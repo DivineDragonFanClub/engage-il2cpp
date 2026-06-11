@@ -4,32 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: irawassetbundle_1 :: { IIRawAssetBundle_1 , IRawAssetBundle_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::irawassetbundle_1::{IIRawAssetBundle_1,IRawAssetBundle_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textassetbundle/TextAssetBundle.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextAssetBundle")] # [parent (crate :: app :: irawassetbundle_1 :: IRawAssetBundle_1 < crate :: unity_engine :: textasset :: TextAsset >)] pub struct TextAssetBundle {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textassetbundle/TextAssetBundle.md"))]#[::unity2::class(namespace="App",name="TextAssetBundle")]#[parent(crate::app::irawassetbundle_1::IRawAssetBundle_1<crate::unity_engine::textasset::TextAsset>)]pub struct TextAssetBundle{}
 
 }
 
 #[cfg(feature = "app-textassetbundle-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-textassetbundle")]
-pub trait ITextAssetBundleMethods : ITextAssetBundle { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TextAssetBundle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAssetBundle , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`OnLoad()` overload"] fn on_load (self ,) -> () { unsafe { let __receiver = < TextAssetBundle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAssetBundle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUnload()` overload"] fn on_unload (self ,) -> () { unsafe { let __receiver = < TextAssetBundle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAssetBundle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Bytes()` overload"] fn get_bytes (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < TextAssetBundle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAssetBundle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Bytes(::unity2::Array<u8>)` overload"] fn set_bytes (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < TextAssetBundle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAssetBundle , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-textassetbundle")]pub trait ITextAssetBundleMethods:ITextAssetBundle{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8ae0usize)as*mut u8,();
+(TextAssetBundle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`OnLoad()` overload"]fn on_load(self,)->(){unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8b40usize)as*mut u8,();
+(TextAssetBundle)__receiver)}
+}
+#[doc="`OnUnload()` overload"]fn on_unload(self,)->(){unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8bb0usize)as*mut u8,();
+(TextAssetBundle)__receiver)}
+}
+#[doc="`get_Bytes()` overload"]fn get_bytes(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8bc0usize)as*mut u8, ::unity2::Array<u8> ;
+(TextAssetBundle)__receiver)}
+}
+#[doc="`set_Bytes(::unity2::Array<u8>)` overload"]fn set_bytes(self,value:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8bd0usize)as*mut u8,();
+(TextAssetBundle)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-textassetbundle")]
-impl < __T : ITextAssetBundle > ITextAssetBundleMethods for __T { }
+#[cfg(feature="app-textassetbundle")]impl<__T:ITextAssetBundle>ITextAssetBundleMethods for __T{}
 
-#[cfg(feature = "app-textassetbundle")]
-impl TextAssetBundle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-textassetbundle")]impl TextAssetBundle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_bytes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_bytes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-textassetbundle")]
-impl TextAssetBundle {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (path : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextAssetBundle) , :: core :: stringify ! (new) ,)) ; < Self as ITextAssetBundleMethods > :: ctor (this , path) ; this }
+#[cfg(feature="app-textassetbundle")]impl TextAssetBundle{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(path: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextAssetBundle), ::core::stringify!(new),));
+ <Self as ITextAssetBundleMethods> ::ctor(this,path);
+this}
 }
 
 #[cfg(feature = "app-textassetbundle")]

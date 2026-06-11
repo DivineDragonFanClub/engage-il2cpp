@@ -4,12 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/controllerstrapguide/ControllerStrapGuide.md"))] # [:: unity2 :: class (namespace = "nn.hid" , name = "ControllerStrapGuide")] # [parent (crate :: system :: object :: Object)] pub struct ControllerStrapGuide {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/controllerstrapguide/ControllerStrapGuide.md"))]#[::unity2::class(namespace="nn.hid",name="ControllerStrapGuide")]#[parent(crate::system::object::Object)]pub struct ControllerStrapGuide{}
 
 }
 

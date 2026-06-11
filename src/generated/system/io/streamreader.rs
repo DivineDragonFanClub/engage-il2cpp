@@ -4,86 +4,256 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: textreader :: { ITextReader , TextReader }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::textreader::{ITextReader,TextReader}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader_NullStreamReader.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "StreamReader.NullStreamReader")] # [parent (crate :: system :: io :: streamreader :: StreamReader)] pub struct StreamReader_NullStreamReader {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/streamreader/StreamReader.md"))]#[::unity2::class(namespace="System.IO",name="StreamReader")]#[parent(crate::system::io::textreader::TextReader)]pub struct StreamReader{#[static_field]#[rename(name="Null")]pub null:crate::system::io::streamreader::StreamReader, #[offset(24)]#[rename(name="stream")]pub stream:crate::system::io::stream::Stream, #[offset(48)]#[rename(name="byteBuffer")]pub byte_buffer: ::unity2::Array<u8> , #[offset(56)]#[rename(name="charBuffer")]pub char_buffer: ::unity2::Array<u16> , #[offset(64)]#[rename(name="_preamble")]pub preamble: ::unity2::Array<u8> , #[offset(72)]#[rename(name="charPos")]pub char_pos:i32, #[offset(76)]#[rename(name="charLen")]pub char_len:i32, #[offset(80)]#[rename(name="byteLen")]pub byte_len:i32, #[offset(84)]#[rename(name="bytePos")]pub byte_pos:i32, #[offset(88)]#[rename(name="_maxCharsPerBuffer")]pub max_chars_per_buffer:i32, #[offset(92)]#[rename(name="_detectEncoding")]pub detect_encoding_field:bool, #[offset(93)]#[rename(name="_checkPreamble")]pub check_preamble:bool, #[offset(94)]#[rename(name="_isBlocked")]pub is_blocked:bool, #[offset(95)]#[rename(name="_closable")]pub closable:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "StreamReader")] # [parent (crate :: system :: io :: textreader :: TextReader)] pub struct StreamReader {
-# [static_field] # [rename (name = "Null")] pub null : crate :: system :: io :: streamreader :: StreamReader ,
-# [offset (24)] # [rename (name = "stream")] pub stream : crate :: system :: io :: stream :: Stream ,
-# [offset (48)] # [rename (name = "byteBuffer")] pub byte_buffer : :: unity2 :: Array < u8 > ,
-# [offset (56)] # [rename (name = "charBuffer")] pub char_buffer : :: unity2 :: Array < u16 > ,
-# [offset (64)] # [rename (name = "_preamble")] pub preamble : :: unity2 :: Array < u8 > ,
-# [offset (72)] # [rename (name = "charPos")] pub char_pos : i32 ,
-# [offset (76)] # [rename (name = "charLen")] pub char_len : i32 ,
-# [offset (80)] # [rename (name = "byteLen")] pub byte_len : i32 ,
-# [offset (84)] # [rename (name = "bytePos")] pub byte_pos : i32 ,
-# [offset (88)] # [rename (name = "_maxCharsPerBuffer")] pub max_chars_per_buffer : i32 ,
-# [offset (92)] # [rename (name = "_detectEncoding")] pub detect_encoding_field : bool ,
-# [offset (93)] # [rename (name = "_checkPreamble")] pub check_preamble : bool ,
-# [offset (94)] # [rename (name = "_isBlocked")] pub is_blocked : bool ,
-# [offset (95)] # [rename (name = "_closable")] pub closable : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/streamreader/StreamReader_NullStreamReader.md"))]#[::unity2::class(namespace="System.IO",name="StreamReader.NullStreamReader")]#[parent(crate::system::io::streamreader::StreamReader)]pub struct StreamReader_NullStreamReader{}
 
 }
 
 #[cfg(feature = "system-io-streamreader-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-streamreader")]
-pub trait IStreamReader_NullStreamReaderMethods : IStreamReader_NullStreamReader { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c59120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_BaseStream()` overload"] fn get_base_stream (self ,) -> crate :: system :: io :: stream :: Stream { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: stream :: Stream = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c591d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c59250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`Peek()` overload"] fn peek (self ,) -> i32 { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c59260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read()` overload"] fn read (self ,) -> i32 { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c59270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"] fn read_2 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c59280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`ReadLine()` overload"] fn read_line (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c59290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadToEnd()` overload"] fn read_to_end (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c592a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadBuffer()` overload"] fn read_buffer (self ,) -> i32 { unsafe { let __receiver = < StreamReader_NullStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader_NullStreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c592f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-io-streamreader")]
-impl < __T : IStreamReader_NullStreamReader > IStreamReader_NullStreamReaderMethods for __T { }
-
-#[cfg(feature = "system-io-streamreader")]
-impl StreamReader_NullStreamReader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_base_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn read_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn read_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn read_to_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn read_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader_NullStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
-
-#[cfg(feature = "system-io-streamreader")]
-impl StreamReader_NullStreamReader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamReader_NullStreamReader) , :: core :: stringify ! (new) ,)) ; < Self as IStreamReader_NullStreamReaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-io-streamreader")]impl StreamReader{#[doc="`get_DefaultBufferSize()` overload"]pub fn get_default_buffer_size()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x377c060usize)as*mut u8,i32;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x377dd40usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "system-io-streamreader")]
-impl StreamReader { # [doc = "`get_DefaultBufferSize()` overload"] pub fn get_default_buffer_size () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377c060usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377dd40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-streamreader")]pub trait IStreamReaderMethods:IStreamReader{#[doc="`CheckAsyncTaskInProgress()` overload"]fn check_async_task_in_progress(self,)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377c070usize)as*mut u8,();
+(StreamReader)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377c100usize)as*mut u8,();
+(StreamReader)__receiver)}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor_2(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377c170usize)as*mut u8,();
+(StreamReader)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream))}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream, bool)` overload"]fn ctor_3(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,detect_encoding_from_byte_order_marks:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377c200usize)as*mut u8,();
+(StreamReader)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(bool)::core::convert::Into::into(detect_encoding_from_byte_order_marks))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_4(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377c700usize)as*mut u8,();
+(StreamReader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor_5(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,detect_encoding_from_byte_order_marks:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377c790usize)as*mut u8,();
+(StreamReader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(detect_encoding_from_byte_order_marks))}
+}
+#[doc="`Init(crate::system::io::stream::Stream)` overload"]fn init(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377cb10usize)as*mut u8,();
+(StreamReader)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377cb40usize)as*mut u8,();
+(StreamReader)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377cb50usize)as*mut u8,();
+(StreamReader)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`get_BaseStream()` overload"]fn get_base_stream(self,)->crate::system::io::stream::Stream{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377ccb0usize)as*mut u8,crate::system::io::stream::Stream;
+(StreamReader)__receiver)}
+}
+#[doc="`get_LeaveOpen()` overload"]fn get_leave_open(self,)->bool{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377cc90usize)as*mut u8,bool;
+(StreamReader)__receiver)}
+}
+#[doc="`get_EndOfStream()` overload"]fn get_end_of_stream(self,)->bool{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377ccc0usize)as*mut u8,bool;
+(StreamReader)__receiver)}
+}
+#[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377cd30usize)as*mut u8,i32;
+(StreamReader)__receiver)}
+}
+#[doc="`DataAvailable()` overload"]fn data_available(self,)->bool{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377cdd0usize)as*mut u8,bool;
+(StreamReader)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377cde0usize)as*mut u8,i32;
+(StreamReader)__receiver)}
+}
+#[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377ce80usize)as*mut u8,i32;
+(StreamReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377d2c0usize)as*mut u8, ::unity2::Il2CppString;
+(StreamReader)__receiver)}
+}
+#[doc="`ReadBlock(::unity2::Array<u16>, i32, i32)` overload"]fn read_block(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377d390usize)as*mut u8,i32;
+(StreamReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`CompressBuffer(i32)` overload"]fn compress_buffer(self,n:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377d520usize)as*mut u8,();
+(StreamReader)__receiver,(i32)::core::convert::Into::into(n))}
+}
+#[doc="`DetectEncoding()` overload"]fn detect_encoding(self,)->(){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377d570usize)as*mut u8,();
+(StreamReader)__receiver)}
+}
+#[doc="`IsPreamble()` overload"]fn is_preamble(self,)->bool{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377d8a0usize)as*mut u8,bool;
+(StreamReader)__receiver)}
+}
+#[doc="`ReadBuffer()` overload"]fn read_buffer(self,)->i32{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377d9c0usize)as*mut u8,i32;
+(StreamReader)__receiver)}
+}
+#[doc="`ReadBuffer(::unity2::Array<u16>, i32, i32, *mutbool)` overload"]fn read_buffer_2(self,user_buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,user_offset:impl::core::convert::Into<i32> ,desired_chars:impl::core::convert::Into<i32>)->(i32,bool){unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x377d0c0usize)as*mut u8,i32;
+(StreamReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(user_buffer),(i32)::core::convert::Into::into(user_offset),(i32)::core::convert::Into::into(desired_chars),(*mut bool)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377db40usize)as*mut u8, ::unity2::Il2CppString;
+(StreamReader)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-streamreader")]
-pub trait IStreamReaderMethods : IStreamReader { # [doc = "`CheckAsyncTaskInProgress()` overload"] fn check_async_task_in_progress (self ,) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377c070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377c100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream)` overload"] fn ctor_2 (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377c170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream, bool)` overload"] fn ctor_3 (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , detect_encoding_from_byte_order_marks : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , crate :: system :: io :: stream :: Stream , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377c200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (detect_encoding_from_byte_order_marks) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_4 (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377c700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] fn ctor_5 (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , detect_encoding_from_byte_order_marks : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377c790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (detect_encoding_from_byte_order_marks) , :: core :: option :: Option :: None) } } } # [doc = "`Init(crate::system::io::stream::Stream)` overload"] fn init (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377cb10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377cb40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377cb50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`get_BaseStream()` overload"] fn get_base_stream (self ,) -> crate :: system :: io :: stream :: Stream { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: stream :: Stream = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377ccb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_LeaveOpen()` overload"] fn get_leave_open (self ,) -> bool { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377cc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_EndOfStream()` overload"] fn get_end_of_stream (self ,) -> bool { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377ccc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Peek()` overload"] fn peek (self ,) -> i32 { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377cd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DataAvailable()` overload"] fn data_available (self ,) -> bool { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377cdd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read()` overload"] fn read (self ,) -> i32 { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377cde0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"] fn read_2 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377ce80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`ReadToEnd()` overload"] fn read_to_end (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377d2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadBlock(::unity2::Array<u16>, i32, i32)` overload"] fn read_block (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377d390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`CompressBuffer(i32)` overload"] fn compress_buffer (self , n : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377d520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (n) , :: core :: option :: Option :: None) } } } # [doc = "`DetectEncoding()` overload"] fn detect_encoding (self ,) -> () { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377d570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPreamble()` overload"] fn is_preamble (self ,) -> bool { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377d8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadBuffer()` overload"] fn read_buffer (self ,) -> i32 { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377d9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadBuffer(::unity2::Array<u16>, i32, i32, *mutbool)` overload"] fn read_buffer_2 (self , user_buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , user_offset : impl :: core :: convert :: Into < i32 > , desired_chars : impl :: core :: convert :: Into < i32 >) -> (i32 , bool) { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (StreamReader , :: unity2 :: Array < u16 > , i32 , i32 , * mut bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377d0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (user_buffer) , :: core :: convert :: Into :: into (user_offset) , :: core :: convert :: Into :: into (desired_chars) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`ReadLine()` overload"] fn read_line (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377db40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-streamreader")]impl<__T:IStreamReader>IStreamReaderMethods for __T{}
 
-#[cfg(feature = "system-io-streamreader")]
-impl < __T : IStreamReader > IStreamReaderMethods for __T { }
+#[cfg(feature="system-io-streamreader")]impl StreamReader{pub fn get_default_buffer_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn check_async_task_in_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_base_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_leave_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_end_of_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn data_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn read_to_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn read_block_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn compress_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn detect_encoding_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn is_preamble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn read_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn read_buffer_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn read_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+}
 
-#[cfg(feature = "system-io-streamreader")]
-impl StreamReader { pub fn get_default_buffer_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn check_async_task_in_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_base_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_leave_open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_end_of_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn data_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn read_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn read_to_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn read_block_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn compress_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn detect_encoding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn is_preamble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn read_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn read_buffer_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn read_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } }
+#[cfg(feature="system-io-streamreader")]impl StreamReader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamReader), ::core::stringify!(new),));
+ <Self as IStreamReaderMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream)` — overload selector"]pub fn new_2(stream:crate::system::io::stream::Stream)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamReader), ::core::stringify!(new_2),));
+ <Self as IStreamReaderMethods> ::ctor_2(this,stream);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream, bool)` — overload selector"]pub fn new_3(stream:crate::system::io::stream::Stream,detect_encoding_from_byte_order_marks:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamReader), ::core::stringify!(new_3),));
+ <Self as IStreamReaderMethods> ::ctor_3(this,stream,detect_encoding_from_byte_order_marks);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_4(path: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamReader), ::core::stringify!(new_4),));
+ <Self as IStreamReaderMethods> ::ctor_4(this,path);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new_5(path: ::unity2::Il2CppString,detect_encoding_from_byte_order_marks:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamReader), ::core::stringify!(new_5),));
+ <Self as IStreamReaderMethods> ::ctor_5(this,path,detect_encoding_from_byte_order_marks);
+this}
+}
 
-#[cfg(feature = "system-io-streamreader")]
-impl StreamReader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamReader) , :: core :: stringify ! (new) ,)) ; < Self as IStreamReaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-io-streamreader")]pub trait IStreamReader_NullStreamReaderMethods:IStreamReader_NullStreamReader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c59120usize)as*mut u8,();
+(StreamReader_NullStreamReader)__receiver)}
+}
+#[doc="`get_BaseStream()` overload"]fn get_base_stream(self,)->crate::system::io::stream::Stream{unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c591d0usize)as*mut u8,crate::system::io::stream::Stream;
+(StreamReader_NullStreamReader)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c59250usize)as*mut u8,();
+(StreamReader_NullStreamReader)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c59260usize)as*mut u8,i32;
+(StreamReader_NullStreamReader)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c59270usize)as*mut u8,i32;
+(StreamReader_NullStreamReader)__receiver)}
+}
+#[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c59280usize)as*mut u8,i32;
+(StreamReader_NullStreamReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c59290usize)as*mut u8, ::unity2::Il2CppString;
+(StreamReader_NullStreamReader)__receiver)}
+}
+#[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c592a0usize)as*mut u8, ::unity2::Il2CppString;
+(StreamReader_NullStreamReader)__receiver)}
+}
+#[doc="`ReadBuffer()` overload"]fn read_buffer(self,)->i32{unsafe{let __receiver= <StreamReader_NullStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c592f0usize)as*mut u8,i32;
+(StreamReader_NullStreamReader)__receiver)}
+}
+}
 
-# [doc = "`.ctor(crate::system::io::stream::Stream)` — overload selector"] pub fn new_2 (stream : crate :: system :: io :: stream :: Stream) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamReader) , :: core :: stringify ! (new_2) ,)) ; < Self as IStreamReaderMethods > :: ctor_2 (this , stream) ; this }
+#[cfg(feature="system-io-streamreader")]impl<__T:IStreamReader_NullStreamReader>IStreamReader_NullStreamReaderMethods for __T{}
 
-# [doc = "`.ctor(crate::system::io::stream::Stream, bool)` — overload selector"] pub fn new_3 (stream : crate :: system :: io :: stream :: Stream , detect_encoding_from_byte_order_marks : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamReader) , :: core :: stringify ! (new_3) ,)) ; < Self as IStreamReaderMethods > :: ctor_3 (this , stream , detect_encoding_from_byte_order_marks) ; this }
+#[cfg(feature="system-io-streamreader")]impl StreamReader_NullStreamReader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_base_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn read_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn read_to_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn read_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_4 (path : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamReader) , :: core :: stringify ! (new_4) ,)) ; < Self as IStreamReaderMethods > :: ctor_4 (this , path) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"] pub fn new_5 (path : :: unity2 :: Il2CppString , detect_encoding_from_byte_order_marks : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamReader) , :: core :: stringify ! (new_5) ,)) ; < Self as IStreamReaderMethods > :: ctor_5 (this , path , detect_encoding_from_byte_order_marks) ; this }
+#[cfg(feature="system-io-streamreader")]impl StreamReader_NullStreamReader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamReader_NullStreamReader), ::core::stringify!(new),));
+ <Self as IStreamReader_NullStreamReaderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-io-streamreader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::StreamReader_NullStreamReader;
-    pub use super::IStreamReader_NullStreamReader;
-    pub use super::IStreamReader_NullStreamReaderMethods;
     pub use super::StreamReader;
     pub use super::IStreamReader;
     pub use super::IStreamReaderMethods;
+    pub use super::StreamReader_NullStreamReader;
+    pub use super::IStreamReader_NullStreamReader;
+    pub use super::IStreamReader_NullStreamReaderMethods;
     pub use crate::system::io::textreader::ITextReader;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-io-textreader")] pub use crate::system::io::textreader::ITextReaderMethods;

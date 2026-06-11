@@ -4,47 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksurfacereflector/AkSurfaceReflector.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSurfaceReflector")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkSurfaceReflector {
-# [offset (24)] # [rename (name = "Mesh")] pub mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (40)] # [rename (name = "OcclusionValues")] pub occlusion_values : :: unity2 :: Array < f32 > ,
-# [offset (48)] # [rename (name = "EnableDiffraction")] pub enable_diffraction : bool ,
-# [offset (49)] # [rename (name = "EnableDiffractionOnBoundaryEdges")] pub enable_diffraction_on_boundary_edges : bool ,
-# [offset (56)] # [rename (name = "AssociatedRoom")] pub associated_room_field : crate :: root :: akroom :: AkRoom ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aksurfacereflector/AkSurfaceReflector.md"))]#[::unity2::class(namespace="",name="AkSurfaceReflector")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkSurfaceReflector{#[offset(24)]#[rename(name="Mesh")]pub mesh:crate::unity_engine::mesh::Mesh, #[offset(40)]#[rename(name="OcclusionValues")]pub occlusion_values: ::unity2::Array<f32> , #[offset(48)]#[rename(name="EnableDiffraction")]pub enable_diffraction:bool, #[offset(49)]#[rename(name="EnableDiffractionOnBoundaryEdges")]pub enable_diffraction_on_boundary_edges:bool, #[offset(56)]#[rename(name="AssociatedRoom")]pub associated_room_field:crate::root::akroom::AkRoom,}
 
 }
 
 #[cfg(feature = "root-aksurfacereflector-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aksurfacereflector")]
-impl AkSurfaceReflector { # [doc = "`RemoveGeometrySet(crate::unity_engine::meshfilter::MeshFilter)` overload"] pub fn remove_geometry_set (mesh_filter : impl :: core :: convert :: Into < crate :: unity_engine :: meshfilter :: MeshFilter >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: meshfilter :: MeshFilter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24fb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mesh_filter) , :: core :: option :: Option :: None) } } } # [doc = "`GetAkGeometrySetID(crate::unity_engine::meshfilter::MeshFilter)` overload"] pub fn get_ak_geometry_set_id (mesh_filter : impl :: core :: convert :: Into < crate :: unity_engine :: meshfilter :: MeshFilter >) -> u64 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: meshfilter :: MeshFilter , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d250c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mesh_filter) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aksurfacereflector")]impl AkSurfaceReflector{#[doc="`RemoveGeometrySet(crate::unity_engine::meshfilter::MeshFilter)` overload"]pub fn remove_geometry_set(mesh_filter:impl::core::convert::Into<crate::unity_engine::meshfilter::MeshFilter>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d24fb0usize)as*mut u8,();
+(crate::unity_engine::meshfilter::MeshFilter)::core::convert::Into::into(mesh_filter))}
+}
+#[doc="`GetAkGeometrySetID(crate::unity_engine::meshfilter::MeshFilter)` overload"]pub fn get_ak_geometry_set_id(mesh_filter:impl::core::convert::Into<crate::unity_engine::meshfilter::MeshFilter>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d250c0usize)as*mut u8,u64;
+(crate::unity_engine::meshfilter::MeshFilter)::core::convert::Into::into(mesh_filter))}
+}
+}
 
-#[cfg(feature = "root-aksurfacereflector")]
-pub trait IAkSurfaceReflectorMethods : IAkSurfaceReflector { # [doc = "`GetID()` overload"] fn get_id (self ,) -> u64 { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d232d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAssociatedRoom(crate::root::akroom::AkRoom)` overload"] fn set_associated_room (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`SetGeometry()` overload"] fn set_geometry (self ,) -> () { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateGeometry()` overload"] fn update_geometry (self ,) -> () { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RemoveGeometry()` overload"] fn remove_geometry (self ,) -> () { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d250e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d251e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d25280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkSurfaceReflector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSurfaceReflector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d25840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aksurfacereflector")]pub trait IAkSurfaceReflectorMethods:IAkSurfaceReflector{#[doc="`GetID()` overload"]fn get_id(self,)->u64{unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d232d0usize)as*mut u8,u64;
+(AkSurfaceReflector)__receiver)}
+}
+#[doc="`SetAssociatedRoom(crate::root::akroom::AkRoom)` overload"]fn set_associated_room(self,room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->(){unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d24aa0usize)as*mut u8,();
+(AkSurfaceReflector)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`SetGeometry()` overload"]fn set_geometry(self,)->(){unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d24bf0usize)as*mut u8,();
+(AkSurfaceReflector)__receiver)}
+}
+#[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d24bc0usize)as*mut u8,();
+(AkSurfaceReflector)__receiver)}
+}
+#[doc="`RemoveGeometry()` overload"]fn remove_geometry(self,)->(){unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d24ef0usize)as*mut u8,();
+(AkSurfaceReflector)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d250e0usize)as*mut u8,();
+(AkSurfaceReflector)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d251e0usize)as*mut u8,();
+(AkSurfaceReflector)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d25280usize)as*mut u8,();
+(AkSurfaceReflector)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkSurfaceReflector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d25840usize)as*mut u8,();
+(AkSurfaceReflector)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aksurfacereflector")]
-impl < __T : IAkSurfaceReflector > IAkSurfaceReflectorMethods for __T { }
+#[cfg(feature="root-aksurfacereflector")]impl<__T:IAkSurfaceReflector>IAkSurfaceReflectorMethods for __T{}
 
-#[cfg(feature = "root-aksurfacereflector")]
-impl AkSurfaceReflector { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_associated_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn remove_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn remove_geometry_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_ak_geometry_set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSurfaceReflector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="root-aksurfacereflector")]impl AkSurfaceReflector{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_associated_room_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn remove_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn remove_geometry_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_ak_geometry_set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "root-aksurfacereflector")]
-impl AkSurfaceReflector {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSurfaceReflector) , :: core :: stringify ! (new) ,)) ; < Self as IAkSurfaceReflectorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aksurfacereflector")]impl AkSurfaceReflector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSurfaceReflector), ::core::stringify!(new),));
+ <Self as IAkSurfaceReflectorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aksurfacereflector")]

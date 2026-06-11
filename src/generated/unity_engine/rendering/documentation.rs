@@ -4,37 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: documentationinfo :: { DocumentationInfo , IDocumentationInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::documentationinfo::{DocumentationInfo,IDocumentationInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/documentation/Documentation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "Documentation")] # [parent (crate :: unity_engine :: rendering :: documentationinfo :: DocumentationInfo)] pub struct Documentation {
-# [static_field] # [rename (name = "baseURL")] pub base_url : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "subURL")] pub sub_url : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "endURL")] pub end_url : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "baseURLHDRP")] pub base_urlhdrp : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/documentation/Documentation.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="Documentation")]#[parent(crate::unity_engine::rendering::documentationinfo::DocumentationInfo)]pub struct Documentation{#[static_field]#[rename(name="baseURL")]pub base_url: ::unity2::Il2CppString, #[static_field]#[rename(name="subURL")]pub sub_url: ::unity2::Il2CppString, #[static_field]#[rename(name="endURL")]pub end_url: ::unity2::Il2CppString, #[static_field]#[rename(name="baseURLHDRP")]pub base_urlhdrp: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-documentation-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-documentation")]
-pub trait IDocumentationMethods : IDocumentation { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Documentation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Documentation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a92f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-documentation")]pub trait IDocumentationMethods:IDocumentation{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Documentation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a92f0usize)as*mut u8,();
+(Documentation)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-documentation")]
-impl < __T : IDocumentation > IDocumentationMethods for __T { }
+#[cfg(feature="unity_engine-rendering-documentation")]impl<__T:IDocumentation>IDocumentationMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-documentation")]
-impl Documentation { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Documentation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-documentation")]impl Documentation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-documentation")]
-impl Documentation {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Documentation) , :: core :: stringify ! (new) ,)) ; < Self as IDocumentationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-documentation")]impl Documentation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Documentation), ::core::stringify!(new),));
+ <Self as IDocumentationMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-documentation")]

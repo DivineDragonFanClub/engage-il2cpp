@@ -4,46 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringroot/SynthesisRingRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "SynthesisRingRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct SynthesisRingRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_SynthesisRingBaseRingMenuObject")] pub m_synthesis_ring_base_ring_menu_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_SynthesisRingInfoWindowObject")] pub m_synthesis_ring_info_window_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_SynthesisRingInfoWindow")] pub m_synthesis_ring_info_window : crate :: app :: synthesisringinfowindow :: SynthesisRingInfoWindow ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringroot/SynthesisRingRoot.md"))]#[::unity2::class(namespace="App",name="SynthesisRingRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SynthesisRingRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_SynthesisRingBaseRingMenuObject")]pub m_synthesis_ring_base_ring_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_SynthesisRingInfoWindowObject")]pub m_synthesis_ring_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_SynthesisRingInfoWindow")]pub m_synthesis_ring_info_window:crate::app::synthesisringinfowindow::SynthesisRingInfoWindow,}
 
 }
 
 #[cfg(feature = "app-synthesisringroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-synthesisringroot")]
-impl SynthesisRingRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b5490usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b5550usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b55f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateRoot()` overload"] pub fn create_root () -> crate :: app :: synthesisringroot :: SynthesisRingRoot { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: synthesisringroot :: SynthesisRingRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b4e70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b5770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-synthesisringroot")]impl SynthesisRingRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b5490usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b5550usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b55f0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateRoot()` overload"]pub fn create_root()->crate::app::synthesisringroot::SynthesisRingRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b4e70usize)as*mut u8,crate::app::synthesisringroot::SynthesisRingRoot;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b5770usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-synthesisringroot")]
-pub trait ISynthesisRingRootMethods : ISynthesisRingRoot { # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < SynthesisRingRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SynthesisRingRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b5690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < SynthesisRingRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SynthesisRingRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b4df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SynthesisRingRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SynthesisRingRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b5760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::app::ringdata::RingData)` overload"] fn set_data (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> () { unsafe { let __receiver = < SynthesisRingRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SynthesisRingRoot , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b50b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-synthesisringroot")]pub trait ISynthesisRingRootMethods:ISynthesisRingRoot{#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <SynthesisRingRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b5690usize)as*mut u8,();
+(SynthesisRingRoot)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <SynthesisRingRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b4df0usize)as*mut u8,();
+(SynthesisRingRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SynthesisRingRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b5760usize)as*mut u8,();
+(SynthesisRingRoot)__receiver)}
+}
+#[doc="`SetData(crate::app::ringdata::RingData)` overload"]fn set_data(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <SynthesisRingRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b50b0usize)as*mut u8,();
+(SynthesisRingRoot)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+}
 
-#[cfg(feature = "app-synthesisringroot")]
-impl < __T : ISynthesisRingRoot > ISynthesisRingRootMethods for __T { }
+#[cfg(feature="app-synthesisringroot")]impl<__T:ISynthesisRingRoot>ISynthesisRingRootMethods for __T{}
 
-#[cfg(feature = "app-synthesisringroot")]
-impl SynthesisRingRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-synthesisringroot")]impl SynthesisRingRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-synthesisringroot")]
-impl SynthesisRingRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SynthesisRingRoot) , :: core :: stringify ! (new) ,)) ; < Self as ISynthesisRingRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-synthesisringroot")]impl SynthesisRingRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SynthesisRingRoot), ::core::stringify!(new),));
+ <Self as ISynthesisRingRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-synthesisringroot")]

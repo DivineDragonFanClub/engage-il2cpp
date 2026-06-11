@@ -4,34 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/invalidkeyexception/InvalidKeyException.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "InvalidKeyException")] pub struct InvalidKeyException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/invalidkeyexception/InvalidKeyException.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="InvalidKeyException")]pub struct InvalidKeyException{}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-invalidkeyexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-invalidkeyexception")]
-pub trait IInvalidKeyExceptionMethods : IInvalidKeyException { # [doc = "`get_Key()` overload"] fn get_key (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Key(crate::system::object::Object)` overload"] fn set_key (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Type()` overload"] fn get_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Type(::unity2::SystemType)` overload"] fn set_type (self , value : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::object::Object)` overload"] fn ctor (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::object::Object, ::unity2::SystemType)` overload"] fn ctor_2 (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , crate :: system :: object :: Object , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dae140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_3 (self ,) -> () { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_4 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb2b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`get_Message()` overload"] fn get_message (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InvalidKeyException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidKeyException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbb450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-invalidkeyexception")]pub trait IInvalidKeyExceptionMethods:IInvalidKeyException{#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb100usize)as*mut u8,crate::system::object::Object;
+(InvalidKeyException)__receiver)}
+}
+#[doc="`set_Key(crate::system::object::Object)` overload"]fn set_key(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb110usize)as*mut u8,();
+(InvalidKeyException)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`get_Type()` overload"]fn get_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb120usize)as*mut u8, ::unity2::SystemType;
+(InvalidKeyException)__receiver)}
+}
+#[doc="`set_Type(::unity2::SystemType)` overload"]fn set_type(self,value:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb130usize)as*mut u8,();
+(InvalidKeyException)__receiver,(::unity2::SystemType)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::system::object::Object)` overload"]fn ctor(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb140usize)as*mut u8,();
+(InvalidKeyException)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`.ctor(crate::system::object::Object, ::unity2::SystemType)` overload"]fn ctor_2(self,key:impl::core::convert::Into<crate::system::object::Object> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dae140usize)as*mut u8,();
+(InvalidKeyException)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+#[doc="`.ctor()` overload"]fn ctor_3(self,)->(){unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb240usize)as*mut u8,();
+(InvalidKeyException)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_4(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb2b0usize)as*mut u8,();
+(InvalidKeyException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`get_Message()` overload"]fn get_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb450usize)as*mut u8, ::unity2::Il2CppString;
+(InvalidKeyException)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-invalidkeyexception")]
-impl < __T : IInvalidKeyException > IInvalidKeyExceptionMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-invalidkeyexception")]impl<__T:IInvalidKeyException>IInvalidKeyExceptionMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-invalidkeyexception")]
-impl InvalidKeyException { pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidKeyException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-addressable_assets-invalidkeyexception")]impl InvalidKeyException{pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-invalidkeyexception")]
-impl InvalidKeyException {
-# [doc = "`.ctor(crate::system::object::Object)` — overload selector"] pub fn new (key : crate :: system :: object :: Object) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvalidKeyException) , :: core :: stringify ! (new) ,)) ; < Self as IInvalidKeyExceptionMethods > :: ctor (this , key) ; this }
-
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::SystemType)` — overload selector"] pub fn new_2 (key : crate :: system :: object :: Object , r#type : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvalidKeyException) , :: core :: stringify ! (new_2) ,)) ; < Self as IInvalidKeyExceptionMethods > :: ctor_2 (this , key , r#type) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_3 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvalidKeyException) , :: core :: stringify ! (new_3) ,)) ; < Self as IInvalidKeyExceptionMethods > :: ctor_3 (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_4 (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvalidKeyException) , :: core :: stringify ! (new_4) ,)) ; < Self as IInvalidKeyExceptionMethods > :: ctor_4 (this , message) ; this }
+#[cfg(feature="unity_engine-addressable_assets-invalidkeyexception")]impl InvalidKeyException{#[doc="`.ctor(crate::system::object::Object)` — overload selector"]pub fn new(key:crate::system::object::Object)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvalidKeyException), ::core::stringify!(new),));
+ <Self as IInvalidKeyExceptionMethods> ::ctor(this,key);
+this}
+#[doc="`.ctor(crate::system::object::Object, ::unity2::SystemType)` — overload selector"]pub fn new_2(key:crate::system::object::Object,r#type: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvalidKeyException), ::core::stringify!(new_2),));
+ <Self as IInvalidKeyExceptionMethods> ::ctor_2(this,key,r#type);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_3()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvalidKeyException), ::core::stringify!(new_3),));
+ <Self as IInvalidKeyExceptionMethods> ::ctor_3(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_4(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvalidKeyException), ::core::stringify!(new_4),));
+ <Self as IInvalidKeyExceptionMethods> ::ctor_4(this,message);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-invalidkeyexception")]

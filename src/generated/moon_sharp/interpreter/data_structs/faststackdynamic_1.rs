@@ -4,44 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: generic :: list_1 :: { IList_1 , List_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::generic::list_1::{IList_1,List_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/faststackdynamic_1/FastStackDynamic_1.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.DataStructs" , name = "FastStackDynamic`1")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < T0 >)] # [parent (crate :: system :: object :: Object)] pub struct FastStackDynamic_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/data_structs/faststackdynamic_1/FastStackDynamic_1.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.DataStructs",name="FastStackDynamic`1")]#[parent(crate::system::collections::generic::list_1::List_1<T0>)]#[parent(crate::system::object::Object)]pub struct FastStackDynamic_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-faststackdynamic_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-data_structs-faststackdynamic_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > FastStackDynamic_1 < T0 > {
-# [doc = "`.ctor(i32)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , starting_capacity : i32) -> () ;
-
-# [doc = "`Set(i32, T0)` overload"] # [method (name = "Set" , args = 2)] pub fn set (self , idxofs : i32 , item : T0) -> () ;
-
-# [doc = "`Push(T0)` overload"] # [method (name = "Push" , args = 1)] pub fn push (self , item : T0) -> T0 ;
-
-# [doc = "`Expand(i32)` overload"] # [method (name = "Expand" , args = 1)] pub fn expand (self , size : i32) -> () ;
-
-# [doc = "`Zero(i32)` overload"] # [method (name = "Zero" , args = 1)] pub fn zero (self , index : i32) -> () ;
-
-# [doc = "`Peek(i32)` overload"] # [method (name = "Peek" , args = 1)] pub fn peek (self , idxofs : i32) -> T0 ;
-
-# [doc = "`CropAtCount(i32)` overload"] # [method (name = "CropAtCount" , args = 1)] pub fn crop_at_count (self , p : i32) -> () ;
-
-# [doc = "`RemoveLast(i32)` overload"] # [method (name = "RemoveLast" , args = 1)] pub fn remove_last (self , cnt : i32) -> () ;
-
-# [doc = "`Pop()` overload"] # [method (name = "Pop" , args = 0)] pub fn pop (self ,) -> T0 ;
+#[cfg(feature="moon_sharp-interpreter-data_structs-faststackdynamic_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>FastStackDynamic_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,starting_capacity:i32)->();
+ #[doc="`Set(i32, T0)` overload"]#[method(name="Set",args=2)]pub fn set(self,idxofs:i32,item:T0)->();
+ #[doc="`Push(T0)` overload"]#[method(name="Push",args=1)]pub fn push(self,item:T0)->T0;
+ #[doc="`Expand(i32)` overload"]#[method(name="Expand",args=1)]pub fn expand(self,size:i32)->();
+ #[doc="`Zero(i32)` overload"]#[method(name="Zero",args=1)]pub fn zero(self,index:i32)->();
+ #[doc="`Peek(i32)` overload"]#[method(name="Peek",args=1)]pub fn peek(self,idxofs:i32)->T0;
+ #[doc="`CropAtCount(i32)` overload"]#[method(name="CropAtCount",args=1)]pub fn crop_at_count(self,p:i32)->();
+ #[doc="`RemoveLast(i32)` overload"]#[method(name="RemoveLast",args=1)]pub fn remove_last(self,cnt:i32)->();
+ #[doc="`Pop()` overload"]#[method(name="Pop",args=0)]pub fn pop(self,)->T0;
 }
 
-#[cfg(feature = "moon_sharp-interpreter-data_structs-faststackdynamic_1")]
-impl < T0 : :: unity2 :: ClassIdentity > FastStackDynamic_1 < T0 > {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (starting_capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FastStackDynamic_1) , :: core :: stringify ! (new) ,)) ; < Self as IFastStackDynamic_1Methods < T0 > > :: ctor (this , starting_capacity) ; this }
+#[cfg(feature="moon_sharp-interpreter-data_structs-faststackdynamic_1")]impl<T0: ::unity2::ClassIdentity>FastStackDynamic_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(starting_capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FastStackDynamic_1), ::core::stringify!(new),));
+ <Self as IFastStackDynamic_1Methods<T0> > ::ctor(this,starting_capacity);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-faststackdynamic_1")]

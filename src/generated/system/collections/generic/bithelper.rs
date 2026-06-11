@@ -4,37 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/bithelper/BitHelper.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "BitHelper")] # [parent (crate :: system :: object :: Object)] pub struct BitHelper {
-# [offset (16)] # [rename (name = "_length")] pub length : i32 ,
-# [offset (32)] # [rename (name = "_array")] pub array : :: unity2 :: Array < i32 > ,
-# [offset (40)] # [rename (name = "_useStackAlloc")] pub use_stack_alloc : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/bithelper/BitHelper.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="BitHelper")]#[parent(crate::system::object::Object)]pub struct BitHelper{#[offset(16)]#[rename(name="_length")]pub length:i32, #[offset(32)]#[rename(name="_array")]pub array: ::unity2::Array<i32> , #[offset(40)]#[rename(name="_useStackAlloc")]pub use_stack_alloc:bool,}
 
 }
 
 #[cfg(feature = "system-collections-generic-bithelper-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-bithelper")]
-impl BitHelper { # [doc = "`ToIntArrayLength(i32)` overload"] pub fn to_int_array_length (n : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b6dd00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (n) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-bithelper")]impl BitHelper{#[doc="`ToIntArrayLength(i32)` overload"]pub fn to_int_array_length(n:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b6dd00usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(n))}
+}
+}
 
-#[cfg(feature = "system-collections-generic-bithelper")]
-pub trait IBitHelperMethods : IBitHelper { # [doc = "`.ctor(::unity2::Array<i32>, i32)` overload"] fn ctor (self , bit_array : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > > , length : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BitHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHelper , :: unity2 :: Array < i32 > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b6dba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bit_array) , :: core :: convert :: Into :: into (length) , :: core :: option :: Option :: None) } } } # [doc = "`MarkBit(i32)` overload"] fn mark_bit (self , bit_position : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BitHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHelper , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b6dbf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bit_position) , :: core :: option :: Option :: None) } } } # [doc = "`IsMarked(i32)` overload"] fn is_marked (self , bit_position : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitHelper , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b6dc70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bit_position) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-bithelper")]pub trait IBitHelperMethods:IBitHelper{#[doc="`.ctor(::unity2::Array<i32>, i32)` overload"]fn ctor(self,bit_array:impl::core::convert::Into< ::unity2::Array<i32> > ,length:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BitHelper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b6dba0usize)as*mut u8,();
+(BitHelper)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(bit_array),(i32)::core::convert::Into::into(length))}
+}
+#[doc="`MarkBit(i32)` overload"]fn mark_bit(self,bit_position:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BitHelper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b6dbf0usize)as*mut u8,();
+(BitHelper)__receiver,(i32)::core::convert::Into::into(bit_position))}
+}
+#[doc="`IsMarked(i32)` overload"]fn is_marked(self,bit_position:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BitHelper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b6dc70usize)as*mut u8,bool;
+(BitHelper)__receiver,(i32)::core::convert::Into::into(bit_position))}
+}
+}
 
-#[cfg(feature = "system-collections-generic-bithelper")]
-impl < __T : IBitHelper > IBitHelperMethods for __T { }
+#[cfg(feature="system-collections-generic-bithelper")]impl<__T:IBitHelper>IBitHelperMethods for __T{}
 
-#[cfg(feature = "system-collections-generic-bithelper")]
-impl BitHelper { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn mark_bit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_marked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn to_int_array_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="system-collections-generic-bithelper")]impl BitHelper{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn mark_bit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_marked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_int_array_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "system-collections-generic-bithelper")]
-impl BitHelper {
-# [doc = "`.ctor(::unity2::Array<i32>, i32)` — overload selector"] pub fn new (bit_array : :: unity2 :: Array < i32 > , length : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitHelper) , :: core :: stringify ! (new) ,)) ; < Self as IBitHelperMethods > :: ctor (this , bit_array , length) ; this }
+#[cfg(feature="system-collections-generic-bithelper")]impl BitHelper{#[doc="`.ctor(::unity2::Array<i32>, i32)` — overload selector"]pub fn new(bit_array: ::unity2::Array<i32> ,length:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitHelper), ::core::stringify!(new),));
+ <Self as IBitHelperMethods> ::ctor(this,bit_array,length);
+this}
 }
 
 #[cfg(feature = "system-collections-generic-bithelper")]

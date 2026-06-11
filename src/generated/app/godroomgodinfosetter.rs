@@ -4,41 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomgodinfosetter/GodRoomGodInfoSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodRoomGodInfoSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GodRoomGodInfoSetter {
-# [offset (24)] # [rename (name = "m_Infos")] pub m_infos : :: unity2 :: Array < crate :: app :: godroomgodinfoitemcontent :: GodRoomGodInfoItemContent > ,
-# [offset (32)] # [rename (name = "m_Wdws")] pub m_wdws : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomgodinfosetter/GodRoomGodInfoSetter.md"))]#[::unity2::class(namespace="App",name="GodRoomGodInfoSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GodRoomGodInfoSetter{#[offset(24)]#[rename(name="m_Infos")]pub m_infos: ::unity2::Array<crate::app::godroomgodinfoitemcontent::GodRoomGodInfoItemContent> , #[offset(32)]#[rename(name="m_Wdws")]pub m_wdws: ::unity2::Array<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-godroomgodinfosetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godroomgodinfosetter")]
-pub trait IGodRoomGodInfoSetterMethods : IGodRoomGodInfoSetter { # [doc = "`SetGodInfo(crate::app::unit::Unit, *mutcrate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>)` overload"] fn set_god_info (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godunit :: GodUnit > { unsafe { let __receiver = < GodRoomGodInfoSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godunit :: GodUnit > > :: uninit () ; { let __inner : extern "C" fn (GodRoomGodInfoSetter , crate :: app :: unit :: Unit , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godunit :: GodUnit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23369c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodRoomGodInfoSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomGodInfoSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23374e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godroomgodinfosetter")]pub trait IGodRoomGodInfoSetterMethods:IGodRoomGodInfoSetter{#[doc="`SetGodInfo(crate::app::unit::Unit, *mutcrate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>)` overload"]fn set_god_info(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>{unsafe{let __receiver= <GodRoomGodInfoSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23369c0usize)as*mut u8,();
+(GodRoomGodInfoSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(*mut crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodRoomGodInfoSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23374e0usize)as*mut u8,();
+(GodRoomGodInfoSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godroomgodinfosetter")]
-impl < __T : IGodRoomGodInfoSetter > IGodRoomGodInfoSetterMethods for __T { }
+#[cfg(feature="app-godroomgodinfosetter")]impl<__T:IGodRoomGodInfoSetter>IGodRoomGodInfoSetterMethods for __T{}
 
-#[cfg(feature = "app-godroomgodinfosetter")]
-impl GodRoomGodInfoSetter { pub fn set_god_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomGodInfoSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomGodInfoSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-godroomgodinfosetter")]impl GodRoomGodInfoSetter{pub fn set_god_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-godroomgodinfosetter")]
-impl GodRoomGodInfoSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodRoomGodInfoSetter) , :: core :: stringify ! (new) ,)) ; < Self as IGodRoomGodInfoSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godroomgodinfosetter")]impl GodRoomGodInfoSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRoomGodInfoSetter), ::core::stringify!(new),));
+ <Self as IGodRoomGodInfoSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godroomgodinfosetter")]

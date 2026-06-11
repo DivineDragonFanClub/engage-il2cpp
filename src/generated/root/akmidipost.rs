@@ -4,39 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akmidievent :: { AkMIDIEvent , IAkMIDIEvent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akmidievent::{AkMIDIEvent,IAkMIDIEvent}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidipost/AkMIDIPost.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIPost")] # [parent (crate :: root :: akmidievent :: AkMIDIEvent)] pub struct AkMIDIPost {
-# [offset (32)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidipost/AkMIDIPost.md"))]#[::unity2::class(namespace="",name="AkMIDIPost")]#[parent(crate::root::akmidievent::AkMIDIEvent)]pub struct AkMIDIPost{#[offset(32)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "root-akmidipost-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akmidipost")]
-impl AkMIDIPost { # [doc = "`getCPtr(crate::root::akmidipost::AkMIDIPost)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidipost :: AkMIDIPost >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidipost :: AkMIDIPost , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25e70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidipost")]impl AkMIDIPost{#[doc="`getCPtr(crate::root::akmidipost::AkMIDIPost)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidipost::AkMIDIPost>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f25870usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidipost::AkMIDIPost)::core::convert::Into::into(obj))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f25e70usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-akmidipost")]
-pub trait IAkMIDIPostMethods : IAkMIDIPost { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f257d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f258d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uOffset(u32)` overload"] fn set_u_offset (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uOffset()` overload"] fn get_u_offset (self ,) -> u32 { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostOnEvent(u32, crate::unity_engine::gameobject::GameObject, u32)` overload"] fn post_on_event (self , in_event_id : impl :: core :: convert :: Into < u32 > , in_game_object_id : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , in_u_num_posts : impl :: core :: convert :: Into < u32 >) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , u32 , crate :: unity_engine :: gameobject :: GameObject , u32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_event_id) , :: core :: convert :: Into :: into (in_game_object_id) , :: core :: convert :: Into :: into (in_u_num_posts) , :: core :: option :: Option :: None) } } } # [doc = "`Clone(crate::root::akmidipost::AkMIDIPost)` overload"] fn clone (self , other : impl :: core :: convert :: Into < crate :: root :: akmidipost :: AkMIDIPost >) -> () { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , crate :: root :: akmidipost :: AkMIDIPost , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIPost as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIPost , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidipost")]pub trait IAkMIDIPostMethods:IAkMIDIPost{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f257d0usize)as*mut u8,();
+(AkMIDIPost)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f258d0usize)as*mut u8,();
+(AkMIDIPost)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25960usize)as*mut u8,();
+(AkMIDIPost)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25a50usize)as*mut u8,();
+(AkMIDIPost)__receiver)}
+}
+#[doc="`set_uOffset(u32)` overload"]fn set_u_offset(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25be0usize)as*mut u8,();
+(AkMIDIPost)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uOffset()` overload"]fn get_u_offset(self,)->u32{unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25c60usize)as*mut u8,u32;
+(AkMIDIPost)__receiver)}
+}
+#[doc="`PostOnEvent(u32, crate::unity_engine::gameobject::GameObject, u32)` overload"]fn post_on_event(self,in_event_id:impl::core::convert::Into<u32> ,in_game_object_id:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,in_u_num_posts:impl::core::convert::Into<u32>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25cd0usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkMIDIPost)__receiver,(u32)::core::convert::Into::into(in_event_id),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object_id),(u32)::core::convert::Into::into(in_u_num_posts))}
+}
+#[doc="`Clone(crate::root::akmidipost::AkMIDIPost)` overload"]fn clone(self,other:impl::core::convert::Into<crate::root::akmidipost::AkMIDIPost>)->(){unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25db0usize)as*mut u8,();
+(AkMIDIPost)__receiver,(crate::root::akmidipost::AkMIDIPost)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIPost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25ee0usize)as*mut u8,();
+(AkMIDIPost)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akmidipost")]
-impl < __T : IAkMIDIPost > IAkMIDIPostMethods for __T { }
+#[cfg(feature="root-akmidipost")]impl<__T:IAkMIDIPost>IAkMIDIPostMethods for __T{}
 
-#[cfg(feature = "root-akmidipost")]
-impl AkMIDIPost { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_u_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_u_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn post_on_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIPost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="root-akmidipost")]impl AkMIDIPost{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_u_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_u_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn post_on_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "root-akmidipost")]
-impl AkMIDIPost {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIPost) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIPostMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIPost) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIPostMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidipost")]impl AkMIDIPost{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIPost), ::core::stringify!(new),));
+ <Self as IAkMIDIPostMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIPost), ::core::stringify!(new_2),));
+ <Self as IAkMIDIPostMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akmidipost")]

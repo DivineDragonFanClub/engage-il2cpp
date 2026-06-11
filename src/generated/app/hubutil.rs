@@ -4,272 +4,834 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil {
-# [static_field] # [rename (name = "s_HubParams")] pub s_hub_params : crate :: app :: hubparams :: HubParams ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubutil/HubUtil_TimezoneType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubUtil_TimezoneType{pub value:i32,}
+impl::unity2::ClassIdentity for HubUtil_TimezoneType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubUtil.TimezoneType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubUtil_TimezoneType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubUtil_TimezoneType{pub fn morning()->Self{Self{value:0}
+}
+pub fn day()->Self{Self{value:1}
+}
+pub fn evening()->Self{Self{value:2}
+}
+pub fn night()->Self{Self{value:3}
+}
+pub fn max()->Self{Self{value:4}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_ConditionType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubUtil_ConditionType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubutil/HubUtil_ConditionType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubUtil_ConditionType{pub value:i32,}
+impl::unity2::ClassIdentity for HubUtil_ConditionType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubUtil.ConditionType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubUtil_ConditionType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubUtil_ConditionType{pub fn morning()->Self{Self{value:0}
+}
+pub fn day()->Self{Self{value:1}
+}
+pub fn evening()->Self{Self{value:2}
+}
+pub fn night()->Self{Self{value:3}
+}
+pub fn weapon_opened()->Self{Self{value:4}
+}
+pub fn item_opened()->Self{Self{value:5}
+}
+pub fn refinement_opened()->Self{Self{value:6}
+}
+pub fn accessory_opened()->Self{Self{value:7}
+}
+pub fn tent1()->Self{Self{value:8}
+}
+pub fn tent2()->Self{Self{value:9}
+}
+pub fn tent3()->Self{Self{value:10}
+}
+pub fn fire()->Self{Self{value:11}
+}
+pub fn fortune_hut_opened()->Self{Self{value:12}
+}
+pub fn flea_market()->Self{Self{value:13}
+}
+pub fn statue()->Self{Self{value:14}
+}
+pub fn pool_circle_swim()->Self{Self{value:15}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for HubUtil_ConditionType  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubutil/HubUtil_BSpline.md"))]#[::unity2::class(namespace="App",name="HubUtil.BSpline")]#[parent(crate::system::object::Object)]pub struct HubUtil_BSpline{}
 
-    const NAME: &'static str = "HubUtil.ConditionType";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubUtil_ConditionType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubUtil_ConditionType  {
-    pub fn morning() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn day() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn evening() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn night() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn weapon_opened() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn item_opened() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn refinement_opened() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn accessory_opened() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn tent1() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn tent2() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn tent3() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn fire() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn fortune_hut_opened() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn flea_market() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn statue() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn pool_circle_swim() -> Self {
-        Self { value: 15 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubUtil_TimezoneType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for HubUtil_TimezoneType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubUtil.TimezoneType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubUtil_TimezoneType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubUtil_TimezoneType  {
-    pub fn morning() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn day() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn evening() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn night() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil.BSpline")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil_BSpline {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubutil/HubUtil.md"))]#[::unity2::class(namespace="App",name="HubUtil")]#[parent(crate::system::object::Object)]pub struct HubUtil{#[static_field]#[rename(name="s_HubParams")]pub s_hub_params:crate::app::hubparams::HubParams,}
 
 }
 
 #[cfg(feature = "app-hubutil-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubutil")]
-impl HubUtil { # [doc = "`get_Params()` overload"] pub fn get_params () -> crate :: app :: hubparams :: HubParams { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: hubparams :: HubParams = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e550usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsParamsValid()` overload"] pub fn is_params_valid () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e6c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetUnitDisplayNum()` overload"] pub fn get_unit_display_num () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_PadThreshold()` overload"] pub fn get_pad_threshold () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e7c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_PlayerMaxSpeed()` overload"] pub fn get_player_max_speed () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_PlayerAccel()` overload"] pub fn get_player_accel () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e880usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_PlayerDecel()` overload"] pub fn get_player_decel () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e8e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_PlayerRotateSpeedRate()` overload"] pub fn get_player_rotate_speed_rate () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_PlayerDashStopTime()` overload"] pub fn get_player_dash_stop_time () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e9a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_PlayerDashSpeedIntensity()` overload"] pub fn get_player_dash_speed_intensity () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ea00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_SpringGravityY()` overload"] pub fn get_spring_gravity_y () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ea60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetPlayerSpeedCurve(f32)` overload"] pub fn get_player_speed_curve (magnitude : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5eac0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (magnitude) , :: core :: option :: Option :: None) } } } # [doc = "`GetTurnCurve()` overload"] pub fn get_turn_curve () -> crate :: unity_engine :: animationcurve :: AnimationCurve { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e4f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_MinLookAtDist()` overload"] pub fn get_min_look_at_dist () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5eb40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_MaxLookAtDist()` overload"] pub fn get_max_look_at_dist () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5eba0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_PadAllowance()` overload"] pub fn get_pad_allowance () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ec00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_OthersBodyWeight()` overload"] pub fn get_others_body_weight () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ec60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_OthersHeadWeight()` overload"] pub fn get_others_head_weight () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ecc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_EmptyWord()` overload"] pub fn get_empty_word () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ed20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCharacterAppearance(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_character_appearance (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , accessory : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: characterappearance :: CharacterAppearance { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: characterappearance :: CharacterAppearance = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ed90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (accessory) , :: core :: option :: Option :: None) } } } # [doc = "`GetPlayerAppearance(::unity2::Il2CppString)` overload"] pub fn get_player_appearance (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: characterappearance :: CharacterAppearance { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: characterappearance :: CharacterAppearance = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`CreateLookAt(crate::unity_engine::gameobject::GameObject, bool)` overload"] pub fn create_look_at (game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , disabled_param : impl :: core :: convert :: Into < bool >) -> crate :: app :: hublookatcontroller :: HubLookAtController { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: hublookatcontroller :: HubLookAtController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5e190usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (disabled_param) , :: core :: option :: Option :: None) } } } # [doc = "`IsMain()` overload"] pub fn is_main () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f410usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsHubSequence()` overload"] pub fn is_hub_sequence () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f4d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsPlayerFemale()` overload"] pub fn is_player_female () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ad80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsComplete(::unity2::Il2CppString)` overload"] pub fn is_complete (cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`PIDToGID(::unity2::Il2CppString)` overload"] pub fn pid_to_gid (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f710usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`GIDToPID(::unity2::Il2CppString)` overload"] pub fn gid_to_pid (gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetSortieUnit(::unity2::Il2CppString)` overload"] pub fn try_get_sortie_unit (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f7f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`IsSortieUnit(::unity2::Il2CppString)` overload"] pub fn is_sortie_unit (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`IsBestReliance(::unity2::Il2CppString)` overload"] pub fn is_best_reliance (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5d260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`GetNowYear()` overload"] pub fn get_now_year () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5f900usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsBirthday(::unity2::Il2CppString)` overload"] pub fn is_birthday (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5fae0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`IsHeroBirthday()` overload"] pub fn is_hero_birthday () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5fbe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsBirthdayPresentGot(::unity2::Il2CppString)` overload"] pub fn is_birthday_present_got (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5fc80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`CanPromiseEngage(crate::app::unit::Unit)` overload"] pub fn can_promise_engage (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5fdc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsAvaliableDispos(crate::app::hubdisposdata::HubDisposData, crate::app::hubutil::HubUtil_TimezoneType)` overload"] pub fn is_avaliable_dispos (data : impl :: core :: convert :: Into < crate :: app :: hubdisposdata :: HubDisposData > , timezone_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_TimezoneType >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: hubdisposdata :: HubDisposData , crate :: app :: hubutil :: HubUtil_TimezoneType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a60020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (timezone_type) , :: core :: option :: Option :: None) } } } # [doc = "`LevelUpReliance(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level)` overload"] pub fn level_up_reliance (a : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , b : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , level : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: reliancedata :: RelianceData_Level , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a60630usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`GetRelianceSuffixLetter(crate::app::reliancedata::RelianceData_Level)` overload"] pub fn get_reliance_suffix_letter (level : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: reliancedata :: RelianceData_Level , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a60710usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`CanAnyRelianceLevelUp()` overload"] pub fn can_any_reliance_level_up () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a607b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CanAnyGodLevelUp()` overload"] pub fn can_any_god_level_up () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a608b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CanAnyRelianceLevelUp(::unity2::Il2CppString, bool)` overload"] pub fn can_any_reliance_level_up_2 (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , without_a_plus : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a60bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (without_a_plus) , :: core :: option :: Option :: None) } } } # [doc = "`CanAnyRelianceLevelUpPlayer(::unity2::Il2CppString, bool)` overload"] pub fn can_any_reliance_level_up_player (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , without_a_plus : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a61360usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (without_a_plus) , :: core :: option :: Option :: None) } } } # [doc = "`GetAPlusAsciiName()` overload"] pub fn get_a_plus_ascii_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a616d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ContinuousSortieCount(::unity2::Il2CppString)` overload"] pub fn continuous_sortie_count (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a61750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`IsExistsMID(::unity2::Il2CppString)` overload"] pub fn is_exists_mid (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a61790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`HasStoryTalk(::unity2::Il2CppString)` overload"] pub fn has_story_talk (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a61870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`HasSwimsuit(::unity2::Il2CppString)` overload"] pub fn has_swimsuit (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a61b80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`GetSwimsuit()` overload"] pub fn get_swimsuit () -> crate :: app :: accessorydata :: AccessoryData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a61c60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetAnimal(::unity2::Il2CppString)` overload"] pub fn get_animal (locator : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: animaldata :: AnimalData { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaldata :: AnimalData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a61e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`IsCaptureAnimal(crate::app::animaldata::AnimalData)` overload"] pub fn is_capture_animal (animal : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a622c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animal) , :: core :: option :: Option :: None) } } } # [doc = "`GetAnimalCaptureNum(crate::app::animaldata::AnimalData)` overload"] pub fn get_animal_capture_num (animal : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62370usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animal) , :: core :: option :: Option :: None) } } } # [doc = "`SetAnimalCaptureNum(crate::app::animaldata::AnimalData, i32)` overload"] pub fn set_animal_capture_num (animal : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData > , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: animaldata :: AnimalData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animal) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`IncAnimalCaptureNum(crate::app::animaldata::AnimalData, i32)` overload"] pub fn inc_animal_capture_num (animal : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData > , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: animaldata :: AnimalData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62640usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animal) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`get_EncountMaterialBase()` overload"] pub fn get_encount_material_base () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a626c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetEncountMaterialItemCount()` overload"] pub fn get_encount_material_item_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62800usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetItemCountWithBonus(crate::app::itemdata::ItemData, i32)` overload"] pub fn get_item_count_with_bonus (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , base_count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a629c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (base_count) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateLocate(::unity2::Il2CppString)` overload"] pub fn update_locate (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62b80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFirstEntry()` overload"] pub fn get_is_first_entry () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62c90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsFirstEntry(bool)` overload"] pub fn set_is_first_entry (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62d00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LastScenarioChapter()` overload"] pub fn get_last_scenario_chapter () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62d80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_LastScenarioChapter(::unity2::Il2CppString)` overload"] pub fn set_last_scenario_chapter (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62df0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionMorning()` overload"] pub fn get_is_condition_morning () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62e70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionMorning(bool)` overload"] pub fn set_is_condition_morning (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62ee0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionDay()` overload"] pub fn get_is_condition_day () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62f60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionDay(bool)` overload"] pub fn set_is_condition_day (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a62fd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionEvening()` overload"] pub fn get_is_condition_evening () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63050usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionEvening(bool)` overload"] pub fn set_is_condition_evening (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a630c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionNight()` overload"] pub fn get_is_condition_night () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionNight(bool)` overload"] pub fn set_is_condition_night (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a631b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionWeaponOpened()` overload"] pub fn get_is_condition_weapon_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63230usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionWeaponOpened(bool)` overload"] pub fn set_is_condition_weapon_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a632a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionItemOpened()` overload"] pub fn get_is_condition_item_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63320usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionItemOpened(bool)` overload"] pub fn set_is_condition_item_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63390usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionRefinementOpened()` overload"] pub fn get_is_condition_refinement_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63410usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionRefinementOpened(bool)` overload"] pub fn set_is_condition_refinement_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63480usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionAccessoryOpened()` overload"] pub fn get_is_condition_accessory_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionAccessoryOpened(bool)` overload"] pub fn set_is_condition_accessory_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63570usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionTent1()` overload"] pub fn get_is_condition_tent1 () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a635f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionTent1(bool)` overload"] pub fn set_is_condition_tent1 (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionTent2()` overload"] pub fn get_is_condition_tent2 () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a636e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionTent2(bool)` overload"] pub fn set_is_condition_tent2 (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionTent3()` overload"] pub fn get_is_condition_tent3 () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a637d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionTent3(bool)` overload"] pub fn set_is_condition_tent3 (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63840usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionFire()` overload"] pub fn get_is_condition_fire () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a638c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionFire(bool)` overload"] pub fn set_is_condition_fire (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63930usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionFortuneHutOpened()` overload"] pub fn get_is_condition_fortune_hut_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a639b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionFortuneHutOpened(bool)` overload"] pub fn set_is_condition_fortune_hut_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionFleaMarket()` overload"] pub fn get_is_condition_flea_market () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63aa0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionFleaMarket(bool)` overload"] pub fn set_is_condition_flea_market (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63b10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionStatue()` overload"] pub fn get_is_condition_statue () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63b90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionStatue(bool)` overload"] pub fn set_is_condition_statue (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63c00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionRefineGodWeaponOpened()` overload"] pub fn get_is_condition_refine_god_weapon_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63c80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionRefineGodWeaponOpened(bool)` overload"] pub fn set_is_condition_refine_god_weapon_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionMuscleHardOpened()` overload"] pub fn get_is_condition_muscle_hard_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63d70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionMuscleHardOpened(bool)` overload"] pub fn set_is_condition_muscle_hard_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63de0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionMuscleMasterAndEndlessOpened()` overload"] pub fn get_is_condition_muscle_master_and_endless_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63e60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionMuscleMasterAndEndlessOpened(bool)` overload"] pub fn set_is_condition_muscle_master_and_endless_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63ed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionDragonRideHardOpened()` overload"] pub fn get_is_condition_dragon_ride_hard_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63f50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionDragonRideHardOpened(bool)` overload"] pub fn set_is_condition_dragon_ride_hard_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a63fc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionDragonRideExpertOpened()` overload"] pub fn get_is_condition_dragon_ride_expert_opened () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64040usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionDragonRideExpertOpened(bool)` overload"] pub fn set_is_condition_dragon_ride_expert_opened (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a640b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsConditionPoolCircleSwim()` overload"] pub fn get_is_condition_pool_circle_swim () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64130usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsConditionPoolCircleSwim(bool)` overload"] pub fn set_is_condition_pool_circle_swim (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a641a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`IsFirstAccessRefineGodWeapon()` overload"] pub fn is_first_access_refine_god_weapon () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64220usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetFirstAccessRefineGodWeapon()` overload"] pub fn set_first_access_refine_god_weapon () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64320usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_CurrentCookingPid()` overload"] pub fn get_current_cooking_pid () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64450usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_CurrentCookingPid(::unity2::Il2CppString)` overload"] pub fn set_current_cooking_pid (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a644c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PersonLimitCount()` overload"] pub fn get_person_limit_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64540usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_GodPersonLimitCount()` overload"] pub fn get_god_person_limit_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64590usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_AnimalLimitCount()` overload"] pub fn get_animal_limit_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a645e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_KizunaPersonLimitCount()` overload"] pub fn get_kizuna_person_limit_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64630usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideLevel()` overload"] pub fn get_dragon_ride_level () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideLevel(i32)` overload"] pub fn set_dragon_ride_level (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a646f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDragonRideTimeTest()` overload"] pub fn get_is_dragon_ride_time_test () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsDragonRideTimeTest(bool)` overload"] pub fn set_is_dragon_ride_time_test (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a647d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDragonRideWalkThrough()` overload"] pub fn get_is_dragon_ride_walk_through () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64850usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsDragonRideWalkThrough(bool)` overload"] pub fn set_is_dragon_ride_walk_through (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a648c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideTotalScore()` overload"] pub fn get_dragon_ride_total_score () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideTotalScore(i32)` overload"] pub fn set_dragon_ride_total_score (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a649b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideNormalTargetCount()` overload"] pub fn get_dragon_ride_normal_target_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64a20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideNormalTargetCount(i32)` overload"] pub fn set_dragon_ride_normal_target_count (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideBigTargetCount()` overload"] pub fn get_dragon_ride_big_target_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideBigTargetCount(i32)` overload"] pub fn set_dragon_ride_big_target_count (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideLinkTargetCount()` overload"] pub fn get_dragon_ride_link_target_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64be0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideLinkTargetCount(i32)` overload"] pub fn set_dragon_ride_link_target_count (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideSpecialTargetCount()` overload"] pub fn get_dragon_ride_special_target_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64cc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideSpecialTargetCount(i32)` overload"] pub fn set_dragon_ride_special_target_count (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64d30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideRouletteTargetCount()` overload"] pub fn get_dragon_ride_roulette_target_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64da0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideRouletteTargetCount(i32)` overload"] pub fn set_dragon_ride_roulette_target_count (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64e10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideAssistScore()` overload"] pub fn get_dragon_ride_assist_score () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64e80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideAssistScore(i32)` overload"] pub fn set_dragon_ride_assist_score (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRidePlayRankNum()` overload"] pub fn get_dragon_ride_play_rank_num () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64f60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRidePlayRankNum(i32)` overload"] pub fn set_dragon_ride_play_rank_num (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a64fd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideRetireFlag()` overload"] pub fn get_dragon_ride_retire_flag () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65040usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideRetireFlag(bool)` overload"] pub fn set_dragon_ride_retire_flag (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a650b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideWalkThroughList()` overload"] pub fn get_dragon_ride_walk_through_list () -> :: unity2 :: Array < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData_CourseData > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData_CourseData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65130usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideWalkThroughList(::unity2::Array<crate::app::dragonridepresetparamdata::DragonRidePresetParamData_CourseData>)` overload"] pub fn set_dragon_ride_walk_through_list (value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData_CourseData > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData_CourseData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a651a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideUsingPresetID()` overload"] pub fn get_dragon_ride_using_preset_id () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65220usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideUsingPresetID(::unity2::Il2CppString)` overload"] pub fn set_dragon_ride_using_preset_id (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideTargetSuicideSec()` overload"] pub fn get_dragon_ride_target_suicide_sec () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65310usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideTargetSuicideSec(f32)` overload"] pub fn set_dragon_ride_target_suicide_sec (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65380usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideTargetSuicideSecRandomRange()` overload"] pub fn get_dragon_ride_target_suicide_sec_random_range () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a653f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideTargetSuicideSecRandomRange(f32)` overload"] pub fn set_dragon_ride_target_suicide_sec_random_range (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonRideAssistLevel()` overload"] pub fn get_dragon_ride_assist_level () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a654d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DragonRideAssistLevel(i32)` overload"] pub fn set_dragon_ride_assist_level (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DebugDragonRideAssistSet()` overload"] pub fn get_debug_dragon_ride_assist_set () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a655b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DebugDragonRideAssistSet(bool)` overload"] pub fn set_debug_dragon_ride_assist_set (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDragonRideResultCheck()` overload"] pub fn get_is_dragon_ride_result_check () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a656a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsDragonRideResultCheck(bool)` overload"] pub fn set_is_dragon_ride_result_check (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65710usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDragonRideResultCheck_Assist()` overload"] pub fn get_is_dragon_ride_result_check_assist () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65790usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsDragonRideResultCheck_Assist(bool)` overload"] pub fn set_is_dragon_ride_result_check_assist (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDragonRideResultCheck_HighScore()` overload"] pub fn get_is_dragon_ride_result_check_high_score () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65880usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsDragonRideResultCheck_HighScore(bool)` overload"] pub fn set_is_dragon_ride_result_check_high_score (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a658f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FishingLureType()` overload"] pub fn get_fishing_lure_type () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65970usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_FishingLureType(i32)` overload"] pub fn set_fishing_lure_type (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a659e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FishingGetFishID()` overload"] pub fn get_fishing_get_fish_id () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65a50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_FishingGetFishID(::unity2::Il2CppString)` overload"] pub fn set_fishing_get_fish_id (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65ac0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FishingGetFishSize()` overload"] pub fn get_fishing_get_fish_size () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65b40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_FishingGetFishSize(f32)` overload"] pub fn set_fishing_get_fish_size (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65bb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPlayMuscleExercise()` overload"] pub fn get_is_play_muscle_exercise () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65c20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsPlayMuscleExercise(bool)` overload"] pub fn set_is_play_muscle_exercise (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65c90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`InitializeCondition()` overload"] pub fn initialize_condition () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a65d10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FinalizeCondition()` overload"] pub fn finalize_condition () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a674b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsCondition(crate::app::hubutil::HubUtil_ConditionType)` overload"] pub fn is_condition (condition_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_ConditionType >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: hubutil :: HubUtil_ConditionType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a67f80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (condition_type) , :: core :: option :: Option :: None) } } } # [doc = "`InitCookingPerson()` overload"] pub fn init_cooking_person () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a67bb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetupCharacterDisposType(crate::combat::character::Character, crate::app::hubdisposdata::HubDisposData_DisposTypes)` overload"] pub fn setup_character_dispos_type (chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , dispos_type : impl :: core :: convert :: Into < crate :: app :: hubdisposdata :: HubDisposData_DisposTypes >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , crate :: app :: hubdisposdata :: HubDisposData_DisposTypes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a68810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chara) , :: core :: convert :: Into :: into (dispos_type) , :: core :: option :: Option :: None) } } } # [doc = "`SetupCharacterGroundHeight(crate::combat::character::Character, f32, f32)` overload"] pub fn setup_character_ground_height (chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , ground_offset : impl :: core :: convert :: Into < f32 > , gravity : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a68a80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chara) , :: core :: convert :: Into :: into (ground_offset) , :: core :: convert :: Into :: into (gravity) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a68bf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubutil")]
-pub trait IHubUtilMethods : IHubUtil { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubUtil as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubUtil , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a68be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubutil")]
-impl < __T : IHubUtil > IHubUtilMethods for __T { }
-
-#[cfg(feature = "app-hubutil")]
-impl HubUtil { pub fn get_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_params_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_unit_display_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_pad_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_player_max_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_player_accel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_player_decel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_player_rotate_speed_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_player_dash_stop_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_player_dash_speed_intensity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_spring_gravity_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_player_speed_curve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_turn_curve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_min_look_at_dist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_max_look_at_dist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_pad_allowance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_others_body_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_others_head_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_empty_word_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_character_appearance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_player_appearance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn create_look_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn is_main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_hub_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn is_player_female_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn is_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn pid_to_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn gid_to_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn try_get_sortie_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn is_sortie_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn is_best_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_now_year_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn is_birthday_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn is_hero_birthday_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn is_birthday_present_got_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn can_promise_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn is_avaliable_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn level_up_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_reliance_suffix_letter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn can_any_reliance_level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn can_any_god_level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn can_any_reliance_level_up_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn can_any_reliance_level_up_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_a_plus_ascii_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn continuous_sortie_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn is_exists_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn has_story_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn has_swimsuit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn get_swimsuit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn get_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn is_capture_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn get_animal_capture_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn set_animal_capture_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn inc_animal_capture_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn get_encount_material_base_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn get_encount_material_item_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn get_item_count_with_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn update_locate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn get_is_first_entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn set_is_first_entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn get_last_scenario_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn set_last_scenario_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn get_is_condition_morning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn set_is_condition_morning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn get_is_condition_day_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn set_is_condition_day_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn get_is_condition_evening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn set_is_condition_evening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn get_is_condition_night_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn set_is_condition_night_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn get_is_condition_weapon_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn set_is_condition_weapon_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn get_is_condition_item_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn set_is_condition_item_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn get_is_condition_refinement_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn set_is_condition_refinement_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn get_is_condition_accessory_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn set_is_condition_accessory_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn get_is_condition_tent1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn set_is_condition_tent1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn get_is_condition_tent2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } pub fn set_is_condition_tent2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [82] } pub fn get_is_condition_tent3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [83] } pub fn set_is_condition_tent3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [84] } pub fn get_is_condition_fire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [85] } pub fn set_is_condition_fire_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [86] } pub fn get_is_condition_fortune_hut_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [87] } pub fn set_is_condition_fortune_hut_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [88] } pub fn get_is_condition_flea_market_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [89] } pub fn set_is_condition_flea_market_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [90] } pub fn get_is_condition_statue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [91] } pub fn set_is_condition_statue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [92] } pub fn get_is_condition_refine_god_weapon_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [93] } pub fn set_is_condition_refine_god_weapon_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [94] } pub fn get_is_condition_muscle_hard_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [95] } pub fn set_is_condition_muscle_hard_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [96] } pub fn get_is_condition_muscle_master_and_endless_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [97] } pub fn set_is_condition_muscle_master_and_endless_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [98] } pub fn get_is_condition_dragon_ride_hard_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [99] } pub fn set_is_condition_dragon_ride_hard_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [100] } pub fn get_is_condition_dragon_ride_expert_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [101] } pub fn set_is_condition_dragon_ride_expert_opened_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [102] } pub fn get_is_condition_pool_circle_swim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [103] } pub fn set_is_condition_pool_circle_swim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [104] } pub fn is_first_access_refine_god_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [105] } pub fn set_first_access_refine_god_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [106] } pub fn get_current_cooking_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [107] } pub fn set_current_cooking_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [108] } pub fn get_person_limit_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [109] } pub fn get_god_person_limit_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [110] } pub fn get_animal_limit_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [111] } pub fn get_kizuna_person_limit_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [112] } pub fn get_dragon_ride_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [113] } pub fn set_dragon_ride_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [114] } pub fn get_is_dragon_ride_time_test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [115] } pub fn set_is_dragon_ride_time_test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [116] } pub fn get_is_dragon_ride_walk_through_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [117] } pub fn set_is_dragon_ride_walk_through_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [118] } pub fn get_dragon_ride_total_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [119] } pub fn set_dragon_ride_total_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [120] } pub fn get_dragon_ride_normal_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [121] } pub fn set_dragon_ride_normal_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [122] } pub fn get_dragon_ride_big_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [123] } pub fn set_dragon_ride_big_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [124] } pub fn get_dragon_ride_link_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [125] } pub fn set_dragon_ride_link_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [126] } pub fn get_dragon_ride_special_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [127] } pub fn set_dragon_ride_special_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [128] } pub fn get_dragon_ride_roulette_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [129] } pub fn set_dragon_ride_roulette_target_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [130] } pub fn get_dragon_ride_assist_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [131] } pub fn set_dragon_ride_assist_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [132] } pub fn get_dragon_ride_play_rank_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [133] } pub fn set_dragon_ride_play_rank_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [134] } pub fn get_dragon_ride_retire_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [135] } pub fn set_dragon_ride_retire_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [136] } pub fn get_dragon_ride_walk_through_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [137] } pub fn set_dragon_ride_walk_through_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [138] } pub fn get_dragon_ride_using_preset_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [139] } pub fn set_dragon_ride_using_preset_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [140] } pub fn get_dragon_ride_target_suicide_sec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [141] } pub fn set_dragon_ride_target_suicide_sec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [142] } pub fn get_dragon_ride_target_suicide_sec_random_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [143] } pub fn set_dragon_ride_target_suicide_sec_random_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [144] } pub fn get_dragon_ride_assist_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [145] } pub fn set_dragon_ride_assist_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [146] } pub fn get_debug_dragon_ride_assist_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [147] } pub fn set_debug_dragon_ride_assist_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [148] } pub fn get_is_dragon_ride_result_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [149] } pub fn set_is_dragon_ride_result_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [150] } pub fn get_is_dragon_ride_result_check_assist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [151] } pub fn set_is_dragon_ride_result_check_assist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [152] } pub fn get_is_dragon_ride_result_check_high_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [153] } pub fn set_is_dragon_ride_result_check_high_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [154] } pub fn get_fishing_lure_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [155] } pub fn set_fishing_lure_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [156] } pub fn get_fishing_get_fish_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [157] } pub fn set_fishing_get_fish_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [158] } pub fn get_fishing_get_fish_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [159] } pub fn set_fishing_get_fish_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [160] } pub fn get_is_play_muscle_exercise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [161] } pub fn set_is_play_muscle_exercise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [162] } pub fn initialize_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [163] } pub fn finalize_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [164] } pub fn is_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [165] } pub fn init_cooking_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [166] } pub fn setup_character_dispos_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [168] } pub fn setup_character_ground_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [169] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [170] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [171] } }
-
-#[cfg(feature = "app-hubutil")]
-impl HubUtil {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubUtil) , :: core :: stringify ! (new) ,)) ; < Self as IHubUtilMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{#[doc="`Loop(i32, i32, i32)` overload"]pub fn r#loop(n:impl::core::convert::Into<i32> ,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedd40usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(n),(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max))}
+}
+#[doc="`Coefficient(f32)` overload"]pub fn coefficient(t:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedd70usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(t))}
+}
+#[doc="`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]pub fn calc(v:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeddf0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(v),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]pub fn calc_loop(v:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedf80usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(v),(f32)::core::convert::Into::into(t))}
+}
 }
 
-#[cfg(feature = "app-hubutil")]
-impl HubUtil_BSpline { # [doc = "`Loop(i32, i32, i32)` overload"] pub fn r#loop (n : impl :: core :: convert :: Into < i32 > , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2aedd40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (n) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`Coefficient(f32)` overload"] pub fn coefficient (t : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2aedd70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"] pub fn calc (v : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2aeddf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"] pub fn calc_loop (v : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2aedf80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubutil")]pub trait IHubUtil_BSplineMethods:IHubUtil_BSpline{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubUtil_BSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aee130usize)as*mut u8,();
+(HubUtil_BSpline)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubutil")]
-pub trait IHubUtil_BSplineMethods : IHubUtil_BSpline { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubUtil_BSpline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubUtil_BSpline , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2aee130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubutil")]impl<__T:IHubUtil_BSpline>IHubUtil_BSplineMethods for __T{}
 
-#[cfg(feature = "app-hubutil")]
-impl < __T : IHubUtil_BSpline > IHubUtil_BSplineMethods for __T { }
+#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{pub fn loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn coefficient_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-hubutil")]
-impl HubUtil_BSpline { pub fn loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil_BSpline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn coefficient_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil_BSpline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil_BSpline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_loop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil_BSpline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubUtil_BSpline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubUtil_BSpline), ::core::stringify!(new),));
+ <Self as IHubUtil_BSplineMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-hubutil")]
-impl HubUtil_BSpline {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubUtil_BSpline) , :: core :: stringify ! (new) ,)) ; < Self as IHubUtil_BSplineMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubutil")]impl HubUtil{#[doc="`get_Params()` overload"]pub fn get_params()->crate::app::hubparams::HubParams{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e550usize)as*mut u8,crate::app::hubparams::HubParams;
+)}
+}
+#[doc="`IsParamsValid()` overload"]pub fn is_params_valid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e6c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetUnitDisplayNum()` overload"]pub fn get_unit_display_num()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e760usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_PadThreshold()` overload"]pub fn get_pad_threshold()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e7c0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_PlayerMaxSpeed()` overload"]pub fn get_player_max_speed()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e820usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_PlayerAccel()` overload"]pub fn get_player_accel()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e880usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_PlayerDecel()` overload"]pub fn get_player_decel()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e8e0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_PlayerRotateSpeedRate()` overload"]pub fn get_player_rotate_speed_rate()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e940usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_PlayerDashStopTime()` overload"]pub fn get_player_dash_stop_time()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e9a0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_PlayerDashSpeedIntensity()` overload"]pub fn get_player_dash_speed_intensity()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ea00usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_SpringGravityY()` overload"]pub fn get_spring_gravity_y()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ea60usize)as*mut u8,f32;
+)}
+}
+#[doc="`GetPlayerSpeedCurve(f32)` overload"]pub fn get_player_speed_curve(magnitude:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5eac0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(magnitude))}
+}
+#[doc="`GetTurnCurve()` overload"]pub fn get_turn_curve()->crate::unity_engine::animationcurve::AnimationCurve{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e4f0usize)as*mut u8,crate::unity_engine::animationcurve::AnimationCurve;
+)}
+}
+#[doc="`get_MinLookAtDist()` overload"]pub fn get_min_look_at_dist()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5eb40usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_MaxLookAtDist()` overload"]pub fn get_max_look_at_dist()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5eba0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_PadAllowance()` overload"]pub fn get_pad_allowance()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ec00usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_OthersBodyWeight()` overload"]pub fn get_others_body_weight()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ec60usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_OthersHeadWeight()` overload"]pub fn get_others_head_weight()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ecc0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_EmptyWord()` overload"]pub fn get_empty_word()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ed20usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`GetCharacterAppearance(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn get_character_appearance(pid:impl::core::convert::Into< ::unity2::Il2CppString> ,accessory:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::characterappearance::CharacterAppearance{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ed90usize)as*mut u8,crate::combat::characterappearance::CharacterAppearance;
+(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(accessory))}
+}
+#[doc="`GetPlayerAppearance(::unity2::Il2CppString)` overload"]pub fn get_player_appearance(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::characterappearance::CharacterAppearance{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f290usize)as*mut u8,crate::combat::characterappearance::CharacterAppearance;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`CreateLookAt(crate::unity_engine::gameobject::GameObject, bool)` overload"]pub fn create_look_at(game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,disabled_param:impl::core::convert::Into<bool>)->crate::app::hublookatcontroller::HubLookAtController{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e190usize)as*mut u8,crate::app::hublookatcontroller::HubLookAtController;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(bool)::core::convert::Into::into(disabled_param))}
+}
+#[doc="`IsMain()` overload"]pub fn is_main()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f410usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsHubSequence()` overload"]pub fn is_hub_sequence()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f4d0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsPlayerFemale()` overload"]pub fn is_player_female()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ad80usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsComplete(::unity2::Il2CppString)` overload"]pub fn is_complete(cid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f590usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`PIDToGID(::unity2::Il2CppString)` overload"]pub fn pid_to_gid(pid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f710usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`GIDToPID(::unity2::Il2CppString)` overload"]pub fn gid_to_pid(gid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f780usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`TryGetSortieUnit(::unity2::Il2CppString)` overload"]pub fn try_get_sortie_unit(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f7f0usize)as*mut u8,crate::app::unit::Unit;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`IsSortieUnit(::unity2::Il2CppString)` overload"]pub fn is_sortie_unit(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f850usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`IsBestReliance(::unity2::Il2CppString)` overload"]pub fn is_best_reliance(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5d260usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`GetNowYear()` overload"]pub fn get_now_year()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5f900usize)as*mut u8,i32;
+)}
+}
+#[doc="`IsBirthday(::unity2::Il2CppString)` overload"]pub fn is_birthday(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5fae0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`IsHeroBirthday()` overload"]pub fn is_hero_birthday()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5fbe0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsBirthdayPresentGot(::unity2::Il2CppString)` overload"]pub fn is_birthday_present_got(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5fc80usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`CanPromiseEngage(crate::app::unit::Unit)` overload"]pub fn can_promise_engage(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5fdc0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsAvaliableDispos(crate::app::hubdisposdata::HubDisposData, crate::app::hubutil::HubUtil_TimezoneType)` overload"]pub fn is_avaliable_dispos(data:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData> ,timezone_type:impl::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a60020usize)as*mut u8,bool;
+(crate::app::hubdisposdata::HubDisposData)::core::convert::Into::into(data),(crate::app::hubutil::HubUtil_TimezoneType)::core::convert::Into::into(timezone_type))}
+}
+#[doc="`LevelUpReliance(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level)` overload"]pub fn level_up_reliance(a:impl::core::convert::Into<crate::app::unit::Unit> ,b:impl::core::convert::Into<crate::app::unit::Unit> ,level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a60630usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(a),(crate::app::unit::Unit)::core::convert::Into::into(b),(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(level))}
+}
+#[doc="`GetRelianceSuffixLetter(crate::app::reliancedata::RelianceData_Level)` overload"]pub fn get_reliance_suffix_letter(level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a60710usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(level))}
+}
+#[doc="`CanAnyRelianceLevelUp()` overload"]pub fn can_any_reliance_level_up()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a607b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`CanAnyGodLevelUp()` overload"]pub fn can_any_god_level_up()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a608b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`CanAnyRelianceLevelUp(::unity2::Il2CppString, bool)` overload"]pub fn can_any_reliance_level_up_2(pid:impl::core::convert::Into< ::unity2::Il2CppString> ,without_a_plus:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a60bd0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(pid),(bool)::core::convert::Into::into(without_a_plus))}
+}
+#[doc="`CanAnyRelianceLevelUpPlayer(::unity2::Il2CppString, bool)` overload"]pub fn can_any_reliance_level_up_player(pid:impl::core::convert::Into< ::unity2::Il2CppString> ,without_a_plus:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a61360usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(pid),(bool)::core::convert::Into::into(without_a_plus))}
+}
+#[doc="`GetAPlusAsciiName()` overload"]pub fn get_a_plus_ascii_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a616d0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`ContinuousSortieCount(::unity2::Il2CppString)` overload"]pub fn continuous_sortie_count(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a61750usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`IsExistsMID(::unity2::Il2CppString)` overload"]pub fn is_exists_mid(label:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a61790usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`HasStoryTalk(::unity2::Il2CppString)` overload"]pub fn has_story_talk(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a61870usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`HasSwimsuit(::unity2::Il2CppString)` overload"]pub fn has_swimsuit(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a61b80usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`GetSwimsuit()` overload"]pub fn get_swimsuit()->crate::app::accessorydata::AccessoryData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a61c60usize)as*mut u8,crate::app::accessorydata::AccessoryData;
+)}
+}
+#[doc="`GetAnimal(::unity2::Il2CppString)` overload"]pub fn get_animal(locator:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::animaldata::AnimalData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a61e40usize)as*mut u8,crate::app::animaldata::AnimalData;
+(::unity2::Il2CppString)::core::convert::Into::into(locator))}
+}
+#[doc="`IsCaptureAnimal(crate::app::animaldata::AnimalData)` overload"]pub fn is_capture_animal(animal:impl::core::convert::Into<crate::app::animaldata::AnimalData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a622c0usize)as*mut u8,bool;
+(crate::app::animaldata::AnimalData)::core::convert::Into::into(animal))}
+}
+#[doc="`GetAnimalCaptureNum(crate::app::animaldata::AnimalData)` overload"]pub fn get_animal_capture_num(animal:impl::core::convert::Into<crate::app::animaldata::AnimalData>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62370usize)as*mut u8,i32;
+(crate::app::animaldata::AnimalData)::core::convert::Into::into(animal))}
+}
+#[doc="`SetAnimalCaptureNum(crate::app::animaldata::AnimalData, i32)` overload"]pub fn set_animal_capture_num(animal:impl::core::convert::Into<crate::app::animaldata::AnimalData> ,num:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62460usize)as*mut u8,();
+(crate::app::animaldata::AnimalData)::core::convert::Into::into(animal),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`IncAnimalCaptureNum(crate::app::animaldata::AnimalData, i32)` overload"]pub fn inc_animal_capture_num(animal:impl::core::convert::Into<crate::app::animaldata::AnimalData> ,num:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62640usize)as*mut u8,();
+(crate::app::animaldata::AnimalData)::core::convert::Into::into(animal),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`get_EncountMaterialBase()` overload"]pub fn get_encount_material_base()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a626c0usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetEncountMaterialItemCount()` overload"]pub fn get_encount_material_item_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62800usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetItemCountWithBonus(crate::app::itemdata::ItemData, i32)` overload"]pub fn get_item_count_with_bonus(item:impl::core::convert::Into<crate::app::itemdata::ItemData> ,base_count:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a629c0usize)as*mut u8,i32;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item),(i32)::core::convert::Into::into(base_count))}
+}
+#[doc="`UpdateLocate(::unity2::Il2CppString)` overload"]pub fn update_locate(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62b80usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`get_IsFirstEntry()` overload"]pub fn get_is_first_entry()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62c90usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsFirstEntry(bool)` overload"]pub fn set_is_first_entry(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62d00usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_LastScenarioChapter()` overload"]pub fn get_last_scenario_chapter()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62d80usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`set_LastScenarioChapter(::unity2::Il2CppString)` overload"]pub fn set_last_scenario_chapter(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62df0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionMorning()` overload"]pub fn get_is_condition_morning()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62e70usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionMorning(bool)` overload"]pub fn set_is_condition_morning(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62ee0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionDay()` overload"]pub fn get_is_condition_day()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62f60usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionDay(bool)` overload"]pub fn set_is_condition_day(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a62fd0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionEvening()` overload"]pub fn get_is_condition_evening()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63050usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionEvening(bool)` overload"]pub fn set_is_condition_evening(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a630c0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionNight()` overload"]pub fn get_is_condition_night()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63140usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionNight(bool)` overload"]pub fn set_is_condition_night(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a631b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionWeaponOpened()` overload"]pub fn get_is_condition_weapon_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63230usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionWeaponOpened(bool)` overload"]pub fn set_is_condition_weapon_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a632a0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionItemOpened()` overload"]pub fn get_is_condition_item_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63320usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionItemOpened(bool)` overload"]pub fn set_is_condition_item_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63390usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionRefinementOpened()` overload"]pub fn get_is_condition_refinement_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63410usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionRefinementOpened(bool)` overload"]pub fn set_is_condition_refinement_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63480usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionAccessoryOpened()` overload"]pub fn get_is_condition_accessory_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63500usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionAccessoryOpened(bool)` overload"]pub fn set_is_condition_accessory_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63570usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionTent1()` overload"]pub fn get_is_condition_tent1()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a635f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionTent1(bool)` overload"]pub fn set_is_condition_tent1(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63660usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionTent2()` overload"]pub fn get_is_condition_tent2()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a636e0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionTent2(bool)` overload"]pub fn set_is_condition_tent2(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63750usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionTent3()` overload"]pub fn get_is_condition_tent3()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a637d0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionTent3(bool)` overload"]pub fn set_is_condition_tent3(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63840usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionFire()` overload"]pub fn get_is_condition_fire()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a638c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionFire(bool)` overload"]pub fn set_is_condition_fire(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63930usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionFortuneHutOpened()` overload"]pub fn get_is_condition_fortune_hut_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a639b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionFortuneHutOpened(bool)` overload"]pub fn set_is_condition_fortune_hut_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63a20usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionFleaMarket()` overload"]pub fn get_is_condition_flea_market()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63aa0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionFleaMarket(bool)` overload"]pub fn set_is_condition_flea_market(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63b10usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionStatue()` overload"]pub fn get_is_condition_statue()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63b90usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionStatue(bool)` overload"]pub fn set_is_condition_statue(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63c00usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionRefineGodWeaponOpened()` overload"]pub fn get_is_condition_refine_god_weapon_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63c80usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionRefineGodWeaponOpened(bool)` overload"]pub fn set_is_condition_refine_god_weapon_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63cf0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionMuscleHardOpened()` overload"]pub fn get_is_condition_muscle_hard_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63d70usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionMuscleHardOpened(bool)` overload"]pub fn set_is_condition_muscle_hard_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63de0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionMuscleMasterAndEndlessOpened()` overload"]pub fn get_is_condition_muscle_master_and_endless_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63e60usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionMuscleMasterAndEndlessOpened(bool)` overload"]pub fn set_is_condition_muscle_master_and_endless_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63ed0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionDragonRideHardOpened()` overload"]pub fn get_is_condition_dragon_ride_hard_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63f50usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionDragonRideHardOpened(bool)` overload"]pub fn set_is_condition_dragon_ride_hard_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a63fc0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionDragonRideExpertOpened()` overload"]pub fn get_is_condition_dragon_ride_expert_opened()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64040usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionDragonRideExpertOpened(bool)` overload"]pub fn set_is_condition_dragon_ride_expert_opened(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a640b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsConditionPoolCircleSwim()` overload"]pub fn get_is_condition_pool_circle_swim()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64130usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsConditionPoolCircleSwim(bool)` overload"]pub fn set_is_condition_pool_circle_swim(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a641a0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`IsFirstAccessRefineGodWeapon()` overload"]pub fn is_first_access_refine_god_weapon()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64220usize)as*mut u8,bool;
+)}
+}
+#[doc="`SetFirstAccessRefineGodWeapon()` overload"]pub fn set_first_access_refine_god_weapon()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64320usize)as*mut u8,();
+)}
+}
+#[doc="`get_CurrentCookingPid()` overload"]pub fn get_current_cooking_pid()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64450usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`set_CurrentCookingPid(::unity2::Il2CppString)` overload"]pub fn set_current_cooking_pid(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a644c0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PersonLimitCount()` overload"]pub fn get_person_limit_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64540usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_GodPersonLimitCount()` overload"]pub fn get_god_person_limit_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64590usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_AnimalLimitCount()` overload"]pub fn get_animal_limit_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a645e0usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_KizunaPersonLimitCount()` overload"]pub fn get_kizuna_person_limit_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64630usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_DragonRideLevel()` overload"]pub fn get_dragon_ride_level()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64680usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideLevel(i32)` overload"]pub fn set_dragon_ride_level(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a646f0usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDragonRideTimeTest()` overload"]pub fn get_is_dragon_ride_time_test()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64760usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsDragonRideTimeTest(bool)` overload"]pub fn set_is_dragon_ride_time_test(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a647d0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDragonRideWalkThrough()` overload"]pub fn get_is_dragon_ride_walk_through()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64850usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsDragonRideWalkThrough(bool)` overload"]pub fn set_is_dragon_ride_walk_through(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a648c0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideTotalScore()` overload"]pub fn get_dragon_ride_total_score()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64940usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideTotalScore(i32)` overload"]pub fn set_dragon_ride_total_score(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a649b0usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideNormalTargetCount()` overload"]pub fn get_dragon_ride_normal_target_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64a20usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideNormalTargetCount(i32)` overload"]pub fn set_dragon_ride_normal_target_count(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64a90usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideBigTargetCount()` overload"]pub fn get_dragon_ride_big_target_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64b00usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideBigTargetCount(i32)` overload"]pub fn set_dragon_ride_big_target_count(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64b70usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideLinkTargetCount()` overload"]pub fn get_dragon_ride_link_target_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64be0usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideLinkTargetCount(i32)` overload"]pub fn set_dragon_ride_link_target_count(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64c50usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideSpecialTargetCount()` overload"]pub fn get_dragon_ride_special_target_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64cc0usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideSpecialTargetCount(i32)` overload"]pub fn set_dragon_ride_special_target_count(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64d30usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideRouletteTargetCount()` overload"]pub fn get_dragon_ride_roulette_target_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64da0usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideRouletteTargetCount(i32)` overload"]pub fn set_dragon_ride_roulette_target_count(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64e10usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideAssistScore()` overload"]pub fn get_dragon_ride_assist_score()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64e80usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideAssistScore(i32)` overload"]pub fn set_dragon_ride_assist_score(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64ef0usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRidePlayRankNum()` overload"]pub fn get_dragon_ride_play_rank_num()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64f60usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRidePlayRankNum(i32)` overload"]pub fn set_dragon_ride_play_rank_num(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a64fd0usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideRetireFlag()` overload"]pub fn get_dragon_ride_retire_flag()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65040usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_DragonRideRetireFlag(bool)` overload"]pub fn set_dragon_ride_retire_flag(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a650b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideWalkThroughList()` overload"]pub fn get_dragon_ride_walk_through_list()-> ::unity2::Array<crate::app::dragonridepresetparamdata::DragonRidePresetParamData_CourseData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65130usize)as*mut u8, ::unity2::Array<crate::app::dragonridepresetparamdata::DragonRidePresetParamData_CourseData> ;
+)}
+}
+#[doc="`set_DragonRideWalkThroughList(::unity2::Array<crate::app::dragonridepresetparamdata::DragonRidePresetParamData_CourseData>)` overload"]pub fn set_dragon_ride_walk_through_list(value:impl::core::convert::Into< ::unity2::Array<crate::app::dragonridepresetparamdata::DragonRidePresetParamData_CourseData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a651a0usize)as*mut u8,();
+(::unity2::Array<crate::app::dragonridepresetparamdata::DragonRidePresetParamData_CourseData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideUsingPresetID()` overload"]pub fn get_dragon_ride_using_preset_id()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65220usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`set_DragonRideUsingPresetID(::unity2::Il2CppString)` overload"]pub fn set_dragon_ride_using_preset_id(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65290usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideTargetSuicideSec()` overload"]pub fn get_dragon_ride_target_suicide_sec()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65310usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_DragonRideTargetSuicideSec(f32)` overload"]pub fn set_dragon_ride_target_suicide_sec(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65380usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideTargetSuicideSecRandomRange()` overload"]pub fn get_dragon_ride_target_suicide_sec_random_range()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a653f0usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_DragonRideTargetSuicideSecRandomRange(f32)` overload"]pub fn set_dragon_ride_target_suicide_sec_random_range(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65460usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DragonRideAssistLevel()` overload"]pub fn get_dragon_ride_assist_level()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a654d0usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_DragonRideAssistLevel(i32)` overload"]pub fn set_dragon_ride_assist_level(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65540usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DebugDragonRideAssistSet()` overload"]pub fn get_debug_dragon_ride_assist_set()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a655b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_DebugDragonRideAssistSet(bool)` overload"]pub fn set_debug_dragon_ride_assist_set(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65620usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDragonRideResultCheck()` overload"]pub fn get_is_dragon_ride_result_check()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a656a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsDragonRideResultCheck(bool)` overload"]pub fn set_is_dragon_ride_result_check(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65710usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDragonRideResultCheck_Assist()` overload"]pub fn get_is_dragon_ride_result_check_assist()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65790usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsDragonRideResultCheck_Assist(bool)` overload"]pub fn set_is_dragon_ride_result_check_assist(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65800usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDragonRideResultCheck_HighScore()` overload"]pub fn get_is_dragon_ride_result_check_high_score()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65880usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsDragonRideResultCheck_HighScore(bool)` overload"]pub fn set_is_dragon_ride_result_check_high_score(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a658f0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_FishingLureType()` overload"]pub fn get_fishing_lure_type()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65970usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_FishingLureType(i32)` overload"]pub fn set_fishing_lure_type(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a659e0usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_FishingGetFishID()` overload"]pub fn get_fishing_get_fish_id()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65a50usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`set_FishingGetFishID(::unity2::Il2CppString)` overload"]pub fn set_fishing_get_fish_id(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65ac0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_FishingGetFishSize()` overload"]pub fn get_fishing_get_fish_size()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65b40usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_FishingGetFishSize(f32)` overload"]pub fn set_fishing_get_fish_size(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65bb0usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsPlayMuscleExercise()` overload"]pub fn get_is_play_muscle_exercise()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65c20usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsPlayMuscleExercise(bool)` overload"]pub fn set_is_play_muscle_exercise(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65c90usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`InitializeCondition()` overload"]pub fn initialize_condition()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a65d10usize)as*mut u8,();
+)}
+}
+#[doc="`FinalizeCondition()` overload"]pub fn finalize_condition()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a674b0usize)as*mut u8,();
+)}
+}
+#[doc="`IsCondition(crate::app::hubutil::HubUtil_ConditionType)` overload"]pub fn is_condition(condition_type:impl::core::convert::Into<crate::app::hubutil::HubUtil_ConditionType>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a67f80usize)as*mut u8,bool;
+(crate::app::hubutil::HubUtil_ConditionType)::core::convert::Into::into(condition_type))}
+}
+#[doc="`InitCookingPerson()` overload"]pub fn init_cooking_person()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a67bb0usize)as*mut u8,();
+)}
+}
+#[doc="`SetupCharacterDisposType(crate::combat::character::Character, crate::app::hubdisposdata::HubDisposData_DisposTypes)` overload"]pub fn setup_character_dispos_type(chara:impl::core::convert::Into<crate::combat::character::Character> ,dispos_type:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData_DisposTypes>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a68810usize)as*mut u8,();
+(crate::combat::character::Character)::core::convert::Into::into(chara),(crate::app::hubdisposdata::HubDisposData_DisposTypes)::core::convert::Into::into(dispos_type))}
+}
+#[doc="`SetupCharacterGroundHeight(crate::combat::character::Character, f32, f32)` overload"]pub fn setup_character_ground_height(chara:impl::core::convert::Into<crate::combat::character::Character> ,ground_offset:impl::core::convert::Into<f32> ,gravity:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a68a80usize)as*mut u8,();
+(crate::combat::character::Character)::core::convert::Into::into(chara),(f32)::core::convert::Into::into(ground_offset),(f32)::core::convert::Into::into(gravity))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a68bf0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-hubutil")]pub trait IHubUtilMethods:IHubUtil{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubUtil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a68be0usize)as*mut u8,();
+(HubUtil)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubutil")]impl<__T:IHubUtil>IHubUtilMethods for __T{}
+
+#[cfg(feature="app-hubutil")]impl HubUtil{pub fn get_params_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_params_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_unit_display_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_pad_threshold_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_player_max_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_player_accel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_player_decel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_player_rotate_speed_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_player_dash_stop_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_player_dash_speed_intensity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_spring_gravity_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_player_speed_curve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_turn_curve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_min_look_at_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_max_look_at_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_pad_allowance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_others_body_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_others_head_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_empty_word_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_character_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_player_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn create_look_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_hub_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn is_player_female_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn is_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn pid_to_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn gid_to_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn try_get_sortie_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn is_sortie_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn is_best_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_now_year_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn is_birthday_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn is_hero_birthday_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn is_birthday_present_got_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn can_promise_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn is_avaliable_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn level_up_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_reliance_suffix_letter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn can_any_reliance_level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn can_any_god_level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn can_any_reliance_level_up_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn can_any_reliance_level_up_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_a_plus_ascii_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn continuous_sortie_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn is_exists_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn has_story_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn has_swimsuit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn get_swimsuit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn get_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn is_capture_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn get_animal_capture_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn set_animal_capture_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn inc_animal_capture_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn get_encount_material_base_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn get_encount_material_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn get_item_count_with_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn update_locate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn get_is_first_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn set_is_first_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn get_last_scenario_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn set_last_scenario_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn get_is_condition_morning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn set_is_condition_morning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn get_is_condition_day_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn set_is_condition_day_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn get_is_condition_evening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn set_is_condition_evening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn get_is_condition_night_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn set_is_condition_night_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn get_is_condition_weapon_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn set_is_condition_weapon_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn get_is_condition_item_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn set_is_condition_item_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn get_is_condition_refinement_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn set_is_condition_refinement_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn get_is_condition_accessory_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn set_is_condition_accessory_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn get_is_condition_tent1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn set_is_condition_tent1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn get_is_condition_tent2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn set_is_condition_tent2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn get_is_condition_tent3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn set_is_condition_tent3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+pub fn get_is_condition_fire_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
+pub fn set_is_condition_fire_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
+pub fn get_is_condition_fortune_hut_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
+pub fn set_is_condition_fortune_hut_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+pub fn get_is_condition_flea_market_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
+pub fn set_is_condition_flea_market_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+pub fn get_is_condition_statue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
+pub fn set_is_condition_statue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[92]}
+pub fn get_is_condition_refine_god_weapon_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
+pub fn set_is_condition_refine_god_weapon_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[94]}
+pub fn get_is_condition_muscle_hard_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
+pub fn set_is_condition_muscle_hard_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
+pub fn get_is_condition_muscle_master_and_endless_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
+pub fn set_is_condition_muscle_master_and_endless_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
+pub fn get_is_condition_dragon_ride_hard_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
+pub fn set_is_condition_dragon_ride_hard_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[100]}
+pub fn get_is_condition_dragon_ride_expert_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[101]}
+pub fn set_is_condition_dragon_ride_expert_opened_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[102]}
+pub fn get_is_condition_pool_circle_swim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[103]}
+pub fn set_is_condition_pool_circle_swim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[104]}
+pub fn is_first_access_refine_god_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[105]}
+pub fn set_first_access_refine_god_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[106]}
+pub fn get_current_cooking_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[107]}
+pub fn set_current_cooking_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[108]}
+pub fn get_person_limit_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[109]}
+pub fn get_god_person_limit_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[110]}
+pub fn get_animal_limit_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[111]}
+pub fn get_kizuna_person_limit_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[112]}
+pub fn get_dragon_ride_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[113]}
+pub fn set_dragon_ride_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[114]}
+pub fn get_is_dragon_ride_time_test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[115]}
+pub fn set_is_dragon_ride_time_test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[116]}
+pub fn get_is_dragon_ride_walk_through_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[117]}
+pub fn set_is_dragon_ride_walk_through_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[118]}
+pub fn get_dragon_ride_total_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[119]}
+pub fn set_dragon_ride_total_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[120]}
+pub fn get_dragon_ride_normal_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[121]}
+pub fn set_dragon_ride_normal_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[122]}
+pub fn get_dragon_ride_big_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[123]}
+pub fn set_dragon_ride_big_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[124]}
+pub fn get_dragon_ride_link_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[125]}
+pub fn set_dragon_ride_link_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[126]}
+pub fn get_dragon_ride_special_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[127]}
+pub fn set_dragon_ride_special_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[128]}
+pub fn get_dragon_ride_roulette_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[129]}
+pub fn set_dragon_ride_roulette_target_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[130]}
+pub fn get_dragon_ride_assist_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[131]}
+pub fn set_dragon_ride_assist_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[132]}
+pub fn get_dragon_ride_play_rank_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[133]}
+pub fn set_dragon_ride_play_rank_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[134]}
+pub fn get_dragon_ride_retire_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[135]}
+pub fn set_dragon_ride_retire_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[136]}
+pub fn get_dragon_ride_walk_through_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[137]}
+pub fn set_dragon_ride_walk_through_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[138]}
+pub fn get_dragon_ride_using_preset_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[139]}
+pub fn set_dragon_ride_using_preset_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[140]}
+pub fn get_dragon_ride_target_suicide_sec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[141]}
+pub fn set_dragon_ride_target_suicide_sec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[142]}
+pub fn get_dragon_ride_target_suicide_sec_random_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[143]}
+pub fn set_dragon_ride_target_suicide_sec_random_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[144]}
+pub fn get_dragon_ride_assist_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[145]}
+pub fn set_dragon_ride_assist_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[146]}
+pub fn get_debug_dragon_ride_assist_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[147]}
+pub fn set_debug_dragon_ride_assist_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[148]}
+pub fn get_is_dragon_ride_result_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[149]}
+pub fn set_is_dragon_ride_result_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[150]}
+pub fn get_is_dragon_ride_result_check_assist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[151]}
+pub fn set_is_dragon_ride_result_check_assist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[152]}
+pub fn get_is_dragon_ride_result_check_high_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[153]}
+pub fn set_is_dragon_ride_result_check_high_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[154]}
+pub fn get_fishing_lure_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[155]}
+pub fn set_fishing_lure_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[156]}
+pub fn get_fishing_get_fish_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[157]}
+pub fn set_fishing_get_fish_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[158]}
+pub fn get_fishing_get_fish_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[159]}
+pub fn set_fishing_get_fish_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[160]}
+pub fn get_is_play_muscle_exercise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[161]}
+pub fn set_is_play_muscle_exercise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[162]}
+pub fn initialize_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[163]}
+pub fn finalize_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[164]}
+pub fn is_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[165]}
+pub fn init_cooking_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[166]}
+pub fn setup_character_dispos_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[168]}
+pub fn setup_character_ground_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[169]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[170]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[171]}
+}
+
+#[cfg(feature="app-hubutil")]impl HubUtil{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubUtil), ::core::stringify!(new),));
+ <Self as IHubUtilMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubUtil;
-    pub use super::IHubUtil;
-    pub use super::IHubUtilMethods;
-    pub use super::HubUtil_ConditionType;
     pub use super::HubUtil_TimezoneType;
+    pub use super::HubUtil_ConditionType;
     pub use super::HubUtil_BSpline;
     pub use super::IHubUtil_BSpline;
     pub use super::IHubUtil_BSplineMethods;
+    pub use super::HubUtil;
+    pub use super::IHubUtil;
+    pub use super::IHubUtilMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

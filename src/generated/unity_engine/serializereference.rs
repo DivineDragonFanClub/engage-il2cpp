@@ -4,10 +4,10 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/serializereference/SerializeReference.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SerializeReference")] pub struct SerializeReference {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/serializereference/SerializeReference.md"))]#[::unity2::class(namespace="UnityEngine",name="SerializeReference")]pub struct SerializeReference{}
 
 }
 

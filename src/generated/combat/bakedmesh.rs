@@ -4,46 +4,73 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bakedmesh/BakedMesh.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "BakedMesh")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BakedMesh {
-# [offset (24)] # [rename (name = "_meshFilter")] pub mesh_filter : crate :: unity_engine :: meshfilter :: MeshFilter ,
-# [offset (32)] # [rename (name = "_meshRenderer")] pub mesh_renderer : crate :: unity_engine :: meshrenderer :: MeshRenderer ,
-# [offset (40)] # [rename (name = "twice")] pub twice : bool ,
-# [offset (41)] # [rename (name = "isSkinnedMesh")] pub is_skinned_mesh : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/bakedmesh/BakedMesh.md"))]#[::unity2::class(namespace="Combat",name="BakedMesh")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct BakedMesh{#[offset(24)]#[rename(name="_meshFilter")]pub mesh_filter:crate::unity_engine::meshfilter::MeshFilter, #[offset(32)]#[rename(name="_meshRenderer")]pub mesh_renderer:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(40)]#[rename(name="twice")]pub twice:bool, #[offset(41)]#[rename(name="isSkinnedMesh")]pub is_skinned_mesh:bool,}
 
 }
 
 #[cfg(feature = "combat-bakedmesh-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-bakedmesh")]
-impl BakedMesh { # [doc = "`Create(crate::unity_engine::transform::Transform)` overload"] pub fn create (parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: combat :: bakedmesh :: BakedMesh { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: combat :: bakedmesh :: BakedMesh = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2123050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-bakedmesh")]impl BakedMesh{#[doc="`Create(crate::unity_engine::transform::Transform)` overload"]pub fn create(parent:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::combat::bakedmesh::BakedMesh{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2123050usize)as*mut u8,crate::combat::bakedmesh::BakedMesh;
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent))}
+}
+}
 
-#[cfg(feature = "combat-bakedmesh")]
-pub trait IBakedMeshMethods : IBakedMesh { # [doc = "`get_meshFilter()` overload"] fn get_mesh_filter (self ,) -> crate :: unity_engine :: meshfilter :: MeshFilter { unsafe { let __receiver = < BakedMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BakedMesh , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: meshfilter :: MeshFilter = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2123130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_meshRenderer()` overload"] fn get_mesh_renderer (self ,) -> crate :: unity_engine :: meshrenderer :: MeshRenderer { unsafe { let __receiver = < BakedMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BakedMesh , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: meshrenderer :: MeshRenderer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21231f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < BakedMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BakedMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21232b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BakeFrom(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer, bool)` overload"] fn bake_from (self , skmesh : impl :: core :: convert :: Into < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > , omit2nd : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BakedMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BakedMesh , crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2123340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skmesh) , :: core :: convert :: Into :: into (omit2nd) , :: core :: option :: Option :: None) } } } # [doc = "`BakeFrom(crate::unity_engine::meshfilter::MeshFilter, crate::unity_engine::meshrenderer::MeshRenderer)` overload"] fn bake_from_2 (self , filter : impl :: core :: convert :: Into < crate :: unity_engine :: meshfilter :: MeshFilter > , renderer : impl :: core :: convert :: Into < crate :: unity_engine :: meshrenderer :: MeshRenderer >) -> () { unsafe { let __receiver = < BakedMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BakedMesh , crate :: unity_engine :: meshfilter :: MeshFilter , crate :: unity_engine :: meshrenderer :: MeshRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21234f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (filter) , :: core :: convert :: Into :: into (renderer) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BakedMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BakedMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2123610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-bakedmesh")]pub trait IBakedMeshMethods:IBakedMesh{#[doc="`get_meshFilter()` overload"]fn get_mesh_filter(self,)->crate::unity_engine::meshfilter::MeshFilter{unsafe{let __receiver= <BakedMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2123130usize)as*mut u8,crate::unity_engine::meshfilter::MeshFilter;
+(BakedMesh)__receiver)}
+}
+#[doc="`get_meshRenderer()` overload"]fn get_mesh_renderer(self,)->crate::unity_engine::meshrenderer::MeshRenderer{unsafe{let __receiver= <BakedMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21231f0usize)as*mut u8,crate::unity_engine::meshrenderer::MeshRenderer;
+(BakedMesh)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <BakedMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21232b0usize)as*mut u8,();
+(BakedMesh)__receiver)}
+}
+#[doc="`BakeFrom(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer, bool)` overload"]fn bake_from(self,skmesh:impl::core::convert::Into<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer> ,omit2nd:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BakedMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2123340usize)as*mut u8,();
+(BakedMesh)__receiver,(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)::core::convert::Into::into(skmesh),(bool)::core::convert::Into::into(omit2nd))}
+}
+#[doc="`BakeFrom(crate::unity_engine::meshfilter::MeshFilter, crate::unity_engine::meshrenderer::MeshRenderer)` overload"]fn bake_from_2(self,filter:impl::core::convert::Into<crate::unity_engine::meshfilter::MeshFilter> ,renderer:impl::core::convert::Into<crate::unity_engine::meshrenderer::MeshRenderer>)->(){unsafe{let __receiver= <BakedMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21234f0usize)as*mut u8,();
+(BakedMesh)__receiver,(crate::unity_engine::meshfilter::MeshFilter)::core::convert::Into::into(filter),(crate::unity_engine::meshrenderer::MeshRenderer)::core::convert::Into::into(renderer))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BakedMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2123610usize)as*mut u8,();
+(BakedMesh)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-bakedmesh")]
-impl < __T : IBakedMesh > IBakedMeshMethods for __T { }
+#[cfg(feature="combat-bakedmesh")]impl<__T:IBakedMesh>IBakedMeshMethods for __T{}
 
-#[cfg(feature = "combat-bakedmesh")]
-impl BakedMesh { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BakedMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_mesh_filter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BakedMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_mesh_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BakedMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BakedMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn bake_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BakedMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn bake_from_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BakedMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BakedMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="combat-bakedmesh")]impl BakedMesh{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_mesh_filter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_mesh_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn bake_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn bake_from_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "combat-bakedmesh")]
-impl BakedMesh {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BakedMesh) , :: core :: stringify ! (new) ,)) ; < Self as IBakedMeshMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-bakedmesh")]impl BakedMesh{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BakedMesh), ::core::stringify!(new),));
+ <Self as IBakedMeshMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-bakedmesh")]

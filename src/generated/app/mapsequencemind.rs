@@ -4,299 +4,480 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceMind")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceMind {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_Target")] pub m_target : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_IsMoveOnly")] pub m_is_move_only : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind.md"))]#[::unity2::class(namespace="App",name="MapSequenceMind")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceMind{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Target")]pub m_target:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_IsMoveOnly")]pub m_is_move_only:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceMind_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceMind_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceMind.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceMind_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceMind_Label{pub fn move_skip()->Self{Self{value:0}
+}
+pub fn after_ai_engage_rewarp()->Self{Self{value:1}
+}
+pub fn attack()->Self{Self{value:2}
+}
+pub fn rod()->Self{Self{value:3}
+}
+pub fn item_use()->Self{Self{value:4}
+}
+pub fn breakdown()->Self{Self{value:5}
+}
+pub fn breakdown_enemy()->Self{Self{value:6}
+}
+pub fn destroy()->Self{Self{value:7}
+}
+pub fn escape()->Self{Self{value:8}
+}
+pub fn visit()->Self{Self{value:9}
+}
+pub fn destroy_village()->Self{Self{value:10}
+}
+pub fn treasure_box()->Self{Self{value:11}
+}
+pub fn door()->Self{Self{value:12}
+}
+pub fn torch()->Self{Self{value:13}
+}
+pub fn talk()->Self{Self{value:14}
+}
+pub fn dance()->Self{Self{value:15}
+}
+pub fn guard()->Self{Self{value:16}
+}
+pub fn full_bullet()->Self{Self{value:17}
+}
+pub fn enchant()->Self{Self{value:18}
+}
+pub fn contract()->Self{Self{value:19}
+}
+pub fn engage_charge()->Self{Self{value:20}
+}
+pub fn engage_wait()->Self{Self{value:21}
+}
+pub fn engage_summon()->Self{Self{value:22}
+}
+pub fn overlap_skill()->Self{Self{value:23}
+}
+pub fn command_skill()->Self{Self{value:24}
+}
+pub fn event_battle()->Self{Self{value:25}
+}
+pub fn fixed()->Self{Self{value:26}
+}
+pub fn dead()->Self{Self{value:27}
+}
+pub fn dead_without_event()->Self{Self{value:28}
+}
+pub fn end()->Self{Self{value:29}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcMindBase.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceMind.ProcMindBase")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceMind_ProcMindBase {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind_ProcMindBase.md"))]#[::unity2::class(namespace="App",name="MapSequenceMind.ProcMindBase")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceMind_ProcMindBase{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceMind.ProcEscape")] # [parent (crate :: app :: mapsequencemind :: MapSequenceMind_ProcMindBase)] pub struct MapSequenceMind_ProcEscape {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencemind/MapSequenceMind_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceMind_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapSequenceMind_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceMind.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSequenceMind_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceMind_Label  {
-    pub fn move_skip() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn after_ai_engage_rewarp() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn rod() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn item_use() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn breakdown() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn breakdown_enemy() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn destroy() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn escape() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn visit() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn destroy_village() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn treasure_box() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn door() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn torch() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn talk() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn dance() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn guard() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn full_bullet() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn enchant() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn contract() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn engage_charge() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn engage_wait() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn engage_summon() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn overlap_skill() -> Self {
-        Self { value: 23 }
-
-    }
-
-
-    pub fn command_skill() -> Self {
-        Self { value: 24 }
-
-    }
-
-
-    pub fn event_battle() -> Self {
-        Self { value: 25 }
-
-    }
-
-
-    pub fn fixed() -> Self {
-        Self { value: 26 }
-
-    }
-
-
-    pub fn dead() -> Self {
-        Self { value: 27 }
-
-    }
-
-
-    pub fn dead_without_event() -> Self {
-        Self { value: 28 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 29 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md"))]#[::unity2::class(namespace="App",name="MapSequenceMind.ProcEscape")]#[parent(crate::app::mapsequencemind::MapSequenceMind_ProcMindBase)]pub struct MapSequenceMind_ProcEscape{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
 
 }
 
 #[cfg(feature = "app-mapsequencemind-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26837e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindTalk(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_talk (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2686dd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindDie(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] pub fn create_bind_die (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2686e60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindDieWithoutEvent(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] pub fn create_bind_die_without_event (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2686ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEventBattle(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_event_battle (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2686f80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindMoveOnly(crate::app::procinst::ProcInst)` overload"] pub fn create_bind_move_only (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26870a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn create_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: mapsequencemind :: MapSequenceMind { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsequencemind :: MapSequenceMind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26837f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencemind")]
-pub trait IMapSequenceMindMethods : IMapSequenceMind { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267d640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267d6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTarget()` overload"] fn get_target (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267d730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitMove()` overload"] fn unit_move (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267d7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitMoveWait()` overload"] fn unit_move_wait (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267d990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMoveOnly()` overload"] fn set_move_only (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267dab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsMoveOnly()` overload"] fn is_move_only (self ,) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267dac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSkipAIEngageRewarp()` overload"] fn is_skip_ai_engage_rewarp (self ,) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267dad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AIEngageRewarp()` overload"] fn ai_engage_rewarp (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267db60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MultiTarget()` overload"] fn multi_target (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267dd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryAddTargetOfFireCannon(i32, i32)` overload"] fn try_add_target_of_fire_cannon (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267ee90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267f220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Breakdown()` overload"] fn breakdown (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267f520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BreakdownEnemy()` overload"] fn breakdown_enemy (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267f640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyVillage()` overload"] fn destroy_village (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267f760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EscapeEvent()` overload"] fn escape_event (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267f910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Escape()` overload"] fn escape (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267fa90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Visit()` overload"] fn visit (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267fb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Poke(crate::app::mapinspector::MapInspector_Kind)` overload"] fn poke (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind >) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , crate :: app :: mapinspector :: MapInspector_Kind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267fc80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`Unlock()` overload"] fn unlock (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267fd80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TreasureBox()` overload"] fn treasure_box (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267ff30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Door()` overload"] fn door (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267ff40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Torch()` overload"] fn torch (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267ff70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Guard()` overload"] fn guard (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267ff80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Lockon()` overload"] fn lockon (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Talk()` overload"] fn talk (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DoneAction()` overload"] fn done_action (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OverlapSkill()` overload"] fn overlap_skill (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26806b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommandSkill()` overload"] fn command_skill (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EngageCharge()` overload"] fn engage_charge (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EngageWait()` overload"] fn engage_wait (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateImage()` overload"] fn update_image (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryTransfer(crate::app::unit::Unit)` overload"] fn try_transfer (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Fixed()` overload"] fn fixed (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2680f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GodExp()` overload"] fn god_exp (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2681860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFixedSkillEnum(crate::app::unit::Unit)` overload"] fn get_fixed_skill_enum (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: skillenum :: SkillEnum { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: skillenum :: SkillEnum = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2681900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`get_CanWaitSkip()` overload"] fn get_can_wait_skip (self ,) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2681ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FixedSkill()` overload"] fn fixed_skill (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2681ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanFixedBonus(crate::app::unit::Unit)` overload"] fn can_fixed_bonus (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2681b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`EngageHeal()` overload"] fn engage_heal (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2681cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KillBonus()` overload"] fn kill_bonus (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2681fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsMoveSkip()` overload"] fn is_move_skip (self ,) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x267d980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsAlive(crate::app::unit::Unit)` overload"] fn is_alive (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2681c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsFixedEvent(crate::app::unit::Unit)` overload"] fn is_fixed_event (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2682110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsFixedEvent(crate::app::unit::Unit, crate::app::force::Force_Type)` overload"] fn is_fixed_event_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , crate :: app :: unit :: Unit , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26821e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`HelpEvent()` overload"] fn help_event (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26822d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FixedEvent()` overload"] fn fixed_event (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2682530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AreaEvent()` overload"] fn area_event (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26826f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddUnitImage()` overload"] fn add_unit_image (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2682990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteUnitImage()` overload"] fn delete_unit_image (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2682ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitDeadEvent()` overload"] fn unit_dead_event (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2682bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitDeadFade()` overload"] fn unit_dead_fade (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2682e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitDead()` overload"] fn unit_dead (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2682ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitDeadKillBonus()` overload"] fn unit_dead_kill_bonus (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2683530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Revive()` overload"] fn revive (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2683630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LooselyFocus()` overload"] fn loosely_focus (self ,) -> () { unsafe { let __receiver = < MapSequenceMind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26836d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencemind")]
-impl < __T : IMapSequenceMind > IMapSequenceMindMethods for __T { }
-
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unit_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unit_move_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_move_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_move_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_skip_ai_engage_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ai_engage_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn multi_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn try_add_target_of_fire_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn breakdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn breakdown_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn destroy_village_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn escape_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn escape_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn visit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn poke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn unlock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn treasure_box_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn door_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn torch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn guard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn lockon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn done_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn overlap_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn command_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn engage_charge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn engage_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn update_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn try_transfer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn fixed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn god_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_fixed_skill_enum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_can_wait_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn fixed_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn can_fixed_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn engage_heal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn is_move_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn is_fixed_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn is_fixed_event_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn help_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn fixed_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn area_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn add_unit_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn delete_unit_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn unit_dead_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn unit_dead_fade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn unit_dead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn unit_dead_kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn revive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn loosely_focus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn create_bind_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn create_bind_die_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn create_bind_die_without_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn create_bind_event_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn create_bind_move_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } }
-
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceMind) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceMindMethods > :: ctor (this , unit , target) ; this }
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26837e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindTalk(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_talk(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2686dd0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindDie(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind_die(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2686e60usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBindDieWithoutEvent(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind_die_without_event(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2686ef0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBindEventBattle(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_event_battle(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2686f80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindMoveOnly(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_move_only(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26870a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::mapsequencemind::MapSequenceMind{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26837f0usize)as*mut u8,crate::app::mapsequencemind::MapSequenceMind;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
 }
 
-#[cfg(feature = "app-mapsequencemind")]
-pub trait IMapSequenceMind_ProcMindBaseMethods : IMapSequenceMind_ProcMindBase { # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceMind_ProcMindBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind_ProcMindBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceMind_ProcMindBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind_ProcMindBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e39f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsequencemind")]
-impl < __T : IMapSequenceMind_ProcMindBase > IMapSequenceMind_ProcMindBaseMethods for __T { }
-
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind_ProcMindBase { pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind_ProcMindBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind_ProcMindBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind_ProcMindBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceMind_ProcMindBase) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceMind_ProcMindBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencemind")]pub trait IMapSequenceMindMethods:IMapSequenceMind{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267d640usize)as*mut u8,();
+(MapSequenceMind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267d6a0usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceMind)__receiver)}
+}
+#[doc="`GetTarget()` overload"]fn get_target(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267d730usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceMind)__receiver)}
+}
+#[doc="`UnitMove()` overload"]fn unit_move(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267d7c0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`UnitMoveWait()` overload"]fn unit_move_wait(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267d990usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`SetMoveOnly()` overload"]fn set_move_only(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267dab0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`IsMoveOnly()` overload"]fn is_move_only(self,)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267dac0usize)as*mut u8,bool;
+(MapSequenceMind)__receiver)}
+}
+#[doc="`IsSkipAIEngageRewarp()` overload"]fn is_skip_ai_engage_rewarp(self,)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267dad0usize)as*mut u8,bool;
+(MapSequenceMind)__receiver)}
+}
+#[doc="`AIEngageRewarp()` overload"]fn ai_engage_rewarp(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267db60usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`MultiTarget()` overload"]fn multi_target(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267dd20usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`TryAddTargetOfFireCannon(i32, i32)` overload"]fn try_add_target_of_fire_cannon(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267ee90usize)as*mut u8,();
+(MapSequenceMind)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267f220usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Breakdown()` overload"]fn breakdown(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267f520usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`BreakdownEnemy()` overload"]fn breakdown_enemy(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267f640usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`DestroyVillage()` overload"]fn destroy_village(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267f760usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`EscapeEvent()` overload"]fn escape_event(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267f910usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Escape()` overload"]fn escape(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267fa90usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Visit()` overload"]fn visit(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267fb60usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Poke(crate::app::mapinspector::MapInspector_Kind)` overload"]fn poke(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267fc80usize)as*mut u8,();
+(MapSequenceMind)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`Unlock()` overload"]fn unlock(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267fd80usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`TreasureBox()` overload"]fn treasure_box(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267ff30usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Door()` overload"]fn door(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267ff40usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Torch()` overload"]fn torch(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267ff70usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Guard()` overload"]fn guard(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267ff80usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Lockon()` overload"]fn lockon(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680320usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Talk()` overload"]fn talk(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680440usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`DoneAction()` overload"]fn done_action(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680630usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`OverlapSkill()` overload"]fn overlap_skill(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26806b0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`CommandSkill()` overload"]fn command_skill(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680a10usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`EngageCharge()` overload"]fn engage_charge(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680bd0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`EngageWait()` overload"]fn engage_wait(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680cf0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(MapSequenceMind)__receiver)}
+}
+#[doc="`UpdateImage()` overload"]fn update_image(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680d70usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`TryTransfer(crate::app::unit::Unit)` overload"]fn try_transfer(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680df0usize)as*mut u8,bool;
+(MapSequenceMind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Fixed()` overload"]fn fixed(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2680f80usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`GodExp()` overload"]fn god_exp(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2681860usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`GetFixedSkillEnum(crate::app::unit::Unit)` overload"]fn get_fixed_skill_enum(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::skillenum::SkillEnum{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2681900usize)as*mut u8,crate::app::skillenum::SkillEnum;
+(MapSequenceMind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2681ac0usize)as*mut u8,bool;
+(MapSequenceMind)__receiver)}
+}
+#[doc="`FixedSkill()` overload"]fn fixed_skill(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2681ad0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(MapSequenceMind)__receiver)}
+}
+#[doc="`CanFixedBonus(crate::app::unit::Unit)` overload"]fn can_fixed_bonus(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2681b50usize)as*mut u8,bool;
+(MapSequenceMind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`EngageHeal()` overload"]fn engage_heal(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2681cc0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`KillBonus()` overload"]fn kill_bonus(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2681fd0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`IsMoveSkip()` overload"]fn is_move_skip(self,)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x267d980usize)as*mut u8,bool;
+(MapSequenceMind)__receiver)}
+}
+#[doc="`IsAlive(crate::app::unit::Unit)` overload"]fn is_alive(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2681c40usize)as*mut u8,bool;
+(MapSequenceMind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsFixedEvent(crate::app::unit::Unit)` overload"]fn is_fixed_event(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2682110usize)as*mut u8,bool;
+(MapSequenceMind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsFixedEvent(crate::app::unit::Unit, crate::app::force::Force_Type)` overload"]fn is_fixed_event_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26821e0usize)as*mut u8,bool;
+(MapSequenceMind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`HelpEvent()` overload"]fn help_event(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26822d0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`FixedEvent()` overload"]fn fixed_event(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2682530usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`AreaEvent()` overload"]fn area_event(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26826f0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`AddUnitImage()` overload"]fn add_unit_image(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2682990usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`DeleteUnitImage()` overload"]fn delete_unit_image(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2682ab0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`UnitDeadEvent()` overload"]fn unit_dead_event(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2682bd0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`UnitDeadFade()` overload"]fn unit_dead_fade(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2682e00usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`UnitDead()` overload"]fn unit_dead(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2682ea0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`UnitDeadKillBonus()` overload"]fn unit_dead_kill_bonus(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2683530usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`Revive()` overload"]fn revive(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2683630usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
+#[doc="`LooselyFocus()` overload"]fn loosely_focus(self,)->(){unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26836d0usize)as*mut u8,();
+(MapSequenceMind)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind_ProcEscape { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e39db0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencemind")]impl<__T:IMapSequenceMind>IMapSequenceMindMethods for __T{}
 
-#[cfg(feature = "app-mapsequencemind")]
-pub trait IMapSequenceMind_ProcEscapeMethods : IMapSequenceMind_ProcEscape { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceMind_ProcEscape as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind_ProcEscape , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e39e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapSequenceMind_ProcEscape as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind_ProcEscape , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3a130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDir()` overload"] fn get_dir (self ,) -> crate :: app :: dir_2 :: Dir_Type { unsafe { let __receiver = < MapSequenceMind_ProcEscape as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceMind_ProcEscape , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e39f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unit_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unit_move_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_move_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_move_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_skip_ai_engage_rewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ai_engage_rewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn multi_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_add_target_of_fire_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn breakdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn breakdown_enemy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn destroy_village_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn escape_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn escape_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn visit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn poke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn unlock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn treasure_box_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn door_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn torch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn guard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn lockon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn done_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn overlap_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn command_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn engage_charge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn engage_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn update_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn try_transfer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn fixed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn god_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_fixed_skill_enum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_can_wait_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn fixed_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn can_fixed_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn engage_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn kill_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn is_move_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn is_fixed_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn is_fixed_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn help_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn fixed_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn area_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn add_unit_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn delete_unit_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn unit_dead_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn unit_dead_fade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn unit_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn unit_dead_kill_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn revive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn loosely_focus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn create_bind_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn create_bind_die_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn create_bind_die_without_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn create_bind_event_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn create_bind_move_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+}
 
-#[cfg(feature = "app-mapsequencemind")]
-impl < __T : IMapSequenceMind_ProcEscape > IMapSequenceMind_ProcEscapeMethods for __T { }
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,target:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceMind), ::core::stringify!(new),));
+ <Self as IMapSequenceMindMethods> ::ctor(this,unit,target);
+this}
+}
 
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind_ProcEscape { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind_ProcEscape as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind_ProcEscape as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind_ProcEscape as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceMind_ProcEscape as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-mapsequencemind")]pub trait IMapSequenceMind_ProcMindBaseMethods:IMapSequenceMind_ProcMindBase{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcMindBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a140usize)as*mut u8,();
+(MapSequenceMind_ProcMindBase)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcMindBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e39f30usize)as*mut u8,();
+(MapSequenceMind_ProcMindBase)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind_ProcEscape {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceMind_ProcEscape) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceMind_ProcEscapeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencemind")]impl<__T:IMapSequenceMind_ProcMindBase>IMapSequenceMind_ProcMindBaseMethods for __T{}
+
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcMindBase{pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcMindBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceMind_ProcMindBase), ::core::stringify!(new),));
+ <Self as IMapSequenceMind_ProcMindBaseMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e39db0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapsequencemind")]pub trait IMapSequenceMind_ProcEscapeMethods:IMapSequenceMind_ProcEscape{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e39e20usize)as*mut u8,();
+(MapSequenceMind_ProcEscape)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3a130usize)as*mut u8,();
+(MapSequenceMind_ProcEscape)__receiver)}
+}
+#[doc="`GetDir()` overload"]fn get_dir(self,)->crate::app::dir_2::Dir_Type{unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e39f40usize)as*mut u8,crate::app::dir_2::Dir_Type;
+(MapSequenceMind_ProcEscape)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencemind")]impl<__T:IMapSequenceMind_ProcEscape>IMapSequenceMind_ProcEscapeMethods for __T{}
+
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceMind_ProcEscape), ::core::stringify!(new),));
+ <Self as IMapSequenceMind_ProcEscapeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencemind")]
@@ -305,13 +486,13 @@ pub mod prelude {
     pub use super::MapSequenceMind;
     pub use super::IMapSequenceMind;
     pub use super::IMapSequenceMindMethods;
+    pub use super::MapSequenceMind_Label;
     pub use super::MapSequenceMind_ProcMindBase;
     pub use super::IMapSequenceMind_ProcMindBase;
     pub use super::IMapSequenceMind_ProcMindBaseMethods;
     pub use super::MapSequenceMind_ProcEscape;
     pub use super::IMapSequenceMind_ProcEscape;
     pub use super::IMapSequenceMind_ProcEscapeMethods;
-    pub use super::MapSequenceMind_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

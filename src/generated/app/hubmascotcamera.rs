@@ -4,42 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascotcamera/HubMascotCamera.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMascotCamera")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMascotCamera {
-# [offset (40)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (48)] # [rename (name = "m_AngleX")] pub m_angle_x : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
-# [offset (56)] # [rename (name = "m_AngleY")] pub m_angle_y : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotcamera/HubMascotCamera.md"))]#[::unity2::class(namespace="App",name="HubMascotCamera")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubMascotCamera{#[offset(40)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(48)]#[rename(name="m_AngleX")]pub m_angle_x:crate::app::interpolatorrotation::InterpolatorRotation, #[offset(56)]#[rename(name="m_AngleY")]pub m_angle_y:crate::app::interpolatorrotation::InterpolatorRotation,}
 
 }
 
 #[cfg(feature = "app-hubmascotcamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmascotcamera")]
-pub trait IHubMascotCameraMethods : IHubMascotCamera { # [doc = "`get_Target()` overload"] fn get_target (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < HubMascotCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotCamera , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target(crate::unity_engine::vector3::Vector3)` overload"] fn set_target (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < HubMascotCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotCamera , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubMascotCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubMascotCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateKey()` overload"] fn update_key (self ,) -> () { unsafe { let __receiver = < HubMascotCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < HubMascotCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b36c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMascotCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascotCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b3840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmascotcamera")]pub trait IHubMascotCameraMethods:IHubMascotCamera{#[doc="`get_Target()` overload"]fn get_target(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <HubMascotCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b2f80usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(HubMascotCamera)__receiver)}
+}
+#[doc="`set_Target(crate::unity_engine::vector3::Vector3)` overload"]fn set_target(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <HubMascotCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b2f90usize)as*mut u8,();
+(HubMascotCamera)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubMascotCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b2fa0usize)as*mut u8,();
+(HubMascotCamera)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubMascotCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b2ff0usize)as*mut u8,();
+(HubMascotCamera)__receiver)}
+}
+#[doc="`UpdateKey()` overload"]fn update_key(self,)->(){unsafe{let __receiver= <HubMascotCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3270usize)as*mut u8,();
+(HubMascotCamera)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <HubMascotCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b36c0usize)as*mut u8,();
+(HubMascotCamera)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMascotCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b3840usize)as*mut u8,();
+(HubMascotCamera)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmascotcamera")]
-impl < __T : IHubMascotCamera > IHubMascotCameraMethods for __T { }
+#[cfg(feature="app-hubmascotcamera")]impl<__T:IHubMascotCamera>IHubMascotCameraMethods for __T{}
 
-#[cfg(feature = "app-hubmascotcamera")]
-impl HubMascotCamera { pub fn get_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascotCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-hubmascotcamera")]impl HubMascotCamera{pub fn get_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-hubmascotcamera")]
-impl HubMascotCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMascotCamera) , :: core :: stringify ! (new) ,)) ; < Self as IHubMascotCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmascotcamera")]impl HubMascotCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMascotCamera), ::core::stringify!(new),));
+ <Self as IHubMascotCameraMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmascotcamera")]

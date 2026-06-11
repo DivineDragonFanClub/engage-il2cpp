@@ -4,160 +4,73 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AnimalMenuSequence_ConfirmNo {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct AnimalMenuSequence_ConfirmYes {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AnimalMenuSequence_From  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalMenuSequence_From{pub value:i32,}
+impl::unity2::ClassIdentity for AnimalMenuSequence_From{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AnimalMenuSequence.From";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AnimalMenuSequence_From{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AnimalMenuSequence_From{pub fn outside()->Self{Self{value:0}
+}
+pub fn inside()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for AnimalMenuSequence_From  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))]#[::unity2::class(namespace="App",name="AnimalMenuSequence.ConfirmNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct AnimalMenuSequence_ConfirmNo{}
 
-    const NAME: &'static str = "AnimalMenuSequence.From";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence.md"))]#[::unity2::class(namespace="App",name="AnimalMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalmenusequence::AnimalMenuSequence>)]pub struct AnimalMenuSequence{#[offset(184)]#[rename(name="AnimalPID")]pub animal_pid: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(224)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(232)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator,}
 
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))]#[::unity2::class(namespace="App",name="AnimalMenuSequence.ConfirmYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct AnimalMenuSequence_ConfirmYes{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalMenuSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for AnimalMenuSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AnimalMenuSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for AnimalMenuSequence_From  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for AnimalMenuSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  AnimalMenuSequence_From  {
-    pub fn outside() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn inside() -> Self {
-        Self { value: 1 }
-
-    }
-
+impl AnimalMenuSequence_Label{pub fn init()->Self{Self{value:0}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AnimalMenuSequence_Label  {
-    pub value: i32,
+pub fn outside_select()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for AnimalMenuSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AnimalMenuSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn inside_select()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::IlType for AnimalMenuSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn confirm()->Self{Self{value:3}
 }
-
-
-impl  AnimalMenuSequence_Label  {
-    pub fn init() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn outside_select() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn inside_select() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn confirm() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn apply() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 5 }
-
-    }
-
+pub fn apply()->Self{Self{value:4}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)] pub struct AnimalMenuSequence {
-# [offset (184)] # [rename (name = "AnimalPID")] pub animal_pid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (224)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (232)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
+pub fn end()->Self{Self{value:5}
+}
 }
 
 }
@@ -165,65 +78,389 @@ impl  AnimalMenuSequence_Label  {
 #[cfg(feature = "app-animalmenusequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-animalmenusequence")]
-pub trait IAnimalMenuSequence_ConfirmNoMethods : IAnimalMenuSequence_ConfirmNo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence_ConfirmNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence_ConfirmNo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba5ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AnimalMenuSequence_ConfirmNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence_ConfirmNo , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba5b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-animalmenusequence")]
-impl < __T : IAnimalMenuSequence_ConfirmNo > IAnimalMenuSequence_ConfirmNoMethods for __T { }
-
-#[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmNo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalMenuSequence_ConfirmNo) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalMenuSequence_ConfirmNoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-animalmenusequence")]pub trait IAnimalMenuSequence_ConfirmNoMethods:IAnimalMenuSequence_ConfirmNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalMenuSequence_ConfirmNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5ae0usize)as*mut u8,();
+(AnimalMenuSequence_ConfirmNo)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalMenuSequence_ConfirmNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5b70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AnimalMenuSequence_ConfirmNo)__receiver)}
+}
 }
 
-#[cfg(feature = "app-animalmenusequence")]
-pub trait IAnimalMenuSequence_ConfirmYesMethods : IAnimalMenuSequence_ConfirmYes { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence_ConfirmYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence_ConfirmYes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba5bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AnimalMenuSequence_ConfirmYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence_ConfirmYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba5c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animalmenusequence")]impl<__T:IAnimalMenuSequence_ConfirmNo>IAnimalMenuSequence_ConfirmNoMethods for __T{}
 
-#[cfg(feature = "app-animalmenusequence")]
-impl < __T : IAnimalMenuSequence_ConfirmYes > IAnimalMenuSequence_ConfirmYesMethods for __T { }
-
-#[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmYes {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalMenuSequence_ConfirmYes) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalMenuSequence_ConfirmYesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence_ConfirmNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence { # [doc = "`SetHelpText(::unity2::Il2CppString)` overload"] pub fn set_help_text (help_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c94010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (help_text) , :: core :: option :: Option :: None) } } } # [doc = "`JumpInside(bool)` overload"] pub fn jump_inside (is_outside_swap : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_outside_swap) , :: core :: option :: Option :: None) } } } # [doc = "`JumpOutside(bool)` overload"] pub fn jump_outside (is_inside_swap : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c939f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_inside_swap) , :: core :: option :: Option :: None) } } } # [doc = "`JumpLeft()` overload"] pub fn jump_left () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c93b20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`JumpRight()` overload"] pub fn jump_right () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95e50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`JumpConfirm(crate::app::animalmenusequence::AnimalMenuSequence_From)` overload"] pub fn jump_confirm (from : impl :: core :: convert :: Into < crate :: app :: animalmenusequence :: AnimalMenuSequence_From >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: animalmenusequence :: AnimalMenuSequence_From , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c94cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (from) , :: core :: option :: Option :: None) } } } # [doc = "`JumpApply()` overload"] pub fn jump_apply () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95f90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetAnimalCount(crate::app::animaldata::AnimalData)` overload"] pub fn get_animal_count (animal : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c94250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animal) , :: core :: option :: Option :: None) } } } # [doc = "`SetAnimal(crate::app::animaldata::AnimalData, i32)` overload"] pub fn set_animal (animal : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData > , select_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: animaldata :: AnimalData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animal) , :: core :: convert :: Into :: into (select_index) , :: core :: option :: Option :: None) } } } # [doc = "`SwapAnimal(i32, i32)` overload"] pub fn swap_animal (select_index1 : impl :: core :: convert :: Into < i32 > , select_index2 : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (select_index1) , :: core :: convert :: Into :: into (select_index2) , :: core :: option :: Option :: None) } } } # [doc = "`IsPlaceEmpty()` overload"] pub fn is_place_empty () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c94660usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlaceAnimal(crate::app::animaldata::AnimalData)` overload"] pub fn place_animal (animal : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c94810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animal) , :: core :: option :: Option :: None) } } } # [doc = "`GetEmptyIndex()` overload"] pub fn get_empty_index () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95c70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsExistsCurrentAnimal()` overload"] pub fn is_exists_current_animal () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96520usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RemoveIndex(i32)` overload"] pub fn remove_index (index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97920usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveCurrentAnimal(crate::app::animaldata::AnimalData)` overload"] pub fn remove_current_animal (animal : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97af0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animal) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c98060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence_ConfirmNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalMenuSequence_ConfirmNo), ::core::stringify!(new),));
+ <Self as IAnimalMenuSequence_ConfirmNoMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-animalmenusequence")]
-pub trait IAnimalMenuSequenceMethods : IAnimalMenuSequence { # [doc = "`get_Inside()` overload"] fn get_inside (self ,) -> crate :: app :: animalinsidemenu :: AnimalInsideMenu { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animalinsidemenu :: AnimalInsideMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Inside(crate::app::animalinsidemenu::AnimalInsideMenu)` overload"] fn set_inside (self , value : impl :: core :: convert :: Into < crate :: app :: animalinsidemenu :: AnimalInsideMenu >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: app :: animalinsidemenu :: AnimalInsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Outside()` overload"] fn get_outside (self ,) -> crate :: app :: animaloutsidemenu :: AnimalOutsideMenu { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaloutsidemenu :: AnimalOutsideMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Outside(crate::app::animaloutsidemenu::AnimalOutsideMenu)` overload"] fn set_outside (self , value : impl :: core :: convert :: Into < crate :: app :: animaloutsidemenu :: AnimalOutsideMenu >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: app :: animaloutsidemenu :: AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_InsideContent()` overload"] fn get_inside_content (self ,) -> crate :: app :: animalinsidemenucontent :: AnimalInsideMenuContent { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animalinsidemenucontent :: AnimalInsideMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InsideContent(crate::app::animalinsidemenucontent::AnimalInsideMenuContent)` overload"] fn set_inside_content (self , value : impl :: core :: convert :: Into < crate :: app :: animalinsidemenucontent :: AnimalInsideMenuContent >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: app :: animalinsidemenucontent :: AnimalInsideMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OutsideContent()` overload"] fn get_outside_content (self ,) -> crate :: app :: animaloutsidemenucontent :: AnimalOutsideMenuContent { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaloutsidemenucontent :: AnimalOutsideMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c958a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OutsideContent(crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent)` overload"] fn set_outside_content (self , value : impl :: core :: convert :: Into < crate :: app :: animaloutsidemenucontent :: AnimalOutsideMenuContent >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: app :: animaloutsidemenucontent :: AnimalOutsideMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c958b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsOutsideSwap()` overload"] fn get_is_outside_swap (self ,) -> bool { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c958c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsOutsideSwap(bool)` overload"] fn set_is_outside_swap (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c958d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsInsideSwap()` overload"] fn get_is_inside_swap (self ,) -> bool { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c958e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsInsideSwap(bool)` overload"] fn set_is_inside_swap (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c958f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsBlankSelect()` overload"] fn get_is_blank_select (self ,) -> bool { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsBlankSelect(bool)` overload"] fn set_is_blank_select (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FromMenu()` overload"] fn get_from_menu (self ,) -> crate :: app :: animalmenusequence :: AnimalMenuSequence_From { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animalmenusequence :: AnimalMenuSequence_From = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FromMenu(crate::app::animalmenusequence::AnimalMenuSequence_From)` overload"] fn set_from_menu (self , value : impl :: core :: convert :: Into < crate :: app :: animalmenusequence :: AnimalMenuSequence_From >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: app :: animalmenusequence :: AnimalMenuSequence_From , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CursorPosition()` overload"] fn get_cursor_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CursorPosition(crate::unity_engine::vector3::Vector3)` overload"] fn set_cursor_position (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentAnimal()` overload"] fn get_current_animal (self ,) -> crate :: app :: animaldata :: AnimalData { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaldata :: AnimalData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CurrentAnimal(crate::app::animaldata::AnimalData)` overload"] fn set_current_animal (self , value : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Root()` overload"] fn get_root (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Root(crate::unity_engine::gameobject::GameObject)` overload"] fn set_root (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectRoot()` overload"] fn get_select_root (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c959a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SelectRoot(crate::unity_engine::gameobject::GameObject)` overload"] fn set_select_root (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c959b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HelpRoot()` overload"] fn get_help_root (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c959c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HelpRoot(crate::unity_engine::gameobject::GameObject)` overload"] fn set_help_root (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c959d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HelpMessage()` overload"] fn get_help_message (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c959e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HelpMessage(crate::unity_engine::gameobject::GameObject)` overload"] fn set_help_message (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c959f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`LoadPrefabAsync()` overload"] fn load_prefab_async (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c965e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] fn is_loading_prefab (self ,) -> bool { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] fn unload_prefab (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c966c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tutorial()` overload"] fn tutorial (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadData()` overload"] fn load_data (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDirtyData()` overload"] fn is_dirty_data (self ,) -> bool { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ApplyData()` overload"] fn apply_data (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c971d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Return()` overload"] fn r#return (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c977f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Confirm()` overload"] fn confirm (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c978b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitInside()` overload"] fn init_inside (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitOutside()` overload"] fn init_outside (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitDecide()` overload"] fn init_decide (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickInside()` overload"] fn tick_inside (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickOutside()` overload"] fn tick_outside (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c98d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence{#[doc="`SetHelpText(::unity2::Il2CppString)` overload"]pub fn set_help_text(help_text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c94010usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(help_text))}
+}
+#[doc="`JumpInside(bool)` overload"]pub fn jump_inside(is_outside_swap:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c95a00usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_outside_swap))}
+}
+#[doc="`JumpOutside(bool)` overload"]pub fn jump_outside(is_inside_swap:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c939f0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_inside_swap))}
+}
+#[doc="`JumpLeft()` overload"]pub fn jump_left()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c93b20usize)as*mut u8,();
+)}
+}
+#[doc="`JumpRight()` overload"]pub fn jump_right()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c95e50usize)as*mut u8,();
+)}
+}
+#[doc="`JumpConfirm(crate::app::animalmenusequence::AnimalMenuSequence_From)` overload"]pub fn jump_confirm(from:impl::core::convert::Into<crate::app::animalmenusequence::AnimalMenuSequence_From>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c94cf0usize)as*mut u8,();
+(crate::app::animalmenusequence::AnimalMenuSequence_From)::core::convert::Into::into(from))}
+}
+#[doc="`JumpApply()` overload"]pub fn jump_apply()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c95f90usize)as*mut u8,();
+)}
+}
+#[doc="`GetAnimalCount(crate::app::animaldata::AnimalData)` overload"]pub fn get_animal_count(animal:impl::core::convert::Into<crate::app::animaldata::AnimalData>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c94250usize)as*mut u8,i32;
+(crate::app::animaldata::AnimalData)::core::convert::Into::into(animal))}
+}
+#[doc="`SetAnimal(crate::app::animaldata::AnimalData, i32)` overload"]pub fn set_animal(animal:impl::core::convert::Into<crate::app::animaldata::AnimalData> ,select_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c96150usize)as*mut u8,();
+(crate::app::animaldata::AnimalData)::core::convert::Into::into(animal),(i32)::core::convert::Into::into(select_index))}
+}
+#[doc="`SwapAnimal(i32, i32)` overload"]pub fn swap_animal(select_index1:impl::core::convert::Into<i32> ,select_index2:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c96330usize)as*mut u8,();
+(i32)::core::convert::Into::into(select_index1),(i32)::core::convert::Into::into(select_index2))}
+}
+#[doc="`IsPlaceEmpty()` overload"]pub fn is_place_empty()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c94660usize)as*mut u8,bool;
+)}
+}
+#[doc="`PlaceAnimal(crate::app::animaldata::AnimalData)` overload"]pub fn place_animal(animal:impl::core::convert::Into<crate::app::animaldata::AnimalData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c94810usize)as*mut u8,();
+(crate::app::animaldata::AnimalData)::core::convert::Into::into(animal))}
+}
+#[doc="`GetEmptyIndex()` overload"]pub fn get_empty_index()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c95c70usize)as*mut u8,i32;
+)}
+}
+#[doc="`IsExistsCurrentAnimal()` overload"]pub fn is_exists_current_animal()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c96520usize)as*mut u8,bool;
+)}
+}
+#[doc="`RemoveIndex(i32)` overload"]pub fn remove_index(index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c97920usize)as*mut u8,();
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`RemoveCurrentAnimal(crate::app::animaldata::AnimalData)` overload"]pub fn remove_current_animal(animal:impl::core::convert::Into<crate::app::animaldata::AnimalData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c97af0usize)as*mut u8,();
+(crate::app::animaldata::AnimalData)::core::convert::Into::into(animal))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c98060usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-animalmenusequence")]
-impl < __T : IAnimalMenuSequence > IAnimalMenuSequenceMethods for __T { }
+#[cfg(feature="app-animalmenusequence")]pub trait IAnimalMenuSequenceMethods:IAnimalMenuSequence{#[doc="`get_Inside()` overload"]fn get_inside(self,)->crate::app::animalinsidemenu::AnimalInsideMenu{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95840usize)as*mut u8,crate::app::animalinsidemenu::AnimalInsideMenu;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_Inside(crate::app::animalinsidemenu::AnimalInsideMenu)` overload"]fn set_inside(self,value:impl::core::convert::Into<crate::app::animalinsidemenu::AnimalInsideMenu>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95850usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::app::animalinsidemenu::AnimalInsideMenu)::core::convert::Into::into(value))}
+}
+#[doc="`get_Outside()` overload"]fn get_outside(self,)->crate::app::animaloutsidemenu::AnimalOutsideMenu{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95860usize)as*mut u8,crate::app::animaloutsidemenu::AnimalOutsideMenu;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_Outside(crate::app::animaloutsidemenu::AnimalOutsideMenu)` overload"]fn set_outside(self,value:impl::core::convert::Into<crate::app::animaloutsidemenu::AnimalOutsideMenu>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95870usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::app::animaloutsidemenu::AnimalOutsideMenu)::core::convert::Into::into(value))}
+}
+#[doc="`get_InsideContent()` overload"]fn get_inside_content(self,)->crate::app::animalinsidemenucontent::AnimalInsideMenuContent{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95880usize)as*mut u8,crate::app::animalinsidemenucontent::AnimalInsideMenuContent;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_InsideContent(crate::app::animalinsidemenucontent::AnimalInsideMenuContent)` overload"]fn set_inside_content(self,value:impl::core::convert::Into<crate::app::animalinsidemenucontent::AnimalInsideMenuContent>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95890usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::app::animalinsidemenucontent::AnimalInsideMenuContent)::core::convert::Into::into(value))}
+}
+#[doc="`get_OutsideContent()` overload"]fn get_outside_content(self,)->crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c958a0usize)as*mut u8,crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_OutsideContent(crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent)` overload"]fn set_outside_content(self,value:impl::core::convert::Into<crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c958b0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsOutsideSwap()` overload"]fn get_is_outside_swap(self,)->bool{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c958c0usize)as*mut u8,bool;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_IsOutsideSwap(bool)` overload"]fn set_is_outside_swap(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c958d0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsInsideSwap()` overload"]fn get_is_inside_swap(self,)->bool{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c958e0usize)as*mut u8,bool;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_IsInsideSwap(bool)` overload"]fn set_is_inside_swap(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c958f0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsBlankSelect()` overload"]fn get_is_blank_select(self,)->bool{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95900usize)as*mut u8,bool;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_IsBlankSelect(bool)` overload"]fn set_is_blank_select(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95910usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_FromMenu()` overload"]fn get_from_menu(self,)->crate::app::animalmenusequence::AnimalMenuSequence_From{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95920usize)as*mut u8,crate::app::animalmenusequence::AnimalMenuSequence_From;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_FromMenu(crate::app::animalmenusequence::AnimalMenuSequence_From)` overload"]fn set_from_menu(self,value:impl::core::convert::Into<crate::app::animalmenusequence::AnimalMenuSequence_From>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95930usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::app::animalmenusequence::AnimalMenuSequence_From)::core::convert::Into::into(value))}
+}
+#[doc="`get_CursorPosition()` overload"]fn get_cursor_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95940usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_CursorPosition(crate::unity_engine::vector3::Vector3)` overload"]fn set_cursor_position(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95950usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_CurrentAnimal()` overload"]fn get_current_animal(self,)->crate::app::animaldata::AnimalData{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95960usize)as*mut u8,crate::app::animaldata::AnimalData;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_CurrentAnimal(crate::app::animaldata::AnimalData)` overload"]fn set_current_animal(self,value:impl::core::convert::Into<crate::app::animaldata::AnimalData>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95970usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::app::animaldata::AnimalData)::core::convert::Into::into(value))}
+}
+#[doc="`get_Root()` overload"]fn get_root(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95980usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_Root(crate::unity_engine::gameobject::GameObject)` overload"]fn set_root(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95990usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_SelectRoot()` overload"]fn get_select_root(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c959a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_SelectRoot(crate::unity_engine::gameobject::GameObject)` overload"]fn set_select_root(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c959b0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_HelpRoot()` overload"]fn get_help_root(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c959c0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_HelpRoot(crate::unity_engine::gameobject::GameObject)` overload"]fn set_help_root(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c959d0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_HelpMessage()` overload"]fn get_help_message(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c959e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`set_HelpMessage(crate::unity_engine::gameobject::GameObject)` overload"]fn set_help_message(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c959f0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`LoadPrefabAsync()` overload"]fn load_prefab_async(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c965e0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`IsLoadingPrefab()` overload"]fn is_loading_prefab(self,)->bool{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96690usize)as*mut u8,bool;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`UnloadPrefab()` overload"]fn unload_prefab(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c966c0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`Tutorial()` overload"]fn tutorial(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96710usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96720usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96cd0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96d80usize)as*mut u8,bool;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96e30usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`LoadData()` overload"]fn load_data(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96a50usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`IsDirtyData()` overload"]fn is_dirty_data(self,)->bool{unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97040usize)as*mut u8,bool;
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`ApplyData()` overload"]fn apply_data(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c971d0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97490usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`Return()` overload"]fn r#return(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c977f0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`Confirm()` overload"]fn confirm(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c978b0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`InitInside()` overload"]fn init_inside(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97c40usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`InitOutside()` overload"]fn init_outside(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97ce0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`InitDecide()` overload"]fn init_decide(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97e90usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`TickInside()` overload"]fn tick_inside(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97f40usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`TickOutside()` overload"]fn tick_outside(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97fa0usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c98d90usize)as*mut u8,();
+(AnimalMenuSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence { pub fn get_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_outside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_outside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_inside_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_inside_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_outside_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_outside_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_outside_swap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_is_outside_swap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_inside_swap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_is_inside_swap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_is_blank_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_is_blank_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_from_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_from_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_cursor_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_cursor_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_current_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_current_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_select_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_select_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_help_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_help_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_help_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_help_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn jump_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn jump_outside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn jump_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn jump_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn jump_confirm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn jump_apply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_animal_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn set_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn swap_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn is_place_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn place_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn get_empty_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn is_exists_current_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn load_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn is_dirty_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn apply_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn return_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn confirm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn remove_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn remove_current_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn init_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn init_outside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn init_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn tick_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn tick_outside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } }
+#[cfg(feature="app-animalmenusequence")]impl<__T:IAnimalMenuSequence>IAnimalMenuSequenceMethods for __T{}
 
-#[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalMenuSequence) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalMenuSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence{pub fn get_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_outside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_outside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_inside_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_inside_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_outside_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_outside_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_outside_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_is_outside_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_inside_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_is_inside_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_is_blank_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_is_blank_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_from_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_from_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_cursor_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_cursor_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_current_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_current_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_select_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_select_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_help_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_help_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_help_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_help_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn jump_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn jump_outside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn jump_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn jump_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn jump_confirm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn jump_apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_animal_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn set_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn swap_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn is_place_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn place_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_empty_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn is_exists_current_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn load_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn is_dirty_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn apply_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn return_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn confirm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn remove_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn remove_current_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn init_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn init_outside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn init_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn tick_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn tick_outside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+}
+
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalMenuSequence), ::core::stringify!(new),));
+ <Self as IAnimalMenuSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-animalmenusequence")]pub trait IAnimalMenuSequence_ConfirmYesMethods:IAnimalMenuSequence_ConfirmYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalMenuSequence_ConfirmYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5bf0usize)as*mut u8,();
+(AnimalMenuSequence_ConfirmYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalMenuSequence_ConfirmYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AnimalMenuSequence_ConfirmYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-animalmenusequence")]impl<__T:IAnimalMenuSequence_ConfirmYes>IAnimalMenuSequence_ConfirmYesMethods for __T{}
+
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence_ConfirmYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence_ConfirmYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalMenuSequence_ConfirmYes), ::core::stringify!(new),));
+ <Self as IAnimalMenuSequence_ConfirmYesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-animalmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AnimalMenuSequence_From;
     pub use super::AnimalMenuSequence_ConfirmNo;
     pub use super::IAnimalMenuSequence_ConfirmNo;
     pub use super::IAnimalMenuSequence_ConfirmNoMethods;
-    pub use super::AnimalMenuSequence_ConfirmYes;
-    pub use super::IAnimalMenuSequence_ConfirmYes;
-    pub use super::IAnimalMenuSequence_ConfirmYesMethods;
-    pub use super::AnimalMenuSequence_From;
-    pub use super::AnimalMenuSequence_Label;
     pub use super::AnimalMenuSequence;
     pub use super::IAnimalMenuSequence;
     pub use super::IAnimalMenuSequenceMethods;
+    pub use super::AnimalMenuSequence_ConfirmYes;
+    pub use super::IAnimalMenuSequence_ConfirmYes;
+    pub use super::IAnimalMenuSequence_ConfirmYesMethods;
+    pub use super::AnimalMenuSequence_Label;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

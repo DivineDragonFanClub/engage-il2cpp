@@ -4,36 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: talk3_d :: talktag :: { ITalkTag , TalkTag }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::talk3_d::talktag::{ITalkTag,TalkTag}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagaddletter/TalkTagAddLetter.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkTagAddLetter")] # [parent (crate :: app :: talk3_d :: talktag :: TalkTag)] pub struct TalkTagAddLetter {
-# [offset (16)] # [rename (name = "m_IsLineFeedEnable")] pub m_is_line_feed_enable : bool ,
-# [offset (18)] # [rename (name = "m_AddLetter")] pub m_add_letter : u16 ,
-# [offset (20)] # [rename (name = "m_Result")] pub m_result : crate :: app :: talk3_d :: talktag :: TalkTag_Result ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagaddletter/TalkTagAddLetter.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagAddLetter")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagAddLetter{#[offset(16)]#[rename(name="m_IsLineFeedEnable")]pub m_is_line_feed_enable:bool, #[offset(18)]#[rename(name="m_AddLetter")]pub m_add_letter:u16, #[offset(20)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
 
 }
 
 #[cfg(feature = "app-talk3_d-talktagaddletter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talktagaddletter")]
-pub trait ITalkTagAddLetterMethods : ITalkTagAddLetter { # [doc = "`SetLetter(u16)` overload"] fn set_letter (self , chr : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } } # [doc = "`ResetLineFeedEnable()` overload"] fn reset_line_feed_enable (self ,) -> () { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d86a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteForCharacterPreLoad()` overload"] fn execute_for_character_pre_load (self ,) -> () { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResult()` overload"] fn get_result (self ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResultForHeadText()` overload"] fn get_result_for_head_text (self ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAddLetter()` overload"] fn get_add_letter (self ,) -> u16 { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NeedFadeWait()` overload"] fn need_fade_wait (self ,) -> bool { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkTagAddLetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagAddLetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d9020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talktagaddletter")]pub trait ITalkTagAddLetterMethods:ITalkTagAddLetter{#[doc="`SetLetter(u16)` overload"]fn set_letter(self,chr:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8680usize)as*mut u8,();
+(TalkTagAddLetter)__receiver,(u16)::core::convert::Into::into(chr))}
+}
+#[doc="`ResetLineFeedEnable()` overload"]fn reset_line_feed_enable(self,)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8690usize)as*mut u8,();
+(TalkTagAddLetter)__receiver)}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d86a0usize)as*mut u8,();
+(TalkTagAddLetter)__receiver)}
+}
+#[doc="`ExecuteForCharacterPreLoad()` overload"]fn execute_for_character_pre_load(self,)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8fb0usize)as*mut u8,();
+(TalkTagAddLetter)__receiver)}
+}
+#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8fc0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
+(TalkTagAddLetter)__receiver)}
+}
+#[doc="`GetResultForHeadText()` overload"]fn get_result_for_head_text(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8fd0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
+(TalkTagAddLetter)__receiver)}
+}
+#[doc="`GetAddLetter()` overload"]fn get_add_letter(self,)->u16{unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8fe0usize)as*mut u8,u16;
+(TalkTagAddLetter)__receiver)}
+}
+#[doc="`NeedFadeWait()` overload"]fn need_fade_wait(self,)->bool{unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8ff0usize)as*mut u8,bool;
+(TalkTagAddLetter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9020usize)as*mut u8,();
+(TalkTagAddLetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talktagaddletter")]
-impl < __T : ITalkTagAddLetter > ITalkTagAddLetterMethods for __T { }
+#[cfg(feature="app-talk3_d-talktagaddletter")]impl<__T:ITalkTagAddLetter>ITalkTagAddLetterMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talktagaddletter")]
-impl TalkTagAddLetter { pub fn set_letter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_line_feed_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn execute_for_character_pre_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_result_for_head_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_add_letter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn need_fade_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagAddLetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-talk3_d-talktagaddletter")]impl TalkTagAddLetter{pub fn set_letter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_line_feed_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn execute_for_character_pre_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_result_for_head_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_add_letter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn need_fade_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-talk3_d-talktagaddletter")]
-impl TalkTagAddLetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkTagAddLetter) , :: core :: stringify ! (new) ,)) ; < Self as ITalkTagAddLetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talktagaddletter")]impl TalkTagAddLetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkTagAddLetter), ::core::stringify!(new),));
+ <Self as ITalkTagAddLetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talktagaddletter")]

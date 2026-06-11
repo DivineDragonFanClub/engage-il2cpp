@@ -4,90 +4,241 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Settings")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct TMP_Settings {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: tm_pro :: tmp_settings :: TMP_Settings ,
-# [offset (24)] # [rename (name = "m_enableWordWrapping")] pub m_enable_word_wrapping : bool ,
-# [offset (25)] # [rename (name = "m_enableKerning")] pub m_enable_kerning : bool ,
-# [offset (26)] # [rename (name = "m_enableExtraPadding")] pub m_enable_extra_padding : bool ,
-# [offset (27)] # [rename (name = "m_enableTintAllSprites")] pub m_enable_tint_all_sprites : bool ,
-# [offset (28)] # [rename (name = "m_enableParseEscapeCharacters")] pub m_enable_parse_escape_characters : bool ,
-# [offset (29)] # [rename (name = "m_EnableRaycastTarget")] pub m_enable_raycast_target : bool ,
-# [offset (30)] # [rename (name = "m_GetFontFeaturesAtRuntime")] pub m_get_font_features_at_runtime : bool ,
-# [offset (32)] # [rename (name = "m_missingGlyphCharacter")] pub m_missing_glyph_character : i32 ,
-# [offset (36)] # [rename (name = "m_warningsDisabled")] pub m_warnings_disabled : bool ,
-# [offset (40)] # [rename (name = "m_defaultFontAsset")] pub m_default_font_asset : crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset ,
-# [offset (48)] # [rename (name = "m_defaultFontAssetPath")] pub m_default_font_asset_path : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "m_defaultFontSize")] pub m_default_font_size : f32 ,
-# [offset (60)] # [rename (name = "m_defaultAutoSizeMinRatio")] pub m_default_auto_size_min_ratio : f32 ,
-# [offset (64)] # [rename (name = "m_defaultAutoSizeMaxRatio")] pub m_default_auto_size_max_ratio : f32 ,
-# [offset (68)] # [rename (name = "m_defaultTextMeshProTextContainerSize")] pub m_default_text_mesh_pro_text_container_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (76)] # [rename (name = "m_defaultTextMeshProUITextContainerSize")] pub m_default_text_mesh_pro_ui_text_container_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (84)] # [rename (name = "m_autoSizeTextContainer")] pub m_auto_size_text_container : bool ,
-# [offset (85)] # [rename (name = "m_IsTextObjectScaleStatic")] pub m_is_text_object_scale_static : bool ,
-# [offset (88)] # [rename (name = "m_fallbackFontAssets")] pub m_fallback_font_assets : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > ,
-# [offset (96)] # [rename (name = "m_matchMaterialPreset")] pub m_match_material_preset : bool ,
-# [offset (104)] # [rename (name = "m_defaultSpriteAsset")] pub m_default_sprite_asset : crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset ,
-# [offset (112)] # [rename (name = "m_defaultSpriteAssetPath")] pub m_default_sprite_asset_path : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_enableEmojiSupport")] pub m_enable_emoji_support : bool ,
-# [offset (124)] # [rename (name = "m_MissingCharacterSpriteUnicode")] pub m_missing_character_sprite_unicode : u32 ,
-# [offset (128)] # [rename (name = "m_defaultColorGradientPresetsPath")] pub m_default_color_gradient_presets_path : :: unity2 :: Il2CppString ,
-# [offset (136)] # [rename (name = "m_defaultStyleSheet")] pub m_default_style_sheet : crate :: tm_pro :: tmp_stylesheet :: TMP_StyleSheet ,
-# [offset (144)] # [rename (name = "m_StyleSheetsResourcePath")] pub m_style_sheets_resource_path : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_leadingCharacters")] pub m_leading_characters : crate :: unity_engine :: textasset :: TextAsset ,
-# [offset (160)] # [rename (name = "m_followingCharacters")] pub m_following_characters : crate :: unity_engine :: textasset :: TextAsset ,
-# [offset (168)] # [rename (name = "m_linebreakingRules")] pub m_linebreaking_rules : crate :: tm_pro :: tmp_settings :: TMP_Settings_LineBreakingTable ,
-# [offset (176)] # [rename (name = "m_UseModernHangulLineBreakingRules")] pub m_use_modern_hangul_line_breaking_rules : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_settings/TMP_Settings.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Settings")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct TMP_Settings{#[static_field]#[rename(name="s_Instance")]pub s_instance:crate::tm_pro::tmp_settings::TMP_Settings, #[offset(24)]#[rename(name="m_enableWordWrapping")]pub m_enable_word_wrapping:bool, #[offset(25)]#[rename(name="m_enableKerning")]pub m_enable_kerning:bool, #[offset(26)]#[rename(name="m_enableExtraPadding")]pub m_enable_extra_padding:bool, #[offset(27)]#[rename(name="m_enableTintAllSprites")]pub m_enable_tint_all_sprites:bool, #[offset(28)]#[rename(name="m_enableParseEscapeCharacters")]pub m_enable_parse_escape_characters:bool, #[offset(29)]#[rename(name="m_EnableRaycastTarget")]pub m_enable_raycast_target:bool, #[offset(30)]#[rename(name="m_GetFontFeaturesAtRuntime")]pub m_get_font_features_at_runtime:bool, #[offset(32)]#[rename(name="m_missingGlyphCharacter")]pub m_missing_glyph_character:i32, #[offset(36)]#[rename(name="m_warningsDisabled")]pub m_warnings_disabled:bool, #[offset(40)]#[rename(name="m_defaultFontAsset")]pub m_default_font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset, #[offset(48)]#[rename(name="m_defaultFontAssetPath")]pub m_default_font_asset_path: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_defaultFontSize")]pub m_default_font_size:f32, #[offset(60)]#[rename(name="m_defaultAutoSizeMinRatio")]pub m_default_auto_size_min_ratio:f32, #[offset(64)]#[rename(name="m_defaultAutoSizeMaxRatio")]pub m_default_auto_size_max_ratio:f32, #[offset(68)]#[rename(name="m_defaultTextMeshProTextContainerSize")]pub m_default_text_mesh_pro_text_container_size:crate::unity_engine::vector2::Vector2, #[offset(76)]#[rename(name="m_defaultTextMeshProUITextContainerSize")]pub m_default_text_mesh_pro_ui_text_container_size:crate::unity_engine::vector2::Vector2, #[offset(84)]#[rename(name="m_autoSizeTextContainer")]pub m_auto_size_text_container:bool, #[offset(85)]#[rename(name="m_IsTextObjectScaleStatic")]pub m_is_text_object_scale_static:bool, #[offset(88)]#[rename(name="m_fallbackFontAssets")]pub m_fallback_font_assets:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset> , #[offset(96)]#[rename(name="m_matchMaterialPreset")]pub m_match_material_preset:bool, #[offset(104)]#[rename(name="m_defaultSpriteAsset")]pub m_default_sprite_asset:crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, #[offset(112)]#[rename(name="m_defaultSpriteAssetPath")]pub m_default_sprite_asset_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_enableEmojiSupport")]pub m_enable_emoji_support:bool, #[offset(124)]#[rename(name="m_MissingCharacterSpriteUnicode")]pub m_missing_character_sprite_unicode:u32, #[offset(128)]#[rename(name="m_defaultColorGradientPresetsPath")]pub m_default_color_gradient_presets_path: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_defaultStyleSheet")]pub m_default_style_sheet:crate::tm_pro::tmp_stylesheet::TMP_StyleSheet, #[offset(144)]#[rename(name="m_StyleSheetsResourcePath")]pub m_style_sheets_resource_path: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_leadingCharacters")]pub m_leading_characters:crate::unity_engine::textasset::TextAsset, #[offset(160)]#[rename(name="m_followingCharacters")]pub m_following_characters:crate::unity_engine::textasset::TextAsset, #[offset(168)]#[rename(name="m_linebreakingRules")]pub m_linebreaking_rules:crate::tm_pro::tmp_settings::TMP_Settings_LineBreakingTable, #[offset(176)]#[rename(name="m_UseModernHangulLineBreakingRules")]pub m_use_modern_hangul_line_breaking_rules:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings_LineBreakingTable.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Settings.LineBreakingTable")] # [parent (crate :: system :: object :: Object)] pub struct TMP_Settings_LineBreakingTable {
-# [offset (16)] # [rename (name = "leadingCharacters")] pub leading_characters : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , u16 > ,
-# [offset (24)] # [rename (name = "followingCharacters")] pub following_characters : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , u16 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_settings/TMP_Settings_LineBreakingTable.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Settings.LineBreakingTable")]#[parent(crate::system::object::Object)]pub struct TMP_Settings_LineBreakingTable{#[offset(16)]#[rename(name="leadingCharacters")]pub leading_characters:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,u16> , #[offset(24)]#[rename(name="followingCharacters")]pub following_characters:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,u16> ,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_settings-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl TMP_Settings { # [doc = "`get_version()` overload"] pub fn get_version () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a8f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_enableWordWrapping()` overload"] pub fn get_enable_word_wrapping () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_enableKerning()` overload"] pub fn get_enable_kerning () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aa50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_enableExtraPadding()` overload"] pub fn get_enable_extra_padding () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aa70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_enableTintAllSprites()` overload"] pub fn get_enable_tint_all_sprites () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aa90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_enableParseEscapeCharacters()` overload"] pub fn get_enable_parse_escape_characters () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aab0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_enableRaycastTarget()` overload"] pub fn get_enable_raycast_target () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aad0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_getFontFeaturesAtRuntime()` overload"] pub fn get_get_font_features_at_runtime () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aaf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_missingGlyphCharacter()` overload"] pub fn get_missing_glyph_character () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ab10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_missingGlyphCharacter(i32)` overload"] pub fn set_missing_glyph_character (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ab30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_warningsDisabled()` overload"] pub fn get_warnings_disabled () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ab60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultFontAsset()` overload"] pub fn get_default_font_asset () -> crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ab80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultFontAssetPath()` overload"] pub fn get_default_font_asset_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aba0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultFontSize()` overload"] pub fn get_default_font_size () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282abc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultTextAutoSizingMinRatio()` overload"] pub fn get_default_text_auto_sizing_min_ratio () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282abe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultTextAutoSizingMaxRatio()` overload"] pub fn get_default_text_auto_sizing_max_ratio () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ac00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultTextMeshProTextContainerSize()` overload"] pub fn get_default_text_mesh_pro_text_container_size () -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ac20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultTextMeshProUITextContainerSize()` overload"] pub fn get_default_text_mesh_pro_ui_text_container_size () -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ac40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_autoSizeTextContainer()` overload"] pub fn get_auto_size_text_container () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ac60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_isTextObjectScaleStatic()` overload"] pub fn get_is_text_object_scale_static () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ac80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_isTextObjectScaleStatic(bool)` overload"] pub fn set_is_text_object_scale_static (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aca0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fallbackFontAssets()` overload"] pub fn get_fallback_font_assets () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282acd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_matchMaterialPreset()` overload"] pub fn get_match_material_preset () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282acf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultSpriteAsset()` overload"] pub fn get_default_sprite_asset () -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ad10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultSpriteAssetPath()` overload"] pub fn get_default_sprite_asset_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ad30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_enableEmojiSupport()` overload"] pub fn get_enable_emoji_support () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ad50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_enableEmojiSupport(bool)` overload"] pub fn set_enable_emoji_support (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ad70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_missingCharacterSpriteUnicode()` overload"] pub fn get_missing_character_sprite_unicode () -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ada0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_missingCharacterSpriteUnicode(u32)` overload"] pub fn set_missing_character_sprite_unicode (value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282adc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_defaultColorGradientPresetsPath()` overload"] pub fn get_default_color_gradient_presets_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282adf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_defaultStyleSheet()` overload"] pub fn get_default_style_sheet () -> crate :: tm_pro :: tmp_stylesheet :: TMP_StyleSheet { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_stylesheet :: TMP_StyleSheet = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ae10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_styleSheetsResourcePath()` overload"] pub fn get_style_sheets_resource_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ae30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_leadingCharacters()` overload"] pub fn get_leading_characters () -> crate :: unity_engine :: textasset :: TextAsset { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: textasset :: TextAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ae50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_followingCharacters()` overload"] pub fn get_following_characters () -> crate :: unity_engine :: textasset :: TextAsset { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: textasset :: TextAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ae70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_linebreakingRules()` overload"] pub fn get_linebreaking_rules () -> crate :: tm_pro :: tmp_settings :: TMP_Settings_LineBreakingTable { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_settings :: TMP_Settings_LineBreakingTable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282ae90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_useModernHangulLineBreakingRules()` overload"] pub fn get_use_modern_hangul_line_breaking_rules () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b010usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_useModernHangulLineBreakingRules(bool)` overload"] pub fn set_use_modern_hangul_line_breaking_rules (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: tm_pro :: tmp_settings :: TMP_Settings { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_settings :: TMP_Settings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a960usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`LoadDefaultSettings()` overload"] pub fn load_default_settings () -> crate :: tm_pro :: tmp_settings :: TMP_Settings { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_settings :: TMP_Settings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b060usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetSettings()` overload"] pub fn get_settings () -> crate :: tm_pro :: tmp_settings :: TMP_Settings { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_settings :: TMP_Settings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b180usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetFontAsset()` overload"] pub fn get_font_asset () -> crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b210usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetSpriteAsset()` overload"] pub fn get_sprite_asset () -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b2a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetStyleSheet()` overload"] pub fn get_style_sheet () -> crate :: tm_pro :: tmp_stylesheet :: TMP_StyleSheet { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_stylesheet :: TMP_StyleSheet = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b330usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`LoadLinebreakingRules()` overload"] pub fn load_linebreaking_rules () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282aed0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCharacters(crate::unity_engine::textasset::TextAsset)` overload"] pub fn get_characters (file : impl :: core :: convert :: Into < crate :: unity_engine :: textasset :: TextAsset >) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , u16 > { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: textasset :: TextAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , u16 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b3c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-pub trait ITMP_SettingsMethods : ITMP_Settings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_Settings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Settings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl < __T : ITMP_Settings > ITMP_SettingsMethods for __T { }
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl TMP_Settings { pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_enable_word_wrapping_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_enable_kerning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_enable_extra_padding_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_enable_tint_all_sprites_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_enable_parse_escape_characters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_enable_raycast_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_get_font_features_at_runtime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_missing_glyph_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_missing_glyph_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_warnings_disabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_default_font_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_default_font_asset_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_default_font_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_default_text_auto_sizing_min_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_default_text_auto_sizing_max_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_default_text_mesh_pro_text_container_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_default_text_mesh_pro_ui_text_container_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_auto_size_text_container_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_is_text_object_scale_static_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_is_text_object_scale_static_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_fallback_font_assets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_match_material_preset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_default_sprite_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_default_sprite_asset_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_enable_emoji_support_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_enable_emoji_support_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_missing_character_sprite_unicode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_missing_character_sprite_unicode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_default_color_gradient_presets_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_default_style_sheet_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_style_sheets_resource_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_leading_characters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_following_characters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_linebreaking_rules_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_use_modern_hangul_line_breaking_rules_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn set_use_modern_hangul_line_breaking_rules_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn load_default_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_font_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn get_sprite_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_style_sheet_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn load_linebreaking_rules_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_characters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } }
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl TMP_Settings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Settings) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_settings")]impl TMP_Settings{#[doc="`get_version()` overload"]pub fn get_version()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282a8f0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_enableWordWrapping()` overload"]pub fn get_enable_word_wrapping()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282a940usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_enableKerning()` overload"]pub fn get_enable_kerning()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aa50usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_enableExtraPadding()` overload"]pub fn get_enable_extra_padding()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aa70usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_enableTintAllSprites()` overload"]pub fn get_enable_tint_all_sprites()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aa90usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_enableParseEscapeCharacters()` overload"]pub fn get_enable_parse_escape_characters()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aab0usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_enableRaycastTarget()` overload"]pub fn get_enable_raycast_target()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aad0usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_getFontFeaturesAtRuntime()` overload"]pub fn get_get_font_features_at_runtime()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aaf0usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_missingGlyphCharacter()` overload"]pub fn get_missing_glyph_character()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ab10usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_missingGlyphCharacter(i32)` overload"]pub fn set_missing_glyph_character(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ab30usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_warningsDisabled()` overload"]pub fn get_warnings_disabled()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ab60usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_defaultFontAsset()` overload"]pub fn get_default_font_asset()->crate::tm_pro::tmp_fontasset::TMP_FontAsset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ab80usize)as*mut u8,crate::tm_pro::tmp_fontasset::TMP_FontAsset;
+)}
+}
+#[doc="`get_defaultFontAssetPath()` overload"]pub fn get_default_font_asset_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aba0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_defaultFontSize()` overload"]pub fn get_default_font_size()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282abc0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_defaultTextAutoSizingMinRatio()` overload"]pub fn get_default_text_auto_sizing_min_ratio()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282abe0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_defaultTextAutoSizingMaxRatio()` overload"]pub fn get_default_text_auto_sizing_max_ratio()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ac00usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_defaultTextMeshProTextContainerSize()` overload"]pub fn get_default_text_mesh_pro_text_container_size()->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ac20usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+)}
+}
+#[doc="`get_defaultTextMeshProUITextContainerSize()` overload"]pub fn get_default_text_mesh_pro_ui_text_container_size()->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ac40usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+)}
+}
+#[doc="`get_autoSizeTextContainer()` overload"]pub fn get_auto_size_text_container()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ac60usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_isTextObjectScaleStatic()` overload"]pub fn get_is_text_object_scale_static()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ac80usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_isTextObjectScaleStatic(bool)` overload"]pub fn set_is_text_object_scale_static(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aca0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_fallbackFontAssets()` overload"]pub fn get_fallback_font_assets()->crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282acd0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset> ;
+)}
+}
+#[doc="`get_matchMaterialPreset()` overload"]pub fn get_match_material_preset()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282acf0usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_defaultSpriteAsset()` overload"]pub fn get_default_sprite_asset()->crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ad10usize)as*mut u8,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
+)}
+}
+#[doc="`get_defaultSpriteAssetPath()` overload"]pub fn get_default_sprite_asset_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ad30usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_enableEmojiSupport()` overload"]pub fn get_enable_emoji_support()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ad50usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_enableEmojiSupport(bool)` overload"]pub fn set_enable_emoji_support(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ad70usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_missingCharacterSpriteUnicode()` overload"]pub fn get_missing_character_sprite_unicode()->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ada0usize)as*mut u8,u32;
+)}
+}
+#[doc="`set_missingCharacterSpriteUnicode(u32)` overload"]pub fn set_missing_character_sprite_unicode(value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282adc0usize)as*mut u8,();
+(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_defaultColorGradientPresetsPath()` overload"]pub fn get_default_color_gradient_presets_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282adf0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_defaultStyleSheet()` overload"]pub fn get_default_style_sheet()->crate::tm_pro::tmp_stylesheet::TMP_StyleSheet{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ae10usize)as*mut u8,crate::tm_pro::tmp_stylesheet::TMP_StyleSheet;
+)}
+}
+#[doc="`get_styleSheetsResourcePath()` overload"]pub fn get_style_sheets_resource_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ae30usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_leadingCharacters()` overload"]pub fn get_leading_characters()->crate::unity_engine::textasset::TextAsset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ae50usize)as*mut u8,crate::unity_engine::textasset::TextAsset;
+)}
+}
+#[doc="`get_followingCharacters()` overload"]pub fn get_following_characters()->crate::unity_engine::textasset::TextAsset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ae70usize)as*mut u8,crate::unity_engine::textasset::TextAsset;
+)}
+}
+#[doc="`get_linebreakingRules()` overload"]pub fn get_linebreaking_rules()->crate::tm_pro::tmp_settings::TMP_Settings_LineBreakingTable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282ae90usize)as*mut u8,crate::tm_pro::tmp_settings::TMP_Settings_LineBreakingTable;
+)}
+}
+#[doc="`get_useModernHangulLineBreakingRules()` overload"]pub fn get_use_modern_hangul_line_breaking_rules()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282b010usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_useModernHangulLineBreakingRules(bool)` overload"]pub fn set_use_modern_hangul_line_breaking_rules(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282b030usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_instance()` overload"]pub fn get_instance()->crate::tm_pro::tmp_settings::TMP_Settings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282a960usize)as*mut u8,crate::tm_pro::tmp_settings::TMP_Settings;
+)}
+}
+#[doc="`LoadDefaultSettings()` overload"]pub fn load_default_settings()->crate::tm_pro::tmp_settings::TMP_Settings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282b060usize)as*mut u8,crate::tm_pro::tmp_settings::TMP_Settings;
+)}
+}
+#[doc="`GetSettings()` overload"]pub fn get_settings()->crate::tm_pro::tmp_settings::TMP_Settings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282b180usize)as*mut u8,crate::tm_pro::tmp_settings::TMP_Settings;
+)}
+}
+#[doc="`GetFontAsset()` overload"]pub fn get_font_asset()->crate::tm_pro::tmp_fontasset::TMP_FontAsset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282b210usize)as*mut u8,crate::tm_pro::tmp_fontasset::TMP_FontAsset;
+)}
+}
+#[doc="`GetSpriteAsset()` overload"]pub fn get_sprite_asset()->crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282b2a0usize)as*mut u8,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
+)}
+}
+#[doc="`GetStyleSheet()` overload"]pub fn get_style_sheet()->crate::tm_pro::tmp_stylesheet::TMP_StyleSheet{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282b330usize)as*mut u8,crate::tm_pro::tmp_stylesheet::TMP_StyleSheet;
+)}
+}
+#[doc="`LoadLinebreakingRules()` overload"]pub fn load_linebreaking_rules()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282aed0usize)as*mut u8,();
+)}
+}
+#[doc="`GetCharacters(crate::unity_engine::textasset::TextAsset)` overload"]pub fn get_characters(file:impl::core::convert::Into<crate::unity_engine::textasset::TextAsset>)->crate::system::collections::generic::dictionary_2::Dictionary_2<i32,u16>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282b3c0usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<i32,u16> ;
+(crate::unity_engine::textasset::TextAsset)::core::convert::Into::into(file))}
+}
 }
 
-#[cfg(feature = "tm_pro-tmp_settings")]
-pub trait ITMP_Settings_LineBreakingTableMethods : ITMP_Settings_LineBreakingTable { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_Settings_LineBreakingTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Settings_LineBreakingTable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ea98c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_settings")]pub trait ITMP_SettingsMethods:ITMP_Settings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Settings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b4e0usize)as*mut u8,();
+(TMP_Settings)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl < __T : ITMP_Settings_LineBreakingTable > ITMP_Settings_LineBreakingTableMethods for __T { }
+#[cfg(feature="tm_pro-tmp_settings")]impl<__T:ITMP_Settings>ITMP_SettingsMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl TMP_Settings_LineBreakingTable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Settings_LineBreakingTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="tm_pro-tmp_settings")]impl TMP_Settings{pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enable_word_wrapping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_enable_kerning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_enable_extra_padding_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_enable_tint_all_sprites_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_enable_parse_escape_characters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_enable_raycast_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_get_font_features_at_runtime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_missing_glyph_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_missing_glyph_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_warnings_disabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_default_font_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_default_font_asset_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_default_font_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_default_text_auto_sizing_min_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_default_text_auto_sizing_max_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_default_text_mesh_pro_text_container_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_default_text_mesh_pro_ui_text_container_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_auto_size_text_container_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_is_text_object_scale_static_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_is_text_object_scale_static_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_fallback_font_assets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_match_material_preset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_default_sprite_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_default_sprite_asset_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_enable_emoji_support_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_enable_emoji_support_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_missing_character_sprite_unicode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_missing_character_sprite_unicode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_default_color_gradient_presets_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_default_style_sheet_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_style_sheets_resource_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_leading_characters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_following_characters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_linebreaking_rules_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_use_modern_hangul_line_breaking_rules_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn set_use_modern_hangul_line_breaking_rules_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn load_default_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_font_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_sprite_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_style_sheet_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn load_linebreaking_rules_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_characters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+}
 
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl TMP_Settings_LineBreakingTable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Settings_LineBreakingTable) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_Settings_LineBreakingTableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_settings")]impl TMP_Settings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Settings), ::core::stringify!(new),));
+ <Self as ITMP_SettingsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_settings")]pub trait ITMP_Settings_LineBreakingTableMethods:ITMP_Settings_LineBreakingTable{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Settings_LineBreakingTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea98c0usize)as*mut u8,();
+(TMP_Settings_LineBreakingTable)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_settings")]impl<__T:ITMP_Settings_LineBreakingTable>ITMP_Settings_LineBreakingTableMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_settings")]impl TMP_Settings_LineBreakingTable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_settings")]impl TMP_Settings_LineBreakingTable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Settings_LineBreakingTable), ::core::stringify!(new),));
+ <Self as ITMP_Settings_LineBreakingTableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_settings")]

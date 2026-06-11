@@ -4,49 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shadowslicedata/ShadowSliceData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ShadowSliceData {
-    pub view_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub projection_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub shadow_transform: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub offset_x: i32,
-    pub offset_y: i32,
-    pub resolution: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shadowslicedata/ShadowSliceData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ShadowSliceData{pub view_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub projection_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub shadow_transform:crate::unity_engine::matrix4x4::Matrix4x4,pub offset_x:i32,pub offset_y:i32,pub resolution:i32,}
+impl::unity2::ClassIdentity for ShadowSliceData{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
+const NAME: &'static str="ShadowSliceData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ShadowSliceData {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "ShadowSliceData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ShadowSliceData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ShadowSliceData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -54,11 +26,13 @@ impl ::unity2::IlType for ShadowSliceData {
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
-impl ShadowSliceData { # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut ShadowSliceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2edb510usize) as * mut u8) ; __inner (self as * mut ShadowSliceData , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-shadowslicedata")]impl ShadowSliceData{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2edb510usize)as*mut u8,();
+(*mut ShadowSliceData)self as*mut ShadowSliceData)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
-impl ShadowSliceData { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSliceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-universal-shadowslicedata")]impl ShadowSliceData{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
 #[doc(hidden)]

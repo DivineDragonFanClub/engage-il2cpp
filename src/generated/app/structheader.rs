@@ -4,65 +4,182 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader_Param.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructHeader.Param")] # [parent (crate :: system :: object :: Object)] pub struct StructHeader_Param {
-# [offset (16)] # [rename (name = "_name")] pub name_field : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "_type")] pub r#type : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "_ident")] pub ident_field : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "_min")] pub min_field : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "_max")] pub max_field : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "_chg")] pub chg_field : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structheader/StructHeader.md"))]#[::unity2::class(namespace="App",name="StructHeader")]#[parent(crate::system::object::Object)]pub struct StructHeader{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructHeader")] # [parent (crate :: system :: object :: Object)] pub struct StructHeader {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structheader/StructHeader_Param.md"))]#[::unity2::class(namespace="App",name="StructHeader.Param")]#[parent(crate::system::object::Object)]pub struct StructHeader_Param{#[offset(16)]#[rename(name="_name")]pub name_field: ::unity2::Il2CppString, #[offset(24)]#[rename(name="_type")]pub r#type: ::unity2::Il2CppString, #[offset(32)]#[rename(name="_ident")]pub ident_field: ::unity2::Il2CppString, #[offset(40)]#[rename(name="_min")]pub min_field: ::unity2::Il2CppString, #[offset(48)]#[rename(name="_max")]pub max_field: ::unity2::Il2CppString, #[offset(56)]#[rename(name="_chg")]pub chg_field: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-structheader-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-structheader")]
-pub trait IStructHeader_ParamMethods : IStructHeader_Param { # [doc = "`get_name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_type()` overload"] fn get_type (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_type(::unity2::Il2CppString)` overload"] fn set_type (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ident()` overload"] fn get_ident (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ident(::unity2::Il2CppString)` overload"] fn set_ident (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_min()` overload"] fn get_min (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_min(::unity2::Il2CppString)` overload"] fn set_min (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_max()` overload"] fn get_max (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_max(::unity2::Il2CppString)` overload"] fn set_max (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_chg()` overload"] fn get_chg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_chg(::unity2::Il2CppString)` overload"] fn set_chg (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StructHeader_Param as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader_Param , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21f5ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-structheader")]
-impl < __T : IStructHeader_Param > IStructHeader_ParamMethods for __T { }
-
-#[cfg(feature = "app-structheader")]
-impl StructHeader_Param { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_ident_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_ident_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_chg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_chg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader_Param as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
-
-#[cfg(feature = "app-structheader")]
-impl StructHeader_Param {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructHeader_Param) , :: core :: stringify ! (new) ,)) ; < Self as IStructHeader_ParamMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-structheader")]pub trait IStructHeaderMethods:IStructHeader{#[doc="`get_param()` overload"]fn get_param(self,)->crate::system::collections::generic::list_1::List_1<crate::app::structheader::StructHeader_Param>{unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250ae70usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::structheader::StructHeader_Param> ;
+(StructHeader)__receiver)}
+}
+#[doc="`set_param(crate::system::collections::generic::list_1::List_1<crate::app::structheader::StructHeader_Param>)` overload"]fn set_param(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::structheader::StructHeader_Param> >)->(){unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250ae80usize)as*mut u8,();
+(StructHeader)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::structheader::StructHeader_Param>)::core::convert::Into::into(value))}
+}
+#[doc="`get_sheetName()` overload"]fn get_sheet_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250ae90usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader)__receiver)}
+}
+#[doc="`set_sheetName(::unity2::Il2CppString)` overload"]fn set_sheet_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250aea0usize)as*mut u8,();
+(StructHeader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_filePath()` overload"]fn get_file_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250aeb0usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader)__receiver)}
+}
+#[doc="`set_filePath(::unity2::Il2CppString)` overload"]fn set_file_path(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250aec0usize)as*mut u8,();
+(StructHeader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250aed0usize)as*mut u8,();
+(StructHeader)__receiver)}
+}
+fn get_propertys<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,)->crate::system::collections::generic::list_1::List_1<crate::app::structproperty::StructProperty>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<StructHeader as::unity2::ClassIdentity> ::class(),"GetPropertys",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <StructHeader as::unity2::ClassIdentity> ::NAME,"GetPropertys",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(StructHeader, ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::app::structproperty::StructProperty> = ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetArrayIdent()` overload"]fn get_array_ident(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250af60usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader)__receiver)}
+}
 }
 
-#[cfg(feature = "app-structheader")]
-pub trait IStructHeaderMethods : IStructHeader { # [doc = "`get_param()` overload"] fn get_param (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: structheader :: StructHeader_Param > { unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: structheader :: StructHeader_Param > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250ae70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_param(crate::system::collections::generic::list_1::List_1<crate::app::structheader::StructHeader_Param>)` overload"] fn set_param (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: structheader :: StructHeader_Param > >) -> () { unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: structheader :: StructHeader_Param > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250ae80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_sheetName()` overload"] fn get_sheet_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250ae90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_sheetName(::unity2::Il2CppString)` overload"] fn set_sheet_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250aea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_filePath()` overload"] fn get_file_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250aeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_filePath(::unity2::Il2CppString)` overload"] fn set_file_path (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250aec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250aed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } fn get_propertys < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: structproperty :: StructProperty > { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< StructHeader as :: unity2 :: ClassIdentity > :: class () , "GetPropertys" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StructHeader as :: unity2 :: ClassIdentity > :: NAME , "GetPropertys" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (StructHeader , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: structproperty :: StructProperty > = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetArrayIdent()` overload"] fn get_array_ident (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StructHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StructHeader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250af60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-structheader")]impl<__T:IStructHeader>IStructHeaderMethods for __T{}
 
-#[cfg(feature = "app-structheader")]
-impl < __T : IStructHeader > IStructHeaderMethods for __T { }
+#[cfg(feature="app-structheader")]impl StructHeader{pub fn get_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sheet_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_sheet_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_file_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_file_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_array_ident_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-structheader")]
-impl StructHeader { pub fn get_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_sheet_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_sheet_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_array_ident_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StructHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-structheader")]impl StructHeader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructHeader), ::core::stringify!(new),));
+ <Self as IStructHeaderMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-structheader")]
-impl StructHeader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructHeader) , :: core :: stringify ! (new) ,)) ; < Self as IStructHeaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-structheader")]pub trait IStructHeader_ParamMethods:IStructHeader_Param{#[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a00usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader_Param)__receiver)}
+}
+#[doc="`set_name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a10usize)as*mut u8,();
+(StructHeader_Param)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_type()` overload"]fn get_type(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a20usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader_Param)__receiver)}
+}
+#[doc="`set_type(::unity2::Il2CppString)` overload"]fn set_type(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a30usize)as*mut u8,();
+(StructHeader_Param)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ident()` overload"]fn get_ident(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a40usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader_Param)__receiver)}
+}
+#[doc="`set_ident(::unity2::Il2CppString)` overload"]fn set_ident(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a50usize)as*mut u8,();
+(StructHeader_Param)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_min()` overload"]fn get_min(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a60usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader_Param)__receiver)}
+}
+#[doc="`set_min(::unity2::Il2CppString)` overload"]fn set_min(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a70usize)as*mut u8,();
+(StructHeader_Param)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_max()` overload"]fn get_max(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a80usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader_Param)__receiver)}
+}
+#[doc="`set_max(::unity2::Il2CppString)` overload"]fn set_max(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5a90usize)as*mut u8,();
+(StructHeader_Param)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_chg()` overload"]fn get_chg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5aa0usize)as*mut u8, ::unity2::Il2CppString;
+(StructHeader_Param)__receiver)}
+}
+#[doc="`set_chg(::unity2::Il2CppString)` overload"]fn set_chg(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5ab0usize)as*mut u8,();
+(StructHeader_Param)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StructHeader_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5ac0usize)as*mut u8,();
+(StructHeader_Param)__receiver)}
+}
+}
+
+#[cfg(feature="app-structheader")]impl<__T:IStructHeader_Param>IStructHeader_ParamMethods for __T{}
+
+#[cfg(feature="app-structheader")]impl StructHeader_Param{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_ident_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_ident_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_chg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_chg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-structheader")]impl StructHeader_Param{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructHeader_Param), ::core::stringify!(new),));
+ <Self as IStructHeader_ParamMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-structheader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::StructHeader_Param;
-    pub use super::IStructHeader_Param;
-    pub use super::IStructHeader_ParamMethods;
     pub use super::StructHeader;
     pub use super::IStructHeader;
     pub use super::IStructHeaderMethods;
+    pub use super::StructHeader_Param;
+    pub use super::IStructHeader_Param;
+    pub use super::IStructHeader_ParamMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

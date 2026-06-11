@@ -4,34 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/meshcontainer/MeshContainer.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "MeshContainer")] # [parent (crate :: system :: object :: Object)] pub struct MeshContainer {
-# [offset (16)] # [rename (name = "mesh")] pub mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (24)] # [rename (name = "vertices")] pub vertices : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (32)] # [rename (name = "normals")] pub normals : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/water/meshcontainer/MeshContainer.md"))]#[::unity2::class(namespace="App.Water",name="MeshContainer")]#[parent(crate::system::object::Object)]pub struct MeshContainer{#[offset(16)]#[rename(name="mesh")]pub mesh:crate::unity_engine::mesh::Mesh, #[offset(24)]#[rename(name="vertices")]pub vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(32)]#[rename(name="normals")]pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
 
 }
 
 #[cfg(feature = "app-water-meshcontainer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-water-meshcontainer")]
-pub trait IMeshContainerMethods : IMeshContainer { # [doc = "`.ctor(crate::unity_engine::mesh::Mesh)` overload"] fn ctor (self , m : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh >) -> () { unsafe { let __receiver = < MeshContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshContainer , crate :: unity_engine :: mesh :: Mesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d1e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (m) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MeshContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d1e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-water-meshcontainer")]pub trait IMeshContainerMethods:IMeshContainer{#[doc="`.ctor(crate::unity_engine::mesh::Mesh)` overload"]fn ctor(self,m:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <MeshContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d1e20usize)as*mut u8,();
+(MeshContainer)__receiver,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(m))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MeshContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d1e90usize)as*mut u8,();
+(MeshContainer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-water-meshcontainer")]
-impl < __T : IMeshContainer > IMeshContainerMethods for __T { }
+#[cfg(feature="app-water-meshcontainer")]impl<__T:IMeshContainer>IMeshContainerMethods for __T{}
 
-#[cfg(feature = "app-water-meshcontainer")]
-impl MeshContainer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-water-meshcontainer")]impl MeshContainer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-water-meshcontainer")]
-impl MeshContainer {
-# [doc = "`.ctor(crate::unity_engine::mesh::Mesh)` — overload selector"] pub fn new (m : crate :: unity_engine :: mesh :: Mesh) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MeshContainer) , :: core :: stringify ! (new) ,)) ; < Self as IMeshContainerMethods > :: ctor (this , m) ; this }
+#[cfg(feature="app-water-meshcontainer")]impl MeshContainer{#[doc="`.ctor(crate::unity_engine::mesh::Mesh)` — overload selector"]pub fn new(m:crate::unity_engine::mesh::Mesh)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MeshContainer), ::core::stringify!(new),));
+ <Self as IMeshContainerMethods> ::ctor(this,m);
+this}
 }
 
 #[cfg(feature = "app-water-meshcontainer")]

@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/playflagsex/PlayFlagsEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PlayFlagsEx")] # [parent (crate :: system :: object :: Object)] pub struct PlayFlagsEx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/playflagsex/PlayFlagsEx.md"))]#[::unity2::class(namespace="Combat",name="PlayFlagsEx")]#[parent(crate::system::object::Object)]pub struct PlayFlagsEx{}
 
 }
 
 #[cfg(feature = "combat-playflagsex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-playflagsex")]
-impl PlayFlagsEx { # [doc = "`Any(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags)` overload"] pub fn any (lhs : impl :: core :: convert :: Into < crate :: combat :: playflags :: PlayFlags > , rhs : impl :: core :: convert :: Into < crate :: combat :: playflags :: PlayFlags >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: playflags :: PlayFlags , crate :: combat :: playflags :: PlayFlags , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280bf90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`NoneOf(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags)` overload"] pub fn none_of (lhs : impl :: core :: convert :: Into < crate :: combat :: playflags :: PlayFlags > , rhs : impl :: core :: convert :: Into < crate :: combat :: playflags :: PlayFlags >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: playflags :: PlayFlags , crate :: combat :: playflags :: PlayFlags , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280bfa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`All(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags)` overload"] pub fn all (lhs : impl :: core :: convert :: Into < crate :: combat :: playflags :: PlayFlags > , rhs : impl :: core :: convert :: Into < crate :: combat :: playflags :: PlayFlags >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: playflags :: PlayFlags , crate :: combat :: playflags :: PlayFlags , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280bfb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-playflagsex")]impl PlayFlagsEx{#[doc="`Any(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags)` overload"]pub fn any(lhs:impl::core::convert::Into<crate::combat::playflags::PlayFlags> ,rhs:impl::core::convert::Into<crate::combat::playflags::PlayFlags>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280bf90usize)as*mut u8,bool;
+(crate::combat::playflags::PlayFlags)::core::convert::Into::into(lhs),(crate::combat::playflags::PlayFlags)::core::convert::Into::into(rhs))}
+}
+#[doc="`NoneOf(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags)` overload"]pub fn none_of(lhs:impl::core::convert::Into<crate::combat::playflags::PlayFlags> ,rhs:impl::core::convert::Into<crate::combat::playflags::PlayFlags>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280bfa0usize)as*mut u8,bool;
+(crate::combat::playflags::PlayFlags)::core::convert::Into::into(lhs),(crate::combat::playflags::PlayFlags)::core::convert::Into::into(rhs))}
+}
+#[doc="`All(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags)` overload"]pub fn all(lhs:impl::core::convert::Into<crate::combat::playflags::PlayFlags> ,rhs:impl::core::convert::Into<crate::combat::playflags::PlayFlags>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280bfb0usize)as*mut u8,bool;
+(crate::combat::playflags::PlayFlags)::core::convert::Into::into(lhs),(crate::combat::playflags::PlayFlags)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "combat-playflagsex")]
-impl PlayFlagsEx { pub fn any_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayFlagsEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn none_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayFlagsEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayFlagsEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-playflagsex")]impl PlayFlagsEx{pub fn any_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn none_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "combat-playflagsex")]
 #[doc(hidden)]

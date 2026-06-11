@@ -4,36 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellyesnodialognomenuitem/ShopSellYesNoDialogNoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopSellYesNoDialogNoMenuItem")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct ShopSellYesNoDialogNoMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellyesnodialognomenuitem/ShopSellYesNoDialogNoMenuItem.md"))]#[::unity2::class(namespace="App",name="ShopSellYesNoDialogNoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct ShopSellYesNoDialogNoMenuItem{}
 
 }
 
 #[cfg(feature = "app-shopsellyesnodialognomenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
-pub trait IShopSellYesNoDialogNoMenuItemMethods : IShopSellYesNoDialogNoMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShopSellYesNoDialogNoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellYesNoDialogNoMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ba7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ShopSellYesNoDialogNoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellYesNoDialogNoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ba860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ShopSellYesNoDialogNoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellYesNoDialogNoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ba8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopsellyesnodialognomenuitem")]pub trait IShopSellYesNoDialogNoMenuItemMethods:IShopSellYesNoDialogNoMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSellYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ba7d0usize)as*mut u8,();
+(ShopSellYesNoDialogNoMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopSellYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ba860usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ShopSellYesNoDialogNoMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopSellYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ba8e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ShopSellYesNoDialogNoMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
-impl < __T : IShopSellYesNoDialogNoMenuItem > IShopSellYesNoDialogNoMenuItemMethods for __T { }
+#[cfg(feature="app-shopsellyesnodialognomenuitem")]impl<__T:IShopSellYesNoDialogNoMenuItem>IShopSellYesNoDialogNoMenuItemMethods for __T{}
 
-#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
-impl ShopSellYesNoDialogNoMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellYesNoDialogNoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellYesNoDialogNoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellYesNoDialogNoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-shopsellyesnodialognomenuitem")]impl ShopSellYesNoDialogNoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
-impl ShopSellYesNoDialogNoMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopSellYesNoDialogNoMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IShopSellYesNoDialogNoMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-shopsellyesnodialognomenuitem")]impl ShopSellYesNoDialogNoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSellYesNoDialogNoMenuItem), ::core::stringify!(new),));
+ <Self as IShopSellYesNoDialogNoMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-shopsellyesnodialognomenuitem")]

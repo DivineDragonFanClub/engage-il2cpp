@@ -4,52 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/directionallight/DirectionalLight.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DirectionalLight {
-    pub instance_id: i32,
-    pub shadow: bool,
-    pub mode: crate :: unity_engine :: experimental :: global_illumination :: lightmode :: LightMode,
-    pub position: crate :: unity_engine :: vector3 :: Vector3,
-    pub orientation: crate :: unity_engine :: quaternion :: Quaternion,
-    pub color: crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor,
-    pub indirect_color: crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor,
-    pub penumbra_width_radian: f32,
-    pub direction: crate :: unity_engine :: vector3 :: Vector3,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/global_illumination/directionallight/DirectionalLight.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DirectionalLight{pub instance_id:i32,pub shadow:bool,pub mode:crate::unity_engine::experimental::global_illumination::lightmode::LightMode,pub position:crate::unity_engine::vector3::Vector3,pub orientation:crate::unity_engine::quaternion::Quaternion,pub color:crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,pub indirect_color:crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,pub penumbra_width_radian:f32,pub direction:crate::unity_engine::vector3::Vector3,}
+impl::unity2::ClassIdentity for DirectionalLight{const NAMESPACE: &'static str="UnityEngine.Experimental.GlobalIllumination";
+const NAME: &'static str="DirectionalLight";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for DirectionalLight {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
-
-    const NAME: &'static str = "DirectionalLight";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for DirectionalLight {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for DirectionalLight{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }

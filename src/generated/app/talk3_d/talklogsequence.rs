@@ -4,82 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talklogsequence/TalkLogSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TalkLogSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogsequence/TalkLogSequence.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::talk3_d::talklogsequence::TalkLogSequence>)]pub struct TalkLogSequence{#[offset(114)]#[rename(name="m_IsPlayedVoice")]pub m_is_played_voice:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogsequence/TalkLogSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkLogSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for TalkLogSequence_Label{const NAMESPACE: &'static str="App.Talk3D";
+const NAME: &'static str="TalkLogSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for TalkLogSequence_Label  {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "TalkLogSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for TalkLogSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for TalkLogSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl TalkLogSequence_Label{pub fn fade_in()->Self{Self{value:0}
 }
-
-
-impl  TalkLogSequence_Label  {
-    pub fn fade_in() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn tick() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn fade_out() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn tick()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogsequence/TalkLogSequence.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkLogSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talklogsequence :: TalkLogSequence >)] pub struct TalkLogSequence {
-# [offset (114)] # [rename (name = "m_IsPlayedVoice")] pub m_is_played_voice : bool ,
+pub fn fade_out()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
 }
 
 }
@@ -87,30 +44,97 @@ impl  TalkLogSequence_Label  {
 #[cfg(feature = "app-talk3_d-talklogsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talklogsequence")]
-impl TalkLogSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: talk3_d :: talklogsequence :: TalkLogSequence { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talklogsequence :: TalkLogSequence = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bff80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talklogsequence")]impl TalkLogSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::talk3_d::talklogsequence::TalkLogSequence{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20bff80usize)as*mut u8,crate::app::talk3_d::talklogsequence::TalkLogSequence;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talklogsequence")]
-pub trait ITalkLogSequenceMethods : ITalkLogSequence { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c2d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c2e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowTalkUI()` overload"] fn show_talk_ui (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c2eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideTalkUI()` overload"] fn hide_talk_ui (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c2fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartFadeIn()` overload"] fn start_fade_in (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c30b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitFadeIn()` overload"] fn wait_fade_in (self ,) -> bool { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c3130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c3140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopVoice()` overload"] fn stop_voice (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c3bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartFadeOut()` overload"] fn start_fade_out (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c3c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitFadeOut()` overload"] fn wait_fade_out (self ,) -> bool { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c3cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndFadeOut()` overload"] fn end_fade_out (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c3d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDesc()` overload"] fn get_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c3dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkLogSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkLogSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c44b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talklogsequence")]pub trait ITalkLogSequenceMethods:ITalkLogSequence{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c2d00usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c2e30usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`ShowTalkUI()` overload"]fn show_talk_ui(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c2eb0usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`HideTalkUI()` overload"]fn hide_talk_ui(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c2fb0usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`StartFadeIn()` overload"]fn start_fade_in(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c30b0usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`WaitFadeIn()` overload"]fn wait_fade_in(self,)->bool{unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c3130usize)as*mut u8,bool;
+(TalkLogSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c3140usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`StopVoice()` overload"]fn stop_voice(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c3bb0usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`StartFadeOut()` overload"]fn start_fade_out(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c3c30usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`WaitFadeOut()` overload"]fn wait_fade_out(self,)->bool{unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c3cb0usize)as*mut u8,bool;
+(TalkLogSequence)__receiver)}
+}
+#[doc="`EndFadeOut()` overload"]fn end_fade_out(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c3d30usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+#[doc="`GetDesc()` overload"]fn get_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c3dc0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(TalkLogSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c44b0usize)as*mut u8,();
+(TalkLogSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talklogsequence")]
-impl < __T : ITalkLogSequence > ITalkLogSequenceMethods for __T { }
+#[cfg(feature="app-talk3_d-talklogsequence")]impl<__T:ITalkLogSequence>ITalkLogSequenceMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talklogsequence")]
-impl TalkLogSequence { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn show_talk_ui_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn hide_talk_ui_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn wait_fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn stop_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn wait_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn end_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkLogSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-talk3_d-talklogsequence")]impl TalkLogSequence{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn show_talk_ui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hide_talk_ui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn wait_fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn stop_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn wait_fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn end_fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-talk3_d-talklogsequence")]
-impl TalkLogSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkLogSequence) , :: core :: stringify ! (new) ,)) ; < Self as ITalkLogSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talklogsequence")]impl TalkLogSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkLogSequence), ::core::stringify!(new),));
+ <Self as ITalkLogSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talklogsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TalkLogSequence_Label;
     pub use super::TalkLogSequence;
     pub use super::ITalkLogSequence;
     pub use super::ITalkLogSequenceMethods;
+    pub use super::TalkLogSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -4,36 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlod/CharacterLod.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterLod")] # [parent (crate :: system :: object :: Object)] pub struct CharacterLod {
-# [static_field] # [rename (name = "LOD_VALUES")] pub lod_values : :: unity2 :: Array < f32 > ,
-# [static_field] # [rename (name = "MAX_LOD")] pub max_lod : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterlod/CharacterLod.md"))]#[::unity2::class(namespace="Combat",name="CharacterLod")]#[parent(crate::system::object::Object)]pub struct CharacterLod{#[static_field]#[rename(name="LOD_VALUES")]pub lod_values: ::unity2::Array<f32> , #[static_field]#[rename(name="MAX_LOD")]pub max_lod:i32,}
 
 }
 
 #[cfg(feature = "combat-characterlod-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterlod")]
-impl CharacterLod { # [doc = "`Activate(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"] pub fn activate (objects : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: transform :: Transform > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: transform :: Transform > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27eb830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (objects) , :: core :: option :: Option :: None) } } } # [doc = "`HasLod(::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"] pub fn has_lod (renderers : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27eb980usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (renderers) , :: core :: option :: Option :: None) } } } # [doc = "`IsShadowMesh(crate::unity_engine::renderer::Renderer)` overload"] pub fn is_shadow_mesh (r : impl :: core :: convert :: Into < crate :: unity_engine :: renderer :: Renderer >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: renderer :: Renderer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27eba40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r) , :: core :: option :: Option :: None) } } } # [doc = "`GetBaseName(::unity2::Il2CppString)` overload"] pub fn get_base_name (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ebba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetRenderersByLod(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"] pub fn get_renderers_by_lod (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , renderers : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > >) -> :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ebcb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (renderers) , :: core :: option :: Option :: None) } } } # [doc = "`CreateLods(::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"] pub fn create_lods (renderers : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > >) -> :: unity2 :: Array < crate :: unity_engine :: lod :: LOD > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: lod :: LOD > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ec020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (renderers) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::combat::characterasset::CharacterAsset)` overload"] pub fn setup (asset : impl :: core :: convert :: Into < crate :: combat :: characterasset :: CharacterAsset >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: characterasset :: CharacterAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ec810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27eca50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterlod")]impl CharacterLod{#[doc="`Activate(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]pub fn activate(objects:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::transform::Transform> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27eb830usize)as*mut u8,();
+(::unity2::Array<crate::unity_engine::transform::Transform>)::core::convert::Into::into(objects))}
+}
+#[doc="`HasLod(::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]pub fn has_lod(renderers:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::renderer::Renderer> >)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27eb980usize)as*mut u8,bool;
+(::unity2::Array<crate::unity_engine::renderer::Renderer>)::core::convert::Into::into(renderers))}
+}
+#[doc="`IsShadowMesh(crate::unity_engine::renderer::Renderer)` overload"]pub fn is_shadow_mesh(r:impl::core::convert::Into<crate::unity_engine::renderer::Renderer>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27eba40usize)as*mut u8,bool;
+(crate::unity_engine::renderer::Renderer)::core::convert::Into::into(r))}
+}
+#[doc="`GetBaseName(::unity2::Il2CppString)` overload"]pub fn get_base_name(name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ebba0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetRenderersByLod(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]pub fn get_renderers_by_lod(key:impl::core::convert::Into< ::unity2::Il2CppString> ,renderers:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::renderer::Renderer> >)-> ::unity2::Array<crate::unity_engine::renderer::Renderer>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ebcb0usize)as*mut u8, ::unity2::Array<crate::unity_engine::renderer::Renderer> ;
+(::unity2::Il2CppString)::core::convert::Into::into(key),(::unity2::Array<crate::unity_engine::renderer::Renderer>)::core::convert::Into::into(renderers))}
+}
+#[doc="`CreateLods(::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]pub fn create_lods(renderers:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::renderer::Renderer> >)-> ::unity2::Array<crate::unity_engine::lod::LOD>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ec020usize)as*mut u8, ::unity2::Array<crate::unity_engine::lod::LOD> ;
+(::unity2::Array<crate::unity_engine::renderer::Renderer>)::core::convert::Into::into(renderers))}
+}
+#[doc="`Setup(crate::combat::characterasset::CharacterAsset)` overload"]pub fn setup(asset:impl::core::convert::Into<crate::combat::characterasset::CharacterAsset>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ec810usize)as*mut u8,bool;
+(crate::combat::characterasset::CharacterAsset)::core::convert::Into::into(asset))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27eca50usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-characterlod")]
-pub trait ICharacterLodMethods : ICharacterLod { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterLod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27eca40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterlod")]pub trait ICharacterLodMethods:ICharacterLod{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterLod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27eca40usize)as*mut u8,();
+(CharacterLod)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterlod")]
-impl < __T : ICharacterLod > ICharacterLodMethods for __T { }
+#[cfg(feature="combat-characterlod")]impl<__T:ICharacterLod>ICharacterLodMethods for __T{}
 
-#[cfg(feature = "combat-characterlod")]
-impl CharacterLod { pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn has_lod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_shadow_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_base_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_renderers_by_lod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_lods_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="combat-characterlod")]impl CharacterLod{pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn has_lod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_shadow_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_base_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_renderers_by_lod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_lods_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "combat-characterlod")]
-impl CharacterLod {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterLod) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterLodMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterlod")]impl CharacterLod{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterLod), ::core::stringify!(new),));
+ <Self as ICharacterLodMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterlod")]

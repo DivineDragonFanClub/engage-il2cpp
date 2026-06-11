@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapdeploytemplate_1 :: { IMapDeployTemplate_1 , MapDeployTemplate_1 }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapdeploytemplate_1::{IMapDeployTemplate_1,MapDeployTemplate_1}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploy/MapDeploy.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDeploy")] # [parent (crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1 < crate :: app :: mapdeploy :: MapDeploy >)] pub struct MapDeploy {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeploy/MapDeploy.md"))]#[::unity2::class(namespace="App",name="MapDeploy")]#[parent(crate::app::mapdeploytemplate_1::MapDeployTemplate_1<crate::app::mapdeploy::MapDeploy>)]pub struct MapDeploy{}
 
 }
 
 #[cfg(feature = "app-mapdeploy-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapdeploy")]
-pub trait IMapDeployMethods : IMapDeploy { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDeploy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeploy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c35c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapdeploy")]pub trait IMapDeployMethods:IMapDeploy{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeploy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c35c0usize)as*mut u8,();
+(MapDeploy)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapdeploy")]
-impl < __T : IMapDeploy > IMapDeployMethods for __T { }
+#[cfg(feature="app-mapdeploy")]impl<__T:IMapDeploy>IMapDeployMethods for __T{}
 
-#[cfg(feature = "app-mapdeploy")]
-impl MapDeploy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeploy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapdeploy")]impl MapDeploy{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-mapdeploy")]
-impl MapDeploy {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDeploy) , :: core :: stringify ! (new) ,)) ; < Self as IMapDeployMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapdeploy")]impl MapDeploy{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDeploy), ::core::stringify!(new),));
+ <Self as IMapDeployMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapdeploy")]

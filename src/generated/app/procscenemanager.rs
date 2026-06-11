@@ -4,90 +4,110 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ProcSceneManager_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procscenemanager/ProcSceneManager_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProcSceneManager_Label{pub value:i32,}
+impl::unity2::ClassIdentity for ProcSceneManager_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProcSceneManager.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ProcSceneManager_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ProcSceneManager_Label{pub fn skip()->Self{Self{value:0}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for ProcSceneManager_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProcSceneManager.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ProcSceneManager_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ProcSceneManager_Label  {
-    pub fn skip() -> Self {
-        Self { value: 0 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenemanager/ProcSceneManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcSceneManager")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProcSceneManager {
-# [static_field] # [rename (name = "Empty")] pub empty : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_Handles")] pub s_handles : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
-# [static_field] # [rename (name = "s_Releases")] pub s_releases : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
-# [offset (112)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_Mode")] pub m_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode ,
-# [offset (128)] # [rename (name = "m_Empty")] pub m_empty : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (136)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procscenemanager/ProcSceneManager.md"))]#[::unity2::class(namespace="App",name="ProcSceneManager")]#[parent(crate::app::procinst::ProcInst)]pub struct ProcSceneManager{#[static_field]#[rename(name="Empty")]pub empty: ::unity2::Il2CppString, #[static_field]#[rename(name="s_Handles")]pub s_handles:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::resourcehandle_2::ResourceHandle_2> , #[static_field]#[rename(name="s_Releases")]pub s_releases:crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2> , #[offset(112)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_Mode")]pub m_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, #[offset(128)]#[rename(name="m_Empty")]pub m_empty:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(136)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcehandle_2::ResourceHandle_2,}
 
 }
 
 #[cfg(feature = "app-procscenemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procscenemanager")]
-impl ProcSceneManager { # [doc = "`HasEmptyScene()` overload"] pub fn has_empty_scene () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f560usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`LoadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] pub fn load_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281fe60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadBind(crate::app::procinst::ProcInst)` overload"] pub fn unload_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2820980usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn unload_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2821130usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] pub fn unload_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2820a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28211b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procscenemanager")]impl ProcSceneManager{#[doc="`HasEmptyScene()` overload"]pub fn has_empty_scene()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281f560usize)as*mut u8,bool;
+)}
+}
+#[doc="`LoadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]pub fn load_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,mode:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281fe60usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)::core::convert::Into::into(mode))}
+}
+#[doc="`UnloadBind(crate::app::procinst::ProcInst)` overload"]pub fn unload_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2820980usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`UnloadBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn unload_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2821130usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`UnloadBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]pub fn unload_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,mode:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2820a10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)::core::convert::Into::into(mode))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28211b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-procscenemanager")]
-pub trait IProcSceneManagerMethods : IProcSceneManager { # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mode : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode >) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcSceneManager , :: unity2 :: Il2CppString , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadBranch()` overload"] fn unload_branch (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadAsync()` overload"] fn unload_async (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitAsync()` overload"] fn wait_async (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281fa40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281fad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadAsync()` overload"] fn load_async (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281fc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DoneAsync()` overload"] fn done_async (self ,) -> () { unsafe { let __receiver = < ProcSceneManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcSceneManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281fcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procscenemanager")]pub trait IProcSceneManagerMethods:IProcSceneManager{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,mode:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>)->(){unsafe{let __receiver= <ProcSceneManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f4f0usize)as*mut u8,();
+(ProcSceneManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)::core::convert::Into::into(mode))}
+}
+#[doc="`UnloadBranch()` overload"]fn unload_branch(self,)->(){unsafe{let __receiver= <ProcSceneManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f670usize)as*mut u8,();
+(ProcSceneManager)__receiver)}
+}
+#[doc="`UnloadAsync()` overload"]fn unload_async(self,)->(){unsafe{let __receiver= <ProcSceneManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f730usize)as*mut u8,();
+(ProcSceneManager)__receiver)}
+}
+#[doc="`WaitAsync()` overload"]fn wait_async(self,)->(){unsafe{let __receiver= <ProcSceneManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281fa40usize)as*mut u8,();
+(ProcSceneManager)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <ProcSceneManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281fad0usize)as*mut u8,();
+(ProcSceneManager)__receiver)}
+}
+#[doc="`LoadAsync()` overload"]fn load_async(self,)->(){unsafe{let __receiver= <ProcSceneManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281fc50usize)as*mut u8,();
+(ProcSceneManager)__receiver)}
+}
+#[doc="`DoneAsync()` overload"]fn done_async(self,)->(){unsafe{let __receiver= <ProcSceneManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281fcf0usize)as*mut u8,();
+(ProcSceneManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-procscenemanager")]
-impl < __T : IProcSceneManager > IProcSceneManagerMethods for __T { }
+#[cfg(feature="app-procscenemanager")]impl<__T:IProcSceneManager>IProcSceneManagerMethods for __T{}
 
-#[cfg(feature = "app-procscenemanager")]
-impl ProcSceneManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn has_empty_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn wait_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn done_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn load_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn unload_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn unload_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn unload_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcSceneManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-procscenemanager")]impl ProcSceneManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn has_empty_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn wait_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn done_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn unload_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn unload_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn unload_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-procscenemanager")]
-impl ProcSceneManager {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcSceneManager) , :: core :: stringify ! (new) ,)) ; < Self as IProcSceneManagerMethods > :: ctor (this , name , mode) ; this }
+#[cfg(feature="app-procscenemanager")]impl ProcSceneManager{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcSceneManager), ::core::stringify!(new),));
+ <Self as IProcSceneManagerMethods> ::ctor(this,name,mode);
+this}
 }
 
 #[cfg(feature = "app-procscenemanager")]

@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/sortinglayerrange/SortingLayerRange.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SortingLayerRange {
-    pub m_lower_bound: i16,
-    pub m_upper_bound: i16,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/sortinglayerrange/SortingLayerRange.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SortingLayerRange{pub m_lower_bound:i16,pub m_upper_bound:i16,}
+impl::unity2::ClassIdentity for SortingLayerRange{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="SortingLayerRange";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for SortingLayerRange {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "SortingLayerRange";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SortingLayerRange {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SortingLayerRange{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,14 +26,31 @@ impl ::unity2::IlType for SortingLayerRange {
 #[cfg(feature = "unity_engine-rendering-sortinglayerrange-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-sortinglayerrange")]
-impl SortingLayerRange { # [doc = "`get_all()` overload"] pub fn get_all () -> crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f947d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-sortinglayerrange")]impl SortingLayerRange{#[doc="`get_all()` overload"]pub fn get_all()->crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f947d0usize)as*mut u8,crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-sortinglayerrange")]
-impl SortingLayerRange { # [doc = "`.ctor(i16, i16)` overload"] pub fn ctor (& mut self , lower_bound : impl :: core :: convert :: Into < i16 > , upper_bound : impl :: core :: convert :: Into < i16 >) -> () { unsafe { { let __inner : extern "C" fn (* mut SortingLayerRange , i16 , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f947c0usize) as * mut u8) ; __inner (self as * mut SortingLayerRange , :: core :: convert :: Into :: into (lower_bound) , :: core :: convert :: Into :: into (upper_bound) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange >) -> bool { unsafe { { let __inner : extern "C" fn (* mut SortingLayerRange , crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f947e0usize) as * mut u8) ; __inner (self as * mut SortingLayerRange , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut SortingLayerRange , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94810usize) as * mut u8) ; __inner (self as * mut SortingLayerRange , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SortingLayerRange , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f948b0usize) as * mut u8) ; __inner (self as * mut SortingLayerRange , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-sortinglayerrange")]impl SortingLayerRange{#[doc="`.ctor(i16, i16)` overload"]pub fn ctor(&mut self,lower_bound:impl::core::convert::Into<i16> ,upper_bound:impl::core::convert::Into<i16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f947c0usize)as*mut u8,();
+(*mut SortingLayerRange)self as*mut SortingLayerRange,(i16)::core::convert::Into::into(lower_bound),(i16)::core::convert::Into::into(upper_bound))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f947e0usize)as*mut u8,bool;
+(*mut SortingLayerRange)self as*mut SortingLayerRange,(crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94810usize)as*mut u8,bool;
+(*mut SortingLayerRange)self as*mut SortingLayerRange,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f948b0usize)as*mut u8,i32;
+(*mut SortingLayerRange)self as*mut SortingLayerRange)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-sortinglayerrange")]
-impl SortingLayerRange { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayerRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayerRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayerRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayerRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayerRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-sortinglayerrange")]impl SortingLayerRange{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-rendering-sortinglayerrange")]
 #[doc(hidden)]

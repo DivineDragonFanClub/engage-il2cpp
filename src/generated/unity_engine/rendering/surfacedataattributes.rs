@@ -4,36 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "SurfaceDataAttributes")] pub struct SurfaceDataAttributes {
-# [offset (16)] # [rename (name = "displayNames")] pub display_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (24)] # [rename (name = "isDirection")] pub is_direction : bool ,
-# [offset (25)] # [rename (name = "sRGBDisplay")] pub s_rgb_display : bool ,
-# [offset (28)] # [rename (name = "precision")] pub precision : crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision ,
-# [offset (32)] # [rename (name = "checkIsNormalized")] pub check_is_normalized : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="SurfaceDataAttributes")]pub struct SurfaceDataAttributes{#[offset(16)]#[rename(name="displayNames")]pub display_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="isDirection")]pub is_direction:bool, #[offset(25)]#[rename(name="sRGBDisplay")]pub s_rgb_display:bool, #[offset(28)]#[rename(name="precision")]pub precision:crate::unity_engine::rendering::fieldprecision::FieldPrecision, #[offset(32)]#[rename(name="checkIsNormalized")]pub check_is_normalized:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
-pub trait ISurfaceDataAttributesMethods : ISurfaceDataAttributes { # [doc = "`.ctor(::unity2::Il2CppString, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision, bool)` overload"] fn ctor (self , display_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_direction : impl :: core :: convert :: Into < bool > , s_rgb_display : impl :: core :: convert :: Into < bool > , precision : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision > , check_is_normalized : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SurfaceDataAttributes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SurfaceDataAttributes , :: unity2 :: Il2CppString , bool , bool , crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e10b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (display_name) , :: core :: convert :: Into :: into (is_direction) , :: core :: convert :: Into :: into (s_rgb_display) , :: core :: convert :: Into :: into (precision) , :: core :: convert :: Into :: into (check_is_normalized) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision)` overload"] fn ctor_2 (self , display_names : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , is_direction : impl :: core :: convert :: Into < bool > , s_rgb_display : impl :: core :: convert :: Into < bool > , check_is_normalized : impl :: core :: convert :: Into < bool > , precision : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision >) -> () { unsafe { let __receiver = < SurfaceDataAttributes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SurfaceDataAttributes , :: unity2 :: Array < :: unity2 :: Il2CppString > , bool , bool , bool , crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e11c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (display_names) , :: core :: convert :: Into :: into (is_direction) , :: core :: convert :: Into :: into (s_rgb_display) , :: core :: convert :: Into :: into (check_is_normalized) , :: core :: convert :: Into :: into (precision) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-surfacedataattributes")]pub trait ISurfaceDataAttributesMethods:ISurfaceDataAttributes{#[doc="`.ctor(::unity2::Il2CppString, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision, bool)` overload"]fn ctor(self,display_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_direction:impl::core::convert::Into<bool> ,s_rgb_display:impl::core::convert::Into<bool> ,precision:impl::core::convert::Into<crate::unity_engine::rendering::fieldprecision::FieldPrecision> ,check_is_normalized:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SurfaceDataAttributes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e10b0usize)as*mut u8,();
+(SurfaceDataAttributes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(display_name),(bool)::core::convert::Into::into(is_direction),(bool)::core::convert::Into::into(s_rgb_display),(crate::unity_engine::rendering::fieldprecision::FieldPrecision)::core::convert::Into::into(precision),(bool)::core::convert::Into::into(check_is_normalized))}
+}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>, bool, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision)` overload"]fn ctor_2(self,display_names:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,is_direction:impl::core::convert::Into<bool> ,s_rgb_display:impl::core::convert::Into<bool> ,check_is_normalized:impl::core::convert::Into<bool> ,precision:impl::core::convert::Into<crate::unity_engine::rendering::fieldprecision::FieldPrecision>)->(){unsafe{let __receiver= <SurfaceDataAttributes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e11c0usize)as*mut u8,();
+(SurfaceDataAttributes)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(display_names),(bool)::core::convert::Into::into(is_direction),(bool)::core::convert::Into::into(s_rgb_display),(bool)::core::convert::Into::into(check_is_normalized),(crate::unity_engine::rendering::fieldprecision::FieldPrecision)::core::convert::Into::into(precision))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
-impl < __T : ISurfaceDataAttributes > ISurfaceDataAttributesMethods for __T { }
+#[cfg(feature="unity_engine-rendering-surfacedataattributes")]impl<__T:ISurfaceDataAttributes>ISurfaceDataAttributesMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
-impl SurfaceDataAttributes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SurfaceDataAttributes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SurfaceDataAttributes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-surfacedataattributes")]impl SurfaceDataAttributes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
-impl SurfaceDataAttributes {
-# [doc = "`.ctor(::unity2::Il2CppString, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision, bool)` — overload selector"] pub fn new (display_name : :: unity2 :: Il2CppString , is_direction : bool , s_rgb_display : bool , precision : crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision , check_is_normalized : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SurfaceDataAttributes) , :: core :: stringify ! (new) ,)) ; < Self as ISurfaceDataAttributesMethods > :: ctor (this , display_name , is_direction , s_rgb_display , precision , check_is_normalized) ; this }
-
-# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision)` — overload selector"] pub fn new_2 (display_names : :: unity2 :: Array < :: unity2 :: Il2CppString > , is_direction : bool , s_rgb_display : bool , check_is_normalized : bool , precision : crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SurfaceDataAttributes) , :: core :: stringify ! (new_2) ,)) ; < Self as ISurfaceDataAttributesMethods > :: ctor_2 (this , display_names , is_direction , s_rgb_display , check_is_normalized , precision) ; this }
+#[cfg(feature="unity_engine-rendering-surfacedataattributes")]impl SurfaceDataAttributes{#[doc="`.ctor(::unity2::Il2CppString, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision, bool)` — overload selector"]pub fn new(display_name: ::unity2::Il2CppString,is_direction:bool,s_rgb_display:bool,precision:crate::unity_engine::rendering::fieldprecision::FieldPrecision,check_is_normalized:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SurfaceDataAttributes), ::core::stringify!(new),));
+ <Self as ISurfaceDataAttributesMethods> ::ctor(this,display_name,is_direction,s_rgb_display,precision,check_is_normalized);
+this}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>, bool, bool, bool, crate::unity_engine::rendering::fieldprecision::FieldPrecision)` — overload selector"]pub fn new_2(display_names: ::unity2::Array< ::unity2::Il2CppString> ,is_direction:bool,s_rgb_display:bool,check_is_normalized:bool,precision:crate::unity_engine::rendering::fieldprecision::FieldPrecision)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SurfaceDataAttributes), ::core::stringify!(new_2),));
+ <Self as ISurfaceDataAttributesMethods> ::ctor_2(this,display_names,is_direction,s_rgb_display,check_is_normalized,precision);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes")]

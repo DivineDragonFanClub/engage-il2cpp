@@ -4,35 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentruststockdata/SortieEntrustStockData.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieEntrustStockData")] # [parent (crate :: system :: object :: Object)] pub struct SortieEntrustStockData {
-# [offset (16)] # [rename (name = "m_UnitItem")] pub m_unit_item : crate :: app :: unititem :: UnitItem ,
-# [offset (24)] # [rename (name = "m_ItemData")] pub m_item_data : crate :: app :: itemdata :: ItemData ,
-# [offset (32)] # [rename (name = "m_StockCount")] pub m_stock_count : i32 ,
-# [offset (36)] # [rename (name = "m_AssignedCount")] pub m_assigned_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentruststockdata/SortieEntrustStockData.md"))]#[::unity2::class(namespace="App",name="SortieEntrustStockData")]#[parent(crate::system::object::Object)]pub struct SortieEntrustStockData{#[offset(16)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(24)]#[rename(name="m_ItemData")]pub m_item_data:crate::app::itemdata::ItemData, #[offset(32)]#[rename(name="m_StockCount")]pub m_stock_count:i32, #[offset(36)]#[rename(name="m_AssignedCount")]pub m_assigned_count:i32,}
 
 }
 
 #[cfg(feature = "app-sortieentruststockdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortieentruststockdata")]
-pub trait ISortieEntrustStockDataMethods : ISortieEntrustStockData { # [doc = "`.ctor(crate::app::unititem::UnitItem, i32)` overload"] fn ctor (self , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SortieEntrustStockData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockData , crate :: app :: unititem :: UnitItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Assigned()` overload"] fn assigned (self ,) -> () { unsafe { let __receiver = < SortieEntrustStockData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddStock(i32)` overload"] fn add_stock (self , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SortieEntrustStockData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitItem()` overload"] fn get_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < SortieEntrustStockData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ItemData()` overload"] fn get_item_data (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < SortieEntrustStockData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_StockCount()` overload"] fn get_stock_count (self ,) -> i32 { unsafe { let __receiver = < SortieEntrustStockData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_AssignedCount()` overload"] fn get_assigned_count (self ,) -> i32 { unsafe { let __receiver = < SortieEntrustStockData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustStockData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe6ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortieentruststockdata")]pub trait ISortieEntrustStockDataMethods:ISortieEntrustStockData{#[doc="`.ctor(crate::app::unititem::UnitItem, i32)` overload"]fn ctor(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortieEntrustStockData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6dc0usize)as*mut u8,();
+(SortieEntrustStockData)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Assigned()` overload"]fn assigned(self,)->(){unsafe{let __receiver= <SortieEntrustStockData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6e80usize)as*mut u8,();
+(SortieEntrustStockData)__receiver)}
+}
+#[doc="`AddStock(i32)` overload"]fn add_stock(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortieEntrustStockData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6ea0usize)as*mut u8,();
+(SortieEntrustStockData)__receiver,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`get_UnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <SortieEntrustStockData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6eb0usize)as*mut u8,crate::app::unititem::UnitItem;
+(SortieEntrustStockData)__receiver)}
+}
+#[doc="`get_ItemData()` overload"]fn get_item_data(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <SortieEntrustStockData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6ec0usize)as*mut u8,crate::app::itemdata::ItemData;
+(SortieEntrustStockData)__receiver)}
+}
+#[doc="`get_StockCount()` overload"]fn get_stock_count(self,)->i32{unsafe{let __receiver= <SortieEntrustStockData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6ed0usize)as*mut u8,i32;
+(SortieEntrustStockData)__receiver)}
+}
+#[doc="`get_AssignedCount()` overload"]fn get_assigned_count(self,)->i32{unsafe{let __receiver= <SortieEntrustStockData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe6ee0usize)as*mut u8,i32;
+(SortieEntrustStockData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortieentruststockdata")]
-impl < __T : ISortieEntrustStockData > ISortieEntrustStockDataMethods for __T { }
+#[cfg(feature="app-sortieentruststockdata")]impl<__T:ISortieEntrustStockData>ISortieEntrustStockDataMethods for __T{}
 
-#[cfg(feature = "app-sortieentruststockdata")]
-impl SortieEntrustStockData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn assigned_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_item_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_stock_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_assigned_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustStockData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-sortieentruststockdata")]impl SortieEntrustStockData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn assigned_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_item_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_stock_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_assigned_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-sortieentruststockdata")]
-impl SortieEntrustStockData {
-# [doc = "`.ctor(crate::app::unititem::UnitItem, i32)` — overload selector"] pub fn new (unit_item : crate :: app :: unititem :: UnitItem , count : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieEntrustStockData) , :: core :: stringify ! (new) ,)) ; < Self as ISortieEntrustStockDataMethods > :: ctor (this , unit_item , count) ; this }
+#[cfg(feature="app-sortieentruststockdata")]impl SortieEntrustStockData{#[doc="`.ctor(crate::app::unititem::UnitItem, i32)` — overload selector"]pub fn new(unit_item:crate::app::unititem::UnitItem,count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieEntrustStockData), ::core::stringify!(new),));
+ <Self as ISortieEntrustStockDataMethods> ::ctor(this,unit_item,count);
+this}
 }
 
 #[cfg(feature = "app-sortieentruststockdata")]

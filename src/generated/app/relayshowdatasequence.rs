@@ -4,70 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatasequence/RelayShowDataSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayShowDataSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayshowdatasequence/RelayShowDataSequence.md"))]#[::unity2::class(namespace="App",name="RelayShowDataSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayShowDataSequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(120)]#[rename(name="m_Mode")]pub m_mode:crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, #[offset(124)]#[rename(name="m_IsNewPlay")]pub m_is_new_play:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayshowdatasequence/RelayShowDataSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayShowDataSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RelayShowDataSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayShowDataSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for RelayShowDataSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayShowDataSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for RelayShowDataSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for RelayShowDataSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl RelayShowDataSequence_Label{pub fn show()->Self{Self{value:0}
 }
-
-
-impl  RelayShowDataSequence_Label  {
-    pub fn show() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn end()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayShowDataSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RelayShowDataSequence {
-# [offset (112)] # [rename (name = "m_MetaData")] pub m_meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData ,
-# [offset (120)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode ,
-# [offset (124)] # [rename (name = "m_IsNewPlay")] pub m_is_new_play : bool ,
 }
 
 }
@@ -75,30 +38,65 @@ impl  RelayShowDataSequence_Label  {
 #[cfg(feature = "app-relayshowdatasequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayshowdatasequence")]
-impl RelayShowDataSequence { # [doc = "`CreateBindTakeOver(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData)` overload"] pub fn create_bind_take_over (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: relayservermetadata :: RelayServerMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200ac10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindUpload(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"] pub fn create_bind_upload (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , is_new_play : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: relayservermetadata :: RelayServerMetaData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200b0c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (is_new_play) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"] pub fn create_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mode : impl :: core :: convert :: Into < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , is_new_play : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , crate :: app :: relayservermetadata :: RelayServerMetaData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200ac20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (is_new_play) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayshowdatasequence")]impl RelayShowDataSequence{#[doc="`CreateBindTakeOver(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn create_bind_take_over(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200ac10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`CreateBindUpload(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]pub fn create_bind_upload(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,is_new_play:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200b0c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_new_play))}
+}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mode:impl::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,is_new_play:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200ac20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)::core::convert::Into::into(mode),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_new_play))}
+}
+}
 
-#[cfg(feature = "app-relayshowdatasequence")]
-pub trait IRelayShowDataSequenceMethods : IRelayShowDataSequence { # [doc = "`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"] fn ctor (self , mode : impl :: core :: convert :: Into < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode > , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , is_new_play : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayShowDataSequence , crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , crate :: app :: relayservermetadata :: RelayServerMetaData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200aa80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (is_new_play) , :: core :: option :: Option :: None) } } } # [doc = "`IsSkipTutorial()` overload"] fn is_skip_tutorial (self ,) -> bool { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayShowDataSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200aae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayShowDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200ab10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSetPublishMode()` overload"] fn is_set_publish_mode (self ,) -> bool { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayShowDataSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200abc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPublishMode()` overload"] fn set_publish_mode (self ,) -> () { unsafe { let __receiver = < RelayShowDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayShowDataSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200ac00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayshowdatasequence")]pub trait IRelayShowDataSequenceMethods:IRelayShowDataSequence{#[doc="`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]fn ctor(self,mode:impl::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,is_new_play:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelayShowDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200aa80usize)as*mut u8,();
+(RelayShowDataSequence)__receiver,(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)::core::convert::Into::into(mode),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_new_play))}
+}
+#[doc="`IsSkipTutorial()` overload"]fn is_skip_tutorial(self,)->bool{unsafe{let __receiver= <RelayShowDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200aae0usize)as*mut u8,bool;
+(RelayShowDataSequence)__receiver)}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <RelayShowDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200ab10usize)as*mut u8,();
+(RelayShowDataSequence)__receiver)}
+}
+#[doc="`IsSetPublishMode()` overload"]fn is_set_publish_mode(self,)->bool{unsafe{let __receiver= <RelayShowDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200abc0usize)as*mut u8,bool;
+(RelayShowDataSequence)__receiver)}
+}
+#[doc="`SetPublishMode()` overload"]fn set_publish_mode(self,)->(){unsafe{let __receiver= <RelayShowDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200ac00usize)as*mut u8,();
+(RelayShowDataSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayshowdatasequence")]
-impl < __T : IRelayShowDataSequence > IRelayShowDataSequenceMethods for __T { }
+#[cfg(feature="app-relayshowdatasequence")]impl<__T:IRelayShowDataSequence>IRelayShowDataSequenceMethods for __T{}
 
-#[cfg(feature = "app-relayshowdatasequence")]
-impl RelayShowDataSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_skip_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_set_publish_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_publish_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_take_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-relayshowdatasequence")]impl RelayShowDataSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_skip_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_set_publish_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_publish_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_take_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-relayshowdatasequence")]
-impl RelayShowDataSequence {
-# [doc = "`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` — overload selector"] pub fn new (mode : crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData , is_new_play : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayShowDataSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRelayShowDataSequenceMethods > :: ctor (this , mode , meta_data , is_new_play) ; this }
+#[cfg(feature="app-relayshowdatasequence")]impl RelayShowDataSequence{#[doc="`.ctor(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode, crate::app::relayservermetadata::RelayServerMetaData, bool)` — overload selector"]pub fn new(mode:crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,meta_data:crate::app::relayservermetadata::RelayServerMetaData,is_new_play:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayShowDataSequence), ::core::stringify!(new),));
+ <Self as IRelayShowDataSequenceMethods> ::ctor(this,mode,meta_data,is_new_play);
+this}
 }
 
 #[cfg(feature = "app-relayshowdatasequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayShowDataSequence_Label;
     pub use super::RelayShowDataSequence;
     pub use super::IRelayShowDataSequence;
     pub use super::IRelayShowDataSequenceMethods;
+    pub use super::RelayShowDataSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

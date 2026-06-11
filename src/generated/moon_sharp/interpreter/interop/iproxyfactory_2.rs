@@ -4,19 +4,17 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/iproxyfactory_2/IProxyFactory_2.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop" , name = "IProxyFactory`2")] pub struct IProxyFactory_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/iproxyfactory_2/IProxyFactory_2.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="IProxyFactory`2")]pub struct IProxyFactory_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > IProxyFactory_2 < T0 , T1 > {
-# [doc = "`CreateProxyObject(T1)` overload"] # [method (name = "CreateProxyObject" , args = 1 , abstract_dispatch)] pub fn create_proxy_object (self , target : T1) -> T0 ;
+#[cfg(feature="moon_sharp-interpreter-interop-iproxyfactory_2")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>IProxyFactory_2<T0,T1>{#[doc="`CreateProxyObject(T1)` overload"]#[method(name="CreateProxyObject",args=1,abstract_dispatch)]pub fn create_proxy_object(self,target:T1)->T0;
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2")]

@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoenum/BattleInfoEnum.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleInfoEnum {
-    pub m_info: crate :: app :: battleinfo :: BattleInfo,
-    pub m_min: crate :: app :: battleside :: BattleSide_Type,
-    pub m_max: crate :: app :: battleside :: BattleSide_Type,
-    pub m_current: crate :: app :: battleinfoside :: BattleInfoSide,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfoenum/BattleInfoEnum.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleInfoEnum{pub m_info:crate::app::battleinfo::BattleInfo,pub m_min:crate::app::battleside::BattleSide_Type,pub m_max:crate::app::battleside::BattleSide_Type,pub m_current:crate::app::battleinfoside::BattleInfoSide,}
+impl::unity2::ClassIdentity for BattleInfoEnum{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleInfoEnum";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for BattleInfoEnum {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleInfoEnum";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for BattleInfoEnum {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for BattleInfoEnum{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,37 @@ impl ::unity2::IlType for BattleInfoEnum {
 #[cfg(feature = "app-battleinfoenum-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battleinfoenum")]
-impl BattleInfoEnum { # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (& mut self ,) -> crate :: app :: battleinfoenum :: BattleInfoEnum { unsafe { { let __inner : extern "C" fn (* mut BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoenum :: BattleInfoEnum = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e77160usize) as * mut u8) ; __inner (self as * mut BattleInfoEnum , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type, crate::app::battleside::BattleSide_Type)` overload"] pub fn ctor (& mut self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo > , min : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , max : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> () { unsafe { { let __inner : extern "C" fn (* mut BattleInfoEnum , crate :: app :: battleinfo :: BattleInfo , crate :: app :: battleside :: BattleSide_Type , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e78020usize) as * mut u8) ; __inner (self as * mut BattleInfoEnum , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e77300usize) as * mut u8) ; __inner (self as * mut BattleInfoEnum , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] pub fn move_next (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e771b0usize) as * mut u8) ; __inner (self as * mut BattleInfoEnum , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] pub fn reset (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e84290usize) as * mut u8) ; __inner (self as * mut BattleInfoEnum , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] pub fn system_collections_i_enumerator_get_current (& mut self ,) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (* mut BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e842a0usize) as * mut u8) ; __inner (self as * mut BattleInfoEnum , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] pub fn get_current (& mut self ,) -> crate :: app :: battleinfoside :: BattleInfoSide { unsafe { { let __inner : extern "C" fn (* mut BattleInfoEnum , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e842b0usize) as * mut u8) ; __inner (self as * mut BattleInfoEnum , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battleinfoenum")]impl BattleInfoEnum{#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::app::battleinfoenum::BattleInfoEnum{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e77160usize)as*mut u8,crate::app::battleinfoenum::BattleInfoEnum;
+(*mut BattleInfoEnum)self as*mut BattleInfoEnum)}
+}
+#[doc="`.ctor(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type, crate::app::battleside::BattleSide_Type)` overload"]pub fn ctor(&mut self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,min:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,max:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e78020usize)as*mut u8,();
+(*mut BattleInfoEnum)self as*mut BattleInfoEnum,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(min),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(max))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e77300usize)as*mut u8,();
+(*mut BattleInfoEnum)self as*mut BattleInfoEnum)}
+}
+#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e771b0usize)as*mut u8,bool;
+(*mut BattleInfoEnum)self as*mut BattleInfoEnum)}
+}
+#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e84290usize)as*mut u8,();
+(*mut BattleInfoEnum)self as*mut BattleInfoEnum)}
+}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e842a0usize)as*mut u8,crate::system::object::Object;
+(*mut BattleInfoEnum)self as*mut BattleInfoEnum)}
+}
+#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::battleinfoside::BattleInfoSide{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e842b0usize)as*mut u8,crate::app::battleinfoside::BattleInfoSide;
+(*mut BattleInfoEnum)self as*mut BattleInfoEnum)}
+}
+}
 
-#[cfg(feature = "app-battleinfoenum")]
-impl BattleInfoEnum { pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn system_collections_i_enumerator_get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleInfoEnum as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-battleinfoenum")]impl BattleInfoEnum{pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "app-battleinfoenum")]
 #[doc(hidden)]

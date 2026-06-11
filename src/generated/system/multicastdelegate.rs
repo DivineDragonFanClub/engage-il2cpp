@@ -4,30 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/multicastdelegate/MulticastDelegate.md"))] # [:: unity2 :: class (namespace = "System" , name = "MulticastDelegate")] # [parent (crate :: system :: delegate :: Delegate)] pub struct MulticastDelegate {
-# [offset (104)] # [rename (name = "delegates")] pub delegates : :: unity2 :: Array < crate :: system :: delegate :: Delegate > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/multicastdelegate/MulticastDelegate.md"))]#[::unity2::class(namespace="System",name="MulticastDelegate")]#[parent(crate::system::delegate::Delegate)]pub struct MulticastDelegate{#[offset(104)]#[rename(name="delegates")]pub delegates: ::unity2::Array<crate::system::delegate::Delegate> ,}
 
 }
 
 #[cfg(feature = "system-multicastdelegate-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-multicastdelegate")]
-pub trait IMulticastDelegateMethods : IMulticastDelegate { # [doc = "`DynamicInvokeImpl(::unity2::Array<crate::system::object::Object>)` overload"] fn dynamic_invoke_impl (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: system :: object :: Object { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MulticastDelegate , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MulticastDelegate , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384c90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MulticastDelegate , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMethodImpl()` overload"] fn get_method_impl (self ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MulticastDelegate , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetInvocationList()` overload"] fn get_invocation_list (self ,) -> :: unity2 :: Array < crate :: system :: delegate :: Delegate > { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MulticastDelegate , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: delegate :: Delegate > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CombineImpl(crate::system::delegate::Delegate)` overload"] fn combine_impl (self , follow : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate >) -> crate :: system :: delegate :: Delegate { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MulticastDelegate , crate :: system :: delegate :: Delegate , :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3384f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (follow) , :: core :: option :: Option :: None) } } } # [doc = "`LastIndexOf(::unity2::Array<crate::system::delegate::Delegate>, ::unity2::Array<crate::system::delegate::Delegate>)` overload"] fn last_index_of (self , haystack : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: delegate :: Delegate > > , needle : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: delegate :: Delegate > >) -> i32 { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MulticastDelegate , :: unity2 :: Array < crate :: system :: delegate :: Delegate > , :: unity2 :: Array < crate :: system :: delegate :: Delegate > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3385200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (haystack) , :: core :: convert :: Into :: into (needle) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveImpl(crate::system::delegate::Delegate)` overload"] fn remove_impl (self , value : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate >) -> crate :: system :: delegate :: Delegate { unsafe { let __receiver = < MulticastDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MulticastDelegate , crate :: system :: delegate :: Delegate , :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3385340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-multicastdelegate")]pub trait IMulticastDelegateMethods:IMulticastDelegate{#[doc="`DynamicInvokeImpl(::unity2::Array<crate::system::object::Object>)` overload"]fn dynamic_invoke_impl(self,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384bf0usize)as*mut u8,crate::system::object::Object;
+(MulticastDelegate)__receiver,(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384c90usize)as*mut u8,bool;
+(MulticastDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384e10usize)as*mut u8,i32;
+(MulticastDelegate)__receiver)}
+}
+#[doc="`GetMethodImpl()` overload"]fn get_method_impl(self,)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384e20usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MulticastDelegate)__receiver)}
+}
+#[doc="`GetInvocationList()` overload"]fn get_invocation_list(self,)-> ::unity2::Array<crate::system::delegate::Delegate>{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384e70usize)as*mut u8, ::unity2::Array<crate::system::delegate::Delegate> ;
+(MulticastDelegate)__receiver)}
+}
+#[doc="`CombineImpl(crate::system::delegate::Delegate)` overload"]fn combine_impl(self,follow:impl::core::convert::Into<crate::system::delegate::Delegate>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3384f60usize)as*mut u8,crate::system::delegate::Delegate;
+(MulticastDelegate)__receiver,(crate::system::delegate::Delegate)::core::convert::Into::into(follow))}
+}
+#[doc="`LastIndexOf(::unity2::Array<crate::system::delegate::Delegate>, ::unity2::Array<crate::system::delegate::Delegate>)` overload"]fn last_index_of(self,haystack:impl::core::convert::Into< ::unity2::Array<crate::system::delegate::Delegate> > ,needle:impl::core::convert::Into< ::unity2::Array<crate::system::delegate::Delegate> >)->i32{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3385200usize)as*mut u8,i32;
+(MulticastDelegate)__receiver,(::unity2::Array<crate::system::delegate::Delegate>)::core::convert::Into::into(haystack),(::unity2::Array<crate::system::delegate::Delegate>)::core::convert::Into::into(needle))}
+}
+#[doc="`RemoveImpl(crate::system::delegate::Delegate)` overload"]fn remove_impl(self,value:impl::core::convert::Into<crate::system::delegate::Delegate>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3385340usize)as*mut u8,crate::system::delegate::Delegate;
+(MulticastDelegate)__receiver,(crate::system::delegate::Delegate)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-multicastdelegate")]
-impl < __T : IMulticastDelegate > IMulticastDelegateMethods for __T { }
+#[cfg(feature="system-multicastdelegate")]impl<__T:IMulticastDelegate>IMulticastDelegateMethods for __T{}
 
-#[cfg(feature = "system-multicastdelegate")]
-impl MulticastDelegate { pub fn dynamic_invoke_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MulticastDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MulticastDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MulticastDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_method_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MulticastDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_invocation_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MulticastDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn combine_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MulticastDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn last_index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MulticastDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn remove_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MulticastDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="system-multicastdelegate")]impl MulticastDelegate{pub fn dynamic_invoke_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_method_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_invocation_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn combine_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn last_index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn remove_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "system-multicastdelegate")]
 #[doc(hidden)]

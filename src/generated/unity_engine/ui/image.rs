@@ -4,460 +4,163 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
- ;
- use crate :: unity_engine :: ui :: maskablegraphic :: { IMaskableGraphic , MaskableGraphic }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
+;
+use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_Type  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_OriginHorizontal.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_OriginHorizontal{pub value:i32,}
+impl::unity2::ClassIdentity for Image_OriginHorizontal{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.OriginHorizontal";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_OriginHorizontal{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_OriginHorizontal{pub fn left()->Self{Self{value:0}
+}
+pub fn right()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Image_Type  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Image")]#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]pub struct Image{#[static_field]#[rename(name="s_ETC1DefaultUI")]pub s_etc1_default_ui:crate::unity_engine::material::Material, #[offset(208)]#[rename(name="m_Sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite, #[offset(216)]#[rename(name="m_OverrideSprite")]pub m_override_sprite:crate::unity_engine::sprite::Sprite, #[offset(224)]#[rename(name="m_Type")]pub m_type:crate::unity_engine::ui::image::Image_Type, #[offset(228)]#[rename(name="m_PreserveAspect")]pub m_preserve_aspect:bool, #[offset(229)]#[rename(name="m_FillCenter")]pub m_fill_center:bool, #[offset(232)]#[rename(name="m_FillMethod")]pub m_fill_method:crate::unity_engine::ui::image::Image_FillMethod, #[offset(236)]#[rename(name="m_FillAmount")]pub m_fill_amount:f32, #[offset(240)]#[rename(name="m_FillClockwise")]pub m_fill_clockwise:bool, #[offset(244)]#[rename(name="m_FillOrigin")]pub m_fill_origin:i32, #[offset(248)]#[rename(name="m_AlphaHitTestMinimumThreshold")]pub m_alpha_hit_test_minimum_threshold:f32, #[offset(252)]#[rename(name="m_Tracked")]pub m_tracked:bool, #[offset(253)]#[rename(name="m_UseSpriteMesh")]pub m_use_sprite_mesh:bool, #[offset(256)]#[rename(name="m_PixelsPerUnitMultiplier")]pub m_pixels_per_unit_multiplier:f32, #[offset(260)]#[rename(name="m_CachedReferencePixelsPerUnit")]pub m_cached_reference_pixels_per_unit:f32, #[static_field]#[rename(name="s_VertScratch")]pub s_vert_scratch: ::unity2::Array<crate::unity_engine::vector2::Vector2> , #[static_field]#[rename(name="s_UVScratch")]pub s_uv_scratch: ::unity2::Array<crate::unity_engine::vector2::Vector2> , #[static_field]#[rename(name="s_Xy")]pub s_xy: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[static_field]#[rename(name="s_Uv")]pub s_uv: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[static_field]#[rename(name="m_TrackedTexturelessImages")]pub m_tracked_textureless_images:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image> , #[static_field]#[rename(name="s_Initialized")]pub s_initialized:bool,}
 
-    const NAME: &'static str = "Image.Type";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_OriginVertical.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_OriginVertical{pub value:i32,}
+impl::unity2::ClassIdentity for Image_OriginVertical{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.OriginVertical";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_OriginVertical{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_OriginVertical{pub fn bottom()->Self{Self{value:0}
+}
+pub fn top()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::IlType for Image_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_FillMethod.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_FillMethod{pub value:i32,}
+impl::unity2::ClassIdentity for Image_FillMethod{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.FillMethod";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_FillMethod{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_FillMethod{pub fn horizontal()->Self{Self{value:0}
+}
+pub fn vertical()->Self{Self{value:1}
+}
+pub fn radial90()->Self{Self{value:2}
+}
+pub fn radial180()->Self{Self{value:3}
+}
+pub fn radial360()->Self{Self{value:4}
+}
 }
 
 
-impl  Image_Type  {
-    pub fn simple() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn sliced() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn tiled() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn filled() -> Self {
-        Self { value: 3 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Origin90.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Origin90{pub value:i32,}
+impl::unity2::ClassIdentity for Image_Origin90{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.Origin90";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_Origin90{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_Origin90{pub fn bottom_left()->Self{Self{value:0}
+}
+pub fn top_left()->Self{Self{value:1}
+}
+pub fn top_right()->Self{Self{value:2}
+}
+pub fn bottom_right()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin180.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_Origin180  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Origin180.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Origin180{pub value:i32,}
+impl::unity2::ClassIdentity for Image_Origin180{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.Origin180";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_Origin180{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_Origin180{pub fn bottom()->Self{Self{value:0}
+}
+pub fn left()->Self{Self{value:1}
+}
+pub fn top()->Self{Self{value:2}
+}
+pub fn right()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Image_Origin180  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Image.Origin180";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Type{pub value:i32,}
+impl::unity2::ClassIdentity for Image_Type{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_Type{pub fn simple()->Self{Self{value:0}
+}
+pub fn sliced()->Self{Self{value:1}
+}
+pub fn tiled()->Self{Self{value:2}
+}
+pub fn filled()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::IlType for Image_Origin180  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Origin360.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Origin360{pub value:i32,}
+impl::unity2::ClassIdentity for Image_Origin360{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.Origin360";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  Image_Origin180  {
-    pub fn bottom() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 3 }
-
-    }
-
+impl::unity2::IlType for Image_Origin360{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_FillMethod.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_FillMethod  {
-    pub value: i32,
+impl Image_Origin360{pub fn bottom()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::ClassIdentity for Image_FillMethod  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Image.FillMethod";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn right()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for Image_FillMethod  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn top()->Self{Self{value:2}
 }
-
-
-impl  Image_FillMethod  {
-    pub fn horizontal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn vertical() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn radial90() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn radial180() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn radial360() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn left()->Self{Self{value:3}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginHorizontal.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_OriginHorizontal  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Image_OriginHorizontal  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Image.OriginHorizontal";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Image_OriginHorizontal  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Image_OriginHorizontal  {
-    pub fn left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin360.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_Origin360  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Image_Origin360  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Image.Origin360";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Image_Origin360  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Image_Origin360  {
-    pub fn bottom() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/image/Image.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Image")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct Image {
-# [static_field] # [rename (name = "s_ETC1DefaultUI")] pub s_etc1_default_ui : crate :: unity_engine :: material :: Material ,
-# [offset (208)] # [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (216)] # [rename (name = "m_OverrideSprite")] pub m_override_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (224)] # [rename (name = "m_Type")] pub m_type : crate :: unity_engine :: ui :: image :: Image_Type ,
-# [offset (228)] # [rename (name = "m_PreserveAspect")] pub m_preserve_aspect : bool ,
-# [offset (229)] # [rename (name = "m_FillCenter")] pub m_fill_center : bool ,
-# [offset (232)] # [rename (name = "m_FillMethod")] pub m_fill_method : crate :: unity_engine :: ui :: image :: Image_FillMethod ,
-# [offset (236)] # [rename (name = "m_FillAmount")] pub m_fill_amount : f32 ,
-# [offset (240)] # [rename (name = "m_FillClockwise")] pub m_fill_clockwise : bool ,
-# [offset (244)] # [rename (name = "m_FillOrigin")] pub m_fill_origin : i32 ,
-# [offset (248)] # [rename (name = "m_AlphaHitTestMinimumThreshold")] pub m_alpha_hit_test_minimum_threshold : f32 ,
-# [offset (252)] # [rename (name = "m_Tracked")] pub m_tracked : bool ,
-# [offset (253)] # [rename (name = "m_UseSpriteMesh")] pub m_use_sprite_mesh : bool ,
-# [offset (256)] # [rename (name = "m_PixelsPerUnitMultiplier")] pub m_pixels_per_unit_multiplier : f32 ,
-# [offset (260)] # [rename (name = "m_CachedReferencePixelsPerUnit")] pub m_cached_reference_pixels_per_unit : f32 ,
-# [static_field] # [rename (name = "s_VertScratch")] pub s_vert_scratch : :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > ,
-# [static_field] # [rename (name = "s_UVScratch")] pub s_uv_scratch : :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > ,
-# [static_field] # [rename (name = "s_Xy")] pub s_xy : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [static_field] # [rename (name = "s_Uv")] pub s_uv : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [static_field] # [rename (name = "m_TrackedTexturelessImages")] pub m_tracked_textureless_images : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
-# [static_field] # [rename (name = "s_Initialized")] pub s_initialized : bool ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginVertical.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_OriginVertical  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Image_OriginVertical  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Image.OriginVertical";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Image_OriginVertical  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Image_OriginVertical  {
-    pub fn bottom() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin90.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_Origin90  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Image_Origin90  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Image.Origin90";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Image_Origin90  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Image_Origin90  {
-    pub fn bottom_left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top_left() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn top_right() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn bottom_right() -> Self {
-        Self { value: 3 }
-
-    }
-
 }
 
 }
@@ -465,36 +168,392 @@ impl  Image_Origin90  {
 #[cfg(feature = "unity_engine-ui-image-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-image")]
-impl Image { # [doc = "`get_defaultETC1GraphicMaterial()` overload"] pub fn get_default_etc1_graphic_material () -> crate :: unity_engine :: material :: Material { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedbd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddQuad(crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::Array<crate::unity_engine::vector3::Vector3>, crate::unity_engine::color32::Color32, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"] pub fn add_quad (vertex_helper : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper > , quad_positions : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color32 :: Color32 > , quad_u_vs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , crate :: unity_engine :: color32 :: Color32 , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf2f60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vertex_helper) , :: core :: convert :: Into :: into (quad_positions) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (quad_u_vs) , :: core :: option :: Option :: None) } } } # [doc = "`AddQuad(crate::unity_engine::ui::vertexhelper::VertexHelper, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::color32::Color32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] pub fn add_quad_2 (vertex_helper : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper > , pos_min : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , pos_max : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color32 :: Color32 > , uv_min : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , uv_max : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: color32 :: Color32 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf2d80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vertex_helper) , :: core :: convert :: Into :: into (pos_min) , :: core :: convert :: Into :: into (pos_max) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (uv_min) , :: core :: convert :: Into :: into (uv_max) , :: core :: option :: Option :: None) } } } # [doc = "`RadialCut(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>, f32, bool, i32)` overload"] pub fn radial_cut (xy : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , uv : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , fill : impl :: core :: convert :: Into < f32 > , invert : impl :: core :: convert :: Into < bool > , corner : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , f32 , bool , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf31a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xy) , :: core :: convert :: Into :: into (uv) , :: core :: convert :: Into :: into (fill) , :: core :: convert :: Into :: into (invert) , :: core :: convert :: Into :: into (corner) , :: core :: option :: Option :: None) } } } # [doc = "`RadialCut(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32, f32, bool, i32)` overload"] pub fn radial_cut_2 (xy : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , cos : impl :: core :: convert :: Into < f32 > , sin : impl :: core :: convert :: Into < f32 > , invert : impl :: core :: convert :: Into < bool > , corner : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , f32 , f32 , bool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf32f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xy) , :: core :: convert :: Into :: into (cos) , :: core :: convert :: Into :: into (sin) , :: core :: convert :: Into :: into (invert) , :: core :: convert :: Into :: into (corner) , :: core :: option :: Option :: None) } } } # [doc = "`RebuildImage(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"] pub fn rebuild_image (sprite_atlas : impl :: core :: convert :: Into < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf4530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite_atlas) , :: core :: option :: Option :: None) } } } # [doc = "`TrackImage(crate::unity_engine::ui::image::Image)` overload"] pub fn track_image (g : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: image :: Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf2400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (g) , :: core :: option :: Option :: None) } } } # [doc = "`UnTrackImage(crate::unity_engine::ui::image::Image)` overload"] pub fn un_track_image (g : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: image :: Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf26c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (g) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf47e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-image")]impl Image{#[doc="`get_defaultETC1GraphicMaterial()` overload"]pub fn get_default_etc1_graphic_material()->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bedbd0usize)as*mut u8,crate::unity_engine::material::Material;
+)}
+}
+#[doc="`AddQuad(crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::Array<crate::unity_engine::vector3::Vector3>, crate::unity_engine::color32::Color32, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]pub fn add_quad(vertex_helper:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper> ,quad_positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,color:impl::core::convert::Into<crate::unity_engine::color32::Color32> ,quad_u_vs:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2f60usize)as*mut u8,();
+(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vertex_helper),(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(quad_positions),(crate::unity_engine::color32::Color32)::core::convert::Into::into(color),(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(quad_u_vs))}
+}
+#[doc="`AddQuad(crate::unity_engine::ui::vertexhelper::VertexHelper, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::color32::Color32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]pub fn add_quad_2(vertex_helper:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper> ,pos_min:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,pos_max:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,color:impl::core::convert::Into<crate::unity_engine::color32::Color32> ,uv_min:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv_max:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2d80usize)as*mut u8,();
+(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vertex_helper),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pos_min),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pos_max),(crate::unity_engine::color32::Color32)::core::convert::Into::into(color),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv_min),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv_max))}
+}
+#[doc="`RadialCut(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>, f32, bool, i32)` overload"]pub fn radial_cut(xy:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,uv:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,fill:impl::core::convert::Into<f32> ,invert:impl::core::convert::Into<bool> ,corner:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf31a0usize)as*mut u8,bool;
+(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(xy),(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(uv),(f32)::core::convert::Into::into(fill),(bool)::core::convert::Into::into(invert),(i32)::core::convert::Into::into(corner))}
+}
+#[doc="`RadialCut(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32, f32, bool, i32)` overload"]pub fn radial_cut_2(xy:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,cos:impl::core::convert::Into<f32> ,sin:impl::core::convert::Into<f32> ,invert:impl::core::convert::Into<bool> ,corner:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf32f0usize)as*mut u8,();
+(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(xy),(f32)::core::convert::Into::into(cos),(f32)::core::convert::Into::into(sin),(bool)::core::convert::Into::into(invert),(i32)::core::convert::Into::into(corner))}
+}
+#[doc="`RebuildImage(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]pub fn rebuild_image(sprite_atlas:impl::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf4530usize)as*mut u8,();
+(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)::core::convert::Into::into(sprite_atlas))}
+}
+#[doc="`TrackImage(crate::unity_engine::ui::image::Image)` overload"]pub fn track_image(g:impl::core::convert::Into<crate::unity_engine::ui::image::Image>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2400usize)as*mut u8,();
+(crate::unity_engine::ui::image::Image)::core::convert::Into::into(g))}
+}
+#[doc="`UnTrackImage(crate::unity_engine::ui::image::Image)` overload"]pub fn un_track_image(g:impl::core::convert::Into<crate::unity_engine::ui::image::Image>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf26c0usize)as*mut u8,();
+(crate::unity_engine::ui::image::Image)::core::convert::Into::into(g))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf47e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-image")]
-pub trait IImageMethods : IImage { # [doc = "`get_sprite()` overload"] fn get_sprite (self ,) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3becfe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_sprite(crate::unity_engine::sprite::Sprite)` overload"] fn set_sprite (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3becff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`DisableSpriteOptimizations()` overload"] fn disable_sprite_optimizations (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_overrideSprite()` overload"] fn get_override_sprite (self ,) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_overrideSprite(crate::unity_engine::sprite::Sprite)` overload"] fn set_override_sprite (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_activeSprite()` overload"] fn get_active_sprite (self ,) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_type()` overload"] fn get_type (self ,) -> crate :: unity_engine :: ui :: image :: Image_Type { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: image :: Image_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_type(crate::unity_engine::ui::image::Image_Type)` overload"] fn set_type (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image_Type >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: ui :: image :: Image_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_preserveAspect()` overload"] fn get_preserve_aspect (self ,) -> bool { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_preserveAspect(bool)` overload"] fn set_preserve_aspect (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fillCenter()` overload"] fn get_fill_center (self ,) -> bool { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fillCenter(bool)` overload"] fn set_fill_center (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fillMethod()` overload"] fn get_fill_method (self ,) -> crate :: unity_engine :: ui :: image :: Image_FillMethod { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: image :: Image_FillMethod = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fillMethod(crate::unity_engine::ui::image::Image_FillMethod)` overload"] fn set_fill_method (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image_FillMethod >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: ui :: image :: Image_FillMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fillAmount()` overload"] fn get_fill_amount (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fillAmount(f32)` overload"] fn set_fill_amount (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed8c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fillClockwise()` overload"] fn get_fill_clockwise (self ,) -> bool { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fillClockwise(bool)` overload"] fn set_fill_clockwise (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fillOrigin()` overload"] fn get_fill_origin (self ,) -> i32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3beda00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fillOrigin(i32)` overload"] fn set_fill_origin (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3beda10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_eventAlphaThreshold()` overload"] fn get_event_alpha_threshold (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedaa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_eventAlphaThreshold(f32)` overload"] fn set_event_alpha_threshold (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_alphaHitTestMinimumThreshold()` overload"] fn get_alpha_hit_test_minimum_threshold (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_alphaHitTestMinimumThreshold(f32)` overload"] fn set_alpha_hit_test_minimum_threshold (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_useSpriteMesh()` overload"] fn get_use_sprite_mesh (self ,) -> bool { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_useSpriteMesh(bool)` overload"] fn set_use_sprite_mesh (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedaf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_mainTexture()` overload"] fn get_main_texture (self ,) -> crate :: unity_engine :: texture :: Texture { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture :: Texture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_hasBorder()` overload"] fn get_has_border (self ,) -> bool { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bedf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pixelsPerUnitMultiplier()` overload"] fn get_pixels_per_unit_multiplier (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pixelsPerUnitMultiplier(f32)` overload"] fn set_pixels_per_unit_multiplier (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pixelsPerUnit()` overload"] fn get_pixels_per_unit (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_multipliedPixelsPerUnit()` overload"] fn get_multiplied_pixels_per_unit (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_material()` overload"] fn get_material (self ,) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_material(crate::unity_engine::material::Material)` overload"] fn set_material (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBeforeSerialize()` overload"] fn on_before_serialize (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnAfterDeserialize()` overload"] fn on_after_deserialize (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PreserveSpriteAspectRatio(*mutcrate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2)` overload"] fn preserve_sprite_aspect_ratio (self , sprite_size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rect :: Rect > :: uninit () ; { let __inner : extern "C" fn (Image , * mut crate :: unity_engine :: rect :: Rect , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee5d0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (sprite_size) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`GetDrawingDimensions(bool)` overload"] fn get_drawing_dimensions (self , should_preserve_aspect : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bee730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (should_preserve_aspect) , :: core :: option :: Option :: None) } } } # [doc = "`SetNativeSize()` overload"] fn set_native_size (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3beeba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn on_populate_mesh (self , to_fill : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3beee00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (to_fill) , :: core :: option :: Option :: None) } } } # [doc = "`TrackSprite()` overload"] fn track_sprite (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bed2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf2590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf25c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMaterial()` overload"] fn update_material (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf2750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCanvasHierarchyChanged()` overload"] fn on_canvas_hierarchy_changed (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf2910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GenerateSimpleSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"] fn generate_simple_sprite (self , vh : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper > , l_preserve_aspect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3beefb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vh) , :: core :: convert :: Into :: into (l_preserve_aspect) , :: core :: option :: Option :: None) } } } # [doc = "`GenerateSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"] fn generate_sprite (self , vh : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper > , l_preserve_aspect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bef380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vh) , :: core :: convert :: Into :: into (l_preserve_aspect) , :: core :: option :: Option :: None) } } } # [doc = "`GenerateSlicedSprite(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn generate_sliced_sprite (self , to_fill : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bef940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (to_fill) , :: core :: option :: Option :: None) } } } # [doc = "`GenerateTiledSprite(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn generate_tiled_sprite (self , to_fill : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf0580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (to_fill) , :: core :: option :: Option :: None) } } } # [doc = "`GetAdjustedBorders(crate::unity_engine::vector4::Vector4, crate::unity_engine::rect::Rect)` overload"] fn get_adjusted_borders (self , border : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 > , adjusted_rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: vector4 :: Vector4 , crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf2a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (border) , :: core :: convert :: Into :: into (adjusted_rect) , :: core :: option :: Option :: None) } } } # [doc = "`GenerateFilledSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"] fn generate_filled_sprite (self , to_fill : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper > , preserve_aspect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf16c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (to_fill) , :: core :: convert :: Into :: into (preserve_aspect) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputHorizontal()` overload"] fn calculate_layout_input_horizontal (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf36c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputVertical()` overload"] fn calculate_layout_input_vertical (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf36d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_minWidth()` overload"] fn get_min_width (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf36e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_preferredWidth()` overload"] fn get_preferred_width (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf36f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_flexibleWidth()` overload"] fn get_flexible_width (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf38e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_minHeight()` overload"] fn get_min_height (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf38f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_preferredHeight()` overload"] fn get_preferred_height (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf3900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_flexibleHeight()` overload"] fn get_flexible_height (self ,) -> f32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf3af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_layoutPriority()` overload"] fn get_layout_priority (self ,) -> i32 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf3b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"] fn is_raycast_location_valid (self , screen_point : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , event_camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf3b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (screen_point) , :: core :: convert :: Into :: into (event_camera) , :: core :: option :: Option :: None) } } } # [doc = "`MapCoordinate(crate::unity_engine::vector2::Vector2, crate::unity_engine::rect::Rect)` overload"] fn map_coordinate (self , local : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf4050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (local) , :: core :: convert :: Into :: into (rect) , :: core :: option :: Option :: None) } } } # [doc = "`OnDidApplyAnimationProperties()` overload"] fn on_did_apply_animation_properties (self ,) -> () { unsafe { let __receiver = < Image as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bf47a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-image")]pub trait IImageMethods:IImage{#[doc="`get_sprite()` overload"]fn get_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3becfe0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(Image)__receiver)}
+}
+#[doc="`set_sprite(crate::unity_engine::sprite::Sprite)` overload"]fn set_sprite(self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3becff0usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
+}
+#[doc="`DisableSpriteOptimizations()` overload"]fn disable_sprite_optimizations(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed480usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`get_overrideSprite()` overload"]fn get_override_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed490usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(Image)__receiver)}
+}
+#[doc="`set_overrideSprite(crate::unity_engine::sprite::Sprite)` overload"]fn set_override_sprite(self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed5b0usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
+}
+#[doc="`get_activeSprite()` overload"]fn get_active_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed520usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(Image)__receiver)}
+}
+#[doc="`get_type()` overload"]fn get_type(self,)->crate::unity_engine::ui::image::Image_Type{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed640usize)as*mut u8,crate::unity_engine::ui::image::Image_Type;
+(Image)__receiver)}
+}
+#[doc="`set_type(crate::unity_engine::ui::image::Image_Type)` overload"]fn set_type(self,value:impl::core::convert::Into<crate::unity_engine::ui::image::Image_Type>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed650usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::ui::image::Image_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_preserveAspect()` overload"]fn get_preserve_aspect(self,)->bool{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed6e0usize)as*mut u8,bool;
+(Image)__receiver)}
+}
+#[doc="`set_preserveAspect(bool)` overload"]fn set_preserve_aspect(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed6f0usize)as*mut u8,();
+(Image)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_fillCenter()` overload"]fn get_fill_center(self,)->bool{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed780usize)as*mut u8,bool;
+(Image)__receiver)}
+}
+#[doc="`set_fillCenter(bool)` overload"]fn set_fill_center(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed790usize)as*mut u8,();
+(Image)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_fillMethod()` overload"]fn get_fill_method(self,)->crate::unity_engine::ui::image::Image_FillMethod{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed820usize)as*mut u8,crate::unity_engine::ui::image::Image_FillMethod;
+(Image)__receiver)}
+}
+#[doc="`set_fillMethod(crate::unity_engine::ui::image::Image_FillMethod)` overload"]fn set_fill_method(self,value:impl::core::convert::Into<crate::unity_engine::ui::image::Image_FillMethod>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed830usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::ui::image::Image_FillMethod)::core::convert::Into::into(value))}
+}
+#[doc="`get_fillAmount()` overload"]fn get_fill_amount(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed8b0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`set_fillAmount(f32)` overload"]fn set_fill_amount(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed8c0usize)as*mut u8,();
+(Image)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fillClockwise()` overload"]fn get_fill_clockwise(self,)->bool{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed960usize)as*mut u8,bool;
+(Image)__receiver)}
+}
+#[doc="`set_fillClockwise(bool)` overload"]fn set_fill_clockwise(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed970usize)as*mut u8,();
+(Image)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_fillOrigin()` overload"]fn get_fill_origin(self,)->i32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3beda00usize)as*mut u8,i32;
+(Image)__receiver)}
+}
+#[doc="`set_fillOrigin(i32)` overload"]fn set_fill_origin(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3beda10usize)as*mut u8,();
+(Image)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_eventAlphaThreshold()` overload"]fn get_event_alpha_threshold(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedaa0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`set_eventAlphaThreshold(f32)` overload"]fn set_event_alpha_threshold(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedab0usize)as*mut u8,();
+(Image)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_alphaHitTestMinimumThreshold()` overload"]fn get_alpha_hit_test_minimum_threshold(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedac0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`set_alphaHitTestMinimumThreshold(f32)` overload"]fn set_alpha_hit_test_minimum_threshold(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedad0usize)as*mut u8,();
+(Image)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_useSpriteMesh()` overload"]fn get_use_sprite_mesh(self,)->bool{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedae0usize)as*mut u8,bool;
+(Image)__receiver)}
+}
+#[doc="`set_useSpriteMesh(bool)` overload"]fn set_use_sprite_mesh(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedaf0usize)as*mut u8,();
+(Image)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedb80usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`get_mainTexture()` overload"]fn get_main_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedce0usize)as*mut u8,crate::unity_engine::texture::Texture;
+(Image)__receiver)}
+}
+#[doc="`get_hasBorder()` overload"]fn get_has_border(self,)->bool{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedf30usize)as*mut u8,bool;
+(Image)__receiver)}
+}
+#[doc="`get_pixelsPerUnitMultiplier()` overload"]fn get_pixels_per_unit_multiplier(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee0b0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`set_pixelsPerUnitMultiplier(f32)` overload"]fn set_pixels_per_unit_multiplier(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee0c0usize)as*mut u8,();
+(Image)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_pixelsPerUnit()` overload"]fn get_pixels_per_unit(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee110usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`get_multipliedPixelsPerUnit()` overload"]fn get_multiplied_pixels_per_unit(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee2f0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`get_material()` overload"]fn get_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee320usize)as*mut u8,crate::unity_engine::material::Material;
+(Image)__receiver)}
+}
+#[doc="`set_material(crate::unity_engine::material::Material)` overload"]fn set_material(self,value:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee540usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(value))}
+}
+#[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee550usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee560usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`PreserveSpriteAspectRatio(*mutcrate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2)` overload"]fn preserve_sprite_aspect_ratio(self,sprite_size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rect::Rect> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee5d0usize)as*mut u8,();
+(Image)__receiver,(*mut crate::unity_engine::rect::Rect)__out_0.as_mut_ptr(),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(sprite_size));
+__out_0.assume_init()}
+}
+#[doc="`GetDrawingDimensions(bool)` overload"]fn get_drawing_dimensions(self,should_preserve_aspect:impl::core::convert::Into<bool>)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee730usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(Image)__receiver,(bool)::core::convert::Into::into(should_preserve_aspect))}
+}
+#[doc="`SetNativeSize()` overload"]fn set_native_size(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3beeba0usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh(self,to_fill:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3beee00usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(to_fill))}
+}
+#[doc="`TrackSprite()` overload"]fn track_sprite(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed2d0usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2590usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf25c0usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`UpdateMaterial()` overload"]fn update_material(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2750usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2910usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`GenerateSimpleSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]fn generate_simple_sprite(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper> ,l_preserve_aspect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3beefb0usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vh),(bool)::core::convert::Into::into(l_preserve_aspect))}
+}
+#[doc="`GenerateSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]fn generate_sprite(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper> ,l_preserve_aspect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bef380usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vh),(bool)::core::convert::Into::into(l_preserve_aspect))}
+}
+#[doc="`GenerateSlicedSprite(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn generate_sliced_sprite(self,to_fill:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bef940usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(to_fill))}
+}
+#[doc="`GenerateTiledSprite(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn generate_tiled_sprite(self,to_fill:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf0580usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(to_fill))}
+}
+#[doc="`GetAdjustedBorders(crate::unity_engine::vector4::Vector4, crate::unity_engine::rect::Rect)` overload"]fn get_adjusted_borders(self,border:impl::core::convert::Into<crate::unity_engine::vector4::Vector4> ,adjusted_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2a30usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(Image)__receiver,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(border),(crate::unity_engine::rect::Rect)::core::convert::Into::into(adjusted_rect))}
+}
+#[doc="`GenerateFilledSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]fn generate_filled_sprite(self,to_fill:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper> ,preserve_aspect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf16c0usize)as*mut u8,();
+(Image)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(to_fill),(bool)::core::convert::Into::into(preserve_aspect))}
+}
+#[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf36c0usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf36d0usize)as*mut u8,();
+(Image)__receiver)}
+}
+#[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf36e0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf36f0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf38e0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf38f0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf3900usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf3af0usize)as*mut u8,f32;
+(Image)__receiver)}
+}
+#[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf3b00usize)as*mut u8,i32;
+(Image)__receiver)}
+}
+#[doc="`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn is_raycast_location_valid(self,screen_point:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf3b10usize)as*mut u8,bool;
+(Image)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(screen_point),(crate::unity_engine::camera::Camera)::core::convert::Into::into(event_camera))}
+}
+#[doc="`MapCoordinate(crate::unity_engine::vector2::Vector2, crate::unity_engine::rect::Rect)` overload"]fn map_coordinate(self,local:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf4050usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(Image)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(local),(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect))}
+}
+#[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf47a0usize)as*mut u8,();
+(Image)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-image")]
-impl < __T : IImage > IImageMethods for __T { }
+#[cfg(feature="unity_engine-ui-image")]impl<__T:IImage>IImageMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-image")]
-impl Image { pub fn get_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn disable_sprite_optimizations_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_override_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_override_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_active_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_preserve_aspect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_preserve_aspect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_fill_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_fill_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_fill_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_fill_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_fill_amount_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_fill_amount_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_fill_clockwise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_fill_clockwise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_fill_origin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_fill_origin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_event_alpha_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_event_alpha_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_alpha_hit_test_minimum_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_alpha_hit_test_minimum_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_use_sprite_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_use_sprite_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_default_etc1_graphic_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_main_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_has_border_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_pixels_per_unit_multiplier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_pixels_per_unit_multiplier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_pixels_per_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_multiplied_pixels_per_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn set_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn on_before_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn on_after_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn preserve_sprite_aspect_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_drawing_dimensions_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn set_native_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn on_populate_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn track_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn update_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn on_canvas_hierarchy_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn generate_simple_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn generate_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn generate_sliced_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn generate_tiled_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn add_quad_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn add_quad_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn get_adjusted_borders_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn generate_filled_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn radial_cut_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn radial_cut_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn calculate_layout_input_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn calculate_layout_input_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn get_min_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn get_preferred_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn get_flexible_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn get_min_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn get_preferred_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn get_flexible_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn get_layout_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn is_raycast_location_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn map_coordinate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn rebuild_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn track_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn un_track_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn on_did_apply_animation_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Image as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } }
+#[cfg(feature="unity_engine-ui-image")]impl Image{pub fn get_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn disable_sprite_optimizations_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_override_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_override_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_active_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_preserve_aspect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_preserve_aspect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_fill_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_fill_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_fill_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_fill_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_fill_amount_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_fill_amount_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_fill_clockwise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_fill_clockwise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_fill_origin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_fill_origin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_event_alpha_threshold_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_event_alpha_threshold_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_alpha_hit_test_minimum_threshold_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_alpha_hit_test_minimum_threshold_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_use_sprite_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_use_sprite_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_default_etc1_graphic_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_main_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_has_border_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_pixels_per_unit_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_pixels_per_unit_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_pixels_per_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_multiplied_pixels_per_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn on_before_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn preserve_sprite_aspect_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_drawing_dimensions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn set_native_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn on_populate_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn track_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn update_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn on_canvas_hierarchy_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn generate_simple_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn generate_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn generate_sliced_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn generate_tiled_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn add_quad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn add_quad_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn get_adjusted_borders_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn generate_filled_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn radial_cut_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn radial_cut_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn calculate_layout_input_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn calculate_layout_input_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn get_min_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn get_preferred_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn get_flexible_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn get_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn get_preferred_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn get_flexible_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn get_layout_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn is_raycast_location_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn map_coordinate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn rebuild_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn track_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn un_track_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn on_did_apply_animation_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+}
 
-#[cfg(feature = "unity_engine-ui-image")]
-impl Image {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Image) , :: core :: stringify ! (new) ,)) ; < Self as IImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-image")]impl Image{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Image), ::core::stringify!(new),));
+ <Self as IImageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-image")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Image_Type;
-    pub use super::Image_Origin180;
-    pub use super::Image_FillMethod;
     pub use super::Image_OriginHorizontal;
-    pub use super::Image_Origin360;
     pub use super::Image;
     pub use super::IImage;
     pub use super::IImageMethods;
     pub use super::Image_OriginVertical;
+    pub use super::Image_FillMethod;
     pub use super::Image_Origin90;
+    pub use super::Image_Origin180;
+    pub use super::Image_Type;
+    pub use super::Image_Origin360;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

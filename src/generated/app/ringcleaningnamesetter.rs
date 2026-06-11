@@ -4,42 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningnamesetter/RingCleaningNameSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningNameSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingCleaningNameSetter {
-# [offset (24)] # [rename (name = "m_RingNameText")] pub m_ring_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_GodNameText")] pub m_god_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_CleanerNameText")] pub m_cleaner_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningnamesetter/RingCleaningNameSetter.md"))]#[::unity2::class(namespace="App",name="RingCleaningNameSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingCleaningNameSetter{#[offset(24)]#[rename(name="m_RingNameText")]pub m_ring_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_GodNameText")]pub m_god_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_CleanerNameText")]pub m_cleaner_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-ringcleaningnamesetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcleaningnamesetter")]
-pub trait IRingCleaningNameSetterMethods : IRingCleaningNameSetter { # [doc = "`SetName(crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"] fn set_name (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < RingCleaningNameSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningNameSetter , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2418670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningNameSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningNameSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24187b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningnamesetter")]pub trait IRingCleaningNameSetterMethods:IRingCleaningNameSetter{#[doc="`SetName(crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]fn set_name(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingCleaningNameSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2418670usize)as*mut u8,();
+(RingCleaningNameSetter)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCleaningNameSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24187b0usize)as*mut u8,();
+(RingCleaningNameSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningnamesetter")]
-impl < __T : IRingCleaningNameSetter > IRingCleaningNameSetterMethods for __T { }
+#[cfg(feature="app-ringcleaningnamesetter")]impl<__T:IRingCleaningNameSetter>IRingCleaningNameSetterMethods for __T{}
 
-#[cfg(feature = "app-ringcleaningnamesetter")]
-impl RingCleaningNameSetter { pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningNameSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningNameSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-ringcleaningnamesetter")]impl RingCleaningNameSetter{pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-ringcleaningnamesetter")]
-impl RingCleaningNameSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningNameSetter) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningNameSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcleaningnamesetter")]impl RingCleaningNameSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningNameSetter), ::core::stringify!(new),));
+ <Self as IRingCleaningNameSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringcleaningnamesetter")]

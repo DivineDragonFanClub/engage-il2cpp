@@ -4,124 +4,152 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplayplayername/RelayReplayPlayerName.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayReplayPlayerName")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: relayreplayplayername :: RelayReplayPlayerName >)] pub struct RelayReplayPlayerName {
-# [offset (32)] # [rename (name = "m_Text")] pub m_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_CanvasManager")] pub m_canvas_manager : crate :: app :: canvasmanager :: CanvasManager ,
-# [offset (48)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (56)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: relayreplayplayername :: RelayReplayPlayerName_Seq ,
-# [offset (60)] # [rename (name = "m_IsReqClose")] pub m_is_req_close : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplayplayername/RelayReplayPlayerName_Seq.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayReplayPlayerName_Seq{pub value:i32,}
+impl::unity2::ClassIdentity for RelayReplayPlayerName_Seq{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayReplayPlayerName.Seq";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RelayReplayPlayerName_Seq{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RelayReplayPlayerName_Seq{pub fn hide()->Self{Self{value:0}
+}
+pub fn opening()->Self{Self{value:1}
+}
+pub fn show()->Self{Self{value:2}
+}
+pub fn closing()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplayplayername/RelayReplayPlayerName_Seq.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayReplayPlayerName_Seq  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RelayReplayPlayerName_Seq  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayReplayPlayerName.Seq";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RelayReplayPlayerName_Seq  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RelayReplayPlayerName_Seq  {
-    pub fn hide() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn opening() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn show() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn closing() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplayplayername/RelayReplayPlayerName.md"))]#[::unity2::class(namespace="App",name="RelayReplayPlayerName")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::relayreplayplayername::RelayReplayPlayerName>)]pub struct RelayReplayPlayerName{#[offset(32)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_CanvasManager")]pub m_canvas_manager:crate::app::canvasmanager::CanvasManager, #[offset(48)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="m_Seq")]pub m_seq:crate::app::relayreplayplayername::RelayReplayPlayerName_Seq, #[offset(60)]#[rename(name="m_IsReqClose")]pub m_is_req_close:bool,}
 
 }
 
 #[cfg(feature = "app-relayreplayplayername-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayreplayplayername")]
-impl RelayReplayPlayerName { # [doc = "`TryShow()` overload"] pub fn try_show () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003a30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryHide()` overload"] pub fn try_hide () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003b20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryUpdatePlayerName()` overload"] pub fn try_update_player_name () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003c20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryCreateAsync()` overload"] pub fn try_create_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003d10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsCreating()` overload"] pub fn is_creating () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003f40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryDestroy()` overload"] pub fn try_destroy () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2004010usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsRequired()` overload"] pub fn is_required () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003e90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayreplayplayername")]impl RelayReplayPlayerName{#[doc="`TryShow()` overload"]pub fn try_show()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2003a30usize)as*mut u8,();
+)}
+}
+#[doc="`TryHide()` overload"]pub fn try_hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2003b20usize)as*mut u8,();
+)}
+}
+#[doc="`TryUpdatePlayerName()` overload"]pub fn try_update_player_name()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2003c20usize)as*mut u8,();
+)}
+}
+#[doc="`TryCreateAsync()` overload"]pub fn try_create_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2003d10usize)as*mut u8,();
+)}
+}
+#[doc="`IsCreating()` overload"]pub fn is_creating()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2003f40usize)as*mut u8,bool;
+)}
+}
+#[doc="`TryDestroy()` overload"]pub fn try_destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2004010usize)as*mut u8,();
+)}
+}
+#[doc="`IsRequired()` overload"]pub fn is_required()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2003e90usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-relayreplayplayername")]
-pub trait IRelayReplayPlayerNameMethods : IRelayReplayPlayerName { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2002bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2002ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowImpl()` overload"] fn show_impl (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20032c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideImpl()` overload"] fn hide_impl (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePlayerNameImpl()` overload"] fn update_player_name_impl (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20036f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2003950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20031e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBool(::unity2::Il2CppString)` overload"] fn get_bool (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20038a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayReplayPlayerName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplayPlayerName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2004290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayreplayplayername")]pub trait IRelayReplayPlayerNameMethods:IRelayReplayPlayerName{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2002bd0usize)as*mut u8,();
+(RelayReplayPlayerName)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2002ca0usize)as*mut u8,();
+(RelayReplayPlayerName)__receiver)}
+}
+#[doc="`ShowImpl()` overload"]fn show_impl(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20032c0usize)as*mut u8,();
+(RelayReplayPlayerName)__receiver)}
+}
+#[doc="`HideImpl()` overload"]fn hide_impl(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2003880usize)as*mut u8,();
+(RelayReplayPlayerName)__receiver)}
+}
+#[doc="`UpdatePlayerNameImpl()` overload"]fn update_player_name_impl(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20036f0usize)as*mut u8,();
+(RelayReplayPlayerName)__receiver)}
+}
+#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2003100usize)as*mut u8,bool;
+(RelayReplayPlayerName)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2003950usize)as*mut u8,bool;
+(RelayReplayPlayerName)__receiver)}
+}
+#[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20031e0usize)as*mut u8,bool;
+(RelayReplayPlayerName)__receiver)}
+}
+#[doc="`GetBool(::unity2::Il2CppString)` overload"]fn get_bool(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20038a0usize)as*mut u8,bool;
+(RelayReplayPlayerName)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2004290usize)as*mut u8,();
+(RelayReplayPlayerName)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayreplayplayername")]
-impl < __T : IRelayReplayPlayerName > IRelayReplayPlayerNameMethods for __T { }
+#[cfg(feature="app-relayreplayplayername")]impl<__T:IRelayReplayPlayerName>IRelayReplayPlayerNameMethods for __T{}
 
-#[cfg(feature = "app-relayreplayplayername")]
-impl RelayReplayPlayerName { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn show_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn hide_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_player_name_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn try_show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn try_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn try_update_player_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn try_create_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_creating_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn try_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_required_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplayPlayerName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-relayreplayplayername")]impl RelayReplayPlayerName{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn show_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hide_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_player_name_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_bool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn try_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn try_update_player_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn try_create_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_creating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn try_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_required_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-relayreplayplayername")]
-impl RelayReplayPlayerName {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayReplayPlayerName) , :: core :: stringify ! (new) ,)) ; < Self as IRelayReplayPlayerNameMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayreplayplayername")]impl RelayReplayPlayerName{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplayPlayerName), ::core::stringify!(new),));
+ <Self as IRelayReplayPlayerNameMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayreplayplayername")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RelayReplayPlayerName_Seq;
     pub use super::RelayReplayPlayerName;
     pub use super::IRelayReplayPlayerName;
     pub use super::IRelayReplayPlayerNameMethods;
-    pub use super::RelayReplayPlayerName_Seq;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

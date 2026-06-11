@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/mesh_extents/Mesh_Extents.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Mesh_Extents {
-    pub min: crate :: unity_engine :: vector2 :: Vector2,
-    pub max: crate :: unity_engine :: vector2 :: Vector2,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/mesh_extents/Mesh_Extents.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mesh_Extents{pub min:crate::unity_engine::vector2::Vector2,pub max:crate::unity_engine::vector2::Vector2,}
+impl::unity2::ClassIdentity for Mesh_Extents{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="Mesh_Extents";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Mesh_Extents {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "Mesh_Extents";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Mesh_Extents {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Mesh_Extents{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,17 @@ impl ::unity2::IlType for Mesh_Extents {
 #[cfg(feature = "tm_pro-mesh_extents-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-mesh_extents")]
-impl Mesh_Extents { # [doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] pub fn ctor (& mut self , min : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , max : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Mesh_Extents , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8e590usize) as * mut u8) ; __inner (self as * mut Mesh_Extents , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Mesh_Extents , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8e5b0usize) as * mut u8) ; __inner (self as * mut Mesh_Extents , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-mesh_extents")]impl Mesh_Extents{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]pub fn ctor(&mut self,min:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,max:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8e590usize)as*mut u8,();
+(*mut Mesh_Extents)self as*mut Mesh_Extents,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(min),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(max))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8e5b0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Mesh_Extents)self as*mut Mesh_Extents)}
+}
+}
 
-#[cfg(feature = "tm_pro-mesh_extents")]
-impl Mesh_Extents { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mesh_Extents as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mesh_Extents as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="tm_pro-mesh_extents")]impl Mesh_Extents{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "tm_pro-mesh_extents")]
 #[doc(hidden)]
